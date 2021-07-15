@@ -8,7 +8,8 @@ Input:
 tccli cls CreateTopic --cli-unfold-argument  \
     --LogsetId xxxxxx-xx-xx-xx-xxxxxxxx \
     --TopicName testname \
-    --PartitionCount 1
+    --PartitionCount 1 \
+    --Period 12
 ```
 
 Output: 

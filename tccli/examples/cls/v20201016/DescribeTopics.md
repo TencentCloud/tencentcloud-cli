@@ -28,6 +28,7 @@ Output:
                 "StorageType": "xx",
                 "PartitionCount": 1,
                 "MaxSplitPartitions": 0,
+                "Period": 0,
                 "AutoSplit": true,
                 "LogsetId": "xx",
                 "Index": true,

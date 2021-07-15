@@ -1961,7 +1961,7 @@
         },
         {
           "default": "",
-          "document": "混流回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "document": "参数已弃用。",
           "example": "asdsad",
           "member": "string",
           "name": "StreamMixNotifyUrl",

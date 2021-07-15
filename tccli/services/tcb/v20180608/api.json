@@ -4362,7 +4362,7 @@
       "members": [
         {
           "default": "",
-          "document": "代码uri",
+          "document": "代码uri，格式如：extension://abcdefhhxxx.zip，对应 DescribeExtensionUploadInfo 接口的返回值",
           "example": "extension://abc.zip",
           "member": "string",
           "name": "CodeUri",
@@ -4376,7 +4376,7 @@
       "document": "DescribeDownloadFile返回参数结构体",
       "members": [
         {
-          "document": "文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件路径，该字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file/path",
           "member": "string",
           "name": "FilePath",
@@ -4385,7 +4385,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "加密key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密key，用于计算下载加密文件的header。参考SSE-C https://cloud.tencent.com/document/product/436/7728#sse-c\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx123",
           "member": "string",
           "name": "CustomKey",

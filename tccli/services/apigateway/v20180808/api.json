@@ -6,6 +6,12 @@
       "name": "插件绑定API",
       "output": "AttachPluginResponse"
     },
+    "BindApiApp": {
+      "document": "本接口（BindApiApp）用于绑定应用到API。",
+      "input": "BindApiAppRequest",
+      "name": "绑定应用到API",
+      "output": "BindApiAppResponse"
+    },
     "BindEnvironment": {
       "document": "本接口（BindEnvironment）用于绑定使用计划到服务或API。\n用户在发布服务到某个环境中后，如果 API 需要鉴权，还需要绑定使用计划才能进行调用，此接口用户将使用计划绑定到特定环境。\n目前支持绑定使用计划到API，但是同一个服务不能同时存在绑定到服务的使用计划和绑定到API的使用计划，所以对已经绑定过服务级别使用计划的环境，请先使用 服务级别使用计划降级 接口进行降级操作。",
       "input": "BindEnvironmentRequest",
@@ -48,6 +54,12 @@
       "name": "创建API",
       "output": "CreateApiResponse"
     },
+    "CreateApiApp": {
+      "document": "本接口（CreateApiApp）用于创建应用。",
+      "input": "CreateApiAppRequest",
+      "name": "创建应用",
+      "output": "CreateApiAppResponse"
+    },
     "CreateApiKey": {
       "document": "本接口（CreateApiKey）用于创建一对新的 API 密钥。",
       "input": "CreateApiKeyRequest",
@@ -89,6 +101,12 @@
       "input": "DeleteApiRequest",
       "name": "删除API",
       "output": "DeleteApiResponse"
+    },
+    "DeleteApiApp": {
+      "document": "本接口（DeleteApiApp）用于删除已经创建的应用。",
+      "input": "DeleteApiAppRequest",
+      "name": "删除应用",
+      "output": "DeleteApiAppResponse"
     },
     "DeleteApiKey": {
       "document": "本接口（DeleteApiKey）用于删除一对 API 密钥。",
@@ -155,6 +173,30 @@
       "input": "DescribeApiRequest",
       "name": "查询API详情",
       "output": "DescribeApiResponse"
+    },
+    "DescribeApiApp": {
+      "document": "本接口（DescribeApiApp）用于根据应用ID搜索应用。",
+      "input": "DescribeApiAppRequest",
+      "name": "搜索应用",
+      "output": "DescribeApiAppResponse"
+    },
+    "DescribeApiAppBindApisStatus": {
+      "document": "本接口（DescribeApiAppBindApisStatus）查询应用绑定的Api列表。",
+      "input": "DescribeApiAppBindApisStatusRequest",
+      "name": "查询应用绑定的Api列表",
+      "output": "DescribeApiAppBindApisStatusResponse"
+    },
+    "DescribeApiAppsStatus": {
+      "document": "本接口（DescribeApiAppsStatus）查询应用列表。",
+      "input": "DescribeApiAppsStatusRequest",
+      "name": "查询应用列表",
+      "output": "DescribeApiAppsStatusResponse"
+    },
+    "DescribeApiBindApiAppsStatus": {
+      "document": "本接口（DescribeApiBindApiAppsStatus）查询Api绑定的应用列表。",
+      "input": "DescribeApiBindApiAppsStatusRequest",
+      "name": "查询Api绑定的应用列表",
+      "output": "DescribeApiBindApiAppsStatusResponse"
     },
     "DescribeApiEnvironmentStrategy": {
       "document": "本接口（DescribeApiEnvironmentStrategy）用于展示API绑定的限流策略。",
@@ -252,6 +294,12 @@
       "name": "展示服务限流策略",
       "output": "DescribeServiceEnvironmentStrategyResponse"
     },
+    "DescribeServiceForApiApp": {
+      "document": "本接口（DescribeServiceForApiApp）用于应用使用者查询一个服务的详细信息、包括服务的描述、域名、协议等信息。",
+      "input": "DescribeServiceForApiAppRequest",
+      "name": "应用使用者查询服务详情",
+      "output": "DescribeServiceForApiAppResponse"
+    },
     "DescribeServiceReleaseVersion": {
       "document": "本接口（DescribeServiceReleaseVersion）查询一个服务下面所有已经发布的版本列表。\n用户在发布服务时，常有多个版本发布，可使用本接口查询已发布的版本。",
       "input": "DescribeServiceReleaseVersionRequest",
@@ -342,6 +390,12 @@
       "name": "修改API",
       "output": "ModifyApiResponse"
     },
+    "ModifyApiApp": {
+      "document": "本接口（ModifyApiApp）用于修改已经创建的应用。",
+      "input": "ModifyApiAppRequest",
+      "name": "修改应用",
+      "output": "ModifyApiAppResponse"
+    },
     "ModifyApiEnvironmentStrategy": {
       "document": "本接口（ModifyApiEnvironmentStrategy）用于修改API限流策略",
       "input": "ModifyApiEnvironmentStrategyRequest",
@@ -431,6 +485,18 @@
       "input": "UnReleaseServiceRequest",
       "name": "下线服务",
       "output": "UnReleaseServiceResponse"
+    },
+    "UnbindApiApp": {
+      "document": "本接口（UnbindApiApp）用于解除应用和API绑定。",
+      "input": "UnbindApiAppRequest",
+      "name": "解除应用和API绑定关系",
+      "output": "UnbindApiAppResponse"
+    },
+    "UpdateApiAppKey": {
+      "document": "本接口（UpdateApiAppKey）用于更新应用秘钥。",
+      "input": "UpdateApiAppKeyRequest",
+      "name": "更新应用秘钥",
+      "output": "UpdateApiAppKeyResponse"
     },
     "UpdateApiKey": {
       "document": "本接口（UpdateApiKey）用于更换用户已创建的一对 API 密钥。",
@@ -656,6 +722,201 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiAppApiInfo": {
+      "document": "应用绑定的Api信息",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Api的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "AuthorizedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Api所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权绑定的环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiAppApiInfos": {
+      "document": "应用信息集",
+      "members": [
+        {
+          "default": "",
+          "document": "数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用绑定的Api信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ApiAppApiInfo",
+          "name": "ApiAppApiSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiAppInfo": {
+      "document": "应用信息",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用SECRET\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAppSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAppDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用KEY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAppKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiAppInfos": {
+      "document": "应用信息集",
+      "members": [
+        {
+          "default": "",
+          "document": "应用数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ApiAppInfo",
+          "name": "ApiAppSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2016,6 +2277,69 @@
       ],
       "usage": "both"
     },
+    "BindApiAppRequest": {
+      "document": "BindApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的应用唯一 ID 。",
+          "example": "app-kzofrjbl",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的环境。",
+          "example": "test",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的服务唯一 ID。",
+          "example": "service-ody35h5e",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的API唯一ID。",
+          "example": "api-c6piso8y",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindApiAppResponse": {
+      "document": "BindApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BindEnvironmentRequest": {
       "document": "BindEnvironment请求参数结构体",
       "members": [
@@ -2418,6 +2742,51 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiAppRequest": {
+      "document": "CreateApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户自定义应用名称。",
+          "example": "test",
+          "member": "string",
+          "name": "ApiAppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用描述",
+          "example": "test",
+          "member": "string",
+          "name": "ApiAppDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiAppResponse": {
+      "document": "CreateApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "新增的应用详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiAppInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3367,6 +3736,42 @@
       ],
       "type": "object"
     },
+    "DeleteApiAppRequest": {
+      "document": "DeleteApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用唯一 ID。",
+          "example": "app-e92i2jds",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiAppResponse": {
+      "document": "DeleteApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteApiKeyRequest": {
       "document": "DeleteApiKey请求参数结构体",
       "members": [
@@ -4023,6 +4428,231 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppBindApisStatusRequest": {
+      "document": "DescribeApiAppBindApisStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "app-kzofrjbl",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。支持ApiId、ApiName、ServiceId、Environment 、KeyWord（ 可以匹配name或者ID）。",
+          "example": "[{\"Name\":\"ServiceId\",\"Values\":\"service-l29qasn8\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppBindApisStatusResponse": {
+      "document": "DescribeApiAppBindApisStatus返回参数结构体",
+      "members": [
+        {
+          "document": "应用绑定的Api列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{     \"Response\": {         \"Result\": {             \"TotalCount\"",
+          "member": "ApiAppApiInfos",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppRequest": {
+      "document": "DescribeApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "app-kzofrjbl",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppResponse": {
+      "document": "DescribeApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "应用详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiAppInfos",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppsStatusRequest": {
+      "document": "DescribeApiAppsStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。支持ApiAppId、ApiAppName、KeyWord（ 可以匹配name或者ID）。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiAppsStatusResponse": {
+      "document": "DescribeApiAppsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "应用列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiAppInfos",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiBindApiAppsStatusRequest": {
+      "document": "DescribeApiBindApiAppsStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务ID",
+          "example": "service-l29qasn8",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api的ID的数组",
+          "example": "[\"api-l29qasn8\"]",
+          "member": "string",
+          "name": "ApiIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。支持ApiAppId、Environment、KeyWord（ 可以匹配name或者ID）。",
+          "example": "[{\"Name\":\"ApiAppId\",\"Value\":\"app-l29qasn8\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiBindApiAppsStatusResponse": {
+      "document": "DescribeApiBindApiAppsStatus返回参数结构体",
+      "members": [
+        {
+          "document": "应用绑定的Api列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{     \"Response\": {         \"Result\": {             \"TotalCount\"",
+          "member": "ApiAppApiInfos",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4961,6 +5591,231 @@
           "member": "ServiceEnvironmentStrategyStatus",
           "name": "Result",
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceForApiAppRequest": {
+      "document": "DescribeServiceForApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的服务唯一 ID。",
+          "example": "service-rypiqi13",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务所属的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApiRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceForApiAppResponse": {
+      "document": "DescribeServiceForApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "服务唯一ID。",
+          "example": "service-rypiqi13",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务 环境列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"release\"]",
+          "member": "string",
+          "name": "AvailableEnvironments",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dd",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ServiceDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务支持协议，可选值为http、https、http&https。",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-04-15T11:03:41Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-04-15T11:03:42Z",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "独立集群名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ExclusiveSetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网络类型列表，INNER为内网访问，OUTER为外网访问。",
+          "example": "[\"OUTER\"]",
+          "member": "string",
+          "name": "NetTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网访问子域名。",
+          "example": "service-rypiqi13-1259027407.bj-in.apigw.tencentcs.com",
+          "member": "string",
+          "name": "InternalSubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "外网访问子域名。",
+          "example": "service-rypiqi13-1259027407.bj.apigw.tencentcs.com",
+          "member": "string",
+          "name": "OuterSubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网访问http服务端口号。",
+          "example": "0",
+          "member": "int64",
+          "name": "InnerHttpPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内网访问https端口号。",
+          "example": "0",
+          "member": "int64",
+          "name": "InnerHttpsPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "API总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApiTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiIdStatus",
+          "name": "ApiIdStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "使用计划总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsagePlanTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "使用计划数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsagePlan",
+          "name": "UsagePlanList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "IP版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IpVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "此服务的用户类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "预留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务绑定的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -6526,6 +7381,60 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiAppRequest": {
+      "document": "ModifyApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用唯一 ID。",
+          "example": "app-e92i2jds",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "ApiAppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改的应用描述",
+          "example": "test",
+          "member": "string",
+          "name": "ApiAppDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiAppResponse": {
+      "document": "ModifyApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "修改操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8913,6 +9822,123 @@
           "document": "下线操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindApiAppRequest": {
+      "document": "UnbindApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待绑定的应用唯一 ID 。",
+          "example": "app-kzofrjbl",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的环境。",
+          "example": "test",
+          "member": "string",
+          "name": "Environment",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的服务唯一 ID。",
+          "example": "service-ody35h5e",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的API唯一ID。",
+          "example": "api-c6piso8y",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindApiAppResponse": {
+      "document": "UnbindApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "解除绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiAppKeyRequest": {
+      "document": "UpdateApiAppKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用唯一 ID。",
+          "example": "app-e92i2jds",
+          "member": "string",
+          "name": "ApiAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用的Key。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApiAppKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用的Secret。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApiAppSecret",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApiAppKeyResponse": {
+      "document": "UpdateApiAppKey返回参数结构体",
+      "members": [
+        {
+          "document": "更新操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

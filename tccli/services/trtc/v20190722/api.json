@@ -447,6 +447,7 @@
         {
           "default": "",
           "document": "用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）",
+          "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -454,7 +455,8 @@
         },
         {
           "default": "",
-          "document": "查询开始时间",
+          "document": "查询开始时间,本地unix时间戳（1588031999s）",
+          "example": "1592448600",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -462,7 +464,8 @@
         },
         {
           "default": "",
-          "document": "查询结束时间",
+          "document": "查询结束时间,本地unix时间戳（1588031999s）",
+          "example": "1592449080",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -471,6 +474,7 @@
         {
           "default": "",
           "document": "房间号，查询房间内任意20条以内异常体验事件",
+          "example": "461",
           "member": "string",
           "name": "RoomId",
           "required": false,
@@ -484,15 +488,19 @@
       "members": [
         {
           "document": "返回的数据总条数",
+          "example": "11",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "异常体验列表",
+          "example": "无",
           "member": "AbnormalExperience",
           "name": "AbnormalExperienceList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -511,6 +519,7 @@
         {
           "default": "",
           "document": "通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）",
+          "example": "1400353843_218695_1590065777",
           "member": "string",
           "name": "CommId",
           "required": true,
@@ -518,7 +527,8 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。",
+          "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -527,6 +537,7 @@
         {
           "default": "",
           "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "example": "1590065877",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -535,6 +546,7 @@
         {
           "default": "",
           "document": "用户SDKAppID（1400188366）",
+          "example": "1400353843",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -543,6 +555,7 @@
         {
           "default": "",
           "document": "需查询的用户数组，不填默认返回6个用户,最多可填6个用户",
+          "example": "UserIds",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -551,6 +564,7 @@
         {
           "default": "",
           "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nbigvBit：上/下行视频码率；\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nbigvLoss：上/下行视频丢包；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
+          "example": "[\"bigvCapFps\\n\"]",
           "member": "string",
           "name": "DataType",
           "required": false,
@@ -559,6 +573,7 @@
         {
           "default": "",
           "document": "设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）",
+          "example": "0",
           "member": "string",
           "name": "PageNumber",
           "required": false,
@@ -567,6 +582,7 @@
         {
           "default": "",
           "document": "设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）",
+          "example": "6",
           "member": "string",
           "name": "PageSize",
           "required": false,
@@ -580,22 +596,28 @@
       "members": [
         {
           "document": "返回的用户总条数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserInformation",
           "name": "UserList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "质量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "QualityData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -663,7 +685,7 @@
       "document": "DescribeDetailEvent返回参数结构体",
       "members": [
         {
-          "document": "返回的事件列表",
+          "document": "返回的事件列表，若没有数据，会返回空数组。",
           "example": "\"Data\": [             {                 \"Content\": [            ",
           "member": "EventList",
           "name": "Data",

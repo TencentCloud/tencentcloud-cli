@@ -946,6 +946,51 @@
           "name": "VersionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动后执行的脚本",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "PostStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "停止前执行的脚本",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PreStop",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分批发布策略配置",
+          "example": "{}",
+          "member": "DeployStrategyConf",
+          "name": "DeployStrategyConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "存活探针配置",
+          "example": "null",
+          "member": "HealthCheckConfig",
+          "name": "Liveness",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "就绪探针配置",
+          "example": "null",
+          "member": "HealthCheckConfig",
+          "name": "Readiness",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -970,6 +1015,52 @@
         }
       ],
       "type": "object"
+    },
+    "DeployStrategyConf": {
+      "document": "分批发布策略配置",
+      "members": [
+        {
+          "default": "",
+          "document": "总分批数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalBatchCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "beta分批实例数",
+          "example": "5",
+          "member": "int64",
+          "name": "BetaBatchNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分批策略：0-全自动，1-全手动，beta分批一定是手动的，这里的策略指定的是剩余批次",
+          "example": "1",
+          "member": "int64",
+          "name": "DeployStrategyType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每批暂停间隔",
+          "example": "200",
+          "member": "int64",
+          "name": "BatchInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DescribeIngressRequest": {
       "document": "DescribeIngress请求参数结构体",
@@ -1594,6 +1685,92 @@
         }
       ],
       "type": "object"
+    },
+    "HealthCheckConfig": {
+      "document": "健康检查配置",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的健康检查类型，如 HttpGet，TcpSocket，Exec",
+          "example": "HttpGet",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅当健康检查类型为 HttpGet 时有效，表示协议类型，如 HTTP，HTTPS",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅当健康检查类型为 HttpGet 时有效，表示请求路径",
+          "example": "/xxx",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅当健康检查类型为 Exec 时有效，表示执行的脚本内容",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Exec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅当健康检查类型为 HttpGet\\TcpSocket 时有效，表示请求路径",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查延迟开始时间，单位为秒，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时时间，单位为秒，默认为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "间隔时间，单位为秒，默认为 10",
+          "example": "10",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "IngressInfo": {
       "document": "Ingress 配置",
@@ -2386,6 +2563,16 @@
           "name": "DeployVersion",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RestartCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

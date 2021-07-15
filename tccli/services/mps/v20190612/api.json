@@ -6805,12 +6805,29 @@
       ],
       "usage": "both"
     },
+    "EditMediaOutputConfig": {
+      "document": "编辑视频的结果文件输出配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "EditMediaRequest": {
       "document": "EditMedia请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "输入的视频文件信息。",
+          "example": "无",
           "member": "EditMediaFileInfo",
           "name": "FileInfos",
           "required": true,
@@ -6819,6 +6836,7 @@
         {
           "default": "",
           "document": "视频处理输出文件的目标存储。",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "required": true,
@@ -6827,6 +6845,7 @@
         {
           "default": "",
           "document": "视频处理输出文件的目标路径。",
+          "example": "/clip_result/clip_WildAnimal.{format}",
           "member": "string",
           "name": "OutputObjectPath",
           "required": true,
@@ -6834,7 +6853,17 @@
         },
         {
           "default": "",
+          "document": "编辑后生成的文件配置。",
+          "example": "无",
+          "member": "EditMediaOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
           "required": false,
@@ -6843,6 +6872,7 @@
         {
           "default": "",
           "document": "任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -6851,6 +6881,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -6859,6 +6890,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -6872,8 +6904,10 @@
       "members": [
         {
           "document": "编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。",
+          "example": "125xxx88-EditMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

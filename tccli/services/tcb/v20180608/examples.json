@@ -211,7 +211,7 @@
     "DescribeDownloadFile": [
       {
         "document": "获取文件下载信息",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeDownloadFile\n&CodeUri=\"abc.zip\"\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeDownloadFile\n&CodeUri=extension://ba883a90xxxxx.zip\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa\",\n        \"CustomKey\": \"xxx\",\n        \"FilePath\": \"file\",\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
         "title": "获取文件下载信息"
       }

@@ -7455,6 +7455,7 @@
         {
           "default": "",
           "document": "应用ID，不传入时查询全量",
+          "example": "application-xxx",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -7463,6 +7464,7 @@
         {
           "default": "",
           "document": "查询关键字，模糊查询：应用名称，配置项名称，不传入时查询全量",
+          "example": "driver",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -7471,6 +7473,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7479,8 +7482,27 @@
         {
           "default": "",
           "document": "每页条数，默认为20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按时间排序：creation_time；按名称排序：config_name",
+          "example": "config_name",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升序传 0，降序传 1",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderType",
           "required": false,
           "type": "int"
         }
@@ -7492,8 +7514,10 @@
       "members": [
         {
           "document": "配置项分页对象",
+          "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9519,6 +9543,7 @@
         {
           "default": "",
           "document": "查询关键字，模糊查询：配置项名称，不传入时查询全量",
+          "example": "null",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -9527,6 +9552,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -9535,8 +9561,27 @@
         {
           "default": "",
           "document": "每页条数，默认为20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按时间排序：creation_time；按名称排序：config_name",
+          "example": "config_name",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升序传 0，降序传 1",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderType",
           "required": false,
           "type": "int"
         }
@@ -9548,8 +9593,10 @@
       "members": [
         {
           "document": "分页的全局配置统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16371,6 +16418,36 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否创建 k8s service，默认为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableService",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "service 是否为 headless 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HeadlessService",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowDeleteService",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

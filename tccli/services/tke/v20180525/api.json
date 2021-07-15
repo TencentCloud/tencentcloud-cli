@@ -7526,6 +7526,7 @@
         {
           "default": "",
           "document": "集群id",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7534,6 +7535,7 @@
         {
           "default": "",
           "document": "节点池id",
+          "example": "np-xxxxxxxx",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -7541,7 +7543,8 @@
         },
         {
           "default": "",
-          "document": "节点id列表",
+          "document": "节点id列表，一次最多支持100台",
+          "example": "[\"ins-xxxxxxxx\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

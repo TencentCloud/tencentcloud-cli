@@ -8,7 +8,8 @@ Input:
 tccli cls ModifyTopic --cli-unfold-argument  \
     --TopicId xxxxxx-xx-xx-xx-xxxxxxxx \
     --TopicName testname \
-    --Status False
+    --Status False \
+    --Period 10
 ```
 
 Output: 

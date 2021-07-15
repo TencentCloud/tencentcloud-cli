@@ -49,9 +49,9 @@
       "output": "DescribeAssociatedInstanceListResponse"
     },
     "DescribeBlockByIpTimesList": {
-      "document": "DescribeBlockByIpTimesList 告警中心阻断ip折线图\n",
+      "document": "DescribeBlockByIpTimesList 告警中心阻断IP折线图\n",
       "input": "DescribeBlockByIpTimesListRequest",
-      "name": "告警中心阻断ip折线图",
+      "name": "告警中心阻断IP折线图",
       "output": "DescribeBlockByIpTimesListResponse"
     },
     "DescribeBlockStaticList": {
@@ -61,9 +61,9 @@
       "output": "DescribeBlockStaticListResponse"
     },
     "DescribeCfwEips": {
-      "document": "查询防火墙弹性公网ip",
+      "document": "查询防火墙弹性公网IP",
       "input": "DescribeCfwEipsRequest",
-      "name": "查询防火墙弹性公网ip",
+      "name": "查询防火墙弹性公网IP",
       "output": "DescribeCfwEipsResponse"
     },
     "DescribeGuideScanInfo": {
@@ -109,9 +109,9 @@
       "output": "DescribeTLogInfoResponse"
     },
     "DescribeTLogIpList": {
-      "document": "DescribeTLogIpList告警中心ip柱形图\n",
+      "document": "DescribeTLogIpList告警中心IP柱形图\n",
       "input": "DescribeTLogIpListRequest",
-      "name": "告警中心ip柱形图",
+      "name": "告警中心IP柱形图",
       "output": "DescribeTLogIpListResponse"
     },
     "DescribeTableStatus": {

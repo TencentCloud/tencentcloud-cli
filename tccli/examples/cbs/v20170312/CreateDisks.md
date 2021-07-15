@@ -29,7 +29,36 @@ Output:
 }
 ```
 
-**Example 2: 根据快照新建云硬盘**
+**Example 2: 创建按小时后付费云盘**
+
+在广州三区创建一块云硬盘，云盘类型为高性能云硬盘，大小100GB，付费类型为按小时后付费。
+
+Input: 
+
+```
+tccli cbs CreateDisks --cli-unfold-argument  \
+    --DiskType CLOUD_PREMIUM \
+    --DiskCount 1 \
+    --Placement.Zone ap-guangzhou-3 \
+    --Placement.ProjectId 0 \
+    --DiskChargeType POSTPAID_BY_HOUR \
+    --DiskName postPayDisk \
+    --DiskSize 100
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DiskIdSet": [
+            "disk-ecjc4cpw"
+        ],
+        "RequestId": "fe2274fa-eaec-4009-807b-6ffc00963fec"
+    }
+}
+```
+
+**Example 3: 根据快照新建云硬盘**
 
 传入快照创建云硬盘，未传DiskSize参数，此时新购云盘的大小为快照大小，新购云盘复制了快照数据。
 
@@ -55,35 +84,6 @@ Output:
             "disk-6rz0ilvu"
         ],
         "RequestId": "5e93a212-ca01-0fdc-eedd-5a1fce5e83e6"
-    }
-}
-```
-
-**Example 3: 创建按小时后付费云盘**
-
-在广州三区创建一块云硬盘，云盘类型为高性能云硬盘，大小100GB，付费类型为按小时后付费。
-
-Input: 
-
-```
-tccli cbs CreateDisks --cli-unfold-argument  \
-    --DiskType CLOUD_PREMIUM \
-    --DiskCount 1 \
-    --Placement.Zone ap-guangzhou-3 \
-    --Placement.ProjectId 0 \
-    --DiskChargeType POSTPAID_BY_HOUR \
-    --DiskName postPayDisk \
-    --DiskSize 100
-```
-
-Output: 
-```
-{
-    "Response": {
-        "DiskIdSet": [
-            "disk-ecjc4cpw"
-        ],
-        "RequestId": "fe2274fa-eaec-4009-807b-6ffc00963fec"
     }
 }
 ```

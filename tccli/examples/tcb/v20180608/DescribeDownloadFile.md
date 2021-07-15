@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb DescribeDownloadFile --cli-unfold-argument  \
-    --CodeUri "abc.zip"
+    --CodeUri extension://ba883a90xxxxx.zip
 ```
 
 Output: 
