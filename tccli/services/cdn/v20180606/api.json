@@ -763,6 +763,24 @@
           "name": "Quic",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回源S3私有鉴权",
+          "example": "无",
+          "member": "AwsPrivateAccess",
+          "name": "AwsPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回源OSS私有鉴权",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5581,6 +5599,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源OSS私有鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5992,7 +6020,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download或media。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
+          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download或media。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
+          "example": "domainType",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6002,6 +6031,7 @@
         {
           "default": "",
           "document": "过滤字段值。",
+          "example": "cname",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -6011,6 +6041,7 @@
         {
           "default": "",
           "document": "是否启用模糊查询，仅支持过滤字段名为origin，domain。\n模糊查询时，Value长度最大为1，否则Value长度最大为5。",
+          "example": "false",
           "member": "bool",
           "name": "Fuzzy",
           "required": false,
@@ -8091,6 +8122,42 @@
       ],
       "usage": "both"
     },
+    "OssPrivateAccess": {
+      "document": "oss回源鉴权",
+      "members": [
+        {
+          "default": "",
+          "document": "开关， on/off。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OverseaConfig": {
       "document": "域名海外地区特殊配置。UpdateDomainConfig接口只支持修改部分分地区配置，为了兼容旧版本配置，本类型会列出旧版本所有可能存在差异的配置列表，支持修改的配置列表如下：\n+ Authentication\n+ BandwidthAlert\n+ ErrorPage\n+ IpFilter\n+ Origin\n+ Referer",
       "members": [
@@ -8352,6 +8419,7 @@
         {
           "default": "",
           "document": "是否开启通配符“*”匹配：\nfalse：关闭\ntrue：开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Regex",
           "required": true,
@@ -8361,6 +8429,7 @@
         {
           "default": "",
           "document": "匹配的URL路径，仅支持Url路径，不支持参数。默认完全匹配，开启通配符“*”匹配后，最多支持5个通配符，最大长度为1024个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -8370,6 +8439,7 @@
         {
           "default": "",
           "document": "路径匹配时的回源源站。暂不支持开了私有读写的COS源。不填写时沿用默认源站。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8.8.8.8",
           "member": "string",
           "name": "Origin",
           "required": false,
@@ -8379,6 +8449,7 @@
         {
           "default": "",
           "document": "路径匹配时回源的Host头部。不填写时沿用默认ServerName。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.test.com",
           "member": "string",
           "name": "ServerName",
           "required": false,
@@ -8388,6 +8459,7 @@
         {
           "default": "",
           "document": "源站所属区域，支持CN，OV：\nCN：中国境内\nOV：中国境外\n默认为CN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CN",
           "member": "string",
           "name": "OriginArea",
           "required": false,
@@ -8397,6 +8469,7 @@
         {
           "default": "",
           "document": "路径匹配时回源的URI路径，必须以“/”开头，不包含参数部分。最大长度为1024个字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号“*”，最多支持10个捕获值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/demo",
           "member": "string",
           "name": "ForwardUri",
           "required": false,
@@ -8406,6 +8479,7 @@
         {
           "default": "",
           "document": "路径匹配时回源的头部设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HttpHeaderRule",
           "name": "RequestHeaders",
           "required": false,
@@ -11282,6 +11356,15 @@
           "example": "无",
           "member": "Quic",
           "name": "Quic",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "回源OSS私有鉴权",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
           "required": false,
           "type": "object"
         }

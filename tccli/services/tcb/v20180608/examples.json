@@ -256,6 +256,14 @@
         "title": "查询环境个数上限接口"
       }
     ],
+    "DescribeEnvPostpaidDeduct": [
+      {
+        "document": "查询环境后付费计费详情",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvPostpaidDeduct\n&EnvId=cdnheader-v2a\n&StartTime=2021-09-09\n&EndTime=2021-09-09\n&ResourceTypes.0=COS\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"PostPaidEnvDeductInfoList\": [\n            {\n                \"EnvId\": \"nanatest-6gh4z1im209cc32c\",\n                \"FreeQuota\": 0.0017,\n                \"MetricName\": \"ReadRequests\",\n                \"PkgQuota\": 0,\n                \"ResQuota\": 0,\n                \"ResourceType\": \"COS\"\n            },\n            {\n                \"EnvId\": \"nanatest-6gh4z1im209cc32c\",\n                \"FreeQuota\": 0.0001,\n                \"MetricName\": \"WriteRequests\",\n                \"PkgQuota\": 0,\n                \"ResQuota\": 0,\n                \"ResourceType\": \"COS\"\n            }\n        ]\n    }\n}",
+        "title": "查询环境后付费计费详情"
+      }
+    ],
     "DescribeEnvs": [
       {
         "document": "",
@@ -318,6 +326,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeSmsQuotas\n&EnvId=tnt-j715s5gda\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SmsFreeQuotaList\": [\n            {\n                \"FreeQuota\": 1000,\n                \"CycleStart\": \"2020-01-01 23:59:59\",\n                \"CycleEnd\": \"2020-02-01 23:59:59\",\n                \"TodayUsedQuota\": 0\n            }\n        ],\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\n    }\n}",
         "title": "查询免费量"
+      }
+    ],
+    "DescribeSpecialCostItems": [
+      {
+        "document": "查询1分钱抵扣详情",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeSpecialCostItems\n&EnvId=cdnheader-v2a\n&StartTime=2021-09-09\n&EndTime=2021-09-09\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"SpecialCostItems\": [\n            {\n                \"EnvId\": \"lbvliu-5gfy5n4a0776401d\",\n                \"ReportDate\": \"2021-07-08\",\n                \"Status\": \"reported\",\n                \"Uin\": \"100008561789\"\n            }\n        ]\n    }\n}",
+        "title": "查询1分钱抵扣详情"
       }
     ],
     "DescribeWxCloudBaseRunEnvs": [

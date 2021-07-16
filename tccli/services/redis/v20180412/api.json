@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ApplyParamsTemplate": {
+      "document": "应用参数模板到实例",
+      "input": "ApplyParamsTemplateRequest",
+      "name": "应用参数模板",
+      "output": "ApplyParamsTemplateResponse"
+    },
     "AssociateSecurityGroups": {
       "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定多个指定实例。",
       "input": "AssociateSecurityGroupsRequest",
@@ -36,11 +42,23 @@
       "name": "创建Redis实例",
       "output": "CreateInstancesResponse"
     },
+    "CreateParamTemplate": {
+      "document": "创建参数模板",
+      "input": "CreateParamTemplateRequest",
+      "name": "创建参数模板",
+      "output": "CreateParamTemplateResponse"
+    },
     "DeleteInstanceAccount": {
       "document": "删除实例子账号",
       "input": "DeleteInstanceAccountRequest",
       "name": "删除实例子账号",
       "output": "DeleteInstanceAccountResponse"
+    },
+    "DeleteParamTemplate": {
+      "document": "删除参数模板",
+      "input": "DeleteParamTemplateRequest",
+      "name": "删除参数模板",
+      "output": "DeleteParamTemplateResponse"
     },
     "DescribeAutoBackupConfig": {
       "document": "获取备份配置",
@@ -185,6 +203,18 @@
       "input": "DescribeMaintenanceWindowRequest",
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintenanceWindowResponse"
+    },
+    "DescribeParamTemplateInfo": {
+      "document": "查询参数模板详情",
+      "input": "DescribeParamTemplateInfoRequest",
+      "name": "查询参数模板详情",
+      "output": "DescribeParamTemplateInfoResponse"
+    },
+    "DescribeParamTemplates": {
+      "document": "查询参数模板列表",
+      "input": "DescribeParamTemplatesRequest",
+      "name": "查询参数模板列表",
+      "output": "DescribeParamTemplatesResponse"
     },
     "DescribeProductInfo": {
       "document": "本接口查询指定可用区和实例类型下 Redis 的售卖规格， 如果用户不在购买白名单中，将不能查询该可用区或该类型的售卖规格详情。申请购买某地域白名单可以提交工单",
@@ -348,6 +378,12 @@
       "name": "修改实例网络配置",
       "output": "ModifyNetworkConfigResponse"
     },
+    "ModifyParamTemplate": {
+      "document": "修改参数模板",
+      "input": "ModifyParamTemplateRequest",
+      "name": "修改参数模板",
+      "output": "ModifyParamTemplateResponse"
+    },
     "RenewInstance": {
       "document": "续费实例",
       "input": "RenewInstanceRequest",
@@ -463,6 +499,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplyParamsTemplateRequest": {
+      "document": "ApplyParamsTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "应用的参数模板ID",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyParamsTemplateResponse": {
+      "document": "ApplyParamsTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",
@@ -831,15 +912,6 @@
       "members": [
         {
           "default": "",
-          "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
-          "example": "100002",
-          "member": "uint64",
-          "name": "ZoneId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。",
           "example": "6",
           "member": "uint64",
@@ -881,6 +953,15 @@
           "member": "int64",
           "name": "BillingMode",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "example": "100002",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": false,
           "type": "int"
         },
         {
@@ -1008,6 +1089,24 @@
           "name": "ResourceTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ZoneName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建实例需要应用的参数模板ID，不传则应用默认的参数模板",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1031,6 +1130,78 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateParamTemplateRequest": {
+      "document": "CreateParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板名称。",
+          "example": "自定义参数模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板描述。",
+          "example": "参数模板描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）。创建模板时必填，从源模板复制则不需要传入该参数。",
+          "example": "6",
+          "member": "uint64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数列表。",
+          "example": "无",
+          "member": "InstanceParam",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateParamTemplateResponse": {
+      "document": "CreateParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1107,6 +1278,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteParamTemplateRequest": {
+      "document": "DeleteParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteParamTemplateResponse": {
+      "document": "DeleteParamTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2648,6 +2846,150 @@
           "member": "string",
           "name": "EndTime",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplateInfoRequest": {
+      "document": "DescribeParamTemplateInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplateInfoResponse": {
+      "document": "DescribeParamTemplateInfo返回参数结构体",
+      "members": [
+        {
+          "document": "实例参数个数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板名称。",
+          "example": "CustomParamTemplate",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）",
+          "example": "6",
+          "member": "uint64",
+          "name": "ProductType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板描述",
+          "example": "MyCustomParamTemplate",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数详情",
+          "example": "无",
+          "member": "ParameterDetail",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplatesRequest": {
+      "document": "DescribeParamTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品类型数组。产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）",
+          "example": "无",
+          "member": "int64",
+          "name": "ProductTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板名称数组。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模板ID数组。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamTemplatesResponse": {
+      "document": "DescribeParamTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "该用户的参数模板数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数模板详情。",
+          "example": "无",
+          "member": "ParamTemplateInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5616,6 +5958,60 @@
       ],
       "type": "object"
     },
+    "ModifyParamTemplateRequest": {
+      "document": "ModifyParamTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "源参数模板 ID。",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板名称。",
+          "example": "自定义参数模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数模板描述。",
+          "example": "参数模板描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数列表。",
+          "example": "无",
+          "member": "InstanceParam",
+          "name": "ParamList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyParamTemplateResponse": {
+      "document": "ModifyParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Outbound": {
       "document": "安全组出站规则",
       "members": [
@@ -5690,6 +6086,148 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamTemplateInfo": {
+      "document": "参数模板信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板ID",
+          "example": "crs-cfg-rhlppeye",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板名称",
+          "example": "CustomParamTemplate",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板描述",
+          "example": "MyCustomParamTemplate",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）",
+          "example": "6",
+          "member": "uint64",
+          "name": "ProductType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ParameterDetail": {
+      "document": "Redis参数模板参数详情",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "slowlog-log-slower-than",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型",
+          "example": "integer",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数默认值",
+          "example": "10",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数描述",
+          "example": "Over this time the command is recorded in us.a negative number d",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数当前值",
+          "example": "5",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改参数后，是否需要重启数据库以使参数生效。可能的值包括：0-不需要重启；1-需要重启",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数允许的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数允许的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数的可选枚举值。如果为非枚举参数，则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6100,6 +6638,7 @@
         {
           "default": "",
           "document": "节点类型，0 为主节点，1 为副本节点",
+          "example": "1",
           "member": "int64",
           "name": "NodeType",
           "required": true,
@@ -6108,20 +6647,32 @@
         },
         {
           "default": "",
-          "document": "主节点或者副本节点的可用区ID",
-          "member": "uint64",
-          "name": "ZoneId",
-          "required": true,
+          "document": "主节点或者副本节点的ID，创建时不需要传递此参数。",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeId",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "主节点或者副本节点的ID，创建时不需要传递此参数。",
-          "member": "int64",
-          "name": "NodeId",
+          "document": "主节点或者副本节点的可用区ID",
+          "example": "100001",
+          "member": "uint64",
+          "name": "ZoneId",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主节点或者副本节点的可用区名称",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -48,6 +48,12 @@
       "name": "创建机器组",
       "output": "CreateMachineGroupResponse"
     },
+    "CreateShipper": {
+      "document": "创建新的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。",
+      "input": "CreateShipperRequest",
+      "name": "创建投递规则",
+      "output": "CreateShipperResponse"
+    },
     "CreateTopic": {
       "document": "本接口用于创建日志主题。",
       "input": "CreateTopicRequest",
@@ -101,6 +107,12 @@
       "input": "DeleteMachineGroupRequest",
       "name": "删除机器组",
       "output": "DeleteMachineGroupResponse"
+    },
+    "DeleteShipper": {
+      "document": "删除投递规则",
+      "input": "DeleteShipperRequest",
+      "name": "删除投递规则",
+      "output": "DeleteShipperResponse"
     },
     "DeleteTopic": {
       "document": "本接口用于删除日志主题。",
@@ -180,6 +192,18 @@
       "name": "获取分区列表",
       "output": "DescribePartitionsResponse"
     },
+    "DescribeShipperTasks": {
+      "document": "获取投递任务列表",
+      "input": "DescribeShipperTasksRequest",
+      "name": "获取投递任务列表",
+      "output": "DescribeShipperTasksResponse"
+    },
+    "DescribeShippers": {
+      "document": "获取投递规则信息列表",
+      "input": "DescribeShippersRequest",
+      "name": "获取投递规则",
+      "output": "DescribeShippersResponse"
+    },
     "DescribeTopics": {
       "document": " 本接口用于获取日志主题列表，支持分页",
       "input": "DescribeTopicsRequest",
@@ -234,11 +258,23 @@
       "name": "修改机器组",
       "output": "ModifyMachineGroupResponse"
     },
+    "ModifyShipper": {
+      "document": "修改现有的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。",
+      "input": "ModifyShipperRequest",
+      "name": "修改投递规则",
+      "output": "ModifyShipperResponse"
+    },
     "ModifyTopic": {
       "document": "本接口用于修改日志主题。",
       "input": "ModifyTopicRequest",
       "name": "修改日志主题",
       "output": "ModifyTopicResponse"
+    },
+    "RetryShipperTask": {
+      "document": "重试失败的投递任务",
+      "input": "RetryShipperTaskRequest",
+      "name": "重试失败的投递任务",
+      "output": "RetryShipperTaskResponse"
     },
     "SearchLog": {
       "document": "本接口用于搜索日志",
@@ -665,12 +701,29 @@
       ],
       "usage": "both"
     },
+    "CompressInfo": {
+      "document": "投递日志的压缩配置",
+      "members": [
+        {
+          "default": "",
+          "document": "压缩格式，支持gzip、lzop和none不压缩",
+          "example": "none",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConfigInfo": {
       "document": "采集规则配置信息",
       "members": [
         {
           "default": "",
           "document": "采集规则配置ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -680,6 +733,7 @@
         {
           "default": "",
           "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LogFormat",
           "required": true,
@@ -688,7 +742,8 @@
         },
         {
           "default": "",
-          "document": "通配符日志采集路径列表，以/**/分隔文件目录和文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test/log.test",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -698,6 +753,7 @@
         {
           "default": "",
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json_log",
           "member": "string",
           "name": "LogType",
           "required": true,
@@ -707,6 +763,7 @@
         {
           "default": "",
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "required": true,
@@ -716,6 +773,7 @@
         {
           "default": "",
           "document": "采集黑名单路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ExcludePathInfo",
           "name": "ExcludePaths",
           "required": true,
@@ -725,6 +783,7 @@
         {
           "default": "",
           "document": "采集配置所属日志主题ID即TopicId",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "Output",
           "required": true,
@@ -734,6 +793,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -743,6 +803,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -751,6 +812,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ContentInfo": {
+      "document": "投递日志的内容格式配置",
+      "members": [
+        {
+          "default": "",
+          "document": "内容格式，支持json、csv",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "csv格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CsvInfo",
+          "name": "Csv",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "json格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JsonInfo",
+          "name": "Json",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateAlarmNoticeRequest": {
       "document": "CreateAlarmNotice请求参数结构体",
@@ -937,7 +1034,7 @@
         },
         {
           "default": "",
-          "document": "通配符日志采集路径列表，以/**/分隔文件目录和文件名",
+          "document": "日志采集路径,包含文件名",
           "example": "/data/nginx/log/**/access.log",
           "member": "string",
           "name": "Path",
@@ -1265,6 +1362,123 @@
       ],
       "type": "object"
     },
+    "CreateShipperRequest": {
+      "document": "CreateShipper请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建的投递规则所属的日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建的投递规则投递的bucket",
+          "example": "bucketName-appid",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建的投递规则投递目录的前缀",
+          "example": "无",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递规则的名字",
+          "example": "testShipper",
+          "member": "string",
+          "name": "ShipperName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
+          "example": "60",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
+          "example": "256",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
+          "example": "无",
+          "member": "FilterRuleInfo",
+          "name": "FilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "投递日志的分区规则，支持strftime的时间格式表示",
+          "example": "%Y%m%d",
+          "member": "string",
+          "name": "Partition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递日志的压缩配置",
+          "example": "无",
+          "member": "CompressInfo",
+          "name": "Compress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递日志的内容格式配置",
+          "example": "无",
+          "member": "ContentInfo",
+          "name": "Content",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateShipperResponse": {
+      "document": "CreateShipper返回参数结构体",
+      "members": [
+        {
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicRequest": {
       "document": "CreateTopic请求参数结构体",
       "members": [
@@ -1363,6 +1577,62 @@
         }
       ],
       "type": "object"
+    },
+    "CsvInfo": {
+      "document": "csv内容描述",
+      "members": [
+        {
+          "default": "",
+          "document": "csv首行是否打印key",
+          "example": "true",
+          "member": "bool",
+          "name": "PrintKey",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每列key的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "各字段间的分隔符",
+          "example": "无",
+          "member": "string",
+          "name": "Delimiter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串",
+          "example": "无",
+          "member": "string",
+          "name": "EscapeChar",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对于上面指定的不存在字段使用该内容填充",
+          "example": "无",
+          "member": "string",
+          "name": "NonExistingField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAlarmNoticeRequest": {
       "document": "DeleteAlarmNotice请求参数结构体",
@@ -1579,6 +1849,33 @@
     },
     "DeleteMachineGroupResponse": {
       "document": "DeleteMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteShipperRequest": {
+      "document": "DeleteShipper请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteShipperResponse": {
+      "document": "DeleteShipper返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2345,6 +2642,123 @@
       ],
       "type": "object"
     },
+    "DescribeShipperTasksRequest": {
+      "document": "DescribeShipperTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的开始时间戳，支持最近3天的查询， 毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的结束时间戳， 毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShipperTasksResponse": {
+      "document": "DescribeShipperTasks返回参数结构体",
+      "members": [
+        {
+          "document": "投递任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShipperTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShippersRequest": {
+      "document": "DescribeShippers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> shipperName\n\n按照【投递规则名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> shipperId\n\n按照【投递规则ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页的限制数目，默认值为20，最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeShippersResponse": {
+      "document": "DescribeShippers返回参数结构体",
+      "members": [
+        {
+          "document": "投递规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShipperInfo",
+          "name": "Shippers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "本次查询获取到的总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicsRequest": {
       "document": "DescribeTopics请求参数结构体",
       "members": [
@@ -2698,6 +3112,42 @@
       ],
       "usage": "in"
     },
+    "FilterRuleInfo": {
+      "document": "投递日志的过滤规则",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤规则Key",
+          "example": "testKey",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤规则",
+          "example": "/w",
+          "member": "string",
+          "name": "Regex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤规则Value",
+          "example": "testValue",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FullTextInfo": {
       "document": "全文索引配置",
       "members": [
@@ -2859,6 +3309,32 @@
         }
       ],
       "type": "object"
+    },
+    "JsonInfo": {
+      "document": "JSON类型描述",
+      "members": [
+        {
+          "default": "",
+          "document": "启用标志",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元数据信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetaFields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "KeyRegexInfo": {
       "document": "需要过滤日志的key，及其对应的regex",
@@ -3601,7 +4077,7 @@
         },
         {
           "default": "",
-          "document": "通配符日志采集路径列表，以/**/分隔文件目录和文件名",
+          "document": "日志采集路径，包含文件名",
           "example": "/data/nginx/log/access.log",
           "member": "string",
           "name": "Path",
@@ -3829,6 +4305,123 @@
     },
     "ModifyMachineGroupResponse": {
       "document": "ModifyMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShipperRequest": {
+      "document": "ModifyShipper请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递规则投递的新的bucket",
+          "example": "bucketName-appid",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递规则投递的新的目录前缀",
+          "example": "无",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递规则的开关状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "投递规则的名字",
+          "example": "testShipper",
+          "member": "string",
+          "name": "ShipperName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
+          "example": "300",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "投递的文件的最大值，单位 MB，默认256，范围 100-256",
+          "example": "256",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "投递日志的过滤规则，匹配的日志进行投递，各rule之间是and关系，最多5个，数组为空则表示不过滤而全部投递",
+          "example": "无",
+          "member": "FilterRuleInfo",
+          "name": "FilterRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "投递日志的分区规则，支持strftime的时间格式表示",
+          "example": "%Y%m%d",
+          "member": "string",
+          "name": "Partition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递日志的压缩配置",
+          "example": "无",
+          "member": "CompressInfo",
+          "name": "Compress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "投递日志的内容格式配置",
+          "example": "无",
+          "member": "ContentInfo",
+          "name": "Content",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyShipperResponse": {
+      "document": "ModifyShipper返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4070,6 +4663,42 @@
       ],
       "usage": "out"
     },
+    "RetryShipperTaskRequest": {
+      "document": "RetryShipperTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryShipperTaskResponse": {
+      "document": "RetryShipperTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RuleInfo": {
       "document": "索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数",
       "members": [
@@ -4285,6 +4914,238 @@
         }
       ],
       "type": "object"
+    },
+    "ShipperInfo": {
+      "document": "投递规则",
+      "members": [
+        {
+          "default": "",
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递的bucket地址",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递的前缀目录",
+          "example": "无",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递规则的名字",
+          "example": "testShipper",
+          "member": "string",
+          "name": "ShipperName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递的时间间隔，单位 秒",
+          "example": "300",
+          "member": "uint64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递的文件的最大值，单位 MB",
+          "example": "256",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递日志的过滤规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterRuleInfo",
+          "name": "FilterRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递日志的分区规则，支持strftime的时间格式表示",
+          "example": "无",
+          "member": "string",
+          "name": "Partition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递日志的压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompressInfo",
+          "name": "Compress",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递日志的内容格式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentInfo",
+          "name": "Content",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递日志的创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ShipperTaskInfo": {
+      "document": "投递任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "投递任务ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "投递信息ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ShipperId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本批投递的日志的开始时间戳，毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "RangeStart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本批投递的日志的结束时间戳， 毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "RangeEnd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次投递任务的开始时间戳， 毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次投递任务的结束时间戳， 毫秒",
+          "example": "978653222",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次投递的结果，\"success\",\"running\",\"failed\"",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的详细信息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SplitPartitionRequest": {
       "document": "SplitPartition请求参数结构体",

@@ -64,6 +64,14 @@
         "title": "创建机器组"
       }
     ],
+    "CreateShipper": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateShipper\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"Bucket\": \"test-1250000001\",\n    \"Prefix\": \"test\",\n    \"ShipperName\": \"myname\",\n    \"Interval\": 300,\n    \"MaxSize\": 256,\n    \"Partition\": \"%Y%m%d\",\n    \"Compress\": {\n        \"Format\": \"none\"\n    },\n    \"FilterRules\": [\n        {\n            \"Key\": \"\",\n            \"Regex\": \"\",\n            \"Value\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ShipperId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建投递规则"
+      }
+    ],
     "CreateTopic": [
       {
         "document": "",
@@ -134,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除机器组"
+      }
+    ],
+    "DeleteShipper": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxxxxx-xxx-xxx-xxx-xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除投递规则"
       }
     ],
     "DeleteTopic": [
@@ -240,6 +256,22 @@
         "title": "获取分区列表"
       }
     ],
+    "DescribeShipperTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShipperTasks\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxxx-xxx-xx-xxx-xxxxx\",\n    \"StartTime\": 978653222,\n    \"EndTime\": 978653333\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"xxxxx-xx-xx-xx\",\n                \"ShipperId\": \"xxxxx-xx-xx-xx\",\n                \"TopicId\": \"xxxxx-xx-xx-xx\",\n                \"RangeStart\": \"978653222\",\n                \"RangeEnd\": \"978653222\",\n                \"StartTime\": \"978653222\",\n                \"EndTime\": \"978653222\",\n                \"Status\": \"success\",\n                \"Message\": \"success\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取投递任务列表"
+      }
+    ],
+    "DescribeShippers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShippers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"shipperId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Shippers\": [\n            {\n                \"ShipperId\": \"xxxx-xx-xx-xx-yyyyyyyy\",\n                \"TopicId\": \"xxxx-xxx-xxx-xxxxx-xxxxx\",\n                \"Bucket\": \"testbucket-appid\",\n                \"Prefix\": \"test\",\n                \"ShipperName\": \"testname\",\n                \"Interval\": 300,\n                \"MaxSize\": 256,\n                \"Status\": true,\n                \"FilterRules\": [\n                    {\n                        \"Key\": \"\",\n                        \"Regex\": \"\",\n                        \"Value\": \"\"\n                    }\n                ],\n                \"Partition\": \"%Y%m%d\",\n                \"CreateTime\": \"2017-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取投递规则"
+      }
+    ],
     "DescribeTopics": [
       {
         "document": "",
@@ -312,12 +344,28 @@
         "title": "修改机器组"
       }
     ],
+    "ModifyShipper": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"Bucket\": \"test-1250000001\",\n    \"Prefix\": \"test\",\n    \"ShipperName\": \"myname\",\n    \"Interval\": 300,\n    \"MaxSize\": 256,\n    \"Partition\": \"%Y%m%d\",\n    \"Compress\": {\n        \"Format\": \"none\"\n    },\n    \"FilterRules\": [\n        {\n            \"Key\": \"\",\n            \"Regex\": \"\",\n            \"Value\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改投递规则"
+      }
+    ],
     "ModifyTopic": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"
+      }
+    ],
+    "RetryShipperTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryShipperTask\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxxxxxx-xxx-xxx-xxxxxxx\",\n    \"TaskId\": \"xxxxxxxx-xxx-xxx-xxxx-xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "重试失败的投递任务"
       }
     ],
     "SearchLog": [

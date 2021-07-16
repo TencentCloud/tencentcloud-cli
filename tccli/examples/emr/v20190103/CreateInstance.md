@@ -30,8 +30,8 @@ tccli emr CreateInstance --cli-unfold-argument  \
     --ResourceSpec.CoreResourceSpec.StorageType 5 \
     --ResourceSpec.MasterCount 1 \
     --ResourceSpec.CoreCount 2 \
-    --VPCSettings.VpcId vpc-ezt5qmqz \
-    --VPCSettings.SubnetId subnet-jhgsahx0 \
+    --VPCSettings.VpcId vpc-xxxxxx \
+    --VPCSettings.SubnetId subnet-xxxxxxx \
     --LoginSettings.Password tencent@cloud123 \
     --TimeSpan 3600 \
     --TimeUnit s
@@ -41,7 +41,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d830face-6587-4263-8ab0-56bda265787d"
+        "RequestId": "d830face-6587-4263-8ab0-56bda265787d",
+        "InstanceId": "emr-xxxx"
     }
 }
 ```

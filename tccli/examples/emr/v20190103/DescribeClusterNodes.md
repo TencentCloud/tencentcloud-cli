@@ -16,6 +16,9 @@ Output:
 ```
 {
     "Response": {
+        "HardwareResourceTypeList": [
+            "all"
+        ],
         "NodeList": [
             {
                 "AppId": 251008830,
@@ -58,7 +61,8 @@ Output:
                 "StorageType": 5,
                 "Tags": [],
                 "WanIp": "--",
-                "ZoneId": 100002
+                "ZoneId": 100002,
+                "SupportModifyPayMode": 1
             },
             {
                 "AppId": 251008830,
@@ -101,7 +105,8 @@ Output:
                 "StorageType": 5,
                 "Tags": [],
                 "WanIp": "",
-                "ZoneId": 100002
+                "ZoneId": 100002,
+                "SupportModifyPayMode": 0
             },
             {
                 "AppId": 251008830,
@@ -144,7 +149,8 @@ Output:
                 "StorageType": 5,
                 "Tags": [],
                 "WanIp": "",
-                "ZoneId": 100002
+                "ZoneId": 100002,
+                "SupportModifyPayMode": 0
             }
         ],
         "RequestId": "bb22bafb-d2a4-4a02-879f-6ccf54a27892",

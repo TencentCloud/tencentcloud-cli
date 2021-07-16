@@ -192,6 +192,12 @@
       "name": "查询环境个数上限接口",
       "output": "DescribeEnvLimitResponse"
     },
+    "DescribeEnvPostpaidDeduct": {
+      "document": "查询环境后付费计费详情",
+      "input": "DescribeEnvPostpaidDeductRequest",
+      "name": "查询环境后付费计费详情",
+      "output": "DescribeEnvPostpaidDeductResponse"
+    },
     "DescribeEnvs": {
       "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
       "input": "DescribeEnvsRequest",
@@ -239,6 +245,12 @@
       "input": "DescribeSmsQuotasRequest",
       "name": "查询后付费短信资源量",
       "output": "DescribeSmsQuotasResponse"
+    },
+    "DescribeSpecialCostItems": {
+      "document": "查询环境1分钱抵扣信息",
+      "input": "DescribeSpecialCostItemsRequest",
+      "name": "查询环境1分钱抵扣信息",
+      "output": "DescribeSpecialCostItemsResponse"
     },
     "DescribeWxCloudBaseRunEnvs": {
       "document": "查询微信云托管环境信息",
@@ -4740,6 +4752,69 @@
       ],
       "type": "object"
     },
+    "DescribeEnvPostpaidDeductRequest": {
+      "document": "DescribeEnvPostpaidDeduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方列表",
+          "example": "[\"FLEXDB\", \"COS\",\"SCF\", \"CDN\",\"EKS\", \"CODING\", \"HTTPSERVICE\", \"H",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "\"nanatest-6gh4z1im209cc32c\"",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "example": "\"2021-07-08\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "\"2021-07-08\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvPostpaidDeductResponse": {
+      "document": "DescribeEnvPostpaidDeduct返回参数结构体",
+      "members": [
+        {
+          "document": "指标抵扣详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostPaidEnvDeductInfo",
+          "name": "PostPaidEnvDeductInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnvsRequest": {
       "document": "DescribeEnvs请求参数结构体",
       "members": [
@@ -5066,6 +5141,60 @@
           "example": "[]",
           "member": "SmsFreeQuota",
           "name": "SmsFreeQuotaList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecialCostItemsRequest": {
+      "document": "DescribeSpecialCostItems请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "\"nanatest-6gh4z1im209cc32c\"",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间",
+          "example": "\"2021-07-08\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "\"2021-07-08\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecialCostItemsResponse": {
+      "document": "DescribeSpecialCostItems返回参数结构体",
+      "members": [
+        {
+          "document": "1分钱抵扣详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpecialCostItem",
+          "name": "SpecialCostItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6568,6 +6697,72 @@
       ],
       "usage": "both"
     },
+    "PostPaidEnvDeductInfo": {
+      "document": "后付费计费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "资源方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COS",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ReadRequests",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "按量计费详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ResQuota",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源包抵扣详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "PkgQuota",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免费额度抵扣详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "FreeQuota",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nanatest-6gh4z1im209cc32c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PostpayEnvQuota": {
       "document": "按量付费免费配额信息",
       "members": [
@@ -7029,6 +7224,52 @@
           "name": "TodayUsedQuota",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SpecialCostItem": {
+      "document": "1分钱计费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "上报日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01",
+          "member": "string",
+          "name": "ReportDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯云uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100008561789",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源id:环境id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbvliu-5gfy5n4a0776401d",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上报任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\\\"Metric\\\":3,\\\"ResourceType\\\":\\\"COS\\\",\\\"MetricName\\\":\\\"Capacit",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

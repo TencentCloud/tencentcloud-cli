@@ -1,7 +1,7 @@
 {
   "actions": {
     "CreateInstance": {
-      "document": "创建EMR实例",
+      "document": "创建EMR集群实例",
       "input": "CreateInstanceRequest",
       "name": "创建EMR实例",
       "output": "CreateInstanceResponse"
@@ -131,6 +131,7 @@
         {
           "default": "",
           "document": "COS SecretId",
+          "example": "SecretId ",
           "member": "string",
           "name": "CosSecretId",
           "required": true,
@@ -140,6 +141,7 @@
         {
           "default": "",
           "document": "COS SecrectKey",
+          "example": "SecrectKey",
           "member": "string",
           "name": "CosSecretKey",
           "required": true,
@@ -149,6 +151,7 @@
         {
           "default": "",
           "document": "日志存储在COS上的路径",
+          "example": "cosn://ad-data-xxxxxx/data/logs/xxxxxxx",
           "member": "string",
           "name": "LogOnCosPath",
           "required": false,
@@ -736,7 +739,8 @@
       "members": [
         {
           "default": "",
-          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>\n<li>9：表示EMR-V2.2.0。</li>\n<li>11：表示CLICKHOUSE-V1.0.0。</li>\n<li>13：表示DRUID-V1.0.0。</li>\n<li>15：表示EMR-V2.2.1。</li>\n<li>16：表示EMR-V2.3.0。</li>\n<li>17：表示CLICKHOUSE-V1.1.0。</li>\n<li>19：表示EMR-V2.4.0。</li>\n<li>20：表示EMR-V2.5.0。</li>\n<li>22：表示CLICKHOUSE-V1.2.0。</li>\n<li>24：表示EMR-TianQiong-V1.0.0。</li>\n<li>25：表示EMR-V3.1.0。</li>\n<li>26：表示DORIS-V1.0.0。</li>\n<li>27：表示KAFKA-V1.0.0。</li>\n<li>28：表示EMR-V3.2.0。</li>\n<li>29：表示EMR-V2.5.1。</li>\n<li>30：表示EMR-V2.6.0。</li>",
+          "example": "4",
           "member": "uint64",
           "name": "ProductId",
           "required": true,
@@ -745,6 +749,7 @@
         {
           "default": "",
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": true,
@@ -752,7 +757,8 @@
         },
         {
           "default": "",
-          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>",
+          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
+          "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
           "member": "string",
           "name": "Software",
           "required": true,
@@ -761,6 +767,7 @@
         {
           "default": "",
           "document": "节点资源的规格。",
+          "example": "无",
           "member": "NewResourceSpec",
           "name": "ResourceSpec",
           "required": true,
@@ -769,6 +776,7 @@
         {
           "default": "",
           "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "SupportHA",
           "required": true,
@@ -777,6 +785,7 @@
         {
           "default": "",
           "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
+          "example": "emr测试",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -785,6 +794,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -793,6 +803,7 @@
         {
           "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -801,6 +812,7 @@
         {
           "default": "",
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -809,6 +821,7 @@
         {
           "default": "",
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -817,6 +830,7 @@
         {
           "default": "",
           "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": true,
@@ -825,6 +839,7 @@
         {
           "default": "",
           "document": "开启COS访问需要设置的参数。",
+          "example": "无",
           "member": "COSSettings",
           "name": "COSSettings",
           "required": false,
@@ -833,6 +848,7 @@
         {
           "default": "",
           "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
+          "example": "sg-xxxxxxxxxx",
           "member": "string",
           "name": "SgId",
           "required": false,
@@ -840,7 +856,8 @@
         },
         {
           "default": "",
-          "document": "引导操作脚本设置。",
+          "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
+          "example": "无",
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
           "required": false,
@@ -849,6 +866,7 @@
         {
           "default": "",
           "document": "包年包月实例是否自动续费。取值范围：\n<li>0：表示不自动续费。</li>\n<li>1：表示自动续费。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
@@ -857,6 +875,7 @@
         {
           "default": "",
           "document": "客户端Token。",
+          "example": "sdcdwxxxws",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -865,6 +884,7 @@
         {
           "default": "",
           "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
+          "example": "NEED_MASTER_WAN",
           "member": "string",
           "name": "NeedMasterWan",
           "required": false,
@@ -873,6 +893,7 @@
         {
           "default": "",
           "document": "是否需要开启外网远程登录，即22号端口。在SgId不为空时，该参数无效。",
+          "example": "22",
           "member": "int64",
           "name": "RemoteLoginAtCreate",
           "required": false,
@@ -881,6 +902,7 @@
         {
           "default": "",
           "document": "是否开启安全集群。0表示不开启，非0表示开启。",
+          "example": "0",
           "member": "int64",
           "name": "CheckSecurity",
           "required": false,
@@ -889,6 +911,7 @@
         {
           "default": "",
           "document": "访问外部文件系统。",
+          "example": "fs",
           "member": "string",
           "name": "ExtendFsField",
           "required": false,
@@ -897,6 +920,7 @@
         {
           "default": "",
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -904,7 +928,8 @@
         },
         {
           "default": "",
-          "document": "分散置放群组ID列表，当前只支持指定一个。",
+          "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/213/15486 ) 的返回值中的SecurityGroupId字段来获取。",
+          "example": "[\"disa-xxxxx\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -913,6 +938,7 @@
         {
           "default": "",
           "document": "集群维度CBS加密盘，默认0表示不加密，1表示加密",
+          "example": "0",
           "member": "uint64",
           "name": "CbsEncrypt",
           "required": false,
@@ -920,7 +946,8 @@
         },
         {
           "default": "",
-          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "example": "EMR_EXIT_META",
           "member": "string",
           "name": "MetaType",
           "required": false,
@@ -929,6 +956,7 @@
         {
           "default": "",
           "document": "EMR-MetaDB实例",
+          "example": "instdxxxxx",
           "member": "string",
           "name": "UnifyMetaInstanceId",
           "required": false,
@@ -937,6 +965,7 @@
         {
           "default": "",
           "document": "自定义MetaDB信息",
+          "example": "无",
           "member": "CustomMetaInfo",
           "name": "MetaDBInfo",
           "required": false,
@@ -945,6 +974,7 @@
         {
           "default": "",
           "document": "自定义应用角色。",
+          "example": "roleName",
           "member": "string",
           "name": "ApplicationRole",
           "required": false,
@@ -956,6 +986,15 @@
     "CreateInstanceResponse": {
       "document": "CreateInstance返回参数结构体",
       "members": [
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-xxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -971,6 +1010,7 @@
         {
           "default": "",
           "document": "自定义MetaDB的JDBC连接，请以 jdbc:mysql:// 开头",
+          "example": "jdbc:mysql://ip:port/hive",
           "member": "string",
           "name": "MetaDataJdbcUrl",
           "required": false,
@@ -980,6 +1020,7 @@
         {
           "default": "",
           "document": "自定义MetaDB用户名",
+          "example": "userName",
           "member": "string",
           "name": "MetaDataUser",
           "required": false,
@@ -989,6 +1030,7 @@
         {
           "default": "",
           "document": "自定义MetaDB密码",
+          "example": "pwd",
           "member": "string",
           "name": "MetaDataPass",
           "required": false,
@@ -1004,6 +1046,7 @@
         {
           "default": "",
           "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
+          "example": "emr-6deluvd4",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1012,6 +1055,7 @@
         {
           "default": "",
           "document": "节点标识，取值为：\n<li>all：表示获取全部类型节点，cdb信息除外。</li>\n<li>master：表示获取master节点信息。</li>\n<li>core：表示获取core节点信息。</li>\n<li>task：表示获取task节点信息。</li>\n<li>common：表示获取common节点信息。</li>\n<li>router：表示获取router节点信息。</li>\n<li>db：表示获取正常状态的cdb信息。</li>\n<li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>\n<li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>\n注意：现在只支持以上取值，输入其他值会导致错误。",
+          "example": "all",
           "member": "string",
           "name": "NodeFlag",
           "required": true,
@@ -1020,6 +1064,7 @@
         {
           "default": "",
           "document": "页编号，默认值为0，表示第一页。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1028,6 +1073,7 @@
         {
           "default": "",
           "document": "每页返回数量，默认值为100，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1036,6 +1082,7 @@
         {
           "default": "",
           "document": "资源类型:支持all/host/pod，默认为all",
+          "example": "all",
           "member": "string",
           "name": "HardwareResourceType",
           "required": false,
@@ -1044,6 +1091,7 @@
         {
           "default": "",
           "document": "支持搜索的字段",
+          "example": "无",
           "member": "SearchItem",
           "name": "SearchFields",
           "required": false,
@@ -1057,29 +1105,37 @@
       "members": [
         {
           "document": "查询到的节点总数",
+          "example": "3",
           "member": "int64",
           "name": "TotalCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "节点详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NodeHardwareInfo",
           "name": "NodeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
           "member": "string",
           "name": "TagKeys",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "资源类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "HardwareResourceTypeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1882,6 +1938,7 @@
         {
           "default": "",
           "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
+          "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -1890,6 +1947,7 @@
         {
           "default": "",
           "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -1898,6 +1956,7 @@
         {
           "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -1906,6 +1965,7 @@
         {
           "default": "",
           "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -1914,6 +1974,7 @@
         {
           "default": "",
           "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
@@ -1922,10 +1983,20 @@
         {
           "default": "",
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
           "member": "string",
           "name": "Currency",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否按量转包年包月。0：否，1：是。",
+          "example": "1",
+          "member": "int64",
+          "name": "ModifyPayMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1935,29 +2006,37 @@
       "members": [
         {
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "898.9",
           "member": "float",
           "name": "OriginalCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "596.54",
           "member": "float",
           "name": "DiscountCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "实例续费的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2447,7 +2526,8 @@
       "members": [
         {
           "default": "",
-          "document": "云盘类型(\"CLOUD_PREMIUM\",\"CLOUD_SSD\",\"CLOUD_BASIC\")的一种",
+          "document": "云盘类型\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "required": false,
@@ -2457,6 +2537,7 @@
         {
           "default": "",
           "document": "云盘大小",
+          "example": "20000",
           "member": "int64",
           "name": "Volume",
           "required": false,
@@ -2466,6 +2547,7 @@
         {
           "default": "",
           "document": "该类型云盘个数",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -2514,6 +2596,7 @@
         {
           "default": "",
           "document": "描述Master节点资源",
+          "example": "无",
           "member": "Resource",
           "name": "MasterResourceSpec",
           "required": false,
@@ -2523,6 +2606,7 @@
         {
           "default": "",
           "document": "描述Core节点资源",
+          "example": "无",
           "member": "Resource",
           "name": "CoreResourceSpec",
           "required": false,
@@ -2532,6 +2616,7 @@
         {
           "default": "",
           "document": "描述Task节点资源",
+          "example": "无",
           "member": "Resource",
           "name": "TaskResourceSpec",
           "required": false,
@@ -2541,6 +2626,7 @@
         {
           "default": "",
           "document": "Master节点数量",
+          "example": "2",
           "member": "int64",
           "name": "MasterCount",
           "required": false,
@@ -2550,6 +2636,7 @@
         {
           "default": "",
           "document": "Core节点数量",
+          "example": "3",
           "member": "int64",
           "name": "CoreCount",
           "required": false,
@@ -2559,6 +2646,7 @@
         {
           "default": "",
           "document": "Task节点数量",
+          "example": "0",
           "member": "int64",
           "name": "TaskCount",
           "required": false,
@@ -2568,6 +2656,7 @@
         {
           "default": "",
           "document": "描述Common节点资源",
+          "example": "无",
           "member": "Resource",
           "name": "CommonResourceSpec",
           "required": false,
@@ -2577,6 +2666,7 @@
         {
           "default": "",
           "document": "Common节点数量",
+          "example": "3",
           "member": "int64",
           "name": "CommonCount",
           "required": false,
@@ -2978,6 +3068,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持变更计费类型 1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SupportModifyPayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3108,6 +3208,7 @@
         {
           "default": "",
           "document": "实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。填0为默认项目。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -3117,6 +3218,7 @@
         {
           "default": "",
           "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3141,7 +3243,7 @@
         },
         {
           "default": "",
-          "document": "自定义权限",
+          "document": "自定义权限\n如：\n{\n  \"apiVersion\": \"v1\",\n  \"clusters\": [\n    {\n      \"cluster\": {\n        \"certificate-authority-data\": \"xxxxxx==\",\n        \"server\": \"https://xxxxx.com\"\n      },\n      \"name\": \"cls-xxxxx\"\n    }\n  ],\n  \"contexts\": [\n    {\n      \"context\": {\n        \"cluster\": \"cls-xxxxx\",\n        \"user\": \"100014xxxxx\"\n      },\n      \"name\": \"cls-a44yhcxxxxxxxxxx\"\n    }\n  ],\n  \"current-context\": \"cls-a4xxxx-context-default\",\n  \"kind\": \"Config\",\n  \"preferences\": {},\n  \"users\": [\n    {\n      \"name\": \"100014xxxxx\",\n      \"user\": {\n        \"client-certificate-data\": \"xxxxxx\",\n        \"client-key-data\": \"xxxxxx\"\n      }\n    }\n  ]\n}",
           "example": "{   \"apiVersion\": \"v1\",   \"clusters\": [     {       \"cluster\": {",
           "member": "string",
           "name": "Config",
@@ -3151,7 +3253,7 @@
         },
         {
           "default": "",
-          "document": "自定义参数",
+          "document": "自定义参数\n如：\n{\n    \"apiVersion\": \"apps/v1\",\n    \"kind\": \"Deployment\",\n    \"metadata\": {\n      \"name\": \"test-deployment\",\n      \"labels\": {\n        \"app\": \"test\"\n      }\n    },\n    \"spec\": {\n      \"replicas\": 3,\n      \"selector\": {\n        \"matchLabels\": {\n          \"app\": \"test-app\"\n        }\n      },\n      \"template\": {\n        \"metadata\": {\n          \"annotations\": {\n            \"your-organization.com/department-v1\": \"test-example-v1\",\n            \"your-organization.com/department-v2\": \"test-example-v2\"\n          },\n          \"labels\": {\n            \"app\": \"test-app\",\n            \"environment\": \"production\"\n          }\n        },\n        \"spec\": {\n          \"nodeSelector\": {\n            \"your-organization/node-test\": \"test-node\"\n          },\n          \"containers\": [\n            {\n              \"name\": \"nginx\",\n              \"image\": \"nginx:1.14.2\",\n              \"ports\": [\n                {\n                  \"containerPort\": 80\n                }\n              ]\n            }\n          ],\n          \"affinity\": {\n            \"nodeAffinity\": {\n              \"requiredDuringSchedulingIgnoredDuringExecution\": {\n                \"nodeSelectorTerms\": [\n                  {\n                    \"matchExpressions\": [\n                      {\n                        \"key\": \"disk-type\",\n                        \"operator\": \"In\",\n                        \"values\": [\n                          \"ssd\",\n                          \"sas\"\n                        ]\n                      },\n                      {\n                        \"key\": \"cpu-num\",\n                        \"operator\": \"Gt\",\n                        \"values\": [\n                          \"6\"\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            }\n          }\n        }\n      }\n    }\n  }",
           "example": "{   \"apiVersion\": \"apps/v1\",   \"kind\": \"Deployment\",   \"metadata",
           "member": "string",
           "name": "Parameter",
@@ -3264,6 +3366,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代表vpc网络唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代表vpc子网唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3307,6 +3429,7 @@
         {
           "default": "",
           "document": "脚本在COS上路径，已废弃",
+          "example": "emr/emr_init.sh",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -3316,6 +3439,7 @@
         {
           "default": "",
           "document": "执行脚本参数",
+          "example": "无",
           "member": "string",
           "name": "Args",
           "required": false,
@@ -3325,6 +3449,7 @@
         {
           "default": "",
           "document": "COS的Bucket名称，已废弃",
+          "example": "starmaker-research-xxxx",
           "member": "string",
           "name": "Bucket",
           "required": false,
@@ -3334,6 +3459,7 @@
         {
           "default": "",
           "document": "COS的Region名称，已废弃",
+          "example": "ap-mumbai",
           "member": "string",
           "name": "Region",
           "required": false,
@@ -3343,6 +3469,7 @@
         {
           "default": "",
           "document": "COS的Domain数据，已废弃",
+          "example": "xxxx",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -3352,6 +3479,7 @@
         {
           "default": "",
           "document": "执行顺序",
+          "example": "0",
           "member": "int64",
           "name": "RunOrder",
           "required": false,
@@ -3361,6 +3489,7 @@
         {
           "default": "",
           "document": "resourceAfter 或 clusterAfter",
+          "example": "resourceAfter",
           "member": "string",
           "name": "WhenRun",
           "required": false,
@@ -3370,6 +3499,7 @@
         {
           "default": "",
           "document": "脚本文件名，已废弃",
+          "example": "无",
           "member": "string",
           "name": "CosFileName",
           "required": false,
@@ -3379,6 +3509,7 @@
         {
           "default": "",
           "document": "脚本的cos地址",
+          "example": "cos://xxxxx",
           "member": "string",
           "name": "CosFileURI",
           "required": false,
@@ -3388,6 +3519,7 @@
         {
           "default": "",
           "document": "cos的SecretId",
+          "example": "xxxx",
           "member": "string",
           "name": "CosSecretId",
           "required": false,
@@ -3397,6 +3529,7 @@
         {
           "default": "",
           "document": "Cos的SecretKey",
+          "example": "xxxxx",
           "member": "string",
           "name": "CosSecretKey",
           "required": false,
@@ -3406,6 +3539,7 @@
         {
           "default": "",
           "document": "cos的appid，已废弃",
+          "example": "xxxxxx",
           "member": "string",
           "name": "AppId",
           "required": false,
@@ -3639,7 +3773,8 @@
       "members": [
         {
           "default": "",
-          "document": "节点规格描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点规格描述，如CVM.SA2。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM.SA2",
           "member": "string",
           "name": "Spec",
           "required": true,
@@ -3648,7 +3783,8 @@
         },
         {
           "default": "",
-          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储类型\n取值范围：\n<li>4：表示云SSD。</li>\n<li>5：表示高效云盘。</li>\n<li>6：表示增强型SSD云硬盘。</li>\n<li>11：表示吞吐型云硬盘。</li>\n<li>12：表示极速型SSD云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
           "member": "int64",
           "name": "StorageType",
           "required": true,
@@ -3657,7 +3793,8 @@
         },
         {
           "default": "",
-          "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘类型\n取值范围：\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_BASIC：表示云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -3667,6 +3804,7 @@
         {
           "default": "",
           "document": "内存容量,单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "131072",
           "member": "int64",
           "name": "MemSize",
           "required": true,
@@ -3676,6 +3814,7 @@
         {
           "default": "",
           "document": "CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Cpu",
           "required": true,
@@ -3685,6 +3824,7 @@
         {
           "default": "",
           "document": "数据盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -3694,6 +3834,7 @@
         {
           "default": "",
           "document": "系统盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RootSize",
           "required": false,
@@ -3703,6 +3844,7 @@
         {
           "default": "",
           "document": "云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MultiDisk",
           "name": "MultiDisks",
           "required": false,
@@ -3712,6 +3854,7 @@
         {
           "default": "",
           "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3720,7 +3863,8 @@
         },
         {
           "default": "",
-          "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格类型，如S2.MEDIUM8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S2.MEDIUM8",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -3729,7 +3873,8 @@
         },
         {
           "default": "",
-          "document": "本地盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地盘数量，该字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "LocalDiskNum",
           "required": false,
@@ -3738,7 +3883,8 @@
         },
         {
           "default": "",
-          "document": "盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地盘数量，如2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "DiskNum",
           "required": false,
@@ -4032,7 +4178,7 @@
         },
         {
           "default": "",
-          "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群提供的资源",
+          "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
           "example": "\"\"",
           "member": "string",
           "name": "HardwareResourceType",
@@ -4086,12 +4232,21 @@
         },
         {
           "default": "",
-          "document": "扩容的Master节点的数量。",
+          "document": "扩容的Master节点的数量。\n使用clickhouse集群扩容时，该参数不生效。\n使用kafka集群扩容时，该参数不生效。\n当HardwareResourceType=POD时，该参数不生效。",
           "example": "1",
           "member": "uint64",
           "name": "MasterCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容后是否启动服务，true：启动，false：不启动",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "StartServiceAfterScaleOut",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4225,6 +4380,7 @@
         {
           "default": "",
           "document": "标签键",
+          "example": "depart-xxx",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -4234,6 +4390,7 @@
         {
           "default": "",
           "document": "标签值",
+          "example": "Intelligent-xxx",
           "member": "string",
           "name": "TagValue",
           "required": false,
@@ -4359,6 +4516,7 @@
         {
           "default": "",
           "document": "VPC ID",
+          "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4368,6 +4526,7 @@
         {
           "default": "",
           "document": "Subnet ID",
+          "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,

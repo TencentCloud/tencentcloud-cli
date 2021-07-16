@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyParamsTemplate": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=ApplyParamsTemplate\n&InstanceIds.0=crs-5a4py64p\n&TemplateId=crs-cfg-rhlppeye\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskIds\": [\n            212,\n            213,\n            214\n        ],\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "修改实例参数"
+      }
+    ],
     "AssociateSecurityGroups": [
       {
         "document": "",
@@ -54,11 +62,27 @@
         "title": "请求示例：购买包年包月的Redis5.0内存版（集群架构）实例"
       }
     ],
+    "CreateParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"ParamList\": [\n        {\n            \"Value\": \"120\",\n            \"Key\": \"timeout\"\n        }\n    ],\n    \"TemplateId\": \"crs-cfg-sa23d5d3\",\n    \"Description\": \"MyCustomParamTemplate\",\n    \"ProductType\": 6,\n    \"Name\": \"CustomParamTemplate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": \"crs-cfg-sa23d5a2\",\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DeleteInstanceAccount": [
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DeleteInstanceAccount\r\n&InstanceId=crs-5a4py64p\r\n&AccountName=test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"crs-cfg-sa23d5d3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -252,6 +276,22 @@
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeMaintenanceWindow\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"StartTime\": \"03:00\",\n        \"EndTime\": \"06:00\",\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeParamTemplateInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplateInfo\n<公共请求参数>\n\n{\n    \"TemplateId\": \"crs-cfg-7mgtd2ro\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"MyCustomParamTemplate\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"\",\n                \"Default\": \"\\\"\\\"\",\n                \"Description\": \"commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'\",\n                \"EnumValue\": [\n                    \"flushall\",\n                    \"flushdb\",\n                    \"keys\",\n                    \"hgetall\",\n                    \"eval\",\n                    \"evalsha\",\n                    \"script\"\n                ],\n                \"Max\": \"\",\n                \"Min\": \"\",\n                \"Name\": \"disable-command-list\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"multi\"\n            },\n            {\n                \"CurrentValue\": \"512\",\n                \"Default\": \"512\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when they have a small number of entries\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-entries\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"64\",\n                \"Default\": \"64\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when the biggest entry does not exceed a given threshold\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-value\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"10\",\n                \"Default\": \"10\",\n                \"Description\": \"The frequency at which Redis background tasks are performed. A higher value results in higher CPU consumption but smaller latency. We recommend that you do not specify a value larger than 100.\",\n                \"EnumValue\": null,\n                \"Max\": \"500\",\n                \"Min\": \"1\",\n                \"Name\": \"hz\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            }\n        ],\n        \"Name\": \"redis_automation_is_awesome_1\",\n        \"ProductType\": 2,\n        \"RequestId\": \"72881d6c-c2a0-42af-862a-a5de09de104d\",\n        \"TemplateId\": \"crs-cfg-7mgtd2ro\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeParamTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\",\n        \"Items\": [\n            {\n                \"Name\": \"CustomParamTemplate\",\n                \"Description\": \"MyCustomParamTemplate\",\n                \"ProductType\": 6,\n                \"TemplateId\": \"crs-cfg-sa23d5d3\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeProductInfo": [
@@ -468,6 +508,14 @@
         "input": "https://redis.tencentcloudapi.com/?Action=ModifyNetworkConfig\r\n&InstanceId=crs-5a4py64p\r\n&Operation=changeVip\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1b5aabe-806a-4886-b839-9907baa24c85\"\n    }\n}",
         "title": "请求修改实例VIP示例"
+      }
+    ],
+    "ModifyParamTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"ParamList\": [\n        {\n            \"Value\": \"120\",\n            \"Key\": \"timeout\"\n        }\n    ],\n    \"TemplateId\": \"crs-cfg-sa23d5d3\",\n    \"Description\": \"MyCustomParamTemplate\",\n    \"Name\": \"CustomParamTemplate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "RenewInstance": [
