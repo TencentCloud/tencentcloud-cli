@@ -864,6 +864,7 @@
         {
           "default": "",
           "document": "编辑任务 ID。",
+          "example": "8E312055EBF7A503B92947E6D3B21EFF_1573715265075",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -877,8 +878,10 @@
       "members": [
         {
           "document": "编辑任务结果信息。",
+          "example": "无",
           "member": "EditingTaskResult",
           "name": "TaskResult",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1053,6 +1056,7 @@
         {
           "default": "",
           "document": "视频标签识别任务参数，不填则不开启。",
+          "example": "null",
           "member": "TagEditingInfo",
           "name": "TagEditingInfo",
           "required": false,
@@ -1062,6 +1066,7 @@
         {
           "default": "",
           "document": "视频分类识别任务参数，不填则不开启。",
+          "example": "null",
           "member": "ClassificationEditingInfo",
           "name": "ClassificationEditingInfo",
           "required": false,
@@ -1071,6 +1076,7 @@
         {
           "default": "",
           "document": "智能拆条任务参数，不填则不开启。",
+          "example": "null",
           "member": "StripEditingInfo",
           "name": "StripEditingInfo",
           "required": false,
@@ -1080,6 +1086,7 @@
         {
           "default": "",
           "document": "智能集锦任务参数，不填则不开启。",
+          "example": "null",
           "member": "HighlightsEditingInfo",
           "name": "HighlightsEditingInfo",
           "required": false,
@@ -1089,6 +1096,7 @@
         {
           "default": "",
           "document": "智能封面任务参数，不填则不开启。",
+          "example": "null",
           "member": "CoverEditingInfo",
           "name": "CoverEditingInfo",
           "required": false,
@@ -1098,6 +1106,7 @@
         {
           "default": "",
           "document": "片头片尾识别任务参数，不填则不开启。",
+          "example": "null",
           "member": "OpeningEndingEditingInfo",
           "name": "OpeningEndingEditingInfo",
           "required": false,
@@ -1113,6 +1122,7 @@
         {
           "default": "",
           "document": "编辑任务 ID。",
+          "example": "null",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1122,6 +1132,7 @@
         {
           "default": "",
           "document": "编辑任务状态。 \n1：执行中；2：已完成。",
+          "example": "null",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1131,6 +1142,7 @@
         {
           "default": "",
           "document": "视频标签识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "TagTaskResult",
           "name": "TagTaskResult",
           "required": true,
@@ -1140,6 +1152,7 @@
         {
           "default": "",
           "document": "视频分类识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "ClassificationTaskResult",
           "name": "ClassificationTaskResult",
           "required": true,
@@ -1149,6 +1162,7 @@
         {
           "default": "",
           "document": "智能拆条结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "StripTaskResult",
           "name": "StripTaskResult",
           "required": true,
@@ -1158,6 +1172,7 @@
         {
           "default": "",
           "document": "智能集锦结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "HighlightsTaskResult",
           "name": "HighlightsTaskResult",
           "required": true,
@@ -1167,6 +1182,7 @@
         {
           "default": "",
           "document": "智能封面结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "CoverTaskResult",
           "name": "CoverTaskResult",
           "required": true,
@@ -1176,6 +1192,7 @@
         {
           "default": "",
           "document": "片头片尾识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "OpeningEndingTaskResult",
           "name": "OpeningEndingTaskResult",
           "required": true,

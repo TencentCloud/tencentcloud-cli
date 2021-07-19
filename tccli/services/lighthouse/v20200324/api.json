@@ -12,6 +12,12 @@
       "name": "绑定密钥对",
       "output": "AssociateInstancesKeyPairsResponse"
     },
+    "AttachCcn": {
+      "document": "本接口 (AttachCcn) 用于建立与云联网的关联。",
+      "input": "AttachCcnRequest",
+      "name": "关联云联网",
+      "output": "AttachCcnResponse"
+    },
     "CreateBlueprint": {
       "document": "本接口 (CreateBlueprint) 用于创建镜像。",
       "input": "CreateBlueprintRequest",
@@ -83,6 +89,12 @@
       "input": "DescribeBundlesRequest",
       "name": "查询套餐",
       "output": "DescribeBundlesResponse"
+    },
+    "DescribeCcnAttachedInstances": {
+      "document": "本接口 (DescribeCcnAttachedInstances) 用于查询云联网关联的实例信息。",
+      "input": "DescribeCcnAttachedInstancesRequest",
+      "name": "查询云联网关联的实例信息",
+      "output": "DescribeCcnAttachedInstancesResponse"
     },
     "DescribeFirewallRules": {
       "document": "本接口（DescribeFirewallRules）用于查询实例的防火墙规则。",
@@ -180,6 +192,12 @@
       "name": "查询可用区列表",
       "output": "DescribeZonesResponse"
     },
+    "DetachCcn": {
+      "document": "本接口 (AttachCcn) 用于解除与云联网的关联。",
+      "input": "DetachCcnRequest",
+      "name": "解关联云联网",
+      "output": "DetachCcnResponse"
+    },
     "DisassociateInstancesKeyPairs": {
       "document": "本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。\n\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 ResetInstancesPassword 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateInstancesKeyPairsRequest",
@@ -257,6 +275,12 @@
       "input": "RebootInstancesRequest",
       "name": "重启实例",
       "output": "RebootInstancesResponse"
+    },
+    "ResetAttachCcn": {
+      "document": "本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。",
+      "input": "ResetAttachCcnRequest",
+      "name": "重新申请关联云联网",
+      "output": "ResetAttachCcnResponse"
     },
     "ResetInstance": {
       "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
@@ -358,6 +382,33 @@
     },
     "AssociateInstancesKeyPairsResponse": {
       "document": "AssociateInstancesKeyPairs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachCcnRequest": {
+      "document": "AttachCcn请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网实例ID。",
+          "example": "ccn-f49l6u0z",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachCcnResponse": {
+      "document": "AttachCcn返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -742,6 +793,62 @@
           "example": "NORMAL",
           "member": "string",
           "name": "BundleDisplayLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnAttachedInstance": {
+      "document": "云联网关联的实例列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网ID。",
+          "example": "ccn-f49l6u0z",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联实例CIDR。",
+          "example": " [\"10.0.0.0/16\"]",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联实例状态：\n\n•  PENDING：申请中\n•  ACTIVE：已连接\n•  EXPIRED：已过期\n•  REJECTED：已拒绝\n•  DELETED：已删除\n•  FAILED：失败的（2小时后将异步强制解关联）\n•  ATTACHING：关联中\n•  DETACHING：解关联中\n•  DETACHFAILED：解关联失败（2小时后将异步强制解关联）",
+          "example": "PENDING",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-08 17:21:05",
+          "member": "datetime",
+          "name": "AttachedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "Lighthouse attach ccn instance",
+          "member": "string",
+          "name": "Description",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1321,6 +1428,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnAttachedInstancesRequest": {
+      "document": "DescribeCcnAttachedInstances请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCcnAttachedInstancesResponse": {
+      "document": "DescribeCcnAttachedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "云联网关联的实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CcnAttachedInstance",
+          "name": "CcnAttachedInstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2158,6 +2291,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachCcnRequest": {
+      "document": "DetachCcn请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网实例ID。",
+          "example": "ccn-f49l6u0z",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachCcnResponse": {
+      "document": "DetachCcn返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3587,6 +3747,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ResetAttachCcnRequest": {
+      "document": "ResetAttachCcn请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云联网实例ID。",
+          "example": "ccn-f49l6u0z",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAttachCcnResponse": {
+      "document": "ResetAttachCcn返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetInstanceBlueprint": {
       "document": "描述了镜像重置信息",

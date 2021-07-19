@@ -7392,7 +7392,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     }
   },
   "version": "1.0"

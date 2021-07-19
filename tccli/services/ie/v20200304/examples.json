@@ -36,7 +36,7 @@
       {
         "document": "",
         "input": "https://ie.tencentcloudapi.com/?Action=DescribeEditingTaskResult\n&TaskId=8E312055EBF7A503B92947E6D3B21EFF_1573715265075\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {},\n    \"RequestId\": \"5d199208-24c9-44a3-ab55-192ff22207c9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"TaskId\": \"8E312055EBF7A503B92947E6D3B21EFF_1573715265075\",\n            \"Status\": 2,\n            \"TagTaskResult\": {\n                \"Status\": 2,\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"Success.\",\n                \"ItemSet\": [\n                    {\n                        \"Tag\": \"动画片\",\n                        \"Confidence\": 90.17\n                    }\n                ]\n            },\n            \"ClassificationTaskResult\": null,\n            \"StripTaskResult\": null,\n            \"HighlightsTaskResult\": null,\n            \"CoverTaskResult\": null,\n            \"OpeningEndingTaskResult\": null\n        },\n        \"RequestId\": \"5d199208-24c9-44a3-ab55-192ff22207c9\"\n    }\n}",
         "title": "获取智能编辑任务结果"
       }
     ],

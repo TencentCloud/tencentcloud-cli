@@ -979,6 +979,7 @@
         {
           "default": "",
           "document": "执行活动ID。",
+          "example": "无",
           "member": "string",
           "name": "InvocationId",
           "required": true,
@@ -988,6 +989,7 @@
         {
           "default": "",
           "document": "执行任务ID。",
+          "example": "无",
           "member": "string",
           "name": "InvocationTaskId",
           "required": true,
@@ -997,6 +999,7 @@
         {
           "default": "",
           "document": "命令ID。",
+          "example": "无",
           "member": "string",
           "name": "CommandId",
           "required": true,
@@ -1006,6 +1009,7 @@
         {
           "default": "",
           "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时",
+          "example": "无",
           "member": "string",
           "name": "TaskStatus",
           "required": true,
@@ -1015,6 +1019,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1024,6 +1029,7 @@
         {
           "default": "",
           "document": "执行结果。",
+          "example": "无",
           "member": "TaskResult",
           "name": "TaskResult",
           "required": true,
@@ -1033,6 +1039,7 @@
         {
           "default": "",
           "document": "执行任务开始时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -1042,6 +1049,7 @@
         {
           "default": "",
           "document": "执行任务结束时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -1051,6 +1059,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -1060,6 +1069,7 @@
         {
           "default": "",
           "document": "更新时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "required": true,
@@ -1069,10 +1079,21 @@
         {
           "default": "",
           "document": "执行任务所执行的命令详情。",
+          "example": "无",
           "member": "CommandDocument",
           "name": "CommandDocument",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务失败时的错误信息。",
+          "example": "working_directory not exists",
+          "member": "string",
+          "name": "ErrorInfo",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

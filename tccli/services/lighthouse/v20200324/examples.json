@@ -16,6 +16,14 @@
         "title": "绑定密钥对到实例"
       }
     ],
+    "AttachCcn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-pf78xmcp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9340eb20-859b-4840-9fa4-12cd4ff7f5c9\"\n    }\n}",
+        "title": "关联到云联网"
+      }
+    ],
     "CreateBlueprint": [
       {
         "document": "",
@@ -110,6 +118,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeBundles\n&BundleIds.0=bundle_bw_small1_1\n&BundleIds.1=bundle_ntp_small1_500\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BundleSet\": [\n            {\n                \"BundleId\": \"bundle_bw_small1_1\",\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 20,\n                \"InternetMaxBandwidthOut\": 1,\n                \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 1,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"OriginalBundlePrice\": 60,\n                        \"OriginalPrice\": 60,\n                        \"Discount\": 65,\n                        \"DiscountPrice\": 39\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": false,\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\"\n            },\n            {\n                \"BundleId\": \"bundle_ntp_small1_500\",\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 40,\n                \"InternetMaxBandwidthOut\": 3,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 500,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"OriginalBundlePrice\": 90,\n                        \"OriginalPrice\": 90,\n                        \"Discount\": 65,\n                        \"DiscountPrice\": 58.5\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": true,\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6d4c966d-bc42-4425-8c98-a39f36c7ad1b\"\n    }\n}",
         "title": "查询套餐-成功返回"
+      }
+    ],
+    "DescribeCcnAttachedInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnAttachedInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CcnAttachedInstanceSet\": [\n            {\n                \"CcnId\": \"ccn-pf78xmcp\",\n                \"CidrBlock\": [\n                    \"10.0.0.0/16\"\n                ],\n                \"State\": \"PENDING\",\n                \"AttachedTime\": \"2021-05-08 17:21:05\",\n                \"Description\": \"Lighthouse attach ccn instance\"\n            }\n        ],\n        \"RequestId\": \"b0f73b4b-bf36-4611-8e3b-e3dfe0353cd6\"\n    }\n}",
+        "title": "查询云联网关联的实例信息"
       }
     ],
     "DescribeFirewallRules": [
@@ -246,6 +262,14 @@
         "title": "查询可用区"
       }
     ],
+    "DetachCcn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-pf78xmcp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c947389-ed9f-4c7a-ba68-4b118a4ac11a\"\n    }\n}",
+        "title": "解关联云联网"
+      }
+    ],
     "DisassociateInstancesKeyPairs": [
       {
         "document": "",
@@ -348,6 +372,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=RebootInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4225fd9d-38cb-4cc7-b7b0-7332809ddca7\"\n    }\n}",
         "title": "重启实例"
+      }
+    ],
+    "ResetAttachCcn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAttachCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-pf78xmcp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92de8d42-4ef3-4d43-bf15-8e0d00b66cb9\"\n    }\n}",
+        "title": "重新申请关联云联网"
       }
     ],
     "ResetInstance": [
