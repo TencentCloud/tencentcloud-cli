@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrgNode\n<公共请求参数>\n\n{\n    \"OrgNodeId\": \"7999987a-c9dc-4dd2-b3e2-b52f53317aa6\",\n    \"IncludeOrgNodeChildInfo\": \"true\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LastModifiedDate\": \"2021-03-19T10:24:56.091+00:00\",\n        \"RequestId\": \"b3040fd6-bb8f-438f-bb4a-adf25e373795\",\n        \"ParentOrgNodeId\": \"94103aaa-79e2-49ee-a9cc-5aa90b30c2e5\",\n        \"DisplayName\": \"字符串\",\n        \"CreatedDate\": \"2021-03-19T10:23:29.104+00:00\",\n        \"CustomizedOrgNodeId\": \"BB1\",\n        \"OrgNodeId\": \"7999987a-c9dc-4dd2-b3e2-b52f53317aa6\",\n        \"OrgNodeChildInfo\": [],\n        \"DataSource\": null\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LastModifiedDate\": \"2021-03-19T10:24:56.091+00:00\",\n        \"RequestId\": \"b3040fd6-bb8f-438f-bb4a-adf25e373795\",\n        \"ParentOrgNodeId\": \"94103aaa-79e2-49ee-a9cc-5aa90b30c2e5\",\n        \"DisplayName\": \"字符串\",\n        \"CreatedDate\": \"2021-03-19T10:23:29.104+00:00\",\n        \"CustomizedOrgNodeId\": \"BB1\",\n        \"OrgNodeId\": \"7999987a-c9dc-4dd2-b3e2-b52f53317aa6\",\n        \"OrgNodeChildInfo\": null,\n        \"DataSource\": null\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"5142dacf-88a1-4950-a5a2-f61f3f4b0dae\",\n            \"8533930b-57e1-4d0a-8961-90478823cdcf\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],

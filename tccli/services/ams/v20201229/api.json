@@ -1,31 +1,31 @@
 {
   "actions": {
     "CancelTask": {
-      "document": "取消任务",
+      "document": "取消音频审核任务\n\n<br>默认接口请求频率限制：**20次/秒**。",
       "input": "CancelTaskRequest",
       "name": "取消任务",
       "output": "CancelTaskResponse"
     },
     "CreateAudioModerationSyncTask": {
-      "document": "本接口（CreateAudioModerationSyncTask） 用于提交短音频内容进行智能审核任务，使用前请您登陆控制台开通音频内容安全服务。\n\n功能使用说明：\n前往“内容安全控制台-音频内容安全”开启使用音频内容安全服务，首次开通可获得10小时免费调用时长；\n\n接口限制：\n- 音频文件大小支持：文件 < 5M;\n- 音频文件时长小于60s，超过60s音频调用则报错；\n- 音频码率类型支持：8Kbps - 16Kbps；\n- 音频文件支持格式：wav、mp3；\n- 接口仅限音频文件传入，视频文件传入请调用长音频异步接口；\n- 接口默认QPS为10，默认接口请求频率限制20次/秒，如需要更高的并发或请求频率，请工单咨询；\n- 接口超时为5s，每一次请求超过该时长会报错；",
+      "document": "本接口（CreateAudioModerationSyncTask） 用于提交短音频内容进行智能审核任务，使用前请您登录控制台开通音频内容安全服务。\n\n功能使用说明：\n前往“内容安全控制台-音频内容安全”开启使用音频内容安全服务，首次开通可获得10小时免费调用时长；\n\n接口限制：\n- 音频文件大小支持：文件 < 5M;\n- 音频文件时长小于60s，超过60s音频调用则报错；\n- 音频码率类型支持：8Kbps - 16Kbps；\n- 音频文件支持格式：wav、mp3；\n- 接口仅限音频文件传入，视频文件传入请调用长音频异步接口；\n- 接口默认QPS为10，默认接口请求频率限制20次/秒，如需要更高的并发或请求频率，请工单咨询；\n- 接口超时为5s，每一次请求超过该时长会报错；",
       "input": "CreateAudioModerationSyncTaskRequest",
       "name": "短音频识别接口",
       "output": "CreateAudioModerationSyncTaskResponse"
     },
     "CreateAudioModerationTask": {
-      "document": "本接口（Audio Moderation）用于提交音频内容（包括音频文件或流地址）进行智能审核任务，使用前请您登陆控制台开通音频内容安全服务。\n\n### 功能使用说明：\n- 前往“内容安全控制台-音频内容安全”开启使用音频内容安全服务，首次开通可获得20小时免费调用时长\n\n### 接口功能说明：\n- 支持对音频流或音频文件进行检测，判断其中是否包含违规内容；\n- 支持设置回调地址 Callback 获取检测结果，或通过接口(查询音频检测结果)主动轮询获取检测结果；\n- 支持识别违规内容，包括：低俗、谩骂、色情、涉政、广告等场景；\n- 支持批量提交检测任务。检测任务列表最多支持10个；\n\n### 音频文件调用说明：\n- 音频文件大小支持：文件 < 500M；\n- 音频文件时长支持：< 1小时；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频文件支持格式：wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape；\n- 支持音视频文件分离并对音频文件进行独立识别；\n\n### 音频流调用说明：\n- 音频流时长支持：< 3小时；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频流支持的传输协议：RTMP、HTTP、HTTPS；\n- 音频流格式支持的类型：rtp、srtp、rtmp、rtmps、mmsh、 mmst、hls、http、tcp、https、m3u8；\n- 支持音视频流分离并对音频流进行独立识别；",
+      "document": "本接口（Audio Moderation）用于提交音频内容（包括音频文件或流地址）进行智能审核任务，使用前请您使用腾讯云主账号登录控制台[开通音频内容安全服务](https://console.cloud.tencent.com/cms/audio/package)并调整好对应的业务配置。<br>\n\n### 功能使用说明：\n- 前往“[内容安全控制台-音频内容安全](https://console.cloud.tencent.com/cms/audio/package)”开启使用音频内容安全服务，首次开通可获得**10小时**免费调用时长，有效期为1个月。\n- 默认接口请求频率限制：**20次/秒**；对于异步审核任务（点播音频），超出频率限制的请求会自动排入待审核队列，对于同步审核任务（直播音频），超出频率限制将会报错。\n\n### 接口功能说明：\n- 支持对音频流或音频文件进行检测，判断其中是否包含违规内容；\n- 支持设置回调地址 Callback 获取检测结果（对于已在审核的任务，最长回调时间为用户配置的**切片时长 + 2s**），或通过接口(查询音频检测结果)主动轮询获取检测结果；\n- 支持识别违规内容，包括：低俗、谩骂、色情、涉政、广告等场景；\n- 支持批量提交检测任务，检测任务列表**最多支持10个**。\n\n### 音频文件调用说明：\n- 音频文件大小支持：**文件 < 500M**；\n- 音频文件时长支持：**< 1小时**；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频文件支持格式：wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape；\n- （**当输入为视频文件时**）支持分离视频文件音轨，并对音频内容进行独立审核。\n\n### 音频流调用说明：\n- 音频流时长支持：**< 3小时**；\n- 音频码率类型支持：128 Kbps - 256 Kbps ；\n- 音频流支持的传输协议：RTMP、HTTP、HTTPS；\n- 音频流格式支持的类型：rtp、srtp、rtmp、rtmps、mmsh、 mmst、hls、http、tcp、https、m3u8；\n- （**当输入为视频流时**）支持提取视频流音轨，并对音频内容进行独立审核。",
       "input": "CreateAudioModerationTaskRequest",
       "name": "创建音频审核任务",
       "output": "CreateAudioModerationTaskResponse"
     },
     "DescribeTaskDetail": {
-      "document": "查看任务详情",
+      "document": "用于查看音频审核任务的详细信息\n\n<br>默认接口请求频率限制：**100次/秒**。",
       "input": "DescribeTaskDetailRequest",
       "name": "查看任务详情",
       "output": "DescribeTaskDetailResponse"
     },
     "DescribeTasks": {
-      "document": "查看审核任务列表",
+      "document": "查看审核任务列表\n\n<br>默认接口请求频率限制：**20次/秒**。",
       "input": "DescribeTasksRequest",
       "name": "查看审核任务列表",
       "output": "DescribeTasksResponse"
@@ -409,7 +409,8 @@
       "members": [
         {
           "default": "",
-          "document": "任务ID",
+          "document": "该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要取消的审核任务。",
+          "example": "task-audio-XwxJtbkKXWgCt8AZ",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -579,7 +580,7 @@
       "members": [
         {
           "default": "",
-          "document": "输入的任务信息，最多可以同时创建10个任务",
+          "document": "该字段表示输入的音频审核任务信息，具体输入内容请参见TaskInput数据结构的详细描述。<br> 备注：最多同时可创建**10个任务**。",
           "example": "[]",
           "member": "TaskInput",
           "name": "Tasks",
@@ -588,7 +589,7 @@
         },
         {
           "default": "",
-          "document": "默认为：default，客户可以在音频审核控制台配置自己的BizType",
+          "document": "该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
           "example": "default",
           "member": "string",
           "name": "BizType",
@@ -597,7 +598,7 @@
         },
         {
           "default": "",
-          "document": "审核类型，这里可选：AUDIO (点播音频)和 LIVE_AUDIO（直播音频），默认为 AUDIIO",
+          "document": "该字段表示输入的音频审核类型，取值为：**AUDIO**（点播音频）和 **LIVE_AUDIO**（直播音频），默认值为AUDIO。",
           "example": "AUDIO",
           "member": "string",
           "name": "Type",
@@ -606,7 +607,7 @@
         },
         {
           "default": "",
-          "document": "（可选）回调签名key，具体可以查看 回调签名示例",
+          "document": "可选参数，该字段表示回调签名的key信息，用于保证数据的安全性。 签名方法为在返回的HTTP头部添加 X-Signature 的字段，值为： seed + body 的 SHA256 编码和Hex字符串，在收到回调数据后，可以根据返回的body，用 **sha256(seed + body)**, 计算出 `X-Signature` 进行验证。<br>具体使用实例可参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53263)。",
           "example": "seed",
           "member": "string",
           "name": "Seed",
@@ -615,7 +616,7 @@
         },
         {
           "default": "",
-          "document": "接收审核信息回调地址，如果设置，则审核过程中产生的违规音频片段和画面截帧发送此接口",
+          "document": "可选参数，该字段表示接受审核信息回调的地址，格式为URL链接默认格式。配置成功后，审核过程中产生的违规音频片段将通过此接口发送。回调返回内容格式请参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53257#.E7.A4.BA.E4.BE.8B2-.E5.9B.9E.E8.B0.83.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)",
           "example": "https://example.com/url",
           "member": "string",
           "name": "CallbackUrl",
@@ -629,7 +630,7 @@
       "document": "CreateAudioModerationTask返回参数结构体",
       "members": [
         {
-          "document": "任务创建结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回任务创建的结果，具体输出内容请参见TaskResult数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "TaskResult",
           "name": "Results",
@@ -651,7 +652,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务ID，创建任务后返回的TaskId字段",
+          "document": "该字段表示创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。\n<br>备注：查询接口单次最大查询量为**20条每次**。",
           "example": "w-audio-YBJzazmYs4vO27p2",
           "member": "string",
           "name": "TaskId",
@@ -660,7 +661,7 @@
         },
         {
           "default": "",
-          "document": "是否展示所有分片，默认只展示命中规则的分片",
+          "document": "该布尔字段表示是否展示全部的音频片段，取值：True(展示全部的音频分片)、False(只展示命中审核规则的音频分片)；默认值为False。",
           "example": "false",
           "member": "bool",
           "name": "ShowAllSegments",
@@ -674,7 +675,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回创建音频审核任务后返回的任务ID（在Results参数中），用于标识需要查询任务详情的审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "w-audio-YBJzazmYs4vO27p2",
           "member": "string",
           "name": "TaskId",
@@ -683,7 +684,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "审核时传入的数据Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回调用音频审核接口时在Tasks参数内传入的数据ID参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "azmYs4vO27p2",
           "member": "string",
           "name": "DataId",
@@ -692,7 +693,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "业务类型，用户可以在控制台查看自己配置的BizType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "BizType",
@@ -701,7 +702,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回调用音频审核接口时传入的TaskInput参数中的任务名称，方便任务的识别与管理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名称",
           "member": "string",
           "name": "Name",
@@ -710,7 +711,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "查询内容审核任务的状态，可选值：\nFINISH 已完成\nPENDING 等待中\nRUNNING 进行中\nERROR 出错\nCANCELLED 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回所查询内容的任务状态。\n<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
@@ -719,7 +720,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "任务类型：可选AUDIO（点播音频），LIVE_AUDIO（直播音频）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUDIO",
           "member": "string",
           "name": "Type",
@@ -728,7 +729,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "智能审核服务对于内容违规类型的等级，可选值：\nPass 建议通过；\nReveiw 建议复审；\nBlock 建议屏蔽；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Pass",
           "member": "string",
           "name": "Suggestion",
@@ -737,7 +738,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "智能审核服务对于内容违规类型的判断，详见返回值列表\n如：Label：Porn（色情）；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "TaskLabel",
           "name": "Labels",
@@ -746,7 +747,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "输入的媒体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "InputInfo",
           "name": "InputInfo",
@@ -755,7 +756,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "音频文本，备注：这里的文本最大只返回前1000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "the text",
           "member": "string",
           "name": "AudioText",
@@ -764,7 +765,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "音频片段审核信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "AudioSegments",
           "name": "AudioSegments",
@@ -773,7 +774,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "错误类型，如果任务状态为Error，则该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当任务状态为Error时，该字段用于返回对应错误的类型；任务状态非Error时，默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "URL_ERROR",
           "member": "string",
           "name": "ErrorType",
@@ -782,7 +783,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "错误描述，如果任务状态为Error，则该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "the url is request is 404",
           "member": "string",
           "name": "ErrorDescription",
@@ -791,7 +792,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "任务创建时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
           "name": "CreatedAt",
@@ -800,7 +801,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "任务最后更新时间，格式为 ISO 8601\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
           "name": "UpdatedAt",
@@ -822,7 +823,8 @@
       "members": [
         {
           "default": "",
-          "document": "每页展示多少条。（默认展示10条）",
+          "document": "该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -830,7 +832,8 @@
         },
         {
           "default": "",
-          "document": "过滤参数",
+          "document": "该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。",
+          "example": "无",
           "member": "TaskFilter",
           "name": "Filter",
           "required": false,
@@ -838,7 +841,8 @@
         },
         {
           "default": "",
-          "document": "翻页token，在向前或向后翻页时需要",
+          "document": "该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。",
+          "example": "无",
           "member": "string",
           "name": "PageToken",
           "required": false,
@@ -846,7 +850,8 @@
         },
         {
           "default": "",
-          "document": "开始时间。默认是最近3天。",
+          "document": "该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -854,7 +859,8 @@
         },
         {
           "default": "",
-          "document": "结束时间。默认为空",
+          "document": "该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -867,23 +873,29 @@
       "document": "DescribeTasks返回参数结构体",
       "members": [
         {
-          "document": "任务总量，为 int 字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前查询的任务总量，格式为int字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Total",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "当前页数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前页的任务详细数据，具体输出内容请参见TaskData数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "翻页Token，当已经到最后一页时，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4765-48dXwxJtbkKXW8d3eb",
           "member": "string",
           "name": "PageToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

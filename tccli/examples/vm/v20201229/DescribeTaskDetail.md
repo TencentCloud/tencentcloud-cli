@@ -104,7 +104,9 @@ Output:
                 "OffsetTime": "0"
             }
         ],
-        "RequestId": "8d3e4765-48db-40b5-8fdb-aaf1d7225a60"
+        "RequestId": "8d3e4765-48db-40b5-8fdb-aaf1d7225a60",
+        "ErrorType": "",
+        "ErrorDescription": ""
     }
 }
 ```

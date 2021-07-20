@@ -8,6 +8,14 @@
         "title": "无"
       }
     ],
+    "CancelDcnJob": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CancelDcnJob\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 11211,\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "CloneAccount": [
       {
         "document": "",
@@ -219,7 +227,7 @@
     "DescribeProjects": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjects\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjects\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Projects\": [\n            {\n                \"AppId\": 0,\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"CreatorUin\": 0,\n                \"Info\": \"默认项目\",\n                \"IsDefault\": 1,\n                \"Name\": \"默认项目\",\n                \"OwnerUin\": 0,\n                \"ProjectId\": 0,\n                \"SrcAppId\": 0,\n                \"SrcPlat\": \"qcloud\",\n                \"Status\": 3\n            },\n            {\n                \"AppId\": 1251966477,\n                \"CreateTime\": \"2019-09-17 15:47:05\",\n                \"CreatorUin\": 3374998458,\n                \"Info\": \"\",\n                \"IsDefault\": 0,\n                \"Name\": \"ryanforredis\",\n                \"OwnerUin\": 3374998458,\n                \"ProjectId\": 1159121,\n                \"SrcAppId\": 0,\n                \"SrcPlat\": \"qcloud\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"31666e3c-f5bf-4862-8876-68f81131eef1\"\n    }\n}",
         "title": "拉取账户所拥有的项目"
       }

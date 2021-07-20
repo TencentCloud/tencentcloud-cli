@@ -350,6 +350,7 @@
         {
           "default": "",
           "document": "调用请求id",
+          "example": "xxxx-yyyy-zzzz",
           "member": "string",
           "name": "InvokeRequestId",
           "required": true,
@@ -359,6 +360,7 @@
         {
           "default": "",
           "document": "调用类型",
+          "example": "TRIGGER_TIMER",
           "member": "string",
           "name": "InvokeType",
           "required": true,
@@ -368,6 +370,7 @@
         {
           "default": "",
           "document": "函数版本",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
           "required": true,
@@ -376,7 +379,8 @@
         },
         {
           "default": "",
-          "document": "事件状态",
+          "document": "事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败",
+          "example": "FINISHED ",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -386,6 +390,7 @@
         {
           "default": "",
           "document": "调用开始时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
+          "example": "2021-01-01 00:00:00.001",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -395,6 +400,7 @@
         {
           "default": "",
           "document": "调用结束时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
+          "example": "2021-01-01 00:00:00.002",
           "member": "string",
           "name": "EndTime",
           "required": true,

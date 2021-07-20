@@ -6,6 +6,12 @@
       "name": "安全组批量绑定云资源",
       "output": "AssociateSecurityGroupsResponse"
     },
+    "CancelDcnJob": {
+      "document": "取消DCN同步",
+      "input": "CancelDcnJobRequest",
+      "name": "取消DCN同步",
+      "output": "CancelDcnJobResponse"
+    },
     "CloneAccount": {
       "document": "本接口（CloneAccount）用于克隆实例账户。",
       "input": "CloneAccountRequest",
@@ -382,6 +388,42 @@
     "AssociateSecurityGroupsResponse": {
       "document": "AssociateSecurityGroups返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDcnJobRequest": {
+      "document": "CancelDcnJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "灾备实例ID",
+          "example": "tdsql-2rn9lmpx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDcnJobResponse": {
+      "document": "CancelDcnJob返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "11211",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

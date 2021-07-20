@@ -21,7 +21,7 @@ Output:
         "CreatedDate": "2021-03-19T10:23:29.104+00:00",
         "CustomizedOrgNodeId": "BB1",
         "OrgNodeId": "7999987a-c9dc-4dd2-b3e2-b52f53317aa6",
-        "OrgNodeChildInfo": [],
+        "OrgNodeChildInfo": null,
         "DataSource": null
     }
 }
