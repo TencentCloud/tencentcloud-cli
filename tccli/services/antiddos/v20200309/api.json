@@ -245,6 +245,12 @@
       "input": "ModifyPacketFilterConfigRequest",
       "name": "修改DDoS防护的特征过滤规则",
       "output": "ModifyPacketFilterConfigResponse"
+    },
+    "SwitchWaterPrintConfig": {
+      "document": "开启或关闭DDoS防护的水印防护配置",
+      "input": "SwitchWaterPrintConfigRequest",
+      "name": "开启或关闭DDoS防护的水印防护配置",
+      "output": "SwitchWaterPrintConfigResponse"
     }
   },
   "metadata": {
@@ -3126,7 +3132,8 @@
       "members": [
         {
           "default": "",
-          "document": "转发监听端口，取值1~65535",
+          "document": "转发监听端口下限，取值1~65535",
+          "example": "80",
           "member": "int64",
           "name": "FrontendPort",
           "required": true,
@@ -3136,10 +3143,21 @@
         {
           "default": "",
           "document": "转发协议，取值[\nTCP\nUDP\n]",
+          "example": "TCP",
           "member": "string",
           "name": "ForwardProtocol",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发监听端口上限，取值1~65535",
+          "example": "8080",
+          "member": "int64",
+          "name": "FrontendPortEnd",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3613,6 +3631,7 @@
         {
           "default": "",
           "document": "协议，取值[tcp udp icmp all]",
+          "example": "tcp",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -3622,6 +3641,7 @@
         {
           "default": "",
           "document": "起始源端口，取值0~65535",
+          "example": "1000",
           "member": "int64",
           "name": "SportStart",
           "required": true,
@@ -3631,6 +3651,7 @@
         {
           "default": "",
           "document": "结束源端口，取值1~65535，必须大于等于起始源端口",
+          "example": "1001",
           "member": "int64",
           "name": "SportEnd",
           "required": true,
@@ -3640,6 +3661,7 @@
         {
           "default": "",
           "document": "起始目的端口，取值0~65535",
+          "example": "1000",
           "member": "int64",
           "name": "DportStart",
           "required": true,
@@ -3649,6 +3671,7 @@
         {
           "default": "",
           "document": "结束目的端口，取值1~65535，必须大于等于起始目的端口",
+          "example": "1001",
           "member": "int64",
           "name": "DportEnd",
           "required": true,
@@ -3658,6 +3681,7 @@
         {
           "default": "",
           "document": "最小报文长度，取值1-1500",
+          "example": "300",
           "member": "int64",
           "name": "PktlenMin",
           "required": true,
@@ -3667,6 +3691,7 @@
         {
           "default": "",
           "document": "最大报文长度，取值1-1500，必须大于等于最小报文长度",
+          "example": "500",
           "member": "int64",
           "name": "PktlenMax",
           "required": true,
@@ -3676,6 +3701,7 @@
         {
           "default": "",
           "document": "动作，取值[\ndrop(丢弃)\ntransmit(放行)\ndrop_black(丢弃并拉黑)\ndrop_rst(拦截)\ndrop_black_rst(拦截并拉黑)\nforward(继续防护)\n]",
+          "example": "drop",
           "member": "string",
           "name": "Action",
           "required": true,
@@ -3685,6 +3711,7 @@
         {
           "default": "",
           "document": "检测位置，取值[\nbegin_l3(IP头)\nbegin_l4(TCP/UDP头)\nbegin_l5(T载荷)\nno_match(不匹配)\n]",
+          "example": "begin_l5",
           "member": "string",
           "name": "MatchBegin",
           "required": false,
@@ -3694,6 +3721,7 @@
         {
           "default": "",
           "document": "检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "example": "sunday",
           "member": "string",
           "name": "MatchType",
           "required": false,
@@ -3702,7 +3730,8 @@
         },
         {
           "default": "",
-          "document": "检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，其中要填写16进制字节码时请以\\x开头，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "document": "检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "example": "\\x313233",
           "member": "string",
           "name": "Str",
           "required": false,
@@ -3712,6 +3741,7 @@
         {
           "default": "",
           "document": "从检测位置开始的检测深度，取值[0,1500]",
+          "example": "500",
           "member": "int64",
           "name": "Depth",
           "required": false,
@@ -3721,6 +3751,7 @@
         {
           "default": "",
           "document": "从检测位置开始的偏移量，取值范围[0,Depth]",
+          "example": "100",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3730,6 +3761,7 @@
         {
           "default": "",
           "document": "是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "example": "0",
           "member": "int64",
           "name": "IsNot",
           "required": false,
@@ -3739,6 +3771,7 @@
         {
           "default": "",
           "document": "当有第二个检测条件时，与第一检测条件的且或关系，取值[\nand(且的关系)\nnone(当没有第二个检测条件时填写此值)\n]",
+          "example": "none",
           "member": "string",
           "name": "MatchLogic",
           "required": false,
@@ -3748,6 +3781,7 @@
         {
           "default": "",
           "document": "第二个检测位置，取值[\nbegin_l5(载荷)\nno_match(不匹配)\n]",
+          "example": "begin_l5",
           "member": "string",
           "name": "MatchBegin2",
           "required": false,
@@ -3757,6 +3791,7 @@
         {
           "default": "",
           "document": "第二个检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "example": "sunday",
           "member": "string",
           "name": "MatchType2",
           "required": false,
@@ -3765,7 +3800,8 @@
         },
         {
           "default": "",
-          "document": "第二个检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，其中要填写16进制字节码时请以\\x开头，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "document": "第二个检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "example": "\\x313233",
           "member": "string",
           "name": "Str2",
           "required": false,
@@ -3775,6 +3811,7 @@
         {
           "default": "",
           "document": "从第二个检测位置开始的第二个检测深度，取值[0,1500]",
+          "example": "500",
           "member": "int64",
           "name": "Depth2",
           "required": false,
@@ -3784,6 +3821,7 @@
         {
           "default": "",
           "document": "从第二个检测位置开始的偏移量，取值范围[0,Depth2]",
+          "example": "200",
           "member": "int64",
           "name": "Offset2",
           "required": false,
@@ -3793,6 +3831,7 @@
         {
           "default": "",
           "document": "第二个检测是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "example": "0",
           "member": "int64",
           "name": "IsNot2",
           "required": false,
@@ -3802,6 +3841,7 @@
         {
           "default": "",
           "document": "特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -4254,12 +4294,49 @@
       ],
       "usage": "out"
     },
+    "SwitchWaterPrintConfigRequest": {
+      "document": "SwitchWaterPrintConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印开启/关闭状态，1表示开启；0表示关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "OpenStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchWaterPrintConfigResponse": {
+      "document": "SwitchWaterPrintConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "WaterPrintConfig": {
       "document": "水印防护配置",
       "members": [
         {
           "default": "",
           "document": "水印偏移量，取值范围[0, 100)",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -4269,6 +4346,7 @@
         {
           "default": "",
           "document": "是否开启，取值[\n0（手动开启）\n1（立即运行）\n]",
+          "example": "0",
           "member": "int64",
           "name": "OpenStatus",
           "required": true,
@@ -4278,6 +4356,7 @@
         {
           "default": "",
           "document": "水印所属的转发监听器列表",
+          "example": "[{80,TCP}]",
           "member": "ForwardListener",
           "name": "Listeners",
           "required": true,
@@ -4287,10 +4366,21 @@
         {
           "default": "",
           "document": "水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥",
+          "example": "[]",
           "member": "WaterPrintKey",
           "name": "Keys",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印检查模式, 取值[\ncheckall（普通模式）\nshortfpcheckall（精简模式）\n]",
+          "example": "checkall",
+          "member": "string",
+          "name": "Verify",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -3952,6 +3952,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3959,7 +3960,8 @@
         },
         {
           "default": "",
-          "document": "策略组id",
+          "document": "策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0",
+          "example": "11111",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -3967,7 +3969,17 @@
         },
         {
           "default": "",
+          "document": "告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0",
+          "example": "policy-xxxxx",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3976,6 +3988,7 @@
         {
           "default": "",
           "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3984,6 +3997,7 @@
         {
           "default": "",
           "document": "筛选对象的维度信息",
+          "example": "无",
           "member": "DescribeBindingPolicyObjectListDimension",
           "name": "Dimensions",
           "required": false,
@@ -3997,29 +4011,37 @@
       "members": [
         {
           "document": "绑定的对象实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeBindingPolicyObjectListInstance",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "绑定的对象实例总数",
+          "example": "3",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "未屏蔽的对象实例数",
+          "example": "3",
           "member": "int64",
           "name": "NoShieldedSum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "绑定的实例分组信息，没有绑定实例分组则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DescribeBindingPolicyObjectListInstanceGroup",
           "name": "InstanceGroup",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -127,7 +127,7 @@
     "CreateParamTemplate": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateParamTemplate\r\n&EngineVersion=5.7\r\n&Name=test\r\n&ParamList.0.Name=auto_increment_increment\r\n&ParamList.0.Value=1\r\n&ParamList.1.Name=binlog_format\r\n&ParamList.2.Value=MIXED\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateParamTemplate\n&EngineVersion=5.7\n&Name=test\n&ParamList.0.Name=auto_increment_increment\n&ParamList.0.CurrentValue=1\n&ParamList.1.Name=binlog_format\n&ParamList.1.CurrentValue=MIXED\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\",\n        \"TemplateId\": 2333\n    }\n}",
         "title": "创建参数模板"
       }
@@ -191,7 +191,7 @@
     "DeleteParamTemplate": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteParamTemplate\r\n&TemplateId=1234\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteParamTemplate\n&TemplateId=1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "删除参数模板"
       }
@@ -765,7 +765,7 @@
     "ModifyParamTemplate": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyParamTemplate\r\n&TemplateId=11231\r\n&ParamList.0.Name=auto_increment_increment\r\n&ParamList.0.Value=1\r\n&ParamList.1.Name=binlog_format\r\n&ParamList.2.Value=MIXED\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyParamTemplate\n&TemplateId=11231\n&ParamList.0.Name=auto_increment_increment\n&ParamList.0.CurrentValue=1\n&ParamList.1.Name=binlog_format\n&ParamList.1.CurrentValue=MIXED\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\"\n    }\n}",
         "title": "修改参数模板"
       }

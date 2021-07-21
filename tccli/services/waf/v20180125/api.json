@@ -48,6 +48,12 @@
       "name": "获取对客户已经开放的负载均衡型WAF(clb-waf)的地域",
       "output": "DescribeUserClbWafRegionsResponse"
     },
+    "ModifyAccessPeriod": {
+      "document": "本接口用于修改访问日志保存期限",
+      "input": "ModifyAccessPeriodRequest",
+      "name": "修改访问日志保存期限",
+      "output": "ModifyAccessPeriodResponse"
+    },
     "ModifyCustomRuleStatus": {
       "document": "开启或禁用自定义策略",
       "input": "ModifyCustomRuleStatusRequest",
@@ -704,6 +710,42 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessPeriodRequest": {
+      "document": "ModifyAccessPeriod请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "访问日志保存期限，范围为[1, 30]",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessPeriodResponse": {
+      "document": "ModifyAccessPeriod返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

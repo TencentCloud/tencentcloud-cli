@@ -9,11 +9,13 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.iotcloud.v20210408 import iotcloud_client as iotcloud_client_v20210408
+from tencentcloud.iotcloud.v20210408 import models as models_v20210408
 from tencentcloud.iotcloud.v20180614 import iotcloud_client as iotcloud_client_v20180614
 from tencentcloud.iotcloud.v20180614 import models as models_v20180614
 
 
-def doCreateTask(args, parsed_globals):
+def doUpdateDeviceLogLevel(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -29,9 +31,9 @@ def doCreateTask(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTaskRequest()
+    model = models.UpdateDeviceLogLevelRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateTask(model)
+    rsp = client.UpdateDeviceLogLevel(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -59,6 +61,33 @@ def doReplaceTopicRule(args, parsed_globals):
     model = models.ReplaceTopicRuleRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ReplaceTopicRule(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetCOSURL(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetCOSURLRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.GetCOSURL(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -121,6 +150,33 @@ def doDeleteLoraDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePrivateCAs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePrivateCAsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePrivateCAs(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDeviceResources(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -140,6 +196,33 @@ def doDescribeDeviceResources(args, parsed_globals):
     model = models.DescribeDeviceResourcesRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeDeviceResources(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateTopicPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateTopicPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdateTopicPolicy(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -202,6 +285,33 @@ def doDescribeDeviceShadow(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeFirmwareTaskDistribution(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFirmwareTaskDistributionRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeFirmwareTaskDistribution(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDevice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -229,7 +339,7 @@ def doDescribeDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetCOSURL(args, parsed_globals):
+def doCreateTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -245,9 +355,9 @@ def doGetCOSURL(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetCOSURLRequest()
+    model = models.CreateTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetCOSURL(model)
+    rsp = client.CreateTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -256,7 +366,7 @@ def doGetCOSURL(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteProduct(args, parsed_globals):
+def doDescribeFirmwareTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -272,9 +382,9 @@ def doDeleteProduct(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteProductRequest()
+    model = models.DescribeFirmwareTaskRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteProduct(model)
+    rsp = client.DescribeFirmwareTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -283,7 +393,7 @@ def doDeleteProduct(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAllDevices(args, parsed_globals):
+def doDescribeProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -299,9 +409,9 @@ def doDescribeAllDevices(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAllDevicesRequest()
+    model = models.DescribeProductRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeAllDevices(model)
+    rsp = client.DescribeProduct(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -329,6 +439,60 @@ def doCreateTopicRule(args, parsed_globals):
     model = models.CreateTopicRuleRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateTopicRule(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCancelTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CancelTask(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeProductTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProductTaskRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeProductTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -418,6 +582,33 @@ def doDescribeFirmwareTaskDevices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeAllDevices(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeAllDevicesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeAllDevices(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doBatchUpdateFirmware(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -472,7 +663,7 @@ def doCreateProduct(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDevice(args, parsed_globals):
+def doGetUserResourceInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -488,9 +679,9 @@ def doCreateDevice(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDeviceRequest()
+    model = models.GetUserResourceInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateDevice(model)
+    rsp = client.GetUserResourceInfo(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -661,6 +852,33 @@ def doDescribeFirmwareTaskStatistics(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeProductCA(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeProductCARequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeProductCA(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLoraDevice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -688,6 +906,60 @@ def doDescribeLoraDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateDevicesEnableState(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateDevicesEnableStateRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdateDevicesEnableState(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteDevice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteDeviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeleteDevice(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -707,60 +979,6 @@ def doDescribeTask(args, parsed_globals):
     model = models.DescribeTaskRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeTask(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeFirmwareTask(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFirmwareTaskRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribeFirmwareTask(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCancelTask(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CancelTaskRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.CancelTask(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -823,7 +1041,7 @@ def doEditFirmware(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetUserResourceInfo(args, parsed_globals):
+def doCreateDevice(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -839,9 +1057,9 @@ def doGetUserResourceInfo(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetUserResourceInfoRequest()
+    model = models.CreateDeviceRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.GetUserResourceInfo(model)
+    rsp = client.CreateDevice(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -904,7 +1122,7 @@ def doPublishMessage(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeFirmwareTaskDistribution(args, parsed_globals):
+def doDescribePrivateCABindedProducts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -920,9 +1138,9 @@ def doDescribeFirmwareTaskDistribution(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFirmwareTaskDistributionRequest()
+    model = models.DescribePrivateCABindedProductsRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeFirmwareTaskDistribution(model)
+    rsp = client.DescribePrivateCABindedProducts(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -931,7 +1149,7 @@ def doDescribeFirmwareTaskDistribution(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteDevice(args, parsed_globals):
+def doCreatePrivateCA(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -947,9 +1165,9 @@ def doDeleteDevice(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteDeviceRequest()
+    model = models.CreatePrivateCARequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteDevice(model)
+    rsp = client.CreatePrivateCA(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -958,7 +1176,7 @@ def doDeleteDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTaskFileUrl(args, parsed_globals):
+def doDeleteProduct(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -974,9 +1192,63 @@ def doCreateTaskFileUrl(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTaskFileUrlRequest()
+    model = models.DeleteProductRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateTaskFileUrl(model)
+    rsp = client.DeleteProduct(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdatePrivateCA(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdatePrivateCARequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdatePrivateCA(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeletePrivateCA(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeletePrivateCARequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DeletePrivateCA(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1255,7 +1527,7 @@ def doBindDevices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateTopicPolicy(args, parsed_globals):
+def doCreateTaskFileUrl(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1271,9 +1543,9 @@ def doUpdateTopicPolicy(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateTopicPolicyRequest()
+    model = models.CreateTaskFileUrlRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.UpdateTopicPolicy(model)
+    rsp = client.CreateTaskFileUrl(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1309,7 +1581,7 @@ def doUnbindDevices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeProductTask(args, parsed_globals):
+def doDescribePrivateCA(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1325,9 +1597,9 @@ def doDescribeProductTask(args, parsed_globals):
     client = mod.IotcloudClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeProductTaskRequest()
+    model = models.DescribePrivateCARequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeProductTask(model)
+    rsp = client.DescribePrivateCA(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1634,52 +1906,64 @@ def doDeleteTopicRule(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20210408": iotcloud_client_v20210408,
     "v20180614": iotcloud_client_v20180614,
 
 }
 
 MODELS_MAP = {
+    "v20210408": models_v20210408,
     "v20180614": models_v20180614,
 
 }
 
 ACTION_MAP = {
-    "CreateTask": doCreateTask,
+    "UpdateDeviceLogLevel": doUpdateDeviceLogLevel,
     "ReplaceTopicRule": doReplaceTopicRule,
+    "GetCOSURL": doGetCOSURL,
     "PublishRRPCMessage": doPublishRRPCMessage,
     "DeleteLoraDevice": doDeleteLoraDevice,
+    "DescribePrivateCAs": doDescribePrivateCAs,
     "DescribeDeviceResources": doDescribeDeviceResources,
+    "UpdateTopicPolicy": doUpdateTopicPolicy,
     "DescribeFirmware": doDescribeFirmware,
     "DescribeDeviceShadow": doDescribeDeviceShadow,
+    "DescribeFirmwareTaskDistribution": doDescribeFirmwareTaskDistribution,
     "DescribeDevice": doDescribeDevice,
-    "GetCOSURL": doGetCOSURL,
-    "DeleteProduct": doDeleteProduct,
-    "DescribeAllDevices": doDescribeAllDevices,
+    "CreateTask": doCreateTask,
+    "DescribeFirmwareTask": doDescribeFirmwareTask,
+    "DescribeProduct": doDescribeProduct,
     "CreateTopicRule": doCreateTopicRule,
+    "CancelTask": doCancelTask,
+    "DescribeProductTask": doDescribeProductTask,
     "RetryDeviceFirmwareTask": doRetryDeviceFirmwareTask,
     "CreateTopicPolicy": doCreateTopicPolicy,
     "DescribeFirmwareTaskDevices": doDescribeFirmwareTaskDevices,
+    "DescribeAllDevices": doDescribeAllDevices,
     "BatchUpdateFirmware": doBatchUpdateFirmware,
     "CreateProduct": doCreateProduct,
-    "CreateDevice": doCreateDevice,
+    "GetUserResourceInfo": doGetUserResourceInfo,
     "UploadFirmware": doUploadFirmware,
     "DescribeDeviceClientKey": doDescribeDeviceClientKey,
     "DescribeProducts": doDescribeProducts,
     "CreateMultiDevicesTask": doCreateMultiDevicesTask,
     "DescribeResourceTasks": doDescribeResourceTasks,
     "DescribeFirmwareTaskStatistics": doDescribeFirmwareTaskStatistics,
+    "DescribeProductCA": doDescribeProductCA,
     "DescribeLoraDevice": doDescribeLoraDevice,
+    "UpdateDevicesEnableState": doUpdateDevicesEnableState,
+    "DeleteDevice": doDeleteDevice,
     "DescribeTask": doDescribeTask,
-    "DescribeFirmwareTask": doDescribeFirmwareTask,
-    "CancelTask": doCancelTask,
     "DescribeFirmwareTasks": doDescribeFirmwareTasks,
     "EditFirmware": doEditFirmware,
-    "GetUserResourceInfo": doGetUserResourceInfo,
+    "CreateDevice": doCreateDevice,
     "DescribeDeviceResource": doDescribeDeviceResource,
     "PublishMessage": doPublishMessage,
-    "DescribeFirmwareTaskDistribution": doDescribeFirmwareTaskDistribution,
-    "DeleteDevice": doDeleteDevice,
-    "CreateTaskFileUrl": doCreateTaskFileUrl,
+    "DescribePrivateCABindedProducts": doDescribePrivateCABindedProducts,
+    "CreatePrivateCA": doCreatePrivateCA,
+    "DeleteProduct": doDeleteProduct,
+    "UpdatePrivateCA": doUpdatePrivateCA,
+    "DeletePrivateCA": doDeletePrivateCA,
     "ResetDeviceState": doResetDeviceState,
     "DescribeProductResource": doDescribeProductResource,
     "DescribeTasks": doDescribeTasks,
@@ -1690,9 +1974,9 @@ ACTION_MAP = {
     "CreateLoraDevice": doCreateLoraDevice,
     "EnableTopicRule": doEnableTopicRule,
     "BindDevices": doBindDevices,
-    "UpdateTopicPolicy": doUpdateTopicPolicy,
+    "CreateTaskFileUrl": doCreateTaskFileUrl,
     "UnbindDevices": doUnbindDevices,
-    "DescribeProductTask": doDescribeProductTask,
+    "DescribePrivateCA": doDescribePrivateCA,
     "DescribeProductTasks": doDescribeProductTasks,
     "DescribeDevices": doDescribeDevices,
     "DisableTopicRule": doDisableTopicRule,
@@ -1708,6 +1992,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20210408",
     "v20180614",
 
 ]

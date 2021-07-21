@@ -191,6 +191,8 @@ include tccli/services/ims/v20200713/api.json
 include tccli/services/ims/v20200713/examples.json
 include tccli/services/iot/v20180123/api.json
 include tccli/services/iot/v20180123/examples.json
+include tccli/services/iotcloud/v20210408/api.json
+include tccli/services/iotcloud/v20210408/examples.json
 include tccli/services/iotcloud/v20180614/api.json
 include tccli/services/iotcloud/v20180614/examples.json
 include tccli/services/iotexplorer/v20190423/api.json

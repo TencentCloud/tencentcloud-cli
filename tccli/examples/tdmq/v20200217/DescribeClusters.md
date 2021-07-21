@@ -26,6 +26,10 @@ Output:
                 "MaxTopicNum": 1000,
                 "MaxQps": 10000,
                 "MessageRetentionTime": 86400,
+                "NamespaceNum": 0,
+                "VpcEndPoint": "xx",
+                "PublicEndPoint": "xx",
+                "Version": "xx",
                 "MaxStorageCapacity": 100
             }
         ],

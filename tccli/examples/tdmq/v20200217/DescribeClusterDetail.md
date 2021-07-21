@@ -26,6 +26,10 @@ Output:
             "MaxTopicNum": 1000,
             "MaxQps": 10000,
             "MessageRetentionTime": 86400,
+            "VpcEndPoint": "xx",
+            "NamespaceNum": 0,
+            "Version": "xx",
+            "PublicEndPoint": "xx",
             "MaxStorageCapacity": 100
         },
         "RequestId": "020eb354-144e-4cf8-9607-c6771cd24421"

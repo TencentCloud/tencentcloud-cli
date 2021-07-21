@@ -5827,6 +5827,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6368,11 +6377,20 @@
       "members": [
         {
           "default": "",
+          "document": "指定 URL 查询",
+          "example": "http://www.test.com/1.txt",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "开始时间，如：2018-12-12 10:24:00。",
           "example": "2021-02-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6381,15 +6399,6 @@
           "example": "2021-02-01 23:59:59",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "指定 URL 查询",
-          "example": "http://www.test.com/1.txt",
-          "member": "string",
-          "name": "Url",
           "required": false,
           "type": "string"
         },
@@ -6419,6 +6428,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务ID，任务ID和起始时间需要至少填写一项。",
+          "example": "364332106815435411",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

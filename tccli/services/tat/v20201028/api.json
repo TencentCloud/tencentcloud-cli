@@ -1170,6 +1170,24 @@
           "name": "Username",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令执行路径, 默认以Command配置的WorkingDirectory执行。",
+          "example": "/root",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令超时时间，取值范围[1, 86400]。默认以Command配置的Timeout执行。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

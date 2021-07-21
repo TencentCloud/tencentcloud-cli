@@ -7,7 +7,8 @@ Input:
 ```
 tccli monitor DescribeBindingPolicyObjectList --cli-unfold-argument  \
     --Module monitor \
-    --GroupId 11111
+    --GroupId 0 \
+    --PolicyId policy-xxxxx
 ```
 
 Output: 
@@ -35,6 +36,7 @@ Output:
             }
         ],
         "NoShieldedSum": 3,
+        "InstanceGroup": null,
         "RequestId": "11111111-1111-1111-1111-111111111111",
         "Total": 3
     }

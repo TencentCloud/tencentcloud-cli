@@ -19,7 +19,7 @@
     "CreateTag": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=CreateTag\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=CreateTag\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建标签"
       }
@@ -35,7 +35,7 @@
     "DeleteTag": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DeleteTag\r\n&TagKey=testTagKey\r\n&TagValue=testTagValue\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DeleteTag\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除标签"
       }

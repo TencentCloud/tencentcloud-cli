@@ -70,6 +70,14 @@
         "title": "获取对客户已经开放的负载均衡型WAF的地域"
       }
     ],
+    "ModifyAccessPeriod": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessPeriod\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"Period\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "删除访问日志导出"
+      }
+    ],
     "ModifyCustomRuleStatus": [
       {
         "document": "",

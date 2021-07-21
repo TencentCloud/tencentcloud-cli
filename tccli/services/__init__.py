@@ -284,6 +284,7 @@ SERVICE_VERSIONS = {
         "2018-01-23"
     ],
     "iotcloud": [
+        "2021-04-08",
         "2018-06-14"
     ],
     "iotexplorer": [

@@ -434,6 +434,7 @@
         {
           "default": "",
           "document": "集群Id。",
+          "example": "1000",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -443,6 +444,7 @@
         {
           "default": "",
           "document": "集群名称。",
+          "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -452,6 +454,7 @@
         {
           "default": "",
           "document": "说明信息。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -461,6 +464,7 @@
         {
           "default": "",
           "document": "\b接入点数量",
+          "example": "0",
           "member": "int64",
           "name": "EndPointNum",
           "required": true,
@@ -470,6 +474,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2021-04-21 19:00:00",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -479,6 +484,7 @@
         {
           "default": "",
           "document": "集群是否健康，1表示健康，0表示异常",
+          "example": "1",
           "member": "int64",
           "name": "Healthy",
           "required": true,
@@ -488,6 +494,7 @@
         {
           "default": "",
           "document": "集群健康信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "HealthyInfo",
           "required": true,
@@ -497,6 +504,7 @@
         {
           "default": "",
           "document": "集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -506,6 +514,7 @@
         {
           "default": "",
           "document": "最大命名空间数量",
+          "example": "100",
           "member": "int64",
           "name": "MaxNamespaceNum",
           "required": true,
@@ -515,6 +524,7 @@
         {
           "default": "",
           "document": "最大Topic数量",
+          "example": "8000",
           "member": "int64",
           "name": "MaxTopicNum",
           "required": true,
@@ -524,6 +534,7 @@
         {
           "default": "",
           "document": "最大QPS",
+          "example": "1000",
           "member": "int64",
           "name": "MaxQps",
           "required": true,
@@ -533,6 +544,7 @@
         {
           "default": "",
           "document": "消息保留时间",
+          "example": "100000000",
           "member": "int64",
           "name": "MessageRetentionTime",
           "required": true,
@@ -542,11 +554,52 @@
         {
           "default": "",
           "document": "最大存储容量",
+          "example": "1024",
           "member": "int64",
           "name": "MaxStorageCapacity",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.5.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网访问接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "PublicEndPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC访问接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "VpcEndPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "NamespaceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1813,6 +1866,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1821,6 +1875,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1829,6 +1884,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1837,6 +1893,7 @@
           "example": "namespace-ak7jexmrz2",
           "member": "string",
           "name": "NamespaceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1855,6 +1912,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -1863,6 +1921,7 @@
         {
           "default": "",
           "document": "主题名称。",
+          "example": "cloud_test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -1871,6 +1930,7 @@
         {
           "default": "",
           "document": "订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。",
+          "example": "cloud_sub",
           "member": "string",
           "name": "SubscriptionName",
           "required": true,
@@ -1879,6 +1939,7 @@
         {
           "default": "",
           "document": "是否幂等创建，若否不允许创建同名的订阅关系。",
+          "example": "true",
           "member": "bool",
           "name": "IsIdempotent",
           "required": true,
@@ -1887,6 +1948,7 @@
         {
           "default": "",
           "document": "备注，128个字符以内。",
+          "example": "创建订阅关系",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1895,6 +1957,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -1903,6 +1966,7 @@
         {
           "default": "",
           "document": "是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。",
+          "example": "true",
           "member": "bool",
           "name": "AutoCreatePolicyTopic",
           "required": false,
@@ -1916,8 +1980,10 @@
       "members": [
         {
           "document": "创建结果。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2204,6 +2270,7 @@
           "example": "[test1,test2]",
           "member": "string",
           "name": "EnvironmentIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2222,6 +2289,7 @@
         {
           "default": "",
           "document": "订阅关系集合，每次最多删除20个。",
+          "example": "无",
           "member": "SubscriptionTopic",
           "name": "SubscriptionTopicSets",
           "required": true,
@@ -2230,6 +2298,7 @@
         {
           "default": "",
           "document": "pulsar集群Id。",
+          "example": "test",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2238,6 +2307,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -2251,8 +2321,10 @@
       "members": [
         {
           "document": "成功删除的订阅关系数组。",
+          "example": "无",
           "member": "SubscriptionTopic",
           "name": "SubscriptionTopicSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2271,6 +2343,7 @@
         {
           "default": "",
           "document": "主题集合，每次最多删除20个。",
+          "example": "无",
           "member": "TopicRecord",
           "name": "TopicSets",
           "required": true,
@@ -2279,6 +2352,7 @@
         {
           "default": "",
           "document": "pulsar集群Id。",
+          "example": "test",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2287,6 +2361,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -2300,8 +2375,10 @@
       "members": [
         {
           "document": "被删除的主题数组。",
+          "example": "无",
           "member": "TopicRecord",
           "name": "TopicSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2324,9 +2401,10 @@
       "members": [
         {
           "document": "专享集群的数量",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2335,6 +2413,7 @@
           "example": "[]",
           "member": "BindCluster",
           "name": "ClusterSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2426,6 +2505,7 @@
           "example": "NULL",
           "member": "Cluster",
           "name": "ClusterSet",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2444,6 +2524,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2452,6 +2533,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2465,15 +2547,19 @@
       "members": [
         {
           "document": "集群列表数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "集群信息列表",
+          "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2860,6 +2946,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2868,6 +2955,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RateInByte",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2876,6 +2964,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RateInSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2884,6 +2973,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RetentionHours",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2892,6 +2982,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RetentionSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2900,6 +2991,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2908,6 +3000,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Replicas",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2916,6 +3009,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3096,6 +3190,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -3104,6 +3199,7 @@
         {
           "default": "",
           "document": "主题名。",
+          "example": "U_TOPIC_nfa_game_push_retry_kb",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3112,6 +3208,7 @@
         {
           "default": "",
           "document": "起始下标，不填默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3120,6 +3217,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3128,6 +3226,7 @@
         {
           "default": "",
           "document": "生产者名称，模糊匹配。",
+          "example": "test",
           "member": "string",
           "name": "ProducerName",
           "required": false,
@@ -3136,6 +3235,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -3149,15 +3249,19 @@
       "members": [
         {
           "document": "生产者集合数组。",
+          "example": "无",
           "member": "Producer",
           "name": "ProducerSets",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3968,6 +4072,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3976,6 +4081,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3984,6 +4090,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3992,6 +4099,7 @@
           "example": "namespace-ak27qjs68x",
           "member": "string",
           "name": "NamespaceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4010,6 +4118,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "default",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -4018,6 +4127,7 @@
         {
           "default": "",
           "document": "主题名。",
+          "example": "test_topic",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -4026,6 +4136,7 @@
         {
           "default": "",
           "document": "分区数，必须大于或者等于原分区数，若想维持原分区数请输入原数目，修改分区数仅对非全局顺序消息起效果，不允许超过128个分区。",
+          "example": "3",
           "member": "uint64",
           "name": "Partitions",
           "required": true,
@@ -4034,6 +4145,7 @@
         {
           "default": "",
           "document": "备注，128字符以内。",
+          "example": "修改分区为3",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4042,6 +4154,7 @@
         {
           "default": "",
           "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -4055,15 +4168,19 @@
       "members": [
         {
           "document": "分区数",
+          "example": "3",
           "member": "uint64",
           "name": "Partitions",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备注，128字符以内。",
+          "example": "修改分区为3",
           "member": "string",
           "name": "Remark",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4462,6 +4579,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

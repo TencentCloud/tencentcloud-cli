@@ -242,6 +242,7 @@
         {
           "default": "",
           "document": "标签键",
+          "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -250,6 +251,7 @@
         {
           "default": "",
           "document": "标签值",
+          "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -310,6 +312,7 @@
         {
           "default": "",
           "document": "需要删除的标签键",
+          "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -318,6 +321,7 @@
         {
           "default": "",
           "document": "需要删除的标签值",
+          "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -1214,6 +1218,7 @@
         {
           "default": "",
           "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "example": "testTagKey",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -1222,6 +1227,7 @@
         {
           "default": "",
           "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "example": "testTagValue",
           "member": "string",
           "name": "TagValue",
           "required": false,
@@ -1230,6 +1236,7 @@
         {
           "default": "",
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1238,6 +1245,7 @@
         {
           "default": "",
           "document": "每页大小，默认为 15",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1246,6 +1254,7 @@
         {
           "default": "",
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "example": "121",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1254,6 +1263,7 @@
         {
           "default": "",
           "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
+          "example": "Key",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -1262,6 +1272,7 @@
         {
           "default": "",
           "document": "是否展现项目标签",
+          "example": "1",
           "member": "uint64",
           "name": "ShowProject",
           "required": false,
@@ -1275,29 +1286,37 @@
       "members": [
         {
           "document": "结果总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "数据位移偏量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页大小",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "标签列表",
+          "example": "无",
           "member": "TagWithDelete",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

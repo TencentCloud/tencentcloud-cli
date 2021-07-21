@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateSnapshotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshotTask\n<公共请求参数>\n\n{\n    \"COS\": {\n        \"TargetDir\": \"snapshot/\",\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-123070000\",\n        \"Domain\": \"xxx.file.com\",\n        \"Uin\": 130001358\n    },\n    \"Whiteboard\": {\n        \"Width\": 1280,\n        \"InitParams\": \"{\\\"ratio\\\":\\\"16:9\\\"}\",\n        \"Height\": 720\n    },\n    \"RoomId\": 12345,\n    \"SdkAppId\": 1400123480,\n    \"CallbackURL\": \"http://xx/callback\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskID\": \"d1806f20-25b8-4c30-8176-c0832bf84e02\",\n        \"RequestId\": \"fe36df20-25b8-4c30-8176-cff28afacb25\"\n    }\n}",
+        "title": "创建白板板书生成任务"
+      }
+    ],
     "CreateTranscode": [
       {
         "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
@@ -50,6 +58,14 @@
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400296030,\n    \"Metric\": \"image_load_fail_count\",\n    \"Interval\": \"1h\",\n    \"StartTime\": 1617874404,\n    \"EndTime\": 1618479204\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c41b5df-2326-4c0b-baca-2fd85ebb4097\",\n        \"Metric\": \"image_load_fail_count\",\n        \"Content\": [\n            {\n                \"Time\": 1617872400,\n                \"Value\": 0\n            }\n        ]\n    }\n}",
         "title": "查询白板图片加载失败统计"
+      }
+    ],
+    "DescribeSnapshotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400127230,\n    \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": 1626249427,\n        \"FinishTime\": 1626250455,\n        \"RequestId\": \"38d75752-85e0-4931-9837-d41be5409a0a\",\n        \"Result\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMessage\": \"\",\n            \"Snapshots\": [\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255368873480.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255373174978.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255375472670.png\"\n            ],\n            \"Total\": 3\n        },\n        \"Status\": \"Finished\",\n        \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n    }\n}",
+        "title": "获取任务信息"
       }
     ],
     "DescribeTranscode": [

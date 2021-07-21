@@ -702,7 +702,7 @@
       "members": [
         {
           "default": "",
-          "document": "模板 ID 数组。\n注：默认数组长度最大100。",
+          "document": "模板 ID 数组。\n<dx-alert infotype=\"notice\" title=\"注意\">默认数组长度最大100</dx-alert>",
           "example": "1110",
           "member": "uint64",
           "name": "TemplateIdSet",

@@ -85,7 +85,7 @@
       "output": "CreateDeployGroupResponse"
     },
     "CreateParamTemplate": {
-      "document": "该接口（CreateParamTemplate）用于创建参数模板。",
+      "document": "该接口（CreateParamTemplate）用于创建参数模板，全地域公共参数Region均为ap-guangzhou。",
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse"
@@ -133,7 +133,7 @@
       "output": "DeleteDeployGroupsResponse"
     },
     "DeleteParamTemplate": {
-      "document": "该接口（DeleteParamTemplate）用于删除参数模板。",
+      "document": "该接口（DeleteParamTemplate）用于删除参数模板，全地域公共参数Region均为ap-guangzhou。",
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse"
@@ -355,7 +355,7 @@
       "output": "DescribeInstanceParamsResponse"
     },
     "DescribeParamTemplateInfo": {
-      "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情。",
+      "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。",
       "input": "DescribeParamTemplateInfoRequest",
       "name": "查询参数模板详情",
       "output": "DescribeParamTemplateInfoResponse"
@@ -559,7 +559,7 @@
       "output": "ModifyNameOrDescByDpIdResponse"
     },
     "ModifyParamTemplate": {
-      "document": "该接口（ModifyParamTemplate）用于修改参数模板。",
+      "document": "该接口（ModifyParamTemplate）用于修改参数模板，全地域公共参数Region均为ap-guangzhou。",
       "input": "ModifyParamTemplateRequest",
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse"
@@ -1898,7 +1898,7 @@
         },
         {
           "default": "",
-          "document": "新账户最大可用连接数。",
+          "document": "新账户最大可用连接数，默认值为10240，最大可设置值为10240。",
           "example": "1",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -3127,6 +3127,7 @@
         {
           "default": "",
           "document": "参数模板名称。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3135,6 +3136,7 @@
         {
           "default": "",
           "document": "参数模板描述。",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3143,6 +3145,7 @@
         {
           "default": "",
           "document": "MySQL 版本号。",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
           "required": false,
@@ -3151,6 +3154,7 @@
         {
           "default": "",
           "document": "源参数模板 ID。",
+          "example": "无",
           "member": "int64",
           "name": "TemplateId",
           "required": false,
@@ -3159,6 +3163,7 @@
         {
           "default": "",
           "document": "参数列表。",
+          "example": "无",
           "member": "Parameter",
           "name": "ParamList",
           "required": false,
@@ -3172,8 +3177,10 @@
       "members": [
         {
           "document": "参数模板 ID。",
+          "example": "2333",
           "member": "int64",
           "name": "TemplateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3553,6 +3560,7 @@
         {
           "default": "",
           "document": "参数模板ID。",
+          "example": "1234",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -8507,7 +8515,7 @@
         },
         {
           "default": "",
-          "document": "设置账户最大可用连接数。",
+          "document": "设置账户最大可用连接数，最大可设置值为10240。",
           "example": "1",
           "member": "int64",
           "name": "MaxUserConnections",
@@ -9213,6 +9221,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "11231",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -9221,6 +9230,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9229,6 +9239,7 @@
         {
           "default": "",
           "document": "模板描述。",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -9237,6 +9248,7 @@
         {
           "default": "",
           "document": "参数列表。",
+          "example": "无",
           "member": "Parameter",
           "name": "ParamList",
           "required": false,

@@ -19,7 +19,8 @@ Output:
                 "http://example.com/path/to.jpg"
             ],
             "FailUrls": []
-        }
+        },
+        "TaskId": "xx"
     }
 }
 ```

@@ -1512,6 +1512,15 @@
           "name": "NewOwnerUin",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否同时转移对应的 DNS 解析域名，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "TransferDns",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

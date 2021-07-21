@@ -156,7 +156,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeClusterDetail\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterSet\": {\n            \"ClusterId\": \"pulsar-xxxxxxxx\",\n            \"ClusterName\": \"sdfsdfsdf\",\n            \"Remark\": \"\",\n            \"EndPointNum\": 0,\n            \"CreateTime\": \"2021-01-13 15:43:29\",\n            \"Healthy\": 1,\n            \"HealthyInfo\": \"\",\n            \"Status\": 1,\n            \"MaxNamespaceNum\": 50,\n            \"MaxTopicNum\": 1000,\n            \"MaxQps\": 10000,\n            \"MessageRetentionTime\": 86400,\n            \"MaxStorageCapacity\": 100\n        },\n        \"RequestId\": \"020eb354-144e-4cf8-9607-c6771cd24421\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": {\n            \"ClusterId\": \"pulsar-xxxxxxxx\",\n            \"ClusterName\": \"sdfsdfsdf\",\n            \"Remark\": \"\",\n            \"EndPointNum\": 0,\n            \"CreateTime\": \"2021-01-13 15:43:29\",\n            \"Healthy\": 1,\n            \"HealthyInfo\": \"\",\n            \"Status\": 1,\n            \"MaxNamespaceNum\": 50,\n            \"MaxTopicNum\": 1000,\n            \"MaxQps\": 10000,\n            \"MessageRetentionTime\": 86400,\n            \"VpcEndPoint\": \"xx\",\n            \"NamespaceNum\": 0,\n            \"Version\": \"xx\",\n            \"PublicEndPoint\": \"xx\",\n            \"MaxStorageCapacity\": 100\n        },\n        \"RequestId\": \"020eb354-144e-4cf8-9607-c6771cd24421\"\n    }\n}",
         "title": "获取集群的详细信息"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeClusters\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"pulsar-p37angkrqd\",\n                \"ClusterName\": \"default\",\n                \"Remark\": \"default\",\n                \"EndPointNum\": 0,\n                \"CreateTime\": \"2020-11-30 20:45:36\",\n                \"Healthy\": 1,\n                \"HealthyInfo\": \"\",\n                \"Status\": 1,\n                \"MaxNamespaceNum\": 10,\n                \"MaxTopicNum\": 1000,\n                \"MaxQps\": 10000,\n                \"MessageRetentionTime\": 86400,\n                \"MaxStorageCapacity\": 100\n            }\n        ],\n        \"RequestId\": \"137c3d2c-eae6-4545-95dd-0d332074fd0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"pulsar-p37angkrqd\",\n                \"ClusterName\": \"default\",\n                \"Remark\": \"default\",\n                \"EndPointNum\": 0,\n                \"CreateTime\": \"2020-11-30 20:45:36\",\n                \"Healthy\": 1,\n                \"HealthyInfo\": \"\",\n                \"Status\": 1,\n                \"MaxNamespaceNum\": 10,\n                \"MaxTopicNum\": 1000,\n                \"MaxQps\": 10000,\n                \"MessageRetentionTime\": 86400,\n                \"NamespaceNum\": 0,\n                \"VpcEndPoint\": \"xx\",\n                \"PublicEndPoint\": \"xx\",\n                \"Version\": \"xx\",\n                \"MaxStorageCapacity\": 100\n            }\n        ],\n        \"RequestId\": \"137c3d2c-eae6-4545-95dd-0d332074fd0e\"\n    }\n}",
         "title": "获取集群列表"
       }
     ],

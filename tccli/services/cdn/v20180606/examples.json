@@ -284,7 +284,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"CacheOptResult\": {\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ],\n            \"FailUrls\": []\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"CacheOptResult\": {\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ],\n            \"FailUrls\": []\n        },\n        \"TaskId\": \"xx\"\n    }\n}",
         "title": "封禁示例"
       }
     ],

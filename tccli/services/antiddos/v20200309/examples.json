@@ -327,6 +327,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改DDoS防护的特征过滤规则"
       }
+    ],
+    "SwitchWaterPrintConfig": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=SwitchWaterPrintConfig\n&InstanceId=bgpip-0000011x\n&OpenStatus=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"512b8c34-3df9-448a-ae90-c28643d351bf\"\n    }\n}",
+        "title": "开启或关闭DDoS防护的水印防护配置"
+      }
     ]
   },
   "version": "1.0"

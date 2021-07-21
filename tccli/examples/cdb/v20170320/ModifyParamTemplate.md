@@ -8,9 +8,9 @@ Input:
 tccli cdb ModifyParamTemplate --cli-unfold-argument  \
     --TemplateId 11231 \
     --ParamList.0.Name auto_increment_increment \
-    --ParamList.0.Value 1 \
+    --ParamList.0.CurrentValue 1 \
     --ParamList.1.Name binlog_format \
-    --ParamList.2.Value MIXED
+    --ParamList.1.CurrentValue MIXED
 ```
 
 Output: 
