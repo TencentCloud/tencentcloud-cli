@@ -1939,6 +1939,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1946,7 +1947,8 @@
         },
         {
           "default": "",
-          "document": "返回数量",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1955,6 +1957,7 @@
         {
           "default": "",
           "document": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)查询",
+          "example": "PS001v1",
           "member": "string",
           "name": "DeviceClassCode",
           "required": false,
@@ -1963,6 +1966,7 @@
         {
           "default": "",
           "document": "设备ID数组",
+          "example": "cpm-1a2b3c4d",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1971,6 +1975,7 @@
         {
           "default": "",
           "document": "外网IP数组",
+          "example": "123.123.123.123",
           "member": "string",
           "name": "WanIps",
           "required": false,
@@ -1979,6 +1984,7 @@
         {
           "default": "",
           "document": "内网IP数组",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "LanIps",
           "required": false,
@@ -1987,6 +1993,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "test",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -1995,6 +2002,7 @@
         {
           "default": "",
           "document": "模糊IP查询",
+          "example": "88",
           "member": "string",
           "name": "VagueIp",
           "required": false,
@@ -2003,6 +2011,7 @@
         {
           "default": "",
           "document": "设备到期时间查询的起始时间",
+          "example": "2018-01-01 18:00:00",
           "member": "datetime",
           "name": "DeadlineStartTime",
           "required": false,
@@ -2011,6 +2020,7 @@
         {
           "default": "",
           "document": "设备到期时间查询的结束时间",
+          "example": "2018-12-01 18:00:00",
           "member": "datetime",
           "name": "DeadlineEndTime",
           "required": false,
@@ -2019,6 +2029,7 @@
         {
           "default": "",
           "document": "自动续费标志 0:不自动续费，1:自动续费",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -2027,6 +2038,7 @@
         {
           "default": "",
           "document": "私有网络唯一ID",
+          "example": "vpc-3c7b2102",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2035,6 +2047,7 @@
         {
           "default": "",
           "document": "子网唯一ID",
+          "example": "subnet-3c7b2102",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2043,6 +2056,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2051,6 +2065,7 @@
         {
           "default": "",
           "document": "设备类型，取值有: compute(计算型), standard(标准型), storage(存储型) 等",
+          "example": "standard",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -2059,6 +2074,7 @@
         {
           "default": "",
           "document": "竞价实例机器的过滤。如果未指定此参数，则不做过滤。0: 查询非竞价实例的机器; 1: 查询竞价实例的机器。",
+          "example": "0",
           "member": "uint64",
           "name": "IsLuckyDevice",
           "required": false,
@@ -2067,6 +2083,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "SubnetId",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -2075,10 +2092,20 @@
         {
           "default": "",
           "document": "排序方式，取值：0:增序(默认)，1:降序",
+          "example": "1",
           "member": "uint64",
           "name": "Order",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保",
+          "example": "Maintain",
+          "member": "string",
+          "name": "MaintainStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2088,15 +2115,19 @@
       "members": [
         {
           "document": "返回数量",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "物理机信息列表",
+          "example": "无",
           "member": "DeviceInfo",
           "name": "DeviceInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3291,6 +3322,7 @@
         {
           "default": "",
           "document": "设备唯一ID",
+          "example": "cpm-1a2b3c4d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3300,6 +3332,7 @@
         {
           "default": "",
           "document": "私有网络ID",
+          "example": "vpc-1a2b3c4d",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3309,6 +3342,7 @@
         {
           "default": "",
           "document": "子网ID",
+          "example": "subnet-1a2b3c4d",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3318,6 +3352,7 @@
         {
           "default": "",
           "document": "设备状态ID，取值：<li>1：申领设备中</li><li>2：初始化中</li><li>4：运营中</li><li>7：隔离中</li><li>8：已隔离</li><li>10：解隔离中</li><li>16：故障中</li>",
+          "example": "4",
           "member": "uint64",
           "name": "DeviceStatus",
           "required": true,
@@ -3327,6 +3362,7 @@
         {
           "default": "",
           "document": "设备操作状态ID，取值：\n<li>1：运行中</li><li>2：正在关机</li><li>3：已关机</li><li>5：正在开机</li><li>7：重启中</li><li>9：重装中</li><li>12：绑定EIP</li><li>13：解绑EIP</li><li>14：绑定LB</li><li>15：解绑LB</li><li>19：更换IP中</li><li>20：制作镜像中</li><li>21：制作镜像失败</li><li>23：故障待重装</li>",
+          "example": "1",
           "member": "uint64",
           "name": "OperateStatus",
           "required": true,
@@ -3336,6 +3372,7 @@
         {
           "default": "",
           "document": "操作系统ID，参考接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/product/386/32902)",
+          "example": "2",
           "member": "uint64",
           "name": "OsTypeId",
           "required": true,
@@ -3345,6 +3382,7 @@
         {
           "default": "",
           "document": "RAID类型ID，参考接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/product/386/32910)",
+          "example": "5",
           "member": "uint64",
           "name": "RaidId",
           "required": true,
@@ -3354,6 +3392,7 @@
         {
           "default": "",
           "document": "设备别名",
+          "example": "设备名称",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -3363,6 +3402,7 @@
         {
           "default": "",
           "document": "用户AppId",
+          "example": "1251001000",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -3372,6 +3412,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "ap-guangzhou-bls-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3381,6 +3422,7 @@
         {
           "default": "",
           "document": "外网IP",
+          "example": "123.123.12.3.123",
           "member": "string",
           "name": "WanIp",
           "required": true,
@@ -3390,6 +3432,7 @@
         {
           "default": "",
           "document": "内网IP",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "LanIp",
           "required": true,
@@ -3399,6 +3442,7 @@
         {
           "default": "",
           "document": "设备交付时间",
+          "example": "2020-02-02 21:00:00",
           "member": "datetime",
           "name": "DeliverTime",
           "required": true,
@@ -3408,6 +3452,7 @@
         {
           "default": "",
           "document": "设备到期时间",
+          "example": "2020-02-02 21:00:00",
           "member": "datetime",
           "name": "Deadline",
           "required": true,
@@ -3417,6 +3462,7 @@
         {
           "default": "",
           "document": "自动续费标识。0: 不自动续费; 1:自动续费",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": true,
@@ -3426,6 +3472,7 @@
         {
           "default": "",
           "document": "设备类型",
+          "example": "PS100v3",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
@@ -3435,6 +3482,7 @@
         {
           "default": "",
           "document": "标签列表",
+          "example": "tag",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -3444,6 +3492,7 @@
         {
           "default": "",
           "document": "计费模式。1: 预付费; 2: 后付费; 3:预付费转后付费中",
+          "example": "1",
           "member": "uint64",
           "name": "CpmPayMode",
           "required": true,
@@ -3453,6 +3502,7 @@
         {
           "default": "",
           "document": "带外IP",
+          "example": "10.1.0.1",
           "member": "string",
           "name": "DhcpIp",
           "required": true,
@@ -3462,6 +3512,7 @@
         {
           "default": "",
           "document": "所在私有网络别名",
+          "example": "vpc名称",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -3471,6 +3522,7 @@
         {
           "default": "",
           "document": "所在子网别名",
+          "example": "子网名称",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -3480,6 +3532,7 @@
         {
           "default": "",
           "document": "所在私有网络CIDR",
+          "example": "10.0.0.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
           "required": true,
@@ -3489,6 +3542,7 @@
         {
           "default": "",
           "document": "所在子网CIDR",
+          "example": "10.0.0.0/24",
           "member": "string",
           "name": "SubnetCidrBlock",
           "required": true,
@@ -3498,11 +3552,32 @@
         {
           "default": "",
           "document": "标识是否是竞价实例。0: 普通设备; 1: 竞价实例设备",
+          "example": "1",
           "member": "uint64",
           "name": "IsLuckyDevice",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Maintain",
+          "member": "string",
+          "name": "MaintainStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "维保信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "有厂商维保服务，可继续使用",
+          "member": "string",
+          "name": "MaintainMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

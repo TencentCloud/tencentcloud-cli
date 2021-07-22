@@ -180,6 +180,18 @@
       "name": "获取命名空间列表",
       "output": "DescribeEnvironmentsResponse"
     },
+    "DescribeNamespaceBundlesOpt": {
+      "document": "运营端获取命名空间bundle列表",
+      "input": "DescribeNamespaceBundlesOptRequest",
+      "name": "运营端获取命名空间bundle列表",
+      "output": "DescribeNamespaceBundlesOptResponse"
+    },
+    "DescribeNodeHealthOpt": {
+      "document": "运营端获节点健康状态",
+      "input": "DescribeNodeHealthOptRequest",
+      "name": "运营端获节点健康状态",
+      "output": "DescribeNodeHealthOptResponse"
+    },
     "DescribeProducers": {
       "document": "获取生产者列表，仅显示在线的生产者",
       "input": "DescribeProducersRequest",
@@ -363,6 +375,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "out"
+    },
+    "BundleSetOpt": {
+      "document": "运营端命名空间bundle实体",
+      "members": [],
       "usage": "out"
     },
     "ClearCmqQueueRequest": {
@@ -3173,6 +3190,141 @@
           "name": "EnvironmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespaceBundlesOptRequest": {
+      "document": "DescribeNamespaceBundlesOpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理集群名",
+          "example": "cluster-s3hklt5n",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟集群（租户）ID",
+          "example": "pulsar-nzw8q5b3g7b2",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名",
+          "example": "default",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要监控指标，若传false，则不需要传Limit和Offset分页参数",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedMetrics",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "查询限制条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNamespaceBundlesOptResponse": {
+      "document": "DescribeNamespaceBundlesOpt返回参数结构体",
+      "members": [
+        {
+          "document": "记录条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "bundle列表",
+          "example": "无",
+          "member": "BundleSetOpt",
+          "name": "BundleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeHealthOptRequest": {
+      "document": "DescribeNodeHealthOpt请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点实例ID",
+          "example": "ins-pkqqy3e2",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeHealthOptResponse": {
+      "document": "DescribeNodeHealthOpt返回参数结构体",
+      "members": [
+        {
+          "document": "0-异常；1-正常",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最近一次健康检查的时间",
+          "example": "2021-07-06 00:00:00",
+          "member": "string",
+          "name": "LatestHealthCheckTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

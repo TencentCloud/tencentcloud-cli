@@ -192,6 +192,7 @@
         {
           "default": "",
           "document": "活动 ID，请在人脸融合控制台查看。",
+          "example": "100646",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -200,6 +201,7 @@
         {
           "default": "",
           "document": "素材 ID，请在人脸融合控制台查看。",
+          "example": "qc_100646_154021_9",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -207,15 +209,8 @@
         },
         {
           "default": "",
-          "document": "图片 base64 数据。请确保人脸为正脸，无旋转。若某些手机拍摄后人脸被旋转，请使用图片的 EXIF 信息对图片进行旋转处理；请勿在 base64 数据中包含头部，如“data:image/jpeg;base64,”。",
-          "member": "string",
-          "name": "Image",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为30天。",
+          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
+          "example": "url",
           "member": "string",
           "name": "RspImgType",
           "required": true,
@@ -223,7 +218,17 @@
         },
         {
           "default": "",
+          "document": "图片 base64 数据。请确保人脸为正脸，无旋转。若某些手机拍摄后人脸被旋转，请使用图片的 EXIF 信息对图片进行旋转处理；请勿在 base64 数据中包含头部，如“data:image/jpeg;base64,”。",
+          "example": "image_base64",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "历史遗留字段，无需填写。因为融合只需提取人脸特征，不需要鉴黄。",
+          "example": "10",
           "member": "int64",
           "name": "PornDetect",
           "required": false,
@@ -232,10 +237,20 @@
         {
           "default": "",
           "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
+          "example": "0",
           "member": "int64",
           "name": "CelebrityIdentify",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片Url地址",
+          "example": "image_url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -245,15 +260,19 @@
       "members": [
         {
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "image_url",
           "member": "string",
           "name": "Image",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "不适宜内容识别结果",
+          "example": "[]",
           "member": "FuseFaceReviewResult",
           "name": "ReviewResultSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -356,6 +375,7 @@
         {
           "default": "",
           "document": "活动 ID，请在人脸融合控制台查看。",
+          "example": "300029",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -364,6 +384,7 @@
         {
           "default": "",
           "document": "素材 ID，请在人脸融合控制台查看。",
+          "example": "qc_300029_453345_1",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -371,7 +392,8 @@
         },
         {
           "default": "",
-          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为30天。",
+          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
+          "example": "url",
           "member": "string",
           "name": "RspImgType",
           "required": true,
@@ -380,6 +402,7 @@
         {
           "default": "",
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
+          "example": "[]",
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
@@ -388,6 +411,7 @@
         {
           "default": "",
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
+          "example": "1",
           "member": "int64",
           "name": "FuseProfileDegree",
           "required": false,
@@ -396,6 +420,7 @@
         {
           "default": "",
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
+          "example": "1",
           "member": "int64",
           "name": "FuseFaceDegree",
           "required": false,
@@ -404,6 +429,7 @@
         {
           "default": "",
           "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
+          "example": "无",
           "member": "int64",
           "name": "CelebrityIdentify",
           "required": false,
@@ -417,15 +443,19 @@
       "members": [
         {
           "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "/9/tetwtwe",
           "member": "string",
           "name": "FusedImage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FuseFaceReviewResult",
           "name": "ReviewResultSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

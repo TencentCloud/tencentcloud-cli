@@ -280,6 +280,14 @@
         "title": "查询数据库列表"
       }
     ],
+    "DescribeDBsNormal": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDBsNormal\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DBList\": [\n            {\n                \"IsFulltextEnabled\": \"0\",\n                \"UserAccessDesc\": \"MULTI_USER\",\n                \"IsMirroring\": \"1\",\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"IsSubscribed\": \"1\",\n                \"StateDesc\": \"ONLINE\",\n                \"IsCdcEnabled\": \"1\",\n                \"MirroringState\": \"SYNCHRONIZED\",\n                \"IsPublished\": \"1\",\n                \"RetentionPeriod\": \"20\",\n                \"IsDbChainingOn\": \"1\",\n                \"IsEncrypted\": \"0\",\n                \"IsTrustworthyOn\": \"1\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsBrokerEnabled\": \"1\",\n                \"IsAutoCleanupOn\": \"1\",\n                \"Name\": \"db_test\"\n            }\n        ],\n        \"RequestId\": \"9607d890-db08-11eb-9f54-a9df121c01af\"\n    }\n}",
+        "title": "查询数据库详细配置信息"
+      }
+    ],
     "DescribeFlowStatus": [
       {
         "document": "",
@@ -558,6 +566,30 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBRemark\r\n&InstanceId=mssql-njj2mtpl\r\n&DBRemarks.0.Name=db_test\r\n&DBRemarks.0.Remark=测试数据库\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "修改数据库备注"
+      }
+    ],
+    "ModifyDatabaseCDC": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabaseCDC\n&InstanceId=mssql-j8kv137v\n&DBNames.0=test_db\n&ModifyType=enable\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 9999,\n        \"RequestId\": \"a928d733-109a-4f44-84ad-991da182d0s3\"\n    }\n}",
+        "title": "开启、关闭数据库数据变更捕获CDC"
+      }
+    ],
+    "ModifyDatabaseCT": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabaseCT\n&InstanceId=mssql-j8kv137v\n&DBNames.0=test_db\n&ModifyType=enable\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 9999,\n        \"RequestId\": \"a928d733-1099-4f44-84ad-991da182d0s3\"\n    }\n}",
+        "title": "启用、禁用数据库数据变更跟踪CT"
+      }
+    ],
+    "ModifyDatabaseMdf": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabaseMdf\n&InstanceId=mssql-j8kv137v\n&DBNames.0=test_db\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 9999,\n        \"RequestId\": \"a989d733-1099-4f44-84ad-991da182d0w3\"\n    }\n}",
+        "title": "收缩数据库mdf"
       }
     ],
     "ModifyIncrementalMigration": [

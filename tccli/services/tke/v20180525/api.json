@@ -6,6 +6,12 @@
       "name": "获取集群RBAC管理员角色",
       "output": "AcquireClusterAdminRoleResponse"
     },
+    "AddClusterCIDR": {
+      "document": "给GR集群增加可用的ClusterCIDR",
+      "input": "AddClusterCIDRRequest",
+      "name": "给集群增加ClusterCIDR",
+      "output": "AddClusterCIDRResponse"
+    },
     "AddExistedInstances": {
       "document": "添加已经存在的实例到集群",
       "input": "AddExistedInstancesRequest",
@@ -348,6 +354,12 @@
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
     },
+    "DisableVpcCniNetworkType": {
+      "document": "提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI",
+      "input": "DisableVpcCniNetworkTypeRequest",
+      "name": "关闭附加的VPC-CNI网络能力",
+      "output": "DisableVpcCniNetworkTypeResponse"
+    },
     "EnableVpcCniNetworkType": {
       "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
       "input": "EnableVpcCniNetworkTypeRequest",
@@ -462,6 +474,51 @@
     },
     "AcquireClusterAdminRoleResponse": {
       "document": "AcquireClusterAdminRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClusterCIDRRequest": {
+      "document": "AddClusterCIDR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增加的ClusterCIDR",
+          "example": "[\"10.0.0.0/14\",\"192.168.0.0/16\"]",
+          "member": "string",
+          "name": "ClusterCIDRs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否忽略ClusterCIDR与VPC路由表的冲突",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreClusterCIDRConflict",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClusterCIDRResponse": {
+      "document": "AddClusterCIDR返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4737,6 +4794,33 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableVpcCniNetworkTypeRequest": {
+      "document": "DisableVpcCniNetworkType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableVpcCniNetworkTypeResponse": {
+      "document": "DisableVpcCniNetworkType返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

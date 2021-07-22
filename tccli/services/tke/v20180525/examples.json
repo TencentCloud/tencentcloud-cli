@@ -8,6 +8,14 @@
         "title": "获取集群管理员角色"
       }
     ],
+    "AddClusterCIDR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterCIDR\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"ClusterCIDRs\": [\n        \"10.0.0.0/14\",\n        \"192.168.0.0/16\"\n    ],\n    \"IgnoreClusterCIDRConflict\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "给集群增加ClusterCIDR"
+      }
+    ],
     "AddExistedInstances": [
       {
         "document": "添加已经存在的实例到集群",
@@ -474,6 +482,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeRouteTableConflicts\n&RouteTableCidrBlock=10.4.0.0/16\n&VpcId=vpc-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由表冲突列表"
+      }
+    ],
+    "DisableVpcCniNetworkType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "关闭vpc-cni网络"
       }
     ],
     "EnableVpcCniNetworkType": [

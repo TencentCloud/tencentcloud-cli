@@ -31,7 +31,7 @@
       "output": "AllocateIp6AddressesBandwidthResponse"
     },
     "AssignIpv6Addresses": {
-      "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。",
+      "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。",
       "input": "AssignIpv6AddressesRequest",
       "name": "分配IPv6地址",
       "output": "AssignIpv6AddressesResponse"
@@ -427,7 +427,7 @@
       "output": "DeleteFlowLogResponse"
     },
     "DeleteHaVip": {
-      "document": "本接口（DeleteHaVip）用于删除高可用虚拟IP（HAVIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口",
+      "document": "本接口（DeleteHaVip）用于删除高可用虚拟IP（HAVIP）。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "DeleteHaVipRequest",
       "name": "删除HAVIP",
       "output": "DeleteHaVipResponse"
@@ -930,6 +930,12 @@
       "name": "查看VPC资源信息",
       "output": "DescribeVpcResourceDashboardResponse"
     },
+    "DescribeVpcTaskResult": {
+      "document": "本接口（DescribeVpcTaskResult）用于查询VPC任务执行结果。",
+      "input": "DescribeVpcTaskResultRequest",
+      "name": "查询异步任务执行结果",
+      "output": "DescribeVpcTaskResultResponse"
+    },
     "DescribeVpcs": {
       "document": "本接口（DescribeVpcs）用于查询私有网络列表。",
       "input": "DescribeVpcsRequest",
@@ -1075,13 +1081,13 @@
       "output": "GetCcnRegionBandwidthLimitsResponse"
     },
     "HaVipAssociateAddressIp": {
-      "document": "本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口",
+      "document": "本接口（HaVipAssociateAddressIp）用于高可用虚拟IP（HAVIP）绑定弹性公网IP（EIP）。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "HaVipAssociateAddressIpRequest",
       "name": "HAVIP绑定EIP",
       "output": "HaVipAssociateAddressIpResponse"
     },
     "HaVipDisassociateAddressIp": {
-      "document": "本接口（HaVipDisassociateAddressIp）用于将高可用虚拟IP（HAVIP）已绑定的弹性公网IP（EIP）解除绑定<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口",
+      "document": "本接口（HaVipDisassociateAddressIp）用于将高可用虚拟IP（HAVIP）已绑定的弹性公网IP（EIP）解除绑定。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "HaVipDisassociateAddressIpRequest",
       "name": "HAVIP解绑EIP",
       "output": "HaVipDisassociateAddressIpResponse"
@@ -1501,7 +1507,7 @@
       "output": "TransformAddressResponse"
     },
     "UnassignIpv6Addresses": {
-      "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`QueryTask`接口。",
+      "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "UnassignIpv6AddressesRequest",
       "name": "释放IPv6地址",
       "output": "UnassignIpv6AddressesResponse"
@@ -2287,6 +2293,7 @@
         {
           "default": "",
           "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
+          "example": "eni-5u5biujl",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -2295,6 +2302,7 @@
         {
           "default": "",
           "document": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -2303,6 +2311,7 @@
         {
           "default": "",
           "document": "自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。",
+          "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
           "required": false,
@@ -2316,8 +2325,10 @@
       "members": [
         {
           "document": "分配给弹性网卡的`IPv6`地址列表。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11186,6 +11197,51 @@
       ],
       "type": "object"
     },
+    "DescribeVpcTaskResultRequest": {
+      "document": "DescribeVpcTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "异步任务请求返回的RequestId。",
+          "example": "481e9b6e-81d1-4859-b8cf-a673e010b388",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcTaskResultResponse": {
+      "document": "DescribeVpcTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务执行结果。结果：SUCCESS、FAILED、RUNNING。3者其中之一。其中SUCCESS表示任务执行成功，FAILED表示任务执行失败，RUNNING表示任务执行中。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异步任务执行输出。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Output",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcsRequest": {
       "document": "DescribeVpcs请求参数结构体",
       "members": [
@@ -13205,6 +13261,7 @@
         {
           "default": "",
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。必须是没有绑定`EIP`的`HAVIP`",
+          "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -13213,6 +13270,7 @@
         {
           "default": "",
           "document": "弹性公网`IP`。必须是没有绑定`HAVIP`的`EIP`",
+          "example": "119.29.93.218",
           "member": "string",
           "name": "AddressIp",
           "required": true,
@@ -13239,6 +13297,7 @@
         {
           "default": "",
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。必须是已绑定`EIP`的`HAVIP`。",
+          "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -19673,6 +19732,7 @@
         {
           "default": "",
           "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
+          "example": "eni-9c8zkfev",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -19681,6 +19741,7 @@
         {
           "default": "",
           "document": "指定的`IPv6`地址列表，单次最多指定10个。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": true,

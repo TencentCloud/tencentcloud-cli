@@ -216,6 +216,12 @@
       "name": "修改只读组配置",
       "output": "ModifyReadOnlyGroupConfigResponse"
     },
+    "ModifySwitchTimePeriod": {
+      "document": "当升级完成后，对处于等待切换状态下的实例，强制实例立即切换。",
+      "input": "ModifySwitchTimePeriodRequest",
+      "name": "修改变更配置切换时间",
+      "output": "ModifySwitchTimePeriodResponse"
+    },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通外网。",
       "input": "OpenDBExtranetAccessRequest",
@@ -265,9 +271,9 @@
       "output": "SetAutoRenewFlagResponse"
     },
     "UpgradeDBInstance": {
-      "document": "本接口（UpgradeDBInstance）用于升级实例。",
+      "document": "本接口（UpgradeDBInstance）用于升级实例配置。",
       "input": "UpgradeDBInstanceRequest",
-      "name": "升级实例",
+      "name": "升级实例配置",
       "output": "UpgradeDBInstanceResponse"
     }
   },
@@ -3424,6 +3430,42 @@
       ],
       "type": "object"
     },
+    "ModifySwitchTimePeriodRequest": {
+      "document": "ModifySwitchTimePeriod请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "处于等待切换状态中的实例ID",
+          "example": "postgres-19nmz2xb",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "入参取值为 0 ，代表立即切换。",
+          "example": "0:立即切换",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySwitchTimePeriodResponse": {
+      "document": "ModifySwitchTimePeriod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NormalQueryItem": {
       "document": "单条SlowQuery信息",
       "members": [
@@ -4574,6 +4616,7 @@
         {
           "default": "",
           "document": "升级后的实例内存大小，单位GB",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -4582,6 +4625,7 @@
         {
           "default": "",
           "document": "升级后的实例磁盘大小，单位GB",
+          "example": "200",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -4590,6 +4634,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-lnp6j617",
+          "example": "postgres-6bwgamo3",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -4598,6 +4643,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -4606,6 +4652,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券",
+          "example": "无",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -4614,10 +4661,38 @@
         {
           "default": "",
           "document": "活动ID",
+          "example": "无",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "example": "0",
+          "member": "int64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间",
+          "example": "8:30:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换截止时间",
+          "example": "8:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4627,15 +4702,19 @@
       "members": [
         {
           "document": "交易名字。",
+          "example": "201806127634",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "冻结流水号",
+          "example": "123",
           "member": "string",
           "name": "BillId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

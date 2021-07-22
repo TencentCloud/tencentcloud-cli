@@ -192,6 +192,12 @@
       "name": "查询数据库列表",
       "output": "DescribeDBsResponse"
     },
+    "DescribeDBsNormal": {
+      "document": "本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号",
+      "input": "DescribeDBsNormalRequest",
+      "name": "查询数据库配置信息",
+      "output": "DescribeDBsNormalResponse"
+    },
     "DescribeFlowStatus": {
       "document": "本接口(DescribeFlowStatus)用于查询流程状态。",
       "input": "DescribeFlowStatusRequest",
@@ -401,6 +407,24 @@
       "input": "ModifyDBRemarkRequest",
       "name": "修改数据库备注",
       "output": "ModifyDBRemarkResponse"
+    },
+    "ModifyDatabaseCDC": {
+      "document": "本接口(ModifyDatabaseCDC)用于开启、关闭数据库数据变更捕获(CDC)",
+      "input": "ModifyDatabaseCDCRequest",
+      "name": "开启&关闭数据库CDC",
+      "output": "ModifyDatabaseCDCResponse"
+    },
+    "ModifyDatabaseCT": {
+      "document": "本接口(ModifyDatabaseCT)用于启用、禁用数据库数据变更跟踪(CT)",
+      "input": "ModifyDatabaseCTRequest",
+      "name": "启用&禁用数据库CT",
+      "output": "ModifyDatabaseCTResponse"
+    },
+    "ModifyDatabaseMdf": {
+      "document": "本接口(ModifyDatabaseMdf)用于收缩数据库mdf(Shrink mdf)",
+      "input": "ModifyDatabaseMdfRequest",
+      "name": "收缩数据库mdf",
+      "output": "ModifyDatabaseMdfResponse"
     },
     "ModifyIncrementalMigration": {
       "document": "本接口（ModifyIncrementalMigration）用于修改增量备份导入任务。",
@@ -2612,6 +2636,192 @@
       ],
       "usage": "out"
     },
+    "DbNormalDetail": {
+      "document": "数据库配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否已订阅 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsSubscribed",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库排序规则",
+          "example": "Chinese_PRC_CI_AS",
+          "member": "string",
+          "name": "CollationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启CT之后是否自动清理 0：否 1：是",
+          "example": "\"\"",
+          "member": "string",
+          "name": "IsAutoCleanupOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已启用代理  0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsBrokerEnabled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已开启/关闭CDC 0：关闭 1：开启",
+          "example": "0",
+          "member": "string",
+          "name": "IsCdcEnabled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已启用/ 禁用CT 0：禁用 1：启用",
+          "example": "0",
+          "member": "string",
+          "name": "IsDbChainingOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否加密 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsEncrypted",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否全文启用 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsFulltextEnabled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是镜像 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsMirroring",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已发布 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsPublished",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启快照 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsReadCommittedSnapshotOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可信任 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsTrustworthyOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像状态",
+          "example": "SYNCHRONIZED",
+          "member": "string",
+          "name": "MirroringState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "mirror_test37",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "恢复模式",
+          "example": "FULL",
+          "member": "string",
+          "name": "RecoveryModelDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留天数",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RetentionPeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库状态",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "StateDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户类型",
+          "example": "MULTI_USER",
+          "member": "string",
+          "name": "UserAccessDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DbRollbackTimeInfo": {
       "document": "数据库可回档时间范围信息",
       "members": [
@@ -3727,6 +3937,51 @@
           "document": "安全组详情。",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBsNormalRequest": {
+      "document": "DescribeDBsNormal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如mssql-7vfv3rk3",
+          "example": "mssql-7vfv3rk3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBsNormalResponse": {
+      "document": "DescribeDBsNormal返回参数结构体",
+      "members": [
+        {
+          "document": "表示当前实例下的数据库总个数",
+          "example": "77",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据库的详细配置信息，比如：数据库是否开启CDC、CT等",
+          "example": "无",
+          "member": "DbNormalDetail",
+          "name": "DBList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6521,6 +6776,168 @@
     "ModifyDBRemarkResponse": {
       "document": "ModifyDBRemark返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseCDCRequest": {
+      "document": "ModifyDatabaseCDC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名数组",
+          "example": "[db_test]",
+          "member": "string",
+          "name": "DBNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开启、关闭数据库CDC功能 enable；开启，disable：关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "ModifyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseCDCResponse": {
+      "document": "ModifyDatabaseCDC返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "99999",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseCTRequest": {
+      "document": "ModifyDatabaseCT请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名数组",
+          "example": "[db_test]",
+          "member": "string",
+          "name": "DBNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "启用、禁用数据库CT功能 enable；启用，disable：禁用",
+          "example": "enable",
+          "member": "string",
+          "name": "ModifyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启用CT时额外保留天数，默认保留3天，最小3天，最大30天",
+          "example": "3",
+          "member": "int64",
+          "name": "ChangeRetentionDay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseCTResponse": {
+      "document": "ModifyDatabaseCT返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "9999",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseMdfRequest": {
+      "document": "ModifyDatabaseMdf请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名数组",
+          "example": "[db_test]",
+          "member": "string",
+          "name": "DBNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseMdfResponse": {
+      "document": "ModifyDatabaseMdf返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "99999",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

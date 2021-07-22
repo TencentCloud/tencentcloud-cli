@@ -102,6 +102,15 @@
           "name": "Capacity",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "应用模板ID",
+          "example": "app-1abcedf",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

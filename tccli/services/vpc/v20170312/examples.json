@@ -55,13 +55,13 @@
     "AssignIpv6Addresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6Addresses\r\n&NetworkInterfaceId=eni-5u5biujl\r\n&Ipv6Addresses.0.Address=3402:4e00:20:1202::1\r\n&Ipv6Addresses.0.Primary=false\r\n&Ipv6Addresses.0.Description=test1\r\n&Ipv6Addresses.1.Address=3402:4e00:20:1202::2\r\n&Ipv6Addresses.1.Primary=false\r\n&Ipv6Addresses.1.Description=test2\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&NetworkInterfaceId=eni-5u5biujl\n&Ipv6Addresses.0.Address=3402:4e00:20:1202::1\n&Ipv6Addresses.0.Primary=false\n&Ipv6Addresses.0.Description=test1\n&Ipv6Addresses.1.Address=3402:4e00:20:1202::2\n&Ipv6Addresses.1.Primary=false\n&Ipv6Addresses.1.Description=test2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ipv6AddressSet\": [\n            {\n                \"Address\": \"3402:4e00:20:1202::1\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"test1\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            },\n            {\n                \"Address\": \"3402:4e00:20:1202::2\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"test2\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\n    }\n}",
         "title": "分配指定IPv6地址"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6Addresses\r\n&NetworkInterfaceId=eni-5u5biujl\r\n&Ipv6AddressCount=2\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&NetworkInterfaceId=eni-5u5biujl\n&Ipv6AddressCount=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ipv6AddressSet\": [\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            },\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f559\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\n    }\n}",
         "title": "按个数自动分配IPv6地址"
       }
@@ -1432,6 +1432,14 @@
         "title": "查看VPC资源信息"
       }
     ],
+    "DescribeVpcTaskResult": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcTaskResult\n&TaskId=481e9b6e-81d1-4859-b8cf-a673e010b388\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"Output\": \"SUCCESS\",\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "查询异步任务执行结果"
+      }
+    ],
     "DescribeVpcs": [
       {
         "document": "",
@@ -1651,7 +1659,7 @@
     "HaVipAssociateAddressIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=HaVipAssociateAddressIp\r\n&HaVipId=havip-9o233uri\r\n&AddressIp=119.29.93.218\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=HaVipAssociateAddressIp\n&HaVipId=havip-9o233uri\n&AddressIp=119.29.93.218\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "HAVIP绑定EIP"
       }
@@ -1659,7 +1667,7 @@
     "HaVipDisassociateAddressIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=HaVipDisassociateAddressIp\r\n&HaVipId=havip-9o233uri\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=HaVipDisassociateAddressIp\n&HaVipId=havip-9o233uri\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "HAVIP解绑EIP"
       }
@@ -2261,7 +2269,7 @@
     "UnassignIpv6Addresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=UnassignIpv6Addresses\r\n&NetworkInterfaceId=eni-9c8zkfev\r\n&Ipv6Addresses.0.Address=3402:4e00:20:1202:0:8d01:ee9c:3e22\r\n&Ipv6Addresses.1.Address=3402:4e00:20:1202:0:8d01:ee9c:3f7d\r\n&Ipv6Addresses.2.Address=3402:4e00:20:1202:0:8d01:fef4:c7d5\r\n&Ipv6Addresses.3.Address=3402:4e00:20:1202:0:8d01:fef4:c97f\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UnassignIpv6Addresses\n&NetworkInterfaceId=eni-9c8zkfev\n&Ipv6Addresses.0.Address=3402:4e00:20:1202:0:8d01:ee9c:3e22\n&Ipv6Addresses.1.Address=3402:4e00:20:1202:0:8d01:ee9c:3f7d\n&Ipv6Addresses.2.Address=3402:4e00:20:1202:0:8d01:fef4:c7d5\n&Ipv6Addresses.3.Address=3402:4e00:20:1202:0:8d01:fef4:c97f\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\"\n    }\n}",
         "title": "释放IPv6地址"
       }

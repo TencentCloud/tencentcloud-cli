@@ -11,6 +11,7 @@ tccli mna CreateQos --cli-unfold-argument  \
     --SrcAddressInfo.SrcIpv4 192.168.2.11 \
     --SrcAddressInfo.SrcPublicIpv4 10.22.33.14 \
     --DestAddressInfo.DestIp 128.22.36.40 \
+    --TemplateId app-1abacedf \
     --DeviceInfo.OS 1 \
     --DeviceInfo.Vendor 2 \
     --DeviceInfo.DeviceId 357315094232545 \
