@@ -25,7 +25,8 @@ class BasicConfigure(BasicCommand):
         super(BasicConfigure, self).__init__()
         self.config_list = [
             OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings]
-        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token]
+        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.RoleArn,
+                          OptionsDefine.RoleSessionName, OptionsDefine.Token]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -91,12 +92,14 @@ class BasicConfigure(BasicCommand):
 
 class ConfigureListCommand(BasicConfigure):
     NAME = 'list'
-    DESCRIPTION = 'list your profile(eg:secretId, secretKey, region, output).'
+    DESCRIPTION = 'list your profile(eg:secretId, secretKey, roleArn, roleSessionName, region, output).'
     USEAGE = 'tccli configure list [--profile profile-name]'
     EXAMPLES = "$ tccli configure list\n" \
                "credential:\n" \
                "secretId = ********************************\n" \
                "secretKey = ********************************\n" \
+               "roleArn = ********************************\n" \
+               "roleSessionName = ********************************\n" \
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
@@ -145,10 +148,12 @@ class ConfigureListCommand(BasicConfigure):
 
 class ConfigureSetCommand(BasicConfigure):
     NAME = 'set'
-    DESCRIPTION = 'set your profile(eg:secretId, secretKey, region, output).'
+    DESCRIPTION = 'set your profile(eg:secretId, secretKey, roleArn, roleSessionName, region, output).'
     USEAGE = 'tccli configure set [CONFIG] [--profile profile-name]'
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
+                      "roleArn: TencentCloud API RoleArn\n" \
+                      "roleSessionName: TencentCloud API RoleSessionName\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
@@ -206,10 +211,12 @@ class ConfigureSetCommand(BasicConfigure):
 
 class ConfigureGetCommand(BasicConfigure):
     NAME = 'get'
-    DESCRIPTION = "get your profile(eg:SecretId, SecretKey, Region)."
+    DESCRIPTION = "get your profile(eg:SecretId, SecretKey, RoleArn, RoleSessionName, Region)."
     USEAGE = "tccli configure get [CONFIG] [--profile profile-name]"
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
+                      "roleArn: TencentCloud API RoleArn\n"\
+                      "roleSessionName: TencentCloud API RoleSessionName\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
@@ -266,13 +273,15 @@ class ConfigureGetCommand(BasicConfigure):
 
 class ConfigureCommand(BasicConfigure):
     NAME = "configure"
-    DESCRIPTION = "configure your profile(eg:secretId, secretKey, region, output)."
+    DESCRIPTION = "configure your profile(eg:secretId, secretKey, roleArn, roleSessionName, region, output)."
     USEAGE = "tccli configure [--profile profile-name]"
     AVAILABLESUBCOMMAND = ["set", 'get', 'list']
     EXAMPLES = "To create a new configuration::\n" \
                "    $ tccli configure\n" \
                "    TencentCloud API secretId [None]: secretId\n" \
                "    TencentCloud API secretKey [None]: secretKey\n" \
+               "    TencentCloud API roleArn [None]: roleArn\n" \
+               "    TencentCloud API roleSessionName [None]: roleSessionName\n" \
                "    Default region name [ap-guangzhou]:\n" \
                "    Default output format [json]:\n" \
                "\n\n" \
@@ -280,6 +289,8 @@ class ConfigureCommand(BasicConfigure):
                "    $ tccli configure\n" \
                "    TencentCloud API secretId [****]:\n" \
                "    TencentCloud API secretKey [****]:\n" \
+               "    TencentCloud API roleArn [****]: roleArn\n" \
+               "    TencentCloud API roleSessionName [****]: roleSessionName\n" \
                "    Default region name [ap-guangzhou]: ap-beijing\n" \
                "    Default output format [json]:\n"
     SUBCOMMANDS = [
@@ -291,6 +302,8 @@ class ConfigureCommand(BasicConfigure):
     VALUES_TO_PROMPT = [
         ('secretId', "TencentCloud API secretId"),
         ('secretKey', "TencentCloud API secretKey"),
+        ('roleArn', "TencentCloud API roleArn"),
+        ('roleSessionName', "TencentCloud API roleSessionName"),
         ('region', "Default region name"),
         ('output', "Default output format"),
     ]
@@ -311,7 +324,9 @@ class ConfigureCommand(BasicConfigure):
 
         cred = {
             OptionsDefine.SecretId: "None",
-            OptionsDefine.SecretKey: "None"
+            OptionsDefine.SecretKey: "None",
+            OptionsDefine.RoleArn: "None",
+            OptionsDefine.RoleSessionName: "None"
         }
 
         is_conf_exist, config_path = self._profile_existed(profile_name + ".configure")
