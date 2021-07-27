@@ -210,6 +210,18 @@
       "name": "查询增量备份导入任务",
       "output": "DescribeIncrementalMigrationResponse"
     },
+    "DescribeInstanceParamRecords": {
+      "document": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。",
+      "input": "DescribeInstanceParamRecordsRequest",
+      "name": "查询实例参数修改历史",
+      "output": "DescribeInstanceParamRecordsResponse"
+    },
+    "DescribeInstanceParams": {
+      "document": "该接口（DescribeInstanceParams）用于查询实例的参数列表。",
+      "input": "DescribeInstanceParamsRequest",
+      "name": "查询实例的可设置参数列表",
+      "output": "DescribeInstanceParamsResponse"
+    },
     "DescribeMaintenanceSpan": {
       "document": "本接口（DescribeMaintenanceSpan）根据实例ID查询该实例的可维护时间窗。",
       "input": "DescribeMaintenanceSpanRequest",
@@ -431,6 +443,12 @@
       "input": "ModifyIncrementalMigrationRequest",
       "name": "修改增量备份导入任务",
       "output": "ModifyIncrementalMigrationResponse"
+    },
+    "ModifyInstanceParam": {
+      "document": "本接口(ModifyInstanceParam)用于修改云数据库实例的参数。\n<b>注意</b>：如果修改的参数是需要<b>重启实例</b>的，那么实例将会按照WaitSwitch参数的设置(可能是立即执行也可能在可维护时间窗内自动执行)在执行参数修改时<b>重启实例</b>。\n您可以通过DescribeInstanceParams接口查询修改参数时是否会重启实例，以免导致您的实例不符合预期重启。",
+      "input": "ModifyInstanceParamRequest",
+      "name": "修改实例参数",
+      "output": "ModifyInstanceParamResponse"
     },
     "ModifyMaintenanceSpan": {
       "document": "本接口（ModifyMaintenanceSpan）用于修改实例的可维护时间窗",
@@ -3977,7 +3995,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "返回数据库的详细配置信息，比如：数据库是否开启CDC、CT等",
+          "document": "返回数据库的详细配置信息，例如：数据库是否开启CDC、CT等",
           "example": "无",
           "member": "DbNormalDetail",
           "name": "DBList",
@@ -4187,6 +4205,114 @@
           "example": "无",
           "member": "Migration",
           "name": "IncrementalMigrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamRecordsRequest": {
+      "document": "DescribeInstanceParamRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：mssql-dj5i29c5n，与云数据库控制台页面中显示的实例 ID 相同，可使用 DescribeDBInstances 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页，页数，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页，页大小，默认20，最大不超过100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamRecordsResponse": {
+      "document": "DescribeInstanceParamRecords返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数修改记录",
+          "example": "无",
+          "member": "ParamRecord",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamsRequest": {
+      "document": "DescribeInstanceParams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：mssql-dj5i29c5n，与云数据库控制台页面中显示的实例 ID 相同，可使用 DescribeDBInstances 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamsResponse": {
+      "document": "DescribeInstanceParams返回参数结构体",
+      "members": [
+        {
+          "document": "实例的参数总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数详情",
+          "example": "无",
+          "member": "ParameterDetail",
+          "name": "Items",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -7019,6 +7145,51 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceParamRequest": {
+      "document": "ModifyInstanceParam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例短 ID 列表",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改的值。<b>注意</b>：如果修改的参数需要<b>重启</b>实例，那么您的实例将会在执行修改时<b>重启</b>。您可以通过DescribeInstanceParams接口查询修改参数时是否会重启实例，以免导致您的实例不符合预期重启。",
+          "example": "无",
+          "member": "Parameter",
+          "name": "ParamList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行。",
+          "example": "0",
+          "member": "int64",
+          "name": "WaitSwitch",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceParamResponse": {
+      "document": "ModifyInstanceParam返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMaintenanceSpanRequest": {
       "document": "ModifyMaintenanceSpan请求参数结构体",
       "members": [
@@ -7273,6 +7444,204 @@
         }
       ],
       "type": "object"
+    },
+    "ParamRecord": {
+      "document": "实例参数修改记录",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "mssql-hbr4jy7i",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "fill factor (%)",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数修改前的值",
+          "example": "2",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数修改后的值",
+          "example": "100",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数修改状态，1-初始化等待被执行，2-执行成功，3-执行失败，4-参数修改中",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2020-04-09 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Parameter": {
+      "document": "数据库实例参数",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "fill factor (%)",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值",
+          "example": "1",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ParameterDetail": {
+      "document": "实例参数的详细描述",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "fill factor (%)",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型，integer-整型，enum-枚举型",
+          "example": "INT",
+          "member": "string",
+          "name": "ParamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数默认值",
+          "example": "0",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数描述",
+          "example": "The fill-factor option is provided for fine-tuning index data st",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数当前值",
+          "example": "5",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改参数后，是否需要重启数据库以使参数生效，0-不需要重启，1-需要重启",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数允许的最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Max",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数允许的最小值",
+          "example": "0",
+          "member": "int64",
+          "name": "Min",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数允许的枚举类型",
+          "example": "[\"YES\", \"NO\"]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数状态 0-状态正常 1-在修改中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PublishSubscribe": {
       "document": "发布订阅对象",

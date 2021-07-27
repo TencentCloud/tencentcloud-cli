@@ -103,7 +103,7 @@
       "output": "AttachClassicLinkVpcResponse"
     },
     "AttachNetworkInterface": {
-      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。",
+      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "AttachNetworkInterfaceRequest",
       "name": "弹性网卡绑定云服务器",
       "output": "AttachNetworkInterfaceResponse"
@@ -475,7 +475,7 @@
       "output": "DeleteNetworkAclResponse"
     },
     "DeleteNetworkInterface": {
-      "document": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。",
+      "document": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "DeleteNetworkInterfaceRequest",
       "name": "删除弹性网卡",
       "output": "DeleteNetworkInterfaceResponse"
@@ -979,7 +979,7 @@
       "output": "DetachClassicLinkVpcResponse"
     },
     "DetachNetworkInterface": {
-      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。",
+      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "DetachNetworkInterfaceRequest",
       "name": "弹性网卡解绑云服务器",
       "output": "DetachNetworkInterfaceResponse"
@@ -1117,13 +1117,13 @@
       "output": "InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse"
     },
     "MigrateNetworkInterface": {
-      "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。",
+      "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "MigrateNetworkInterfaceRequest",
       "name": "弹性网卡迁移",
       "output": "MigrateNetworkInterfaceResponse"
     },
     "MigratePrivateIpAddress": {
-      "document": " 本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。",
+      "document": " 本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "MigratePrivateIpAddressRequest",
       "name": "弹性网卡内网IP迁移",
       "output": "MigratePrivateIpAddressResponse"
@@ -2512,6 +2512,7 @@
         {
           "default": "",
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
+          "example": "eip-ek0cdz1g",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -2520,6 +2521,7 @@
         {
           "default": "",
           "document": "要绑定的实例 ID。实例 ID 形如：`ins-11112222`。可通过登录[控制台](https://console.cloud.tencent.com/cvm)查询，也可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
+          "example": "ins-1bmpb9tu",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2528,6 +2530,7 @@
         {
           "default": "",
           "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：`eni-11112222`。`NetworkInterfaceId` 与 `InstanceId` 不可同时指定。弹性网卡 ID 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的`networkInterfaceId`获取。",
+          "example": "eni-jyhoxx61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": false,
@@ -2536,10 +2539,20 @@
         {
           "default": "",
           "document": "要绑定的内网 IP。如果指定了 `NetworkInterfaceId` 则也必须指定 `PrivateIpAddress` ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 `PrivateIpAddress` 是指定的 `NetworkInterfaceId` 上的一个内网 IP。指定弹性网卡的内网 IP 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的`privateIpAddress`获取。",
+          "example": "10.0.0.120",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定绑定时是否设置直通。弹性公网 IP 直通请参见 [EIP 直通](https://cloud.tencent.com/document/product/1199/41709)。取值：True、False，默认值为 False。当绑定 CVM 实例、EKS 弹性集群时，可设定此参数为 True。此参数目前处于内测中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&level3_id=1071&queue=96&scene_code=34639&step=2)。",
+          "example": "False",
+          "member": "bool",
+          "name": "EipDirectConnection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2549,8 +2562,10 @@
       "members": [
         {
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "50121411",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7183,6 +7198,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -11695,6 +11711,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -11703,6 +11720,7 @@
         {
           "default": "",
           "document": "CVM实例ID。形如：ins-r8hr2upy。",
+          "example": "ins-ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
           "required": true,

@@ -90,6 +90,12 @@
       "name": "删除安全网关路由",
       "output": "DeleteWxGatewayRouteResponse"
     },
+    "DescribeActivityRecord": {
+      "document": "查询活动记录信息",
+      "input": "DescribeActivityRecordRequest",
+      "name": "查询活动记录信息",
+      "output": "DescribeActivityRecordResponse"
+    },
     "DescribeAuthDomains": {
       "document": "获取安全域名列表",
       "input": "DescribeAuthDomainsRequest",
@@ -318,6 +324,12 @@
       "name": "恢复环境，解除隔离状态",
       "output": "ReinstateEnvResponse"
     },
+    "ReplaceActivityRecord": {
+      "document": "更新活动详情",
+      "input": "ReplaceActivityRecordRequest",
+      "name": "更新活动详情",
+      "output": "ReplaceActivityRecordResponse"
+    },
     "RollUpdateCloudBaseRunServerVersion": {
       "document": "针对特定的版本，进行滚动更新",
       "input": "RollUpdateCloudBaseRunServerVersionRequest",
@@ -332,6 +344,52 @@
     "serviceShortName": "tcb"
   },
   "objects": {
+    "ActivityRecordItem": {
+      "document": "活动详情",
+      "members": [
+        {
+          "default": "",
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义子状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "string",
+          "name": "SubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AuthDomain": {
       "document": "合法域名",
       "members": [
@@ -3084,6 +3142,69 @@
     "DeleteWxGatewayRouteResponse": {
       "document": "DeleteWxGatewayRoute返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivityRecordRequest": {
+      "document": "DescribeActivityRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道加密token",
+          "example": "\"ssss\"",
+          "member": "string",
+          "name": "ChannelToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道来源，每个来源对应不同secretKey",
+          "example": "\"qc_console\"",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动id列表",
+          "example": "[1,2,4]",
+          "member": "int64",
+          "name": "ActivityIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤状态码",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivityRecordResponse": {
+      "document": "DescribeActivityRecord返回参数结构体",
+      "members": [
+        {
+          "document": "活动记录详情",
+          "example": "无",
+          "member": "ActivityRecordItem",
+          "name": "ActivityRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6830,6 +6951,69 @@
     },
     "ReinstateEnvResponse": {
       "document": "ReinstateEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceActivityRecordRequest": {
+      "document": "ReplaceActivityRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "1",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "状态码",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义子状态",
+          "example": "\"3\"",
+          "member": "string",
+          "name": "SubStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "鉴权token",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "ChannelToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名，不同渠道对应不同secretKey",
+          "example": "\"qc_console\"",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceActivityRecordResponse": {
+      "document": "ReplaceActivityRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

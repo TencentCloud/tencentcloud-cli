@@ -304,6 +304,22 @@
         "title": "查询增量备份导入任务"
       }
     ],
+    "DescribeInstanceParamRecords": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\n&InstanceId=mssql-bm5e51kb\n&Offset=0\n&Limit=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"InstanceId\": \"mssql-bm5e51kb\",\n                \"ModifyTime\": \"2021-04-09 19:04:12\",\n                \"NewValue\": \"60\",\n                \"OldValue\": \"80\",\n                \"ParamName\": \"fill factor(%)\",\n                \"Status\": 3\n            },\n            {\n                \"InstanceId\": \"mssql-bm5e51kb\",\n                \"ModifyTime\": \"2021-04-09 20:26:57\",\n                \"NewValue\": \"60\",\n                \"OldValue\": \"80\",\n                \"ParamName\": \"fill factor(%)\",\n                \"Status\": 3\n            }\n        ],\n        \"RequestId\": \"10684c55-95b7-40de-b070-23f02c6746d2\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询实例参数修改历史"
+      }
+    ],
+    "DescribeInstanceParams": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeInstanceParams\n&InstanceId=mssql-bm5e51kb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CurrentValue\": \"24\",\n                \"Default\": \"0\",\n                \"Description\": \"The fill-factor option is provided for fine-tuning index data storage and performance.\",\n                \"EnumValue\": [],\n                \"Max\": 100,\n                \"Min\": 0,\n                \"Name\": \"fill factor(%)\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"0\",\n                \"Default\": \"0\",\n                \"Description\": \"The max worker threads option configures the number of worker threads that are available SQL Server-wide to process query requests, login, logout, and similar application requests.\",\n                \"EnumValue\": [\n                    \"0\"\n                ],\n                \"Max\": 32767,\n                \"Min\": 336,\n                \"Name\": \"max worker threads\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"30000\",\n                \"Default\": \"5\",\n                \"Description\": \"The cost threshold for parallelism option specifies the threshold at which SQL Server creates and runs parallel plans for queries.\",\n                \"EnumValue\": [],\n                \"Max\": 32767,\n                \"Min\": 0,\n                \"Name\": \"cost threshold for parallelism\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"1024\",\n                \"Default\": \"0\",\n                \"Description\": \"The degree of parallelism sets the number of processors employed to run a single statement, for each parallel plan execution. \",\n                \"EnumValue\": [],\n                \"Max\": 1024,\n                \"Min\": 0,\n                \"Name\": \"max degree of parallelism\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"0\",\n                \"Default\": \"0\",\n                \"Description\": \"The optimize for ad hoc workloads option is used to improve the efficiency of the plan cache for workloads that contain many single use ad hoc batches.\",\n                \"EnumValue\": [\n                    \"0\",\n                    \"1\"\n                ],\n                \"Max\": 0,\n                \"Min\": 0,\n                \"Name\": \"optimize for ad hoc workloads\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"enum\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"1024\",\n                \"Default\": \"0\",\n                \"Description\": \"This options change the amount of memory the SQL Server Memory Manager can allocate to a SQL Server process.\",\n                \"EnumValue\": [],\n                \"Max\": 2560,\n                \"Min\": 0,\n                \"Name\": \"min server memory(MB)\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            },\n            {\n                \"CurrentValue\": \"23\",\n                \"Default\": \"0\",\n                \"Description\": \"Use the blocked process threshold option to specify the threshold, in seconds, at which blocked process reports are generated.\",\n                \"EnumValue\": [],\n                \"Max\": 86400,\n                \"Min\": 0,\n                \"Name\": \"blocked process threshold(s)\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"integer\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"8c2fa1ec-7e13-4a2b-ba20-4d5ef93047ad\",\n        \"TotalCount\": 7\n    }\n}",
+        "title": "查询实例的可设置参数列表"
+      }
+    ],
     "DescribeMaintenanceSpan": [
       {
         "document": "",
@@ -598,6 +614,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyIncrementalMigration\n&InstanceId=mssql-rdc0gajn\n&BackupMigrationId=mssql-backup-migration-cg0ffgqt\n&IncrementalMigrationId=mssql-incremental-migration-kp7bgv8p\n&IsRecovery=YES\n&BackupFiles.0=db_cvm_1_20200927204209_2log2_2reconvery2.bak\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"IncrementalMigrationId\": \"mssql-incremental-migration-kp7bgv8p\",\n        \"RequestId\": \"dab70669-594b-4610-981b-5bfeef7182bb\"\n    }\n}",
         "title": "修改增量迁移任务"
+      }
+    ],
+    "ModifyInstanceParam": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyInstanceParam\n&WaitSwitch=0\n&InstanceIds.0=mssql-bm5e51kb\n&InstanceIds.1=mssql-p2yli7gv\n&InstanceIds.2=mssql-9ahw2qp9\n&ParamList.0.Name=fill factor(%)\n&ParamList.0.CurrentValue=50\n&ParamList.1.Name=cost threshold for parallelism\n&ParamList.1.CurrentValue=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74172b7e-139c-4eed-b237-856f56e67f48\"\n    }\n}",
+        "title": "修改实例参数"
       }
     ],
     "ModifyMaintenanceSpan": [

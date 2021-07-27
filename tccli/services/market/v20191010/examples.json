@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"MaxRequestNum\": 1000,\n        \"InUseRequestNum\": 500,\n        \"RemainingRequestNum\": 500,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询使用计划使用量"
       }
+    ],
+    "SyncUserAndOrderInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncUserAndOrderInfo\n<公共请求参数>\n\n{\n    \"UserInfo\": {\n        \"PaidCorpName\": \"xx\",\n        \"PaidCorpId\": \"xx\"\n    },\n    \"OrderInfo\": {\n        \"OrderId\": \"xx\",\n        \"OrderTime\": 0,\n        \"EditionName\": \"xx\",\n        \"OrderType\": 0,\n        \"Price\": 0,\n        \"EditionId\": \"xx\",\n        \"Remark\": \"xx\",\n        \"Deals\": {\n            \"ProductCode\": \"xx\",\n            \"SubBillingItemCode\": \"xx\",\n            \"BillingItemCode\": \"xx\",\n            \"SubProductCode\": \"xx\",\n            \"TimeSpan\": 0.0,\n            \"Discount\": 0.0,\n            \"DosageUnit\": \"xx\",\n            \"Fee\": 0,\n            \"TimeUnit\": \"xx\",\n            \"OriginPrice\": 0,\n            \"UnitPrice\": 0.0,\n            \"Dosage\": 0.0\n        },\n        \"SuiteId\": \"xx\",\n        \"OrderStatus\": 0,\n        \"UseEndTime\": 0,\n        \"UseBeginTime\": 0,\n        \"PaidTime\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"Message\": \"xx\",\n            \"Code\": \"xx\"\n        },\n        \"Details\": {\n            \"TotalCount\": 1,\n            \"OwnerUin\": \"xx\",\n            \"MarketOrders\": [\n                \"10001\",\n                \"10002\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "例子"
+      }
     ]
   },
   "version": "1.0"

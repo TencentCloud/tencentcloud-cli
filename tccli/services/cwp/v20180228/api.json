@@ -1,17 +1,5 @@
 {
   "actions": {
-    "AddLoginWhiteList": {
-      "document": "本接口用于新增异地登录白名单规则。",
-      "input": "AddLoginWhiteListRequest",
-      "name": "新增异地登录白名单规则",
-      "output": "AddLoginWhiteListResponse"
-    },
-    "AddMachineTag": {
-      "document": "增加机器关联标签",
-      "input": "AddMachineTagRequest",
-      "name": "增加机器关联标签",
-      "output": "AddMachineTagResponse"
-    },
     "CloseProVersion": {
       "document": "本接口 (CloseProVersion) 用于关闭专业版。",
       "input": "CloseProVersionRequest",
@@ -23,18 +11,6 @@
       "input": "CreateBaselineStrategyRequest",
       "name": "创建基线策略",
       "output": "CreateBaselineStrategyResponse"
-    },
-    "CreateOpenPortTask": {
-      "document": "本接口 (CreateOpenPortTask) 用于创建实时获取端口任务。",
-      "input": "CreateOpenPortTaskRequest",
-      "name": "创建实时获取端口任务",
-      "output": "CreateOpenPortTaskResponse"
-    },
-    "CreateProcessTask": {
-      "document": "本接口 (CreateProcessTask) 用于创建实时拉取进程任务。",
-      "input": "CreateProcessTaskRequest",
-      "name": "创建实时拉取进程任务",
-      "output": "CreateProcessTaskResponse"
     },
     "CreateProtectServer": {
       "document": "添加房展防护服务器",
@@ -59,12 +35,6 @@
       "input": "CreateSearchTemplateRequest",
       "name": "添加检索模板",
       "output": "CreateSearchTemplateResponse"
-    },
-    "CreateUsualLoginPlaces": {
-      "document": "此接口（CreateUsualLoginPlaces）用于添加常用登录地。",
-      "input": "CreateUsualLoginPlacesRequest",
-      "name": "添加常用登录地",
-      "output": "CreateUsualLoginPlacesResponse"
     },
     "DeleteAttackLogs": {
       "document": "删除网络攻击日志",
@@ -162,12 +132,6 @@
       "name": "删除标签",
       "output": "DeleteTagsResponse"
     },
-    "DeleteUsualLoginPlaces": {
-      "document": "本接口（DeleteUsualLoginPlaces）用于删除常用登录地。",
-      "input": "DeleteUsualLoginPlacesRequest",
-      "name": "删除常用登录地",
-      "output": "DeleteUsualLoginPlacesResponse"
-    },
     "DeleteWebPageEventLog": {
       "document": "网站防篡改-删除事件记录",
       "input": "DeleteWebPageEventLogRequest",
@@ -181,22 +145,10 @@
       "output": "DescribeAccountStatisticsResponse"
     },
     "DescribeAccounts": {
-      "document": "本接口 (DescribeAccounts) 用于获取帐号列表数据。",
+      "document": "该接口已废弃\n\n本接口 (DescribeAccounts) 用于获取帐号列表数据。",
       "input": "DescribeAccountsRequest",
       "name": "获取帐号列表",
       "output": "DescribeAccountsResponse"
-    },
-    "DescribeAgentVuls": {
-      "document": "本接口 (DescribeAgentVuls) 用于获取单台主机的漏洞列表。",
-      "input": "DescribeAgentVulsRequest",
-      "name": "获取单台主机的漏洞列表",
-      "output": "DescribeAgentVulsResponse"
-    },
-    "DescribeAlarmAttribute": {
-      "document": "本接口 (DescribeAlarmAttribute) 用于获取告警设置。",
-      "input": "DescribeAlarmAttributeRequest",
-      "name": "获取告警设置",
-      "output": "DescribeAlarmAttributeResponse"
     },
     "DescribeAssetInfo": {
       "document": "获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数",
@@ -246,29 +198,11 @@
       "name": "获取密码破解列表",
       "output": "DescribeBruteAttackListResponse"
     },
-    "DescribeBruteAttacks": {
-      "document": "本接口{DescribeBruteAttacks}用于获取暴力破解事件列表。",
-      "input": "DescribeBruteAttacksRequest",
-      "name": "获取云镜破解事件列表",
-      "output": "DescribeBruteAttacksResponse"
-    },
-    "DescribeComponentInfo": {
-      "document": "本接口 (DescribeComponentInfo) 用于获取组件信息数据。",
-      "input": "DescribeComponentInfoRequest",
-      "name": "获取组件信息",
-      "output": "DescribeComponentInfoResponse"
-    },
     "DescribeComponentStatistics": {
       "document": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。",
       "input": "DescribeComponentStatisticsRequest",
       "name": "获取组件统计列表",
       "output": "DescribeComponentStatisticsResponse"
-    },
-    "DescribeComponents": {
-      "document": "本接口 (DescribeComponents) 用于获取组件列表数据。",
-      "input": "DescribeComponentsRequest",
-      "name": "获取组件列表",
-      "output": "DescribeComponentsResponse"
     },
     "DescribeESAggregations": {
       "document": "获取ES字段聚合结果",
@@ -305,12 +239,6 @@
       "input": "DescribeHistoryServiceRequest",
       "name": "查询日志检索服务信息",
       "output": "DescribeHistoryServiceResponse"
-    },
-    "DescribeImpactedHosts": {
-      "document": "本接口 (DescribeImpactedHosts) 用于获取漏洞受影响机器列表。",
-      "input": "DescribeImpactedHostsRequest",
-      "name": "获取漏洞受影响机器列表",
-      "output": "DescribeImpactedHostsResponse"
     },
     "DescribeImportMachineInfo": {
       "document": "查询批量导入机器信息",
@@ -366,12 +294,6 @@
       "name": "获取区域主机列表",
       "output": "DescribeMachinesResponse"
     },
-    "DescribeMaliciousRequests": {
-      "document": "本接口 (DescribeMaliciousRequests) 用于获取恶意请求数据。",
-      "input": "DescribeMaliciousRequestsRequest",
-      "name": "获取恶意请求数据",
-      "output": "DescribeMaliciousRequestsResponse"
-    },
     "DescribeMalwareInfo": {
       "document": "查看恶意文件详情",
       "input": "DescribeMalwareInfoRequest",
@@ -384,35 +306,11 @@
       "name": "查询定时扫描配置",
       "output": "DescribeMalwareTimingScanSettingResponse"
     },
-    "DescribeMalwares": {
-      "document": "本接口（DescribeMalwares）用于获取木马事件列表。",
-      "input": "DescribeMalwaresRequest",
-      "name": "获取木马信息",
-      "output": "DescribeMalwaresResponse"
-    },
-    "DescribeNonlocalLoginPlaces": {
-      "document": "本接口(DescribeNonlocalLoginPlaces)用于获取异地登录事件。",
-      "input": "DescribeNonlocalLoginPlacesRequest",
-      "name": "获取异地登录事件",
-      "output": "DescribeNonlocalLoginPlacesResponse"
-    },
     "DescribeOpenPortStatistics": {
       "document": "本接口 (DescribeOpenPortStatistics) 用于获取端口统计列表。",
       "input": "DescribeOpenPortStatisticsRequest",
       "name": "获取端口统计列表",
       "output": "DescribeOpenPortStatisticsResponse"
-    },
-    "DescribeOpenPortTaskStatus": {
-      "document": "本接口 (DescribeOpenPortTaskStatus) 用于获取实时拉取端口任务状态。",
-      "input": "DescribeOpenPortTaskStatusRequest",
-      "name": "获取实时拉取端口任务状态",
-      "output": "DescribeOpenPortTaskStatusResponse"
-    },
-    "DescribeOpenPorts": {
-      "document": "本接口 (DescribeOpenPorts) 用于获取端口列表数据。\n",
-      "input": "DescribeOpenPortsRequest",
-      "name": "获取端口列表",
-      "output": "DescribeOpenPortsResponse"
     },
     "DescribeOverviewStatistics": {
       "document": "本接口用于（DescribeOverviewStatistics）获取概览统计数据。",
@@ -443,18 +341,6 @@
       "input": "DescribeProcessStatisticsRequest",
       "name": "获取进程统计列表",
       "output": "DescribeProcessStatisticsResponse"
-    },
-    "DescribeProcessTaskStatus": {
-      "document": "本接口 (DescribeProcessTaskStatus) 用于获取实时拉取进程任务状态。",
-      "input": "DescribeProcessTaskStatusRequest",
-      "name": "获取实时拉取进程任务状态",
-      "output": "DescribeProcessTaskStatusResponse"
-    },
-    "DescribeProcesses": {
-      "document": "本接口 (DescribeProcesses) 用于获取进程列表数据。",
-      "input": "DescribeProcessesRequest",
-      "name": "获取进程列表",
-      "output": "DescribeProcessesResponse"
     },
     "DescribeReverseShellEvents": {
       "document": "获取反弹Shell列表",
@@ -517,7 +403,7 @@
       "output": "DescribeSecurityDynamicsResponse"
     },
     "DescribeSecurityEventsCnt": {
-      "document": "概览页抽屉侧边弹窗：安全概览“立即处理”页面中的相关事件数统计接口。",
+      "document": "获取安全概览相关事件统计数据接口",
       "input": "DescribeSecurityEventsCntRequest",
       "name": "获取安全事件数统计数据",
       "output": "DescribeSecurityEventsCntResponse"
@@ -546,89 +432,17 @@
       "name": "查询常用登录地",
       "output": "DescribeUsualLoginPlacesResponse"
     },
-    "DescribeVulInfo": {
-      "document": "本接口 (DescribeVulInfo) 用于获取漏洞详情。",
-      "input": "DescribeVulInfoRequest",
-      "name": "获取漏洞详情",
-      "output": "DescribeVulInfoResponse"
-    },
-    "DescribeVulScanResult": {
-      "document": "本接口 (DescribeVulScanResult) 用于获取漏洞检测结果。\n",
-      "input": "DescribeVulScanResultRequest",
-      "name": "获取漏洞检测结果",
-      "output": "DescribeVulScanResultResponse"
-    },
-    "DescribeVuls": {
-      "document": "本接口 (DescribeVuls) 用于获取漏洞列表数据。",
-      "input": "DescribeVulsRequest",
-      "name": "获取漏洞列表",
-      "output": "DescribeVulsResponse"
-    },
     "DescribeWebPageGeneralize": {
-      "document": "查询网站防篡改 概览信息",
+      "document": "查询网站防篡改概览信息",
       "input": "DescribeWebPageGeneralizeRequest",
       "name": "查询网页防篡改概览信息",
       "output": "DescribeWebPageGeneralizeResponse"
-    },
-    "DescribeWeeklyReportBruteAttacks": {
-      "document": "本接口 (DescribeWeeklyReportBruteAttacks) 用于获取专业周报密码破解数据。",
-      "input": "DescribeWeeklyReportBruteAttacksRequest",
-      "name": "获取专业周报密码破解数据",
-      "output": "DescribeWeeklyReportBruteAttacksResponse"
-    },
-    "DescribeWeeklyReportInfo": {
-      "document": "本接口 (DescribeWeeklyReportInfo) 用于获取专业周报详情数据。",
-      "input": "DescribeWeeklyReportInfoRequest",
-      "name": "获取专业周报详情",
-      "output": "DescribeWeeklyReportInfoResponse"
-    },
-    "DescribeWeeklyReportMalwares": {
-      "document": "本接口 (DescribeWeeklyReportMalwares) 用于获取专业周报木马数据。",
-      "input": "DescribeWeeklyReportMalwaresRequest",
-      "name": "获取专业周报木马数据",
-      "output": "DescribeWeeklyReportMalwaresResponse"
-    },
-    "DescribeWeeklyReportNonlocalLoginPlaces": {
-      "document": "本接口 (DescribeWeeklyReportNonlocalLoginPlaces) 用于获取专业周报异地登录数据。",
-      "input": "DescribeWeeklyReportNonlocalLoginPlacesRequest",
-      "name": "获取专业周报异地登录数据",
-      "output": "DescribeWeeklyReportNonlocalLoginPlacesResponse"
-    },
-    "DescribeWeeklyReportVuls": {
-      "document": "本接口 (DescribeWeeklyReportVuls) 用于专业版周报漏洞数据。\n",
-      "input": "DescribeWeeklyReportVulsRequest",
-      "name": "获取专业版周报漏洞数据",
-      "output": "DescribeWeeklyReportVulsResponse"
-    },
-    "DescribeWeeklyReports": {
-      "document": "本接口 (DescribeWeeklyReports) 用于获取周报列表数据。",
-      "input": "DescribeWeeklyReportsRequest",
-      "name": "获取周报列表",
-      "output": "DescribeWeeklyReportsResponse"
-    },
-    "EditBashRule": {
-      "document": "新增或修改高危命令规则",
-      "input": "EditBashRuleRequest",
-      "name": "新增或修改高危命令规则",
-      "output": "EditBashRuleResponse"
     },
     "EditBashRules": {
       "document": "新增或修改高危命令规则",
       "input": "EditBashRulesRequest",
       "name": "新增或修改高危命令规则（支持多服务器选择）",
       "output": "EditBashRulesResponse"
-    },
-    "EditPrivilegeRule": {
-      "document": "新增或修改本地提权规则",
-      "input": "EditPrivilegeRuleRequest",
-      "name": "新增或修改本地提权规则",
-      "output": "EditPrivilegeRuleResponse"
-    },
-    "EditReverseShellRule": {
-      "document": "编辑反弹Shell规则",
-      "input": "EditReverseShellRuleRequest",
-      "name": "编辑反弹Shell规则",
-      "output": "EditReverseShellRuleResponse"
     },
     "EditTags": {
       "document": "新增或编辑标签",
@@ -720,29 +534,11 @@
       "name": "开通专业版询价(预付费)",
       "output": "InquiryPriceOpenProVersionPrepaidResponse"
     },
-    "MisAlarmNonlocalLoginPlaces": {
-      "document": "本接口{MisAlarmNonlocalLoginPlaces}将设置当前地点为常用登录地。",
-      "input": "MisAlarmNonlocalLoginPlacesRequest",
-      "name": "误报异地登录",
-      "output": "MisAlarmNonlocalLoginPlacesResponse"
-    },
-    "ModifyAlarmAttribute": {
-      "document": "本接口（ModifyAlarmAttribute）用于修改告警设置。",
-      "input": "ModifyAlarmAttributeRequest",
-      "name": "修改告警设置",
-      "output": "ModifyAlarmAttributeResponse"
-    },
     "ModifyAutoOpenProVersionConfig": {
       "document": "本接口 (ModifyAutoOpenProVersionConfig) 用于设置新增主机自动开通专业版配置。",
       "input": "ModifyAutoOpenProVersionConfigRequest",
       "name": "设置新增主机自动开通专业版配置",
       "output": "ModifyAutoOpenProVersionConfigResponse"
-    },
-    "ModifyLoginWhiteList": {
-      "document": "本接口用于编辑异地登录白名单规则。",
-      "input": "ModifyLoginWhiteListRequest",
-      "name": "编辑异地登录白名单规则",
-      "output": "ModifyLoginWhiteListResponse"
     },
     "ModifyMalwareTimingScanSettings": {
       "document": "定时扫描设置",
@@ -792,6 +588,12 @@
       "name": "漏洞重新检测",
       "output": "RescanImpactedHostResponse"
     },
+    "ScanAsset": {
+      "document": "资产指纹启动扫描",
+      "input": "ScanAssetRequest",
+      "name": "资产指纹启动扫描",
+      "output": "ScanAssetResponse"
+    },
     "ScanVul": {
       "document": " 一键检测",
       "input": "ScanVulRequest",
@@ -834,23 +636,11 @@
       "name": "同步资产扫描信息",
       "output": "SyncAssetScanResponse"
     },
-    "TrustMaliciousRequest": {
-      "document": "本接口 (TrustMaliciousRequest) 用于恶意请求添加信任。",
-      "input": "TrustMaliciousRequestRequest",
-      "name": "恶意请求添加信任",
-      "output": "TrustMaliciousRequestResponse"
-    },
     "TrustMalwares": {
       "document": "本接口(TrustMalwares)将被识别木马文件设为信任。",
       "input": "TrustMalwaresRequest",
       "name": "信任木马文件",
       "output": "TrustMalwaresResponse"
-    },
-    "UntrustMaliciousRequest": {
-      "document": "本接口 (UntrustMaliciousRequest) 用于取消信任恶意请求。",
-      "input": "UntrustMaliciousRequestRequest",
-      "name": "取消信任恶意请求",
-      "output": "UntrustMaliciousRequestResponse"
     },
     "UntrustMalwares": {
       "document": "本接口（UntrustMalwares）用于取消信任木马文件。",
@@ -978,165 +768,6 @@
           "name": "MachineNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "AddLoginWhiteListRequest": {
-      "document": "AddLoginWhiteList请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "白名单规则",
-          "example": "{}",
-          "member": "LoginWhiteListsRule",
-          "name": "Rules",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "AddLoginWhiteListResponse": {
-      "document": "AddLoginWhiteList返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddMachineTagRequest": {
-      "document": "AddMachineTag请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云服务器ID",
-          "example": "quuid",
-          "member": "string",
-          "name": "Quuid",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "标签ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "TagId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "云服务器地区",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "MRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "云服务器类型(CVM|BM)",
-          "example": "CVM",
-          "member": "string",
-          "name": "MArea",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddMachineTagResponse": {
-      "document": "AddMachineTag返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AgentVul": {
-      "document": "主机漏洞信息",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞名称。",
-          "member": "string",
-          "name": "VulName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞危害等级。\n<li>HIGH：高危</li>\n<li>MIDDLE：中危</li>\n<li>LOW：低危</li>\n<li>NOTICE：提示</li>",
-          "member": "string",
-          "name": "VulLevel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最后扫描时间。",
-          "member": "datetime",
-          "name": "LastScanTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞描述。",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞种类ID。",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞状态。\n<li>UN_OPERATED : 待处理</li>\n<li>FIXED : 已修复</li>",
-          "member": "string",
-          "name": "VulStatus",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1560,147 +1191,6 @@
       ],
       "usage": "out"
     },
-    "BruteAttack": {
-      "document": "暴力破解列表",
-      "members": [
-        {
-          "default": "",
-          "document": "事件ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "破解事件状态\n<li>BRUTEATTACK_FAIL_ACCOUNT： 暴力破解事件-失败(存在帐号)  </li>\n<li>BRUTEATTACK_FAIL_NOACCOUNT：暴力破解事件-失败(帐号不存在)</li>\n<li>BRUTEATTACK_SUCCESS：暴力破解事件-成功</li>",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用户名称。",
-          "member": "string",
-          "name": "UserName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "城市ID。",
-          "member": "uint64",
-          "name": "City",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "国家ID。",
-          "member": "uint64",
-          "name": "Country",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "省份ID。",
-          "member": "uint64",
-          "name": "Province",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "来源IP。",
-          "member": "string",
-          "name": "SrcIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "尝试破解次数。",
-          "member": "uint64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "发生时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名称。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一标识UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否专业版。",
-          "member": "bool",
-          "name": "IsProVersion",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "阻断状态。",
-          "member": "string",
-          "name": "BanStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "机器UUID",
-          "member": "string",
-          "name": "Quuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "BruteAttackInfo": {
       "document": "密码破解列表实体",
       "members": [
@@ -1947,84 +1437,6 @@
       ],
       "type": "object"
     },
-    "Component": {
-      "document": "组件列表数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "唯一ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机内网IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "组件版本号。",
-          "member": "string",
-          "name": "ComponentVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "组件类型。\n<li>SYSTEM：系统组件</li>\n<li>WEB：Web组件</li>",
-          "member": "string",
-          "name": "ComponentType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "组件名称。",
-          "member": "string",
-          "name": "ComponentName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "组件检测更新时间。",
-          "member": "datetime",
-          "name": "ModifyTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ComponentStatistics": {
       "document": "组件统计数据。",
       "members": [
@@ -2156,58 +1568,6 @@
     },
     "CreateBaselineStrategyResponse": {
       "document": "CreateBaselineStrategy返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOpenPortTaskRequest": {
-      "document": "CreateOpenPortTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOpenPortTaskResponse": {
-      "document": "CreateOpenPortTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateProcessTaskRequest": {
-      "document": "CreateProcessTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateProcessTaskResponse": {
-      "document": "CreateProcessTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2371,40 +1731,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateUsualLoginPlacesRequest": {
-      "document": "CreateUsualLoginPlaces请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端UUID数组。",
-          "member": "string",
-          "name": "Uuids",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "登录地域信息数组。",
-          "member": "Place",
-          "name": "Places",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateUsualLoginPlacesResponse": {
-      "document": "CreateUsualLoginPlaces返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2764,7 +2090,8 @@
       "members": [
         {
           "default": "",
-          "document": "木马记录ID数组",
+          "document": "木马记录ID数组 (最大100条)",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,
@@ -3008,40 +2335,6 @@
       ],
       "type": "object"
     },
-    "DeleteUsualLoginPlacesRequest": {
-      "document": "DeleteUsualLoginPlaces请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端Uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "已添加常用登录地城市ID数组",
-          "member": "uint64",
-          "name": "CityIds",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteUsualLoginPlacesResponse": {
-      "document": "DeleteUsualLoginPlaces返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteWebPageEventLogRequest": {
       "document": "DeleteWebPageEventLog请求参数结构体",
       "members": [],
@@ -3194,132 +2487,6 @@
       ],
       "type": "object"
     },
-    "DescribeAgentVulsRequest": {
-      "document": "DescribeAgentVuls请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞类型。\n<li>WEB: Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>",
-          "example": "WEB",
-          "member": "string",
-          "name": "VulType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "客户端UUID。",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAgentVulsResponse": {
-      "document": "DescribeAgentVuls返回参数结构体",
-      "members": [
-        {
-          "document": "记录总数",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "主机漏洞信息",
-          "example": "[]",
-          "member": "AgentVul",
-          "name": "AgentVuls",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAlarmAttributeRequest": {
-      "document": "DescribeAlarmAttribute请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeAlarmAttributeResponse": {
-      "document": "DescribeAlarmAttribute返回参数结构体",
-      "members": [
-        {
-          "document": "防护软件离线告警状态：\n<li>OPEN：告警已开启</li>\n<li>CLOSE： 告警已关闭</li>",
-          "member": "string",
-          "name": "Offline",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "发现木马告警状态：\n<li>OPEN：告警已开启</li>\n<li>CLOSE： 告警已关闭</li>",
-          "member": "string",
-          "name": "Malware",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "发现异地登录告警状态：\n<li>OPEN：告警已开启</li>\n<li>CLOSE： 告警已关闭</li>",
-          "member": "string",
-          "name": "NonlocalLogin",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "被暴力破解成功告警状态：\n<li>OPEN：告警已开启</li>\n<li>CLOSE： 告警已关闭</li>",
-          "member": "string",
-          "name": "CrackSuccess",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeAssetInfoRequest": {
       "document": "DescribeAssetInfo请求参数结构体",
       "members": [],
@@ -3432,7 +2599,7 @@
       "members": [
         {
           "default": "",
-          "document": "开始时间。",
+          "document": "开始时间，如：2020-09-22",
           "example": "2020-10-10",
           "member": "date",
           "name": "BeginDate",
@@ -3441,7 +2608,7 @@
         },
         {
           "default": "",
-          "document": "结束时间。",
+          "document": "结束时间，如：2020-09-22",
           "example": "2020-10-10",
           "member": "date",
           "name": "EndDate",
@@ -3968,142 +3135,6 @@
       ],
       "type": "object"
     },
-    "DescribeBruteAttacksRequest": {
-      "document": "DescribeBruteAttacks请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 -  查询关键字</li>\n<li>Status - String - 是否必填：否 -  查询状态（FAILED：破解失败 |SUCCESS：破解成功）</li>",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBruteAttacksResponse": {
-      "document": "DescribeBruteAttacks返回参数结构体",
-      "members": [
-        {
-          "document": "事件数量",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "暴力破解事件列表",
-          "member": "BruteAttack",
-          "name": "BruteAttacks",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeComponentInfoRequest": {
-      "document": "DescribeComponentInfo请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "组件ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "ComponentId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeComponentInfoResponse": {
-      "document": "DescribeComponentInfo返回参数结构体",
-      "members": [
-        {
-          "document": "组件ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "组件名称。",
-          "example": "Mysql",
-          "member": "string",
-          "name": "ComponentName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "组件类型。\n<li>WEB：web组件</li>\n<li>SYSTEM：系统组件</li>",
-          "example": "SYSTEM",
-          "member": "string",
-          "name": "ComponentType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "组件官网。",
-          "example": "官网",
-          "member": "string",
-          "name": "Homepage",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "组件描述。",
-          "example": "描述",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeComponentStatisticsRequest": {
       "document": "DescribeComponentStatistics请求参数结构体",
       "members": [
@@ -4148,87 +3179,6 @@
           "document": "组件统计列表数据数组。",
           "member": "ComponentStatistics",
           "name": "ComponentStatistics",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeComponentsRequest": {
-      "document": "DescribeComponents请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。Uuid和ComponentId必填其一，使用Uuid表示，查询该主机列表信息。",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "组件ID。Uuid和ComponentId必填其一，使用ComponentId表示，查询该组件列表信息。",
-          "example": "1",
-          "member": "uint64",
-          "name": "ComponentId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>ComponentVersion - String - 是否必填：否 - 组件版本号</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeComponentsResponse": {
-      "document": "DescribeComponents返回参数结构体",
-      "members": [
-        {
-          "document": "组件列表记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "组件列表数据。",
-          "example": "[]",
-          "member": "Component",
-          "name": "Components",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4653,76 +3603,6 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeImpactedHostsRequest": {
-      "document": "DescribeImpactedHosts请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞种类ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED：待处理 | FIXED：已修复）</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeImpactedHostsResponse": {
-      "document": "DescribeImpactedHosts返回参数结构体",
-      "members": [
-        {
-          "document": "记录总数",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞影响机器列表数组",
-          "example": "[]",
-          "member": "ImpactedHost",
-          "name": "ImpactedHosts",
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5377,78 +4257,6 @@
       ],
       "type": "object"
     },
-    "DescribeMaliciousRequestsRequest": {
-      "document": "DescribeMaliciousRequests请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | TRUSTED：已信任 | UN_TRUSTED：已取消信任）</li>\n<li>Domain - String - 是否必填：否 - 恶意请求的域名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一UUID。",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMaliciousRequestsResponse": {
-      "document": "DescribeMaliciousRequests返回参数结构体",
-      "members": [
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "恶意请求记录数组。",
-          "example": "[]",
-          "member": "MaliciousRequest",
-          "name": "MaliciousRequests",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeMalwareInfoRequest": {
       "document": "DescribeMalwareInfo请求参数结构体",
       "members": [
@@ -5581,7 +4389,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "是否自动隔离",
+          "document": "是否自动隔离：1-是，0-否",
           "example": "1",
           "member": "uint64",
           "name": "AutoIsolation",
@@ -5590,148 +4398,12 @@
           "value_allowed_null": false
         },
         {
-          "document": "一键扫描超时",
+          "document": "一键扫描超时时长，如：1800秒（s）",
           "example": "60",
           "member": "uint64",
           "name": "ClickTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMalwaresRequest": {
-      "document": "DescribeMalwares请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "客户端唯一Uuid。",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 木马状态（UN_OPERATED: 未处理 | SEGREGATED: 已隔离|TRUSTED：信任）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询。",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeMalwaresResponse": {
-      "document": "DescribeMalwares返回参数结构体",
-      "members": [
-        {
-          "document": "木马总数。",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "木马相关信息。",
-          "example": "[]",
-          "member": "Malware",
-          "name": "Malwares",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeNonlocalLoginPlacesRequest": {
-      "document": "DescribeNonlocalLoginPlaces请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 -  查询关键字</li>\n<li>Status - String - 是否必填：否 -  登录状态（NON_LOCAL_LOGIN: 异地登录 | NORMAL_LOGIN : 正常登录）</li>",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeNonlocalLoginPlacesResponse": {
-      "document": "DescribeNonlocalLoginPlaces返回参数结构体",
-      "members": [
-        {
-          "document": "记录总数。",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "异地登录信息数组。",
-          "member": "NonLocalLoginPlace",
-          "name": "NonLocalLoginPlaces",
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5793,120 +4465,6 @@
           "example": "[]",
           "member": "OpenPortStatistics",
           "name": "OpenPortStatistics",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOpenPortTaskStatusRequest": {
-      "document": "DescribeOpenPortTaskStatus请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOpenPortTaskStatusResponse": {
-      "document": "DescribeOpenPortTaskStatus返回参数结构体",
-      "members": [
-        {
-          "document": "任务状态。\n<li>COMPLETE：完成（此时可以调用DescribeOpenPorts接口获取实时进程列表）</li>\n<li>AGENT_OFFLINE：云镜客户端离线</li>\n<li>COLLECTING：端口获取中</li>\n<li>FAILED：进程获取失败</li>",
-          "member": "string",
-          "name": "Status",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOpenPortsRequest": {
-      "document": "DescribeOpenPorts请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。",
-          "example": "80",
-          "member": "uint64",
-          "name": "Port",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Port - Uint64 - 是否必填：否 - 端口号</li>\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOpenPortsResponse": {
-      "document": "DescribeOpenPorts返回参数结构体",
-      "members": [
-        {
-          "document": "端口列表记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "端口列表。",
-          "example": "[]",
-          "member": "OpenPort",
-          "name": "OpenPorts",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6200,118 +4758,6 @@
           "member": "ProcessStatistics",
           "name": "ProcessStatistics",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessTaskStatusRequest": {
-      "document": "DescribeProcessTaskStatus请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessTaskStatusResponse": {
-      "document": "DescribeProcessTaskStatus返回参数结构体",
-      "members": [
-        {
-          "document": "任务状态。\n<li>COMPLETE：完成（此时可以调用DescribeProcesses接口获取实时进程列表）</li>\n<li>AGENT_OFFLINE：云镜客户端离线</li>\n<li>COLLECTING：进程获取中</li>\n<li>FAILED：进程获取失败</li>",
-          "member": "string",
-          "name": "Status",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessesRequest": {
-      "document": "DescribeProcesses请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。",
-          "example": "xxx",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。",
-          "example": "test",
-          "member": "string",
-          "name": "ProcessName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
-          "example": "[]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProcessesResponse": {
-      "document": "DescribeProcesses返回参数结构体",
-      "members": [
-        {
-          "document": "进程列表记录总数。",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "进程列表数据数组。",
-          "example": "[]",
-          "member": "Process",
-          "name": "Processes",
           "type": "list",
           "value_allowed_null": false
         },
@@ -6802,7 +5248,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "定期检测时间",
+          "document": "定期检测时间，如：00:00",
           "example": "xxx",
           "member": "string",
           "name": "TimerTime",
@@ -6811,7 +5257,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "是否紧急漏洞",
+          "document": "是否紧急漏洞：0-否 1-是",
           "example": "1",
           "member": "uint64",
           "name": "VulEmergency",
@@ -6847,7 +5293,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "一键扫描超时时长",
+          "document": "一键扫描超时时长，如：1800秒（s）",
           "example": "600",
           "member": "uint64",
           "name": "ClickTimeout",
@@ -7053,86 +5499,128 @@
       "members": [
         {
           "document": "木马文件相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "Malware",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "登录审计相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "HostLogin",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "密码破解相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "BruteAttack",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "恶意请求相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "RiskDns",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "高危命令相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "Bash",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "本地提权相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "PrivilegeRules",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "反弹Shell相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "ReverseShell",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "系统组件相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "SysVul",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "Web应用漏洞相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "WebVul",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "应急漏洞相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "EmergencyVul",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "安全基线相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "BaseLine",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "攻击检测相关风险事件",
+          "example": "1",
           "member": "SecurityEventInfo",
           "name": "AttackLogs",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "受影响机器数",
+          "example": "1",
+          "member": "uint64",
+          "name": "EffectMachineCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有事件总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventsCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7149,7 +5637,7 @@
       "members": [
         {
           "default": "",
-          "document": "开始时间。",
+          "document": "开始时间，如：2021-07-10",
           "example": "xxx",
           "member": "date",
           "name": "BeginDate",
@@ -7158,7 +5646,7 @@
         },
         {
           "default": "",
-          "document": "结束时间。",
+          "document": "结束时间，如：2021-07-10",
           "example": "xxx",
           "member": "date",
           "name": "EndDate",
@@ -7393,226 +5881,6 @@
       ],
       "type": "object"
     },
-    "DescribeVulInfoRequest": {
-      "document": "DescribeVulInfo请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞种类ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVulInfoResponse": {
-      "document": "DescribeVulInfo返回参数结构体",
-      "members": [
-        {
-          "document": "漏洞种类ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞名称。",
-          "example": "Redis",
-          "member": "string",
-          "name": "VulName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞等级。",
-          "example": "1",
-          "member": "string",
-          "name": "VulLevel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞类型。",
-          "example": "1",
-          "member": "string",
-          "name": "VulType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞描述。",
-          "example": "描述",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "修复方案。",
-          "example": "修复方案",
-          "member": "string",
-          "name": "RepairPlan",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞CVE。",
-          "example": "CVE",
-          "member": "string",
-          "name": "CveId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "参考链接。",
-          "example": "url",
-          "member": "string",
-          "name": "Reference",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVulScanResultRequest": {
-      "document": "DescribeVulScanResult请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeVulScanResultResponse": {
-      "document": "DescribeVulScanResult返回参数结构体",
-      "members": [
-        {
-          "document": "漏洞数量。",
-          "example": "1",
-          "member": "uint64",
-          "name": "VulNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "专业版机器数。",
-          "example": "2",
-          "member": "uint64",
-          "name": "ProVersionNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "受影响的专业版主机数。",
-          "example": "3",
-          "member": "uint64",
-          "name": "ImpactedHostNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "主机总数。",
-          "example": "4",
-          "member": "uint64",
-          "name": "HostNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "基础版机器数。",
-          "example": "5",
-          "member": "uint64",
-          "name": "BasicVersionNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVulsRequest": {
-      "document": "DescribeVuls请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞类型。\n<li>WEB：Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>",
-          "member": "string",
-          "name": "VulType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）\n\nStatus过滤条件值只能取其一，不能是“或”逻辑。",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeVulsResponse": {
-      "document": "DescribeVuls返回参数结构体",
-      "members": [
-        {
-          "document": "漏洞数量。",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞列表数组。",
-          "member": "Vul",
-          "name": "Vuls",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeWebPageGeneralizeRequest": {
       "document": "DescribeWebPageGeneralize请求参数结构体",
       "members": [],
@@ -7667,7 +5935,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "今日防护",
+          "document": "今日防护数",
           "example": "1",
           "member": "uint64",
           "name": "ProtectToday",
@@ -7684,537 +5952,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportBruteAttacksRequest": {
-      "document": "DescribeWeeklyReportBruteAttacks请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "专业周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportBruteAttacksResponse": {
-      "document": "DescribeWeeklyReportBruteAttacks返回参数结构体",
-      "members": [
-        {
-          "document": "专业周报密码破解数组。",
-          "example": "[]",
-          "member": "WeeklyReportBruteAttack",
-          "name": "WeeklyReportBruteAttacks",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportInfoRequest": {
-      "document": "DescribeWeeklyReportInfo请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "专业周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportInfoResponse": {
-      "document": "DescribeWeeklyReportInfo返回参数结构体",
-      "members": [
-        {
-          "document": "账号所属公司或个人名称。",
-          "example": "Tencent",
-          "member": "string",
-          "name": "CompanyName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "机器总数。",
-          "example": "1",
-          "member": "uint64",
-          "name": "MachineNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "云镜客户端在线数。",
-          "example": "1",
-          "member": "uint64",
-          "name": "OnlineMachineNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "云镜客户端离线数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "OfflineMachineNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "开通云镜专业版数量。",
-          "example": "0",
-          "member": "uint64",
-          "name": "ProVersionMachineNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "周报结束时间。",
-          "example": "2018-01-07",
-          "member": "date",
-          "name": "EndDate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "安全等级。\n<li>HIGH：高</li>\n<li>MIDDLE：中</li>\n<li>LOW：低</li>",
-          "example": "HIGH",
-          "member": "string",
-          "name": "Level",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "木马记录数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "MalwareNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "异地登录数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "NonlocalLoginNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "密码破解成功数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "BruteAttackSuccessNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "漏洞数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "VulNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "导出文件下载地址。",
-          "example": "url",
-          "member": "string",
-          "name": "DownloadUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportMalwaresRequest": {
-      "document": "DescribeWeeklyReportMalwares请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "专业周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportMalwaresResponse": {
-      "document": "DescribeWeeklyReportMalwares返回参数结构体",
-      "members": [
-        {
-          "document": "专业周报木马数据。",
-          "example": "[]",
-          "member": "WeeklyReportMalware",
-          "name": "WeeklyReportMalwares",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportNonlocalLoginPlacesRequest": {
-      "document": "DescribeWeeklyReportNonlocalLoginPlaces请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "专业周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportNonlocalLoginPlacesResponse": {
-      "document": "DescribeWeeklyReportNonlocalLoginPlaces返回参数结构体",
-      "members": [
-        {
-          "document": "专业周报异地登录数据。",
-          "example": "[]",
-          "member": "WeeklyReportNonlocalLoginPlace",
-          "name": "WeeklyReportNonlocalLoginPlaces",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportVulsRequest": {
-      "document": "DescribeWeeklyReportVuls请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "专业版周报开始时间。",
-          "example": "2018-01-01",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportVulsResponse": {
-      "document": "DescribeWeeklyReportVuls返回参数结构体",
-      "members": [
-        {
-          "document": "专业周报漏洞数据数组。",
-          "example": "[]",
-          "member": "WeeklyReportVul",
-          "name": "WeeklyReportVuls",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportsRequest": {
-      "document": "DescribeWeeklyReports请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWeeklyReportsResponse": {
-      "document": "DescribeWeeklyReports返回参数结构体",
-      "members": [
-        {
-          "document": "专业周报列表数组。",
-          "example": "[]",
-          "member": "WeeklyReport",
-          "name": "WeeklyReports",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EditBashRuleRequest": {
-      "document": "EditBashRule请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "规则名称",
-          "example": "Rule",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "危险等级(1: 高危 2:中危 3: 低危)",
-          "example": "1",
-          "member": "uint64",
-          "name": "Level",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "正则表达式",
-          "example": "*",
-          "member": "string",
-          "name": "Rule",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "规则ID(新增时不填)",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "客户端ID(IsGlobal为0时，Uuid或Hostip必填一个)",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主机IP(IsGlobal为0时，Uuid或Hostip必填一个)",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Hostip",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "是否全局规则(默认否)",
-          "example": "0",
-          "member": "uint64",
-          "name": "IsGlobal",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "EditBashRuleResponse": {
-      "document": "EditBashRule返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8283,7 +6020,7 @@
         },
         {
           "default": "",
-          "document": "是否全局规则(默认否)",
+          "document": "是否全局规则(默认否)：1-全局，0-非全局",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -8322,159 +6059,6 @@
     },
     "EditBashRulesResponse": {
       "document": "EditBashRules返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EditPrivilegeRuleRequest": {
-      "document": "EditPrivilegeRule请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "规则ID(新增时请留空)",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Hostip",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "进程名",
-          "example": "Nginx",
-          "member": "string",
-          "name": "ProcessName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "是否S权限进程",
-          "example": "1",
-          "member": "uint64",
-          "name": "SMode",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "是否全局规则(默认否)",
-          "example": "0",
-          "member": "uint64",
-          "name": "IsGlobal",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "EditPrivilegeRuleResponse": {
-      "document": "EditPrivilegeRule返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EditReverseShellRuleRequest": {
-      "document": "EditReverseShellRule请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "规则ID(新增时请留空)",
-          "example": "1",
-          "member": "uint64",
-          "name": "Id",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
-          "example": "uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
-          "example": "127.0.0.1",
-          "member": "string",
-          "name": "Hostip",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目标IP",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "DestIp",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目标端口",
-          "example": "80",
-          "member": "string",
-          "name": "DestPort",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "进程名",
-          "example": "Nginx",
-          "member": "string",
-          "name": "ProcessName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "是否全局规则(默认否)",
-          "example": "0",
-          "member": "uint64",
-          "name": "IsGlobal",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "EditReverseShellRuleResponse": {
-      "document": "EditReverseShellRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9381,93 +6965,6 @@
       ],
       "type": "object"
     },
-    "ImpactedHost": {
-      "document": "受影响主机信息",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名称。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最后检测时间。",
-          "member": "datetime",
-          "name": "LastScanTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞状态。\n<li>UN_OPERATED ：待处理</li>\n<li>SCANING : 扫描中</li>\n<li>FIXED : 已修复</li>",
-          "member": "string",
-          "name": "VulStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一标识UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞描述。",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞种类ID。",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否为专业版。",
-          "member": "bool",
-          "name": "IsProVersion",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "InquiryPriceOpenProVersionPrepaidRequest": {
       "document": "InquiryPriceOpenProVersionPrepaid请求参数结构体",
       "members": [
@@ -9629,84 +7126,6 @@
         }
       ],
       "usage": "out"
-    },
-    "LoginWhiteListsRule": {
-      "document": "白名单规则",
-      "members": [
-        {
-          "default": "",
-          "document": "加白地域",
-          "member": "Place",
-          "name": "Places",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "加白源IP，支持网段，多个IP以逗号隔开",
-          "member": "string",
-          "name": "SrcIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "加白用户名，多个用户名以逗号隔开",
-          "member": "string",
-          "name": "UserName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否对全局生效",
-          "member": "bool",
-          "name": "IsGlobal",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "白名单生效的机器",
-          "member": "string",
-          "name": "HostIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "规则ID，用于更新规则",
-          "member": "uint64",
-          "name": "Id",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "起始时间",
-          "member": "string",
-          "name": "StartTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "结束时间",
-          "member": "string",
-          "name": "EndTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "Machine": {
       "document": "主机列表",
@@ -9957,234 +7376,6 @@
       ],
       "usage": "out"
     },
-    "MaliciousRequest": {
-      "document": "恶意请求数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "记录ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机内网IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "恶意请求域名。",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "恶意请求数。",
-          "member": "uint64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程名。",
-          "member": "string",
-          "name": "ProcessName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录状态。\n<li>UN_OPERATED：待处理</li>\n<li>TRUSTED：已信任</li>\n<li>UN_TRUSTED：已取消信任</li>",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "恶意请求域名描述。",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "参考地址。",
-          "member": "string",
-          "name": "Reference",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "发现时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录合并时间。",
-          "member": "datetime",
-          "name": "MergeTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程MD5\n值。",
-          "member": "string",
-          "name": "ProcessMd5",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "执行命令行。",
-          "member": "string",
-          "name": "CmdLine",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程PID。",
-          "member": "uint64",
-          "name": "Pid",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "Malware": {
-      "document": "木马相关信息",
-      "members": [
-        {
-          "default": "",
-          "document": "事件ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当前木马状态。\n<li>UN_OPERATED：未处理</li><li>SEGREGATED：已隔离</li><li>TRUSTED：已信任</li>\n<li>SEPARATING：隔离中</li><li>RECOVERING：恢复中</li>",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马所在的路径。",
-          "member": "string",
-          "name": "FilePath",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马描述。",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名称。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马文件创建时间。",
-          "member": "datetime",
-          "name": "FileCreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马文件修改时间。",
-          "member": "datetime_iso",
-          "name": "ModifyTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一标识UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "MalwareInfo": {
       "document": "恶意文件详情",
       "members": [
@@ -10362,68 +7553,6 @@
       ],
       "usage": "out"
     },
-    "MisAlarmNonlocalLoginPlacesRequest": {
-      "document": "MisAlarmNonlocalLoginPlaces请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "异地登录事件Id数组。",
-          "member": "uint64",
-          "name": "Ids",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "MisAlarmNonlocalLoginPlacesResponse": {
-      "document": "MisAlarmNonlocalLoginPlaces返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyAlarmAttributeRequest": {
-      "document": "ModifyAlarmAttribute请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "告警项目。\n<li>Offline：防护软件离线</li>\n<li>Malware：发现木马文件</li>\n<li>NonlocalLogin：发现异地登录行为</li>\n<li>CrackSuccess：被暴力破解成功</li>",
-          "example": "CrackSuccess",
-          "member": "string",
-          "name": "Attribute",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "告警项目属性。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>",
-          "example": "OPEN",
-          "member": "string",
-          "name": "Value",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyAlarmAttributeResponse": {
-      "document": "ModifyAlarmAttribute返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyAutoOpenProVersionConfigRequest": {
       "document": "ModifyAutoOpenProVersionConfig请求参数结构体",
       "members": [
@@ -10440,33 +7569,6 @@
     },
     "ModifyAutoOpenProVersionConfigResponse": {
       "document": "ModifyAutoOpenProVersionConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoginWhiteListRequest": {
-      "document": "ModifyLoginWhiteList请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "白名单规则",
-          "example": "xxx",
-          "member": "LoginWhiteListsRule",
-          "name": "Rules",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLoginWhiteListResponse": {
-      "document": "ModifyLoginWhiteList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10663,198 +7765,6 @@
         }
       ],
       "type": "object"
-    },
-    "NonLocalLoginPlace": {
-      "document": "异地登录",
-      "members": [
-        {
-          "default": "",
-          "document": "事件ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "登录状态\n<li>NON_LOCAL_LOGIN：异地登录</li>\n<li>NORMAL_LOGIN：正常登录</li>",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用户名。",
-          "member": "string",
-          "name": "UserName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "城市ID。",
-          "member": "uint64",
-          "name": "City",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "国家ID。",
-          "member": "uint64",
-          "name": "Country",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "省份ID。",
-          "member": "uint64",
-          "name": "Province",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "登录IP。",
-          "member": "string",
-          "name": "SrcIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "机器名称。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "登录时间。",
-          "member": "datetime",
-          "name": "LoginTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一标识Uuid。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "OpenPort": {
-      "document": "端口列表",
-      "members": [
-        {
-          "default": "",
-          "document": "唯一ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "开放端口号。",
-          "member": "uint64",
-          "name": "Port",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "端口对应进程名。",
-          "member": "string",
-          "name": "ProcessName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "端口对应进程Pid。",
-          "member": "uint64",
-          "name": "Pid",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录创建时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录更新时间。",
-          "member": "datetime",
-          "name": "ModifyTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "OpenPortStatistics": {
       "document": "端口统计列表",
@@ -11327,111 +8237,6 @@
       ],
       "usage": "in"
     },
-    "Process": {
-      "document": "进程信息数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "唯一ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一UUID。",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机内网IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程Pid。",
-          "member": "uint64",
-          "name": "Pid",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程Ppid。",
-          "member": "uint64",
-          "name": "Ppid",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程名。",
-          "member": "string",
-          "name": "ProcessName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程用户名。",
-          "member": "string",
-          "name": "Username",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "所属平台。\n<li>WIN32：windows32位</li>\n<li>WIN64：windows64位</li>\n<li>LINUX32：Linux32位</li>\n<li>LINUX64：Linux64位</li>",
-          "member": "string",
-          "name": "Platform",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "进程路径。",
-          "member": "string",
-          "name": "FullPath",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ProcessStatistics": {
       "document": "进程数据统计数据。",
       "members": [
@@ -11494,7 +8299,7 @@
       "members": [
         {
           "default": "",
-          "document": "木马Id数组（单次最大恢复不超过100条）",
+          "document": "木马Id数组（最大100条）",
           "example": "[]",
           "member": "uint64",
           "name": "Ids",
@@ -11508,7 +8313,7 @@
       "document": "RecoverMalwares返回参数结构体",
       "members": [
         {
-          "document": "恢复成功id数组",
+          "document": "恢复成功id数组，若无则返回空数组",
           "example": "[]",
           "member": "uint64",
           "name": "SuccessIds",
@@ -11517,7 +8322,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "恢复失败id数组",
+          "document": "恢复失败id数组，若无则返回空数组",
           "example": "[]",
           "member": "uint64",
           "name": "FailedIds",
@@ -12138,6 +8943,51 @@
       ],
       "usage": "out"
     },
+    "ScanAssetRequest": {
+      "document": "ScanAsset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产指纹类型id列表",
+          "example": "1",
+          "member": "uint64",
+          "name": "AssetTypeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Quuid列表",
+          "example": "1",
+          "member": "string",
+          "name": "Quuids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanAssetResponse": {
+      "document": "ScanAsset返回参数结构体",
+      "members": [
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ScanTaskDetails": {
       "document": "扫描任务详情列表信息",
       "members": [
@@ -12422,7 +9272,7 @@
         },
         {
           "default": "",
-          "document": "定期检测时间",
+          "document": "定期检测时间，如：02:10:50",
           "example": "xxx",
           "member": "string",
           "name": "TimerTime",
@@ -12440,7 +9290,7 @@
         },
         {
           "default": "",
-          "document": "扫描开始时间",
+          "document": "扫描开始时间，如：00:00",
           "example": "00:00",
           "member": "string",
           "name": "StartTime",
@@ -12449,7 +9299,7 @@
         },
         {
           "default": "",
-          "document": "扫描结束时间",
+          "document": "扫描结束时间，如：08:00",
           "example": "01:59",
           "member": "string",
           "name": "EndTime",
@@ -12564,6 +9414,7 @@
         {
           "default": "",
           "document": "云镜客户端UUID。",
+          "example": "uuid",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -12572,7 +9423,8 @@
         },
         {
           "default": "",
-          "document": "安全事件发生事件。",
+          "document": "安全事件发生时间。",
+          "example": "2018-01-01 00:00:00",
           "member": "datetime",
           "name": "EventTime",
           "required": true,
@@ -12582,6 +9434,7 @@
         {
           "default": "",
           "document": "安全事件类型。\n<li>MALWARE：木马事件</li>\n<li>NON_LOCAL_LOGIN：异地登录</li>\n<li>BRUTEATTACK_SUCCESS：密码破解成功</li>\n<li>VUL：漏洞</li>\n<li>BASELINE：安全基线</li>",
+          "example": "BASELINE",
           "member": "string",
           "name": "EventType",
           "required": true,
@@ -12591,6 +9444,7 @@
         {
           "default": "",
           "document": "安全事件消息。",
+          "example": "事件消息",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -12600,6 +9454,7 @@
         {
           "default": "",
           "document": "安全事件等级。\n<li>RISK: 严重</li>\n<li>HIGH: 高危</li>\n<li>NORMAL: 中危</li>\n<li>LOW: 低危</li>",
+          "example": "High",
           "member": "string",
           "name": "SecurityLevel",
           "required": true,
@@ -12662,7 +9517,8 @@
       "members": [
         {
           "default": "",
-          "document": "木马事件ID数组。",
+          "document": "木马事件ID数组。(最大100条)",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": true,
@@ -12675,16 +9531,20 @@
       "document": "SeparateMalwares返回参数结构体",
       "members": [
         {
-          "document": "隔离成功的id数组。",
+          "document": "隔离成功的id数组，若无则返回空数组",
+          "example": "[]",
           "member": "uint64",
           "name": "SuccessIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "隔离失败的id数组。",
+          "document": "隔离失败的id数组，若无则返回空数组",
+          "example": "[]",
           "member": "uint64",
           "name": "FailedIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12894,32 +9754,6 @@
       ],
       "usage": "out"
     },
-    "TrustMaliciousRequestRequest": {
-      "document": "TrustMaliciousRequest请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "恶意请求记录ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "TrustMaliciousRequestResponse": {
-      "document": "TrustMaliciousRequest返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "TrustMalwaresRequest": {
       "document": "TrustMalwares请求参数结构体",
       "members": [
@@ -12937,32 +9771,6 @@
     },
     "TrustMalwaresResponse": {
       "document": "TrustMalwares返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UntrustMaliciousRequestRequest": {
-      "document": "UntrustMaliciousRequest请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "受信任记录ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "UntrustMaliciousRequestResponse": {
-      "document": "UntrustMaliciousRequest返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13149,66 +9957,6 @@
       ],
       "usage": "out"
     },
-    "Vul": {
-      "document": "漏洞列表数据",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞种类ID",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞名称",
-          "member": "string",
-          "name": "VulName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞危害等级:\nHIGH：高危\nMIDDLE：中危\nLOW：低危\nNOTICE：提示",
-          "member": "string",
-          "name": "VulLevel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最后扫描时间",
-          "member": "datetime",
-          "name": "LastScanTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "受影响机器数量",
-          "member": "uint64",
-          "name": "ImpactedHostNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞状态\n* UN_OPERATED : 待处理\n* FIXED : 已修复",
-          "member": "string",
-          "name": "VulStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "VulDetailInfo": {
       "document": "漏洞详细信息",
       "members": [
@@ -13318,261 +10066,6 @@
           "example": "11",
           "member": "string",
           "name": "PublishTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WeeklyReport": {
-      "document": "周报列表。",
-      "members": [
-        {
-          "default": "",
-          "document": "周报开始时间。",
-          "member": "date",
-          "name": "BeginDate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "周报结束时间。",
-          "member": "date",
-          "name": "EndDate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WeeklyReportBruteAttack": {
-      "document": "专业周报密码破解数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "被破解用户名。",
-          "member": "string",
-          "name": "Username",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "源IP。",
-          "member": "string",
-          "name": "SrcIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "尝试次数。",
-          "member": "uint64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "攻击时间。",
-          "member": "datetime",
-          "name": "AttackTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WeeklyReportMalware": {
-      "document": "专业周报木马数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马文件路径。",
-          "member": "string",
-          "name": "FilePath",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马文件MD5值。",
-          "member": "string",
-          "name": "Md5",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "木马发现时间。",
-          "member": "datetime",
-          "name": "FindTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当前木马状态。\n<li>UN_OPERATED：未处理</li>\n<li>SEGREGATED：已隔离</li>\n<li>TRUSTED：已信任</li>\n<li>SEPARATING：隔离中</li>\n<li>RECOVERING：恢复中</li>",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WeeklyReportNonlocalLoginPlace": {
-      "document": "专业周报异地登录数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "主机IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用户名。",
-          "member": "string",
-          "name": "Username",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "源IP。",
-          "member": "string",
-          "name": "SrcIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "国家ID。",
-          "member": "uint64",
-          "name": "Country",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "省份ID。",
-          "member": "uint64",
-          "name": "Province",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "城市ID。",
-          "member": "uint64",
-          "name": "City",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "登录时间。",
-          "member": "datetime",
-          "name": "LoginTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WeeklyReportVul": {
-      "document": "专业版周报漏洞数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "主机内网IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞名称。",
-          "member": "string",
-          "name": "VulName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞类型。\n<li> WEB : Web漏洞</li>\n<li> SYSTEM :系统组件漏洞</li>\n<li> BASELINE : 安全基线</li>",
-          "member": "string",
-          "name": "VulType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞描述。",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "漏洞状态。\n<li> UN_OPERATED : 待处理</li>\n<li> SCANING : 扫描中</li>\n<li> FIXED : 已修复</li>",
-          "member": "string",
-          "name": "VulStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "最后扫描时间。",
-          "member": "datetime",
-          "name": "LastScanTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

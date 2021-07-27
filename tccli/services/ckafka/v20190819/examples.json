@@ -11,7 +11,7 @@
     "CreateInstancePre": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePre\r\n&InstanceName=test\r\n&MsgRetentionTime=1440\r\n&InstanceType=1\r\n&ZoneId=100003\r\n&Period=1m\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePre\n&InstanceName=test\n&MsgRetentionTime=1440\n&InstanceType=1\n&ZoneId=100003\n&Period=1m\n&<公共请求参数>",
         "output": "{\n    \"Response\": {}\n}",
         "title": "创建实例(预付费包年包月)"
       }

@@ -3978,7 +3978,7 @@
         },
         {
           "default": "",
-          "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "document": "每次返回的数量，取值1~100，默认20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -3987,7 +3987,7 @@
         },
         {
           "default": "",
-          "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "document": "偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推",
           "example": "0",
           "member": "int64",
           "name": "Offset",

@@ -1093,6 +1093,33 @@ def doDescribeRegions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstanceParams(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceParamsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeInstanceParams(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCompleteExpansion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1228,6 +1255,33 @@ def doRestoreInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeInstanceParamRecords(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceParamRecordsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeInstanceParamRecords(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeFlowStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1328,6 +1382,33 @@ def doResetAccountPassword(args, parsed_globals):
     model = models.ResetAccountPasswordRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.ResetAccountPassword(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyInstanceParam(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SqlserverClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyInstanceParamRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyInstanceParam(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2575,15 +2656,18 @@ ACTION_MAP = {
     "CreateAccount": doCreateAccount,
     "StopMigration": doStopMigration,
     "DescribeRegions": doDescribeRegions,
+    "DescribeInstanceParams": doDescribeInstanceParams,
     "CompleteExpansion": doCompleteExpansion,
     "CreateDB": doCreateDB,
     "DeleteDB": doDeleteDB,
     "CompleteMigration": doCompleteMigration,
     "RestoreInstance": doRestoreInstance,
+    "DescribeInstanceParamRecords": doDescribeInstanceParamRecords,
     "DescribeFlowStatus": doDescribeFlowStatus,
     "DescribeDBCharsets": doDescribeDBCharsets,
     "DeletePublishSubscribe": doDeletePublishSubscribe,
     "ResetAccountPassword": doResetAccountPassword,
+    "ModifyInstanceParam": doModifyInstanceParam,
     "DescribeSlowlogs": doDescribeSlowlogs,
     "DescribeUploadIncrementalInfo": doDescribeUploadIncrementalInfo,
     "StartMigrationCheck": doStartMigrationCheck,

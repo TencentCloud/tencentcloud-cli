@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DescribeConfig": [
-      {
-        "document": "查看配置",
-        "input": "https://tse.tencentcloudapi.com/?Action=DescribeConfig\n&InstanceId=ins-389a8c12\n&Type=consul\n&Key=name\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Key\": \"name\",\n        \"Value\": \"tom\",\n        \"IsDir\": false,\n        \"List\": []\n    }\n}",
-        "title": "查看配置"
-      }
-    ],
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",
@@ -22,14 +14,6 @@
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstances\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Status\": \"xx\",\n                \"Paymode\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"SpecId\": \"xx\",\n                \"Name\": \"xx\",\n                \"EnableStorage\": true,\n                \"InstanceId\": \"xx\",\n                \"EKSClusterID\": \"xx\",\n                \"SubnetIds\": [\n                    \"a\"\n                ],\n                \"StorageType\": \"xx\",\n                \"StorageCapacity\": 0,\n                \"Edition\": \"xx\",\n                \"Replica\": 3,\n                \"EnvInfos\": [\n                    {\n                        \"VpcInfos\": [\n                            {\n                                \"SubnetId\": \"xx\",\n                                \"VpcId\": \"xx\"\n                            }\n                        ],\n                        \"Status\": \"xx\",\n                        \"ConfigServiceIp\": \"xx\",\n                        \"StorageCapacity\": 0,\n                        \"EnvName\": \"xx\",\n                        \"AdminServiceIp\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询微服务引擎实例列表"
-      }
-    ],
-    "ManageConfig": [
-      {
-        "document": "配置管理",
-        "input": "https://tse.tencentcloudapi.com/?Action=ManageConfig\n&InstanceId=ins-389a8c12\n&Type=consule\n&Command=PUT\n&Key=name\n&Value=AAA\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"tom\",\n        \"OpResult\": true\n    }\n}",
-        "title": "配置管理"
       }
     ]
   },

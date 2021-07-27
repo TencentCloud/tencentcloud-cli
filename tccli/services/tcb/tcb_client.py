@@ -256,6 +256,33 @@ def doRollUpdateCloudBaseRunServerVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateStaticStore(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateStaticStoreRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateStaticStore(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateWxCloudBaseRunServerDBCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -823,7 +850,7 @@ def doEstablishCloudBaseRunServer(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateStaticStore(args, parsed_globals):
+def doReplaceActivityRecord(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -839,9 +866,9 @@ def doCreateStaticStore(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateStaticStoreRequest()
+    model = models.ReplaceActivityRecordRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateStaticStore(model)
+    rsp = client.ReplaceActivityRecord(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -977,6 +1004,33 @@ def doDescribeHostingDomainTask(args, parsed_globals):
     model = models.DescribeHostingDomainTaskRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeHostingDomainTask(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeActivityRecord(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeActivityRecordRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeActivityRecord(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1491,6 +1545,7 @@ ACTION_MAP = {
     "DescribeWxCloudBaseRunEnvs": doDescribeWxCloudBaseRunEnvs,
     "DescribeSmsQuotas": doDescribeSmsQuotas,
     "RollUpdateCloudBaseRunServerVersion": doRollUpdateCloudBaseRunServerVersion,
+    "CreateStaticStore": doCreateStaticStore,
     "CreateWxCloudBaseRunServerDBCluster": doCreateWxCloudBaseRunServerDBCluster,
     "DescribeEnvPostpaidDeduct": doDescribeEnvPostpaidDeduct,
     "DeleteCloudBaseRunServerVersion": doDeleteCloudBaseRunServerVersion,
@@ -1512,12 +1567,13 @@ ACTION_MAP = {
     "DescribeDownloadFile": doDescribeDownloadFile,
     "DescribePostpayPackageFreeQuotas": doDescribePostpayPackageFreeQuotas,
     "EstablishCloudBaseRunServer": doEstablishCloudBaseRunServer,
-    "CreateStaticStore": doCreateStaticStore,
+    "ReplaceActivityRecord": doReplaceActivityRecord,
     "CreateAndDeployCloudBaseProject": doCreateAndDeployCloudBaseProject,
     "CheckTcbService": doCheckTcbService,
     "DeleteEndUser": doDeleteEndUser,
     "DescribeExtensionUploadInfo": doDescribeExtensionUploadInfo,
     "DescribeHostingDomainTask": doDescribeHostingDomainTask,
+    "DescribeActivityRecord": doDescribeActivityRecord,
     "EstablishWxGatewayRoute": doEstablishWxGatewayRoute,
     "DescribeQuotaData": doDescribeQuotaData,
     "CreateCloudBaseRunResource": doCreateCloudBaseRunResource,

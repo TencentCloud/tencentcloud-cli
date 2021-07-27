@@ -7243,6 +7243,32 @@
       ],
       "usage": "in"
     },
+    "HeadTailParameter": {
+      "document": "片头片尾参数",
+      "members": [
+        {
+          "default": "",
+          "document": "片头列表。",
+          "example": "[   {     \"Type\": \"URL\",     \"UrlInputInfo\": {       \"Url\": \"htt",
+          "member": "MediaInputInfo",
+          "name": "HeadSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片尾列表。",
+          "example": "[   {     \"Type\": \"URL\",     \"UrlInputInfo\": {       \"Url\": \"htt",
+          "member": "MediaInputInfo",
+          "name": "TailSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ImageSpriteTaskInput": {
       "document": "对视频截雪碧图任务输入参数类型",
       "members": [
@@ -13059,6 +13085,7 @@
         {
           "default": "",
           "document": "CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。",
+          "example": "Queue ",
           "member": "string",
           "name": "CmqModel",
           "required": true,
@@ -13068,6 +13095,7 @@
         {
           "default": "",
           "document": "CMQ 的园区，如 sh，bj 等。",
+          "example": "sh",
           "member": "string",
           "name": "CmqRegion",
           "required": true,
@@ -13077,6 +13105,7 @@
         {
           "default": "",
           "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。",
+          "example": "test",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -13086,6 +13115,7 @@
         {
           "default": "",
           "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -13095,8 +13125,29 @@
         {
           "default": "",
           "document": "工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。",
+          "example": "Finish ",
           "member": "string",
           "name": "NotifyMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。",
+          "example": "URL",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTP回调地址，NotifyType为URL时必填。",
+          "example": "http://www.qq.com/callback",
+          "member": "string",
+          "name": "NotifyUrl",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13475,6 +13526,7 @@
         {
           "default": "",
           "document": "视频转码模板 ID。",
+          "example": "20",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -13484,6 +13536,7 @@
         {
           "default": "",
           "document": "视频转码自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "RawTranscodeParameter",
           "name": "RawParameter",
           "required": false,
@@ -13493,6 +13546,7 @@
         {
           "default": "",
           "document": "视频转码自定义参数，当 Definition 不填 0 时有效。\n当填写了该结构中的部分转码参数时，将使用填写的参数覆盖转码模板中的参数。\n该参数用于高度定制场景，建议您仅使用 Definition 指定转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "OverrideTranscodeParameter",
           "name": "OverrideParameter",
           "required": false,
@@ -13502,6 +13556,7 @@
         {
           "default": "",
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "required": false,
@@ -13511,6 +13566,7 @@
         {
           "default": "",
           "document": "马赛克列表，最大可支持 10 张。",
+          "example": "null",
           "member": "MosaicInput",
           "name": "MosaicSet",
           "required": false,
@@ -13520,6 +13576,7 @@
         {
           "default": "",
           "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
+          "example": "null",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -13529,6 +13586,7 @@
         {
           "default": "",
           "document": "转码后视频的终止时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>",
+          "example": "null",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,
@@ -13538,6 +13596,7 @@
         {
           "default": "",
           "document": "转码后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "required": false,
@@ -13547,6 +13606,7 @@
         {
           "default": "",
           "document": "转码后主文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_transcode_{definition}.{format}`。",
+          "example": "null",
           "member": "string",
           "name": "OutputObjectPath",
           "required": false,
@@ -13556,6 +13616,7 @@
         {
           "default": "",
           "document": "转码后分片文件的输出路径（转码 HLS 时 ts 的路径），只能为相对路径。如果不填，则默认为：`{inputName}_transcode_{definition}_{number}.{format}`。",
+          "example": "null",
           "member": "string",
           "name": "SegmentObjectName",
           "required": false,
@@ -13565,8 +13626,19 @@
         {
           "default": "",
           "document": "转码后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "片头片尾参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"HeadSet\": [     {       \"Type\": \"URL\",       \"UrlInputInfo\"",
+          "member": "HeadTailParameter",
+          "name": "HeadTailParameter",
           "required": false,
           "type": "object",
           "value_allowed_null": true

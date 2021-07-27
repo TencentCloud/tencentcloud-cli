@@ -120,6 +120,14 @@
         "title": "删除微信网关"
       }
     ],
+    "DescribeActivityRecord": [
+      {
+        "document": "查询活动记录信息",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ActivityRecords\": []\n    }\n}",
+        "title": "查询活动记录信息"
+      }
+    ],
     "DescribeAuthDomains": [
       {
         "document": "",
@@ -422,6 +430,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=ReinstateEnv\n&EnvId=envid\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "恢复已隔离的免费环境"
+      }
+    ],
+    "ReplaceActivityRecord": [
+      {
+        "document": "更新活动详情",
+        "input": "https://tcb.tencentcloudapi.com/?Action=ReplaceActivityRecord\n&ActivityId=1\n&Status=2\n&SubStatus=4323\n&ChannelToken=321\n&Channel=qc_console\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "更新活动详情"
       }
     ],
     "RollUpdateCloudBaseRunServerVersion": [

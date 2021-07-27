@@ -13,12 +13,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b",
-        "Record": {
-            "SubDomain": "_cdnauth",
-            "Record": "20191225190958a7c80465432ff68a58d359e28ee6390f",
-            "RecordType": "TXT"
-        }
+        "RequestId": "8518c99c-a8eb-4930-a7d0-eff586d9cc37",
+        "SubDomain": "_cdnauth",
+        "Record": "202009071516044acd018wf498457628cn75ba018ec9cv",
+        "RecordType": "TXT"
     }
 }
 ```

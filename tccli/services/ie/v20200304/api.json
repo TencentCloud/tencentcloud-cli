@@ -3608,6 +3608,75 @@
       ],
       "usage": "out"
     },
+    "TextMarkInfoItem": {
+      "document": "画质重生子任务文字水印信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文字内容。",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字水印X坐标。",
+          "member": "int64",
+          "name": "PosX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字水印Y坐标。",
+          "member": "int64",
+          "name": "PosY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字大小",
+          "member": "int64",
+          "name": "FontSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体，可选项：hei,song，simkai,arial；默认hei(黑体）。",
+          "member": "string",
+          "name": "FontFile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体颜色，颜色见附录，不填默认black。",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字透明度，可选值0-1。0：不透明，1：全透明。默认为0",
+          "member": "float",
+          "name": "FontAlpha",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "UrlInfo": {
       "document": "任务视频Url形式下载信息。",
       "members": [
@@ -3888,6 +3957,16 @@
           "name": "HiddenMarkInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本水印参数信息。",
+          "example": "无",
+          "member": "TextMarkInfoItem",
+          "name": "TextMarkInfo",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

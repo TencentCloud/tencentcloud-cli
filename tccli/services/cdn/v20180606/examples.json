@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateVerifyRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b\",\r\n    \"Record\": {\r\n      \"SubDomain\": \"_cdnauth\",\r\n      \"Record\": \"20191225190958a7c80465432ff68a58d359e28ee6390f\",\r\n      \"RecordType\": \"TXT\"\r\n    }\r\n  }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\"\n    }\n}",
         "title": "生成解析记录"
       }
     ],

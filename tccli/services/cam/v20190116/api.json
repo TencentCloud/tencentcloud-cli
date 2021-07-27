@@ -4173,6 +4173,7 @@
         {
           "default": "",
           "document": "策略ID。",
+          "example": "1",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -4182,6 +4183,7 @@
         {
           "default": "",
           "document": "策略名称。",
+          "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -4191,6 +4193,7 @@
         {
           "default": "",
           "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "AddTime",
           "required": true,
@@ -4200,6 +4203,7 @@
         {
           "default": "",
           "document": "策略类型。1 表示自定义策略，2 表示预设策略。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -4209,6 +4213,7 @@
         {
           "default": "",
           "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "该策略允许您管理账户内所有用户及其权限、财务相关的信息、云服务资产。",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -4218,6 +4223,7 @@
         {
           "default": "",
           "document": "创建来源，1 通过控制台创建, 2 通过策略语法创建。",
+          "example": "1",
           "member": "uint64",
           "name": "CreateMode",
           "required": true,
@@ -4227,6 +4233,7 @@
         {
           "default": "",
           "document": "关联的用户数",
+          "example": "1",
           "member": "uint64",
           "name": "Attachments",
           "required": true,
@@ -4236,6 +4243,7 @@
         {
           "default": "",
           "document": "策略关联的产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cam",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -4245,6 +4253,7 @@
         {
           "default": "",
           "document": "当需要查询标记实体是否已经关联策略时不为null。0表示未关联策略，1表示已关联策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "IsAttached",
           "required": true,
@@ -4254,6 +4263,7 @@
         {
           "default": "",
           "document": "是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Deactived",
           "required": true,
@@ -4263,6 +4273,7 @@
         {
           "default": "",
           "document": "已下线产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "DeactivedDetail",
           "required": true,
@@ -4272,10 +4283,41 @@
         {
           "default": "",
           "document": "是否是服务相关角色策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "IsServiceLinkedPolicy",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联策略实体数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AttachEntityCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联权限边界实体数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AttachEntityBoundaryCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-06-02 19:40:09",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

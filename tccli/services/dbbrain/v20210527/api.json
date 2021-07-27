@@ -1924,6 +1924,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SOL模板的MD5值",
+          "example": "AD7651E51E8C6FBA",
+          "member": "string",
+          "name": "Md5",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4161,6 +4170,16 @@
           "name": "RowsExaminedAvg",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SOL模板的MD5值",
+          "example": "AD7651E51E8C6FBA",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

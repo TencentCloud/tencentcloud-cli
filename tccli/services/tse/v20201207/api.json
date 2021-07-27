@@ -1,11 +1,5 @@
 {
   "actions": {
-    "DescribeConfig": {
-      "document": "查看配置项",
-      "input": "DescribeConfigRequest",
-      "name": "查看配置",
-      "output": "DescribeConfigResponse"
-    },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询微服务注册引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
@@ -17,12 +11,6 @@
       "input": "DescribeSREInstancesRequest",
       "name": "查询微服务引擎实例列表",
       "output": "DescribeSREInstancesResponse"
-    },
-    "ManageConfig": {
-      "document": "管理配置",
-      "input": "ManageConfigRequest",
-      "name": "管理配置",
-      "output": "ManageConfigResponse"
     }
   },
   "metadata": {
@@ -32,87 +20,6 @@
     "serviceShortName": "tse"
   },
   "objects": {
-    "DescribeConfigRequest": {
-      "document": "DescribeConfig请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID",
-          "example": "ins-389a8c12",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "配置中心类型（consul、zookeeper、apollo等）",
-          "example": "consul",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "配置项的节点路径key",
-          "example": "/",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeConfigResponse": {
-      "document": "DescribeConfig返回参数结构体",
-      "members": [
-        {
-          "document": "配置项或路径key",
-          "example": "name",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "配置项的值",
-          "example": "tom",
-          "member": "string",
-          "name": "Value",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "当前key是否为路径",
-          "example": "true",
-          "member": "bool",
-          "name": "IsDir",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "当前key下的子路径",
-          "example": "[\"a\",\"b\",\"c\"]",
-          "member": "string",
-          "name": "List",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeSREInstanceAccessAddressRequest": {
       "document": "DescribeSREInstanceAccessAddress请求参数结构体",
       "members": [
@@ -319,87 +226,6 @@
         }
       ],
       "usage": "in"
-    },
-    "ManageConfigRequest": {
-      "document": "ManageConfig请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID",
-          "example": "ins-389a8c12",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "配置中心类型（consul、zookeeper、apollo等）",
-          "example": "consul",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "请求命名 PUT GET DELETE",
-          "example": "PUT",
-          "member": "string",
-          "name": "Command",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "配置的Key",
-          "example": "name",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "配置的Value",
-          "example": "{name:aaa}",
-          "member": "string",
-          "name": "Value",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ManageConfigResponse": {
-      "document": "ManageConfig返回参数结构体",
-      "members": [
-        {
-          "document": "对配置中心操作配置之后的返回值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "string",
-          "name": "Result",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "操作是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "bool",
-          "name": "OpResult",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "SREInstance": {
       "document": "微服务注册引擎实例",

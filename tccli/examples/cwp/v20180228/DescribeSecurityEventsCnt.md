@@ -59,6 +59,8 @@ Output:
             "EventCnt": 3,
             "UuidCnt": 2
         },
+        "EffectMachineCount": 1,
+        "EventsCount": 1,
         "RequestId": "1234567"
     }
 }
