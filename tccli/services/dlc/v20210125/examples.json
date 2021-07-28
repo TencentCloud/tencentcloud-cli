@@ -80,6 +80,14 @@
         "title": "创建sql任务"
       }
     ],
+    "CreateTasksInOrder": [
+      {
+        "document": "按顺序创建任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasksInOrder\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "按顺序创建任务"
+      }
+    ],
     "CreateUser": [
       {
         "document": "",

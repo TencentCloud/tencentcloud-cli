@@ -969,6 +969,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用来源。",
+          "example": "USER",
+          "member": "string",
+          "name": "InvocationSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1092,6 +1102,16 @@
           "example": "working_directory not exists",
           "member": "string",
           "name": "ErrorInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用来源。",
+          "example": "USER",
+          "member": "string",
+          "name": "InvocationSource",
           "required": true,
           "type": "string",
           "value_allowed_null": false

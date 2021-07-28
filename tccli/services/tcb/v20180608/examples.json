@@ -123,7 +123,7 @@
     "DescribeActivityRecord": [
       {
         "document": "查询活动记录信息",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&Statuses.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ActivityRecords\": []\n    }\n}",
         "title": "查询活动记录信息"
       }

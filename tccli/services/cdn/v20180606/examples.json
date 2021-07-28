@@ -32,6 +32,14 @@
         "title": "动态打包任务提交"
       }
     ],
+    "CreateScdnDomain": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=CreateScdnDomain\n&Domain=www.test.com\n&Waf.Switch=on\n&CC.Switch=on\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\n        \"Result\": \"Success\"\n    }\n}",
+        "title": "创建SCDN域名"
+      }
+    ],
     "CreateScdnFailedLogTask": [
       {
         "document": "",

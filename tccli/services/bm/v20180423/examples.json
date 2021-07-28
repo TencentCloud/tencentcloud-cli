@@ -369,7 +369,7 @@
     "RepairTaskControl": [
       {
         "document": "",
-        "input": "https://bm.tencentcloudapi.com/?Action=RepairTaskControl\r\n&TaskId=bm-repair-4zywlogv\r\n&Operate=AuthorizeRepair\r\n&<公共请求参数>",
+        "input": "https://bm.tencentcloudapi.com/?Action=RepairTaskControl\n&TaskId=bm-repair-4zywlogv\n&Operate=AuthorizeRepair\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0436564c-1284-4f0f-a341-59e86f548446\",\n        \"TaskId\": 123\n    }\n}",
         "title": "维修任务管理-授权维修"
       }

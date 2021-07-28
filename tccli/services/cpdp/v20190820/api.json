@@ -9257,6 +9257,24 @@
           "name": "UserType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约代扣穿透查询存量数据迁移模式",
+          "example": "MigrateMode_CONTRACT_MIGRATE_MODE_NO",
+          "member": "string",
+          "name": "MigrateMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约方式",
+          "example": "CONTRACT_METHOD_WECHAT_JSAPI",
+          "member": "string",
+          "name": "ContractMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15075,6 +15093,24 @@
           "example": "USER_ID",
           "member": "string",
           "name": "UserType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约方式",
+          "example": "CONTRACT_METHOD_WECHAT_JSAPI",
+          "member": "string",
+          "name": "ContractMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签约代扣穿透查询存量数据迁移模式",
+          "example": "MigrateMode_CONTRACT_MIGRATE_MODE_NO",
+          "member": "string",
+          "name": "MigrateMode",
           "required": false,
           "type": "string"
         }

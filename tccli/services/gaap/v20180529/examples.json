@@ -64,6 +64,14 @@
         "title": "创建证书"
       }
     ],
+    "CreateCustomHeader": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomHeader\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-18vhg67\",\n    \"Headers\": [\n        {\n            \"HeaderName\": \"X-REAL_IP\",\n            \"HeaderValue\": \"$remote_addr\"\n        },\n        {\n            \"HeaderName\": \"X-FORWORD-IP\",\n            \"HeaderValue\": \"192.168.2.101\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "CreateCustomHeader"
+      }
+    ],
     "CreateDomain": [
       {
         "document": "",
@@ -240,6 +248,14 @@
         "title": "根据源站区域查询可用加速区域"
       }
     ],
+    "DescribeBlackHeader": [
+      {
+        "document": "",
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeBlackHeader\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"BlackHeaders\": [\n            \"X-Forward-For\",\n            \"allow\"\n        ]\n    }\n}",
+        "title": "查询源站 区域"
+      }
+    ],
     "DescribeCertificateDetail": [
       {
         "document": "",
@@ -262,6 +278,14 @@
         "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCountryAreaMapping\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdcb19c0-74db-47b1-a07c-bbe6985ef44c\",\n        \"CountryAreaMappingList\": [\n            {\n                \"NationCountryName\": \"Fiji Islands\",\n                \"GeographicalZoneInnerCode\": \"401000\",\n                \"ContinentName\": \"Oceania\",\n                \"ContinentInnerCode\": \"400000\",\n                \"NationCountryInnerCode\": \"401012\",\n                \"GeographicalZoneName\": \"Oceania\"\n            }\n        ]\n    }\n}",
         "title": "获取国家地区编码映射表"
+      }
+    ],
+    "DescribeCustomHeader": [
+      {
+        "document": "",
+        "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCustomHeader\n&RuleId=rule-18vhg67\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"RuleId\": \"rule-18vhg67\",\n        \"Headers\": [\n            {\n                \"HeaderName\": \"X-REAL_IP\",\n                \"HeaderValue\": \"$remote_addr\"\n            },\n            {\n                \"HeaderName\": \"X-FORWORD-IP\",\n                \"HeaderValue\": \"192.168.2.101\"\n            }\n        ]\n    }\n}",
+        "title": "查询源站 区域"
       }
     ],
     "DescribeDestRegions": [

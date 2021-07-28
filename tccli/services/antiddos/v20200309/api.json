@@ -120,6 +120,12 @@
       "name": "删除DDoS防护的水印防护密钥",
       "output": "DeleteWaterPrintKeyResponse"
     },
+    "DescribeBasicDeviceStatus": {
+      "document": "获取基础防护攻击状态",
+      "input": "DescribeBasicDeviceStatusRequest",
+      "name": "获取基础防护攻击状态",
+      "output": "DescribeBasicDeviceStatusResponse"
+    },
     "DescribeBlackWhiteIpList": {
       "document": "获取DDoS防护的IP黑白名单",
       "input": "DescribeBlackWhiteIpListRequest",
@@ -1833,6 +1839,42 @@
       ],
       "type": "object"
     },
+    "DescribeBasicDeviceStatusRequest": {
+      "document": "DescribeBasicDeviceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "IP 资源列表",
+          "example": "[\"\\u20181.1.1.1\\u2019\\r\\n\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBasicDeviceStatusResponse": {
+      "document": "DescribeBasicDeviceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "返回资源及状态",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlackWhiteIpListRequest": {
       "document": "DescribeBlackWhiteIpList请求参数结构体",
       "members": [
@@ -2701,7 +2743,7 @@
         },
         {
           "default": "",
-          "document": "域名搜索（查询域名与协议的CC防护阈值时使用）",
+          "document": "域名搜索(查询域名与协议的CC防护阈值时使用）",
           "example": "无",
           "member": "string",
           "name": "FilterDomain",
@@ -3321,6 +3363,32 @@
         }
       ],
       "usage": "both"
+    },
+    "KeyValue": {
+      "document": "字段值，K-V形式",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段取值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Layer4Rule": {
       "document": "4层转发规则",

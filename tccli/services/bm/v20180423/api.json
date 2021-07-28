@@ -4959,6 +4959,7 @@
         {
           "default": "",
           "document": "维修任务ID",
+          "example": "bm-repair-4zywlogv",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4967,6 +4968,7 @@
         {
           "default": "",
           "document": "操作",
+          "example": "AuthorizeRepair",
           "member": "string",
           "name": "Operate",
           "required": true,
@@ -4980,8 +4982,10 @@
       "members": [
         {
           "document": "出参TaskId是黑石异步任务ID，不同于入参TaskId字段。\n此字段可作为DescriptionOperationResult查询异步任务状态接口的入参，查询异步任务执行结果。",
+          "example": "123",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -85,7 +85,7 @@
     "AssignPrivateIpAddresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssignPrivateIpAddresses\r\n&NetworkInterfaceId=eni-afo43z61\r\n&SecondaryPrivateIpAddressCount=2\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssignPrivateIpAddresses\n&NetworkInterfaceId=eni-afo43z61\n&SecondaryPrivateIpAddressCount=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PrivateIpAddressSet\": [\n            {\n                \"PrivateIpAddress\": \"172.16.32.237\"\n            },\n            {\n                \"PrivateIpAddress\": \"172.16.32.84\"\n            }\n        ],\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡申请内网 IP"
       }
@@ -1075,13 +1075,13 @@
     "DescribeHaVips": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeHaVips\r\n&HaVipIds.0=havip-bk4275i0\r\n&HaVipIds.1=havip-2kce8v4q\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeHaVips\n&HaVipIds.0=havip-bk4275i0\n&HaVipIds.1=havip-2kce8v4q\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HaVipSet\": [\n            {\n                \"HaVipId\": \"havip-2kce8v4q\",\n                \"HaVipName\": \"tadfafd\",\n                \"Vip\": \"10.3.3.15\",\n                \"VpcId\": \"vpc-o31qeah3\",\n                \"SubnetId\": \"subnet-8qywqc4y\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"Business\": \"\",\n                \"State\": \"UNBOUND\",\n                \"CreatedTime\": \"2018-04-03 20:00:05\"\n            },\n            {\n                \"HaVipId\": \"havip-bk4275i0\",\n                \"HaVipName\": \"22\",\n                \"Vip\": \"10.2.0.14\",\n                \"VpcId\": \"vpc-2mcdauzl\",\n                \"SubnetId\": \"subnet-mnmm19fg\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"Business\": \"\",\n                \"State\": \"UNBOUND\",\n                \"CreatedTime\": \"2018-04-03 20:05:33\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"1c827bf1-837f-4302-b51a-4d538b7ad249\"\n    }\n}",
         "title": "按ID过滤查询HAVIP列表"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeHaVips\r\n&Filters.0.Name=havip-name\r\n&Filters.0.Values.0=test\r\n&Filters.1.Name=vpc-id\r\n&Filters.1.Values.0=vpc-6v2ht8q5\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeHaVips\n&Filters.0.Name=havip-name\n&Filters.0.Values.0=test\n&Filters.1.Name=vpc-id\n&Filters.1.Values.0=vpc-6v2ht8q5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HaVipSet\": [\n            {\n                \"HaVipId\": \"havip-iyy1ykky\",\n                \"HaVipName\": \"test modify\",\n                \"Vip\": \"10.4.6.17\",\n                \"VpcId\": \"vpc-6v2ht8q5\",\n                \"SubnetId\": \"subnet-qq51iwr4\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"Business\": \"\",\n                \"State\": \"UNBOUND\",\n                \"CreatedTime\": \"2018-10-09 18:08:16\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"659cd6a3-a75a-473c-8280-af27c33da8bd\"\n    }\n}",
         "title": "多条件过滤查询HAVIP列表"
       }
@@ -1861,7 +1861,7 @@
     "ModifyHaVipAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyHaVipAttribute\r\n&HaVipId=havip-9o233uri\r\n&HaVipName=new+name\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyHaVipAttribute\n&HaVipId=havip-9o233uri\n&HaVipName=new+name\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "修改HAVIP名称"
       }
@@ -2293,7 +2293,7 @@
     "UnassignPrivateIpAddresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=UnassignPrivateIpAddresses\r\n&Version=2017-03-12\r\n&NetworkInterfaceId=eni-afo43z61\r\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.32.111\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UnassignPrivateIpAddresses\n&NetworkInterfaceId=eni-afo43z61\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.32.111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡退还内网 IP"
       }

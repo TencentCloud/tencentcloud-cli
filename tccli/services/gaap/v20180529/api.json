@@ -48,6 +48,12 @@
       "name": "创建证书",
       "output": "CreateCertificateResponse"
     },
+    "CreateCustomHeader": {
+      "document": "本接口（CreateCustomHeader）用于创建HTTP/HTTPS监听器的自定义header，客户端请求通过访问该监听器时，会将监听器中配置的header信息发送到源站。",
+      "input": "CreateCustomHeaderRequest",
+      "name": "创建自定义header",
+      "output": "CreateCustomHeaderResponse"
+    },
     "CreateDomain": {
       "document": "本接口（CreateDomain）用于创建HTTP/HTTPS监听器的访问域名，客户端请求通过访问该域名来请求后端业务。\n该接口仅支持version3.0的通道。",
       "input": "CreateDomainRequest",
@@ -180,6 +186,12 @@
       "name": "根据源站区域查询可用加速区域",
       "output": "DescribeAccessRegionsByDestRegionResponse"
     },
+    "DescribeBlackHeader": {
+      "document": "本接口（DescribeBlackHeader）用于查询禁用的自定义header 名称",
+      "input": "DescribeBlackHeaderRequest",
+      "name": "查询禁用自定义header 名称列表",
+      "output": "DescribeBlackHeaderResponse"
+    },
     "DescribeCertificateDetail": {
       "document": "本接口（DescribeCertificateDetail）用于查询证书详情，包括证书ID，证书名字，证书类型，证书内容以及密钥等信息。",
       "input": "DescribeCertificateDetailRequest",
@@ -197,6 +209,12 @@
       "input": "DescribeCountryAreaMappingRequest",
       "name": "获取国家地区编码映射表",
       "output": "DescribeCountryAreaMappingResponse"
+    },
+    "DescribeCustomHeader": {
+      "document": "本接口（DescribeCustomHeader）用于自定义header列表",
+      "input": "DescribeCustomHeaderRequest",
+      "name": "查询自定义header列表",
+      "output": "DescribeCustomHeaderResponse"
     },
     "DescribeDestRegions": {
       "document": "本接口（DescribeDestRegions）用于查询源站区域，即源站服务器所在区域。",
@@ -1433,6 +1451,42 @@
       ],
       "type": "object"
     },
+    "CreateCustomHeaderRequest": {
+      "document": "CreateCustomHeader请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则id",
+          "example": "rule-18vhg67",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新增的header名称和内容列表， ‘’$remote_addr‘’会被解析替换成客户端ip，其他值原样透传到源站。",
+          "example": "[{\"HeaderName\":\"X-REAL_IP\",\"HeaderValue\":\"$remote_addr\"}]",
+          "member": "HttpHeaderParam",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomHeaderResponse": {
+      "document": "CreateCustomHeader返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDomainErrorPageInfoRequest": {
       "document": "CreateDomainErrorPageInfo请求参数结构体",
       "members": [
@@ -1981,6 +2035,7 @@
         {
           "default": "",
           "document": "7层监听器ID",
+          "example": "listener-9jt0rtv9",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -1989,6 +2044,7 @@
         {
           "default": "",
           "document": "转发规则的域名",
+          "example": "www.bbb.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1997,6 +2053,7 @@
         {
           "default": "",
           "document": "转发规则的路径",
+          "example": "%2Fimage",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -2005,6 +2062,7 @@
         {
           "default": "",
           "document": "转发规则对应源站的类型，支持IP和DOMAIN类型。",
+          "example": "IP",
           "member": "string",
           "name": "RealServerType",
           "required": true,
@@ -2013,6 +2071,7 @@
         {
           "default": "",
           "document": "规则转发源站调度策略，支持轮询（rr），加权轮询（wrr），最小连接数（lc）。",
+          "example": "rr",
           "member": "string",
           "name": "Scheduler",
           "required": true,
@@ -2021,6 +2080,7 @@
         {
           "default": "",
           "document": "规则是否开启健康检查，1开启，0关闭。",
+          "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
           "required": true,
@@ -2029,6 +2089,7 @@
         {
           "default": "",
           "document": "源站健康检查相关参数",
+          "example": "无",
           "member": "RuleCheckParams",
           "name": "CheckParams",
           "required": false,
@@ -2037,6 +2098,7 @@
         {
           "default": "",
           "document": "加速通道转发到源站的协议类型：支持HTTP或HTTPS。\n不传递该字段时表示使用对应监听器的ForwardProtocol。",
+          "example": "HTTP",
           "member": "string",
           "name": "ForwardProtocol",
           "required": false,
@@ -2045,6 +2107,7 @@
         {
           "default": "",
           "document": "加速通道转发到远照的host，不设置该参数时，使用默认的host设置，即客户端发起的http请求的host。",
+          "example": "无",
           "member": "string",
           "name": "ForwardHost",
           "required": false,
@@ -2058,8 +2121,10 @@
       "members": [
         {
           "document": "创建转发规则成功返回规则ID",
+          "example": "rule-qws4fmyl",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2791,6 +2856,32 @@
       ],
       "type": "object"
     },
+    "DescribeBlackHeaderRequest": {
+      "document": "DescribeBlackHeader请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBlackHeaderResponse": {
+      "document": "DescribeBlackHeader返回参数结构体",
+      "members": [
+        {
+          "document": "禁用的自定义header列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"X-REAL_IP\",\"remote_addr\"}]",
+          "member": "string",
+          "name": "BlackHeaders",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCertificateDetailRequest": {
       "document": "DescribeCertificateDetail请求参数结构体",
       "members": [
@@ -2894,6 +2985,41 @@
           "name": "CountryAreaMappingList",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomHeaderRequest": {
+      "document": "DescribeCustomHeader请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCustomHeaderResponse": {
+      "document": "DescribeCustomHeader返回参数结构体",
+      "members": [
+        {
+          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule-18vhg67",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自定义header列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"HeaderName\":\"X-REAL_IP\",\"HeaderValue\":\"$remote_addr\"}]",
+          "member": "HttpHeaderParam",
+          "name": "Headers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

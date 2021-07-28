@@ -60,6 +60,12 @@
       "name": "任务创建",
       "output": "CreateTaskResponse"
     },
+    "CreateTasksInOrder": {
+      "document": "按顺序创建任务",
+      "input": "CreateTasksInOrderRequest",
+      "name": "按顺序创建任务",
+      "output": "CreateTasksInOrderResponse"
+    },
     "CreateUser": {
       "document": "创建用户",
       "input": "CreateUserRequest",
@@ -665,6 +671,69 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTasksInOrderRequest": {
+      "document": "CreateTasksInOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL任务信息",
+          "example": "无",
+          "member": "TasksInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据源名称，默认为COSDataCatalog",
+          "example": "COSDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTasksInOrderResponse": {
+      "document": "CreateTasksInOrder返回参数结构体",
+      "members": [
+        {
+          "document": "本批次提交的任务的批次Id",
+          "example": "batch-xxxxxxxx",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务Id集合，按照执行顺序排列",
+          "example": "[alcas,asdfasd]",
+          "member": "string",
+          "name": "TaskIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2511,6 +2580,52 @@
         }
       ],
       "usage": "out"
+    },
+    "TasksInfo": {
+      "document": "批量顺序执行任务集合",
+      "members": [
+        {
+          "default": "",
+          "document": "任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务",
+          "example": "SQLTask",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。",
+          "example": "Proceed",
+          "member": "string",
+          "name": "FailureTolerance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64加密后的SQL语句，用\";\"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的配置信息",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Config",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TextFile": {
       "document": "文本格式",

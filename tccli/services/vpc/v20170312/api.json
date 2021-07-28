@@ -1321,7 +1321,7 @@
       "output": "ModifySecurityGroupAttributeResponse"
     },
     "ModifySecurityGroupPolicies": {
-      "document": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n<ul>\n<li>接口是先删除当前所有的出入站规则，然后再添加 Egress 和 Ingress 规则，不支持自定义索引 PolicyIndex。</li>\n<li>在 SecurityGroupPolicySet 参数中：<ul>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略 Egress 和 Ingress。</li>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 不为0, 在添加出站和入站规则（Egress 和 Ingress）时：<ul>\n\t\t<li>Protocol 字段支持输入 TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n\t\t<li>CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。(展开)在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>Ipv6CidrBlock 字段允许输入符合 IPv6 cidr 格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。</li>\n\t\t<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受。</li>\n\t\t<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n\t\t<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>\n</ul></li></ul></li>\n</ul>",
+      "document": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n<ul>\n<li>该接口不支持自定义索引 PolicyIndex。</li>\n<li>在 SecurityGroupPolicySet 参数中：<ul>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略 Egress 和 Ingress。</li>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 不为0, 在添加出站和入站规则（Egress 和 Ingress）时：<ul>\n\t\t<li>Protocol 字段支持输入 TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n\t\t<li>CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。(展开)在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>Ipv6CidrBlock 字段允许输入符合 IPv6 cidr 格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。</li>\n\t\t<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受。</li>\n\t\t<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n\t\t<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>\n</ul></li></ul></li>\n</ul>",
       "input": "ModifySecurityGroupPoliciesRequest",
       "name": "修改安全组出站和入站规则",
       "output": "ModifySecurityGroupPoliciesResponse"
@@ -1525,7 +1525,7 @@
       "output": "UnassignIpv6SubnetCidrBlockResponse"
     },
     "UnassignPrivateIpAddresses": {
-      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。",
+      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解关联弹性公网 IP。不能退还弹性网卡的主内网IP。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "UnassignPrivateIpAddressesRequest",
       "name": "弹性网卡退还内网 IP",
       "output": "UnassignPrivateIpAddressesResponse"
@@ -2421,6 +2421,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -2429,6 +2430,7 @@
         {
           "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -2437,6 +2439,7 @@
         {
           "default": "",
           "document": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。",
+          "example": "2",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
@@ -2450,8 +2453,10 @@
       "members": [
         {
           "document": "内网IP详细信息。",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9289,6 +9294,7 @@
         {
           "default": "",
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "example": "[\"havip-bk4275i0\\r\\n\",\"havip-2kce8v4q\\r\\n\"]",
           "member": "string",
           "name": "HaVipIds",
           "required": false,
@@ -9297,6 +9303,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。\n<li>havip-id - String - `HAVIP`唯一`ID`，形如：`havip-9o233uri`。</li>\n<li>havip-name - String - `HAVIP`名称。</li>\n<li>vpc-id - String - `HAVIP`所在私有网络`ID`。</li>\n<li>subnet-id - String - `HAVIP`所在子网`ID`。</li>\n<li>vip - String - `HAVIP`的地址`VIP`。</li>\n<li>address-ip - String - `HAVIP`绑定的弹性公网`IP`。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9305,6 +9312,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9313,6 +9321,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9326,15 +9335,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "`HAVIP`对象数组。",
+          "example": "无",
           "member": "HaVip",
           "name": "HaVipSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15036,6 +15049,7 @@
         {
           "default": "",
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
@@ -15044,6 +15058,7 @@
         {
           "default": "",
           "document": "`HAVIP`名称，可任意命名，但不得超过60个字符。",
+          "example": "new+name",
           "member": "string",
           "name": "HaVipName",
           "required": true,
@@ -19854,6 +19869,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -19862,6 +19878,7 @@
         {
           "default": "",
           "document": "指定的内网IP信息，单次最多指定10个。",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": true,

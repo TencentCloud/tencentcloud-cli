@@ -9,7 +9,8 @@ tccli tcb DescribeActivityRecord --cli-unfold-argument  \
     --ActivityIdList 1 \
     --ChannelToken 123 \
     --Channel qc_console \
-    --Status 1
+    --Status 1 \
+    --Statuses 1
 ```
 
 Output: 

@@ -24,6 +24,12 @@
       "name": "动态打包任务提交",
       "output": "CreateEdgePackTaskResponse"
     },
+    "CreateScdnDomain": {
+      "document": "CreateScdnDomain 用于创建 SCDN 加速域名",
+      "input": "CreateScdnDomainRequest",
+      "name": "创建SCDN域名",
+      "output": "CreateScdnDomainResponse"
+    },
     "CreateScdnFailedLogTask": {
       "document": "CreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
       "input": "CreateScdnFailedLogTaskRequest",
@@ -2811,6 +2817,87 @@
     "CreateEdgePackTaskResponse": {
       "document": "CreateEdgePackTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScdnDomainRequest": {
+      "document": "CreateScdnDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Web 攻击防护（WAF）配置",
+          "example": "无",
+          "member": "ScdnWafConfig",
+          "name": "Waf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义防护策略配置",
+          "example": "无",
+          "member": "ScdnAclConfig",
+          "name": "Acl",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "CC 防护配置，目前 CC 防护默认开启",
+          "example": "无",
+          "member": "ScdnConfig",
+          "name": "CC",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "DDOS 防护配置，目前 DDoS 防护默认开启",
+          "example": "无",
+          "member": "ScdnDdosConfig",
+          "name": "Ddos",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "BOT 防护配置",
+          "example": "无",
+          "member": "ScdnBotConfig",
+          "name": "Bot",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScdnDomainResponse": {
+      "document": "CreateScdnDomain返回参数结构体",
+      "members": [
+        {
+          "document": "创建结果，Success表示成功",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -680,6 +680,7 @@
         {
           "default": "",
           "document": "联系人信息",
+          "example": "无",
           "member": "ContactInfo",
           "name": "ContactInfo",
           "required": true,
@@ -688,6 +689,7 @@
         {
           "default": "",
           "document": "证件信息",
+          "example": "无",
           "member": "CertificateInfo",
           "name": "CertificateInfo",
           "required": false,
@@ -701,8 +703,10 @@
       "members": [
         {
           "document": "模板信息",
+          "example": "无",
           "member": "TemplateInfo",
           "name": "Template",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

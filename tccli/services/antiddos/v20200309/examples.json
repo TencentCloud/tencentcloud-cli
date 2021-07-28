@@ -19,7 +19,7 @@
     "CreateBoundIP": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateBoundIP\n&Business=bgp\n&Id=bgp-000000xe\n&BoundDevList.0.Ip=1.1.1.1\n&BoundDevList.0.BizType=public\n&BoundDevList.0.DeviceType=cvm\n&BoundDevList.0.InstanceId=ins-f2f9ssbo\n&CopyPolicy=yes\n&<公共请求参数>",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateBoundIP\n&Business=bgp\n&Id=bgp-000000xe\n&BoundDevList.0.Ip=1.1.1.1\n&BoundDevList.0.BizType=public\n&BoundDevList.0.DeviceType=cvm\n&BoundDevList.0.InstanceId=ins-f2f9ssbo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "绑定IP到高防包实例"
       }
@@ -158,6 +158,14 @@
         "input": "https://antiddos.tencentcloudapi.com/?Action=DeleteWaterPrintKey\n&InstanceId=bgpip-0000011x\n&KeyId=000000f8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"512b8c34-3df9-448a-ae90-c28643d351bf\"\n    }\n}",
         "title": "删除DDoS防护的水印防护密钥"
+      }
+    ],
+    "DescribeBasicDeviceStatus": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeBasicDeviceStatus\n&IpList.0=‘1.1.1.1’\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"1.1.1.1\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"RequestId\": \"8f7a9451-2372-4a88-a69d-9868b8991076\"\n    }\n}",
+        "title": "获取基础防护攻击状态"
       }
     ],
     "DescribeBlackWhiteIpList": [
