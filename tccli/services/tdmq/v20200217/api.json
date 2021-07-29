@@ -1988,6 +1988,15 @@
           "name": "AutoCreatePolicyTopic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范",
+          "example": "LEGACY",
+          "member": "string",
+          "name": "PostFixPattern",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -583,7 +583,7 @@
       "output": "RenewProVersionResponse"
     },
     "RescanImpactedHost": {
-      "document": "本接口 (RescanImpactedHost) 用于漏洞重新检测。",
+      "document": "该接口已废弃\n\n本接口 (RescanImpactedHost) 用于漏洞重新检测。",
       "input": "RescanImpactedHostRequest",
       "name": "漏洞重新检测",
       "output": "RescanImpactedHostResponse"
@@ -7913,6 +7913,7 @@
         {
           "default": "",
           "document": "城市 ID。",
+          "example": "1",
           "member": "uint64",
           "name": "CityId",
           "required": true,
@@ -7922,6 +7923,7 @@
         {
           "default": "",
           "document": "省份 ID。",
+          "example": "1",
           "member": "uint64",
           "name": "ProvinceId",
           "required": true,
@@ -7931,10 +7933,21 @@
         {
           "default": "",
           "document": "国家ID，暂只支持国内：1。",
+          "example": "1",
           "member": "uint64",
           "name": "CountryId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置名称",
+          "example": "中国:北京市:北京市",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

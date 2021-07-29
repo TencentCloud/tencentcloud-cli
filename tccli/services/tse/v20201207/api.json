@@ -1,15 +1,15 @@
 {
   "actions": {
     "DescribeSREInstanceAccessAddress": {
-      "document": "查询微服务注册引擎实例访问地址",
+      "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
-      "name": "查询注册引擎实例访问地址",
+      "name": "查询引擎实例访问地址",
       "output": "DescribeSREInstanceAccessAddressResponse"
     },
     "DescribeSREInstances": {
-      "document": "用于查询微服务引擎实例列表",
+      "document": "用于查询引擎实例列表",
       "input": "DescribeSREInstancesRequest",
-      "name": "查询微服务引擎实例列表",
+      "name": "查询引擎实例列表",
       "output": "DescribeSREInstancesResponse"
     }
   },
@@ -54,6 +54,15 @@
           "name": "InternetAddress",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "apollo多环境公网ip",
+          "example": "无",
+          "member": "EnvAddressInfo",
+          "name": "EnvAddressInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -137,6 +146,42 @@
       ],
       "type": "object"
     },
+    "EnvAddressInfo": {
+      "document": "多环境网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境名",
+          "example": "dev",
+          "member": "string",
+          "name": "EnvName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启config公网",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConfigInternet",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "config公网ip",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConfigInternetServiceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EnvInfo": {
       "document": "环境具体信息",
       "members": [
@@ -196,6 +241,26 @@
           "example": "xxxx.xx.xx.xx",
           "member": "string",
           "name": "ConfigServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启config-server公网",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableConfigInternet",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "config-server公网访问地址",
+          "example": "xx.xx.xx.xx",
+          "member": "string",
+          "name": "ConfigInternetServiceIp",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -388,6 +453,26 @@
           "name": "EnvInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎所在的区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "注册引擎是否开启公网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternet",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

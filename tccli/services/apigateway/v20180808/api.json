@@ -204,6 +204,12 @@
       "name": "展示API绑定的限流策略",
       "output": "DescribeApiEnvironmentStrategyResponse"
     },
+    "DescribeApiForApiApp": {
+      "document": "本接口（DescribeApiForApiApp）用于应用使用者查询部署于 API 网关的 API 接口的详细信息。​",
+      "input": "DescribeApiForApiAppRequest",
+      "name": "应用使用者查询API详情",
+      "output": "DescribeApiForApiAppResponse"
+    },
     "DescribeApiKey": {
       "document": "本接口（DescribeApiKey）用于查询密钥详情。\n用户在创建密钥后，可用此接口查询一个 API 密钥的详情，该接口会显示密钥 Key。",
       "input": "DescribeApiKeyRequest",
@@ -3270,6 +3276,15 @@
           "name": "IsBase64Encoded",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。",
+          "example": "EVENT",
+          "member": "string",
+          "name": "ServiceScfFunctionType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4114,6 +4129,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-2nuhovb7",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4123,6 +4139,7 @@
         {
           "default": "",
           "document": "API唯一ID。",
+          "example": "api-d2sdvx",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -4132,6 +4149,7 @@
         {
           "default": "",
           "document": "用户自定义的 API 接口描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API",
           "member": "string",
           "name": "ApiDesc",
           "required": true,
@@ -4141,6 +4159,7 @@
         {
           "default": "",
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -4150,6 +4169,7 @@
         {
           "default": "",
           "document": "最后修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -4159,6 +4179,7 @@
         {
           "default": "",
           "document": "API 接口的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apiname",
           "member": "string",
           "name": "ApiName",
           "required": true,
@@ -4168,6 +4189,7 @@
         {
           "default": "",
           "document": "VPCID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
           "member": "int64",
           "name": "VpcId",
           "required": true,
@@ -4177,6 +4199,7 @@
         {
           "default": "",
           "document": "VPC唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -4186,6 +4209,7 @@
         {
           "default": "",
           "document": "API类型。取值为NORMAL（普通API）和TSF（微服务API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
           "member": "string",
           "name": "ApiType",
           "required": true,
@@ -4195,6 +4219,7 @@
         {
           "default": "",
           "document": "API协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -4204,6 +4229,7 @@
         {
           "default": "",
           "document": "是否买后调试。（云市场预留字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "False",
           "member": "bool",
           "name": "IsDebugAfterCharge",
           "required": true,
@@ -4212,7 +4238,8 @@
         },
         {
           "default": "",
-          "document": "API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API 鉴权类型。取值为SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、EIAM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EIAM",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -4222,6 +4249,7 @@
         {
           "default": "",
           "document": "OAUTH API的类型。当AuthType 为 OAUTH时该字段有效， 取值为NORMAL（业务API）和 OAUTH（授权API）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OAUTH",
           "member": "string",
           "name": "ApiBusinessType",
           "required": true,
@@ -4231,6 +4259,7 @@
         {
           "default": "",
           "document": "关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api-dd3acs",
           "member": "string",
           "name": "AuthRelationApiId",
           "required": true,
@@ -4240,6 +4269,7 @@
         {
           "default": "",
           "document": "OAUTH 配置信息。当AuthType是OAUTH时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OauthConfig",
           "name": "OauthConfig",
           "required": true,
@@ -4249,6 +4279,7 @@
         {
           "default": "",
           "document": "授权API关联的业务API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "RelationBuniessApiIds",
           "required": true,
@@ -4258,6 +4289,7 @@
         {
           "default": "",
           "document": "API关联的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -4267,6 +4299,7 @@
         {
           "default": "",
           "document": "API 的路径，如 /path。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/hello",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -4276,6 +4309,7 @@
         {
           "default": "",
           "document": "API 的请求方法，如 GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -4718,6 +4752,60 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiForApiAppRequest": {
+      "document": "DescribeApiForApiApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "API 所在的服务唯一 ID。",
+          "example": "service-ody35h5e",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "API 接口唯一 ID。",
+          "example": "api-3v4tzy3u",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Api所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApiRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiForApiAppResponse": {
+      "document": "DescribeApiForApiApp返回参数结构体",
+      "members": [
+        {
+          "document": "API 详情。",
+          "example": "{             \"ServiceId\": \"service-miqoaf3c\",             \"Serv",
+          "member": "ApiInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9074,11 +9162,12 @@
       "usage": "out"
     },
     "ServiceConfig": {
-      "document": "ServiceConfig",
+      "document": "ServiceConfig配置",
       "members": [
         {
           "default": "",
-          "document": "后端类型。启用vpc时生效，目前支持的类型为clb。",
+          "document": "后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道",
+          "example": "clb",
           "member": "string",
           "name": "Product",
           "required": false,
@@ -9088,6 +9177,7 @@
         {
           "default": "",
           "document": "vpc 的唯一ID。",
+          "example": "vpc-ssaasd",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -9097,6 +9187,7 @@
         {
           "default": "",
           "document": "API 的后端服务url。如果ServiceType是HTTP，则此参数必传。",
+          "example": "172.17.0.16",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -9106,6 +9197,7 @@
         {
           "default": "",
           "document": "API 的后端服务路径，如 /path。如果 ServiceType 是 HTTP，则此参数必传。前后端路径可不同。",
+          "example": "/",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -9115,6 +9207,7 @@
         {
           "default": "",
           "document": "API的后端服务请求方法，如 GET。如果 ServiceType 是 HTTP，则此参数必传。前后端方法可不同。",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": false,

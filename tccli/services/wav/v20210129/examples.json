@@ -80,6 +80,14 @@
         "title": "外部联系人转换接口"
       }
     ],
+    "QueryLicenseInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryLicenseInfo\n<公共请求参数>\n\n{\n    \"License\": \"A1c0tVAAAGSB1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LicenseInfo\": {\n            \"DestroyTime\": \"2022-07-15 00:00:00\",\n            \"ResourceEndTime\": \"2022-07-01 00:00:00\",\n            \"Extra\": \"\",\n            \"IsolationDeadline\": \"2022-07-08 00:00:00\",\n            \"License\": \"A1c0tVAAAGSB1\",\n            \"LicenseEdition\": 1,\n            \"ResourceStartTime\": \"2021-07-01 00:00:00\",\n            \"Status\": 1\n        },\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询license信息接口"
+      }
+    ],
     "QueryMiniAppCodeList": [
       {
         "document": "",

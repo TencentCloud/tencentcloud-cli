@@ -1550,6 +1550,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -1558,6 +1559,7 @@
         {
           "default": "",
           "document": "接受关联实例列表。",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -3043,6 +3045,7 @@
         {
           "default": "",
           "document": "云联网唯一ID",
+          "example": "-",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -3052,6 +3055,7 @@
         {
           "default": "",
           "document": "云联网名称",
+          "example": "-",
           "member": "string",
           "name": "CcnName",
           "required": true,
@@ -3061,6 +3065,7 @@
         {
           "default": "",
           "document": "云联网描述信息",
+          "example": "-",
           "member": "string",
           "name": "CcnDescription",
           "required": true,
@@ -3070,6 +3075,7 @@
         {
           "default": "",
           "document": "关联实例数量",
+          "example": "-",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -3079,6 +3085,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "-",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -3088,6 +3095,7 @@
         {
           "default": "",
           "document": "实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。",
+          "example": "ISOLATED",
           "member": "string",
           "name": "State",
           "required": true,
@@ -3097,6 +3105,7 @@
         {
           "default": "",
           "document": "实例服务质量，’PT’：白金，'AU'：金，'AG'：银。",
+          "example": "PT",
           "member": "string",
           "name": "QosLevel",
           "required": true,
@@ -3106,6 +3115,7 @@
         {
           "default": "",
           "document": "付费类型，PREPAID为预付费，POSTPAID为后付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -3115,6 +3125,7 @@
         {
           "default": "",
           "document": "限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
           "required": true,
@@ -3124,6 +3135,7 @@
         {
           "default": "",
           "document": "标签键值对。",
+          "example": "-",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -3133,11 +3145,32 @@
         {
           "default": "",
           "document": "是否支持云联网路由优先级的功能。False：不支持，True：支持。",
+          "example": "True",
           "member": "bool",
           "name": "RoutePriorityFlag",
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例关联的路由表个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RouteTableCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启云联网多路由表特性。False：未开启，True：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteTableFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3264,6 +3297,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由表ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路由表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3370,6 +3423,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例关联的路由表ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7883,6 +7946,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`数组。形如：[`vpc-6v2ht8q5`]",
+          "example": "vpc-6v2ht8q5",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -7890,7 +7954,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
+          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7899,6 +7964,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -7907,6 +7973,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -7920,15 +7987,19 @@
       "members": [
         {
           "document": "符合条件的辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

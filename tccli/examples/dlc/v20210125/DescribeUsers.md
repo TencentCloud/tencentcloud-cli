@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dlc DescribeUsers --cli-unfold-argument  \
-    --Limit 0 \
-    --Sorting xx \
-    --UserId xx \
-    --SortBy xx \
+    --Limit 10 \
+    --Sorting create-time \
+    --UserId 1248065439 \
+    --SortBy desc \
     --Offset 0
 ```
 
@@ -17,34 +17,34 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "UserSet": [
             {
-                "Creator": "xx",
+                "Creator": "1248065439",
                 "PolicySet": [
                     {
-                        "Table": "xx",
-                        "Catalog": "xx",
-                        "Operation": "xx",
-                        "Database": "xx"
+                        "Table": "TableName",
+                        "Catalog": "COSDataCatalog",
+                        "Operation": "ALL",
+                        "Database": "DatabaseName"
                     }
                 ],
-                "UserId": "xx",
+                "UserId": "1248065439",
                 "IsOwner": true,
-                "UserDescription": "xx",
+                "UserDescription": "Test User",
                 "WorkGroupSet": [
                     {
                         "WorkGroupId": 0,
-                        "WorkGroupName": "xx",
-                        "CreateTime": "xx",
-                        "WorkGroupDescription": "xx",
-                        "Creator": "xx"
+                        "WorkGroupName": "Group1",
+                        "CreateTime": "2021-07-28 16:19:32",
+                        "WorkGroupDescription": "test group",
+                        "Creator": "1248065439"
                     }
                 ],
-                "CreateTime": "xx"
+                "CreateTime": "2021-07-28 16:19:32"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1287310-badou889lodj-1231jk12"
     }
 }
 ```

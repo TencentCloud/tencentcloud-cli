@@ -484,6 +484,14 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "DescribeVpcCniPodLimits": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeVpcCniPodLimits\n&Zone=ap-guangzhou-3,\n&InstanceFamily=S5,\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"PodLimitsInstanceSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 1\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.SMALL4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 1\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.MEDIUM4\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 3\n                }\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"S5\",\n                \"InstanceType\": \"S5.MEDIUM8\",\n                \"PodLimits\": {\n                    \"TKERouteENINonStaticIP\": 60,\n                    \"TKERouteENIStaticIP\": 59,\n                    \"TKEDirectENI\": 3\n                }\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询广州3区下的S5实例族机型可支持的 VPC-CNI Pod 数量"
+      }
+    ],
     "DisableVpcCniNetworkType": [
       {
         "document": "",

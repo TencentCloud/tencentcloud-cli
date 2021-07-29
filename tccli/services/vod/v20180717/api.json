@@ -2002,7 +2002,8 @@
       "members": [
         {
           "default": "",
-          "document": "语音全文识别片段列表。",
+          "document": "语音全文识别片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskAsrFullTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
@@ -2011,7 +2012,28 @@
         },
         {
           "default": "",
+          "document": "语音全文识别片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://123xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音全文识别片段列表文件 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "字幕文件 Url。",
+          "example": "http://123xxx",
           "member": "string",
           "name": "SubtitleUrl",
           "required": true,
@@ -2167,11 +2189,32 @@
       "members": [
         {
           "default": "",
-          "document": "语音关键词识别结果集。",
+          "document": "语音关键词识别结果集。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskAsrWordsResultItem",
           "name": "ResultSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "htttp://12xxx",
+          "member": "string",
+          "name": "ResultSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ResultSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2332,11 +2375,32 @@
       "members": [
         {
           "default": "",
-          "document": "智能人脸识别结果集。",
+          "document": "智能人脸识别结果集。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskFaceResultItem",
           "name": "ResultSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能人脸识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://123xxx",
+          "member": "string",
+          "name": "ResultSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能人脸识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ResultSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2620,11 +2684,32 @@
       "members": [
         {
           "default": "",
-          "document": "智能物体识别结果集。",
+          "document": "智能物体识别结果集。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskObjectResultItem",
           "name": "ResultSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能物体识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "ResultSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能物体识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ResultSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2752,11 +2837,32 @@
       "members": [
         {
           "default": "",
-          "document": "文本全文识别结果集。",
+          "document": "文本全文识别结果集。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskOcrFullTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本全文识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本全文识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2932,11 +3038,32 @@
       "members": [
         {
           "default": "",
-          "document": "文本关键词识别结果集。",
+          "document": "文本关键词识别结果集。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ResultSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskOcrWordsResultItem",
           "name": "ResultSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本关键词识别结果集文件 URL。文件的内容为 JSON，数据结构与 ResultSet 字段一致。 （文件不会永久存储，到达ResultSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "ResultSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本关键词识别结果集文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ResultSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3064,11 +3191,32 @@
       "members": [
         {
           "default": "",
-          "document": "视频拆条片段列表。",
+          "document": "视频拆条片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "null",
           "member": "AiRecognitionTaskSegmentSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拆条片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://123xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拆条片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

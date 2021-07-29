@@ -25,13 +25,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": {
-            "ApiId": "api-61jyuvg6",
-            "Path": "test",
-            "Method": "GET",
-            "CreatedTime": "2020-03-23T08:59:18Z"
-        },
-        "RequestId": "96026454-d916-4035-ba88-0e900214d0f6"
+        "Result": {},
+        "RequestId": "d617a773-cfbd-47a7-8762-b213dcb681f0"
     }
 }
 ```

@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli dlc AttachUserPolicy --cli-unfold-argument  \
-    --UserId xx \
-    --PolicySet.0.Table xx \
-    --PolicySet.0.Catalog xx \
-    --PolicySet.0.Operation xx \
-    --PolicySet.0.Database xx
+    --UserId 1248065439 \
+    --PolicySet.0.Table TableName \
+    --PolicySet.0.Catalog COSDataCatalog \
+    --PolicySet.0.Operation ALL \
+    --PolicySet.0.Database DatabaseName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "1287310-badou889lodj-1231jk12"
     }
 }
 ```

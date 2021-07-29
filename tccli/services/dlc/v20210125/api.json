@@ -55,13 +55,19 @@
       "output": "CreateTableResponse"
     },
     "CreateTask": {
-      "document": "本接口（CreateTask）用于创建sql查询任务。",
+      "document": "本接口（CreateTask）用于创建sql查询任务。（推荐使用CreateTasks接口）",
       "input": "CreateTaskRequest",
       "name": "任务创建",
       "output": "CreateTaskResponse"
     },
+    "CreateTasks": {
+      "document": "批量创建任务",
+      "input": "CreateTasksRequest",
+      "name": "批量创建任务",
+      "output": "CreateTasksResponse"
+    },
     "CreateTasksInOrder": {
-      "document": "按顺序创建任务",
+      "document": "按顺序创建任务（已经废弃，后期不再维护，请使用接口CreateTasks）",
       "input": "CreateTasksInOrderRequest",
       "name": "按顺序创建任务",
       "output": "CreateTasksInOrderResponse"
@@ -226,7 +232,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户Id，和CAM侧Uin匹配",
+          "document": "用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。",
           "example": "12345678",
           "member": "string",
           "name": "UserId",
@@ -744,12 +750,75 @@
       ],
       "type": "object"
     },
+    "CreateTasksRequest": {
+      "document": "CreateTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL任务信息",
+          "example": "无",
+          "member": "TasksInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据源名称，默认为COSDataCatalog",
+          "example": "COSDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTasksResponse": {
+      "document": "CreateTasks返回参数结构体",
+      "members": [
+        {
+          "document": "本批次提交的任务的批次Id",
+          "example": "batch-xxxxxxxx",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务Id集合，按照执行顺序排列",
+          "example": "[alcas,asdfasd]",
+          "member": "string",
+          "name": "TaskIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserRequest": {
       "document": "CreateUser请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "用户Id，当前主账号的子账号Uin，和CAM侧匹配",
+          "document": "需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。",
           "example": "12345678",
           "member": "string",
           "name": "UserId",
@@ -758,7 +827,7 @@
         },
         {
           "default": "",
-          "document": "用户描述",
+          "document": "用户描述信息，方便区分不同用户",
           "example": "for test",
           "member": "string",
           "name": "UserDescription",
@@ -1536,7 +1605,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询的用户Id，和CAM侧Uin匹配",
+          "document": "指定查询的子用户uin，用户需要通过CreateUser接口创建。",
           "example": "12345678",
           "member": "string",
           "name": "UserId",
@@ -1586,7 +1655,7 @@
       "document": "DescribeUsers返回参数结构体",
       "members": [
         {
-          "document": "用户总数",
+          "document": "查询到的用户总数",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -1595,7 +1664,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户集合",
+          "document": "查询到的授权用户信息集合",
           "example": "无",
           "member": "UserInfo",
           "name": "UserSet",
@@ -1698,7 +1767,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询的工作组Id",
+          "document": "查询的工作组Id，不填或填0表示不过滤。",
           "example": "1",
           "member": "int64",
           "name": "WorkGroupId",
@@ -2052,7 +2121,7 @@
       "members": [
         {
           "default": "",
-          "document": "需要授权的数据源名称，*代表拥有全部数据源权限",
+          "document": "需要授权的数据源名称，当前仅支持COSDataCatalog或者*",
           "example": "COSDataCatalog",
           "member": "string",
           "name": "Catalog",
@@ -2062,7 +2131,7 @@
         },
         {
           "default": "",
-          "document": "需要授权的数据库名称，*代表拥有全部数据库名称",
+          "document": "需要授权的数据库名，填*代表当前Catalog下所有数据库",
           "example": "test_database",
           "member": "string",
           "name": "Database",
@@ -2072,7 +2141,7 @@
         },
         {
           "default": "",
-          "document": "需要授权的表名称，*代表拥有全部表权限",
+          "document": "需要授权的表名，填*代表当前Database下所有表",
           "example": "test_table",
           "member": "string",
           "name": "Table",
@@ -2082,7 +2151,7 @@
         },
         {
           "default": "",
-          "document": "授权的操作，当前只支持“ALL”",
+          "document": "授权粒度，当前只支持ALL，即全部权限",
           "example": "ALL",
           "member": "string",
           "name": "Operation",
@@ -2616,7 +2685,7 @@
         },
         {
           "default": "",
-          "document": "任务的配置信息",
+          "document": "任务的配置信息，当前仅支持SparkSQLTask任务。",
           "example": "无",
           "member": "KVPair",
           "name": "Config",
@@ -2711,7 +2780,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户Id，和CAM侧Uin匹配",
+          "document": "用户Id，和子用户uin相同",
           "example": "12345678",
           "member": "string",
           "name": "UserId",
@@ -2721,7 +2790,7 @@
         },
         {
           "default": "",
-          "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户描述信息，方便区分不同用户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试用户",
           "member": "string",
           "name": "UserDescription",
@@ -2741,7 +2810,7 @@
         },
         {
           "default": "",
-          "document": "创建者",
+          "document": "当前用户的创建者",
           "example": "Administrator",
           "member": "string",
           "name": "Creator",
@@ -2751,8 +2820,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
-          "example": "2010/10/04",
+          "document": "创建时间，格式如2021-07-28 16:19:32",
+          "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -2787,7 +2856,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户Id，和CAM侧Uin匹配",
+          "document": "用户Id，和CAM侧子用户Uin匹配",
           "example": "12345678",
           "member": "string",
           "name": "UserId",
@@ -2807,7 +2876,7 @@
         },
         {
           "default": "",
-          "document": "创建者",
+          "document": "当前用户的创建者",
           "example": "Administrator",
           "member": "string",
           "name": "Creator",
@@ -2817,8 +2886,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
-          "example": "2020/10/04",
+          "document": "当前用户的创建时间，形如2021-07-28 16:19:32",
+          "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -2941,7 +3010,7 @@
       "members": [
         {
           "default": "",
-          "document": "工作组Id",
+          "document": "查询到的工作组唯一Id",
           "example": "1",
           "member": "int64",
           "name": "WorkGroupId",
@@ -3001,7 +3070,7 @@
         },
         {
           "default": "",
-          "document": "创建者",
+          "document": "工作组的创建人",
           "example": "Administrator",
           "member": "string",
           "name": "Creator",
@@ -3011,8 +3080,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
-          "example": "2020/10/04",
+          "document": "工作组的创建时间，形如2021-07-28 16:19:32",
+          "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -3027,7 +3096,7 @@
       "members": [
         {
           "default": "",
-          "document": "工作组Id",
+          "document": "工作组唯一Id",
           "example": "1",
           "member": "int64",
           "name": "WorkGroupId",
@@ -3067,8 +3136,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
-          "example": "2020/10/04",
+          "document": "工作组创建的时间，形如2021-07-28 16:19:32",
+          "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
           "required": true,

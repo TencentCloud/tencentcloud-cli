@@ -1,6 +1,6 @@
-**Example 1: 查询微服务引擎实例列表**
+**Example 1: 查询引擎实例列表**
 
-用于查询微服务引擎实例列表
+用于查询引擎实例列表
 
 Input: 
 
@@ -31,6 +31,7 @@ Output:
                 "StorageCapacity": 0,
                 "Edition": "xx",
                 "Replica": 3,
+                "EngineRegion": "xx",
                 "EnvInfos": [
                     {
                         "VpcInfos": [
@@ -40,9 +41,11 @@ Output:
                             }
                         ],
                         "Status": "xx",
+                        "EnableConfigInternet": true,
                         "ConfigServiceIp": "xx",
                         "StorageCapacity": 0,
                         "EnvName": "xx",
+                        "ConfigInternetServiceIp": "xx",
                         "AdminServiceIp": "xx"
                     }
                 ],

@@ -60,6 +60,12 @@
       "name": "外部联系人转换接口",
       "output": "QueryExternalUserMappingInfoResponse"
     },
+    "QueryLicenseInfo": {
+      "document": "该接口获取license对应的详细信息",
+      "input": "QueryLicenseInfoRequest",
+      "name": "查询license信息接口",
+      "output": "QueryLicenseInfoResponse"
+    },
     "QueryMiniAppCodeList": {
       "document": "查询小程序码列表接口",
       "input": "QueryMiniAppCodeListRequest",
@@ -1074,6 +1080,92 @@
       ],
       "usage": "out"
     },
+    "LicenseInfo": {
+      "document": "license相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "license编号",
+          "example": "A1c0tVAAAGSB1",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license版本；1-基础版，2-标准版，3-增值版",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseEdition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效开始时间, 格式yyyy-MM-dd HH:mm:ss",
+          "example": "2021-07-01 00:00:00",
+          "member": "string",
+          "name": "ResourceStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效结束时间, 格式yyyy-MM-dd HH:mm:ss",
+          "example": "2022-07-01 00:00:00",
+          "member": "string",
+          "name": "ResourceEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离截止时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-08 00:00:00",
+          "member": "string",
+          "name": "IsolationDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源计划销毁时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-15 00:00:00",
+          "member": "string",
+          "name": "DestroyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源状态，1.正常，2.隔离，3.销毁",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LiveCodeDetail": {
       "document": "活动活码详情",
       "members": [
@@ -1686,6 +1778,42 @@
           "name": "ExternalUserIdMapping",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryLicenseInfoRequest": {
+      "document": "QueryLicenseInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "license编号",
+          "example": "afeafefefe1",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryLicenseInfoResponse": {
+      "document": "QueryLicenseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "license响应信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LicenseInfo",
+          "name": "LicenseInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {

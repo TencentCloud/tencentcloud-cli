@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dlc DescribeWorkGroups --cli-unfold-argument  \
-    --Sorting xx \
-    --WorkGroupId 0 \
+    --Sorting desc \
+    --WorkGroupId 1 \
     --Limit 0 \
-    --SortBy xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --SortBy create-time \
+    --Filters.0.Values workgroup-name \
+    --Filters.0.Name Group1 \
     --Offset 0
 ```
 
@@ -23,30 +23,30 @@ Output:
             {
                 "PolicySet": [
                     {
-                        "Table": "xx",
-                        "Catalog": "xx",
-                        "Operation": "xx",
-                        "Database": "xx"
+                        "Table": "TableName",
+                        "Catalog": "COSDataCatalog",
+                        "Operation": "ALL",
+                        "Database": "DatabaseName"
                     }
                 ],
-                "WorkGroupId": 0,
-                "Creator": "xx",
-                "UserNum": 0,
-                "WorkGroupDescription": "xx",
-                "WorkGroupName": "xx",
+                "WorkGroupId": 1,
+                "Creator": "1248065439",
+                "UserNum": 1,
+                "WorkGroupDescription": "test group",
+                "WorkGroupName": "Group1",
                 "UserSet": [
                     {
-                        "UserDescription": "xx",
-                        "UserId": "xx",
-                        "CreateTime": "xx",
-                        "Creator": "xx"
+                        "UserDescription": "test user",
+                        "UserId": "1248065439",
+                        "CreateTime": "2021-07-28 16:19:32",
+                        "Creator": "1248065439"
                     }
                 ],
-                "CreateTime": "xx"
+                "CreateTime": "2021-07-28 16:19:32"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "1287310-badou889lodj-1231jk12"
     }
 }
 ```

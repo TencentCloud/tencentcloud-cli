@@ -1,4 +1,4 @@
-**Example 1: 查询微服务注册引擎实例访问地址**
+**Example 1: 查询引擎实例访问地址**
 
 
 
@@ -15,7 +15,14 @@ Output:
     "Response": {
         "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
         "IntranetAddress": "10.1.8.15",
-        "InternetAddress": "10.0.0.1"
+        "InternetAddress": "10.0.0.1",
+        "EnvAddressInfos": [
+            {
+                "EnvName": "xx",
+                "ConfigInternetServiceIp": "xx",
+                "EnableConfigInternet": true
+            }
+        ]
     }
 }
 ```

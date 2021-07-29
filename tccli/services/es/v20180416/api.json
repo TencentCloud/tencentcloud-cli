@@ -1739,7 +1739,7 @@
         },
         {
           "default": "",
-          "document": "节点类型<li>hotData: 热数据节点</li>\n<li>warmData: 冷数据节点</li>\n<li>dedicatedMaster: 专用主节点</li>\n<li>kibana: Kibana节点</li>\n默认值为hotData",
+          "document": "节点类型<li>hotData: 热数据节点</li>\n<li>warmData: 冷数据节点</li>\n<li>dedicatedMaster: 专用主节点</li>\n默认值为hotData",
           "example": "dedicatedMaster",
           "member": "string",
           "name": "Type",

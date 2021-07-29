@@ -94,7 +94,7 @@ def doAddUsersToWorkGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doBindWorkGroupsToUser(args, parsed_globals):
+def doDeleteScript(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -110,9 +110,9 @@ def doBindWorkGroupsToUser(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.BindWorkGroupsToUserRequest()
+    model = models.DeleteScriptRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.BindWorkGroupsToUser(model)
+    rsp = client.DeleteScript(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -167,6 +167,33 @@ def doDescribeUsers(args, parsed_globals):
     model = models.DescribeUsersRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeUsers(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateTasks(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateTasksRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateTasks(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -580,7 +607,7 @@ def doDescribeTasks(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteScript(args, parsed_globals):
+def doBindWorkGroupsToUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -596,9 +623,9 @@ def doDeleteScript(args, parsed_globals):
     client = mod.DlcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteScriptRequest()
+    model = models.BindWorkGroupsToUserRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DeleteScript(model)
+    rsp = client.BindWorkGroupsToUser(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -864,9 +891,10 @@ ACTION_MAP = {
     "DetachWorkGroupPolicy": doDetachWorkGroupPolicy,
     "CreateTask": doCreateTask,
     "AddUsersToWorkGroup": doAddUsersToWorkGroup,
-    "BindWorkGroupsToUser": doBindWorkGroupsToUser,
+    "DeleteScript": doDeleteScript,
     "CreateTable": doCreateTable,
     "DescribeUsers": doDescribeUsers,
+    "CreateTasks": doCreateTasks,
     "DescribeScripts": doDescribeScripts,
     "DeleteWorkGroup": doDeleteWorkGroup,
     "CreateStoreLocation": doCreateStoreLocation,
@@ -882,7 +910,7 @@ ACTION_MAP = {
     "DescribeViews": doDescribeViews,
     "DescribeTable": doDescribeTable,
     "DescribeTasks": doDescribeTasks,
-    "DeleteScript": doDeleteScript,
+    "BindWorkGroupsToUser": doBindWorkGroupsToUser,
     "ModifyUser": doModifyUser,
     "DeleteUser": doDeleteUser,
     "DescribeDatabases": doDescribeDatabases,

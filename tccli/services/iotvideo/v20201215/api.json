@@ -4453,6 +4453,7 @@
         {
           "default": "",
           "document": "设备名",
+          "example": "video_00001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -4462,6 +4463,7 @@
         {
           "default": "",
           "document": "设备是否在线，0不在线，1在线，2获取失败，3未激活",
+          "example": "0",
           "member": "uint64",
           "name": "Online",
           "required": true,
@@ -4471,6 +4473,7 @@
         {
           "default": "",
           "document": "设备最后上线时间",
+          "example": "1625543955",
           "member": "uint64",
           "name": "LoginTime",
           "required": true,
@@ -4480,6 +4483,7 @@
         {
           "default": "",
           "document": "设备密钥",
+          "example": "Cdakt7OGTs8689DT1qv0w==",
           "member": "string",
           "name": "DevicePsk",
           "required": true,
@@ -4488,7 +4492,8 @@
         },
         {
           "default": "",
-          "document": "设备启用状态",
+          "document": "设备启用状态 0为停用 1为可用",
+          "example": "1",
           "member": "uint64",
           "name": "EnableState",
           "required": true,
@@ -4498,6 +4503,7 @@
         {
           "default": "",
           "document": "设备过期时间",
+          "example": "1657024030",
           "member": "uint64",
           "name": "ExpireTime",
           "required": true,

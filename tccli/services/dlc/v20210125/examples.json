@@ -11,8 +11,8 @@
     "AttachUserPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "绑定鉴权策略到用户"
       }
     ],
@@ -80,6 +80,14 @@
         "title": "创建sql任务"
       }
     ],
+    "CreateTasks": [
+      {
+        "document": "批量创建任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasks\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量创建任务"
+      }
+    ],
     "CreateTasksInOrder": [
       {
         "document": "按顺序创建任务",
@@ -91,16 +99,16 @@
     "CreateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"xx\",\n    \"UserId\": \"xx\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"Test User\",\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "创建用户"
       }
     ],
     "CreateWorkGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupName\": \"xx\",\n    \"WorkGroupDescription\": \"xx\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"WorkGroupId\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupName\": \"Group1\",\n    \"WorkGroupDescription\": \"testGroup\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkGroupId\": 1,\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "创建工作组"
       }
     ],
@@ -187,8 +195,8 @@
     "DescribeUsers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Sorting\": \"xx\",\n    \"UserId\": \"xx\",\n    \"SortBy\": \"xx\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"UserSet\": [\n            {\n                \"Creator\": \"xx\",\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"xx\",\n                        \"Catalog\": \"xx\",\n                        \"Operation\": \"xx\",\n                        \"Database\": \"xx\"\n                    }\n                ],\n                \"UserId\": \"xx\",\n                \"IsOwner\": true,\n                \"UserDescription\": \"xx\",\n                \"WorkGroupSet\": [\n                    {\n                        \"WorkGroupId\": 0,\n                        \"WorkGroupName\": \"xx\",\n                        \"CreateTime\": \"xx\",\n                        \"WorkGroupDescription\": \"xx\",\n                        \"Creator\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Sorting\": \"create-time\",\n    \"UserId\": \"1248065439\",\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"Creator\": \"1248065439\",\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"TableName\",\n                        \"Catalog\": \"COSDataCatalog\",\n                        \"Operation\": \"ALL\",\n                        \"Database\": \"DatabaseName\"\n                    }\n                ],\n                \"UserId\": \"1248065439\",\n                \"IsOwner\": true,\n                \"UserDescription\": \"Test User\",\n                \"WorkGroupSet\": [\n                    {\n                        \"WorkGroupId\": 0,\n                        \"WorkGroupName\": \"Group1\",\n                        \"CreateTime\": \"2021-07-28 16:19:32\",\n                        \"WorkGroupDescription\": \"test group\",\n                        \"Creator\": \"1248065439\"\n                    }\n                ],\n                \"CreateTime\": \"2021-07-28 16:19:32\"\n            }\n        ],\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "获取用户列表信息"
       }
     ],
@@ -203,8 +211,8 @@
     "DescribeWorkGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkGroups\n<公共请求参数>\n\n{\n    \"Sorting\": \"xx\",\n    \"WorkGroupId\": 0,\n    \"Limit\": 0,\n    \"SortBy\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"WorkGroupSet\": [\n            {\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"xx\",\n                        \"Catalog\": \"xx\",\n                        \"Operation\": \"xx\",\n                        \"Database\": \"xx\"\n                    }\n                ],\n                \"WorkGroupId\": 0,\n                \"Creator\": \"xx\",\n                \"UserNum\": 0,\n                \"WorkGroupDescription\": \"xx\",\n                \"WorkGroupName\": \"xx\",\n                \"UserSet\": [\n                    {\n                        \"UserDescription\": \"xx\",\n                        \"UserId\": \"xx\",\n                        \"CreateTime\": \"xx\",\n                        \"Creator\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkGroups\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"WorkGroupId\": 1,\n    \"Limit\": 0,\n    \"SortBy\": \"create-time\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"workgroup-name\"\n            ],\n            \"Name\": \"Group1\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkGroupSet\": [\n            {\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"TableName\",\n                        \"Catalog\": \"COSDataCatalog\",\n                        \"Operation\": \"ALL\",\n                        \"Database\": \"DatabaseName\"\n                    }\n                ],\n                \"WorkGroupId\": 1,\n                \"Creator\": \"1248065439\",\n                \"UserNum\": 1,\n                \"WorkGroupDescription\": \"test group\",\n                \"WorkGroupName\": \"Group1\",\n                \"UserSet\": [\n                    {\n                        \"UserDescription\": \"test user\",\n                        \"UserId\": \"1248065439\",\n                        \"CreateTime\": \"2021-07-28 16:19:32\",\n                        \"Creator\": \"1248065439\"\n                    }\n                ],\n                \"CreateTime\": \"2021-07-28 16:19:32\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "获取工作组列表"
       }
     ],
