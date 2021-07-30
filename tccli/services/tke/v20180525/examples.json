@@ -140,6 +140,14 @@
         "title": "创建弹性集群示例"
       }
     ],
+    "CreatePrometheusAlertRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"TemplateId\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"WebHook\": \"xx\",\n            \"RepeatInterval\": \"xx\",\n            \"TimeRangeStart\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"Interval\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增告警"
+      }
+    ],
     "CreatePrometheusDashboard": [
       {
         "document": "",
@@ -226,6 +234,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteEKSCluster\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除弹性集群"
+      }
+    ],
+    "DeletePrometheusAlertRule": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusAlertRule\n&InstanceId=prom-xxx\n&AlertIds.0=a1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除Prometheus告警规则"
       }
     ],
     "DeletePrometheusTemplate": [
@@ -436,6 +452,14 @@
         "title": "告警列表"
       }
     ],
+    "DescribePrometheusInstance": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusInstance\n&InstanceId=prom-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueryAddress\": \"xx\",\n        \"VpcId\": \"xx\",\n        \"Name\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"COSBucket\": \"xx\",\n        \"AlertManagerUrl\": \"xx\",\n        \"Grafana\": {\n            \"Domain\": \"xx\",\n            \"Internet\": \"xx\",\n            \"Enabled\": true,\n            \"AdminUser\": \"xx\",\n            \"Address\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"SubnetId\": \"xx\"\n    }\n}",
+        "title": "查看托管prometheus实例详情"
+      }
+    ],
     "DescribePrometheusOverviews": [
       {
         "document": "",
@@ -562,6 +586,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=ModifyNodePoolDesiredCapacityAboutAsg\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&DesiredCapacity=6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "修改节点池关联伸缩组的期望实例数示例"
+      }
+    ],
+    "ModifyPrometheusAlertRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"TemplateId\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"WebHook\": \"xx\",\n            \"RepeatInterval\": \"xx\",\n            \"TimeRangeStart\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"Interval\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "新增告警"
       }
     ],
     "ModifyPrometheusTemplate": [

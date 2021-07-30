@@ -312,6 +312,33 @@ def doCreateAppUsr(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyDeviceLogLevel(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDeviceLogLevelRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyDeviceLogLevel(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateDevToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -960,6 +987,33 @@ def doDescribeCloudStorageDate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCloudStorageUsers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCloudStorageUsersRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCloudStorageUsers(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doTransferCloudStorage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1041,7 +1095,7 @@ def doModifyDevice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDevices(args, parsed_globals):
+def doModifyDataForward(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1057,9 +1111,9 @@ def doCreateDevices(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDevicesRequest()
+    model = models.ModifyDataForwardRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.CreateDevices(model)
+    rsp = client.ModifyDataForward(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1195,6 +1249,33 @@ def doDisableOtaVersion(args, parsed_globals):
     model = models.DisableOtaVersionRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DisableOtaVersion(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInheritCloudStorageUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InheritCloudStorageUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.InheritCloudStorageUser(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -1392,6 +1473,33 @@ def doDeleteProduct(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyDataForwardStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyDataForwardStatusRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ModifyDataForwardStatus(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeFirmwareTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1527,6 +1635,33 @@ def doDescribeStorageService(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeDataForwardList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDataForwardListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDataForwardList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeCloudStorageTime(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1554,7 +1689,7 @@ def doDescribeCloudStorageTime(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUpdateAIModelChannel(args, parsed_globals):
+def doDescribeDeviceActionHistory(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -1570,9 +1705,9 @@ def doUpdateAIModelChannel(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateAIModelChannelRequest()
+    model = models.DescribeDeviceActionHistoryRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.UpdateAIModelChannel(model)
+    rsp = client.DescribeDeviceActionHistory(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2067,7 +2202,7 @@ def doCreateIotModel(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeviceActionHistory(args, parsed_globals):
+def doUploadFirmware(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -2083,9 +2218,9 @@ def doDescribeDeviceActionHistory(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceActionHistoryRequest()
+    model = models.UploadFirmwareRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeDeviceActionHistory(model)
+    rsp = client.UploadFirmware(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2283,33 +2418,6 @@ def doCreateBinding(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUploadFirmware(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    cred = credential.Credential(
-        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-    )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UploadFirmwareRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.UploadFirmware(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doCreateCloudStorage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2472,6 +2580,60 @@ def doDescribeTraceStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doWakeUpDevice(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.WakeUpDeviceRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.WakeUpDevice(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDeviceStatusLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDeviceStatusLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeDeviceStatusLog(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateForwardRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2599,6 +2761,60 @@ def doDescribeBalance(args, parsed_globals):
     model = models.DescribeBalanceRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeBalance(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSDKLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSDKLogRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeSDKLog(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doBindCloudStorageUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.BindCloudStorageUserRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.BindCloudStorageUser(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -2931,6 +3147,33 @@ def doDescribeRechargeRecords(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateDevices(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDevicesRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDevices(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeAccountBalance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3093,6 +3336,33 @@ def doRunOtaVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateDataForward(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateDataForwardRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.CreateDataForward(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisableDeviceStream(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3139,6 +3409,33 @@ def doCreateUploadPath(args, parsed_globals):
     model = models.CreateUploadPathRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.CreateUploadPath(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateAIModelChannel(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateAIModelChannelRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.UpdateAIModelChannel(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -3360,6 +3657,7 @@ ACTION_MAP = {
     "DescribeProducts": doDescribeProducts,
     "DescribeFirmwareTaskStatistics": doDescribeFirmwareTaskStatistics,
     "CreateAppUsr": doCreateAppUsr,
+    "ModifyDeviceLogLevel": doModifyDeviceLogLevel,
     "CreateDevToken": doCreateDevToken,
     "GenerateSignedVideoURL": doGenerateSignedVideoURL,
     "EditFirmware": doEditFirmware,
@@ -3384,15 +3682,17 @@ ACTION_MAP = {
     "DescribeDeviceCommLog": doDescribeDeviceCommLog,
     "DescribeFirmware": doDescribeFirmware,
     "DescribeCloudStorageDate": doDescribeCloudStorageDate,
+    "DescribeCloudStorageUsers": doDescribeCloudStorageUsers,
     "TransferCloudStorage": doTransferCloudStorage,
     "RetryDeviceFirmwareTask": doRetryDeviceFirmwareTask,
     "ModifyDevice": doModifyDevice,
-    "CreateDevices": doCreateDevices,
+    "ModifyDataForward": doModifyDataForward,
     "BatchUpdateFirmware": doBatchUpdateFirmware,
     "CreateProduct": doCreateProduct,
     "SetMessageQueue": doSetMessageQueue,
     "DeleteIotDataType": doDeleteIotDataType,
     "DisableOtaVersion": doDisableOtaVersion,
+    "InheritCloudStorageUser": doInheritCloudStorageUser,
     "GetFirmwareURL": doGetFirmwareURL,
     "DeleteOtaVersion": doDeleteOtaVersion,
     "DescribeBatch": doDescribeBatch,
@@ -3400,13 +3700,15 @@ ACTION_MAP = {
     "DescribeCategory": doDescribeCategory,
     "RefundStorageService": doRefundStorageService,
     "DeleteProduct": doDeleteProduct,
+    "ModifyDataForwardStatus": doModifyDataForwardStatus,
     "DescribeFirmwareTask": doDescribeFirmwareTask,
     "ResetCloudStorage": doResetCloudStorage,
     "DescribeRegistrationStatus": doDescribeRegistrationStatus,
     "DescribeFirmwareTaskDevices": doDescribeFirmwareTaskDevices,
     "DescribeStorageService": doDescribeStorageService,
+    "DescribeDataForwardList": doDescribeDataForwardList,
     "DescribeCloudStorageTime": doDescribeCloudStorageTime,
-    "UpdateAIModelChannel": doUpdateAIModelChannel,
+    "DescribeDeviceActionHistory": doDescribeDeviceActionHistory,
     "DescribeCloudStorageThumbnail": doDescribeCloudStorageThumbnail,
     "DeleteFirmware": doDeleteFirmware,
     "DescribeBindUsr": doDescribeBindUsr,
@@ -3425,7 +3727,7 @@ ACTION_MAP = {
     "DescribeCloudStorage": doDescribeCloudStorage,
     "DescribeBatchs": doDescribeBatchs,
     "CreateIotModel": doCreateIotModel,
-    "DescribeDeviceActionHistory": doDescribeDeviceActionHistory,
+    "UploadFirmware": doUploadFirmware,
     "DescribeIotModel": doDescribeIotModel,
     "CreateCOSCredentials": doCreateCOSCredentials,
     "SendOnlineMsg": doSendOnlineMsg,
@@ -3433,18 +3735,21 @@ ACTION_MAP = {
     "CreateBatch": doCreateBatch,
     "DescribeMessageQueue": doDescribeMessageQueue,
     "CreateBinding": doCreateBinding,
-    "UploadFirmware": doUploadFirmware,
     "CreateCloudStorage": doCreateCloudStorage,
     "CreateStorageService": doCreateStorageService,
     "DescribeOsList": doDescribeOsList,
     "DescribeLogs": doDescribeLogs,
     "DeliverStorageService": doDeliverStorageService,
     "DescribeTraceStatus": doDescribeTraceStatus,
+    "WakeUpDevice": doWakeUpDevice,
+    "DescribeDeviceStatusLog": doDescribeDeviceStatusLog,
     "CreateForwardRule": doCreateForwardRule,
     "DescribeRunLog": doDescribeRunLog,
     "DescribeAIModelChannel": doDescribeAIModelChannel,
     "DescribeModelDataRet": doDescribeModelDataRet,
     "DescribeBalance": doDescribeBalance,
+    "DescribeSDKLog": doDescribeSDKLog,
+    "BindCloudStorageUser": doBindCloudStorageUser,
     "DescribeDevice": doDescribeDevice,
     "DisableDevice": doDisableDevice,
     "RunTestOtaVersion": doRunTestOtaVersion,
@@ -3457,14 +3762,17 @@ ACTION_MAP = {
     "DeleteDevice": doDeleteDevice,
     "DeleteAppUsr": doDeleteAppUsr,
     "DescribeRechargeRecords": doDescribeRechargeRecords,
+    "CreateDevices": doCreateDevices,
     "DescribeAccountBalance": doDescribeAccountBalance,
     "SetForwardAuth": doSetForwardAuth,
     "DescribeFirmwareTaskDistribution": doDescribeFirmwareTaskDistribution,
     "DescribeIotModels": doDescribeIotModels,
     "CreateTaskFileUrl": doCreateTaskFileUrl,
     "RunOtaVersion": doRunOtaVersion,
+    "CreateDataForward": doCreateDataForward,
     "DisableDeviceStream": doDisableDeviceStream,
     "CreateUploadPath": doCreateUploadPath,
+    "UpdateAIModelChannel": doUpdateAIModelChannel,
     "DescribeCloudStorageEvents": doDescribeCloudStorageEvents,
     "ModifyModelDefinition": doModifyModelDefinition,
     "ApplyAIModel": doApplyAIModel,

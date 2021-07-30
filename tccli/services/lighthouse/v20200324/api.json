@@ -571,6 +571,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-cs2rrmp0",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3895,6 +3905,7 @@
         {
           "default": "",
           "document": "快照 ID。",
+          "example": "无",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
@@ -3904,6 +3915,7 @@
         {
           "default": "",
           "document": "创建此快照的磁盘类型。取值：<li>SYSTEM_DISK：系统盘</li>",
+          "example": "无",
           "member": "string",
           "name": "DiskUsage",
           "required": true,
@@ -3913,6 +3925,7 @@
         {
           "default": "",
           "document": "创建此快照的磁盘 ID。",
+          "example": "无",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -3922,6 +3935,7 @@
         {
           "default": "",
           "document": "创建此快照的磁盘大小，单位 GB。",
+          "example": "无",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -3931,6 +3945,7 @@
         {
           "default": "",
           "document": "快照名称，用户自定义的快照别名。",
+          "example": "无",
           "member": "string",
           "name": "SnapshotName",
           "required": true,
@@ -3940,6 +3955,7 @@
         {
           "default": "",
           "document": "快照的状态。取值范围：\n<li>NORMAL：正常 </li>\n<li>CREATING：创建中</li>\n<li>ROLLBACKING：回滚中。</li>",
+          "example": "无",
           "member": "string",
           "name": "SnapshotState",
           "required": true,
@@ -3949,6 +3965,7 @@
         {
           "default": "",
           "document": "创建或回滚快照进度百分比，成功后此字段取值为 100。",
+          "example": "无",
           "member": "int64",
           "name": "Percent",
           "required": true,
@@ -3958,6 +3975,7 @@
         {
           "default": "",
           "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperation",
           "required": true,
@@ -3967,6 +3985,7 @@
         {
           "default": "",
           "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperationState",
           "required": true,
@@ -3976,6 +3995,7 @@
         {
           "default": "",
           "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LatestOperationRequestId",
           "required": true,
@@ -3985,6 +4005,7 @@
         {
           "default": "",
           "document": "快照的创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,

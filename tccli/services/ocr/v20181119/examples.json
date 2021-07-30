@@ -490,7 +490,7 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=TrainTicketOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TicketNum\": \"17C060124\",\n        \"StartStation\": \"南京南\",\n        \"DestinationStation\": \"上海虹桥\",\n        \"Date\": \"2017年12月23日10:33\",\n        \"TrainNum\": \"G5\",\n        \"Seat\": \"15车18A号\",\n        \"Name\": \"周周\",\n        \"Price\": \"134.50\",\n        \"SeatCategory\": \"二等座\",\n        \"ID\": \"3210231993****6499\",\n        \"InvoiceType\": \"交通\",\n        \"SerialNumber\": \"16804000071224C060124\",\n        \"RequestId\": \"9084dec6-dae4-455f-976c-8e3609e86920\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TicketNum\": \"17C060124\",\n        \"StartStation\": \"南京南\",\n        \"DestinationStation\": \"上海虹桥\",\n        \"Date\": \"2017年12月23日10:33\",\n        \"TrainNum\": \"G5\",\n        \"Seat\": \"15车18A号\",\n        \"Name\": \"周周\",\n        \"Price\": \"134.50\",\n        \"SeatCategory\": \"二等座\",\n        \"ID\": \"3210231993****6499\",\n        \"InvoiceType\": \"交通\",\n        \"SerialNumber\": \"16804000071224C060124\",\n        \"AdditionalCost\": \"2.00\",\n        \"HandlingFee\": \"5.00\",\n        \"LegalAmount\": \"贰元\",\n        \"TicketStation\": \"成都客运段\",\n        \"OriginalPrice\": \"83.50\",\n        \"InvoiceStyle\": \"火车票补票\",\n        \"ReceiptNumber\": \"\",\n        \"IsReceipt\": \"0\",\n        \"RequestId\": \"9084dec6-dae4-455f-976c-8e3609e86920\"\n    }\n}",
         "title": "火车票识别示例代码"
       }
     ],

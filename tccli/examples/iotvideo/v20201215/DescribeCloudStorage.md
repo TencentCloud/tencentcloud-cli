@@ -7,7 +7,8 @@ Input:
 ```
 tccli iotvideo DescribeCloudStorage --cli-unfold-argument  \
     --ProductId H541SOP191 \
-    --DeviceName event_36502632_1
+    --DeviceName event_36502632_1 \
+    --UserId default
 ```
 
 Output: 
@@ -18,7 +19,8 @@ Output:
         "Status": 1,
         "Type": 1,
         "ExpireTime": 1614670782,
-        "ShiftDuration": 86400
+        "ShiftDuration": 86400,
+        "UserId": "default"
     }
 }
 ```

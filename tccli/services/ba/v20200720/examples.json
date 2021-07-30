@@ -8,6 +8,14 @@
         "title": "创建渠道备案小程序二维码"
       }
     ],
+    "DescribeGetAuthInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ba.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGetAuthInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTenPayMasked\": \"0\",\n        \"IsAuthenticated\": \"1\",\n        \"Type\": \"0\",\n        \"RequestId\": \"9b4ddc4725e84bc5241d7fOK\"\n    }\n}",
+        "title": "获取实名认证信息"
+      }
+    ],
     "SyncIcpOrderWebInfo": [
       {
         "document": "",

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindEnvGateway": [
+      {
+        "document": "绑定环境网关",
+        "input": "https://tcb.tencentcloudapi.com/?Action=BindEnvGateway\n&SubEnvId=test-3giff8js6c2215cd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "绑定环境网关"
+      }
+    ],
     "CheckTcbService": [
       {
         "document": "",

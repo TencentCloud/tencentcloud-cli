@@ -25,6 +25,14 @@ Output:
         "ID": "3210231993****6499",
         "InvoiceType": "交通",
         "SerialNumber": "16804000071224C060124",
+        "AdditionalCost": "2.00",
+        "HandlingFee": "5.00",
+        "LegalAmount": "贰元",
+        "TicketStation": "成都客运段",
+        "OriginalPrice": "83.50",
+        "InvoiceStyle": "火车票补票",
+        "ReceiptNumber": "",
+        "IsReceipt": "0",
         "RequestId": "9084dec6-dae4-455f-976c-8e3609e86920"
     }
 }

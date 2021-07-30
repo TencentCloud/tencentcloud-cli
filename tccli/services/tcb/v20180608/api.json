@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindEnvGateway": {
+      "document": "绑定另外一个环境下的网关，callContainer请求可以访问到该网关",
+      "input": "BindEnvGatewayRequest",
+      "name": "绑定环境网关",
+      "output": "BindEnvGatewayResponse"
+    },
     "CheckTcbService": {
       "document": "检查是否开通Tcb服务",
       "input": "CheckTcbServiceRequest",
@@ -449,6 +455,33 @@
         }
       ],
       "usage": "out"
+    },
+    "BindEnvGatewayRequest": {
+      "document": "BindEnvGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子环境id",
+          "example": "test-3giff8js6c2215cd",
+          "member": "string",
+          "name": "SubEnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindEnvGatewayResponse": {
+      "document": "BindEnvGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckTcbServiceRequest": {
       "document": "CheckTcbService请求参数结构体",

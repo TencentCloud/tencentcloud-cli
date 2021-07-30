@@ -96,6 +96,12 @@
       "name": "创建弹性集群",
       "output": "CreateEKSClusterResponse"
     },
+    "CreatePrometheusAlertRule": {
+      "document": "创建告警规则",
+      "input": "CreatePrometheusAlertRuleRequest",
+      "name": "创建告警规则",
+      "output": "CreatePrometheusAlertRuleResponse"
+    },
     "CreatePrometheusDashboard": {
       "document": "创建grafana监控面板",
       "input": "CreatePrometheusDashboardRequest",
@@ -161,6 +167,12 @@
       "input": "DeleteEKSClusterRequest",
       "name": "删除弹性集群",
       "output": "DeleteEKSClusterResponse"
+    },
+    "DeletePrometheusAlertRule": {
+      "document": "删除告警规则",
+      "input": "DeletePrometheusAlertRuleRequest",
+      "name": "删除告警规则",
+      "output": "DeletePrometheusAlertRuleResponse"
     },
     "DeletePrometheusTemplate": {
       "document": "删除一个云原生Prometheus配置模板",
@@ -318,6 +330,12 @@
       "name": "获取告警规则列表",
       "output": "DescribePrometheusAlertRuleResponse"
     },
+    "DescribePrometheusInstance": {
+      "document": "获取实例详细信息",
+      "input": "DescribePrometheusInstanceRequest",
+      "name": "获取实例详细信息",
+      "output": "DescribePrometheusInstanceResponse"
+    },
     "DescribePrometheusOverviews": {
       "document": "获取实例列表",
       "input": "DescribePrometheusOverviewsRequest",
@@ -413,6 +431,12 @@
       "input": "ModifyNodePoolDesiredCapacityAboutAsgRequest",
       "name": "修改节点池关联伸缩组的期望实例数",
       "output": "ModifyNodePoolDesiredCapacityAboutAsgResponse"
+    },
+    "ModifyPrometheusAlertRule": {
+      "document": "修改告警规则 ",
+      "input": "ModifyPrometheusAlertRuleRequest",
+      "name": "修改告警规则",
+      "output": "ModifyPrometheusAlertRuleResponse"
     },
     "ModifyPrometheusTemplate": {
       "document": "修改模板内容",
@@ -2662,6 +2686,51 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAlertRuleRequest": {
+      "document": "CreatePrometheusAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警配置",
+          "example": "参考复杂类型",
+          "member": "PrometheusAlertRuleDetail",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusAlertRuleResponse": {
+      "document": "CreatePrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "告警id",
+          "example": "alert-xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusDashboardRequest": {
       "document": "CreatePrometheusDashboard请求参数结构体",
       "members": [
@@ -3145,6 +3214,42 @@
     },
     "DeleteEKSClusterResponse": {
       "document": "DeleteEKSCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertRuleRequest": {
+      "document": "DeletePrometheusAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警规则id列表",
+          "example": "[\"alert-xx\"]",
+          "member": "string",
+          "name": "AlertIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertRuleResponse": {
+      "document": "DeletePrometheusAlertRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4470,6 +4575,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4478,6 +4584,7 @@
         {
           "default": "",
           "document": "分页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4486,6 +4593,7 @@
         {
           "default": "",
           "document": "分页",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4494,6 +4602,7 @@
         {
           "default": "",
           "document": "过滤\n支持ID，Name",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4507,17 +4616,120 @@
       "members": [
         {
           "document": "告警详情",
+          "example": "无",
           "member": "PrometheusAlertRuleDetail",
           "name": "AlertRules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstanceRequest": {
+      "document": "DescribePrometheusInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstanceResponse": {
+      "document": "DescribePrometheusInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例id",
+          "example": "prom-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私有网络id",
+          "example": "vpcId-xx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子网id",
+          "example": "sub-xx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cos桶名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "COSBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据查询地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "QueryAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例中grafana相关的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusGrafanaInfo",
+          "name": "Grafana",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户自定义alertmanager\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://1.1.1.1",
+          "member": "string",
+          "name": "AlertManagerUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6427,6 +6639,42 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusAlertRuleRequest": {
+      "document": "ModifyPrometheusAlertRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警配置",
+          "example": "无",
+          "member": "PrometheusAlertRuleDetail",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertRuleResponse": {
+      "document": "ModifyPrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusTemplateRequest": {
       "document": "ModifyPrometheusTemplate请求参数结构体",
       "members": [
@@ -7081,6 +7329,62 @@
         }
       ],
       "usage": "both"
+    },
+    "PrometheusGrafanaInfo": {
+      "document": "托管prometheus中grafana的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名，只有开启外网访问才有效果",
+          "example": "http://grafana.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网地址，或者外网地址",
+          "example": "http://1.1.1.1",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启了外网访问\nclose = 未开启外网访问\nopening = 正在开启外网访问\nopen  = 已开启外网访问",
+          "example": "open",
+          "member": "string",
+          "name": "Internet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "grafana管理员用户名",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PrometheusInstanceOverview": {
       "document": "托管prometheus实例概览",

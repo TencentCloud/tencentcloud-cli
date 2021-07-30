@@ -159,8 +159,8 @@
   },
   "metadata": {
     "apiVersion": "2019-01-07",
-    "api_brief": null,
-    "serviceNameCN": "云数据库 CynosDB",
+    "api_brief": "",
+    "serviceNameCN": "云原生数据库 TDSQL-C",
     "serviceShortName": "cynosdb"
   },
   "objects": {

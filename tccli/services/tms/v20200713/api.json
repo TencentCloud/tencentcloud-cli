@@ -119,6 +119,7 @@
         {
           "default": "",
           "document": "内容类型 text: 1; image: 2; audio: 3; video: 4",
+          "example": "1",
           "member": "int64",
           "name": "StrategyType",
           "required": true,
@@ -132,8 +133,10 @@
       "members": [
         {
           "document": "文本库id和name列表",
+          "example": "无",
           "member": "TextLib",
           "name": "TextLib",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
