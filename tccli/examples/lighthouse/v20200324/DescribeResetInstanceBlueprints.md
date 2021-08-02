@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "ResetInstanceBlueprintSet": [
             {
                 "BlueprintInfo": {
@@ -31,31 +31,11 @@ Output:
                     "RequiredMemorySize": 2,
                     "SupportAutomationTools": true,
                     "BlueprintState": "NORMAL",
-                    "CreatedTime": "2020-09-22T00:00:00+00:00"
+                    "CreatedTime": "2020-09-22T00:00:00+00:00",
+                    "ImageId": ""
                 },
                 "IsResettable": false,
                 "NonResettableMessage": "The current system disk size of instance does not match the system disk size requirements of the blueprint."
-            },
-            {
-                "BlueprintInfo": {
-                    "BlueprintId": "lhbp-5e8807lo",
-                    "BlueprintName": "my-blueprint",
-                    "DisplayTitle": "wordpress",
-                    "DisplayVersion": "5.3.2",
-                    "Description": "个人blog建站",
-                    "OsName": "CentOS 7.4 64bit",
-                    "Platform": "CENTOS",
-                    "PlatformType": "WINDOWS",
-                    "BlueprintType": "APP_OS",
-                    "ImageUrl": "http://www.wordpress.com/image",
-                    "RequiredSystemDiskSize": 10,
-                    "RequiredMemorySize": 2,
-                    "SupportAutomationTools": true,
-                    "BlueprintState": "NORMAL",
-                    "CreatedTime": "2020-09-22T00:00:00+00:00"
-                },
-                "IsResettable": false,
-                "NonResettableMessage": "It is not allowed to change the PlatformType of Blueprint outside the Chinese mainland."
             }
         ],
         "RequestId": "a1768b80-f8f1-47c0-ad60-bb7e3318610b"

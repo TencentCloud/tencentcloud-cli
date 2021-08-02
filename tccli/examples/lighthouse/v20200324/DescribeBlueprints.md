@@ -30,7 +30,8 @@ Output:
                 "CreatedTime": "2020-04-28T03:46:09Z",
                 "BlueprintName": "Wordpress",
                 "SupportAutomationTools": true,
-                "RequiredMemorySize": 1
+                "RequiredMemorySize": 1,
+                "ImageId": ""
             }
         ],
         "RequestId": "3df9cd92-cec1-4864-a2a1-358084f41551"

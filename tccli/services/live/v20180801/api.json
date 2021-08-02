@@ -1526,6 +1526,7 @@
         {
           "default": "",
           "document": "裁剪的宽度。取值范围[0，2000]。",
+          "example": "0",
           "member": "float",
           "name": "CropWidth",
           "required": false,
@@ -1535,6 +1536,7 @@
         {
           "default": "",
           "document": "裁剪的高度。取值范围[0，2000]。",
+          "example": "0",
           "member": "float",
           "name": "CropHeight",
           "required": false,
@@ -1544,6 +1546,7 @@
         {
           "default": "",
           "document": "裁剪的起始X坐标。取值范围[0，2000]。",
+          "example": "0",
           "member": "float",
           "name": "CropStartLocationX",
           "required": false,
@@ -1553,6 +1556,7 @@
         {
           "default": "",
           "document": "裁剪的起始Y坐标。取值范围[0，2000]。",
+          "example": "0",
           "member": "float",
           "name": "CropStartLocationY",
           "required": false,
@@ -1567,7 +1571,8 @@
       "members": [
         {
           "default": "",
-          "document": "输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。",
+          "document": "输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。\n当LayoutParams.InputType=0(音视频)/4(纯音频)/5(纯视频)时，该值为需要混流的流名称。\n当LayoutParams.InputType=2(图片)/3(画布)时，该值仅用作标识输入，可用类似Canvas1、Pictrue1的名称。",
+          "example": "ExampleStreamName1",
           "member": "string",
           "name": "InputStreamName",
           "required": true,
@@ -1577,6 +1582,7 @@
         {
           "default": "",
           "document": "输入流布局参数。",
+          "example": "无",
           "member": "CommonMixLayoutParams",
           "name": "LayoutParams",
           "required": true,
@@ -1586,6 +1592,7 @@
         {
           "default": "",
           "document": "输入流裁剪参数。",
+          "example": "无",
           "member": "CommonMixCropParams",
           "name": "CropParams",
           "required": false,
@@ -1601,6 +1608,7 @@
         {
           "default": "",
           "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。",
+          "example": "1",
           "member": "int64",
           "name": "ImageLayer",
           "required": true,
@@ -1610,6 +1618,7 @@
         {
           "default": "",
           "document": "输入类型。取值范围[0，5]。\n不填默认为0。\n0表示输入流为音视频。\n2表示输入流为图片。\n3表示输入流为画布。 \n4表示输入流为音频。\n5表示输入流为纯视频。",
+          "example": "0",
           "member": "int64",
           "name": "InputType",
           "required": false,
@@ -1618,16 +1627,8 @@
         },
         {
           "default": "",
-          "document": "输入画面在输出时的宽度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的宽度。\n使用百分比时，期望输出为（百分比 * 背景宽）。",
-          "member": "float",
-          "name": "ImageWidth",
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "输入画面在输出时的高度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的高度。\n使用百分比时，期望输出为（百分比 * 背景高）。",
+          "example": "720",
           "member": "float",
           "name": "ImageHeight",
           "required": false,
@@ -1636,7 +1637,18 @@
         },
         {
           "default": "",
+          "document": "输入画面在输出时的宽度。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为输入流的宽度。\n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "example": "1024",
+          "member": "float",
+          "name": "ImageWidth",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "输入在输出画面的X偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的横向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）。",
+          "example": "0",
           "member": "float",
           "name": "LocationX",
           "required": false,
@@ -1646,6 +1658,7 @@
         {
           "default": "",
           "document": "输入在输出画面的Y偏移。取值范围：\n像素：[0，2000]\n百分比：[0.01，0.99]\n不填默认为0。\n相对于大主播背景画面左上角的纵向偏移。 \n使用百分比时，期望输出为（百分比 * 背景宽）",
+          "example": "0",
           "member": "float",
           "name": "LocationY",
           "required": false,
@@ -1655,6 +1668,7 @@
         {
           "default": "",
           "document": "当InputType为3(画布)时，该值表示画布的颜色。\n常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "example": "0xFFFFFF",
           "member": "string",
           "name": "Color",
           "required": false,
@@ -1664,6 +1678,7 @@
         {
           "default": "",
           "document": "当InputType为2(图片)时，该值是水印ID。",
+          "example": "0",
           "member": "int64",
           "name": "WatermarkId",
           "required": false,
@@ -2079,7 +2094,7 @@
         },
         {
           "default": "",
-          "document": "拉流源 url 列表。\nSourceType 为直播（PullLivePushLive）只可以填1个，\nSourceType 为点播（PullVodPushLive）可以填多个，上限30个。\n当前支持的文件格式：flv，mp4，hls。\n当前支持的拉流协议：http，https，rtmp。",
+          "document": "拉流源 url 列表。\nSourceType 为直播（PullLivePushLive）只可以填1个，\nSourceType 为点播（PullVodPushLive）可以填多个，上限30个。\n当前支持的文件格式：flv，mp4，hls。\n当前支持的拉流协议：http，https，rtmp。\n注意：\n1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。\n2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。",
           "example": "http://5000.liveplay.myqcloud.com/live/testsrc.flv?txSecret=4d8e",
           "member": "string",
           "name": "SourceUrls",

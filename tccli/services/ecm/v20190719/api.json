@@ -11109,7 +11109,8 @@
       "members": [
         {
           "default": "",
-          "document": "标签的键。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签健。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -11118,7 +11119,8 @@
         },
         {
           "default": "",
-          "document": "标签的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
