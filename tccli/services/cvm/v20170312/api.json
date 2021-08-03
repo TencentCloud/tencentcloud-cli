@@ -806,6 +806,7 @@
         {
           "default": "",
           "document": "镜像名称",
+          "example": "MyImageName",
           "member": "string",
           "name": "ImageName",
           "required": true,
@@ -813,7 +814,8 @@
         },
         {
           "default": "",
-          "document": "需要制作镜像的实例ID。",
+          "document": "需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。",
+          "example": "ins-2v3sqe2t",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -822,6 +824,7 @@
         {
           "default": "",
           "document": "镜像描述",
+          "example": "MyImageDescription",
           "member": "string",
           "name": "ImageDescription",
           "required": false,
@@ -830,6 +833,7 @@
         {
           "default": "",
           "document": "是否执行强制关机以制作镜像。\n取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
+          "example": "TRUE",
           "member": "string",
           "name": "ForcePoweroff",
           "required": false,
@@ -838,6 +842,7 @@
         {
           "default": "",
           "document": "创建Windows镜像时是否启用Sysprep，关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)",
+          "example": "FALSE",
           "member": "string",
           "name": "Sysprep",
           "required": false,
@@ -846,6 +851,7 @@
         {
           "default": "",
           "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘Id",
+          "example": "['disk-6gabakqz']",
           "member": "string",
           "name": "DataDiskIds",
           "required": false,
@@ -854,6 +860,7 @@
         {
           "default": "",
           "document": "基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。",
+          "example": "['snap-kso6f712', 'snap-l3rrf322']",
           "member": "string",
           "name": "SnapshotIds",
           "required": false,
@@ -862,6 +869,7 @@
         {
           "default": "",
           "document": "检测本次请求的是否成功，但不会对操作的资源产生任何影响",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -875,8 +883,10 @@
       "members": [
         {
           "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-2v3sqe2t",
           "member": "string",
           "name": "ImageId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1058,6 +1068,7 @@
         {
           "default": "",
           "document": "准备删除的镜像Id列表",
+          "example": "[\"img-34vaef8fe\\r\\n\"]",
           "member": "string",
           "name": "ImageIds",
           "required": true,
@@ -6049,7 +6060,7 @@
         },
         {
           "default": "",
-          "document": "实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定大小且原系统盘大小小于镜像大小，则会自动扩容，产生多余的磁盘费用。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。",
+          "document": "实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -6290,7 +6301,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br><li>CDCPAID：专用集群付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",

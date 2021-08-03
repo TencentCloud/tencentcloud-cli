@@ -3344,7 +3344,8 @@
       "members": [
         {
           "default": "",
-          "document": "根据使用场景过滤 \"ST_DASHBOARD\"=Dashboard类型 或 \"ST_ALARM\"=告警类型",
+          "document": "根据使用场景过滤 目前仅有\"ST_ALARM\"=告警类型",
+          "example": "ST_ALARM",
           "member": "string",
           "name": "SceneType",
           "required": true,
@@ -3353,6 +3354,7 @@
         {
           "default": "",
           "document": "固定值，为\"monitor\"",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3361,6 +3363,7 @@
         {
           "default": "",
           "document": "根据监控类型过滤 不填默认查所有类型 \"MT_QCE\"=云产品监控",
+          "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -3369,6 +3372,7 @@
         {
           "default": "",
           "document": "根据namespace的Id过滤 不填默认查询所有",
+          "example": "cvm_device",
           "member": "string",
           "name": "Ids",
           "required": false,
@@ -3382,29 +3386,37 @@
       "members": [
         {
           "document": "云产品的告警策略类型，已废弃",
+          "example": "无",
           "member": "CommonNamespace",
           "name": "QceNamespaces",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "其他告警策略类型，已废弃",
+          "example": "无",
           "member": "CommonNamespace",
           "name": "CustomNamespaces",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "云产品的告警策略类型",
+          "example": "无",
           "member": "CommonNamespace",
           "name": "QceNamespacesNew",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "其他告警策略类型，暂不支持",
+          "example": "无",
           "member": "CommonNamespace",
           "name": "CustomNamespacesNew",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

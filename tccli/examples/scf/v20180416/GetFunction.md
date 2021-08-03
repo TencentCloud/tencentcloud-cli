@@ -113,7 +113,9 @@ Output:
         },
         "Timeout": 3,
         "StatusDesc": "xx",
+        "TraceEnable": "xx",
         "CodeInfo": "xx",
+        "AsyncRunEnable": "xx",
         "VpcConfig": {
             "SubnetId": "xx",
             "VpcId": "xx"

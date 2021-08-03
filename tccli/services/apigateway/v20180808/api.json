@@ -8265,6 +8265,7 @@
         {
           "default": "",
           "document": "待修改服务的唯一 Id。",
+          "example": "service-0c96l2bo",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -8273,6 +8274,7 @@
         {
           "default": "",
           "document": "修改后的服务名称。",
+          "example": "test_https",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -8281,6 +8283,7 @@
         {
           "default": "",
           "document": "修改后的服务描述。",
+          "example": "https",
           "member": "string",
           "name": "ServiceDesc",
           "required": false,
@@ -8289,6 +8292,7 @@
         {
           "default": "",
           "document": "修改后的服务前端请求类型，如 http、https和 http&https。",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -8297,6 +8301,7 @@
         {
           "default": "",
           "document": "网络类型列表，用于指定支持的访问类型，INNER为内网访问，OUTER为外网访问。默认为OUTER。",
+          "example": "无",
           "member": "string",
           "name": "NetTypes",
           "required": false,
@@ -8688,6 +8693,7 @@
         {
           "default": "",
           "document": "待发布服务的唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -8696,6 +8702,7 @@
         {
           "default": "",
           "document": "待发布的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
+          "example": "prepub",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -8704,6 +8711,7 @@
         {
           "default": "",
           "document": "本次的发布描述。",
+          "example": "xx",
           "member": "string",
           "name": "ReleaseDesc",
           "required": true,
@@ -8712,6 +8720,7 @@
         {
           "default": "",
           "document": "apiId列表，预留字段，默认全量api发布。",
+          "example": "无",
           "member": "string",
           "name": "ApiIds",
           "required": false,
@@ -8725,8 +8734,10 @@
       "members": [
         {
           "document": "发布信息。",
+          "example": "无",
           "member": "ReleaseService",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10091,6 +10102,7 @@
         {
           "default": "",
           "document": "待切换服务的唯一 Id。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -10099,6 +10111,7 @@
         {
           "default": "",
           "document": "待切换的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -10107,6 +10120,7 @@
         {
           "default": "",
           "document": "切换的版本号。",
+          "example": "202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215",
           "member": "string",
           "name": "VersionName",
           "required": true,
@@ -10115,6 +10129,7 @@
         {
           "default": "",
           "document": "本次的切换描述。",
+          "example": "test",
           "member": "string",
           "name": "UpdateDesc",
           "required": false,
@@ -10128,8 +10143,10 @@
       "members": [
         {
           "document": "切换版本操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

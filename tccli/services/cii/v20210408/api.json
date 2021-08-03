@@ -6,6 +6,12 @@
       "name": "新建结构化任务",
       "output": "CreateStructureTaskResponse"
     },
+    "CreateStructureTaskTest": {
+      "document": "本接口(CreateStructureTaskTest)基于提供的客户及保单信息，创建并启动结构化识别任务。用于路由到测试环境。",
+      "input": "CreateStructureTaskTestRequest",
+      "name": "测试环境新建结构化任务",
+      "output": "CreateStructureTaskTestResponse"
+    },
     "DescribeStructCompareData": {
       "document": "结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。",
       "input": "DescribeStructCompareDataRequest",
@@ -23,6 +29,12 @@
       "input": "DescribeStructureTaskResultRequest",
       "name": "获取结构化结果接口",
       "output": "DescribeStructureTaskResultResponse"
+    },
+    "DescribeStructureTaskResultTest": {
+      "document": "依据任务ID获取结构化结果接口，该接口用于路由到测试环境。",
+      "input": "DescribeStructureTaskResultTestRequest",
+      "name": "测试环境获取结构化结果接口",
+      "output": "DescribeStructureTaskResultTestResponse"
     }
   },
   "metadata": {
@@ -226,6 +238,87 @@
     },
     "CreateStructureTaskResponse": {
       "document": "CreateStructureTask返回参数结构体",
+      "members": [
+        {
+          "document": "创建的主任务号，用于查询结果",
+          "example": "46313288149458944",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStructureTaskTestRequest": {
+      "document": "CreateStructureTaskTest请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
+          "example": "Structured",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息",
+          "example": "[{         \"TaskType\": \"HealthReport\",         \"CustomerId\": \"04",
+          "member": "CreateStructureTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "保单号",
+          "example": "p0001",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "核保触发方式\nAuto 自动\nManual 手动",
+          "example": "Auto",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
+          "example": "[\"CriticalDiseaseInsurance\"]",
+          "member": "string",
+          "name": "InsuranceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调地址，接收Post请求传送结果",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStructureTaskTestResponse": {
+      "document": "CreateStructureTaskTest返回参数结构体",
       "members": [
         {
           "document": "创建的主任务号，用于查询结果",
@@ -460,6 +553,51 @@
     },
     "DescribeStructureTaskResultResponse": {
       "document": "DescribeStructureTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [{ \t\t\t\"Quality\": 0.9244373, \t\t\t\"StructureResult\": \"\\\"{\\\\\\\"objec",
+          "member": "ResultObject",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructureTaskResultTestRequest": {
+      "document": "DescribeStructureTaskResultTest请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "结构化任务ID",
+          "example": "46313288149458944",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructureTaskResultTestResponse": {
+      "document": "DescribeStructureTaskResultTest返回参数结构体",
       "members": [
         {
           "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",

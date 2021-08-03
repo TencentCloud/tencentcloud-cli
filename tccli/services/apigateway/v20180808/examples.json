@@ -577,7 +577,7 @@
     "ModifyService": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyService\r\n&ServiceId=service-0c96l2bo\r\n&ServiceName=test_https\r\n&ServiceDesc=https\r\n&Protocol=https\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyService\n&ServiceId=service-0c96l2bo\n&ServiceName=test_https\n&ServiceDesc=https\n&Protocol=https\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
         "title": "用于修改服务"
       }
@@ -609,7 +609,7 @@
     "ReleaseService": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=ReleaseService\r\n&ServiceId=service-ody35h5e\r\n&EnvironmentName=prepub\r\n&ReleaseDesc=xx\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ReleaseService\n&ServiceId=service-ody35h5e\n&EnvironmentName=prepub\n&ReleaseDesc=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReleaseDesc\": \"xx\",\n            \"ReleaseVersion\": \"2020022502411672fae6e9-9726-4caa-8867-6366cd3f1ba5\"\n        },\n        \"RequestId\": \"c5b4711b-8044-43eb-97cc-e755c5df1420\"\n    }\n}",
         "title": "ReleaseService"
       }
@@ -689,7 +689,7 @@
     "UpdateService": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=UpdateService\r\n&ServiceId=service-ody35h5e\r\n&EnvironmentName=test\r\n&VersionName=202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215\r\n&UpdateDesc=test\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=UpdateService\n&ServiceId=service-ody35h5e\n&EnvironmentName=test\n&VersionName=202002161926124aa59df4-7198-4f7a-acc7-887ab7ee0215\n&UpdateDesc=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"7787aa0e-be74-43c0-b6f6-7bf56995ce2d\"\n    }\n}",
         "title": "UpdateService"
       }

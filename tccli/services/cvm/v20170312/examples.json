@@ -59,7 +59,7 @@
     "DeleteImages": [
       {
         "document": "删除一个镜像img-34vaef8fe， 当这个镜像处于使用中或者镜像Id不存在时不采取操作并返回错误码。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteImages\r\n&ImageIds.0=img-34vaef8fe\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteImages\n&ImageIds.0=img-34vaef8fe\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "删除一个镜像"
       }
