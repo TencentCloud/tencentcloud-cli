@@ -194,7 +194,11 @@ class ConfigureSetCommand(BasicConfigure):
             if varname in self.cred_list:
                 cred[varname] = value
             elif varname in self.config_list:
-                config[varname] = value
+                if varname == OptionsDefine.Output and not value in ['json', 'text', 'table']:
+                    print('Output format must be json, text or table. Set as default: json\n')
+                    config[varname] = 'json'
+                else:
+                    config[varname] = value
             else:
                 extra[varname] = value
 
@@ -333,7 +337,20 @@ class ConfigureCommand(BasicConfigure):
         for index, prompt_text in self.VALUES_TO_PROMPT:
             if index in config:
                 response = self._compat_input("%s[%s]: " % (prompt_text, config[index]))
-                conf_data[index] = response if response else config[index]
+                if index == OptionsDefine.Output:
+                    if not response in ['json', 'text', 'table']:
+                        print('Output format must be json, text or table. Set as default: %s\n' % config[index])
+                        conf_data[index] = config[index]
+                    else:
+                        conf_data[index] = response
+                elif index ==OptionsDefine.Region:
+                    if response:
+                        conf_data[index] = response
+                    else:
+                        print('Set region as default: %s:\n' % config[index])
+                        conf_data[index] = config[index]
+                else:
+                    conf_data[index] = response if response else config[index]
             else:
                 response = self._compat_input(
                     "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index]!="None" else cred[index]))
