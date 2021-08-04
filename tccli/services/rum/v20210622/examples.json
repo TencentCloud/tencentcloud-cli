@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CreateProject": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=CreateProject\n&Name='测试项目'\n&Desc='项目描述'\n&InstanceID=\"taw-123\"\n&Type=web\n&URL='http://www.qq.com'\n&Repo='http://github.com/xxx'\n&Rate=\"10\"\n&EnableURLGroup=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"Key\": \"RlOmCVbPrKd4\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "创建 rum 项目"
+      }
+    ]
+  },
+  "version": "1.0"
+}

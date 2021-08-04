@@ -9,6 +9,8 @@ from tccli.exceptions import ConfigurationError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.tem.v20210701 import tem_client as tem_client_v20210701
+from tencentcloud.tem.v20210701 import models as models_v20210701
 from tencentcloud.tem.v20201221 import tem_client as tem_client_v20201221
 from tencentcloud.tem.v20201221 import models as models_v20201221
 
@@ -67,7 +69,7 @@ def doCreateResource(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyServiceInfo(args, parsed_globals):
+def doDescribeDeployApplicationDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -83,9 +85,36 @@ def doModifyServiceInfo(args, parsed_globals):
     client = mod.TemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyServiceInfoRequest()
+    model = models.DescribeDeployApplicationDetailRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.ModifyServiceInfo(model)
+    rsp = client.DescribeDeployApplicationDetail(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResumeDeployApplication(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TemClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResumeDeployApplicationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.ResumeDeployApplication(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -113,6 +142,33 @@ def doGenerateDownloadUrl(args, parsed_globals):
     model = models.GenerateDownloadUrlRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.GenerateDownloadUrl(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRevertDeployApplication(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TemClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RevertDeployApplicationRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.RevertDeployApplication(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -283,6 +339,33 @@ def doDescribeNamespaces(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeServiceRunPodListV2(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    cred = credential.Credential(
+        g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+    )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TemClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServiceRunPodListV2Request()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeServiceRunPodListV2(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRelatedIngresses(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -364,7 +447,7 @@ def doCreateNamespace(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeServiceRunPodListV2(args, parsed_globals):
+def doModifyServiceInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     cred = credential.Credential(
@@ -380,9 +463,9 @@ def doDescribeServiceRunPodListV2(args, parsed_globals):
     client = mod.TemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServiceRunPodListV2Request()
+    model = models.ModifyServiceInfoRequest()
     model.from_json_string(json.dumps(args))
-    rsp = client.DescribeServiceRunPodListV2(model)
+    rsp = client.ModifyServiceInfo(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -473,11 +556,13 @@ def doDeleteIngress(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20210701": tem_client_v20210701,
     "v20201221": tem_client_v20201221,
 
 }
 
 MODELS_MAP = {
+    "v20210701": models_v20210701,
     "v20201221": models_v20201221,
 
 }
@@ -485,18 +570,21 @@ MODELS_MAP = {
 ACTION_MAP = {
     "ModifyNamespace": doModifyNamespace,
     "CreateResource": doCreateResource,
-    "ModifyServiceInfo": doModifyServiceInfo,
+    "DescribeDeployApplicationDetail": doDescribeDeployApplicationDetail,
+    "ResumeDeployApplication": doResumeDeployApplication,
     "GenerateDownloadUrl": doGenerateDownloadUrl,
+    "RevertDeployApplication": doRevertDeployApplication,
     "ModifyIngress": doModifyIngress,
     "DescribeIngress": doDescribeIngress,
     "CreateCosTokenV2": doCreateCosTokenV2,
     "DeployServiceV2": doDeployServiceV2,
     "CreateServiceV2": doCreateServiceV2,
     "DescribeNamespaces": doDescribeNamespaces,
+    "DescribeServiceRunPodListV2": doDescribeServiceRunPodListV2,
     "DescribeRelatedIngresses": doDescribeRelatedIngresses,
     "RestartServiceRunPod": doRestartServiceRunPod,
     "CreateNamespace": doCreateNamespace,
-    "DescribeServiceRunPodListV2": doDescribeServiceRunPodListV2,
+    "ModifyServiceInfo": doModifyServiceInfo,
     "DescribeIngresses": doDescribeIngresses,
     "CreateCosToken": doCreateCosToken,
     "DeleteIngress": doDeleteIngress,
@@ -504,6 +592,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20210701",
     "v20201221",
 
 ]

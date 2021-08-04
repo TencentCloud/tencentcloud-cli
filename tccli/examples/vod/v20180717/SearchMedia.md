@@ -286,6 +286,17 @@ Output:
                             "Package": "xx"
                         }
                     ]
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
+                        }
+                    ]
                 }
             }
         ]
@@ -578,6 +589,17 @@ Output:
                             "Package": "xx"
                         }
                     ]
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
+                        }
+                    ]
                 }
             }
         ]
@@ -868,6 +890,17 @@ Output:
                             "Definition": 0,
                             "Url": "xx",
                             "Package": "xx"
+                        }
+                    ]
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
                         }
                     ]
                 }
@@ -1165,6 +1198,17 @@ Output:
                             "Package": "xx"
                         }
                     ]
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
+                        }
+                    ]
                 }
             }
         ]
@@ -1220,6 +1264,17 @@ Output:
                     "Category": "Image",
                     "Status": "Normal"
                 },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
+                        }
+                    ]
+                },
                 "MetaData": null,
                 "TranscodeInfo": null,
                 "AnimatedGraphicsInfo": null,
@@ -1253,6 +1308,17 @@ Output:
                     "Vid": "5285890811175698692",
                     "Category": "Image",
                     "Status": "Normal"
+                },
+                "SubtitleInfo": {
+                    "SubtitleSet": [
+                        {
+                            "Url": "xx",
+                            "Format": "xx",
+                            "Name": "xx",
+                            "Language": "xx",
+                            "Id": "xx"
+                        }
+                    ]
                 },
                 "MetaData": null,
                 "TranscodeInfo": null,

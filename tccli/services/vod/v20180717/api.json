@@ -20052,6 +20052,15 @@
         },
         {
           "default": "",
+          "document": "匹配过期时间在此时间段内的文件，无法检索到已过期文件。\n<li>包含所指定的头尾时间点。</li>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "排序方式。\n<li>Sort.Field 可选 CreateTime 。</li>\n<li>当 Text、 Names 或 Descriptions 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>",
           "example": "无",
           "member": "SortBy",
@@ -20103,6 +20112,15 @@
           "name": "SubAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "存储类型数组。可选值有：\n<li> STANDARD：标准存储。</li>\n<li> STANDARD_IA：低频存储。</li>\n<li> ARCHIVE：归档存储。</li>\n<li> DEEP_ARCHIVE：深度归档存储。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "StorageClasses",
+          "required": false,
+          "type": "list"
         },
         {
           "default": "",

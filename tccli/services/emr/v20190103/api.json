@@ -12,6 +12,12 @@
       "name": "查询硬件节点信息",
       "output": "DescribeClusterNodesResponse"
     },
+    "DescribeCvmQuota": {
+      "document": "获取账户的CVM配额",
+      "input": "DescribeCvmQuotaRequest",
+      "name": "获取账户的CVM配额",
+      "output": "DescribeCvmQuotaResponse"
+    },
     "DescribeInstanceRenewNodes": {
       "document": "预付费集群隔离后续费资源查询",
       "input": "DescribeInstanceRenewNodesRequest",
@@ -71,6 +77,12 @@
       "input": "ScaleOutInstanceRequest",
       "name": "实例扩容",
       "output": "ScaleOutInstanceResponse"
+    },
+    "SyncPodState": {
+      "document": "EMR同步TKE中POD状态",
+      "input": "SyncPodStateRequest",
+      "name": "EMR同步POD状态",
+      "output": "SyncPodStateResponse"
     },
     "TerminateInstance": {
       "document": "销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。",
@@ -1135,6 +1147,69 @@
           "example": "无",
           "member": "string",
           "name": "HardwareResourceTypeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmQuotaRequest": {
+      "document": "DescribeCvmQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EMR集群ID",
+          "example": "emr-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmQuotaResponse": {
+      "document": "DescribeCvmQuota返回参数结构体",
+      "members": [
+        {
+          "document": "后付费配额列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "QuotaEntity",
+          "name": "PostPaidQuotaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "竞价实例配额列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "QuotaEntity",
+          "name": "SpotPaidQuotaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "eks配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "PodSaleSpec",
+          "name": "EksQuotaSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -3264,6 +3339,48 @@
       ],
       "usage": "in"
     },
+    "PodSaleSpec": {
+      "document": "Pod资源售卖规格",
+      "members": [
+        {
+          "default": "",
+          "document": "可售卖的资源规格，仅为以下值:\"TASK\",\"CORE\",\"MASTER\",\"ROUTER\"。",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu核数。",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存数量，单位为GB。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格资源可申请的最大数量。",
+          "member": "uint64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PodSpec": {
       "document": "扩容容器资源时的资源描述",
       "members": [
@@ -3389,6 +3506,72 @@
         }
       ],
       "usage": "both"
+    },
+    "PodState": {
+      "document": "单个pod状态",
+      "members": [
+        {
+          "default": "",
+          "document": "pod的名称",
+          "example": "1234-5677-3352-2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod uuid",
+          "example": "1234-5677-3352-2",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod的状态",
+          "example": "POD_STATE_DELETED",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod处于该状态原因",
+          "example": "pod is deleted",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod所属集群",
+          "example": "emr-cluster",
+          "member": "string",
+          "name": "OwnerCluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod内存大小",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "PodVolume": {
       "document": "Pod的存储设备描述信息。",
@@ -3667,6 +3850,52 @@
           "name": "LocalDiskNum",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QuotaEntity": {
+      "document": "获取CVM配额",
+      "members": [
+        {
+          "default": "",
+          "document": "已使用配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainingQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4373,6 +4602,33 @@
         }
       ],
       "usage": "both"
+    },
+    "SyncPodStateRequest": {
+      "document": "SyncPodState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EmrService中pod状态信息",
+          "example": "{”pod-1\"，”pod-1\"，““POD_STATE_DELETED”,\"pod is deleted\",\"1223456\"",
+          "member": "PodState",
+          "name": "Message",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncPodStateResponse": {
+      "document": "SyncPodState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "标签",

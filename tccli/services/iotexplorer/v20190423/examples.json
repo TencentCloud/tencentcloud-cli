@@ -88,7 +88,7 @@
       {
         "document": "删除设备",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=KO9JAFB9W5\n&DeviceName=dev\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1aa7421b-f69b-4ea9-acf5-4bf22681f3b1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除设备"
       }
     ],

@@ -14,7 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1aa7421b-f69b-4ea9-acf5-4bf22681f3b1"
+        "ResultCode": "xx",
+        "ResultMessage": "xx",
+        "RequestId": "xx"
     }
 }
 ```

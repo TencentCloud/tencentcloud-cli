@@ -21,14 +21,16 @@ Output:
                 "ClusterId": "tgw-12345678",
                 "Vip": "1.1.1.1",
                 "LoadBalancerId": null,
-                "Idle": true
+                "Idle": true,
+                "Isp": "BGP"
             },
             {
                 "ClusterName": "cluster-1",
                 "ClusterId": "tgw-12345678",
                 "Vip": "1.1.1.2",
                 "LoadBalancerId": "lb-12345678",
-                "Idle": false
+                "Idle": false,
+                "Isp": "BGP"
             }
         ],
         "RequestId": "49e44bf9-1357-420b-87ba-3c827209af67"

@@ -1,0 +1,572 @@
+{
+  "actions": {
+    "DescribeDeployApplicationDetail": {
+      "document": "获取分批发布详情",
+      "input": "DescribeDeployApplicationDetailRequest",
+      "name": "获取分批发布详情",
+      "output": "DescribeDeployApplicationDetailResponse"
+    },
+    "ResumeDeployApplication": {
+      "document": "开始下一批次发布",
+      "input": "ResumeDeployApplicationRequest",
+      "name": "开始下一批次发布",
+      "output": "ResumeDeployApplicationResponse"
+    },
+    "RevertDeployApplication": {
+      "document": "回滚分批发布",
+      "input": "RevertDeployApplicationRequest",
+      "name": "回滚分批发布",
+      "output": "RevertDeployApplicationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-07-01",
+    "api_brief": "腾讯云弹性微服务（TEM）相关接口。",
+    "serviceNameCN": "弹性微服务",
+    "serviceShortName": "tem"
+  },
+  "objects": {
+    "DeployServiceBatchDetail": {
+      "document": "分批发布单批次详情",
+      "members": [
+        {
+          "default": "",
+          "document": "旧实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "DeployServicePodDetail",
+          "name": "OldPodList",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "新实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "DeployServicePodDetail",
+          "name": "NewPodList",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前批次状态：\"WaitForTimeExceed\", \"WaitForResume\", \"Deploying\", \"Finish\", \"NotStart\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Finish",
+          "member": "string",
+          "name": "BatchStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该批次预计旧实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "PodNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BatchIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeployServicePodDetail": {
+      "document": "分批发布单批次详情",
+      "members": [
+        {
+          "default": "",
+          "document": "pod Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pod-123",
+          "member": "string",
+          "name": "PodId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pending",
+          "member": "string",
+          "name": "PodStatus",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.1",
+          "member": "string",
+          "name": "PodVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 11：11：11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shanghai-zone-4",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeployStrategyConf": {
+      "document": "分批发布策略配置",
+      "members": [
+        {
+          "default": "",
+          "document": "总分批数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalBatchCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "beta分批实例数",
+          "example": "5",
+          "member": "int64",
+          "name": "BetaBatchNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的",
+          "example": "1",
+          "member": "int64",
+          "name": "DeployStrategyType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "每批暂停间隔",
+          "example": "200",
+          "member": "int64",
+          "name": "BatchInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDeployApplicationDetailRequest": {
+      "document": "DescribeDeployApplicationDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-123",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "env-123",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployApplicationDetailResponse": {
+      "document": "DescribeDeployApplicationDetail返回参数结构体",
+      "members": [
+        {
+          "document": "分批发布结果详情",
+          "example": "{}",
+          "member": "TemDeployApplicationDetailInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRunPodPage": {
+      "document": "版本pod列表",
+      "members": [
+        {
+          "default": "",
+          "document": "分页下标",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单页条数",
+          "example": "11",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "111",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求id",
+          "example": "ssss",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "条目",
+          "example": "{name:key}",
+          "member": "RunVersionPod",
+          "name": "PodList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResumeDeployApplicationRequest": {
+      "document": "ResumeDeployApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要开始下一批次的服务id",
+          "example": "service-123",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境id",
+          "example": "env-123",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeDeployApplicationResponse": {
+      "document": "ResumeDeployApplication返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevertDeployApplicationRequest": {
+      "document": "RevertDeployApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要回滚的服务id",
+          "example": "service-123",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要回滚的服务所在环境id",
+          "example": "env-xxxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevertDeployApplicationResponse": {
+      "document": "RevertDeployApplication返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunVersionPod": {
+      "document": "版本pod",
+      "members": [
+        {
+          "default": "",
+          "document": "shell地址",
+          "example": "sss",
+          "member": "string",
+          "name": "Webshell",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod的id",
+          "example": "aaa",
+          "member": "string",
+          "name": "PodId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2010-11-11 22:21:11",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "PodIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RestartCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TemDeployApplicationDetailInfo": {
+      "document": "分批发布详情",
+      "members": [
+        {
+          "default": "",
+          "document": "分批发布策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "DeployStrategyConf",
+          "name": "DeployStrategyConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxxxxx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxxx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "beta分批详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "DeployServiceBatchDetail",
+          "name": "BetaBatchDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他分批详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{},{}]",
+          "member": "DeployServiceBatchDetail",
+          "name": "OtherBatchDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "老版本pod列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{pod1}, {pod2}]",
+          "member": "DescribeRunPodPage",
+          "name": "OldVersionPodList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前批次id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentBatchIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "errormesage",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前批次状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "revert",
+          "member": "string",
+          "name": "CurrentBatchStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

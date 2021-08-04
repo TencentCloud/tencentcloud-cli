@@ -13,16 +13,48 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "InstanceSet": [
             {
-                "InstanceId": "ins-gsk7l6vw",
-                "InstanceRole": "WORKER",
-                "InstanceState": "running",
-                "FailedReason": ""
+                "InstanceAdvancedSettings": {
+                    "DockerGraphPath": "xx",
+                    "Labels": [
+                        {
+                            "Name": "xx",
+                            "Value": "xx"
+                        }
+                    ],
+                    "ExtraArgs": {
+                        "Kubelet": [
+                            "xx"
+                        ]
+                    },
+                    "Unschedulable": 0,
+                    "UserScript": "xx",
+                    "MountTarget": "xx",
+                    "DataDisks": [
+                        {
+                            "DiskPartition": "xx",
+                            "DiskType": "xx",
+                            "DiskSize": 0,
+                            "FileSystem": "xx",
+                            "AutoFormatAndMount": true,
+                            "MountTarget": "xx"
+                        }
+                    ]
+                },
+                "InstanceId": "xx",
+                "InstanceRole": "xx",
+                "LanIP": "xx",
+                "DrainStatus": "xx",
+                "AutoscalingGroupId": "xx",
+                "InstanceState": "xx",
+                "CreatedTime": "xx",
+                "NodePoolId": "xx",
+                "FailedReason": "xx"
             }
         ],
-        "RequestId": "82f2fe9c-c5fa-4077-9236-f1341180a696"
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```

@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeDeployApplicationDetail": [
+      {
+        "document": "获取分批发布详情",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployApplicationDetail\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"xx\",\n            \"BetaBatchDetail\": {\n                \"NewPodList\": {\n                    \"PodVersion\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"CreateTime\": \"xx\",\n                    \"PodStatus\": [\n                        \"xx\"\n                    ],\n                    \"PodId\": \"xx\"\n                },\n                \"BatchIndex\": 0,\n                \"BatchStatus\": \"xx\",\n                \"OldPodList\": {\n                    \"PodVersion\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"CreateTime\": \"xx\",\n                    \"PodStatus\": [\n                        \"xx\"\n                    ],\n                    \"PodId\": \"xx\"\n                },\n                \"PodNum\": 0\n            },\n            \"ErrorMessage\": \"xx\",\n            \"DeployStrategyConf\": {\n                \"TotalBatchCount\": 0,\n                \"DeployStrategyType\": 0,\n                \"BatchInterval\": 0,\n                \"BetaBatchNum\": 0\n            },\n            \"OtherBatchDetail\": [\n                {\n                    \"NewPodList\": {\n                        \"PodVersion\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"CreateTime\": \"xx\",\n                        \"PodStatus\": [\n                            \"xx\"\n                        ],\n                        \"PodId\": \"xx\"\n                    },\n                    \"BatchIndex\": 0,\n                    \"BatchStatus\": \"xx\",\n                    \"OldPodList\": {\n                        \"PodVersion\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"CreateTime\": \"xx\",\n                        \"PodStatus\": [\n                            \"xx\"\n                        ],\n                        \"PodId\": \"xx\"\n                    },\n                    \"PodNum\": 0\n                }\n            ],\n            \"StartTime\": \"xx\",\n            \"CurrentBatchIndex\": 0,\n            \"EndTime\": \"xx\",\n            \"CurrentBatchStatus\": \"xx\",\n            \"OldVersionPodList\": {\n                \"TotalCount\": 0,\n                \"Limit\": 0,\n                \"RequestId\": \"xx\",\n                \"PodList\": [\n                    {\n                        \"Webshell\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"RestartCount\": 0,\n                        \"Zone\": \"xx\",\n                        \"PodId\": \"xx\",\n                        \"DeployVersion\": \"xx\",\n                        \"PodIp\": \"xx\",\n                        \"CreateTime\": \"xx\"\n                    }\n                ],\n                \"Offset\": 0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取分批发布详情"
+      }
+    ],
+    "ResumeDeployApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeDeployApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "开始下一批次发布"
+      }
+    ],
+    "RevertDeployApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevertDeployApplication\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "回滚分批发布"
+      }
+    ]
+  },
+  "version": "1.0"
+}

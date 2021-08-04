@@ -16,6 +16,14 @@
         "title": "获取硬件节点信息"
       }
     ],
+    "DescribeCvmQuota": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeCvmQuota\n&ClusterId=emr-xxxxxxxx\n&ZoneId=100002\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PostPaidQuotaSet\": [\n            {\n                \"UsedQuota\": 0,\n                \"RemainingQuota\": 288,\n                \"TotalQuota\": 288,\n                \"Zone\": \"ap-guangzhou-1\"\n            }\n        ],\n        \"SpotPaidQuotaSet\": [\n            {\n                \"UsedQuota\": 0,\n                \"RemainingQuota\": 244,\n                \"TotalQuota\": 244,\n                \"Zone\": \"ap-guangzhou-1\"\n            }\n        ],\n        \"EksQuotaSet\": [\n            {\n                \"NodeType\": \"TASK\",\n                \"Cpu\": 12000,\n                \"Memory\": 32000000,\n                \"Number\": 12\n            }\n        ],\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
+        "title": "获取账户的CVM配额"
+      }
+    ],
     "DescribeInstanceRenewNodes": [
       {
         "document": "预付费集群隔离后续费资源查询",
@@ -94,6 +102,14 @@
         "input": "https://emr.tencentcloudapi.com/?Action=ScaleOutInstance\n&TimeUnit=s\n&TimeSpan=3600\n&CoreCount=1\n&InstanceId=emr-5n3l5c83\n&PayMode=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"ClientToken\": \"\",\n        \"DealNames\": [\n            \"20200309357833\",\n            \"20200309357834\",\n            \"20200309357835\",\n            \"20200309357836\"\n        ],\n        \"FlowId\": 0,\n        \"InstanceId\": \"emr-5n3l5c83\",\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
         "title": "集群扩容"
+      }
+    ],
+    "SyncPodState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncPodState\n<公共请求参数>\n\n{\n    \"Message\": {\n        \"Name\": \"pod-1\",\n        \"Reason\": \"pod is deleted\",\n        \"OwnerCluster\": \"emr-cluster\",\n        \"State\": \"POD_STATE_DELETED\",\n        \"Memory\": 0,\n        \"Uuid\": \"3435346\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d830face-6587-4263-8ab0-56bda265787d\"\n    }\n}",
+        "title": "EMR同步Pod状态"
       }
     ],
     "TerminateInstance": [

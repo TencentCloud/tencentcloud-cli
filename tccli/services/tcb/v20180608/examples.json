@@ -72,6 +72,14 @@
         "title": "开通后付费资源"
       }
     ],
+    "CreateStandaloneGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayAlias\": \"StandaloneGateway\",\n    \"VpcId\": \"vpc-nzmimmod\",\n    \"SubnetIds\": [\n        \"subnet-hpddq58c\"\n    ],\n    \"GatewayDesc\": \"gateway\",\n    \"PackageVersion\": \"starter\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayName\": \"x-tcb-cbr-gateway-9eba9lc1daaf2e\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "创建独立网关"
+      }
+    ],
     "CreateStaticStore": [
       {
         "document": "",
@@ -352,6 +360,22 @@
         "title": "查询1分钱抵扣详情"
       }
     ],
+    "DescribeStandaloneGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"StandaloneGatewayList\": [\n            {\n                \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n                \"CPU\": 0.25,\n                \"Mem\": 1,\n                \"PackageVersion\": \"starter\",\n                \"GatewayAlias\": \"StandaloneGateway\",\n                \"VpcId\": \"vpc-73afxxfa\",\n                \"SubnetIds\": [\n                    \"subnet-9xnlrqj5\"\n                ],\n                \"GatewayDesc\": \"gateway\",\n                \"GateWayStatus\": \"success\",\n                \"ServiceInfo\": {\n                    \"ServiceName\": \"gateway\",\n                    \"Status\": \"off\"\n                }\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "查询小租户网关信息"
+      }
+    ],
+    "DescribeStandaloneGatewayPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandaloneGatewayPackage\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"PackageVersion\": \"starter\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"StandaloneGatewayPackageList\": [\n            {\n                \"CPU\": 0.25,\n                \"Mem\": 1,\n                \"PackageVersion\": \"starter\"\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "查询小租户网关套餐信息"
+      }
+    ],
     "DescribeWxCloudBaseRunEnvs": [
       {
         "document": "",
@@ -374,6 +398,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DestroyEnv\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "销毁环境"
+      }
+    ],
+    "DestroyStandaloneGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"IsForce\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "销毁小租户网关"
       }
     ],
     "DestroyStaticStore": [
@@ -454,6 +486,22 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollUpdateCloudBaseRunServerVersion\n<公共请求参数>\n\n{\n    \"MaxNum\": \"xx\",\n    \"EnvParams\": \"xx\",\n    \"PackageName\": \"xx\",\n    \"MountVolumeInfo\": [\n        {\n            \"ReadOnly\": true,\n            \"MountPath\": \"xx\",\n            \"Name\": \"xx\",\n            \"NfsVolumes\": [\n                {\n                    \"Path\": \"xx\",\n                    \"ReadOnly\": true,\n                    \"Server\": \"xx\"\n                }\n            ]\n        }\n    ],\n    \"Branch\": \"xx\",\n    \"Rollback\": true,\n    \"BuildDir\": \"xx\",\n    \"Repository\": \"xx\",\n    \"Mem\": \"xx\",\n    \"UploadType\": \"xx\",\n    \"RepositoryType\": \"xx\",\n    \"InitialDelaySeconds\": 0,\n    \"CustomLogs\": \"xx\",\n    \"FlowRatio\": 0,\n    \"MinNum\": \"xx\",\n    \"VersionRemark\": \"xx\",\n    \"ContainerPort\": 0,\n    \"DockerfilePath\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"SnapshotName\": \"xx\",\n    \"ServerName\": \"xx\",\n    \"EnableUnion\": true,\n    \"PackageVersion\": \"xx\",\n    \"Cpu\": \"xx\",\n    \"CodeDetail\": {\n        \"Url\": \"xx\",\n        \"Name\": {\n            \"FullName\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    },\n    \"ImageInfo\": {\n        \"ImageUrl\": \"xx\",\n        \"RepositoryName\": \"xx\",\n        \"IsPublic\": true,\n        \"ServerAddr\": \"xx\",\n        \"TagName\": \"xx\"\n    },\n    \"PolicyThreshold\": \"xx\",\n    \"IsRebuild\": true,\n    \"PolicyType\": \"xx\",\n    \"VersionName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"VersionName\": \"xxx\",\n        \"RunId\": \"a123\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "TurnOffStandaloneGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOffStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "关闭小租户网关"
+      }
+    ],
+    "TurnOnStandaloneGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOnStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "title": "开启小租户网关"
       }
     ]
   },

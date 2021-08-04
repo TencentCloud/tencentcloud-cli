@@ -278,7 +278,7 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeClusterResources\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ClusterResourceSet\": [\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.1\",\n                \"LoadBalancerId\": null,\n                \"Idle\": true\n            },\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.2\",\n                \"LoadBalancerId\": \"lb-12345678\",\n                \"Idle\": false\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ClusterResourceSet\": [\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.1\",\n                \"LoadBalancerId\": null,\n                \"Idle\": true,\n                \"Isp\": \"BGP\"\n            },\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.2\",\n                \"LoadBalancerId\": \"lb-12345678\",\n                \"Idle\": false,\n                \"Isp\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
         "title": "查询集群资源列表"
       }
     ],

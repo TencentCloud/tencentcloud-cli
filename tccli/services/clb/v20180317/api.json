@@ -1641,6 +1641,7 @@
         {
           "default": "",
           "document": "集群唯一ID，如tgw-12345678。",
+          "example": "tgw-12345678",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1650,6 +1651,7 @@
         {
           "default": "",
           "document": "ip地址。",
+          "example": "1.1.1.2",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -1659,6 +1661,7 @@
         {
           "default": "",
           "document": "负载均衡唯一ID，如lb-12345678。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -1668,6 +1671,7 @@
         {
           "default": "",
           "document": "资源是否闲置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "string",
           "name": "Idle",
           "required": true,
@@ -1677,11 +1681,22 @@
         {
           "default": "",
           "document": "集群名称。",
+          "example": "cluster-1",
           "member": "string",
           "name": "ClusterName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "互联网服务供应商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BGP,CMCC",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

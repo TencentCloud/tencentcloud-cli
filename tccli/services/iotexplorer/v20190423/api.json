@@ -946,6 +946,7 @@
         {
           "default": "",
           "document": "产品ID。",
+          "example": "KO9JAFB9W5",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -954,10 +955,20 @@
         {
           "default": "",
           "document": "设备名称。",
+          "example": "dev",
           "member": "string",
           "name": "DeviceName",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否删除绑定设备",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -967,15 +978,19 @@
       "members": [
         {
           "document": "删除的结果代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
           "member": "string",
           "name": "ResultCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "删除的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
           "member": "string",
           "name": "ResultMessage",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
