@@ -78,6 +78,26 @@ tccli configure list      --profile test
 tccli cvm DescribeZones --profile test
 ```
 
+4. 您可以配置https代理，让tccli通过代理调用API
+
+在环境变量中配置https代理
+```bash
+# 在Linux/Unix和macOS中执行如下类似命令配置环境变量
+export https_proxy=https://192.168.1.1:1111
+export https_proxy=https://myproxy.com:1111
+
+# 在Windows的终端中执行如下类似命令配置环境变量
+setx http_proxy=https://192.168.1.1:1111
+set  http_proxy=https://myproxy.com:1111
+# setx表示设置永久环境变量，设置后重启终端生效
+```
+
+您也可以直接使用'--https-proxy'选项设置https代理
+```bash
+# 例如
+tccli cvm DescribeRegions --https-proxy https://192.168.1.1:1111
+```
+
 
 # 使用TCCLI
 命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能再命令行工具上执行命令实现。

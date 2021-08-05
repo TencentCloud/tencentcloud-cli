@@ -111,6 +111,9 @@ class Loader(object):
                 'help': 'complex type parameters are expanded with dots',
                 'action': 'store_true'
             },
+            'https-proxy': {
+                'help': 'specify a https proxy',
+            },
             'warning': {
                 'help': 'Open the warning log',
                 'action': 'store_true'
@@ -224,6 +227,7 @@ class Loader(object):
             "--cli-input-json": "Reads arguments from the JSON string provided. The JSON string "
                                 "follows the format provided by --generate-cli-skeleton. ",
             "--cli-unfold-argument": "complex type parameters are expanded with dots",
+            "--https-proxy": "specify a https proxy",
             "--warning": "Open the warning log",
         }
 
