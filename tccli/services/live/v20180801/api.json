@@ -55,7 +55,7 @@
       "output": "CreateLiveCertResponse"
     },
     "CreateLivePullStreamTask": {
-      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到直播系统。\n注意：\n1. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n2. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n3. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n4. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n5. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。\n",
+      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到直播系统。\n注意：\n1. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n2. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n3. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n4. 目前仅支持推流到腾讯云直播，暂不支持推到第三方。\n5. 过期不用的任务需自行清理，未清理的过期任务也会占用上限额度，如需要自动清理过期任务，可提单给售后进行配置。\n6. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n7. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。\n",
       "input": "CreateLivePullStreamTaskRequest",
       "name": "创建直播拉流任务",
       "output": "CreateLivePullStreamTaskResponse"
@@ -503,6 +503,12 @@
       "input": "DescribePullStreamConfigsRequest",
       "name": "查询拉流配置(该接口已下线,请联系售后获取新接口)",
       "output": "DescribePullStreamConfigsResponse"
+    },
+    "DescribePushBandwidthAndFluxList": {
+      "document": "直播推流带宽和流量数据查询。\n推流计费会先取全球推流用量和全球播放用量进行比较，满足计费条件后再按各地区用量出账。详情参见[计费文档](https://cloud.tencent.com/document/product/267/34175)。",
+      "input": "DescribePushBandwidthAndFluxListRequest",
+      "name": "直播推流带宽和流量数据查询",
+      "output": "DescribePushBandwidthAndFluxListResponse"
     },
     "DescribeRecordTask": {
       "document": "查询指定时间段范围内启动和结束的录制任务列表。\n- 使用前提\n1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。\n2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。\n",
@@ -3059,6 +3065,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "livetest",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -3067,6 +3074,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "5000.live.push.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -3075,6 +3083,7 @@
         {
           "default": "",
           "document": "推流路径。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -3082,7 +3091,8 @@
         },
         {
           "default": "",
-          "document": "录制任务结束时间，Unix时间戳。设置时间必须大于StartTime，且EndTime - StartTime不能超过24小时。",
+          "document": "录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。",
+          "example": "1589904000",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -3090,7 +3100,8 @@
         },
         {
           "default": "",
-          "document": "录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。不超过从当前时间开始6天之内的时间。",
+          "document": "录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。",
+          "example": "1589889600",
           "member": "uint64",
           "name": "StartTime",
           "required": false,
@@ -3099,6 +3110,7 @@
         {
           "default": "",
           "document": "推流类型，默认0。取值：\n0-直播推流。\n1-合成流，即 A+B=C 类型混流。",
+          "example": "0",
           "member": "uint64",
           "name": "StreamType",
           "required": false,
@@ -3107,6 +3119,7 @@
         {
           "default": "",
           "document": "录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。",
+          "example": "0",
           "member": "uint64",
           "name": "TemplateId",
           "required": false,
@@ -3115,6 +3128,7 @@
         {
           "default": "",
           "document": "扩展字段，暂无定义。默认为空。",
+          "example": "\"\"",
           "member": "string",
           "name": "Extension",
           "required": false,
@@ -3128,8 +3142,10 @@
       "members": [
         {
           "document": "任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6648,6 +6664,123 @@
           "document": "拉流配置。",
           "member": "PullStreamConfig",
           "name": "PullStreamConfigs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePushBandwidthAndFluxListRequest": {
+      "document": "DescribePushBandwidthAndFluxList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间点，格式为 yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点，格式为 yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。",
+          "example": "2019-02-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，可以填多个，若不填，表示总体数据。",
+          "example": "[\"5000.pushdomain.com\"]",
+          "member": "string",
+          "name": "PushDomains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选值：\nMainland：查询中国大陆（境内）数据，\nOversea：则查询国际/港澳台（境外）数据，\n不填则默认查询全球地区（境内+境外）的数据。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n60：1小时粒度（跨度不支持超过一个月），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePushBandwidthAndFluxListResponse": {
+      "document": "DescribePushBandwidthAndFluxList返回参数结构体",
+      "members": [
+        {
+          "document": "峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-01 00:00:00",
+          "member": "string",
+          "name": "PeakBandwidthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "峰值带宽，单位是 Mbps。",
+          "example": "117042.495",
+          "member": "float",
+          "name": "PeakBandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "95峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-01 00:00:00",
+          "member": "string",
+          "name": "P95PeakBandwidthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "95峰值带宽，单位是 Mbps。",
+          "example": "117042.495",
+          "member": "float",
+          "name": "P95PeakBandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总流量，单位是 MB。",
+          "example": "12254567.55",
+          "member": "float",
+          "name": "SumFlux",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "明细数据信息。",
+          "example": "无",
+          "member": "BillDataInfo",
+          "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -372,6 +372,12 @@
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
     },
+    "DescribeVersions": {
+      "document": "获取集群版本信息",
+      "input": "DescribeVersionsRequest",
+      "name": "集群版本信息",
+      "output": "DescribeVersionsResponse"
+    },
     "DescribeVpcCniPodLimits": {
       "document": "本接口查询当前用户和地域在指定可用区下的机型可支持的最大 TKE VPC-CNI 网络模式的 Pod 数量",
       "input": "DescribeVpcCniPodLimitsRequest",
@@ -5029,6 +5035,41 @@
       ],
       "type": "object"
     },
+    "DescribeVersionsRequest": {
+      "document": "DescribeVersions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVersionsResponse": {
+      "document": "DescribeVersions返回参数结构体",
+      "members": [
+        {
+          "document": "版本数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VersionInstance",
+          "name": "VersionInstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcCniPodLimitsRequest": {
       "document": "DescribeVpcCniPodLimits请求参数结构体",
       "members": [
@@ -8856,6 +8897,39 @@
         }
       ],
       "usage": "in"
+    },
+    "VersionInstance": {
+      "document": "版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Remark\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

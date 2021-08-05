@@ -328,6 +328,14 @@
         "title": "修改智能解析域名名称"
       }
     ],
+    "ModifyL7RulesEdge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL7RulesEdge\n<公共请求参数>\n\n{\n    \"Rule\": {\n        \"KeepTime\": 1,\n        \"Status\": 1,\n        \"Domain\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"SourceType\": 1,\n        \"RuleId\": \"xx\",\n        \"CCThreshold\": 1,\n        \"HttpsToHttpEnable\": 1,\n        \"CCEnable\": 1,\n        \"PrivateKey\": \"xx\",\n        \"CertType\": 1,\n        \"LbType\": 1,\n        \"SourceList\": [\n            {\n                \"Source\": \"xx\",\n                \"Weight\": 1\n            }\n        ],\n        \"Cert\": \"xx\",\n        \"CCLevel\": \"xx\",\n        \"KeepEnable\": 1,\n        \"RuleName\": \"xx\",\n        \"CCStatus\": 1,\n        \"VirtualPort\": 1,\n        \"SSLId\": \"xx\"\n    },\n    \"Id\": \"xx\",\n    \"Business\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改L7转发规则"
+      }
+    ],
     "ModifyPacketFilterConfig": [
       {
         "document": "",

@@ -463,7 +463,7 @@
         },
         {
           "default": "",
-          "document": "游戏用户IP，用于就近调度，例如125.127.178.228",
+          "document": "【必选】用户IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",

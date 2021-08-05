@@ -246,6 +246,12 @@
       "name": "修改智能解析域名名称",
       "output": "ModifyDomainUsrNameResponse"
     },
+    "ModifyL7RulesEdge": {
+      "document": "修改边界防护L7转发规则",
+      "input": "ModifyL7RulesEdgeRequest",
+      "name": "修改边界防护L7转发规则",
+      "output": "ModifyL7RulesEdgeResponse"
+    },
     "ModifyPacketFilterConfig": {
       "document": "修改DDoS防护的特征过滤规则",
       "input": "ModifyPacketFilterConfigRequest",
@@ -3390,6 +3396,238 @@
       ],
       "usage": "out"
     },
+    "L4RuleSource": {
+      "document": "L4规则回源列表",
+      "members": [
+        {
+          "default": "",
+          "document": "回源IP或域名",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重值，取值[0,100]",
+          "example": "无",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7RuleEntry": {
+      "document": "L7规则",
+      "members": [
+        {
+          "default": "",
+          "document": "会话保持时间，单位秒",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议，取值[http, https]",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "LbType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源列表",
+          "example": "无",
+          "member": "L4RuleSource",
+          "name": "SourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护阈值",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HttpsToHttpEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "example": "无",
+          "member": "uint64",
+          "name": "CertType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护等级",
+          "example": "无",
+          "member": "string",
+          "name": "CCLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Layer4Rule": {
       "document": "4层转发规则",
       "members": [
@@ -3624,6 +3862,60 @@
     "ModifyDomainUsrNameResponse": {
       "document": "ModifyDomainUsrName返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7RulesEdgeRequest": {
+      "document": "ModifyL7RulesEdge请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（edge表示边界防护产品）",
+          "example": "edge",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "edge-000000xe",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则",
+          "example": "无",
+          "member": "L7RuleEntry",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7RulesEdgeResponse": {
+      "document": "ModifyL7RulesEdge返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

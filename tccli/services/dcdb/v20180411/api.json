@@ -924,6 +924,24 @@
           "name": "InitParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "DCN源地域",
+          "example": "无",
+          "member": "string",
+          "name": "DcnRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DCN源实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "DcnInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

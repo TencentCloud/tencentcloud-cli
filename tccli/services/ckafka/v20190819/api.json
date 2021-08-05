@@ -162,6 +162,12 @@
       "name": "查询用户信息",
       "output": "DescribeUserResponse"
     },
+    "FetchMessageByOffset": {
+      "document": "根据指定offset位置的消息",
+      "input": "FetchMessageByOffsetRequest",
+      "name": "查询消息",
+      "output": "FetchMessageByOffsetResponse"
+    },
     "ModifyGroupOffsets": {
       "document": "设置Groups 消费分组offset",
       "input": "ModifyGroupOffsetsRequest",
@@ -595,6 +601,66 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerRecord": {
+      "document": "消息记录",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位点",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2395,6 +2461,69 @@
         }
       ],
       "usage": "both"
+    },
+    "FetchMessageByOffsetRequest": {
+      "document": "FetchMessageByOffset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "位点信息",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchMessageByOffsetResponse": {
+      "document": "FetchMessageByOffset返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "ConsumerRecord",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Filter": {
       "document": "查询过滤器\n>描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n",

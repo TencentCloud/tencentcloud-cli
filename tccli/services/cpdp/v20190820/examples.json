@@ -104,6 +104,14 @@
         "title": "关闭订单请求示例"
       }
     ],
+    "ConfirmOrder": [
+      {
+        "document": "消费订单确认正常的示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfirmOrder\n<公共请求参数>\n\n{\n    \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n    \"OrderNo\": \" T03210722000014555992\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"OrderNo\": \"847f33d665d83eecaf0a8805a2ee6c7a\",\n        \"Status\": \"1\",\n        \"Description\": \"确认成功\"\n    }\n}",
+        "title": "消费订单确认正常示例"
+      }
+    ],
     "ContractOrder": [
       {
         "document": "应用需要先带上签约信息调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
@@ -158,6 +166,22 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=CreateMerchant\n&InvoicePlatformId=0\n&BankName=银行名称\n&BankAccount=621281240305123200\n&Drawer=drawer\n&Payee=payee\n&Reviewer=reviewer\n&State=1\n&TaxpayerNum=111212222233338\n&TaxpayerName=测试名称\n&LegalPersonName=测试名称\n&ContactsName=联系人\n&Email=test@email.com\n&Phone=11111111111\n&RegionCode=44\n&CityName=深圳市\n&Address=地址\n&TaxRegistrationCertificate=营业执照base64编码文件\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585012073321\",\n        \"Result\": {\n            \"Message\": \"success\",\n            \"Data\": {\n                \"SerialNo\": \"CPDP\",\n                \"TaxpayerNum\": \"\",\n                \"TaxpayerName\": \"\"\n            },\n            \"Code\": 0\n        }\n    }\n}",
         "title": "CreateMerchant"
+      }
+    ],
+    "CreateOrder": [
+      {
+        "document": "消费请求正常示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrder\n<公共请求参数>\n\n{\n    \"ChannelCode\": \"ZSB2B\",\n    \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n    \"Amount\": \"200.56\",\n    \"TraceNo\": \"46eed0ce0edc3b11bc1056b97dbc734c\",\n    \"NotifyUrl\": \"http://aaa.aaa.aaa\",\n    \"ReturnUrl\": \"http://bbb.bbb.bbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"TraceNo\": \"46eed0ce0edc3b11bc1056b97dbc734c\",\n        \"OrderNo\": \"847f33d665d83eecaf0a8805a2ee6c7a\",\n        \"PayUrl\": \"http://ccc.ccc.ccc\"\n    }\n}",
+        "title": "消费请求正常示例"
+      }
+    ],
+    "CreatePayMerchant": [
+      {
+        "document": "正确输入返回的场景",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePayMerchant\n<公共请求参数>\n\n{\n    \"ChannelCheckFlag\": \"0\",\n    \"ChannelMerchantNo\": \"1023459381\",\n    \"PlatformCode\": \"2928394059\",\n    \"MerchantName\": \"测试商户\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\"\n    }\n}",
+        "title": "商户新增正常返回"
       }
     ],
     "CreateRedInvoice": [
@@ -268,6 +292,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=ModifyAgentTaxPaymentInfo\n&BatchNum=98\n&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40639\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8ee3913-aa2a-4ea0-840f-9a77247bcabb\",\n        \"AgentTaxPaymentBatch\": {\n            \"StatusMsg\": \"下载&上传成功\",\n            \"Type\": 0,\n            \"BatchNum\": 98,\n            \"InfoNum\": 1,\n            \"Channel\": 1,\n            \"FileName\": \"paxos.pdf\",\n            \"RawElectronicCertUrl\": \"https://cloud.tencent.com/document/product/1122/40639\",\n            \"AgentId\": \"test\",\n            \"StatusCode\": 0\n        }\n    }\n}",
         "title": "ModifyAgentTaxPaymentInfo"
+      }
+    ],
+    "ModifyMerchant": [
+      {
+        "document": "商户修改正常的示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMerchant\n<公共请求参数>\n\n{\n    \"BusinessPayFlag\": \"1\",\n    \"MerchantName\": \"xx名称\",\n    \"MerchantAppId\": \"ufdj9384443\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\"\n    }\n}",
+        "title": "商户修改正常示例"
       }
     ],
     "ModifyMntMbrBindRelateAcctBankCode": [
@@ -438,6 +470,14 @@
         "title": "会员间交易-不验证"
       }
     ],
+    "QueryMerchant": [
+      {
+        "document": "商户查询正常的示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMerchant\n<公共请求参数>\n\n{\n    \"MerchantAppId\": \"34edsdfa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"MerchantName\": \"测试商户\",\n        \"BusinessPayFlag\": \"1\"\n    }\n}",
+        "title": "商户查询正常示例"
+      }
+    ],
     "QueryMerchantBalance": [
       {
         "document": "",
@@ -452,6 +492,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMerchantInfoForManagement\n&InvoicePlatformId=0\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585143238239\",\n        \"Result\": {\n            \"Total\": 1,\n            \"List\": [\n                {}\n            ]\n        }\n    }\n}",
         "title": "QueryMerchantInfoForManagement"
+      }
+    ],
+    "QueryMerchantOrder": [
+      {
+        "document": "消费订单查询正常的示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMerchantOrder\n<公共请求参数>\n\n{\n    \"OrderNo\": \"1c6f41570498301d85fc4589a5435b54\",\n    \"MerchantAppId\": \"T03210722000014555992\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"OrderNo\": \"847f33d665d83eecaf0a8805a2ee6c7a\",\n        \"Status\": \"1\"\n    }\n}",
+        "title": "消费订单查询正常示例"
       }
     ],
     "QueryOrder": [
@@ -586,6 +634,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=RefundMemberTransaction\r\n&<公共请求参数>\r\n&MidasSecretId=1587005497659\r\n&MidasSignature=111\r\n&MidasAppId=unibank10001\r\n&RequestType=MemberTransactionRefundReq\r\n&MerchantCode=4087\r\n&PayChannel=bank_pingan\r\n&PayChannelSubId=1\r\n&OutSubAccountName=水惠壮\r\n&InSubAccountName=水惠壮\r\n&OutSubAccountNumber=4087000000016017\r\n&InSubAccountNumber=4087000000061027\r\n&OldTransSequenceNumber=F088722003121180926752\r\n&BankAccountNumber=15000093978307\r\n&CurrencyAmount=0.03\r\n&TransSequenceNumber=33233\r\n&OldOrderId=332222211111\r\n&OrderId=777323232111\r\n&OutTransNetMemberCode=2019080500002\r\n&InTransNetMemberCode=ninggyang_test\r\n&ReservedMessage=\r\n&PlatformShortNumber=F08872\r\n&TransType=2\r\n&TransFee=0.01\r\n&MidasEnvironment=development",
         "output": "{\n    \"Response\": {\n        \"FrontSequenceNumber\": \"6124889676724932\",\n        \"ReservedMessage\": \"\",\n        \"RequestType\": \"MemberTransactionRefundAns\",\n        \"RequestId\": \"7c8256aa-1a63-402e-ba14-e0e138135eae\"\n    }\n}",
         "title": "会员间交易退款"
+      }
+    ],
+    "RefundOrder": [
+      {
+        "document": "消费订单退款接口正常的示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundOrder\n<公共请求参数>\n\n{\n    \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n    \"OrderNo\": \" T03210722000014555992\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"OrderNo\": \"847f33d665d83eecaf0a8805a2ee6c7a\",\n        \"Status\": \"1\",\n        \"Description\": \"退款成功\"\n    }\n}",
+        "title": "消费订单退款接口正常示例"
       }
     ],
     "RegisterBehavior": [

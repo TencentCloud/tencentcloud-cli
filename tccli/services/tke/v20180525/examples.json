@@ -508,6 +508,14 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "DescribeVersions": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeVersions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VersionInstanceSet\": [\n            {\n                \"Name\": \"k8s\",\n                \"Version\": \"1.18.4\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"6a2fe3a8-0914-475f-980b-b4a143c3fbc9\"\n    }\n}",
+        "title": "集群版本信息"
+      }
+    ],
     "DescribeVpcCniPodLimits": [
       {
         "document": "",

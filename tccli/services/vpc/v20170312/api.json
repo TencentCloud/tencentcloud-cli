@@ -11229,6 +11229,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。",
+          "example": "vpc-rkxd3pgh",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -11237,6 +11238,7 @@
         {
           "default": "",
           "document": "内网`IP`地址列表，批量查询单次请求最多支持`10`个。",
+          "example": "[\"10.4.2.2\\n\",\"10.4.2.3\\n\",\"10.4.2.17\\n\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": true,
@@ -11250,8 +11252,10 @@
       "members": [
         {
           "document": "内网`IP`地址信息列表。",
+          "example": "无",
           "member": "VpcPrivateIpAddress",
           "name": "VpcPrivateIpAddressSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

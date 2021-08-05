@@ -224,6 +224,14 @@
         "title": "查看服务版本历史"
       }
     ],
+    "DescribeCurveData": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCurveData\n&MetricName=StorageRead\n&StartTime=2019-04-0209:00:00\n&EndTime=2019-04-0419:00:00\n&ResourceID=3\n&EnvId=lotestapi100004\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2019-04-04 19:00:00\",\n        \"MetricName\": \"StorageRead\",\n        \"Period\": 3600,\n        \"RequestId\": \"6702e6bd-858d-4b19-89bb-5b183540186d\",\n        \"StartTime\": \"2019-04-02 09:00:00\",\n        \"Time\": [\n            1554894000,\n            1554894300,\n            1554894600,\n            1554894900,\n            1554895200\n        ],\n        \"Values\": [\n            20,\n            100,\n            180,\n            240,\n            260\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDatabaseACL": [
       {
         "document": "",

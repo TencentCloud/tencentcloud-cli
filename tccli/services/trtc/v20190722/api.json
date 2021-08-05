@@ -25,7 +25,7 @@
       "output": "DescribeAbnormalEventResponse"
     },
     "DescribeCallDetail": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，每次查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n注意：不建议依赖接口做实时类业务逻辑处理",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，每次查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeCallDetailRequest",
       "name": "查询历史用户列表与通话指标",
       "output": "DescribeCallDetailResponse"
@@ -73,7 +73,7 @@
       "output": "DescribeRecordStatisticResponse"
     },
     "DescribeRoomInformation": {
-      "document": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。\n注意：不建议依赖接口做实时类业务逻辑处理",
+      "document": "查询sdkappid下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeRoomInformationRequest",
       "name": "查询历史房间列表",
       "output": "DescribeRoomInformationResponse"
@@ -91,7 +91,7 @@
       "output": "DescribeTrtcMcuTranscodeTimeResponse"
     },
     "DescribeUserInformation": {
-      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。\n注意：不建议依赖接口做实时类业务逻辑处理",
+      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeUserInformationRequest",
       "name": "查询历史用户列表",
       "output": "DescribeUserInformationResponse"
@@ -1056,6 +1056,7 @@
         {
           "default": "",
           "document": "用户sdkappid",
+          "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -1064,6 +1065,7 @@
         {
           "default": "",
           "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "example": "1588031999",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -1072,6 +1074,7 @@
         {
           "default": "",
           "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "example": "1588034999",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -1080,6 +1083,7 @@
         {
           "default": "",
           "document": "字符串房间号",
+          "example": "1000",
           "member": "string",
           "name": "RoomId",
           "required": false,
@@ -1088,6 +1092,7 @@
         {
           "default": "",
           "document": "分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）",
+          "example": "0",
           "member": "string",
           "name": "PageNumber",
           "required": false,
@@ -1096,6 +1101,7 @@
         {
           "default": "",
           "document": "分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）",
+          "example": "10",
           "member": "string",
           "name": "PageSize",
           "required": false,
@@ -1109,15 +1115,19 @@
       "members": [
         {
           "document": "返回当页数据总数",
+          "example": "10",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "房间信息列表",
+          "example": "RoomList",
           "member": "RoomState",
           "name": "RoomList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

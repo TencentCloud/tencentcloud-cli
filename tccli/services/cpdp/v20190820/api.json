@@ -78,6 +78,12 @@
       "name": "聚鑫-关闭订单接口",
       "output": "CloseOrderResponse"
     },
+    "ConfirmOrder": {
+      "document": "云鉴-消费订单确认接口",
+      "input": "ConfirmOrderRequest",
+      "name": "云鉴-消费订单确认接口",
+      "output": "ConfirmOrderResponse"
+    },
     "ContractOrder": {
       "document": "应用需要先带上签约信息调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
       "input": "ContractOrderRequest",
@@ -119,6 +125,18 @@
       "input": "CreateMerchantRequest",
       "name": "智慧零售-商户注册",
       "output": "CreateMerchantResponse"
+    },
+    "CreateOrder": {
+      "document": "云鉴-消费订单发起的接口",
+      "input": "CreateOrderRequest",
+      "name": "云鉴-消费订单发起接口",
+      "output": "CreateOrderResponse"
+    },
+    "CreatePayMerchant": {
+      "document": "商户新增的接口",
+      "input": "CreatePayMerchantRequest",
+      "name": "云鉴-商户新增接口",
+      "output": "CreatePayMerchantResponse"
     },
     "CreateRedInvoice": {
       "document": "智慧零售-发票红冲",
@@ -197,6 +215,12 @@
       "input": "ModifyAgentTaxPaymentInfoRequest",
       "name": "直播平台-修改代理商完税信息",
       "output": "ModifyAgentTaxPaymentInfoResponse"
+    },
+    "ModifyMerchant": {
+      "document": "云鉴-商户信息修改的接口",
+      "input": "ModifyMerchantRequest",
+      "name": "云鉴-商户信息修改接口",
+      "output": "ModifyMerchantResponse"
     },
     "ModifyMntMbrBindRelateAcctBankCode": {
       "document": "维护会员绑定提现账户联行号。此接口可以支持市场修改会员的提现账户的开户行信息，具体包括开户行行名、开户行的银行联行号（大小额联行号）和超级网银行号。",
@@ -324,6 +348,12 @@
       "name": "云鉴-会员间交易-不验证",
       "output": "QueryMemberTransactionResponse"
     },
+    "QueryMerchant": {
+      "document": "云鉴-商户信息查询接口",
+      "input": "QueryMerchantRequest",
+      "name": "云鉴-商户信息查询接口",
+      "output": "QueryMerchantResponse"
+    },
     "QueryMerchantBalance": {
       "document": "跨境-对接方账户余额查询",
       "input": "QueryMerchantBalanceRequest",
@@ -335,6 +365,12 @@
       "input": "QueryMerchantInfoForManagementRequest",
       "name": "智慧零售-查询管理端商户",
       "output": "QueryMerchantInfoForManagementResponse"
+    },
+    "QueryMerchantOrder": {
+      "document": "云鉴-消费订单查询接口",
+      "input": "QueryMerchantOrderRequest",
+      "name": "云鉴-消费订单查询接口",
+      "output": "QueryMerchantOrderResponse"
     },
     "QueryOrder": {
       "document": "根据订单号，或者用户Id，查询支付订单状态 ",
@@ -431,6 +467,12 @@
       "input": "RefundMemberTransactionRequest",
       "name": "会员间交易退款",
       "output": "RefundMemberTransactionResponse"
+    },
+    "RefundOrder": {
+      "document": "云鉴-消费订单退款的接口",
+      "input": "RefundOrderRequest",
+      "name": "云鉴-消费订单退款接口",
+      "output": "RefundOrderResponse"
     },
     "RegisterBehavior": {
       "document": "商户查询是否签约和签约行为上报",
@@ -3087,6 +3129,78 @@
       ],
       "type": "object"
     },
+    "ConfirmOrderRequest": {
+      "document": "ConfirmOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分配给商户的AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台流水号。消费订单发起成功后，返回的平台唯一订单号。",
+          "example": "T094795059988",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfirmOrderResponse": {
+      "document": "ConfirmOrder返回参数结构体",
+      "members": [
+        {
+          "document": "分配给商户的AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台流水号。消费订单发起成功后，返回的平台唯一订单号。",
+          "example": "T094795059988",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单确认状态。0-确认失败\n1-确认成功 \n2-可疑状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单确认状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "确认成功",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ContractInfo": {
       "document": "合约信息",
       "members": [
@@ -5408,6 +5522,186 @@
       ],
       "usage": "out"
     },
+    "CreateOrderRequest": {
+      "document": "CreateOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道编号。ZSB2B：招商银行B2B。",
+          "example": "ZSB2B",
+          "member": "string",
+          "name": "ChannelCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进件成功后返给商户方的 AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易金额。单位：元",
+          "example": "交易金额",
+          "member": "string",
+          "name": "Amount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户流水号。商户唯一订单号由字母或数字组成。",
+          "example": "46eed0ce0edc3b11bc1056b97dbc734c",
+          "member": "string",
+          "name": "TraceNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知地址。商户接收交易结果的通知地址。",
+          "example": "http://aaa.aaa.aaa/",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回地址。支付成功后，页面将跳 转返回到商户的该地址。",
+          "example": "http://bbb.bbb.bbb/",
+          "member": "string",
+          "name": "ReturnUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrderResponse": {
+      "document": "CreateOrder返回参数结构体",
+      "members": [
+        {
+          "document": "进件成功后返给商户方的AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户流水号，商户唯一订单号由字母或数字组成。",
+          "example": "46eed0ce0edc3b11bc1056b97dbc734c",
+          "member": "string",
+          "name": "TraceNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台流水号，若下单成功则返回。",
+          "example": "847f33d665d83eecaf0a8805a2ee6c7a",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "支付页面跳转地址，若下单成功则返回。",
+          "example": "http://ccc.ccc.ccc/",
+          "member": "string",
+          "name": "PayUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayMerchantRequest": {
+      "document": "CreatePayMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台编号",
+          "example": "1001",
+          "member": "string",
+          "name": "PlatformCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道方收款商户编号，由渠道方(银行)提 供。",
+          "example": "m123456",
+          "member": "string",
+          "name": "ChannelMerchantNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要向渠道进行 商户信息验证 1:验证\n0:不验证",
+          "example": "0",
+          "member": "string",
+          "name": "ChannelCheckFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款商户名称",
+          "example": "美亿佳白石洲店",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开通 B2B 支付 1:开通 0:不开通 缺省:1",
+          "example": "1",
+          "member": "string",
+          "name": "BusinessPayFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayMerchantResponse": {
+      "document": "CreatePayMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "分配给商户的 AppId。该 AppId 为后续各项 交易的商户标识。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRedInvoiceItem": {
       "document": "创建红票明细",
       "members": [
@@ -7364,6 +7658,51 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMerchantRequest": {
+      "document": "ModifyMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进件成功后返给商户的AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收款商户名称",
+          "example": "美亿佳乐购超市",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "B2B 支付标志。是否开通 B2B支付， 1:开通 0:不开通。",
+          "example": "1",
+          "member": "string",
+          "name": "BusinessPayFlag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMerchantResponse": {
+      "document": "ModifyMerchant返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10610,6 +10949,123 @@
       ],
       "type": "object"
     },
+    "QueryMerchantOrderRequest": {
+      "document": "QueryMerchantOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进件成功后返给商户方的AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台流水号。平台唯一订单号。",
+          "example": "847f33d665d83eecaf0a8805a2ee6c7a",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantOrderResponse": {
+      "document": "QueryMerchantOrder返回参数结构体",
+      "members": [
+        {
+          "document": "进件成功后返给商户方的AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台流水号。平台唯一订单号。",
+          "example": "847f33d665d83eecaf0a8805a2ee6c7a",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单支付状态。0-下单失败 1-下单成功未支付 2-支付成功 3-支付失败 4-退款中 5-退款成功 6-退款失败 7-待付款 8-待确认。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantRequest": {
+      "document": "QueryMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进件成功后返给商户方的 AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantResponse": {
+      "document": "QueryMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "分配给商户的 AppId，该 AppId 为后续各项 交易的商户标识。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "收款商户名称。",
+          "example": "美亿佳乐购超市",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "B2B 支付标志。是否开通 B2B 支付， 1:开通 0:不开通。",
+          "example": "1",
+          "member": "string",
+          "name": "BusinessPayFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryOrderOutOrderList": {
       "document": "查询订单接口的出参，订单列表",
       "members": [
@@ -13345,6 +13801,78 @@
           "name": "ReservedMessage",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundOrderRequest": {
+      "document": "RefundOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "进件成功后返给商户方的AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台流水号。消费订单发起成功后，返回的平台唯一订单号。",
+          "example": "T03210722000014555992",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundOrderResponse": {
+      "document": "RefundOrder返回参数结构体",
+      "members": [
+        {
+          "document": "进件成功后返给商户方的AppId",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台流水号。消费订单发起成功后，返回的平台唯一订单号。",
+          "example": "T03210722000014555992",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单退款状态。0-退款失败\n1-退款成功 \n2-可疑状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单退款状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "退款成功",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -4757,7 +4757,7 @@
         },
         {
           "default": "",
-          "document": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中",
+          "document": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中\ninvalid: 预热无效(源站返回4xx或5xx状态码)",
           "example": "done",
           "member": "string",
           "name": "Status",
@@ -8881,6 +8881,7 @@
         {
           "default": "",
           "document": "预热任务 ID",
+          "example": "1234",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -8890,6 +8891,7 @@
         {
           "default": "",
           "document": "预热 URL",
+          "example": "http://www.test.com/1.txt",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -8898,7 +8900,8 @@
         },
         {
           "default": "",
-          "document": "预热任务状态\nfail：预热失败\ndone：预热成功\nprocess：预热中",
+          "document": "预热任务状态\nfail：预热失败\ndone：预热成功\nprocess：预热中\ninvalid：预热无效(源站返回4xx或5xx状态码)",
+          "example": "done",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8908,6 +8911,7 @@
         {
           "default": "",
           "document": "预热进度百分比",
+          "example": "100",
           "member": "int64",
           "name": "Percent",
           "required": true,
@@ -8917,6 +8921,7 @@
         {
           "default": "",
           "document": "预热任务提交时间",
+          "example": "2021-05-02 16:06:20",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -8926,6 +8931,7 @@
         {
           "default": "",
           "document": "预热区域\nmainland：境内\noverseas：境外\nglobal：全球",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -8935,6 +8941,7 @@
         {
           "default": "",
           "document": "预热任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-02 16:06:20",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,

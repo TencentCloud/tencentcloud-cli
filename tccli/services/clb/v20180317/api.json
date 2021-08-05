@@ -1690,7 +1690,7 @@
         },
         {
           "default": "",
-          "document": "互联网服务供应商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群的Isp属性，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BGP,CMCC",
           "member": "string",
           "name": "Isp",
