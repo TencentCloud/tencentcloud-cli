@@ -29,10 +29,6 @@ class BasicConfigure(BasicCommand):
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
-        self.region = ['ap-bangkok', 'ap-beijing', 'ap-chengdu', 'ap-chongqing', 'ap-guangzhou', 'ap-hongkong',
-                       'ap-jakarta', 'ap-mumbai', 'ap-nanjing', 'ap-seoul', 'ap-shanghai', 'ap-shanghai-fsi',
-                       'ap-shenzhen-fsi', 'ap-singapore', 'ap-tokyo', 'eu-frankfurt', 'eu-moscow', 'na-ashburn',
-                       'na-siliconvalley', 'na-toronto']
 
     def _run_main(self, parsed_args, parsed_globals):
         raise NotImplementedError("_run_main")
@@ -199,12 +195,8 @@ class ConfigureSetCommand(BasicConfigure):
                 cred[varname] = value
             elif varname in self.config_list:
                 if varname == OptionsDefine.Output and value not in ['json', 'text', 'table']:
-                    print('Output format must be json, text or table. Set as default: json\n')
+                    print('Output format must be json, text or table. Set as default: json')
                     config[varname] = 'json'
-                elif varname == OptionsDefine.Region and value not in self.region:
-                    print('Region not support. Set region as default: ap-guangzhou\n')
-
-                    config[varname] = 'ap-guangzhou'
                 else:
                     config[varname] = value
             else:
@@ -346,10 +338,10 @@ class ConfigureCommand(BasicConfigure):
             if index in config:
                 response = self._compat_input("%s[%s]: " % (prompt_text, config[index]))
                 if index == OptionsDefine.Output and response not in ['json', 'text', 'table']:
-                    print('Output format must be json, text or table. Set as default: %s\n' % config[index])
+                    print('Output format must be json, text or table. Set as default: %s' % config[index])
                     conf_data[index] = config[index]
-                elif index == OptionsDefine.Region and response not in self.region:
-                    print('Region not support. Set region as default: %s:\n' % config[index])
+                elif index == OptionsDefine.Region and not response:
+                    print('Set region as default: %s' % config[index])
                     conf_data[index] = config[index]
                 else:
                     conf_data[index] = response if response else config[index]
