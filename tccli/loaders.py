@@ -74,6 +74,16 @@ class Loader(object):
             "token": {
                 "help": "temporary certificate token",
             },
+            "roleArn": {
+                "help": "specify a RoleArn",
+            },
+            "roleSessionName": {
+                "help": "specify a RoleSessionName",
+            },
+            "useCVMRole": {
+                "help": "use CVM Role to obtain the secret id and secret key",
+                'action': 'store_true'
+            },
             "version": {
                 "help": "specify a DescribeRegions api version",
                 "metavar": "version_name"
@@ -213,6 +223,9 @@ class Loader(object):
             "--secretId": "specify a SecretId",
             "--secretKey": "specify a SecretKey",
             "--token": "temporary certificate token",
+            "--roleArn": "specify a RoleArn",
+            "--roleSessionName": "specify a RoleSessionName",
+            "--useCVMRole": "use CVM Role to obtain the secret id and secret key",
             "--region": "identify the region to which the instance you want to work with belongs.",
             "--endpoint": "specify an access point domain name",
             "--version": "specify a %s api version" % action,
