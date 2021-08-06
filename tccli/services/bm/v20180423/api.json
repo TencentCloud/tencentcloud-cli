@@ -4976,7 +4976,7 @@
         },
         {
           "default": "",
-          "document": "打回操作的备注信息",
+          "document": "需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。",
           "example": "无",
           "member": "string",
           "name": "OperateRemark",

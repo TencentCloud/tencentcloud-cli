@@ -618,6 +618,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveTranscodeTotalInfo": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeTotalInfo\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 00:00:00\",\n                \"Duration\": 100,\n                \"ModuleCodec\": \"\",\n                \"Resolution\": \"540*480\"\n            }\n        ],\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveWatermark": [
       {
         "document": "",

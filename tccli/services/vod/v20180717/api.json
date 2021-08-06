@@ -10362,7 +10362,7 @@
         },
         {
           "default": "",
-          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n默认值为 TotalStorage。",
+          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedInfrequentStorage：低频存储提前删除量。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n默认值为 TotalStorage。",
           "example": "StandardStorage",
           "member": "string",
           "name": "StorageType",

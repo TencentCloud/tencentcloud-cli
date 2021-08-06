@@ -37,6 +37,7 @@ Output:
                                 "DetectedStress": true,
                                 "Phone": "xx",
                                 "MemBeginTime": 0,
+                                "ReferenceLetter": "xx",
                                 "PronAccuracy": 0.0,
                                 "MemEndTime": 0
                             }
@@ -67,6 +68,7 @@ Output:
                         "DetectedStress": false,
                         "Phone": "xx",
                         "MemBeginTime": 1,
+                        "ReferenceLetter": "xx",
                         "PronAccuracy": 0.0,
                         "MemEndTime": 2
                     }

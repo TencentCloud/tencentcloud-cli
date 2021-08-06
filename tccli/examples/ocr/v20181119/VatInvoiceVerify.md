@@ -53,6 +53,50 @@ Output:
                 }
             ]
         },
+        "VehicleInvoiceInfo": {
+            "MotorBankAccount": "xx",
+            "VinNo": "xx",
+            "MotorBankName": "xx",
+            "BizCheckFormNo": "xx",
+            "PlateModel": "xx",
+            "CarType": "xx",
+            "TaxtationOrgName": "xx",
+            "TaxtationOrgCode": "xx",
+            "EngineNo": "xx",
+            "PayTaxesNo": "xx",
+            "Tonnage": "xx",
+            "MotorTaxRate": "xx",
+            "CertificateNo": "xx",
+            "ProduceAddress": "xx",
+            "LimitCount": "xx",
+            "ImportNo": "xx"
+        },
+        "UsedVehicleInvoiceInfo": {
+            "BuyerTel": "xx",
+            "MarketBankAccount": "xx",
+            "BuyerNo": "xx",
+            "ManagementOffice": "xx",
+            "Seller": "xx",
+            "MarketAddress": "xx",
+            "SellerNo": "xx",
+            "BuyerAddress": "xx",
+            "Buyer": "xx",
+            "AuctioneerTel": "xx",
+            "AuctioneerAddress": "xx",
+            "MarketTaxpayerNum": "xx",
+            "VehicleIdentifyNo": "xx",
+            "VehicleLicenseNo": "xx",
+            "AuctioneerTaxpayerNum": "xx",
+            "MarketTel": "xx",
+            "AuctioneerBankAccount": "xx",
+            "Auctioneer": "xx",
+            "VehicleTotalPrice": "xx",
+            "RegisterNo": "xx",
+            "SellerAddress": "xx",
+            "TaxBureau": "xx",
+            "SellerTel": "xx",
+            "Market": "xx"
+        },
         "RequestId": "163b7f97-0b1f-4054-b8e5-bdfb5a6c213f"
     }
 }

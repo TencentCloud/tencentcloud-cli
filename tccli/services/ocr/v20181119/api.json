@@ -7138,6 +7138,252 @@
       ],
       "type": "object"
     },
+    "UsedVehicleInvoiceInfo": {
+      "document": "二手车销售统一发票信息",
+      "members": [
+        {
+          "default": "",
+          "document": "所属税局",
+          "example": "吉林",
+          "member": "string",
+          "name": "TaxBureau",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "买方单位/个人",
+          "example": "刘超",
+          "member": "string",
+          "name": "Buyer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "买方单位代码/身份证号码",
+          "example": "230124****04280718",
+          "member": "string",
+          "name": "BuyerNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "买方单位/个人地址",
+          "example": "长春市二道区吉林大路高格蓝湾小区705室",
+          "member": "string",
+          "name": "BuyerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "买方单位电话",
+          "example": "158****2158",
+          "member": "string",
+          "name": "BuyerTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖方单位/个人",
+          "example": "郝小琼",
+          "member": "string",
+          "name": "Seller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖方单位代码/身份证号码",
+          "example": "411081****11256858",
+          "member": "string",
+          "name": "SellerNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖方单位/个人地址",
+          "example": "长春市绿园区上海绿地小区408室",
+          "member": "string",
+          "name": "SellerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卖方单位电话",
+          "example": "137****1002",
+          "member": "string",
+          "name": "SellerTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车牌照号",
+          "example": "吉A****P",
+          "member": "string",
+          "name": "VehicleLicenseNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登记证号",
+          "example": "2200****5945",
+          "member": "string",
+          "name": "RegisterNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车架号/车辆识别代码",
+          "example": "LDCC53****1073689",
+          "member": "string",
+          "name": "VehicleIdentifyNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转入地车辆管理所名称",
+          "example": "长春市车辆管理所",
+          "member": "string",
+          "name": "ManagementOffice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车价合计",
+          "example": "46000.00",
+          "member": "string",
+          "name": "VehicleTotalPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经营、拍卖单位",
+          "example": "无",
+          "member": "string",
+          "name": "Auctioneer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经营、拍卖单位地址",
+          "example": "无",
+          "member": "string",
+          "name": "AuctioneerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经营、拍卖单位纳税人识别号",
+          "example": "无",
+          "member": "string",
+          "name": "AuctioneerTaxpayerNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经营、拍卖单位开户银行、账号",
+          "example": "无",
+          "member": "string",
+          "name": "AuctioneerBankAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经营、拍卖单位电话",
+          "example": "无",
+          "member": "string",
+          "name": "AuctioneerTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二手车市场",
+          "example": "长春市****二手车交易市场有限公司",
+          "member": "string",
+          "name": "Market",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二手车市场纳税人识别号",
+          "example": "91220101****Y58W6Y",
+          "member": "string",
+          "name": "MarketTaxpayerNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二手车市场地址",
+          "example": "长春市二道区福安街以西、吉林大路104号",
+          "member": "string",
+          "name": "MarketAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二手车市场开户银行账号",
+          "example": "中国工商银行股份有限公司长春二道支行42002217****0441272",
+          "member": "string",
+          "name": "MarketBankAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二手车市场电话",
+          "example": "158****2158",
+          "member": "string",
+          "name": "MarketTel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VatInvoice": {
       "document": "增值税发票信息",
       "members": [
@@ -7666,6 +7912,7 @@
         {
           "default": "",
           "document": "发票代码， 一张发票一天只能查询5次。",
+          "example": "1300000000",
           "member": "string",
           "name": "InvoiceCode",
           "required": true,
@@ -7674,6 +7921,7 @@
         {
           "default": "",
           "document": "发票号码（8位）。",
+          "example": "04000000",
           "member": "string",
           "name": "InvoiceNo",
           "required": true,
@@ -7682,6 +7930,7 @@
         {
           "default": "",
           "document": "开票日期（不支持当天发票查询，只支持一年以内），如：2019-12-20。",
+          "example": "2019-12-11",
           "member": "string",
           "name": "InvoiceDate",
           "required": true,
@@ -7690,6 +7939,7 @@
         {
           "default": "",
           "document": "金额/发票校验码后6位（根据票种传递对应值，如果报参数错误，请仔细检查每个票种对应的值）\n增值税专用发票：开具金额（不含税）\n增值税普通发票、增值税电子普通发票（含通行费发票）、增值税普通发票（卷票）：校验码后6位\n机动车销售统一发票：不含税价\n货物运输业增值税专用发票：合计金额\n二手车销售统一发票：车价合计",
+          "example": "88.50",
           "member": "string",
           "name": "Additional",
           "required": true,
@@ -7703,8 +7953,28 @@
       "members": [
         {
           "document": "增值税发票信息，详情请点击左侧链接。",
+          "example": "无",
           "member": "VatInvoice",
           "name": "Invoice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机动车销售统一发票信息",
+          "example": "无",
+          "member": "VehicleInvoiceInfo",
+          "name": "VehicleInvoiceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "二手车销售统一发票信息",
+          "example": "无",
+          "member": "UsedVehicleInvoiceInfo",
+          "name": "UsedVehicleInvoiceInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7803,6 +8073,172 @@
         }
       ],
       "type": "object"
+    },
+    "VehicleInvoiceInfo": {
+      "document": "机动车销售统一发票信息",
+      "members": [
+        {
+          "default": "",
+          "document": "车辆类型",
+          "example": "轿车",
+          "member": "string",
+          "name": "CarType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "厂牌型号",
+          "example": "斯柯达牌SVW71419AL",
+          "member": "string",
+          "name": "PlateModel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产地",
+          "example": "上海",
+          "member": "string",
+          "name": "ProduceAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合格证号",
+          "example": "WAE0X17041xxxxx",
+          "member": "string",
+          "name": "CertificateNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进口证明书号",
+          "example": "无",
+          "member": "string",
+          "name": "ImportNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LSVCA2NP9HN0xxxxx",
+          "example": "车架号码/车辆识别代号",
+          "member": "string",
+          "name": "VinNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完税证书号",
+          "example": "无",
+          "member": "string",
+          "name": "PayTaxesNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "吨位",
+          "example": "1.92",
+          "member": "string",
+          "name": "Tonnage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "限乘人数",
+          "example": "5",
+          "member": "string",
+          "name": "LimitCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发动机号码",
+          "example": "328xxx",
+          "member": "string",
+          "name": "EngineNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商检单号",
+          "example": "无",
+          "member": "string",
+          "name": "BizCheckFormNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主管税务机关代码",
+          "example": "16101984500",
+          "member": "string",
+          "name": "TaxtationOrgCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主管税务机关名称",
+          "example": "高新技术产业开发区国家税务局新型工业园税务所",
+          "member": "string",
+          "name": "TaxtationOrgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税率",
+          "example": "17",
+          "member": "string",
+          "name": "MotorTaxRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开户行",
+          "example": "宁夏银行西安分行营业部",
+          "member": "string",
+          "name": "MotorBankName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号",
+          "example": "5100014080000xxxx",
+          "member": "string",
+          "name": "MotorBankAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VehicleLicenseOCRRequest": {
       "document": "VehicleLicenseOCR请求参数结构体",

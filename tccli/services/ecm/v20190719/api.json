@@ -4034,7 +4034,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nsubnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。\nnetwork-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。\nattachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。\ngroups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。\nnetwork-interface-name - String - （过滤条件）网卡实例名称。\nnetwork-interface-description - String - （过滤条件）网卡实例描述。\naddress-ip - String - （过滤条件）内网IPv4地址。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。\nis-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nsubnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。\nnetwork-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。\nattachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ein-3nqpdn3i。\ngroups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。\nnetwork-interface-name - String - （过滤条件）网卡实例名称。\nnetwork-interface-description - String - （过滤条件）网卡实例描述。\naddress-ip - String - （过滤条件）内网IPv4地址。\ntag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2\ntag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。\nis-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；次过滤参数为提供时，同时过滤主网卡和辅助网卡。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5620,6 +5620,16 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持CloudInit",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSupportCloudInit",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -8060,7 +8070,8 @@
       "members": [
         {
           "default": "",
-          "document": "模块Id",
+          "document": "模块Id。",
+          "example": "无",
           "member": "string",
           "name": "ModuleId",
           "required": true,
@@ -8069,7 +8080,8 @@
         },
         {
           "default": "",
-          "document": "模块名称",
+          "document": "模块名称。",
+          "example": "无",
           "member": "string",
           "name": "ModuleName",
           "required": true,
@@ -8078,7 +8090,8 @@
         },
         {
           "default": "",
-          "document": "模块状态：\nNORMAL：正常\nDELETING：删除中 \nDELETEFAILED：删除失败",
+          "document": "模块状态：\nNORMAL：正常。\nDELETING：删除中 \nDELETEFAILED：删除失败。",
+          "example": "无",
           "member": "string",
           "name": "ModuleState",
           "required": true,
@@ -8087,7 +8100,8 @@
         },
         {
           "default": "",
-          "document": "默认系统盘大小",
+          "document": "默认系统盘大小。",
+          "example": "无",
           "member": "int64",
           "name": "DefaultSystemDiskSize",
           "required": true,
@@ -8096,7 +8110,8 @@
         },
         {
           "default": "",
-          "document": "默认数据盘大小",
+          "document": "默认数据盘大小。",
+          "example": "无",
           "member": "int64",
           "name": "DefaultDataDiskSize",
           "required": true,
@@ -8105,7 +8120,8 @@
         },
         {
           "default": "",
-          "document": "默认机型",
+          "document": "默认机型。",
+          "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
           "required": true,
@@ -8114,7 +8130,8 @@
         },
         {
           "default": "",
-          "document": "默认镜像",
+          "document": "默认镜像。",
+          "example": "无",
           "member": "Image",
           "name": "DefaultImage",
           "required": true,
@@ -8123,7 +8140,8 @@
         },
         {
           "default": "",
-          "document": "创建时间",
+          "document": "创建时间。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8132,7 +8150,8 @@
         },
         {
           "default": "",
-          "document": "默认出带宽",
+          "document": "默认出带宽。",
+          "example": "无",
           "member": "int64",
           "name": "DefaultBandwidth",
           "required": true,
@@ -8141,7 +8160,8 @@
         },
         {
           "default": "",
-          "document": "标签集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -8150,7 +8170,8 @@
         },
         {
           "default": "",
-          "document": "是否关闭IP直通",
+          "document": "是否关闭IP直通。",
+          "example": "无",
           "member": "int64",
           "name": "CloseIpDirect",
           "required": true,
@@ -8159,7 +8180,8 @@
         },
         {
           "default": "",
-          "document": "默认安全组id列表",
+          "document": "默认安全组id列表。",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -8168,11 +8190,22 @@
         },
         {
           "default": "",
-          "document": "默认入带宽",
+          "document": "默认入带宽。",
+          "example": "无",
           "member": "int64",
           "name": "DefaultBandwidthIn",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义脚本数据",
+          "example": "无",
+          "member": "string",
+          "name": "UserData",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

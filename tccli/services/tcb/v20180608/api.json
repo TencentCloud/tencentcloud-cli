@@ -2270,6 +2270,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "envid",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2278,6 +2279,7 @@
         {
           "default": "",
           "document": "安全域名",
+          "example": "[\"localhost\\n\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -2740,6 +2742,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "env_id",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2748,6 +2751,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "domain",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -2756,6 +2760,7 @@
         {
           "default": "",
           "document": "证书ID",
+          "example": "cert-id",
           "member": "string",
           "name": "CertId",
           "required": true,

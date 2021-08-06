@@ -31,7 +31,7 @@ Output:
                 "NationCode": "86",
                 "PurePhoneNumber": "+8615291997777",
                 "PhoneNumber": "15291997777",
-                "SerialNo": "14:19325917feb3914eb78b50d6182d7e452e",
+                "SerialNo": "14:19325917feb3914eb78b50d6182d7e552f",
                 "ReportStatus": "SUCCESS",
                 "Description": "DELIVRD"
             }

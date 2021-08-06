@@ -450,6 +450,12 @@
       "name": "获取转码模板列表",
       "output": "DescribeLiveTranscodeTemplatesResponse"
     },
+    "DescribeLiveTranscodeTotalInfo": {
+      "document": "查询转码总量数据，可查询近30天内数据。\n注意：\n如果是查询某一天内，则返回5分钟粒度数据；\n如果是查询跨天或指定域名， 则返回1小时粒度数据。",
+      "input": "DescribeLiveTranscodeTotalInfoRequest",
+      "name": "查询转码总量数据",
+      "output": "DescribeLiveTranscodeTotalInfoResponse"
+    },
     "DescribeLiveWatermark": {
       "document": "获取单个水印信息。",
       "input": "DescribeLiveWatermarkRequest",
@@ -6011,6 +6017,69 @@
       ],
       "type": "object"
     },
+    "DescribeLiveTranscodeTotalInfoRequest": {
+      "document": "DescribeLiveTranscodeTotalInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名列表，若不填，表示查询所有域名总体数据。\n指定域名时返回1小时粒度数据。",
+          "example": "[\"test.com\"]",
+          "member": "string",
+          "name": "PushDomains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选值：\nMainland：查询中国大陆（境内）数据，\nOversea：则查询国际/港澳台（境外）数据，\n默认：查询全球地区（境内+境外）的数据。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTranscodeTotalInfoResponse": {
+      "document": "DescribeLiveTranscodeTotalInfo返回参数结构体",
+      "members": [
+        {
+          "document": "统计数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TranscodeTotalInfo",
+          "name": "DataInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLiveWatermarkRequest": {
       "document": "DescribeLiveWatermark请求参数结构体",
       "members": [
@@ -11554,6 +11623,48 @@
         {
           "default": "",
           "document": "分辨率。",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TranscodeTotalInfo": {
+      "document": "转码总量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点，北京时间，\n示例：2019-03-01 00:00:00。",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转码时长，单位：分钟。",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码方式，带模块，\n示例：\nliveprocessor_H264 =》直播转码-H264，\nliveprocessor_H265 =》 直播转码-H265，\ntopspeed_H264 =》极速高清-H264，\ntopspeed_H265 =》极速高清-H265。",
+          "member": "string",
+          "name": "ModuleCodec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分辨率，\n示例：540*480。",
           "member": "string",
           "name": "Resolution",
           "required": true,

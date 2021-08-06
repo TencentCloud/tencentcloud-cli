@@ -37,7 +37,7 @@
       "members": [
         {
           "default": "",
-          "document": "语音段唯一标识，一段语音一个SessionId",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
           "example": "stress_test_956938",
           "member": "string",
           "name": "SessionId",
@@ -46,7 +46,7 @@
         },
         {
           "default": "",
-          "document": "被评估语音对应的文本，句子模式下不超过个 20 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值传空。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "document": "被评估语音对应的文本，仅支持中文和英文。\n句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。\n关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。\n如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
           "example": "again",
           "member": "string",
           "name": "RefText",
@@ -55,7 +55,7 @@
         },
         {
           "default": "",
-          "document": "语音输入模式，0：流式分片，1：非流式一次性评估",
+          "document": "语音输入模式\n0：流式分片\n1：非流式一次性评估\n推荐使用流式分片传输。",
           "example": "0",
           "member": "int64",
           "name": "WorkMode",
@@ -64,7 +64,7 @@
         },
         {
           "default": "",
-          "document": "评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。4: 英文单词音素诊断评测模式，针对一个单词音素诊断评测。",
+          "document": "评测模式\n0：单词/单字模式（中文评测模式下为单字模式）\n1：句子模式\n2：段落模式\n3：自由说模式\n4：单词音素纠错模式\n5：情景评测模式\n6：句子多分支评测模式\n7：单词实时评测模式\n8：拼音评测模式\n关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。",
           "example": "0",
           "member": "int64",
           "name": "EvalMode",
@@ -73,7 +73,7 @@
         },
         {
           "default": "",
-          "document": "评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
           "example": "3.5",
           "member": "float",
           "name": "ScoreCoeff",
@@ -82,7 +82,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
           "example": "无",
           "member": "string",
           "name": "SoeAppId",
@@ -100,7 +100,7 @@
         },
         {
           "default": "",
-          "document": "音频存储模式，0：不存储，1：存储到公共对象存储，输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段，2：永久存储音频，需要提工单申请，会产生一定存储费用，3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中，需要提工单登记存储信息。",
+          "document": "音频存储模式\n0：不存储\n1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；\n2：永久存储音频，需要提工单申请，会产生一定的存储费用；\n3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。\n注：对可用性要求较高的用户建议自行存储至腾讯云COS。",
           "example": "无",
           "member": "int64",
           "name": "StorageMode",
@@ -109,7 +109,7 @@
         },
         {
           "default": "",
-          "document": "输出断句中间结果标识，0：不输出，1：输出，通过设置该参数，可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "document": "输出断句中间结果标识\n0：不输出\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
           "example": "无",
           "member": "int64",
           "name": "SentenceInfoEnabled",
@@ -118,7 +118,7 @@
         },
         {
           "default": "",
-          "document": "评估语言，0：英文，1：中文。",
+          "document": "评估语言\n0：英文\n1：中文",
           "example": "无",
           "member": "int64",
           "name": "ServerType",
@@ -127,7 +127,7 @@
         },
         {
           "default": "",
-          "document": "异步模式标识，0：同步模式，1：异步模式，可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "document": "异步模式标识\n0：同步模式\n1：异步模式（一般情况不建议使用异步模式）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
           "example": "无",
           "member": "int64",
           "name": "IsAsync",
@@ -136,7 +136,7 @@
         },
         {
           "default": "",
-          "document": "输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
           "example": "无",
           "member": "int64",
           "name": "TextMode",
@@ -223,7 +223,7 @@
       "members": [
         {
           "default": "",
-          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
           "example": "1",
           "member": "uint64",
           "name": "SeqId",
@@ -241,7 +241,7 @@
         },
         {
           "default": "",
-          "document": "语音文件类型 \t1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
           "example": "3",
           "member": "uint64",
           "name": "VoiceFileType",
@@ -250,7 +250,7 @@
         },
         {
           "default": "",
-          "document": "语音编码类型\t1:pcm。",
+          "document": "语音编码类型\n1:pcm",
           "example": "1",
           "member": "uint64",
           "name": "VoiceEncodeType",
@@ -259,7 +259,7 @@
         },
         {
           "default": "",
-          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
           "example": "SUQzBAAAAAAANFRDT04AAAAHAAADQmx1ZXMAVFNTRQAAAA8AAANMYXZmNTguMjMuMTAyAAAAAAAAAAAAAAD%2F81jAAAAAAAAAAAAASW5mbwAAAA8AAAASAAAITAAiIiIiIi8vLy8vLzw8PDw8SUlJSUlJVlZWVlZjY2NjY2NwcHBwcH19fX19fYqKioqKl5eXl5eXpKSkpKSksbGxsbG%2Bvr6%2Bvr7Ly8vLy9jY2NjY2OXl5eXl8vLy8vLy%2F%2F%2F%2F%2F%2F8AAAAATGF2YzU4LjQxAAAAAAAAAAAAAAAAJAOVAAAAAAAACEyULaIpAAAAAAAAAAAAAAD%2F8zjEABOylnQLRigAETO960QQJ6YQQPAYDTk8mTJ0YQIB9yBwCBwk5CEISd5zvIQjHDgoxzoQihwOEnOdyB8Pnf5CEb%2F%2FJ%2F%2Fkb%2F%2FQnIT%2F%2F%2FU4fOQPh84gcf%2F4fdgZFMFAgSI3tbm442AGGmn%2F8zjEEBkKUvpfi1AAfjskBZcKzUvSVbbkBJDYQQjiAjweEh5oMAAxlFw2k%2Bp54rlpkWD5QfurYURx1YQtGGn7mdM%2FVu3Rmq2QIhX7ZWx7%2F5Eex766IzR8OwyFiH5dn1HFKghCWjAD0l4f9zT%2F8zjEChdqDubXyzgA3lYDYbubfXyPI2D4dmug8D4iJZc9%2BYIwaBEHgPBor9R8YU890ucccaexjHjBqIc6aHHqb%2F%2F%2F%2F%2FsjrS1mImg2cCg1BlukfTFxC7PpC5FCF0fiWcCdCWNpdRAMYCcHqZf%2F8zjECxfpUu7%2BC9JQ7YQQxOR%2FiKEMUe%2F8q1hNE2EaKBQxc4SWEQlDQsCbSBBCTuqSolZZPPt2k1GqT2EbsZFLIkRIWmJpQqDAoCDv%2F%2FXtcHDDGBwHAIXU5FPmGNLVf%2BiOUgqkR5AiDr1Jh7X%2F8zjEChc4tvMWFhJoYfXUNMqB1gdU4pPwIZnrP%2F8mYkJKNHVmM3yXQoSVDEkDMWPMUFXJOsEoLFTr1VAYgA1fSthFzQ28abcksWuOkSyg6C3T2tzJkkKEEk6ov3B9BBMDoBg1EgT8ootC24j%2F8zjEDBb62tI6FgpoO5GE3EBgQmkw%2FnMdCMQQDBEPGNstEOdTnssPdbMz5GHyiIt%2F91KWkPHrVXra7LGO1GOdVOlWHOSHj7%2Fpt3%2F%2FbOrO7pd5%2BQ4xxEh5r%2BoRIDoFhAAZ3YAEH%2F%2FNbiyCRBn%2F8zjEDxWystLcwkSoLYJUnMaxF7LRRVWrMAgQElk6CbkRETWhQsuYrHuoyO9Jiy3naZB9Stfr%2F%2F%2F%2F6p2eh7osy0u5m6Svo1%2F%2F7%2Bj0qavNQdVA7UuiGxAMkt2ZuyUSEUFGaDj8M8WuGo1X4IL%2F8zjEFxMQpupcBowKRR5FI6kt9afbPm38SfPJrAKBHikFpXloKkIsWYM%2FrPf6h7cAAuOGA4tNVeydJCsVHlv%2F%2FedqLkssZVj%2F4yVQtUemsMYhKaZhU2gdEzWb7LfwLDzWJbhnMD46pRpWrnX%2F8zjEKRUKBrh8egSarpKOqT66Fa6S9DbaJ2Qxj%2F%2FZL0VSspQrWVAJ4sLg6Iv7dyyICEv%2F%2BmJBZVUufh4SdxCqFKEJQMJ%2BsEqaXtrbx4WzXlB%2F%2BXX%2FmHNikKupO1hAKmGRGFEaELvR15TSsYz%2F8zjEMxRCimwQeETdreatS1Zyq39ktUtf0cBxymbx%2F%2FO1uX63eKCeBMIFArlLCwIjqBWHSamMJzj5FFxgaNAeKxQqKX0Mn%2F7P2KGxYdzo1IbVIixgYLAyeUaBk5PJUZbson4URTW24h0%2FSgf%2F8zjEQQ%2FoRlwUS8wA%2FglgBwOUTVxujFPq2x72dRxP%2FX0L0t2%2F%2Fb9Le36McQdCK4U7PBlrQGCQ7koxmDjEKZUZWOcimEnIHM7OymihAJljbgm4zUpugWnetpkMhEO7Eb9FucQBM2PECMOt0CX%2F8zjEYBS6PmQVSxAARGA%2BfNEEC0UBchAQ935fc3LjCOC2JEQ0q%2Flw6VyDnDQwFAiEw6iBCb%2F5OGknSuXECJkIToYFAoAN%2FGd%2F5DCIDQIOolycL7idg2UDzwGmEoBFAhEOQELf%2FlMnx3lxjRb%2F8zjEbCb7zowBipAA98NlDbgbiFhIuRcdh9MuE%2BXv%2F%2FoLdO3vcuGZPloyNC8alQvlwumyRS%2F%2F%2F1f%2F%2FzU6B4d3%2B222ku2H%2Fw1qUtolGx5YxBokEwPjG02NhBZBMqZBhqRqmnCqFa1MJiNRAAj%2F8zjELxRwdxL%2FyxACaDh92VacCiWgbq3G71JGf%2BUIpjHUJCJmLNDJNzhAa0tjGk4AhiEN21AFmCjjKLLxjmPBALF5Egr2PkYAFBZqG4%2BCFGqGM9i7X%2F2Xhr%2B2xkcnpdFRR7I0aWhqZ2Q%2FwYD%2F8zjEPBSRwr78AYYwgZQkyJMu7X5XZXcQljwcK%2B%2F%2BSKuABOoCVhWb2EHuNarNrHOLkiSscbiJVXtQ5rEialjXoGiym5fnkCY%2BH5KSOUOr7atkZnV2WhRJGv59X81%2F4bTh%2FxqEFHcWL1qesrb%2F8zjESBXx%2BqpcAYY8VoLRMoNSwUHD%2F6nvVh1QVnUBvHPzELNOiKAIKRYeq%2FKwzFC1rcX%2F%2F%2BzMxQdGx8X8KsNw3xryKmqKyKitNsHQAw61VeVWSRU2v%2BGa59a1FQkHXxEJQaDhENCWR9TxKJb%2F8zjETxdh4nQ0CZCEDR6HKzqwaPYbqeWgrDTaxYeCA4Cwfy3%2FllqGTWX8jVrLZ%2BXZPvyyX%2FlkuZGstQyNQwUMGBhHFRUUFuoka%2F6hf2oHs%2FxYXZLCwr%2F%2BukxBTUUzLjEwMKqqqqqqqqqqqqr%2F8zjEUA8hVcGWCAYAqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqo%3D",
           "member": "string",
           "name": "UserVoiceData",
@@ -268,7 +268,7 @@
         },
         {
           "default": "",
-          "document": "语音段唯一标识，一个完整语音一个SessionId。",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
           "example": "12345",
           "member": "string",
           "name": "SessionId",
@@ -286,7 +286,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
           "example": "default",
           "member": "string",
           "name": "SoeAppId",
@@ -318,7 +318,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "语音段唯一标识，一段语音一个SessionId",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
           "example": "12345",
           "member": "string",
           "name": "SessionId",
@@ -556,7 +556,7 @@
       "members": [
         {
           "default": "",
-          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
           "example": "1",
           "member": "int64",
           "name": "SeqId",
@@ -574,7 +574,7 @@
         },
         {
           "default": "",
-          "document": "语音文件类型 \t1: raw, 2: wav, 3: mp3, 4: speex (语言文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败)。",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
           "example": "1",
           "member": "int64",
           "name": "VoiceFileType",
@@ -583,7 +583,7 @@
         },
         {
           "default": "",
-          "document": "语音编码类型\t1:pcm。",
+          "document": "语音编码类型\n1:pcm",
           "example": "1",
           "member": "int64",
           "name": "VoiceEncodeType",
@@ -601,7 +601,7 @@
         },
         {
           "default": "",
-          "document": "语音段唯一标识，一个完整语音一个SessionId。",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
           "example": "stress_test_956938",
           "member": "string",
           "name": "SessionId",
@@ -610,7 +610,7 @@
         },
         {
           "default": "",
-          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
           "example": "无",
           "member": "string",
           "name": "SoeAppId",
@@ -736,7 +736,7 @@
       "members": [
         {
           "default": "",
-          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
           "example": "1",
           "member": "int64",
           "name": "SeqId",
