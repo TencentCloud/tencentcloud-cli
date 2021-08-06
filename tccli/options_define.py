@@ -29,6 +29,7 @@ ENV_TOKEN = "TENCENTCLOUD_TOKEN"
 
 Help = "help"
 CliVersion = "version"
+Detail = "detail"
 
 
 ACTION_GLOBAL_OPT = [SecretId, SecretKey, RoleArn, RoleSessionName, UseCVMRole, Token, Region, Endpoint, Version,

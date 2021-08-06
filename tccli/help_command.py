@@ -35,7 +35,7 @@ class BaseHelpCommand(object):
 
         self._get_service_version(parsed_globals)
         document_handle = self._get_document_handler()
-        document_handle.doc_help()
+        document_handle.doc_help(parsed_globals.detail)
         sys.stdout.write(self.doc.getvalue())
 
 

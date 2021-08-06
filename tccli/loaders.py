@@ -88,6 +88,10 @@ class Loader(object):
                 "help": "specify a DescribeRegions api version",
                 "metavar": "version_name"
             },
+            "detail": {
+                "help": "see detailed help information",
+                'action': 'store_true'
+            },
             "profile": {
                 "help": "specify a profile name",
                 "metavar": "profile_name"
@@ -229,6 +233,7 @@ class Loader(object):
             "--region": "identify the region to which the instance you want to work with belongs.",
             "--endpoint": "specify an access point domain name",
             "--version": "specify a %s api version" % action,
+            "--detail": "see detailed help information",
             "--filter": "specify a filter field",
             "--timeout": "specify a request timeout",
             "--generate-cli-skeleton": "Prints a JSON skeleton to standard output without sending "
