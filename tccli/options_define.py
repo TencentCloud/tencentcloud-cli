@@ -2,9 +2,9 @@
 SecretId = "secretId"
 SecretKey = "secretKey"
 Token = "token"
-RoleArn = "roleArn"
-RoleSessionName = "roleSessionName"
-UseCVMRole = "useCVMRole"
+RoleArn = "role_arn"
+RoleSessionName = "role_session_name"
+UseCVMRole = "use_cvm_role"
 Region = "region"
 Endpoint = "endpoint"
 Version = "version"
@@ -32,8 +32,8 @@ CliVersion = "version"
 Detail = "detail"
 
 
-ACTION_GLOBAL_OPT = [SecretId, SecretKey, RoleArn, RoleSessionName, UseCVMRole, Token, Region, Endpoint, Version,
-                     Filter, Profile, Timeout, Output, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument]
+ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, Region, Endpoint, Version, Filter, Profile, Timeout,
+                     Output, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument]
 
 
 

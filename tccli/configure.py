@@ -25,8 +25,7 @@ class BasicConfigure(BasicCommand):
         super(BasicConfigure, self).__init__()
         self.config_list = [
             OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings]
-        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.RoleArn,
-                          OptionsDefine.RoleSessionName, OptionsDefine.Token]
+        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -98,8 +97,6 @@ class ConfigureListCommand(BasicConfigure):
                "credential:\n" \
                "secretId = ********************************\n" \
                "secretKey = ********************************\n" \
-               "roleArn = ********************************\n" \
-               "roleSessionName = ********************************\n" \
                "configure:\n" \
                "region = ap-guangzhou\n" \
                "output = json\n" \
@@ -152,8 +149,6 @@ class ConfigureSetCommand(BasicConfigure):
     USEAGE = 'tccli configure set [CONFIG] [--profile profile-name]'
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
-                      "roleArn: TencentCloud API RoleArn\n" \
-                      "roleSessionName: TencentCloud API RoleSessionName\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \
@@ -219,8 +214,6 @@ class ConfigureGetCommand(BasicConfigure):
     USEAGE = "tccli configure get [CONFIG] [--profile profile-name]"
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
-                      "roleArn: TencentCloud API RoleArn\n" \
-                      "roleSessionName: TencentCloud API RoleSessionName\n" \
                       "region: which the region you want to work with belongs.\n" \
                       "output: TencentCloud API response format[json, text, table]\n" \
                       "[cvm, cbs ...].version: service [cvm cbs ...] version\n" \

@@ -151,18 +151,18 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def options(self, detail=False):
         self.doc.style.h2('Options')
         options = self._cli_data.get_action_options(self._service, self._action)
-        options = sorted(options)
-        options.insert(0, options.pop())
+        keys = sorted(options)
+        keys.insert(0, keys.pop())
         if not detail:
             self.doc.style.indent()
             self.doc.write(self.doc.style.spaces())
-            for option in options:
+            for option in keys:
                 self.doc.write("[%s] " % option)
             self.doc.style.dedent()
             self.doc.style.new_line()
             self.doc.style.new_line()
         else:
-            for option in options:
+            for option in keys:
                 self.doc.doc_title_indent(option)
                 self.doc.doc_description_indent(options[option])
 
@@ -266,14 +266,14 @@ class ActionDocumentHandler(BaseDocumentHandler):
         if not params_info:
             self.doc.style.indent()
             self.doc.doc_title(u'无')
-            self.doc.style.new_line()
+            # self.doc.style.new_line()
 
         if not detail:
             for param, param_info in params_info.items():
                 self._doc_title(option, param, param_info)
             self.doc.style.new_line()
             if option == "Output Parameter":
-                self.doc.write('Use `help %s %s --detail` to see more information.' % (self._service, self._action))
+                self.doc.write('Use `tccli %s %s help --detail` to see more information.' % (self._service, self._action))
                 self.doc.style.new_line()
         else:
             for param, param_info in params_info.items():
