@@ -91,7 +91,7 @@ class BasicConfigure(BasicCommand):
 
 class ConfigureListCommand(BasicConfigure):
     NAME = 'list'
-    DESCRIPTION = 'list your profile(eg:secretId, secretKey, roleArn, roleSessionName, region, output).'
+    DESCRIPTION = 'list your profile(eg:secretId, secretKey, region, output).'
     USEAGE = 'tccli configure list [--profile profile-name]'
     EXAMPLES = "$ tccli configure list\n" \
                "credential:\n" \
@@ -145,7 +145,7 @@ class ConfigureListCommand(BasicConfigure):
 
 class ConfigureSetCommand(BasicConfigure):
     NAME = 'set'
-    DESCRIPTION = 'set your profile(eg:secretId, secretKey, roleArn, roleSessionName, region, output).'
+    DESCRIPTION = 'set your profile(eg:secretId, secretKey, region, output).'
     USEAGE = 'tccli configure set [CONFIG] [--profile profile-name]'
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
@@ -210,7 +210,7 @@ class ConfigureSetCommand(BasicConfigure):
 
 class ConfigureGetCommand(BasicConfigure):
     NAME = 'get'
-    DESCRIPTION = "get your profile(eg:SecretId, SecretKey, RoleArn, RoleSessionName, Region)."
+    DESCRIPTION = "get your profile(eg:SecretId, SecretKey, Region)."
     USEAGE = "tccli configure get [CONFIG] [--profile profile-name]"
     AVAILABLECONFIG = "secretId: TencentCloud API SecretId\n" \
                       "secretKey: TencentCloud API SecretKey\n" \
