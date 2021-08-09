@@ -82,7 +82,7 @@ class Style(object):
         self.dedent()
 
     def h2(self, text):
-        self.new_line()
+        # self.new_line()
         self.doc.write(text.upper())
         self.new_line()
 

@@ -43,7 +43,7 @@ class Loader(object):
         return "Before using tccli, you should use the command(tccli configure) to configure your profile " \
                "as the default For more information, please enter tccli configure help"
 
-    def get_useage(self):
+    def get_usage(self):
         return "tccli [options] <service> [options] <action> [options] [options and parameters]"
 
     def get_options(self):
@@ -159,7 +159,7 @@ class Loader(object):
         description = service_model["metadata"].get("api_brief", '')
         return description
 
-    def get_service_useage(self, service):
+    def get_service_usage(self, service):
         return "tccli %s <action> [--param...]" % service
 
     def get_service_options(self, service):
@@ -217,7 +217,7 @@ class Loader(object):
     def get_action_description(self, service, version, action):
         return self.get_actions_info(service, version)[action]['document']
 
-    def get_action_useage(self, service, action):
+    def get_action_usage(self, service, action):
         return "tccli %s %s [--param...]" % (service, action)
 
     def get_action_options(self, service, action):

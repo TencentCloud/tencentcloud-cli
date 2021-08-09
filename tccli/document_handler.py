@@ -24,26 +24,31 @@ class CLIDocumentHandler(BaseDocumentHandler):
         configure = self._cli_data.get_configure()
         self.doc.doc_description_indent(configure)
 
-    def useage(self):
-        self.doc.style.h2('Useage')
-        useage = self._cli_data.get_useage()
-        self.doc.doc_description_indent(useage)
+    def usage(self):
+        self.doc.style.h2('Usage')
+        usage = self._cli_data.get_usage()
+        self.doc.doc_description_indent(usage)
 
     def options(self):
         self.doc.style.h2('Options')
         options = self._cli_data.get_options()
         for option in options:
-            self.doc.doc_title_indent(option)
-            self.doc.doc_description_indent(options[option])
+            self.doc.doc_title_indent("%-12s| %s" % (option, options[option]))
+            # self.doc.doc_description_indent(options[option])
+        self.doc.style.new_line()
 
     def available_services(self, detailed=False):
         available_services = self._cli_data.get_available_services().keys()
         self.doc.style.h2('Available Services')
         if not detailed:
+            self.doc.style.indent()
+            self.doc.write(self.doc.style.spaces())
             for service in sorted(available_services):
-                self.doc.doc_title_indent(service)
+                self.doc.write("[%s] " % service)
+            self.doc.style.dedent()
             self.doc.style.new_line()
-            self.doc.write('Use %chelp --detail%c to see more information' % (39, 39))
+            self.doc.style.new_line()
+            self.doc.write('Use `tccli help --detail` to see more information')
             self.doc.style.new_line()
         else:
             for service in sorted(available_services):
@@ -56,10 +61,10 @@ class CLIDocumentHandler(BaseDocumentHandler):
                 self.doc.doc_description_indent(description)
 
     def doc_help(self, detailed=False):
-        self.doc.style.h1("tccli")
-        self.description()
-        self.configure()
-        self.useage()
+        # self.doc.style.h1("tccli")
+        # self.description()
+        # self.configure()
+        self.usage()
         self.options()
         self.available_services(detailed)
 
@@ -76,20 +81,20 @@ class ServiceDocumentHandler(BaseDocumentHandler):
         versions = self._cli_data.get_available_services()[self._service]
         for version in versions:
             self.doc.doc_title_indent(version)
-        self.doc.style.new_line()
+        # self.doc.style.new_line()
         self.doc.doc_description_indent(u"默认只展示最新版本信息，查看其它版本帮助信息加 --version xxxx-xx-xx")
 
     def description(self):
         self.doc.style.h2('Description')
         description = self._cli_data.get_service_description(self._service, self._version)
         description = description if description else ""
-        self.doc.doc_title_indent("%s-%s\n" % (self._service, self._version))
+        # self.doc.doc_title_indent("%s-%s\n" % (self._service, self._version))
         self.doc.doc_description_indent(description)
 
-    def useage(self):
-        self.doc.style.h2('Useage')
-        useage = self._cli_data.get_service_useage(self._service)
-        self.doc.doc_description_indent(useage)
+    def usage(self):
+        self.doc.style.h2('Usage')
+        usage = self._cli_data.get_service_usage(self._service)
+        self.doc.doc_description_indent(usage)
 
     def options(self):
         self.doc.style.h2('Options')
@@ -102,10 +107,13 @@ class ServiceDocumentHandler(BaseDocumentHandler):
         actions_info = self._cli_data.get_actions_info(self._service, self._version)
         self.doc.style.h2('Available Actions')
         if not detail:
+            self.doc.style.indent()
+            self.doc.write(self.doc.style.spaces())
             for action in actions_info:
-                self.doc.doc_title_indent(action)
+                self.doc.write("<%s> " % action)
             self.doc.style.new_line()
-            self.doc.write('Use %chelp --detail%c to see more information.' % (39, 39))
+            self.doc.style.new_line()
+            self.doc.write('Use `tccli %s help --detail` to see more information.' % self._service)
             self.doc.style.new_line()
         else:
             for action in actions_info:
@@ -113,10 +121,10 @@ class ServiceDocumentHandler(BaseDocumentHandler):
                 self.doc.doc_description_indent(actions_info[action]["name"])
 
     def doc_help(self, detail=False):
-        self.doc.style.h1(self._service)
+        # self.doc.style.h1(self._service)
         self.available_versions()
         self.description()
-        self.useage()
+        self.usage()
         self.options()
         self.available_actions(detail)
 
@@ -135,17 +143,24 @@ class ActionDocumentHandler(BaseDocumentHandler):
         self.doc.doc_title_indent("%s-%s-%s\n" % (self._service, self._version, self._action))
         self.doc.doc_description_indent(description)
 
-    def useage(self):
-        self.doc.style.h2('Useage')
-        useage = self._cli_data.get_action_useage(self._service, self._action)
-        self.doc.doc_description_indent(useage)
+    def usage(self):
+        self.doc.style.h2('Usage')
+        usage = self._cli_data.get_action_usage(self._service, self._action)
+        self.doc.doc_description_indent(usage)
 
     def options(self, detail=False):
         self.doc.style.h2('Options')
         options = self._cli_data.get_action_options(self._service, self._action)
+        options = sorted(options)
+        options.insert(0, options.pop())
         if not detail:
+            self.doc.style.indent()
+            self.doc.write(self.doc.style.spaces())
             for option in options:
-                self.doc.doc_title_indent(option)
+                self.doc.write("[%s] " % option)
+            self.doc.style.dedent()
+            self.doc.style.new_line()
+            self.doc.style.new_line()
         else:
             for option in options:
                 self.doc.doc_title_indent(option)
@@ -256,9 +271,9 @@ class ActionDocumentHandler(BaseDocumentHandler):
         if not detail:
             for param, param_info in params_info.items():
                 self._doc_title(option, param, param_info)
+            self.doc.style.new_line()
             if option == "Output Parameter":
-                self.doc.style.new_line()
-                self.doc.write('Use %chelp --detail%c to see more information.' % (39, 39))
+                self.doc.write('Use `help %s %s --detail` to see more information.' % (self._service, self._action))
                 self.doc.style.new_line()
         else:
             for param, param_info in params_info.items():
@@ -320,9 +335,10 @@ class ActionDocumentHandler(BaseDocumentHandler):
         self.doc.style.dedent()
 
     def doc_help(self, detail=False):
-        self.doc.style.h1(self._action)
-        self.description()
-        self.useage()
+        # self.doc.style.h1(self._action)
+        if detail:
+            self.description()
+        self.usage()
         self.options(detail)
         self.available_parameter(detail)
         if detail:
