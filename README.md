@@ -225,6 +225,21 @@ TCCLI 支持 [JMESPath](https://jmespath.org/examples.html) ，以下仅为部�
 tccli cvm DescribeInstances --region ap-hongkong --filter 'InstanceSet[].[InstanceId,InstanceName,Tags[?Key==`app`].Value|[0]]' --output text
 ins-6xe51ktg    未命名  elastic-search
 ```
+## 结果轮询
+可以使用'--waiter'参数来轮询实例的信息直到出现指定的状态
+```
+# 例如执行如下命令，程序将以一定的时间间隔对实例的状态进行轮询，直到实例的状态为'RUNNING'或者超时为止，超时的时间为180秒，请求的间隔时间为5秒
+tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Response.InstanceStatusSet[0].InstanceState','to':'RUNNING','timeout':180,'interval':5}"
+```
+使用'--waiter'参数时，必须指定一以下两个参数：
+
+- expr: 指定被查询的字段，使用[jmespath](http://jmespath.org/)来查找被指定的字段的值
+- to: 被轮询的字段的目标值
+
+可选子参数：
+
+- timeout: 轮询的超时时间(s)
+- inaterval: 轮询的间隔时间(s)
 ## 输出入参骨架到json文件
 ```bash
 [root@VM_180_248_centos ~]# tccli cvm RunInstances  --generate-cli-skeleton > /tmp/RunInstances.json

@@ -131,6 +131,11 @@ class Loader(object):
             'warning': {
                 'help': 'Open the warning log',
                 'action': 'store_true'
+            },
+            'waiter': {
+                'help': 'Set param `expr`, `to`, `timeout` and `interval` to get the polling result.'
+                        '`expr` is the inquiry expresion, `to` is the ending status.'
+                        '`timeout` and `interval` are unnecessary params.',
             }
 
         }
@@ -247,6 +252,9 @@ class Loader(object):
             "--cli-unfold-argument": "complex type parameters are expanded with dots",
             "--https-proxy": "specify a https proxy",
             "--warning": "Open the warning log",
+            "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
+                        "`expr` is the inquiry expresion, `to` is the ending status"
+                        ".`timeout` and `interval` are unnecessary params.",
         }
 
     def _filling_param_info(self, param_info, para, param_type, member):
