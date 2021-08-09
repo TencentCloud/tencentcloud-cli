@@ -134,6 +134,7 @@
         {
           "default": "",
           "document": "卡片ID",
+          "example": "xxx",
           "member": "string",
           "name": "Iccid",
           "required": true,
@@ -143,6 +144,7 @@
         {
           "default": "",
           "document": "卡电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Msisdn",
           "required": true,
@@ -152,6 +154,7 @@
         {
           "default": "",
           "document": "卡imsi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Imsi",
           "required": true,
@@ -161,6 +164,7 @@
         {
           "default": "",
           "document": "卡imei\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Imei",
           "required": true,
@@ -170,6 +174,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "xxx",
           "member": "string",
           "name": "Sdkappid",
           "required": true,
@@ -179,6 +184,7 @@
         {
           "default": "",
           "document": "运营商编号",
+          "example": "1",
           "member": "int64",
           "name": "Teleoperator",
           "required": true,
@@ -188,6 +194,7 @@
         {
           "default": "",
           "document": "卡片状态 1:未激活 2：激活 3：停卡 5：销卡",
+          "example": "1",
           "member": "int64",
           "name": "CardStatus",
           "required": true,
@@ -197,6 +204,7 @@
         {
           "default": "",
           "document": "网络状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "NetworkStatus",
           "required": true,
@@ -206,6 +214,7 @@
         {
           "default": "",
           "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ActivitedTime",
           "required": true,
@@ -215,6 +224,7 @@
         {
           "default": "",
           "document": "资费类型，1 单卡，2 流量池",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -224,6 +234,7 @@
         {
           "default": "",
           "document": "套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -233,6 +244,7 @@
         {
           "default": "",
           "document": "流量池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "PoolId",
           "required": true,
@@ -242,6 +254,7 @@
         {
           "default": "",
           "document": "周期套餐流量使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.1",
           "member": "float",
           "name": "DataUsedInPeriod",
           "required": true,
@@ -251,6 +264,7 @@
         {
           "default": "",
           "document": "周期套餐总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.1",
           "member": "float",
           "name": "DataTotalInPeriod",
           "required": true,
@@ -260,6 +274,7 @@
         {
           "default": "",
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProductExpiredTime",
           "required": true,
@@ -269,6 +284,7 @@
         {
           "default": "",
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -278,6 +294,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "xxx",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -287,6 +304,7 @@
         {
           "default": "",
           "document": "修改时间",
+          "example": "xxx",
           "member": "datetime",
           "name": "ModifiedTime",
           "required": true,
@@ -296,6 +314,7 @@
         {
           "default": "",
           "document": "套餐周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "int64",
           "name": "PreorderCnt",
           "required": true,
@@ -305,6 +324,7 @@
         {
           "default": "",
           "document": "激活被回调标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "int64",
           "name": "IsActivated",
           "required": true,
@@ -314,6 +334,7 @@
         {
           "default": "",
           "document": "订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -323,6 +344,7 @@
         {
           "default": "",
           "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "int64",
           "name": "AutoRenew",
           "required": true,
@@ -332,6 +354,7 @@
         {
           "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -341,6 +364,7 @@
         {
           "default": "",
           "document": "0 不需要开通达量不停卡 1 需要开通达量不停卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "int64",
           "name": "AllowArrears",
           "required": true,
@@ -350,6 +374,7 @@
         {
           "default": "",
           "document": "是否开通短信0:未开短信 1:开通短信",
+          "example": "xxx",
           "member": "int64",
           "name": "NeedSms",
           "required": true,
@@ -359,6 +384,7 @@
         {
           "default": "",
           "document": "供应商",
+          "example": "1",
           "member": "int64",
           "name": "Provider",
           "required": true,
@@ -368,10 +394,21 @@
         {
           "default": "",
           "document": "实名认证 0:无 1:未实名 2:已实名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "CertificationState",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他流量信息,流量分离统计其他流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.1",
+          "member": "float",
+          "name": "OtherData",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -383,6 +420,7 @@
         {
           "default": "",
           "document": "卡片总数",
+          "example": "100",
           "member": "string",
           "name": "Total",
           "required": true,
@@ -392,6 +430,7 @@
         {
           "default": "",
           "document": "卡片列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CardInfo",
           "name": "List",
           "required": true,
@@ -440,6 +479,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "1200168178",
           "member": "int64",
           "name": "Sdkappid",
           "required": true,
@@ -448,6 +488,7 @@
         {
           "default": "",
           "document": "卡片ID",
+          "example": "89860619000013360957",
           "member": "string",
           "name": "Iccid",
           "required": true,
@@ -461,8 +502,10 @@
       "members": [
         {
           "document": "卡片详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CardInfo",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -481,6 +524,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "1200168178",
           "member": "string",
           "name": "Sdkappid",
           "required": true,
@@ -489,6 +533,7 @@
         {
           "default": "",
           "document": "偏移值",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -497,6 +542,7 @@
         {
           "default": "",
           "document": "列表限制",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -510,8 +556,10 @@
       "members": [
         {
           "document": "卡片列表信息",
+          "example": "无",
           "member": "CardList",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

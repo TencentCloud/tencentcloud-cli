@@ -15,6 +15,36 @@ Output:
     "Response": {
         "Template": {
             "TemplateId": 1000,
+            "Mp4Param": {
+                "ClassId": 0,
+                "StorageMode": "xx",
+                "StorageTime": 0,
+                "VodSubAppId": 0,
+                "VodFileName": "xx",
+                "Enable": 0,
+                "RecordInterval": 0,
+                "Procedure": "xx"
+            },
+            "AacParam": {
+                "ClassId": 0,
+                "StorageMode": "xx",
+                "StorageTime": 0,
+                "VodSubAppId": 0,
+                "VodFileName": "xx",
+                "Enable": 0,
+                "RecordInterval": 0,
+                "Procedure": "xx"
+            },
+            "Mp3Param": {
+                "ClassId": 0,
+                "StorageMode": "xx",
+                "StorageTime": 0,
+                "VodSubAppId": 0,
+                "VodFileName": "xx",
+                "Enable": 0,
+                "RecordInterval": 0,
+                "Procedure": "xx"
+            },
             "TemplateName": "testName",
             "Description": "test",
             "FlvParam": {

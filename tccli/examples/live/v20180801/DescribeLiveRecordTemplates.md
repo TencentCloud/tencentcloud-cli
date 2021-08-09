@@ -25,6 +25,36 @@ Output:
                     "StorageTime": 6000,
                     "VodSubAppId": 123456
                 },
+                "Mp4Param": {
+                    "ClassId": 0,
+                    "StorageMode": "xx",
+                    "StorageTime": 0,
+                    "VodSubAppId": 0,
+                    "VodFileName": "xx",
+                    "Enable": 0,
+                    "RecordInterval": 0,
+                    "Procedure": "xx"
+                },
+                "AacParam": {
+                    "ClassId": 0,
+                    "StorageMode": "xx",
+                    "StorageTime": 0,
+                    "VodSubAppId": 0,
+                    "VodFileName": "xx",
+                    "Enable": 0,
+                    "RecordInterval": 0,
+                    "Procedure": "xx"
+                },
+                "Mp3Param": {
+                    "ClassId": 0,
+                    "StorageMode": "xx",
+                    "StorageTime": 0,
+                    "VodSubAppId": 0,
+                    "VodFileName": "xx",
+                    "Enable": 0,
+                    "RecordInterval": 0,
+                    "Procedure": "xx"
+                },
                 "HlsParam": {
                     "Enable": 1,
                     "RecordInterval": 1800,
