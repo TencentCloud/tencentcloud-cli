@@ -13,6 +13,42 @@ from tencentcloud.ccc.v20200210 import ccc_client as ccc_client_v20200210
 from tencentcloud.ccc.v20200210 import models as models_v20200210
 
 
+def doDescribePSTNActiveSessionList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
+            g_param[OptionsDefine.RoleSessionName]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePSTNActiveSessionListRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribePSTNActiveSessionList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeChatMessages(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -373,42 +409,6 @@ def doCreateSDKLoginToken(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePSTNActiveSessionList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePSTNActiveSessionListRequest()
-    model.from_json_string(json.dumps(args))
-    rsp = client.DescribePSTNActiveSessionList(model)
-    result = rsp.to_json_string()
-    try:
-        json_obj = json.loads(result)
-    except TypeError as e:
-        json_obj = json.loads(result.decode('utf-8'))  # python3.3
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeSeatUserList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -437,6 +437,78 @@ def doDescribeSeatUserList(args, parsed_globals):
     model = models.DescribeSeatUserListRequest()
     model.from_json_string(json.dumps(args))
     rsp = client.DescribeSeatUserList(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeCallInMetrics(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
+            g_param[OptionsDefine.RoleSessionName]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCallInMetricsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeCallInMetrics(model)
+    result = rsp.to_json_string()
+    try:
+        json_obj = json.loads(result)
+    except TypeError as e:
+        json_obj = json.loads(result.decode('utf-8'))  # python3.3
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeStaffStatusMetrics(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
+            g_param[OptionsDefine.RoleSessionName]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeStaffStatusMetricsRequest()
+    model.from_json_string(json.dumps(args))
+    rsp = client.DescribeStaffStatusMetrics(model)
     result = rsp.to_json_string()
     try:
         json_obj = json.loads(result)
@@ -564,6 +636,7 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribePSTNActiveSessionList": doDescribePSTNActiveSessionList,
     "DescribeChatMessages": doDescribeChatMessages,
     "DescribeIMCdrs": doDescribeIMCdrs,
     "CreateUserSig": doCreateUserSig,
@@ -574,8 +647,9 @@ ACTION_MAP = {
     "UnbindStaffSkillGroupList": doUnbindStaffSkillGroupList,
     "DescribeTelSession": doDescribeTelSession,
     "CreateSDKLoginToken": doCreateSDKLoginToken,
-    "DescribePSTNActiveSessionList": doDescribePSTNActiveSessionList,
     "DescribeSeatUserList": doDescribeSeatUserList,
+    "DescribeCallInMetrics": doDescribeCallInMetrics,
+    "DescribeStaffStatusMetrics": doDescribeStaffStatusMetrics,
     "DescribeTelCallInfo": doDescribeTelCallInfo,
     "BindStaffSkillGroupList": doBindStaffSkillGroupList,
     "DescribeTelCdr": doDescribeTelCdr,

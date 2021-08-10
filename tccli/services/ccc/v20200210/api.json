@@ -30,6 +30,12 @@
       "name": "删除坐席信息",
       "output": "DeleteStaffResponse"
     },
+    "DescribeCallInMetrics": {
+      "document": "获取呼入实时数据统计指标",
+      "input": "DescribeCallInMetricsRequest",
+      "name": "获取呼入实时数据统计指标",
+      "output": "DescribeCallInMetricsResponse"
+    },
     "DescribeChatMessages": {
       "document": "包括具体聊天内容",
       "input": "DescribeChatMessagesRequest",
@@ -65,6 +71,12 @@
       "input": "DescribeStaffInfoListRequest",
       "name": "获取坐席信息列表",
       "output": "DescribeStaffInfoListResponse"
+    },
+    "DescribeStaffStatusMetrics": {
+      "document": "获取坐席实时状态统计指标",
+      "input": "DescribeStaffStatusMetricsRequest",
+      "name": "获取坐席实时状态统计指标",
+      "output": "DescribeStaffStatusMetricsResponse"
     },
     "DescribeTelCallInfo": {
       "document": "按实例获取电话消耗统计",
@@ -142,6 +154,194 @@
         }
       ],
       "type": "object"
+    },
+    "CallInMetrics": {
+      "document": "呼入实时指标",
+      "members": [
+        {
+          "default": "",
+          "document": "IVR驻留数量",
+          "example": "0",
+          "member": "int64",
+          "name": "IvrCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排队中数量",
+          "example": "0",
+          "member": "int64",
+          "name": "QueueCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "振铃中数量",
+          "example": "0",
+          "member": "int64",
+          "name": "RingCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接通中数量",
+          "example": "0",
+          "member": "int64",
+          "name": "AcceptCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客服转接外线中数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TransferOuterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大排队时长",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxQueueDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均排队时长",
+          "example": "0",
+          "member": "int64",
+          "name": "AvgQueueDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大振铃时长",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxRingDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均振铃时长",
+          "example": "0",
+          "member": "int64",
+          "name": "AvgRingDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大接通时长",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxAcceptDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均接通时长",
+          "example": "0",
+          "member": "int64",
+          "name": "AvgAcceptDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CallInNumberMetrics": {
+      "document": "呼入线路维度相关指标",
+      "members": [
+        {
+          "default": "",
+          "document": "线路号码",
+          "example": "02188888888",
+          "member": "string",
+          "name": "Number",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线路相关指标",
+          "example": "无",
+          "member": "CallInMetrics",
+          "name": "Metrics",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属技能组相关指标",
+          "example": "无",
+          "member": "CallInSkillGroupMetrics",
+          "name": "SkillGroupMetrics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CallInSkillGroupMetrics": {
+      "document": "呼入技能组相关指标",
+      "members": [
+        {
+          "default": "",
+          "document": "技能组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据指标",
+          "example": "无",
+          "member": "CallInMetrics",
+          "name": "Metrics",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "技能组名称",
+          "example": "技能组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateSDKLoginTokenRequest": {
       "document": "CreateSDKLoginToken请求参数结构体",
@@ -338,6 +538,87 @@
           "example": "无",
           "member": "string",
           "name": "OnlineStaffList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallInMetricsRequest": {
+      "document": "DescribeCallInMetrics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否返回技能组维度信息，默认“是”",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledSkillGroup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否返回线路维度信息，默认“否”",
+          "example": "false",
+          "member": "bool",
+          "name": "EnabledNumber",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallInMetricsResponse": {
+      "document": "DescribeCallInMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "时间戳",
+          "example": "1",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总体指标",
+          "example": "无",
+          "member": "CallInMetrics",
+          "name": "TotalMetrics",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "线路维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CallInNumberMetrics",
+          "name": "NumberMetrics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "技能组维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CallInSkillGroupMetrics",
+          "name": "SkillGroupMetrics",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -794,6 +1075,51 @@
           "example": "无",
           "member": "StaffInfo",
           "name": "StaffList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusMetricsRequest": {
+      "document": "DescribeStaffStatusMetrics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选坐席列表，默认不传返回全部坐席信息",
+          "example": "无",
+          "member": "string",
+          "name": "StaffList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusMetricsResponse": {
+      "document": "DescribeStaffStatusMetrics返回参数结构体",
+      "members": [
+        {
+          "document": "坐席状态实时信息",
+          "example": "无",
+          "member": "StaffStatusMetrics",
+          "name": "Metrics",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1897,6 +2223,158 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StaffStatusExtra": {
+      "document": "坐席状态补充信息",
+      "members": [
+        {
+          "default": "",
+          "document": "im - 文本 | tel - 电话 | all - 全媒体",
+          "example": "tel",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "in - 呼入 | out - 呼出",
+          "example": "in",
+          "member": "string",
+          "name": "Direct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StaffStatusMetrics": {
+      "document": "坐席状态相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "坐席邮箱",
+          "example": "xxx@xxx.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
+          "example": "free",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席状态补充信息",
+          "example": "无",
+          "member": "StaffStatusExtra",
+          "name": "StatusExtra",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天在线总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "OnlineDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天示闲总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "FreeDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天忙碌总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "BusyDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天示忙总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "NotReadyDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天小休总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "RestDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当天话后调整总时长",
+          "example": "0",
+          "member": "int64",
+          "name": "AfterCallWorkDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小休原因",
+          "example": "会议",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否预约小休",
+          "example": "false",
+          "member": "bool",
+          "name": "ReserveRest",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否预约示忙",
+          "example": "false",
+          "member": "bool",
+          "name": "ReserveNotReady",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

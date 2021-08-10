@@ -318,6 +318,12 @@
       "name": "云鉴-查询银行子账户余额",
       "output": "QueryCustAcctIdBalanceResponse"
     },
+    "QueryDownloadBillURL": {
+      "document": "云鉴-查询对账单下载地址的接口",
+      "input": "QueryDownloadBillURLRequest",
+      "name": "云鉴-查询对账单下载地址接口",
+      "output": "QueryDownloadBillURLResponse"
+    },
     "QueryExchangeRate": {
       "document": "跨境-查询汇率",
       "input": "QueryExchangeRateRequest",
@@ -9905,6 +9911,69 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryDownloadBillURLRequest": {
+      "document": "QueryDownloadBillURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分配给商户的AppId。进件成功后返给商户方的AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道编号。固定值：ZSB2B",
+          "example": "ZSB2B",
+          "member": "string",
+          "name": "ChannelCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对账单日期，格式yyyyMMdd",
+          "example": "20211012",
+          "member": "string",
+          "name": "BillDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDownloadBillURLResponse": {
+      "document": "QueryDownloadBillURL返回参数结构体",
+      "members": [
+        {
+          "document": "分配给商户的AppId。进件成功后返给商户方的AppId。",
+          "example": "1c6f41570498301d85fc4589a5435b54",
+          "member": "string",
+          "name": "MerchantAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对账单下载地址。",
+          "example": "http://xxx.xxx.xxx/a.xls",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryExchangeRateRequest": {
       "document": "QueryExchangeRate请求参数结构体",

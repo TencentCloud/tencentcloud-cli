@@ -189,7 +189,7 @@
     "DeleteLiveCallbackTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCallbackTemplate\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCallbackTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -237,7 +237,7 @@
     "DeleteLiveRecordTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveRecordTemplate\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveRecordTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -253,7 +253,7 @@
     "DeleteLiveSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotTemplate\r\n&TemplateId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveSnapshotTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -525,7 +525,7 @@
     "DescribeLiveSnapshotRules": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveSnapshotRules\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveSnapshotRules\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"CreateTime\": \"2018-09-12 15:52:01\",\n                \"UpdateTime\": \"2018-10-12 18:00:05\",\n                \"TemplateId\": 1000,\n                \"DomainName\": \"5000.livepush.myqcloud.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"stream1\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -541,8 +541,8 @@
     "DescribeLiveSnapshotTemplates": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveSnapshotTemplates\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"TemplateId\": 1000,\n                \"TemplateName\": \"testName\",\n                \"Description\": \"test\",\n                \"SnapshotInterval\": 10,\n                \"Width\": 250,\n                \"Height\": 250,\n                \"PornFlag\": 0,\n                \"CosAppId\": 123,\n                \"CosBucket\": \"bucket\",\n                \"CosRegion\": \"beijing\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveSnapshotTemplates\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"TemplateId\": 1000,\n                \"TemplateName\": \"testName\",\n                \"Description\": \"test\",\n                \"SnapshotInterval\": 10,\n                \"Width\": 250,\n                \"Height\": 250,\n                \"PornFlag\": 0,\n                \"CosAppId\": 123,\n                \"CosBucket\": \"bucket\",\n                \"CosRegion\": \"beijing\",\n                \"CosPrefix\": \"xx\",\n                \"CosFileName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -606,7 +606,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveTranscodeTemplate\n&TemplateId=1000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"Vcodec\": \"h265\",\n            \"VideoBitrate\": 30,\n            \"Acodec\": \"aac\",\n            \"AudioBitrate\": 15,\n            \"Width\": 250,\n            \"Height\": 250,\n            \"Fps\": 30,\n            \"Gop\": 3,\n            \"Rotate\": 0,\n            \"Profile\": \"main\",\n            \"BitrateToOrig\": 0,\n            \"HeightToOrig\": 0,\n            \"NeedVideo\": 1,\n            \"NeedAudio\": 1,\n            \"TemplateId\": 1000,\n            \"TemplateName\": \"test\",\n            \"Description\": \"test\",\n            \"AiTransCode\": 0,\n            \"AdaptBitratePercent\": 0\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"Profile\": \"xx\",\n            \"AudioBitrate\": 15,\n            \"Rotate\": 0,\n            \"BitrateToOrig\": 0,\n            \"TemplateName\": \"xx\",\n            \"VideoBitrate\": 30,\n            \"ShortEdgeAsHeight\": 0,\n            \"Vcodec\": \"xx\",\n            \"AdaptBitratePercent\": 0.0,\n            \"AiTransCode\": 0,\n            \"Height\": 250,\n            \"Width\": 250,\n            \"NeedAudio\": 1,\n            \"FpsToOrig\": 0,\n            \"Fps\": 30,\n            \"TemplateId\": 1000,\n            \"Description\": \"xx\",\n            \"HeightToOrig\": 0,\n            \"NeedVideo\": 1,\n            \"Gop\": 3,\n            \"Acodec\": \"xx\"\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -877,7 +877,7 @@
     "ModifyLiveSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveSnapshotTemplate\r\n&TemplateId=1000\r\n&TemplateName=testName\r\n&Description=testDesc\r\n&SnapshotInterval=10\r\n&Width=250\r\n&Height=250\r\n&PornFlag=0\r\n&CosAppId=123\r\n&CosBucket=bucket\r\n&CosRegion=beijing\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveSnapshotTemplate\n&TemplateId=1000\n&TemplateName=testName\n&Description=testDesc\n&SnapshotInterval=10\n&Width=250\n&Height=250\n&PornFlag=0\n&CosAppId=123\n&CosBucket=bucket\n&CosRegion=beijing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

@@ -180,6 +180,18 @@
       "name": "查询集群中资源列表",
       "output": "DescribeClusterResourcesResponse"
     },
+    "DescribeCustomizedConfigAssociateList": {
+      "document": "拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。",
+      "input": "DescribeCustomizedConfigAssociateListRequest",
+      "name": "拉取配置绑定的server或location。",
+      "output": "DescribeCustomizedConfigAssociateListResponse"
+    },
+    "DescribeCustomizedConfigList": {
+      "document": "拉取个性化配置列表，返回用户 AppId 下指定类型的配置。",
+      "input": "DescribeCustomizedConfigListRequest",
+      "name": "拉取配置列表",
+      "output": "DescribeCustomizedConfigListResponse"
+    },
     "DescribeExclusiveClusters": {
       "document": "查询集群信息列表，支持以集群类型、集群唯一ID、集群名字、集群标签、集群内vip、集群内负载均衡唯一id、集群网络类型、可用区等条件进行检索",
       "input": "DescribeExclusiveClustersRequest",
@@ -365,6 +377,12 @@
       "input": "ReplaceCertForLoadBalancersRequest",
       "name": "替换负载均衡实例所关联的证书",
       "output": "ReplaceCertForLoadBalancersResponse"
+    },
+    "SetCustomizedConfigForLoadBalancer": {
+      "document": "负载均衡维度的个性化配置相关操作：创建、删除、修改、绑定、解绑",
+      "input": "SetCustomizedConfigForLoadBalancerRequest",
+      "name": "负载均衡维度的个性化配置相关操作",
+      "output": "SetCustomizedConfigForLoadBalancerResponse"
     },
     "SetLoadBalancerClsLog": {
       "document": "增加、删除、更新负载均衡的日志服务(CLS)主题。",
@@ -871,6 +889,93 @@
         }
       ],
       "usage": "in"
+    },
+    "BindDetailItem": {
+      "document": "绑定关系，包含监听器名字、协议、url、vport。",
+      "members": [
+        {
+          "default": "",
+          "document": "配置绑定的CLB ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置绑定的监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置绑定的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置绑定的规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ListenerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "location的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UconfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BlockedIP": {
       "document": "加入了12306黑名单的IP",
@@ -1721,6 +1826,66 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigListItem": {
+      "document": "配置内容",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "member": "string",
+          "name": "UconfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置类型",
+          "member": "string",
+          "name": "ConfigType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置内容",
+          "member": "string",
+          "name": "ConfigContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "增加配置时间",
+          "member": "string",
+          "name": "CreateTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改配置时间",
+          "member": "string",
+          "name": "UpdateTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3165,6 +3330,168 @@
           "document": "集群中资源总数。",
           "example": "2",
           "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizedConfigAssociateListRequest": {
+      "document": "DescribeCustomizedConfigAssociateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "pz-fi018waq",
+          "member": "string",
+          "name": "UconfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拉取绑定关系列表开始位置，默认值 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拉取绑定关系列表数目，默认值 20",
+          "example": "3",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索域名",
+          "example": "a.cc",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizedConfigAssociateListResponse": {
+      "document": "DescribeCustomizedConfigAssociateList返回参数结构体",
+      "members": [
+        {
+          "document": "绑定关系列表",
+          "example": "无",
+          "member": "BindDetailItem",
+          "name": "BindList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定关系总数目",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizedConfigListRequest": {
+      "document": "DescribeCustomizedConfigList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置类型:CLB 负载均衡维度。 SERVER 域名维度。 LOCATION 规则维度。",
+          "example": "CLB",
+          "member": "string",
+          "name": "ConfigType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拉取页偏移，默认值0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拉取数目，默认值20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拉取指定配置名字，模糊匹配。",
+          "example": "custom",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "pz-12345678",
+          "member": "string",
+          "name": "UconfigIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件如下：\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如：\"lb-12345678\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如：\"1.1.1.1\",\"2204::22:3\"。</li>",
+          "example": "[{\"Name\":\"loadbalancer-id\",\"Values\":[\"lb-12345678\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomizedConfigListResponse": {
+      "document": "DescribeCustomizedConfigList返回参数结构体",
+      "members": [
+        {
+          "document": "配置列表",
+          "example": "[{",
+          "member": "ConfigListItem",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "配置数目",
+          "example": "1",
+          "member": "int64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
@@ -7253,6 +7580,78 @@
         }
       ],
       "usage": "out"
+    },
+    "SetCustomizedConfigForLoadBalancerRequest": {
+      "document": "SetCustomizedConfigForLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作类型：'ADD', 'DELETE', 'UPDATE', 'BIND', 'UNBIND'",
+          "example": "ADD",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "除了创建个性化配置外，必传此字段，如：pz-1234abcd",
+          "example": "pz-n651fsue",
+          "member": "string",
+          "name": "UconfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建个性化配置或修改个性化配置的内容时，必传此字段",
+          "example": "client_max_body_size 222M;",
+          "member": "string",
+          "name": "ConfigContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建个性化配置或修改个性化配置的名字时，必传此字段",
+          "example": "config_test",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定解绑时，必传此字段",
+          "example": "[lb-55rh44i6]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetCustomizedConfigForLoadBalancerResponse": {
+      "document": "SetCustomizedConfigForLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "个性化配置ID，如：pz-1234abcd",
+          "example": "pz-1234abcd",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetLoadBalancerClsLogRequest": {
       "document": "SetLoadBalancerClsLog请求参数结构体",

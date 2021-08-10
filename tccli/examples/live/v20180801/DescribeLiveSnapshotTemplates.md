@@ -22,7 +22,9 @@ Output:
                 "PornFlag": 0,
                 "CosAppId": 123,
                 "CosBucket": "bucket",
-                "CosRegion": "beijing"
+                "CosRegion": "beijing",
+                "CosPrefix": "xx",
+                "CosFileName": "xx"
             }
         ],
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"

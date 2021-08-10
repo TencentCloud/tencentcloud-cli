@@ -282,6 +282,22 @@
         "title": "查询集群资源列表"
       }
     ],
+    "DescribeCustomizedConfigAssociateList": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeCustomizedConfigAssociateList\n&UconfigId=pz-fi018waq\n&Offset=0\n&Limit=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BindList\": [\n            {\n                \"LoadBalancerId\": \"lb-az5a9oyo\",\n                \"ListenerId\": \"lbl-nppnktey\",\n                \"Domain\": \"www.aaa.com\",\n                \"LocationId\": \"loc-nppnktey\",\n                \"ListenerName\": \"test\",\n                \"Protocol\": \"http\",\n                \"Vport\": 80,\n                \"Url\": \"\",\n                \"UconfigId\": \"pz-n651fsue\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "拉取配置绑定的server或location"
+      }
+    ],
+    "DescribeCustomizedConfigList": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeCustomizedConfigList\n&ConfigType=CLB\n&Offset=0\n&Limit=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ConfigList\": [\n            {\n                \"UconfigId\": \"pz-go2gs3d6\",\n                \"ConfigType\": \"CLB\",\n                \"ConfigContent\": \"client_max_body_size 1m;\",\n                \"ConfigName\": \"122222\",\n                \"CreateTimestamp\": \"2019-11-28 20:44:24\",\n                \"UpdateTimestamp\": \"2020-03-01 11:11:27\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d6f74bc7-2b26-4f5f-9dd8-6f0c8e8e2cc2\"\n    }\n}",
+        "title": "拉取配置列表"
+      }
+    ],
     "DescribeExclusiveClusters": [
       {
         "document": "",
@@ -594,6 +610,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=ReplaceCertForLoadBalancers\r\n&OldCertificateId=cuxw0123\r\n&Certificate.CertId=cuxw4567\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
         "title": "替换负载均衡实例关联的服务端证书"
+      }
+    ],
+    "SetCustomizedConfigForLoadBalancer": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetCustomizedConfigForLoadBalancer\n&OperationType=ADD\n&ConfigContent=client_max_body_size 222M;\n&ConfigName=config_test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ConfigId\": \"pz-1234abcd\",\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba22\"\n    }\n}",
+        "title": "创建负载均衡维度的个性化配置"
       }
     ],
     "SetLoadBalancerClsLog": [

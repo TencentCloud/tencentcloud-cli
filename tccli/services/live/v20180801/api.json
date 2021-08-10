@@ -55,7 +55,7 @@
       "output": "CreateLiveCertResponse"
     },
     "CreateLivePullStreamTask": {
-      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到直播系统。\n注意：\n1. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n2. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n3. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n4. 目前仅支持推流到腾讯云直播，暂不支持推到第三方。\n5. 过期不用的任务需自行清理，未清理的过期任务也会占用上限额度，如需要自动清理过期任务，可提单给售后进行配置。\n6. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n7. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。\n",
+      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到直播系统。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 目前仅支持推流到腾讯云直播，暂不支持推到第三方。\n3. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n4. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n5. 过期不用的任务需自行清理，未清理的过期任务也会占用上限额度，如需要自动清理过期任务，可提单给售后进行配置。\n6. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n7. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
       "input": "CreateLivePullStreamTaskRequest",
       "name": "创建直播拉流任务",
       "output": "CreateLivePullStreamTaskResponse"
@@ -2581,6 +2581,7 @@
         {
           "default": "",
           "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testName",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -2589,6 +2590,7 @@
         {
           "default": "",
           "document": "Cos 应用 ID。",
+          "example": "123",
           "member": "int64",
           "name": "CosAppId",
           "required": true,
@@ -2597,6 +2599,7 @@
         {
           "default": "",
           "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。",
+          "example": "bucket",
           "member": "string",
           "name": "CosBucket",
           "required": true,
@@ -2605,6 +2608,7 @@
         {
           "default": "",
           "document": "Cos地区。",
+          "example": "beijing",
           "member": "string",
           "name": "CosRegion",
           "required": true,
@@ -2613,6 +2617,7 @@
         {
           "default": "",
           "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "example": "testDesc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2621,6 +2626,7 @@
         {
           "default": "",
           "document": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。",
+          "example": "10",
           "member": "int64",
           "name": "SnapshotInterval",
           "required": false,
@@ -2629,6 +2635,7 @@
         {
           "default": "",
           "document": "截图宽度。默认：0（原始宽）。",
+          "example": "250",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -2637,6 +2644,7 @@
         {
           "default": "",
           "document": "截图高度。默认：0（原始高）。",
+          "example": "250",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -2645,6 +2653,7 @@
         {
           "default": "",
           "document": "是否开启鉴黄，0：不开启，1：开启。默认：0。",
+          "example": "0",
           "member": "int64",
           "name": "PornFlag",
           "required": false,
@@ -2653,6 +2662,7 @@
         {
           "default": "",
           "document": "Cos Bucket文件夹前缀。\n如不传，实际按默认值\n/{Year}-{Month}-{Day}\n生效",
+          "example": "12",
           "member": "string",
           "name": "CosPrefix",
           "required": false,
@@ -2661,6 +2671,7 @@
         {
           "default": "",
           "document": "Cos 文件名称。\n如不传，实际按默认值\n{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}\n生效",
+          "example": "abc",
           "member": "string",
           "name": "CosFileName",
           "required": false,
@@ -2674,8 +2685,10 @@
       "members": [
         {
           "document": "模板Id。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3335,6 +3348,7 @@
         {
           "default": "",
           "document": "模板 ID。\n1. 在创建回调模板接口 [CreateLiveCallbackTemplate](/document/product/267/32637) 调用的返回值中获取模板 ID。\n2. 可以从接口 [DescribeLiveCallbackTemplates](/document/product/267/32632) 查询已经创建的过的模板列表。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -3536,6 +3550,7 @@
         {
           "default": "",
           "document": "DescribeRecordTemplates接口获取到的模板 ID。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -3604,6 +3619,7 @@
         {
           "default": "",
           "document": "模板 ID。\n1. 在创建截图模板接口 [CreateLiveSnapshotTemplate](/document/product/267/32624) 调用的返回值中获取。\n2. 可以从接口 [DescribeLiveSnapshotTemplates](/document/product/267/32619) 中查询已创建的截图模板列表。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -5261,8 +5277,10 @@
       "members": [
         {
           "document": "规则列表。",
+          "example": "无",
           "member": "RuleInfo",
           "name": "Rules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5318,8 +5336,10 @@
       "members": [
         {
           "document": "截图模板列表。",
+          "example": "无",
           "member": "SnapshotTemplateInfo",
           "name": "Templates",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5997,6 +6017,7 @@
         {
           "default": "",
           "document": "模板 ID。\n注意：在创建转码模板接口 [CreateLiveTranscodeTemplate](/document/product/267/32646) 调用的返回值中获取模板 ID。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -6010,8 +6031,10 @@
       "members": [
         {
           "document": "模板信息。",
+          "example": "无",
           "member": "TemplateInfo",
           "name": "Template",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6119,6 +6142,7 @@
         {
           "default": "",
           "document": "DescribeLiveWatermarks接口返回的水印 ID。",
+          "example": "10001",
           "member": "uint64",
           "name": "WatermarkId",
           "required": true,
@@ -6132,8 +6156,10 @@
       "members": [
         {
           "document": "水印信息。",
+          "example": "无",
           "member": "WatermarkInfo",
           "name": "Watermark",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6156,8 +6182,10 @@
       "members": [
         {
           "document": "水印规则列表。",
+          "example": "无",
           "member": "RuleInfo",
           "name": "Rules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9005,6 +9033,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "1000",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -9013,6 +9042,7 @@
         {
           "default": "",
           "document": "模板名称。\n长度上限：255字节。",
+          "example": "testName",
           "member": "string",
           "name": "TemplateName",
           "required": false,
@@ -9021,6 +9051,7 @@
         {
           "default": "",
           "document": "描述信息。\n长度上限：1024字节。",
+          "example": "testDesc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -9029,6 +9060,7 @@
         {
           "default": "",
           "document": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。",
+          "example": "10",
           "member": "int64",
           "name": "SnapshotInterval",
           "required": false,
@@ -9037,6 +9069,7 @@
         {
           "default": "",
           "document": "截图宽度。默认：0（原始宽）。",
+          "example": "250",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -9045,6 +9078,7 @@
         {
           "default": "",
           "document": "截图高度。默认：0（原始高）。",
+          "example": "250",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -9053,6 +9087,7 @@
         {
           "default": "",
           "document": "是否开启鉴黄，默认 0 。\n0：不开启。\n1：开启。",
+          "example": "0",
           "member": "int64",
           "name": "PornFlag",
           "required": false,
@@ -9061,6 +9096,7 @@
         {
           "default": "",
           "document": "Cos 应用 ID。",
+          "example": "123",
           "member": "int64",
           "name": "CosAppId",
           "required": false,
@@ -9069,6 +9105,7 @@
         {
           "default": "",
           "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。",
+          "example": "bucket",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -9077,6 +9114,7 @@
         {
           "default": "",
           "document": "Cos 地域。",
+          "example": "beijing",
           "member": "string",
           "name": "CosRegion",
           "required": false,
@@ -9085,6 +9123,7 @@
         {
           "default": "",
           "document": "Cos Bucket文件夹前缀。",
+          "example": "12",
           "member": "string",
           "name": "CosPrefix",
           "required": false,
@@ -9093,6 +9132,7 @@
         {
           "default": "",
           "document": "Cos 文件名称。",
+          "example": "12",
           "member": "string",
           "name": "CosFileName",
           "required": false,

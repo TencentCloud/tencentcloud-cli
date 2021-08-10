@@ -8650,6 +8650,7 @@
         {
           "default": "",
           "document": "音频流的码率，单位：bps。",
+          "example": "8000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -8659,6 +8660,7 @@
         {
           "default": "",
           "document": "音频流的采样率，单位：hz。",
+          "example": "8000",
           "member": "int64",
           "name": "SamplingRate",
           "required": true,
@@ -8668,11 +8670,22 @@
         {
           "default": "",
           "document": "音频流的编码格式，例如 aac。",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频声道数，例如 2。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9904,6 +9917,7 @@
         {
           "default": "",
           "document": "视频流的码率，单位：bps。",
+          "example": "100000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
@@ -9913,6 +9927,7 @@
         {
           "default": "",
           "document": "视频流的高度，单位：px。",
+          "example": "1920",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -9922,6 +9937,7 @@
         {
           "default": "",
           "document": "视频流的宽度，单位：px。",
+          "example": "1080",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -9931,6 +9947,7 @@
         {
           "default": "",
           "document": "视频流的编码格式，例如 h264。",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -9940,11 +9957,42 @@
         {
           "default": "",
           "document": "帧率，单位：hz。",
+          "example": "30",
           "member": "int64",
           "name": "Fps",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bt470bg",
+          "member": "string",
+          "name": "ColorPrimaries",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gbr",
+          "member": "string",
+          "name": "ColorSpace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "色彩空间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bt709",
+          "member": "string",
+          "name": "ColorTransfer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
