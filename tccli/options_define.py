@@ -2,9 +2,9 @@
 SecretId = "secretId"
 SecretKey = "secretKey"
 Token = "token"
-RoleArn = "role_arn"
-RoleSessionName = "role_session_name"
-UseCVMRole = "use_cvm_role"
+RoleArn = "role-arn"
+RoleSessionName = "role-session-name"
+UseCVMRole = "use-cvm-role"
 Region = "region"
 Endpoint = "endpoint"
 Version = "version"
@@ -15,7 +15,7 @@ Timeout = "timeout"
 Output = "output"
 ArrayCount = "arrayCount"
 Warnings = "warning"
-HttpsProxy = "https_proxy"
+HttpsProxy = "https-proxy"
 GenerateCliSkeleton = "generate-cli-skeleton"
 CliInputJson = "cli-input-json"
 CliUnfoldArgument = "cli-unfold-argument"
@@ -32,8 +32,8 @@ CliVersion = "version"
 Detail = "detail"
 
 
-ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, Region, Endpoint, Version, Filter, Profile, Timeout,
-                     Output, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument]
+ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, RoleArn, RoleSessionName, UseCVMRole, Region, Endpoint, Version,
+                     Filter, Profile, Timeout, Output, HttpsProxy, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument]
 
 
 
