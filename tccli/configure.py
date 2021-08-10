@@ -25,7 +25,8 @@ class BasicConfigure(BasicCommand):
         super(BasicConfigure, self).__init__()
         self.config_list = [
             OptionsDefine.Region, OptionsDefine.Output, OptionsDefine.ArrayCount, OptionsDefine.Warnings]
-        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token]
+        self.cred_list = [OptionsDefine.SecretId, OptionsDefine.SecretKey, OptionsDefine.Token,
+                          OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]
         self.conf_service_list = [OptionsDefine.Version, OptionsDefine.Endpoint]
         self.cli_path = os.path.join(os.path.expanduser("~"), ".tccli")
         self._cli_data = Loader()
@@ -338,10 +339,14 @@ class ConfigureCommand(BasicConfigure):
             if index in config:
                 response = self._compat_input("%s[%s]: " % (prompt_text, config[index]))
                 if index == OptionsDefine.Output and response not in ['json', 'text', 'table']:
-                    print('Output format must be json, text or table. Set as default: %s' % config[index])
-                    conf_data[index] = config[index]
+                    if config[index] not in ['json', 'text', 'table']:
+                        print('Output format must be json, text or table. Set as default: json')
+                        conf_data[index] = 'json'
+                    else:
+                        conf_data[index] = config[index]
                 elif index == OptionsDefine.Region and not response:
-                    print('Set region as default: %s' % config[index])
+                    if not config[index]:
+                        print('Set region as default: %s' % config[index])
                     conf_data[index] = config[index]
                 else:
                     conf_data[index] = response if response else config[index]
