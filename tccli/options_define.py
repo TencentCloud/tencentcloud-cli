@@ -35,7 +35,7 @@ Detail = "detail"
 
 
 ACTION_GLOBAL_OPT = [SecretId, SecretKey, RoleArn, RoleSessionName, UseCVMRole, Token, Region, Endpoint, Version,
-                     Waiter, Filter, Profile, Timeout, Output, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument]
+                     Filter, Profile, Timeout, Output, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument, Waiter]
 
 
 
