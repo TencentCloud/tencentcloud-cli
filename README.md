@@ -242,6 +242,15 @@ tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Instan
 
 - timeout: 轮询的超时时间(s)
 - inaterval: 进程睡眠的时间(s)
+
+您可以在配置文件中设置可选子参数的值，例如
+```
+# 在default.configure文件中，您可以添加如下参数，设置系统超时时间为180诗，睡眠时间为5s
+    "waiter": {
+        "interval": 5,
+        "timeout": 180
+      },
+```
 ## 输出入参骨架到json文件
 ```bash
 [root@VM_180_248_centos ~]# tccli cvm RunInstances  --generate-cli-skeleton > /tmp/RunInstances.json
