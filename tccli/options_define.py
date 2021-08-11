@@ -19,6 +19,8 @@ HttpsProxy = "https-proxy"
 GenerateCliSkeleton = "generate-cli-skeleton"
 CliInputJson = "cli-input-json"
 CliUnfoldArgument = "cli-unfold-argument"
+Waiter = "waiter"
+WaiterInfo = "waiter_info"
 
 ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
 ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
