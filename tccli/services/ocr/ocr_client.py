@@ -16,12 +16,12 @@ from tencentcloud.ocr.v20181119 import models as models_v20181119
 def doInsuranceBillOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -52,12 +52,12 @@ def doInsuranceBillOCR(args, parsed_globals):
 def doVerifyBasicBizLicense(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -88,12 +88,12 @@ def doVerifyBasicBizLicense(args, parsed_globals):
 def doQueryBarCode(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -124,12 +124,12 @@ def doQueryBarCode(args, parsed_globals):
 def doEnterpriseLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -160,12 +160,12 @@ def doEnterpriseLicenseOCR(args, parsed_globals):
 def doBusinessCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -196,12 +196,12 @@ def doBusinessCardOCR(args, parsed_globals):
 def doIDCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -232,12 +232,12 @@ def doIDCardOCR(args, parsed_globals):
 def doPassportOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -268,12 +268,12 @@ def doPassportOCR(args, parsed_globals):
 def doLicensePlateOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -304,12 +304,12 @@ def doLicensePlateOCR(args, parsed_globals):
 def doMLIDCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -340,12 +340,12 @@ def doMLIDCardOCR(args, parsed_globals):
 def doQrcodeOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -376,12 +376,12 @@ def doQrcodeOCR(args, parsed_globals):
 def doGeneralAccurateOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -412,12 +412,12 @@ def doGeneralAccurateOCR(args, parsed_globals):
 def doMixedInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -448,12 +448,12 @@ def doMixedInvoiceOCR(args, parsed_globals):
 def doMixedInvoiceDetect(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -484,12 +484,12 @@ def doMixedInvoiceDetect(args, parsed_globals):
 def doVinOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -520,12 +520,12 @@ def doVinOCR(args, parsed_globals):
 def doMLIDPassportOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -556,12 +556,12 @@ def doMLIDPassportOCR(args, parsed_globals):
 def doVatRollInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -592,12 +592,12 @@ def doVatRollInvoiceOCR(args, parsed_globals):
 def doQuotaInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -628,12 +628,12 @@ def doQuotaInvoiceOCR(args, parsed_globals):
 def doGeneralFastOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -664,12 +664,12 @@ def doGeneralFastOCR(args, parsed_globals):
 def doResidenceBookletOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -700,12 +700,12 @@ def doResidenceBookletOCR(args, parsed_globals):
 def doPropOwnerCertOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -736,12 +736,12 @@ def doPropOwnerCertOCR(args, parsed_globals):
 def doRecognizeThaiIDCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -772,12 +772,12 @@ def doRecognizeThaiIDCardOCR(args, parsed_globals):
 def doBizLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -808,12 +808,12 @@ def doBizLicenseOCR(args, parsed_globals):
 def doGeneralHandwritingOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -844,12 +844,12 @@ def doGeneralHandwritingOCR(args, parsed_globals):
 def doAdvertiseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -880,12 +880,12 @@ def doAdvertiseOCR(args, parsed_globals):
 def doInvoiceGeneralOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -916,12 +916,12 @@ def doInvoiceGeneralOCR(args, parsed_globals):
 def doHKIDCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -952,12 +952,12 @@ def doHKIDCardOCR(args, parsed_globals):
 def doVatInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -988,12 +988,12 @@ def doVatInvoiceOCR(args, parsed_globals):
 def doWaybillOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1024,12 +1024,12 @@ def doWaybillOCR(args, parsed_globals):
 def doFlightInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1060,12 +1060,12 @@ def doFlightInvoiceOCR(args, parsed_globals):
 def doPermitOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1096,12 +1096,12 @@ def doPermitOCR(args, parsed_globals):
 def doRecognizeTableOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1132,12 +1132,12 @@ def doRecognizeTableOCR(args, parsed_globals):
 def doTextDetect(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1168,12 +1168,12 @@ def doTextDetect(args, parsed_globals):
 def doBusInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1204,12 +1204,12 @@ def doBusInvoiceOCR(args, parsed_globals):
 def doTableOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1240,12 +1240,12 @@ def doTableOCR(args, parsed_globals):
 def doEnglishOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1276,12 +1276,12 @@ def doEnglishOCR(args, parsed_globals):
 def doHmtResidentPermitOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1312,12 +1312,12 @@ def doHmtResidentPermitOCR(args, parsed_globals):
 def doArithmeticOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1348,12 +1348,12 @@ def doArithmeticOCR(args, parsed_globals):
 def doTollInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1384,12 +1384,12 @@ def doTollInvoiceOCR(args, parsed_globals):
 def doEstateCertOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1420,12 +1420,12 @@ def doEstateCertOCR(args, parsed_globals):
 def doClassifyDetectOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1456,12 +1456,12 @@ def doClassifyDetectOCR(args, parsed_globals):
 def doSealOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1492,12 +1492,12 @@ def doSealOCR(args, parsed_globals):
 def doFinanBillOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1528,12 +1528,12 @@ def doFinanBillOCR(args, parsed_globals):
 def doTrainTicketOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1564,12 +1564,12 @@ def doTrainTicketOCR(args, parsed_globals):
 def doBankSlipOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1600,12 +1600,12 @@ def doBankSlipOCR(args, parsed_globals):
 def doGeneralEfficientOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1636,12 +1636,12 @@ def doGeneralEfficientOCR(args, parsed_globals):
 def doTaxiInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1672,12 +1672,12 @@ def doTaxiInvoiceOCR(args, parsed_globals):
 def doVerifyBizLicense(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1708,12 +1708,12 @@ def doVerifyBizLicense(args, parsed_globals):
 def doInstitutionOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1744,12 +1744,12 @@ def doInstitutionOCR(args, parsed_globals):
 def doRideHailingDriverLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1780,12 +1780,12 @@ def doRideHailingDriverLicenseOCR(args, parsed_globals):
 def doVehicleRegCertOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1816,12 +1816,12 @@ def doVehicleRegCertOCR(args, parsed_globals):
 def doBankCardOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1852,12 +1852,12 @@ def doBankCardOCR(args, parsed_globals):
 def doCarInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1888,12 +1888,12 @@ def doCarInvoiceOCR(args, parsed_globals):
 def doDutyPaidProofOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1924,12 +1924,12 @@ def doDutyPaidProofOCR(args, parsed_globals):
 def doMainlandPermitOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1960,12 +1960,12 @@ def doMainlandPermitOCR(args, parsed_globals):
 def doFinanBillSliceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1996,12 +1996,12 @@ def doFinanBillSliceOCR(args, parsed_globals):
 def doFormulaOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2032,12 +2032,12 @@ def doFormulaOCR(args, parsed_globals):
 def doVatInvoiceVerify(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2068,12 +2068,12 @@ def doVatInvoiceVerify(args, parsed_globals):
 def doShipInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2104,12 +2104,12 @@ def doShipInvoiceOCR(args, parsed_globals):
 def doVerifyOfdVatInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2140,12 +2140,12 @@ def doVerifyOfdVatInvoiceOCR(args, parsed_globals):
 def doGeneralBasicOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2176,12 +2176,12 @@ def doGeneralBasicOCR(args, parsed_globals):
 def doVerifyEnterpriseFourFactors(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2212,12 +2212,12 @@ def doVerifyEnterpriseFourFactors(args, parsed_globals):
 def doDriverLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2248,12 +2248,12 @@ def doDriverLicenseOCR(args, parsed_globals):
 def doEduPaperOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2284,12 +2284,12 @@ def doEduPaperOCR(args, parsed_globals):
 def doRideHailingTransportLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2320,12 +2320,12 @@ def doRideHailingTransportLicenseOCR(args, parsed_globals):
 def doOrgCodeCertOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2356,12 +2356,12 @@ def doOrgCodeCertOCR(args, parsed_globals):
 def doVehicleLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -2525,16 +2525,16 @@ def parse_global_arg(parsed_globals):
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId, OptionsDefine.Token]:
                 if param in cred:
                     g_param[param] = cred[param]
-                elif not g_param[OptionsDefine.UseCVMRole]:
+                elif not g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
                     raise ConfigurationError("%s is invalid" % param)
             elif param in [OptionsDefine.Region, OptionsDefine.Output]:
                 if param in conf:
                     g_param[param] = conf[param]
                 else:
                     raise ConfigurationError("%s is invalid" % param)
-            elif param in [OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]:
-                if param in cred:
-                    g_param[param] = cred[param]
+            elif param.replace('_', '-') in [OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]:
+                if param.replace('_', '-') in cred:
+                    g_param[param] = cred[param.replace('_', '-')]
 
     try:
         if g_param[OptionsDefine.ServiceVersion]:

@@ -16,12 +16,12 @@ from tencentcloud.batch.v20170312 import models as models_v20170312
 def doDescribeCvmZoneInstanceConfigInfos(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -52,12 +52,12 @@ def doDescribeCvmZoneInstanceConfigInfos(args, parsed_globals):
 def doCreateTaskTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -88,12 +88,12 @@ def doCreateTaskTemplate(args, parsed_globals):
 def doDescribeJobSubmitInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -124,12 +124,12 @@ def doDescribeJobSubmitInfo(args, parsed_globals):
 def doTerminateComputeNode(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -160,12 +160,12 @@ def doTerminateComputeNode(args, parsed_globals):
 def doDeleteJob(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -196,12 +196,12 @@ def doDeleteJob(args, parsed_globals):
 def doDescribeAvailableCvmInstanceTypes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -232,12 +232,12 @@ def doDescribeAvailableCvmInstanceTypes(args, parsed_globals):
 def doAttachInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -268,12 +268,12 @@ def doAttachInstances(args, parsed_globals):
 def doCreateComputeEnv(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -304,12 +304,12 @@ def doCreateComputeEnv(args, parsed_globals):
 def doDescribeComputeEnvs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -340,12 +340,12 @@ def doDescribeComputeEnvs(args, parsed_globals):
 def doDetachInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -376,12 +376,12 @@ def doDetachInstances(args, parsed_globals):
 def doDescribeTaskLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -412,12 +412,12 @@ def doDescribeTaskLogs(args, parsed_globals):
 def doTerminateJob(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -448,12 +448,12 @@ def doTerminateJob(args, parsed_globals):
 def doDescribeTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -484,12 +484,12 @@ def doDescribeTask(args, parsed_globals):
 def doDescribeComputeEnv(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -520,12 +520,12 @@ def doDescribeComputeEnv(args, parsed_globals):
 def doDescribeJob(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -556,12 +556,12 @@ def doDescribeJob(args, parsed_globals):
 def doDescribeComputeEnvActivities(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -592,12 +592,12 @@ def doDescribeComputeEnvActivities(args, parsed_globals):
 def doTerminateComputeNodes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -628,12 +628,12 @@ def doTerminateComputeNodes(args, parsed_globals):
 def doDescribeTaskTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -664,12 +664,12 @@ def doDescribeTaskTemplates(args, parsed_globals):
 def doDescribeInstanceCategories(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -700,12 +700,12 @@ def doDescribeInstanceCategories(args, parsed_globals):
 def doDeleteTaskTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -736,12 +736,12 @@ def doDeleteTaskTemplates(args, parsed_globals):
 def doTerminateTaskInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -772,12 +772,12 @@ def doTerminateTaskInstance(args, parsed_globals):
 def doModifyComputeEnv(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -808,12 +808,12 @@ def doModifyComputeEnv(args, parsed_globals):
 def doCreateCpmComputeEnv(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -844,12 +844,12 @@ def doCreateCpmComputeEnv(args, parsed_globals):
 def doDescribeComputeEnvCreateInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -880,12 +880,12 @@ def doDescribeComputeEnvCreateInfo(args, parsed_globals):
 def doSubmitJob(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -916,12 +916,12 @@ def doSubmitJob(args, parsed_globals):
 def doDescribeComputeEnvCreateInfos(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -952,12 +952,12 @@ def doDescribeComputeEnvCreateInfos(args, parsed_globals):
 def doDescribeJobs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -988,12 +988,12 @@ def doDescribeJobs(args, parsed_globals):
 def doDescribeCpmOsInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1024,12 +1024,12 @@ def doDescribeCpmOsInfo(args, parsed_globals):
 def doDeleteComputeEnv(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1060,12 +1060,12 @@ def doDeleteComputeEnv(args, parsed_globals):
 def doModifyTaskTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1096,12 +1096,12 @@ def doModifyTaskTemplate(args, parsed_globals):
 def doRetryJobs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
-    if g_param[OptionsDefine.UseCVMRole]:
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
         cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn] and g_param[OptionsDefine.RoleSessionName]:
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
         cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn],
-            g_param[OptionsDefine.RoleSessionName]
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
         )
     else:
         cred = credential.Credential(
@@ -1230,16 +1230,16 @@ def parse_global_arg(parsed_globals):
             if param in [OptionsDefine.SecretKey, OptionsDefine.SecretId, OptionsDefine.Token]:
                 if param in cred:
                     g_param[param] = cred[param]
-                elif not g_param[OptionsDefine.UseCVMRole]:
+                elif not g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
                     raise ConfigurationError("%s is invalid" % param)
             elif param in [OptionsDefine.Region, OptionsDefine.Output]:
                 if param in conf:
                     g_param[param] = conf[param]
                 else:
                     raise ConfigurationError("%s is invalid" % param)
-            elif param in [OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]:
-                if param in cred:
-                    g_param[param] = cred[param]
+            elif param.replace('_', '-') in [OptionsDefine.RoleArn, OptionsDefine.RoleSessionName]:
+                if param.replace('_', '-') in cred:
+                    g_param[param] = cred[param.replace('_', '-')]
 
     try:
         if g_param[OptionsDefine.ServiceVersion]:

@@ -515,7 +515,7 @@
         },
         {
           "default": "",
-          "document": "注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。",
+          "document": "音频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp3`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>",
           "example": "1000000:www.qq.com/a.mp4",
           "member": "string",
           "name": "SourceMedia",
@@ -2851,7 +2851,7 @@
         },
         {
           "default": "",
-          "document": "媒资绑定媒体路径或文件 ID，如果要绑定 URL 类型的媒体，请将 URL 的 <code> 'https://' </code>或者<code> 'http://' </code>去掉。",
+          "document": "媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：\n原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。",
           "example": "www.qq.com/a.mp4",
           "member": "string",
           "name": "MediaKey",
@@ -6410,7 +6410,7 @@
         },
         {
           "default": "",
-          "document": "注：当 SourceType 为 EXTERNAL 时，目前仅支持外部 URL 的媒体直接导入项目中。当外部 URL Scheme 为 https 时，Definiton 为 1000000，MediaKey 为 URL 去掉<code> 'https://' </code>；当外部 URL Scheme 为 http 时，Definiton 为 1000001，MediaKey 为 URL 去掉<code> 'http://'</code>。",
+          "document": "视频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "SourceMedia",

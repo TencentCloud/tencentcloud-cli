@@ -433,8 +433,8 @@
     "QueryDownloadBillURL": [
       {
         "document": "查询对账单下载地址正常的示例",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDownloadBillURL\n<公共请求参数>\n\n{\n    \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n    \"ChannelCode\": \"ZSB2B\",\n    \"BillDate\": \"20211012\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"DownloadUrl\": \"http://yuewangb2b-test-1257849200.cos.ap-guangzhou.myqcloud.com/C000000198-20210723.xls\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDownloadBillURL\n<公共请求参数>\n\n{\n    \"MerchantAppId\": \"1c6f415798301d85fc4589a5435b54\",\n    \"ChannelCode\": \"ZSB2B\",\n    \"BillDate\": \"20211012\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd590936-acd7-440c-9ac5-b698bc0a5af0\",\n        \"MerchantAppId\": \"1c6f41570498301d85fc4589a5435b54\",\n        \"DownloadUrl\": \"http://xx.myqcloud.com/C000000198-20210723.xls\"\n    }\n}",
         "title": "查询对账单下载地址正常示例"
       }
     ],

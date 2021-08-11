@@ -491,7 +491,7 @@
         },
         {
           "default": "",
-          "document": "区分高防IP海外线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区分高防IP境外线路\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ZoneId",
@@ -548,6 +548,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议客户接入的域名，客户可使用域名接入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.8cname.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -557,7 +567,8 @@
       "members": [
         {
           "default": "",
-          "document": "保底防护峰值，单位Gbps",
+          "document": "保底防护峰值，单位Mbps",
+          "example": "2000",
           "member": "uint64",
           "name": "ProtectBandwidth",
           "required": true,
@@ -567,6 +578,7 @@
         {
           "default": "",
           "document": "CC防护峰值，单位qps",
+          "example": "2000",
           "member": "uint64",
           "name": "ProtectCCQPS",
           "required": true,
@@ -576,6 +588,7 @@
         {
           "default": "",
           "document": "正常业务带宽，单位Mbps",
+          "example": "2000",
           "member": "uint64",
           "name": "NormalBandwidth",
           "required": true,
@@ -585,6 +598,7 @@
         {
           "default": "",
           "document": "转发规则数，单位条",
+          "example": "50",
           "member": "uint64",
           "name": "ForwardRulesLimit",
           "required": true,
@@ -594,6 +608,7 @@
         {
           "default": "",
           "document": "自动续费状态，取值[\n0：没有开启自动续费\n1：开启了自动续费\n]",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": true,
@@ -603,6 +618,7 @@
         {
           "default": "",
           "document": "高防IP线路，取值为[\n1：BGP线路\n2：电信\n3：联通\n4：移动\n99：第三方合作线路\n]",
+          "example": "1",
           "member": "uint64",
           "name": "Line",
           "required": true,
@@ -611,7 +627,8 @@
         },
         {
           "default": "",
-          "document": "弹性防护峰值，单位Gbps",
+          "document": "弹性防护峰值，单位Mbps",
+          "example": "1000",
           "member": "uint64",
           "name": "ElasticBandwidth",
           "required": true,

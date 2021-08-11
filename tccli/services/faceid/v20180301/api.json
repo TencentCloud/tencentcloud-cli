@@ -36,6 +36,12 @@
       "name": "身份证人像照片验真",
       "output": "CheckIdCardInformationResponse"
     },
+    "CheckIdNameDate": {
+      "document": "本接口用于校验姓名、身份证号、身份证有效期的真实性和一致性。",
+      "input": "CheckIdNameDateRequest",
+      "name": "身份信息及有效期核验",
+      "output": "CheckIdNameDateResponse"
+    },
     "CheckPhoneAndName": {
       "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。\n",
       "input": "CheckPhoneAndNameRequest",
@@ -685,6 +691,87 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdNameDateRequest": {
+      "document": "CheckIdNameDate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "620xxxxxxxxxxx0321",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证有效期开始时间，格式：YYYYMMDD。如：20210701",
+          "example": "20160607",
+          "member": "string",
+          "name": "ValidityBegin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证有效期到期时间，格式：YYYYMMDD，长期用“00000000”代替；如：20210701",
+          "example": "20250607",
+          "member": "string",
+          "name": "ValidityEnd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdNameDateResponse": {
+      "document": "CheckIdNameDate返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 一致\n-1: 不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 非法有效期（长度、格式等不正确）\n-5: 身份信息无效\n-6: 证件库服务异常\n-7: 证件库中无此身份证记录",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "核验一致",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -66,6 +66,14 @@
         "title": "使用身份证照片Base64进行验证"
       }
     ],
+    "CheckIdNameDate": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdNameDate\n&Name=xxxxxxxxxx\n&IdCard=xxxx\n&ValidityBegin=20160204\n&ValidityEnd=20260204\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"查询成功\",\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\n    }\n}",
+        "title": "参考示例"
+      }
+    ],
     "CheckPhoneAndName": [
       {
         "document": "",

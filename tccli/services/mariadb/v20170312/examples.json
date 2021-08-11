@@ -390,6 +390,14 @@
         "title": "修改备份日志保存天数"
       }
     ],
+    "ModifyRealServerAccessStrategy": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyRealServerAccessStrategy\n&InstanceId=tdsql-f35wr6wj\n&RsAccessStrategy=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
     "OpenDBExtranetAccess": [
       {
         "document": "",

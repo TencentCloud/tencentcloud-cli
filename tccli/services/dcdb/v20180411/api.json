@@ -264,6 +264,12 @@
       "name": "修改同步模式",
       "output": "ModifyDBSyncModeResponse"
     },
+    "ModifyRealServerAccessStrategy": {
+      "document": "本接口(ModifyRealServerAccessStrategy)用于修改云数据库的VPCGW到RS的访问策略。\n\n**注意**\n- 修改策略后只对新建立的连接生效，老连接不受影响\n- 就近访问只针对实例是跨可用区部署有用，单可用区部署实例就近与否并无作用\n- DB每个Node对应一个proxy，如果开启就近访问，将会把连接集中到对应可用区的proxy上，可能造成热点问题，这种情况下如果是线上业务，请务必根据自己的业务请求量测试符合预期后再进行就近策略变更",
+      "input": "ModifyRealServerAccessStrategyRequest",
+      "name": "修改RS的访问策略",
+      "output": "ModifyRealServerAccessStrategyResponse"
+    },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。",
       "input": "OpenDBExtranetAccessRequest",
@@ -4363,6 +4369,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRealServerAccessStrategyRequest": {
+      "document": "ModifyRealServerAccessStrategy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RS就近模式, 0-无策略, 1-可用区就近访问。",
+          "example": "无",
+          "member": "int64",
+          "name": "RsAccessStrategy",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRealServerAccessStrategyResponse": {
+      "document": "ModifyRealServerAccessStrategy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
