@@ -135,7 +135,7 @@ class Loader(object):
             'waiter': {
                 'help': 'Set param `expr`, `to`, `timeout` and `interval` to get the polling result.'
                         '`expr` is the inquiry expresion, `to` is the ending status.'
-                        '`timeout` and `interval` are unnecessary params.',
+                        '`timeout` and `interval` are optional params.',
             }
 
         }
@@ -254,7 +254,7 @@ class Loader(object):
             "--warning": "Open the warning log",
             "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
                         "`expr` is the inquiry expresion, `to` is the ending status"
-                        ".`timeout` and `interval` are unnecessary params.",
+                        ".`timeout` and `interval` are optional params.",
         }
 
     def _filling_param_info(self, param_info, para, param_type, member):

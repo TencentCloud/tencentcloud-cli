@@ -228,9 +228,9 @@ ins-6xe51ktg    未命名  elastic-search
 ## 结果轮询
 可以使用'--waiter'参数来轮询实例的信息直到出现指定的状态
 ```
-# 执行如下命令，程序会以一定的时间间隔对结果请求的结果进行轮询
-tccli cvm DescribeRegions --waiter "{'expr':'RegionSet[0].Region','to':'ap-bangkok'}"
-# 例如执行如下命令，程序将以5秒的时间间隔对实例的状态进行轮询，直到实例的状态为'RUNNING'或者超时为止，超时的时间为180秒。
+# 例如执行如下命令，程序将一定的时间间隔对实例的状态进行轮询，直到实例的状态为'RUNNING'或者超时为止，`--region`的值需改为您的实例所在的地域
+tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'InstanceStatusSet[0].InstanceState','to':'RUNNING'}"
+# 您可以自己指定超时的时间和睡眠的时间，如下面的例子，设定的超时时间为180秒，睡眠的时间为5秒。
 tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'InstanceStatusSet[0].InstanceState','to':'RUNNING','timeout':180,'interval':5}"
 ```
 使用'--waiter'参数时，必须指定一以下两个参数：
