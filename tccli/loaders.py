@@ -26,6 +26,34 @@ PARAM_TYPE_MAP = {
     'list': 'Array'
 }
 
+HELPER_MAP = {
+    "--profile": "specify a profile name",
+    "--secretId": "specify a SecretId",
+    "--secretKey": "specify a SecretKey",
+    "--token": "temporary certificate token",
+    "--role-arn": "specify a RoleArn",
+    "--role-session-name": "specify a RoleSessionName",
+    "--use-cvm-role": "use CVM Role to obtain the secret id and secret key",
+    "--region": "identify the region to which the instance you want to work with belongs.",
+    "--endpoint": "specify an access point domain name",
+    "--detail": "see detailed help information",
+    "--filter": "specify a filter field",
+    "--timeout": "specify a request timeout",
+    "--generate-cli-skeleton": "Prints a JSON skeleton to standard output without sending "
+                               "an API request. If provided with no value or the value "
+                               "input, prints a sample input JSON that can be used as an "
+                               "argument for --cli-input-json. If provided with the value "
+                               "output, it validates the command inputs and returns a "
+                               "sample output JSON for that command.",
+    "--cli-input-json": "Reads arguments from the JSON string provided. The JSON string "
+                        "follows the format provided by --generate-cli-skeleton. ",
+    "--cli-unfold-argument": "complex type parameters are expanded with dots",
+    "--https-proxy": "specify a https proxy",
+    "--warning": "Open the warning log",
+    "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
+                "`expr` is the inquiry expresion, `to` is the ending status"
+                ".`timeout` and `interval` are optional params.",
+}
 
 class Loader(object):
     def get_services_path(self):
@@ -55,7 +83,7 @@ class Loader(object):
     def get_cli_option(self):
         return {
             "filter": {
-                "help": "specify a filter field"
+                "help": HELPER_MAP['--filter'],
             },
             "output": {
                 "choices": [
@@ -66,22 +94,22 @@ class Loader(object):
                 "metavar": "output_format"
             },
             "secretId": {
-                "help": "specify a SecretId",
+                "help": HELPER_MAP['--secretId'],
             },
             "secretKey": {
-                "help": "specify a SecretKey",
+                "help": HELPER_MAP['--secretKey'],
             },
             "token": {
-                "help": "temporary certificate token",
+                "help": HELPER_MAP['--token'],
             },
             "role-arn": {
-                "help": "specify a RoleArn",
+                "help": HELPER_MAP['--role-arn'],
             },
             "role-session-name": {
-                "help": "specify a RoleSessionName",
+                "help": HELPER_MAP['--role-session-name'],
             },
             "use-cvm-role": {
-                "help": "use CVM Role to obtain the secret id and secret key",
+                "help": HELPER_MAP['--use-cvm-role'],
                 'action': 'store_true'
             },
             "version": {
@@ -89,53 +117,47 @@ class Loader(object):
                 "metavar": "version_name"
             },
             "detail": {
-                "help": "see detailed help information",
+                "help": HELPER_MAP['--detail'],
                 'action': 'store_true'
             },
             "profile": {
-                "help": "specify a profile name",
+                "help": HELPER_MAP['--profile'],
                 "metavar": "profile_name"
             },
             "region": {
-                "help": "identify the region to which the instance you want to work with belongs.",
+                "help": HELPER_MAP['--region'],
                 "metavar": "region_name"
             },
             "endpoint": {
-                "help": "specify an access point domain name",
+                "help": HELPER_MAP['--endpoint'],
                 "metavar": "endpoint_url"
             },
             "timeout": {
                 "type": "int",
-                "help": "specify a request timeout"
+                "help": HELPER_MAP['--timeout'],
             },
             "generate-cli-skeleton": {
-                'help': 'Prints a JSON skeleton to standard output without sending '
-                        'an API request. If provided with no value or the value '
-                        '``input``, prints a sample input JSON that can be used as an '
-                        'argument for ``--cli-input-json``.',
+                'help': HELPER_MAP['--generate-cli-skeleton'],
                 'nargs': '?',
                 'const': 'input',
                 'choices': ['input'],
             },
             'cli-input-json': {
-                'help': 'Reads arguments from the JSON string provided. The JSON string '
-                        'follows the format provided by ``--generate-cli-skeleton``. '
+                'help': HELPER_MAP['--cli-input-json'],
             },
             'cli-unfold-argument': {
-                'help': 'complex type parameters are expanded with dots',
+                'help': HELPER_MAP['--cli-unfold-argument'],
                 'action': 'store_true'
             },
             'https-proxy': {
-                'help': 'specify a https proxy',
+                'help': HELPER_MAP['--https-proxy'],
             },
             'warning': {
-                'help': 'Open the warning log',
+                'help': HELPER_MAP['--warning'],
                 'action': 'store_true'
             },
             'waiter': {
-                'help': 'Set param `expr`, `to`, `timeout` and `interval` to get the polling result.'
-                        '`expr` is the inquiry expresion, `to` is the ending status.'
-                        '`timeout` and `interval` are optional params.',
+                'help': HELPER_MAP['--waiter'],
             }
 
         }
@@ -226,36 +248,9 @@ class Loader(object):
         return "tccli %s %s [--param...]" % (service, action)
 
     def get_action_options(self, service, action):
-        return {
-            "help": "show the tccli %s %s help info" % (service, action),
-            "--profile": "specify a profile name",
-            "--secretId": "specify a SecretId",
-            "--secretKey": "specify a SecretKey",
-            "--token": "temporary certificate token",
-            "--role-arn": "specify a RoleArn",
-            "--role-session-name": "specify a RoleSessionName",
-            "--use-cvm-role": "use CVM Role to obtain the secret id and secret key",
-            "--region": "identify the region to which the instance you want to work with belongs.",
-            "--endpoint": "specify an access point domain name",
-            "--version": "specify a %s api version" % action,
-            "--detail": "see detailed help information",
-            "--filter": "specify a filter field",
-            "--timeout": "specify a request timeout",
-            "--generate-cli-skeleton": "Prints a JSON skeleton to standard output without sending "
-                                       "an API request. If provided with no value or the value "
-                                       "input, prints a sample input JSON that can be used as an "
-                                       "argument for --cli-input-json. If provided with the value "
-                                       "output, it validates the command inputs and returns a "
-                                       "sample output JSON for that command.",
-            "--cli-input-json": "Reads arguments from the JSON string provided. The JSON string "
-                                "follows the format provided by --generate-cli-skeleton. ",
-            "--cli-unfold-argument": "complex type parameters are expanded with dots",
-            "--https-proxy": "specify a https proxy",
-            "--warning": "Open the warning log",
-            "--waiter": "Set param `expr`, `to`, `timeout` and `interval` to get the polling result."
-                        "`expr` is the inquiry expresion, `to` is the ending status"
-                        ".`timeout` and `interval` are optional params.",
-        }
+        HELPER_MAP["help"] = "show the tccli %s %s help info" % (service, action)
+        HELPER_MAP["--version"] = "specify a %s api version" % action
+        return HELPER_MAP
 
     def _filling_param_info(self, param_info, para, param_type, member):
         param_info[para["name"]] = {}
