@@ -132,11 +132,29 @@
       "name": "获取基础防护攻击状态",
       "output": "DescribeBasicDeviceStatusResponse"
     },
+    "DescribeBizTrend": {
+      "document": "获取业务流量曲线",
+      "input": "DescribeBizTrendRequest",
+      "name": "获取业务流量曲线",
+      "output": "DescribeBizTrendResponse"
+    },
     "DescribeBlackWhiteIpList": {
       "document": "获取DDoS防护的IP黑白名单",
       "input": "DescribeBlackWhiteIpListRequest",
       "name": "获取DDoS防护的IP黑白名单",
       "output": "DescribeBlackWhiteIpListResponse"
+    },
+    "DescribeCCTrend": {
+      "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)",
+      "input": "DescribeCCTrendRequest",
+      "name": "获取CC攻击指标数据",
+      "output": "DescribeCCTrendResponse"
+    },
+    "DescribeDDoSTrend": {
+      "document": "获取DDoS攻击流量带宽和攻击包速率数据",
+      "input": "DescribeDDoSTrendRequest",
+      "name": "获取DDoS攻击指标数据",
+      "output": "DescribeDDoSTrendResponse"
     },
     "DescribeDefaultAlarmThreshold": {
       "document": "获取单IP默认告警阈值配置",
@@ -1958,6 +1976,123 @@
       ],
       "type": "object"
     },
+    "DescribeBizTrendRequest": {
+      "document": "DescribeBizTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
+          "example": "xx",
+          "member": "string",
+          "name": "Statistics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "xx",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计周期，可取值300，1800，3600，21600，86400，单位秒",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
+          "example": "xx",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计纬度为qps时，可选特定域名查询",
+          "example": "xx",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
+          "example": "无",
+          "member": "ProtocolPort",
+          "name": "ProtoInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizTrendResponse": {
+      "document": "DescribeBizTrend返回参数结构体",
+      "members": [
+        {
+          "document": "曲线图各个时间点的值",
+          "example": "无",
+          "member": "float",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计纬度",
+          "example": "intraffic",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlackWhiteIpListRequest": {
       "document": "DescribeBlackWhiteIpList请求参数结构体",
       "members": [
@@ -1992,6 +2127,339 @@
           "name": "WhiteIpList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCTrendRequest": {
+      "document": "DescribeCCTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "example": "inqps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，可选",
+          "example": "www.xx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCTrendResponse": {
+      "document": "DescribeCCTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计开始时间",
+          "example": "2018-08-27 15:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计结束时间",
+          "example": "2018-08-27 16:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "example": "inqps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSTrendRequest": {
+      "document": "DescribeDDoSTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
+          "example": "bps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSTrendResponse": {
+      "document": "DescribeDDoSTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计开始时间",
+          "example": "2018-08-27 15:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计结束时间",
+          "example": "2018-08-27 16:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组，攻击流量带宽单位为Mbps，包速率单位为pps",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
+          "example": "bps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4479,6 +4947,32 @@
         }
       ],
       "usage": "out"
+    },
+    "ProtocolPort": {
+      "document": "Protocol、Port参数",
+      "members": [
+        {
+          "default": "",
+          "document": "协议（tcp；udp）",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "无",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ProxyTypeInfo": {
       "document": "转发类型",

@@ -72,6 +72,12 @@
       "name": "获取安全事件列表",
       "output": "DescribeSafetyEventListResponse"
     },
+    "DescribeSocCspmCompliance": {
+      "document": "合规详情项",
+      "input": "DescribeSocCspmComplianceRequest",
+      "name": "合规详情",
+      "output": "DescribeSocCspmComplianceResponse"
+    },
     "DescribeVulDetail": {
       "document": "漏洞列表页，获取漏洞详情信息",
       "input": "DescribeVulDetailRequest",
@@ -2717,6 +2723,32 @@
       ],
       "type": "object"
     },
+    "DescribeSocCspmComplianceRequest": {
+      "document": "DescribeSocCspmCompliance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSocCspmComplianceResponse": {
+      "document": "DescribeSocCspmCompliance返回参数结构体",
+      "members": [
+        {
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SocComplianceInfoResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVulDetailRequest": {
       "document": "DescribeVulDetail请求参数结构体",
       "members": [
@@ -3258,6 +3290,190 @@
         }
       ],
       "type": "object"
+    },
+    "SocCheckItem": {
+      "document": "SocCheckItem类型",
+      "members": [
+        {
+          "default": "",
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ads\"",
+          "member": "string",
+          "name": "LevelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成功数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FailCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SocComplianceInfoResp": {
+      "document": "返回结构",
+      "members": [
+        {
+          "default": "",
+          "document": "合格项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "SocComplianceItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SocComplianceItem": {
+      "document": "soc合规信息",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Item",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "StandardItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "ProStr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SocProductionItem",
+          "name": "Production",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SocCheckItem",
+          "name": "CheckItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SocProductionItem": {
+      "document": "soc产品购买信息",
+      "members": [
+        {
+          "default": "",
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "标签",

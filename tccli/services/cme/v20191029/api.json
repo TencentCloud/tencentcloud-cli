@@ -4153,16 +4153,62 @@
       ],
       "usage": "out"
     },
+    "MediaPreprocessOperation": {
+      "document": "媒体处理视频合成任务的预处理操作。",
+      "members": [
+        {
+          "default": "",
+          "document": "预处理操作的类型，取值范围：\n<li>ImageTextMask：图片文字遮罩。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预处理操作参数。\n当 Type 取值 ImageTextMask 时，参数为要保留的文字。",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MediaReplacementInfo": {
       "document": "媒体替换信息。",
       "members": [
         {
           "default": "",
-          "document": "素材 ID。",
+          "document": "替换的媒体类型，取值有：\n<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>\n<li>ImageUrl：替换的媒体类型为图片 URL；</li>\n\n注：默认为 CMEMaterialId 。",
+          "example": "无",
+          "member": "string",
+          "name": "MediaType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 ID。\n当媒体类型取值为 CMEMaterialId 时有效。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 URL。\n当媒体类型取值为 ImageUrl 时有效，\n图片仅支持 jpg、png 格式，且大小不超过 2M 。",
+          "example": "无",
+          "member": "string",
+          "name": "MediaUrl",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4174,6 +4220,16 @@
           "name": "StartTimeOffset",
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预处理操作。\n注：目前该功能暂不支持，请勿使用。",
+          "example": "无",
+          "member": "MediaPreprocessOperation",
+          "name": "PreprocessOperation",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

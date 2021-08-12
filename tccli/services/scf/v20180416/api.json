@@ -2935,7 +2935,7 @@
         },
         {
           "default": "",
-          "document": "触发函数的版本号或别名",
+          "document": "触发函数的版本号或别名，默认值为$DEFAULT",
           "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",

@@ -16,6 +16,8 @@ Output:
 ```
 {
     "Response": {
+        "Cn2BandwidthPrice": 0.0,
+        "Cn2BandwidthPriceWithDiscount": 0.0,
         "ProxyDailyPrice": 80.64,
         "FlowUnitPrice": 0.0,
         "Currency": "xx",

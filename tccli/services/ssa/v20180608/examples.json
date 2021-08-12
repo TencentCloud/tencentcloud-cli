@@ -96,6 +96,14 @@
         "title": "获取安全事件列表"
       }
     ],
+    "DescribeSocCspmCompliance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSocCspmCompliance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"asd-asdf-asdf-asdf-asdsfdsdsdsdsd\"\n    }\n}",
+        "title": "demo1"
+      }
+    ],
     "DescribeVulDetail": [
       {
         "document": "",

@@ -132,6 +132,12 @@
       "name": "获取用户组中的用户列表",
       "output": "ListUsersInUserGroupResponse"
     },
+    "ModifyApplication": {
+      "document": "更新一个应用的信息",
+      "input": "ModifyApplicationRequest",
+      "name": "更新应用",
+      "output": "ModifyApplicationResponse"
+    },
     "ModifyUserInfo": {
       "document": "通过用户名或用户 id 冻结用户",
       "input": "ModifyUserInfoRequest",
@@ -861,6 +867,42 @@
           "example": "无",
           "member": "string",
           "name": "AuthorizeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用图标图片访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IconUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "安全等级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecureLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AppStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1854,6 +1896,78 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationRequest": {
+      "document": "ModifyApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，是应用的全局唯一标识。",
+          "example": "id",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全级别。",
+          "example": "无",
+          "member": "string",
+          "name": "SecureLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用展示名称，长度限制：32个字符。 默认与应用名字相同。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用状态",
+          "example": "无",
+          "member": "bool",
+          "name": "AppStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "应用图标图片访问地址。",
+          "example": "无",
+          "member": "string",
+          "name": "IconUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述。长度不超过128。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationResponse": {
+      "document": "ModifyApplication返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

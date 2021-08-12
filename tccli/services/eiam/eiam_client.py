@@ -63,6 +63,54 @@ def doDescribeUserGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyApplication(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EiamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyApplicationRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyApplication(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePublicKey(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -495,7 +543,7 @@ def doListUsersInUserGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateUser(args, parsed_globals):
+def doListUserGroupsOfUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -520,11 +568,11 @@ def doCreateUser(args, parsed_globals):
     client = mod.EiamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateUserRequest()
+    model = models.ListUserGroupsOfUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateUser(model)
+        rsp = client.ListUserGroupsOfUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1023,7 +1071,7 @@ def doCreateUserGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListUserGroupsOfUser(args, parsed_globals):
+def doCreateUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1048,11 +1096,11 @@ def doListUserGroupsOfUser(args, parsed_globals):
     client = mod.EiamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListUserGroupsOfUserRequest()
+    model = models.CreateUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ListUserGroupsOfUser(model)
+        rsp = client.CreateUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1227,6 +1275,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeUserGroup": doDescribeUserGroup,
+    "ModifyApplication": doModifyApplication,
     "DescribePublicKey": doDescribePublicKey,
     "ListUsers": doListUsers,
     "ListAuthorizedApplicationsToUserGroup": doListAuthorizedApplicationsToUserGroup,
@@ -1236,7 +1285,7 @@ ACTION_MAP = {
     "ListUserGroups": doListUserGroups,
     "AddUserToUserGroup": doAddUserToUserGroup,
     "ListUsersInUserGroup": doListUsersInUserGroup,
-    "CreateUser": doCreateUser,
+    "ListUserGroupsOfUser": doListUserGroupsOfUser,
     "ListAuthorizedApplicationsToUser": doListAuthorizedApplicationsToUser,
     "DescribeOrgNode": doDescribeOrgNode,
     "DescribeUserInfo": doDescribeUserInfo,
@@ -1247,7 +1296,7 @@ ACTION_MAP = {
     "ListAuthorizedApplicationsToOrgNode": doListAuthorizedApplicationsToOrgNode,
     "DeleteOrgNode": doDeleteOrgNode,
     "CreateUserGroup": doCreateUserGroup,
-    "ListUserGroupsOfUser": doListUserGroupsOfUser,
+    "CreateUser": doCreateUser,
     "DescribeApplication": doDescribeApplication,
     "ListUsersInOrgNode": doListUsersInOrgNode,
     "UpdateOrgNode": doUpdateOrgNode,

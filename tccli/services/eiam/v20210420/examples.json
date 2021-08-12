@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efe4663a-f71b-498d-a270-0cca0c69f743\",\n        \"ApplicationId\": \"52edd4a7-cd07-4ab1-8f33-8bb537179ba2\",\n        \"DisplayName\": \"测试API网关应用\",\n        \"CreatedDate\": \"2020-05-28T02:09:57.343+00:00\",\n        \"LastModifiedDate\": \"2020-11-26T03:41:21.891+00:00\",\n        \"ApplicationType\": \"API\",\n        \"TokenExpired\": \"4800\",\n        \"ClientId\": \"xxx\",\n        \"ClientSecret\": \"xxx\",\n        \"KeyId\": \"xxx\",\n        \"PublicKey\": \"{\\\"kty\\\":\\\"RSA\\\",\\\"kid\\\":\\\"xxx\\\",\\\"use\\\":\\\"sig\\\",\\\"alg\\\":\\\"RS256\\\",\\\"n\\\":\\\"xxx\\\",\\\"e\\\":\\\"AQAB\\\"}\",\n        \"AuthorizeUrl\": \"https://xxx.com/auth/oauth2/authorize?client_id=xxx&response_type=code&state=xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efe4663a-f71b-498d-a270-0cca0c69f743\",\n        \"ApplicationId\": \"52edd4a7-cd07-4ab1-8f33-8bb537179ba2\",\n        \"DisplayName\": \"测试API网关应用\",\n        \"CreatedDate\": \"2020-05-28T02:09:57.343+00:00\",\n        \"LastModifiedDate\": \"2020-11-26T03:41:21.891+00:00\",\n        \"ApplicationType\": \"API\",\n        \"TokenExpired\": \"4800\",\n        \"ClientId\": \"xxx\",\n        \"ClientSecret\": \"xxx\",\n        \"KeyId\": \"xxx\",\n        \"PublicKey\": \"{\\\"kty\\\":\\\"RSA\\\",\\\"kid\\\":\\\"xxx\\\",\\\"use\\\":\\\"sig\\\",\\\"alg\\\":\\\"RS256\\\",\\\"n\\\":\\\"xxx\\\",\\\"e\\\":\\\"AQAB\\\"}\",\n        \"AuthorizeUrl\": \"https://xxx.com/auth/oauth2/authorize?client_id=xxx&response_type=code&state=xxx\",\n        \"IconUrl\": \"https://online-xxxxxxx.cos.ap-shenzhen-fsi.myqcloud.com/xxxxxxxx/...\",\n        \"SecureLevel\": \"1\",\n        \"AppStatus\": true,\n        \"Description\": \"xxxxxxxxxxxxx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -174,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsersInUserGroup\n<公共请求参数>\n\n{\n    \"UserGroupId\": \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalNum\": 3,\n        \"RequestId\": \"cbceae17-3098-4ac1-813f-8db40ee01e05\",\n        \"UserGroupId\": \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\",\n        \"UserInfo\": [\n            {\n                \"UserId\": \"5c1ab60e-4844-4d92-8708-82257657d916\",\n                \"DisplayName\": \"接口创建用户\"\n            },\n            {\n                \"UserId\": \"df68819a-804b-44f8-af68-682b28d5c02e\",\n                \"DisplayName\": \"接口创建用户\"\n            },\n            {\n                \"UserId\": \"3945dcb0-e433-4fd0-a69b-b5074abe3cbd\",\n                \"DisplayName\": \"修改用户\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{\n    \"DisplayName\": \"demo_app\",\n    \"Description\": \"描述信息\",\n    \"SecureLevel\": \"2\",\n    \"IconUrl\": \"https://xxxx/xxx.svg\",\n    \"AppStatus\": false,\n    \"ApplicationId\": \"5176073b-aa2c-4c55-baa4-52990b3973f5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4facd7b-f77b-464a-bf6f-0f070f666938\"\n    }\n}",
+        "title": "请求示例2"
       }
     ],
     "ModifyUserInfo": [

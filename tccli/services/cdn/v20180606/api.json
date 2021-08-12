@@ -1326,7 +1326,7 @@
       "usage": "both"
     },
     "AdvancedCache": {
-      "document": "缓存过期配置高级版（功能灰度中，尚未全量）\n注意：该版本不支持设置首页缓存规则",
+      "document": "缓存过期配置高级版，注意：此字段已经弃用，请使用RuleCache",
       "members": [
         {
           "default": "",
@@ -2116,11 +2116,12 @@
       "usage": "both"
     },
     "CacheKey": {
-      "document": "缓存键配置（过滤参数配置）",
+      "document": "缓存键配置（忽略参数配置）",
       "members": [
         {
           "default": "",
-          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数过滤）\noff：关闭全路径缓存（即开启参数过滤）",
+          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数忽略）\noff：关闭全路径缓存（即开启参数忽略）",
+          "example": "off",
           "member": "string",
           "name": "FullUrlCache",
           "required": false,
@@ -2130,6 +2131,7 @@
         {
           "default": "",
           "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "IgnoreCase",
           "required": false,
@@ -2139,6 +2141,7 @@
         {
           "default": "",
           "document": "CacheKey中包含请求参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "QueryStringKey",
           "name": "QueryString",
           "required": false,
@@ -2148,6 +2151,7 @@
         {
           "default": "",
           "document": "CacheKey中包含Cookie\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CookieKey",
           "name": "Cookie",
           "required": false,
@@ -2157,6 +2161,7 @@
         {
           "default": "",
           "document": "CacheKey中包含请求头部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HeaderKey",
           "name": "Header",
           "required": false,
@@ -2166,6 +2171,7 @@
         {
           "default": "",
           "document": "CacheKey中包含自定义字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CacheTagKey",
           "name": "CacheTag",
           "required": false,
@@ -2175,6 +2181,7 @@
         {
           "default": "",
           "document": "CacheKey中包含请求协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SchemeKey",
           "name": "Scheme",
           "required": false,
@@ -2184,6 +2191,7 @@
         {
           "default": "",
           "document": "分路径缓存键配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KeyRule",
           "name": "KeyRules",
           "required": false,
@@ -3387,7 +3395,7 @@
         },
         {
           "default": "",
-          "document": "指定查询域名列表\n最多可一次性查询 30 个加速域名明细",
+          "document": "指定查询域名列表\n查询单域名：指定单个域名\n查询多个域名：指定多个域名，最多可一次性查询 30 个\n查询账号下所有域名：不传参，默认查询账号维度",
           "example": "无",
           "member": "string",
           "name": "Domains",
@@ -6424,11 +6432,12 @@
       "type": "object"
     },
     "ErrorPage": {
-      "document": "状态码重定向配置，默认为关闭状态（功能灰度中，尚未全量）",
+      "document": "状态码重定向配置，默认为关闭状态",
       "members": [
         {
           "default": "",
           "document": "状态码重定向配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -6438,6 +6447,7 @@
         {
           "default": "",
           "document": "状态码重定向规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ErrorPageRule",
           "name": "PageRules",
           "required": false,
@@ -7121,6 +7131,7 @@
         {
           "default": "",
           "document": "CacheType 对应类型下的匹配内容：\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RulePaths",
           "required": true,
@@ -7130,6 +7141,7 @@
         {
           "default": "",
           "document": "规则类型：\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -7138,7 +7150,8 @@
         },
         {
           "default": "",
-          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数过滤）\noff：关闭全路径缓存（即开启参数过滤）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数忽略）\noff：关闭全路径缓存（即开启参数忽略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "FullUrlCache",
           "required": true,
@@ -7148,6 +7161,7 @@
         {
           "default": "",
           "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "IgnoreCase",
           "required": true,
@@ -7157,6 +7171,7 @@
         {
           "default": "",
           "document": "CacheKey中包含请求参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RuleQueryString",
           "name": "QueryString",
           "required": true,
@@ -7166,6 +7181,7 @@
         {
           "default": "",
           "document": "路径缓存键标签，传 user\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
           "member": "string",
           "name": "RuleTag",
           "required": true,
@@ -7958,11 +7974,12 @@
       "usage": "out"
     },
     "MaxAge": {
-      "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态（功能灰度中，尚未全量）",
+      "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态",
       "members": [
         {
           "default": "",
           "document": "浏览器缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -7972,6 +7989,7 @@
         {
           "default": "",
           "document": "MaxAge 规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MaxAgeRule",
           "name": "MaxAgeRules",
           "required": false,
@@ -9350,7 +9368,8 @@
       "members": [
         {
           "default": "",
-          "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据",
+          "document": "资源名称，根据查询条件不同分为以下几类：\n单域名：指定单域名查询，表示该域名明细数据，当传入参数 detail 指定为 true 时，显示该域名（ detail 参数默认为 false ）\n多域名：指定多个域名查询，表示多域名汇总明细数据，显示 multiDomains\n项目 ID：指定项目查询时，表示该项目下的域名汇总明细数据，显示该项目 ID\nall：账号维度明细数据，即账号下所有域名的汇总明细数据",
+          "example": "multiDomains",
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -9360,6 +9379,7 @@
         {
           "default": "",
           "document": "资源对应的数据明细",
+          "example": "无",
           "member": "CdnData",
           "name": "CdnData",
           "required": true,
@@ -11811,11 +11831,12 @@
       "usage": "out"
     },
     "UrlRedirect": {
-      "document": "URL重定向配置",
+      "document": "访问URL重写配置",
       "members": [
         {
           "default": "",
-          "document": "URL重定向配置开关\non：开启\noff：关闭",
+          "document": "访问URL重写配置开关\non：开启\noff：关闭",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -11824,7 +11845,8 @@
         },
         {
           "default": "",
-          "document": "URL重定向规则，当Switch为on时必填，规则数量最大为10个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问URL重写规则，当Switch为on时必填，规则数量最大为10个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UrlRedirectRule",
           "name": "PathRules",
           "required": false,

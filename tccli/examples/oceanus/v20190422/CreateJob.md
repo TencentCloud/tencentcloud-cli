@@ -11,7 +11,8 @@ tccli oceanus CreateJob --cli-unfold-argument  \
     --ClusterType 2 \
     --ClusterId cluster-xxxxxxxx \
     --CuMem 4 \
-    --Remark 测试作业
+    --Remark 测试作业 \
+    --FolderId folder-xxxxxxxx
 ```
 
 Output: 

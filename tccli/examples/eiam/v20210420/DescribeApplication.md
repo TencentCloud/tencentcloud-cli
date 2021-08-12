@@ -24,7 +24,11 @@ Output:
         "ClientSecret": "xxx",
         "KeyId": "xxx",
         "PublicKey": "{\"kty\":\"RSA\",\"kid\":\"xxx\",\"use\":\"sig\",\"alg\":\"RS256\",\"n\":\"xxx\",\"e\":\"AQAB\"}",
-        "AuthorizeUrl": "https://xxx.com/auth/oauth2/authorize?client_id=xxx&response_type=code&state=xxx"
+        "AuthorizeUrl": "https://xxx.com/auth/oauth2/authorize?client_id=xxx&response_type=code&state=xxx",
+        "IconUrl": "https://online-xxxxxxx.cos.ap-shenzhen-fsi.myqcloud.com/xxxxxxxx/...",
+        "SecureLevel": "1",
+        "AppStatus": true,
+        "Description": "xxxxxxxxxxxxx"
     }
 }
 ```

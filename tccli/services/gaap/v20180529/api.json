@@ -562,6 +562,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，可取值：normal、cn2，默认值为normal",
+          "example": "normal",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1170,6 +1180,15 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型，可取值：normal、cn2，默认值normal",
+          "example": "normal",
+          "member": "string",
+          "name": "NetworkType",
           "required": false,
           "type": "string"
         }
@@ -2002,6 +2021,15 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型，可取值：normal、cn2，默认值normal",
+          "example": "normal",
+          "member": "string",
+          "name": "NetworkType",
           "required": false,
           "type": "string"
         }
@@ -5529,6 +5557,15 @@
           "name": "IPAddressVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型，可取值：normal、cn2，默认值normal",
+          "example": "normal",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5586,6 +5623,24 @@
           "example": "0",
           "member": "float",
           "name": "DiscountFlowUnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "精品BGP的带宽费用价格，单位: 元/Mbps/天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Cn2BandwidthPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "精品BGP的折后带宽费用价格，单位: 元/Mbps/天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Cn2BandwidthPriceWithDiscount",
           "required": true,
           "type": "float",
           "value_allowed_null": true
@@ -7296,7 +7351,7 @@
         },
         {
           "default": "",
-          "document": "通道类型，104表示新的银牌质量通道类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "ProxyType",
@@ -7320,6 +7375,16 @@
           "example": "\"IPV4\"",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络类型：normal、cn2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"normal\"",
+          "member": "string",
+          "name": "NetworkType",
           "required": true,
           "type": "string",
           "value_allowed_null": true
