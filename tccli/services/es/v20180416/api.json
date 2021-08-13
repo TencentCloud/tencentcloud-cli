@@ -1476,6 +1476,26 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JDK类型，oracle或kona\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "oracle",
+          "member": "string",
+          "name": "Jdk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1899,6 +1919,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1907,10 +1928,20 @@
         {
           "default": "",
           "document": "是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false",
+          "example": "false",
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "重启模式：0 滚动重启； 1 全量重启",
+          "example": "0",
+          "member": "int64",
+          "name": "RestartMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2190,6 +2221,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2198,6 +2230,7 @@
         {
           "default": "",
           "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "newName",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -2206,6 +2239,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点个数（2-50个）",
+          "example": "3",
           "member": "uint64",
           "name": "NodeNum",
           "required": false,
@@ -2214,6 +2248,7 @@
         {
           "default": "",
           "document": "ES配置项（JSON格式字符串）",
+          "example": "无",
           "member": "string",
           "name": "EsConfig",
           "required": false,
@@ -2222,6 +2257,7 @@
         {
           "default": "",
           "document": "默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2230,6 +2266,7 @@
         {
           "default": "",
           "document": "访问控制列表",
+          "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",
           "required": false,
@@ -2238,6 +2275,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n磁盘大小（单位GB）",
+          "example": "已废弃请使用NodeInfoList",
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
@@ -2246,6 +2284,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "已废弃请使用NodeInfoList",
           "member": "string",
           "name": "NodeType",
           "required": false,
@@ -2254,6 +2293,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个或5个）",
+          "example": "已废弃请使用NodeInfoList",
           "member": "uint64",
           "name": "MasterNodeNum",
           "required": false,
@@ -2262,6 +2302,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "已废弃请使用NodeInfoList",
           "member": "string",
           "name": "MasterNodeType",
           "required": false,
@@ -2270,6 +2311,7 @@
         {
           "default": "",
           "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）",
+          "example": "已废弃请使用NodeInfoList",
           "member": "uint64",
           "name": "MasterNodeDiskSize",
           "required": false,
@@ -2278,6 +2320,7 @@
         {
           "default": "",
           "document": "更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false",
+          "example": "已废弃请使用NodeInfoList",
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
@@ -2286,6 +2329,7 @@
         {
           "default": "",
           "document": "COS自动备份信息",
+          "example": "无",
           "member": "CosBackup",
           "name": "CosBackup",
           "required": false,
@@ -2294,6 +2338,7 @@
         {
           "default": "",
           "document": "节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改",
+          "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
           "required": false,
@@ -2302,6 +2347,7 @@
         {
           "default": "",
           "document": "公网访问状态",
+          "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
           "required": false,
@@ -2310,6 +2356,7 @@
         {
           "default": "",
           "document": "公网访问控制列表",
+          "example": "无",
           "member": "EsPublicAcl",
           "name": "EsPublicAcl",
           "required": false,
@@ -2318,6 +2365,7 @@
         {
           "default": "",
           "document": "Kibana公网访问状态",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
           "required": false,
@@ -2326,6 +2374,7 @@
         {
           "default": "",
           "document": "Kibana内网访问状态",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
           "required": false,
@@ -2334,6 +2383,7 @@
         {
           "default": "",
           "document": "ES 6.8及以上版本基础版开启或关闭用户认证",
+          "example": "1",
           "member": "int64",
           "name": "BasicSecurityType",
           "required": false,
@@ -2342,6 +2392,7 @@
         {
           "default": "",
           "document": "Kibana内网端口",
+          "example": "5601",
           "member": "uint64",
           "name": "KibanaPrivatePort",
           "required": false,
@@ -2350,6 +2401,7 @@
         {
           "default": "",
           "document": "0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启",
+          "example": "0",
           "member": "int64",
           "name": "ScaleType",
           "required": false,
@@ -2358,6 +2410,7 @@
         {
           "default": "",
           "document": "多可用区部署",
+          "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
           "required": false,
@@ -2366,6 +2419,7 @@
         {
           "default": "",
           "document": "场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索",
+          "example": "-1",
           "member": "int64",
           "name": "SceneType",
           "required": false,
@@ -2374,10 +2428,20 @@
         {
           "default": "",
           "document": "Kibana配置项（JSON格式字符串）",
+          "example": "无",
           "member": "string",
           "name": "KibanaConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

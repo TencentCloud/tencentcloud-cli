@@ -482,6 +482,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多维分析设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalysisDimensional",
+          "name": "Analysis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -692,6 +702,42 @@
         }
       ],
       "usage": "out"
+    },
+    "AnalysisDimensional": {
+      "document": "多维分析的分析维度",
+      "members": [
+        {
+          "default": "",
+          "document": "分析名称",
+          "example": "status 502 pv",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析类型：query，field",
+          "example": "query",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析内容",
+          "example": "*|select count(1) as pv where status = 502",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ApplyConfigToMachineGroupRequest": {
       "document": "ApplyConfigToMachineGroup请求参数结构体",
@@ -1282,6 +1328,33 @@
           "name": "Status",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户自定义告警内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MessageTemplate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义回调",
+          "example": "无",
+          "member": "CallBackInfo",
+          "name": "CallBack",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "多维分析",
+          "example": "无",
+          "member": "AnalysisDimensional",
+          "name": "Analysis",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4865,6 +4938,33 @@
           "name": "Status",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户自定义告警内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MessageTemplate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义回调",
+          "example": "无",
+          "member": "CallBackInfo",
+          "name": "CallBack",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "多维分析",
+          "example": "无",
+          "member": "AnalysisDimensional",
+          "name": "Analysis",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

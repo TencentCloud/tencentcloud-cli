@@ -72,6 +72,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeOrgResourcesAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrgResourcesAuthorization\n<公共请求参数>\n\n{\n    \"OrgNodeId\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10df84ec-33d8-4fe1-a180-960aaa5c746a\",\n        \"ApplicationId\": \"f6f29e24-ffc2-456c-b815-532291bc96af\",\n        \"OrgNodeId\": \"46165edc-4fc0-46d7-8973-453fb58fe24f\",\n        \"OrgNodeName\": \"csg\",\n        \"OrgNodePath\": \"tencent/csg\",\n        \"AuthorizationOrgResourceList\": [\n            {\n                \"ResourceId\": \"fe211d3a-6a08-435a-a4b4-5537176acd2e\",\n                \"ResourceType\": \"resource\",\n                \"Resource\": \"service-ovwon6kp：service-ovwonooo\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribePublicKey": [
       {
         "document": "",
@@ -88,12 +96,28 @@
         "title": "请求示例"
       }
     ],
+    "DescribeUserGroupResourcesAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroupResourcesAuthorization\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\",\n    \"UserGroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10df84ec-33d8-4fe1-a180-960aaa5c746a\",\n        \"ApplicationId\": \"f6f29e24-ffc2-456c-b815-532291bc96af\",\n        \"UserGroupId\": \"1we234c7f-56b0-4c3a-9ae5-17baeb0u5643\",\n        \"UserGroupName\": \"用户组1\",\n        \"AuthorizationUserGroupResourceList\": [\n            {\n                \"ResourceId\": \"8ae33c7f-56b0-4c3a-9ae5-17baeb0d7940\",\n                \"ResourceType\": \"resource\",\n                \"Resource\": \"service-ovwon6kp：service-23errrt\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeUserInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeUserResourcesAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserResourcesAuthorization\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"UserId\": \"xx\",\n    \"IncludeInheritedAuthorizations\": true,\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10df84ec-33d8-4fe1-a180-960aaa5c746a\",\n        \"ApplicationId\": \"7107ee0d-e556-47db-8fca-e6d1fc910dd2\",\n        \"ApplicationAccounts\": [\n            \"iamadmin\"\n        ],\n        \"UserId\": \"1we234c7f-56b0-4c3a-9ae5-17baeb0u5643\",\n        \"UserName\": \"zhangsan\",\n        \"AuthorizationUserResourceList\": [\n            {\n                \"InheritedForm\": {\n                    \"UserGroupIds\": [\n                        \"8580d166-2a25-45eb-beff-3085f5464deb\",\n                        \"2222d166-2a25-45eb-beff-3085f5234ed\"\n                    ],\n                    \"OrgNodeIds\": [\n                        \"823445-2a25-45eb-beff-3085f54645555\"\n                    ]\n                },\n                \"ApplicationAccounts\": [\n                    \"iamadmin\"\n                ],\n                \"ResourceId\": \"8ae33c7f-56b0-4c3a-9ae5-17baeb0d7940\",\n                \"ResourceType\": \"resourceGroup\",\n                \"Resource\": \"service-888:*\"\n            },\n            {\n                \"InheritedForm\": {\n                    \"UserGroupIds\": [\n                        \"8580d166-2a25-45eb-beff-3085f5464deb\"\n                    ],\n                    \"OrgNodeIds\": [\n                        \"823445-2a25-45eb-beff-3085f54645555\"\n                    ]\n                },\n                \"ApplicationAccounts\": [\n                    \"iamadmin\"\n                ],\n                \"ResourceId\": \"8ae33c7f-56b0-4c3a-9ae5-17baeb0d7940\",\n                \"ResourceType\": \"resourceGroup\",\n                \"Resource\": \"service-888:*\"\n            },\n            {\n                \"InheritedForm\": {\n                    \"UserGroupIds\": [],\n                    \"OrgNodeIds\": []\n                },\n                \"ApplicationAccounts\": [\n                    \"iamadmin\"\n                ],\n                \"ResourceId\": \"8ae33c7f-56b0-4c3a-9ae5-17baeb0d7940\",\n                \"ResourceType\": \"resourceGroup\",\n                \"Resource\": \"service-888:*\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
       }
     ],
     "ListApplicationAuthorizations": [

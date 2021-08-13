@@ -54,6 +54,12 @@
       "name": "读取机构节点信息",
       "output": "DescribeOrgNodeResponse"
     },
+    "DescribeOrgResourcesAuthorization": {
+      "document": "查询指定机构下的资源授权列表",
+      "input": "DescribeOrgResourcesAuthorizationRequest",
+      "name": "查询指定机构下的资源授权列表",
+      "output": "DescribeOrgResourcesAuthorizationResponse"
+    },
     "DescribePublicKey": {
       "document": "获取JWT公钥信息。",
       "input": "DescribePublicKeyRequest",
@@ -66,11 +72,23 @@
       "name": "获取用户组信息",
       "output": "DescribeUserGroupResponse"
     },
+    "DescribeUserGroupResourcesAuthorization": {
+      "document": "查询指定用户组下的资源授权列表",
+      "input": "DescribeUserGroupResourcesAuthorizationRequest",
+      "name": "查询指定用户组下的资源授权列表",
+      "output": "DescribeUserGroupResourcesAuthorizationResponse"
+    },
     "DescribeUserInfo": {
       "document": "通过用户名或用户 id 搜索用户",
       "input": "DescribeUserInfoRequest",
       "name": "获取用户信息",
       "output": "DescribeUserInfoResponse"
+    },
+    "DescribeUserResourcesAuthorization": {
+      "document": "查询指定用户下的资源授权列表",
+      "input": "DescribeUserResourcesAuthorizationRequest",
+      "name": "查询指定用户下的资源授权列表",
+      "output": "DescribeUserResourcesAuthorizationResponse"
     },
     "ListApplicationAuthorizations": {
       "document": "应用授权关系列表（含搜索条件匹配）。",
@@ -429,6 +447,98 @@
         }
       ],
       "usage": "in"
+    },
+    "AuthorizationResouceEntityInfo": {
+      "document": "授权资源详情",
+      "members": [
+        {
+          "default": "",
+          "document": "授权关系的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6747d37a-616b-4b2f-9b7e-f4c922eb2932",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源授权类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api1",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthorizationUserResouceInfo": {
+      "document": "返回符合条件的用户数据列表",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8580d166-2a25-45eb-beff-3085f5464deb",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resourceGroup",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service-888:*",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "继承关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InheritedForm",
+          "name": "InheritedForm",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用账户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationAccounts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateOrgNodeRequest": {
       "document": "CreateOrgNode请求参数结构体",
@@ -1024,6 +1134,87 @@
       ],
       "type": "object"
     },
+    "DescribeOrgResourcesAuthorizationRequest": {
+      "document": "DescribeOrgResourcesAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrgResourcesAuthorizationResponse": {
+      "document": "DescribeOrgResourcesAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权机构ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthorizationResouceEntityInfo",
+          "name": "AuthorizationOrgResourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicKeyRequest": {
       "document": "DescribePublicKey请求参数结构体",
       "members": [
@@ -1088,6 +1279,78 @@
           "member": "string",
           "name": "UserGroupId",
           "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupResourcesAuthorizationRequest": {
+      "document": "DescribeUserGroupResourcesAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupResourcesAuthorizationResponse": {
+      "document": "DescribeUserGroupResourcesAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthorizationResouceEntityInfo",
+          "name": "AuthorizationUserGroupResourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
           "type": "string"
         }
       ],
@@ -1265,6 +1528,105 @@
           "name": "ActivationTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResourcesAuthorizationRequest": {
+      "document": "DescribeUserResourcesAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名。",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询范围是否包括用户关联的用户组、组织机构的应用访问权限。默认为不查询 ，传false表示不查询该范围，传true查询该范围。",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInheritedAuthorizations",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserResourcesAuthorizationResponse": {
+      "document": "DescribeUserResourcesAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "应用的唯一ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用账户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationAccounts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权用户的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权的用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的资源列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthorizationUserResouceInfo",
+          "name": "AuthorizationUserResourceList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {

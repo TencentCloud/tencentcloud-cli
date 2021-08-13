@@ -2241,6 +2241,7 @@
         {
           "default": "",
           "document": "分散置放群组id。",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "DisasterRecoverGroupId",
           "required": true,
@@ -2250,6 +2251,7 @@
         {
           "default": "",
           "document": "分散置放群组名称，长度1-60个字符。",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2259,6 +2261,7 @@
         {
           "default": "",
           "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架",
+          "example": "\"HOST\"",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -2268,6 +2271,7 @@
         {
           "default": "",
           "document": "分散置放群组内最大容纳云服务器数量。",
+          "example": "50",
           "member": "int64",
           "name": "CvmQuotaTotal",
           "required": true,
@@ -2277,6 +2281,7 @@
         {
           "default": "",
           "document": "分散置放群组内云服务器当前数量。",
+          "example": "2",
           "member": "int64",
           "name": "CurrentNum",
           "required": true,
@@ -2286,6 +2291,7 @@
         {
           "default": "",
           "document": "分散置放群组内，云服务器id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2295,6 +2301,7 @@
         {
           "default": "",
           "document": "分散置放群组创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-01-04 21:40:02\"",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -3552,6 +3559,7 @@
         {
           "default": "",
           "document": "实例所在的位置。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": false,
@@ -3561,6 +3569,7 @@
         {
           "default": "",
           "document": "实例`ID`。",
+          "example": "ins-9bxebleo",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -3570,6 +3579,7 @@
         {
           "default": "",
           "document": "实例机型。",
+          "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -3579,6 +3589,7 @@
         {
           "default": "",
           "document": "实例的CPU核数，单位：核。",
+          "example": "1",
           "member": "int64",
           "name": "CPU",
           "required": false,
@@ -3588,6 +3599,7 @@
         {
           "default": "",
           "document": "实例内存容量，单位：`GB`。",
+          "example": "1",
           "member": "int64",
           "name": "Memory",
           "required": false,
@@ -3597,6 +3609,7 @@
         {
           "default": "",
           "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。",
+          "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
           "required": false,
@@ -3606,6 +3619,7 @@
         {
           "default": "",
           "document": "实例名称。",
+          "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -3615,6 +3629,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -3624,6 +3639,7 @@
         {
           "default": "",
           "document": "实例系统盘信息。",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -3632,7 +3648,8 @@
         },
         {
           "default": "",
-          "document": "实例数据盘信息。只包含随实例购买的数据盘。",
+          "document": "实例数据盘信息。",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -3642,6 +3659,7 @@
         {
           "default": "",
           "document": "实例主网卡的内网`IP`列表。",
+          "example": "[\"172.16.32.78\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -3651,6 +3669,7 @@
         {
           "default": "",
           "document": "实例主网卡的公网`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123.207.11.190\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
@@ -3660,6 +3679,7 @@
         {
           "default": "",
           "document": "实例带宽信息。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -3669,6 +3689,7 @@
         {
           "default": "",
           "document": "实例所属虚拟私有网络信息。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -3678,6 +3699,7 @@
         {
           "default": "",
           "document": "生产实例所使用的镜像`ID`。",
+          "example": "img-9qabwvbn",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -3687,6 +3709,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n<br><li>注意：后付费模式本项为null",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -3696,6 +3719,7 @@
         {
           "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2020-03-10T02:43:51Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": false,
@@ -3705,6 +3729,7 @@
         {
           "default": "",
           "document": "到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。注意：后付费模式本项为null",
+          "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "required": false,
@@ -3714,6 +3739,7 @@
         {
           "default": "",
           "document": "操作系统名称。",
+          "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
           "required": true,
@@ -3723,6 +3749,7 @@
         {
           "default": "",
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。",
+          "example": "[\"sg-p1ezv4wz\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -3732,6 +3759,7 @@
         {
           "default": "",
           "document": "实例登录设置。目前只返回实例所关联的密钥。",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": true,
@@ -3741,6 +3769,7 @@
         {
           "default": "",
           "document": "实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
           "required": true,
@@ -3750,6 +3779,7 @@
         {
           "default": "",
           "document": "实例关联的标签列表。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -3759,6 +3789,7 @@
         {
           "default": "",
           "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>",
+          "example": "NOT_APPLICABLE",
           "member": "string",
           "name": "StopChargingMode",
           "required": true,
@@ -3768,6 +3799,7 @@
         {
           "default": "",
           "document": "实例全局唯一ID",
+          "example": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -3777,6 +3809,7 @@
         {
           "default": "",
           "document": "实例的最新操作。例：StopInstances、ResetInstance。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RenewInstances",
           "member": "string",
           "name": "LatestOperation",
           "required": true,
@@ -3786,6 +3819,7 @@
         {
           "default": "",
           "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "required": true,
@@ -3795,6 +3829,7 @@
         {
           "default": "",
           "document": "实例最新操作的唯一请求 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
           "member": "string",
           "name": "LatestOperationRequestId",
           "required": true,
@@ -3804,6 +3839,7 @@
         {
           "default": "",
           "document": "分散置放群组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "DisasterRecoverGroupId",
           "required": true,
@@ -3813,6 +3849,7 @@
         {
           "default": "",
           "document": "实例的IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "IPv6Addresses",
           "required": true,
@@ -3822,6 +3859,7 @@
         {
           "default": "",
           "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "CamRoleName",
           "required": true,
@@ -3831,6 +3869,7 @@
         {
           "default": "",
           "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "HpcClusterId",
           "required": true,
@@ -3840,10 +3879,21 @@
         {
           "default": "",
           "document": "高性能计算集群`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "RdmaIpAddresses",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTISOLATED",
+          "member": "string",
+          "name": "IsolatedSource",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

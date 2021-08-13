@@ -59,7 +59,7 @@
     "RestartInstance": [
       {
         "document": "用以进行版本更新等操作",
-        "input": "https://es.tencentcloudapi.com/?Action=RestartInstance\r\n&InstanceId=es-xxxxxxxx\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
         "title": "重启ES集群实例"
       }

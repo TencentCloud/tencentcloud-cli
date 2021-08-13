@@ -156,6 +156,12 @@
       "name": "获取主题列表详情",
       "output": "DescribeTopicDetailResponse"
     },
+    "DescribeTopicSubscribeGroup": {
+      "document": "查询订阅某主题消息分组信息",
+      "input": "DescribeTopicSubscribeGroupRequest",
+      "name": "查询订阅某主题消息分组信息",
+      "output": "DescribeTopicSubscribeGroupResponse"
+    },
     "DescribeUser": {
       "document": "查询用户信息",
       "input": "DescribeUserRequest",
@@ -2363,6 +2369,69 @@
       ],
       "type": "object"
     },
+    "DescribeTopicSubscribeGroupRequest": {
+      "document": "DescribeTopicSubscribeGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "ckafka-kmex0nvv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页时的起始位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页时的个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicSubscribeGroupResponse": {
+      "document": "DescribeTopicSubscribeGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "TopicSubscribeGroup",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserRequest": {
       "document": "DescribeUser请求参数结构体",
       "members": [
@@ -4533,6 +4602,48 @@
           "document": "最近变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ModTimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicSubscribeGroup": {
+      "document": "DescribeTopicSubscribeGroup接口出参",
+      "members": [
+        {
+          "default": "",
+          "document": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费分组状态数量信息",
+          "member": "string",
+          "name": "StatusCountInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消费分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupInfoResponse",
+          "name": "GroupsInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "此次请求是否异步的状态。实例里分组较少的会直接返回结果,Status为1。当分组较多时,会异步更新缓存，Status为0时不会返回分组信息，直至Status为1更新完毕返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": true

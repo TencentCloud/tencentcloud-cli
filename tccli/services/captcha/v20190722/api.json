@@ -924,7 +924,7 @@
         },
         {
           "default": "",
-          "document": "透传业务侧获取到的验证码使用者的IP",
+          "document": "业务侧获取到的验证码使用者的外网IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "UserIp",
@@ -1024,6 +1024,7 @@
         {
           "default": "",
           "document": "固定填值：9（滑块验证码）",
+          "example": "9",
           "member": "uint64",
           "name": "CaptchaType",
           "required": true,
@@ -1032,6 +1033,7 @@
         {
           "default": "",
           "document": "验证码返回给用户的票据",
+          "example": "xxxx",
           "member": "string",
           "name": "Ticket",
           "required": true,
@@ -1039,7 +1041,8 @@
         },
         {
           "default": "",
-          "document": "用户操作来源的外网 IP",
+          "document": "业务侧获取到的验证码使用者的外网IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -1048,6 +1051,7 @@
         {
           "default": "",
           "document": "验证码应用APPID",
+          "example": "201111111",
           "member": "uint64",
           "name": "CaptchaAppId",
           "required": true,
@@ -1056,6 +1060,7 @@
         {
           "default": "",
           "document": "用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方",
+          "example": "xxxxxx",
           "member": "string",
           "name": "AppSecretKey",
           "required": true,
@@ -1064,6 +1069,7 @@
         {
           "default": "",
           "document": "业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据",
+          "example": "xxxx",
           "member": "uint64",
           "name": "BusinessId",
           "required": false,
@@ -1072,6 +1078,7 @@
         {
           "default": "",
           "document": "场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据",
+          "example": "xxxx",
           "member": "uint64",
           "name": "SceneId",
           "required": false,
@@ -1080,6 +1087,7 @@
         {
           "default": "",
           "document": "mac 地址或设备唯一标识",
+          "example": "xxxx",
           "member": "string",
           "name": "MacAddress",
           "required": false,
@@ -1088,6 +1096,7 @@
         {
           "default": "",
           "document": "手机设备号",
+          "example": "xxxx",
           "member": "string",
           "name": "Imei",
           "required": false,
@@ -1096,6 +1105,7 @@
         {
           "default": "",
           "document": "验证场景：1 活动防刷场景，2 登录保护场景，3 注册保护场景。根据需求选择场景参数。",
+          "example": "1",
           "member": "int64",
           "name": "SceneCode",
           "required": false,
@@ -1104,6 +1114,7 @@
         {
           "default": "",
           "document": "用户操作来源的微信开放账号",
+          "example": "xxxxxx",
           "member": "string",
           "name": "WeChatOpenId",
           "required": false,
@@ -1117,22 +1128,28 @@
       "members": [
         {
           "document": "1 ticket verification succeeded 票据验证成功\n7 CaptchaAppId does not match 票据与验证码应用APPID不匹配\n8 ticket expired 票据超时\n10 ticket format error 票据格式不正确\n15 ticket decryption failed 票据解密失败\n16 CaptchaAppId wrong format 检查验证码应用APPID错误\n21 ticket error 票据验证错误\n25 bad visitor 策略拦截\n26 system internal error 系统内部错误\n100 param err 参数校验错误",
+          "example": "1",
           "member": "int64",
           "name": "CaptchaCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ticket verification succeeded",
           "member": "string",
           "name": "CaptchaMsg",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "拦截策略返回信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OutputManageMarketingRiskValue",
           "name": "ManageMarketingRiskValue",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1231,7 +1248,7 @@
         },
         {
           "default": "",
-          "document": "透传业务侧获取到的验证码使用者的IP",
+          "document": "业务侧获取到的验证码使用者的外网IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "UserIp",
@@ -1317,7 +1334,7 @@
       "document": "DescribeCaptchaResult返回参数结构体",
       "members": [
         {
-          "document": "1 OK 验证通过\n6 user code len error 验证码长度不匹配，请检查请求是否带Randstr参数，Randstr参数大小写是否有误\n7 captcha no match 验证码答案不匹配/Randstr参数不匹配，请重新生成Randstr、Ticket进行校验\n8 verify timeout 验证码签名超时，票据已过期，请重新生成Randstr、Ticket票进行校验\n9 Sequnce repeat 验证码签名重放，票据重复使用，请重新生成Randstr、Ticket进行校验\n10 Sequnce invalid 验证码签名序列\n11 Cookie invalid 验证码cookie信息不合法，非法请求，可能存在不规范接入\n12 sig len error 签名长度错误\n13 verify ip no match ip不匹配，非法请求，可能存在不规范接入\n15 decrypt fail 验证码签名解密失败，票据校验失败，请检查Ticket票据是否与前端返回Ticket一致\n16 appid no match 验证码强校验appid错误，请检查CaptchaAppId是否为控制台基础配置界面系统分配的APPID\n17 cmd no much 验证码系统命令不匹配\n18 uin no match 号码不匹配\n19 seq redirect 重定向验证\n20 opt no vcode 操作使用pt免验证码校验错误\n21 diff 差别，验证错误\n22 captcha type not match 验证码类型与拉取时不一致\n23 verify type error 验证类型错误\n24 invalid pkg 非法请求包\n25 bad visitor 策略拦截\n26 system busy 系统内部错误\n100 param err appsecretkey 参数校验错误，请检查AppSecretKey是否与控制台基础配置界面系统分配的APPID、AppSecretKey相对应\n104 Ticket Reuse 票据重复使用，同个票据验证多次，请重新生成Randstr、Ticket进行校验",
+          "document": "1 OK 验证通过\n6 user code len error 验证码长度不匹配，请检查请求是否带Randstr参数，Randstr参数大小写是否有误\n7 captcha no match 验证码答案不匹配/Randstr参数不匹配，请重新生成Randstr、Ticket进行校验\n8 verify timeout 验证码签名超时，票据已过期，请重新生成Randstr、Ticket票进行校验\n9 Sequnce repeat 验证码签名重放，票据重复使用，请重新生成Randstr、Ticket进行校验\n10 Sequnce invalid 验证码签名序列\n11 Cookie invalid 验证码cookie信息不合法，非法请求，可能存在不规范接入\n12 sig len error 签名长度错误\n13 verify ip no match ip不匹配，非法请求，可能存在不规范接入\n15 decrypt fail 验证码签名解密失败，票据校验失败，请检查Ticket票据是否与前端返回Ticket一致\n16 appid no match 验证码强校验appid错误，前端代码 data-appid 和后端 CaptchaAppId 所填写的值，必须和 验证码控制台 中【验证详情】>【基础配置】内的 AppID 一致,请检查CaptchaAppId是否为控制台基础配置界面系统分配的APPID\n17 cmd no much 验证码系统命令不匹配\n18 uin no match 号码不匹配\n19 seq redirect 重定向验证\n20 opt no vcode 操作使用pt免验证码校验错误\n21 diff 差别，验证错误\n22 captcha type not match 验证码类型与拉取时不一致\n23 verify type error 验证类型错误\n24 invalid pkg 非法请求包\n25 bad visitor 策略拦截\n26 system busy 系统内部错误\n100 param err appsecretkey 参数校验错误，CaptchaAppId 与对应 AppSecretKey 不一致，需检查 AppSecretKey 参数是否有误。其中 CaptchaAppId、 AppSecretKey 在 验证码控制台 的【验证详情】>【基础配置】中获取\n104 Ticket Reuse 票据重复使用，同个票据验证多次，请重新生成Randstr、Ticket进行校验",
           "example": "1",
           "member": "int64",
           "name": "CaptchaCode",

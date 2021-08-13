@@ -61,6 +61,7 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
+                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
@@ -148,6 +149,7 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
+                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
@@ -230,6 +232,7 @@ Output:
                 ],
                 "InstanceName": "测试实例",
                 "DataDisks": null,
+                "IsolatedSource": "NOTISOLATED",
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,

@@ -8,12 +8,42 @@
         "title": "创建规则"
       }
     ],
+    "CreateChooseVpcs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChooseVpcs\n<公共请求参数>\n\n{\n    \"VpcList\": [\n        \"xxx\"\n    ],\n    \"AllZoneList\": [\n        {\n            \"Zone\": \"ap-test-5\",\n            \"Region\": \"ap-test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建、选择vpc"
+      }
+    ],
+    "CreateNatFwInstance": [
+      {
+        "document": "接入模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-14yv5rzx\",\n        \"nat-14yv5rzk\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建防火墙实例--接入模式"
+      },
+      {
+        "document": "新增模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-q98tz7hs\"\n        ],\n        \"Eips\": [\n            \"11.2.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建防火墙实例--新增模式"
+      }
+    ],
     "CreateSecurityGroupApiRules": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupApiRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"SourceId\": \"0.0.0.0/0\",\n            \"TargetId\": \"119.29.186.197\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"Strategy\": \"1\",\n            \"Detail\": \"test\",\n            \"RuleType\": 1\n        }\n    ],\n    \"Type\": 0,\n    \"Area\": \"\",\n    \"Direction\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建安全组API规则"
+      }
+    ],
+    "CreateSecurityGroupRules": [
+      {
+        "document": "创建企业安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityGroupRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": 1,\n            \"SourceId\": \"ipm-dyodhpby\",\n            \"TargetId\": \"subnet-fmo10koi\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"ppm-9olqf3lc\",\n            \"Strategy\": \"2\",\n            \"Detail\": \"test 555\",\n            \"VpcId\": \"vpc-8xuf8kf5\",\n            \"SubnetId\": \"subnet-fmo10koi\",\n            \"BothWay\": 0,\n            \"BothWayInfo\": \"\",\n            \"SourceType\": 7,\n            \"TargetType\": 2,\n            \"Direction\": 1\n        },\n        {\n            \"OrderIndex\": 2,\n            \"SourceId\": \"ipmg-43isdfuc\",\n            \"TargetId\": \"subnet-5cwgmy1i\",\n            \"Protocol\": \"ANY\",\n            \"Port\": \"-1/-1\",\n            \"ServiceTemplateId\": \"ppmg-jz17vpis\",\n            \"Strategy\": \"2\",\n            \"Detail\": \"test 555\",\n            \"VpcId\": \"vpc-aa6b04jr\",\n            \"SubnetId\": \"subnet-5cwgmy1i\",\n            \"BothWay\": 0,\n            \"BothWayInfo\": \"\",\n            \"SourceType\": 7,\n            \"TargetType\": 2,\n            \"Direction\": 1\n        }\n    ],\n    \"Type\": 0,\n    \"Enable\": 1,\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
+        "title": "创建企业安全组规则"
       }
     ],
     "DeleteAcRule": [
@@ -32,6 +62,22 @@
         "title": "全部删除规则"
       }
     ],
+    "DeleteNatFwInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatFwInstance\n<公共请求参数>\n\n{\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "销毁防火墙实例"
+      }
+    ],
+    "DeleteResourceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "资产中心资产组删除"
+      }
+    ],
     "DeleteSecurityGroupAllRule": [
       {
         "document": "",
@@ -46,6 +92,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupRule\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Area\": \"ap-guangzhou\",\n    \"Direction\": 0,\n    \"IsDelReverse\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除安全组规则"
+      }
+    ],
+    "DeleteVpcInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcInstance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建、选择vpc"
       }
     ],
     "DescribeAcLists": [
@@ -96,12 +150,60 @@
         "title": "DescribeGuideScanInfo 新手引导扫描接口"
       }
     ],
+    "DescribeNatFwInfoCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInfoCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"NatFwInsCount\": 3,\n        \"SubnetCount\": 3,\n        \"OpenSwitchCount\": 3,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
+        "title": "获取当前用户接入nat防火墙的所有子网数及natfw实例个数"
+      }
+    ],
+    "DescribeNatFwInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInstance\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"NatinsLst\": [\n            {\n                \"NatinsId\": \"cfwnat-9243de20\",\n                \"NatinsName\": \"ywold\",\n                \"Region\": \"ap-shanghai\",\n                \"FwMode\": 0,\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeNatFwInstance 获取租户所有NAT实例"
+      }
+    ],
+    "DescribeNatFwInstanceWithRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInstanceWithRegion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"NatinsLst\": [\n            {\n                \"NatinsId\": \"cfwnat-fc7ae792\",\n                \"NatinsName\": \"wy yw 测试\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"52fa6827-985f-49c7-a853-d86efbd547c3\"\n    }\n}",
+        "title": "GetNatInstance 获取租户所有NAT实例"
+      }
+    ],
+    "DescribeNatFwInstancesInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInstancesInfo\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"FilterType\": \"NatinsId\",\n            \"FilterContent\": \"cfwnat-65d0d823,cfwnat-65d0d824\"\n        },\n        {\n            \"FilterType\": \"NatinsName\",\n            \"FilterContent\": \"wytest\"\n        },\n        {\n            \"FilterType\": \"FwMode\",\n            \"FilterContent\": \"1\"\n        },\n        {\n            \"FilterType\": \"Region\",\n            \"FilterContent\": \"ap-guangzhou\"\n        },\n        {\n            \"FilterType\": \"EipAddress\",\n            \"FilterContent\": \"1.13.19.217,1.13.16.20\"\n        },\n        {\n            \"FilterType\": \"VpcIp\",\n            \"FilterContent\": \"10.255.0.20,10.255.0.5\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"NatinsLst\": [\n            {\n                \"BandWidth\": 30,\n                \"EipAddress\": [\n                    \"1.117.4.229\",\n                    \"121.5.27.250\"\n                ],\n                \"FwMode\": 0,\n                \"InFlowMax\": 4985,\n                \"NatinsId\": \"cfwnat-f3250045\",\n                \"NatinsName\": \"yw\",\n                \"OutFlowMax\": 14642,\n                \"Region\": \"ap-shanghai\",\n                \"RegionZh\": \"上海\",\n                \"Subnets\": [\n                    \"subnet-cjxihpy1\",\n                    \"subnet-1e34182d\",\n                    \"subnet-5sx5vrcj\",\n                    \"subnet-he9ba55f\",\n                    \"subnet-0yd4fk0j\",\n                    \"subnet-kdu0qj4t\"\n                ],\n                \"VpcIp\": [\n                    \"10.255.6.36\",\n                    \"10.255.6.37\",\n                    \"10.255.6.21\",\n                    \"10.255.6.18\",\n                    \"10.255.6.19\",\n                    \"10.255.5.28\",\n                    \"10.255.5.18\",\n                    \"10.255.5.19\"\n                ]\n            }\n        ],\n        \"Total\": 10,\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
+        "title": "GetNatInstance 获取租户所有NAT实例"
+      }
+    ],
+    "DescribeNatFwVpcDnsLst": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwVpcDnsLst\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcDnsSwitchLst\": [\n            {\n                \"SwitchStatus\": 0,\n                \"NatInsId\": \"cfwnat-f3250045\",\n                \"DNSEip\": \"121.5.27.250\",\n                \"VpcIpv4Cidr\": \"10.115.0.0/16\",\n                \"FwMode\": 1,\n                \"VpcName\": \"wy\",\n                \"VpcId\": \"vpc-ilbrv877\"\n            }\n        ],\n        \"Total\": 3,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
+        "title": "ShowNatFwVpcDnsLst 展示租户NAT防火墙实例的vpc dns 开关信息"
+      }
+    ],
     "DescribeNatRuleOverview": [
       {
         "document": "",
         "input": "https://cfw.tencentcloudapi.com/?Action=DescribeNatRuleOverview\n&Direction=1\n&Area=ap-chongqing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"cfwnat-f3250045\",\n        \"InstanceName\": \"nat-name\",\n        \"EipList\": [\n            \"192.168.0.1\",\n            \"10.10.10.10\"\n        ],\n        \"DnatNum\": 10,\n        \"TotalNum\": 100,\n        \"RemainNum\": 4900,\n        \"BlockNum\": 50,\n        \"EnableNum\": 10,\n        \"RequestId\": \"cd0e1fdf-157d-438c-9bc8-75925e5d4e20\"\n    }\n}",
         "title": "nat规则列表概况"
+      }
+    ],
+    "DescribeResourceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xx\",\n    \"QueryType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "资产中心资产树信息"
       }
     ],
     "DescribeRuleOverview": [
@@ -118,6 +220,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Filter\": 0,\n    \"Status\": \"\",\n    \"Area\": \"ap-guangzhou\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AllTotal\": 0,\n        \"Enable\": 1,\n        \"Data\": [\n            {\n                \"Status\": 1,\n                \"TargetType\": 1,\n                \"VpcId\": \"vpc-khmhp1co1\",\n                \"Protocol\": \"ANY\",\n                \"SourceType\": 1,\n                \"IsNew\": 1,\n                \"SourceId\": \"ins-1kub1g5f\",\n                \"Port\": \"-1/-1\",\n                \"TargetId\": \"0.0.0.0/0\",\n                \"Detail\": \"添加规则test\",\n                \"PrivateIp\": \"172.27.0.17\",\n                \"PublicIp\": \"119.27.187.24\",\n                \"OrderIndex\": 1,\n                \"SubnetId\": \"subnet-9qs6catf\",\n                \"Cidr\": \"\",\n                \"Strategy\": 1,\n                \"InstanceName\": \"成都多协议-勿删（勿删勿删勿删勿删）\",\n                \"Id\": 1,\n                \"BothWay\": 1\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询安全组规则列表"
+      }
+    ],
+    "DescribeSourceAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceAsset\n<公共请求参数>\n\n{\n    \"InsType\": \"xx\",\n    \"ChooseType\": \"xx\",\n    \"FuzzySearch\": \"xx\",\n    \"Zone\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Data\": [\n            {\n                \"LeakNum\": \"xx\",\n                \"InsSource\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"PortNum\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"ResourcePath\": [\n                    \"xx\"\n                ],\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"VPCName\": \"xx\",\n                \"AppId\": \"xx\",\n                \"InsType\": 0,\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"ZoneList\": [\n            {\n                \"ZoneEng\": \"xx\",\n                \"Zone\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询资产组全部资产信息"
       }
     ],
     "DescribeSwitchLists": [
@@ -192,6 +302,14 @@
         "title": "修改规则"
       }
     ],
+    "ModifyAllPublicIPSwitchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllPublicIPSwitchStatus\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"FireWallPublicIPs\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "互联网边界防火墙一键开关"
+      }
+    ],
     "ModifyAllRuleStatus": [
       {
         "document": "",
@@ -206,6 +324,22 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllSwitchStatus\n<公共请求参数>\n\n{\n    \"Ids\": [],\n    \"Status\": 0,\n    \"Type\": 2,\n    \"ChangeType\": 3,\n    \"Area\": \"ap-shanghai\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "一键开启和关闭"
+      }
+    ],
+    "ModifyAllVPCSwitchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllVPCSwitchStatus\n<公共请求参数>\n\n{\n    \"FireWallVpcIds\": [],\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "一键开启和关闭"
+      }
+    ],
+    "ModifyAssetScan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetScan\n<公共请求参数>\n\n{\n    \"ScanRange\": 1,\n    \"ScanDeep\": \"heavy\",\n    \"RangeType\": 2,\n    \"ScanPeriod\": \"每周-星期四/12:51:00\",\n    \"ScanFilterIp\": [\n        \"11\",\n        \"22\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "资产扫描"
       }
     ],
     "ModifyBlockIgnoreList": [
@@ -232,12 +366,88 @@
         "title": "修改单个防火墙开关"
       }
     ],
+    "ModifyNatFwReSelect": [
+      {
+        "document": "接入模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwReSelect\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"NatGwList\": [\n        \"nat-14yv5rzx\",\n        \"nat-14yv5rzk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "接入模式防火墙实例重新选择接入nat"
+      },
+      {
+        "document": "新增模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwReSelect\n<公共请求参数>\n\n{\n    \"Mode\": 0,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"VpcList\": [\n        \"vpc-q98tz7hs\",\n        \"vpc-x98tz7ha\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "新增模式防火墙实例重新选择接入vpc"
+      }
+    ],
+    "ModifyNatFwSwitch": [
+      {
+        "document": "推荐使用场景，针对路由表开启防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"RouteTableIdList\": [\n        \"rtb-9jbsa559\",\n        \"rtb-dba9eo0f\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "开启防火墙路由表开关"
+      },
+      {
+        "document": "子网参数场景，当前仅支持单一子网开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"SubnetIdList\": [\n        \"subnet-cjxihpy1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "开启防火墙子网开关"
+      }
+    ],
+    "ModifyNatFwVpcDnsSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwVpcDnsSwitch\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"DnsVpcSwitchLst\": [\n        {\n            \"VpcId\": \"vpc-ilbrv877\",\n            \"Status\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "SetNatFwVpcDnsSwitch 防火墙VPC DNS 开关切换"
+      }
+    ],
+    "ModifyPublicIPSwitchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicIPSwitchStatus\n<公共请求参数>\n\n{\n    \"FireWallPublicIP\": \"1.2.3.4\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改防火墙开关"
+      }
+    ],
+    "ModifyResourceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"xx\",\n    \"GroupId\": \"xx\",\n    \"ParentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "资产中心资产组信息修改"
+      }
+    ],
     "ModifySecurityGroupAllRuleStatus": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupAllRuleStatus\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Status\": 1,\n    \"Direction\": 1,\n    \"Area\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "启用停用全部安全组规则"
+      }
+    ],
+    "ModifySecurityGroupItemRuleStatus": [
+      {
+        "document": "启用停用单条企业安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupItemRuleStatus\n<公共请求参数>\n\n{\n    \"RuleSequence\": 5,\n    \"Direction\": 1,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
+        "title": "启用停用单条企业安全组规则"
+      }
+    ],
+    "ModifySecurityGroupRule": [
+      {
+        "document": "编辑单条安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupRule\n<公共请求参数>\n\n{\n    \"SgRuleOriginSequence\": 1,\n    \"Direction\": 1,\n    \"Enable\": 1,\n    \"Data\": [\n        {\n            \"TargetType\": 1,\n            \"BothWay\": 1,\n            \"SourceId\": \"xx\",\n            \"Detail\": \"xx\",\n            \"Strategy\": 1,\n            \"Id\": 1,\n            \"Status\": 1,\n            \"Direction\": 1,\n            \"VpcId\": \"xx\",\n            \"IsNew\": 1,\n            \"TargetId\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"Cidr\": \"xx\",\n            \"ServiceTemplateId\": \"xx\",\n            \"OrderIndex\": 1,\n            \"InstanceName\": \"xx\",\n            \"Protocol\": \"xx\",\n            \"SourceType\": 1,\n            \"BothWayInfo\": \"xx\",\n            \"PrivateIp\": \"xx\",\n            \"PublicIp\": \"xx\",\n            \"Port\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0,\n        \"NewRuleId\": 35641\n    }\n}",
+        "title": "编辑单条安全组规则"
+      }
+    ],
+    "ModifySecurityGroupSequenceRules": [
+      {
+        "document": "企业安全组规则快速排序",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupSequenceRules\n<公共请求参数>\n\n{\n    \"Direction\": 1,\n    \"Data\": [\n        {\n            \"NewOrderIndex\": 1,\n            \"OrderIndex\": 1\n        },\n        {\n            \"NewOrderIndex\": 1,\n            \"OrderIndex\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
+        "title": "企业安全组规则快速排序"
       }
     ],
     "ModifySequenceRules": [
@@ -256,6 +466,14 @@
         "title": "修改规则表状态"
       }
     ],
+    "ModifyVPCSwitchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVPCSwitchStatus\n<公共请求参数>\n\n{\n    \"FirewallVpcId\": \"1.2.3.4\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改防火墙开关"
+      }
+    ],
     "RunSyncAsset": [
       {
         "document": "",
@@ -270,6 +488,28 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"OperationType\": \"add\",\n    \"AddOrDelDnatRules\": [\n        {\n            \"IpProtocol\": \"TCP\",\n            \"PublicIpAddress\": \"119.45.163.54\",\n            \"PublicPort\": 80,\n            \"PrivateIpAddress\": \"10.206.22.4\",\n            \"PrivatePort\": 80,\n            \"Description\": \"\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "配置防火墙Dnat规则"
+      }
+    ],
+    "SetNatFwEip": [
+      {
+        "document": "仅支持新增模式的防火墙实例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwEip\n<公共请求参数>\n\n{\n    \"OperationType\": \"bind\",\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"EipList\": [\n        \"1.2.3.8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "绑定防火墙实例的弹性公网ip"
+      },
+      {
+        "document": "仅支持新增模式的防火墙实例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwEip\n<公共请求参数>\n\n{\n    \"OperationType\": \"newAdd\",\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "新增防火墙实例的弹性公网ip"
+      }
+    ],
+    "StopSecurityGroupRuleDispatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSecurityGroupRuleDispatch\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改防火墙开关"
       }
     ]
   },

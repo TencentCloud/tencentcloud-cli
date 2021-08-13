@@ -3477,6 +3477,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "teamid",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -3486,6 +3487,7 @@
         {
           "default": "",
           "document": "团队名称。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3494,7 +3496,8 @@
         },
         {
           "default": "",
-          "document": "团队成员个数",
+          "document": "团队成员个数。",
+          "example": "10",
           "member": "uint64",
           "name": "MemberCount",
           "required": true,
@@ -3504,6 +3507,7 @@
         {
           "default": "",
           "document": "成员在团队中的角色，取值有：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "example": "Member",
           "member": "string",
           "name": "Role",
           "required": true,
