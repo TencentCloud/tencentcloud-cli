@@ -1128,6 +1128,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "=0：手动确认批次；>0：下一批次开始时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "NextBatchStartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3139,6 +3149,46 @@
           "name": "CurrentBatchStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "新版本version\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018222",
+          "member": "string",
+          "name": "NewDeployVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "旧版本version\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018221",
+          "member": "string",
+          "name": "OldDeployVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello-world.jar",
+          "member": "string",
+          "name": "NewVersionPackageInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下一批次开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12342423452",
+          "member": "int64",
+          "name": "NextBatchStartTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

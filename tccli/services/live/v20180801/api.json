@@ -7963,6 +7963,7 @@
         {
           "default": "",
           "document": "待启用的直播域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8707,6 +8708,7 @@
         {
           "default": "",
           "document": "播放域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8715,6 +8717,7 @@
         {
           "default": "",
           "document": "拉流域名类型。1-国内；2-全球；3-境外",
+          "example": "1",
           "member": "int64",
           "name": "PlayType",
           "required": true,
@@ -8830,7 +8833,7 @@
         },
         {
           "default": "",
-          "document": "指定播放文件索引。\n注意：\n1. 从1开始，不大于SourceUrls中文件个数。\n2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。\n3. 只有当前任务处于暂停时，指定后启动任务才会生效。",
+          "document": "指定播放文件索引。\n注意： 从1开始，不大于SourceUrls中文件个数。",
           "example": "0",
           "member": "int64",
           "name": "FileIndex",
@@ -8839,7 +8842,7 @@
         },
         {
           "default": "",
-          "document": "指定播放文件偏移。\n注意：\n1. 单位：秒，配合FileIndex使用。\n2. 只有VodRefreshType为ContinueBeginPoint时指定才有效。\n3. 只有当前任务处于暂停时，指定后启动任务才会生效。",
+          "document": "指定播放文件偏移。\n注意：\n1. 单位：秒，配合FileIndex使用。",
           "example": "0",
           "member": "int64",
           "name": "OffsetTime",

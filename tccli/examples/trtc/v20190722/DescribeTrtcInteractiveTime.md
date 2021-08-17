@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trtc DescribeTrtcInteractiveTime --cli-unfold-argument  \
-    --SdkAppId 1400123456 \
+    --SdkAppId 1400243510 \
     --StartTime 2020-09-07 \
     --EndTime 2020-09-08
 ```
@@ -52,7 +52,7 @@ Input:
 
 ```
 tccli trtc DescribeTrtcInteractiveTime --cli-unfold-argument  \
-    --SdkAppId 1400123456 \
+    --SdkAppId 1400243510 \
     --StartTime 2020-09-08 \
     --EndTime 2020-09-08
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli ssm ListSecrets --cli-unfold-argument  \
     --Limit 2 \
-    --SecretType 1
+    --SecretType 0
 ```
 
 Output: 
@@ -19,12 +19,18 @@ Output:
             {
                 "Status": "xx",
                 "Description": "xx",
+                "AssociatedInstanceIDs": [
+                    "xx"
+                ],
                 "CreateUin": 1,
+                "ProjectID": 0,
                 "ProductName": "xx",
+                "RotationStatus": 0,
                 "SecretType": 0,
                 "KmsKeyId": "xx",
                 "KmsKeyType": "xx",
                 "SecretName": "xx",
+                "ResourceName": "xx",
                 "DeleteTime": 1,
                 "CreateTime": 1,
                 "NextRotationTime": 1
@@ -32,12 +38,18 @@ Output:
             {
                 "Status": "xx",
                 "Description": "xx",
+                "AssociatedInstanceIDs": [
+                    "xx"
+                ],
                 "CreateUin": 1,
+                "SecretName": "xx",
                 "KmsKeyType": "xx",
                 "ProductName": "xx",
-                "KmsKeyId": "xx",
                 "SecretType": 0,
-                "SecretName": "xx",
+                "KmsKeyId": "xx",
+                "RotationStatus": 0,
+                "ProjectID": 0,
+                "ResourceName": "xx",
                 "DeleteTime": 1,
                 "CreateTime": 1,
                 "NextRotationTime": 1

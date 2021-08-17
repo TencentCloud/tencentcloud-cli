@@ -6,6 +6,12 @@
       "name": "创建云产品凭据",
       "output": "CreateProductSecretResponse"
     },
+    "CreateSSHKeyPairSecret": {
+      "document": "创建用于托管SSH密钥对的凭据",
+      "input": "CreateSSHKeyPairSecretRequest",
+      "name": "创建SSH密钥对凭据",
+      "output": "CreateSSHKeyPairSecretResponse"
+    },
     "CreateSecret": {
       "document": "创建新的凭据信息，通过KMS进行加密保护。每个Region最多可创建存储1000个凭据信息。",
       "input": "CreateSecretRequest",
@@ -71,6 +77,12 @@
       "input": "GetRegionsRequest",
       "name": "获取控制台展示region列表",
       "output": "GetRegionsResponse"
+    },
+    "GetSSHKeyPairValue": {
+      "document": "获取SSH密钥对凭据明文信息。",
+      "input": "GetSSHKeyPairValueRequest",
+      "name": "获取SSH密钥对凭据明文",
+      "output": "GetSSHKeyPairValueResponse"
     },
     "GetSecretValue": {
       "document": "对于用户自定义凭据，通过指定凭据名称和版本来获取凭据的明文信息；\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
@@ -302,6 +314,114 @@
       ],
       "type": "object"
     },
+    "CreateSSHKeyPairSecretRequest": {
+      "document": "CreateSSHKeyPairSecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密钥对创建后所属的项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
+          "example": "无",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSSHKeyPairSecretResponse": {
+      "document": "CreateSSHKeyPairSecret返回参数结构体",
+      "members": [
+        {
+          "document": "创建的凭据名称。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建的SSH密钥ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建的SSH密钥名称。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TagCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签操作的返回信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSecretRequest": {
       "document": "CreateSecret请求参数结构体",
       "members": [
@@ -418,12 +538,21 @@
         },
         {
           "default": "",
-          "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。",
+          "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。\n当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。",
           "example": "1",
           "member": "uint64",
           "name": "RecoveryWindowInDays",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，取值：\nTrue -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。\nFalse --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。",
+          "example": "False",
+          "member": "bool",
+          "name": "CleanSSHKey",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -576,7 +705,7 @@
       "document": "DescribeRotationDetail返回参数结构体",
       "members": [
         {
-          "document": "否允许轮转，True表示开启轮转，False表示禁止轮转。",
+          "document": "否允许轮转，true表示开启轮转，false表示禁止轮转。",
           "example": "False",
           "member": "bool",
           "name": "EnableRotation",
@@ -747,7 +876,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "0 --  用户自定义凭据类型；1 -- 云产品凭据类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SecretType",
@@ -789,6 +918,33 @@
           "name": "RotationFrequency",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssociatedInstanceIDs",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -920,6 +1076,87 @@
           "member": "string",
           "name": "Regions",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSSHKeyPairValueRequest": {
+      "document": "GetSSHKeyPairValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭据名称，此凭据只能为SSH密钥对凭据类型。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSSHKeyPairValueResponse": {
+      "document": "GetSSHKeyPairValue返回参数结构体",
+      "members": [
+        {
+          "document": "SSH密钥对ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公钥明文，使用base64编码。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私钥明文，使用base64编码",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "此密钥对所属的项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSH密钥对的描述信息。\n用户可以在CVM侧控制台对密钥对的描述信息进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSH密钥对的名称。\n用户可以在CVM侧控制台对密钥对的名称进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "SSHKeyName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1133,7 +1370,7 @@
         },
         {
           "default": "",
-          "document": "0  -- 表示用户自定义凭据，默认为0。\n1  -- 表示用户云产品凭据。\n这个参数只能在云产品凭据(1)和用户自定义凭据(0)中二选一。",
+          "document": "0  -- 表示用户自定义凭据，默认为0。\n1  -- 表示用户云产品凭据。\n2 -- 表示SSH密钥对凭据。",
           "example": "1",
           "member": "uint64",
           "name": "SecretType",
@@ -1492,6 +1729,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对凭据的名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当凭据类型为SSH密钥对凭据时，此字段有效，用于表示SSH密钥对所关联的CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssociatedInstanceIDs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1599,7 +1866,7 @@
         },
         {
           "default": "",
-          "document": "是否开启轮转。\nTrue -- 开启轮转；\nFalse -- 禁止轮转。",
+          "document": "是否开启轮转。\ntrue -- 开启轮转；\nfalse -- 禁止轮转。",
           "example": "True",
           "member": "bool",
           "name": "EnableRotation",
@@ -1617,7 +1884,7 @@
         },
         {
           "default": "",
-          "document": "用户设置的期望开始轮转时间，格式为：2006-01-02 15:04:05。\n当EnableRotation为True时，如果不填RotationBeginTime，则默认填充为当前时间。",
+          "document": "用户设置的期望开始轮转时间，格式为：2006-01-02 15:04:05。\n当EnableRotation为true时，如果不填RotationBeginTime，则默认填充为当前时间。",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RotationBeginTime",

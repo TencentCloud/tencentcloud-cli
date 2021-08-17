@@ -36,6 +36,12 @@
       "name": "聚鑫-提现",
       "output": "ApplyWithdrawalResponse"
     },
+    "BindAccount": {
+      "document": "灵云-绑定账号",
+      "input": "BindAccountRequest",
+      "name": "灵云-绑定账号",
+      "output": "BindAccountResponse"
+    },
     "BindAcct": {
       "document": "商户绑定提现银行卡，每个商户只能绑定一张提现银行卡",
       "input": "BindAcctRequest",
@@ -107,6 +113,12 @@
       "input": "CreateCustAcctIdRequest",
       "name": "云鉴-会员子账户开立",
       "output": "CreateCustAcctIdResponse"
+    },
+    "CreateExternalAnchor": {
+      "document": "灵云-主播入驻",
+      "input": "CreateExternalAnchorRequest",
+      "name": "灵云-主播入驻",
+      "output": "CreateExternalAnchorResponse"
     },
     "CreateInvoice": {
       "document": "智慧零售-发票开具",
@@ -215,6 +227,12 @@
       "input": "ModifyAgentTaxPaymentInfoRequest",
       "name": "直播平台-修改代理商完税信息",
       "output": "ModifyAgentTaxPaymentInfoResponse"
+    },
+    "ModifyBindedAccount": {
+      "document": "灵云-重新绑定账号",
+      "input": "ModifyBindedAccountRequest",
+      "name": "灵云-重新绑定账号",
+      "output": "ModifyBindedAccountResponse"
     },
     "ModifyMerchant": {
       "document": "云鉴-商户信息修改的接口",
@@ -557,6 +575,12 @@
       "input": "UnifiedOrderRequest",
       "name": "聚鑫-统一下单接口",
       "output": "UnifiedOrderResponse"
+    },
+    "UploadExternalAnchorInfo": {
+      "document": "灵云-上传主播信息",
+      "input": "UploadExternalAnchorInfoRequest",
+      "name": "灵云-上传主播信息",
+      "output": "UploadExternalAnchorInfoResponse"
     },
     "UploadTaxList": {
       "document": "直播平台-上传代理商完税列表",
@@ -2123,6 +2147,87 @@
         }
       ],
       "usage": "out"
+    },
+    "BindAccountRequest": {
+      "document": "BindAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播Id",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1 微信企业付款 \n2 支付宝转账 \n3 平安银企直连代发转账",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "收款方标识。\n微信为open_id；\n支付宝为会员alipay_user_id;\n平安为收款方银行账号;",
+          "example": "无",
+          "member": "string",
+          "name": "AccountNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAccountResponse": {
+      "document": "BindAccount返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该字段为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindAcctRequest": {
       "document": "BindAcct请求参数结构体",
@@ -4302,6 +4407,112 @@
           "name": "CnsmrSeqNo",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalAnchorData": {
+      "document": "CreateExternalAnchor接口返回参数",
+      "members": [
+        {
+          "default": "",
+          "document": "主播Id",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateExternalAnchorRequest": {
+      "document": "CreateExternalAnchor请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台业务系统唯一标示的主播id",
+          "example": "无",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证正面图片下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardFront",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证反面图片下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardReverse",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalAnchorResponse": {
+      "document": "CreateExternalAnchor返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateExternalAnchorData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7663,6 +7874,87 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBindedAccountRequest": {
+      "document": "ModifyBindedAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播Id",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1 微信企业付款 \n2 支付宝转账 \n3 平安银企直连代发转账",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "收款方标识。\n微信为open_id；\n支付宝为会员alipay_user_id;\n平安为收款方银行账号;",
+          "example": "无",
+          "member": "string",
+          "name": "AccountNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBindedAccountResponse": {
+      "document": "ModifyBindedAccount返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该字段为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16817,6 +17109,78 @@
           "name": "TransactionId",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadExternalAnchorInfoRequest": {
+      "document": "UploadExternalAnchorInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播Id",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证正面图片下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardFront",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证反面图片下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardReverse",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadExternalAnchorInfoResponse": {
+      "document": "UploadExternalAnchorInfo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该字段为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

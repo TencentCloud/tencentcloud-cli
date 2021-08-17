@@ -35,7 +35,7 @@
     "CreateApplicationTriggerPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateApplicationTriggerPersonal\r\n&RepoName=test/test123&TriggerName=testtrig&InvokeMethod=all&ClusterId=cls-xxxxxxxx&Namespace=default&WorkloadType=Deployment&WorkloadName=testdeploy&ContainerName=nginx&ClusterRegion=16\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateApplicationTriggerPersonal\n&RepoName=test/test123\n&TriggerName=testtrig\n&InvokeMethod=all\n&ClusterId=cls-xxxxxxxx\n&Namespace=default\n&WorkloadType=Deployment\n&WorkloadName=testdeploy\n&ContainerName=nginx\n&ClusterRegion=16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26358c69-7254-41e8-8f4e-bb13836e4165\"\n    }\n}",
         "title": "创建应用更新触发器"
       }
@@ -97,7 +97,7 @@
     "CreateNamespace": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateNamespace\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&IsPublic=true\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateNamespace\n&RegistryId=tcr-okmj78\n&NamespaceName=mytest\n&IsPublic=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "创建命名空间"
       }
@@ -161,7 +161,7 @@
     "CreateUserPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateUserPersonal\r\n&Password=123456789\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateUserPersonal\n&Password=123456789\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建个人用户"
       }
@@ -273,7 +273,7 @@
     "DeleteRepository": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepository\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=test\r\n&RepositoryName=mytest\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepository\n&RegistryId=tcr-okmj78\n&NamespaceName=test\n&RepositoryName=mytest\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "删除镜像仓库"
       }
@@ -353,7 +353,7 @@
     "DescribeImageFilterPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImageFilterPersonal\r\n&RepoName=dockerhub/test\r\n&Tag=test\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImageFilterPersonal\n&RepoName=dockerhub/test\n&Tag=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"SameImages\": [\n                \"99\"\n            ]\n        }\n    }\n}",
         "title": "查询个人版与指定tag镜像内容相同的tag列表"
       }
@@ -631,7 +631,7 @@
     "ModifyApplicationTriggerPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyApplicationTriggerPersonal\r\n&RepoName=test/test123&TriggerName=testtrig&InvokeMethod=all&ClusterId=cls-xxxxxxxx&Namespace=default&WorkloadType=Deployment&WorkloadName=testdeploy&ContainerName=nginx&ClusterRegion=16&NewTriggerName=test2\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyApplicationTriggerPersonal\n&RepoName=test/test123\n&TriggerName=testtrig\n&InvokeMethod=all\n&ClusterId=cls-xxxxxxxx\n&Namespace=default\n&WorkloadType=Deployment\n&WorkloadName=testdeploy\n&ContainerName=nginx\n&ClusterRegion=16\n&NewTriggerName=test2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26358c69-7254-41e8-8f4e-bb13836e4165\"\n    }\n}",
         "title": "修改应用更新触发器"
       }
@@ -739,7 +739,7 @@
     "ValidateNamespaceExistPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ValidateNamespaceExistPersonal\r\n&Namespace=mynamespace\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ValidateNamespaceExistPersonal\n&Namespace=mynamespace\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"IsExist\": false,\n            \"IsPreserved\": false\n        }\n    }\n}",
         "title": "验证个人版命名空间是否存在"
       }
@@ -747,7 +747,7 @@
     "ValidateRepositoryExistPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ValidateRepositoryExistPersonal\r\n&RepoName=dockerhub/test\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ValidateRepositoryExistPersonal\n&RepoName=dockerhub/test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsExist\": false\n        },\n        \"RequestId\": \"444332c8-056a-4f8a-899b-16ba6e2d0be5\"\n    }\n}",
         "title": "验证个人版仓库是否存在"
       }

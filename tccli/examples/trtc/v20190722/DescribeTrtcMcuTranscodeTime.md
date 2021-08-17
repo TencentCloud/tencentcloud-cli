@@ -17,7 +17,7 @@ Output:
     "Response": {
         "Usages": [
             {
-                "SdkAppId": "xx",
+                "SdkAppId": "查询旁路转码计费时长",
                 "TotalNum": 1,
                 "SdkAppIdTranscodeTimeUsages": [
                     {
@@ -30,7 +30,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "644956b8-9f7c-44c5-b833-31d91dba1b23"
     }
 }
 ```

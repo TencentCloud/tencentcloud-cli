@@ -2450,6 +2450,7 @@
         {
           "default": "",
           "document": "证书 ID。",
+          "example": "abcb1234",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2458,6 +2459,7 @@
         {
           "default": "",
           "document": "备注名称。",
+          "example": "others",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -2471,8 +2473,10 @@
       "members": [
         {
           "document": "修改成功的证书 ID。",
+          "example": "abcb1234",
           "member": "string",
           "name": "CertificateId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

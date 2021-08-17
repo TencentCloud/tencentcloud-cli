@@ -48,6 +48,14 @@
         "title": "提现请求示例"
       }
     ],
+    "BindAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 0,\n    \"AccountNo\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "BindAccount"
+      }
+    ],
     "BindAcct": [
       {
         "document": "用于子商户绑定提现银行卡场景。",
@@ -142,6 +150,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=CreateCustAcctId\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&FunctionFlag=1&FundSummaryAcctNo=15041201553971&TranNetMemberCode=YAPI100015&MemberProperty=SH&UserNickname=APITEST&Mobile=110&Email=test@tencent.com&MrchCode=1234&SelfBusiness=false&ContactName=API&SubAcctName=API&SubAcctShortName=API&SubAcctType=1",
         "output": "{\n    \"Response\": {\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"3f9eb098-d94a-4d34-aefc-35325956923c\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831912061575630632\",\n        \"SubAcctNo\": \"3691000000021018\"\n    }\n}",
         "title": "CreateCustAcctId"
+      }
+    ],
+    "CreateExternalAnchor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalAnchor\n<公共请求参数>\n\n{\n    \"IdCardFront\": \"xx\",\n    \"IdNo\": \"xx\",\n    \"IdCardReverse\": \"xx\",\n    \"Uid\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"AnchorId\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "CreateExternalAnchor"
       }
     ],
     "CreateInvoice": [
@@ -292,6 +308,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=ModifyAgentTaxPaymentInfo\n&BatchNum=98\n&RawElectronicCertUrl=https://cloud.tencent.com/document/product/1122/40639\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8ee3913-aa2a-4ea0-840f-9a77247bcabb\",\n        \"AgentTaxPaymentBatch\": {\n            \"StatusMsg\": \"下载&上传成功\",\n            \"Type\": 0,\n            \"BatchNum\": 98,\n            \"InfoNum\": 1,\n            \"Channel\": 1,\n            \"FileName\": \"paxos.pdf\",\n            \"RawElectronicCertUrl\": \"https://cloud.tencent.com/document/product/1122/40639\",\n            \"AgentId\": \"test\",\n            \"StatusCode\": 0\n        }\n    }\n}",
         "title": "ModifyAgentTaxPaymentInfo"
+      }
+    ],
+    "ModifyBindedAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBindedAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 0,\n    \"AccountNo\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "ModifyBindedAccount"
       }
     ],
     "ModifyMerchant": [
@@ -754,6 +778,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=UnifiedOrder\n&CurrencyType=CNY\n&MidasAppId=your_midas_app_id\n&OutTradeNo=your_order_no\n&ProductDetail=商品详情\n&ProductId=your_product_id\n&ProductName=商品名称\n&TotalAmt=1\n&UserId=your_user_id\n&Channel=wechat\n&Quantity=1\n&RealChannel=bank_pingan\n&SubAppId=your_sub_app_id\n&TotalMchIncome=1\n&TotalPlatformIncome=0\n&WxSubOpenId=your_wx_sub_open_id\n&OriginalAmt=1\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&WxAppId=your_wx_app_id\n&WxSubAppId=your_wx_sub_app_id\n&SubOrderList.0.SubMchIncome=1\n&SubOrderList.0.PlatformIncome=0\n&SubOrderList.0.ProductDetail=商品详情\n&SubOrderList.0.ProductName=商品名称\n&SubOrderList.0.SubAppId=your_sub_app_id\n&SubOrderList.0.SubOutTradeNo=your_sub_order_no\n&SubOrderList.0.Amt=1\n&SubOrderList.0.OriginalAmt=1\n&SubOrderList.0.Metadata=xxx\n&PaymentNotifyUrl=http://cloud.tencent.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalAmt\": 1,\n        \"OutTradeNo\": \"your_order_no\",\n        \"TransactionId\": \"E-191018160200005000\",\n        \"PayInfo\": \"data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22user123%22%2C%22out_trade_no%22%3A%22mikeuf1910181230%22%2C%22product_id%22%3A%22product_111%22%7D&sign=sign\",\n        \"RequestId\": \"6a895298-cd08-4170-b8e2-eeda98794a16\"\n    }\n}",
         "title": "统一下单请求示例"
+      }
+    ],
+    "UploadExternalAnchorInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadExternalAnchorInfo\n<公共请求参数>\n\n{\n    \"IdCardFront\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"IdCardReverse\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "UploadExternalAnchorInfo"
       }
     ],
     "UploadTaxList": [

@@ -13,40 +13,19 @@ tccli cbs DescribeDiskOperationLogs --cli-unfold-argument  \
 Output: 
 ```
 {
-    "DiskOperationLogSet": [
-        {
-            "OperationState": "SUCCESS",
-            "StartTime": "2018-09-19 20:40:20",
-            "Operator": "100004375281",
-            "Operation": "CBS_OPERATION_MODIFY",
-            "EndTime": "2018-09-19 20:40:20",
-            "DiskId": "disk-ou4acu4i"
-        },
-        {
-            "OperationState": "SUCCESS",
-            "StartTime": "2018-09-19 20:40:16",
-            "Operator": "100004375281",
-            "Operation": "CBS_OPERATION_MODIFY",
-            "EndTime": "2018-09-19 20:40:16",
-            "DiskId": "disk-ou4acu4i"
-        },
-        {
-            "OperationState": "SUCCESS",
-            "StartTime": "2018-09-19 20:40:13",
-            "Operator": "100004375281",
-            "Operation": "CBS_OPERATION_EXPAND",
-            "EndTime": "2018-09-19 20:40:13",
-            "DiskId": "disk-ou4acu4i"
-        },
-        {
-            "OperationState": "SUCCESS",
-            "StartTime": "2018-09-19 20:39:59",
-            "Operator": "100004375281",
-            "Operation": "CBS_OPERATION_CREATE",
-            "EndTime": "2018-09-19 20:39:59",
-            "DiskId": "disk-ou4acu4i"
-        }
-    ]
+    "Response": {
+        "RequestId": "xx",
+        "DiskOperationLogSet": [
+            {
+                "OperationState": "xx",
+                "StartTime": "xx",
+                "Operator": "xx",
+                "Operation": "xx",
+                "EndTime": "xx",
+                "DiskId": "xx"
+            }
+        ]
+    }
 }
 ```
 

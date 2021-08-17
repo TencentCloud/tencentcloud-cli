@@ -37,7 +37,7 @@
       "output": "DescribeDetailEventResponse"
     },
     "DescribeHistoryScale": {
-      "document": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。",
+      "document": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。 ",
       "input": "DescribeHistoryScaleRequest",
       "name": "查询历史房间和用户数",
       "output": "DescribeHistoryScaleResponse"
@@ -455,7 +455,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间,本地unix时间戳（1588031999s）",
+          "document": "查询开始时间,本地unix时间戳（1592448600s）",
           "example": "1592448600",
           "member": "uint64",
           "name": "StartTime",
@@ -464,7 +464,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间,本地unix时间戳（1588031999s）",
+          "document": "查询结束时间,本地unix时间戳（1592449080s）",
           "example": "1592449080",
           "member": "uint64",
           "name": "EndTime",
@@ -527,7 +527,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s），查询实时数据时，查询起止时间不超过1个小时。",
+          "document": "查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -536,7 +536,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "document": "查询结束时间，本地unix时间戳（1590065877s）",
           "example": "1590065877",
           "member": "uint64",
           "name": "EndTime",
@@ -545,7 +545,7 @@
         },
         {
           "default": "",
-          "document": "用户SDKAppID（1400188366）",
+          "document": "用户SDKAppID（1400353843）",
           "example": "1400353843",
           "member": "string",
           "name": "SdkAppId",
@@ -644,7 +644,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588055615s）",
           "example": "1588055615",
           "member": "uint64",
           "name": "StartTime",
@@ -653,7 +653,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "document": "查询结束时间，本地unix时间戳（1588058615s）",
           "example": "1588055615",
           "member": "uint64",
           "name": "EndTime",
@@ -707,7 +707,8 @@
       "members": [
         {
           "default": "",
-          "document": "用户sdkappid",
+          "document": "用户sdkappid(1400188366)",
+          "example": "1400188366",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -715,7 +716,8 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，5天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，5天内。本地unix时间戳（1587571000s）",
+          "example": "1587571000",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -723,7 +725,8 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "document": "查询结束时间，本地unix时间戳（1588034999s）",
+          "example": "1588034999",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -737,15 +740,19 @@
       "members": [
         {
           "document": "返回的数据条数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                 \"Time\": 1587830400,                 \"RoomNumbe",
           "member": "ScaleInfomation",
           "name": "ScaleList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1064,7 +1071,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1588031999）",
           "example": "1588031999",
           "member": "uint64",
           "name": "StartTime",
@@ -1073,7 +1080,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "document": "查询结束时间，本地unix时间戳（1588034999）",
           "example": "1588034999",
           "member": "uint64",
           "name": "EndTime",
@@ -1146,6 +1153,7 @@
         {
           "default": "",
           "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2020-09-07",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -1154,6 +1162,7 @@
         {
           "default": "",
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2020-09-08",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -1162,6 +1171,7 @@
         {
           "default": "",
           "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回所有应用的合计值。",
+          "example": "1400123456",
           "member": "uint64",
           "name": "SdkAppId",
           "required": false,
@@ -1175,8 +1185,10 @@
       "members": [
         {
           "document": "应用的用量信息数组。",
+          "example": "无",
           "member": "OneSdkAppIdUsagesInfo",
           "name": "Usages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1195,6 +1207,7 @@
         {
           "default": "",
           "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2020-09-07",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -1203,6 +1216,7 @@
         {
           "default": "",
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2020-09-08",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -1211,6 +1225,7 @@
         {
           "default": "",
           "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400123456",
           "member": "uint64",
           "name": "SdkAppId",
           "required": false,
@@ -1224,8 +1239,10 @@
       "members": [
         {
           "document": "应用的用量信息数组。",
+          "example": "无",
           "member": "OneSdkAppIdTranscodeTimeUsagesInfo",
           "name": "Usages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1252,7 +1269,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间，14天内。本地unix时间戳（1588031999s）",
+          "document": "查询开始时间，14天内。本地unix时间戳（1590065777）",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -1261,7 +1278,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间，本地unix时间戳（1588031999s）",
+          "document": "查询结束时间，本地unix时间戳（1590065877）",
           "example": "1590065877",
           "member": "uint64",
           "name": "EndTime",
@@ -1270,7 +1287,7 @@
         },
         {
           "default": "",
-          "document": "用户SDKAppID（1400188366）",
+          "document": "用户SDKAppID（1400353843）",
           "example": "1400353843",
           "member": "string",
           "name": "SdkAppId",

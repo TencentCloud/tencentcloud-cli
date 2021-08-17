@@ -25,7 +25,12 @@ Output:
         "SecretName": "xx",
         "RotationFrequency": 1,
         "DeleteTime": 1,
-        "CreateTime": 1
+        "CreateTime": 1,
+        "ResourceName": "xxx",
+        "ProjectID": 1,
+        "AssociatedInstanceIDs": [
+            "xxx"
+        ]
     }
 }
 ```

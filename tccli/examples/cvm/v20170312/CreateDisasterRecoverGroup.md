@@ -19,7 +19,7 @@ Output:
         "Name": "物理机容灾组",
         "CvmQuotaTotal": 50,
         "CurrentNum": 0,
-        "CreateTime": "2018-06-08T07:26:38Z",
+        "CreateTime": "2020-09-22 00:00:00",
         "RequestId": "21387009-9b9c-4b57-8fa2-8228f702ff6c"
     }
 }

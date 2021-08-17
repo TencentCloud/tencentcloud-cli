@@ -109,8 +109,8 @@
     "DescribeDiskOperationLogs": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskOperationLogs\r\n&Filters.0.Name=disk-id\r\n&Filters.0.Values.0=disk-ou4acu4i\r\n&<公共请求参数>",
-        "output": "{\r\n  \"DiskOperationLogSet\": [\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:20\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_MODIFY\",\r\n      \"EndTime\": \"2018-09-19 20:40:20\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:16\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_MODIFY\",\r\n      \"EndTime\": \"2018-09-19 20:40:16\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:40:13\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_EXPAND\",\r\n      \"EndTime\": \"2018-09-19 20:40:13\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    },\r\n    {\r\n      \"OperationState\": \"SUCCESS\",\r\n      \"StartTime\": \"2018-09-19 20:39:59\",\r\n      \"Operator\": \"100004375281\",\r\n      \"Operation\": \"CBS_OPERATION_CREATE\",\r\n      \"EndTime\": \"2018-09-19 20:39:59\",\r\n      \"DiskId\": \"disk-ou4acu4i\"\r\n    }\r\n  ]\r\n}",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskOperationLogs\n&Filters.0.Name=disk-id\n&Filters.0.Values.0=disk-ou4acu4i\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DiskOperationLogSet\": [\n            {\n                \"OperationState\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Operator\": \"xx\",\n                \"Operation\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"DiskId\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询云盘操作日志"
       }
     ],

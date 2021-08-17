@@ -132,6 +132,12 @@
       "name": "查看实例列表",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeInstancesModification": {
+      "document": "本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。",
+      "input": "DescribeInstancesModificationRequest",
+      "name": "查询实例可调整配置",
+      "output": "DescribeInstancesModificationResponse"
+    },
     "DescribeInstancesOperationLimit": {
       "document": "本接口（DescribeInstancesOperationLimit）用于查询实例操作限制。\n\n* 目前支持调整配置操作限制次数查询。",
       "input": "DescribeInstancesOperationLimitRequest",
@@ -722,6 +728,7 @@
         {
           "default": "",
           "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "example": "物理机容灾组",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -730,6 +737,7 @@
         {
           "default": "",
           "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架",
+          "example": "HOST",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -738,6 +746,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -751,43 +760,55 @@
       "members": [
         {
           "document": "分散置放群组ID列表。",
+          "example": "ps-qajfd25h",
           "member": "string",
           "name": "DisasterRecoverGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架",
+          "example": "HOST",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "example": "物理机容灾组",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "置放群组内可容纳的云服务器数量。",
+          "example": "50",
           "member": "int64",
           "name": "CvmQuotaTotal",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "置放群组内已有的云服务器数量。",
+          "example": "0",
           "member": "int64",
           "name": "CurrentNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "置放群组创建时间。",
+          "example": "2018-06-08T07:26:38Z",
           "member": "datetime",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -841,7 +862,7 @@
         },
         {
           "default": "",
-          "document": "创建Windows镜像时是否启用Sysprep，关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)",
+          "document": "创建Windows镜像时是否启用Sysprep。\n取值范围：TRUE或FALSE，默认取值为FALSE。\n\n关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)。",
           "example": "FALSE",
           "member": "string",
           "name": "Sysprep",
@@ -1218,6 +1239,7 @@
         {
           "default": "",
           "document": "分散置放群组ID列表。每次请求允许操作的分散置放群组数量上限是100。",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -1226,6 +1248,7 @@
         {
           "default": "",
           "document": "分散置放群组名称，支持模糊匹配。",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1234,6 +1257,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1242,6 +1266,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1255,15 +1280,19 @@
       "members": [
         {
           "document": "分散置放群组信息列表。",
+          "example": "无",
           "member": "DisasterRecoverGroup",
           "name": "DisasterRecoverGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "用户置放群组总量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1613,6 +1642,60 @@
           "member": "string",
           "name": "InstanceVncUrl",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesModificationRequest": {
+      "document": "DescribeInstancesModification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待查询的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为20。",
+          "example": "\"ins-4txox06m\"",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<li><strong>status</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL、UNAVAILABLE。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesModificationResponse": {
+      "document": "DescribeInstancesModification返回参数结构体",
+      "members": [
+        {
+          "document": "实例调整的机型配置的数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例支持调整的机型配置列表。",
+          "example": "无",
+          "member": "InstanceTypeConfigStatus",
+          "name": "InstanceTypeConfigStatusSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3306,6 +3389,7 @@
         {
           "default": "",
           "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "example": "ins-fd8spnmq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3314,6 +3398,7 @@
         {
           "default": "",
           "document": "待扩容的数据盘配置信息。只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/product/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考硬盘产品简介。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -3322,6 +3407,7 @@
         {
           "default": "",
           "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机<br><li>FALSE：表示在正常关机失败后不进行强制关机<br><br>默认取值：FALSE。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "example": "True",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -3335,8 +3421,10 @@
       "members": [
         {
           "document": "该参数表示磁盘扩容成对应配置的价格。",
+          "example": "无",
           "member": "Price",
           "name": "Price",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4059,6 +4147,42 @@
           "name": "FPGA",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceTypeConfigStatus": {
+      "document": "描述实例机型配置信息及状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "\"UNAVAILABLE\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"The instance does not support tuning to SA3 instance family.\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置信息",
+          "example": "无",
+          "member": "InstanceTypeConfig",
+          "name": "InstanceTypeConfig",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -6310,6 +6434,7 @@
         {
           "default": "",
           "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6318,6 +6443,7 @@
         {
           "default": "",
           "document": "待扩容的数据盘配置信息。只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](/document/api/213/9452#block_device)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考[硬盘产品简介](https://cloud.tencent.com/document/product/362/2353)。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -6326,6 +6452,7 @@
         {
           "default": "",
           "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机<br><li>FALSE：表示在正常关机失败后不进行强制关机<br><br>默认取值：FALSE。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "example": "true",
           "member": "bool",
           "name": "ForceStop",
           "required": false,

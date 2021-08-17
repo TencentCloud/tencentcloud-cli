@@ -8,6 +8,14 @@
         "title": "创建云产品凭据"
       }
     ],
+    "CreateSSHKeyPairSecret": [
+      {
+        "document": "创建SSH密钥对凭据",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSHKeyPairSecret\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"KmsKeyId\": \"xx\",\n    \"Description\": \"xx\",\n    \"SecretName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SSHKeyID\": \"xx\",\n        \"TagMsg\": \"xx\",\n        \"TagCode\": 1,\n        \"RequestId\": \"xx\",\n        \"SecretName\": \"xx\",\n        \"SSHKeyName\": \"xx\"\n    }\n}",
+        "title": "创建SSH密钥对凭据"
+      }
+    ],
     "CreateSecret": [
       {
         "document": "",
@@ -60,7 +68,7 @@
       {
         "document": "",
         "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"xx\",\n        \"ProductName\": \"xx\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecretType\": 0,\n        \"SecretName\": \"xx\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"xx\",\n        \"ProductName\": \"xx\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecretType\": 0,\n        \"SecretName\": \"xx\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"xxx\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"xxx\"\n        ]\n    }\n}",
         "title": "获取凭据详情信息"
       }
     ],
@@ -96,6 +104,14 @@
         "title": "获取控制台展示region列表"
       }
     ],
+    "GetSSHKeyPairValue": [
+      {
+        "document": "获取SSH密钥对凭据明文",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSSHKeyPairValue\n<公共请求参数>\n\n{\n    \"SecretName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SSHKeyID\": \"xx\",\n        \"ProjectID\": 0,\n        \"PrivateKey\": \"xx\",\n        \"PublicKey\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SSHKeyName\": \"xx\",\n        \"SSHKeyDescription\": \"xx\"\n    }\n}",
+        "title": "获取SSH密钥对凭据明文"
+      }
+    ],
     "GetSecretValue": [
       {
         "document": "",
@@ -123,8 +139,8 @@
     "ListSecrets": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecrets\n&Limit=2\n&SecretType=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SecretMetadatas\": [\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreateUin\": 1,\n                \"ProductName\": \"xx\",\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"SecretName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            },\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"CreateUin\": 1,\n                \"KmsKeyType\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"KmsKeyId\": \"xx\",\n                \"SecretType\": 0,\n                \"SecretName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecrets\n&Limit=2\n&SecretType=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SecretMetadatas\": [\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"ProjectID\": 0,\n                \"ProductName\": \"xx\",\n                \"RotationStatus\": 0,\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"SecretName\": \"xx\",\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            },\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"SecretName\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"RotationStatus\": 0,\n                \"ProjectID\": 0,\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取凭据详细信息列表"
       }
     ],

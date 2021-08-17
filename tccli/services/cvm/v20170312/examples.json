@@ -27,8 +27,8 @@
     "CreateDisasterRecoverGroup": [
       {
         "document": "创建分散置放群组",
-        "input": "https://cvm.tencentcloudapi.com/?Action=CreateDisasterRecoverGroup\r\n&Name=物理机容灾组\r\n&Type=HOST\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Type\": \"HOST\",\n        \"DisasterRecoverGroupId\": \"ps-qajfd25h\",\n        \"Name\": \"物理机容灾组\",\n        \"CvmQuotaTotal\": 50,\n        \"CurrentNum\": 0,\n        \"CreateTime\": \"2018-06-08T07:26:38Z\",\n        \"RequestId\": \"21387009-9b9c-4b57-8fa2-8228f702ff6c\"\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=CreateDisasterRecoverGroup\n&Name=物理机容灾组\n&Type=HOST\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"HOST\",\n        \"DisasterRecoverGroupId\": \"ps-qajfd25h\",\n        \"Name\": \"物理机容灾组\",\n        \"CvmQuotaTotal\": 50,\n        \"CurrentNum\": 0,\n        \"CreateTime\": \"2020-09-22 00:00:00\",\n        \"RequestId\": \"21387009-9b9c-4b57-8fa2-8228f702ff6c\"\n    }\n}",
         "title": "创建分散置放群组"
       }
     ],
@@ -91,7 +91,7 @@
     "DescribeDisasterRecoverGroups": [
       {
         "document": "查询分散置放群组信息",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeDisasterRecoverGroups\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeDisasterRecoverGroups\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DisasterRecoverGroupSet\": [\n            {\n                \"DisasterRecoverGroupId\": \"ps-21q9ibvr\",\n                \"Name\": \"数据库业务\",\n                \"Type\": \"RACK\",\n                \"CvmQuotaTotal\": 30,\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"CreateTime\": \"2018-04-19T02:47:12Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c68ce193-be41-4d13-9a9b-2dc031db6477\"\n    }\n}",
         "title": "查询分散置放群组信息"
       }
@@ -192,6 +192,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstances\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.0.Values.1=ap-guangzhou-2\n&Offset=0\n&Limit=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"RenewFlag\": \"null\",\n                \"Uuid\": \"68b510db-b4c1-4630-a62b-73d0c7c970f9\",\n                \"InstanceState\": \"STOPPING\",\n                \"LatestOperationState\": \"OPERATING\",\n                \"OsName\": \"CentOS 7.6 64bit\",\n                \"CreatedTime\": \"2020-03-10T02:43:51Z\",\n                \"RestrictState\": \"NORMAL\",\n                \"ExpiredTime\": \"2020-04-10T02:47:36Z\",\n                \"DisasterRecoverGroupId\": \"\",\n                \"Memory\": 1,\n                \"IPv6Addresses\": null,\n                \"CPU\": 1,\n                \"CamRoleName\": \"\",\n                \"PublicIpAddresses\": [\n                    \"123.207.11.190\"\n                ],\n                \"Tags\": [],\n                \"InstanceId\": \"ins-9bxebleo\",\n                \"ImageId\": \"img-9qabwvbn\",\n                \"StopChargingMode\": \"NOT_APPLICABLE\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InstanceType\": \"S1.SMALL1\",\n                \"SystemDisk\": {\n                    \"DiskSize\": 50,\n                    \"DiskId\": \"disk-nucurerk\",\n                    \"DiskType\": \"CLOUD_PREMIUM\"\n                },\n                \"Placement\": {\n                    \"ProjectId\": 1174660,\n                    \"HostId\": null,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"PrivateIpAddresses\": [\n                    \"172.16.32.78\"\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": null\n                },\n                \"SecurityGroupIds\": [\n                    \"sg-p1ezv4wz\"\n                ],\n                \"InstanceName\": \"测试实例\",\n                \"DataDisks\": null,\n                \"IsolatedSource\": \"NOTISOLATED\",\n                \"VirtualPrivateCloud\": {\n                    \"SubnetId\": \"subnet-a2676p0e\",\n                    \"AsVpcGateway\": false,\n                    \"VpcId\": \"vpc-g7wzcv7n\"\n                },\n                \"LatestOperationRequestId\": \"2f8decef-78b2-4e20-bcfe-7a5112658a05\",\n                \"InternetAccessible\": {\n                    \"InternetMaxBandwidthOut\": 1,\n                    \"InternetChargeType\": \"BANDWIDTH_PREPAID\"\n                },\n                \"LatestOperation\": \"StopInstances\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
         "title": "查询实例的最新操作情况"
+      }
+    ],
+    "DescribeInstancesModification": [
+      {
+        "document": "",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstancesModification\n&InstanceIds.0=xx\n&Filters.0.Name=status\n&Filters.0.Values.0=SELL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigStatusSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"InstanceTypeConfig\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"FPGA\": 0,\n                    \"InstanceFamily\": \"SA2\",\n                    \"InstanceType\": \"SA2.MEDIUM4\",\n                    \"Memory\": 4,\n                    \"GPU\": 0,\n                    \"CPU\": 2\n                },\n                \"Message\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "title": "查询指定实例支持调整的机型配置"
       }
     ],
     "DescribeInstancesOperationLimit": [
@@ -363,8 +371,8 @@
     "InquiryPriceResizeInstanceDisks": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResizeInstanceDisks\r\n&InstanceId=ins-fd8spnmq\r\n&DataDisks.0.DiskSize=100\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.46,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"d63b4f53-335b-49fb-9aa1-1716bb9276f6\"\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResizeInstanceDisks\n&InstanceId=ins-fd8spnmq\n&DataDisks.0.DiskSize=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.46,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"xx\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            },\n            \"BandwidthPrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.0,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"xx\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "按量付费实例扩容磁盘询价"
       }
     ],
@@ -549,7 +557,7 @@
     "ResizeInstanceDisks": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResizeInstanceDisks\r\n&InstanceId=ins-r8hr2upy\r\n&DataDisks.0.DiskSize=100\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ResizeInstanceDisks\n&InstanceId=ins-r8hr2upy\n&DataDisks.0.DiskSize=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "重置一块指定id的磁盘大小"
       }

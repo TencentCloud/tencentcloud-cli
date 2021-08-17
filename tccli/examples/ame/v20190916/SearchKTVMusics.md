@@ -22,6 +22,7 @@ Output:
                     "方文山"
                 ],
                 "MusicId": "ame-78dxxx",
+                "Duration": 120,
                 "SingerSet": [
                     "周杰伦"
                 ],

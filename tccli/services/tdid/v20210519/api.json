@@ -1,0 +1,458 @@
+{
+  "actions": {
+    "CreateCredential": {
+      "document": "创建凭证",
+      "input": "CreateCredentialRequest",
+      "name": "创建凭证",
+      "output": "CreateCredentialResponse"
+    },
+    "CreateSelectiveCredential": {
+      "document": "创建选择性批露凭证",
+      "input": "CreateSelectiveCredentialRequest",
+      "name": "创建选择性批露凭证",
+      "output": "CreateSelectiveCredentialResponse"
+    },
+    "CreateTDid": {
+      "document": "创建机构DID",
+      "input": "CreateTDidRequest",
+      "name": "创建机构DID",
+      "output": "CreateTDidResponse"
+    },
+    "VerifyCredential": {
+      "document": "验证凭证",
+      "input": "VerifyCredentialRequest",
+      "name": "验证凭证",
+      "output": "VerifyCredentialResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-05-19",
+    "api_brief": "API接口提供基础的创建DID、查询DID文档、更新VC、验证凭证、颁发凭证、本地密钥管理、数字身份标识DID管理、电子凭证Credential管理、授权机构（Authority Issuer）管理、CPT（Claim Protocol Type）管理、存证（Evidence）管理、AMOP链上数据通道、凭证传输（Transportation）管理等一系列功能。",
+    "serviceNameCN": "分布式身份",
+    "serviceShortName": "tdid"
+  },
+  "objects": {
+    "CreateCredentialRequest": {
+      "document": "CreateCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数集合，详见示例",
+          "example": "无",
+          "member": "FunctionArg",
+          "name": "FunctionArg",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "参数集合，详见示例",
+          "example": "无",
+          "member": "TransactionArg",
+          "name": "TransactionArg",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "VersionCredential",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCredentialResponse": {
+      "document": "CreateCredential返回参数结构体",
+      "members": [
+        {
+          "document": "Credential的具体信息",
+          "example": "c",
+          "member": "string",
+          "name": "CredentialData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSelectiveCredentialRequest": {
+      "document": "CreateSelectiveCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数集合",
+          "example": "1",
+          "member": "VerifyFunctionArg",
+          "name": "FunctionArg",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "批露策略id",
+          "example": "2000000",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSelectiveCredentialResponse": {
+      "document": "CreateSelectiveCredential返回参数结构体",
+      "members": [
+        {
+          "document": "凭证字符串",
+          "example": "{}",
+          "member": "string",
+          "name": "CredentialData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTDidRequest": {
+      "document": "CreateTDid请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署机构为1，否则为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Relegation",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTDidResponse": {
+      "document": "CreateTDid返回参数结构体",
+      "members": [
+        {
+          "document": "TDID",
+          "example": "did:tdid:1:0xdab41eb32082044366f1b5712504d0b623b095c1",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FunctionArg": {
+      "document": "创建凭证入参的FunctionArg",
+      "members": [
+        {
+          "default": "",
+          "document": "CPT ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签发者 did",
+          "example": "1",
+          "member": "string",
+          "name": "Issuer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "1",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "声明",
+          "example": "1",
+          "member": "string",
+          "name": "ClaimJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Proof": {
+      "document": "验证凭证签名",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1",
+          "member": "int64",
+          "name": "Created",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建着did",
+          "example": "1",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "salt值",
+          "example": "1",
+          "member": "string",
+          "name": "SaltJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名",
+          "example": "1",
+          "member": "string",
+          "name": "SignatureValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "type类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TransactionArg": {
+      "document": "创建凭证第二个",
+      "members": [
+        {
+          "default": "",
+          "document": "凭证did",
+          "example": "1",
+          "member": "string",
+          "name": "InvokerTDid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VerifyCredentialRequest": {
+      "document": "VerifyCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数集合",
+          "example": "1",
+          "member": "VerifyFunctionArg",
+          "name": "FunctionArg",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyCredentialResponse": {
+      "document": "VerifyCredential返回参数结构体",
+      "members": [
+        {
+          "document": "是否验证成功",
+          "example": "True",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证返回码",
+          "example": "0",
+          "member": "uint64",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证消息",
+          "example": "success",
+          "member": "string",
+          "name": "VerifyMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyFunctionArg": {
+      "document": "验证凭证参数值",
+      "members": [
+        {
+          "default": "",
+          "document": "CPT ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CptId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "issuer did",
+          "example": "1",
+          "member": "string",
+          "name": "Issuer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "声明",
+          "example": "1",
+          "member": "string",
+          "name": "ClaimJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "颁发时间",
+          "example": "1",
+          "member": "int64",
+          "name": "IssuanceDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "context值",
+          "example": "1",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "id值",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名值",
+          "example": "无",
+          "member": "Proof",
+          "name": "Proof",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "type值",
+          "example": "[\"a\",\"b\"]",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

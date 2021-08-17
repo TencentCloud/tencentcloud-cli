@@ -824,6 +824,7 @@
         {
           "default": "",
           "document": "触发器关联的镜像仓库，library/test格式",
+          "example": "test/test123",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -832,6 +833,7 @@
         {
           "default": "",
           "document": "触发器名称",
+          "example": "testtrig",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -840,6 +842,7 @@
         {
           "default": "",
           "document": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发",
+          "example": "all",
           "member": "string",
           "name": "InvokeMethod",
           "required": true,
@@ -848,6 +851,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -856,6 +860,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -864,6 +869,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。",
+          "example": "Deployment",
           "member": "string",
           "name": "WorkloadType",
           "required": true,
@@ -872,6 +878,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载名称",
+          "example": "testdeploy",
           "member": "string",
           "name": "WorkloadName",
           "required": true,
@@ -880,6 +887,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载下容器名称",
+          "example": "nginx",
           "member": "string",
           "name": "ContainerName",
           "required": true,
@@ -888,6 +896,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群地域",
+          "example": "16",
           "member": "int64",
           "name": "ClusterRegion",
           "required": true,
@@ -896,6 +905,7 @@
         {
           "default": "",
           "document": "触发方式对应的表达式",
+          "example": "无",
           "member": "string",
           "name": "InvokeExpr",
           "required": false,
@@ -1075,6 +1085,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-ak9876",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1083,6 +1094,7 @@
         {
           "default": "",
           "document": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时",
+          "example": "temp",
           "member": "string",
           "name": "TokenType",
           "required": false,
@@ -1091,6 +1103,7 @@
         {
           "default": "",
           "document": "长期访问凭证描述信息",
+          "example": "test",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -1104,29 +1117,37 @@
       "members": [
         {
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345678",
           "member": "string",
           "name": "Username",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "访问凭证",
+          "example": "XXXX",
           "member": "string",
           "name": "Token",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "访问凭证过期时间戳",
+          "document": "访问凭证过期时间戳，是一个时间戳数字，无单位",
+          "example": "33987631",
           "member": "int64",
           "name": "ExpTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "长期凭证的TokenId，短期凭证没有TokenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
           "member": "string",
           "name": "TokenId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1270,6 +1291,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tcr-okmj78",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1277,7 +1299,8 @@
         },
         {
           "default": "",
-          "document": "命名空间的名称",
+          "document": "命名空间的名称（长度2-30个字符，只能包含小写字母、数字及分隔符(\".\"、\"_\"、\"-\")，且不能以分隔符开头、结尾或连续）",
+          "example": "mytest",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -1286,6 +1309,7 @@
         {
           "default": "",
           "document": "是否公开，true为公开，fale为私有",
+          "example": "true",
           "member": "bool",
           "name": "IsPublic",
           "required": true,
@@ -1528,7 +1552,7 @@
         },
         {
           "default": "",
-          "document": "是否模拟执行",
+          "document": "是否模拟执行，默认值为false，即非模拟执行",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -1591,7 +1615,7 @@
         },
         {
           "default": "",
-          "document": "是否禁用规则",
+          "document": "是否禁用规则，默认值为false",
           "example": "false",
           "member": "bool",
           "name": "Disabled",
@@ -1618,7 +1642,8 @@
       "members": [
         {
           "default": "",
-          "document": "用户密码",
+          "document": "用户密码，密码必须为8到16位",
+          "example": "123456789",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1987,7 +2012,7 @@
         },
         {
           "default": "",
-          "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "document": "true：使用默认域名\nfalse:  使用带有vpc的域名",
           "example": "true",
           "member": "bool",
           "name": "UsePublicDomain",
@@ -2146,6 +2171,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-okmj78",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2154,6 +2180,7 @@
         {
           "default": "",
           "document": "命名空间的名称",
+          "example": "test",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -2161,7 +2188,8 @@
         },
         {
           "default": "",
-          "document": "仓库名称的名称",
+          "document": "镜像仓库的名称",
+          "example": "mytest",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
@@ -2647,6 +2675,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "dockerhub/test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -2655,6 +2684,7 @@
         {
           "default": "",
           "document": "Tag名",
+          "example": "test",
           "member": "string",
           "name": "Tag",
           "required": true,
@@ -2667,9 +2697,11 @@
       "document": "DescribeImageFilterPersonal返回参数结构体",
       "members": [
         {
-          "document": "payload",
+          "document": "返回tag镜像内容相同的tag列表",
+          "example": "无",
           "member": "SameImagesResp",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3364,7 +3396,7 @@
       "members": [
         {
           "default": "",
-          "document": "同步实例Id",
+          "document": "同步实例Id，见实例返回列表中的同步实例ID",
           "example": "tcr-ak9876-5",
           "member": "string",
           "name": "ReplicationRegistryId",
@@ -3373,7 +3405,7 @@
         },
         {
           "default": "",
-          "document": "同步实例的地域ID",
+          "document": "同步实例的地域ID，见实例返回列表中地域ID",
           "example": "5",
           "member": "uint64",
           "name": "ReplicationRegionId",
@@ -4879,6 +4911,7 @@
         {
           "default": "",
           "document": "触发器关联的镜像仓库，library/test格式",
+          "example": "test/test123",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -4886,7 +4919,8 @@
         },
         {
           "default": "",
-          "document": "触发器名称",
+          "document": "触发器名称，必填参数",
+          "example": "testtrig",
           "member": "string",
           "name": "TriggerName",
           "required": false,
@@ -4895,6 +4929,7 @@
         {
           "default": "",
           "document": "触发方式，\"all\"全部触发，\"taglist\"指定tag触发，\"regex\"正则触发",
+          "example": "all",
           "member": "string",
           "name": "InvokeMethod",
           "required": false,
@@ -4903,6 +4938,7 @@
         {
           "default": "",
           "document": "触发方式对应的表达式",
+          "example": "\"\"",
           "member": "string",
           "name": "InvokeExpr",
           "required": false,
@@ -4911,6 +4947,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -4919,6 +4956,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -4927,6 +4965,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载类型,支持Deployment、StatefulSet、DaemonSet、CronJob、Job。",
+          "example": "Deployment",
           "member": "string",
           "name": "WorkloadType",
           "required": false,
@@ -4935,6 +4974,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载名称",
+          "example": "testdeploy",
           "member": "string",
           "name": "WorkloadName",
           "required": false,
@@ -4943,6 +4983,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群工作负载下容器名称",
+          "example": "nginx",
           "member": "string",
           "name": "ContainerName",
           "required": false,
@@ -4951,6 +4992,7 @@
         {
           "default": "",
           "document": "应用所在TKE集群地域数字ID，如1（广州）、16（成都）",
+          "example": "16",
           "member": "int64",
           "name": "ClusterRegion",
           "required": false,
@@ -4959,6 +5001,7 @@
         {
           "default": "",
           "document": "新触发器名称",
+          "example": "test2",
           "member": "string",
           "name": "NewTriggerName",
           "required": false,
@@ -5074,7 +5117,7 @@
         },
         {
           "default": "",
-          "document": "1为修改描述 2为启动禁用，不填写默认为修改启动禁用",
+          "document": "1为修改描述 2为操作启动禁用，默认值为2",
           "example": "1",
           "member": "int64",
           "name": "ModifyFlag",
@@ -5152,7 +5195,7 @@
         },
         {
           "default": "",
-          "document": "默认值为0",
+          "document": "默认值为0, 1公共，0私有",
           "example": "1",
           "member": "int64",
           "name": "Public",
@@ -5823,6 +5866,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-12345",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5830,7 +5874,8 @@
         },
         {
           "default": "",
-          "document": "预付费自动续费标识和购买时长",
+          "document": "预付费自动续费标识和购买时长,0：手动续费，1：自动续费，2：不续费并且不通知;单位为月",
+          "example": "无",
           "member": "RegistryChargePrepaid",
           "name": "RegistryChargePrepaid",
           "required": true,
@@ -5839,6 +5884,7 @@
         {
           "default": "",
           "document": "0 续费， 1按量转包年包月",
+          "example": "0",
           "member": "int64",
           "name": "Flag",
           "required": true,
@@ -5852,8 +5898,10 @@
       "members": [
         {
           "document": "企业版实例Id",
+          "example": "tcr-12345",
           "member": "string",
           "name": "RegistryId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7358,6 +7406,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "mynamespace",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -7370,9 +7419,11 @@
       "document": "ValidateNamespaceExistPersonal返回参数结构体",
       "members": [
         {
-          "document": "命名空间是否存在",
+          "document": "验证命名空间是否存在返回信息",
+          "example": "无",
           "member": "NamespaceIsExistsResp",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7391,6 +7442,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "dockerhub/test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -7403,9 +7455,11 @@
       "document": "ValidateRepositoryExistPersonal返回参数结构体",
       "members": [
         {
-          "document": "仓库是否存在",
+          "document": "验证个人版仓库是否存在返回信息",
+          "example": "无",
           "member": "RepoIsExistResp",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

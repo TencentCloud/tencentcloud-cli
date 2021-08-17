@@ -1256,7 +1256,7 @@
         },
         {
           "default": "",
-          "document": "失败：FAILED；成功：SUCCESS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SUCCESS：破解成功；FAILED：破解失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "FAILED",
           "member": "string",
           "name": "Status",
@@ -1306,7 +1306,7 @@
         },
         {
           "default": "",
-          "document": "阻断状态：0-未阻断；1-已阻断；2-阻断失败；3-内网攻击暂不支持阻断；4-安平暂不支持阻断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "阻断状态：1-阻断成功；非1-阻断失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "BanStatus",
@@ -1380,6 +1380,16 @@
           "example": "2021-05-25 12:01:50",
           "member": "string",
           "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -7312,7 +7322,7 @@
         },
         {
           "default": "",
-          "document": "授权状态 1 授权 0 未授权",
+          "document": "防篡改 授权状态 1 授权 0 未授权",
           "example": "1",
           "member": "uint64",
           "name": "LicenseStatus",
@@ -7338,6 +7348,16 @@
           "name": "HasAssetScan",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7382,6 +7402,7 @@
         {
           "default": "",
           "document": "病毒名称",
+          "example": "virusName",
           "member": "string",
           "name": "VirusName",
           "required": true,
@@ -7391,6 +7412,7 @@
         {
           "default": "",
           "document": "文件大小",
+          "example": "1024",
           "member": "int64",
           "name": "FileSize",
           "required": true,
@@ -7400,6 +7422,7 @@
         {
           "default": "",
           "document": "文件MD5",
+          "example": "gfahetagrfwafewr32tgr",
           "member": "string",
           "name": "MD5",
           "required": true,
@@ -7409,6 +7432,7 @@
         {
           "default": "",
           "document": "文件地址",
+          "example": "/usr/local/services/tnginx_1_0_0-1.0/lib/luajit/lib",
           "member": "string",
           "name": "FilePath",
           "required": true,
@@ -7418,6 +7442,7 @@
         {
           "default": "",
           "document": "首次运行时间",
+          "example": "2021-04-26 15:19:04",
           "member": "string",
           "name": "FileCreateTime",
           "required": true,
@@ -7427,6 +7452,7 @@
         {
           "default": "",
           "document": "最近一次运行时间",
+          "example": "2021-04-26 15:19:04",
           "member": "string",
           "name": "FileModifierTime",
           "required": true,
@@ -7436,6 +7462,7 @@
         {
           "default": "",
           "document": "危害描述",
+          "example": "这是描述",
           "member": "string",
           "name": "HarmDescribe",
           "required": true,
@@ -7445,6 +7472,7 @@
         {
           "default": "",
           "document": "建议方案",
+          "example": "建议方案",
           "member": "string",
           "name": "SuggestScheme",
           "required": true,
@@ -7454,6 +7482,7 @@
         {
           "default": "",
           "document": "服务器名称",
+          "example": "服务器名称",
           "member": "string",
           "name": "ServersName",
           "required": true,
@@ -7463,6 +7492,7 @@
         {
           "default": "",
           "document": "服务器IP",
+          "example": "15.2.3.442",
           "member": "string",
           "name": "HostIp",
           "required": true,
@@ -7472,6 +7502,7 @@
         {
           "default": "",
           "document": "进程名称",
+          "example": "进程名称",
           "member": "string",
           "name": "ProcessName",
           "required": true,
@@ -7481,6 +7512,7 @@
         {
           "default": "",
           "document": "进程ID",
+          "example": "pid",
           "member": "string",
           "name": "ProcessID",
           "required": true,
@@ -7490,6 +7522,7 @@
         {
           "default": "",
           "document": "标签特性",
+          "example": "[\"tewt\",\"wekk\"]",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -7499,6 +7532,7 @@
         {
           "default": "",
           "document": "影响广度 // 暂时不提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Breadth",
           "member": "string",
           "name": "Breadth",
           "required": true,
@@ -7508,6 +7542,7 @@
         {
           "default": "",
           "document": "查询热度 // 暂时不提供\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Heat",
           "member": "string",
           "name": "Heat",
           "required": true,
@@ -7517,6 +7552,7 @@
         {
           "default": "",
           "document": "唯一ID",
+          "example": "123",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -7526,6 +7562,7 @@
         {
           "default": "",
           "document": "文件名称",
+          "example": "FileName",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -7535,6 +7572,7 @@
         {
           "default": "",
           "document": "首次发现时间",
+          "example": "2021-04-26 15:19:04",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7544,8 +7582,19 @@
         {
           "default": "",
           "document": "最近扫描时间",
+          "example": "2021-04-26 15:19:04",
           "member": "string",
           "name": "LatestScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考链接",
+          "example": "http://www.vxjump.net/files/virus_analysis/virut%20botnet%20anal",
+          "member": "string",
+          "name": "Reference",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7959,6 +8008,7 @@
         {
           "default": "",
           "document": "数据ID",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -7968,6 +8018,7 @@
         {
           "default": "",
           "document": "云镜ID",
+          "example": "xxx",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -7977,6 +8028,7 @@
         {
           "default": "",
           "document": "主机ID",
+          "example": "xxx",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -7986,6 +8038,7 @@
         {
           "default": "",
           "document": "主机内网IP",
+          "example": "xxx",
           "member": "string",
           "name": "Hostip",
           "required": true,
@@ -7995,6 +8048,7 @@
         {
           "default": "",
           "document": "进程名",
+          "example": "xxx",
           "member": "string",
           "name": "ProcessName",
           "required": true,
@@ -8004,6 +8058,7 @@
         {
           "default": "",
           "document": "进程路径",
+          "example": "xxx",
           "member": "string",
           "name": "FullPath",
           "required": true,
@@ -8013,6 +8068,7 @@
         {
           "default": "",
           "document": "执行命令",
+          "example": "xxx",
           "member": "string",
           "name": "CmdLine",
           "required": true,
@@ -8022,6 +8078,7 @@
         {
           "default": "",
           "document": "用户名",
+          "example": "xxx",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -8031,6 +8088,7 @@
         {
           "default": "",
           "document": "用户组",
+          "example": "xxx",
           "member": "string",
           "name": "UserGroup",
           "required": true,
@@ -8040,6 +8098,7 @@
         {
           "default": "",
           "document": "进程文件权限",
+          "example": "xxx",
           "member": "string",
           "name": "ProcFilePrivilege",
           "required": true,
@@ -8049,6 +8108,7 @@
         {
           "default": "",
           "document": "父进程名",
+          "example": "xxx",
           "member": "string",
           "name": "ParentProcName",
           "required": true,
@@ -8058,6 +8118,7 @@
         {
           "default": "",
           "document": "父进程用户名",
+          "example": "xxx",
           "member": "string",
           "name": "ParentProcUser",
           "required": true,
@@ -8067,6 +8128,7 @@
         {
           "default": "",
           "document": "父进程用户组",
+          "example": "xxx",
           "member": "string",
           "name": "ParentProcGroup",
           "required": true,
@@ -8076,6 +8138,7 @@
         {
           "default": "",
           "document": "父进程路径",
+          "example": "xxx",
           "member": "string",
           "name": "ParentProcPath",
           "required": true,
@@ -8085,6 +8148,7 @@
         {
           "default": "",
           "document": "进程树",
+          "example": "xxx",
           "member": "string",
           "name": "ProcTree",
           "required": true,
@@ -8093,7 +8157,8 @@
         },
         {
           "default": "",
-          "document": "处理状态",
+          "document": "处理状态：0-待处理 2-白名单",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -8103,6 +8168,7 @@
         {
           "default": "",
           "document": "发生时间",
+          "example": "xxx",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8112,6 +8178,7 @@
         {
           "default": "",
           "document": "机器名",
+          "example": "xxx",
           "member": "string",
           "name": "MachineName",
           "required": true,
@@ -8222,7 +8289,8 @@
       "members": [
         {
           "default": "",
-          "document": "主机类型。\n<li>CVM: 虚拟主机</li>\n<li>BM: 黑石物理机</li>",
+          "document": "主机类型。\n<li>CVM: 云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
+          "example": "CVM",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -8232,6 +8300,7 @@
         {
           "default": "",
           "document": "主机所在地域。\n如：ap-guangzhou、ap-beijing",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
           "required": true,
@@ -8240,7 +8309,8 @@
         },
         {
           "default": "",
-          "document": "主机唯一标识Uuid。\n黑石的InstanceId，CVM的Uuid",
+          "document": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20",
+          "example": "quuid",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -8473,7 +8543,8 @@
       "members": [
         {
           "default": "",
-          "document": "ID",
+          "document": "ID 主键",
+          "example": "11",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -8483,6 +8554,7 @@
         {
           "default": "",
           "document": "云镜UUID",
+          "example": "dsdsds",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -8492,6 +8564,7 @@
         {
           "default": "",
           "document": "主机ID",
+          "example": "dsdsds",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -8501,6 +8574,7 @@
         {
           "default": "",
           "document": "主机内网IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Hostip",
           "required": true,
@@ -8510,6 +8584,7 @@
         {
           "default": "",
           "document": "目标IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "DstIp",
           "required": true,
@@ -8519,6 +8594,7 @@
         {
           "default": "",
           "document": "目标端口",
+          "example": "12",
           "member": "uint64",
           "name": "DstPort",
           "required": true,
@@ -8528,6 +8604,7 @@
         {
           "default": "",
           "document": "进程名",
+          "example": "1.exe",
           "member": "string",
           "name": "ProcessName",
           "required": true,
@@ -8537,6 +8614,7 @@
         {
           "default": "",
           "document": "进程路径",
+          "example": "/home",
           "member": "string",
           "name": "FullPath",
           "required": true,
@@ -8546,6 +8624,7 @@
         {
           "default": "",
           "document": "命令详情",
+          "example": "dadad",
           "member": "string",
           "name": "CmdLine",
           "required": true,
@@ -8555,6 +8634,7 @@
         {
           "default": "",
           "document": "执行用户",
+          "example": "root",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -8564,6 +8644,7 @@
         {
           "default": "",
           "document": "执行用户组",
+          "example": "root",
           "member": "string",
           "name": "UserGroup",
           "required": true,
@@ -8573,6 +8654,7 @@
         {
           "default": "",
           "document": "父进程名",
+          "example": "2.exe",
           "member": "string",
           "name": "ParentProcName",
           "required": true,
@@ -8582,6 +8664,7 @@
         {
           "default": "",
           "document": "父进程用户",
+          "example": "root",
           "member": "string",
           "name": "ParentProcUser",
           "required": true,
@@ -8591,6 +8674,7 @@
         {
           "default": "",
           "document": "父进程用户组",
+          "example": "root",
           "member": "string",
           "name": "ParentProcGroup",
           "required": true,
@@ -8600,6 +8684,7 @@
         {
           "default": "",
           "document": "父进程路径",
+          "example": "/home",
           "member": "string",
           "name": "ParentProcPath",
           "required": true,
@@ -8608,7 +8693,8 @@
         },
         {
           "default": "",
-          "document": "处理状态",
+          "document": "处理状态：0-待处理 2-白名单",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -8618,6 +8704,7 @@
         {
           "default": "",
           "document": "产生时间",
+          "example": "2021-05-20 17:00:33",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8627,6 +8714,7 @@
         {
           "default": "",
           "document": "主机名",
+          "example": "sasas",
           "member": "string",
           "name": "MachineName",
           "required": true,
@@ -8636,10 +8724,21 @@
         {
           "default": "",
           "document": "进程树",
+          "example": "sasas",
           "member": "string",
           "name": "ProcTree",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测方法",
+          "example": "1",
+          "member": "uint64",
+          "name": "DetectBy",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

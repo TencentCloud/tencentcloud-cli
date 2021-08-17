@@ -36,8 +36,20 @@
       "name": "查询即时广播曲目详情",
       "output": "DescribeKTVMusicDetailResponse"
     },
+    "DescribeKTVPlaylistDetail": {
+      "document": "根据歌单 Id 获取歌单详情，包括歌单的基础信息以及歌曲列表。",
+      "input": "DescribeKTVPlaylistDetailRequest",
+      "name": "获取即时广播曲库推荐歌单详情",
+      "output": "DescribeKTVPlaylistDetailResponse"
+    },
+    "DescribeKTVPlaylists": {
+      "document": "获取即时广播曲库推荐歌单列表。",
+      "input": "DescribeKTVPlaylistsRequest",
+      "name": "获取即时广播曲库推荐歌单列表",
+      "output": "DescribeKTVPlaylistsResponse"
+    },
     "DescribeLyric": {
-      "document": "根据接口的模式及歌曲ID来取得歌词信息。",
+      "document": "根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。",
       "input": "DescribeLyricRequest",
       "name": "获取歌词信息",
       "output": "DescribeLyricResponse"
@@ -623,12 +635,130 @@
       ],
       "type": "object"
     },
+    "DescribeKTVPlaylistDetailRequest": {
+      "document": "DescribeKTVPlaylistDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌单Id",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistDetailResponse": {
+      "document": "DescribeKTVPlaylistDetail返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲基础信息列表",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "歌单基础信息",
+          "example": "无",
+          "member": "KTVPlaylistBaseInfo",
+          "name": "PlaylistBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsRequest": {
+      "document": "DescribeKTVPlaylists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsResponse": {
+      "document": "DescribeKTVPlaylists返回参数结构体",
+      "members": [
+        {
+          "document": "推荐歌单列表",
+          "example": "无",
+          "member": "KTVPlaylistBaseInfo",
+          "name": "PlaylistBaseInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "推荐歌单列表总数",
+          "example": "30",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLyricRequest": {
       "document": "DescribeLyric请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "歌曲ID",
+          "example": "xxxxx",
           "member": "string",
           "name": "ItemId",
           "required": true,
@@ -636,7 +766,8 @@
         },
         {
           "default": "",
-          "document": "歌词格式，可选项，可不填写，目前填写只能填LRC-LRC。该字段为预留的扩展字段。后续如果不填，会返回歌曲的所有格式的歌词。如果填写某个正确的格式，则只返回该格式的歌词。",
+          "document": "格式，可选项，可不填写，默认值为：LRC-LRC。\n<li>LRC-LRC：歌词；</li>\n<li>JSON-ST：波形图。</li>",
+          "example": "LRC-LRC",
           "member": "string",
           "name": "SubItemType",
           "required": false,
@@ -649,9 +780,11 @@
       "document": "DescribeLyric返回参数结构体",
       "members": [
         {
-          "document": "歌词详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "歌词或者波形图详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Lyric",
           "name": "Lyric",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1037,6 +1170,52 @@
       ],
       "usage": "out"
     },
+    "KTVPlaylistBaseInfo": {
+      "document": "推荐歌单基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "歌单Id",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌单标题",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌单介绍",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲数量",
+          "example": "1",
+          "member": "int64",
+          "name": "MusicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Lyric": {
       "document": "歌词信息",
       "members": [
@@ -1298,6 +1477,7 @@
         {
           "default": "",
           "document": "音乐Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "MusicId",
           "required": true,
@@ -1307,6 +1487,7 @@
         {
           "default": "",
           "document": "专辑名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "AlbumName",
           "required": true,
@@ -1316,6 +1497,7 @@
         {
           "default": "",
           "document": "专辑图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "AlbumImageUrl",
           "required": true,
@@ -1325,6 +1507,7 @@
         {
           "default": "",
           "document": "音乐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "MusicName",
           "required": true,
@@ -1334,6 +1517,7 @@
         {
           "default": "",
           "document": "音乐图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "MusicImageUrl",
           "required": true,
@@ -1343,6 +1527,7 @@
         {
           "default": "",
           "document": "歌手\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Singers",
           "required": true,
@@ -1352,6 +1537,7 @@
         {
           "default": "",
           "document": "播放时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Duration",
           "required": true,
@@ -1361,6 +1547,7 @@
         {
           "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -1370,8 +1557,19 @@
         {
           "default": "",
           "document": "歌词url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "LyricUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "波形图url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "WaveformUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": true

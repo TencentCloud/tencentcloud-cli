@@ -129,7 +129,7 @@
     "ModifyCertificateAlias": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=ModifyCertificateAlias\r\n&CertificateId=abcb1234\r\n&Alias=others\r\n&<公共请求参数>",
+        "input": "https://ssl.tencentcloudapi.com/?Action=ModifyCertificateAlias\n&CertificateId=abcb1234\n&Alias=others\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "修改证书备注"
       }

@@ -1769,6 +1769,7 @@
         {
           "default": "",
           "document": "Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "’‘",
           "member": "string",
           "name": "OldIdMd5",
           "required": true,
@@ -1778,6 +1779,7 @@
         {
           "default": "",
           "document": "事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "’‘",
           "member": "string",
           "name": "EventName",
           "required": true,
@@ -1787,6 +1789,7 @@
         {
           "default": "",
           "document": "事件类型一级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "EventType1",
           "required": true,
@@ -1796,6 +1799,7 @@
         {
           "default": "",
           "document": "事件类型二级分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "EventType2",
           "required": true,
@@ -1805,6 +1809,7 @@
         {
           "default": "",
           "document": "事件等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "Level",
           "required": true,
@@ -1814,6 +1819,7 @@
         {
           "default": "",
           "document": "处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1823,6 +1829,7 @@
         {
           "default": "",
           "document": "源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "’‘",
           "member": "string",
           "name": "SrcIp",
           "required": true,
@@ -1832,6 +1839,7 @@
         {
           "default": "",
           "document": "目的ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "’‘",
           "member": "string",
           "name": "DstIp",
           "required": true,
@@ -1841,6 +1849,7 @@
         {
           "default": "",
           "document": "事件发生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "’‘",
           "member": "datetime",
           "name": "Time",
           "required": true,
@@ -1850,6 +1859,7 @@
         {
           "default": "",
           "document": "目的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Dstport",
           "required": true,
@@ -1859,6 +1869,7 @@
         {
           "default": "",
           "document": "资产ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AssetIp",
           "required": true,
@@ -1868,6 +1879,7 @@
         {
           "default": "",
           "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AssetName",
           "required": true,
@@ -1877,6 +1889,7 @@
         {
           "default": "",
           "document": "安全事件唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SsaEventUniqid",
           "required": true,
@@ -1886,6 +1899,7 @@
         {
           "default": "",
           "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AssetId",
           "required": true,
@@ -1895,6 +1909,7 @@
         {
           "default": "",
           "document": "事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -1904,6 +1919,7 @@
         {
           "default": "",
           "document": "索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Index",
           "required": true,
@@ -1913,6 +1929,7 @@
         {
           "default": "",
           "document": "索引中的唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -1922,6 +1939,7 @@
         {
           "default": "",
           "document": "受影响资产是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "IsAssetDeleted",
           "required": true,
@@ -1931,6 +1949,7 @@
         {
           "default": "",
           "document": "源ip所属地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SsaSrcCountry",
           "required": true,
@@ -1940,6 +1959,7 @@
         {
           "default": "",
           "document": "目的ip所属地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SsaDstCountry",
           "required": true,
@@ -1949,6 +1969,7 @@
         {
           "default": "",
           "document": "木马类型的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SsaDescription",
           "required": true,
@@ -1958,6 +1979,7 @@
         {
           "default": "",
           "document": "供给链类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SsaAttackChain",
           "required": true,
@@ -1967,6 +1989,7 @@
         {
           "default": "",
           "document": "受影响组件",
+          "example": "test",
           "member": "string",
           "name": "RuleComponents",
           "required": true,
@@ -1976,6 +1999,7 @@
         {
           "default": "",
           "document": "资产ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AssetIpAll",
           "required": true,
@@ -1985,6 +2009,7 @@
         {
           "default": "",
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AssetType",
           "required": true,
@@ -1994,6 +2019,7 @@
         {
           "default": "",
           "document": "cvm类型资产的公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -2003,6 +2029,7 @@
         {
           "default": "",
           "document": "cvm类型资产的内网ip",
+          "example": "test",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": true,
@@ -2012,6 +2039,7 @@
         {
           "default": "",
           "document": "事件响应状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "int64",
           "name": "SoarResponseStatus",
           "required": true,
@@ -2021,6 +2049,7 @@
         {
           "default": "",
           "document": "事件最近响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "int64",
           "name": "SoarResponseTime",
           "required": true,
@@ -2030,6 +2059,7 @@
         {
           "default": "",
           "document": "事件建议处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "int64",
           "name": "SoarSuggestStatus",
           "required": true,
@@ -2039,6 +2069,7 @@
         {
           "default": "",
           "document": "事件剧本类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SoarPlaybookType",
           "required": true,
@@ -2048,6 +2079,7 @@
         {
           "default": "",
           "document": "剧本任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SoarRunId",
           "required": true,
@@ -2057,8 +2089,29 @@
         {
           "default": "",
           "document": "事件Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1445149556-88e0807e-4058-4a03-b913-3b552ac78057",
           "member": "string",
           "name": "SsaEventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否新接入的云防事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNewCfwEvent",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出入站方向\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "出站",
+          "member": "string",
+          "name": "Direction",
           "required": true,
           "type": "string",
           "value_allowed_null": true

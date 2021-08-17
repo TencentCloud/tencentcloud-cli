@@ -67,7 +67,7 @@
       "output": "DescribeDiskConfigQuotaResponse"
     },
     "DescribeDiskOperationLogs": {
-      "document": "本接口（DescribeDiskOperationLogs）用于查询云盘操作日志列表。\n\n可根据云盘ID过滤。云盘ID形如：disk-a1kmcp13。\n",
+      "document": "查询云盘操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeDiskOperationLogs）即将下线，后续不再提供调用，请知悉。",
       "input": "DescribeDiskOperationLogsRequest",
       "name": "查询云盘操作日志列表",
       "output": "DescribeDiskOperationLogsResponse"
@@ -1034,6 +1034,7 @@
         {
           "default": "",
           "document": "过滤条件。支持以下条件：\n<li>disk-id - Array of String - 是否必填：是 - 按云盘ID过滤，每个请求最多可指定10个云盘ID。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -1041,17 +1042,19 @@
         },
         {
           "default": "",
-          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
+          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
+          "example": "无",
           "member": "datetime",
-          "name": "BeginTime",
+          "name": "EndTime",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
+          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
+          "example": "无",
           "member": "datetime",
-          "name": "EndTime",
+          "name": "BeginTime",
           "required": false,
           "type": "string"
         }
@@ -1063,8 +1066,10 @@
       "members": [
         {
           "document": "云盘的操作日志列表。",
+          "example": "无",
           "member": "DiskOperationLog",
           "name": "DiskOperationLogSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1894,34 +1899,8 @@
       "members": [
         {
           "default": "",
-          "document": "操作者的UIN。",
-          "member": "string",
-          "name": "Operator",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "操作类型。取值范围：\nCBS_OPERATION_ATTACH：挂载云硬盘\nCBS_OPERATION_DETACH：解挂云硬盘\nCBS_OPERATION_RENEW：续费\nCBS_OPERATION_EXPAND：扩容\nCBS_OPERATION_CREATE：创建\nCBS_OPERATION_ISOLATE：隔离\nCBS_OPERATION_MODIFY：修改云硬盘属性\nASP_OPERATION_BIND：关联定期快照策略\nASP_OPERATION_UNBIND：取消关联定期快照策略",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "操作的云盘ID。",
-          "member": "string",
-          "name": "DiskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "操作的状态。取值范围：\nSUCCESS :表示操作成功 \nFAILED :表示操作失败 \nPROCESSING :表示操作中。",
+          "example": "无",
           "member": "string",
           "name": "OperationState",
           "required": true,
@@ -1931,6 +1910,7 @@
         {
           "default": "",
           "document": "开始时间。",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1939,9 +1919,40 @@
         },
         {
           "default": "",
+          "document": "操作者的UIN。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型。取值范围：\nCBS_OPERATION_ATTACH：挂载云硬盘\nCBS_OPERATION_DETACH：解挂云硬盘\nCBS_OPERATION_RENEW：续费\nCBS_OPERATION_EXPAND：扩容\nCBS_OPERATION_CREATE：创建\nCBS_OPERATION_ISOLATE：隔离\nCBS_OPERATION_MODIFY：修改云硬盘属性\nASP_OPERATION_BIND：关联定期快照策略\nASP_OPERATION_UNBIND：取消关联定期快照策略",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "结束时间。",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作的云盘ID。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false

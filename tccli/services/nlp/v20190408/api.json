@@ -127,7 +127,7 @@
       "output": "TextCorrectionResponse"
     },
     "TextSimilarity": {
-      "document": "句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。\n\n鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。",
+      "document": "句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。\n\n鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。\n\n接口将以句子数量为单位消耗资源包，而不是调用接口次数为单位。",
       "input": "TextSimilarityRequest",
       "name": "句子相似度",
       "output": "TextSimilarityResponse"
@@ -1047,7 +1047,8 @@
       "members": [
         {
           "default": "",
-          "document": "待处理的文本（仅支持UTF-8格式，不超过10000字）",
+          "document": "待处理的文本（仅支持UTF-8格式，不超过10000字符）",
+          "example": "无",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -1056,6 +1057,7 @@
         {
           "default": "",
           "document": "指定关键词个数上限（默认值为5）",
+          "example": "无",
           "member": "uint64",
           "name": "Num",
           "required": false,
@@ -1069,8 +1071,10 @@
       "members": [
         {
           "document": "关键词提取结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Keyword",
           "name": "Keywords",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1584,7 +1588,7 @@
         },
         {
           "default": "",
-          "document": "目标句子",
+          "document": "目标句子（以句子数量为单位消耗资源包）",
           "example": "你好",
           "member": "string",
           "name": "TargetText",

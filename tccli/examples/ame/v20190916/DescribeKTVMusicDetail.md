@@ -20,6 +20,7 @@ Output:
                 "周杰伦"
             ],
             "MusicId": "ame-78d2xxx",
+            "Duration": 120,
             "SingerSet": [
                 "周杰伦"
             ],

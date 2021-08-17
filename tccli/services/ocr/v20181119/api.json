@@ -9055,7 +9055,7 @@
       "document": "VerifyEnterpriseFourFactors返回参数结构体",
       "members": [
         {
-          "document": "核验一致性（1:一致，2:不一致）",
+          "document": "核验一致性（1:一致，2:不一致，3:查询无记录）",
           "example": "1",
           "member": "int64",
           "name": "State",
