@@ -163,7 +163,7 @@
       "output": "CreateAssistantCidrResponse"
     },
     "CreateBandwidthPackage": {
-      "document": "接口支持创建[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[IP带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)",
+      "document": "本接口 (CreateBandwidthPackage) 支持创建[设备带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)和[IP带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)。",
       "input": "CreateBandwidthPackageRequest",
       "name": "创建共享带宽包",
       "output": "CreateBandwidthPackageResponse"
@@ -4189,7 +4189,7 @@
       "members": [
         {
           "default": "",
-          "document": "带宽包类型，包括'HIGH_QUALITY_BGP', 'BGP'，'SINGLEISP'，'ANYCAST'",
+          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -4198,7 +4198,7 @@
         },
         {
           "default": "",
-          "document": "带宽包计费类型，包括‘TOP5_POSTPAID_BY_MONTH’，‘PERCENT95_POSTPAID_BY_MONTH’",
+          "document": "带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -4207,7 +4207,7 @@
         },
         {
           "default": "",
-          "document": "带宽包名字",
+          "document": "带宽包名称。",
           "example": "test",
           "member": "string",
           "name": "BandwidthPackageName",
@@ -4216,7 +4216,7 @@
         },
         {
           "default": "",
-          "document": "带宽包数量(传统账户类型只能填1)",
+          "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthPackageCount",
@@ -4257,7 +4257,7 @@
       "document": "CreateBandwidthPackage返回参数结构体",
       "members": [
         {
-          "document": "带宽包唯一ID",
+          "document": "带宽包唯一ID。",
           "example": "bwp-8rolc8ec",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4266,7 +4266,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "带宽包唯一ID列表(申请数量大于1时有效)",
+          "document": "带宽包唯一ID列表(申请数量大于1时有效)。",
           "example": "[\"bwp-8rolc8ec\"]",
           "member": "string",
           "name": "BandwidthPackageIds",

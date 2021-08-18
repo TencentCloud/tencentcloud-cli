@@ -1872,6 +1872,15 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息保留策略",
+          "example": "无",
+          "member": "RetentionPolicy",
+          "name": "RetentionPolicy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2340,6 +2349,15 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2394,6 +2412,15 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4224,6 +4251,15 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息保留策略",
+          "example": "无",
+          "member": "RetentionPolicy",
+          "name": "RetentionPolicy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4755,6 +4791,32 @@
         }
       ],
       "type": "object"
+    },
+    "RetentionPolicy": {
+      "document": "消息保留策略",
+      "members": [
+        {
+          "default": "",
+          "document": "消息保留时长",
+          "example": "0",
+          "member": "int64",
+          "name": "TimeInMinutes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息保留大小",
+          "example": "0",
+          "member": "int64",
+          "name": "SizeInMB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RewindCmqQueueRequest": {
       "document": "RewindCmqQueue请求参数结构体",

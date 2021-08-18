@@ -368,6 +368,9 @@ SERVICE_VERSIONS = {
     "partners": [
         "2018-03-21"
     ],
+    "pds": [
+        "2021-07-01"
+    ],
     "postgres": [
         "2017-03-12"
     ],

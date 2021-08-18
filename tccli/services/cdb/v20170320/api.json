@@ -10584,6 +10584,7 @@
         {
           "default": "",
           "document": "云数据库实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb_xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10592,7 +10593,8 @@
         },
         {
           "default": "",
-          "document": "回档策略。可选值为：table、db、full；默认值为full。table - 急速回档模式，仅导入所选中表级别的备份和binlog，如有跨表操作，且关联表未被同时选中，将会导致回档失败，该模式下参数Databases必须为空；db - 快速模式，仅导入所选中库级别的备份和binlog，如有跨库操作，且关联库未被同时选中，将会导致回档失败；full - 普通回档模式，将导入整个实例的备份和binlog，速度较慢。",
+          "document": "回档策略。可选值为：table、db、full；默认值为full。table - 极速回档模式，仅导入所选中表级别的备份和binlog，如有跨表操作，且关联表未被同时选中，将会导致回档失败，该模式下参数Databases必须为空；db - 快速模式，仅导入所选中库级别的备份和binlog，如有跨库操作，且关联库未被同时选中，将会导致回档失败；full - 普通回档模式，将导入整个实例的备份和binlog，速度较慢。",
+          "example": "\"\"",
           "member": "string",
           "name": "Strategy",
           "required": true,
@@ -10602,6 +10604,7 @@
         {
           "default": "",
           "document": "数据库回档时间，时间格式为：yyyy-mm-dd hh:mm:ss",
+          "example": "\"\"",
           "member": "string",
           "name": "RollbackTime",
           "required": true,
@@ -10611,6 +10614,7 @@
         {
           "default": "",
           "document": "待回档的数据库信息，表示整库回档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RollbackDBName",
           "name": "Databases",
           "required": false,
@@ -10620,6 +10624,7 @@
         {
           "default": "",
           "document": "待回档的数据库表信息，表示按表回档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RollbackTables",
           "name": "Tables",
           "required": false,
@@ -12045,7 +12050,7 @@
         },
         {
           "default": "",
-          "document": "是否急速变配。0-普通升级，1-急速变配。选择急速变配会根据资源状况校验是否可以进行急速变配，满足条件则进行急速变配，不满足条件会返回报错信息。",
+          "document": "是否极速变配。0-普通升级，1-极速变配。选择极速变配会根据资源状况校验是否可以进行极速变配，满足条件则进行极速变配，不满足条件会返回报错信息。",
           "example": "1",
           "member": "int64",
           "name": "FastUpgrade",

@@ -2377,6 +2377,7 @@
         {
           "default": "",
           "document": "开启云安全服务。若不指定该参数，则默认开启云安全服务。",
+          "example": "TRUE",
           "member": "RunSecurityServiceEnabled",
           "name": "SecurityService",
           "required": false,
@@ -2386,8 +2387,19 @@
         {
           "default": "",
           "document": "开启云监控服务。若不指定该参数，则默认开启云监控服务。",
+          "example": "TRUE",
           "member": "RunMonitorServiceEnabled",
           "name": "MonitorService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启云自动化助手服务。若不指定该参数，则默认不开启云自动化助手服务。",
+          "example": "TRUE",
+          "member": "RunAutomationServiceEnabled",
+          "name": "AutomationService",
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4379,6 +4391,11 @@
         }
       ],
       "type": "object"
+    },
+    "RunAutomationServiceEnabled": {
+      "document": "描述了 “云自动化助手” 服务相关的信息",
+      "members": [],
+      "usage": "both"
     },
     "RunMonitorServiceEnabled": {
       "document": "描述了 “云监控” 服务相关的信息",

@@ -736,6 +736,14 @@
         "title": "修改专业版续费标识"
       }
     ],
+    "ModifyWarningSetting": [
+      {
+        "document": "告警设置-修改告警设置",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWarningSetting\n<公共请求参数>\n\n{\n    \"WarningObjects\": [\n        {\n            \"BeginTime\": \"00:00\",\n            \"ControlBits\": \"01\",\n            \"DisablePhoneWarning\": 0,\n            \"EndTime\": \"23:59\",\n            \"Type\": 4\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2dfde02-1109-4818-8988-a4355f615442\"\n    }\n}",
+        "title": "告警设置-修改告警设置"
+      }
+    ],
     "ModifyWebPageProtectSetting": [
       {
         "document": "",

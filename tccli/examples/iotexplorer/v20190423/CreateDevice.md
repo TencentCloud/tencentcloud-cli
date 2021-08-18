@@ -57,3 +57,31 @@ Output:
 }
 ```
 
+**Example 3: 创建手动指定psk的设备**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateDevice --cli-unfold-argument  \
+    --ProductId LJ0INDNU7Us \
+    --DeviceName device2 \
+    --DefinedPsk 1231
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "DeviceCert": "",
+            "DeviceName": "device2",
+            "DevicePrivateKey": "",
+            "DevicePsk": "1231"
+        },
+        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5f3d91"
+    }
+}
+```
+

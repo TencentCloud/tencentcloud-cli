@@ -42,6 +42,12 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&DevAddr=01865bd9\n&AppKey=00000000000000010000000000000001\n&DevEUI=0100000000000021\n&AppSKey=bc97ea1ff62e7a3490135d989aae6bca\n&NwkSKey=bc97ea1ff62e7a3490135d989aae6bca\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"dd1\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"GTnp7I+yckhF3LrmHRtYBQ==\"\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
         "title": "创建 LoRa 设备"
+      },
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&DefinedPsk=1231\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"1231\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "创建手动指定psk的设备"
       }
     ],
     "CreateLoRaFrequency": [

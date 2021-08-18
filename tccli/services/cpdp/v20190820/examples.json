@@ -144,6 +144,14 @@
         "title": "CreateAgentTaxPaymentInfos"
       }
     ],
+    "CreateBatchPayment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchPayment\n<公共请求参数>\n\n{\n    \"RecipientList\": [\n        {\n            \"OrderId\": \"xx\",\n            \"Remark\": \"xx\",\n            \"TransferAmount\": 0,\n            \"AnchorName\": \"xx\",\n            \"Uid\": \"xx\",\n            \"AnchorId\": \"xx\",\n            \"ReqReserved\": \"xx\"\n        }\n    ],\n    \"NotifyUrl\": \"xx\",\n    \"TransferType\": 0,\n    \"ReqReserved\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"BatchId\": \"xx\",\n            \"BatchInfoList\": [\n                {\n                    \"OrderId\": \"xx\",\n                    \"Status\": 0,\n                    \"AgentId\": \"xx\",\n                    \"TradeSerialNo\": \"xx\",\n                    \"AgentName\": \"xx\",\n                    \"StatusDesc\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "CreateBatchPayment"
+      }
+    ],
     "CreateCustAcctId": [
       {
         "document": "",
@@ -222,6 +230,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=CreateSinglePay\n&SerialNumber=20190505000000000013\n&PayAccountNumber=123123123\n&PayAccountName=测试付款账户\n&PayBankCnaps=321321321\n&Amount=1\n&RecvAccountNumber=123123123123\n&RecvAccountName=王大拿\n&RecvBankCnaps=321321321\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be294bbb-47c9-4f01-9b1e-9e8ca3a72d4b\",\n        \"Result\": {\n            \"SerialNo\": \"20190505000000000013\",\n            \"BankSerialNo\": \"123123123123123\",\n            \"PayStatus\": \"P\",\n            \"HandleStatus\": \"S\",\n            \"BankRetMsg\": null,\n            \"BankRetCode\": null,\n            \"HandleMsg\": \"处理成功！\"\n        }\n    }\n}",
         "title": "CreateSinglePay"
+      }
+    ],
+    "CreateSinglePayment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSinglePayment\n<公共请求参数>\n\n{\n    \"OrderId\": \"xx\",\n    \"Remark\": \"xx\",\n    \"TransferAmount\": 1,\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 1,\n    \"NotifyUrl\": \"xx\",\n    \"Uid\": \"xx\",\n    \"AnchorName\": \"xx\",\n    \"ReqReserved\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"TradeSerialNo\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "CreateSinglePayment"
       }
     ],
     "CreateTransferBatch": [
@@ -422,6 +438,14 @@
         "title": "QueryBankWithdrawCashDetails"
       }
     ],
+    "QueryBatchPaymentResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryBatchPaymentResult\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"Remark\": \"xx\",\n            \"TransferType\": 0,\n            \"TransferInfoList\": [\n                {\n                    \"OrderId\": \"xx\",\n                    \"Status\": 0,\n                    \"TransferAmount\": 0,\n                    \"StatusDesc\": \"SUCCESS\",\n                    \"AgentName\": \"xx\",\n                    \"AgentId\": \"xx\"\n                }\n            ],\n            \"BatchId\": \"xx\",\n            \"TotalCount\": 0,\n            \"TotalAmount\": 0,\n            \"ReqReserved\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "QueryBatchPaymentResult"
+      }
+    ],
     "QueryBillDownloadURL": [
       {
         "document": "",
@@ -580,6 +604,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QuerySinglePay\n&SerialNumber=123123123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b919ced-362c-4190-8cb8-cc6216526bfb\",\n        \"Result\": {\n            \"SerialNo\": \"123123123\",\n            \"HandleStatus\": \"S\",\n            \"Items\": [\n                {\n                    \"PayStatus\": \"P\",\n                    \"PlatformMsg\": null,\n                    \"BankRetMsg\": null,\n                    \"BankRetCode\": null\n                }\n            ],\n            \"HandleMsg\": null\n        }\n    }\n}",
         "title": "QuerySinglePay"
+      }
+    ],
+    "QuerySinglePaymentResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuerySinglePaymentResult\n<公共请求参数>\n\n{\n    \"OrderId\": \"xx\",\n    \"TransferType\": 0,\n    \"TradeSerialNo\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"OrderId\": \"xx\",\n            \"Remark\": \"xx\",\n            \"AgentId\": \"xx\",\n            \"TradeSerialNo\": \"xx\",\n            \"AgentName\": \"xx\",\n            \"TradeStatus\": 0\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
+        "title": "QuerySinglePaymentResult"
       }
     ],
     "QuerySingleTransactionStatus": [

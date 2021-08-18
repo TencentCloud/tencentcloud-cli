@@ -108,6 +108,12 @@
       "name": "直播平台-代理商完税信息录入",
       "output": "CreateAgentTaxPaymentInfosResponse"
     },
+    "CreateBatchPayment": {
+      "document": "灵云-批量主播转账接口",
+      "input": "CreateBatchPaymentRequest",
+      "name": "灵云-批量主播转账接口",
+      "output": "CreateBatchPaymentResponse"
+    },
     "CreateCustAcctId": {
       "document": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。",
       "input": "CreateCustAcctIdRequest",
@@ -167,6 +173,12 @@
       "input": "CreateSinglePayRequest",
       "name": "银企直连-单笔支付接口",
       "output": "CreateSinglePayResponse"
+    },
+    "CreateSinglePayment": {
+      "document": "灵云-单笔主播转账接口",
+      "input": "CreateSinglePaymentRequest",
+      "name": "灵云-单笔主播转账接口",
+      "output": "CreateSinglePaymentResponse"
     },
     "CreateTransferBatch": {
       "document": "微信商户发起批量转账",
@@ -312,6 +324,12 @@
       "name": "云鉴-查询银行时间段内清分提现明细",
       "output": "QueryBankWithdrawCashDetailsResponse"
     },
+    "QueryBatchPaymentResult": {
+      "document": "灵云-批量转账结果查询",
+      "input": "QueryBatchPaymentResultRequest",
+      "name": "灵云-批量转账结果查询",
+      "output": "QueryBatchPaymentResultResponse"
+    },
     "QueryBillDownloadURL": {
       "document": "获取单笔代发转账对账单下载URL",
       "input": "QueryBillDownloadURLRequest",
@@ -431,6 +449,12 @@
       "input": "QuerySinglePayRequest",
       "name": "银企直连-单笔支付状态查询接口",
       "output": "QuerySinglePayResponse"
+    },
+    "QuerySinglePaymentResult": {
+      "document": "灵云-单笔转账结果查询",
+      "input": "QuerySinglePaymentResultRequest",
+      "name": "灵云-单笔转账结果查询",
+      "output": "QuerySinglePaymentResultResponse"
     },
     "QuerySingleTransactionStatus": {
       "document": "查询银行单笔交易状态。查询单笔交易的状态。",
@@ -4244,6 +4268,255 @@
       ],
       "type": "object"
     },
+    "CreateBatchPaymentBatchData": {
+      "document": "CreateBatchPayment接口BatchInfo对象",
+      "members": [
+        {
+          "default": "",
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易状态。\n0 处理中  \n1 预占成功 \n2 交易成功 \n3 交易失败 \n4 未知渠道异常 \n5 预占额度失败\n6 提交成功\n7 提交失败\n8 订单重复提交\n99 未知系统异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBatchPaymentData": {
+      "document": "CreateBatchPayment接口返回响应",
+      "members": [
+        {
+          "default": "",
+          "document": "批次号",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批次列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateBatchPaymentBatchData",
+          "name": "BatchInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBatchPaymentRecipient": {
+      "document": "CreateBatchPayment转账明细",
+      "members": [
+        {
+          "default": "",
+          "document": "转账金额",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主播ID（与主播业务ID不能同时为空，两者都填取主播ID）",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主播业务ID（与主播业务ID不能同时为空，两者都填取主播ID）",
+          "example": "无",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主播名称。如果该字段填入，则会对AnchorName和AnchorId/Uid进行校验。",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子单请求预留字段",
+          "example": "无",
+          "member": "string",
+          "name": "ReqReserved",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateBatchPaymentRequest": {
+      "document": "CreateBatchPayment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "1 微信企业付款 \n2 支付宝转账 \n3 平安银企直连代发转账",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转账详情",
+          "example": "无",
+          "member": "CreateBatchPaymentRecipient",
+          "name": "RecipientList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "请求预留字段",
+          "example": "无",
+          "member": "string",
+          "name": "ReqReserved",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调Url",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchPaymentResponse": {
+      "document": "CreateBatchPayment返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应",
+          "example": "无",
+          "member": "CreateBatchPaymentData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCustAcctIdRequest": {
       "document": "CreateCustAcctId请求参数结构体",
       "members": [
@@ -6462,6 +6735,148 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateSinglePaymentData": {
+      "document": "CreateSinglePayment接口返回响应",
+      "members": [
+        {
+          "default": "",
+          "document": "平台交易流水号，唯一",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateSinglePaymentRequest": {
+      "document": "CreateSinglePayment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "转账类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单流水号",
+          "example": "orderId",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转账金额",
+          "example": "100",
+          "member": "uint64",
+          "name": "TransferAmount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主播ID（与主播业务ID不能同时为空，两者都填取主播ID）",
+          "example": "anchorId",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求预留字段，原样透传返回",
+          "example": "reqReserved",
+          "member": "string",
+          "name": "ReqReserved",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播名称。如果该字段填入，则会对AnchorName和AnchorId/Uid进行校验。",
+          "example": "主播名称",
+          "member": "string",
+          "name": "AnchorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播业务ID（与主播ID不能同时为空，两者都填取主播ID）",
+          "example": "uid",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转账结果回调通知URL。若不填，则不进行回调。",
+          "example": "https://123.com",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSinglePaymentResponse": {
+      "document": "CreateSinglePayment返回参数结构体",
+      "members": [
+        {
+          "document": "错误码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateSinglePaymentData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateTransferBatchRequest": {
       "document": "CreateTransferBatch请求参数结构体",
@@ -9542,6 +9957,202 @@
       ],
       "type": "object"
     },
+    "QueryBatchPaymentResultData": {
+      "document": "QueryBatchPaymentResult接口返回响应",
+      "members": [
+        {
+          "default": "",
+          "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次总额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次预留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReqReserved",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批次备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转账明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryBatchPaymentResultDataInfo",
+          "name": "TransferInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryBatchPaymentResultDataInfo": {
+      "document": "QueryBatchPaymentResultData复杂类型中的TransferInfoList",
+      "members": [
+        {
+          "default": "",
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易状态。\n0 处理中  \n1 预占成功 \n2 交易成功 \n3 交易失败 \n4 未知渠道异常 \n5 预占额度失败\n6 提交成功\n7 提交失败\n8 订单重复提交\n99 未知系统异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转账金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryBatchPaymentResultRequest": {
+      "document": "QueryBatchPaymentResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批次号",
+          "example": "无",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryBatchPaymentResultResponse": {
+      "document": "QueryBatchPaymentResult返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应",
+          "example": "无",
+          "member": "QueryBatchPaymentResultData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryBillDownloadURLData": {
       "document": "智能代发-单笔代发转账对账单返回数据",
       "members": [
@@ -12531,6 +13142,144 @@
         }
       ],
       "usage": "out"
+    },
+    "QuerySinglePaymentResultData": {
+      "document": "QuerySinglePaymentResult接口返回响应",
+      "members": [
+        {
+          "default": "",
+          "document": "平台交易流水号，唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易状态。\n0 处理中  \n1 预占成功 \n2 交易成功 \n3 交易失败 \n4 未知渠道异常 \n5 预占额度失败\n6 提交成功\n7 提交失败\n8 订单重复提交\n99 未知系统异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TradeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QuerySinglePaymentResultRequest": {
+      "document": "QuerySinglePaymentResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "转账类型",
+          "example": "无",
+          "member": "int64",
+          "name": "TransferType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "交易流水流水号，唯一",
+          "example": "无",
+          "member": "string",
+          "name": "TradeSerialNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单号，与TradeSerialNo不能同时为空",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QuerySinglePaymentResultResponse": {
+      "document": "QuerySinglePaymentResult返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QuerySinglePaymentResultData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QuerySingleTransactionStatusRequest": {
       "document": "QuerySingleTransactionStatus请求参数结构体",

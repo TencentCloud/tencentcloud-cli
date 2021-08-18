@@ -262,7 +262,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateBandwidthPackage\n&ChargeType=TOP5_POSTPAID_BY_MONTH\n&NetworkType=BGP\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BandwidthPackageId\": \"bwp-8rolc8ec\",\n        \"BandwidthPackageIds\": [\n            \"bwp-8rolc8ec\"\n        ],\n        \"RequestId\": \"57741638-47c2-4c6d-ac84-b88eb83dad06\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BandwidthPackageId\": \"bwp-8rol****\",\n        \"BandwidthPackageIds\": [\n            \"bwp-8rol****\"\n        ],\n        \"RequestId\": \"57741638-47c2-4c6d-ac84-b88eb83dad06\"\n    }\n}",
         "title": "创建共享带宽包"
       }
     ],

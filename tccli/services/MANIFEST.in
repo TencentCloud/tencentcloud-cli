@@ -253,6 +253,8 @@ include tccli/services/organization/v20181225/api.json
 include tccli/services/organization/v20181225/examples.json
 include tccli/services/partners/v20180321/api.json
 include tccli/services/partners/v20180321/examples.json
+include tccli/services/pds/v20210701/api.json
+include tccli/services/pds/v20210701/examples.json
 include tccli/services/postgres/v20170312/api.json
 include tccli/services/postgres/v20170312/examples.json
 include tccli/services/privatedns/v20201028/api.json

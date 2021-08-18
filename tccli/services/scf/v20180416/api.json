@@ -5218,6 +5218,7 @@
         {
           "default": "",
           "document": "要修改的函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -5226,6 +5227,7 @@
         {
           "default": "",
           "document": "函数描述。最大支持 1000 个英文字母、数字、空格、逗号和英文句号，支持中文",
+          "example": "<Description>",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5234,6 +5236,7 @@
         {
           "default": "",
           "document": "函数运行时内存大小，默认为 128 M，可选范64M、128 M-3072 M，以 128MB 为阶梯。",
+          "example": "128",
           "member": "int64",
           "name": "MemorySize",
           "required": false,
@@ -5242,6 +5245,7 @@
         {
           "default": "",
           "document": "函数最长执行时间，单位为秒，可选值范 1-900 秒，默认为 3 秒",
+          "example": "3",
           "member": "int64",
           "name": "Timeout",
           "required": false,
@@ -5250,6 +5254,7 @@
         {
           "default": "",
           "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime",
+          "example": "Python3.6",
           "member": "string",
           "name": "Runtime",
           "required": false,
@@ -5258,6 +5263,7 @@
         {
           "default": "",
           "document": "函数的环境变量",
+          "example": "无",
           "member": "Environment",
           "name": "Environment",
           "required": false,
@@ -5266,6 +5272,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5274,6 +5281,7 @@
         {
           "default": "",
           "document": "函数的私有网络配置",
+          "example": "无",
           "member": "VpcConfig",
           "name": "VpcConfig",
           "required": false,
@@ -5282,6 +5290,7 @@
         {
           "default": "",
           "document": "函数绑定的角色",
+          "example": "SCF_ExecuteRole",
           "member": "string",
           "name": "Role",
           "required": false,
@@ -5290,6 +5299,7 @@
         {
           "default": "",
           "document": "日志投递到的cls日志集ID",
+          "example": "xxxx",
           "member": "string",
           "name": "ClsLogsetId",
           "required": false,
@@ -5298,6 +5308,7 @@
         {
           "default": "",
           "document": "日志投递到的cls Topic ID",
+          "example": "xxxx",
           "member": "string",
           "name": "ClsTopicId",
           "required": false,
@@ -5306,6 +5317,7 @@
         {
           "default": "",
           "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布新版本",
+          "example": "FALSE",
           "member": "string",
           "name": "Publish",
           "required": false,
@@ -5314,6 +5326,7 @@
         {
           "default": "",
           "document": "是否开启L5访问能力，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
           "member": "string",
           "name": "L5Enable",
           "required": false,
@@ -5322,6 +5335,7 @@
         {
           "default": "",
           "document": "函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。",
+          "example": "无",
           "member": "LayerVersionSimple",
           "name": "Layers",
           "required": false,
@@ -5330,6 +5344,7 @@
         {
           "default": "",
           "document": "函数关联的死信队列信息",
+          "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
           "required": false,
@@ -5338,6 +5353,7 @@
         {
           "default": "",
           "document": "公网访问配置",
+          "example": "无",
           "member": "PublicNetConfigIn",
           "name": "PublicNetConfig",
           "required": false,
@@ -5346,6 +5362,7 @@
         {
           "default": "",
           "document": "文件系统配置入参，用于云函数绑定CFS文件系统",
+          "example": "无",
           "member": "CfsConfig",
           "name": "CfsConfig",
           "required": false,
@@ -5354,6 +5371,7 @@
         {
           "default": "",
           "document": "函数初始化执行超时时间，默认15秒",
+          "example": "15",
           "member": "int64",
           "name": "InitTimeout",
           "required": false,

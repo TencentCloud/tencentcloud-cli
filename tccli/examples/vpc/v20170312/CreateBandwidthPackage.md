@@ -14,9 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "BandwidthPackageId": "bwp-8rolc8ec",
+        "BandwidthPackageId": "bwp-8rol****",
         "BandwidthPackageIds": [
-            "bwp-8rolc8ec"
+            "bwp-8rol****"
         ],
         "RequestId": "57741638-47c2-4c6d-ac84-b88eb83dad06"
     }
