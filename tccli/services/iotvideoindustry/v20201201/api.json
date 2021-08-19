@@ -12,6 +12,12 @@
       "name": "PTZ设备远程控制",
       "output": "ControlDevicePTZResponse"
     },
+    "ControlRecordStream": {
+      "document": "对回放流进行控制，包括暂停、播放、拉动、结束等",
+      "input": "ControlRecordStreamRequest",
+      "name": "回放流控制",
+      "output": "ControlRecordStreamResponse"
+    },
     "CreateDevice": {
       "document": "本接口(CreateDevice) 用于创建设备。",
       "input": "CreateDeviceRequest",
@@ -326,6 +332,36 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备接入协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GB/T 28181",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gro-zn3ro30w",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "一个组的名字",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -372,7 +408,7 @@
         {
           "default": "",
           "document": "设备唯一标识",
-          "example": "xxx",
+          "example": "99933020581320000064_99933020581320000064",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -386,12 +422,75 @@
           "name": "Command",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
     },
     "ControlDevicePTZResponse": {
       "document": "ControlDevicePTZ返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlRecordStreamRequest": {
+      "document": "ControlRecordStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备Id，设备的唯一标识",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流Id，流的唯一标识",
+          "example": "1038455659",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "|控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)\n| Offset  | uint  |否|拖动播放时的时间偏移量（相对于起始时间）,单位：秒",
+          "example": "{\\\"Action\\\":\\\"pause\\\"}",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlRecordStreamResponse": {
+      "document": "ControlRecordStream返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -584,6 +683,15 @@
           "name": "Devices",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "存储周期",
+          "example": "2",
+          "member": "int64",
+          "name": "RecordStorageTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -845,6 +953,15 @@
           "name": "DeviceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设备类型过滤",
+          "example": "2,3",
+          "member": "int64",
+          "name": "DeviceTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -999,7 +1116,7 @@
         {
           "default": "",
           "document": "设备唯一标识",
-          "example": "xxx",
+          "example": "99933020581320000064_99933020581320000064",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -1013,6 +1130,15 @@
           "name": "ExpireTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "99933020581320000064_99933020581320000064",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1157,6 +1283,15 @@
           "name": "Recordable",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当Group是普通组的时候，支持根据deviceTypes筛选类型",
+          "example": "1",
+          "member": "int64",
+          "name": "DeviceTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1330,6 +1465,15 @@
           "name": "EndTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1404,7 +1548,7 @@
         },
         {
           "default": "",
-          "document": "统计项。取值范围：\n1.录制设备数：RecordingDevice\n2.非录制设备数：NonRecordingDevice\n3.观看流量总数：WatchFlux\n4.已用存储容量总数：StorageUsage",
+          "document": "统计项。取值范围：\n1.录制设备数：RecordingDevice\n2.非录制设备数：NonRecordingDevice\n3.观看流量总数：WatchFlux\n4.已用存储容量总数：StorageUsage\n5. X-P2P分享流量: P2PFluxTotal\n6. X-P2P峰值带宽: P2PPeakValue",
           "example": "StorageUsage",
           "member": "string",
           "name": "StatisticField",
@@ -1485,6 +1629,24 @@
           "example": "1.22",
           "member": "float",
           "name": "StorageUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "X-P2P分享流量。单位 Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.3",
+          "member": "float",
+          "name": "P2PFluxTotal",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "X-P2P峰值带宽。 单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.45",
+          "member": "float",
+          "name": "P2PPeakValue",
           "required": true,
           "type": "float",
           "value_allowed_null": true
@@ -1731,9 +1893,19 @@
         {
           "default": "",
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dev1",
+          "example": "34020000001180000036_34020000001320000092",
           "member": "string",
           "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "ChannelId",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1747,7 +1919,7 @@
         {
           "default": "",
           "document": "设备唯一标识",
-          "example": "device01",
+          "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -1769,6 +1941,24 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "99870353841320000007_99870353841320000007",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1: 云端录制 2: 本地录制",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
           "type": "int"
         }
       ],
@@ -1979,7 +2169,7 @@
         {
           "default": "",
           "document": "设备唯一标识",
-          "example": "dev01",
+          "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -2020,6 +2210,24 @@
           "name": "Date",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道唯一标识",
+          "example": "99870353841320000007_99870353841320000007",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1: 云端录制 2: 本地录制",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2145,6 +2353,16 @@
           "name": "Recordable",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备接入协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GB/T 28181",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

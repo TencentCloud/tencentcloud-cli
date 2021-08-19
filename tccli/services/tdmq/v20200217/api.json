@@ -3124,6 +3124,15 @@
           "name": "RoleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "* RoleName\n按照角色名进行过滤，精确查询。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

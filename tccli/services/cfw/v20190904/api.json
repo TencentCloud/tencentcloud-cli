@@ -5056,7 +5056,7 @@
         },
         {
           "default": "",
-          "document": "访问源类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问源类型，默认为0，0: IP, 1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资产分组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "uint64",
           "name": "SourceType",
@@ -5076,7 +5076,7 @@
         },
         {
           "default": "",
-          "document": "访问目的类型，默认为0，1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 100:资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问目的类型，默认为0，0: IP, 1: VPC, 2: SUBNET, 3: CVM, 4: CLB, 5: ENI, 6: CDB, 7: 参数模板, 100: 资产分组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "TargetType",
@@ -5196,7 +5196,7 @@
         },
         {
           "default": "",
-          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "InstanceName",

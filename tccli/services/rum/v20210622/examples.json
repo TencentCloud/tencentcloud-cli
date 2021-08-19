@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取PerformancePage信息"
       }
+    ],
+    "DescribeError": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeError\n&ID=1\n&Date=20210520\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"CreateTime\": \"20210520\",\n        \"Content\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取首页错误信息"
+      }
     ]
   },
   "version": "1.0"

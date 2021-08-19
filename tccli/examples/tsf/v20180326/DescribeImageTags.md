@@ -1,4 +1,4 @@
-**Example 1: 镜像版本列表**
+**Example 1: DescribeImageTags**
 
 
 
@@ -6,38 +6,53 @@ Input:
 
 ```
 tccli tsf DescribeImageTags --cli-unfold-argument  \
+    --TcrRepoInfo.RegistryName xx \
+    --TcrRepoInfo.Namespace xx \
+    --TcrRepoInfo.Region xx \
+    --TcrRepoInfo.RegistryId xx \
+    --TcrRepoInfo.RepoName xx \
+    --QueryImageIdFlag 0 \
+    --Limit 0 \
+    --SearchWord xx \
     --Offset 0 \
-    --Limit 100 \
-    --ApplicationId application-xxxxxxx \
-    --QueryImageIdFlag 1
+    --RepoType xx \
+    --ApplicationId xx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "93445e4b-1d76-4cdb-95ed-1d0a4ed42171",
         "Result": {
             "Content": [
                 {
-                    "RepoName": "tsf_1000061xxxxx/test",
-                    "TagName": "test",
-                    "TagId": "sha256:6xxxxxxx4a5xxxxxxxb6fdxxxxxxx43dedxxxxxxx123xxxxxxxca83",
-                    "ImageId": "sha256:f9bc8xxxxxxx1d591xxxxxxx70dc43xxxxxxxe00bef40a1762a",
-                    "Size": "230 MB",
-                    "CreationTime": "2019-05-23T05:51:19Z",
-                    "UpdateTime": "2019-05-29T09:36:26Z",
-                    "Author": "",
-                    "Architecture": "amd64",
-                    "DockerVersion": "18.09.0",
-                    "Os": "linux",
-                    "PushTime": "2019-05-29T09:36:22Z",
-                    "SizeByte": 230967859
+                    "UpdateTime": "xx",
+                    "DockerVersion": "xx",
+                    "Author": "xx",
+                    "TcrRepoInfo": {
+                        "RegistryName": "xx",
+                        "Namespace": "xx",
+                        "Region": "xx",
+                        "RegistryId": "xx",
+                        "RepoName": "xx"
+                    },
+                    "TagId": "xx",
+                    "CreationTime": "xx",
+                    "RepoName": "xx",
+                    "ImageId": "xx",
+                    "SizeByte": 0,
+                    "Architecture": "xx",
+                    "TagName": "xx",
+                    "PushTime": "xx",
+                    "Os": "xx",
+                    "Size": "xx"
                 }
             ],
-            "TotalCount": 1,
-            "Server": "ccr.ccs.tencentyun.com"
-        }
+            "TotalCount": 0,
+            "RepoName": "xx",
+            "Server": "xx"
+        },
+        "RequestId": "xx"
     }
 }
 ```

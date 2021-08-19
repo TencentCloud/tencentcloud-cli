@@ -755,6 +755,7 @@
         {
           "default": "",
           "document": "告警策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -764,6 +765,7 @@
         {
           "default": "",
           "document": "告警策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -773,6 +775,7 @@
         {
           "default": "",
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -782,6 +785,7 @@
         {
           "default": "",
           "document": "监控类型 MT_QCE=云产品监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MonitorType",
           "required": true,
@@ -791,6 +795,7 @@
         {
           "default": "",
           "document": "启停状态 0=停用 1=启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Enable",
           "required": true,
@@ -800,6 +805,7 @@
         {
           "default": "",
           "document": "策略组绑定的实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "UseSum",
           "required": true,
@@ -809,6 +815,7 @@
         {
           "default": "",
           "document": "项目 Id -1=无项目 0=默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -818,6 +825,7 @@
         {
           "default": "",
           "document": "项目名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -827,6 +835,7 @@
         {
           "default": "",
           "document": "告警策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -836,6 +845,7 @@
         {
           "default": "",
           "document": "触发条件模板 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ConditionTemplateId",
           "required": true,
@@ -845,6 +855,7 @@
         {
           "default": "",
           "document": "指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": true,
@@ -854,6 +865,7 @@
         {
           "default": "",
           "document": "事件触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": true,
@@ -863,6 +875,7 @@
         {
           "default": "",
           "document": "通知规则 id 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NoticeIds",
           "required": true,
@@ -872,6 +885,7 @@
         {
           "default": "",
           "document": "通知规则 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
           "required": true,
@@ -881,6 +895,7 @@
         {
           "default": "",
           "document": "触发任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": true,
@@ -890,6 +905,7 @@
         {
           "default": "",
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ConditionsTemp",
           "name": "ConditionsTemp",
           "required": true,
@@ -899,6 +915,7 @@
         {
           "default": "",
           "document": "最后编辑的用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LastEditUin",
           "required": true,
@@ -908,6 +925,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "UpdateTime",
           "required": true,
@@ -917,6 +935,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "InsertTime",
           "required": true,
@@ -926,6 +945,7 @@
         {
           "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -935,6 +955,7 @@
         {
           "default": "",
           "document": "namespace显示名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceShowName",
           "required": true,
@@ -944,6 +965,7 @@
         {
           "default": "",
           "document": "是否默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "IsDefault",
           "required": true,
@@ -953,6 +975,7 @@
         {
           "default": "",
           "document": "能否设置默认策略，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "CanSetDefault",
           "required": true,
@@ -962,6 +985,7 @@
         {
           "default": "",
           "document": "实例分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": true,
@@ -971,6 +995,7 @@
         {
           "default": "",
           "document": "实例分组总实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "InstanceSum",
           "required": true,
@@ -980,6 +1005,7 @@
         {
           "default": "",
           "document": "实例分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "InstanceGroupName",
           "required": true,
@@ -989,6 +1015,7 @@
         {
           "default": "",
           "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -998,6 +1025,7 @@
         {
           "default": "",
           "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "OriginId",
           "required": true,
@@ -1007,6 +1035,7 @@
         {
           "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagInstance",
           "name": "TagInstances",
           "required": true,
@@ -3163,6 +3192,15 @@
           "example": "1",
           "member": "int64",
           "name": "NotBindingNoticeRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例分组id",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceGroupId",
           "required": false,
           "type": "int"
         }

@@ -19,6 +19,7 @@ Output:
                 "InstanceId": "lhins-ruy9d2tw",
                 "BundleId": "bundle_bw_small1_1",
                 "BlueprintId": "lhbp-5e8807lo",
+                "Zone": "ap-guangzhou-3",
                 "CPU": 1,
                 "Memory": 1,
                 "InstanceName": "lighthouse-test",

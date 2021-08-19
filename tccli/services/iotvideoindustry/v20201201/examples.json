@@ -16,6 +16,14 @@
         "title": "PTZ设备远程控制示例"
       }
     ],
+    "ControlRecordStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlRecordStream\n<公共请求参数>\n\n{\n    \"DeviceId\": \"34020000001180000036_34020000001320000092\",\n    \"StreamId\": \"1038455659\",\n    \"Command\": \"{\\\"Action\\\":\\\"pause\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "",
@@ -178,7 +186,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticSummary\n<公共请求参数>\n\n{\n    \"Date\": \"2020-12-09\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RecordingDevice\": 3,\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"StorageUsage\": 1.22,\n        \"NonRecordingDevice\": 1,\n        \"WatchFlux\": 2.21\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordingDevice\": 3,\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"StorageUsage\": 1.22,\n        \"NonRecordingDevice\": 1,\n        \"WatchFlux\": 2.21,\n        \"P2PFluxTotal\": 1.2,\n        \"P2PPeakValue\": 2.4\n    }\n}",
         "title": "查询统计指标概览数据"
       }
     ],

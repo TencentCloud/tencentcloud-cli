@@ -31,6 +31,24 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -474,6 +492,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有网络列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VpcInfo",
+          "name": "VpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -500,6 +528,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "IntranetAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

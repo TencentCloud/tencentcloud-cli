@@ -11,6 +11,12 @@
       "input": "DescribeDataPerformancePageRequest",
       "name": "获取PerformancePage信息",
       "output": "DescribeDataPerformancePageResponse"
+    },
+    "DescribeError": {
+      "document": "获取首页错误信息",
+      "input": "DescribeErrorRequest",
+      "name": "获取首页错误信息",
+      "output": "DescribeErrorResponse"
     }
   },
   "metadata": {
@@ -331,6 +337,69 @@
           "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeErrorRequest": {
+      "document": "DescribeError请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日期",
+          "example": "20210520",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeErrorResponse": {
+      "document": "DescribeError返回参数结构体",
+      "members": [
+        {
+          "document": "内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间",
+          "example": "20210520",
+          "member": "string",
+          "name": "CreateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

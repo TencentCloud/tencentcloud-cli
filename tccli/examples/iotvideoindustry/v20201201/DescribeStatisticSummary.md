@@ -17,7 +17,9 @@ Output:
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",
         "StorageUsage": 1.22,
         "NonRecordingDevice": 1,
-        "WatchFlux": 2.21
+        "WatchFlux": 2.21,
+        "P2PFluxTotal": 1.2,
+        "P2PPeakValue": 2.4
     }
 }
 ```

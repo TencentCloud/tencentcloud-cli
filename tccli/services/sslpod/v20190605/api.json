@@ -648,7 +648,8 @@
       "members": [
         {
           "default": "",
-          "document": "ID",
+          "document": "ID标识",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -658,6 +659,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -667,6 +669,7 @@
         {
           "default": "",
           "document": "IP地址",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -675,7 +678,8 @@
         },
         {
           "default": "",
-          "document": "是否自动获取IP",
+          "document": "是否自动获取IP：true：是，false:否",
+          "example": "无",
           "member": "bool",
           "name": "AutoIP",
           "required": true,
@@ -684,25 +688,8 @@
         },
         {
           "default": "",
-          "document": "监控服务类型",
-          "member": "int64",
-          "name": "ServerType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "证书品牌",
-          "member": "string",
-          "name": "Brand",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "评级",
+          "document": "评级\n\"A+\"，\n \"A\"，\n\"A-\"，\n\"B\"，\n\"C\"，\n\"D\"，\n \"E\"，\n \"F\"，\n\"T\"，",
+          "example": "无",
           "member": "string",
           "name": "Grade",
           "required": true,
@@ -711,7 +698,28 @@
         },
         {
           "default": "",
-          "document": "评级Code",
+          "document": "证书品牌",
+          "example": "无",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控服务类型\n0 :Web\n1: SMTP\n2: IMAP\n3: POP3",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "评级Code\n0：\"unknown\"，\n1：\"A+\"，\n2： \"A\"，\n3：\"A-\"，\n4：\"B\"，\n5：\"C\"，\n6：\"D\"，\n7： \"E\"，\n8： \"F\"，\n9：\"T\"，",
+          "example": "无",
           "member": "int64",
           "name": "GradeCode",
           "required": true,
@@ -720,7 +728,8 @@
         },
         {
           "default": "",
-          "document": "是否监控告警",
+          "document": "是否监控告警；true：是，false:否",
+          "example": "无",
           "member": "bool",
           "name": "Notice",
           "required": true,
@@ -730,6 +739,7 @@
         {
           "default": "",
           "document": "账号域名关系ID",
+          "example": "无",
           "member": "int64",
           "name": "AccountDomainId",
           "required": true,
@@ -739,6 +749,7 @@
         {
           "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -747,7 +758,8 @@
         },
         {
           "default": "",
-          "document": "域名状态",
+          "document": "域名状态:\n连接异常，\n证书已过期，\n证书已吊销，\n证书黑名单，\n证书域名不匹配，\n证书不可信，\n证书密钥弱，\n证书即将过期，少于7天，\n证书即将过期，少于30天，\n正常，\n部分异常",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -757,6 +769,7 @@
         {
           "default": "",
           "document": "域名端口",
+          "example": "无",
           "member": "string",
           "name": "Port",
           "required": true,
@@ -771,7 +784,8 @@
       "members": [
         {
           "default": "",
-          "document": "通知类型",
+          "document": "通知类型：\nlimit_emai：邮件\nlimit_wechat：微信\nlimit_phone：手机",
+          "example": "limit_emai",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -781,6 +795,7 @@
         {
           "default": "",
           "document": "总量",
+          "example": "无",
           "member": "int64",
           "name": "Total",
           "required": true,
@@ -790,6 +805,7 @@
         {
           "default": "",
           "document": "已发送",
+          "example": "无",
           "member": "int64",
           "name": "Sent",
           "required": true,
@@ -839,6 +855,7 @@
         {
           "default": "",
           "document": "通知ID",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -847,7 +864,8 @@
         },
         {
           "default": "",
-          "document": "通知开关信息",
+          "document": "通知开关信息；0：关闭；15开启",
+          "example": "0",
           "member": "int64",
           "name": "NoticeType",
           "required": true,
@@ -857,6 +875,7 @@
         {
           "default": "",
           "document": "额度信息",
+          "example": "无",
           "member": "LimitInfo",
           "name": "LimitInfos",
           "required": true,

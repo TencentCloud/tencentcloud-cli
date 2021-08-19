@@ -259,8 +259,8 @@
     "DeleteImageTags": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteImageTags\r\n&ImageTags.0.RepoName=tsf_410xxxxxx/test\r\n&ImageTags.0.TagName=20190529xxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fdd6706-7447-4c00-8717-e834f470dd43\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageTags\n<公共请求参数>\n\n{\n    \"ImageTags\": [\n        {\n            \"RepoName\": \"xx\",\n            \"TagName\": \"xx\"\n        }\n    ],\n    \"RepoType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DeleteImageTags"
       }
     ],
@@ -616,6 +616,14 @@
         "title": "查询虚拟机部署组云主机列表"
       }
     ],
+    "DescribeGroupRelease": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupRelease\n&GroupId=group-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c033faca-041a-4357-a96d-xxxxxxxx\",\n        \"Result\": {\n            \"PackageName\": \"consumer-demo-1.25.0-Greenwich-SNAPSHOT.jar\",\n            \"PackageVersion\": \"xxxxxx\",\n            \"PackageId\": \"pkg-xxxxxx\",\n            \"PublicConfigReleaseList\": [\n                {\n                    \"ConfigReleaseId\": \"dcfgr-xxxxxx\",\n                    \"ConfigId\": \"dcfg-p-xxxxxx\",\n                    \"ConfigName\": \"n1\",\n                    \"ConfigVersion\": \"v1\",\n                    \"ReleaseTime\": \"2021-08-10 10:xx:xx\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-xxxxxxxx\",\n                    \"NamespaceName\": \"xxxxxx\",\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ReleaseDesc\": null,\n                    \"ApplicationId\": null\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询部署组发布的相关信息"
+      }
+    ],
     "DescribeGroupUseDetail": [
       {
         "document": "",
@@ -651,9 +659,9 @@
     "DescribeImageTags": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeImageTags\r\n&Offset=0\r\n&Limit=100\r\n&ApplicationId=application-xxxxxxx\r\n&QueryImageIdFlag=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93445e4b-1d76-4cdb-95ed-1d0a4ed42171\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"RepoName\": \"tsf_1000061xxxxx/test\",\n                    \"TagName\": \"test\",\n                    \"TagId\": \"sha256:6xxxxxxx4a5xxxxxxxb6fdxxxxxxx43dedxxxxxxx123xxxxxxxca83\",\n                    \"ImageId\": \"sha256:f9bc8xxxxxxx1d591xxxxxxx70dc43xxxxxxxe00bef40a1762a\",\n                    \"Size\": \"230 MB\",\n                    \"CreationTime\": \"2019-05-23T05:51:19Z\",\n                    \"UpdateTime\": \"2019-05-29T09:36:26Z\",\n                    \"Author\": \"\",\n                    \"Architecture\": \"amd64\",\n                    \"DockerVersion\": \"18.09.0\",\n                    \"Os\": \"linux\",\n                    \"PushTime\": \"2019-05-29T09:36:22Z\",\n                    \"SizeByte\": 230967859\n                }\n            ],\n            \"TotalCount\": 1,\n            \"Server\": \"ccr.ccs.tencentyun.com\"\n        }\n    }\n}",
-        "title": "镜像版本列表"
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageTags\n<公共请求参数>\n\n{\n    \"TcrRepoInfo\": {\n        \"RegistryName\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"Region\": \"xx\",\n        \"RegistryId\": \"xx\",\n        \"RepoName\": \"xx\"\n    },\n    \"QueryImageIdFlag\": 0,\n    \"Limit\": 0,\n    \"SearchWord\": \"xx\",\n    \"Offset\": 0,\n    \"RepoType\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"UpdateTime\": \"xx\",\n                    \"DockerVersion\": \"xx\",\n                    \"Author\": \"xx\",\n                    \"TcrRepoInfo\": {\n                        \"RegistryName\": \"xx\",\n                        \"Namespace\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"RegistryId\": \"xx\",\n                        \"RepoName\": \"xx\"\n                    },\n                    \"TagId\": \"xx\",\n                    \"CreationTime\": \"xx\",\n                    \"RepoName\": \"xx\",\n                    \"ImageId\": \"xx\",\n                    \"SizeByte\": 0,\n                    \"Architecture\": \"xx\",\n                    \"TagName\": \"xx\",\n                    \"PushTime\": \"xx\",\n                    \"Os\": \"xx\",\n                    \"Size\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 0,\n            \"RepoName\": \"xx\",\n            \"Server\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeImageTags"
       }
     ],
     "DescribeLaneRules": [
@@ -1078,6 +1086,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyUploadInfo\n&ApplicationId=application-xxxxxx\n&PkgId=pkg-xxxxx0ae\n&Md5=663ed83xxxxxxxxxxxxxxxxx73d983f94\n&Size=67118957\n&Result=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6785e607-c819-4721-9223-5a1613ae3d8d\"\n    }\n}",
         "title": "更新上传程序包信息"
+      }
+    ],
+    "OperateApplicationTcrBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateApplicationTcrBinding\n<公共请求参数>\n\n{\n    \"TcrRepoInfo\": {\n        \"RegistryName\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"Region\": \"xx\",\n        \"RegistryId\": \"xx\",\n        \"RepoName\": \"xx\"\n    },\n    \"Command\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "OperateApplicationTcrBinding"
       }
     ],
     "RedoTask": [
