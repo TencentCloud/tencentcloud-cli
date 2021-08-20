@@ -3672,6 +3672,15 @@
           "name": "Order",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关键字匹配搜索，Key 可选值为 Namespace 和 Description，多个搜索条件之间是与的关系",
+          "example": "无",
+          "member": "SearchKey",
+          "name": "SearchKey",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4578,6 +4587,30 @@
         }
       ],
       "usage": "both"
+    },
+    "SearchKey": {
+      "document": "包含搜索关键字和对应的内容",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "搜索内容",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "StatusReason": {
       "document": "状态原因描述",

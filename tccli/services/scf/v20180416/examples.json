@@ -233,7 +233,7 @@
     "ListNamespaces": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\n&SearchKey.0.Key=Namespace\n&SearchKey.0.Value=dev\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Type\": \"xx\",\n                \"Description\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "列出命名空间列表"
       }

@@ -1022,6 +1022,7 @@
         {
           "default": "",
           "document": "客户端地址。",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -1031,6 +1032,7 @@
         {
           "default": "",
           "document": "用户名。",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": false,
@@ -1040,6 +1042,7 @@
         {
           "default": "",
           "document": "数据库名称。",
+          "example": "无",
           "member": "string",
           "name": "DBName",
           "required": false,
@@ -1049,6 +1052,7 @@
         {
           "default": "",
           "document": "表名称。",
+          "example": "无",
           "member": "string",
           "name": "TableName",
           "required": false,
@@ -1058,6 +1062,7 @@
         {
           "default": "",
           "document": "审计策略名称。",
+          "example": "无",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -1067,6 +1072,7 @@
         {
           "default": "",
           "document": "SQL 语句。支持模糊匹配。",
+          "example": "“”",
           "member": "string",
           "name": "Sql",
           "required": false,
@@ -1076,6 +1082,7 @@
         {
           "default": "",
           "document": "SQL 类型。目前支持：\"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\", \"CREATE\", \"DROP\", \"ALTER\", \"SET\", \"REPLACE\", \"EXECUTE\"。",
+          "example": "无",
           "member": "string",
           "name": "SqlType",
           "required": false,
@@ -1085,6 +1092,7 @@
         {
           "default": "",
           "document": "执行时间。单位为：ms。表示筛选执行时间大于该值的审计日志。",
+          "example": "1",
           "member": "int64",
           "name": "ExecTime",
           "required": false,
@@ -1094,6 +1102,7 @@
         {
           "default": "",
           "document": "影响行数。表示筛选影响行数大于该值的审计日志。",
+          "example": "1",
           "member": "int64",
           "name": "AffectRows",
           "required": false,
@@ -2008,6 +2017,7 @@
         {
           "default": "",
           "document": "审计策略名称。",
+          "example": "audit_policy_1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2016,6 +2026,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-asdfghjk",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -2024,6 +2035,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-qwerasdf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2031,7 +2043,8 @@
         },
         {
           "default": "",
-          "document": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；\n实例首次开通审计策略时，可传该值，用于设置存储日志保存天数，默认为 30 天。若实例已存在审计策略，则此参数无效，可使用 更改审计服务配置 接口修改日志存储时长。",
+          "document": "审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；\n实例首次开通审计策略时，可传该值，用于设置存储日志保存天数，默认为 30 天。若实例已存在审计策略，则此参数无效，可使用 更改审计服务配置 接口修改日志存储时长。",
+          "example": "7",
           "member": "int64",
           "name": "LogExpireDay",
           "required": false,
@@ -2045,8 +2058,10 @@
       "members": [
         {
           "document": "审计策略 ID。",
+          "example": "cdbpolicy-asdfqwer",
           "member": "string",
           "name": "PolicyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3895,7 +3910,7 @@
       "document": "DescribeAuditConfig返回参数结构体",
       "members": [
         {
-          "document": "审计日志保存时长。目前支持的值包括：[0，30，180，365，1095，1825]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志保存时长。目前支持的值包括：[0，7，30，180，365，1095，1825]。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "365",
           "member": "int64",
           "name": "LogExpireDay",
@@ -3920,6 +3935,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "审计服务开通时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-07-13 11:34:35“",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8691,6 +8715,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "cdb-txcniupi",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8698,7 +8723,8 @@
         },
         {
           "default": "",
-          "document": "审计日志保存时长。支持值包括：\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "document": "审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "example": "365",
           "member": "int64",
           "name": "LogExpireDay",
           "required": false,
@@ -8707,6 +8733,7 @@
         {
           "default": "",
           "document": "是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。\n当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。\nCloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。",
+          "example": "true",
           "member": "bool",
           "name": "CloseAudit",
           "required": false,

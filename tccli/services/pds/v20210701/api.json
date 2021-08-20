@@ -39,7 +39,7 @@
       "document": "DescribeNewUserAcquisition返回参数结构体",
       "members": [
         {
-          "document": "用户信誉值",
+          "document": "用户信誉分，1-5从低到高",
           "example": "无",
           "member": "Score",
           "name": "ServiceRsp",
@@ -75,7 +75,7 @@
       "document": "DescribeStockEstimation返回参数结构体",
       "members": [
         {
-          "document": "用户信誉值",
+          "document": "用户信誉分，1-5从低到高",
           "example": "无",
           "member": "Score",
           "name": "ServiceRsp",
@@ -93,11 +93,11 @@
       "type": "object"
     },
     "Score": {
-      "document": "信誉分",
+      "document": "信誉分，1-5从低到高",
       "members": [
         {
           "default": "",
-          "document": "用户信誉分",
+          "document": "信誉分，1-5从低到高",
           "example": "1",
           "member": "int64",
           "name": "Star",

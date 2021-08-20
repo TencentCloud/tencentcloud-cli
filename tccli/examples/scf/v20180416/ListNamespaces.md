@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli scf ListNamespaces --cli-unfold-argument ```
+tccli scf ListNamespaces --cli-unfold-argument  \
+    --SearchKey.0.Key Namespace \
+    --SearchKey.0.Value dev
+```
 
 Output: 
 ```

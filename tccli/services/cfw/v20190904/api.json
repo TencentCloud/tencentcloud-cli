@@ -5243,6 +5243,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否使用端口协议模板，0：否，1：是",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtocolPortType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5466,6 +5476,16 @@
           "example": "0",
           "member": "uint64",
           "name": "Direction",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用端口协议模板，0：否，1：是",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtocolPortType",
           "required": false,
           "type": "int",
           "value_allowed_null": false

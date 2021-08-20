@@ -51,7 +51,7 @@
     "CreateAuditPolicy": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAuditPolicy\r\n&Name=audit_policy_1\r\n&RuleId=cdbrule-asdfghjk\r\n&InstanceId=cdb-qwerasdf\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateAuditPolicy\n&Name=audit_policy_1\n&RuleId=cdbrule-asdfghjk\n&InstanceId=cdb-qwerasdf\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"PolicyId\": \"cdbpolicy-asdfqwer\"\n    }\n}",
         "title": "创建审计策略"
       }
@@ -232,7 +232,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditConfig\n&InstanceId=cdb-txcniupi\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"LogExpireDay\": 365,\n        \"LogType\": \"storage\",\n        \"IsClosing\": \"false\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"LogExpireDay\": 365,\n        \"LogType\": \"storage\",\n        \"IsClosing\": \"false\",\n        \"CreateTime\": \"2021-07-13 11:34:35\"\n    }\n}",
         "title": "查询审计服务配置"
       }
     ],

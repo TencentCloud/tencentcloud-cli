@@ -1959,7 +1959,7 @@
       "document": "DescribeBasicDeviceStatus返回参数结构体",
       "members": [
         {
-          "document": "返回资源及状态",
+          "document": "返回资源及状态，状态码：\n1 - 封堵状态\n2 - 正常状态\n3 - 攻击状态",
           "example": "无",
           "member": "KeyValue",
           "name": "Data",

@@ -2634,7 +2634,7 @@
         },
         {
           "default": "",
-          "document": "截图宽度。默认：0（原始宽）。",
+          "document": "截图宽度。默认：0（原始宽）。\n范围：0-3000 。",
           "example": "250",
           "member": "int64",
           "name": "Width",
@@ -2643,7 +2643,7 @@
         },
         {
           "default": "",
-          "document": "截图高度。默认：0（原始高）。",
+          "document": "截图高度。默认：0（原始高）。\n范围：0-2000 。",
           "example": "250",
           "member": "int64",
           "name": "Height",
