@@ -1553,16 +1553,16 @@
         },
         {
           "default": "",
-          "document": "用户ID。",
+          "document": "用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。",
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "用户名。",
+          "document": "用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",

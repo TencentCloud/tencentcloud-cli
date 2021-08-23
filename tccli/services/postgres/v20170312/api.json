@@ -138,6 +138,18 @@
       "name": "查询ServerlessDB实例列表",
       "output": "DescribeServerlessDBInstancesResponse"
     },
+    "DescribeSlowQueryAnalysis": {
+      "document": "慢查询统计分析接口，根据SQL语句抽象参数之后，进行聚合分析，并返回对应结果",
+      "input": "DescribeSlowQueryAnalysisRequest",
+      "name": "慢查询统计分析接口",
+      "output": "DescribeSlowQueryAnalysisResponse"
+    },
+    "DescribeSlowQueryList": {
+      "document": "获取慢查询列表",
+      "input": "DescribeSlowQueryListRequest",
+      "name": "获取慢查询列表",
+      "output": "DescribeSlowQueryListResponse"
+    },
     "DescribeZones": {
       "document": "本接口 (DescribeZones) 用于查询支持的可用区信息。",
       "input": "DescribeZonesRequest",
@@ -388,6 +400,142 @@
         }
       ],
       "type": "object"
+    },
+    "AnalysisItems": {
+      "document": "慢查询分析接口返回的分析详情，按照参数抽象之后进行分类",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL查询的数据库名",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的用户名",
+          "example": "postgres",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "抽象参数之后的慢SQL",
+          "example": "select $1",
+          "member": "string",
+          "name": "NormalQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的客户端地址",
+          "example": "::1",
+          "member": "string",
+          "name": "ClientAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内慢SQL语句执行的次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CallNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）",
+          "example": "0.1",
+          "member": "float",
+          "name": "CallPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL执行的总时间",
+          "example": "1.1",
+          "member": "float",
+          "name": "CostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的总时间占所有慢SQL的比例（小数返回）",
+          "example": "0.2",
+          "member": "float",
+          "name": "CostPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时最短的时间（单位：ms）",
+          "example": "0.01",
+          "member": "float",
+          "name": "MinCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时最长的时间（单位：ms）",
+          "example": "1",
+          "member": "float",
+          "name": "MaxCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时平均时间（单位：ms）",
+          "example": "0.2",
+          "member": "float",
+          "name": "AvgCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL第一条开始执行的时间戳",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL最后一条开始执行的时间戳",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CloseDBExtranetAccessRequest": {
       "document": "CloseDBExtranetAccess请求参数结构体",
@@ -2709,6 +2857,231 @@
       ],
       "type": "object"
     },
+    "DescribeSlowQueryAnalysisRequest": {
+      "document": "DescribeSlowQueryAnalysis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据数据库名进行筛选，可以为空。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。",
+          "example": "CallNum",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型。升序asc、降序desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小。取值范围[1,100]。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移。取值范围[0,INF)。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryAnalysisResponse": {
+      "document": "DescribeSlowQueryAnalysis返回参数结构体",
+      "members": [
+        {
+          "document": "查询总条数。",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢SQL统计分析接口返回详情。",
+          "example": "无",
+          "member": "Detail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryListRequest": {
+      "document": "DescribeSlowQueryList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。",
+          "example": "2020-01-01 02:03:04",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。",
+          "example": "2020-01-01 02:03:04",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据数据库名进行筛选，可以为空。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型。升序asc、降序desc。默认为desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序维度。 可选参数，取值范围[SessionStartTime,Duration]，默认为SessionStartTime。",
+          "example": "SessionStartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小。取值范围[1,100],默认为20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移。取值范围[0,INF)，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryListResponse": {
+      "document": "DescribeSlowQueryList返回参数结构体",
+      "members": [
+        {
+          "document": "选定时间范围内慢SQL总条数。",
+          "example": "6",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定时间范围内，慢SQL耗时分段分析。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DurationAnalysis",
+          "name": "DurationAnalysis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定时间范围内 慢SQL流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RawSlowQuery",
+          "name": "RawSlowQueryList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [],
@@ -2767,6 +3140,42 @@
       ],
       "type": "object"
     },
+    "Detail": {
+      "document": "慢SQL 统计分析接口返回详情",
+      "members": [
+        {
+          "default": "",
+          "document": "输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）",
+          "example": "0.1",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入时间范围内所有慢sql总条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCallNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL统计分析列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalysisItems",
+          "name": "AnalysisItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DisIsolateDBInstancesRequest": {
       "document": "DisIsolateDBInstances请求参数结构体",
       "members": [
@@ -2820,6 +3229,32 @@
         }
       ],
       "type": "object"
+    },
+    "DurationAnalysis": {
+      "document": "慢SQL耗时分段分析",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL耗时，时段",
+          "example": "“0-1s”",
+          "member": "string",
+          "name": "TimeSegment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应时段区间慢SQL 条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ErrLogDetail": {
       "document": "错误日志详情",
@@ -3737,6 +4172,72 @@
           "name": "DBInstanceIdSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RawSlowQuery": {
+      "document": "慢SQL查询接口返回 慢SQL列表详情",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL 语句",
+          "example": "select 1",
+          "member": "string",
+          "name": "RawQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL 查询的数据库",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行 耗时",
+          "example": "1.1",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行慢SQL的客户端",
+          "example": "::1",
+          "member": "string",
+          "name": "ClientAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行慢SQL的用户名",
+          "example": "postgres",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的开始时间",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "SessionStartTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
