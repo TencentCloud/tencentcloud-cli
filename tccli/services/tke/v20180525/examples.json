@@ -596,6 +596,14 @@
         "title": "修改节点池关联伸缩组的期望实例数示例"
       }
     ],
+    "ModifyNodePoolInstanceTypes": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyNodePoolInstanceTypes\n&ClusterId=cls-xxx\n&NodePoolId=np-xxx\n&InstanceTypes.0=ins-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "修改节点池机型"
+      }
+    ],
     "ModifyPrometheusAlertRule": [
       {
         "document": "",

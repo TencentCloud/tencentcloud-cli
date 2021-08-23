@@ -438,6 +438,12 @@
       "name": "修改节点池关联伸缩组的期望实例数",
       "output": "ModifyNodePoolDesiredCapacityAboutAsgResponse"
     },
+    "ModifyNodePoolInstanceTypes": {
+      "document": "修改节点池的机型配置",
+      "input": "ModifyNodePoolInstanceTypesRequest",
+      "name": "修改节点池的机型配置",
+      "output": "ModifyNodePoolInstanceTypesResponse"
+    },
     "ModifyPrometheusAlertRule": {
       "document": "修改告警规则 ",
       "input": "ModifyPrometheusAlertRuleRequest",
@@ -6690,6 +6696,51 @@
     },
     "ModifyNodePoolDesiredCapacityAboutAsgResponse": {
       "document": "ModifyNodePoolDesiredCapacityAboutAsg返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNodePoolInstanceTypesRequest": {
+      "document": "ModifyNodePoolInstanceTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点池id",
+          "example": "np-xxx",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型列表",
+          "example": "[\"ins-xxx\\n\"]",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNodePoolInstanceTypesResponse": {
+      "document": "ModifyNodePoolInstanceTypes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
