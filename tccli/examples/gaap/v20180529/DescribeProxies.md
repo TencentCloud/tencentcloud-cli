@@ -64,6 +64,7 @@ Output:
                     0
                 ],
                 "ProxyName": "test",
+                "NetworkType": "xx",
                 "ModifyConfigTime": 1,
                 "GroupId": null
             }
@@ -117,6 +118,7 @@ Output:
                     0
                 ],
                 "ProxyName": "test",
+                "NetworkType": "",
                 "ModifyConfigTime": 1,
                 "GroupId": null
             }

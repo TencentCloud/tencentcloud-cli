@@ -148,7 +148,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=GetFaceIdResult\n&FaceIdToken=CE661F1A-0F1E-45BD-BE13-34C05CEA7681\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"IdCard\": \"23232323232\",\n        \"Name\": \"王五\",\n        \"Similarity\": 97.7,\n        \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\",\n        \"Extra\": \"xx\",\n        \"VideoBase64\": \"xx\",\n        \"BestFrameBase64\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"IdCard\": \"23232323232\",\n        \"Name\": \"王五\",\n        \"Similarity\": 97.7,\n        \"RequestId\": \"0f96cf39-a183-485c-ab29-8427ab81f9ae\",\n        \"Extra\": \"xx\",\n        \"VideoBase64\": \"xx\",\n        \"BestFrameBase64\": \"xx\",\n        \"DeviceInfoTag\": \"5007_1005\",\n        \"RiskInfoTag\": \"02\"\n    }\n}",
         "title": "获取结果成功时"
       }
     ],

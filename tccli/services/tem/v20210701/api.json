@@ -1031,6 +1031,15 @@
           "name": "CronHorizontalAutoscaler",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否启用log，1为启用，0为不启用",
+          "example": "1",
+          "member": "int64",
+          "name": "LogEnable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

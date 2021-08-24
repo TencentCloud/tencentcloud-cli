@@ -239,6 +239,7 @@
         {
           "default": "",
           "document": "Song Name",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -248,6 +249,7 @@
         {
           "default": "",
           "document": "歌曲版本",
+          "example": "无",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -257,6 +259,7 @@
         {
           "default": "",
           "document": "歌曲总时长（非试听时长）",
+          "example": "无",
           "member": "string",
           "name": "Duration",
           "required": true,
@@ -266,6 +269,7 @@
         {
           "default": "",
           "document": "试听开始时间",
+          "example": "无",
           "member": "uint64",
           "name": "AuditionBegin",
           "required": true,
@@ -275,10 +279,21 @@
         {
           "default": "",
           "document": "试听结束时间",
+          "example": "无",
           "member": "uint64",
           "name": "AuditionEnd",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称",
+          "example": "无",
+          "member": "string",
+          "name": "TagNames",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

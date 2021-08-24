@@ -25,7 +25,8 @@ Output:
                 "AppId": "1252225953",
                 "GoodsNum": "1",
                 "GoodsPrice": {
-                    "RealTotalCost": 4576
+                    "RealTotalCost": 4576,
+                    "OriginalTotalCost": 0
                 },
                 "Creater": "3455636980",
                 "CreatTime": "2019-04-09 20:48:45",
@@ -49,7 +50,9 @@ Output:
                         "Value": "xx"
                     }
                 ],
-                "OverdueTime": "2019-05-21 11:24:05"
+                "OverdueTime": "2019-05-21 11:24:05",
+                "PaymentMethod": "",
+                "UpdateTime": "2019-05-21 11:24:05"
             }
         ],
         "TotalCount": 1

@@ -13,24 +13,25 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
+        "TotalCount": 1,
         "AgentBillSet": [
             {
-                "Uin": "11111",
-                "OrderId": "20180201112843",
-                "ClientUin": "33333",
-                "ClientRemark": "",
-                "PayTime": "2018-02-01 02:51:02",
-                "GoodsType": "云服务器",
-                "PayMode": "prepay",
-                "SettleMonth": "2018-02",
-                "Amt": "19200",
-                "PayerMode": "selfpay",
-                "ClientType": "assign",
-                "ProjectType": ""
+                "OrderId": "xx",
+                "ClientUin": "xx",
+                "ProjectType": "xx",
+                "ClientType": "xx",
+                "PayerMode": "xx",
+                "ActivityId": "xx",
+                "Uin": "xx",
+                "PayMode": "xx",
+                "ClientRemark": "xx",
+                "SettleMonth": "xx",
+                "PayTime": "2020-09-22 00:00:00",
+                "Amt": 0,
+                "GoodsType": "xx"
             }
         ],
-        "TotalCount": 2
+        "RequestId": "xx"
     }
 }
 ```

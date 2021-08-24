@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateAgeDetectTask": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=CreateAgeDetectTask\n&BizId=123456\n&Callback=https://xxx.com/callback\n&Tasks.0.DataId=xxx\n&Tasks.0.Url=https://yy.com/xx.wav\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "title": "提交年龄语音识别任务"
+      }
+    ],
     "CreateApp": [
       {
         "document": "最简单的创建一个GME应用",
@@ -12,6 +20,14 @@
         "input": "https://gme.tencentcloudapi.com/?Action=CreateApp\r\n&AppName=simple_gme_application\r\n&ProjectId=10000，\r\n&RealtimeSpeechConf.Status=open\r\n&RealtimeSpecchConf.Quality=high\r\n&VoiceMessageConf.Status=close\r\n&VoiceFilterConf.Status=open\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {}\n}",
         "title": "使用自定义配置，创建一个GME应用"
+      }
+    ],
+    "DescribeAgeDetectTask": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAgeDetectTask\n&BizId=123456\n&TaskId=xxx-yyy-zzz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"Results\": [\n            {\n                \"DataId\": \"xxxx\",\n                \"Url\": \"https://yy.com\",\n                \"Status\": 2,\n                \"Age\": 1\n            }\n        ],\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "title": "查询年龄语音识别任务结果"
       }
     ],
     "DescribeAppStatistics": [

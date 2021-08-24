@@ -635,7 +635,7 @@
     "DeleteFlowLog": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteFlowLog\r\n&FlowLogId=fl-xxxxxx\r\n&VpcId=vpc-xxxxxx\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteFlowLog\n&FlowLogId=fl-xxxxxx\n&VpcId=vpc-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "删除流日志"
       }
@@ -1845,7 +1845,7 @@
     "ModifyFlowLogAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyFlowLogAttribute\r\n&FlowLogId=fl-xxxxxx\r\n&FlowLogName=xxxxx\r\n&VpcId=vpc-xxxxx\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyFlowLogAttribute\n&FlowLogId=fl-xxxxxx\n&FlowLogName=xxxxx\n&VpcId=vpc-xxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
         "title": "修改流日志属性"
       }

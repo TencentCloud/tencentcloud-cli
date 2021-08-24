@@ -22,6 +22,7 @@ Output:
             ],
             "ProxyNum": 0,
             "ProjectId": 0,
+            "PackageType": "Thunder",
             "OwnerUin": "2186969362",
             "GroupId": "lg-mh4k07v5",
             "GroupName": "t4",

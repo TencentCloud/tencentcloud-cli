@@ -1575,6 +1575,7 @@
         {
           "default": "",
           "document": "页码，从1开始",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": true,
@@ -1583,6 +1584,7 @@
         {
           "default": "",
           "document": "每页行数，不能大于200",
+          "example": "5",
           "member": "uint64",
           "name": "Rp",
           "required": true,
@@ -1596,15 +1598,19 @@
       "members": [
         {
           "document": "角色详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RoleInfo",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "角色总数",
+          "example": "14",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2679,6 +2685,7 @@
         {
           "default": "",
           "document": "用户组ID",
+          "example": "3349",
           "member": "uint64",
           "name": "TargetGroupId",
           "required": true,
@@ -2687,6 +2694,7 @@
         {
           "default": "",
           "document": "页码，默认值是 1，从 1 开始",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -2695,10 +2703,20 @@
         {
           "default": "",
           "document": "每页大小，默认值是 20",
+          "example": "10",
           "member": "uint64",
           "name": "Rp",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "searchKey",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2708,15 +2726,19 @@
       "members": [
         {
           "document": "策略总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "策略列表",
+          "example": "无",
           "member": "AttachPolicyInfo",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2735,6 +2757,7 @@
         {
           "default": "",
           "document": "页码，从 1 开始",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": true,
@@ -2743,6 +2766,7 @@
         {
           "default": "",
           "document": "每页行数，不能大于200",
+          "example": "10",
           "member": "uint64",
           "name": "Rp",
           "required": true,
@@ -2751,6 +2775,7 @@
         {
           "default": "",
           "document": "角色 ID。用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "4611686018427397905",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -2759,6 +2784,7 @@
         {
           "default": "",
           "document": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "role_data",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -2767,8 +2793,18 @@
         {
           "default": "",
           "document": "按策略类型过滤，User表示仅查询自定义策略，QCS表示仅查询预设策略",
+          "example": "1",
           "member": "string",
           "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "searchKey",
+          "member": "string",
+          "name": "Keyword",
           "required": false,
           "type": "string"
         }
@@ -2780,15 +2816,19 @@
       "members": [
         {
           "document": "角色关联的策略列表",
+          "example": "无",
           "member": "AttachedPolicyOfRole",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "角色关联的策略总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3933,6 +3973,7 @@
         {
           "default": "",
           "document": "角色ID",
+          "example": "12",
           "member": "string",
           "name": "RoleId",
           "required": true,
@@ -3942,6 +3983,7 @@
         {
           "default": "",
           "document": "角色名称",
+          "example": "testRoleName",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -3951,6 +3993,7 @@
         {
           "default": "",
           "document": "角色的策略文档",
+          "example": "无",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
@@ -3960,6 +4003,7 @@
         {
           "default": "",
           "document": "角色描述",
+          "example": "Description",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -3969,6 +4013,7 @@
         {
           "default": "",
           "document": "角色的创建时间",
+          "example": "2020-01-01 01:01:01",
           "member": "string",
           "name": "AddTime",
           "required": true,
@@ -3978,6 +4023,7 @@
         {
           "default": "",
           "document": "角色的最近一次时间",
+          "example": "2020-01-01 01:01:01",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -3987,6 +4033,7 @@
         {
           "default": "",
           "document": "角色是否允许登录",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
           "required": true,
@@ -3996,6 +4043,7 @@
         {
           "default": "",
           "document": "角色类型，取user、system或service_linked\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
           "member": "string",
           "name": "RoleType",
           "required": true,
@@ -4005,6 +4053,7 @@
         {
           "default": "",
           "document": "有效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7200",
           "member": "uint64",
           "name": "SessionDuration",
           "required": true,
@@ -4014,6 +4063,7 @@
         {
           "default": "",
           "document": "服务相关角色删除TaskId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "DeletionTaskId",
           "required": true,

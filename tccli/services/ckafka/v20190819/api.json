@@ -4117,6 +4117,7 @@
         {
           "default": "",
           "document": "实例接入方式\n0：PLAINTEXT (明文方式，没有带用户信息老版本及社区版本都支持)\n1：SASL_PLAINTEXT（明文方式，不过在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）\n2：SSL（SSL加密通信，没有带用户信息，老版本及社区版本都支持）\n3：SASL_SSL（SSL加密通信，在数据开始时，会通过SASL方式登录鉴权，仅社区版本支持）",
+          "example": "1",
           "member": "int64",
           "name": "AccessType",
           "required": true,
@@ -4126,6 +4127,7 @@
         {
           "default": "",
           "document": "路由ID",
+          "example": "1",
           "member": "int64",
           "name": "RouteId",
           "required": true,
@@ -4134,7 +4136,8 @@
         },
         {
           "default": "",
-          "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:腾讯云支持环境(一般用于内部实例) 5:SSL外网访问方式访问 6:黑石环境vpc）",
+          "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）",
+          "example": "1",
           "member": "int64",
           "name": "VipType",
           "required": true,
@@ -4144,6 +4147,7 @@
         {
           "default": "",
           "document": "虚拟IP列表",
+          "example": "1",
           "member": "VipEntity",
           "name": "VipList",
           "required": true,
@@ -4153,6 +4157,7 @@
         {
           "default": "",
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4162,10 +4167,21 @@
         {
           "default": "",
           "document": "域名port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "DomainPort",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "DeleteTimestamp",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

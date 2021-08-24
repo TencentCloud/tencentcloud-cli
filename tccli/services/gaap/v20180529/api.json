@@ -1191,6 +1191,15 @@
           "name": "NetworkType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1886,6 +1895,15 @@
           "example": "IPV4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }
@@ -2817,6 +2835,15 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }
@@ -3870,19 +3897,19 @@
         },
         {
           "default": "",
-          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。",
+          "document": "过滤条件。   \n每次请求的Filter.Values的上限为5。\nRealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。\nPackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
           "example": "无",
-          "member": "TagPair",
-          "name": "TagSet",
+          "member": "Filter",
+          "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
           "default": "",
-          "document": "过滤条件。   \n每次请求的Filter.Values的上限为5。\nRealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。",
+          "document": "标签列表，当存在该字段时，拉取对应标签下的资源列表。\n最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。",
           "example": "无",
-          "member": "Filter",
-          "name": "Filters",
+          "member": "TagPair",
+          "name": "TagSet",
           "required": false,
           "type": "list"
         }
@@ -4266,6 +4293,15 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }
@@ -5564,6 +5600,15 @@
           "example": "normal",
           "member": "string",
           "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }
@@ -6968,6 +7013,16 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道组类型，可取值：Thunder、Accelerator，默认值Thunder\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": true,
           "type": "string",
           "value_allowed_null": true

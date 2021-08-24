@@ -4656,15 +4656,6 @@
       "members": [
         {
           "default": "",
-          "document": "私用网络ID或者统一ID，建议使用统一ID",
-          "example": "vpc-12345678",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "流日志实例名字",
           "example": "test-flowlog",
           "member": "string",
@@ -4674,7 +4665,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -4710,6 +4701,15 @@
         },
         {
           "default": "",
+          "document": "私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "流日志实例描述",
           "example": "test",
           "member": "string",
@@ -4737,6 +4737,7 @@
           "example": "无",
           "member": "FlowLog",
           "name": "FlowLog",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6987,18 +6988,20 @@
       "members": [
         {
           "default": "",
-          "document": "私用网络ID或者统一ID，建议使用统一ID",
+          "document": "流日志唯一ID",
+          "example": "fl-xxxxxx",
           "member": "string",
-          "name": "VpcId",
+          "name": "FlowLogId",
           "required": true,
           "type": "string"
         },
         {
           "default": "",
-          "document": "流日志唯一ID",
+          "document": "私用网络ID或者统一ID，建议使用统一ID，删除云联网流日志时，可不填，其他流日志类型必填。",
+          "example": "vpc-xxxxxx",
           "member": "string",
-          "name": "FlowLogId",
-          "required": true,
+          "name": "VpcId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -13002,7 +13005,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -15031,15 +15034,8 @@
       "members": [
         {
           "default": "",
-          "document": "私用网络ID或者统一ID，建议使用统一ID",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "流日志唯一ID",
+          "example": "fl-xxxxxx",
           "member": "string",
           "name": "FlowLogId",
           "required": true,
@@ -15047,7 +15043,17 @@
         },
         {
           "default": "",
+          "document": "私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "流日志实例名字",
+          "example": "xxxxx",
           "member": "string",
           "name": "FlowLogName",
           "required": false,
@@ -15056,6 +15062,7 @@
         {
           "default": "",
           "document": "流日志实例描述",
+          "example": "无",
           "member": "string",
           "name": "FlowLogDescription",
           "required": false,

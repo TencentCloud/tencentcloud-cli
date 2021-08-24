@@ -2685,6 +2685,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-p8vnipr5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2693,6 +2694,7 @@
         {
           "default": "",
           "document": "实例配置变更后的内存大小，单位：GB。内存和磁盘必须同时升配或同时降配",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -2701,6 +2703,7 @@
         {
           "default": "",
           "document": "实例配置变更后的硬盘大小，单位：GB。内存和磁盘必须同时升配或同时降配。降配时，新的磁盘参数必须大于已用磁盘容量的1.2倍",
+          "example": "250",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -2709,8 +2712,36 @@
         {
           "default": "",
           "document": "实例配置变更后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
+          "example": "25",
           "member": "uint64",
           "name": "OplogSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数",
+          "example": "3",
+          "member": "uint64",
+          "name": "ReplicateSetNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例配置变更的切换时间，参数为：0(默认)、1。0-调整完成时，1-维护时间内。注：调整节点数和分片数不支持在【维护时间内】变更。",
+          "example": "0",
+          "member": "uint64",
+          "name": "InMaintenance",
           "required": false,
           "type": "int"
         }
@@ -2722,8 +2753,10 @@
       "members": [
         {
           "document": "订单ID",
+          "example": "7142863",
           "member": "string",
           "name": "DealId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

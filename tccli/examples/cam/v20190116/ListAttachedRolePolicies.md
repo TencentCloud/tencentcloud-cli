@@ -17,15 +17,20 @@ Output:
     "Response": {
         "List": [
             {
-                "PolicyId": 13847366,
                 "PolicyName": "QcloudAccessForASRole",
+                "Description": "xx",
+                "CreateMode": 1,
+                "Deactived": 1,
                 "AddTime": "2019-07-10 11:17:41",
-                "CreateMode": 2,
-                "PolicyType": "QCS"
+                "PolicyType": "QCS",
+                "PolicyId": 13847366,
+                "DeactivedDetail": [
+                    "xx"
+                ]
             }
         ],
-        "TotalNum": 1,
-        "RequestId": "60dc7f3f-5d8b-45e9-b703-5feefac9960c"
+        "RequestId": "60dc7f3f-5d8b-45e9-b703-5feefac9960c",
+        "TotalNum": 1
     }
 }
 ```

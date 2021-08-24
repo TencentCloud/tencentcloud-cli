@@ -14,45 +14,48 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e646987c-8b65-4848-8550-2aa48a1426e4",
+        "RequestId": "78b52639-8471-41c1-a05a-1ea787a605e0",
         "AgentDealSet": [
             {
-                "DealId": "27342606",
-                "DealName": "20190521331769",
-                "BigDealId": "20190521331770",
-                "GoodsCategoryId": "100019",
-                "OwnerUin": "100001340921",
-                "AppId": "1254282690",
+                "DealId": "3775889",
+                "DealName": "20170316123135",
+                "BigDealId": "20170316123136",
+                "GoodsCategoryId": "75",
+                "OwnerUin": "12512",
+                "AppId": "1201",
                 "GoodsNum": "1",
                 "GoodsPrice": {
-                    "RealTotalCost": -357500
+                    "RealTotalCost": 5500,
+                    "OriginalTotalCost": 0
                 },
-                "Creater": "100001340921",
-                "CreatTime": "2019-05-21 11:24:05",
-                "Payer": "100001340921",
-                "BillId": "",
-                "PayEndTime": "0000-00-00 00:00:00",
-                "Status": "8",
-                "VoucherDecline": "0",
+                "Creater": "12512",
+                "CreatTime": "2017-03-16 16:00:06",
+                "Payer": "12512",
+                "BillId": "20170316030000047100683218060026",
+                "PayEndTime": "2017-03-16 16:00:45",
+                "Status": "4",
+                "VoucherDecline": null,
                 "PayerMode": "0",
-                "GoodsName": "新购云服务器",
+                "GoodsName": "购买域名",
                 "ClientRemark": "",
-                "ClientType": "new",
+                "ClientType": "",
                 "ProjectType": "",
                 "SalesUin": "",
-                "DealStatus": "已过期",
+                "DealStatus": "分配完成",
                 "ActionType": "purchase",
-                "ActivityId": "222",
+                "ActivityId": "",
+                "OverdueTime": "2017-03-31 16:00:06",
                 "ProductInfo": [
                     {
                         "Name": "xx",
                         "Value": "xx"
                     }
                 ],
-                "OverdueTime": "2019-05-21 11:24:05"
+                "UpdateTime": "2021-01-01 00:00:00",
+                "PaymentMethod": ""
             }
         ],
-        "TotalCount": 401321
+        "TotalCount": 1
     }
 }
 ```

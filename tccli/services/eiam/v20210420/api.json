@@ -2299,7 +2299,7 @@
         },
         {
           "default": "",
-          "document": "应用状态",
+          "document": "应用状态，true表示启用，false表示禁用。",
           "example": "无",
           "member": "bool",
           "name": "AppStatus",

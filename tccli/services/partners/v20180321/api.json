@@ -1123,6 +1123,7 @@
         {
           "default": "",
           "document": "订单所有者uin",
+          "example": "123456",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -1131,6 +1132,7 @@
         {
           "default": "",
           "document": "代付标志，1：代付；0：自付",
+          "example": "1",
           "member": "uint64",
           "name": "AgentPay",
           "required": true,
@@ -1139,6 +1141,7 @@
         {
           "default": "",
           "document": "订单号数组",
+          "example": "[\"20180204123456\\n\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
@@ -1243,6 +1246,7 @@
         {
           "default": "",
           "document": "待审核客户账号ID",
+          "example": "123456",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -1251,6 +1255,7 @@
         {
           "default": "",
           "document": "审核结果，可能的取值：accept/reject",
+          "example": "accept",
           "member": "string",
           "name": "AuditResult",
           "required": true,
@@ -1259,6 +1264,7 @@
         {
           "default": "",
           "document": "申请理由，B类客户审核通过时必须填写申请理由",
+          "example": "reason",
           "member": "string",
           "name": "Note",
           "required": true,
@@ -1272,27 +1278,39 @@
       "members": [
         {
           "document": "代理商账号ID",
+          "example": "1111111",
           "member": "string",
           "name": "Uin",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "客户账号ID",
+          "example": "22222222",
           "member": "string",
           "name": "ClientUin",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "审核结果，包括accept/reject/qcloudaudit（腾讯云审核）",
+          "example": "qcloudaudit",
           "member": "string",
           "name": "AuditResult",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "关联时间对应的时间戳",
+          "example": "133218546",
           "member": "uint64",
           "name": "AgentTime",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1365,6 +1383,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "123",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -1596,6 +1615,7 @@
         {
           "default": "",
           "document": "支付月份，如2018-02",
+          "example": "2018-02",
           "member": "string",
           "name": "SettleMonth",
           "required": true,
@@ -1604,6 +1624,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "无",
           "member": "string",
           "name": "ClientUin",
           "required": false,
@@ -1612,6 +1633,7 @@
         {
           "default": "",
           "document": "支付方式，prepay/postpay",
+          "example": "无",
           "member": "string",
           "name": "PayMode",
           "required": false,
@@ -1620,6 +1642,7 @@
         {
           "default": "",
           "document": "预付费订单号",
+          "example": "无",
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -1628,6 +1651,7 @@
         {
           "default": "",
           "document": "客户备注名称",
+          "example": "无",
           "member": "string",
           "name": "ClientRemark",
           "required": false,
@@ -1636,6 +1660,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1644,6 +1669,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1657,15 +1683,19 @@
       "members": [
         {
           "document": "符合查询条件列表总数量",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "业务明细列表",
+          "example": "无",
           "member": "AgentBillElem",
           "name": "AgentBillSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1684,6 +1714,7 @@
         {
           "default": "",
           "document": "代客uin",
+          "example": "123456",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -1697,29 +1728,37 @@
       "members": [
         {
           "document": "审核状态：0待审核，1，已审核",
+          "example": "1",
           "member": "uint64",
           "name": "AuditStatus",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实名认证状态：0，未实名认证，1实名认证",
+          "example": "1",
           "member": "uint64",
           "name": "AuthState",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "客户级别",
+          "example": "T2",
           "member": "string",
           "name": "ClientGrade",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "客户类型：1，个人；2，企业；3，其他",
+          "example": "1",
           "member": "uint64",
           "name": "ClientType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1738,6 +1777,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "无",
           "member": "string",
           "name": "ClientUin",
           "required": false,
@@ -1746,6 +1786,7 @@
         {
           "default": "",
           "document": "客户名称。由于涉及隐私，名称打码显示，故名称仅支持打码后的模糊搜索",
+          "example": "无",
           "member": "string",
           "name": "ClientName",
           "required": false,
@@ -1754,6 +1795,7 @@
         {
           "default": "",
           "document": "客户类型，a/b，类型定义参考代理商相关政策文档",
+          "example": "无",
           "member": "string",
           "name": "ClientFlag",
           "required": false,
@@ -1762,6 +1804,7 @@
         {
           "default": "",
           "document": "ASC/DESC， 不区分大小写，按申请时间排序",
+          "example": "无",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1770,6 +1813,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1778,6 +1822,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1786,6 +1831,7 @@
         {
           "default": "",
           "document": "业务员ID",
+          "example": "无",
           "member": "string",
           "name": "SalesUin",
           "required": false,
@@ -1794,6 +1840,7 @@
         {
           "default": "",
           "document": "业务员姓名（模糊查询）",
+          "example": "无",
           "member": "string",
           "name": "SalesName",
           "required": false,
@@ -1807,15 +1854,19 @@
       "members": [
         {
           "document": "待审核代客列表",
+          "example": "无",
           "member": "AgentClientElem",
           "name": "AgentClientSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的代客总数",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2635,6 +2686,7 @@
         {
           "default": "",
           "document": "返佣月份，如2018-02",
+          "example": "2018-02",
           "member": "string",
           "name": "RebateMonth",
           "required": false,
@@ -2643,6 +2695,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2651,6 +2704,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2664,15 +2718,21 @@
       "members": [
         {
           "document": "返佣信息列表",
+          "example": "无",
           "member": "RebateInfoElem",
           "name": "RebateInfoSet",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "符合查询条件返佣信息数目",
+          "example": "8",
           "member": "uint64",
           "name": "TotalCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2687,16 +2747,18 @@
       "document": "DescribeSalesmans请求参数结构体",
       "members": [
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "default": "10",
+          "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2705,6 +2767,7 @@
         {
           "default": "",
           "document": "业务员姓名(模糊查询)",
+          "example": "无",
           "member": "string",
           "name": "SalesName",
           "required": false,
@@ -2713,6 +2776,7 @@
         {
           "default": "",
           "document": "业务员ID",
+          "example": "无",
           "member": "string",
           "name": "SalesUin",
           "required": false,
@@ -2721,6 +2785,7 @@
         {
           "default": "",
           "document": "ASC/DESC， 不区分大小写，按创建通过时间排序",
+          "example": "无",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -2734,15 +2799,19 @@
       "members": [
         {
           "document": "业务员列表",
+          "example": "无",
           "member": "AgentSalesmanElem",
           "name": "AgentSalesmanSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的代客总数",
+          "example": "11",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2761,6 +2830,7 @@
         {
           "default": "",
           "document": "解绑状态：0:所有,1:审核中,2已解绑",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -2769,6 +2839,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2777,6 +2848,7 @@
         {
           "default": "",
           "document": "限制数目",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2785,6 +2857,7 @@
         {
           "default": "",
           "document": "解绑账号ID",
+          "example": "xx",
           "member": "string",
           "name": "UnbindUin",
           "required": false,
@@ -2793,6 +2866,7 @@
         {
           "default": "",
           "document": "解绑申请时间范围起始点",
+          "example": "2020-09-22",
           "member": "date",
           "name": "ApplyTimeStart",
           "required": false,
@@ -2801,6 +2875,7 @@
         {
           "default": "",
           "document": "解绑申请时间范围终止点",
+          "example": "2020-09-22",
           "member": "date",
           "name": "ApplyTimeEnd",
           "required": false,
@@ -2809,6 +2884,7 @@
         {
           "default": "",
           "document": "对申请时间的升序降序，值：asc，desc",
+          "example": "无",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -2822,15 +2898,19 @@
       "members": [
         {
           "document": "符合条件的解绑客户数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的解绑客户列表",
+          "example": "无",
           "member": "UnbindClientElem",
           "name": "UnbindClientList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2849,6 +2929,7 @@
         {
           "default": "",
           "document": "客户备注名称",
+          "example": "xxx",
           "member": "string",
           "name": "ClientRemark",
           "required": true,
@@ -2857,6 +2938,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "123456789",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -2961,6 +3043,7 @@
         {
           "default": "",
           "document": "客户账号ID",
+          "example": "123",
           "member": "string",
           "name": "ClientUin",
           "required": true,

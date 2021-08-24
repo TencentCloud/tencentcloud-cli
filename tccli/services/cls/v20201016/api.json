@@ -19,15 +19,15 @@
       "output": "CreateAlarmNoticeResponse"
     },
     "CreateAsyncContextTask": {
-      "document": "本接口用于创建异步上下文任务",
+      "document": "本接口用于创建离线上下文任务",
       "input": "CreateAsyncContextTaskRequest",
-      "name": "创建异步上下文任务",
+      "name": "创建离线上下文任务",
       "output": "CreateAsyncContextTaskResponse"
     },
     "CreateAsyncSearchTask": {
-      "document": "本接口用于创建异步检索任务",
+      "document": "本接口用于创建离线检索任务",
       "input": "CreateAsyncSearchTaskRequest",
-      "name": "创建异步检索任务",
+      "name": "创建离线检索任务",
       "output": "CreateAsyncSearchTaskResponse"
     },
     "CreateConfig": {
@@ -37,9 +37,9 @@
       "output": "CreateConfigResponse"
     },
     "CreateExport": {
-      "document": "本接口用于创建日志导出",
+      "document": "本接口用于创建日志下载任务",
       "input": "CreateExportRequest",
-      "name": "创建日志导出",
+      "name": "创建日志下载任务",
       "output": "CreateExportResponse"
     },
     "CreateIndex": {
@@ -85,15 +85,15 @@
       "output": "DeleteAlarmNoticeResponse"
     },
     "DeleteAsyncContextTask": {
-      "document": "本接口用于删除异步上下文任务",
+      "document": "本接口用于删除离线上下文任务",
       "input": "DeleteAsyncContextTaskRequest",
-      "name": "删除异步上下文任务",
+      "name": "删除离线上下文任务",
       "output": "DeleteAsyncContextTaskResponse"
     },
     "DeleteAsyncSearchTask": {
-      "document": "本接口用于删除异步检索任务",
+      "document": "本接口用于删除离线检索任务",
       "input": "DeleteAsyncSearchTaskRequest",
-      "name": "删除异步检索任务",
+      "name": "删除离线检索任务",
       "output": "DeleteAsyncSearchTaskResponse"
     },
     "DeleteConfig": {
@@ -109,9 +109,9 @@
       "output": "DeleteConfigFromMachineGroupResponse"
     },
     "DeleteExport": {
-      "document": "本接口用于删除日志导出",
+      "document": "本接口用于删除日志下载任务",
       "input": "DeleteExportRequest",
-      "name": "删除日志导出",
+      "name": "删除日志下载任务",
       "output": "DeleteExportResponse"
     },
     "DeleteIndex": {
@@ -157,27 +157,27 @@
       "output": "DescribeAlarmsResponse"
     },
     "DescribeAsyncContextResult": {
-      "document": "本接口用户获取异步上下文任务的结果",
+      "document": "本接口用户获取离线上下文任务的结果",
       "input": "DescribeAsyncContextResultRequest",
-      "name": "获取异步上下文任务的结果",
+      "name": "获取离线上下文任务的结果",
       "output": "DescribeAsyncContextResultResponse"
     },
     "DescribeAsyncContextTasks": {
-      "document": "本接口用于获取异步上下文任务列表",
+      "document": "本接口用于获取离线上下文任务列表",
       "input": "DescribeAsyncContextTasksRequest",
-      "name": "获取异步上下文任务列表",
+      "name": "获取离线上下文任务列表",
       "output": "DescribeAsyncContextTasksResponse"
     },
     "DescribeAsyncSearchResult": {
-      "document": "本接口用户获取异步检索任务的结果",
+      "document": "本接口用户获取离线检索任务的结果",
       "input": "DescribeAsyncSearchResultRequest",
-      "name": "获取异步检索任务的结果",
+      "name": "获取离线检索任务的结果",
       "output": "DescribeAsyncSearchResultResponse"
     },
     "DescribeAsyncSearchTasks": {
-      "document": "本接口用户获取异步检索任务列表",
+      "document": "本接口用户获取离线检索任务列表",
       "input": "DescribeAsyncSearchTasksRequest",
-      "name": "获取异步检索任务列表",
+      "name": "获取离线检索任务列表",
       "output": "DescribeAsyncSearchTasksResponse"
     },
     "DescribeConfigMachineGroups": {
@@ -193,9 +193,9 @@
       "output": "DescribeConfigsResponse"
     },
     "DescribeExports": {
-      "document": "本接口用于获取日志导出列表",
+      "document": "本接口用于获取日志下载任务列表",
       "input": "DescribeExportsRequest",
-      "name": "获取日志导出列表",
+      "name": "获取日志下载任务列表",
       "output": "DescribeExportsResponse"
     },
     "DescribeIndex": {
@@ -1043,6 +1043,32 @@
       ],
       "usage": "both"
     },
+    "Column": {
+      "document": "日志分析的列属性",
+      "members": [
+        {
+          "default": "",
+          "document": "列的名字",
+          "example": "_col0",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列的属性",
+          "example": "json",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CompressInfo": {
       "document": "投递日志的压缩配置",
       "members": [
@@ -1637,7 +1663,7 @@
         },
         {
           "default": "",
-          "document": "日志导出数量",
+          "document": "日志导出数量,  最大值1000万",
           "example": "100",
           "member": "uint64",
           "name": "Count",
@@ -5772,6 +5798,15 @@
           "name": "Sort",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5829,6 +5864,24 @@
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "新的日志分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxx\",\"yy\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志分析的列属性; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
           "required": true,
           "type": "list",
           "value_allowed_null": true

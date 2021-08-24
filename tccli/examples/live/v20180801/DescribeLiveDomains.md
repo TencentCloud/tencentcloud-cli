@@ -19,9 +19,11 @@ Output:
     "Response": {
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "AllCount": 2,
+        "CreateLimitCount": 0,
         "DomainList": [
             {
                 "Name": "abc.com",
+                "IsMiniProgramLive": 0,
                 "Type": 1,
                 "Status": 1,
                 "PlayType": 1,

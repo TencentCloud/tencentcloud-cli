@@ -650,6 +650,14 @@
         "title": "修改云数据库实例账号的备注信息"
       }
     ],
+    "ModifyAccountHost": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyAccountHost\n&InstanceId=cdb-f35wr6wj\n&User=ajnnw\n&NewHost=%\n&Host=127.0.0.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
+        "title": "修改云数据库实例账号的主机"
+      }
+    ],
     "ModifyAccountMaxUserConnections": [
       {
         "document": "",

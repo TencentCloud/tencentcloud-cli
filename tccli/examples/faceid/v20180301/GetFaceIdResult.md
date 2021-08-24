@@ -21,7 +21,9 @@ Output:
         "RequestId": "0f96cf39-a183-485c-ab29-8427ab81f9ae",
         "Extra": "xx",
         "VideoBase64": "xx",
-        "BestFrameBase64": "xx"
+        "BestFrameBase64": "xx",
+        "DeviceInfoTag": "5007_1005",
+        "RiskInfoTag": "02"
     }
 }
 ```

@@ -17,15 +17,23 @@ Output:
     "Response": {
         "List": [
             {
-                "PolicyId": 1,
+                "OperateOwnerUin": "xx",
                 "PolicyName": "AdministratorAccess",
-                "AddTime": "2018-04-09 16:31:19",
-                "CreateMode": 2,
-                "PolicyType": "User"
+                "Remark": "xx",
+                "OperateUinType": 1,
+                "CreateMode": 1,
+                "Deactived": 1,
+                "AddTime": "2020-09-22 00:00:00",
+                "PolicyType": "User",
+                "PolicyId": 1,
+                "DeactivedDetail": [
+                    "xx"
+                ],
+                "OperateUin": "xx"
             }
         ],
-        "TotalNum": 1,
-        "RequestId": "836d7034-9854-44f0-9d4a-ee57842f8644"
+        "RequestId": "836d7034-9854-44f0-9d4a-ee57842f8644",
+        "TotalNum": 1
     }
 }
 ```

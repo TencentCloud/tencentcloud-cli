@@ -15,10 +15,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
-        "Uin": "1111111",
-        "ClientUin": "22222222",
-        "AuditResult": "qcloudaudit"
+        "RequestId": "xx",
+        "AuditResult": "xx",
+        "ClientUin": "xx",
+        "AgentTime": 1,
+        "Uin": "xx"
     }
 }
 ```

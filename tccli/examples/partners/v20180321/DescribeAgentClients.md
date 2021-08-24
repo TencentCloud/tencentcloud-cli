@@ -14,20 +14,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
         "AgentClientSet": [
             {
-                "Uin": "100654321",
-                "ClientUin": "100123456",
-                "ApplyTime": "1487487666",
-                "ClientFlag": "",
-                "Mail": null,
-                "Phone": "132****0769",
-                "HasOverdueBill": 0,
-                "Status": 1
+                "Status": 1,
+                "SalesName": "xx",
+                "ClientUin": "xx",
+                "ClientFlag": "xx",
+                "SalesUin": "xx",
+                "Phone": "xx",
+                "ApplyTime": 1,
+                "Uin": "xx",
+                "HasOverdueBill": 1,
+                "Mail": "xx",
+                "ClientName": "xx"
             }
         ],
-        "TotalCount": 20
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```
@@ -41,7 +44,7 @@ Input:
 ```
 tccli partners DescribeAgentClients --cli-unfold-argument  \
     --Offset 0 \
-    --Limit z
+    --Limit 0
 ```
 
 Output: 

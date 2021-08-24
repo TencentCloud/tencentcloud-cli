@@ -1,10 +1,22 @@
 {
   "actions": {
+    "CreateAgeDetectTask": {
+      "document": "用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
+      "input": "CreateAgeDetectTaskRequest",
+      "name": "提交年龄语音识别任务",
+      "output": "CreateAgeDetectTaskResponse"
+    },
     "CreateApp": {
       "document": "本接口(CreateApp)用于创建一个GME应用。",
       "input": "CreateAppRequest",
       "name": "创建GME应用",
       "output": "CreateAppResponse"
+    },
+    "DescribeAgeDetectTask": {
+      "document": "查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
+      "input": "DescribeAgeDetectTaskRequest",
+      "name": "查询年龄语音识别任务结果",
+      "output": "DescribeAgeDetectTaskResponse"
     },
     "DescribeAppStatistics": {
       "document": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近30天。",
@@ -80,6 +92,78 @@
     "serviceShortName": "gme"
   },
   "objects": {
+    "AgeDetectTask": {
+      "document": "年龄语音识别子任务",
+      "members": [
+        {
+          "default": "",
+          "document": "数据唯一ID",
+          "example": "abcd",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg",
+          "example": "https://xxx.com/yy.wav",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AgeDetectTaskResult": {
+      "document": "年龄语音任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "数据唯一ID",
+          "example": "abcd",
+          "member": "string",
+          "name": "DataId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据文件的url",
+          "example": "https://xxx.com/yyy.wav",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，0: 已创建，1:运行中，2:正常结束，3:异常结束，4:运行超时",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结果：0: 成年，1:未成年，100:未知",
+          "example": "1",
+          "member": "uint64",
+          "name": "Age",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AppStatisticsItem": {
       "document": "应用用量统计数据",
       "members": [
@@ -245,6 +329,60 @@
       ],
       "usage": "out"
     },
+    "CreateAgeDetectTaskRequest": {
+      "document": "CreateAgeDetectTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "123456",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音检测子任务列表，列表最多支持100个检测子任务。结构体中包含：\n<li>DataId：数据的唯一ID</li>\n<li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>",
+          "example": "无",
+          "member": "AgeDetectTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务结束时gme后台会自动触发回调",
+          "example": "https://xxx.com/callback",
+          "member": "string",
+          "name": "Callback",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgeDetectTaskResponse": {
+      "document": "CreateAgeDetectTask返回参数结构体",
+      "members": [
+        {
+          "document": "本次任务提交后唯一id，用于获取任务运行结果",
+          "example": "xxx-yyy-zzz",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAppRequest": {
       "document": "CreateApp请求参数结构体",
       "members": [
@@ -392,6 +530,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAgeDetectTaskRequest": {
+      "document": "DescribeAgeDetectTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "123456",
+          "member": "int64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建年龄语音识别任务时返回的taskid",
+          "example": "xxx-yyy-zzz",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgeDetectTaskResponse": {
+      "document": "DescribeAgeDetectTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "xxx-yyy-zzz",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语音检测返回。Results 字段是 JSON 数组，每一个元素包含：\nDataId： 请求中对应的 DataId。\nUrl ：该请求中对应的 Url。\nStatus ：子任务状态，0:已创建，1:运行中，2:已完成，3:任务异常，4:任务超时。\nAge ：子任务完成后的结果，0:成年人，1:未成年人，100:未知结果。",
+          "example": "无",
+          "member": "AgeDetectTaskResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAppStatisticsRequest": {
       "document": "DescribeAppStatistics请求参数结构体",
@@ -1085,6 +1277,7 @@
         {
           "default": "",
           "document": "实时语音服务开关，取值：open/close",
+          "example": "open",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1093,7 +1286,8 @@
         },
         {
           "default": "",
-          "document": "实时语音音质类型，取值：high-高音质，ordinary-普通音质。默认高音质。普通音质仅白名单开放，如需要普通音质，请联系腾讯云商务。",
+          "document": "实时语音音质类型，取值：high-高音质",
+          "example": "high",
           "member": "string",
           "name": "Quality",
           "required": false,

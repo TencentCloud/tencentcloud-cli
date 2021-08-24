@@ -774,6 +774,7 @@
         {
           "default": "",
           "document": "域名名称。",
+          "example": "www.test.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -782,6 +783,7 @@
         {
           "default": "",
           "document": "域名类型，\n0：推流域名，\n1：播放域名。",
+          "example": "0",
           "member": "uint64",
           "name": "DomainType",
           "required": true,
@@ -790,6 +792,7 @@
         {
           "default": "",
           "document": "拉流域名类型：\n1：国内，\n2：全球，\n3：境外。\n默认值：1。",
+          "example": "1",
           "member": "uint64",
           "name": "PlayType",
           "required": false,
@@ -798,6 +801,7 @@
         {
           "default": "",
           "document": "是否是慢直播：\n0： 普通直播，\n1 ：慢直播 。\n默认值： 0。",
+          "example": "1",
           "member": "int64",
           "name": "IsDelayLive",
           "required": false,
@@ -806,6 +810,7 @@
         {
           "default": "",
           "document": "是否是小程序直播：\n0： 标准直播，\n1 ：小程序直播 。\n默认值： 0。",
+          "example": "1",
           "member": "int64",
           "name": "IsMiniProgramLive",
           "required": false,
@@ -4732,6 +4737,7 @@
         {
           "default": "",
           "document": "域名状态过滤。0-停用，1-启用。",
+          "example": "1",
           "member": "uint64",
           "name": "DomainStatus",
           "required": false,
@@ -4740,6 +4746,7 @@
         {
           "default": "",
           "document": "域名类型过滤。0-推流，1-播放。",
+          "example": "1",
           "member": "uint64",
           "name": "DomainType",
           "required": false,
@@ -4748,6 +4755,7 @@
         {
           "default": "",
           "document": "分页大小，范围：10~100。默认10。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -4756,6 +4764,7 @@
         {
           "default": "",
           "document": "取第几页，范围：1~100000。默认1。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -4764,6 +4773,7 @@
         {
           "default": "",
           "document": "0 普通直播 1慢直播 默认0。",
+          "example": "0",
           "member": "uint64",
           "name": "IsDelayLive",
           "required": false,
@@ -4772,6 +4782,7 @@
         {
           "default": "",
           "document": "域名前缀。",
+          "example": "qq",
           "member": "string",
           "name": "DomainPrefix",
           "required": false,
@@ -4785,17 +4796,30 @@
       "members": [
         {
           "document": "总记录数。",
+          "example": "2",
           "member": "uint64",
           "name": "AllCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "域名详细信息列表。",
+          "example": "无",
           "member": "DomainInfo",
           "name": "DomainList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "可继续添加域名数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "77",
+          "member": "int64",
+          "name": "CreateLimitCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -474,6 +474,12 @@
       "name": "修改云数据库实例账号的备注信息",
       "output": "ModifyAccountDescriptionResponse"
     },
+    "ModifyAccountHost": {
+      "document": "本接口(ModifyAccountHost)用于修改云数据库账户的主机。",
+      "input": "ModifyAccountHostRequest",
+      "name": "修改云数据库实例账号的主机",
+      "output": "ModifyAccountHostResponse"
+    },
     "ModifyAccountMaxUserConnections": {
       "document": "本接口(ModifyAccountMaxUserConnections)用于修改云数据库账户最大可用连接数。",
       "input": "ModifyAccountMaxUserConnectionsRequest",
@@ -8504,6 +8510,69 @@
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
           "member": "string",
           "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountHostRequest": {
+      "document": "ModifyAccountHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "\"cdb_xx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户的名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户的旧主机",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户的新主机",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NewHost",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountHostResponse": {
+      "document": "ModifyAccountHost返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

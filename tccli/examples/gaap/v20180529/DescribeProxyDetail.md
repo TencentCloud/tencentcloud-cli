@@ -47,6 +47,7 @@ Output:
             "SupportSecurity": 1,
             "TagSet": [],
             "ProxyName": "p_weidzhao_test",
+            "NetworkType": "",
             "ModifyConfigTime": 1598417633,
             "GroupId": "",
             "ClientIPMethod": 1,

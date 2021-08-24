@@ -26,7 +26,8 @@ Output:
                 "AppId": "1201",
                 "GoodsNum": "1",
                 "GoodsPrice": {
-                    "RealTotalCost": 5500
+                    "RealTotalCost": 5500,
+                    "OriginalTotalCost": 0
                 },
                 "Creater": "12512",
                 "CreatTime": "2017-03-16 16:00:06",
@@ -50,7 +51,9 @@ Output:
                         "Name": "xx",
                         "Value": "xx"
                     }
-                ]
+                ],
+                "UpdateTime": "2021-01-01 00:00:00",
+                "PaymentMethod": ""
             }
         ],
         "TotalCount": 1
