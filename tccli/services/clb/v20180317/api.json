@@ -6388,6 +6388,15 @@
           "name": "SnatPro",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

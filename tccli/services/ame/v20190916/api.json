@@ -60,6 +60,12 @@
       "name": "获取曲库包歌曲播放信息",
       "output": "DescribeMusicResponse"
     },
+    "DescribeMusicSaleStatus": {
+      "document": "根据音乐信息查询音乐是否在售",
+      "input": "DescribeMusicSaleStatusRequest",
+      "name": "查询歌曲在售状态",
+      "output": "DescribeMusicSaleStatusResponse"
+    },
     "DescribePackageItems": {
       "document": "获取曲库包下已核销歌曲列表接口",
       "input": "DescribePackageItemsRequest",
@@ -875,6 +881,51 @@
       ],
       "type": "object"
     },
+    "DescribeMusicSaleStatusRequest": {
+      "document": "DescribeMusicSaleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id集合，可传单个，也可传多个，上线查询单次50个",
+          "example": "无",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询哪个渠道的数据，1为曲库包，2为单曲",
+          "example": "1",
+          "member": "int64",
+          "name": "PurchaseType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMusicSaleStatusResponse": {
+      "document": "DescribeMusicSaleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "musicId对应歌曲状态",
+          "example": "无",
+          "member": "MusicStatus",
+          "name": "MusicStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePackageItemsRequest": {
       "document": "DescribePackageItems请求参数结构体",
       "members": [
@@ -1588,6 +1639,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicStatus": {
+      "document": "返回单曲页面歌曲是否在售状态",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在售状态,0为在售，1为临时下架，2为永久下架",
+          "example": "无",
+          "member": "int64",
+          "name": "SaleStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

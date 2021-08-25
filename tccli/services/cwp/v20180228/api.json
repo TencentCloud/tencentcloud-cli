@@ -504,6 +504,12 @@
       "name": "导出反弹Shell事件",
       "output": "ExportReverseShellEventsResponse"
     },
+    "ExportScanTaskDetails": {
+      "document": "根据任务id导出指定扫描任务详情 ",
+      "input": "ExportScanTaskDetailsRequest",
+      "name": "导出扫描任务详情",
+      "output": "ExportScanTaskDetailsResponse"
+    },
     "ExportTasks": {
       "document": "用于异步导出数据量大的日志文件",
       "input": "ExportTasksRequest",
@@ -6640,6 +6646,60 @@
         {
           "document": "任务id",
           "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportScanTaskDetailsRequest": {
+      "document": "ExportScanTaskDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本次检测的任务id（不同于出参的导出本次检测Excel的任务Id）",
+          "example": "1596595610",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模块类型，当前提供：Malware 木马 , Vul 漏洞 , Baseline 基线",
+          "example": "Malware ",
+          "member": "string",
+          "name": "ModuleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤参数：ipOrAlias（服务器名/ip）",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportScanTaskDetailsResponse": {
+      "document": "ExportScanTaskDetails返回参数结构体",
+      "members": [
+        {
+          "document": "导出本次检测Excel的任务Id（不同于入参的本次检测任务id）",
+          "example": "1615549629",
           "member": "string",
           "name": "TaskId",
           "required": true,

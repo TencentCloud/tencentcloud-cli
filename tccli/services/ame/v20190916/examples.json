@@ -86,6 +86,14 @@
         "title": "获取曲库包歌曲播放信息-版权方错误示例"
       }
     ],
+    "DescribeMusicSaleStatus": [
+      {
+        "document": "根据音乐信息查询音乐是否在售",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMusicSaleStatus\n<公共请求参数>\n\n{\n    \"PurchaseType\": 0,\n    \"MusicIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"MusicStatusSet\": [\n            {\n                \"MusicId\": \"xx\",\n                \"SaleStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询歌曲在售状态"
+      }
+    ],
     "DescribePackageItems": [
       {
         "document": "",

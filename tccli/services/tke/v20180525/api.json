@@ -6051,6 +6051,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "#!/bin/sh echo \"hello world\"",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8343,7 +8353,18 @@
     },
     "RunAutomationServiceEnabled": {
       "document": "描述了 “云自动化助手” 服务相关的信息",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：FALSE。",
+          "example": "TRUE",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "RunInstancesForNode": {

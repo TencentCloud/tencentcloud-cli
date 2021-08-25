@@ -216,6 +216,12 @@
       "name": "聚鑫-账单下载",
       "output": "DownloadBillResponse"
     },
+    "DownloadReconciliationUrl": {
+      "document": "获取对账中心账单下载地址的接口",
+      "input": "DownloadReconciliationUrlRequest",
+      "name": "灵云-对账中心账单下载接口",
+      "output": "DownloadReconciliationUrlResponse"
+    },
     "ExecuteMemberTransaction": {
       "document": "会员间交易接口",
       "input": "ExecuteMemberTransactionRequest",
@@ -7549,6 +7555,87 @@
           "document": "账单文件的真实下载地址",
           "member": "string",
           "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadReconciliationUrlRequest": {
+      "document": "DownloadReconciliationUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台应用ID",
+          "example": "8793784",
+          "member": "string",
+          "name": "MainAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台代码",
+          "example": "cpdp_recon12384",
+          "member": "string",
+          "name": "AppCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账单日期，yyyy-MM-dd",
+          "example": "2021-08-21",
+          "member": "string",
+          "name": "BillDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户或者代理商ID",
+          "example": "9098835664433",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadReconciliationUrlResponse": {
+      "document": "DownloadReconciliationUrl返回参数结构体",
+      "members": [
+        {
+          "document": "下载地址",
+          "example": "http://xxx.xx.com/xxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "hash类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHA1",
+          "member": "string",
+          "name": "HashType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "hash值",
+          "example": "055a397d3c7e9fbf97c6348732c20684c89d01df",
+          "member": "string",
+          "name": "HashValue",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -672,6 +672,14 @@
         "title": "导出反弹Shell事件"
       }
     ],
+    "ExportScanTaskDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportScanTaskDetails\n<公共请求参数>\n\n{\n    \"ModuleType\": \"xx\",\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TaskId\": \"1615549629\"\n    }\n}",
+        "title": "导出扫描任务详情"
+      }
+    ],
     "ExportTasks": [
       {
         "document": "",

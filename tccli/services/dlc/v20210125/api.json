@@ -2485,7 +2485,7 @@
       "usage": "in"
     },
     "TaskResponseInfo": {
-      "document": "任务实例。",
+      "document": "任务实例",
       "members": [
         {
           "default": "",
@@ -2646,6 +2646,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
+          "member": "string",
+          "name": "ProgressDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

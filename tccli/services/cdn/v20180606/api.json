@@ -282,11 +282,35 @@
       "name": "查询SCDN日志下载任务列表",
       "output": "ListScdnLogTasksResponse"
     },
+    "ListTopBotData": {
+      "document": "获取Bot攻击的Top信息",
+      "input": "ListTopBotDataRequest",
+      "name": "获取Bot攻击的Top信息",
+      "output": "ListTopBotDataResponse"
+    },
+    "ListTopCcData": {
+      "document": "获取CC攻击Top数据",
+      "input": "ListTopCcDataRequest",
+      "name": "获取CC攻击Top数据",
+      "output": "ListTopCcDataResponse"
+    },
+    "ListTopDDoSData": {
+      "document": "获取DDoS攻击Top数据",
+      "input": "ListTopDDoSDataRequest",
+      "name": "获取DDoS攻击Top数据",
+      "output": "ListTopDDoSDataResponse"
+    },
     "ListTopData": {
       "document": "ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL\n+ 依据总流量、总请求数对客户端省份排序，从大至小返回省份列表\n+ 依据总流量、总请求数对客户端运营商排序，从大至小返回运营商列表\n+ 依据总流量、峰值带宽、总请求数、平均命中率、2XX/3XX/4XX/5XX 状态码对域名排序，从大至小返回域名列表\n+ 依据总回源流量、回源峰值带宽、总回源请求数、平均回源失败率、2XX/3XX/4XX/5XX 回源状态码对域名排序，从大至小返回域名列表\n\n注意：仅支持 90 天内数据查询",
       "input": "ListTopDataRequest",
       "name": "TOP 数据查询",
       "output": "ListTopDataResponse"
+    },
+    "ListTopWafData": {
+      "document": "获取Waf攻击Top数据",
+      "input": "ListTopWafDataRequest",
+      "name": "获取Waf攻击Top数据",
+      "output": "ListTopWafDataResponse"
     },
     "ManageClsTopicDomains": {
       "document": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。",
@@ -2282,6 +2306,57 @@
       ],
       "usage": "both"
     },
+    "CcTopData": {
+      "document": "CC攻击Top数据",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "访问URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户端UserAgent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UserAgent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CdnData": {
       "document": "访问明细数据类型",
       "members": [
@@ -3141,6 +3216,30 @@
         }
       ],
       "type": "object"
+    },
+    "DDoSTopData": {
+      "document": "DDoS攻击Top数据",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击类型",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击带宽，单位：bps",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteCdnDomainRequest": {
       "document": "DeleteCdnDomain请求参数结构体",
@@ -6197,6 +6296,72 @@
       ],
       "usage": "both"
     },
+    "DomainBotCount": {
+      "document": "域名及其他指标Bot次数",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BOT次数",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Top指标值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国家/地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运营商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DomainFilter": {
       "document": "域名查询时过滤条件。",
       "members": [
@@ -7473,6 +7638,240 @@
       ],
       "type": "object"
     },
+    "ListTopBotDataRequest": {
+      "document": "ListTopBotData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取Top量，取值范围[1-10]",
+          "example": "10",
+          "member": "int64",
+          "name": "TopCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-02-01 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-02-01 23:59:59",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "session表示查询BOT会话的Top信息\nip表示查询BOT客户端IP的Top信息\n\n不填代表获取会话信息",
+          "example": "ip",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，仅当Metric=ip时有效，不填写表示使用Domains参数",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopBotDataResponse": {
+      "document": "ListTopBotData返回参数结构体",
+      "members": [
+        {
+          "document": "域名BOT次数列表",
+          "example": "无",
+          "member": "DomainBotCount",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopCcDataRequest": {
+      "document": "ListTopCcData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询Top数据的开始时间，格式为：2020-01-01 00:00:00",
+          "example": "2021-02-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询Top数据的结束时间，格式为：2020-01-01 23:59:59\n支持 90 天内数据查询，不传此参数，表示查当天数据\n时间跨度要小于等于7天",
+          "example": "2021-02-01 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，不传此参数，表示查询账号级别数据",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计指标：\nip_url : Top IP+URL 默认值\nua :  Top UA",
+          "example": "ua",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cdn表示CDN数据，默认值\necdn表示ECDN数据",
+          "example": "cdn",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名列表，不传此参数，表示查询账号级别数据",
+          "example": "[www.test.com]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "执行动作，取值为：intercept/redirect/observe\n分别表示：拦截/重定向/观察\n为空表示查询所有执行动作数据",
+          "example": "observe",
+          "member": "string",
+          "name": "ActionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland或overseas，表示国内或海外，不填写默认表示国内",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopCcDataResponse": {
+      "document": "ListTopCcData返回参数结构体",
+      "members": [
+        {
+          "document": "Top数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CcTopData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopDDoSDataRequest": {
+      "document": "ListTopDDoSData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询Top数据的开始时间，格式为：2020-01-01 00:00:00",
+          "example": "2020-09-22 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询Top数据的结束时间，格式为：2020-01-01 23:59:59\n支持 90 天内数据查询，时间跨度要小于等于7天",
+          "example": "2020-09-22 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询Top的数量，不填默认值为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "TopCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopDDoSDataResponse": {
+      "document": "ListTopDDoSData返回参数结构体",
+      "members": [
+        {
+          "document": "DDoS Top数据",
+          "example": "无",
+          "member": "DDoSTopData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTopDataRequest": {
       "document": "ListTopData请求参数结构体",
       "members": [
@@ -7586,6 +7985,141 @@
           "example": "[]",
           "member": "TopData",
           "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopWafDataRequest": {
+      "document": "ListTopWafData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名查询，不填写查询整个AppID下数据",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定攻击类型\n不填则查询所有攻击类型的数据总和\nAttackType 映射如下:\n\"webshell\" : Webshell检测防护\n\"oa\" : 常见OA漏洞防护\n\"xss\" : XSS跨站脚本攻击防护\n\"xxe\" : XXE攻击防护\n\"webscan\" : 扫描器攻击漏洞防护\n\"cms\" : 常见CMS漏洞防护\n\"upload\" : 恶意文件上传攻击防护\n\"sql\" : SQL注入攻击防护\n\"cmd_inject\": 命令/代码注入攻击防护\n\"osc\" : 开源组件漏洞防护\n\"file_read\" : 任意文件读取\n\"ldap\" : LDAP注入攻击防护\n\"other\" : 其它漏洞防护",
+          "example": "sql_inject",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定防御模式\n不填则查询所有防御模式的数据总和\nDefenceMode 映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'",
+          "example": "observe",
+          "member": "string",
+          "name": "DefenceMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序对象，支持以下几种形式：\nurl：攻击目标 url 排序\nip：攻击源 IP 排序\nattackType：攻击类型排序\ndomain：当查询整个AppID下数据时，按照域名请求量排序",
+          "example": "attackType",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland 或 overseas",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定攻击类型列表，取值参考AttackType",
+          "example": "[sql_inject]",
+          "member": "string",
+          "name": "AttackTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定域名列表查询，不填写查询整个AppID下数据",
+          "example": "[www.test.com]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopWafDataResponse": {
+      "document": "ListTopWafData返回参数结构体",
+      "members": [
+        {
+          "document": "攻击类型统计",
+          "example": "[]",
+          "member": "ScdnTypeData",
+          "name": "TopTypeData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IP统计",
+          "example": "[]",
+          "member": "ScdnTopData",
+          "name": "TopIpData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "URL统计",
+          "example": "[]",
+          "member": "ScdnTopUrlData",
+          "name": "TopUrlData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名统计",
+          "example": "[]",
+          "member": "ScdnTopDomainData",
+          "name": "TopDomainData",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10206,6 +10740,42 @@
           "name": "District",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScdnTopDomainData": {
+      "document": "SCDN攻击数据Top展示",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.123.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "百分比",
+          "example": "50.09",
+          "member": "float",
+          "name": "Percent",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

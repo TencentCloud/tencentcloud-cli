@@ -1114,6 +1114,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SQL 类型。支持多个类型同时查询。目前支持：\"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\", \"CREATE\", \"DROP\", \"ALTER\", \"SET\", \"REPLACE\", \"EXECUTE\"。",
+          "example": "无",
+          "member": "string",
+          "name": "SqlTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SQL 语句。支持传递多个sql语句。",
+          "example": "无",
+          "member": "string",
+          "name": "Sqls",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

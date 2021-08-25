@@ -376,12 +376,44 @@
         "title": "查询SCDN事件日志下载任务列表"
       }
     ],
+    "ListTopBotData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopBotData\n&TopCount=10\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Domain\": \"zc-work.qcloudwaf.com\",\n                \"Count\": 1,\n                \"Value\": \"\",\n                \"Isp\": \"xx\",\n                \"Province\": \"\",\n                \"Country\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
+        "title": "查询bot的topN域名"
+      }
+    ],
+    "ListTopCcData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopCcData\n&Domain=www.test.com\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"Url\": \"/test.html?key=value\",\n                \"UserAgent\": \"\",\n                \"Value\": 1000,\n                \"Domain\": \"123.com\"\n            },\n            {\n                \"Ip\": \"2.2.2.2\",\n                \"Url\": \"/test.html\",\n                \"UserAgent\": \"\",\n                \"Value\": 900,\n                \"Domain\": \"123.com\"\n            }\n        ]\n    }\n}",
+        "title": "安全加速CC攻击Top N数据查询"
+      }
+    ],
+    "ListTopDDoSData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopDDoSData\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"AttackType\": \"UDP Flood\",\n                \"Value\": 10\n            },\n            {\n                \"AttackType\": \"TCP Flood\",\n                \"Value\": 2\n            }\n        ]\n    }\n}",
+        "title": "获取DDoS攻击Top数据"
+      }
+    ],
     "ListTopData": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=Url\n&Filter=flux\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"www.test1.com/1.jpg?abc=123\",\n                        \"Value\": 13838\n                    }\n                ]\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"http://www.test2.com/1.jpg?abc=123\",\n                        \"Value\": 2501\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询Top Url访问数据"
+      }
+    ],
+    "ListTopWafData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopWafData\n&Domain=www.test.com\n&StartTime=2019-06-2600:00:00\n&EndTime=2019-06-2603:00:00\n&Metric=url\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\n        \"TopTypeData\": [\n            {\n                \"AttackType\": \"xss\",\n                \"Value\": 20\n            },\n            {\n                \"AttackType\": \"sql\",\n                \"Value\": 831\n            }\n        ],\n        \"TopIpData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:00\",\n                \"Value\": 18,\n                \"District\": \"江苏\",\n                \"Isp\": \"中国电信\",\n                \"Ip\": \"222.186.20.85\"\n            }\n        ],\n        \"TopUrlData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:00\",\n                \"Value\": 18,\n                \"Domain\": \"www.test.com\",\n                \"Url\": \"/path\"\n            }\n        ],\n        \"TopDomainData\": [\n            {\n                \"Value\": 18,\n                \"Percent\": 0.0,\n                \"Domain\": \"www.test.com\"\n            },\n            {\n                \"Value\": 9,\n                \"Percent\": 0.0,\n                \"Domain\": \"www.123.com\"\n            }\n        ]\n    }\n}",
+        "title": "获取Waf攻击Top数据"
       }
     ],
     "ManageClsTopicDomains": [

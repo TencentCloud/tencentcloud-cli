@@ -837,6 +837,7 @@
         {
           "default": "",
           "document": "水印图片 URL。\nURL中禁止包含的字符：\n ;(){}$>`#\"\\'|",
+          "example": "http://watermark-101.cos.myqcloud.com/1251830167/imglogo.png",
           "member": "string",
           "name": "PictureUrl",
           "required": true,
@@ -845,6 +846,7 @@
         {
           "default": "",
           "document": "水印名称。\n最长16字节。",
+          "example": "logo",
           "member": "string",
           "name": "WatermarkName",
           "required": true,
@@ -853,6 +855,7 @@
         {
           "default": "",
           "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
+          "example": "80",
           "member": "int64",
           "name": "XPosition",
           "required": false,
@@ -861,6 +864,7 @@
         {
           "default": "",
           "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
+          "example": "10",
           "member": "int64",
           "name": "YPosition",
           "required": false,
@@ -869,6 +873,7 @@
         {
           "default": "",
           "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
+          "example": "100",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -877,6 +882,7 @@
         {
           "default": "",
           "document": "水印高度，占直播原始画面高度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
+          "example": "100",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -890,8 +896,10 @@
       "members": [
         {
           "document": "水印ID。",
+          "example": "123",
           "member": "uint64",
           "name": "WatermarkId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
