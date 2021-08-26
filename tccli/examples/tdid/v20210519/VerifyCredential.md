@@ -27,8 +27,8 @@ Output:
     "Response": {
         "Result": true,
         "VerifyCode": 0,
-        "VerifyMessage": "",
-        "RequestId": "xx"
+        "VerifyMessage": "success",
+        "RequestId": "72a6643f-7123-4288-9584-8dd4db7e8373"
     }
 }
 ```

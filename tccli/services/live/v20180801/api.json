@@ -10622,7 +10622,7 @@
       "members": [
         {
           "default": "",
-          "document": "录制间隔。\n单位秒，默认：1800。\n取值范围：60-7200。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
+          "document": "录制间隔。\n单位秒，默认：1800。\n取值范围：30-7200。\n此参数对 HLS 无效，当录制 HLS 时从推流到断流生成一个文件。",
           "example": "400",
           "member": "int64",
           "name": "RecordInterval",

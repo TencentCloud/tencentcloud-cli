@@ -227,6 +227,7 @@
         {
           "default": "",
           "document": "监控的服务器类型（0：web，1：smtp，2：imap，3：pops）",
+          "example": "0",
           "member": "int64",
           "name": "ServerType",
           "required": true,
@@ -235,6 +236,7 @@
         {
           "default": "",
           "document": "添加的域名",
+          "example": "cloud.tencent.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -243,6 +245,7 @@
         {
           "default": "",
           "document": "添加的端口",
+          "example": "443",
           "member": "string",
           "name": "Port",
           "required": true,
@@ -251,6 +254,7 @@
         {
           "default": "",
           "document": "指定域名的IP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "IP",
           "required": false,
@@ -258,7 +262,8 @@
         },
         {
           "default": "",
-          "document": "是否开启通知告警",
+          "document": "是否开启通知告警；true：开启通知告警，false：关闭通知告警",
+          "example": "1",
           "member": "bool",
           "name": "Notice",
           "required": false,
@@ -267,6 +272,7 @@
         {
           "default": "",
           "document": "给域名添加标签，多个以逗号隔开",
+          "example": "123",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -352,7 +358,8 @@
       "members": [
         {
           "default": "",
-          "document": "域名ID，可通过搜索域名接口获得",
+          "document": "域名ID，可通过<a href=\"https://cloud.tencent.com/document/api/1084/49339\">搜索域名</a>接口获得",
+          "example": "13076",
           "member": "int64",
           "name": "DomainId",
           "required": true,
@@ -520,6 +527,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -528,6 +536,7 @@
         {
           "default": "",
           "document": "获取数量",
+          "example": "1000",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -535,7 +544,8 @@
         },
         {
           "default": "",
-          "document": "搜索的类型 Enums(none,tags,grade,brand,code,hash,limit)",
+          "document": "搜索的类型有：none，tags，grade，brand，code，hash，limit。\n选tags，入参请填Tag，\n选grade，入参请填Grade，\n选brand，入参请填Brand，\n选code，入参请填Code，\n选hash，入参请填Hash\n选limit，标识只返回数量信息",
+          "example": "none",
           "member": "string",
           "name": "SearchType",
           "required": true,
@@ -544,6 +554,7 @@
         {
           "default": "",
           "document": "标签，多个标签用逗号分隔",
+          "example": "无",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -552,6 +563,7 @@
         {
           "default": "",
           "document": "等级",
+          "example": "无",
           "member": "string",
           "name": "Grade",
           "required": false,
@@ -560,6 +572,7 @@
         {
           "default": "",
           "document": "品牌",
+          "example": "无",
           "member": "string",
           "name": "Brand",
           "required": false,
@@ -568,6 +581,7 @@
         {
           "default": "",
           "document": "混合搜索",
+          "example": "无",
           "member": "string",
           "name": "Code",
           "required": false,
@@ -576,6 +590,7 @@
         {
           "default": "",
           "document": "证书指纹",
+          "example": "无",
           "member": "string",
           "name": "Hash",
           "required": false,
@@ -584,6 +599,7 @@
         {
           "default": "",
           "document": "搜索图标类型",
+          "example": "无",
           "member": "string",
           "name": "Item",
           "required": false,
@@ -592,6 +608,7 @@
         {
           "default": "",
           "document": "搜索图标值",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -605,8 +622,10 @@
       "members": [
         {
           "document": "列表数据",
+          "example": "无",
           "member": "DescribeDomains",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

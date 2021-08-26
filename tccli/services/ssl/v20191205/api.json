@@ -3436,6 +3436,7 @@
         {
           "default": "",
           "document": "证书 ID。",
+          "example": "a91hoLqi",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -3444,6 +3445,7 @@
         {
           "default": "",
           "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
+          "example": "base64content",
           "member": "string",
           "name": "RevokeLetter",
           "required": true,
@@ -3457,15 +3459,19 @@
       "members": [
         {
           "document": "证书 ID。",
+          "example": "a91hoLqi",
           "member": "string",
           "name": "CertificateId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否成功。",
+          "example": "1",
           "member": "bool",
           "name": "IsSuccess",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

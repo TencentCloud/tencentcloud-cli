@@ -4759,6 +4759,15 @@
           "name": "IdCardReverse",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定分配的代理商ID",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

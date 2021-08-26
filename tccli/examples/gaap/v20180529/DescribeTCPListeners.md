@@ -29,6 +29,7 @@ Output:
                 "ListenerStatus": 0,
                 "ListenerName": "111",
                 "ConnectTimeout": 2,
+                "FailoverSwitch": 0,
                 "ClientIPMethod": 1,
                 "CreateTime": 1607071157,
                 "RealServerSet": [

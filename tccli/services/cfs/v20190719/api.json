@@ -301,7 +301,7 @@
         },
         {
           "default": "",
-          "document": "网络类型，值为 VPC，BASIC；其中 VPC 为私有网络，BASIC 为基础网络",
+          "document": "网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。",
           "example": "VPC",
           "member": "string",
           "name": "NetInterface",
@@ -310,7 +310,7 @@
         },
         {
           "default": "",
-          "document": "权限组 ID",
+          "document": "权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic",
           "example": "pgroupbasic",
           "member": "string",
           "name": "PGroupId",
@@ -319,7 +319,7 @@
         },
         {
           "default": "",
-          "document": "文件系统协议类型， 值为 NFS、CIFS; 若留空则默认为 NFS协议",
+          "document": "文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS",
           "example": "NFS",
           "member": "string",
           "name": "Protocol",
@@ -328,7 +328,7 @@
         },
         {
           "default": "",
-          "document": "文件系统存储类型，值为 SD ；其中 SD 为标准型存储， HP为性能存储。",
+          "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
           "example": "SD",
           "member": "string",
           "name": "StorageType",
@@ -355,7 +355,7 @@
         },
         {
           "default": "",
-          "document": "指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP",
+          "document": "指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定",
           "example": "10.0.0.1",
           "member": "string",
           "name": "MountIP",
@@ -388,6 +388,33 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填",
+          "example": "ccn-12345",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突",
+          "example": "10.0.0.1/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。",
+          "example": "40960",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -423,7 +450,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "文件系统状态",
+          "document": "文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "LifeCycleState",
@@ -432,7 +459,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "文件系统已使用容量大小",
+          "document": "文件系统已使用容量大小，单位为 Byte",
           "example": "1000",
           "member": "uint64",
           "name": "SizeByte",
@@ -1093,6 +1120,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -1102,6 +1130,7 @@
         {
           "default": "",
           "document": "用户自定义名称",
+          "example": "无",
           "member": "string",
           "name": "CreationToken",
           "required": true,
@@ -1111,6 +1140,7 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "无",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1120,6 +1150,7 @@
         {
           "default": "",
           "document": "文件系统状态",
+          "example": "无",
           "member": "string",
           "name": "LifeCycleState",
           "required": true,
@@ -1129,6 +1160,7 @@
         {
           "default": "",
           "document": "文件系统已使用容量",
+          "example": "无",
           "member": "uint64",
           "name": "SizeByte",
           "required": true,
@@ -1138,6 +1170,7 @@
         {
           "default": "",
           "document": "文件系统最大空间限制",
+          "example": "无",
           "member": "uint64",
           "name": "SizeLimit",
           "required": true,
@@ -1147,6 +1180,7 @@
         {
           "default": "",
           "document": "区域 ID",
+          "example": "无",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -1156,6 +1190,7 @@
         {
           "default": "",
           "document": "区域名称",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1165,6 +1200,7 @@
         {
           "default": "",
           "document": "文件系统协议类型",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -1174,6 +1210,7 @@
         {
           "default": "",
           "document": "文件系统存储类型",
+          "example": "无",
           "member": "string",
           "name": "StorageType",
           "required": true,
@@ -1183,6 +1220,7 @@
         {
           "default": "",
           "document": "文件系统绑定的预付费存储包",
+          "example": "无",
           "member": "string",
           "name": "StorageResourcePkg",
           "required": true,
@@ -1192,6 +1230,7 @@
         {
           "default": "",
           "document": "文件系统绑定的预付费带宽包（暂未支持）",
+          "example": "无",
           "member": "string",
           "name": "BandwidthResourcePkg",
           "required": true,
@@ -1201,6 +1240,7 @@
         {
           "default": "",
           "document": "文件系统绑定权限组信息",
+          "example": "无",
           "member": "PGroup",
           "name": "PGroup",
           "required": true,
@@ -1210,6 +1250,7 @@
         {
           "default": "",
           "document": "用户自定义名称",
+          "example": "无",
           "member": "string",
           "name": "FsName",
           "required": true,
@@ -1219,6 +1260,7 @@
         {
           "default": "",
           "document": "文件系统是否加密",
+          "example": "无",
           "member": "bool",
           "name": "Encrypted",
           "required": true,
@@ -1228,6 +1270,7 @@
         {
           "default": "",
           "document": "加密所使用的密钥，可以为密钥的 ID 或者 ARN",
+          "example": "无",
           "member": "string",
           "name": "KmsKeyId",
           "required": true,
@@ -1237,6 +1280,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "无",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -1246,10 +1290,21 @@
         {
           "default": "",
           "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定",
+          "example": "无",
           "member": "float",
           "name": "BandwidthLimit",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统总容量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1261,6 +1316,7 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-hge16re9",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1270,6 +1326,7 @@
         {
           "default": "",
           "document": "挂载点 ID",
+          "example": "mount-0ylt3o7o",
           "member": "string",
           "name": "MountTargetId",
           "required": true,
@@ -1279,6 +1336,7 @@
         {
           "default": "",
           "document": "挂载点 IP",
+          "example": "10.1.0.7",
           "member": "string",
           "name": "IpAddress",
           "required": true,
@@ -1288,6 +1346,7 @@
         {
           "default": "",
           "document": "挂载根目录",
+          "example": "fwsuvz0l",
           "member": "string",
           "name": "FSID",
           "required": true,
@@ -1297,6 +1356,7 @@
         {
           "default": "",
           "document": "挂载点状态",
+          "example": "available",
           "member": "string",
           "name": "LifeCycleState",
           "required": true,
@@ -1306,6 +1366,7 @@
         {
           "default": "",
           "document": "网络类型",
+          "example": "VPC",
           "member": "string",
           "name": "NetworkInterface",
           "required": true,
@@ -1315,6 +1376,7 @@
         {
           "default": "",
           "document": "私有网络 ID",
+          "example": "vpc-hq13cw04",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1324,6 +1386,7 @@
         {
           "default": "",
           "document": "私有网络名称",
+          "example": "qcloudtest",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -1333,6 +1396,7 @@
         {
           "default": "",
           "document": "子网 Id",
+          "example": "subnet-jdl08no5",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1342,8 +1406,29 @@
         {
           "default": "",
           "document": "子网名称",
+          "example": "qcloudtest",
           "member": "string",
           "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CFS Turbo使用的云联网ID",
+          "example": "ccn-1xhbcp41",
+          "member": "string",
+          "name": "CcnID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网中CFS Turbo使用的网段",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
           "required": true,
           "type": "string",
           "value_allowed_null": false

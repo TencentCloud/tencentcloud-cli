@@ -1606,7 +1606,7 @@
         },
         {
           "default": "",
-          "document": "转发地址。",
+          "document": "转发地址。如果有鉴权Token，则需要自行传入，例如 [{\\\"forward\\\":{\\\"api\\\":\\\"http://123.207.117.108:1080/sub.php\\\",\\\"token\\\":\\\"testtoken\\\"}}]",
           "example": "[{\\\"forward\\\":{\\\"api\\\":\\\"http://123.207.117.108:1080/sub.php\\\"}}",
           "member": "string",
           "name": "ForwardAddr",
@@ -1894,7 +1894,7 @@
         },
         {
           "default": "",
-          "document": "设备操作系统 Linux",
+          "document": "设备操作系统，通用设备填default",
           "example": "linux",
           "member": "string",
           "name": "ChipOs",
@@ -1903,7 +1903,7 @@
         },
         {
           "default": "",
-          "document": "芯片厂商id",
+          "document": "芯片厂商id，通用设备填default",
           "example": "x86",
           "member": "string",
           "name": "ChipManufactureId",
@@ -1912,7 +1912,7 @@
         },
         {
           "default": "",
-          "document": "芯片id",
+          "document": "芯片id，通用设备填default",
           "example": "chip1",
           "member": "string",
           "name": "ChipId",
@@ -5799,7 +5799,7 @@
         },
         {
           "default": "",
-          "document": "转发地址。",
+          "document": "转发地址。如果有鉴权Token，则需要自行传入，例如 [{\\\"forward\\\":{\\\"api\\\":\\\"http://123.207.117.108:1080/sub.php\\\",\\\"token\\\":\\\"testtoken\\\"}}]",
           "example": "[{\\\"forward\\\":{\\\"api\\\":\\\"http://123.207.117.108:1080/sub.php\\\"}}",
           "member": "string",
           "name": "ForwardAddr",

@@ -48,6 +48,7 @@ Output:
                     "HTTP",
                     "HTTPS"
                 ],
+                "PackageType": "Thunder",
                 "Domain": "link-12345678.gaapqcloud.com",
                 "IPAddressVersion": "IPv4",
                 "CreateTime": 1,
@@ -102,6 +103,7 @@ Output:
                     "HTTP",
                     "HTTPS"
                 ],
+                "PackageType": "Thunder",
                 "Domain": "link-12345678.gaapqcloud.com",
                 "IPAddressVersion": "IPv4",
                 "CreateTime": 1,

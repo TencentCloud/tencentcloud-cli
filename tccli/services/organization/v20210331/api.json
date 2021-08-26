@@ -1,0 +1,64 @@
+{
+  "actions": {
+    "BindOrganizationMemberAuthAccount": {
+      "document": "绑定组织成员和子账号的授权关系",
+      "input": "BindOrganizationMemberAuthAccountRequest",
+      "name": "绑定组织成员和子账号的授权关系",
+      "output": "BindOrganizationMemberAuthAccountResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-03-31",
+    "api_brief": "介绍如何使用API对企业组织进行操作，包括获取企业组织单元列表、更新企业组织单元等。",
+    "serviceNameCN": "企业组织",
+    "serviceShortName": "organization"
+  },
+  "objects": {
+    "BindOrganizationMemberAuthAccountRequest": {
+      "document": "BindOrganizationMemberAuthAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "成员Uin。",
+          "example": "1000001",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略ID。",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "组织子账号Uin。",
+          "example": "无",
+          "member": "int64",
+          "name": "OrgSubAccountUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindOrganizationMemberAuthAccountResponse": {
+      "document": "BindOrganizationMemberAuthAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

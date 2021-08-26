@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "15dc3823-4089-4fd6-81a6-ec8baf5ec330",
-        "CertificateId": "flSFd6Fh",
+        "CertificateId": "a91hoLqi",
         "IsSuccess": true
     }
 }

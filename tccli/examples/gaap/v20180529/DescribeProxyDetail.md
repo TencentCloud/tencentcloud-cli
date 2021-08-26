@@ -40,6 +40,7 @@ Output:
                 "TCP",
                 "UDP"
             ],
+            "PackageType": "Thunder",
             "Domain": "link-ibqy8dqv.gaapqcloud.com",
             "CreateTime": 1598417633,
             "ProxyId": "link-ibqy8dqv",

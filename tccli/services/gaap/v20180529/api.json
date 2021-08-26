@@ -1602,6 +1602,7 @@
         {
           "default": "",
           "document": "监听器ID。",
+          "example": "0",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -1610,6 +1611,7 @@
         {
           "default": "",
           "document": "需要创建的域名，一个监听器下最大支持100个域名。",
+          "example": "a.a.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1618,6 +1620,7 @@
         {
           "default": "",
           "document": "服务器证书，用于客户端与GAAP的HTTPS的交互。",
+          "example": "abc",
           "member": "string",
           "name": "CertificateId",
           "required": false,
@@ -1626,6 +1629,7 @@
         {
           "default": "",
           "document": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段或PolyClientCertificateIds字段。",
+          "example": "xx",
           "member": "string",
           "name": "ClientCertificateId",
           "required": false,
@@ -1634,6 +1638,7 @@
         {
           "default": "",
           "document": "客户端CA证书，用于客户端与GAAP的HTTPS的交互。\n仅当采用双向认证的方式时，需要设置该字段或ClientCertificateId字段。",
+          "example": "xx",
           "member": "string",
           "name": "PolyClientCertificateIds",
           "required": false,
@@ -5863,6 +5868,7 @@
         {
           "default": "",
           "document": "7层监听器ID",
+          "example": "0",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -5871,6 +5877,7 @@
         {
           "default": "",
           "document": "修改前的域名信息",
+          "example": "a.a.com",
           "member": "string",
           "name": "OldDomain",
           "required": true,
@@ -5879,6 +5886,7 @@
         {
           "default": "",
           "document": "修改后的域名信息",
+          "example": "b.b.com",
           "member": "string",
           "name": "NewDomain",
           "required": true,
@@ -5887,6 +5895,7 @@
         {
           "default": "",
           "document": "服务器SSL证书ID，仅适用于version3.0的通道。其中：\n不带该字段时，表示使用原证书；\n携带该字段时并且CertificateId=default，表示使用监听器证书；\n其他情况，使用该CertificateId指定的证书。",
+          "example": "default",
           "member": "string",
           "name": "CertificateId",
           "required": false,
@@ -5895,6 +5904,7 @@
         {
           "default": "",
           "document": "客户端CA证书ID，仅适用于version3.0的通道。其中：\n不带该字段和PolyClientCertificateIds时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。",
+          "example": "xx",
           "member": "string",
           "name": "ClientCertificateId",
           "required": false,
@@ -5903,6 +5913,7 @@
         {
           "default": "",
           "document": "客户端CA证书ID，仅适用于version3.0的通道。其中：\n不带该字段和ClientCertificateId时，表示使用原证书；\n携带该字段时并且ClientCertificateId=default，表示使用监听器证书；\n其他情况，使用该ClientCertificateId或PolyClientCertificateIds指定的证书。",
+          "example": "[\"xx\"]",
           "member": "string",
           "name": "PolyClientCertificateIds",
           "required": false,
@@ -7019,7 +7030,7 @@
         },
         {
           "default": "",
-          "document": "通道组类型，可取值：Thunder、Accelerator，默认值Thunder\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
@@ -7440,6 +7451,16 @@
           "example": "\"normal\"",
           "member": "string",
           "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -8300,6 +8321,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站是否开启主备模式：1开启，0关闭，DOMAIN类型源站不支持开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FailoverSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8466,6 +8507,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启会话保持选项：0关闭， 非0开启，非0值为会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

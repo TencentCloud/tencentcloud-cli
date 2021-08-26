@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "https://ssl.tencentcloudapi.com/?Action=UploadRevokeLetter\n&CertificateId=a91hoLqi\n&RevokeLetter=base64content\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\n        \"CertificateId\": \"flSFd6Fh\",\n        \"IsSuccess\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\n        \"CertificateId\": \"a91hoLqi\",\n        \"IsSuccess\": true\n    }\n}",
         "title": "上传证书吊销确认函"
       }
     ],
