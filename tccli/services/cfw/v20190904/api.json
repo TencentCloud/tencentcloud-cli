@@ -150,6 +150,12 @@
       "name": "资产中心资产树信息查询",
       "output": "DescribeResourceGroupResponse"
     },
+    "DescribeResourceGroupNew": {
+      "document": "DescribeResourceGroupNew资产中心资产树信息",
+      "input": "DescribeResourceGroupNewRequest",
+      "name": "资产中心资产树信息查询new",
+      "output": "DescribeResourceGroupNewResponse"
+    },
     "DescribeRuleOverview": {
       "document": "查询规则列表概况",
       "input": "DescribeRuleOverviewRequest",
@@ -2089,6 +2095,87 @@
           "document": "启用规则条数",
           "member": "int64",
           "name": "EnableNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupNewRequest": {
+      "document": "DescribeResourceGroupNew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询类型 网络结构 vpc，业务识别- resource ，资源标签-tag",
+          "example": "tag",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产组id  全部传0",
+          "example": "test-id",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "all  包含子组 own自己",
+          "example": "ALL ",
+          "member": "string",
+          "name": "ShowType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceGroupNewResponse": {
+      "document": "DescribeResourceGroupNew返回参数结构体",
+      "members": [
+        {
+          "document": "返回树形结构",
+          "example": "[{\\\"GroupId\\\":\\\"1300448058_masternode\\\",\\\"ParentId\\\":\\\"0\\\",\\\"Gro",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "0",
+          "member": "int64",
+          "name": "UnResourceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "suuce",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

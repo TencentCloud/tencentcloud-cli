@@ -98,6 +98,14 @@
         "title": "删除设备"
       }
     ],
+    "DeleteDevices": [
+      {
+        "document": "批量删除设备",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevices\n<公共请求参数>\n\n{\n    \"DevicesItems\": [\n        {\n            \"DeviceName\": \"xx\",\n            \"ProductId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量删除设备"
+      }
+    ],
     "DeleteLoRaFrequency": [
       {
         "document": "删除LoRa自定义频点",
@@ -237,8 +245,8 @@
     "GetDeviceList": [
       {
         "document": "根据某个产品ID获取对应的设备列表",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetDeviceList\n&ProductId=ABCDE12345\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceName\": \"wifi_test\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"FirstOnlineTime\": 1557397755,\n                \"LoginTime\": 1559744044\n            },\n            {\n                \"DeviceName\": \"dev_hu\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"FirstOnlineTime\": 1557235894,\n                \"LoginTime\": 1560328893\n            },\n            {\n                \"DeviceName\": \"dev01\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"FirstOnlineTime\": 1557229181,\n                \"LoginTime\": 1557470791\n            }\n        ],\n        \"RequestId\": \"4ccc27e9-4525-4396-9db3-369b2cd3d28a\",\n        \"Total\": 3\n    }\n}",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetDeviceList\n&ProductId=ABCDE12345\n&ProjectId=12\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceName\": \"d1\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            },\n            {\n                \"DeviceName\": \"d1\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            },\n            {\n                \"DeviceName\": \"d10\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            }\n        ],\n        \"RequestId\": \"8bbbaa15-9918-4fd9-a70c-dbb47dwac0ca\",\n        \"Total\": 15\n    }\n}",
         "title": "获取设备列表"
       }
     ],
@@ -380,6 +388,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"test\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "搜索规则"
+      }
+    ],
+    "UpdateDevicesEnableState": [
+      {
+        "document": "批量禁用启用设备",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevicesEnableState\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"DevicesItems\": [\n        {\n            \"DeviceName\": \"xx\",\n            \"ProductId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量禁用启用设备"
       }
     ],
     "UpdateFirmware": [

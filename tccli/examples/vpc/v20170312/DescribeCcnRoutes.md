@@ -23,30 +23,40 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "xx",
         "RouteSet": [
             {
-                "RouteId": "ccnr-bvipc87w",
-                "DestinationCidrBlock": "10.33.0.0/24",
-                "InstanceType": "VPC",
-                "InstanceId": "vpc-r1ckkpid",
-                "InstanceName": "vpc0420",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "979137",
-                "UpdateTime": "2018-06-21 11:32:29"
+                "DestinationCidrBlock": "10.0.0.1/16",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "RoutePriority": 1,
+                "InstanceId": "xx",
+                "InstanceUin": "xx",
+                "Enabled": true,
+                "InstanceExtraName": "xx",
+                "IsBgp": true,
+                "InstanceRegion": "xx",
+                "ExtraState": "xx",
+                "RouteId": "xx",
+                "InstanceName": "xx",
+                "InstanceType": "xx"
             },
             {
-                "RouteId": "ccnr-oc61so0o",
-                "DestinationCidrBlock": "192.168.0.0/24",
-                "InstanceType": "DIRECTCONNECT",
-                "InstanceId": "dcg-98qosdc3",
-                "InstanceName": "test",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "979137",
-                "UpdateTime": "2018-06-21 11:32:29"
+                "DestinationCidrBlock": "xx",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "RoutePriority": 1,
+                "InstanceId": "xx",
+                "InstanceName": "xx",
+                "Enabled": true,
+                "InstanceExtraName": "xx",
+                "IsBgp": true,
+                "InstanceRegion": "xx",
+                "ExtraState": "xx",
+                "RouteId": "xx",
+                "InstanceUin": "xx",
+                "InstanceType": "xx"
             }
-        ],
-        "TotalCount": 2,
-        "RequestId": "6e446c86-d8c9-4981-9b33-d10956585058"
+        ]
     }
 }
 ```

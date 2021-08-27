@@ -60,6 +60,12 @@
       "name": "删除设备",
       "output": "DeleteDeviceResponse"
     },
+    "DeleteDevices": {
+      "document": "批量删除设备",
+      "input": "DeleteDevicesRequest",
+      "name": "批量删除设备",
+      "output": "DeleteDevicesResponse"
+    },
     "DeleteLoRaFrequency": {
       "document": "提供删除LoRa自定义频点的能力",
       "input": "DeleteLoRaFrequencyRequest",
@@ -263,6 +269,12 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse"
+    },
+    "UpdateDevicesEnableState": {
+      "document": "批量禁用启用设备",
+      "input": "UpdateDevicesEnableStateRequest",
+      "name": "批量禁用启用设备",
+      "output": "UpdateDevicesEnableStateResponse"
     },
     "UpdateFirmware": {
       "document": "本接口（UpdateFirmware）用于对指定设备发起固件升级请求 ",
@@ -993,6 +1005,51 @@
     },
     "DeleteDeviceResponse": {
       "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "删除的结果代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResultCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "删除的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResultMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDevicesRequest": {
+      "document": "DeleteDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个设备标识",
+          "example": "无",
+          "member": "DevicesItem",
+          "name": "DevicesItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDevicesResponse": {
+      "document": "DeleteDevices返回参数结构体",
       "members": [
         {
           "document": "删除的结果代码\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1872,6 +1929,32 @@
       ],
       "usage": "out"
     },
+    "DevicesItem": {
+      "document": "ProductId -> DeviceName",
+      "members": [
+        {
+          "default": "",
+          "document": "产品id",
+          "example": "JZYTG1M2EN",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev01",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "DisableTopicRuleRequest": {
       "document": "DisableTopicRule请求参数结构体",
       "members": [
@@ -2150,6 +2233,7 @@
         {
           "default": "",
           "document": "需要查看设备列表的产品 ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2158,6 +2242,7 @@
         {
           "default": "",
           "document": "分页偏移",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2166,6 +2251,7 @@
         {
           "default": "",
           "document": "分页的大小，数值范围 10-100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2174,6 +2260,7 @@
         {
           "default": "",
           "document": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备",
+          "example": "1",
           "member": "string",
           "name": "FirmwareVersion",
           "required": false,
@@ -2182,8 +2269,18 @@
         {
           "default": "",
           "document": "需要过滤的设备名称",
+          "example": "1",
           "member": "string",
           "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。产品 ID 为 -1 时，该参数必填",
+          "example": "test",
+          "member": "string",
+          "name": "ProjectId",
           "required": false,
           "type": "string"
         }
@@ -2195,15 +2292,19 @@
       "members": [
         {
           "document": "返回的设备列表, 注意列表设备的 DevicePsk 为空, 要获取设备的 DevicePsk 请使用 DescribeDevice\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DeviceInfo",
           "name": "Devices",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "产品下的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4078,6 +4179,60 @@
         }
       ],
       "usage": "in"
+    },
+    "UpdateDevicesEnableStateRequest": {
+      "document": "UpdateDevicesEnableState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "多个设备标识",
+          "example": "无",
+          "member": "DevicesItem",
+          "name": "DevicesItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "1：启用；0：禁用",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicesEnableStateResponse": {
+      "document": "UpdateDevicesEnableState返回参数结构体",
+      "members": [
+        {
+          "document": "删除的结果代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResultCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "删除的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResultMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateFirmwareRequest": {
       "document": "UpdateFirmware请求参数结构体",

@@ -206,6 +206,14 @@
         "title": "资产中心资产树信息"
       }
     ],
+    "DescribeResourceGroupNew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGroupNew\n<公共请求参数>\n\n{\n    \"GroupId\": \"xx\",\n    \"QueryType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"xx\",\n        \"UnResourceNum\": 0,\n        \"ReturnCode\": 0,\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "资产中心资产树信息"
+      }
+    ],
     "DescribeRuleOverview": [
       {
         "document": "",

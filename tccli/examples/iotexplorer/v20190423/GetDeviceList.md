@@ -7,6 +7,7 @@ Input:
 ```
 tccli iotexplorer GetDeviceList --cli-unfold-argument  \
     --ProductId ABCDE12345 \
+    --ProjectId 12 \
     --Offset 0 \
     --Limit 10
 ```
@@ -17,29 +18,62 @@ Output:
     "Response": {
         "Devices": [
             {
-                "DeviceName": "wifi_test",
+                "DeviceName": "d1",
                 "Status": 0,
                 "DevicePsk": "",
-                "FirstOnlineTime": 1557397755,
-                "LoginTime": 1559744044
+                "CreateTime": 0,
+                "FirstOnlineTime": 0,
+                "LoginTime": 0,
+                "LogLevel": 0,
+                "Version": "",
+                "DeviceCert": "",
+                "DevEUI": "",
+                "AppKey": "",
+                "DevAddr": "",
+                "AppSKey": "",
+                "NwkSKey": "",
+                "CreatorNickName": "",
+                "CreateUserId": 0
             },
             {
-                "DeviceName": "dev_hu",
+                "DeviceName": "d1",
                 "Status": 0,
                 "DevicePsk": "",
-                "FirstOnlineTime": 1557235894,
-                "LoginTime": 1560328893
+                "CreateTime": 0,
+                "FirstOnlineTime": 0,
+                "LoginTime": 0,
+                "LogLevel": 0,
+                "Version": "",
+                "DeviceCert": "",
+                "DevEUI": "",
+                "AppKey": "",
+                "DevAddr": "",
+                "AppSKey": "",
+                "NwkSKey": "",
+                "CreatorNickName": "",
+                "CreateUserId": 0
             },
             {
-                "DeviceName": "dev01",
+                "DeviceName": "d10",
                 "Status": 0,
                 "DevicePsk": "",
-                "FirstOnlineTime": 1557229181,
-                "LoginTime": 1557470791
+                "CreateTime": 0,
+                "FirstOnlineTime": 0,
+                "LoginTime": 0,
+                "LogLevel": 0,
+                "Version": "",
+                "DeviceCert": "",
+                "DevEUI": "",
+                "AppKey": "",
+                "DevAddr": "",
+                "AppSKey": "",
+                "NwkSKey": "",
+                "CreatorNickName": "",
+                "CreateUserId": 0
             }
         ],
-        "RequestId": "4ccc27e9-4525-4396-9db3-369b2cd3d28a",
-        "Total": 3
+        "RequestId": "8bbbaa15-9918-4fd9-a70c-dbb47dwac0ca",
+        "Total": 15
     }
 }
 ```

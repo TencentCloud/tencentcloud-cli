@@ -4149,6 +4149,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4157,6 +4158,7 @@
         {
           "default": "",
           "document": "CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]",
+          "example": "[\"172.16.0.0\\/24\\n\"]",
           "member": "string",
           "name": "CidrBlocks",
           "required": true,
@@ -4170,8 +4172,10 @@
       "members": [
         {
           "document": "辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8338,6 +8342,7 @@
         {
           "default": "",
           "document": "CCN实例ID，形如：ccn-gree226l。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -8346,6 +8351,7 @@
         {
           "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "example": "-",
           "member": "string",
           "name": "RouteIds",
           "required": false,
@@ -8353,7 +8359,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定RouteIds和Filters。\n<li>route-id - String -（过滤条件）路由策略ID。</li>\n<li>cidr-block - String -（过滤条件）目的端。</li>\n<li>instance-type - String -（过滤条件）下一跳类型。</li>\n<li>instance-region - String -（过滤条件）下一跳所属地域。</li>\n<li>instance-id - String -（过滤条件）下一跳实例ID。</li>",
+          "document": "过滤条件，参数不支持同时指定RouteIds和Filters。\n<li>route-id - String -（过滤条件）路由策略ID。</li>\n<li>cidr-block - String -（过滤条件）目的端。</li>\n<li>instance-type - String -（过滤条件）下一跳类型。</li>\n<li>instance-region - String -（过滤条件）下一跳所属地域。</li>\n<li>instance-id - String -（过滤条件）下一跳实例ID。</li>\n<li>route-table-id - String -（过滤条件）路由表ID列表，形如ccntr-1234edfr，可以根据路由表ID 过滤。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8362,6 +8369,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "-",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8370,6 +8378,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "-",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8383,15 +8392,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "CCN路由策略对象。",
+          "example": "无",
           "member": "CcnRoute",
           "name": "RouteSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
