@@ -162,6 +162,12 @@
       "name": "查询订阅某主题消息分组信息",
       "output": "DescribeTopicSubscribeGroupResponse"
     },
+    "DescribeTopicSyncReplica": {
+      "document": "获取Topic 副本详情信息",
+      "input": "DescribeTopicSyncReplicaRequest",
+      "name": "获取Topic 同步副本信息",
+      "output": "DescribeTopicSyncReplicaResponse"
+    },
     "DescribeUser": {
       "document": "查询用户信息",
       "input": "DescribeUserRequest",
@@ -2432,6 +2438,78 @@
       ],
       "type": "object"
     },
+    "DescribeTopicSyncReplicaRequest": {
+      "document": "DescribeTopicSyncReplica请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ckafka-gt2ty",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "message-tp",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，不填默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认10，最大值20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅筛选未同步副本",
+          "example": "true",
+          "member": "bool",
+          "name": "OutOfSyncReplicaOnly",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicSyncReplicaResponse": {
+      "document": "DescribeTopicSyncReplica返回参数结构体",
+      "members": [
+        {
+          "document": "返回topic 副本详情",
+          "example": "无",
+          "member": "TopicInSyncReplicaResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserRequest": {
       "document": "DescribeUser请求参数结构体",
       "members": [
@@ -4518,6 +4596,118 @@
           "default": "",
           "document": "符合条件的所有主题详情数量",
           "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicInSyncReplicaInfo": {
+      "document": "topic副本及详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分区名称",
+          "example": "partition-1",
+          "member": "string",
+          "name": "Partition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Leader Id",
+          "example": "0",
+          "member": "uint64",
+          "name": "Leader",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本集",
+          "example": "1,3,2",
+          "member": "string",
+          "name": "Replica",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ISR",
+          "example": "1,2,3",
+          "member": "string",
+          "name": "InSyncReplica",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始Offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12055",
+          "member": "uint64",
+          "name": "BeginOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "末端Offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13353",
+          "member": "uint64",
+          "name": "EndOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120045",
+          "member": "uint64",
+          "name": "MessageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未同步副本集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2",
+          "member": "string",
+          "name": "OutOfSyncReplica",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicInSyncReplicaResult": {
+      "document": "Topic 副本及详情数据集合",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic详情及副本合集",
+          "example": "无",
+          "member": "TopicInSyncReplicaInfo",
+          "name": "TopicInSyncReplicaList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总计个数",
+          "example": "0",
+          "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
