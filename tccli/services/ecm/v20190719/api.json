@@ -9766,6 +9766,7 @@
         {
           "default": "",
           "document": "待重装的实例ID列表。",
+          "example": "[\"ein-492054ga\\r\\n\",\"ein-482972ao\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -9774,6 +9775,7 @@
         {
           "default": "",
           "document": "重装使用的镜像ID，若未指定，则使用各个实例当前的镜像进行重装。",
+          "example": "img-q9fy0if9",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -9782,6 +9784,7 @@
         {
           "default": "",
           "document": "密码设置，若未指定，则后续将以站内信的形式通知密码。",
+          "example": "hpjtfgnb3nwa",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -9790,6 +9793,7 @@
         {
           "default": "",
           "document": "是否开启云监控和云镜服务，未指定时默认开启。",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -9798,8 +9802,18 @@
         {
           "default": "",
           "document": "是否保留数据盘数据，取值\"true\"/\"false\"。默认为\"true\"",
+          "example": "无",
           "member": "string",
           "name": "KeepData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\nTRUE：表示保持镜像的登录设置\nFALSE：表示不保持镜像的登录设置\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeepImageLogin",
           "required": false,
           "type": "string"
         }
@@ -10261,6 +10275,15 @@
           "name": "KeyIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\nTRUE：表示保持镜像的登录设置\nFALSE：表示不保持镜像的登录设置\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeepImageLogin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

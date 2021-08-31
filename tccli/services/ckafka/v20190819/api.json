@@ -48,6 +48,12 @@
       "name": "删除ACL规则",
       "output": "DeleteAclRuleResponse"
     },
+    "DeleteRouteTriggerTime": {
+      "document": "修改删除路由延迟触发时间",
+      "input": "DeleteRouteTriggerTimeRequest",
+      "name": "修改路由触发时间",
+      "output": "DeleteRouteTriggerTimeResponse"
+    },
     "DeleteTopic": {
       "document": "删除ckafka主题",
       "input": "DeleteTopicRequest",
@@ -1409,6 +1415,33 @@
       ],
       "type": "object"
     },
+    "DeleteRouteTriggerTimeRequest": {
+      "document": "DeleteRouteTriggerTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "DelayTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRouteTriggerTimeResponse": {
+      "document": "DeleteRouteTriggerTime返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTopicIpWhiteListRequest": {
       "document": "DeleteTopicIpWhiteList请求参数结构体",
       "members": [
@@ -1946,6 +1979,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1958,9 +1992,11 @@
       "document": "DescribeInstanceAttributes返回参数结构体",
       "members": [
         {
-          "document": "实例属性返回结果对象",
+          "document": "实例属性返回结果对象。",
+          "example": "无",
           "member": "InstanceAttributesResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3017,6 +3053,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3026,6 +3063,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -3035,6 +3073,7 @@
         {
           "default": "",
           "document": "接入点 VIP 列表信息",
+          "example": "无",
           "member": "VipEntity",
           "name": "VipList",
           "required": true,
@@ -3044,6 +3083,7 @@
         {
           "default": "",
           "document": "虚拟IP",
+          "example": "grp-gsg1",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -3053,6 +3093,7 @@
         {
           "default": "",
           "document": "虚拟端口",
+          "example": "ckafka-gt2ty",
           "member": "string",
           "name": "Vport",
           "required": true,
@@ -3062,6 +3103,7 @@
         {
           "default": "",
           "document": "实例的状态。0：创建中，1：运行中，2：删除中",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -3071,6 +3113,7 @@
         {
           "default": "",
           "document": "实例带宽，单位：Mbps",
+          "example": "100",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -3080,6 +3123,7 @@
         {
           "default": "",
           "document": "实例的存储大小，单位：GB",
+          "example": "2344",
           "member": "int64",
           "name": "DiskSize",
           "required": true,
@@ -3089,6 +3133,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "19009",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -3098,6 +3143,7 @@
         {
           "default": "",
           "document": "VPC 的 ID，为空表示是基础网络",
+          "example": "grp-gsg1",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3107,6 +3153,7 @@
         {
           "default": "",
           "document": "子网 ID， 为空表示基础网络",
+          "example": "topic-tsvs23is1",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3116,6 +3163,7 @@
         {
           "default": "",
           "document": "实例健康状态， 1：健康，2：告警，3：异常",
+          "example": "12355",
           "member": "int64",
           "name": "Healthy",
           "required": true,
@@ -3125,6 +3173,7 @@
         {
           "default": "",
           "document": "实例健康信息，当前会展示磁盘利用率，最大长度为256",
+          "example": "ckafka-gt2ty",
           "member": "string",
           "name": "HealthyMessage",
           "required": true,
@@ -3134,6 +3183,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "134",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -3143,6 +3193,7 @@
         {
           "default": "",
           "document": "消息保存时间,单位为分钟",
+          "example": "1235",
           "member": "int64",
           "name": "MsgRetentionTime",
           "required": true,
@@ -3152,6 +3203,7 @@
         {
           "default": "",
           "document": "自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建",
+          "example": "无",
           "member": "InstanceConfigDO",
           "name": "Config",
           "required": true,
@@ -3161,6 +3213,7 @@
         {
           "default": "",
           "document": "剩余创建分区数",
+          "example": "135",
           "member": "int64",
           "name": "RemainderPartitions",
           "required": true,
@@ -3170,6 +3223,7 @@
         {
           "default": "",
           "document": "剩余创建主题数",
+          "example": "123",
           "member": "int64",
           "name": "RemainderTopics",
           "required": true,
@@ -3179,6 +3233,7 @@
         {
           "default": "",
           "document": "当前创建分区数",
+          "example": "123",
           "member": "int64",
           "name": "CreatedPartitions",
           "required": true,
@@ -3188,6 +3243,7 @@
         {
           "default": "",
           "document": "当前创建主题数",
+          "example": "123",
           "member": "int64",
           "name": "CreatedTopics",
           "required": true,
@@ -3197,6 +3253,7 @@
         {
           "default": "",
           "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -3206,6 +3263,7 @@
         {
           "default": "",
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
           "member": "uint64",
           "name": "ExpireTime",
           "required": true,
@@ -3215,6 +3273,7 @@
         {
           "default": "",
           "document": "跨可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
           "member": "int64",
           "name": "ZoneIds",
           "required": true,
@@ -3224,6 +3283,7 @@
         {
           "default": "",
           "document": "kafka版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grp-gsg1",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -3233,6 +3293,7 @@
         {
           "default": "",
           "document": "最大分组数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1344",
           "member": "int64",
           "name": "MaxGroupNum",
           "required": true,
@@ -3242,6 +3303,7 @@
         {
           "default": "",
           "document": "售卖类型,0:标准版,1:专业版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12351",
           "member": "int64",
           "name": "Cvm",
           "required": true,
@@ -3251,6 +3313,7 @@
         {
           "default": "",
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -3260,6 +3323,7 @@
         {
           "default": "",
           "document": "表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sdgg\", \"sdgg\"]",
           "member": "string",
           "name": "Features",
           "required": true,
@@ -3269,10 +3333,41 @@
         {
           "default": "",
           "document": "动态消息保留策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DynamicRetentionTime",
           "name": "RetentionTimeConfig",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大连接数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "MaxConnection",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PublicNetwork",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "DeleteRouteTimestamp",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3641,6 +3736,7 @@
         {
           "default": "",
           "document": "返回的code，0为正常，非0为错误",
+          "example": "1",
           "member": "string",
           "name": "ReturnCode",
           "required": true,
@@ -3650,6 +3746,7 @@
         {
           "default": "",
           "document": "成功消息",
+          "example": "1",
           "member": "string",
           "name": "ReturnMessage",
           "required": true,
@@ -3659,6 +3756,7 @@
         {
           "default": "",
           "document": "操作型返回的Data数据,可能有flowId等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "OperateResponseData",
           "name": "Data",
           "required": true,
@@ -3796,6 +3894,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "10",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3804,6 +3903,7 @@
         {
           "default": "",
           "document": "实例日志的最长保留时间，单位分钟，最大30天，0代表不开启日志保留时间回收策略",
+          "example": "无",
           "member": "int64",
           "name": "MsgRetentionTime",
           "required": false,
@@ -3812,6 +3912,7 @@
         {
           "default": "",
           "document": "实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -3820,6 +3921,7 @@
         {
           "default": "",
           "document": "实例配置",
+          "example": "无",
           "member": "ModifyInstanceAttributesConfig",
           "name": "Config",
           "required": false,
@@ -3828,6 +3930,7 @@
         {
           "default": "",
           "document": "动态消息保留策略配置",
+          "example": "无",
           "member": "DynamicRetentionTime",
           "name": "DynamicRetentionConfig",
           "required": false,
@@ -3836,8 +3939,18 @@
         {
           "default": "",
           "document": "修改升配置rebalance时间",
+          "example": "无",
           "member": "int64",
           "name": "RebalanceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "PublicNetwork",
           "required": false,
           "type": "int"
         }
@@ -3849,8 +3962,10 @@
       "members": [
         {
           "document": "返回结果",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4030,7 +4145,8 @@
       "members": [
         {
           "default": "",
-          "document": "FlowId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "FlowId11\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "FlowId",
           "required": true,

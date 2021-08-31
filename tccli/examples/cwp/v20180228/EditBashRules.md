@@ -10,7 +10,7 @@ tccli cwp EditBashRules --cli-unfold-argument  \
     --Level 1 \
     --Rule .* \
     --IsGlobal 0 \
-    --Uuids 11 12
+    --Uuids uuids1 uuids2
 ```
 
 Output: 

@@ -454,6 +454,14 @@
         "title": "轮船票识别示例代码"
       }
     ],
+    "SmartStructuralOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=SmartStructuralOCR\n&ImageUrl=https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralOCR1.jpg\n&ItemNames.0=标题\n&ItemNames.1=姓名\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Angle\": 0,\n        \"RequestId\": \"af25f0c0-5c34-4359-98dd-25da408f5947\",\n        \"StructuralItems\": [\n            {\n                \"Confidence\": 94,\n                \"ItemCoord\": {\n                    \"Height\": 1,\n                    \"Width\": 1,\n                    \"X\": 1,\n                    \"Y\": 0\n                },\n                \"Name\": \"姓名\",\n                \"Value\": \"汪晓茹\"\n            },\n            {\n                \"Confidence\": 94,\n                \"ItemCoord\": {\n                    \"Height\": 1,\n                    \"Width\": 1,\n                    \"X\": 1,\n                    \"Y\": 1\n                },\n                \"Name\": \"标题\",\n                \"Value\": \"大学英语六级考试成绩报告单\"\n            }\n        ]\n    }\n}",
+        "title": "智能结构化识别"
+      }
+    ],
     "TableOCR": [
       {
         "document": "",

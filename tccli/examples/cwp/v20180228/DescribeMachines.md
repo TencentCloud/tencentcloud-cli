@@ -21,8 +21,8 @@ Output:
         "Machines": [
             {
                 "MachineName": "ccs_cls-i4vyo8qa_node",
-                "MachineIp": "172.16.0.4",
-                "MachineWanIp": "193.112.57.245",
+                "MachineIp": "0.0.0.0",
+                "MachineWanIp": "0.0.0.0",
                 "MachineOs": "ubuntu16.04.1 LTSx86_64",
                 "MachineStatus": "OFFLINE",
                 "Quuid": "fbd6ea2c-1894-47b0-bf3e-095c78138f76",
@@ -44,8 +44,10 @@ Output:
                     "RegionCode": "gz",
                     "Region": "ap-guangzhuo",
                     "RegionId": 1,
-                    "RegionName": "广州"
-                }
+                    "RegionName": "广州",
+                    "RegionNameEn": "chine guangzhou"
+                },
+                "MachineType": "CVM"
             }
         ],
         "TotalCount": 1,

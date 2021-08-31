@@ -24,8 +24,13 @@ Output:
                 "Rule": "xx",
                 "CreateTime": "xx",
                 "Decription": "xx",
+                "Uuids": [
+                    "xx"
+                ],
                 "ModifyTime": "xx",
                 "Operator": "xx",
+                "White": 1,
+                "DealOldEvents": 1,
                 "Id": 1,
                 "Uuid": "xx"
             }

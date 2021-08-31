@@ -917,7 +917,7 @@
     "ResetInstances": [
       {
         "document": "重装实例",
-        "input": "https://ecm.tencentcloudapi.com/?Action=ResetInstances\r\n&InstanceIdSet.0=ein-492054ga\r\n&InstanceIdSet.1=ein-482972ao\r\n&ImageId=img-q9fy0if9\r\n&Password=hpjtfgnb3nwa\r\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ResetInstances\n&InstanceIdSet.0=ein-492054ga\n&InstanceIdSet.1=ein-482972ao\n&ImageId=img-q9fy0if9\n&Password=hpjtfgnb3nwa\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s46ofg79-6hm8-4b48-b3aa-djl3424-6jgfh\"\n    }\n}",
         "title": "重装实例"
       }

@@ -300,6 +300,12 @@
       "name": "轮船票识别",
       "output": "ShipInvoiceOCRResponse"
     },
+    "SmartStructuralOCR": {
+      "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。",
+      "input": "SmartStructuralOCRRequest",
+      "name": "智能结构化识别(免费公测版)",
+      "output": "SmartStructuralOCRResponse"
+    },
     "TableOCR": {
       "document": "<b>此接口为表格识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/49525\">新版表格识别</a>。</b>\n\n本接口支持图片内表格文档的检测和识别，返回每个单元格的文字内容，支持将识别结果保存为 Excel 格式。\n\n",
       "input": "TableOCRRequest",
@@ -5717,6 +5723,115 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartStructuralOCRRequest": {
+      "document": "SmartStructuralOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
+          "example": "[\"key1\",\"key2\"]",
+          "member": "string",
+          "name": "ItemNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartStructuralOCRResponse": {
+      "document": "SmartStructuralOCR返回参数结构体",
+      "members": [
+        {
+          "document": "图片旋转角度(角度制)，文本的水平方向\n为 0；顺时针为正，逆时针为负",
+          "example": "0",
+          "member": "float",
+          "name": "Angle",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别信息",
+          "example": "无",
+          "member": "StructuralItem",
+          "name": "StructuralItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StructuralItem": {
+      "document": "智能结构化识别",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的字段名称(关键字)。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的字段名称对应的值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度 0 ~100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本行在旋转纠正之后的图像中的像素\n坐标。",
+          "example": "无",
+          "member": "ItemCoord",
+          "name": "ItemCoord",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -14,43 +14,62 @@ Output:
 {
     "Response": {
         "Result": {
-            "Tags": [],
-            "InstanceId": "instance-will-s",
-            "InstanceName": "treTest",
-            "VipList": [
-                {
-                    "Vip": "172.16.16.135",
-                    "Vport": "9092"
-                }
-            ],
-            "Vip": "172.16.16.135",
-            "Vport": "9092",
-            "Status": 1,
-            "Bandwidth": 48000,
-            "DiskSize": 120000,
-            "ZoneId": 100003,
-            "VpcId": "vpc-1qkosjcb",
-            "SubnetId": "subnet-lt4shnme",
-            "Healthy": 1,
-            "HealthyMessage": "连接数:0#磁盘使用百分比:0%#消费峰值带宽0MB/s",
-            "CreateTime": "1970-01-19 06:46:02",
             "MsgRetentionTime": 1440,
+            "Version": "xx",
             "Config": {
+                "DefaultNumPartitions": 0,
                 "AutoCreateTopicsEnable": true,
                 "DefaultReplicationFactor": 2
             },
-            "RemainderPartitions": 45,
-            "RemainderTopics": 17,
-            "CreatedPartitions": 0,
+            "Status": 1,
             "CreatedTopics": 0,
+            "VpcId": "xx",
+            "Tags": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xx"
+                }
+            ],
+            "InstanceId": "xx",
+            "Vip": "xx",
+            "SubnetId": "xx",
+            "InstanceType": "xx",
+            "RemainderTopics": 17,
+            "MaxConnection": 1,
+            "PublicNetwork": 48000,
+            "Healthy": 1,
+            "ZoneId": 100003,
+            "Cvm": 0,
+            "DiskSize": 120000,
+            "HealthyMessage": "xx",
+            "RemainderPartitions": 45,
+            "InstanceName": "xx",
+            "CreatedPartitions": 0,
+            "Features": [
+                "xx"
+            ],
+            "ZoneIds": [
+                0
+            ],
+            "ExpireTime": 1,
+            "Bandwidth": 48000,
+            "MaxGroupNum": 0,
             "RetentionTimeConfig": {
-                "Enable": 0,
-                "DiskQuotaPercentage": 90,
                 "StepForwardPercentage": 10,
+                "DiskQuotaPercentage": 90,
+                "Enable": 0,
                 "BottomRetention": 360
-            }
+            },
+            "Vport": "xx",
+            "CreateTime": 1,
+            "VipList": [
+                {
+                    "Vip": "xx",
+                    "Vport": "xx"
+                }
+            ]
         },
-        "RequestId": "33a2224e-156d-4f23-9ffe-3c66d545c59c"
+        "RequestId": "xx"
     }
 }
 ```

@@ -11241,6 +11241,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "无",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -11250,6 +11251,7 @@
         {
           "default": "",
           "document": "业务开票号",
+          "example": "无",
           "member": "string",
           "name": "OrderSn",
           "required": true,
@@ -11259,6 +11261,7 @@
         {
           "default": "",
           "document": "发票状态",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -11268,6 +11271,7 @@
         {
           "default": "",
           "document": "开票描述",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -11277,6 +11281,7 @@
         {
           "default": "",
           "document": "开票日期",
+          "example": "无",
           "member": "string",
           "name": "TicketDate",
           "required": true,
@@ -11286,6 +11291,7 @@
         {
           "default": "",
           "document": "发票号码",
+          "example": "无",
           "member": "string",
           "name": "TicketSn",
           "required": true,
@@ -11295,6 +11301,7 @@
         {
           "default": "",
           "document": "发票代码",
+          "example": "无",
           "member": "string",
           "name": "TicketCode",
           "required": true,
@@ -11304,6 +11311,7 @@
         {
           "default": "",
           "document": "检验码",
+          "example": "无",
           "member": "string",
           "name": "CheckCode",
           "required": true,
@@ -11313,6 +11321,7 @@
         {
           "default": "",
           "document": "含税金额(元)",
+          "example": "无",
           "member": "string",
           "name": "AmountWithTax",
           "required": true,
@@ -11322,6 +11331,7 @@
         {
           "default": "",
           "document": "不含税金额(元)",
+          "example": "无",
           "member": "string",
           "name": "AmountWithoutTax",
           "required": true,
@@ -11331,6 +11341,7 @@
         {
           "default": "",
           "document": "税额(元)",
+          "example": "无",
           "member": "string",
           "name": "TaxAmount",
           "required": true,
@@ -11340,6 +11351,7 @@
         {
           "default": "",
           "document": "是否被红冲",
+          "example": "无",
           "member": "int64",
           "name": "IsRedWashed",
           "required": true,
@@ -11349,11 +11361,22 @@
         {
           "default": "",
           "document": "pdf地址",
+          "example": "无",
           "member": "string",
           "name": "PdfUrl",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "png地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

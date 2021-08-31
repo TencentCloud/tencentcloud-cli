@@ -64,6 +64,14 @@
         "title": "删除ACL规则示例"
       }
     ],
+    "DeleteRouteTriggerTime": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteRouteTriggerTime\n&InstanceId='ckafka-xxx'\n&DelayTime='2020-08-21 11:15:54'\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91b6b112-7f0a-4e18-b353-5202bcafd2c2\"\n    }\n}",
+        "title": "修改路由触发时间"
+      }
+    ],
     "DeleteTopic": [
       {
         "document": "",
@@ -148,7 +156,7 @@
       {
         "document": "",
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstanceAttributes\n&InstanceId=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Tags\": [],\n            \"InstanceId\": \"instance-will-s\",\n            \"InstanceName\": \"treTest\",\n            \"VipList\": [\n                {\n                    \"Vip\": \"172.16.16.135\",\n                    \"Vport\": \"9092\"\n                }\n            ],\n            \"Vip\": \"172.16.16.135\",\n            \"Vport\": \"9092\",\n            \"Status\": 1,\n            \"Bandwidth\": 48000,\n            \"DiskSize\": 120000,\n            \"ZoneId\": 100003,\n            \"VpcId\": \"vpc-1qkosjcb\",\n            \"SubnetId\": \"subnet-lt4shnme\",\n            \"Healthy\": 1,\n            \"HealthyMessage\": \"连接数:0#磁盘使用百分比:0%#消费峰值带宽0MB/s\",\n            \"CreateTime\": \"1970-01-19 06:46:02\",\n            \"MsgRetentionTime\": 1440,\n            \"Config\": {\n                \"AutoCreateTopicsEnable\": true,\n                \"DefaultReplicationFactor\": 2\n            },\n            \"RemainderPartitions\": 45,\n            \"RemainderTopics\": 17,\n            \"CreatedPartitions\": 0,\n            \"CreatedTopics\": 0,\n            \"RetentionTimeConfig\": {\n                \"Enable\": 0,\n                \"DiskQuotaPercentage\": 90,\n                \"StepForwardPercentage\": 10,\n                \"BottomRetention\": 360\n            }\n        },\n        \"RequestId\": \"33a2224e-156d-4f23-9ffe-3c66d545c59c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"MsgRetentionTime\": 1440,\n            \"Version\": \"xx\",\n            \"Config\": {\n                \"DefaultNumPartitions\": 0,\n                \"AutoCreateTopicsEnable\": true,\n                \"DefaultReplicationFactor\": 2\n            },\n            \"Status\": 1,\n            \"CreatedTopics\": 0,\n            \"VpcId\": \"xx\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"InstanceId\": \"xx\",\n            \"Vip\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"InstanceType\": \"xx\",\n            \"RemainderTopics\": 17,\n            \"MaxConnection\": 1,\n            \"PublicNetwork\": 48000,\n            \"Healthy\": 1,\n            \"ZoneId\": 100003,\n            \"Cvm\": 0,\n            \"DiskSize\": 120000,\n            \"HealthyMessage\": \"xx\",\n            \"RemainderPartitions\": 45,\n            \"InstanceName\": \"xx\",\n            \"CreatedPartitions\": 0,\n            \"Features\": [\n                \"xx\"\n            ],\n            \"ZoneIds\": [\n                0\n            ],\n            \"ExpireTime\": 1,\n            \"Bandwidth\": 48000,\n            \"MaxGroupNum\": 0,\n            \"RetentionTimeConfig\": {\n                \"StepForwardPercentage\": 10,\n                \"DiskQuotaPercentage\": 90,\n                \"Enable\": 0,\n                \"BottomRetention\": 360\n            },\n            \"Vport\": \"xx\",\n            \"CreateTime\": 1,\n            \"VipList\": [\n                {\n                    \"Vip\": \"xx\",\n                    \"Vport\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取实例属性"
       }
     ],

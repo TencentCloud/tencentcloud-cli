@@ -600,6 +600,7 @@
         {
           "default": "",
           "document": "导出媒体归属，个人或团队。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -609,6 +610,7 @@
         {
           "default": "",
           "document": "导出的媒体名称，不得超过30个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -618,6 +620,7 @@
         {
           "default": "",
           "document": "导出的媒体信息，不得超过50个字符。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -626,7 +629,8 @@
         },
         {
           "default": "",
-          "document": "导出的媒体分类路径，长度不能超过15字符。",
+          "document": "导出的媒体分类路径，长度不能超过15字符。不存在默认创建。",
+          "example": "无",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -636,6 +640,7 @@
         {
           "default": "",
           "document": "导出的媒体标签，单个标签不得超过10个字符。",
+          "example": "无",
           "member": "string",
           "name": "TagSet",
           "required": false,
@@ -645,6 +650,7 @@
         {
           "default": "",
           "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
+          "example": "无",
           "member": "ThirdPartyPublishInfo",
           "name": "ThirdPartyPublishInfos",
           "required": false,

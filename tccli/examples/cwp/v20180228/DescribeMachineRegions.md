@@ -56,6 +56,15 @@ Output:
                 "RegionNameEn": "South China (Guangzhou)"
             }
         ],
+        "ALL": [
+            {
+                "Region": "ap-guangzhou",
+                "RegionName": "华南地区（广州）",
+                "RegionId": "1",
+                "RegionCode": "gz",
+                "RegionNameEn": "South China (Guangzhou)"
+            }
+        ],
         "RequestId": "3d4ffdf0-f350-c3ea-d09c-3f5313e044fd"
     }
 }

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cwp DeleteTags --cli-unfold-argument  \
-    --Ids 1 2
+    --Ids 1
 ```
 
 Output: 

@@ -20,6 +20,8 @@ Output:
         "AgentsBasic": 38,
         "AgentsProExpireWithInSevenDays": 1,
         "RiskMachine": 0,
+        "Shutdown": 0,
+        "Offline": 0,
         "RequestId": "cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4"
     }
 }

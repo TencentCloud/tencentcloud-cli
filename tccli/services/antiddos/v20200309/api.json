@@ -3963,6 +3963,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "8000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
