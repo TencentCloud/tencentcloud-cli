@@ -389,6 +389,7 @@
         {
           "default": "",
           "document": "应用名称",
+          "example": "simple_gme_application",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -397,6 +398,7 @@
         {
           "default": "",
           "document": "腾讯云项目ID，默认为0，表示默认项目",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -405,6 +407,7 @@
         {
           "default": "",
           "document": "需要支持的引擎列表，默认全选。",
+          "example": "无",
           "member": "string",
           "name": "EngineList",
           "required": false,
@@ -413,6 +416,7 @@
         {
           "default": "",
           "document": "服务区域列表，默认全选。",
+          "example": "无",
           "member": "string",
           "name": "RegionList",
           "required": false,
@@ -421,6 +425,7 @@
         {
           "default": "",
           "document": "实时语音服务配置数据",
+          "example": "无",
           "member": "RealtimeSpeechConf",
           "name": "RealtimeSpeechConf",
           "required": false,
@@ -429,6 +434,7 @@
         {
           "default": "",
           "document": "语音消息及转文本服务配置数据",
+          "example": "无",
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
           "required": false,
@@ -437,6 +443,7 @@
         {
           "default": "",
           "document": "语音分析服务配置数据",
+          "example": "无",
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
           "required": false,
@@ -445,6 +452,7 @@
         {
           "default": "",
           "document": "需要添加的标签列表",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -453,12 +461,13 @@
       ],
       "type": "object"
     },
-    "CreateAppResponse": {
+    "CreateAppResp": {
       "document": "CreateApp的输出参数",
       "members": [
         {
           "default": "",
           "document": "应用ID，由后台自动生成。",
+          "example": "123456",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -468,6 +477,7 @@
         {
           "default": "",
           "document": "应用名称，透传输入参数的AppName",
+          "example": "abcd",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -477,6 +487,7 @@
         {
           "default": "",
           "document": "项目ID，透传输入的ProjectId",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -486,6 +497,7 @@
         {
           "default": "",
           "document": "应用密钥，GME SDK初始化时使用",
+          "example": "sdsd",
           "member": "string",
           "name": "SecretKey",
           "required": true,
@@ -495,6 +507,7 @@
         {
           "default": "",
           "document": "服务创建时间戳",
+          "example": "123456",
           "member": "uint64",
           "name": "CreateTime",
           "required": true,
@@ -504,6 +517,7 @@
         {
           "default": "",
           "document": "实时语音服务配置数据",
+          "example": "{}",
           "member": "RealtimeSpeechConf",
           "name": "RealtimeSpeechConf",
           "required": true,
@@ -513,6 +527,7 @@
         {
           "default": "",
           "document": "语音消息及转文本服务配置数据",
+          "example": "{}",
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
           "required": true,
@@ -522,6 +537,7 @@
         {
           "default": "",
           "document": "语音分析服务配置数据",
+          "example": "{}",
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
           "required": true,
@@ -530,6 +546,27 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAppResponse": {
+      "document": "CreateApp返回参数结构体",
+      "members": [
+        {
+          "document": "创建应用返回数据",
+          "example": "无",
+          "member": "CreateAppResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAgeDetectTaskRequest": {
       "document": "DescribeAgeDetectTask请求参数结构体",
@@ -591,6 +628,7 @@
         {
           "default": "",
           "document": "GME应用ID",
+          "example": "140000001",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -599,6 +637,7 @@
         {
           "default": "",
           "document": "数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
+          "example": "2019-08-01",
           "member": "date",
           "name": "StartDate",
           "required": true,
@@ -607,6 +646,7 @@
         {
           "default": "",
           "document": "数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13",
+          "example": "2019-08-03",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -615,6 +655,7 @@
         {
           "default": "",
           "document": "要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter",
+          "example": "[\"RealTimeSpeech\\r\\n\",\"VoiceMessage\\r\\n\"]",
           "member": "string",
           "name": "Services",
           "required": true,
@@ -623,12 +664,13 @@
       ],
       "type": "object"
     },
-    "DescribeAppStatisticsResponse": {
+    "DescribeAppStatisticsResp": {
       "document": "获取应用用量统计数据输出参数",
       "members": [
         {
           "default": "",
           "document": "应用用量统计数据",
+          "example": "[]",
           "member": "AppStatisticsItem",
           "name": "AppStatistics",
           "required": true,
@@ -637,6 +679,27 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAppStatisticsResponse": {
+      "document": "DescribeAppStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "应用用量统计数据",
+          "example": "无",
+          "member": "DescribeAppStatisticsResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeApplicationDataRequest": {
       "document": "DescribeApplicationData请求参数结构体",
@@ -1108,6 +1171,7 @@
         {
           "default": "",
           "document": "应用ID，创建应用后由后台生成并返回。",
+          "example": "140000001",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1116,6 +1180,7 @@
         {
           "default": "",
           "document": "应用状态，取值：open/close",
+          "example": "close",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1124,12 +1189,13 @@
       ],
       "type": "object"
     },
-    "ModifyAppStatusResponse": {
+    "ModifyAppStatusResp": {
       "document": "ModifyAppStatus接口输出参数",
       "members": [
         {
           "default": "",
           "document": "GME应用ID",
+          "example": "123456",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1139,6 +1205,7 @@
         {
           "default": "",
           "document": "应用状态，取值：open/close",
+          "example": "open",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1147,6 +1214,27 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAppStatusResponse": {
+      "document": "ModifyAppStatus返回参数结构体",
+      "members": [
+        {
+          "document": "修改应用开关状态返回数据",
+          "example": "无",
+          "member": "ModifyAppStatusResp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyRoomInfoRequest": {
       "document": "ModifyRoomInfo请求参数结构体",

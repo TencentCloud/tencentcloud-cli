@@ -1647,7 +1647,7 @@ def doDescribeDownloadFile(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCloudBaseRunServerVersion(args, parsed_globals):
+def doDescribeEnvDealRegion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1672,11 +1672,11 @@ def doDescribeCloudBaseRunServerVersion(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCloudBaseRunServerVersionRequest()
+    model = models.DescribeEnvDealRegionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCloudBaseRunServerVersion(model)
+        rsp = client.DescribeEnvDealRegion(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2703,7 +2703,7 @@ def doDescribeCloudBaseRunVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCurveData(args, parsed_globals):
+def doDescribeCloudBaseRunServerVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2728,11 +2728,11 @@ def doDescribeCurveData(args, parsed_globals):
     client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCurveDataRequest()
+    model = models.DescribeCloudBaseRunServerVersionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCurveData(model)
+        rsp = client.DescribeCloudBaseRunServerVersion(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2943,6 +2943,54 @@ def doDestroyStaticStore(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCurveData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TcbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCurveDataRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeCurveData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribePostpayFreeQuotas(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3132,7 +3180,7 @@ ACTION_MAP = {
     "DescribeCloudBaseRunResourceForExtend": doDescribeCloudBaseRunResourceForExtend,
     "ModifyEndUser": doModifyEndUser,
     "DescribeDownloadFile": doDescribeDownloadFile,
-    "DescribeCloudBaseRunServerVersion": doDescribeCloudBaseRunServerVersion,
+    "DescribeEnvDealRegion": doDescribeEnvDealRegion,
     "DescribePostpayPackageFreeQuotas": doDescribePostpayPackageFreeQuotas,
     "EstablishCloudBaseRunServer": doEstablishCloudBaseRunServer,
     "ReplaceActivityRecord": doReplaceActivityRecord,
@@ -3154,11 +3202,12 @@ ACTION_MAP = {
     "DescribeAuthDomains": doDescribeAuthDomains,
     "DescribeEndUsers": doDescribeEndUsers,
     "DescribeCloudBaseRunVersion": doDescribeCloudBaseRunVersion,
-    "DescribeCurveData": doDescribeCurveData,
+    "DescribeCloudBaseRunServerVersion": doDescribeCloudBaseRunServerVersion,
     "ModifyDatabaseACL": doModifyDatabaseACL,
     "CommonServiceAPI": doCommonServiceAPI,
     "DescribeEnvLimit": doDescribeEnvLimit,
     "DestroyStaticStore": doDestroyStaticStore,
+    "DescribeCurveData": doDescribeCurveData,
     "DescribePostpayFreeQuotas": doDescribePostpayFreeQuotas,
     "DescribeEnvFreeQuota": doDescribeEnvFreeQuota,
     "DescribeEndUserLoginStatistic": doDescribeEndUserLoginStatistic,

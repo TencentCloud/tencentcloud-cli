@@ -20,6 +20,11 @@ Output:
         "InvocationSet": [
             {
                 "CommandId": "cmd-9dxzty3m",
+                "CommandContent": "cHdk",
+                "CommandType": "SHELL",
+                "Timeout": 60,
+                "InvocationSource": "USER",
+                "WorkingDirectory": "/root",
                 "InvocationId": "inv-q4zp60g0",
                 "InstanceKind": "CVM",
                 "InvocationStatus": "SUCCESS",

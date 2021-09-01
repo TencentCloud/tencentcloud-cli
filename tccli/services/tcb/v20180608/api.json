@@ -204,6 +204,12 @@
       "name": "获取终端用户列表",
       "output": "DescribeEndUsersResponse"
     },
+    "DescribeEnvDealRegion": {
+      "document": "获取环境下单地域",
+      "input": "DescribeEnvDealRegionRequest",
+      "name": "获取环境下单地域",
+      "output": "DescribeEnvDealRegionResponse"
+    },
     "DescribeEnvFreeQuota": {
       "document": "查询后付费免费配额信息",
       "input": "DescribeEnvFreeQuotaRequest",
@@ -5047,6 +5053,96 @@
           "member": "EndUserInfo",
           "name": "Users",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvDealRegionRequest": {
+      "document": "DescribeEnvDealRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "test-12323",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单类型：\nENV_PREPAY_MINIAPP= 预付费环境(微信小程序)\nENV_PREPAY_CLOUD= 预付费环境(腾讯云)\nENV_POSTPAY = 后付费环境\nHOSTING_PREPAY = 预付费静态托管\nPACKAGE=套餐包",
+          "example": "ENV_PREPAY",
+          "member": "string",
+          "name": "DealType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单类型：\nCREATE = 新购\nRENEW = 续费\nMODIFY = 套餐调整(升级/降级)\nREFUND = 退费",
+          "example": "RENEW",
+          "member": "string",
+          "name": "DealAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下单地域：\nap-guangzhou = 广州地域\nap-shanghai = 上海地域\nap-beijing = 北京地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "DealRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvDealRegionResponse": {
+      "document": "DescribeEnvDealRegion返回参数结构体",
+      "members": [
+        {
+          "document": "下单region",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下单zone",
+          "example": "ap-shanghai-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下单regionId",
+          "example": "4",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下单zoneId",
+          "example": "200001",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -474,6 +474,12 @@
       "name": "更新镜像不可变规则",
       "output": "ModifyImmutableTagRulesResponse"
     },
+    "ModifyInstance": {
+      "document": "更新实例信息",
+      "input": "ModifyInstanceRequest",
+      "name": "更新实例信息",
+      "output": "ModifyInstanceResponse"
+    },
     "ModifyInstanceToken": {
       "document": "更新实例内指定长期访问凭证的启用状态",
       "input": "ModifyInstanceTokenRequest",
@@ -5066,6 +5072,42 @@
     },
     "ModifyImmutableTagRulesResponse": {
       "document": "ModifyImmutableTagRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tcr-abc123",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例的规格",
+          "example": "premium",
+          "member": "string",
+          "name": "RegistryType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

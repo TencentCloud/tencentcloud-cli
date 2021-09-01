@@ -152,6 +152,14 @@
         "title": "批量查询分组信息"
       }
     ],
+    "DescribeIPCChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPCChannels\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99576636581320000278_99576636581320000278\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceList\": [\n            {\n                \"NickName\": \"Camera 01\",\n                \"DeviceId\": \"99576636581320000278_99576636581320000278\",\n                \"Status\": 0,\n                \"ExtraInformation\": \"{\\\"Manufacturer\\\":\\\"Hikvision\\\",\\\"Model\\\":\\\"IP Camera\\\"}\",\n                \"DeviceType\": 6,\n                \"IsRecord\": 0,\n                \"DeviceCode\": \"99576636581320000278\",\n                \"Recordable\": 1,\n                \"Protocol\": \"\"\n            },\n            {\n                \"NickName\": \"Camera 02\",\n                \"DeviceId\": \"99576636581320000278_99576636581320000279\",\n                \"Status\": 0,\n                \"ExtraInformation\": \"{\\\"Model\\\":\\\"IP Camera\\\",\\\"Manufacturer\\\":\\\"Hikvision\\\"}\",\n                \"DeviceType\": 6,\n                \"IsRecord\": 0,\n                \"DeviceCode\": \"99576636581320000279\",\n                \"Recordable\": 1,\n                \"Protocol\": \"\"\n            }\n        ],\n        \"RequestId\": \"20e4eb35-5429-4b25-8e4e-d7435518f194\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "获取设备下属通道"
+      }
+    ],
     "DescribeRecordStream": [
       {
         "document": "使用StartTime/EndTime",

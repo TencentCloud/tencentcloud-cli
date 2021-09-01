@@ -644,6 +644,14 @@
         "title": "更新规则"
       }
     ],
+    "ModifyInstance": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstance\n&RegistryId=tcr-abc123\n&RegistryType=premium\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "title": "更新实例信息"
+      }
+    ],
     "ModifyInstanceToken": [
       {
         "document": "",

@@ -979,6 +979,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64编码的命令内容",
+          "example": "cHdk",
+          "member": "string",
+          "name": "CommandContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令类型",
+          "example": "SHELL",
+          "member": "string",
+          "name": "CommandType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行命令过期时间， 单位秒",
+          "example": "60",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行命令的工作路径",
+          "example": "/root",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

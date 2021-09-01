@@ -15,7 +15,58 @@ tccli gme DescribeAppStatistics --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "AppStatistics": [
+                {
+                    "Date": "2019-08-01",
+                    "RealtimeSpeechStatisticsItem": {
+                        "MainLandDau": 10000,
+                        "MainLandPcu": 5000,
+                        "MainLandDuration": 1000000,
+                        "OverseaDau": 5000,
+                        "OverseaPcu": 2000,
+                        "OverseaDuration": 500000
+                    },
+                    "VoiceMessageStatisticsItem": {
+                        "Dau": 68000
+                    },
+                    "VoiceFilterStatisticsItem": null
+                },
+                {
+                    "Date": "2019-08-02",
+                    "RealtimeSpeechStatisticsItem": {
+                        "MainLandDau": 10000,
+                        "MainLandPcu": 5000,
+                        "MainLandDuration": 1000000,
+                        "OverseaDau": 5000,
+                        "OverseaPcu": 2000,
+                        "OverseaDuration": 500000
+                    },
+                    "VoiceMessageStatisticsItem": {
+                        "Dau": 68000
+                    },
+                    "VoiceFilterStatisticsItem": null
+                },
+                {
+                    "Date": "2019-08-03",
+                    "RealtimeSpeechStatisticsItem": {
+                        "MainLandDau": 10000,
+                        "MainLandPcu": 5000,
+                        "MainLandDuration": 1000000,
+                        "OverseaDau": 5000,
+                        "OverseaPcu": 2000,
+                        "OverseaDuration": 500000
+                    },
+                    "VoiceMessageStatisticsItem": {
+                        "Dau": 68000
+                    },
+                    "VoiceFilterStatisticsItem": null
+                }
+            ]
+        },
+        "RequestId": "9b993045-9fa1-47f4-9d25-79160f305be8"
+    }
 }
 ```
 

@@ -13,7 +13,13 @@ tccli gme ModifyAppStatus --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "BizId": 140000001,
+            "Status": "close"
+        },
+        "RequestId": "e2900289-f21e-43a8-a3bf-0b439cdbbbb8"
+    }
 }
 ```
 

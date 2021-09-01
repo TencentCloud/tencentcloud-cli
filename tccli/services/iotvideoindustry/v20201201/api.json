@@ -114,6 +114,12 @@
       "name": "批量查询分组信息",
       "output": "DescribeGroupsResponse"
     },
+    "DescribeIPCChannels": {
+      "document": "获取设备下属通道",
+      "input": "DescribeIPCChannelsRequest",
+      "name": "获取设备下属通道",
+      "output": "DescribeIPCChannelsResponse"
+    },
     "DescribeRecordStream": {
       "document": "获取回放视频流(NVR录制用)\nRecordId和StartTime/EndTime互斥\n当存在RecordId时，StartTime和EndTime无效\n当RecordId为空，StartTime和EndTime生效",
       "input": "DescribeRecordStreamRequest",
@@ -1362,6 +1368,78 @@
       ],
       "type": "object"
     },
+    "DescribeIPCChannelsRequest": {
+      "document": "DescribeIPCChannels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制，默认0",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备Id",
+          "example": "34020000001180000036_34020000001320000092",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道类型 \t4: 国标NVR通道 5:  国标VMS通道 6: 国标IPC通道",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "ChannelTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPCChannelsResponse": {
+      "document": "DescribeIPCChannels返回参数结构体",
+      "members": [
+        {
+          "document": "通道总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "通道详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupDeviceItem",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordStreamData": {
       "document": "DescribeRecordStreamData 复杂类型",
       "members": [
@@ -1746,24 +1824,6 @@
       "members": [
         {
           "default": "",
-          "document": "开始时间戳，秒级",
-          "example": "1616660711",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "结束时间戳，秒级",
-          "example": "1616661017",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "偏移",
           "example": "0",
           "member": "int64",
@@ -1782,10 +1842,100 @@
         },
         {
           "default": "",
+          "document": "开始时间戳，秒级",
+          "example": "1616660711",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，秒级",
+          "example": "1616661017",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "设备Id",
           "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始录制范围 开始",
+          "example": "1624204800",
+          "member": "int64",
+          "name": "StartRecordTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始录制范围 结束",
+          "example": "1624204800",
+          "member": "int64",
+          "name": "EndRecordTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过期时间范围 开始",
+          "example": "1624204800",
+          "member": "int64",
+          "name": "StartExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过期时间范围 结束",
+          "example": "1624204800",
+          "member": "int64",
+          "name": "EndExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件大小范围 开始 单位byte",
+          "example": "20",
+          "member": "int64",
+          "name": "StartFileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件大小范围 结束 单位byte",
+          "example": "50 ",
+          "member": "int64",
+          "name": "EndFileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写",
+          "example": "99",
+          "member": "int64",
+          "name": "IsRecording",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "通道ID默认必传",
+          "example": "99576636581320000310_99782261871320000002",
+          "member": "string",
+          "name": "ChannelId",
           "required": false,
           "type": "string"
         }

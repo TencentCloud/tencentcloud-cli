@@ -10,15 +10,9 @@
     ],
     "CreateApp": [
       {
-        "document": "最简单的创建一个GME应用",
-        "input": "https://gme.tencentcloudapi.com/?Action=CreateApp\r\n&AppName=simple_gme_application\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
-        "title": "使用默认配置创建一个GME应用"
-      },
-      {
         "document": "使用项目10000，开启实时语音服务，使用高音质；关闭离线语音服务； 开启语音过滤服务",
-        "input": "https://gme.tencentcloudapi.com/?Action=CreateApp\r\n&AppName=simple_gme_application\r\n&ProjectId=10000，\r\n&RealtimeSpeechConf.Status=open\r\n&RealtimeSpecchConf.Quality=high\r\n&VoiceMessageConf.Status=close\r\n&VoiceFilterConf.Status=open\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://gme.tencentcloudapi.com/?Action=CreateApp\n&AppName=simple_gme_application\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppName\": \"simple_gme_application\",\n            \"CreateTime\": 1568945078,\n            \"ProjectId\": 10000,\n            \"BizId\": 140000002,\n            \"SecretKey\": \"abcdefghijklmnop\",\n            \"RealtimeSpeechConf\": {\n                \"Status\": \"open\",\n                \"Quality\": \"high\"\n            },\n            \"VoiceMessageConf\": {\n                \"Status\": \"open\",\n                \"Language\": \"cnen\"\n            },\n            \"VoiceFilterConf\": {\n                \"Status\": \"open\"\n            }\n        },\n        \"RequestId\": \"d61be8ca-f010-11e9-af81-fa163ee00eb7\"\n    }\n}",
         "title": "使用自定义配置，创建一个GME应用"
       }
     ],
@@ -33,8 +27,8 @@
     "DescribeAppStatistics": [
       {
         "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAppStatistics\r\n&BizId=140000001\r\n&StartDate=2019-08-01\r\n&EndDate=2019-08-03\r\n&Services.0=RealTimeSpeech\r\n&Services.1=VoiceMessage\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAppStatistics\n&BizId=140000001\n&StartDate=2019-08-01\n&EndDate=2019-08-03\n&Services.0=RealTimeSpeech\n&Services.1=VoiceMessage\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppStatistics\": [\n                {\n                    \"Date\": \"2019-08-01\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                },\n                {\n                    \"Date\": \"2019-08-02\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                },\n                {\n                    \"Date\": \"2019-08-03\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                }\n            ]\n        },\n        \"RequestId\": \"9b993045-9fa1-47f4-9d25-79160f305be8\"\n    }\n}",
         "title": "查询实时语音和离线语音2019-08-01至2019-08-03的用量统计"
       }
     ],
@@ -89,8 +83,8 @@
     "ModifyAppStatus": [
       {
         "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=ModifyAppStatus\r\n&BizId=140000001\r\n&Status=close\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://gme.tencentcloudapi.com/?Action=ModifyAppStatus\n&BizId=140000001\n&Status=close\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BizId\": 140000001,\n            \"Status\": \"close\"\n        },\n        \"RequestId\": \"e2900289-f21e-43a8-a3bf-0b439cdbbbb8\"\n    }\n}",
         "title": "关闭GME应用140000001"
       }
     ],
