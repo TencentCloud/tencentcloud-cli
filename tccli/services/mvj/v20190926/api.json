@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "MarketingValueJudgement": {
+      "document": "欢迎使用营销价值判断（Marketing Value Judgement，简称 MVJ）。\n\n营销价值判断（MVJ）是针对零售场景的风控服务，通过识别高价值顾客，以帮助零售商保障营销资金",
+      "input": "MarketingValueJudgementRequest",
+      "name": "营销价值判断",
+      "output": "MarketingValueJudgementResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-26",
+    "serviceNameCN": "营销价值判断",
+    "serviceShortName": "mvj"
+  },
+  "objects": {
+    "Data": {
+      "document": "返回结构",
+      "members": [
+        {
+          "default": "",
+          "document": "操作时间戳，单位秒",
+          "member": "uint64",
+          "name": "PostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID \naccountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作来源的外网IP",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0~100：营销价值评分，分值越高，价值越大\n[0,50]低价值\n[50,70]价值一般\n[70,100]高价值",
+          "member": "uint64",
+          "name": "ValueScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MarketingValueJudgementRequest": {
+      "document": "MarketingValueJudgement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机账号类型填写4",
+          "member": "uint64",
+          "name": "AccountType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "填写手机号码，如15317537488",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户请求时的客户端外网IP",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户操作时间戳，单位秒（格林威治时间精确到秒，如1501590972）",
+          "member": "uint64",
+          "name": "PostTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户设备号imei/idfa(建议填写)",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动链接(建议填写)",
+          "member": "string",
+          "name": "Referer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MarketingValueJudgementResponse": {
+      "document": "MarketingValueJudgement返回参数结构体",
+      "members": [
+        {
+          "document": "返回数据",
+          "member": "Data",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

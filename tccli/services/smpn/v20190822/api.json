@@ -1,0 +1,461 @@
+{
+  "actions": {
+    "CreateSmpnEpa": {
+      "document": "企业号码认证",
+      "input": "CreateSmpnEpaRequest",
+      "name": "企业号码认证",
+      "output": "CreateSmpnEpaResponse"
+    },
+    "DescribeSmpnChp": {
+      "document": "查询号码的标记和标记次数",
+      "input": "DescribeSmpnChpRequest",
+      "name": "终端骚扰保护",
+      "output": "DescribeSmpnChpResponse"
+    },
+    "DescribeSmpnFnr": {
+      "document": "虚假号码识别",
+      "input": "DescribeSmpnFnrRequest",
+      "name": "虚假号码识别",
+      "output": "DescribeSmpnFnrResponse"
+    },
+    "DescribeSmpnMhm": {
+      "document": "号码营销监控",
+      "input": "DescribeSmpnMhmRequest",
+      "name": "号码营销监控",
+      "output": "DescribeSmpnMhmResponse"
+    },
+    "DescribeSmpnMrl": {
+      "document": "查询号码恶意标记等级",
+      "input": "DescribeSmpnMrlRequest",
+      "name": "恶意标记等级",
+      "output": "DescribeSmpnMrlResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-08-22",
+    "api_brief": "介绍如何使用API对营销号码安全进行操作，包括企业认证、终端骚扰保护、虚假号码识别等。",
+    "serviceNameCN": "营销号码安全",
+    "serviceShortName": "smpn"
+  },
+  "objects": {
+    "CHPRequest": {
+      "document": "终端骚扰保护请求内容",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CHPResponse": {
+      "document": "终端骚扰保护",
+      "members": [
+        {
+          "default": "",
+          "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
+          "member": "int64",
+          "name": "TagType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标记次数",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateSmpnEpaRequest": {
+      "document": "CreateSmpnEpa请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业号码认证请求内容",
+          "member": "EPARequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于计费的资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSmpnEpaResponse": {
+      "document": "CreateSmpnEpa返回参数结构体",
+      "members": [
+        {
+          "document": "业号码认证回应内容",
+          "member": "EPAResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnChpRequest": {
+      "document": "DescribeSmpnChp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户用于计费的资源Id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端骚扰保护请求",
+          "member": "CHPRequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnChpResponse": {
+      "document": "DescribeSmpnChp返回参数结构体",
+      "members": [
+        {
+          "document": "终端骚扰保护回应",
+          "member": "CHPResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnFnrRequest": {
+      "document": "DescribeSmpnFnr请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "虚假号码识别请求内容",
+          "member": "FNRRequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于计费的资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnFnrResponse": {
+      "document": "DescribeSmpnFnr返回参数结构体",
+      "members": [
+        {
+          "document": "虚假号码识别回应内容",
+          "member": "FNRResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnMhmRequest": {
+      "document": "DescribeSmpnMhm请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "号码营销监控请求内容",
+          "member": "MHMRequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于计费的资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnMhmResponse": {
+      "document": "DescribeSmpnMhm返回参数结构体",
+      "members": [
+        {
+          "document": "号码营销监控回应内容",
+          "member": "MHMResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnMrlRequest": {
+      "document": "DescribeSmpnMrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意标记等级请求内容",
+          "member": "MRLRequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于计费的资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmpnMrlResponse": {
+      "document": "DescribeSmpnMrl返回参数结构体",
+      "members": [
+        {
+          "document": "恶意标记等级回应内容",
+          "member": "MRLResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EPARequest": {
+      "document": "企业号码认证请求",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黄页名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EPAResponse": {
+      "document": "企业号码认证回应",
+      "members": [
+        {
+          "default": "",
+          "document": "0成功 其他失败",
+          "member": "int64",
+          "name": "RetCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FNRRequest": {
+      "document": "虚假号码识别请求",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FNRResponse": {
+      "document": "虚假号码识别回应",
+      "members": [
+        {
+          "default": "",
+          "document": "虚假号码描述",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MHMRequest": {
+      "document": "号码营销监控请求",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MHMResponse": {
+      "document": "号码营销监控回应",
+      "members": [
+        {
+          "default": "",
+          "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
+          "member": "int64",
+          "name": "TagType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标记次数",
+          "member": "int64",
+          "name": "TagCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MRLRequest": {
+      "document": "号码恶意标记等级请求",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MRLResponse": {
+      "document": "号码恶意标记等级",
+      "members": [
+        {
+          "default": "",
+          "document": "骚扰电话恶意标记等级",
+          "member": "int64",
+          "name": "DisturbLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房产中介恶意标记等级",
+          "member": "int64",
+          "name": "HouseAgentLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保险理财恶意标记等级",
+          "member": "int64",
+          "name": "InsuranceLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广告推销恶意标记等级",
+          "member": "int64",
+          "name": "SalesLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诈骗电话恶意标记等级",
+          "member": "int64",
+          "name": "CheatLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

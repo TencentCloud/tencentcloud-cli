@@ -1,0 +1,77 @@
+{
+  "actions": {
+    "AddFairPlayPem": [
+      {
+        "document": "",
+        "input": "https://drm.tencentcloudapi.com/?Action=AddFairPlayPem\r\n&Pem=ENEcI2pZnZPi/x+wZNXaNDyfdw/hMoTpYDSNuaGV0gw1NhEE2zMMDdPhFcE0EbRx6sBKcTNfqTSa/M7cB6RAWcv0Ic/96UBSMjzIKvvViMUnozEoce3ySm6pS/KHxa32Xtmd/3aKxYgeHl1MIG03CdGIotV6rXo/V727gXTVQcg=&Ask=ISS0DkPgq41Q7ca7/QWEUlAkrsCsRsxrN2y0R8kJN4jIepYnaflfNXiIsb/iR0Rrg24DofcKJx2Y5NgYUMVaxPtVyiTR5mtoo5HB9cvEyEgje9tKMlP1WyBoKRMFlYy32jqTZZeUW1uLpXdLhn2yyPOfw9s0XlsdKVKs5Hsxqnc=\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"FairPlayPemId\": 1234,\n        \"Priority\": 2\n    }\n}",
+        "title": "设置Fairplay方案所需的私钥、ASK"
+      }
+    ],
+    "CreateEncryptKeys": [
+      {
+        "document": "设置加密密钥",
+        "input": "https://drm.tencentcloudapi.com/?Action=CreateEncryptKeys\r\n&DrmType=FAIRPLAY\r\n&ContentType=LiveVideo\r\n&ContentId=set_example\r\n&Keys.0.Track=HD\r\n&Keys.0.KeyId=12345678901234567890123456789015\r\n&Keys.0.Key=dlAuJ6EKsKVMKS/atJpxRUEwBjdDHSmDcRk/fDk+5PdaLQq7Bq9a8d5XitcoYWYZ9ukzzhYT0oTqhTbFUfboKEL7iAhJ7SvWgVMwAlPgcV+ZgA2/AH8Xvj8Y+iOb3sN+oy3thGGW71+GxAFNXG46HB0MWWvA15KBTfA+f42eVcs=\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateLicense": [
+      {
+        "document": "开发者使用该接口生成使用Fairplay方案的加密内容的播放许可证。",
+        "input": "https://drm.tencentcloudapi.com/?Action=CreateLicense\r\n&DrmType=FAIRPLAY\r\n&LicenseRequest=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\r\n&ContentType=LiveVideo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ContentId\": \"twelve\",\n        \"License\": \"AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAD7KZa2/J7Gz2f/tq584d8AQx6DemMJ5eHhfByaM8JupQHW7jkL8xOGXPzqzG2qsMV4i3e/LYQbJAavAKFN8qJnGLJjFfWIcbRVW8WPtwwgHPauRdU52H+r7fmup3TQP3oYYnOTYrQNhJI7Cu/VJqpfBRqBFl3kZvey9gVDoicp34/OwQVEXgWo+IiFc+R9a6ypQAzfZFQVkeVIQQcXTJso1R5rr0V1uv6Ygh7Z3RZDMpW0883z85C0auNkYp6VPPjIKKUHzkYsOXEcv1HEMp/Zow6VaAcKfqL0A/yIxvF1bzjNW24caxU8GuM1VLBCxE4yLtC2j8oKBWQaSv/zi1fsKca7hrF+RjPAo4euuleFWIbHezXfBdanAsfYPIav8uxkmppKpjA0sRQzx094CnXiAXaJDTbJun2fsZ+DzNlTZw21bVKybHIXzOKja/hgqxGaw5A7cuHG/UZG0VTbsujmWfbSWyWecMazvH3w5yNI+YXScFlcyuu5Zci3k6CgnEj3Le6/3LSjUSbRI+2SRjlMBUMJHb9+IKzUfgleZqwPqgJtPjRD1gK5Fifr4j1rO0hGNhQDjj23ax7xw7t2iXkyBFzL45pvq945jNZvtJQaiUofDeIlW/ubRyt5kfc1wl6+1xFyXXZ1eaPUXa1VcF4F5KNIF7THN68G82/0hmBf3yDjmgUhtbfPsNxxY44qIJSmxgZyz7+DScA2LP5qztSr/jNfU5UImzeLtpHq/HEqm6f+GwiWJMTKheLKP4CnNf1ITixhaIQSLXSDZkTP7tGc28nbDYQRlzRImv9vkwCHQujrf1zb0naLXhsKHSXc0/HBz2GvOMQ/0zztadRXc6cC4ds6XPtYJ4/+7lUGn4grjq0IbHxbzMITMaqHQq7V5xWp5AV+5OanopHdwKplheLSuaHavd2IF5OUzyYnWMws/XRW/rEPvqPDevgz2zO4azbh2oRn4GT0hdzRr16yifeRCOXv0/Z6ucnoF9D2A3qJjAeTH4/GV4VbfMVpaM2425A==\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteFairPlayPem": [
+      {
+        "document": "",
+        "input": "https://drm.tencentcloudapi.com/?Action=DeleteFairPlayPem\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除fairplay 方案私钥、ask"
+      }
+    ],
+    "DescribeAllKeys": [
+      {
+        "document": "请求Fairplay方案使用的加密密钥",
+        "input": "https://drm.tencentcloudapi.com/?Action=DescribeAllKeys\r\n&DrmType=FAIRPLAY\r\n&PublicKey=LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDcmJBUmhXamRTZjlWTGtpZGZGdHhkbzJjUwpOak9PTExhdjdaRWZZSzJtd2NZQ3BqRmtDaG41bi8xcHM2LzcwZjlBRUs1Mmt5T0lSVTVzR0hqcjZEMEgrUUFzCndJZnBya1NzV0krSS9hTGYrM2l0b0tIb0Y5eWRTMEhneHdEcUM0dWRTRFFzRmxKczFTNHZEdm5WbG1IRGNJSkIKdDBLTzZoSVJ4Z2F3bmVxUHN3SURBUUFCCi0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=\r\n&ContentType=LiveVideo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Keys\": [\n            {\n                \"Track\": \"VIDEO\",\n                \"KeyId\": \"0c366a3173584fb693be0218c27d4532\",\n                \"Key\": \"7CiNq5Q+fYTBAIySw/gglnNNeBmw6uQ76erIvD3IQj0=\",\n                \"Iv\": \"tHUB8M/yvRcHswxRm74hb/ej+q4amjEg0/m8F82ezbg=\"\n            },\n            {\n                \"Track\": \"AUDIO\",\n                \"KeyId\": \"0c366a3173584fb693be0218c27d4532\",\n                \"Key\": \"7CiNq5Q+fYTBAIySw/gglnNNeBmw6uQ76erIvD3IQj0=\",\n                \"Iv\": \"tHUB8M/yvRcHswxRm74hb/ej+q4amjEg0/m8F82ezbg=\"\n            }\n        ],\n        \"SessionKey\": \"l2XuCkQx288LFBlbDeKuQ1tfW5LOC2mbRfcAvhD8byFmIq8sqTQ+KA/UMrJyk1lImqgodiOuv+fmVTNbb06IY9vILtBDaN3Ek5/x2c0HUJ3k+kL4gMxOvKmAe/F0+qr0Kbl9CVx6YRntXWcWqD+IJ18D76+tQD1aBP8tS5pwV6Q=\",\n        \"ContentId\": \"test\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeFairPlayPem": [
+      {
+        "document": "",
+        "input": "https://drm.tencentcloudapi.com/?Action=DescribeFairPlayPem\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"FairPlayPems\": []\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeKeys": [
+      {
+        "document": "请求Fairplay方案使用的加密密钥",
+        "input": "https://drm.tencentcloudapi.com/?Action=DescribeKeys\r\n&DrmType=FAIRPLAY\r\n&Tracks.0=VIDEO\r\n&Tracks.1=AUDIO\r\n&PublicKey=LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDcmJBUmhXamRTZjlWTGtpZGZGdHhkbzJjUwpOak9PTExhdjdaRWZZSzJtd2NZQ3BqRmtDaG41bi8xcHM2LzcwZjlBRUs1Mmt5T0lSVTVzR0hqcjZEMEgrUUFzCndJZnBya1NzV0krSS9hTGYrM2l0b0tIb0Y5eWRTMEhneHdEcUM0dWRTRFFzRmxKczFTNHZEdm5WbG1IRGNJSkIKdDBLTzZoSVJ4Z2F3bmVxUHN3SURBUUFCCi0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=\r\n&ContentType=LiveVideo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Keys\": [\n            {\n                \"Track\": \"VIDEO\",\n                \"KeyId\": \"0c366a3173584fb693be0218c27d4532\",\n                \"Key\": \"7CiNq5Q+fYTBAIySw/gglnNNeBmw6uQ76erIvD3IQj0=\",\n                \"Iv\": \"tHUB8M/yvRcHswxRm74hb/ej+q4amjEg0/m8F82ezbg=\"\n            },\n            {\n                \"Track\": \"AUDIO\",\n                \"KeyId\": \"0c366a3173584fb693be0218c27d4532\",\n                \"Key\": \"7CiNq5Q+fYTBAIySw/gglnNNeBmw6uQ76erIvD3IQj0=\",\n                \"Iv\": \"tHUB8M/yvRcHswxRm74hb/ej+q4amjEg0/m8F82ezbg=\"\n            }\n        ],\n        \"SessionKey\": \"l2XuCkQx288LFBlbDeKuQ1tfW5LOC2mbRfcAvhD8byFmIq8sqTQ+KA/UMrJyk1lImqgodiOuv+fmVTNbb06IY9vILtBDaN3Ek5/x2c0HUJ3k+kL4gMxOvKmAe/F0+qr0Kbl9CVx6YRntXWcWqD+IJ18D76+tQD1aBP8tS5pwV6Q=\",\n        \"ContentId\": \"test\",\n        \"Pssh\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyFairPlayPem": [
+      {
+        "document": "",
+        "input": "https://drm.tencentcloudapi.com/?Action=ModifyFairPlayPem\r\n&Pem=ENEcI2pZnZPi/x+wZNXaNDyfdw/hMoTpYDSNuaGV0gw1NhEE2zMMDdPhFcE0EbRx6sBKcTNfqTSa/M7cB6RAWcv0Ic/96UBSMjzIKvvViMUnozEoce3ySm6pS/KHxa32Xtmd/3aKxYgeHl1MIG03CdGIotV6rXo/V727gXTVQcg=&Ask=ISS0DkPgq41Q7ca7/QWEUlAkrsCsRsxrN2y0R8kJN4jIepYnaflfNXiIsb/iR0Rrg24DofcKJx2Y5NgYUMVaxPtVyiTR5mtoo5HB9cvEyEgje9tKMlP1WyBoKRMFlYy32jqTZZeUW1uLpXdLhn2yyPOfw9s0XlsdKVKs5Hsxqnc=\r\n&FairPlayPemId=16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"FairPlayPemId\": 1234,\n        \"Priority\": 2\n    }\n}",
+        "title": "设置Fairplay方案所需的私钥、ASK"
+      }
+    ],
+    "StartEncryption": [
+      {
+        "document": "演示启动一次fairplay方案的加密",
+        "input": "https://drm.tencentcloudapi.com/?Action=StartEncryption\n&CosEndPoint=cos.ap-hongkong.myqcloud.com\n&CosSecretId=your secretID\n&CosSecretKey=your secret key\n&DrmType=FAIRPLAY\n&SourceObject.BucketName=drm-unencrypt-1234567\n&SourceObject.ObjectName=in.mp4\n&OutputObjects.0.BucketName=drm-encrypt-1234567\n&OutputObjects.0.ObjectName=out.m3u8\n&OutputObjects.0.Para.Type=m3u8\n&OutputObjects.1.BucketName=drm-encrypt-1234567\n&OutputObjects.1.ObjectName=out.ts\n&OutputObjects.1.Para.Type=audio\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

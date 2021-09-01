@@ -1,0 +1,202 @@
+{
+  "actions": {
+    "SendCodeVoice": {
+      "document": "给用户发语音验证码（仅支持数字）。",
+      "input": "SendCodeVoiceRequest",
+      "name": "发送语音验证码",
+      "output": "SendCodeVoiceResponse"
+    },
+    "SendTtsVoice": {
+      "document": "给用户发送指定模板的语音通知。",
+      "input": "SendTtsVoiceRequest",
+      "name": "指定模板发送语音通知",
+      "output": "SendTtsVoiceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-09-02",
+    "api_brief": "介绍如何使用API对语音消息进行操作，包括管理语音消息应用、标签等。",
+    "serviceNameCN": "语音消息",
+    "serviceShortName": "vms"
+  },
+  "objects": {
+    "SendCodeVoiceRequest": {
+      "document": "SendCodeVoice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码，仅支持填写数字，实际播报语音时，会自动在数字前补充语音文本\"您的验证码是\"。",
+          "example": "1234",
+          "member": "string",
+          "name": "CodeMessage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被叫手机号码，采用 e.164 标准，格式为+[国家或地区码][用户号码]。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "+8613788888888",
+          "member": "string",
+          "name": "CalledNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在[语音控制台](https://console.cloud.tencent.com/vms)添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006666",
+          "member": "string",
+          "name": "VoiceSdkAppid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "播放次数，可选，最多3次，默认2次。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PlayTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户的 session 内容，腾讯 server 回包中会原样返回。",
+          "example": "test",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendCodeVoiceResponse": {
+      "document": "SendCodeVoice返回参数结构体",
+      "members": [
+        {
+          "document": "语音验证码发送状态。",
+          "example": "无",
+          "member": "SendStatus",
+          "name": "SendStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendStatus": {
+      "document": "语音验证码发送状态",
+      "members": [
+        {
+          "default": "",
+          "document": "标识本次发送 ID，标识一次下发记录。",
+          "member": "string",
+          "name": "CallId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户的 session 内容，腾讯 server 回包中会原样返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionContext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SendTtsVoiceRequest": {
+      "document": "SendTtsVoice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板 ID，在控制台审核通过的模板 ID。",
+          "example": "4356",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被叫手机号码，采用 e.164 标准，格式为+[国家或地区码][用户号码]。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "+8613788888888",
+          "member": "string",
+          "name": "CalledNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在[语音控制台](https://console.cloud.tencent.com/vms)添加应用后生成的实际SdkAppid，示例如1400006666。",
+          "example": "1400006666",
+          "member": "string",
+          "name": "VoiceSdkAppid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板参数，若模板没有参数，请提供为空数组。\n注：语音消息的内容长度不超过350字。",
+          "example": "[\"7652\"]",
+          "member": "string",
+          "name": "TemplateParamSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "播放次数，可选，最多3次，默认2次。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PlayTimes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户的 session 内容，腾讯 server 回包中会原样返回。",
+          "example": "test",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendTtsVoiceResponse": {
+      "document": "SendTtsVoice返回参数结构体",
+      "members": [
+        {
+          "document": "语音通知发送状态。",
+          "example": "无",
+          "member": "SendStatus",
+          "name": "SendStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

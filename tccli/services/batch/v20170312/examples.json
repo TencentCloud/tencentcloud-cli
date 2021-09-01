@@ -1,0 +1,259 @@
+{
+  "actions": {
+    "AttachInstances": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=AttachInstances\r\n&EnvId=env-nuydksjj\r\n&Instances.0.InstanceId=ins-dus5t7tu\r\n&Instances.0.ImageId=img-8toqc6s3\r\n&Instances.0.LoginSettings.Password=xxxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a402b86a-5b45-4edf-b64c-d233c2984fbd\"\n    }\n}",
+        "title": "添加实例到计算环境"
+      }
+    ],
+    "CreateComputeEnv": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=CreateComputeEnv\n&Placement.Zone=ap-guangzhou-2\n&ComputeEnv.EnvName=test compute env\n&ComputeEnv.EnvDescription=test compute env\n&ComputeEnv.EnvType=MANAGED\n&ComputeEnv.EnvData.InstanceType=S1.SMALL2\n&ComputeEnv.EnvData.ImageId=img-bd78fy2t\n&ComputeEnv.DesiredComputeNodeCount=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-3dhmblr3\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "创建计算环境"
+      }
+    ],
+    "CreateCpmComputeEnv": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=CreateCpmComputeEnv\n&ComputeEnv.EnvName=cpm-env-win\n&ComputeEnv.EnvData.Zones.0=ap-chongqing-bls-1\n&ComputeEnv.EnvData.InstanceTypes.0=PI100v2\n&ComputeEnv.EnvData.TimeUnit=m\n&ComputeEnv.EnvData.TimeSpan=1\n&ComputeEnv.EnvData.RaidId=3\n&ComputeEnv.EnvData.OsTypeId=125\n&ComputeEnv.EnvData.VirtualPrivateClouds.0.VpcId=vpc-33em4y15\n&ComputeEnv.EnvData.VirtualPrivateClouds.0.SubnetId=subnet-6x83jiie\n&ComputeEnv.EnvData.SysRootSpace=100\n&ComputeEnv.EnvData.SysDataSpace=50\n&ComputeEnv.EnvData.EipPayMode=flow\n&ComputeEnv.EnvData.EipBandwidth=0\n&ComputeEnv.EnvData.ApplyEip=0\n&ComputeEnv.EnvData.HyperThreading=1\n&ComputeEnv.EnvData.AutoRenewFlag=0\n&ComputeEnv.DesiredComputeNodeCount=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-89kunmev\",\n        \"RequestId\": \"c30340b4-a9a7-4204-98f6-725da4bcc117\"\n    }\n}",
+        "title": "创建黑石计算环境"
+      }
+    ],
+    "CreateTaskTemplate": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=CreateTaskTemplate\n&TaskTemplateName=A\n&TaskTemplateDescription=test\n&TaskTemplateInfo.TaskName=A\n&TaskTemplateInfo.TaskInstanceNum=1\n&TaskTemplateInfo.Application.DeliveryForm=LOCAL\n&TaskTemplateInfo.Application.Command=python-c\"fib=lambdan:1ifn<=2elsefib(n-1)+fib(n-2);print(fib(20))\"\n&TaskTemplateInfo.ComputeEnv.EnvType=MANAGED\n&TaskTemplateInfo.ComputeEnv.EnvData.InstanceType=S1.SMALL1\n&TaskTemplateInfo.ComputeEnv.EnvData.ImageId=img-bd78fy2t\n&TaskTemplateInfo.RedirectInfo.StdoutRedirectPath=cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\n&TaskTemplateInfo.RedirectInfo.StderrRedirectPath=cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskTemplateId\": \"task-tmpl-7vtx96n2\",\n        \"RequestId\": \"83cd875b-7ac0-4e5b-b150-0e69c59e5e52\"\n    }\n}",
+        "title": "创建任务模板"
+      }
+    ],
+    "DeleteComputeEnv": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteComputeEnv\r\n&EnvId=env-3dhmblr3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b71050a-55c1-4f3b-bf66-5e4f8510a5a0\"\n    }\n}",
+        "title": "删除计算环境"
+      }
+    ],
+    "DeleteJob": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteJob\n&JobId=job-f5da1edl\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ffc9347-a47a-43a6-a64a-aa77fda7ea13\"\n    }\n}",
+        "title": "删除作业"
+      }
+    ],
+    "DeleteTaskTemplates": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DeleteTaskTemplates\r\n&TaskTemplateIds.0=task-tmpl-7vtx96n2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b68e632-c0eb-4e85-b9ef-a152aa3cc073\"\n    }\n}",
+        "title": "删除任务模板"
+      }
+    ],
+    "DescribeAvailableCvmInstanceTypes": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeAvailableCvmInstanceTypes\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-3\r\n&Filters.1.Name=instance-family\r\n&Filters.1.Values.0=GN2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigSet\": [\n            {\n                \"Mem\": 56,\n                \"Cpu\": 28,\n                \"InstanceType\": \"GN2.7XLARGE56\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"GN2\"\n            },\n            {\n                \"Mem\": 112,\n                \"Cpu\": 56,\n                \"InstanceType\": \"GN2.14XLARGE112\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceFamily\": \"GN2\"\n            }\n        ],\n        \"RequestId\": \"59f5b671-c492-4536-bbed-e5fbf78619dd\"\n    }\n}",
+        "title": "查询广州三区 GN2 系列机型"
+      }
+    ],
+    "DescribeComputeEnv": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnv\n&EnvId=env-lcpcej85\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-lcpcej85\",\n        \"ComputeNodeMetrics\": {\n            \"CreatedCount\": 0,\n            \"DeletingCount\": 0,\n            \"CreationFailedCount\": 0,\n            \"SubmittedCount\": 0,\n            \"CreatingCount\": 0,\n            \"AbnormalCount\": 1,\n            \"RunningCount\": 1\n        },\n        \"ResourceType\": \"CVM\",\n        \"EnvType\": \"MANAGED\",\n        \"CreateTime\": \"2018-03-08T11:48:43Z\",\n        \"EnvName\": \"test compute env\",\n        \"Placement\": {\n            \"Zone\": \"ap-guangzhou-2\"\n        },\n        \"ComputeNodeSet\": [\n            {\n                \"ComputeNodeId\": \"node-noa8vefu\",\n                \"ComputeNodeState\": \"ABNORMAL\",\n                \"Mem\": 2,\n                \"ResourceCreatedTime\": \"2018-03-08T11:49:17Z\",\n                \"ResourceType\": \"CVM\",\n                \"ResourceOrigin\": \"BATCH_CREATED\",\n                \"ComputeNodeInstanceId\": \"ins-0kj3gz6s\",\n                \"AgentVersion\": \"1.1.9\",\n                \"TaskInstanceNumAvailable\": 1,\n                \"Cpu\": 1\n            },\n            {\n                \"ComputeNodeId\": \"node-9yzd5jei\",\n                \"ComputeNodeState\": \"RUNNING\",\n                \"Mem\": 2,\n                \"ResourceCreatedTime\": \"2018-03-09T13:15:44Z\",\n                \"ResourceType\": \"CVM\",\n                \"ResourceOrigin\": \"BATCH_CREATED\",\n                \"ComputeNodeInstanceId\": \"ins-jyafz2sk\",\n                \"AgentVersion\": \"1.1.9\",\n                \"TaskInstanceNumAvailable\": 1,\n                \"Cpu\": 1\n            }\n        ],\n        \"DesiredComputeNodeCount\": 2,\n        \"AttachedComputeNodeCount\": 0,\n        \"Tags\": [\n            {\n                \"Key\": \"batch-test-tag-env-key\",\n                \"Value\": \"batch-test-tag-env-value1\"\n            }\n        ],\n        \"RequestId\": \"274cbd4f-77d2-4bf6-9984-643318ed3ef8\"\n    }\n}",
+        "title": "查看计算环境详细信息"
+      }
+    ],
+    "DescribeComputeEnvActivities": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvActivities\r\n&EnvId=env-lcpcej85\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ActivitySet\": [\n            {\n                \"ComputeNodeId\": \"node-9yzd5jei\",\n                \"EnvId\": \"env-lcpcej85\",\n                \"ActivityState\": \"SUCCEED\",\n                \"ActivityId\": \"act-83xvnt5p\",\n                \"StartTime\": \"2018-03-09T13:14:34Z\",\n                \"StateReason\": \"\",\n                \"EndTime\": \"2018-03-09T13:15:44Z\",\n                \"Cause\": \"ModifyComputeEnv: increase the capacity from 1 to 2\",\n                \"ComputeNodeActivityType\": \"CREATE_COMPUTE_NODE\"\n            },\n            {\n                \"ComputeNodeId\": \"node-noa8vefu\",\n                \"EnvId\": \"env-lcpcej85\",\n                \"ActivityState\": \"SUCCEED\",\n                \"ActivityId\": \"act-ezle9e7v\",\n                \"StartTime\": \"2018-03-08T11:48:43Z\",\n                \"StateReason\": \"\",\n                \"EndTime\": \"2018-03-08T11:49:17Z\",\n                \"Cause\": \"CreateComputeEnv: the capacity is 1\",\n                \"ComputeNodeActivityType\": \"CREATE_COMPUTE_NODE\"\n            }\n        ],\n        \"RequestId\": \"ecfeec77-6ec1-4daf-8730-1dd00c742252\"\n    }\n}",
+        "title": "查询计算环境的活动列表"
+      }
+    ],
+    "DescribeComputeEnvCreateInfo": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvCreateInfo\n&EnvId=env-lcpcej85\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-qleawxzt\",\n        \"EnvType\": \"MANAGED\",\n        \"DesiredComputeNodeCount\": 2,\n        \"EnvName\": \"test compute env\",\n        \"EnvDescription\": \"test compute env\",\n        \"InputMappings\": [\n            {\n                \"SourcePath\": \"cos://bucket-appid.cos.ap-hongkong.myqcloud.com/\",\n                \"DestinationPath\": \"/mnt/disk/\"\n            },\n            {\n                \"SourcePath\": \"cos://bucket-appid.cos.ap-hongkong.myqcloud.com/test/\",\n                \"DestinationPath\": \"/mnt/input/\"\n            }\n        ],\n        \"Notifications\": [\n            {\n                \"TopicName\": \"topic name\",\n                \"EventConfigs\": [\n                    {\n                        \"EventName\": \"ComputeEnvCreated\",\n                        \"EventVars\": [\n                            {\n                                \"Name\": \"name1\",\n                                \"Value\": \"value1\"\n                            },\n                            {\n                                \"Name\": \"name2\",\n                                \"Value\": \"value2\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"EnvData\": {\n            \"VirtualPrivateCloud\": {\n                \"SubnetId\": \"subnet-8axej2jc\",\n                \"VpcId\": \"vpc-cg18la4l\"\n            },\n            \"SystemDisk\": {\n                \"DiskSize\": 50,\n                \"DiskType\": \"CLOUD_BASIC\"\n            },\n            \"InternetAccessible\": {\n                \"PublicIpAssigned\": \"TRUE\",\n                \"InternetMaxBandwidthOut\": 50\n            },\n            \"ImageId\": \"img-bd78fy2t\",\n            \"InstanceType\": \"S1.SMALL2\",\n            \"DataDisks\": [\n                {\n                    \"DiskSize\": 50,\n                    \"DiskType\": \"CLOUD_BASIC\"\n                }\n            ]\n        },\n        \"Tags\": [\n            {\n                \"Key\": \"batch-test-tag-env-key\",\n                \"Value\": \"batch-test-tag-env-value1\"\n            }\n        ],\n        \"RequestId\": \"578f3fae-6908-4521-ac07-17c2cffcd5ae\"\n    }\n}",
+        "title": "查看计算环境的创建信息"
+      }
+    ],
+    "DescribeComputeEnvCreateInfos": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvCreateInfos\r\n&EnvIds.0=env-lcx7qbbr\r\n&Filters.1.Name=env-id\r\n&Filters.1.Values.1=env-lcpcej85\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ComputeEnvCreateInfoSet\": [\n            {\n                \"EnvId\": \"env-lcx7qbbr\",\n                \"EnvType\": \"MANAGED\",\n                \"DesiredComputeNodeCount\": 1,\n                \"EnvName\": \"batch-spot\",\n                \"EnvDescription\": \"batch env \",\n                \"EnvData\": {\n                    \"ImageId\": \"img-8toqc6s3\",\n                    \"SystemDisk\": {\n                        \"DiskSize\": \"50\",\n                        \"DiskType\": \"CLOUD_BASIC\"\n                    },\n                    \"InternetAccessible\": {\n                        \"PublicIpAssigned\": \"TRUE\",\n                        \"InternetMaxBandwidthOut\": \"50\"\n                    },\n                    \"InstanceType\": \"S3.4XLARGE32\",\n                    \"LoginSettings\": {\n                        \"Password\": \"B1[habcd\"\n                    }\n                }\n            },\n            {\n                \"EnvId\": \"env-lcpcej85\",\n                \"EnvType\": \"MANAGED\",\n                \"DesiredComputeNodeCount\": 1,\n                \"EnvName\": \"batch-spot\",\n                \"EnvDescription\": \"batch env \",\n                \"EnvData\": {\n                    \"ImageId\": \"img-8toqc6s3\",\n                    \"SystemDisk\": {\n                        \"DiskSize\": \"50\",\n                        \"DiskType\": \"CLOUD_BASIC\"\n                    },\n                    \"InternetAccessible\": {\n                        \"PublicIpAssigned\": \"TRUE\",\n                        \"InternetMaxBandwidthOut\": \"50\"\n                    },\n                    \"InstanceType\": \"S3.4XLARGE32\",\n                    \"LoginSettings\": {\n                        \"Password\": \"B1[habcd\"\n                    }\n                }\n            }\n        ],\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\n    }\n}",
+        "title": "查看计算环境创建信息列表"
+      }
+    ],
+    "DescribeComputeEnvs": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvs\n&EnvIds.0=env-lcx7qbbr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ComputeEnvSet\": [\n            {\n                \"EnvId\": \"env-lcx7qbbr\",\n                \"ComputeNodeMetrics\": {\n                    \"CreatedCount\": 0,\n                    \"DeletingCount\": 0,\n                    \"CreationFailedCount\": 0,\n                    \"SubmittedCount\": 0,\n                    \"CreatingCount\": 0,\n                    \"AbnormalCount\": 1,\n                    \"RunningCount\": 0\n                },\n                \"Tags\": [\n                    {\n                        \"Key\": \"batch-test-tag-env-key\",\n                        \"Value\": \"batch-test-tag-env-value\"\n                    }\n                ],\n                \"ResourceType\": \"CVM\",\n                \"EnvType\": \"MANAGED\",\n                \"AttachedComputeNodeCount\": 0,\n                \"DesiredComputeNodeCount\": 1,\n                \"EnvName\": \"test-compute-env\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-4\"\n                },\n                \"NextAction\": \"\",\n                \"CreateTime\": \"2020-09-22T06:51:42Z\"\n            }\n        ],\n        \"RequestId\": \"bedb1750-a09f-4c4d-9f25-6afccda50dea\"\n    }\n}",
+        "title": "查看计算环境列表"
+      }
+    ],
+    "DescribeCpmOsInfo": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeCpmOsInfo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"OsInfoSet\": [\n            {\n                \"OsEnglishDescription\": \"Windows Server 2012 datacenter cn 64bit\",\n                \"OsName\": \"BM-XServer_V12cdb_x64\",\n                \"MaxPartitionSize\": 1000000,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 125,\n                \"OsDescription\": \"Windows Server 2012 数据中心中文版 batch\",\n                \"OsClass\": \"Windows\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 7.3 64bit\",\n                \"OsName\": \"BM-centos7.3\",\n                \"MaxPartitionSize\": 50,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 47,\n                \"OsDescription\": \"Centos 7.3 64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 6.8 64bit\",\n                \"OsName\": \"BM-centos6.8\",\n                \"MaxPartitionSize\": 16,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 48,\n                \"OsDescription\": \"Centos 6.8 64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 6.5 64bit\",\n                \"OsName\": \"BM-centos6.5\",\n                \"MaxPartitionSize\": 16,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 1,\n                \"OsDescription\": \"Centos 6.5  64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 7.2  64bit\",\n                \"OsName\": \"BM-centos7.2\",\n                \"MaxPartitionSize\": 50,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 2,\n                \"OsDescription\": \"Centos 7.2  64位\",\n                \"OsClass\": \"CentOS\"\n            }\n        ],\n        \"RequestId\": \"b53f11cc-8583-4533-8bec-686ca56799eb\"\n    }\n}",
+        "title": "查询批量计算黑石操作系统信息"
+      }
+    ],
+    "DescribeCvmZoneInstanceConfigInfos": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeCvmZoneInstanceConfigInfos\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-chongqing-1\r\n&Filters.1.Name=instance-charge-type\r\n&Filters.1.Values.0=POSTPAID_BY_HOUR\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeQuotaSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"NetworkCard\": 0,\n                \"Price\": {\n                    \"UnitPrice\": 0.18,\n                    \"ChargeUnit\": \"HOUR\"\n                },\n                \"InstanceFamily\": \"S3\",\n                \"Externals\": {},\n                \"Cpu\": 1,\n                \"TypeName\": \"标准型S3\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"Memory\": 1,\n                \"LocalDiskTypeList\": [],\n                \"InstanceType\": \"S3.SMALL1\"\n            },\n            {\n                \"Status\": \"SELL\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"NetworkCard\": 0,\n                \"Price\": {\n                    \"UnitPrice\": 0.26,\n                    \"ChargeUnit\": \"HOUR\"\n                },\n                \"InstanceFamily\": \"S3\",\n                \"Externals\": {},\n                \"Cpu\": 1,\n                \"TypeName\": \"标准型S3\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"Memory\": 2,\n                \"LocalDiskTypeList\": [],\n                \"InstanceType\": \"S3.SMALL2\"\n            }\n        ],\n        \"RequestId\": \"2fba5b9c-e4ee-47ad-a776-dabb79ff2c35\"\n    }\n}",
+        "title": "查看重庆一区按量计费机型配置信息"
+      }
+    ],
+    "DescribeInstanceCategories": [
+      {
+        "document": "查询当前CVM实例族分类及分类详情。",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeInstanceCategories\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceCategorySet\": [\n            {\n                \"InstanceFamilySet\": [\n                    \"C3\",\n                    \"CN3\"\n                ],\n                \"InstanceCategory\": \"COMPUTE_3\"\n            },\n            {\n                \"InstanceFamilySet\": [\n                    \"C2\"\n                ],\n                \"InstanceCategory\": \"COMPUTE_2\"\n            },\n            {\n                \"InstanceFamilySet\": [\n                    \"S2\",\n                    \"S2ne\",\n                    \"I2\",\n                    \"D1\",\n                    \"M2\"\n                ],\n                \"InstanceCategory\": \"GENERAL_2\"\n            },\n            {\n                \"InstanceFamilySet\": [\n                    \"S3\",\n                    \"SN3ne\",\n                    \"S4\",\n                    \"I3\",\n                    \"M3\",\n                    \"M4\"\n                ],\n                \"InstanceCategory\": \"GENERAL_3\"\n            }\n        ],\n        \"RequestId\": \"166a2a24-888f-4fd5-82ef-f41e4754d994\"\n    }\n}",
+        "title": "查询实例分类信息"
+      }
+    ],
+    "DescribeJob": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJob\n&JobId=job-97zcl3wt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobState\": \"SUCCEED\",\n        \"TaskSet\": [\n            {\n                \"EndTime\": \"2018-02-07T09:30:31Z\",\n                \"TaskName\": \"A\",\n                \"TaskState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\n            },\n            {\n                \"EndTime\": \"2018-02-07T09:31:49Z\",\n                \"TaskName\": \"B\",\n                \"TaskState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\n            },\n            {\n                \"EndTime\": \"2018-02-07T09:31:48Z\",\n                \"TaskName\": \"C\",\n                \"TaskState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\n            },\n            {\n                \"EndTime\": \"2018-02-07T09:33:01Z\",\n                \"TaskName\": \"D\",\n                \"TaskState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\"\n            }\n        ],\n        \"Zone\": \"ap-guangzhou-2\",\n        \"TaskMetrics\": {\n            \"PendingCount\": 0,\n            \"FailedCount\": 0,\n            \"StartingCount\": 0,\n            \"SucceedCount\": 4,\n            \"FailedInterruptedCount\": 0,\n            \"SubmittedCount\": 0,\n            \"RunnableCount\": 0,\n            \"RunningCount\": 0\n        },\n        \"JobName\": \"test job\",\n        \"JobId\": \"job-97zcl3wt\",\n        \"Priority\": 1,\n        \"StateReason\": \"\",\n        \"TaskInstanceMetrics\": {\n            \"PendingCount\": 0,\n            \"FailedCount\": 0,\n            \"StartingCount\": 0,\n            \"SucceedCount\": 4,\n            \"FailedInterruptedCount\": 0,\n            \"SubmittedCount\": 0,\n            \"RunnableCount\": 0,\n            \"RunningCount\": 0\n        },\n        \"EndTime\": \"2018-02-07T09:33:01Z\",\n        \"DependenceSet\": [\n            {\n                \"StartTask\": \"A\",\n                \"EndTask\": \"B\"\n            },\n            {\n                \"StartTask\": \"A\",\n                \"EndTask\": \"C\"\n            },\n            {\n                \"StartTask\": \"B\",\n                \"EndTask\": \"D\"\n            },\n            {\n                \"StartTask\": \"C\",\n                \"EndTask\": \"D\"\n            }\n        ],\n        \"CreateTime\": \"2018-02-07T09:29:09Z\",\n        \"Tags\": [\n            {\n                \"Key\": \"batch-test-tag-job-key\",\n                \"Value\": \"batch-test-tag-job-value\"\n            }\n        ],\n        \"NextAction\": \"\",\n        \"RequestId\": \"d1b08863-b8ee-49d4-aa08-f464499f97a0\"\n    }\n}",
+        "title": "查询作业详细信息"
+      }
+    ],
+    "DescribeJobSubmitInfo": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJobSubmitInfo\n&JobId=job-97zcl3wt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskInstanceNum\": 2,\n                \"ComputeEnv\": {\n                    \"EnvType\": \"MANAGED\",\n                    \"EnvData\": {\n                        \"InstanceType\": \"S1.SMALL1\",\n                        \"ImageId\": \"img-bd78fy2t\"\n                    }\n                },\n                \"RedirectInfo\": {\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://bucket-appid..cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"Application\": {\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\n                    \"DeliveryForm\": \"LOCAL\"\n                },\n                \"MaxRetryCount\": 0,\n                \"FailedAction\": \"TERMINATE\",\n                \"TaskName\": \"A\"\n            },\n            {\n                \"TaskInstanceNum\": 2,\n                \"ComputeEnv\": {\n                    \"EnvType\": \"MANAGED\",\n                    \"EnvData\": {\n                        \"InstanceType\": \"S1.SMALL1\",\n                        \"ImageId\": \"img-bd78fy2t\"\n                    }\n                },\n                \"RedirectInfo\": {\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"Application\": {\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\n                    \"DeliveryForm\": \"LOCAL\"\n                },\n                \"MaxRetryCount\": 0,\n                \"FailedAction\": \"TERMINATE\",\n                \"TaskName\": \"B\"\n            },\n            {\n                \"TaskInstanceNum\": 2,\n                \"ComputeEnv\": {\n                    \"EnvType\": \"MANAGED\",\n                    \"EnvData\": {\n                        \"InstanceType\": \"S1.SMALL1\",\n                        \"ImageId\": \"img-bd78fy2t\"\n                    }\n                },\n                \"RedirectInfo\": {\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"Application\": {\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\n                    \"DeliveryForm\": \"LOCAL\"\n                },\n                \"MaxRetryCount\": 0,\n                \"FailedAction\": \"TERMINATE\",\n                \"TaskName\": \"C\"\n            },\n            {\n                \"TaskInstanceNum\": 2,\n                \"ComputeEnv\": {\n                    \"EnvType\": \"MANAGED\",\n                    \"EnvData\": {\n                        \"InstanceType\": \"S1.SMALL1\",\n                        \"ImageId\": \"img-bd78fy2t\"\n                    }\n                },\n                \"RedirectInfo\": {\n                    \"StdoutRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"Application\": {\n                    \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\n                    \"DeliveryForm\": \"LOCAL\"\n                },\n                \"MaxRetryCount\": 0,\n                \"FailedAction\": \"TERMINATE\",\n                \"TaskName\": \"D\"\n            }\n        ],\n        \"Dependences\": [\n            {\n                \"StartTask\": \"A\",\n                \"EndTask\": \"B\"\n            },\n            {\n                \"StartTask\": \"A\",\n                \"EndTask\": \"C\"\n            },\n            {\n                \"StartTask\": \"B\",\n                \"EndTask\": \"D\"\n            },\n            {\n                \"StartTask\": \"C\",\n                \"EndTask\": \"D\"\n            }\n        ],\n        \"JobName\": \"test job\",\n        \"Priority\": 1,\n        \"JobDescription\": \"xxx\",\n        \"JobId\": \"job-97zcl3wt\",\n        \"Tags\": [\n            {\n                \"Key\": \"batch-test-tag-job-key\",\n                \"Value\": \"batch-test-tag-job-value\"\n            }\n        ],\n        \"RequestId\": \"1a69db97-95ff-4bf7-9eb2-875ea6e5737b\"\n    }\n}",
+        "title": "获取作业的提交信息"
+      }
+    ],
+    "DescribeJobs": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeJobs\n&JobIds.0=job-7e7evk2x\n&JobIds.1=job-3n2weaqt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"JobSet\": [\n            {\n                \"EndTime\": null,\n                \"JobState\": \"STARTING\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"batch-test-tag-job-key\",\n                        \"Value\": \"batch-test-tag-job-value\"\n                    }\n                ],\n                \"TaskMetrics\": {\n                    \"PendingCount\": 0,\n                    \"FailedCount\": 0,\n                    \"StartingCount\": 1,\n                    \"SucceedCount\": 0,\n                    \"FailedInterruptedCount\": 0,\n                    \"SubmittedCount\": 0,\n                    \"RunnableCount\": 0,\n                    \"RunningCount\": 0\n                },\n                \"JobId\": \"job-3n2weaqt\",\n                \"Priority\": 1,\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-4\"\n                },\n                \"JobName\": \"hello-test-job\",\n                \"CreateTime\": \"2020-09-22T07:14:54Z\"\n            },\n            {\n                \"EndTime\": \"2020-09-21T08:59:45Z\",\n                \"JobState\": \"FAILED\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"job-key1\",\n                        \"Value\": \"job-value1\"\n                    },\n                    {\n                        \"Key\": \"job-key\",\n                        \"Value\": \"job-value\"\n                    }\n                ],\n                \"TaskMetrics\": {\n                    \"PendingCount\": 0,\n                    \"FailedCount\": 1,\n                    \"StartingCount\": 0,\n                    \"SucceedCount\": 0,\n                    \"FailedInterruptedCount\": 0,\n                    \"SubmittedCount\": 0,\n                    \"RunnableCount\": 0,\n                    \"RunningCount\": 0\n                },\n                \"JobId\": \"job-7e7evk2x\",\n                \"Priority\": 1,\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-4\"\n                },\n                \"JobName\": \"hello-test-job\",\n                \"CreateTime\": \"2020-09-21T08:57:01Z\"\n            }\n        ],\n        \"RequestId\": \"ba5df388-51bd-434d-81aa-d640f284b4e7\"\n    }\n}",
+        "title": "查询作业信息"
+      }
+    ],
+    "DescribeTask": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTask\r\n&JobId=job-97zcl3wt\r\n&TaskName=A\r\n&Filters.0.Name=task-instance-state\r\n&Filters.0.Values.0=SUCCEED\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskInstanceSet\": [\n            {\n                \"TaskInstanceIndex\": 1,\n                \"RedirectInfo\": {\n                    \"StderrRedirectFileName\": \"stderr.job-97zcl3wt.A.1.log\",\n                    \"StdoutRedirectFileName\": \"stdout.job-97zcl3wt.A.1.log\",\n                    \"StdoutRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"RunningTime\": \"2018-02-07T09:29:55Z\",\n                \"LaunchTime\": \"2018-02-07T09:29:09Z\",\n                \"StateReason\": \"\",\n                \"ComputeNodeInstanceId\": null,\n                \"EndTime\": \"2018-02-07T09:30:23Z\",\n                \"TaskInstanceState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\",\n                \"ExitCode\": 0\n            },\n            {\n                \"TaskInstanceIndex\": 0,\n                \"RedirectInfo\": {\n                    \"StderrRedirectFileName\": \"stderr.job-97zcl3wt.A.0.log\",\n                    \"StdoutRedirectFileName\": \"stdout.job-97zcl3wt.A.0.log\",\n                    \"StdoutRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\",\n                    \"StderrRedirectPath\": \"cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\"\n                },\n                \"RunningTime\": \"2018-02-07T09:30:02Z\",\n                \"LaunchTime\": \"2018-02-07T09:29:09Z\",\n                \"StateReason\": \"\",\n                \"ComputeNodeInstanceId\": null,\n                \"EndTime\": \"2018-02-07T09:30:31Z\",\n                \"TaskInstanceState\": \"SUCCEED\",\n                \"CreateTime\": \"2018-02-07T09:29:09Z\",\n                \"ExitCode\": 0\n            }\n        ],\n        \"TaskState\": \"SUCCEED\",\n        \"JobId\": \"job-97zcl3wt\",\n        \"TaskInstanceMetrics\": {\n            \"PendingCount\": 0,\n            \"FailedCount\": 0,\n            \"StartingCount\": 0,\n            \"SucceedCount\": 2,\n            \"FailedInterruptedCount\": 0,\n            \"SubmittedCount\": 0,\n            \"RunnableCount\": 0,\n            \"RunningCount\": 0\n        },\n        \"TaskInstanceTotalCount\": 2,\n        \"TaskName\": \"A\",\n        \"EndTime\": \"2018-02-07T09:30:31Z\",\n        \"CreateTime\": \"2018-02-07T09:29:09Z\",\n        \"RequestId\": \"f4723b24-e080-4599-b12d-b7eb657faefe\"\n    }\n}",
+        "title": "查询任务详情"
+      }
+    ],
+    "DescribeTaskLogs": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTaskLogs\r\n&JobId=job-mawzp3ja\r\n&TaskName=task\r\n&TaskInstanceIndexes.0=0\r\n&TaskInstanceIndexes.1=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskInstanceLogSet\": [\n            {\n                \"StdoutLog\": \"data:text/plain;charset=utf-8;base64,bWFpbgpbJ2RlbW8ucHknLCAnMycsICcvbW50L2lucHV0JywgJy9tbnQvb3V0cHV0JywgJzEnXWZsdXNoIHRvIC9tbnQvb3V0cHV0LzE1MzU3MjYwMDQuOTEKZmx1c2ggdG8gL21udC9vdXRwdXQvMTUzNTcyNjAwNi4zOQpmbHVzaCB0byAvbW50L291dHB1dC8xNTM1NzI2MDA3LjcK\",\n                \"TaskInstanceIndex\": 0,\n                \"StderrLog\": \"data:text/plain;charset=utf-8;base64,Zmx1c2ggdG8gL21udC9vdXRwdXQvMTUzNTcyNjAwNC45MQpmbHVzaCB0byAvbW50L291dHB1dC8xNTM1NzI2MDA2LjM5CmZsdXNoIHRvIC9tbnQvb3V0cHV0LzE1MzU3MjYwMDcuNwo=\",\n                \"StdoutRedirectPath\": \"\",\n                \"StderrRedirectPath\": \"\",\n                \"StdoutRedirectFileName\": \"\",\n                \"StderrRedirectFileName\": \"\"\n            }\n        ],\n        \"RequestId\": \"3b1ba3bf-a315-42ec-9e8e-af8def768f8a\"\n    }\n}",
+        "title": "获取任务日志详情"
+      }
+    ],
+    "DescribeTaskTemplates": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DescribeTaskTemplates\n&TaskTemplateIds.0=task-tmpl-pq24rq1e\n&TaskTemplateIds.1=task-tmpl-606i415o\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TaskTemplateSet\": [\n            {\n                \"TaskTemplateName\": \"rendering\",\n                \"TaskTemplateDescription\": \"3ds Max 2018 Demo\",\n                \"TaskTemplateId\": \"task-tmpl-pq24rq1e\",\n                \"CreateTime\": \"2018-03-08T03:27:43Z\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"batch-test-tag-tp-key\",\n                        \"Value\": \"batch-test-tag-tp-value\"\n                    }\n                ],\n                \"TaskTemplateInfo\": {\n                    \"OutputMappings\": [\n                        {\n                            \"SourcePath\": \"C:\\\\\\\\render\\\\\\\\\",\n                            \"DestinationPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/\"\n                        }\n                    ],\n                    \"TaskInstanceNum\": 1,\n                    \"ComputeEnv\": {\n                        \"EnvType\": \"MANAGED\",\n                        \"EnvData\": {\n                            \"SystemDisk\": {\n                                \"DiskSize\": \"50\",\n                                \"DiskType\": \"CLOUD_BASIC\"\n                            },\n                            \"LoginSettings\": {\n                                \"Password\": \"B1habcdB1habcd\"\n                            },\n                            \"InternetAccessible\": {\n                                \"InternetMaxBandwidthOut\": \"10\",\n                                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"\n                            },\n                            \"ImageId\": \"img-i64lx84h\",\n                            \"InstanceType\": \"S1.LARGE8\",\n                            \"DataDisks\": [\n                                {\n                                    \"DiskSize\": \"0\",\n                                    \"DiskType\": \"CLOUD_BASIC\"\n                                }\n                            ]\n                        }\n                    },\n                    \"RedirectInfo\": {\n                        \"StdoutRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/\",\n                        \"StderrRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/\"\n                    },\n                    \"Application\": {\n                        \"Command\": \"3dsmaxcmd Demo.max -outputName:c:\\\\\\\\render\\\\\\\\image.jpg\",\n                        \"PackagePath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/render/max.tar.gz\",\n                        \"DeliveryForm\": \"PACKAGE\"\n                    },\n                    \"MaxRetryCount\": 0,\n                    \"Timeout\": 259200,\n                    \"FailedAction\": \"TERMINATE\",\n                    \"TaskName\": \"rendering\"\n                }\n            },\n            {\n                \"TaskTemplateName\": \"A\",\n                \"TaskTemplateDescription\": \"\",\n                \"TaskTemplateId\": \"task-tmpl-606i415o\",\n                \"CreateTime\": \"2018-01-25T07:46:12Z\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"batch-test-tag-tp-key\",\n                        \"Value\": \"batch-test-tag-tp-value\"\n                    }\n                ],\n                \"TaskTemplateInfo\": {\n                    \"TaskInstanceNum\": 2,\n                    \"ComputeEnv\": {\n                        \"EnvType\": \"MANAGED\",\n                        \"EnvData\": {\n                            \"InstanceType\": \"S1.SMALL1\",\n                            \"ImageId\": \"img-bq1gnde2\"\n                        }\n                    },\n                    \"RedirectInfo\": {\n                        \"StdoutRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\",\n                        \"StderrRedirectPath\": \"cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\"\n                    },\n                    \"Application\": {\n                        \"Command\": \"python -c \\\"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\\\" \",\n                        \"DeliveryForm\": \"LOCAL\"\n                    },\n                    \"MaxRetryCount\": 0,\n                    \"FailedAction\": \"TERMINATE\",\n                    \"TaskName\": \"A\"\n                }\n            }\n        ],\n        \"RequestId\": \"23f7d202-1cd4-4658-a989-88ad4ed77aac\"\n    }\n}",
+        "title": "查询任务模板"
+      }
+    ],
+    "DetachInstances": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=DetachInstances\r\n&EnvId=env-1mekuyxs\r\n&InstanceIds.0=ins-kjoossv5\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd757b4d-9797-493e-b421-89873457a071\"\n    }\n}",
+        "title": "从计算环境移出实例"
+      }
+    ],
+    "ModifyComputeEnv": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=ModifyComputeEnv\r\n&EnvId=env-lcpcej85\r\n&DesiredComputeNodeCount=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"147fbf83-f817-4528-a547-f5f313b673d2\"\n    }\n}",
+        "title": "调整计算环境节点期望数量为2"
+      }
+    ],
+    "ModifyTaskTemplate": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=ModifyTaskTemplate\r\n&TaskTemplateId=task-tmpl-606i415o\r\n&TaskTemplateName=A\r\n&TaskTemplateDescription=test\r\n&TaskTemplateInfo.TaskName=A\r\n&TaskTemplateInfo.TaskInstanceNum=1\r\n&TaskTemplateInfo.Application.DeliveryForm=LOCAL\r\n&TaskTemplateInfo.Application.Command=python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\"\r\n&TaskTemplateInfo.ComputeEnv.EnvType=MANAGED\r\n&TaskTemplateInfo.ComputeEnv.EnvData.InstanceType=S1.SMALL1\r\n&TaskTemplateInfo.ComputeEnv.EnvData.ImageId=img-bd78fy2t\r\n&TaskTemplateInfo.RedirectInfo.StdoutRedirectPath=cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/\r\n&TaskTemplateInfo.RedirectInfo.StderrRedirectPath=cos://bucket-appid.ap-guangzhou.myqcloud.com/hello2/logs/\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a56bd93-688e-41c3-bc8b-f9867ffb0dd0\"\n    }\n}",
+        "title": "更改任务模板"
+      }
+    ],
+    "RetryJobs": [
+      {
+        "document": "任务中出现部分实例失败时，仅重试失败的任务实例，已成功的任务不作处理。",
+        "input": "https://batch.tencentcloudapi.com/?Action=RetryJobs\r\n&JobIds.0=job-rybewp57\r\n&JobIds.1=job-97zcl3wt\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"970e5a9f-2963-436c-8dad-4847360676f7\"\n    }\n}",
+        "title": "重试作业"
+      }
+    ],
+    "SubmitJob": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=SubmitJob\n&Placement.Zone=ap-guangzhou-2\n&Job.JobName=test\n&Job.JobDescription=test\n&Job.Priority=1\n&Job.Tasks.0.TaskName=hello2\n&Job.Tasks.0.TaskInstanceNum=1\n&Job.Tasks.0.Application.DeliveryForm=LOCAL\n&Job.Tasks.0.Application.Command=python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\"\n&Job.Tasks.0.ComputeEnv.EnvType=MANAGED\n&Job.Tasks.0.ComputeEnv.EnvData.InstanceType=S1.SMALL1\n&Job.Tasks.0.ComputeEnv.EnvData.ImageId=img-bd78fy2t\n&Job.Tasks.0.RedirectInfo.StdoutRedirectPath=cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\n&Job.Tasks.0.RedirectInfo.StderrRedirectPath=cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-4yn0we13\",\n        \"RequestId\": \"bf2a9734-e485-423f-9d73-a93f5e6c6a0c\"\n    }\n}",
+        "title": "提交作业"
+      },
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=SubmitJob\n&Placement.Zone=ap-beijing-2\n&Job.JobName=dag\n&Job.JobDescription=dag_demo\n&Job.Tasks.0.TaskName=pre_task\n&Job.Tasks.0.TaskInstanceNum=1\n&Job.Tasks.0.Application.DeliveryForm=LOCAL\n&Job.Tasks.0.Application.Command=echo pre_task\n&Job.Tasks.0.ComputeEnv.EnvData.InstanceType=S2.SMALL1\n&Job.Tasks.0.RedirectInfo.StdoutRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\n&Job.Tasks.0.RedirectInfo.StderrRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\n&Job.Tasks.1.TaskName=post_task\n&Job.Tasks.1.TaskInstanceNum=1\n&Job.Tasks.1.Application.DeliveryForm=LOCAL\n&Job.Tasks.1.Application.Command=echo post_task\n&Job.Tasks.1.ComputeEnv.EnvData.InstanceType=S2.SMALL1\n&Job.Tasks.1.RedirectInfo.StdoutRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\n&Job.Tasks.1.RedirectInfo.StderrRedirectPath=cos://batch-demo-1251783334.cosbj.myqcloud.com/logs/\n&Job.Dependences.0.StartTask=pre_task\n&Job.Dependences.0.EndTask=post_task\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-2bmv4p7o\",\n        \"RequestId\": \"165dc518-52a4-4363-8ea4-14f1ee8dea1a\"\n    }\n}",
+        "title": "提交DAG型作业，具有依赖关系"
+      }
+    ],
+    "TerminateComputeNode": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNode\n&EnvId=env-lcx7qbbr\n&ComputeNodeId=node-lcpcej85\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\n    }\n}",
+        "title": "销毁计算节点"
+      }
+    ],
+    "TerminateComputeNodes": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateComputeNodes\r\n&EnvId=env-lcx7qbbr\r\n&ComputeNodeId.0=node-lcpcej85\r\n&ComputeNodeId.1=node-lcz8jkvw\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c50bfbf1-d214-4e41-90f6-39270dc9f071\"\n    }\n}",
+        "title": "批量销毁计算节点"
+      }
+    ],
+    "TerminateJob": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateJob\r\n&JobId=job-rybewp57\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"970e5a9f-2963-436c-8dad-4847360676f7\"\n    }\n}",
+        "title": "终止作业"
+      }
+    ],
+    "TerminateTaskInstance": [
+      {
+        "document": "",
+        "input": "https://batch.tencentcloudapi.com/?Action=TerminateTaskInstance\r\n&JobId=job-rybewp57\r\n&TaskName=A\r\n&TaskInstanceIndex=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72e9a712-1fed-4b57-be72-62e71eefd4c3\"\n    }\n}",
+        "title": "终止任务实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

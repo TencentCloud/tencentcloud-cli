@@ -1,0 +1,101 @@
+{
+  "actions": {
+    "CreateChannelCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelCode\n<公共请求参数>\n\n{\n    \"Remark\": \"如图\",\n    \"AppIds\": \"DEFAULT\",\n    \"Name\": \"测试企业标签的活码\",\n    \"UseUserId\": [\n        1386218784692961300\n    ],\n    \"SourceName\": \"自然到店\",\n    \"MsgId\": 1397103192673538050,\n    \"Source\": \"1\",\n    \"Tag\": [\n        {\n            \"BizTagIdStr\": \"1394843909254754300\",\n            \"BizTagId\": 1394843909254754300,\n            \"BizGroupId\": 1394843720913727500,\n            \"TagId\": \"etQIM2CwAA_dZ7TUzES2iRRIGXJrWY8w\",\n            \"GroupName\": \"测试111\",\n            \"TagName\": \"额嗡嗡嗡\",\n            \"Type\": 1\n        }\n    ],\n    \"SkipVerify\": 0,\n    \"UseUserOpenId\": [\n        \"544064e019b53e4791115020ffc68f33\"\n    ],\n    \"Type\": 1,\n    \"SourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fea177dd-9fa6-4e76-9c8f-67f5a21f20bb\"\n    }\n}",
+        "title": "渠道活码创建实例"
+      }
+    ],
+    "CreateCorpTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorpTag\n<公共请求参数>\n\n{\n    \"GroupName\": \"购车计划\",\n    \"Sort\": 1,\n    \"Tags\": [\n        {\n            \"TagName\": \"半年内\",\n            \"Sort\": 1\n        },\n        {\n            \"TagName\": \"一年内\",\n            \"Sort\": 2\n        },\n        {\n            \"TagName\": \"三年内\",\n            \"Sort\": 3\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79091a0a-ee46-49bb-9c22-a070b07cbe8f\",\n        \"TagGroup\": {\n            \"GroupName\": \"购车计划\",\n            \"BizGroupId\": \"1407601951281504258\",\n            \"CreateTime\": 1624433431,\n            \"Sort\": 1,\n            \"Tags\": [\n                {\n                    \"TagName\": \"一年内\",\n                    \"CreateTime\": 1624433431,\n                    \"TagId\": \"etpqy2CAAAFrsM5y90F-pRGaiEkft--Q\",\n                    \"Sort\": 2,\n                    \"BizTagId\": \"1407601951327641602\"\n                },\n                {\n                    \"TagName\": \"三年内\",\n                    \"CreateTime\": 1624433431,\n                    \"TagId\": \"etpqy2CAAAqgssMTUt0l_JCvml-OKY8Q\",\n                    \"Sort\": 3,\n                    \"BizTagId\": \"1407601951327641603\"\n                },\n                {\n                    \"TagName\": \"半年内\",\n                    \"CreateTime\": 1624433431,\n                    \"TagId\": \"etpqy2CAAARruxu_UDmM5NuYkY27kBaw\",\n                    \"Sort\": 1,\n                    \"BizTagId\": \"1407601951327641601\"\n                }\n            ],\n            \"GroupId\": \"etpqy2CAAAPp0tGn_m9B-uTiJYk7kktw\"\n        }\n    }\n}",
+        "title": "设置标签库"
+      }
+    ],
+    "QueryActivityJoinList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityJoinList\n&Limit=1\n&ActivityId=1394233693086657654\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"E9y1rxkoUxUW4i+Yx7ThkT7p0+bJm6IXDaCfF4etiyI=\",\n        \"PageData\": [\n            {\n                \"ActivityData\": \"{\\\"cityInfo\\\":{\\\"cityCode\\\":\\\"420100\\\",\\\"cityName\\\":\\\"武汉市\\\",\\\"provinceCode\\\":\\\"420000\\\",\\\"provinceName\\\":\\\"湖北省\\\"},\\\"carInfo\\\":{\\\"carId\\\":\\\"1334701452344614913\\\",\\\"carName\\\":\\\"A车型\\\",\\\"brandId\\\":1334701452336226306,\\\"tenantSeriesId\\\":1334701452340420610,\\\"baseBrandName\\\":\\\"大迪\\\",\\\"tenantSeriesName\\\":\\\"测试素材查看-车型\\\"},\\\"shopInfo\\\":{\\\"shopId\\\":1392034008271540226,\\\"shopName\\\":\\\"武汉惠通陆华汽车服务有限公司\\\",\\\"cityCode\\\":\\\"420100\\\"}}\",\n                \"SalesName\": \"hc\",\n                \"UserName\": \"lxc\",\n                \"ActivityName\": \"测试未开始活动\",\n                \"SalesPhone\": \"18976547654\",\n                \"ActivityId\": 1394233693086657654,\n                \"CreateTime\": 1624242265,\n                \"LiveCodeId\": 0,\n                \"JoinId\": 1406800137191108987,\n                \"JoinState\": 1,\n                \"DuplicateLeadId\": 0,\n                \"UserPhone\": \"18045676789\",\n                \"UpdateTime\": 1624242265,\n                \"Duplicate\": 0,\n                \"JoinTime\": 1624242264,\n                \"LeadId\": 1406800137394126823\n            }\n        ],\n        \"RequestId\": \"cee4598b-9eea-4e87-8544-7f584beb6235\"\n    }\n}",
+        "title": "查询活动列表"
+      }
+    ],
+    "QueryActivityList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityList\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"jQ+8f/xhRbMzAxSUUgYbgiYY28BzY+xFM6JuYjezhUQ=\",\n        \"PageData\": [\n            {\n                \"ActivityState\": 20,\n                \"ActivityName\": \"新建打圈互动111\",\n                \"EndTime\": 1627022340,\n                \"ActivityId\": 1407589595607994444,\n                \"UpdateTime\": 1624430486,\n                \"StartTime\": 1624377600,\n                \"ActivityType\": 101,\n                \"PrivacyAgreementId\": \"\",\n                \"MainPhoto\": \"https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.com/media/92d8452b-e194-4d59-a28e-7300d0556976.jpg\",\n                \"ActivityDataList\": \"{\\\"couponTypeList\\\":[1],\\\"couponInfoList\\\":[{\\\"couponId\\\":\\\"C1407254077494390786\\\",\\\"couponName\\\":\\\"自动化创建满减券161480\\\",\\\"thresholdAmount\\\":15000000,\\\"discountAmount\\\":15000000,\\\"discountPercentage\\\":0,\\\"couponType\\\":1,\\\"availableTimeType\\\":1,\\\"availableBeginTime\\\":0,\\\"availableEndTime\\\":10368000}]}\"\n            }\n        ],\n        \"RequestId\": \"d143e1fc-1106-4b3e-a9cd-854b09b51752\"\n    }\n}",
+        "title": "查询活动列表"
+      }
+    ],
+    "QueryActivityLiveCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryActivityLiveCodeList\n&Cursor=eKMXI/XqG5yQmGrx3qXBRrthr/F8JGlknuYJTKHZaks=\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"eKMXI/XqG5yQmGrx3qXBRrthr/F8JGlknuYJTKHZaks=\",\n        \"PageData\": [\n            {\n                \"LiveCodePreview\": \"https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.com/liveCode/ww81084a80e7663baf/1405537314006573058.jpg\",\n                \"ActivityName\": \"10日券\",\n                \"ActivityId\": 1405537288119328800,\n                \"CreateTime\": 1623941184,\n                \"ShortChainAddress\": \"https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_target=weixin%3A%2F%2Fdl%2Fbusiness%2F%3Ft%3DreO6Co5q6ko\",\n                \"UpdateTime\": 1623941184,\n                \"LiveCodeData\": \"\",\n                \"LiveCodeState\": 0,\n                \"LiveCodeName\": \"22\",\n                \"LiveCodeId\": 1405537311796174800\n            }\n        ],\n        \"RequestId\": \"e520d8eb-969f-4554-bf5f-169b344935e8\"\n    }\n}",
+        "title": "查询活码列表"
+      }
+    ],
+    "QueryChannelCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryChannelCodeList\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"iKJ7ml3ltna2Hs+BMN02l6F6RoJbCkeHgCBKcY0Qe+s=\",\n        \"PageData\": [\n            {\n                \"Friends\": 0,\n                \"QrCodeUrl\": \"https://wework.qpic.cn/wwpic/182442_klur6CpKTWe-bVG_1623808245/0\",\n                \"SourceName\": \"公域车迅达\",\n                \"MsgId\": 1404979725786083311,\n                \"Source\": \"1001\",\n                \"Remark\": \"\",\n                \"Name\": \"erwef\",\n                \"Type\": 1,\n                \"UseUserOpenIdList\": [\n                    \"ShiHao\"\n                ],\n                \"AppId\": \"LXC\",\n                \"UseUserIdList\": [\n                    1372482008858415111\n                ],\n                \"TagList\": [],\n                \"ConfigId\": \"f25675c3b271f41f28274c1c7e729f16\",\n                \"Id\": 1404979727371530211,\n                \"SkipVerify\": 0,\n                \"RecStatus\": 0\n            }\n        ],\n        \"RequestId\": \"801fbb9d-00ad-4990-b0c9-fdb3e4e48073\"\n    }\n}",
+        "title": "查询活码列表"
+      }
+    ],
+    "QueryChatArchivingList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryChatArchivingList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageData\": [\n            {\n                \"MsgId\": \"1312616990135121111\",\n                \"Action\": \"send\",\n                \"MsgType\": \"video\",\n                \"From\": \"YangYan\",\n                \"ToList\": [\n                    \"YangGuo\"\n                ],\n                \"RoomId\": \"100001\",\n                \"MsgTime\": \"1616990135\",\n                \"Video\": {\n                    \"PlayLength\": 4,\n                    \"FileSize\": 645990,\n                    \"CosKey\": \"http://test\"\n                }\n            }\n        ],\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "title": "查询会话存档列表"
+      }
+    ],
+    "QueryExternalContactDetail": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactDetail\n&ExternalUserId=2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"\",\n        \"RequestId\": \"482482d3-1631-4c41-a42a-41809d0e5593\",\n        \"Customer\": {\n            \"Type\": 1,\n            \"Phone\": \"\",\n            \"UnionId\": \"o1MJd6WzhNPBPLuXID6gpbHY2Mko\",\n            \"ExternalUserId\": \"wmpqy2CAAALJVRD88JLOUVONlJS9c7nA\",\n            \"Gender\": 1,\n            \"Name\": \"艺术就是派大星\"\n        },\n        \"FollowUser\": [\n            {\n                \"OperUserId\": \"wmpqy2CAAALJVRD88JLOUVONlJS9c7nA\",\n                \"Description\": \"\",\n                \"AddWay\": 3,\n                \"UserId\": \"TaXun\",\n                \"CreateTime\": 1621849569,\n                \"Tags\": [\n                    {\n                        \"GroupName\": \"个人标签\",\n                        \"Type\": 2,\n                        \"TagId\": \"etpqy2CAAA4au5I00lvVcnlZ_berhx1g\",\n                        \"TagName\": \"标签名称\"\n                    }\n                ],\n                \"Remark\": \"备注\"\n            }\n        ]\n    }\n}",
+        "title": "获取客户详情"
+      }
+    ],
+    "QueryExternalContactList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"PageData\": [\n            {\n                \"SalesName\": \"杨过\",\n                \"UserId\": \"YangGuo\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "客户列表"
+      }
+    ],
+    "QueryExternalUserMappingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryExternalUserMappingInfo\n<公共请求参数>\n\n{\n    \"CorpExternalUserIdList\": [\n        \"wmQIM2CwAAywHqH07voRw9aacKXf09eQ\",\n        \"wmAA2CCwAAywHqH07voRw9aacAFEewf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExternalUserIdMapping\": [\n            {\n                \"CorpExternalUserId\": \"wmabc2CAAATGwpQTxuU1IaaaiOFH2cXA\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "外部联系人转换接口"
+      }
+    ],
+    "QueryLicenseInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryLicenseInfo\n<公共请求参数>\n\n{\n    \"License\": \"A1c0tVAAAGSB1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LicenseInfo\": {\n            \"DestroyTime\": \"2022-07-15 00:00:00\",\n            \"ResourceEndTime\": \"2022-07-01 00:00:00\",\n            \"Extra\": \"\",\n            \"IsolationDeadline\": \"2022-07-08 00:00:00\",\n            \"License\": \"A1c0tVAAAGSB1\",\n            \"LicenseEdition\": 1,\n            \"ResourceStartTime\": \"2021-07-01 00:00:00\",\n            \"Status\": 1\n        },\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询license信息接口"
+      }
+    ],
+    "QueryMiniAppCodeList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryMiniAppCodeList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"MiniAdminUrl\": \"https://weworksaas-web-dev.map.qq.com/\",\n                \"State\": 1,\n                \"CreateTime\": 1618556502,\n                \"UpdateTime\": 1618556507,\n                \"MiniAppName\": \"官方小程序\",\n                \"MiniAppLogo\": \"https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.com/media/9b2bfb85-9d3a-41d2-a6cb-2ac95b11af68.jpg\",\n                \"Id\": 10\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "title": "查询小程序码列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

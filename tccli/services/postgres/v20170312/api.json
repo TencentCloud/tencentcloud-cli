@@ -1,0 +1,5344 @@
+{
+  "actions": {
+    "AddDBInstanceToReadOnlyGroup": {
+      "document": "本接口（AddDBInstanceToReadOnlyGroup）用于添加只读实例到只读组",
+      "input": "AddDBInstanceToReadOnlyGroupRequest",
+      "name": "添加只读实例到只读组",
+      "output": "AddDBInstanceToReadOnlyGroupResponse"
+    },
+    "CloseDBExtranetAccess": {
+      "document": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。",
+      "input": "CloseDBExtranetAccessRequest",
+      "name": "关闭实例外网链接",
+      "output": "CloseDBExtranetAccessResponse"
+    },
+    "CloseServerlessDBExtranetAccess": {
+      "document": "关闭serverlessDB实例外网",
+      "input": "CloseServerlessDBExtranetAccessRequest",
+      "name": "关闭serverlessDB实例外网",
+      "output": "CloseServerlessDBExtranetAccessResponse"
+    },
+    "CreateDBInstances": {
+      "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。",
+      "input": "CreateDBInstancesRequest",
+      "name": "创建实例(旧)",
+      "output": "CreateDBInstancesResponse"
+    },
+    "CreateInstances": {
+      "document": "本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。",
+      "input": "CreateInstancesRequest",
+      "name": "创建实例(新)",
+      "output": "CreateInstancesResponse"
+    },
+    "CreateReadOnlyDBInstance": {
+      "document": "本接口(CreateReadOnlyDBInstance)用于创建只读实例",
+      "input": "CreateReadOnlyDBInstanceRequest",
+      "name": "创建只读实例",
+      "output": "CreateReadOnlyDBInstanceResponse"
+    },
+    "CreateReadOnlyGroup": {
+      "document": "本接口（CreateReadOnlyGroup）用于创建只读组",
+      "input": "CreateReadOnlyGroupRequest",
+      "name": "创建只读组",
+      "output": "CreateReadOnlyGroupResponse"
+    },
+    "CreateServerlessDBInstance": {
+      "document": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
+      "input": "CreateServerlessDBInstanceRequest",
+      "name": "创建ServerlessDB实例",
+      "output": "CreateServerlessDBInstanceResponse"
+    },
+    "DeleteReadOnlyGroup": {
+      "document": "本接口(DeleteReadOnlyGroup)用于删除指定的只读组",
+      "input": "DeleteReadOnlyGroupRequest",
+      "name": "删除只读组",
+      "output": "DeleteReadOnlyGroupResponse"
+    },
+    "DeleteServerlessDBInstance": {
+      "document": "本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
+      "input": "DeleteServerlessDBInstanceRequest",
+      "name": "删除ServerlessDB实例",
+      "output": "DeleteServerlessDBInstanceResponse"
+    },
+    "DescribeAccounts": {
+      "document": "本接口（DescribeAccounts）用于获取实例用户列表。",
+      "input": "DescribeAccountsRequest",
+      "name": "获取实例用户列表",
+      "output": "DescribeAccountsResponse"
+    },
+    "DescribeDBBackups": {
+      "document": "本接口（DescribeDBBackups）用于查询实例备份列表。",
+      "input": "DescribeDBBackupsRequest",
+      "name": "查询实例备份列表",
+      "output": "DescribeDBBackupsResponse"
+    },
+    "DescribeDBErrlogs": {
+      "document": "本接口（DescribeDBErrlogs）用于获取错误日志。",
+      "input": "DescribeDBErrlogsRequest",
+      "name": "获取错误日志",
+      "output": "DescribeDBErrlogsResponse"
+    },
+    "DescribeDBInstanceAttribute": {
+      "document": "本接口 (DescribeDBInstanceAttribute) 用于查询某个实例的详情信息。",
+      "input": "DescribeDBInstanceAttributeRequest",
+      "name": "查询实例详情",
+      "output": "DescribeDBInstanceAttributeResponse"
+    },
+    "DescribeDBInstances": {
+      "document": "本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。",
+      "input": "DescribeDBInstancesRequest",
+      "name": "查询实例列表",
+      "output": "DescribeDBInstancesResponse"
+    },
+    "DescribeDBSlowlogs": {
+      "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。",
+      "input": "DescribeDBSlowlogsRequest",
+      "name": "获取慢查询日志",
+      "output": "DescribeDBSlowlogsResponse"
+    },
+    "DescribeDBXlogs": {
+      "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。",
+      "input": "DescribeDBXlogsRequest",
+      "name": "获取实例Xlog列表",
+      "output": "DescribeDBXlogsResponse"
+    },
+    "DescribeDatabases": {
+      "document": "接口（DescribeDatabases）用来拉取数据库列表",
+      "input": "DescribeDatabasesRequest",
+      "name": "拉取数据库列表",
+      "output": "DescribeDatabasesResponse"
+    },
+    "DescribeOrders": {
+      "document": "本接口（DescribeOrders）用于获取订单信息。",
+      "input": "DescribeOrdersRequest",
+      "name": "获取订单信息",
+      "output": "DescribeOrdersResponse"
+    },
+    "DescribeProductConfig": {
+      "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
+      "input": "DescribeProductConfigRequest",
+      "name": "查询售卖规格配置",
+      "output": "DescribeProductConfigResponse"
+    },
+    "DescribeReadOnlyGroups": {
+      "document": "本接口(DescribeReadOnlyGroups)用于查询用户输入指定实例的只读组",
+      "input": "DescribeReadOnlyGroupsRequest",
+      "name": "查询只读组信息",
+      "output": "DescribeReadOnlyGroupsResponse"
+    },
+    "DescribeRegions": {
+      "document": "本接口 (DescribeRegions) 用于查询售卖地域信息。",
+      "input": "DescribeRegionsRequest",
+      "name": "查询售卖地域",
+      "output": "DescribeRegionsResponse"
+    },
+    "DescribeServerlessDBInstances": {
+      "document": "用于查询一个或多个serverlessDB实例的详细信息",
+      "input": "DescribeServerlessDBInstancesRequest",
+      "name": "查询ServerlessDB实例列表",
+      "output": "DescribeServerlessDBInstancesResponse"
+    },
+    "DescribeSlowQueryAnalysis": {
+      "document": "慢查询统计分析接口，根据SQL语句抽象参数之后，进行聚合分析，并返回对应结果",
+      "input": "DescribeSlowQueryAnalysisRequest",
+      "name": "慢查询统计分析接口",
+      "output": "DescribeSlowQueryAnalysisResponse"
+    },
+    "DescribeSlowQueryList": {
+      "document": "获取慢查询列表",
+      "input": "DescribeSlowQueryListRequest",
+      "name": "获取慢查询列表",
+      "output": "DescribeSlowQueryListResponse"
+    },
+    "DescribeZones": {
+      "document": "本接口 (DescribeZones) 用于查询支持的可用区信息。",
+      "input": "DescribeZonesRequest",
+      "name": "查询售卖可用区",
+      "output": "DescribeZonesResponse"
+    },
+    "DestroyDBInstance": {
+      "document": "本接口 (DestroyDBInstance) 用于彻底下线指定DBInstanceId对应的实例，下线后实例数据将彻底删除，无法找回，只能下线隔离中的实例。",
+      "input": "DestroyDBInstanceRequest",
+      "name": "下线实例",
+      "output": "DestroyDBInstanceResponse"
+    },
+    "DisIsolateDBInstances": {
+      "document": "本接口（DisIsolateDBInstances）用于解隔离实例",
+      "input": "DisIsolateDBInstancesRequest",
+      "name": "解隔离实例",
+      "output": "DisIsolateDBInstancesResponse"
+    },
+    "InitDBInstances": {
+      "document": "本接口 (InitDBInstances) 用于初始化云数据库PostgreSQL实例。",
+      "input": "InitDBInstancesRequest",
+      "name": "初始化实例",
+      "output": "InitDBInstancesResponse"
+    },
+    "InquiryPriceCreateDBInstances": {
+      "document": "本接口 (InquiryPriceCreateDBInstances) 用于查询购买一个或多个实例的价格信息。",
+      "input": "InquiryPriceCreateDBInstancesRequest",
+      "name": "查询售卖价格",
+      "output": "InquiryPriceCreateDBInstancesResponse"
+    },
+    "InquiryPriceRenewDBInstance": {
+      "document": "本接口（InquiryPriceRenewDBInstance）用于查询续费实例的价格。",
+      "input": "InquiryPriceRenewDBInstanceRequest",
+      "name": "查询实例续费价格",
+      "output": "InquiryPriceRenewDBInstanceResponse"
+    },
+    "InquiryPriceUpgradeDBInstance": {
+      "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。",
+      "input": "InquiryPriceUpgradeDBInstanceRequest",
+      "name": "查询升级实例价格",
+      "output": "InquiryPriceUpgradeDBInstanceResponse"
+    },
+    "IsolateDBInstances": {
+      "document": "本接口（IsolateDBInstances）用于隔离实例",
+      "input": "IsolateDBInstancesRequest",
+      "name": "隔离实例",
+      "output": "IsolateDBInstancesResponse"
+    },
+    "ModifyAccountRemark": {
+      "document": "本接口（ModifyAccountRemark）用于修改帐号备注。",
+      "input": "ModifyAccountRemarkRequest",
+      "name": "修改帐号备注",
+      "output": "ModifyAccountRemarkResponse"
+    },
+    "ModifyDBInstanceName": {
+      "document": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。",
+      "input": "ModifyDBInstanceNameRequest",
+      "name": "修改实例名字",
+      "output": "ModifyDBInstanceNameResponse"
+    },
+    "ModifyDBInstanceReadOnlyGroup": {
+      "document": "本接口（ModifyDBInstanceReadOnlyGroup）用于修改实例所属的只读组",
+      "input": "ModifyDBInstanceReadOnlyGroupRequest",
+      "name": "修改实例所属的只读组",
+      "output": "ModifyDBInstanceReadOnlyGroupResponse"
+    },
+    "ModifyDBInstancesProject": {
+      "document": "本接口（ModifyDBInstancesProject）用于将实例转至其他项目。",
+      "input": "ModifyDBInstancesProjectRequest",
+      "name": "将实例转至其他项目",
+      "output": "ModifyDBInstancesProjectResponse"
+    },
+    "ModifyReadOnlyGroupConfig": {
+      "document": "本接口(ModifyReadOnlyGroupConfig)用于更新只读组配置信息",
+      "input": "ModifyReadOnlyGroupConfigRequest",
+      "name": "修改只读组配置",
+      "output": "ModifyReadOnlyGroupConfigResponse"
+    },
+    "ModifySwitchTimePeriod": {
+      "document": "当升级完成后，对处于等待切换状态下的实例，强制实例立即切换。",
+      "input": "ModifySwitchTimePeriodRequest",
+      "name": "修改变更配置切换时间",
+      "output": "ModifySwitchTimePeriodResponse"
+    },
+    "OpenDBExtranetAccess": {
+      "document": "本接口（OpenDBExtranetAccess）用于开通外网。",
+      "input": "OpenDBExtranetAccessRequest",
+      "name": "开通外网",
+      "output": "OpenDBExtranetAccessResponse"
+    },
+    "OpenServerlessDBExtranetAccess": {
+      "document": "开通serverlessDB实例外网",
+      "input": "OpenServerlessDBExtranetAccessRequest",
+      "name": "开通serverlessDB实例外网",
+      "output": "OpenServerlessDBExtranetAccessResponse"
+    },
+    "RebalanceReadOnlyGroup": {
+      "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",
+      "input": "RebalanceReadOnlyGroupRequest",
+      "name": "均衡只读组内实例的负载",
+      "output": "RebalanceReadOnlyGroupResponse"
+    },
+    "RemoveDBInstanceFromReadOnlyGroup": {
+      "document": "本接口（RemoveDBInstanceFromReadOnlyGroup）用户将只读实例从只读组中移除",
+      "input": "RemoveDBInstanceFromReadOnlyGroupRequest",
+      "name": "将只读实例从只读组中移除",
+      "output": "RemoveDBInstanceFromReadOnlyGroupResponse"
+    },
+    "RenewInstance": {
+      "document": "本接口（RenewInstance）用于续费实例。",
+      "input": "RenewInstanceRequest",
+      "name": "续费实例",
+      "output": "RenewInstanceResponse"
+    },
+    "ResetAccountPassword": {
+      "document": "本接口（ResetAccountPassword）用于重置实例的账户密码。",
+      "input": "ResetAccountPasswordRequest",
+      "name": "重置账户密码",
+      "output": "ResetAccountPasswordResponse"
+    },
+    "RestartDBInstance": {
+      "document": "本接口（RestartDBInstance）用于重启实例。",
+      "input": "RestartDBInstanceRequest",
+      "name": "重启实例",
+      "output": "RestartDBInstanceResponse"
+    },
+    "SetAutoRenewFlag": {
+      "document": "本接口（SetAutoRenewFlag）用于设置自动续费。",
+      "input": "SetAutoRenewFlagRequest",
+      "name": "设置自动续费",
+      "output": "SetAutoRenewFlagResponse"
+    },
+    "UpgradeDBInstance": {
+      "document": "本接口（UpgradeDBInstance）用于升级实例配置。",
+      "input": "UpgradeDBInstanceRequest",
+      "name": "升级实例配置",
+      "output": "UpgradeDBInstanceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2017-03-12",
+    "api_brief": "介绍如何使用API对云数据库PostgreSQL进行操作，包括实例管理、serverlessDB等。",
+    "serviceNameCN": "云数据库 PostgreSQL",
+    "serviceShortName": "postgres"
+  },
+  "objects": {
+    "AccountInfo": {
+      "document": "账户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-lnp6j617",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号最后一次更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddDBInstanceToReadOnlyGroupRequest": {
+      "document": "AddDBInstanceToReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddDBInstanceToReadOnlyGroupResponse": {
+      "document": "AddDBInstanceToReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AnalysisItems": {
+      "document": "慢查询分析接口返回的分析详情，按照参数抽象之后进行分类",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL查询的数据库名",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的用户名",
+          "example": "postgres",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "抽象参数之后的慢SQL",
+          "example": "select $1",
+          "member": "string",
+          "name": "NormalQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的客户端地址",
+          "example": "::1",
+          "member": "string",
+          "name": "ClientAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内慢SQL语句执行的次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CallNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的次数占所有慢SQL的比例（小数返回）",
+          "example": "0.1",
+          "member": "float",
+          "name": "CallPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL执行的总时间",
+          "example": "1.1",
+          "member": "float",
+          "name": "CostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的总时间占所有慢SQL的比例（小数返回）",
+          "example": "0.2",
+          "member": "float",
+          "name": "CostPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时最短的时间（单位：ms）",
+          "example": "0.01",
+          "member": "float",
+          "name": "MinCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时最长的时间（单位：ms）",
+          "example": "1",
+          "member": "float",
+          "name": "MaxCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL语句执行的耗时平均时间（单位：ms）",
+          "example": "0.2",
+          "member": "float",
+          "name": "AvgCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL第一条开始执行的时间戳",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在选定时间范围内，慢SQL最后一条开始执行的时间戳",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloseDBExtranetAccessRequest": {
+      "document": "CloseDBExtranetAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-6r233v55",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否关闭Ipv6外网，1：是，0：否",
+          "member": "int64",
+          "name": "IsIpv6",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseDBExtranetAccessResponse": {
+      "document": "CloseDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务流程ID",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseServerlessDBExtranetAccessRequest": {
+      "document": "CloseServerlessDBExtranetAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一标识符",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseServerlessDBExtranetAccessResponse": {
+      "document": "CloseServerlessDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstancesRequest": {
+      "document": "CreateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。",
+          "example": "无",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一次性购买的实例数量。取值1-100",
+          "example": "无",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络子网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费；",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "活动ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名(后续支持)",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持Ipv6，1：是，0：否",
+          "example": "无",
+          "member": "uint64",
+          "name": "NeedSupportIpv6",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstancesResponse": {
+      "document": "CreateDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表。每个实例对应一个订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号",
+          "example": "无",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
+          "example": "无",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4、11.8、12.4五种版本。",
+          "example": "无",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一次性购买的实例数量。取值1-10。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例字符集，目前只支持：UTF8、LATIN1。",
+          "example": "UTF8",
+          "member": "string",
+          "name": "Charset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名对应的密码。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已配置的私有网络中的子网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费。",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "活动ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持Ipv6，1：是，0：否（默认）。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NeedSupportIpv6",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表。每个实例对应一个订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号。",
+          "example": "无",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建成功的实例ID集合，只在后付费情景下有返回值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyDBInstanceRequest": {
+      "document": "CreateReadOnlyDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "SpecCode",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前强制和主实例保持一致",
+          "example": "DBVersion",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一次性购买的实例数量。取值1-100",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "只读实例的主实例ID",
+          "example": "MasterDBInstanceId",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "InstanceChargeType",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费；",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络子网ID。",
+          "example": "SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优惠活动ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名(后续支持)",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持Ipv6，1：是，0：否",
+          "example": "1",
+          "member": "uint64",
+          "name": "NeedSupportIpv6",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "只读组ID。",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空",
+          "example": "空",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "[\"sasasasd\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyDBInstanceResponse": {
+      "document": "CreateReadOnlyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单号列表。每个实例对应一个订单号",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号",
+          "example": "BillId",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
+          "example": "[\"BillId\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupRequest": {
+      "document": "CreateReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主实例ID",
+          "example": "MasterDBInstanceId",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "example": "VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLagEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小开关： 0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLatencyEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小阈值，单位MB",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLatency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟剔除最小保留实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinDelayEliminateReserve",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "[\"sasasasd\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupResponse": {
+      "document": "CreateReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessDBInstanceRequest": {
+      "document": "CreateServerlessDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DB实例名称，同一个账号下该值必须唯一。",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本，目前只支持：10.4。",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL数据库字符集，目前支持UTF8。",
+          "member": "string",
+          "name": "DBCharset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络子网ID。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的标签数组信息",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessDBInstanceResponse": {
+      "document": "CreateServerlessDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID，该ID全局唯一，如：postgres-xxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DBBackup": {
+      "document": "数据库备份信息",
+      "members": [
+        {
+          "default": "",
+          "document": "备份文件唯一标识",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件生成的开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件生成的结束时间",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小(K)",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略（0-实例备份；1-多库备份）",
+          "member": "int64",
+          "name": "Strategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型（0-定时）",
+          "member": "int64",
+          "name": "Way",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份方式（1-完整）",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态（1-创建中；2-成功；3-失败）",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB列表",
+          "member": "string",
+          "name": "DbList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网下载地址",
+          "member": "string",
+          "name": "InternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网下载地址",
+          "member": "string",
+          "name": "ExternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DBInstance": {
+      "document": "描述实例的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例所属地域，如: ap-guangzhou，对应RegionSet的Region字段",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段",
+          "example": "100003",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "example": "123123",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgre-123",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "postgre-123",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态，分别为：applying（申请中）、init(待初始化)、initing(初始化中)、running(运行中)、limited run（受限运行）、isolated（已隔离）、recycling（回收中）、recycled（已回收）、job running（任务执行中）、offline（下线）、migrating（迁移中）、expanding（扩容中）、waitSwitch（等待切换）、switching（切换中）、readonly（只读）、restarting（重启中）、",
+          "example": "applying",
+          "member": "string",
+          "name": "DBInstanceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例分配的内存大小，单位：GB",
+          "example": "2",
+          "member": "uint64",
+          "name": "DBInstanceMemory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例分配的存储空间大小，单位：GB",
+          "example": "10",
+          "member": "uint64",
+          "name": "DBInstanceStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例分配的CPU数量，单位：个",
+          "example": "2",
+          "member": "uint64",
+          "name": "DBInstanceCpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖规格ID",
+          "example": "11",
+          "member": "string",
+          "name": "DBInstanceClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型，类型有：1、primary（主实例）；2、readonly（只读实例）；3、guard（灾备实例）；4、temp（临时实例）",
+          "example": "primary",
+          "member": "string",
+          "name": "DBInstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本，目前只支持standard（双机高可用版, 一主一从）",
+          "example": "standard",
+          "member": "string",
+          "name": "DBInstanceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例DB字符集",
+          "example": "utf-8",
+          "member": "string",
+          "name": "DBCharset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本",
+          "example": "12.4",
+          "member": "string",
+          "name": "DBVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "example": "2014-08-03 12:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例执行最后一次更新的时间",
+          "example": "2014-08-03 12:00:00",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间",
+          "example": "2014-08-03 12:00:00",
+          "member": "datetime",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例隔离时间",
+          "example": "2014-08-03 12:00:00",
+          "member": "datetime",
+          "name": "IsolatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式，1、prepaid（包年包月,预付费）；2、postpaid（按量计费，后付费）",
+          "example": "prepaid",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例网络连接信息",
+          "example": "1",
+          "member": "DBInstanceNetInfo",
+          "name": "DBInstanceNetInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户的AppId",
+          "example": "123455",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的Uid",
+          "example": "12344",
+          "member": "uint64",
+          "name": "Uid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例是否支持Ipv6，1：支持，0：不支持",
+          "example": "1",
+          "member": "uint64",
+          "name": "SupportIpv6",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "Tag",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主实例信息，仅在实例为只读实例时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgre-123",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "ReadOnlyInstanceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读实例在只读组中的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "StatusInReadonlyGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03 12:00",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DBInstanceNetInfo": {
+      "document": "描述实例的网络连接信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "DNS域名",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接Port地址",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；",
+          "member": "string",
+          "name": "NetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络连接状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteReadOnlyGroupRequest": {
+      "document": "DeleteReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReadOnlyGroupResponse": {
+      "document": "DeleteReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessDBInstanceRequest": {
+      "document": "DeleteServerlessDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessDBInstanceResponse": {
+      "document": "DeleteServerlessDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsRequest": {
+      "document": "DescribeAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-6fego161",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回，每页最大返回数目，默认20，取值范围为1-100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回，返回第几页的用户数据。页码从0开始计数",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsResponse": {
+      "document": "DescribeAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "本次调用接口共返回了多少条数据。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "帐号列表详细信息。",
+          "member": "AccountInfo",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBBackupsRequest": {
+      "document": "DescribeDBBackups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-4wdeb0zv。",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份方式（1-全量）。目前只支持全量，取值为1。",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份列表分页返回，每页返回数量，默认为 20，最小为1，最大值为 100。（当该参数不传或者传0时按默认值处理）",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果中的第几页，从第0页开始。默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBBackupsResponse": {
+      "document": "DescribeDBBackups返回参数结构体",
+      "members": [
+        {
+          "document": "返回备份列表中备份文件的个数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备份列表",
+          "member": "DBBackup",
+          "name": "BackupList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBErrlogsRequest": {
+      "document": "DescribeDBErrlogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-5bq3wfjd",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，形如2018-01-01 00:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名字",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "member": "string",
+          "name": "SearchKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页返回，每页返回的最大数量。取值为1-100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回，返回第几页的数据，从第0页开始计数",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBErrlogsResponse": {
+      "document": "DescribeDBErrlogs返回参数结构体",
+      "members": [
+        {
+          "document": "本次调用返回了多少条数据",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误日志列表",
+          "member": "ErrLogDetail",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceAttributeRequest": {
+      "document": "DescribeDBInstanceAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceAttributeResponse": {
+      "document": "DescribeDBInstanceAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "实例详细信息。",
+          "member": "DBInstance",
+          "name": "DBInstance",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string\ndb-instance-name：按照实例名过滤，类型为string\ndb-project-id：按照项目ID过滤，类型为integer\ndb-pay-mode：按照付费模式过滤，类型为string\ndb-tag-key：按照标签键过滤，类型为string",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页显示数量，取值范围为1-100，默认为返回10条。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序：asc、降序：desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的实例数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例详细信息集合。",
+          "example": "无",
+          "member": "DBInstance",
+          "name": "DBInstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSlowlogsRequest": {
+      "document": "DescribeDBSlowlogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-lnp6j617",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名字",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照何种指标排序，取值为sum_calls或者sum_cost_time。sum_calls-总调用次数；sum_cost_time-总的花费时间",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序规则。desc-降序；asc-升序",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回结果，每页最大返回数量，取值为1-100，默认20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回结果，返回结果的第几页，从0开始计数",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSlowlogsResponse": {
+      "document": "DescribeDBSlowlogs返回参数结构体",
+      "members": [
+        {
+          "document": "本次返回多少条数据",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢查询日志详情",
+          "member": "SlowlogDetail",
+          "name": "Detail",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBXlogsRequest": {
+      "document": "DescribeDBXlogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-4wdeb0zv。",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回，表示返回第几页的条目。从第0页开始计数。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回，表示每页有多少条目。取值为1-100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBXlogsResponse": {
+      "document": "DescribeDBXlogs返回参数结构体",
+      "members": [
+        {
+          "document": "表示此次返回结果有多少条数据。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Xlog列表",
+          "member": "Xlog",
+          "name": "XlogList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesRequest": {
+      "document": "DescribeDatabases请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesResponse": {
+      "document": "DescribeDatabases返回参数结构体",
+      "members": [
+        {
+          "document": "数据库信息",
+          "member": "string",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersRequest": {
+      "document": "DescribeOrders请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "订单名集合",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersResponse": {
+      "document": "DescribeOrders返回参数结构体",
+      "members": [
+        {
+          "document": "订单数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单数组",
+          "member": "PgDeal",
+          "name": "Deals",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductConfigRequest": {
+      "document": "DescribeProductConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区名称",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductConfigResponse": {
+      "document": "DescribeProductConfig返回参数结构体",
+      "members": [
+        {
+          "document": "售卖规格列表。",
+          "member": "SpecInfo",
+          "name": "SpecInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReadOnlyGroupsRequest": {
+      "document": "DescribeReadOnlyGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，必须传入主实例ID进行过滤，否则返回值将为空，过滤参数为：db-master-instance-id",
+          "example": "[{\"Name\": \"db-master-instance-id\", \"Value\": \"aa\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询每一页的条数，默认为10",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的页码，默认为1",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询排序依据，目前支持:ROGroupId,CreateTime,Name",
+          "example": "ROGroupId",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询排序依据类型，目前支持:desc,asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReadOnlyGroupsResponse": {
+      "document": "DescribeReadOnlyGroups返回参数结构体",
+      "members": [
+        {
+          "document": "只读组列表",
+          "example": "空",
+          "member": "ReadOnlyGroup",
+          "name": "ReadOnlyGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域信息集合。",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessDBInstancesRequest": {
+      "document": "DescribeServerlessDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询个数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序指标，目前支持实例创建时间CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，包括升序、降序",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessDBInstancesResponse": {
+      "document": "DescribeServerlessDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ServerlessDBInstance",
+          "name": "DBInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryAnalysisRequest": {
+      "document": "DescribeSlowQueryAnalysis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据数据库名进行筛选，可以为空。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。",
+          "example": "CallNum",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型。升序asc、降序desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小。取值范围[1,100]。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移。取值范围[0,INF)。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryAnalysisResponse": {
+      "document": "DescribeSlowQueryAnalysis返回参数结构体",
+      "members": [
+        {
+          "document": "查询总条数。",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢SQL统计分析接口返回详情。",
+          "example": "无",
+          "member": "Detail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryListRequest": {
+      "document": "DescribeSlowQueryList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。",
+          "example": "2020-01-01 02:03:04",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询j结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。",
+          "example": "2020-01-01 02:03:04",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据数据库名进行筛选，可以为空。",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型。升序asc、降序desc。默认为desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序维度。 可选参数，取值范围[SessionStartTime,Duration]，默认为SessionStartTime。",
+          "example": "SessionStartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页大小。取值范围[1,100],默认为20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移。取值范围[0,INF)，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryListResponse": {
+      "document": "DescribeSlowQueryList返回参数结构体",
+      "members": [
+        {
+          "document": "选定时间范围内慢SQL总条数。",
+          "example": "6",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "指定时间范围内，慢SQL耗时分段分析。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DurationAnalysis",
+          "name": "DurationAnalysis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指定时间范围内 慢SQL流水。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RawSlowQuery",
+          "name": "RawSlowQueryList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "返回的结果数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区信息集合。",
+          "member": "ZoneInfo",
+          "name": "ZoneSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBInstanceRequest": {
+      "document": "DestroyDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待下线实例ID",
+          "example": "postgres-19nmz2xb",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBInstanceResponse": {
+      "document": "DestroyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Detail": {
+      "document": "慢SQL 统计分析接口返回详情",
+      "members": [
+        {
+          "default": "",
+          "document": "输入时间范围内所有慢sql执行的总时间，单位毫秒（ms）",
+          "example": "0.1",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入时间范围内所有慢sql总条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCallNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL统计分析列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalysisItems",
+          "name": "AnalysisItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DisIsolateDBInstancesRequest": {
+      "document": "DisIsolateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID列表",
+          "example": "[\"postgres-xxxxxxx\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "包年包月实例解隔离时购买时常 以月为单位",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否使用代金券：true-使用,false-不使用，默认不使用",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "代金券id列表",
+          "example": "[\"a\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisIsolateDBInstancesResponse": {
+      "document": "DisIsolateDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DurationAnalysis": {
+      "document": "慢SQL耗时分段分析",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL耗时，时段",
+          "example": "“0-1s”",
+          "member": "string",
+          "name": "TimeSegment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应时段区间慢SQL 条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ErrLogDetail": {
+      "document": "错误日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名字",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误发生时间",
+          "member": "string",
+          "name": "ErrTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误消息",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称等\n* 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n* 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "InitDBInstancesRequest": {
+      "document": "InitDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID集合。",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名。",
+          "member": "string",
+          "name": "AdminName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例根账号用户名对应的密码。",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例字符集，目前只支持：UTF8、LATIN1。",
+          "member": "string",
+          "name": "Charset",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InitDBInstancesResponse": {
+      "document": "InitDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID集合。",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateDBInstancesRequest": {
+      "document": "InquiryPriceCreateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储容量大小，单位：GB。",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例数量。目前最大数量不超过100，如需一次性创建更多实例，请联系客服支持。",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。",
+          "member": "uint64",
+          "name": "Pid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateDBInstancesResponse": {
+      "document": "InquiryPriceCreateDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "原始价格，单位：分",
+          "member": "uint64",
+          "name": "OriginalPrice",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "折后价格，单位：分",
+          "member": "uint64",
+          "name": "Price",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewDBInstanceRequest": {
+      "document": "InquiryPriceRenewDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费周期，按月计算，最大不超过48",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewDBInstanceResponse": {
+      "document": "InquiryPriceRenewDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "总费用，打折前的。比如24650表示246.5元",
+          "member": "int64",
+          "name": "OriginalPrice",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实际需要付款金额。比如24650表示246.5元",
+          "member": "int64",
+          "name": "Price",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceUpgradeDBInstanceRequest": {
+      "document": "InquiryPriceUpgradeDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的磁盘大小，单位GB",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例的内存大小，单位GB",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-hez4fh0v",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceUpgradeDBInstanceResponse": {
+      "document": "InquiryPriceUpgradeDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "总费用，打折前的",
+          "member": "int64",
+          "name": "OriginalPrice",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实际需要付款金额",
+          "member": "int64",
+          "name": "Price",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstancesRequest": {
+      "document": "IsolateDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID集合",
+          "example": "[\"postgres-xxxxxxxx\"]",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateDBInstancesResponse": {
+      "document": "IsolateDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountRemarkRequest": {
+      "document": "ModifyAccountRemark请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-4wdeb0zv",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户UserName对应的新备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountRemarkResponse": {
+      "document": "ModifyAccountRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNameRequest": {
+      "document": "ModifyDBInstanceName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库实例ID，形如postgres-6fego161",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的数据库实例名字",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNameResponse": {
+      "document": "ModifyDBInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyGroupRequest": {
+      "document": "ModifyDBInstanceReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前实例所在只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例修改的目标只读组ID",
+          "example": "NewReadOnlyGroupId",
+          "member": "string",
+          "name": "NewReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceReadOnlyGroupResponse": {
+      "document": "ModifyDBInstanceReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstancesProjectRequest": {
+      "document": "ModifyDBInstancesProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "postgresql实例ID数组",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "postgresql实例所属新项目的ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstancesProjectResponse": {
+      "document": "ModifyDBInstancesProject返回参数结构体",
+      "members": [
+        {
+          "document": "转移项目成功的实例个数",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReadOnlyGroupConfigRequest": {
+      "document": "ModifyReadOnlyGroupConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组名称",
+          "example": "ReadOnlyGroupName",
+          "member": "string",
+          "name": "ReadOnlyGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "延迟时间配置开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLagEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟日志大小配置开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplayLatencyEliminate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟日志大小阈值，单位MB",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLatency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxReplayLag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动负载均衡开关：0关、1开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rebalance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "延迟剔除最小保留实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinDelayEliminateReserve",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReadOnlyGroupConfigResponse": {
+      "document": "ModifyReadOnlyGroupConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySwitchTimePeriodRequest": {
+      "document": "ModifySwitchTimePeriod请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "处于等待切换状态中的实例ID",
+          "example": "postgres-19nmz2xb",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "入参取值为 0 ，代表立即切换。",
+          "example": "0:立即切换",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySwitchTimePeriodResponse": {
+      "document": "ModifySwitchTimePeriod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NormalQueryItem": {
+      "document": "单条SlowQuery信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用次数",
+          "member": "int64",
+          "name": "Calls",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "粒度点",
+          "member": "int64",
+          "name": "CallsGrids",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "花费总时间",
+          "member": "float",
+          "name": "CostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "影响的行数",
+          "member": "int64",
+          "name": "Rows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "花费最小时间",
+          "member": "float",
+          "name": "MinCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "花费最大时间",
+          "member": "float",
+          "name": "MaxCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最早一条慢SQL时间",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最晚一条慢SQL时间",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读共享内存块数",
+          "member": "int64",
+          "name": "SharedReadBlks",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "写共享内存块数",
+          "member": "int64",
+          "name": "SharedWriteBlks",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读io总耗时",
+          "member": "int64",
+          "name": "ReadCostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "写io总耗时",
+          "member": "int64",
+          "name": "WriteCostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名字",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脱敏后的慢SQL",
+          "member": "string",
+          "name": "NormalQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OpenDBExtranetAccessRequest": {
+      "document": "OpenDBExtranetAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-hez4fh0v",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开通Ipv6外网，1：是，0：否",
+          "member": "int64",
+          "name": "IsIpv6",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenDBExtranetAccessResponse": {
+      "document": "OpenDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务流程ID",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenServerlessDBExtranetAccessRequest": {
+      "document": "OpenServerlessDBExtranetAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的唯一标识符",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenServerlessDBExtranetAccessResponse": {
+      "document": "OpenServerlessDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PgDeal": {
+      "document": "订单详情",
+      "members": [
+        {
+          "default": "",
+          "document": "订单名",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属用户",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单涉及多少个实例",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式。1-预付费；0-后付费",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步任务流程ID",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID数组",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RawSlowQuery": {
+      "document": "慢SQL查询接口返回 慢SQL列表详情",
+      "members": [
+        {
+          "default": "",
+          "document": "慢SQL 语句",
+          "example": "select 1",
+          "member": "string",
+          "name": "RawQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL 查询的数据库",
+          "example": "postgres",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行 耗时",
+          "example": "1.1",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行慢SQL的客户端",
+          "example": "::1",
+          "member": "string",
+          "name": "ClientAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行慢SQL的用户名",
+          "example": "postgres",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢SQL执行的开始时间",
+          "example": "2020-02-01 01:02:03",
+          "member": "string",
+          "name": "SessionStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReadOnlyGroup": {
+      "document": "只读组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReadOnlyGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MasterDBInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小保留实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MinDelayEliminateReserve",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟空间大小阈值",
+          "member": "int64",
+          "name": "MaxReplayLatency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟大小开关",
+          "member": "int64",
+          "name": "ReplayLatencyEliminate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟时间大小阈值",
+          "member": "float",
+          "name": "MaxReplayLag",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟时间开关",
+          "member": "int64",
+          "name": "ReplayLagEliminate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟网络id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域id",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地区id",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例详细信息",
+          "member": "DBInstance",
+          "name": "ReadOnlyDBInstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动负载均衡开关",
+          "member": "int64",
+          "name": "Rebalance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络信息",
+          "member": "DBInstanceNetInfo",
+          "name": "DBInstanceNetInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RebalanceReadOnlyGroupRequest": {
+      "document": "RebalanceReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebalanceReadOnlyGroupResponse": {
+      "document": "RebalanceReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInfo": {
+      "document": "描述地域的编码和状态等信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该地域对应的英文名称",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该地域对应的中文名称",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该地域对应的数字编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "RegionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该地域是否支持国际站售卖，0：不支持，1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SupportInternational",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveDBInstanceFromReadOnlyGroupRequest": {
+      "document": "RemoveDBInstanceFromReadOnlyGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "DBInstanceId",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只读组ID",
+          "example": "ReadOnlyGroupId",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveDBInstanceFromReadOnlyGroupResponse": {
+      "document": "RemoveDBInstanceFromReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstanceRequest": {
+      "document": "RenewInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-6fego161",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费多少个月",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstanceResponse": {
+      "document": "RenewInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单名",
+          "member": "string",
+          "name": "DealName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAccountPasswordRequest": {
+      "document": "ResetAccountPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-4wdeb0zv",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例账户名",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UserName账户对应的新密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAccountPasswordResponse": {
+      "document": "ResetAccountPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDBInstanceRequest": {
+      "document": "RestartDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-6r233v55",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDBInstanceResponse": {
+      "document": "RestartDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ServerlessDBAccount": {
+      "document": "serverless账号描述",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DBConnLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerlessDBInstance": {
+      "document": "serverless实例描述",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id，唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBInstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBInstanceStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有网络Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字符集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBCharset",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ServerlessDBInstanceNetInfo",
+          "name": "DBInstanceNetInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例账户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ServerlessDBAccount",
+          "name": "DBAccountSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例下的db信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DBDatabaseList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例绑定的标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServerlessDBInstanceNetInfo": {
+      "document": "serverless实例网络信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SetAutoRenewFlagRequest": {
+      "document": "SetAutoRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID数组",
+          "member": "string",
+          "name": "DBInstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费标记。0-正常续费；1-自动续费；2-到期不续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAutoRenewFlagResponse": {
+      "document": "SetAutoRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "设置成功的实例个数",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SlowlogDetail": {
+      "document": "慢查询详情",
+      "members": [
+        {
+          "default": "",
+          "document": "花费总时间",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用总次数",
+          "member": "int64",
+          "name": "TotalCalls",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脱敏后的慢SQL列表",
+          "member": "NormalQueryItem",
+          "name": "NormalQueries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SpecInfo": {
+      "document": "描述某个地域下某个可用区的可售卖规格详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "地域英文编码，对应RegionSet的Region字段",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区域英文编码，对应ZoneSet的Zone字段",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规格详细信息列表",
+          "member": "SpecItemInfo",
+          "name": "SpecItemInfoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "out"
+    },
+    "SpecItemInfo": {
+      "document": "描述一种规格的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规格ID",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL的内核版本编号",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内核编号对应的完整版本名称",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU核数",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存大小，单位：MB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格所支持最大存储容量，单位：GB",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格所支持最小存储容量，单位：GB",
+          "member": "uint64",
+          "name": "MinStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格的预估QPS",
+          "member": "uint64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格对应的计费ID",
+          "member": "uint64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "实例绑定的标签信息，包含标签键TagKey和标签值TagValue",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpgradeDBInstanceRequest": {
+      "document": "UpgradeDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "升级后的实例内存大小，单位GB",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后的实例磁盘大小，单位GB",
+          "example": "200",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例ID，形如postgres-lnp6j617",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "活动ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "example": "0",
+          "member": "int64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间",
+          "example": "8:30:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换截止时间",
+          "example": "8:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceResponse": {
+      "document": "UpgradeDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "交易名字。",
+          "example": "201806127634",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号",
+          "example": "123",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Xlog": {
+      "document": "数据库Xlog信息",
+      "members": [
+        {
+          "default": "",
+          "document": "备份文件唯一标识",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件生成的开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件生成的结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网下载地址",
+          "member": "string",
+          "name": "InternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网下载地址",
+          "member": "string",
+          "name": "ExternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件大小",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "描述可用区的编码和状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该可用区的英文名称",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该可用区的中文名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该可用区对应的数字编号",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用",
+          "member": "string",
+          "name": "ZoneState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该可用区是否支持Ipv6",
+          "member": "uint64",
+          "name": "ZoneSupportIpv6",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "CreateCameraAlerts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCameraAlerts\n<公共请求参数>\n\n{\n    \"Alerts\": [\n        {\n            \"GroupCode\": \"group_code\",\n            \"MallId\": 1,\n            \"CameraId\": 1,\n            \"CaptureTime\": 123123123123,\n            \"MoveAlert\": {\n                \"Move\": true,\n                \"MoveConfidence\": 0.32\n            },\n            \"CoverAlert\": {\n                \"Cover\": true,\n                \"CoverConfidence\": 0.32\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "上报相机移动、遮挡等告警信息"
+      }
+    ],
+    "CreateCameraState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCameraState\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"CameraStates\": [\n        {\n            \"CameraId\": 1,\n            \"State\": 10\n        },\n        {\n            \"CameraId\": 2,\n            \"State\": 11\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "相机状态上报接口"
+      }
+    ],
+    "CreateCapture": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCapture\n<公共请求参数>\n\n{\n    \"Data\": \"source capture info\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"RspData\": \"source detail response info\"\n    }\n}",
+        "title": "接入层抓拍上报接口"
+      }
+    ],
+    "CreateMultiBizAlert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiBizAlert\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"ZoneId\": 1,\n    \"CameraId\": 1,\n    \"CaptureTime\": 1600011956020,\n    \"Image\": \"imagebase64stirng\",\n    \"State\": 1,\n    \"Warnings\": [\n        {\n            \"Id\": -1,\n            \"MonitoringArea\": [\n                {\n                    \"X\": 0,\n                    \"Y\": 0\n                },\n                {\n                    \"X\": 1920,\n                    \"Y\": 0\n                },\n                {\n                    \"X\": 1920,\n                    \"Y\": 1080\n                },\n                {\n                    \"X\": 0,\n                    \"Y\": 1080\n                }\n            ],\n            \"WarningInfos\": [\n                {\n                    \"WarningType\": 1,\n                    \"WarningAreaSize\": 100,\n                    \"WarningLocation\": {\n                        \"X\": 100,\n                        \"Y\": 100\n                    },\n                    \"WarningAreaContour\": [\n                        {\n                            \"X\": 100,\n                            \"Y\": 100\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "多经点位告警"
+      }
+    ],
+    "CreateProgramState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProgramState\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"ProgramStateItems\": [\n        {\n            \"ServerIp\": \"192.168.1.1\",\n            \"ProgramName\": \"ops_server\",\n            \"OnlineCount\": 1,\n            \"OfflineCount\": 1,\n            \"State\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "进程监控信息"
+      }
+    ],
+    "CreateServerState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerState\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"ReportTime\": 123456789,\n    \"ServerStateItems\": [\n        {\n            \"ServerState\": 1,\n            \"ServerIp\": \"192.168.1.1\",\n            \"DiskInfos\": [\n                {\n                    \"DiskName\": \"/dev/sdb\",\n                    \"Usage\": 0.45\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "服务器监控信息"
+      }
+    ],
+    "DeleteMultiBizAlert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMultiBizAlert\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"CameraId\": 1,\n    \"ZoneId\": 1,\n    \"ActionType\": 1,\n    \"Image\": \"imagebase64string\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "多经点位消警"
+      }
+    ],
+    "DeleteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTask\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除任务"
+      }
+    ],
+    "DescribeCameras": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCameras\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Cameras\": [\n            {\n                \"CameraFeature\": 1,\n                \"CameraId\": 1,\n                \"CameraName\": \"camera_name\",\n                \"Pixel\": \"100w\",\n                \"CameraIp\": \"ip\",\n                \"CameraState\": 0,\n                \"RTSP\": \"rtsp://192.168.1.1/av0_0\",\n                \"Zones\": [\n                    {\n                        \"ZoneId\": 1,\n                        \"ZoneName\": \"zone_name\",\n                        \"BunkCodes\": \"bunk_codes\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取摄像头状态列表"
+      }
+    ],
+    "DescribeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfig\n<公共请求参数>\n\n{\n    \"ServerMac\": \"78:7B:8A:CD:1D:EA\",\n    \"GroupCode\": \"\",\n    \"MallId\": 0,\n    \"CameraSign\": \"sign\",\n    \"CameraAppId\": \"\",\n    \"CameraTimestamp\": 1599655851520,\n    \"SessionId\": \"id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"SessionId\": \"id\",\n        \"Version\": 1,\n        \"Cameras\": [\n            {\n                \"GroupCode\": \"\",\n                \"MallId\": 1,\n                \"FloorId\": 1,\n                \"CameraId\": 1,\n                \"CameraIp\": \"ip\",\n                \"CameraMac\": \"mac\",\n                \"CameraType\": 2,\n                \"CameraFeature\": 1,\n                \"CameraState\": 0,\n                \"Width\": 1920,\n                \"Height\": 1080,\n                \"ZoneId\": 1,\n                \"ZoneType\": 1,\n                \"Config\": {\n                    \"CameraProducer\": \"D\",\n                    \"RTSP\": \"\",\n                    \"Fps\": 5,\n                    \"DecodeFps\": 5,\n                    \"PassengerFlow\": 1,\n                    \"FaceExpose\": 1,\n                    \"MallArea\": [\n                        {\n                            \"X\": 1,\n                            \"Y\": 1\n                        },\n                        {\n                            \"X\": 2,\n                            \"Y\": 2\n                        },\n                        {\n                            \"X\": 3,\n                            \"Y\": 3\n                        }\n                    ],\n                    \"ShopArea\": [\n                        {\n                            \"X\": 1,\n                            \"Y\": 1\n                        },\n                        {\n                            \"X\": 2,\n                            \"Y\": 2\n                        },\n                        {\n                            \"X\": 3,\n                            \"Y\": 3\n                        }\n                    ],\n                    \"TrackAreas\": [\n                        {\n                            \"Points\": [\n                                {\n                                    \"X\": 1,\n                                    \"Y\": 1\n                                },\n                                {\n                                    \"X\": 2,\n                                    \"Y\": 2\n                                },\n                                {\n                                    \"X\": 3,\n                                    \"Y\": 3\n                                },\n                                {\n                                    \"X\": 4,\n                                    \"Y\": 4\n                                }\n                            ]\n                        }\n                    ],\n                    \"Zones\": [\n                        {\n                            \"ZoneId\": 1,\n                            \"ShopArea\": [\n                                {\n                                    \"X\": 1,\n                                    \"Y\": 1\n                                },\n                                {\n                                    \"X\": 2,\n                                    \"Y\": 2\n                                },\n                                {\n                                    \"X\": 3,\n                                    \"Y\": 3\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取摄像头配置信息"
+      }
+    ],
+    "DescribeImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImage\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"CameraId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ImageUrl\": \"http://youmall.cos.ap-shanghai.myqlcoud.com/123456.png\"\n    }\n}",
+        "title": "获取底图"
+      }
+    ],
+    "DescribeMultiBizBaseImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiBizBaseImage\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"ZoneId\": 1,\n    \"CameraId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ImageUrl\": \"http://youmall.cos.ap-shanghai.myqcloud.com/tmp.png\"\n    }\n}",
+        "title": "获取多经点位底图"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Tasks\": [\n            {\n                \"TaskType\": 0,\n                \"TaskId\": 1,\n                \"GroupCode\": \"code\",\n                \"MallId\": 1,\n                \"TaskContent\": {\n                    \"CameraId\": 1,\n                    \"RTSP\": \"rtsp://127.0.0.1/video0\",\n                    \"Url\": \"cos put url\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询任务列表"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Zones\": [\n            {\n                \"ZoneId\": 1,\n                \"ZoneName\": \"zone_name\",\n                \"ZoneType\": 1,\n                \"BindNum\": 0,\n                \"DebugNum\": 0,\n                \"BunkCodes\": \"bunk_codes\",\n                \"FloorId\": 0,\n                \"FloorName\": \"floor_name\",\n                \"State\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取点位列表"
+      }
+    ],
+    "ModifyMultiBizConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMultiBizConfig\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"CameraId\": 1,\n    \"ZoneId\": 1,\n    \"MonitoringAreas\": [\n        {\n            \"Points\": [\n                {\n                    \"X\": 1,\n                    \"Y\": 1\n                },\n                {\n                    \"X\": 2,\n                    \"Y\": 2\n                },\n                {\n                    \"X\": 3,\n                    \"Y\": 3\n                },\n                {\n                    \"X\": 4,\n                    \"Y\": 4\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "多经点位配置更新"
+      }
+    ],
+    "ReportServiceRegister": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportServiceRegister\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"ServerIp\": \"192.168.1.1\",\n    \"ServerNodeId\": \"asdr5qwfq451234fsdgsfg\",\n    \"ServiceRegisterInfos\": [\n        {\n            \"CgiUrl\": \"http://127.0.0.1:111111/hello_world\",\n            \"ServiceType\": 2\n        },\n        {\n            \"CgiUrl\": \"http://127.0.0.1:22222/hello_tencent\",\n            \"ServiceType\": 3\n        }\n    ],\n    \"ReportTime\": 123456789\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "上报服务回调地址注册"
+      }
+    ],
+    "SearchImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ump.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchImage\n<公共请求参数>\n\n{\n    \"GroupCode\": \"group_code\",\n    \"MallId\": 1,\n    \"Image\": \"imagebase64string\",\n    \"ImageTime\": 1600427281051\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"FaceId\": \"face_id\",\n        \"Results\": [\n            {\n                \"Image\": \"image base64 string\",\n                \"PersonId\": \"person_id\",\n                \"Similarity\": 0.99\n            }\n        ]\n    }\n}",
+        "title": "以图搜图"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CreateProject": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=CreateProject\n&Name='测试项目'\n&Desc='项目描述'\n&InstanceID=\"taw-123\"\n&Type=web\n&URL='http://www.qq.com'\n&Repo='http://github.com/xxx'\n&Rate=\"10\"\n&EnableURLGroup=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"Key\": \"RlOmCVbPrKd4\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "创建 rum 项目"
+      }
+    ],
+    "DescribeDataLogUrlStatistics": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataLogUrlStatistics\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取LogUrlStatistics信息"
+      }
+    ],
+    "DescribeDataPerformancePage": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataPerformancePage\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取PerformancePage信息"
+      }
+    ],
+    "DescribeError": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeError\n&ID=1\n&Date=20210520\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ID\": 1,\n        \"CreateTime\": \"20210520\",\n        \"Content\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取首页错误信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

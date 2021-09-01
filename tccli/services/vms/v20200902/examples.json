@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "SendCodeVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendCodeVoice\n<公共请求参数>\n\n{\n    \"CodeMessage\": \"1234\",\n    \"PlayTimes\": 2,\n    \"CalledNumber\": \"+8613788888888\",\n    \"SessionContext\": \"test\",\n    \"VoiceSdkAppid\": \"1400006666\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SendStatus\": {\n            \"CallId\": \"12582bce-403c-11eb-96b8-525400476c37\",\n            \"SessionContext\": \"test\"\n        },\n        \"RequestId\": \"91260bb8-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "title": "发送语音验证码"
+      }
+    ],
+    "SendTtsVoice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendTtsVoice\n<公共请求参数>\n\n{\n    \"TemplateId\": \"4356\",\n    \"TemplateParamSet\": [\n        \"7652\"\n    ],\n    \"PlayTimes\": 2,\n    \"CalledNumber\": \"+8613788888888\",\n    \"SessionContext\": \"test\",\n    \"VoiceSdkAppid\": \"1400006666\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SendStatus\": {\n            \"CallId\": \"12582bce-403c-11eb-96b8-525400476c37\",\n            \"SessionContext\": \"test\"\n        },\n        \"RequestId\": \"91260bb8-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "title": "指定模板发送语音通知"
+      }
+    ]
+  },
+  "version": "1.0"
+}

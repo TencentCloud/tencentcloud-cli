@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "DescribeApp": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=DescribeApp\r\n&Sdkappid=1200168178\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\",\n        \"Data\": {\n            \"Sdkappid\": \"1400168178\",\n            \"Appkey\": \"20676074e3db4492efb0471b4cbec2f1\",\n            \"CloudAppid\": \"1256872341\",\n            \"Name\": \"test\",\n            \"Description\": \"descr\",\n            \"CreatedTime\": \"2018-12-11 15:40:01\",\n            \"BizType\": 1,\n            \"Uin\": \"100008340870\"\n        }\n    }\n}",
+        "title": "查询物联网卡详情信息"
+      }
+    ],
+    "DescribeCard": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=DescribeCard\n&Sdkappid=1200168178\n&Iccid=89860619000013360957\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\",\n        \"Data\": {\n            \"Iccid\": \"89860619000013360957\",\n            \"Msisdn\": \"861064606873886\",\n            \"Imsi\": \"460066520053793\",\n            \"Imei\": \"\",\n            \"Sdkappid\": \"1400168178\",\n            \"Teleoperator\": 2,\n            \"CardStatus\": 1,\n            \"NetworkStatus\": 0,\n            \"ActivitedTime\": \"0\",\n            \"Type\": 1,\n            \"ProductId\": \"LT-1-10M\",\n            \"PoolId\": \"\",\n            \"DataUsedInPeriod\": 0,\n            \"DataTotalInPeriod\": 0,\n            \"ProductExpiredTime\": \"0\",\n            \"Description\": \"\",\n            \"CreatedTime\": \"2019-01-04 17:41:42\",\n            \"ModifiedTime\": \"2019-01-04 18:30:44\",\n            \"PreorderCnt\": 2,\n            \"IsActivated\": 1,\n            \"OrderId\": \"20190104157897\",\n            \"AutoRenew\": 0,\n            \"Remark\": \"\",\n            \"AllowArrears\": 0,\n            \"NeedSms\": 0,\n            \"Provider\": 0\n        }\n    }\n}",
+        "title": "查询物联网卡详情信息"
+      }
+    ],
+    "DescribeCards": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCards\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Sdkappid\": \"xx\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\",\n        \"Data\": {\n            \"Total\": \"10\",\n            \"List\": [\n                {\n                    \"Iccid\": \"89860619000013360924\",\n                    \"Msisdn\": \"861064606873883\",\n                    \"Imsi\": \"460066520053790\",\n                    \"Imei\": \"\",\n                    \"Sdkappid\": \"1400168178\",\n                    \"Teleoperator\": 2,\n                    \"CardStatus\": 1,\n                    \"NetworkStatus\": 0,\n                    \"ActivitedTime\": \"0\",\n                    \"Type\": 1,\n                    \"ProductId\": \"LT-1-10M\",\n                    \"PoolId\": \"\",\n                    \"DataUsedInPeriod\": 0,\n                    \"DataTotalInPeriod\": 0,\n                    \"ProductExpiredTime\": \"0\",\n                    \"Description\": \"\",\n                    \"CreatedTime\": \"2019-01-04 17:41:42\",\n                    \"ModifiedTime\": \"2019-01-04 18:30:44\",\n                    \"PreorderCnt\": 2,\n                    \"IsActivated\": 1,\n                    \"OrderId\": \"20190104157897\",\n                    \"AutoRenew\": 0,\n                    \"Remark\": \"\",\n                    \"AllowArrears\": 0,\n                    \"NeedSms\": 0,\n                    \"Provider\": 1\n                },\n                {\n                    \"Iccid\": \"89860619000013360932\",\n                    \"Msisdn\": \"861064606873884\",\n                    \"Imsi\": \"460066520053791\",\n                    \"Imei\": \"\",\n                    \"Sdkappid\": \"1400168178\",\n                    \"Teleoperator\": 2,\n                    \"CardStatus\": 1,\n                    \"NetworkStatus\": 0,\n                    \"ActivitedTime\": \"0\",\n                    \"Type\": 1,\n                    \"ProductId\": \"LT-1-10M\",\n                    \"PoolId\": \"\",\n                    \"DataUsedInPeriod\": 0,\n                    \"DataTotalInPeriod\": 0,\n                    \"ProductExpiredTime\": \"0\",\n                    \"Description\": \"\",\n                    \"CreatedTime\": \"2019-01-04 17:41:42\",\n                    \"ModifiedTime\": \"2019-01-04 18:30:44\",\n                    \"PreorderCnt\": 2,\n                    \"IsActivated\": 1,\n                    \"OrderId\": \"20190104157897\",\n                    \"AutoRenew\": 0,\n                    \"Remark\": \"\",\n                    \"AllowArrears\": 0,\n                    \"NeedSms\": 0,\n                    \"Provider\": 1\n                },\n                {\n                    \"Iccid\": \"89860619000013360940\",\n                    \"Msisdn\": \"861064606873885\",\n                    \"Imsi\": \"460066520053792\",\n                    \"Imei\": \"\",\n                    \"Sdkappid\": \"1400168178\",\n                    \"Teleoperator\": 2,\n                    \"CardStatus\": 1,\n                    \"NetworkStatus\": 0,\n                    \"ActivitedTime\": \"0\",\n                    \"Type\": 1,\n                    \"ProductId\": \"LT-1-10M\",\n                    \"PoolId\": \"\",\n                    \"DataUsedInPeriod\": 0,\n                    \"DataTotalInPeriod\": 0,\n                    \"ProductExpiredTime\": \"0\",\n                    \"Description\": \"\",\n                    \"CreatedTime\": \"2019-01-04 17:41:42\",\n                    \"ModifiedTime\": \"2019-01-04 18:30:44\",\n                    \"PreorderCnt\": 2,\n                    \"IsActivated\": 1,\n                    \"OrderId\": \"20190104157897\",\n                    \"AutoRenew\": 0,\n                    \"Remark\": \"\",\n                    \"AllowArrears\": 0,\n                    \"NeedSms\": 0,\n                    \"Provider\": 1,\n                    \"OtherData\": 123.1\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询物联网卡片列表"
+      }
+    ],
+    "ModifyUserCardRemark": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=ModifyUserCardRemark\n&Sdkappid=1200168178\n&Iccid=8986****0957\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\"\n    }\n}",
+        "title": "编辑物联卡备注信息"
+      }
+    ],
+    "RenewCards": [
+      {
+        "document": "为两张卡片续费。",
+        "input": "https://ic.tencentcloudapi.com/?Action=RenewCards\r\n&Sdkappid=1420003184\r\n&Iccids=[\"89860619100041768583\",\"89860438011891822968\"]\r\n&RenewNum=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a4dae1c-8a44-4f36-bf18-97564c27a29911\",\n        \"Data\": {}\n    }\n}",
+        "title": "卡片续费"
+      }
+    ],
+    "SendMultiSms": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=SendMultiSms\r\n&Sdkappid=1200168178\r\n&Iccids=[\"89860619000013360957\",\"89860619000013360957\"]\r\n&Content=ok\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\",\n        \"Data\": [\n            {\n                \"Code\": \"0\",\n                \"Msg\": \"成功\",\n                \"Iccid\": \"89860619000013360940\",\n                \"Sid\": \"15512560992520710006873885999\"\n            },\n            {\n                \"Code\": \"0\",\n                \"Msg\": \"成功\",\n                \"Iccid\": \"89860619000013360957\",\n                \"Sid\": \"15512560992520830006873886999\"\n            }\n        ]\n    }\n}",
+        "title": "群发短信"
+      }
+    ],
+    "SendSms": [
+      {
+        "document": "",
+        "input": "https://ic.tencentcloudapi.com/?Action=SendSms\r\n&Sdkappid=1200168178\r\n&Iccid=89860619000013360957\r\n&Content=openok\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"124145i30913\",\n        \"Data\": {\n            \"Iccid\": \"89860619000013360957\",\n            \"Sid\": \"15512545038707740006873886999\"\n        }\n    }\n}",
+        "title": "发送短信息接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

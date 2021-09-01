@@ -1,0 +1,85 @@
+{
+  "actions": {
+    "CreateEditingTask": [
+      {
+        "document": "对一个视频进行标签识别",
+        "input": "https://ie.tencentcloudapi.com/?Action=CreateEditingTask\n&EditingInfo.TagEditingInfo.Switch=1\n&DownInfo.Type=0\n&DownInfo.UrlInfo.Url=http://test.video.myqcloud.com/testA.mp4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"8E312055EBF7A503B92947E6D3B21EFF_1573715265075\",\n        \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\n    }\n}",
+        "title": "创建智能编辑任务"
+      }
+    ],
+    "CreateMediaProcessTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=CreateMediaProcessTask\n&MediaProcessInfo.Type=MediaCutting\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.Type=IntervalPoint\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.IntervalPoint.StartTime=20000\n&MediaProcessInfo.MediaCuttingInfo.TimeInfo.IntervalPoint.Interval=5000\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.FileName=dstfile-{index|:5|4:x}\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.Format=jpg\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.TargetVideoInfo.Width=800\n&MediaProcessInfo.MediaCuttingInfo.TargetInfo.TargetVideoInfo.Height=800\n&MediaProcessInfo.MediaCuttingInfo.OutForm.Type=Static\n&MediaProcessInfo.MediaCuttingInfo.OutForm.FillType=Gaussian\n&MediaProcessInfo.MediaCuttingInfo.ResultListSaveType=UseSaveInfo\n&SourceInfoSet.0.Id=source_video\n&SourceInfoSet.0.Type=Video\n&SourceInfoSet.0.DownInfo.Type=1\n&SourceInfoSet.0.DownInfo.CosInfo.Region=ap-beijing\n&SourceInfoSet.0.DownInfo.CosInfo.Bucket=shortvideo-1251820392\n&SourceInfoSet.0.DownInfo.CosInfo.Path=/video/sar_dar/sar_dar.mov\n&SourceInfoSet.0.DownInfo.CosInfo.CosAuthMode.Type=1\n&SourceInfoSet.0.DownInfo.CosInfo.CosAuthMode.HostedId=internal_test\n&SaveInfoSet.0.Type=1\n&SaveInfoSet.0.CosInfo.Region=ap-beijing\n&SaveInfoSet.0.CosInfo.Bucket=shortvideo-1251820392\n&SaveInfoSet.0.CosInfo.Path=/video_cutting/test_res/1012_test_sec_video\n&SaveInfoSet.0.CosInfo.CosAuthMode.Type=1\n&SaveInfoSet.0.CosInfo.CosAuthMode.HostedId=internal_test\n&CallbackInfoSet.0.Url=http://qq.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"12001326083614739554304\",\n        \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\n    }\n}",
+        "title": "创建编辑处理/剪切任务"
+      }
+    ],
+    "CreateMediaQualityRestorationTask": [
+      {
+        "document": "对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。",
+        "input": "https://ie.tencentcloudapi.com/?Action=CreateMediaQualityRestorationTask\n&DownInfo.Type=0\n&DownInfo.UrlInfo.Url=http://test.video.myqcloud.com/testA.mp4\n&TransInfo.0.TaskName=src_file.mp4\n&TransInfo.0.TargetInfo.FileName=dst_file.mp4\n&TransInfo.0.VideoInfo.VideoEnhance.ColorEnhance.Type=strong\n&SaveInfo.Type=1\n&SaveInfo.CosInfo.Region=ap-beijing\n&SaveInfo.CosInfo.Bucket=test-123456\n&SaveInfo.CosInfo.Path=/out_file/\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e3\",\n        \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\n    }\n}",
+        "title": "创建画质重生任务"
+      }
+    ],
+    "CreateQualityControlTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=CreateQualityControlTask\n&DownInfo.Type=0\n&DownInfo.UrlInfo.Url=http://test.cos.ap-beijing.myqcloud.com/test.mp4\n&QualityControlInfo.Interval=1000\n&QualityControlInfo.Jitter=True\n&QualityControlInfo.QRCode=True\n&QualityControlInfo.QualityEvaluation=True\n&QualityControlInfo.Voice=True\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1260168002184429568\",\n        \"RequestId\": \"b228ebf6-5463-429d-8bfe-5c74fb1dc2c5\"\n    }\n}",
+        "title": "创建媒体质检任务"
+      }
+    ],
+    "DescribeEditingTaskResult": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=DescribeEditingTaskResult\n&TaskId=8E312055EBF7A503B92947E6D3B21EFF_1573715265075\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"TaskId\": \"8E312055EBF7A503B92947E6D3B21EFF_1573715265075\",\n            \"Status\": 2,\n            \"TagTaskResult\": {\n                \"Status\": 2,\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"Success.\",\n                \"ItemSet\": [\n                    {\n                        \"Tag\": \"动画片\",\n                        \"Confidence\": 90.17\n                    }\n                ]\n            },\n            \"ClassificationTaskResult\": null,\n            \"StripTaskResult\": null,\n            \"HighlightsTaskResult\": null,\n            \"CoverTaskResult\": null,\n            \"OpeningEndingTaskResult\": null\n        },\n        \"RequestId\": \"5d199208-24c9-44a3-ab55-192ff22207c9\"\n    }\n}",
+        "title": "获取智能编辑任务结果"
+      }
+    ],
+    "DescribeMediaProcessTaskResult": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=DescribeMediaProcessTaskResult\n&TaskId=12001326083614739554304\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"ErrCode\": 100,\n            \"ErrMsg\": \"Task is under processing.\",\n            \"MediaCuttingTaskResult\": null,\n            \"Progress\": 24,\n            \"Status\": 1200,\n            \"TaskId\": \"12001331787046041444352\",\n            \"Type\": \"MediaCutting\"\n        },\n        \"RequestId\": \"e4de90c2-2836-44d4-8513-f4ff06596fe9\"\n    }\n}",
+        "title": "查询编辑处理任务结果"
+      }
+    ],
+    "DescribeMediaQualityRestorationTaskRusult": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=DescribeMediaQualityRestorationTaskRusult\n&TaskId=b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"TaskId\": \"b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e3\",\n            \"SubTaskResult\": [\n                {\n                    \"DownloadUrl\": \"http://yayunhui-1251820392-1251820392.cos.ap-beijing.myqcloud.com/test/mqr_test1.mp4\",\n                    \"Md5\": \"5adf8bd17a2239bfb1dc7172e51e34a1\",\n                    \"ProgressRate\": 100,\n                    \"StatusCode\": 0,\n                    \"StatusMsg\": \"0\",\n                    \"TaskName\": \"1080_five_all.mp4\",\n                    \"FileInfo\": {\n                        \"FileSize\": 31254626,\n                        \"FileType\": \"mp4\",\n                        \"Bitrate\": 8323468,\n                        \"Duration\": 30040,\n                        \"VideoInfoResult\": [\n                            {\n                                \"Stream\": 0,\n                                \"Height\": 2160,\n                                \"Bitrate\": 7975062,\n                                \"Fps\": \"25/1\",\n                                \"Codec\": \"h264\",\n                                \"Duration\": 30040,\n                                \"PixFormat\": \"yuv420p\"\n                            }\n                        ],\n                        \"AudioInfoResult\": [\n                            {\n                                \"Stream\": 1,\n                                \"Sample\": 48000,\n                                \"Channel\": 6,\n                                \"Codec\": \"aac\",\n                                \"Bitrate\": 341546,\n                                \"Duration\": 30015\n                            }\n                        ]\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"request_id_1\"\n    }\n}",
+        "title": "获取画质重生任务结果"
+      }
+    ],
+    "DescribeQualityControlTaskResult": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=DescribeQualityControlTaskResult\n&TaskId=1260170830789492736\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskResult\": {\n            \"TaskId\": \"488022239\",\n            \"Status\": 2,\n            \"ErrCode\": 0,\n            \"ErrMsg\": \"\",\n            \"Progress\": 100,\n            \"UsedTime\": 51,\n            \"Duration\": 150,\n            \"QualityEvaluationScore\": 74,\n            \"JitterResults\": [\n                {\n                    \"QualityControlItems\": [\n                        {\n                            \"StartTimeOffset\": 93.92,\n                            \"EndTimeOffset\": 111.16,\n                            \"Confidence\": 100\n                        },\n                        {\n                            \"StartTimeOffset\": 113.16,\n                            \"EndTimeOffset\": 130.248,\n                            \"Confidence\": 100\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"request_id_query\"\n    }\n}",
+        "title": "查询媒体质检任务结果"
+      }
+    ],
+    "StopMediaProcessTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=StopMediaProcessTask\n&TaskId=12001326083614739554304\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d199208-24c9-44a3-ab55-192ff22207c9\"\n    }\n}",
+        "title": "停止编辑处理/剪切任务"
+      }
+    ],
+    "StopMediaQualityRestorationTask": [
+      {
+        "document": "",
+        "input": "https://ie.tencentcloudapi.com/?Action=StopMediaQualityRestorationTask\n&TaskId=b8dc83ef-7ce4-4d76-94b5-a8cfe73d40e\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request_id_1\"\n    }\n}",
+        "title": "删除画质重生任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

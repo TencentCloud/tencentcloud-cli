@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "MarketingValueJudgement": [
+      {
+        "document": "",
+        "input": "https://mvj.tencentcloudapi.com/?Action=MarketingValueJudgement\r\n&AccountType=4\r\n&Uid=17620430702\r\n&UserIp=117.62.203.111\r\n&PostTime=1569486063\r\n&Imei=861622010000056\r\n&Referer=1569571332\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"PostTime\": 1569486063,\r\n            \"Uid\": \"17620430702\",\r\n            \"UserIp\": \"117.62.203.111\",\r\n            \"ValueScore\": 84\r\n        },\r\n        \"RequestId\": \"ab49be72-fac8-467d-bf59-9c6193fe5af6\"\r\n    }\r\n}",
+        "title": "营销价值判断正确返回示例"
+      },
+      {
+        "document": "",
+        "input": "https://mvj.tencentcloudapi.com/?Action=MarketingValueJudgement\r\n&AccountType=4\r\n&Uid=1620430702\r\n&UserIp=117.62.203.111\r\n&PostTime=1569486063\r\n&Imei=861622010000056\r\n&Referer=1569571332\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Error\": {\r\n            \"Code\": \"InvalidParameterValue.AccountNotFound\",\r\n            \"Message\": \"未开通账号！\"\r\n        },\r\n        \"RequestId\": \"8ce8d3dd-d849-4bc4-9fa0-2868749164eb\"\r\n    }\r\n}",
+        "title": "营销价值判断错误返回示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

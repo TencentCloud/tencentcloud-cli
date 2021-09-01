@@ -1,0 +1,6621 @@
+{
+  "actions": {
+    "AddTeamMember": {
+      "document": "向一个团队中团队成员，并且指定成员的角色。",
+      "input": "AddTeamMemberRequest",
+      "name": "添加团队成员",
+      "output": "AddTeamMemberResponse"
+    },
+    "CopyProject": {
+      "document": "复制一个项目，包括项目素材及轨道数据。目前仅普通剪辑及模板制作项目可复制，其它类型的项目不支持复制。",
+      "input": "CopyProjectRequest",
+      "name": "复制项目",
+      "output": "CopyProjectResponse"
+    },
+    "CreateClass": {
+      "document": "新增分类，用于管理素材。分类层数不能超过20。",
+      "input": "CreateClassRequest",
+      "name": "创建分类",
+      "output": "CreateClassResponse"
+    },
+    "CreateLink": {
+      "document": " 创建媒体链接或分类路径链接，将源资源信息链接到目标。",
+      "input": "CreateLinkRequest",
+      "name": "创建链接",
+      "output": "CreateLinkResponse"
+    },
+    "CreateProject": {
+      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑、导播台、视频拆条、录制回放以及云转推项目。\n\n<b>若需使用云转推功能，请先咨询 [智能客服](https://cloud.tencent.com/act/event/smarty-service?from=doc_1138) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 。</b>\n",
+      "input": "CreateProjectRequest",
+      "name": "创建项目",
+      "output": "CreateProjectResponse"
+    },
+    "CreateTeam": {
+      "document": "创建一个团队。",
+      "input": "CreateTeamRequest",
+      "name": "创建团队",
+      "output": "CreateTeamResponse"
+    },
+    "DeleteClass": {
+      "document": "删除分类信息，删除时检验下述限制：\n<li>分类路径必须存在；</li>\n<li>分类下没有绑定素材。</li>",
+      "input": "DeleteClassRequest",
+      "name": "删除分类",
+      "output": "DeleteClassResponse"
+    },
+    "DeleteLoginStatus": {
+      "document": "删除用户登录态，使用户登出云剪平台。",
+      "input": "DeleteLoginStatusRequest",
+      "name": "删除登录态",
+      "output": "DeleteLoginStatusResponse"
+    },
+    "DeleteMaterial": {
+      "document": "根据媒体 Id 删除媒体。",
+      "input": "DeleteMaterialRequest",
+      "name": "删除媒体",
+      "output": "DeleteMaterialResponse"
+    },
+    "DeleteProject": {
+      "document": "删除云剪编辑项目。",
+      "input": "DeleteProjectRequest",
+      "name": "删除项目",
+      "output": "DeleteProjectResponse"
+    },
+    "DeleteTeam": {
+      "document": "删除一个团队。\n<li>要删除的团队必须没有归属的素材；</li>\n<li>要删除的团队必须没有归属的分类。</li>",
+      "input": "DeleteTeamRequest",
+      "name": "删除团队",
+      "output": "DeleteTeamResponse"
+    },
+    "DeleteTeamMembers": {
+      "document": "将团队成员从团队中删除，默认只有 Owner 及管理员才有此权限。",
+      "input": "DeleteTeamMembersRequest",
+      "name": "删除团队成员",
+      "output": "DeleteTeamMembersResponse"
+    },
+    "DescribeAccounts": {
+      "document": "获取用户账号信息。",
+      "input": "DescribeAccountsRequest",
+      "name": "获取账号信息",
+      "output": "DescribeAccountsResponse"
+    },
+    "DescribeClass": {
+      "document": "获取指定归属者下所有的分类信息。",
+      "input": "DescribeClassRequest",
+      "name": "获取分类列表",
+      "output": "DescribeClassResponse"
+    },
+    "DescribeJoinTeams": {
+      "document": "获取指定的团队成员所加入的团队列表。",
+      "input": "DescribeJoinTeamsRequest",
+      "name": "获取成员加入的团队列表",
+      "output": "DescribeJoinTeamsResponse"
+    },
+    "DescribeLoginStatus": {
+      "document": "查询指定用户的登录态。",
+      "input": "DescribeLoginStatusRequest",
+      "name": "查询登录态",
+      "output": "DescribeLoginStatusResponse"
+    },
+    "DescribeMaterials": {
+      "document": "根据媒体 Id 批量获取媒体详情。",
+      "input": "DescribeMaterialsRequest",
+      "name": "获取媒体详情",
+      "output": "DescribeMaterialsResponse"
+    },
+    "DescribePlatforms": {
+      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n",
+      "input": "DescribePlatformsRequest",
+      "name": "获取平台列表",
+      "output": "DescribePlatformsResponse"
+    },
+    "DescribeProjects": {
+      "document": "支持根据多种条件过滤出项目列表。",
+      "input": "DescribeProjectsRequest",
+      "name": "获取项目列表",
+      "output": "DescribeProjectsResponse"
+    },
+    "DescribeResourceAuthorization": {
+      "document": "查询指定资源的授权列表。",
+      "input": "DescribeResourceAuthorizationRequest",
+      "name": "获取资源授权列表",
+      "output": "DescribeResourceAuthorizationResponse"
+    },
+    "DescribeSharedSpace": {
+      "document": "获取共享空间。当个人或团队A对个人或团队B授权某资源以后，个人或团队B的共享空间就会增加个人或团队A。",
+      "input": "DescribeSharedSpaceRequest",
+      "name": "获取共享空间",
+      "output": "DescribeSharedSpaceResponse"
+    },
+    "DescribeTaskDetail": {
+      "document": "获取任务详情信息，包含下面几个部分：\n<li>任务基础信息：包括任务状态、错误信息、创建时间等；</li>\n<li>导出项目输出信息：包括输出的素材 Id 等。</li>",
+      "input": "DescribeTaskDetailRequest",
+      "name": "获取任务详情",
+      "output": "DescribeTaskDetailResponse"
+    },
+    "DescribeTasks": {
+      "document": "获取任务列表，支持条件筛选，返回对应的任务基础信息列表。",
+      "input": "DescribeTasksRequest",
+      "name": "获取任务列表",
+      "output": "DescribeTasksResponse"
+    },
+    "DescribeTeamMembers": {
+      "document": "获取指定成员 ID 的信息，同时支持拉取所有团队成员信息。",
+      "input": "DescribeTeamMembersRequest",
+      "name": "获取团队成员信息",
+      "output": "DescribeTeamMembersResponse"
+    },
+    "DescribeTeams": {
+      "document": "获取指定团队的信息，拉取团队信息列表。",
+      "input": "DescribeTeamsRequest",
+      "name": "获取团队信息",
+      "output": "DescribeTeamsResponse"
+    },
+    "ExportVideoByEditorTrackData": {
+      "document": "使用视频合成协议导出视频，支持导出到CME云媒资和VOD云媒资。",
+      "input": "ExportVideoByEditorTrackDataRequest",
+      "name": "使用视频合成协议导出视频",
+      "output": "ExportVideoByEditorTrackDataResponse"
+    },
+    "ExportVideoByTemplate": {
+      "document": "使用视频编辑模板直接导出视频。",
+      "input": "ExportVideoByTemplateRequest",
+      "name": "使用视频编辑模板导出视频",
+      "output": "ExportVideoByTemplateResponse"
+    },
+    "ExportVideoByVideoSegmentationData": {
+      "document": "使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。",
+      "input": "ExportVideoByVideoSegmentationDataRequest",
+      "name": "使用视频智能拆条数据导出视频",
+      "output": "ExportVideoByVideoSegmentationDataResponse"
+    },
+    "ExportVideoEditProject": {
+      "document": "导出视频编辑项目，支持指定输出的模板。",
+      "input": "ExportVideoEditProjectRequest",
+      "name": "导出视频编辑项目",
+      "output": "ExportVideoEditProjectResponse"
+    },
+    "FlattenListMedia": {
+      "document": "平铺分类路径下及其子分类下的所有媒体基础信息。",
+      "input": "FlattenListMediaRequest",
+      "name": "平铺浏览媒体",
+      "output": "FlattenListMediaResponse"
+    },
+    "GenerateVideoSegmentationSchemeByAi": {
+      "document": "<li>发起视频智能拆条任务，支持智能生成和平精英集锦、王者荣耀集锦、足球集锦、篮球集锦 、人物集锦、新闻拆条等任务。</li>\n<li>和平精英集锦和王者荣耀集锦根据击杀场景进行拆条，足球集锦和篮球集锦根据进球场景进行拆条，人物集锦根据人物人脸特征进行拆条，新闻拆条根据导播进行拆条。</li>\n<li>【本接口内测中，暂不建议使用】</li>",
+      "input": "GenerateVideoSegmentationSchemeByAiRequest",
+      "name": "视频智能拆条",
+      "output": "GenerateVideoSegmentationSchemeByAiResponse"
+    },
+    "GrantResourceAuthorization": {
+      "document": "资源归属者对目标个人或团队授予目标资源的相应权限。",
+      "input": "GrantResourceAuthorizationRequest",
+      "name": "发起媒资授权",
+      "output": "GrantResourceAuthorizationResponse"
+    },
+    "HandleStreamConnectProject": {
+      "document": "对云转推项目进行操作。\n### 操作类型<a id=\"Operation\"></a>\n- `AddInput`（添加输入源），包括：\n\t- 添加直播拉流输入源，参见 [示例1](#.E7.A4.BA.E4.BE.8B1-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加直播推流输入源，参见 [示例2](#.E7.A4.BA.E4.BE.8B2-.E6.B7.BB.E5.8A.A0.E7.9B.B4.E6.92.AD.E6.8E.A8.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90)；\n\t- 添加点播拉流输入源，参见 [示例3](#.E7.A4.BA.E4.BE.8B3-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.BE.AA.E7.8E.AF.E6.92.AD.E6.94.BE)、[示例4](#.E7.A4.BA.E4.BE.8B4-.E6.B7.BB.E5.8A.A0.E7.82.B9.E6.92.AD.E6.8B.89.E6.B5.81.E8.BE.93.E5.85.A5.E6.BA.90.E4.B8.94.E5.8D.95.E6.AC.A1.E6.92.AD.E6.94.BE)；\n- `DeleteInput`（删除输入源），参见 [示例5](#.E7.A4.BA.E4.BE.8B5-.E5.88.A0.E9.99.A4.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyInput`（修改输入源），参见 [示例6](#.E7.A4.BA.E4.BE.8B6-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `AddOutput`（ 添加输出源），参见 [示例7](#.E7.A4.BA.E4.BE.8B7-.E6.B7.BB.E5.8A.A0.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `DeleteOutput`（删除输出源），参见 [示例8](#.E7.A4.BA.E4.BE.8B8-.E5.88.A0.E9.99.A4.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `ModifyOutput`（修改输出源），参见 [示例9](#.E7.A4.BA.E4.BE.8B9-.E4.BF.AE.E6.94.B9.E8.BE.93.E5.87.BA.E6.BA.90)；\n- `Start`（开启转推），参见 [示例10](#.E7.A4.BA.E4.BE.8B10-.E5.BC.80.E5.90.AF.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `Stop`（停止转推），参见 [示例11](#.E7.A4.BA.E4.BE.8B11-.E5.81.9C.E6.AD.A2.E4.BA.91.E8.BD.AC.E6.8E.A8)；\n- `SwitchInput`（切换输入源），参见 [示例12](#.E7.A4.BA.E4.BE.8B12-.E5.88.87.E6.8D.A2.E8.BE.93.E5.85.A5.E6.BA.90)；\n- `ModifyCurrentStopTime`（修改当前计划结束时间），参见 [示例13](#.E7.A4.BA.E4.BE.8B13-.E4.BF.AE.E6.94.B9.E8.BD.AC.E6.8E.A8.E7.BB.93.E6.9D.9F.E6.97.B6.E9.97.B4)。",
+      "input": "HandleStreamConnectProjectRequest",
+      "name": "操作云转推项目",
+      "output": "HandleStreamConnectProjectResponse"
+    },
+    "ImportMaterial": {
+      "document": "将云点播媒资文件导入到云剪媒体资源库。",
+      "input": "ImportMaterialRequest",
+      "name": "导入媒体",
+      "output": "ImportMaterialResponse"
+    },
+    "ImportMediaToProject": {
+      "document": "将云点播中的媒资或者用户自有媒资文件添加到媒体库中，跟项目关联，供后续视频编辑使用。目前仅普通编辑项目和智能视频拆条项目有效。",
+      "input": "ImportMediaToProjectRequest",
+      "name": "在项目中导入媒体",
+      "output": "ImportMediaToProjectResponse"
+    },
+    "ListMedia": {
+      "document": " 浏览当前分类路径下的资源，包括媒体文件和子分类，返回媒资基础信息和分类信息。",
+      "input": "ListMediaRequest",
+      "name": "浏览媒体",
+      "output": "ListMediaResponse"
+    },
+    "ModifyMaterial": {
+      "document": "修改媒体信息，支持修改媒体名称、分类路径、标签等信息。",
+      "input": "ModifyMaterialRequest",
+      "name": "修改媒体信息",
+      "output": "ModifyMaterialResponse"
+    },
+    "ModifyProject": {
+      "document": "修改云剪编辑项目的信息。",
+      "input": "ModifyProjectRequest",
+      "name": "修改项目",
+      "output": "ModifyProjectResponse"
+    },
+    "ModifyTeam": {
+      "document": "修改团队信息，目前支持修改的操作有：\n<li>修改团队名称。</li>",
+      "input": "ModifyTeamRequest",
+      "name": "修改团队信息",
+      "output": "ModifyTeamResponse"
+    },
+    "ModifyTeamMember": {
+      "document": "修改团队成员信息，包括成员备注、角色等。",
+      "input": "ModifyTeamMemberRequest",
+      "name": "修改团队成员",
+      "output": "ModifyTeamMemberResponse"
+    },
+    "MoveClass": {
+      "document": "移动某一个分类到另外一个分类下，也可用于分类重命名。\n如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球\n<li>当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath；</li>\n<li>当 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>",
+      "input": "MoveClassRequest",
+      "name": "移动分类",
+      "output": "MoveClassResponse"
+    },
+    "MoveResource": {
+      "document": "移动资源，支持跨个人或团队移动媒体以及分类。如果填写了Operator，则需要校验用户对媒体和分类资源的访问以及写权限。\n<li>当原始资源为媒体时，该接口效果为将该媒体移动到目标分类下面；</li>\n<li>当原始资源为分类时，该接口效果为将原始分类移动到目标分类或者是重命名。</li>\n 如果 SourceResource.Resource.Id = /素材/视频/NBA，DestinationResource.Resource.Id= /素材/视频/篮球 \n<li>当 DestinationResource.Resource.Id 不存在时候且原始资源与目标资源归属相同，操作结果为重命名原始分类；</li>\n<li>当 DestinationResource.Resource.Id 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>\n",
+      "input": "MoveResourceRequest",
+      "name": "移动资源",
+      "output": "MoveResourceResponse"
+    },
+    "ParseEvent": {
+      "document": "该接口接受制作云回调给客户的事件内容，将其转化为对应的 EventContent 结构，请不要实际调用该接口，只需要将接收到的事件内容直接使用 JSON 解析到 EventContent  即可使用。",
+      "input": "ParseEventRequest",
+      "name": "回调事件内容解析",
+      "output": "ParseEventResponse"
+    },
+    "RevokeResourceAuthorization": {
+      "document": " 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。",
+      "input": "RevokeResourceAuthorizationRequest",
+      "name": "回收资源权限",
+      "output": "RevokeResourceAuthorizationResponse"
+    },
+    "SearchMaterial": {
+      "document": "根据检索条件搜索媒体，返回媒体的基本信息。",
+      "input": "SearchMaterialRequest",
+      "name": "搜索媒体",
+      "output": "SearchMaterialResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-29",
+    "api_brief": "介绍如何使用API对腾讯云剪操作，如视频编辑项目、素材管理等。",
+    "serviceNameCN": "腾讯云剪",
+    "serviceShortName": "cme"
+  },
+  "objects": {
+    "AccountInfo": {
+      "document": "制作云用户账号信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户 Id。",
+          "example": "1000000001",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号码。",
+          "example": "15515555055",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称。",
+          "example": "Nick",
+          "member": "string",
+          "name": "Nick",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号状态，取值：\n<li>Normal：有效；</li>\n<li>Stopped：无效。</li>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddMemberInfo": {
+      "document": "添加的团队成员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "团队成员 ID。",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员备注。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员角色，不填则默认添加普通成员。可选值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AddTeamMemberRequest": {
+      "document": "AddTeamMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要添加的成员列表，一次最多添加30个成员。",
+          "member": "AddMemberInfo",
+          "name": "TeamMembers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddTeamMemberResponse": {
+      "document": "AddTeamMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AudioMaterial": {
+      "document": "音频素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "素材元信息。",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的播放 URL 地址。",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的封面图片地址。",
+          "member": "string",
+          "name": "CoverUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MaterialStatus",
+          "name": "MaterialStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的原始 URL 地址。",
+          "member": "string",
+          "name": "OriginalUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioStreamInfo": {
+      "document": "音频流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "码率，单位：bps。",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采样率，单位：hz。",
+          "member": "uint64",
+          "name": "SamplingRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码格式。",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioTrackItem": {
+      "document": "音频轨道上的音频片段信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "音频媒体来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 ；</li>\n<li>CME ：视频来源于制作云媒体文件 ；</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
+          "example": "EXTERNAL ",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp3`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>",
+          "example": "1000000:www.qq.com/a.mp4",
+          "member": "string",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。",
+          "example": "0",
+          "member": "float",
+          "name": "SourceMediaStartTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。",
+          "example": "20",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AuthorizationInfo": {
+      "document": "资源权限信息",
+      "members": [
+        {
+          "default": "",
+          "document": "被授权者实体。",
+          "member": "Entity",
+          "name": "Authorizee",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "member": "string",
+          "name": "PermissionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Authorizer": {
+      "document": "授权者",
+      "members": [
+        {
+          "default": "",
+          "document": "授权者类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Id，当 Type=PERSON，取值为用户 Id。当Type=TEAM，取值为团队 ID。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CMEExportInfo": {
+      "document": "云剪导出信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "导出媒体归属，个人或团队。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒体名称，不得超过30个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒体信息，不得超过50个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒体分类路径，长度不能超过15字符。不存在默认创建。",
+          "example": "无",
+          "member": "string",
+          "name": "ClassPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒体标签，单个标签不得超过10个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
+          "example": "无",
+          "member": "ThirdPartyPublishInfo",
+          "name": "ThirdPartyPublishInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClassInfo": {
+      "document": "分类信息",
+      "members": [
+        {
+          "default": "",
+          "document": "归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类路径。",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CopyProjectRequest": {
+      "document": "CopyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被复制的项目 ID。",
+          "example": "cmepid_88kkdkkkkd009d9d9d99d9",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制后的项目名称，不填为原项目名称+\"(副本)\"。",
+          "example": "复制项目",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制后的项目归属者，不填为原项目归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id_1000001",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyProjectResponse": {
+      "document": "CopyProject返回参数结构体",
+      "members": [
+        {
+          "document": "复制后的项目 ID。",
+          "example": "mepid_88kkdkkkkd009d9duujde77",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CosPublishInputInfo": {
+      "document": "COS 发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布生成的封面在 COS 存储的对象键。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateClassRequest": {
+      "document": "CreateClass请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分类路径。",
+          "example": "/a/b",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验分类创建权限。",
+          "example": "aaa1e081-***-9162840cadb7",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClassResponse": {
+      "document": "CreateClass返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLinkRequest": {
+      "document": "CreateLink请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "链接类型，取值有:\n<li>CLASS: 分类链接；</li>\n<li> MATERIAL：媒体文件链接。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "链接名称，不能超过30个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "链接归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目标资源Id。取值：\n<li>当 Type 为 MATERIAL 时填媒体 ID；</li>\n<li>当 Type 为 CLASS 时填写分类路径。</li>",
+          "member": "string",
+          "name": "DestinationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标资源归属者。",
+          "member": "Entity",
+          "name": "DestinationOwner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "链接的分类路径，如填\"/a/b\"则代表链接属于该分类路径，不填则默认为根路径。",
+          "member": "string",
+          "name": "ClassPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLinkResponse": {
+      "document": "CreateLink返回参数结构体",
+      "members": [
+        {
+          "document": "新建链接的媒体 Id。",
+          "member": "string",
+          "name": "MaterialId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称，不可超过30个字符。",
+          "example": "新建项目",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
+          "example": "VIDEO_EDIT",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "画布宽高比。\n该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目描述信息。",
+          "example": "新建",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导播台信息，仅当项目类型为 SWITCHER 时必填。",
+          "example": "无",
+          "member": "SwitcherProjectInput",
+          "name": "SwitcherProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "直播剪辑信息，暂未开放，请勿使用。",
+          "example": "无",
+          "member": "LiveStreamClipProjectInput",
+          "name": "LiveStreamClipProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。",
+          "example": "无",
+          "member": "VideoEditProjectInput",
+          "name": "VideoEditProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。",
+          "example": "无",
+          "member": "VideoSegmentationProjectInput",
+          "name": "VideoSegmentationProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。",
+          "example": "无",
+          "member": "StreamConnectProjectInput",
+          "name": "StreamConnectProjectInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。",
+          "example": "无",
+          "member": "RecordReplayProjectInput",
+          "name": "RecordReplayProjectInput",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "document": "项目 Id。",
+          "example": "60336ab29997a500019xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "输入源推流信息。\n <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>",
+          "example": "无",
+          "member": "RtmpPushInputInfo",
+          "name": "RtmpPushInputInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTeamRequest": {
+      "document": "CreateTeam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队名称，限30个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队所有者，指定用户 ID。",
+          "member": "string",
+          "name": "OwnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队所有者的备注，限30个字符。",
+          "member": "string",
+          "name": "OwnerRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义团队 ID。创建后不可修改，限20个英文字符及\"-\"。同时不能以 cmetid_开头。不填会生成默认团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTeamResponse": {
+      "document": "CreateTeam返回参数结构体",
+      "members": [
+        {
+          "document": "创建的团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClassRequest": {
+      "document": "DeleteClass请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分类路径。",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClassResponse": {
+      "document": "DeleteClass返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoginStatusRequest": {
+      "document": "DeleteLoginStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Id 列表，N 从 0 开始取值，最大 19。",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoginStatusResponse": {
+      "document": "DeleteLoginStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMaterialRequest": {
+      "document": "DeleteMaterial请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "123456789",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体删除权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMaterialResponse": {
+      "document": "DeleteMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "1112",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。",
+          "example": "user_id_100001",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTeamMembersRequest": {
+      "document": "DeleteTeamMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的成员列表。",
+          "member": "string",
+          "name": "MemberIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTeamMembersResponse": {
+      "document": "DeleteTeamMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTeamRequest": {
+      "document": "DeleteTeam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的团队  ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTeamResponse": {
+      "document": "DeleteTeam返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsRequest": {
+      "document": "DescribeAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台唯一标识。",
+          "example": "1000000001",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码。",
+          "example": "15515555055",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10，最大值：20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsResponse": {
+      "document": "DescribeAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "符合搜索条件的记录总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号信息列表。",
+          "example": "无",
+          "member": "AccountInfo",
+          "name": "AccountInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassRequest": {
+      "document": "DescribeClass请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClassResponse": {
+      "document": "DescribeClass返回参数结构体",
+      "members": [
+        {
+          "document": "分类信息列表。",
+          "member": "ClassInfo",
+          "name": "ClassInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJoinTeamsRequest": {
+      "document": "DescribeJoinTeams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队成员　ID。",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：30，最大值：30。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJoinTeamsResponse": {
+      "document": "DescribeJoinTeams返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "团队列表",
+          "member": "JoinTeamInfo",
+          "name": "TeamSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginStatusRequest": {
+      "document": "DescribeLoginStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 Id 列表，N 从 0 开始取值，最大 19。",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginStatusResponse": {
+      "document": "DescribeLoginStatus返回参数结构体",
+      "members": [
+        {
+          "document": "用户登录状态列表。",
+          "member": "LoginStatusInfo",
+          "name": "LoginStatusInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaterialsRequest": {
+      "document": "DescribeMaterials请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体 ID 列表，N 从 0 开始取值，最大 19。",
+          "member": "string",
+          "name": "MaterialIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaterialsResponse": {
+      "document": "DescribeMaterials返回参数结构体",
+      "members": [
+        {
+          "document": "媒体列表信息。",
+          "member": "MaterialInfo",
+          "name": "MaterialInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsRequest": {
+      "document": "DescribePlatforms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台集合。",
+          "member": "string",
+          "name": "Platforms",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "平台绑定的 license Id 集合。",
+          "member": "string",
+          "name": "LicenseIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsResponse": {
+      "document": "DescribePlatforms返回参数结构体",
+      "members": [
+        {
+          "document": "符合搜索条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "平台信息列表。",
+          "member": "PlatformInfo",
+          "name": "PlatformInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id 列表，N 从 0 开始取值，最大 19。",
+          "example": "[\"1111\\n\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "画布宽高比集合。",
+          "example": "无",
+          "member": "string",
+          "name": "AspectRatioSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "CategorySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Modes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>",
+          "example": "无",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "项目归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目信息列表。",
+          "example": "无",
+          "member": "ProjectInfo",
+          "name": "ProjectInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceAuthorizationRequest": {
+      "document": "DescribeResourceAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源。",
+          "member": "Resource",
+          "name": "Resource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceAuthorizationResponse": {
+      "document": "DescribeResourceAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的资源授权记录总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权信息列表。",
+          "member": "AuthorizationInfo",
+          "name": "AuthorizationInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedSpaceRequest": {
+      "document": "DescribeSharedSpace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被授权目标,，个人或团队。",
+          "member": "Entity",
+          "name": "Authorizee",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedSpaceResponse": {
+      "document": "DescribeSharedSpace返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的共享空间总数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各个共享空间对应的授权者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Authorizer",
+          "name": "AuthorizerSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailRequest": {
+      "document": "DescribeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务 Id。",
+          "example": "1400-tfusion-ct0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "example": "85b8cdac-8e18-430a-aeae-08076ac26a11",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailResponse": {
+      "document": "DescribeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "document": "任务状态，取值有：\n<li>PROCESSING：处理中：</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务进度，取值为：0~100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息。",
+          "example": "Success.",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>",
+          "example": "VIDEO_EDIT_PROJECT_EXPORT",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "导出项目输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEditProjectOutput",
+          "name": "VideoEditProjectOutput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2020-04-28T18:16:58Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>",
+          "member": "string",
+          "name": "TaskTypeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "member": "string",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：10。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "符合搜索条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务基础信息列表。",
+          "member": "TaskBaseInfo",
+          "name": "TaskBaseInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTeamMembersRequest": {
+      "document": "DescribeTeamMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。",
+          "member": "string",
+          "name": "MemberIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：30，最大值：30。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTeamMembersResponse": {
+      "document": "DescribeTeamMembers返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "团队成员列表。",
+          "member": "TeamMemberInfo",
+          "name": "MemberSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTeamsRequest": {
+      "document": "DescribeTeams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。",
+          "member": "string",
+          "name": "TeamIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：20，最大值：30。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTeamsResponse": {
+      "document": "DescribeTeams返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "团队列表。",
+          "member": "TeamInfo",
+          "name": "TeamSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EmptyTrackItem": {
+      "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
+      "members": [
+        {
+          "default": "",
+          "document": "持续时间，单位为秒。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Entity": {
+      "document": "用于描述资源的归属，归属者为个人或者团队。",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EventContent": {
+      "document": "回调事件内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "事件类型，可取值为：\n<li>Storage.NewFileCreated：新文件产生；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>",
+          "example": "Storage.NewFileCreated",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新文件产生事件信息。仅当 EventType 为 Storage.NewFileCreated 时有效。",
+          "example": "无",
+          "member": "StorageNewFileCreatedEvent",
+          "name": "StorageNewFileCreatedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。",
+          "example": "无",
+          "member": "ProjectStreamConnectStatusChangedEvent",
+          "name": "ProjectStreamConnectStatusChangedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExportVideoByEditorTrackDataRequest": {
+      "document": "ExportVideoByEditorTrackData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "example": "VOD",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "在线编辑轨道数据。轨道数据相关介绍，请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。",
+          "example": "无",
+          "member": "string",
+          "name": "TrackData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪素材信息。指定 ExportDestination = CME 时有效。",
+          "example": "无",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "example": "无",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。",
+          "example": "b64e98ad",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByEditorTrackDataResponse": {
+      "document": "ExportVideoByEditorTrackData返回参数结构体",
+      "members": [
+        {
+          "document": "任务 Id。",
+          "example": "125009388839-tfusion-0a54392053f84053942f9308c49404d7",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByTemplateRequest": {
+      "document": "ExportVideoByTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频编辑模板  Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标，可取值为：\n<li>CME：云剪，即导出为云剪媒体；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "example": "VOD",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要替换的素材信息。",
+          "example": "无",
+          "member": "SlotReplacementInfo",
+          "name": "SlotReplacements",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪媒体信息。指定 ExportDestination = CME 时有效。",
+          "example": "无",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "example": "无",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByTemplateResponse": {
+      "document": "ExportVideoByTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "导出任务 Id。",
+          "example": "1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd6",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByVideoSegmentationDataRequest": {
+      "document": "ExportVideoByVideoSegmentationData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "default_platform",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频拆条项目 Id 。",
+          "example": "cmepid_5fd1dfaf0e1b530001f5d9b0",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定需要导出的智能拆条片段的组 Id 。",
+          "example": "5fd6e20b0e1b530001f5daed",
+          "member": "string",
+          "name": "SegmentGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定需要导出的智能拆条片段 Id  集合。",
+          "example": "[\"seg_5fd6e20b0e1b530001f5daee\\n\"]",
+          "member": "string",
+          "name": "SegmentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "example": "VOD",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪素材信息。指定 ExportDestination = CME 时有效。",
+          "example": "无",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "example": "无",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "16556266637489",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoByVideoSegmentationDataResponse": {
+      "document": "ExportVideoByVideoSegmentationData返回参数结构体",
+      "members": [
+        {
+          "document": "任务 Id。",
+          "example": "125009388839-tfusion-0a54392053f84053942f9308c49404d7",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoEditProjectRequest": {
+      "document": "ExportVideoEditProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "导出目标。\n<li>CME：云剪，即导出为云剪媒体；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "example": "CME",
+          "member": "string",
+          "name": "ExportDestination",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出的云剪媒体信息。指定 ExportDestination = CME 时有效。",
+          "example": "无",
+          "member": "CMEExportInfo",
+          "name": "CMEExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "导出的云点播媒资信息。指定 ExportDestination = VOD 时有效。",
+          "example": "无",
+          "member": "VODExportInfo",
+          "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportVideoEditProjectResponse": {
+      "document": "ExportVideoEditProject返回参数结构体",
+      "members": [
+        {
+          "document": "任务 Id。",
+          "example": "24820810452266399",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExternalMediaInfo": {
+      "document": "媒资绑定资源信息，包含媒资绑定模板 ID 和文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资绑定模板 ID，可取值为：\n<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>\n<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>\n\n注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。",
+          "example": "1000000",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：\n原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。",
+          "example": "www.qq.com/a.mp4",
+          "member": "string",
+          "name": "MediaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FlattenListMediaRequest": {
+      "document": "FlattenListMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表平铺该分类路径下及其子分类路径下的媒体信息。",
+          "example": "/a/b",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体分类的归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlattenListMediaResponse": {
+      "document": "FlattenListMedia返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该分类路径下及其子分类下的所有媒体基础信息列表。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "MaterialInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVideoSegmentationSchemeByAiRequest": {
+      "document": "GenerateVideoSegmentationSchemeByAi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视频拆条项目 Id 。",
+          "example": "60336ab29997a50001942xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVideoSegmentationSchemeByAiResponse": {
+      "document": "GenerateVideoSegmentationSchemeByAi返回参数结构体",
+      "members": [
+        {
+          "document": "视频智能拆条任务 Id 。",
+          "example": "1400xxx8-procxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourceAuthorizationRequest": {
+      "document": "GrantResourceAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源归属者，个人或者团队。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "被授权资源。",
+          "member": "Resource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "被授权目标，个人或者团队。",
+          "member": "Entity",
+          "name": "Authorizees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantResourceAuthorizationResponse": {
+      "document": "GrantResourceAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HandleStreamConnectProjectRequest": {
+      "document": "HandleStreamConnectProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云转推项目Id 。",
+          "example": "project_id",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请参考 [操作类型](#Operation)",
+          "example": "AddInput",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转推输入源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "InputInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "主备输入源标识，取值有：\n<li> Main ：主源；</li>\n<li> Backup ：备源。</li>",
+          "example": "Main",
+          "member": "string",
+          "name": "InputEndpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转推输出源操作参数。具体操作方式详见 [操作类型](#Operation) 及下文示例。",
+          "example": "无",
+          "member": "StreamConnectOutput",
+          "name": "OutputInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云转推当前预计结束时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。具体操作方式详见 [操作类型](#Operation) 及下文示例。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "CurrentStopTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HandleStreamConnectProjectResponse": {
+      "document": "HandleStreamConnectProject返回参数结构体",
+      "members": [
+        {
+          "document": "输入源推流地址，当 Operation 取值 AddInput 且 InputType 为 RtmpPush 类型时有效。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-6086",
+          "member": "string",
+          "name": "StreamInputRtmpPushUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageMaterial": {
+      "document": "图片素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片高度，单位：px。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片宽度，单位：px。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的展示 URL 地址。",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片大小，单位：字节。",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的原始 URL 地址。",
+          "member": "string",
+          "name": "OriginalUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImportMaterialRequest": {
+      "document": "ImportMaterial请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体归属者，团队或个人。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体名称，不能超过30个字符。",
+          "example": "material_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId，仅当 SourceType 为 VOD 时有效。",
+          "example": "5285890796182734267",
+          "member": "string",
+          "name": "VodFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "example": "无",
+          "member": "ExternalMediaInfo",
+          "name": "ExternalMediaInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径，形如：\"/a/b\"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。",
+          "example": "/test",
+          "member": "string",
+          "name": "ClassPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体预处理任务模板 ID。取值：\n<li>10：进行编辑预处理。</li>",
+          "example": "10",
+          "member": "int64",
+          "name": "PreProcessDefinition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMaterialResponse": {
+      "document": "ImportMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "媒体 Id。",
+          "example": "materialId",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体文预处理任务 ID，如果未指定发起预处理任务则为空。",
+          "example": "taskId",
+          "member": "string",
+          "name": "PreProcessTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMediaToProjectRequest": {
+      "document": "ImportMediaToProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "cme_platform",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "600aae0bb1cc1c000129214b",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云点播媒资文件 Id，当 SourceType 取值 VOD 或者缺省的时候必填。",
+          "example": "5285890813075978720",
+          "member": "string",
+          "name": "VodFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始媒资文件信息，当 SourceType 取值 EXTERNAL 的时候必填。",
+          "example": "无",
+          "member": "ExternalMediaInfo",
+          "name": "ExternalMediaInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体名称，不能超过30个字符。",
+          "example": "测试",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体预处理任务模板 ID，取值：\n<li>10：进行编辑预处理。</li>\n注意：如果填0则不进行处理。",
+          "example": "10",
+          "member": "int64",
+          "name": "PreProcessDefinition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。",
+          "example": "abf00b8b-9482-4c34-b72c-bea5da0a27ce",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMediaToProjectResponse": {
+      "document": "ImportMediaToProject返回参数结构体",
+      "members": [
+        {
+          "document": "媒体 Id。",
+          "example": "600a2c94e5c6aa0001b9ef78",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体预处理任务 ID，如果未指定发起预处理任务则为空。",
+          "example": "1900001191-tfusion-5e299c12c63f6af4c95f34159f19137345t0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IntegerRange": {
+      "document": "整型范围",
+      "members": [
+        {
+          "default": "",
+          "document": "按整形代表值的下限检索。",
+          "member": "int64",
+          "name": "LowerBound",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按整形代表值的上限检索。",
+          "member": "int64",
+          "name": "UpperBound",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "JoinTeamInfo": {
+      "document": "加入的团队信息",
+      "members": [
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "example": "teamid",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MemberCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成员在团队中的角色，取值有：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "example": "Member",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KuaishouPublishInfo": {
+      "document": "快手视频发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题，限30个字符。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LinkMaterial": {
+      "document": "链接类型的素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "链接类型取值:\n<li>CLASS: 分类链接;</li>\n<li> MATERIAL：素材链接。</li>",
+          "member": "string",
+          "name": "LinkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链接状态取值：\n<li> Normal：正常 ；</li>\n<li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>",
+          "member": "string",
+          "name": "LinkStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材链接详细信息，当LinkType=\"MATERIAL\"时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LinkMaterialInfo",
+          "name": "LinkMaterialInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类链接目标信息，当LinkType=“CLASS”时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClassInfo",
+          "name": "LinkClassInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LinkMaterialInfo": {
+      "document": "链接素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "素材基本信息。",
+          "member": "MaterialBasicInfo",
+          "name": "BasicInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VideoMaterial",
+          "name": "VideoMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AudioMaterial",
+          "name": "AudioMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ImageMaterial",
+          "name": "ImageMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListMediaRequest": {
+      "document": "ListMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表浏览该分类路径下的媒体和子分类信息。",
+          "example": "/a/b",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体和分类的归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验对媒体的访问权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListMediaResponse": {
+      "document": "ListMedia返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的媒体记录总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaterialTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "浏览分类路径下的媒体列表信息。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "MaterialInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "浏览分类路径下的一级子类。",
+          "example": "无",
+          "member": "ClassInfo",
+          "name": "ClassInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LivePullInputInfo": {
+      "document": "直播拉流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "直播拉流地址。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "InputUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LiveStreamClipProjectInput": {
+      "document": "直播剪辑项目输入参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "直播流播放地址，目前仅支持 HLS 和 FLV 格式。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播流录制时长，单位为秒，最大值为 7200。",
+          "member": "uint64",
+          "name": "StreamRecordDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginStatusInfo": {
+      "document": "登录态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户 Id。",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户登录状态。\n<li>Online：在线；</li>\n<li>Offline：离线。</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialBasicInfo": {
+      "document": "媒体基本信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体类型，取值为：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片;</li>\n<li> LINK  :链接.</li>\n<li> OTHER : 其他.</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体归属实体。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件的创建时间，使用 ISO 日期格式。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体的分类路径。",
+          "example": "无",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预置标签列表。",
+          "example": "无",
+          "member": "PresetTagInfo",
+          "name": "PresetTagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人工标签列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件的预览图。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体绑定的标签信息列表 。\n该字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialTagInfo",
+          "name": "TagInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialInfo": {
+      "document": "媒体详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体基本信息。",
+          "example": "无",
+          "member": "MaterialBasicInfo",
+          "name": "BasicInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoMaterial",
+          "name": "VideoMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioMaterial",
+          "name": "AudioMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageMaterial",
+          "name": "ImageMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "链接媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkMaterial",
+          "name": "LinkMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEditTemplateMaterial",
+          "name": "VideoEditTemplateMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他类型媒体信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtherMaterial",
+          "name": "OtherMaterial",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialStatus": {
+      "document": "素材的状态，目前仅包含素材编辑可用状态。",
+      "members": [
+        {
+          "default": "",
+          "document": "素材编辑可用状态，取值有：\n<li>NORMAL：正常，可直接用于编辑；</li>\n<li>ABNORMAL : 异常，不可用于编辑；</li>\n<li>PROCESSING：处理中，暂不可用于编辑。</li>",
+          "member": "string",
+          "name": "EditorUsableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialTagInfo": {
+      "document": "素材标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签类型，取值为：\n<li>PRESET：预置标签；</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MediaImageSpriteInfo": {
+      "document": "雪碧图",
+      "members": [
+        {
+          "default": "",
+          "document": "雪碧图小图的高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "雪碧图小图的宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "雪碧图小图的总数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取雪碧图输出的地址。",
+          "member": "string",
+          "name": "ImageUrlSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。",
+          "member": "string",
+          "name": "WebVttUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaMetaData": {
+      "document": "文件元信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "大小。",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器类型。",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流高度的最大值，单位：px。",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流宽度的最大值，单位：px。",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时长，单位：秒。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拍摄时的选择角度，单位：度",
+          "member": "int64",
+          "name": "Rotate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流信息。",
+          "member": "VideoStreamInfo",
+          "name": "VideoStreamInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流信息。",
+          "member": "AudioStreamInfo",
+          "name": "AudioStreamInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaPreprocessOperation": {
+      "document": "媒体处理视频合成任务的预处理操作。",
+      "members": [
+        {
+          "default": "",
+          "document": "预处理操作的类型，取值范围：\n<li>ImageTextMask：图片文字遮罩。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预处理操作参数。\n当 Type 取值 ImageTextMask 时，参数为要保留的文字。",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaReplacementInfo": {
+      "document": "媒体替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "替换的媒体类型，取值有：\n<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>\n<li>ImageUrl：替换的媒体类型为图片 URL；</li>\n\n注：默认为 CMEMaterialId 。",
+          "example": "无",
+          "member": "string",
+          "name": "MediaType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 ID。\n当媒体类型取值为 CMEMaterialId 时有效。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "MaterialId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 URL。\n当媒体类型取值为 ImageUrl 时有效，\n图片仅支持 jpg、png 格式，且大小不超过 2M 。",
+          "example": "无",
+          "member": "string",
+          "name": "MediaUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换媒体选取的开始时间，单位为秒，默认为 0。",
+          "example": "0",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预处理操作。\n注：目前该功能暂不支持，请勿使用。",
+          "example": "无",
+          "member": "MediaPreprocessOperation",
+          "name": "PreprocessOperation",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTrack": {
+      "document": "轨道信息",
+      "members": [
+        {
+          "default": "",
+          "document": "轨道类型，取值有：\n<ul>\n<li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>\n<li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n</ul>",
+          "example": "Video",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "轨道上的媒体片段列表。",
+          "example": "无",
+          "member": "MediaTrackItem",
+          "name": "TrackItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTrackItem": {
+      "document": "媒体轨道的片段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "片段类型。取值有：\n<li>Video：视频片段；</li>\n<li>Audio：音频片段；</li>\n<li>Empty：空白片段；</li>\n<li>Transition：转场。</li>",
+          "example": "Video",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段，当 Type = Video 时有效。",
+          "example": "无",
+          "member": "VideoTrackItem",
+          "name": "VideoItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频片段，当 Type = Audio 时有效。",
+          "example": "无",
+          "member": "AudioTrackItem",
+          "name": "AudioItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>\n<li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>",
+          "example": "无",
+          "member": "EmptyTrackItem",
+          "name": "EmptyItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转场，当 Type = Transition 时有效。",
+          "example": "b64e98advodcq198uje890",
+          "member": "MediaTransitionItem",
+          "name": "TransitionItem",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTransitionItem": {
+      "document": "转场信息",
+      "members": [
+        {
+          "default": "",
+          "document": "转场 Id 。暂只支持一个转场。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "TransitionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转场持续时间，单位为秒，默认为2秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。",
+          "example": "2.0",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyMaterialRequest": {
+      "document": "ModifyMaterial请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "123245678",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体或分类路径归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "媒体名称，不能超过30个字符。",
+          "example": "name_modify",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径，例如填写\"/a/b\"，则代表该媒体存储的路径为\"/a/b\"。若修改分类路径，则 Owner 字段必填。",
+          "example": "/a/b",
+          "member": "string",
+          "name": "ClassPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMaterialResponse": {
+      "document": "ModifyMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目名称，不可超过30个字符。",
+          "example": "first_project",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Defualt：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "example": "Default",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTeamMemberRequest": {
+      "document": "ModifyTeamMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队成员 ID。",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "成员备注，允许设置备注为空，不为空时长度不能超过15个字符。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "成员角色，取值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTeamMemberResponse": {
+      "document": "ModifyTeamMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTeamRequest": {
+      "document": "ModifyTeam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团队名称，不能超过 30 个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTeamResponse": {
+      "document": "ModifyTeam返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveClassRequest": {
+      "document": "MoveClass请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "源分类路径。",
+          "member": "string",
+          "name": "SourceClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标分类路径。",
+          "member": "string",
+          "name": "DestinationClassPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveClassResponse": {
+      "document": "MoveClass返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveResourceRequest": {
+      "document": "MoveResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "your_platform",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待移动的原始资源信息，包含原始媒体或分类资源，以及资源归属。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "SourceResource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目标信息，包含分类及归属，仅支持移动资源到分类。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "DestinationResource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验资源访问以及写权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveResourceResponse": {
+      "document": "MoveResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OtherMaterial": {
+      "document": "其他类型素材",
+      "members": [
+        {
+          "default": "",
+          "document": "素材媒体文件的播放 URL 地址。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "example": "无",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ParseEventRequest": {
+      "document": "ParseEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调事件内容。",
+          "example": "无",
+          "member": "string",
+          "name": "EventContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseEventResponse": {
+      "document": "ParseEvent返回参数结构体",
+      "members": [
+        {
+          "document": "事件内容。",
+          "example": "无",
+          "member": "EventContent",
+          "name": "EventContent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PenguinMediaPlatformPublishInfo": {
+      "document": "企鹅号发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频发布描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频标签。",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。",
+          "member": "int64",
+          "name": "Category",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PlatformInfo": {
+      "document": "平台信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播子应用 Id。",
+          "member": "uint64",
+          "name": "VodSubAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台绑定的 license Id。",
+          "member": "string",
+          "name": "LicenseId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PresetTagInfo": {
+      "document": "预置标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签 Id 。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父级预设 Id。",
+          "member": "string",
+          "name": "ParentTagId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProjectInfo": {
+      "document": "项目信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "project_id",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称。",
+          "example": "新建",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画布宽高比。",
+          "example": "无",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
+          "example": "STREAM_CONNECT",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目封面图片地址。",
+          "example": "无",
+          "member": "string",
+          "name": "CoverUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamConnectProjectInfo",
+          "name": "StreamConnectProjectInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目更新时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectStreamConnectStatusChangedEvent": {
+      "document": "云转推项目状态变更事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目状态，取值有：\n<li>Working：云转推推流开始；</li>\n<li>Stopped：云转推推流结束。</li>",
+          "example": "PushStreamFinish",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordReplayProjectInput": {
+      "document": "录制回放项目输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "录制拉流地址。",
+          "example": "无",
+          "member": "string",
+          "name": "PullStreamUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制文件归属者。",
+          "example": "无",
+          "member": "Entity",
+          "name": "MaterialOwner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制文件存储分类路径。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回放推流地址。",
+          "example": "无",
+          "member": "string",
+          "name": "PushStreamUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Resource": {
+      "document": "用于描述资源",
+      "members": [
+        {
+          "default": "",
+          "document": "类型，取值有：\n<li>MATERIAL：素材。</li>\n<li>CLASS：分类。</li>",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceInfo": {
+      "document": "资源信息，包含资源以及归属信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资和分类资源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源归属，个人或团队。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RevokeResourceAuthorizationRequest": {
+      "document": "RevokeResourceAuthorization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所属实体。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "被授权资源。",
+          "member": "Resource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "被授权目标实体。",
+          "member": "Entity",
+          "name": "Authorizees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeResourceAuthorizationResponse": {
+      "document": "RevokeResourceAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RtmpPushInputInfo": {
+      "document": "直播推流信息，包括推流地址有效时长，云剪后端生成直播推流地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "直播推流地址有效期，单位：秒 。",
+          "example": "60",
+          "member": "uint64",
+          "name": "ExpiredSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播推流地址，入参不填默认由云剪生成。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SearchMaterialRequest": {
+      "document": "SearchMaterial请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定搜索空间，数组长度不得超过5。",
+          "example": "无",
+          "member": "SearchScope",
+          "name": "SearchScopes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "媒体类型，取值：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "搜索文本，模糊匹配媒体名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：15个字符。",
+          "example": "综艺",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按画质检索，取值为：LD/SD/HD/FHD/2K/4K。",
+          "example": "无",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按媒体时长检索，单位s。",
+          "example": "无",
+          "member": "IntegerRange",
+          "name": "DurationRange",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "按照媒体创建时间检索。",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTimeRange",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "按标签检索，填入检索的标签名。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式。Sort.Field 可选值：CreateTime。指定 Text 搜索时，将根据匹配度排序，该字段无效。",
+          "example": "无",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回记录条数，默认值：50。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "example": "user_id",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchMaterialResponse": {
+      "document": "SearchMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "符合记录总条数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体信息，仅返回基础信息。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "MaterialInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchScope": {
+      "document": "搜索空间",
+      "members": [
+        {
+          "default": "",
+          "document": "分类路径归属。",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按分类路径检索。 不填则默认按根分类路径检索。",
+          "member": "string",
+          "name": "ClassPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SlotInfo": {
+      "document": "卡槽信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "卡槽 Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材类型，同素材素材，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>",
+          "example": "0",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认素材 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "DefaultMaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材时长，单位秒。",
+          "example": "100",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlotReplacementInfo": {
+      "document": "卡槽替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "卡槽 Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "替换类型，可取值有：\n<li> AUDIO ：音频；</li>\n<li> VIDEO ：视频；</li>\n<li> IMAGE ：图片；</li>\n<li> TEXT ：文本。</li>\n注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。",
+          "example": "VIDEO",
+          "member": "string",
+          "name": "ReplacementType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。",
+          "example": " 无",
+          "member": "MediaReplacementInfo",
+          "name": "MediaReplacementInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本替换信息，仅当要替换的卡槽类型为文本时有效。",
+          "example": "无",
+          "member": "TextReplacementInfo",
+          "name": "TextReplacementInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SortBy": {
+      "document": "排序",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段。",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序方式，可选值：Asc（升序）、Desc（降序），默认降序。",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StorageNewFileCreatedEvent": {
+      "document": "新文件生成事件",
+      "members": [
+        {
+          "default": "",
+          "document": "云点播文件  Id。",
+          "example": "5285890818667693889292992",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "60a75c1c30fcbe0001cc8990d0",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者 Id。",
+          "example": "3fa6b09e-05c6-433e-bc1e-6457d264f1dd",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型，可取值为：\n<li>Upload：上传；</li>\n<li>PullUpload：拉取上传；</li>\n<li>Record：直播录制。</li>",
+          "example": "Upload",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamConnectOutput": {
+      "document": "云转推输出源。",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推输出源标识，转推项目级别唯一。若不填则由后端生成。",
+          "example": "135ed54d55d",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源类型，取值：\n<li>URL ：URL类型</li>\n不填默认为URL类型。",
+          "example": "URL",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推推流地址。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "PushUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StreamConnectOutputInfo": {
+      "document": "云转推输出源信息，包含输出源和输出源转推状态。",
+      "members": [
+        {
+          "default": "",
+          "document": "输出源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamConnectOutput",
+          "name": "StreamConnectOutput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "输出流状态：\n<li>On ：开；</li>\n<li>Off ：关 。</li>",
+          "example": "On",
+          "member": "string",
+          "name": "PushSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamConnectProjectInfo": {
+      "document": "云转推项目信息，包含输入源、输出源、当前转推开始时间等信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "转推项目状态，取值有：\n<li>Working ：转推中；</li>\n<li>Idle ：空闲中。</li>",
+          "example": "Working",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前转推输入源，取值有：\n<li>Main ：主输入源；</li>\n<li>Backup ：备输入源。</li>",
+          "example": "Main",
+          "member": "string",
+          "name": "CurrentInputEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前转推开始时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Working 时有效。",
+          "example": "2021-03-23T07:51:18.029Z",
+          "member": "string",
+          "name": "CurrentStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前转推计划结束时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Working 时有效。",
+          "example": "2021-03-23T08:51:18.029Z",
+          "member": "string",
+          "name": "CurrentStopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次转推结束时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Idle 时有效。",
+          "example": "2021-03-22T08:51:18.029Z",
+          "member": "string",
+          "name": "LastStopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推主输入源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "MainInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云转推备输入源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "BackupInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云转推输出源。",
+          "example": "无",
+          "member": "StreamConnectOutputInfo",
+          "name": "OutputSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamConnectProjectInput": {
+      "document": "云转推项目输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推主输入源信息。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "MainInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推备输入源信息。",
+          "example": "无",
+          "member": "StreamInputInfo",
+          "name": "BackupInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出源信息。",
+          "example": "无",
+          "member": "StreamConnectOutput",
+          "name": "Outputs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StreamInputInfo": {
+      "document": "输入流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "流输入类型，取值：\n<li>VodPull ： 点播拉流；</li>\n<li>LivePull ：直播拉流；</li>\n<li>RtmpPush ： 直播推流。</li>",
+          "example": "LivePull",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点播拉流信息，当 InputType = VodPull 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VodPullInputInfo",
+          "name": "VodPullInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "直播拉流信息，当 InputType = LivePull  时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LivePullInputInfo",
+          "name": "LivePullInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "直播推流信息，当 InputType = RtmpPush 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RtmpPushInputInfo",
+          "name": "RtmpPushInputInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SwitcherPgmOutputConfig": {
+      "document": "导播台主监输出配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "导播台输出模板 ID，可取值：\n<li>10001：分辨率为1080 P；</li>\n<li>10002：分辨率为720 P；</li>\n<li>10003：分辨率为480 P。</li>",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台输出宽，单位：像素。",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台输出高，单位：像素。",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台输出帧率，单位：帧/秒",
+          "member": "uint64",
+          "name": "Fps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台输出码率， 单位：bit/s。",
+          "member": "uint64",
+          "name": "BitRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SwitcherProjectInput": {
+      "document": "导播台项目输入信息",
+      "members": [
+        {
+          "default": "",
+          "document": "导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。",
+          "member": "string",
+          "name": "StopTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台主监输出配置信息。若不填，默认输出 720P。",
+          "member": "SwitcherPgmOutputConfig",
+          "name": "PgmOutputConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskBaseInfo": {
+      "document": "任务基础信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 Id。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：项目导出。</li>",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，取值有：\n<li>PROCESSING：处理中：</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度，取值为：0~100。",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TeamInfo": {
+      "document": "团队信息",
+      "members": [
+        {
+          "default": "",
+          "document": "团队 ID。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员个数",
+          "member": "uint64",
+          "name": "MemberCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队创建时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队最后更新时间，格式按照 ISO 8601 标准表示。",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TeamMemberInfo": {
+      "document": "团队成员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "团队成员 ID。",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员备注。",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "团队成员角色，取值：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TextReplacementInfo": {
+      "document": "模板插槽文本替换信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "替换的文本信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ThirdPartyPublishInfo": {
+      "document": "第三方平台视频发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "发布通道  ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企鹅号发布信息，如果使用的发布通道为企鹅号时必填。",
+          "example": "无",
+          "member": "PenguinMediaPlatformPublishInfo",
+          "name": "PenguinMediaPlatformPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新浪微博发布信息，如果使用的发布通道为新浪微博时必填。",
+          "example": "无",
+          "member": "WeiboPublishInfo",
+          "name": "WeiboPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快手发布信息，如果使用的发布通道为快手时必填。",
+          "example": "无",
+          "member": "KuaishouPublishInfo",
+          "name": "KuaishouPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。",
+          "example": "无",
+          "member": "CosPublishInputInfo",
+          "name": "CosPublishInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TimeRange": {
+      "document": "时间范围",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间，使用 ISO 日期格式。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间，使用 ISO 日期格式。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VODExportInfo": {
+      "document": "云点播导出信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "导出的媒资名称。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒资分类 Id。",
+          "member": "uint64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
+          "member": "ThirdPartyPublishInfo",
+          "name": "ThirdPartyPublishInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoEditProjectInput": {
+      "document": "视频编辑项目输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoEditTemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入的媒体轨道列表，包括视频、音频，等媒体组成的多个轨道信息。其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>\n注：当从模板导入项目时（即 VideoEditTemplateId 不为空时），该参数无效。",
+          "example": "无",
+          "member": "MediaTrack",
+          "name": "InitTracks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoEditProjectOutput": {
+      "document": "项目导出信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "example": "无",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出的媒资 URL。",
+          "example": "无",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoEditTemplateMaterial": {
+      "document": "视频编辑模板素材信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频编辑模板宽高比。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "卡槽信息。",
+          "example": "无",
+          "member": "SlotInfo",
+          "name": "SlotSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板预览视频 URL 地址 。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewVideoUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoMaterial": {
+      "document": "视频素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "素材元信息。",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "雪碧图信息。",
+          "member": "MediaImageSpriteInfo",
+          "name": "ImageSpriteInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的播放 URL 地址。",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的封面图片地址。",
+          "member": "string",
+          "name": "CoverUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。",
+          "member": "string",
+          "name": "Resolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MaterialStatus",
+          "name": "MaterialStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "素材媒体文件的原始 URL 地址。",
+          "member": "string",
+          "name": "OriginalUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云点播媒资 FileId。",
+          "member": "string",
+          "name": "VodFileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoSegmentationProjectInput": {
+      "document": "视频拆条项目的输入信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拆条处理模型，不填则默认为手工分割视频。取值 ：\n<li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>\n<li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>\n<li>AI.SportHighlights.Football：足球集锦 </li>\n<li>AI.SportHighlights.Basketball：篮球集锦 ；</li>\n<li>AI.PersonSegmentation：人物集锦  ;</li>\n<li>AI.NewsSegmentation：新闻拆条。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessModel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoStreamInfo": {
+      "document": "视频流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "码率，单位：bps。",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高度，单位：px。",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽度，单位：px。",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码格式。",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帧率，单位：hz。",
+          "member": "uint64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoTrackItem": {
+      "document": "视频轨的视频片段信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频媒体来源类型，取值有：\n<ul>\n<li>VOD ：媒体来源于云点播文件 。</li>\n<li>CME ：视频来源制作云媒体文件。</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
+          "example": "VOD",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段取自媒体文件的起始时间，单位为秒。默认为0。",
+          "example": "0",
+          "member": "float",
+          "name": "SourceMediaStartTime",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段时长，单位为秒。默认取视频媒体文件本身长度，表示截取全部媒体文件。如果源文件是图片，Duration需要大于0。",
+          "example": "20",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段原点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布口宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认值：0px。",
+          "example": "10px",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段原点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认值：0px。",
+          "example": "20px",
+          "member": "string",
+          "name": "YPos",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频原点位置，取值有：\n<li>Center：坐标原点为中心位置，如画布中心。</li>\n默认值 ：Center。",
+          "example": "Center",
+          "member": "string",
+          "name": "CoordinateOrigin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "1080px",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
+          "example": "1920px",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VodPullInputInfo": {
+      "document": "点播拉流信息，包括输入拉流地址和播放次数。",
+      "members": [
+        {
+          "default": "",
+          "document": "点播输入拉流 URL 。",
+          "example": "无",
+          "member": "string",
+          "name": "InputUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放次数，取值有：\n<li>-1 : 循环播放，直到转推结束；</li>\n<li>0 : 不循环；</li>\n<li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>\n默认不循环。",
+          "example": "-1",
+          "member": "int64",
+          "name": "LoopTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeiboPublishInfo": {
+      "document": "微博发布信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频发布标题。",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频发布描述信息。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微博可见性，可取值为：\n<li>Public：公开，所有人可见；</li>\n<li>Private：私有，仅自己可见。</li>\n\n默认为 Public，所有人可见。",
+          "member": "string",
+          "name": "Visible",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

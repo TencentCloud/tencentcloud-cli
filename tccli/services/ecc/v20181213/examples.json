@@ -1,0 +1,73 @@
+{
+  "actions": {
+    "CorrectMultiImage": [
+      {
+        "document": "ServerType = 0，使用识别功能，只返回识别文本。",
+        "input": "https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage\r\n&InputType=0\r\n&Image.0=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg\r\n&Image.1=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\r\n&ServerType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \" Dear Peter,\\n I am glad to hear from you. Let me tell you something about Nanjing.\\nFirst, the environment in Nanjing is beautiful and there are many trees on both sides an of the road\\nNext ,it's very easy to travel around the city and there are many ways. People all have a confortable life,here are lots of tall buildings for or them to live.\\nWhat's more, Nanjing has many interesting places and lots of visiters come here every year.\\nAll in all, Nanjing is a good place to visit Yours sincerely, and I hope you can visit it some day Su Hua\\n  Dear Peter,\\n I am glad to hear from you. Let me tell you something about Nanjing.\\nNanjing is a clean and beautiful city. There a are many trees and mountains. Also, people here live a happy life. They live in comfortable flaks and communicate with their friends easily. And the transport changes. When people want to go out and\\ntaxi they can take a or an underground Furthermore, Naying is a good place to travel. There are many places of interest. You can a visit Xuanoun Park. You can see many views in it. All in all, I think Nanjing is a peaceful and Yours sincerely, perfect city. I hope it can be better\\nand better. Su Hua\\n\",\n            \"CorrectData\": null,\n            \"TaskId\": \"\",\n            \"SessionId\": \"\"\n        },\n        \"RequestId\": \"4cd778bd-4e62-44a3-bd6a-27686c2af81d\"\n    }\n}",
+        "title": "多图像识别批改-识别"
+      },
+      {
+        "document": "ServerType = 1，使用批改功能，只返回批改结果。\n注意：图像批改耗时较长，超过4s后返回异步任务结果。",
+        "input": "https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage\r\n&InputType=0\r\n&Image.0=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg\r\n&Image.1=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\r\n&ServerType=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6560fa28-683e-454f-b8a2-88bee017836a\"\n    }\n}",
+        "title": "多图像识别批改-批改"
+      },
+      {
+        "document": "ServerType = 1，使用批改功能，只返回批改结果。\nIsAsync= 1，使用异步处理。",
+        "input": "https://ecc.tencentcloudapi.com/?Action=CorrectMultiImage\r\n&InputType=0\r\n&Image.0=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/0999.jpg\r\n&Image.1=https://ecc-access-file-test-1253364609.cos.ap-guangzhou.myqcloud.com/1000.jpg\r\n&ServerType=1\r\n&IsAsync=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"\",\n            \"CorrectData\": null,\n            \"TaskId\": \"10001265\",\n            \"SessionId\": \"\"\n        },\n        \"RequestId\": \"1d417477-05cb-409e-b4bf-b4a4842ef513\"\n    }\n}",
+        "title": "多图像识别批改-异步批改"
+      }
+    ],
+    "DescribeTask": [
+      {
+        "document": "正常返回（内容仅为参考，非实际批改结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=DescribeTask\r\n&TaskId=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Finished\",\n        \"Content\": \"this is compostion content\",\n        \"CorrectData\": {\n            \"Score\": 72.39,\n            \"ScoreCat\": {\n                \"Words\": {\n                    \"Name\": \"词汇\",\n                    \"Score\": 76.08,\n                    \"Percentage\": 42\n                },\n                \"Sentences\": {\n                    \"Name\": \"句子\",\n                    \"Score\": 61.16,\n                    \"Percentage\": 28\n                },\n                \"Structure\": {\n                    \"Name\": \"篇章结构\",\n                    \"Score\": 80.37,\n                    \"Percentage\": 23\n                },\n                \"Content\": {\n                    \"Name\": \"内容\",\n                    \"Score\": 69,\n                    \"Percentage\": 7\n                },\n                \"Score\": 0,\n                \"Percentage\": 0\n            },\n            \"Comment\": \"作者词汇基础扎实；可适当增加复合句和从句的使用；文中衔接词丰富。请多加练习，更上一层楼。\",\n            \"SentenceComments\": [\n                {\n                    \"Sentence\": {\n                        \"Sentence\": \"Teenagers likeating fast 1888861 food.\",\n                        \"ParaID\": 1,\n                        \"SentenceID\": 7\n                    },\n                    \"Suggestions\": [\n                        {\n                            \"Type\": \"Error\",\n                            \"ErrorType\": \"拼写错误\",\n                            \"Origin\": \"likeating\",\n                            \"Replace\": \"elevating\",\n                            \"Message\": \"likeating 可能是拼写错误，请注意拼写检查，这里应将 likeating 替换为 elevating\",\n                            \"ErrorPosition\": [\n                                8,\n                                8\n                            ]\n                        },\n                        {\n                            \"Type\": \"Error\",\n                            \"ErrorType\": \"易混淆词汇建议\",\n                            \"Origin\": \"1888861\",\n                            \"Replace\": \"1886861\",\n                            \"Message\": \"注意1888861 与 1886861 的区别，推荐将 1888861 替换为 1886861\",\n                            \"ErrorPosition\": [\n                                8,\n                                8\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "查询异步任务结果-正常"
+      },
+      {
+        "document": "任务处理中（内容仅为参考，非实际返回结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=DescribeTask\r\n&TaskId=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"Progressing\",\n        \"Content\": null,\n        \"CorrectData\": null,\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "查询异步任务结果-处理中"
+      }
+    ],
+    "ECC": [
+      {
+        "document": "IsAsync=0 时为同步模式，返回批改结果（内容仅为参考，非实际批改结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=ECC\r\n&Grade=\r\n&Outline=\r\n&ModelSubject=\r\n&ModelContent=\r\n&Title=\r\n&Content=this composition content\r\n&IsAsync=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Score\": 72.39,\n            \"ScoreCat\": {\n                \"Words\": {\n                    \"Name\": \"词汇\",\n                    \"Score\": 76.08,\n                    \"Percentage\": 42\n                },\n                \"Sentences\": {\n                    \"Name\": \"句子\",\n                    \"Score\": 61.16,\n                    \"Percentage\": 28\n                },\n                \"Structure\": {\n                    \"Name\": \"篇章结构\",\n                    \"Score\": 80.37,\n                    \"Percentage\": 23\n                },\n                \"Content\": {\n                    \"Name\": \"内容\",\n                    \"Score\": 69,\n                    \"Percentage\": 7\n                },\n                \"Score\": 0,\n                \"Percentage\": 0\n            },\n            \"Comment\": \"作者词汇基础扎实；可适当增加复合句和从句的使用；文中衔接词丰富。请多加练习，更上一层楼。\",\n            \"SentenceComments\": [\n                {\n                    \"Sentence\": {\n                        \"Sentence\": \"Teenagers likeating fast 1888861 food.\",\n                        \"ParaID\": 1,\n                        \"SentenceID\": 7\n                    },\n                    \"Suggestions\": [\n                        {\n                            \"Type\": \"Error\",\n                            \"ErrorType\": \"拼写错误\",\n                            \"Origin\": \"likeating\",\n                            \"Replace\": \"elevating\",\n                            \"Message\": \"likeating 可能是拼写错误，请注意拼写检查，这里应将 likeating 替换为 elevating\",\n                            \"ErrorPosition\": [\n                                8,\n                                8\n                            ]\n                        },\n                        {\n                            \"Type\": \"Error\",\n                            \"ErrorType\": \"易混淆词汇建议\",\n                            \"Origin\": \"1888861\",\n                            \"Replace\": \"1886861\",\n                            \"Message\": \"注意1888861 与 1886861 的区别，推荐将 1888861 替换为 1886861\",\n                            \"ErrorPosition\": [\n                                8,\n                                8\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"TaskId\": \"\",\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "纯文本英语作文批改-同步"
+      },
+      {
+        "document": "IsAsync=1 时为异步模式，返回 TaskId（内容仅为参考，非实际返回结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=ECC\r\n&Grade=\r\n&Outline=\r\n&ModelSubject=\r\n&ModelContent=\r\n&Title=\r\n&Content=this composition content\r\n&IsAsync=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"TaskId\": \"10000004\",\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "纯文本英语作文批改-异步"
+      }
+    ],
+    "EHOCR": [
+      {
+        "document": "ServerType = 0，使用识别功能，只返回识别文本（内容仅为参考，非实际返回结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=EHOCR\r\n&InputType=1\r\n&Image=ccc\r\n&ServerType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"this is compostion content\",\n            \"CorrectData\": null,\n            \"TaskId\": null\n        },\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "图像识别批改-识别"
+      },
+      {
+        "document": "ServerType = 1，使用批改功能，返回识别文本与批改结果（内容仅为参考，非实际批改结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=EHOCR\r\n&InputType=1\r\n&Image=ccc\r\n&ServerType=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"this is compostion content\",\n            \"CorrectData\": {\n                \"Score\": 72.39,\n                \"ScoreCat\": {\n                    \"Words\": {\n                        \"Name\": \"词汇\",\n                        \"Score\": 76.08,\n                        \"Percentage\": 42\n                    },\n                    \"Sentences\": {\n                        \"Name\": \"句子\",\n                        \"Score\": 61.16,\n                        \"Percentage\": 28\n                    },\n                    \"Structure\": {\n                        \"Name\": \"篇章结构\",\n                        \"Score\": 80.37,\n                        \"Percentage\": 23\n                    },\n                    \"Content\": {\n                        \"Name\": \"内容\",\n                        \"Score\": 69,\n                        \"Percentage\": 7\n                    },\n                    \"Score\": 0,\n                    \"Percentage\": 0\n                },\n                \"Comment\": \"作者词汇基础扎实；可适当增加复合句和从句的使用；文中衔接词丰富。请多加练习，更上一层楼。\",\n                \"SentenceComments\": [\n                    {\n                        \"Sentence\": {\n                            \"Sentence\": \"Teenagers likeating fast 1888861 food.\",\n                            \"ParaID\": 1,\n                            \"SentenceID\": 7\n                        },\n                        \"Suggestions\": [\n                            {\n                                \"Type\": \"Error\",\n                                \"ErrorType\": \"拼写错误\",\n                                \"Origin\": \"likeating\",\n                                \"Replace\": \"elevating\",\n                                \"Message\": \"likeating 可能是拼写错误，请注意拼写检查，这里应将 likeating 替换为 elevating\",\n                                \"ErrorPosition\": [\n                                    8,\n                                    8\n                                ]\n                            },\n                            {\n                                \"Type\": \"Error\",\n                                \"ErrorType\": \"易混淆词汇建议\",\n                                \"Origin\": \"1888861\",\n                                \"Replace\": \"1886861\",\n                                \"Message\": \"注意1888861 与 1886861 的区别，推荐将 1888861 替换为 1886861\",\n                                \"ErrorPosition\": [\n                                    8,\n                                    8\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            },\n            \"TaskId\": null\n        },\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "图像识别批改-批改"
+      },
+      {
+        "document": "IsAsync= 1，使用异步处理（内容仅为参考，非实际返回结果）",
+        "input": "https://ecc.tencentcloudapi.com/?Action=EHOCR\r\n&InputType=1\r\n&Image=ccc\r\n&IsAsync=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"\",\n            \"CorrectData\": null,\n            \"TaskId\": \"10000010\"\n        },\n        \"RequestId\": \"ae5d82c1-47a1-43c0-b8a2-4d3c35a21488\"\n    }\n}",
+        "title": "图像识别批改-异步"
+      }
+    ]
+  },
+  "version": "1.0"
+}

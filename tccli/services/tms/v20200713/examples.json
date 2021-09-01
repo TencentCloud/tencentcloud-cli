@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "AccountTipoffAccess": [
+      {
+        "document": "举报存在诈骗、违规、违法等行为的账号",
+        "input": "POST / HTTP/1.1\nHost: tms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AccountTipoffAccess\n<公共请求参数>\n\n{\n    \"ReportedAccount\": \"123456789\",\n    \"ReportedAccountType\": 2,\n    \"SenderAccount\": \"987654321\",\n    \"SenderAccountType\": 2,\n    \"SenderIP\": \"127.0.0.1\",\n    \"EvilType\": 1,\n    \"EvilContent\": \"王者代练，入会需交费，+q：123456789\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d31ec33\",\n        \"Data\": {\n            \"ResultCode\": 0,\n            \"ResultMsg\": \"success\"\n        }\n    }\n}",
+        "title": "账号举报"
+      }
+    ],
+    "DescribeTextLib": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=DescribeTextLib\n&StrategyType=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TextLib\": [\n            {\n                \"LibId\": 1,\n                \"LibName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "控制台获取用户词库列表"
+      }
+    ],
+    "DescribeTextStat": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=DescribeTextStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TrendCount\": [\n            {\n                \"TotalHour\": 0,\n                \"EvilHour\": 0,\n                \"TotalCount\": 0,\n                \"EvilCount\": 0,\n                \"PassCount\": 0,\n                \"Date\": \"xx\",\n                \"PassHour\": 0,\n                \"SuspectHour\": 0,\n                \"SuspectCount\": 0\n            }\n        ],\n        \"Overview\": {\n            \"TotalHour\": 0,\n            \"EvilHour\": 0,\n            \"TotalCount\": 0,\n            \"EvilCount\": 0,\n            \"PassCount\": 0,\n            \"PassHour\": 0,\n            \"SuspectHour\": 0,\n            \"SuspectCount\": 0\n        },\n        \"RequestId\": \"xx\",\n        \"EvilCount\": [\n            {\n                \"Count\": 0,\n                \"EvilType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "控制台识别统计"
+      }
+    ],
+    "TextModeration": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataId\": \"123\",\n        \"Extra\": \"xx\",\n        \"BizType\": \"0\",\n        \"RiskDetails\": [\n            {\n                \"Level\": 2,\n                \"Label\": \"RiskAccount\"\n            }\n        ],\n        \"DetailResults\": [\n            {\n                \"LibName\": \"Porn\",\n                \"Score\": 72,\n                \"Label\": \"Porn\",\n                \"LibId\": \"12\",\n                \"Suggestion\": \"Review\",\n                \"Keywords\": [\n                    \"色情\"\n                ],\n                \"LibType\": 0\n            },\n            {\n                \"LibName\": \"Porn\",\n                \"Score\": 0,\n                \"Label\": \"\",\n                \"LibId\": \"1\",\n                \"Suggestion\": \"Block\",\n                \"Keywords\": [\n                    \"色情\"\n                ],\n                \"LibType\": 2\n            }\n        ],\n        \"Label\": \"Ad\",\n        \"EvilFlag\": 1,\n        \"Score\": 87,\n        \"RequestId\": \"x2123-123123-123\",\n        \"Suggestion\": \"Block\",\n        \"Keywords\": [\n            \"加我好友，给你发优惠券\"\n        ]\n    }\n}",
+        "title": "文本内容安全"
+      }
+    ]
+  },
+  "version": "1.0"
+}

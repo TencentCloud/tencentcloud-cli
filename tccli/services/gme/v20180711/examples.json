@@ -1,0 +1,129 @@
+{
+  "actions": {
+    "CreateAgeDetectTask": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=CreateAgeDetectTask\n&BizId=123456\n&Callback=https://xxx.com/callback\n&Tasks.0.DataId=xxx\n&Tasks.0.Url=https://yy.com/xx.wav\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "title": "提交年龄语音识别任务"
+      }
+    ],
+    "CreateApp": [
+      {
+        "document": "使用项目10000，开启实时语音服务，使用高音质；关闭离线语音服务； 开启语音过滤服务",
+        "input": "https://gme.tencentcloudapi.com/?Action=CreateApp\n&AppName=simple_gme_application\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppName\": \"simple_gme_application\",\n            \"CreateTime\": 1568945078,\n            \"ProjectId\": 10000,\n            \"BizId\": 140000002,\n            \"SecretKey\": \"abcdefghijklmnop\",\n            \"RealtimeSpeechConf\": {\n                \"Status\": \"open\",\n                \"Quality\": \"high\"\n            },\n            \"VoiceMessageConf\": {\n                \"Status\": \"open\",\n                \"Language\": \"cnen\"\n            },\n            \"VoiceFilterConf\": {\n                \"Status\": \"open\"\n            }\n        },\n        \"RequestId\": \"d61be8ca-f010-11e9-af81-fa163ee00eb7\"\n    }\n}",
+        "title": "使用自定义配置，创建一个GME应用"
+      }
+    ],
+    "DescribeAgeDetectTask": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAgeDetectTask\n&BizId=123456\n&TaskId=xxx-yyy-zzz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxxxxxx\",\n        \"Results\": [\n            {\n                \"DataId\": \"xxxx\",\n                \"Url\": \"https://yy.com\",\n                \"Status\": 2,\n                \"Age\": 1\n            }\n        ],\n        \"RequestId\": \"ecefce57a9ae2087d0cbf7fcc0e27bac\"\n    }\n}",
+        "title": "查询年龄语音识别任务结果"
+      }
+    ],
+    "DescribeAppStatistics": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeAppStatistics\n&BizId=140000001\n&StartDate=2019-08-01\n&EndDate=2019-08-03\n&Services.0=RealTimeSpeech\n&Services.1=VoiceMessage\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppStatistics\": [\n                {\n                    \"Date\": \"2019-08-01\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                },\n                {\n                    \"Date\": \"2019-08-02\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                },\n                {\n                    \"Date\": \"2019-08-03\",\n                    \"RealtimeSpeechStatisticsItem\": {\n                        \"MainLandDau\": 10000,\n                        \"MainLandPcu\": 5000,\n                        \"MainLandDuration\": 1000000,\n                        \"OverseaDau\": 5000,\n                        \"OverseaPcu\": 2000,\n                        \"OverseaDuration\": 500000\n                    },\n                    \"VoiceMessageStatisticsItem\": {\n                        \"Dau\": 68000\n                    },\n                    \"VoiceFilterStatisticsItem\": null\n                }\n            ]\n        },\n        \"RequestId\": \"9b993045-9fa1-47f4-9d25-79160f305be8\"\n    }\n}",
+        "title": "查询实时语音和离线语音2019-08-01至2019-08-03的用量统计"
+      }
+    ],
+    "DescribeApplicationData": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeApplicationData\n&BizId=2400000\n&StartDate=2018-07-13\n&EndDate=2018-07-14\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DurationDataOversea\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"DurationDataMainland\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"BizId\": 1,\n            \"PcuDataMainland\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"DauDataMainland\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"DurationDataNum\": 1,\n            \"DauDataNum\": 1,\n            \"PcuDataNum\": 1,\n            \"DauDataSum\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"PcuDataOversea\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"DauDataOversea\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"DurationDataSum\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                },\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ],\n            \"PcuDataSum\": [\n                {\n                    \"StatDate\": \"2020-09-22\",\n                    \"Data\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"9b993045-9fa1-47f4-9d25-79160f305be8\"\n    }\n}",
+        "title": "获取数据详情"
+      }
+    ],
+    "DescribeFilterResult": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResult\r\n&BizId=0\r\n&FileId=test_file_id\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BizId\": 0,\n            \"Data\": [\n                {\n                    \"Type\": 1,\n                    \"Word\": \"xxxx\"\n                }\n            ],\n            \"FileId\": \"test_file_id\",\n            \"FileName\": \"test_file_name\",\n            \"OpenId\": \"\",\n            \"Timestamp\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询识别结果"
+      }
+    ],
+    "DescribeFilterResultList": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeFilterResultList\r\n&BizId=0\r\n&StartDate=0000-00-00\r\n&EndDate=0000-00-00\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            },\n            {\n                \"BizId\": 0,\n                \"Data\": [],\n                \"FileId\": \"test_file_id\",\n                \"FileName\": \"test_file_name\",\n                \"OpenId\": \"\"\n            }\n        ],\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 100\n    }\n}",
+        "title": "查询识别结果列表"
+      }
+    ],
+    "DescribeRoomInfo": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeRoomInfo\n&SdkAppId=1400000000\n&RoomIds.0=88888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 88888,\n                \"Uins\": [\n                    1234,\n                    5678\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "获取房间内用户信息"
+      }
+    ],
+    "DescribeScanResultList": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeScanResultList\r\n&BizId=1400000000\r\n&TaskIdList.0=xxx\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Data\": [{\r\n\t\t\"Code\": 0,\r\n\t\t\"DataId\": \"1400000000_test_data_id\",\r\n\t\t\"ScanFinishTime\": 1566720906,\r\n\t\t\"HitFlag\": true,\r\n\t\t\"Live\": false,\r\n\t\t\"Msg\": \"\",\r\n\t\t\"ScanPiece\": [{\r\n\t\t\t\"DumpUrl\": \"\",\r\n\t\t\t\"HitFlag\": true,\r\n\t\t\t\"MainType\": \"abuse\",\r\n\t\t\t\"Info\":\"\",\r\n                        \"Offset\": 0,\r\n                        \"Duration\": 3400,\r\n                        \"PieceStartTime\":1574684231,\r\n\t\t\t\"ScanDetail\": [{\r\n\t\t\t\t\"EndTime\": 1110,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 1110\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 1380,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 930\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 1560,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 930\r\n\t\t\t}, {\r\n\t\t\t\t\"EndTime\": 2820,\r\n\t\t\t\t\"KeyWord\": \"xxx\",\r\n\t\t\t\t\"Label\": \"abuse\",\r\n\t\t\t\t\"Rate\": \"90.00\",\r\n\t\t\t\t\"StartTime\": 2490\r\n\t\t\t}]\r\n\t\t}],\r\n\t\t\"ScanStartTime\": 1566720905,\r\n\t\t\"Scenes\":[ \r\n                    \"default\"\r\n                ],\r\n\t\t\"Status\": \"Success\",\r\n\t\t\"TaskId\": \"xxx\",\r\n\t\t\"Url\": \"https://xxx/xxx.m4a\"\r\n\t}],\r\n\t\"RequestId\": \"xxx\"\r\n}",
+        "title": "查询语音检测结果"
+      }
+    ],
+    "DescribeUserInAndOutTime": [
+      {
+        "document": "拉取用户在房间得进出时间",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInAndOutTime\n<公共请求参数>\n\n{\n    \"BizId\": 1400440313,\n    \"RoomId\": 12675079,\n    \"UserId\": 112675079\n}",
+        "output": "{\n    \"Response\": {\n        \"InOutList\": [\n            {\n                \"StartTime\": 1606355700701,\n                \"EndTime\": 1606355712545\n            },\n            {\n                \"StartTime\": 1606355835221,\n                \"EndTime\": 1606355983240\n            },\n            {\n                \"StartTime\": 1606356131997,\n                \"EndTime\": 1606356139161\n            },\n            {\n                \"StartTime\": 1606356140241,\n                \"EndTime\": 1606357417975\n            },\n            {\n                \"StartTime\": 1606357498484,\n                \"EndTime\": 1606357504722\n            },\n            {\n                \"StartTime\": 1606357505783,\n                \"EndTime\": 1606358646084\n            },\n            {\n                \"StartTime\": 1606358708098,\n                \"EndTime\": 1606358732251\n            }\n        ],\n        \"Duration\": 2615453,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取用户在房间得进出时间"
+      }
+    ],
+    "ModifyAppStatus": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=ModifyAppStatus\n&BizId=140000001\n&Status=close\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BizId\": 140000001,\n            \"Status\": \"close\"\n        },\n        \"RequestId\": \"e2900289-f21e-43a8-a3bf-0b439cdbbbb8\"\n    }\n}",
+        "title": "关闭GME应用140000001"
+      }
+    ],
+    "ModifyRoomInfo": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=ModifyRoomInfo\n&SdkAppId=1400000000\n&RoomId=88888\n&OperationType=301\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "修改房间信息"
+      }
+    ],
+    "ScanVoice": [
+      {
+        "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=false\r\n&Callback=\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=http://xxx/audio_store/xxxx.mp3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "提交语音文件检测任务-2"
+      },
+      {
+        "document": "通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=true\r\n&Callback=\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=https://xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "提交语音流检测任务"
+      },
+      {
+        "document": "通过语音文件的方式提交检测任务，可通过设置回调地址 Callback 获取检测结果",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=false\r\n&Callback=https://0.0.0.0/user_callback\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=http://xxxx/audio_store/xxxx.mp3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "title": "提交语音文件检测任务"
+      }
+    ],
+    "VoiceFilter": [
+      {
+        "document": "",
+        "input": "https://gme.tencentcloudapi.com/?Action=VoiceFilter\r\n&BizId=0\r\n&FileId=test_file_id\r\n&FileName=test_file_name\r\n&FileUrl=http%3a%2f%2ftest_file_url.com%2ffile\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "语音过滤"
+      }
+    ]
+  },
+  "version": "1.0"
+}

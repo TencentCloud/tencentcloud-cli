@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "CreateCosToken": [
+      {
+        "document": "为上传jar包和war包，生成Cos临时秘钥",
+        "input": "https://tem.tencentcloudapi.com/?Action=CreateCosToken\n&ServiceId=\"service-xxxxxx\"\n&VersionId=\"version-1233344\"\n&PkgName=\"test-demo.jar\"\n&OptType=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": {}\n    }\n}",
+        "title": "生成Cos临时秘钥"
+      }
+    ],
+    "CreateCosTokenV2": [
+      {
+        "document": "为上传jar包和war包，生成Cos临时秘钥",
+        "input": "https://tem.tencentcloudapi.com/?Action=CreateCosTokenV2\n&ServiceId=\"service-xxxxx\"\n&PkgName=\"test-demo.jar\"\n&OptType=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": {}\n    }\n}",
+        "title": "生成Cos临时秘钥"
+      }
+    ],
+    "CreateNamespace": [
+      {
+        "document": "创建环境（命名空间）",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"xx\",\n    \"K8sVersion\": \"1.16.9\",\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"Vpc\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"env-xxxx\"\n    }\n}",
+        "title": "创建环境（命名空间）"
+      }
+    ],
+    "CreateResource": [
+      {
+        "document": "创建环境（命名空间）",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"env-xx\",\n    \"ResourceType\": \"VPC\",\n    \"ResourceId\": \"vpc-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "创建环境（命名空间）"
+      }
+    ],
+    "CreateServiceV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceV2\n<公共请求参数>\n\n{\n    \"SubnetList\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"DeployMode\": \"xx\",\n    \"RepoServer\": \"xx\",\n    \"SourceChannel\": 0,\n    \"ServiceName\": \"xx\",\n    \"RepoType\": 0,\n    \"RepoName\": \"xx\",\n    \"UseDefaultImageService\": 0,\n    \"CodingLanguage\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建服务"
+      }
+    ],
+    "DeleteIngress": [
+      {
+        "document": "查询 Ingress 规则",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIngress\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"cls-xxx\",\n    \"EksNamespace\": \"default\",\n    \"Name\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "查询 Ingress 规则"
+      }
+    ],
+    "DeployServiceV2": [
+      {
+        "document": "服务版本部署",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployServiceV2\n<公共请求参数>\n\n{\n    \"JvmOpts\": \"xx\",\n    \"StorageConfs\": [\n        {\n            \"StorageVolName\": \"xx\",\n            \"StorageVolPath\": \"xx\"\n        }\n    ],\n    \"ImgRepo\": \"xx\",\n    \"EnvConf\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Description\": \"xx\",\n    \"JdkVersion\": \"xx\",\n    \"ContainerPort\": 1,\n    \"LogOutputConf\": {\n        \"ClsLogTopicId\": \"xx\",\n        \"ClsLogsetName\": \"xx\",\n        \"OutputType\": \"xx\"\n    },\n    \"CpuSpec\": 0.0,\n    \"DeployMode\": \"xx\",\n    \"SecurityGroupIds\": [\n        \"xx\"\n    ],\n    \"SourceChannel\": 0,\n    \"DeployVersion\": \"xx\",\n    \"InitPodNum\": 1,\n    \"VersionDesc\": \"xx\",\n    \"MemorySpec\": 0.0,\n    \"LogConfs\": [\n        \"xx\"\n    ],\n    \"PkgName\": \"xx\",\n    \"StorageMountConfs\": [\n        {\n            \"VolumeName\": \"xx\",\n            \"MountPath\": \"xx\"\n        }\n    ],\n    \"SettingConfs\": [\n        {\n            \"ConfigDataName\": \"xx\",\n            \"MountedPath\": \"xx\"\n        }\n    ],\n    \"EsInfo\": {\n        \"MinAliveInstances\": 0,\n        \"EsStrategy\": 0,\n        \"VersionId\": \"xx\",\n        \"Threshold\": 1,\n        \"MaxAliveInstances\": 2\n    },\n    \"ServiceId\": \"xx\",\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"version-xxx\"\n    }\n}",
+        "title": "服务版本部署"
+      }
+    ],
+    "DescribeIngress": [
+      {
+        "document": "查询 Ingress 规则",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIngress\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"env-xxx\",\n    \"EksNamespace\": \"default\",\n    \"Name\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Tls\": [\n                {\n                    \"CertificateId\": \"xx\",\n                    \"Hosts\": [\n                        \"xxx.com\"\n                    ],\n                    \"SecretName\": \"xx\"\n                }\n            ],\n            \"EksNamespace\": \"xx\",\n            \"Name\": \"xx\",\n            \"Rules\": [\n                {\n                    \"Protocol\": \"xx\",\n                    \"Host\": \"xx\",\n                    \"Http\": {\n                        \"Paths\": [\n                            {\n                                \"Path\": \"xx\",\n                                \"Backend\": {\n                                    \"ServiceName\": \"xx\",\n                                    \"ServicePort\": 443\n                                }\n                            }\n                        ]\n                    }\n                }\n            ],\n            \"ClbId\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"Vip\": \"xx\",\n            \"Mixed\": true,\n            \"AddressIPVersion\": \"xx\",\n            \"NamespaceId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询 Ingress 规则"
+      }
+    ],
+    "DescribeIngresses": [
+      {
+        "document": "Ingress 列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIngresses\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"env-xxx\",\n    \"EksNamespace\": \"default\",\n    \"Names\": [\n        \"test-ingress-1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": [\n            {\n                \"ClusterId\": \"cls-9lxt9ic2\",\n                \"NamespaceId\": null,\n                \"EksNamespace\": \"default\",\n                \"AddressIPVersion\": \"IPV4\",\n                \"ClbId\": \"clb-xxxx\",\n                \"Vip\": \"10.10.10.10\",\n                \"Name\": \"test-ingress-1\",\n                \"Rules\": [\n                    {\n                        \"Host\": \"\",\n                        \"Http\": {\n                            \"Paths\": [\n                                {\n                                    \"Path\": \"/\",\n                                    \"Backend\": {\n                                        \"ServiceName\": \"kubernetes\",\n                                        \"ServicePort\": 443\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Tls\": [\n                    {\n                        \"Hosts\": [\n                            \"xxx.com\"\n                        ],\n                        \"SecretName\": \"xxx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "Ingress 列表"
+      }
+    ],
+    "DescribeNamespaces": [
+      {
+        "document": "获取租户命名空间列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Records\": [\n                {\n                    \"Status\": 0,\n                    \"ModifyDate\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"Creator\": \"xx\",\n                    \"CreateDate\": \"xx\",\n                    \"NamespaceName\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"EnableTswTraceService\": true,\n                    \"TcbEnvStatus\": \"xx\",\n                    \"ServiceNum\": 0,\n                    \"RunInstancesNum\": 0,\n                    \"Vpc\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ClusterStatus\": \"xx\",\n                    \"Modifier\": \"xx\",\n                    \"NamespaceId\": \"xx\",\n                    \"Channel\": \"xx\"\n                }\n            ],\n            \"Total\": 0,\n            \"Pages\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取租户命名空间列表"
+      }
+    ],
+    "DescribeRelatedIngresses": [
+      {
+        "document": "服务关联的 Ingress 列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelatedIngresses\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"env-xxx\",\n    \"EksNamespace\": \"default\",\n    \"ServiceId\": \"svc-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": [\n            {\n                \"ClusterId\": \"cls-9lxt9ic2\",\n                \"NamespaceId\": null,\n                \"EksNamespace\": \"default\",\n                \"AddressIPVersion\": \"IPV4\",\n                \"ClbId\": \"clb-xxxx\",\n                \"Vip\": \"10.10.10.10\",\n                \"Name\": \"test-ingress-1\",\n                \"Mixed\": true,\n                \"Rules\": [\n                    {\n                        \"Host\": \"\",\n                        \"Http\": {\n                            \"Paths\": [\n                                {\n                                    \"Path\": \"/\",\n                                    \"Backend\": {\n                                        \"ServiceName\": \"kubernetes\",\n                                        \"ServicePort\": 443\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Tls\": [\n                    {\n                        \"Hosts\": [\n                            \"xxx.com\"\n                        ],\n                        \"SecretName\": \"xxx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "服务关联的 Ingress 列表"
+      }
+    ],
+    "DescribeServiceRunPodListV2": [
+      {
+        "document": "获取版本下面运行pod列表",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceRunPodListV2\n<公共请求参数>\n\n{\n    \"PodName\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Limit\": 0,\n            \"RequestId\": \"xx\",\n            \"PodList\": [\n                {\n                    \"Webshell\": \"xx\",\n                    \"Status\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"PodId\": \"xx\",\n                    \"DeployVersion\": \"xx\",\n                    \"PodIp\": \"xx\",\n                    \"CreateTime\": \"xx\"\n                }\n            ],\n            \"Offset\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取版本下面运行pod列表"
+      }
+    ],
+    "GenerateDownloadUrl": [
+      {
+        "document": "生成包预签名下载链接",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateDownloadUrl\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"DeployVersion\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"PkgName\": \"xx\"\n}",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\r\n    \"Result\": {\r\n\r\n      }\r\n  }\r\n}",
+        "title": "生成包预签名下载链接"
+      }
+    ],
+    "ModifyIngress": [
+      {
+        "document": "创建或者更新 Ingress 规则",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIngress\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Ingress\": {\n        \"Tls\": [\n            {\n                \"CertificateId\": \"xx\",\n                \"Hosts\": [\n                    \"xxx.com\"\n                ],\n                \"SecretName\": \"xx\"\n            }\n        ],\n        \"EksNamespace\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Protocol\": \"xx\",\n                \"Host\": \"xx\",\n                \"Http\": {\n                    \"Paths\": [\n                        {\n                            \"Path\": \"xx\",\n                            \"Backend\": {\n                                \"ServiceName\": \"xx\",\n                                \"ServicePort\": 443\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"ClbId\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Vip\": \"xx\",\n        \"Mixed\": true,\n        \"AddressIPVersion\": \"xx\",\n        \"NamespaceId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "创建或者更新 Ingress 规则"
+      }
+    ],
+    "ModifyNamespace": [
+      {
+        "document": "编辑命名空间",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"xx\",\n    \"SubnetIds\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"Vpc\": \"xx\",\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "编辑命名空间"
+      }
+    ],
+    "ModifyServiceInfo": [
+      {
+        "document": "修改服务基本信息",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceInfo\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"SourceChannel\": 0,\n    \"ServiceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"true\"\n    }\n}",
+        "title": "修改服务基本信息"
+      }
+    ],
+    "RestartServiceRunPod": [
+      {
+        "document": "重启实例",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartServiceRunPod\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"PodName\": \"xx\",\n    \"ServiceId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"NamespaceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "重启实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

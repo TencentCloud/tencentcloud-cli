@@ -1,0 +1,615 @@
+{
+  "actions": {
+    "AttachCcnInstances": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=AttachCcnInstances\n&FleetId=fleet-qp3g3caa-ax4fq2wi\n&AccountId=1234567\n&CcnId=ccn-2dsbtmo3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1591756282499823050\"\n    }\n}",
+        "title": "关联云联网实例"
+      }
+    ],
+    "CopyFleet": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CopyFleet\n&FleetId=fleet-qp3g3caa-2m6pzf4g\n&AssetId=asset-qrdiw1a9\n&Description=Human description\n&InstanceType=S5.LARGE8\n&FleetType=ON_DEMAND\n&Name=testfleet\n&NewGameServerSessionProtectionPolicy=TimeLimitProtection\n&ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator=2\n&ResourceCreationLimitPolicy.PolicyPeriodInMinutes=0\n&RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds=5\n&RuntimeConfiguration.MaxConcurrentGameServerSessionActivations=5\n&RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions=10\n&RuntimeConfiguration.ServerProcesses.0.LaunchPath=/local/game/GameLiftLinuxServer\n&InboundPermissions.0.FromPort=1900\n&InboundPermissions.0.IpRange=0.0.0.0/0\n&InboundPermissions.0.Protocol=TCP\n&InboundPermissions.0.ToPort=2900\n&SelectedScalingType=SCALING_UNSELECTED\n&SelectedCcnType=CCN_UNSELECTED\n&SelectedTimerType=TIMER_UNSELECTED\n&CopyNumber=1\n&DataDiskInfo.0.DiskType=CLOUD_PREMIUM\n&DataDiskInfo.0.DiskSize=50\n&SystemDiskInfo.DiskType=CLOUD_PREMIUM\n&SystemDiskInfo.DiskSize=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetAttributes\": [\n            {\n                \"AssetId\": \"asset-qrdiw1a9\",\n                \"BillingStatus\": \"BILLING_ACTIVATED\",\n                \"CreationTime\": \"2020-11-18T04:01:03Z\",\n                \"Description\": \"Human description test update\",\n                \"FleetArn\": \"qcs::gse:ap-shanghai:uin/838831829:fleet/fleet-qp3g3caa-95z2gimq\",\n                \"FleetId\": \"fleet-qp3g3caa-95z2gimq\",\n                \"FleetType\": \"ON_DEMAND\",\n                \"GameServerSessionProtectionTimeLimit\": 60,\n                \"InstanceType\": \"S5.LARGE8\",\n                \"Name\": \"frederickli-test-fleet\",\n                \"NewGameServerSessionProtectionPolicy\": \"TimeLimitProtection\",\n                \"OperatingSystem\": \"CentOS 7.16 64位\",\n                \"ResourceCreationLimitPolicy\": {\n                    \"NewGameServerSessionsPerCreator\": 2,\n                    \"PolicyPeriodInMinutes\": 3\n                },\n                \"Status\": \"NEW\",\n                \"StoppedActions\": [],\n                \"TerminationTime\": null,\n                \"DataDiskInfo\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 50\n                    }\n                ],\n                \"SystemDiskInfo\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                }\n            }\n        ],\n        \"RequestId\": \"s1605672063311364390\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "复制服务器舰队"
+      }
+    ],
+    "CreateAlias": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateAlias\n&Name=aliastest\n&RoutingStrategy.Type=TERMINAL\n&RoutingStrategy.Message=thisisatest\n&RoutingStrategy.FleetId=fleet-xxxx-xxxx-xxxxx\n&Description=aliastest\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Alias\": {\n            \"AliasArn\": \"aliasArn-alias-1\",\n            \"AliasId\": \"alias-1\",\n            \"CreationTime\": \"2019-11-27T04:54:20Z\",\n            \"Description\": \"aliastest\",\n            \"LastUpdatedTime\": \"2019-11-27T04:54:20Z\",\n            \"Name\": \"aliastest\",\n            \"RoutingStrategy\": {\n                \"FleetId\": \"fleet-xxxx-xxxx-xxxxx\",\n                \"Message\": \"this is a test\",\n                \"Type\": \"TERMINAL\"\n            }\n        },\n        \"RequestId\": \"3084cdf3-6b74-4f8d-8f57-b3abb2b47bdd\"\n    }\n}",
+        "title": "创建别名"
+      }
+    ],
+    "CreateAsset": [
+      {
+        "document": "创建生成包",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateAsset\n&BucketKey=GseLinuxServer.zip\n&AssetName=asset-demo\n&AssetVersion=1.0\n&AssetRegion=ap-shanghai\n&OperateSystem=CentOS7.16\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetId\": \"asset-xxx\",\n        \"AssetArn\": \"xx\",\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "创建生成包"
+      }
+    ],
+    "CreateAssetWithImage": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateAssetWithImage\n&AssetName=asset-demo\n&AssetVersion=1.0\n&AssetRegion=ap-shanghai\n&ImageId=img-pj8r89ch\n&ImageSize=40GB\n&ImageOs=CentOS 6.5 64bit\n&OsType=CentOS\n&ImageType=SHARED_IMAGE\n&OsBit=64\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetArn\": \"qcs::gse:ap-shanghai:uin/838831829:asset/asset-mds6425j\",\n        \"AssetId\": \"asset-mds6425j\",\n        \"RequestId\": \"s1604054956874940891\"\n    }\n}",
+        "title": "创建生成包镜像信息"
+      }
+    ],
+    "CreateFleet": [
+      {
+        "document": "创建服务器舰队",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateFleet\n&AssetId=asset-eugdyx0g\n&Description=Humandecription\n&InstanceType=S5.LARGE8\n&FleetType=ON_DEMAND\n&Name=testfleet\n&NewGameServerSessionProtectionPolicy=FullProtection\n&PeerVpcId=null\n&ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator=0\n&ResourceCreationLimitPolicy.PolicyPeriodInMinutes=1\n&RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds=5\n&RuntimeConfiguration.MaxConcurrentGameServerSessionActivations=4\n&RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions=10\n&RuntimeConfiguration.ServerProcesses.0.LaunchPath=/local/game/GameLiftLinuxServer\n&RuntimeConfiguration.ServerProcesses.0.Parameters=-cconf/config.toml\n&InboundPermissions.0.FromPort=1900\n&InboundPermissions.0.IpRange=0.0.0.0/0\n&InboundPermissions.0.Protocol=TCP\n&InboundPermissions.0.ToPort=2900\n&DataDiskInfo.0.DiskType=CLOUD_PREMIUM\n&DataDiskInfo.0.DiskSize=50\n&SystemDiskInfo.DiskType=CLOUD_PREMIUM\n&SystemDiskInfo.DiskSize=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetAttributes\": {\n            \"AssetId\": \"build-xifjw-fiist-2019\",\n            \"CreationTime\": \"2019-12-09T13:37:01Z\",\n            \"Description\": \"Human decription\",\n            \"FleetArn\": \"qcs::gse:ap-beijing:uin/20548499:fleet/fleet-pro4eunl-0l1exqxf\",\n            \"FleetId\": \"fleet-pro4eunl-0l1exqxf\",\n            \"FleetType\": \"ON_DEMAND\",\n            \"GameServerSessionProtectionTimeLimit\": 5,\n            \"InstanceType\": \"S5.LARGE8\",\n            \"Name\": \"test fleet\",\n            \"NewGameServerSessionProtectionPolicy\": \"TimeLimitProtection\",\n            \"OperatingSystem\": \"centos\",\n            \"ResourceCreationLimitPolicy\": {\n                \"NewGameServerSessionsPerCreator\": 0,\n                \"PolicyPeriodInMinutes\": 1\n            },\n            \"Status\": \"NEW\",\n            \"StoppedActions\": [],\n            \"TerminationTime\": null,\n            \"DataDiskInfo\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                }\n            ],\n            \"SystemDiskInfo\": {\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskSize\": 50\n            }\n        },\n        \"RequestId\": \"4520ba54-982e-46e2-9a0b-63c963c34fc6\"\n    }\n}",
+        "title": "创建服务器舰队"
+      }
+    ],
+    "CreateGameServerSession": [
+      {
+        "document": "创建游戏服务会话",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateGameServerSession\n&AliasId=alias-aatest-66bb\n&MaximumPlayerSessionCount=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSession\": {\n            \"AvailabilityStatus\": \"Enable\",\n            \"CreationTime\": \"2020-07-30T03:55:43Z\",\n            \"CreatorId\": \"\",\n            \"CurrentCustomCount\": 0,\n            \"CurrentPlayerSessionCount\": 0,\n            \"DnsName\": \"\",\n            \"FleetId\": \"fleet-qp33caaa-35555\",\n            \"GameProperties\": [],\n            \"GameServerSessionData\": \"\",\n            \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu\",\n            \"InstanceType\": \"S5.LARGE8\",\n            \"IpAddress\": \"127.0.0.1\",\n            \"MatchmakerData\": \"\",\n            \"MaxCustomCount\": 0,\n            \"MaximumPlayerSessionCount\": 100,\n            \"Name\": \"\",\n            \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n            \"Port\": 6000,\n            \"Status\": \"ACTIVATING\",\n            \"StatusReason\": \"\",\n            \"TerminationTime\": null,\n            \"Weight\": 5\n        },\n        \"RequestId\": \"s15960816666663333\"\n    }\n}",
+        "title": "创建游戏服务会话"
+      }
+    ],
+    "CreateGameServerSessionQueue": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=CreateGameServerSessionQueue\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionQueue\": {\n            \"Destinations\": [],\n            \"GameServerSessionQueueArn\": \"qcs::gse:ap-shanghai:uin/20534889:queue/test\",\n            \"Name\": \"test\",\n            \"PlayerLatencyPolicies\": [],\n            \"TimeoutInSeconds\": 600,\n            \"Tags\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"08f383c1-2694-4236-ba64-e7d3e3453d96c\"\n    }\n}",
+        "title": "创建游戏服务器会话队列"
+      }
+    ],
+    "DeleteAlias": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DeleteAlias\n&AliasId=alias-123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"980f94c6-b2f9-4d39-a46b-5402789258cd\"\n    }\n}",
+        "title": "删除别名"
+      }
+    ],
+    "DeleteAsset": [
+      {
+        "document": "删除生成包",
+        "input": "https://gse.tencentcloudapi.com/?Action=DeleteAsset\n&AssetId=asset-i5gtz5l9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "删除生成包"
+      }
+    ],
+    "DeleteFleet": [
+      {
+        "document": "删除服务器舰队",
+        "input": "https://gse.tencentcloudapi.com/?Action=DeleteFleet\n&FleetId=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16f29370-828e-4acc-a836-9a542abfb650\"\n    }\n}",
+        "title": "删除服务器舰队"
+      }
+    ],
+    "DeleteGameServerSessionQueue": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DeleteGameServerSessionQueue\n&Name=queue2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3118ddfd-1fb0-4560-adf4-1da1216sdsdfedb\"\n    }\n}",
+        "title": "游戏服务器会话队列"
+      }
+    ],
+    "DeleteScalingPolicy": [
+      {
+        "document": "删除Fleet扩缩容策略配置，删除请求服务器舰队fleet-qp3g3caa-ay03mhdm的所有扩缩容策略。",
+        "input": "https://gse.tencentcloudapi.com/?Action=DeleteScalingPolicy\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88017b64-f190-4882-9d9c-e995ac565014\"\n    }\n}",
+        "title": "删除Fleet扩缩容策略配置"
+      }
+    ],
+    "DeleteTimerScalingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTimerScalingPolicy\n<公共请求参数>\n\n{\n    \"TimerId\": \"timerId-oc80v5zp\",\n    \"FleetId\": \"fleet-qp3g3caa-mg4w88ho\",\n    \"TimerName\": \"testDay\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611558706853891353\"\n    }\n}",
+        "title": "删除定时器"
+      }
+    ],
+    "DescribeAlias": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeAlias\n&AliasId=alias-123-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Alias\": {\n            \"AliasArn\": \"qcs::gse:ap-shanghai:uin/20548499:alias/alias-123-test\",\n            \"AliasId\": \"alias-123-test\",\n            \"CreationTime\": \"2019-12-11T13:51:05Z\",\n            \"Description\": \"\",\n            \"LastUpdatedTime\": \"2019-12-11T13:51:05Z\",\n            \"Name\": \"\",\n            \"RoutingStrategy\": {\n                \"FleetId\": \"fleet-qp3gsffn6-ob9lsbfa\",\n                \"Message\": \"\",\n                \"Type\": \"SIMPLE\"\n            }\n        },\n        \"RequestId\": \"5d7aef5a-8950-4530-b89d-9c84347d13f6\"\n    }\n}",
+        "title": "获取别名信息"
+      }
+    ],
+    "DescribeAsset": [
+      {
+        "document": "获取生成包信息",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeAsset\n&AssetId=asset-i5gtz5l9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Asset\": {\n            \"AssetId\": \"build-xxxxx\",\n            \"AssetName\": \"test\",\n            \"AssetVersion\": \"test\",\n            \"OperateSystem\": \"centos\",\n            \"Stauts\": 1,\n            \"Size\": \"11M\",\n            \"CreateTime\": \"2019-11-28 20:04:32\",\n            \"BindFleetNum\": 2,\n            \"OsType\": \"xx\",\n            \"ResourceType\": \"IMAGE\",\n            \"SharingStatus\": \"SHARED\",\n            \"AssetArn\": \"xx\",\n            \"ImageId\": \"xx\"\n        },\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "获取生成包信息"
+      }
+    ],
+    "DescribeAssetSystems": [
+      {
+        "document": "获取生成包支持的操作系统列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeAssetSystems\n&OsType=Windows\n&OsBit=64\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetSupportSys\": [\n            {\n                \"ImageId\": \"img-xxx\",\n                \"OsBit\": \"64\",\n                \"OsType\": \"Windows\",\n                \"OsVersion\": \"Windows Server 2012 R2 数据中心版 64位英文版\"\n            }\n        ],\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "获取生成包支持的操作系统列表"
+      }
+    ],
+    "DescribeAssets": [
+      {
+        "document": "拉取生成包列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeAssets\n&AssetRegion=ap-shanghai\n&Limit=1\n&Offset=2\n&Filter=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Assets\": [\n            {\n                \"AssetId\": \"asset-xxxxx\",\n                \"AssetName\": \"test\",\n                \"AssetVersion\": \"test\",\n                \"OperateSystem\": \"centos\",\n                \"Stauts\": 1,\n                \"Size\": \"11M\",\n                \"CreateTime\": \"2019-11-28 20:04:32\",\n                \"BindFleetNum\": 2,\n                \"AssetArn\": \"xx\",\n                \"OsType\": \"CentOS\",\n                \"ResourceType\": \"IMAGE\",\n                \"SharingStatus\": \"SHARED\",\n                \"ImageId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "拉取生成包列表"
+      }
+    ],
+    "DescribeCcnInstances": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeCcnInstances\n&FleetId=fleet-qp3g3caa-ax4fq2wi\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CcnInstanceSets\": [\n            {\n                \"AccountId\": \"838831829\",\n                \"CcnId\": \"ccn-2dsbtmo3\",\n                \"CreateTime\": \"2020-06-10T10:36:05Z\",\n                \"InstanceName\": \"fleet-qp3g3caa-ax4fq2wi\",\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"s1591771152224988588\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询云联网实例"
+      }
+    ],
+    "DescribeFleetAttributes": [
+      {
+        "document": "用于查询服务器舰队属性",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetAttributes\n&FleetIds.0=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetAttributes\": [\n            {\n                \"AssetId\": \"asset-97n7z87d\",\n                \"BillingStatus\": \"UNKNOWN\",\n                \"CreationTime\": \"2020-01-06T09:55:34Z\",\n                \"Description\": \"范德萨范德萨发\",\n                \"FleetArn\": \"qcs::gse:ap-shanghai:uin/:fleet/fleet-qp3g3caa-hxcv60fw\",\n                \"FleetId\": \"fleet-qp3g3caa-hxcv60fw\",\n                \"FleetType\": \"ON_DEMAND\",\n                \"GameServerSessionProtectionTimeLimit\": 0,\n                \"InstanceType\": \"S5.SMALL2\",\n                \"Name\": \"tedt01\",\n                \"NewGameServerSessionProtectionPolicy\": \"FullProtection\",\n                \"OperatingSystem\": \"\",\n                \"ResourceCreationLimitPolicy\": {\n                    \"NewGameServerSessionsPerCreator\": 2,\n                    \"PolicyPeriodInMinutes\": 3\n                },\n                \"Status\": \"ACTIVE\",\n                \"StoppedActions\": [],\n                \"TerminationTime\": null,\n                \"DataDiskInfo\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 50\n                    }\n                ],\n                \"SystemDiskInfo\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                }\n            }\n        ],\n        \"RequestId\": \"s1602557884795276136\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "用于查询服务器舰队属性"
+      }
+    ],
+    "DescribeFleetCapacity": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetCapacity\n&FleetIds.0=fleet-qp3g3caa-ay03mhdm\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetCapacity\": [\n            {\n                \"FleetId\": \"fleet-qp3g3caa-19tzbzao\",\n                \"ScalingInterval\": 3,\n                \"InstanceCounts\": {\n                    \"Active\": 1,\n                    \"Desired\": 1,\n                    \"Idle\": 1,\n                    \"MaxiNum\": 1,\n                    \"MiniNum\": 0,\n                    \"Pending\": 0,\n                    \"Terminating\": 0\n                },\n                \"InstanceType\": \"S5.SMALL2\"\n            }\n        ],\n        \"RequestId\": \"fb8ac83f-fefa-4b5d-ba12-d1dc88785e6b\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Fleet的容量信息列表"
+      }
+    ],
+    "DescribeFleetEvents": [
+      {
+        "document": "本示例用于查看服务器舰队的事件列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetEvents\n&FleetId=fleet-pro4extc-kej8s8z4\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"EventCode\": \"FLEET_STATE_VALIDATING\",\n                \"EventId\": \"event-qyylnmcz-cic9i6f3\",\n                \"EventTime\": \"2019-12-09T06:10:29Z\",\n                \"Message\": \"Fleet changed state to VALIDATING\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            },\n            {\n                \"EventCode\": \"FLEET_CREATION_RUNNING_INSTALLER\",\n                \"EventId\": \"event-qyylnmcz-2nweakep\",\n                \"EventTime\": \"2019-12-09T06:08:29Z\",\n                \"Message\": \"Running installer at /local/game/install.sh\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            },\n            {\n                \"EventCode\": \"FLEET_CREATION_VALIDATING_RUNTIME_CONFIG\",\n                \"EventId\": \"event-qyylnmcz-g8qtc5wd\",\n                \"EventTime\": \"2019-12-09T06:08:29Z\",\n                \"Message\": \"Searching for runtime path.\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            },\n            {\n                \"EventCode\": \"FLEET_STATE_DOWNLOADING\",\n                \"EventId\": \"event-qyylnmcz-npk9jmjb\",\n                \"EventTime\": \"2019-12-09T06:05:29Z\",\n                \"Message\": \"Fleet  changed state to DOWNLOADING\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            },\n            {\n                \"EventCode\": \"FLEET_CREATED\",\n                \"EventId\": \"event-qyylnmcz-ibwl3703\",\n                \"EventTime\": \"2019-12-09T06:01:29Z\",\n                \"Message\": \"Fleet has been created with state NEW.\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            },\n            {\n                \"EventCode\": \"FLEET_CREATION_EXTRACTING_BUILD\",\n                \"EventId\": \"event-qyylnmcz-1gwrgqmr\",\n                \"EventTime\": \"2019-12-09T06:01:29Z\",\n                \"Message\": \"Extracting Build.\",\n                \"PreSignedLogUrl\": \"\",\n                \"ResourceId\": \"fleet-pro4extc-kej8s8z4\"\n            }\n        ],\n        \"RequestId\": \"s1575880419614511725\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "查询服务器舰队的事件列表"
+      }
+    ],
+    "DescribeFleetPortSettings": [
+      {
+        "document": "服务器舰队安全组信息查询",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetPortSettings\n&FleetId=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InboundPermissions\": [\n            {\n                \"FromPort\": 1900,\n                \"IpRange\": \"0.0.0.0/0\",\n                \"Protocol\": \"TCP\",\n                \"ToPort\": 2900\n            }\n        ],\n        \"RequestId\": \"16f29370-828e-4acc-a836-9a542abfb650\"\n    }\n}",
+        "title": "服务器舰队安全组信息查询"
+      }
+    ],
+    "DescribeFleetRelatedResources": [
+      {
+        "document": "删除服务器舰队时，可先访问该接口获取与服务器舰队关联的资源",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetRelatedResources\n&FleetId=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2140e503-13cc-4249-af0f-b6ae0682ca18\",\n        \"Resources\": [\n            {\n                \"ResourceId\": \"alias-qh85lwj6-k4bfes0u\",\n                \"ResourceRegion\": \"ap-shanghai\",\n                \"Type\": \"ALIAS\"\n            },\n            {\n                \"ResourceId\": \"kongtest\",\n                \"ResourceRegion\": \"ap-shanghai\",\n                \"Type\": \"QUEUE\"\n            },\n            {\n                \"ResourceId\": \"kongtest\",\n                \"ResourceRegion\": \"na-siliconvalley\",\n                \"Type\": \"QUEUE\"\n            }\n        ]\n    }\n}",
+        "title": "获取服务器舰队关联的资源"
+      }
+    ],
+    "DescribeFleetStatisticDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFleetStatisticDetails\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"FleetId\": \"fleet-qp3g3caa-nkeekxw6\",\n    \"BeginTime\": \"2020-09-22 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DetailList\": [\n            {\n                \"FleetId\": \"fleet-qp3g3caa-nkeekxw6\",\n                \"InstanceId\": \"ins-abd1122\",\n                \"InstanceIP\": \"1.1.1.2\",\n                \"TotalUsedTimeSeconds\": 60,\n                \"TotalUsedFlowMegaBytes\": 1024,\n                \"BeginTime\": \"2020-05-13T01:00:00Z\",\n                \"EndTime\": \"2020-05-13T02:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"TimeType\": \"DAY\",\n        \"RequestId\": \"4520ba54-982e-46e2-9a0b-63c963c34fc6\"\n    }\n}",
+        "title": "查询舰队统计详情信息"
+      }
+    ],
+    "DescribeFleetStatisticFlows": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFleetStatisticFlows\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"FleetId\": \"fleet-qp3g3caa-nkeekxw6\",\n    \"BeginTime\": \"2020-09-22 00:00:00\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"UsedFlowList\": [\n            {\n                \"TotalUsedFlowMegaBytes\": 1024,\n                \"BeginTime\": \"2020-05-13T01:02:03Z\"\n            }\n        ],\n        \"UsedTimeList\": [\n            {\n                \"TotalUsedTimeSeconds\": 60,\n                \"BeginTime\": \"2020-05-13T01:02:03Z\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"TimeType\": \"DAY\",\n        \"RequestId\": \"4520ba54-982e-46e2-9a0b-63c963c34fc6\"\n    }\n}",
+        "title": "查询舰队统计用量"
+      }
+    ],
+    "DescribeFleetStatisticSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFleetStatisticSummary\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"FleetId\": \"fleet-qp3g3caa-nkeekxw6\",\n    \"BeginTime\": \"2020-09-22 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalUsedTimeSeconds\": \"60\",\n        \"TotalUsedFlowMegaBytes\": \"1024\",\n        \"RequestId\": \"4520ba54-982e-46e2-9a0b-63c963c34fc6\"\n    }\n}",
+        "title": "查询舰队统计汇总信息"
+      }
+    ],
+    "DescribeFleetUtilization": [
+      {
+        "document": "查询服务器舰队的利用率信息",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeFleetUtilization\n&FleetIds.0=fleet-qp3g3caa-nkeekxw6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetUtilization\": [\n            {\n                \"ActiveGameServerSessionCount\": 0,\n                \"ActiveServerProcessCount\": 49,\n                \"CurrentPlayerSessionCount\": 0,\n                \"FleetId\": \"fleet-qp3g3caa-8yh5e7kg\",\n                \"MaximumPlayerSessionCount\": 0\n            }\n        ],\n        \"RequestId\": \"d485c777-e1f6-4bfd-9e03-c4968f097692\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询服务器舰队的利用率信息"
+      }
+    ],
+    "DescribeGameServerSessionDetails": [
+      {
+        "document": "获取游戏会话详情列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeGameServerSessionDetails\n&FleetId=fleet-test00-1223\n&Limit=5\n&NextToken=nextToken-test01-tt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionDetails\": [\n            {\n                \"GameServerSession\": {\n                    \"AvailabilityStatus\": \"Enable\",\n                    \"CreationTime\": \"2020-07-30T03:55:43Z\",\n                    \"CreatorId\": \"\",\n                    \"CurrentCustomCount\": 0,\n                    \"CurrentPlayerSessionCount\": 0,\n                    \"DnsName\": \"\",\n                    \"FleetId\": \"fleet-qp33caaa-35555\",\n                    \"GameProperties\": [],\n                    \"GameServerSessionData\": \"\",\n                    \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu\",\n                    \"InstanceType\": \"S5.LARGE8\",\n                    \"IpAddress\": \"127.0.0.1\",\n                    \"MatchmakerData\": \"\",\n                    \"MaxCustomCount\": 0,\n                    \"MaximumPlayerSessionCount\": 100,\n                    \"Name\": \"\",\n                    \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                    \"Port\": 6000,\n                    \"Status\": \"ACTIVATING\",\n                    \"StatusReason\": \"\",\n                    \"TerminationTime\": null,\n                    \"Weight\": 5\n                },\n                \"ProtectionPolicy\": \"TimeLimitProtection\"\n            }\n        ],\n        \"NextToken\": \"\",\n        \"RequestId\": \"0a6ce70b-ffc8-4b9a-9255-d1915test\"\n    }\n}",
+        "title": "获取游戏会话详情列表"
+      }
+    ],
+    "DescribeGameServerSessionPlacement": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeGameServerSessionPlacement\n&PlacementId=PlacementId-3a7d34cd-5240-11ea-b02a-3464sdf513fe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionPlacement\": {\n            \"DnsName\": \"\",\n            \"EndTime\": \"2020-02-18T11:27:23Z\",\n            \"GameProperties\": [\n                {\n                    \"Key\": \"Key-3a7d34d0-5240-11ea-a3b0-3464afff13fe\",\n                    \"Value\": \"Value-3a7d34d1-5240-11ea-9466-344654391513fe\"\n                }\n            ],\n            \"GameServerSessionData\": \"GameServerSessionData-3a7d34d2-5240-11ea-8dd4-3464afdf1513fe\",\n            \"GameServerSessionId\": \"\",\n            \"GameServerSessionName\": \"GameServerSessionName-3a7d34d3-5240-11ea-8564-3464sd1513fe\",\n            \"GameServerSessionQueueName\": \"PlacementTwo\",\n            \"GameServerSessionRegion\": \"\",\n            \"IpAddress\": \"\",\n            \"MatchmakerData\": \"\",\n            \"MaximumPlayerSessionCount\": 100,\n            \"PlacedPlayerSessions\": [],\n            \"PlacementId\": \"PlacementId-3a7d34cd-5240-11ea-b02a-3464sdf513fe\",\n            \"PlayerLatencies\": [\n                {\n                    \"LatencyInMilliseconds\": 10000,\n                    \"PlayerId\": \"Player-3a7d34d4-5240-11ea-a2ee-3464a91513fe\",\n                    \"RegionIdentifier\": \"ap-shanghai\"\n                }\n            ],\n            \"Port\": 0,\n            \"StartTime\": \"2020-02-18T11:17:23Z\",\n            \"Status\": \"TIMED_OUT\"\n        }\n    }\n}",
+        "title": "查询游戏服务器会话的放置"
+      }
+    ],
+    "DescribeGameServerSessionQueues": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeGameServerSessionQueues\n&Names.0=queue2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionQueues\": [\n            {\n                \"Destinations\": [\n                    {\n                        \"DestinationArn\": \"qcs::gse:ap-shanghai:uin/100045346943:alias/alias-8whoa55z-reu7dfdfphl\"\n                    }\n                ],\n                \"GameServerSessionQueueArn\": \"qcs::gse:ap-shanghai:uin/24353458499:queue/t2\",\n                \"Name\": \"queue2\",\n                \"PlayerLatencyPolicies\": [\n                    {\n                        \"MaximumIndividualPlayerLatencyMilliseconds\": 56,\n                        \"PolicyDurationSeconds\": 20\n                    }\n                ],\n                \"TimeoutInSeconds\": 20\n            }\n        ],\n        \"RequestId\": \"3832851f-2b09-47dc-85db-27c33946456549\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询游戏服务器会话队列"
+      }
+    ],
+    "DescribeGameServerSessions": [
+      {
+        "document": "查询游戏会话列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeGameServerSessions\n&AliasId=a\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-111222\n&Limit=1\n&NextToken=nextToken-4hpp445-niuu789\n&StatusFilter=ACTIVATING\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessions\": [\n            {\n                \"AvailabilityStatus\": \"Enable\",\n                \"CreationTime\": \"2020-07-30T03:55:43Z\",\n                \"CreatorId\": \"\",\n                \"CurrentCustomCount\": 0,\n                \"CurrentPlayerSessionCount\": 0,\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp33caaa-35555\",\n                \"GameProperties\": [],\n                \"GameServerSessionData\": \"\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu\",\n                \"InstanceType\": \"S5.LARGE8\",\n                \"IpAddress\": \"127.0.0.1\",\n                \"MatchmakerData\": \"\",\n                \"MaxCustomCount\": 0,\n                \"MaximumPlayerSessionCount\": 100,\n                \"Name\": \"\",\n                \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                \"Port\": 6000,\n                \"Status\": \"ACTIVATING\",\n                \"StatusReason\": \"\",\n                \"TerminationTime\": null,\n                \"Weight\": 5\n            }\n        ],\n        \"NextToken\": \"\",\n        \"RequestId\": \"0fffff4-oooo-43333d-9222-testaaa\"\n    }\n}",
+        "title": "查询游戏会话列表"
+      }
+    ],
+    "DescribeInstanceLimit": [
+      {
+        "document": "查询用户实例数限额",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstanceLimit\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Limit\": 0,\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"ExtraInfos\": [\n            {\n                \"TotalInstances\": 1,\n                \"InstanceType\": \"inst-sjifew\"\n            }\n        ]\n    }\n}",
+        "title": "查询用户实例数限额"
+      }
+    ],
+    "DescribeInstanceTypes": [
+      {
+        "document": "获取服务器实例类型列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstanceTypes\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeList\": [\n            {\n                \"TypeName\": \"标准型S3\",\n                \"InstanceType\": \"S3.LARGE8\",\n                \"Cpu\": 4,\n                \"Memory\": 8,\n                \"NetworkCard\": 45\n            }\n        ],\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "获取服务器实例类型列表"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstances\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&IpAddress=1.1.1.1\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"CreateTime\": \"2020-04-09T11:30:03Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-dglymksw\",\n                \"InstanceId\": \"ins-1d6i1mzp\",\n                \"IpAddress\": \"1.1.1.1\",\n                \"OperatingSystem\": \"CentOS7.16\",\n                \"Status\": \"RUNNING\",\n                \"Type\": \"S5.SMALL2\"\n            },\n            {\n                \"CreateTime\": \"2020-04-09T11:20:20Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-ckyp9do4\",\n                \"InstanceId\": \"ins-gsua7xs9\",\n                \"IpAddress\": \"1.1.1.2\",\n                \"OperatingSystem\": \"CentOS7.16\",\n                \"Status\": \"RUNNING\",\n                \"Type\": \"S5.SMALL2\"\n            }\n        ],\n        \"RequestId\": \"e8ab591f-9a69-466d-a27b-a587556856bc\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeInstancesExtend": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeInstancesExtend\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&IpAddress=1.1.1.1\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"ActiveProcessCnt\": 1,\n                \"GameSessionCnt\": 0,\n                \"HealthyProcessCnt\": 1,\n                \"Instance\": {\n                    \"CreateTime\": \"2020-02-26T03:31:17Z\",\n                    \"DnsName\": \"\",\n                    \"FleetId\": \"fleet-qp3g3caa-19tzbzao\",\n                    \"InstanceId\": \"ins-242yfav7\",\n                    \"IpAddress\": \"129.211.106.166\",\n                    \"OperatingSystem\": \"CentOS7.16\",\n                    \"Status\": \"RUNNING\",\n                    \"Type\": \"S5.SMALL2\"\n                },\n                \"MaxGameSessionCnt\": 0,\n                \"MaxPlayerSessionCnt\": 0,\n                \"PlayerSessionCnt\": 0,\n                \"State\": \"Active\"\n            }\n        ],\n        \"RequestId\": \"d47e19b5-12b7-43e9-b25f-a48344efb199\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询实例及其扩展信息"
+      }
+    ],
+    "DescribePlayerSessions": [
+      {
+        "document": "查询玩家会话列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribePlayerSessions\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\n&Limit=5\n&NextToken=nextToken-abc78-1122bc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"nextToken-4hpp445-niuu789\",\n        \"PlayerSessions\": [\n            {\n                \"CreationTime\": \"2019-12-06T11:33:19Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-00test-a5testzz\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\",\n                \"IpAddress\": \"0000.0.0.0\",\n                \"PlayerData\": \"TestPlayerData\",\n                \"PlayerId\": \"\",\n                \"PlayerSessionId\": \"psess-d44990-test5\",\n                \"Port\": 8000,\n                \"Status\": \"COMPLETED\",\n                \"TerminationTime\": \"2019-12-06T11:33:18Z\"\n            }\n        ],\n        \"RequestId\": \"0fffff4-oooo-43333d-9222-testaaa\"\n    }\n}",
+        "title": "查询玩家会话列表"
+      }
+    ],
+    "DescribeRuntimeConfiguration": [
+      {
+        "document": "获取服务器舰队运行配置",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeRuntimeConfiguration\n&FleetId=fleet-qp3g3fn6-p6l46gnu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1582189364373611676\",\n        \"RuntimeConfiguration\": {\n            \"GameServerSessionActivationTimeoutSeconds\": 600,\n            \"MaxConcurrentGameServerSessionActivations\": 0,\n            \"ServerProcesses\": [\n                {\n                    \"ConcurrentExecutions\": 10,\n                    \"LaunchPath\": \"/local/game/GameLiftLinuxServer\",\n                    \"Parameters\": \"\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取服务器舰队运行配置"
+      }
+    ],
+    "DescribeScalingPolicies": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeScalingPolicies\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed36d5af-7db8-4bd8-9c4d-ee33c0ca330d\",\n        \"ScalingPolicies\": [\n            {\n                \"ComparisonOperator\": \"\",\n                \"EvaluationPeriods\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-19tzbzao\",\n                \"MetricName\": \"\",\n                \"Name\": \"\",\n                \"PolicyType\": \"\",\n                \"ScalingAdjustment\": \"\",\n                \"ScalingAdjustmentType\": \"\",\n                \"Status\": \"\",\n                \"TargetConfiguration\": {\n                    \"TargetValue\": 30\n                },\n                \"Threshold\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Fleet的扩缩容配置"
+      }
+    ],
+    "DescribeTimerScalingPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimerScalingPolicies\n<公共请求参数>\n\n{\n    \"FleetId\": \"fleet-qp3g3caa-mg4w88ho\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611556817860590511\",\n        \"TimerScalingPolicies\": [\n            {\n                \"TimerId\": \"\",\n                \"TimerStatus\": 1,\n                \"TimerName\": \"11111111\",\n                \"TimerFleetCapacity\": {\n                    \"FleetId\": \"fleet-qp3g3caa-mkurlvoa\",\n                    \"DesiredInstances\": 1,\n                    \"MinSize\": 0,\n                    \"MaxSize\": 1,\n                    \"ScalingInterval\": 10,\n                    \"ScalingType\": \"ScalingTypeAuto\",\n                    \"TargetConfiguration\": {\n                        \"TargetValue\": 23\n                    }\n                },\n                \"TimerConfiguration\": {\n                    \"TimerType\": \"TimerTypeDay\",\n                    \"TimerValue\": {\n                        \"Day\": 1,\n                        \"WeekDays\": [],\n                        \"FromDay\": 0,\n                        \"ToDay\": 0\n                    },\n                    \"BeginTime\": \"2021-01-14T14:04:29.496Z\",\n                    \"EndTime\": \"2022-01-14T14:04:29.496Z\"\n                }\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询定时器列表"
+      }
+    ],
+    "DescribeUserQuota": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeUserQuota\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QuotaResource\": {\n            \"ExtraInfo\": \"\",\n            \"HardLimit\": 20,\n            \"Remaining\": 10,\n            \"ResourceType\": 1\n        },\n        \"RequestId\": \"s1585794616012158675\"\n    }\n}",
+        "title": "获取用户单个模块配额示例"
+      }
+    ],
+    "DescribeUserQuotas": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DescribeUserQuotas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QuotaResource\": [\n            {\n                \"ExtraInfo\": \"\",\n                \"HardLimit\": 20,\n                \"Remaining\": 4,\n                \"ResourceType\": 2\n            },\n            {\n                \"ExtraInfo\": \"\",\n                \"HardLimit\": 20,\n                \"Remaining\": 2,\n                \"ResourceType\": 3\n            },\n            {\n                \"ExtraInfo\": \"{\\\"AssertCapacityQuota\\\":\\\"100GB\\\",\\\"AssertCapacitySurplus\\\":\\\"80GB\\\"}\",\n                \"HardLimit\": 20,\n                \"Remaining\": 10,\n                \"ResourceType\": 1\n            },\n            {\n                \"ExtraInfo\": \"\",\n                \"HardLimit\": 20,\n                \"Remaining\": 10,\n                \"ResourceType\": 5\n            }\n        ],\n        \"RequestId\": \"s1585793458903733954\",\n        \"Total\": 4\n    }\n}",
+        "title": "获取用户配额示例"
+      }
+    ],
+    "DetachCcnInstances": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=DetachCcnInstances\n&FleetId=fleet-qp3g3caa-ax4fq2wi\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1591756528815085354\"\n    }\n}",
+        "title": "解关联云联网实例"
+      }
+    ],
+    "EndGameServerSessionAndProcess": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=EndGameServerSessionAndProcess\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-pxxx/xxx\n&IpAddress=0.0.0.0\n&Port=8888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84708eb1-0247-43f8-834e-c7edfdsfdgd53\"\n    }\n}",
+        "title": "终止游戏服务器会话的进程"
+      }
+    ],
+    "GetGameServerInstanceLogUrl": [
+      {
+        "document": "获取游戏实例日志URL",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetGameServerInstanceLogUrl\n&FleetId=fleet-qp3g3ffn-rwh0v05d\n&InstanceId=ins-93lqcfq0\n&ServerIp=21.3.65.11\n&Offset=0\n&Size=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HasNext\": true,\n        \"Total\": 11,\n        \"PresignedUrls\": [\n            \"http://test/url-001\",\n            \"http://test/url-002\",\n            \"http://test/url-003\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取游戏实例日志URL"
+      }
+    ],
+    "GetGameServerSessionLogUrl": [
+      {
+        "document": "获取游戏会话日志URL",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetGameServerSessionLogUrl\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PreSignedUrl\": \"http://test/url-001\",\n        \"RequestId\": \"s1596161996478632139\"\n    }\n}",
+        "title": "获取游戏会话日志URL"
+      }
+    ],
+    "GetInstanceAccess": [
+      {
+        "document": "获取实例登录所需要的凭据",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetInstanceAccess\n&FleetId=fleet-qp3g3caa-iectl8nb\n&InstanceId=ins-gi2lxw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceAccess\": {\n            \"Credentials\": {\n                \"Secret\": \"w4bksrwe3gdbqwernmlvjioqeniovmlni3289t0123n42lfn892sjdfqwionv823bnvh2ljkvs\",\n                \"UserName\": \"root\"\n            },\n            \"FleetId\": \"fleet-qp3g3caa-iectl8nb\",\n            \"InstanceId\": \"ins-gi2lxw\",\n            \"IpAddress\": \"9.12.5.87\",\n            \"OperatingSystem\": \"centos6.7\"\n        },\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "获取实例登录所需要的凭据"
+      }
+    ],
+    "GetUploadCredentials": [
+      {
+        "document": "下面是请求返回的授权信息：\n\n```\n{\n    \"Response\": {\n    \t\"BucketAuth\": \"q-sign-algorithm=sha1&q-ak=AKID0ndxGAMVRNGyKXulw5ilRyyxWwBKtEQa&q-sign-time=1571902453;1571902813&q-key-time=1571902453;1571902813&q-header-list=host&q-url-param-list=&q-signature=93dbff22e6b80fb5907fe5f4e31a491p7f146cee\",\n        \"BucketName\": \"xxxx\",\n        \"AssetRegion\": \"ap-shanghai\",\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad81\"\n    }\n}\n```\n上传 Bucket ，请求 HOST 地址为：`https://<BucketName>.cos.<AssetRegion>.myqcloud.com`，具体使用方式参考[COS API 文档](https://cloud.tencent.com/document/product/436/7749)，[COS SDK集成](https://cloud.tencent.com/document/product/436/6474) 进行调用。",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetUploadCredentials\n&AssetRegion=ap-shanghai\n&BucketKey=server.zip\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BucketAuth\": \"q-sign-algorithm=sha1&q-ak=AKID0ndxGAMVRNGyKXulw5ilRyyxWwBKtEQa&q-sign-time=1571902453;1571902813&q-key-time=1571902453;1571902813&q-header-list=host&q-url-param-list=&q-signature=93dbff22e6b80fb5907fe5f4e31a491p7f146cee\",\n        \"BucketName\": \"xxxx\",\n        \"AssetRegion\": \"ap-shanghai\",\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad81\"\n    }\n}",
+        "title": "获取上传文件授权信息，并根据信息进行文件的上传"
+      }
+    ],
+    "GetUploadFederationToken": [
+      {
+        "document": "使用临时密钥进行文件上传的场景如下：\n\n1. 准备好上传所需要的 Bucket （这里会初始化相关的 Bucket，只需要用户调用一次，后续直接使用临时密钥上传即可），参见 GetUploadCredentials API 描述。\n2. 获取临时密钥请求，参考下面的 GetUploadFederationToken API 示例\n3. 调用 COS API 或者集成 COS SDK 进行文件上传，其中大文件，请使用分块上传方式，其中 COS SDK 提供了高级接口上传对象即可，具体细节参考 [COS 文档](https://cloud.tencent.com/document/product/436/14112)。\n4. 根据上传成功的 BucketKey 创建 Asset。",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetUploadFederationToken\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetCredentials\": {\n            \"TmpSecretId\": \"xxxx\",\n            \"TmpSecretKey\": \"yyyy\",\n            \"Token\": \"jAlJicYVxHStLs34mTFfnSxJ7YpYx2UFae79befda56accd665e0c14b6ea2a8a9qM30cu5FtylTrH9U6Dm89Vl-uZ3vkcIRHS1jA8I9JaMJnAkGDFr-dtMt8v0vO3XSsF_T_RTIQHfqgXpYyyf-mLywmF3kZ07Ub7xIDfQSjGPg9yQXs-nqv2cpnsOLCDTRR598VYgkgExE31vIn6Ca-lNruZhxDwKS1fvi7g75yyLzX0Ambr6sB-ULEF6ubycmuMXyjXM4lsuRCuswkrHxSZXlsYtNF-hLlzcQjU6R4qXO8ncqDxfcVhadCMso_U73RxVcqcH21aG9IlnrLDpYRVGAXpQ1tvsgvOOJBh1mcQV6ef5MVTJFePIUsS7E2Sm1Ivv3-dP1lfHbs-Igu1IyF2hT8-zzs8mFlLt3yfdzwtbBGqZMTW9b-4Y5kdMY-cOqoTxbqjdJKTPEtLwi6160CRaabqSaRKsAI6dhgTsbc2vR4piNvdQZgL8I3vVrRtfAC5a0yZFfmd1EXnJjuYl_ZV78fNBC1VqVWDvWMyckJRZ2TepIItZR26FMkCsbFSTA7m5HN-nvRpo96WVsHy6QeJC9dpZbkHOePDRzZrXLRV_CHjiKn1wozZiNQ2kdDt_j\"\n        },\n        \"ExpiredTime\": 1597058405,\n        \"RequestId\": \"a2b2a551-1551-4625-8ae9-086328d366b7\"\n    }\n}",
+        "title": "获取生成包上传所需要的临时密钥，根据信息进行文件的上传"
+      },
+      {
+        "document": "为了方便快速地进行文件上传，我们也提供了 Python 脚本（目前只是支持 Linux 和 Mac 系统），您可以[下载](https://uploadasset-1301007756.cos.ap-guangzhou.myqcloud.com/uploadasset.zip)使用\n\n脚本中有详细说明，具体如下：\n```\n# 该脚本依赖安装如下包：\n# 1. tencentcloud-sdk-python\n# 2. cos-python-sdk-v5\n#\n# 如何安装 tencentcloud-sdk-python:\n#   pip install tencentcloud-sdk-python\n#\n# 如何安装 cos-python-sdk-v5:\n#  pip install -U cos-python-sdk-v5\n#\n# 参考信息：\n# 腾讯云云API SDK：Python 2.7至3.6版本 \n# 安装文档参考：https://cloud.tencent.com/document/sdk/Python\n#\n# 腾讯云COSV5Python SDK, 目前可以支持Python2.6与Python2.7以及Python3.x\n# 安装文档参考： https://cloud.tencent.com/document/product/436/12269\n#\n# 运行例子：\n# python uploadasset.py  --local_path ./game_folder/\n\n其中脚本中需要配置用户的认证信息，下面两个信息：\n\nsecret_id = 'xxxx'     # 替换为用户的secret_id\nsecret_key = 'yyyy'     # 替换为用户的secret_key\n```\n\n其中内部实际上调用了如下的请求，只不过是是以腾讯云SDK的方式进行的调用",
+        "input": "https://gse.tencentcloudapi.com/?Action=GetUploadFederationToken\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AssetCredentials\": {\n            \"TmpSecretId\": \"xxxx\",\n            \"TmpSecretKey\": \"yyyy\",\n            \"Token\": \"jAlJicYVxHStLs34mTFfnSxJ7YpYx2UFae79befda56accd665e0c14b6ea2a8a9qM30cu5FtylTrH9U6Dm89Vl-uZ3vkcIRHS1jA8I9JaMJnAkGDFr-dtMt8v0vO3XSsF_T_RTIQHfqgXpYyyf-mLywmF3kZ07Ub7xIDfQSjGPg9yQXs-nqv2cpnsOLCDTRR598VYgkgExE31vIn6Ca-lNruZhxDwKS1fvi7g75yyLzX0Ambr6sB-ULEF6ubycmuMXyjXM4lsuRCuswkrHxSZXlsYtNF-hLlzcQjU6R4qXO8ncqDxfcVhadCMso_U73RxVcqcH21aG9IlnrLDpYRVGAXpQ1tvsgvOOJBh1mcQV6ef5MVTJFePIUsS7E2Sm1Ivv3-dP1lfHbs-Igu1IyF2hT8-zzs8mFlLt3yfdzwtbBGqZMTW9b-4Y5kdMY-cOqoTxbqjdJKTPEtLwi6160CRaabqSaRKsAI6dhgTsbc2vR4piNvdQZgL8I3vVrRtfAC5a0yZFfmd1EXnJjuYl_ZV78fNBC1VqVWDvWMyckJRZ2TepIItZR26FMkCsbFSTA7m5HN-nvRpo96WVsHy6QeJC9dpZbkHOePDRzZrXLRV_CHjiKn1wozZiNQ2kdDt_j\"\n        },\n        \"ExpiredTime\": 1597058405,\n        \"RequestId\": \"a2b2a551-1551-4625-8ae9-086328d366b7\"\n    }\n}",
+        "title": "使用脚本方式快捷上传并且创建 Asset"
+      }
+    ],
+    "JoinGameServerSession": [
+      {
+        "document": "创建单个玩家会话",
+        "input": "https://gse.tencentcloudapi.com/?Action=JoinGameServerSession\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\n&PlayerData=testData\n&PlayerId=testPlayer\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PlayerSession\": {\n            \"CreationTime\": \"2019-12-05T15:15:33Z\",\n            \"DnsName\": \"\",\n            \"FleetId\": \"fleet-sss-test01\",\n            \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\",\n            \"IpAddress\": \"0000.0.0.0\",\n            \"PlayerData\": \"imangozhang\",\n            \"PlayerId\": \"100\",\n            \"PlayerSessionId\": \"psess-d44990-test5\",\n            \"Port\": \"8000\",\n            \"Status\": \"RESERVED\",\n            \"TerminationTime\": null\n        },\n        \"RequestId\": \"0fffff4-oooo-43333d-9222-testaaa\"\n    }\n}",
+        "title": "创建单个玩家会话"
+      }
+    ],
+    "JoinGameServerSessionBatch": [
+      {
+        "document": "创建一组玩家会话",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: JoinGameServerSessionBatch\n<公共请求参数>\n\n{\n    \"PlayerIds\": [\n        \"xx\"\n    ],\n    \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\",\n    \"PlayerDataMap\": {\n        \"Value\": \"xx\",\n        \"Key\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayerSessions\": [\n            {\n                \"CreationTime\": \"2019-12-06T11:33:19Z\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-ptest40-f001\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\",\n                \"IpAddress\": \"0000.0.0.0\",\n                \"PlayerData\": \"TestPlayerData\",\n                \"PlayerId\": \"\",\n                \"PlayerSessionId\": \"psess-d44990-test5\",\n                \"Port\": 8000,\n                \"Status\": \"COMPLETED\",\n                \"TerminationTime\": \"2019-12-06T11:33:18Z\"\n            }\n        ],\n        \"RequestId\": \"0fffff4-oooo-43333d-9222-testaaa\"\n    }\n}",
+        "title": "创建一组玩家会话"
+      }
+    ],
+    "ListAliases": [
+      {
+        "document": "本示例用于查询alias列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=ListAliases\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Aliases\": [\n            {\n                \"AliasArn\": \"qcs::gse:ap-shanghai:uin/20548675699:alias/alias-123-test\",\n                \"AliasId\": \"alias-123-test\",\n                \"CreationTime\": \"2019-12-11T13:51:05Z\",\n                \"Description\": \"\",\n                \"LastUpdatedTime\": \"2019-12-11T13:51:05Z\",\n                \"Name\": \"\",\n                \"RoutingStrategy\": {\n                    \"FleetId\": \"fleet-qp3gsffn6-ob9lsbfa\",\n                    \"Message\": \"\",\n                    \"Type\": \"SIMPLE\"\n                }\n            }\n        ],\n        \"RequestId\": \"95a408d2-9194-4bf0-97f6-972f645457756b8\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询alias列表"
+      }
+    ],
+    "ListFleets": [
+      {
+        "document": "用于获取服务器舰队列表",
+        "input": "https://gse.tencentcloudapi.com/?Action=ListFleets\n&AssetId=asset-eugdyx0g\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetIds\": [\n            \"fleet-qp3g3chf-jwoblkv3\"\n        ],\n        \"RequestId\": \"s1582187331291590006\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "用于获取服务器舰队列表"
+      }
+    ],
+    "PutScalingPolicy": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=PutScalingPolicy\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&Name=scaling1\n&PolicyType=TargetBased\n&MetricName=PercentAvailableGameServerSessions\n&TargetConfiguration.TargetValue=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"\",\n        \"RequestId\": \"a6b88256-7dc4-4682-99ed-9e10dfb66044\"\n    }\n}",
+        "title": "设置扩缩容缓冲值"
+      }
+    ],
+    "PutTimerScalingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutTimerScalingPolicy\n<公共请求参数>\n\n{\n    \"TimerScalingPolicy\": {\n        \"TimerId\": \"\",\n        \"TimerStatus\": 1,\n        \"TimerName\": \"11111111\",\n        \"TimerFleetCapacity\": {\n            \"FleetId\": \"fleet-qp3g3caa-mkurlvoa\",\n            \"DesiredInstances\": 1,\n            \"MinSize\": 0,\n            \"MaxSize\": 1,\n            \"ScalingInterval\": 10,\n            \"ScalingType\": \"ScalingTypeAuto\",\n            \"TargetConfiguration\": {\n                \"TargetValue\": 23\n            }\n        },\n        \"TimerConfiguration\": {\n            \"TimerType\": \"TimerTypeDay\",\n            \"TimerValue\": {\n                \"Day\": 1,\n                \"WeekDays\": [],\n                \"FromDay\": 0,\n                \"ToDay\": 0\n            },\n            \"BeginTime\": \"2021-01-14T14:04:29.496Z\",\n            \"EndTime\": \"2022-01-14T14:04:29.496Z\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1610633051302940772\"\n    }\n}",
+        "title": "创建或更新定时器"
+      }
+    ],
+    "ResolveAlias": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=ResolveAlias\n&AliasId=alias-qp3gs99n6-ob9l35fa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-qp3grthn6-ob9l1223a\",\n        \"RequestId\": \"c1565064-3e4f-4129-8aca-4815efb45641\"\n    }\n}",
+        "title": "获取别名当前指向的fleetId"
+      }
+    ],
+    "SearchGameServerSessions": [
+      {
+        "document": "搜索指定时间创建的游戏会话\ncreationTimeMillis=1575518668000，时间为创建游戏会话的UTC时间，单位：毫秒。\n条件表达式：\nFilterExpression: creationTimeMillis=1575518668000",
+        "input": "https://gse.tencentcloudapi.com/?Action=SearchGameServerSessions\n&FleetId=fleet-qp3g3caa-b1adh8hq\n&Limit=1\n&NextToken=nextToken-4hpp445-niuu789\n&FilterExpression=creationTimeMillis%3d1575518668000\n&SortExpression=creationTimeMillis+ASC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessions\": [\n            {\n                \"CreationTime\": \"2019-12-05T12:04:28Z\",\n                \"CreatorId\": \"c2\",\n                \"CurrentPlayerSessionCount\": \"0\",\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-00test-a5testzz\",\n                \"GameProperties\": [\n                    {\n                        \"Key\": \"Key-2aa06131-7d54-11ea-b3e7-3464a91513fe\",\n                        \"Value\": \"Value-2aa06132-7d54-11ea-8199-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-2aa06133-7d54-11ea-aaac-3464a91513fe\",\n                        \"Value\": \"Value-2aa06134-7d54-11ea-8fa2-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-2aa06135-7d54-11ea-a9c1-3464a91513fe\",\n                        \"Value\": \"Value-2aa06136-7d54-11ea-b30b-3464a91513fe\"\n                    }\n                ],\n                \"GameServerSessionData\": \"\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-111222\",\n                \"AvailabilityStatus\": \"ENABLE\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"IpAddress\": \"0000.0.0.0\",\n                \"MatchmakerData\": \"\",\n                \"MaximumPlayerSessionCount\": \"10\",\n                \"Name\": \"game-session-name\",\n                \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                \"Port\": \"8000\",\n                \"Status\": \"ACTIVE\",\n                \"StatusReason\": \"\",\n                \"TerminationTime\": \"2019-12-05T04:04:28Z\",\n                \"CurrentCustomCount\": 0,\n                \"MaxCustomCount\": 10,\n                \"Weight\": 5\n            }\n        ],\n        \"NextToken\": \"\",\n        \"RequestId\": \"0fffff4-oooo-43333d-9222-testaaa\"\n    }\n}",
+        "title": "搜索游戏会话列表-creationTimeMillis条件"
+      },
+      {
+        "document": "查询游戏属性Key-2aa06135-7d54-11ea-a9c1-3464a91513的值是Value-2aa06136-7d54-11ea-b30b-3464a91513fe游戏会话列表\n条件表达式：\nFilterExpression: gameServerSessionProperties.Key-2aa06135-7d54-11ea-a9c1-3464a91513fe=Value-2aa06136-7d54-11ea-b30b-3464a91513fe",
+        "input": "https://gse.tencentcloudapi.com/?Action=SearchGameServerSessions\n&FleetId=fleet-qp3g3caa-b1adh8hq\n&Limit=1\n&NextToken=nextToken-4hpp445-niuu789\n&FilterExpression=gameServerSessionProperties.Key-2aa06135-7d54-11ea-a9c1-3464a91513fe%3dValue-2aa06136-7d54-11ea-b30b-3464a91513fe\n&SortExpression=creationTimeMillis+ASC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessions\": [\n            {\n                \"AvailabilityStatus\": \"Unknown\",\n                \"CreationTime\": \"2020-04-13T06:58:27Z\",\n                \"CreatorId\": \"\",\n                \"CurrentCustomCount\": 0,\n                \"CurrentPlayerSessionCount\": 0,\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-b1adh8hq\",\n                \"GameProperties\": [\n                    {\n                        \"Key\": \"Key-2aa06131-7d54-11ea-b3e7-3464a91513fe\",\n                        \"Value\": \"Value-2aa06132-7d54-11ea-8199-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-2aa06133-7d54-11ea-aaac-3464a91513fe\",\n                        \"Value\": \"Value-2aa06134-7d54-11ea-8fa2-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-2aa06135-7d54-11ea-a9c1-3464a91513fe\",\n                        \"Value\": \"Value-2aa06136-7d54-11ea-b30b-3464a91513fe\"\n                    }\n                ],\n                \"GameServerSessionData\": \"\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/0:gameserversession/fleet-qp3g3caa-b1adh8hq/gssess-k17ia36c-omi2numy\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"IpAddress\": \"200.0.0.1\",\n                \"MatchmakerData\": \"\",\n                \"MaxCustomCount\": 0,\n                \"MaximumPlayerSessionCount\": 78,\n                \"Name\": \"GameServerSessionName-2aa06130-7d54-11ea-9263-3464a91513fe\",\n                \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                \"Port\": 59920,\n                \"Status\": \"ACTIVE\",\n                \"StatusReason\": \"\",\n                \"TerminationTime\": null,\n                \"Weight\": 0\n            }\n        ],\n        \"NextToken\": \"ntoken-bldnitiu-4cnjt4c0\",\n        \"RequestId\": \"s1587465032390722054\"\n    }\n}",
+        "title": "搜索游戏会话列表-游戏属性"
+      },
+      {
+        "document": "条件表达式：\nFilterExpression:\n(maximumSessions>=10 OR playerSessionCount=0) OR NOT (creationTimeMillis>1575518668000) OR (maximumSessions>=10 AND hasAvailablePlayerSessions=true)",
+        "input": "https://gse.tencentcloudapi.com/?Action=SearchGameServerSessions\n&FleetId=fleet-qp3g3caa-b1adh8hq\n&Limit=1\n&NextToken=nextToken-4hpp445-niuu789\n&FilterExpression=(maximumSessions%3e%3d10+OR+playerSessionCount%3d0)+OR+NOT+(creationTimeMillis%3e1575518668000)+OR+(maximumSessions%3e%3d10+AND+hasAvailablePlayerSessions%3dtrue)\n&SortExpression=creationTimeMillis+ASC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessions\": [\n            {\n                \"AvailabilityStatus\": \"Unknown\",\n                \"CreationTime\": \"2020-04-13T06:58:07Z\",\n                \"CreatorId\": \"\",\n                \"MaxCustomCount\": 0,\n                \"CurrentCustomCount\": 0,\n                \"CurrentPlayerSessionCount\": 0,\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-b1adh8hq\",\n                \"GameProperties\": [\n                    {\n                        \"Key\": \"Key-1ea66e9e-7d54-11ea-a4aa-3464a91513fe\",\n                        \"Value\": \"Value-1ea66e9f-7d54-11ea-a71e-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-1ea66ea0-7d54-11ea-9afd-3464a91513fe\",\n                        \"Value\": \"Value-1ea66ea1-7d54-11ea-a5f2-3464a91513fe\"\n                    },\n                    {\n                        \"Key\": \"Key-1ea66ea2-7d54-11ea-b184-3464a91513fe\",\n                        \"Value\": \"Value-1ea66ea3-7d54-11ea-b355-3464a91513fe\"\n                    }\n                ],\n                \"GameServerSessionData\": \"\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/0:gameserversession/fleet-qp3g3caa-b1adh8hq/gssess-k17ia36c-2hs38yc0\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"IpAddress\": \"200.0.0.2\",\n                \"MatchmakerData\": \"\",\n                \"MaximumPlayerSessionCount\": 181,\n                \"Name\": \"GameServerSessionName-1ea66e9d-7d54-11ea-b041-3464a91513fe\",\n                \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                \"Port\": 59106,\n                \"Status\": \"ACTIVE\",\n                \"StatusReason\": \"\",\n                \"TerminationTime\": null,\n                \"Weight\": 0\n            },\n            {\n                \"AvailabilityStatus\": \"Unknown\",\n                \"CreationTime\": \"2020-04-13T07:49:16Z\",\n                \"CreatorId\": \"\",\n                \"CurrentCustomCount\": 0,\n                \"CurrentPlayerSessionCount\": 0,\n                \"DnsName\": \"\",\n                \"FleetId\": \"fleet-qp3g3caa-b1adh8hq\",\n                \"GameProperties\": [],\n                \"GameServerSessionData\": \"\",\n                \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/0:gameserversession/fleet-qp3g3caa-b1adh8hq/gssess-k17ia36c-oik1x49i\",\n                \"InstanceType\": \"S5.SMALL2\",\n                \"IpAddress\": \"200.0.0.1\",\n                \"MatchmakerData\": \"\",\n                \"MaxCustomCount\": 0,\n                \"MaximumPlayerSessionCount\": 200,\n                \"Name\": \"GameServerSessionName-45bd031c-7d5b-11ea-acf8-52540024df83\",\n                \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n                \"Port\": 59110,\n                \"Status\": \"ACTIVE\",\n                \"StatusReason\": \"\",\n                \"TerminationTime\": null,\n                \"Weight\": 0\n            }\n        ],\n        \"NextToken\": \"ntoken-bldnitiu-4cnjt4c0\",\n        \"RequestId\": \"s1587466067806554523\"\n    }\n}",
+        "title": "搜索游戏会话列表-复杂条件表达式"
+      }
+    ],
+    "SetServerReserved": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetServerReserved\n<公共请求参数>\n\n{\n    \"FleetId\": \"fleet-qp3g3caa-mg4w88ho\",\n    \"InstanceId\": \"ins-3g57621x\",\n    \"ReserveValue\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611068228708726332\"\n    }\n}",
+        "title": "设置实例保留-用于问题排查"
+      }
+    ],
+    "SetServerWeight": [
+      {
+        "document": "设置服务器权重",
+        "input": "https://gse.tencentcloudapi.com/?Action=SetServerWeight\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&InstanceId=ins-xxxxx\n&Weight=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6b88256-7dc4-4682-99ed-9e10dfb66044\"\n    }\n}",
+        "title": "设置服务器权重"
+      }
+    ],
+    "StartFleetActions": [
+      {
+        "document": "启用服务器舰队自动扩缩容",
+        "input": "https://gse.tencentcloudapi.com/?Action=StartFleetActions\n&FleetId=fleet-qp3g3fn6-p6l46gnu\n&Actions.0=AUTO_SCALING\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-qp3g3fn6-p6l46gnu\",\n        \"RequestId\": \"e23dc127-80b8-481b-b85d-1d802546c738\"\n    }\n}",
+        "title": "启用服务器舰队自动扩缩容"
+      }
+    ],
+    "StartGameServerSessionPlacement": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=StartGameServerSessionPlacement\n&PlacementId=PlacementId-3a7d34cd-5240-11ea-b02a-3464a91513fe\n&GameServerSessionQueueName=PlacementTwo\n&MaximumPlayerSessionCount=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionPlacement\": {\n            \"DnsName\": \"\",\n            \"EndTime\": null,\n            \"GameProperties\": [],\n            \"GameServerSessionData\": \"\",\n            \"GameServerSessionId\": \"\",\n            \"GameServerSessionName\": \"\",\n            \"GameServerSessionQueueName\": \"PlacementTwo\",\n            \"GameServerSessionRegion\": \"\",\n            \"IpAddress\": \"\",\n            \"MatchmakerData\": \"\",\n            \"MaximumPlayerSessionCount\": 100,\n            \"PlacedPlayerSessions\": [],\n            \"PlacementId\": \"PlacementId-3a7d34cd-5240-11ea-b02a-3464a91513fe\",\n            \"PlayerLatencies\": [],\n            \"Port\": 0,\n            \"StartTime\": \"2020-02-18T11:17:23Z\",\n            \"Status\": \"PENDING\"\n        },\n        \"RequestId\": \"84708eb1-0247-43f8-834e-c7edfdsfdgd53\"\n    }\n}",
+        "title": "开始放置游戏服务器会话"
+      }
+    ],
+    "StopFleetActions": [
+      {
+        "document": "停止服务器舰队自动扩缩容",
+        "input": "https://gse.tencentcloudapi.com/?Action=StopFleetActions\n&FleetId=fleet-qp3g3fn6-p6l46gnu\n&Actions.0=AUTO_SCALING\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-qp3g3fn6-p6l46gnu\",\n        \"RequestId\": \"e23dc127-80b8-481b-b85d-1d802546c738\"\n    }\n}",
+        "title": "停止服务器舰队自动扩缩容"
+      }
+    ],
+    "StopGameServerSessionPlacement": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=StopGameServerSessionPlacement\n&PlacementId=PlacementId-3a7d34cd-5240-11ea-b02a-3464sdfsfsdf13fe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionPlacement\": {\n            \"DnsName\": \"\",\n            \"EndTime\": \"2020-02-18T11:33:49Z\",\n            \"GameProperties\": [\n                {\n                    \"Key\": \"Key-8658b11f-5242-11ea-9c67-3464a435513fe\",\n                    \"Value\": \"Value-8658b120-5242-11ea-8527-34t4a91513fe\"\n                }\n            ],\n            \"GameServerSessionData\": \"GameServerSessionData-8658b121-5242-11ea-af53-34644351513fe\",\n            \"GameServerSessionId\": \"\",\n            \"GameServerSessionName\": \"GameServerSessionName-8658b122-5242-11ea-9f8f-3464491513fe\",\n            \"GameServerSessionQueueName\": \"PlacementTwo\",\n            \"GameServerSessionRegion\": \"\",\n            \"IpAddress\": \"\",\n            \"MatchmakerData\": \"\",\n            \"MaximumPlayerSessionCount\": 100,\n            \"PlacedPlayerSessions\": [],\n            \"PlacementId\": \"PlacementId-3a7d34cd-5240-11ea-b02a-3464sdfsfsdf13fe\",\n            \"PlayerLatencies\": [\n                {\n                    \"LatencyInMilliseconds\": 10000,\n                    \"PlayerId\": \"Player-8658b123-5242-11ea-9e2f-3464sf91513fe\",\n                    \"RegionIdentifier\": \"ap-shanghai\"\n                }\n            ],\n            \"Port\": 0,\n            \"StartTime\": \"2020-02-18T11:33:49Z\",\n            \"Status\": \"CANCELLED\"\n        },\n        \"RequestId\": \"2f631834-4c91-4c9b-a13a-2d5757582eb5f\"\n    }\n}",
+        "title": "停止放置游戏服务器会话"
+      }
+    ],
+    "UpdateAlias": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateAlias\n&AliasId=alias-123-test\n&Name=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Alias\": {\n            \"AliasArn\": \"qcs::gse:ap-shanghai:uin/20548499:alias/alias-123-test\",\n            \"AliasId\": \"alias-123-test\",\n            \"CreationTime\": \"2019-12-11T13:51:05Z\",\n            \"Description\": \"\",\n            \"LastUpdatedTime\": \"2019-12-11T13:51:05Z\",\n            \"Name\": \"test\",\n            \"RoutingStrategy\": {\n                \"FleetId\": \"fleet-qp3gsffn6-ob9lsbfa\",\n                \"Message\": \"\",\n                \"Type\": \"SIMPLE\"\n            }\n        },\n        \"RequestId\": \"5d7aef5a-8950-4530-b89d-9c84347d13f6\"\n    }\n}",
+        "title": "修改别名信息"
+      }
+    ],
+    "UpdateAsset": [
+      {
+        "document": "修改生成包信息",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateAsset\n&AssetId=asset-i5gtz5l9\n&AssetName=test-demo\n&AssetVersion=1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
+        "title": "修改生成包信息"
+      }
+    ],
+    "UpdateBucketAccelerateOpt": [
+      {
+        "document": "设置cos全球加速",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateBucketAccelerateOpt\n&Allowed=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609299213222354000\"\n    }\n}",
+        "title": "设置cos全球加速"
+      }
+    ],
+    "UpdateBucketCORSOpt": [
+      {
+        "document": "设置cos跨域请求",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateBucketCORSOpt\n&AllowedOrigins.0=*\n&AllowedMethods.0=GET\n&AllowedHeaders.0=x-cos-meta-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609831145190946000\"\n    }\n}",
+        "title": "设置cos跨域请求"
+      }
+    ],
+    "UpdateFleetAttributes": [
+      {
+        "document": "更新服务器舰队属性",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateFleetAttributes\n&FleetId=fleet-pro4eunl-lmpa6tud\n&Description=Modifyfleetattr1\n&Name=mod1\n&NewGameSessionProtectionPolicy=FullProtection\n&ResourceCreationLimitPolicy.NewGameServerSessionsPerCreator=9\n&ResourceCreationLimitPolicy.PolicyPeriodInMinutes=9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-pro4eunl-lmpa6tud\",\n        \"RequestId\": \"accaa150-cd32-4919-8283-da31817e6363\"\n    }\n}",
+        "title": "更新服务器舰队属性"
+      }
+    ],
+    "UpdateFleetCapacity": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateFleetCapacity\n&FleetId=fleet-qp3g3caa-ay03mhdm\n&DesiredInstances=30\n&MinSize=0\n&MaxSize=40\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-qp3g3caa-19tzbzao\",\n        \"RequestId\": \"ada0f201-91c7-4100-bbb4-a29e7399e776\"\n    }\n}",
+        "title": "设置Fleet扩缩容的容量配置"
+      }
+    ],
+    "UpdateFleetName": [
+      {
+        "document": "更新服务器舰队名称",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateFleetName\n&FleetId=fleet-pro4eunl-lmpa6tud\n&Name=mod1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"accaa150-cd32-4919-8283-da31817e6363\"\n    }\n}",
+        "title": "更新服务器舰队名称"
+      }
+    ],
+    "UpdateFleetPortSettings": [
+      {
+        "document": "更新服务器舰队安全组",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateFleetPortSettings\n&FleetId=fleet-pro4eunl-lmpa6tud\n&InboundPermissionAuthorizations.0.FromPort=1900\n&InboundPermissionAuthorizations.0.IpRange=0.0.0.1/0\n&InboundPermissionAuthorizations.0.Protocol=UDP\n&InboundPermissionAuthorizations.0.ToPort=2900\n&InboundPermissionRevocations.0.FromPort=19000\n&InboundPermissionRevocations.0.IpRange=0.0.0.0/0\n&InboundPermissionRevocations.0.Protocol=TCP\n&InboundPermissionRevocations.0.ToPort=24000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FleetId\": \"fleet-pro4eunl-lmpa6tud\",\n        \"RequestId\": \"2f564325-03c0-4fdb-a099-25376c20723f\"\n    }\n}",
+        "title": "更新服务器舰队安全组"
+      }
+    ],
+    "UpdateGameServerSession": [
+      {
+        "document": "更新游戏会话属性",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateGameServerSession\n&GameServerSessionId=qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p70zzzz/gssess-aaaa-ilqsssu/PlacementId-124ddda-4e28-1111-222b-abcde\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSession\": {\n            \"AvailabilityStatus\": \"Enable\",\n            \"CreationTime\": \"2020-07-30T03:55:43Z\",\n            \"CreatorId\": \"\",\n            \"CurrentCustomCount\": 0,\n            \"CurrentPlayerSessionCount\": 0,\n            \"DnsName\": \"\",\n            \"FleetId\": \"fleet-qp33caaa-35555\",\n            \"GameProperties\": [],\n            \"GameServerSessionData\": \"\",\n            \"GameServerSessionId\": \"qcs::gse:ap-shanghai:uin/100000010000:gameserversession/fleet-qp33caaa-35555/gssess-qtk2222-uuu\",\n            \"InstanceType\": \"S5.LARGE8\",\n            \"IpAddress\": \"127.0.0.1\",\n            \"MatchmakerData\": \"\",\n            \"MaxCustomCount\": 0,\n            \"MaximumPlayerSessionCount\": 100,\n            \"Name\": \"\",\n            \"PlayerSessionCreationPolicy\": \"ACCEPT_ALL\",\n            \"Port\": 6000,\n            \"Status\": \"ACTIVATING\",\n            \"StatusReason\": \"\",\n            \"TerminationTime\": null,\n            \"Weight\": 5\n        },\n        \"RequestId\": \"s15960816666663333\"\n    }\n}",
+        "title": "更新游戏会话属性"
+      }
+    ],
+    "UpdateGameServerSessionQueue": [
+      {
+        "document": "",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateGameServerSessionQueue\n&Name=queue2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GameServerSessionQueue\": {\n            \"Destinations\": [],\n            \"GameServerSessionQueueArn\": \"qcs::gse:ap-shanghai:uin/20555599:queue/queue2\",\n            \"Name\": \"queue2\",\n            \"PlayerLatencyPolicies\": [],\n            \"TimeoutInSeconds\": 600\n        },\n        \"RequestId\": \"4e958efc-79af-47e4-9521-7744af034534c6a\"\n    }\n}",
+        "title": "修改游戏服务器会话队列"
+      }
+    ],
+    "UpdateRuntimeConfiguration": [
+      {
+        "document": "更新服务器舰队配置",
+        "input": "https://gse.tencentcloudapi.com/?Action=UpdateRuntimeConfiguration\n&FleetId=fleet-pro4eunl-lmpa6tud\n&RuntimeConfiguration.GameServerSessionActivationTimeoutSeconds=9\n&RuntimeConfiguration.MaxConcurrentGameServerSessionActivations=9\n&RuntimeConfiguration.ServerProcesses.0.ConcurrentExecutions=9\n&RuntimeConfiguration.ServerProcesses.0.LaunchPath=/local/game/GameLiftLinuxServer\n&RuntimeConfiguration.ServerProcesses.0.Parameters=-cconf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90b59a79-9868-4145-8ff3-2053de2d785e\",\n        \"RuntimeConfiguration\": {\n            \"GameServerSessionActivationTimeoutSeconds\": 9,\n            \"MaxConcurrentGameServerSessionActivations\": 9,\n            \"ServerProcesses\": [\n                {\n                    \"ConcurrentExecutions\": 9,\n                    \"LaunchPath\": \"/local/game/GameLiftLinuxServer\",\n                    \"Parameters\": \"-c conf\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "更新服务器舰队配置"
+      }
+    ]
+  },
+  "version": "1.0"
+}

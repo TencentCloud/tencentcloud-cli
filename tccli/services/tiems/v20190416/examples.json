@@ -1,0 +1,217 @@
+{
+  "actions": {
+    "CreateJob": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=CreateJob\r\n&Name=test\r\n&Description=job\r\n&WorkerCount=1\r\n&ConfigId=asjcqn7wtdgrd7gt\r\n&ResourceGroupId=ap-beijing\r\n&Cpu=100\r\n&Memory=100\r\n&PredictInput.InputDataFormat=json\r\n&PredictInput.OutputDataFormat=json\r\n&PredictInput.InputPath=cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/pmminput\r\n&PredictInput.OutputPath=cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/\r\n&PredictInput.BatchSize=32\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0448ae0a-d593-4a48-a025-bede58e1f841\",\n        \"Job\": {\n            \"Id\": \"aktwbxqmfkr8g44v\",\n            \"Cluster\": \"ap-beijing\",\n            \"Region\": \"ap-beijing\",\n            \"Name\": \"test\",\n            \"Runtime\": \"pmml\",\n            \"Description\": \"job\",\n            \"ConfigId\": \"asjcqn7wtdgrd7gt\",\n            \"PredictInput\": {\n                \"InputDataFormat\": \"json\",\n                \"OutputDataFormat\": \"json\",\n                \"InputPath\": \"cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/pmminput\",\n                \"OutputPath\": \"cos://data-test-1255502019.cos.ap-guangzhou.myqcloud.com/test/\",\n                \"BatchSize\": 32,\n                \"SignatureName\": \"\"\n            },\n            \"Status\": {\n                \"DesiredWorkers\": 0,\n                \"CurrentWorkers\": 0,\n                \"Replicas\": [],\n                \"Status\": \"Waiting\",\n                \"Message\": \"\"\n            },\n            \"CreateTime\": \"2019-11-07T15:41:35+08:00\",\n            \"StartTime\": \"\",\n            \"EndTime\": \"\",\n            \"CancelTime\": \"\",\n            \"ResourceGroupId\": \"ap-beijing\",\n            \"ResourceGroupName\": \"公共资源组\",\n            \"Cpu\": 100,\n            \"Memory\": 100,\n            \"Gpu\": 0,\n            \"GpuMemory\": 0,\n            \"GpuType\": \"\",\n            \"ConfigName\": \"test1\",\n            \"ConfigVersion\": \"1.0\"\n        }\n    }\n}",
+        "title": "创建任务"
+      }
+    ],
+    "CreateRsgAsGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=CreateRsgAsGroup\r\n&Cluster=ap-beijing\r\n&RsgId=rsg-xxxxxxxx\r\n&Name=asg-xxxxxxxx\r\n&MaxSize=5\r\n&MinSize=0\r\n&InstanceType=sv_tiems_instance_8c32g1t4\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d96e8c0-97a9-43a2-8268-99ff505fbd84\",\n        \"RsgAsGroup\": {\n            \"Id\": \"asg-xxxxxxxx\",\n            \"Region\": \"ap-beijing\",\n            \"Zone\": \"ap-beijing-5\",\n            \"Cluster\": \"ap-beijing\",\n            \"RsgId\": \"rsg-xxxxxxxx\",\n            \"Name\": \"xxxx\",\n            \"MaxSize\": 5,\n            \"MinSize\": 0,\n            \"CreateTime\": \"2019-12-24T17:39:40+08:00\",\n            \"UpdateTime\": \"2019-12-24T17:39:40+08:00\",\n            \"Status\": \"Enabled\",\n            \"InstanceType\": \"sv_tiems_instance_8c32g1t4\",\n            \"InstanceCount\": 0\n        }\n    }\n}",
+        "title": "创建资源组的伸缩组"
+      }
+    ],
+    "CreateRuntime": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=CreateRuntime\r\n&Name=test\r\n&Framework=test\r\n&Image=ccr.ccs.tencentyun.com/testrepo/testimage:v1\r\n&Description=test\r\n&HealthCheckOn=false\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8717195-6b62-4fcc-99fe-e29d2aecb21e\",\n        \"Runtime\": {\n            \"Name\": \"test\",\n            \"Framework\": \"test\",\n            \"Description\": \"字符串\",\n            \"Public\": false,\n            \"HealthCheckOn\": false,\n            \"Image\": \"ccr.ccs.tencentyun.com/testrepo/testimage:v1\",\n            \"CreateTime\": \"2019-11-07T14:47:49+08:00\"\n        }\n    }\n}",
+        "title": "创建自定义运行环境"
+      }
+    ],
+    "CreateService": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=CreateService\r\n&ServiceConfigId=asjcqn7wtdgrd7gt\r\n&Name=test\r\n&ScaleMode=MANUAL\r\n&ResourceGroupId=ap-beijing\r\n&Cpu=100\r\n&Memory=100\r\n&Description=test\r\n&Scaler.StartReplicas=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48d37fb1-15fa-4320-9c59-d673c653e0d4\",\n        \"Service\": {\n            \"Id\": \"ank95gbm4dwfhmds\",\n            \"Cluster\": \"ap-beijing\",\n            \"Region\": \"ap-beijing\",\n            \"Name\": \"test\",\n            \"Runtime\": \"pmml\",\n            \"ModelUri\": \"cos://ti-ems-12502019.cos.ap-beijing.myqcloud.com/models/pmml/\",\n            \"Cpu\": 100,\n            \"Memory\": 100,\n            \"Gpu\": 0,\n            \"GpuMemory\": 0,\n            \"CreateTime\": \"2019-11-07T15:14:19+08:00\",\n            \"UpdateTime\": \"2019-11-07T15:14:19+08:00\",\n            \"ScaleMode\": \"MANUAL\",\n            \"Scaler\": {\n                \"MaxReplicas\": 1,\n                \"MinReplicas\": 1,\n                \"StartReplicas\": 1,\n                \"HpaMetrics\": []\n            },\n            \"Status\": {\n                \"DesiredReplicas\": 0,\n                \"CurrentReplicas\": 1,\n                \"Replicas\": [],\n                \"Status\": \"Waiting\",\n                \"Message\": \"\",\n                \"Conditions\": []\n            },\n            \"AccessToken\": \"\",\n            \"ConfigName\": \"test1\",\n            \"ConfigVersion\": \"1.0\",\n            \"ServeSeconds\": 1,\n            \"ConfigId\": \"asjcqn7wtdgrd7gt\",\n            \"ResourceGroupId\": \"ap-beijing\",\n            \"ResourceGroupName\": \"公共资源组\",\n            \"Exposes\": [],\n            \"Description\": \"test\",\n            \"GpuType\": \"\"\n        }\n    }\n}",
+        "title": "创建服务"
+      }
+    ],
+    "CreateServiceConfig": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=CreateServiceConfig\r\n&Name=test\r\n&Runtime=pmml\r\n&ModelUri=cos://ti-example-125550209.cos.ap-beijing.myqcloud.com/models/pmml/\r\n&Description=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63dccc5a-0084-4a3e-a9ae-cefb019fce9d\",\n        \"ServiceConfig\": {\n            \"Id\": \"aktst2r9fkmtpdf8\",\n            \"Name\": \"test\",\n            \"Runtime\": \"pmml\",\n            \"ModelUri\": \"cos://ti-example-125550209.cos.ap-beijing.myqcloud.com/models/pmml/\",\n            \"CreateTime\": \"2019-11-07T15:01:12+08:00\",\n            \"UpdateTime\": \"2019-11-07T15:01:12+08:00\",\n            \"Version\": \"1.0\",\n            \"Description\": \"test\"\n        }\n    }\n}",
+        "title": "创建服务配置"
+      }
+    ],
+    "DeleteInstance": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteInstance\r\n&InstanceId=ins-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\"\n    }\n}",
+        "title": "删除节点"
+      }
+    ],
+    "DeleteJob": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteJob\r\n&JobId=aktwbxqmfkr8g44v\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f478e4dd-02e5-4468-9a5d-baf762b8e36d\"\n    }\n}",
+        "title": "删除任务"
+      }
+    ],
+    "DeleteResourceGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteResourceGroup\r\n&ResourceGroupId=rsg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\"\n    }\n}",
+        "title": "删除资源组"
+      }
+    ],
+    "DeleteRsgAsGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteRsgAsGroup\r\n&Id=asg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\"\n    }\n}",
+        "title": "删除资源组的伸缩组"
+      }
+    ],
+    "DeleteRuntime": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteRuntime\r\n&Runtime=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"754a8f06-3e10-4282-8c77-b0efc6fbb132\"\n    }\n}",
+        "title": "删除运行环境"
+      }
+    ],
+    "DeleteService": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteServiceConfig\r\n&ServiceId=xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bb70a498-78e1-4905-bc73-170b66edabb9\"\n    }\n}",
+        "title": "删除服务"
+      }
+    ],
+    "DeleteServiceConfig": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DeleteServiceConfig\r\n&ServiceConfigName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9120fa1d-f19c-4b11-a9af-956911fbc85b\"\n    }\n}",
+        "title": "删除服务配置"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeInstances\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AbnormalReason\": \"\",\n                \"Cpu\": 24,\n                \"CpuRequested\": 0,\n                \"Created\": \"2019-11-06T16:18:22+08:00\",\n                \"DeadlineTime\": \"2020-02-06T16:18:36+08:00\",\n                \"Gpu\": 0,\n                \"GpuRequested\": 0,\n                \"Id\": \"ins-19a065ev\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InstanceType\": \"sv_tiems_instance_24c48g\",\n                \"Memory\": 48,\n                \"MemoryRequested\": 0,\n                \"Region\": \"ap-beijing\",\n                \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\",\n                \"ResourceGroupId\": \"fl2hrhgp97jcg8pf\",\n                \"State\": \"Running\",\n                \"Updated\": \"2019-11-07T20:50:34+08:00\",\n                \"Zone\": \"ap-beijing-2\"\n            },\n            {\n                \"AbnormalReason\": \"\",\n                \"Cpu\": 24,\n                \"CpuRequested\": 0,\n                \"Created\": \"2019-11-06T16:18:22+08:00\",\n                \"DeadlineTime\": \"2020-02-06T16:18:29+08:00\",\n                \"Gpu\": 0,\n                \"GpuRequested\": 0,\n                \"Id\": \"ins-19a066i9\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InstanceType\": \"sv_tiems_instance_24c48g\",\n                \"Memory\": 48,\n                \"MemoryRequested\": 0,\n                \"Region\": \"ap-beijing\",\n                \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\",\n                \"ResourceGroupId\": \"pf2kdwlmn9s2wq5m\",\n                \"State\": \"Running\",\n                \"Updated\": \"2019-11-07T20:50:34+08:00\",\n                \"Zone\": \"ap-beijing-2\"\n            }\n        ],\n        \"RequestId\": \"675e9ba8-f0ad-4727-83cc-384ee8089ac6\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "展示用户当前地域下所有节点"
+      },
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeInstances\r\n&ResourceGroupId=pf2kdwlmn9s2wq5m\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AbnormalReason\": \"\",\n                \"Cpu\": 24,\n                \"CpuRequested\": 0,\n                \"Created\": \"2019-11-06T16:18:22+08:00\",\n                \"DeadlineTime\": \"2020-02-06T16:18:29+08:00\",\n                \"Gpu\": 0,\n                \"GpuRequested\": 0,\n                \"Id\": \"ins-19a066i9\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InstanceType\": \"sv_tiems_instance_24c48g\",\n                \"Memory\": 48,\n                \"MemoryRequested\": 0,\n                \"Region\": \"ap-beijing\",\n                \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\",\n                \"ResourceGroupId\": \"pf2kdwlmn9s2wq5m\",\n                \"State\": \"Running\",\n                \"Updated\": \"2019-11-07T20:50:34+08:00\",\n                \"Zone\": \"ap-beijing-2\"\n            }\n        ],\n        \"RequestId\": \"6c6ebb92-5ede-491e-ab88-d49cb3dc22a1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "展示用户当前地域下某资源组的所有节点"
+      }
+    ],
+    "DescribeResourceGroups": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeResourceGroups\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\",\n        \"ResourceGroups\": [\n            {\n                \"Region\": \"ap-beijing\",\n                \"Cluster\": \"ap-beijing\",\n                \"Id\": \"ap-beijing\",\n                \"Name\": \"公共资源组\",\n                \"Description\": \"公共资源组\",\n                \"Created\": \"\",\n                \"Updated\": \"\",\n                \"InstanceCount\": 0,\n                \"ServiceCount\": 0,\n                \"JobCount\": 0,\n                \"InstanceType\": \"sv_tiems_instance_4c20g1p4\",\n                \"Gpu\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0,\n                \"Status\": \"Ready\",\n                \"Zone\": \"ap-beijing-4\",\n                \"GpuType\": [\n                    \"P4\"\n                ],\n                \"Public\": true\n            },\n            {\n                \"Cluster\": \"ap-beijing\",\n                \"Cpu\": 336,\n                \"Created\": \"2019-10-22T22:32:38+08:00\",\n                \"Description\": \"\",\n                \"Gpu\": 0,\n                \"GpuType\": [],\n                \"Id\": \"kd8rgp2qpxf5h46f\",\n                \"InstanceCount\": 14,\n                \"InstanceType\": \"sv_tiems_instance_24c48g\",\n                \"JobCount\": 2,\n                \"Memory\": 0,\n                \"Name\": \"rsg-kd8rgp2qpxf5h46f\",\n                \"Public\": false,\n                \"Region\": \"ap-beijing\",\n                \"ServiceCount\": 10,\n                \"Status\": \"Ready\",\n                \"Updated\": \"2019-10-22T22:32:38+08:00\",\n                \"Zone\": \"ap-beijing-2\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "展示用户当前地域下的可用资源组（包括公共资源组）"
+      },
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeResourceGroups\r\n&Filters.0.Name=public\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\",\n        \"ResourceGroups\": [\n            {\n                \"Cluster\": \"ap-beijing\",\n                \"Cpu\": 336,\n                \"Created\": \"2019-10-22T22:32:38+08:00\",\n                \"Description\": \"\",\n                \"Gpu\": 0,\n                \"GpuType\": [],\n                \"Id\": \"kd8rgp2qpxf5h46f\",\n                \"InstanceCount\": 14,\n                \"InstanceType\": \"sv_tiems_instance_24c48g\",\n                \"JobCount\": 2,\n                \"Memory\": 0,\n                \"Name\": \"rsg-kd8rgp2qpxf5h46f\",\n                \"Public\": false,\n                \"Region\": \"ap-beijing\",\n                \"ServiceCount\": 10,\n                \"Status\": \"Ready\",\n                \"Updated\": \"2019-10-22T22:32:38+08:00\",\n                \"Zone\": \"ap-beijing-2\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "展示用户当前地域下的可用资源组（不包括公共资源组）"
+      }
+    ],
+    "DescribeRsgAsGroupActivities": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeRsgAsGroupActivities\r\n&Id=asg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"206bf53c-c658-44cb-b50a-5eb9904c49fd\",\n        \"RsgAsGroupActivitySet\": [\n            {\n                \"Id\": \"asa-xxxxxxxx\",\n                \"RsgAsGroupId\": \"asg-xxxxxxxx\",\n                \"ActivityType\": \"SCALE_OUT\",\n                \"StatusCode\": \"FAILED\",\n                \"StatusMessage\": \"选择的机型在当前可用区已售罄\",\n                \"Cause\": \"因匹配期望实例数\",\n                \"Description\": \"因匹配期望实例数，扩容1台\",\n                \"StartTime\": \"2019-12-30T10:11:26+08:00\",\n                \"EndTime\": \"2019-12-30T10:11:27+08:00\",\n                \"CreateTime\": \"2019-12-30T10:11:26+08:00\",\n                \"StatusMessageSimplified\": \"云主机售罄\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询伸缩组活动"
+      }
+    ],
+    "DescribeRsgAsGroups": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeRsgAsGroups\r\nFilters.0.Name=rsg_id\r\n&Filters.0.Values.0=rsg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d96e8c0-97a9-43a2-8268-99ff505fbd84\",\n        \"RsgAsGroupSet\": [\n            {\n                \"Id\": \"asg-xxxxxxxx\",\n                \"Region\": \"ap-beijing\",\n                \"Zone\": \"ap-beijing-5\",\n                \"Cluster\": \"ap-beijing\",\n                \"RsgId\": \"rsg-xxxxxxxx\",\n                \"Name\": \"rsg-xxxxxxxx\",\n                \"MaxSize\": 3,\n                \"MinSize\": 0,\n                \"CreateTime\": \"2019-12-24T17:39:40+08:00\",\n                \"UpdateTime\": \"2019-12-24T17:39:40+08:00\",\n                \"Status\": \"Enabled\",\n                \"InstanceType\": \"sv_tiems_instance_8c32g1t4\",\n                \"InstanceCount\": 1\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询资源组的伸缩组信息"
+      }
+    ],
+    "DescribeRuntimes": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeRuntimes\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efcdba3f-080f-4913-a7a2-5f47e0baf67a\",\n        \"Runtimes\": [\n            {\n                \"Name\": \"pmml\",\n                \"Framework\": \"pmml\",\n                \"Description\": \"pmml-description\",\n                \"Public\": true,\n                \"HealthCheckOn\": true,\n                \"Image\": \"**\",\n                \"CreateTime\": \"2019-11-01T17:03:26+08:00\"\n            },\n            {\n                \"Name\": \"angel\",\n                \"Framework\": \"angel\",\n                \"Description\": \"angel-description\",\n                \"Public\": true,\n                \"HealthCheckOn\": true,\n                \"Image\": \"**\",\n                \"CreateTime\": \"2019-11-01T17:03:26+08:00\"\n            },\n            {\n                \"Name\": \"tfserving\",\n                \"Framework\": \"tfserving\",\n                \"Description\": \"tfserving-description\",\n                \"Public\": true,\n                \"HealthCheckOn\": true,\n                \"Image\": \"**\",\n                \"CreateTime\": \"2019-11-01T17:03:26+08:00\"\n            },\n            {\n                \"Name\": \"test\",\n                \"Framework\": \"test\",\n                \"Description\": \"字符串\",\n                \"Public\": false,\n                \"HealthCheckOn\": false,\n                \"Image\": \"ccr.ccs.tencentyun.com/mla-library/tool\",\n                \"CreateTime\": \"2019-11-07T14:47:49+08:00\"\n            }\n        ],\n        \"UserAccess\": 1\n    }\n}",
+        "title": "描述服务运行环境"
+      }
+    ],
+    "DescribeServiceConfigs": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeServiceConfigs\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a3d63f8-fb12-4dd5-b444-02c0a91af0d2\",\n        \"ServiceConfigs\": [\n            {\n                \"Id\": \"asjcqn7wtdgrd7t\",\n                \"Name\": \"test1\",\n                \"Runtime\": \"pmml\",\n                \"ModelUri\": \"cos://ti-ems-example.cos.ap-beijing.myqcloud.com/models/pmml/\",\n                \"CreateTime\": \"2019-11-04T17:34:58+08:00\",\n                \"UpdateTime\": \"2019-11-04T17:34:58+08:00\",\n                \"Version\": \"1.0\",\n                \"Description\": \"字符串\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "描述服务配置"
+      }
+    ],
+    "DescribeServices": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DescribeServices\r\n&Limit=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bf9843d-9153-4647-99a0-05c70ba47603\",\n        \"Services\": [\n            {\n                \"Id\": \"ank95gbm4dwfhmds\",\n                \"Cluster\": \"ap-beijing\",\n                \"Region\": \"ap-beijing\",\n                \"Name\": \"test\",\n                \"Runtime\": \"pmml\",\n                \"ModelUri\": \"cos://ti-ems-125502019.cos.ap-beijing.myqcloud.com/models/pmml/\",\n                \"Cpu\": 100,\n                \"Memory\": 100,\n                \"Gpu\": 0,\n                \"GpuMemory\": 0,\n                \"CreateTime\": \"2019-11-07T15:14:19+08:00\",\n                \"UpdateTime\": \"2019-11-07T15:14:19+08:00\",\n                \"ScaleMode\": \"MANUAL\",\n                \"Scaler\": {\n                    \"MaxReplicas\": 2,\n                    \"MinReplicas\": 0,\n                    \"StartReplicas\": 2,\n                    \"HpaMetrics\": []\n                },\n                \"Status\": {\n                    \"DesiredReplicas\": 2,\n                    \"CurrentReplicas\": 2,\n                    \"Replicas\": [\n                        \"ank95gbm4dwfhmds-fccc99cdd-ftff5\",\n                        \"ank95gbm4dwfhmds-fccc99cdd-fvskl\"\n                    ],\n                    \"Status\": \"Normal\",\n                    \"Message\": \"\",\n                    \"Conditions\": []\n                },\n                \"AccessToken\": \"\",\n                \"ConfigName\": \"test1\",\n                \"ConfigVersion\": \"1.0\",\n                \"ServeSeconds\": 470,\n                \"ConfigId\": \"asjcqn7wtdgrd7gt\",\n                \"ResourceGroupId\": \"ap-beijing\",\n                \"ResourceGroupName\": \"公共资源组\",\n                \"Exposes\": [],\n                \"Description\": \"test\",\n                \"GpuType\": \"\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "描述服务"
+      }
+    ],
+    "DisableRsgAsGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=DisableRsgAsGroup\r\n&Id=asg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\"\n    }\n}",
+        "title": "停用资源组的伸缩组"
+      }
+    ],
+    "EnableRsgAsGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=EnableRsgAsGroup\r\n&Id=asg-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e21c605-3d85-4fc0-bc91-4c61ca250ad5\"\n    }\n}",
+        "title": "启用资源组的伸缩组"
+      }
+    ],
+    "ExposeService": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=ExposeService\r\n&ServiceId=ank95gbm4dwfhmds\r\n&ExposeType=EXTERNAL\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b6049dc-f99a-47e9-99fa-f701ecc4b76a\",\n        \"Expose\": {\n            \"ExposeType\": \"EXTERNAL\",\n            \"VpcId\": \"\",\n            \"SubnetId\": \"\",\n            \"Ip\": \"pending\"\n        }\n    }\n}",
+        "title": "暴露模型服务"
+      }
+    ],
+    "UpdateJob": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=UpdateJob\r\n&JobId=aktwbxqmfkr8g44v\r\n&Description=123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a31293c1-d8ba-4dbb-828e-6f16016fbb88\",\n        \"Job\": {\n            \"Id\": \"aktwbxqmfkr8g44v\",\n            \"Cluster\": \"ap-beijing\",\n            \"Region\": \"ap-beijing\",\n            \"Name\": \"test\",\n            \"Runtime\": \"pmml\",\n            \"Description\": \"123\",\n            \"ConfigId\": \"0\",\n            \"PredictInput\": {\n                \"InputDataFormat\": \"json\",\n                \"OutputDataFormat\": \"json\",\n                \"InputPath\": \"cos://data-test-125502019.cos.ap-guangzhou.myqcloud.com/test/pmminput\",\n                \"OutputPath\": \"cos://data-test-125502019.cos.ap-guangzhou.myqcloud.com/test/\",\n                \"BatchSize\": 32,\n                \"SignatureName\": \"\"\n            },\n            \"Status\": {\n                \"DesiredWorkers\": 1,\n                \"CurrentWorkers\": 1,\n                \"Replicas\": [\n                    \"aktwbxqmfkr8g44v-mwjbb\"\n                ],\n                \"Status\": \"Cancelled\",\n                \"Message\": \"\"\n            },\n            \"CreateTime\": \"2019-11-07T15:41:35+08:00\",\n            \"StartTime\": \"2019-11-07T15:41:35+08:00\",\n            \"EndTime\": \"\",\n            \"CancelTime\": \"\",\n            \"ResourceGroupId\": \"ap-beijing\",\n            \"ResourceGroupName\": \"公共资源组\",\n            \"Cpu\": 100,\n            \"Memory\": 100,\n            \"Gpu\": 0,\n            \"GpuMemory\": 0,\n            \"GpuType\": \"\",\n            \"ConfigName\": \"test1\",\n            \"ConfigVersion\": \"1.0\"\n        }\n    }\n}",
+        "title": "更新任务"
+      }
+    ],
+    "UpdateRsgAsGroup": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=UpdateRsgAsGroup\r\n&Id=asg-xxxxxxxx\r\n$Name=<name>\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d96e8c0-97a9-43a2-8268-99ff505fbd84\",\n        \"RsgAsGroup\": {\n            \"Id\": \"asg-xxxxxxxx\",\n            \"Region\": \"ap-beijing\",\n            \"Zone\": \"ap-beijing-5\",\n            \"Cluster\": \"ap-beijing\",\n            \"RsgId\": \"rsg-xxxxxxxx\",\n            \"Name\": \"<name>\",\n            \"MaxSize\": 5,\n            \"MinSize\": 0,\n            \"CreateTime\": \"2019-12-24T17:39:40+08:00\",\n            \"UpdateTime\": \"2019-12-24T17:39:40+08:00\",\n            \"Status\": \"Enabled\",\n            \"InstanceType\": \"sv_tiems_instance_8c32g1t4\",\n            \"InstanceCount\": 1\n        }\n    }\n}",
+        "title": "更新资源组的伸缩组"
+      }
+    ],
+    "UpdateService": [
+      {
+        "document": "",
+        "input": "https://tiems.tencentcloudapi.com/?Action=UpdateService\r\n&ServiceId=ank95gbm4dwfhmds\r\n&Scaler.StartReplicas=2\r\n&Scaler.MaxReplicas=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c7e1137-91a3-4c3b-8ff8-d695276a9b13\",\n        \"Service\": {\n            \"Id\": \"ank95gbm4dwfhmds\",\n            \"Cluster\": \"ap-beijing\",\n            \"Region\": \"ap-beijing\",\n            \"Name\": \"test\",\n            \"Runtime\": \"pmml\",\n            \"ModelUri\": \"cos://ti-ems-125502019.cos.ap-beijing.myqcloud.com/models/pmml/\",\n            \"Cpu\": 100,\n            \"Memory\": 100,\n            \"Gpu\": 0,\n            \"GpuMemory\": 0,\n            \"CreateTime\": \"2019-11-07T15:14:19+08:00\",\n            \"UpdateTime\": \"2019-11-07T15:14:19+08:00\",\n            \"ScaleMode\": \"MANUAL\",\n            \"Scaler\": {\n                \"MaxReplicas\": 2,\n                \"MinReplicas\": 0,\n                \"StartReplicas\": 2,\n                \"HpaMetrics\": []\n            },\n            \"Status\": {\n                \"DesiredReplicas\": 1,\n                \"CurrentReplicas\": 1,\n                \"Replicas\": [\n                    \"ank95gbm4dwfhmds-fccc99cdd-ftff5\"\n                ],\n                \"Status\": \"Normal\",\n                \"Message\": \"\",\n                \"Conditions\": []\n            },\n            \"AccessToken\": \"\",\n            \"ConfigName\": \"test1\",\n            \"ConfigVersion\": \"1.0\",\n            \"ServeSeconds\": 307,\n            \"ConfigId\": \"asjcqn7wtdgrd7gt\",\n            \"ResourceGroupId\": \"ap-beijing\",\n            \"ResourceGroupName\": \"公共资源组\",\n            \"Exposes\": [],\n            \"Description\": \"test\",\n            \"GpuType\": \"\"\n        }\n    }\n}",
+        "title": "更新服务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

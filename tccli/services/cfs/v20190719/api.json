@@ -1,0 +1,1925 @@
+{
+  "actions": {
+    "CreateCfsFileSystem": {
+      "document": "用于添加新文件系统",
+      "input": "CreateCfsFileSystemRequest",
+      "name": "创建文件系统",
+      "output": "CreateCfsFileSystemResponse"
+    },
+    "CreateCfsPGroup": {
+      "document": "本接口（CreateCfsPGroup）用于创建权限组",
+      "input": "CreateCfsPGroupRequest",
+      "name": "创建权限组",
+      "output": "CreateCfsPGroupResponse"
+    },
+    "CreateCfsRule": {
+      "document": "本接口（CreateCfsRule）用于创建权限组规则。",
+      "input": "CreateCfsRuleRequest",
+      "name": "创建权限组规则",
+      "output": "CreateCfsRuleResponse"
+    },
+    "DeleteCfsFileSystem": {
+      "document": "用于删除文件系统",
+      "input": "DeleteCfsFileSystemRequest",
+      "name": "删除文件系统",
+      "output": "DeleteCfsFileSystemResponse"
+    },
+    "DeleteCfsPGroup": {
+      "document": "本接口（DeleteCfsPGroup）用于删除权限组。",
+      "input": "DeleteCfsPGroupRequest",
+      "name": "删除权限组",
+      "output": "DeleteCfsPGroupResponse"
+    },
+    "DeleteCfsRule": {
+      "document": "本接口（DeleteCfsRule）用于删除权限组规则。",
+      "input": "DeleteCfsRuleRequest",
+      "name": "删除权限组规则",
+      "output": "DeleteCfsRuleResponse"
+    },
+    "DeleteMountTarget": {
+      "document": "本接口（DeleteMountTarget）用于删除挂载点",
+      "input": "DeleteMountTargetRequest",
+      "name": "删除挂载点",
+      "output": "DeleteMountTargetResponse"
+    },
+    "DescribeAvailableZoneInfo": {
+      "document": "本接口（DescribeAvailableZoneInfo）用于查询区域的可用情况。",
+      "input": "DescribeAvailableZoneInfoRequest",
+      "name": "查询区域可用情况",
+      "output": "DescribeAvailableZoneInfoResponse"
+    },
+    "DescribeCfsFileSystemClients": {
+      "document": "查询挂载该文件系统的客户端。此功能需要客户端安装CFS监控插件。",
+      "input": "DescribeCfsFileSystemClientsRequest",
+      "name": "查询文件系统客户端",
+      "output": "DescribeCfsFileSystemClientsResponse"
+    },
+    "DescribeCfsFileSystems": {
+      "document": "本接口（DescribeCfsFileSystems）用于查询文件系统",
+      "input": "DescribeCfsFileSystemsRequest",
+      "name": "查询文件系统",
+      "output": "DescribeCfsFileSystemsResponse"
+    },
+    "DescribeCfsPGroups": {
+      "document": "本接口（DescribeCfsPGroups）用于查询权限组列表。",
+      "input": "DescribeCfsPGroupsRequest",
+      "name": "查询权限组列表",
+      "output": "DescribeCfsPGroupsResponse"
+    },
+    "DescribeCfsRules": {
+      "document": "本接口（DescribeCfsRules）用于查询权限组规则列表。",
+      "input": "DescribeCfsRulesRequest",
+      "name": "查询权限组规则",
+      "output": "DescribeCfsRulesResponse"
+    },
+    "DescribeCfsServiceStatus": {
+      "document": "本接口（DescribeCfsServiceStatus）用于查询用户使用CFS的服务状态。",
+      "input": "DescribeCfsServiceStatusRequest",
+      "name": "查询CFS服务状态",
+      "output": "DescribeCfsServiceStatusResponse"
+    },
+    "DescribeMountTargets": {
+      "document": "本接口（DescribeMountTargets）用于查询文件系统挂载点信息",
+      "input": "DescribeMountTargetsRequest",
+      "name": "查询文件系统挂载点",
+      "output": "DescribeMountTargetsResponse"
+    },
+    "SignUpCfsService": {
+      "document": "本接口（SignUpCfsService）用于开通CFS服务。",
+      "input": "SignUpCfsServiceRequest",
+      "name": "开通CFS服务",
+      "output": "SignUpCfsServiceResponse"
+    },
+    "UpdateCfsFileSystemName": {
+      "document": "本接口（UpdateCfsFileSystemName）用于更新文件系统名",
+      "input": "UpdateCfsFileSystemNameRequest",
+      "name": "更新文件系统名",
+      "output": "UpdateCfsFileSystemNameResponse"
+    },
+    "UpdateCfsFileSystemPGroup": {
+      "document": "本接口（UpdateCfsFileSystemPGroup）用于更新文件系统所使用的权限组",
+      "input": "UpdateCfsFileSystemPGroupRequest",
+      "name": "更新文件系统的权限组",
+      "output": "UpdateCfsFileSystemPGroupResponse"
+    },
+    "UpdateCfsFileSystemSizeLimit": {
+      "document": "本接口（UpdateCfsFileSystemSizeLimit）用于更新文件系统存储容量限制。",
+      "input": "UpdateCfsFileSystemSizeLimitRequest",
+      "name": "更新文件系统存储容量限制",
+      "output": "UpdateCfsFileSystemSizeLimitResponse"
+    },
+    "UpdateCfsPGroup": {
+      "document": "本接口（UpdateCfsPGroup）更新权限组信息。",
+      "input": "UpdateCfsPGroupRequest",
+      "name": "更新权限组信息",
+      "output": "UpdateCfsPGroupResponse"
+    },
+    "UpdateCfsRule": {
+      "document": "本接口（UpdateCfsRule）用于更新权限规则。",
+      "input": "UpdateCfsRuleRequest",
+      "name": "更新权限组规则",
+      "output": "UpdateCfsRuleResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-07-19",
+    "api_brief": "介绍如何使用API对文件存储进行操作，包括对文件系统、权限组等的创建、删除、修改等操作。",
+    "serviceNameCN": "文件存储",
+    "serviceShortName": "cfs"
+  },
+  "objects": {
+    "AvailableProtoStatus": {
+      "document": "版本控制-协议详情\n",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售",
+          "member": "string",
+          "name": "SaleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议类型。可选值有 NFS、CIFS",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvailableRegion": {
+      "document": "版本控制-区域数组",
+      "members": [
+        {
+          "default": "",
+          "document": "区域名称，如“ap-beijing”",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域名称，如“bj”",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE",
+          "member": "string",
+          "name": "RegionStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区数组",
+          "member": "AvailableZone",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域中文名称，如“广州”",
+          "member": "string",
+          "name": "RegionCnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvailableType": {
+      "document": "版本控制-类型数组",
+      "members": [
+        {
+          "default": "",
+          "document": "协议与售卖详情",
+          "member": "AvailableProtoStatus",
+          "name": "Protocols",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储类型。返回值中 SD 为标准型存储、HP 为性能型存储",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持预付费。返回值中 true 为支持、false 为不支持",
+          "member": "bool",
+          "name": "Prepayment",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvailableZone": {
+      "document": "版本控制-可用区数组",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区名称",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中文名称",
+          "member": "string",
+          "name": "ZoneCnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type数组",
+          "member": "AvailableType",
+          "name": "Types",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中英文名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCfsFileSystemRequest": {
+      "document": "CreateCfsFileSystem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区名称，例如ap-beijing-1，请参考 [概览](https://cloud.tencent.com/document/product/582/13225) 文档中的地域与可用区列表",
+          "example": "ap-beijing-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型，可选值为 VPC，BASIC，CCN；其中 VPC 为私有网络，BASIC 为基础网络, CCN 为云联网，Turbo系列当前必须选择云联网。目前基础网络已逐渐淘汰，不推荐使用。",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetInterface",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限组 ID，通用标准型和性能型必填，turbo系列请填写pgroupbasic",
+          "example": "pgroupbasic",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统协议类型， 值为 NFS、CIFS、TURBO ; 若留空则默认为 NFS协议，turbo系列必须选择turbo，不支持NFS、CIFS",
+          "example": "NFS",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统存储类型，默认值为 SD ；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。",
+          "example": "123",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网 ID，若网络类型选择的是VPC，该字段为必填。",
+          "example": "234",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定IP地址，仅VPC网络支持；若不填写、将在该子网下随机分配 IP，Turbo系列当前不支持指定",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "MountIP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义文件系统名称",
+          "example": "QcloudCfs",
+          "member": "string",
+          "name": "FsName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统标签",
+          "example": "[\"TagKey\":\"a\",\"TagValue\":1]",
+          "member": "TagInfo",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。用于保证请求幂等性的字符串失效时间为2小时。",
+          "example": "QcloudCfs001",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填",
+          "example": "ccn-12345",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云联网中CFS使用的网段， 若网络类型选择的是Ccn，该字段为必填，且不能和Ccn中已经绑定的网段冲突",
+          "example": "10.0.0.1/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。",
+          "example": "40960",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsFileSystemResponse": {
+      "document": "CreateCfsFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统创建时间",
+          "example": "2017-02-24 11:28:12",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义文件系统名称",
+          "example": "QcloudCfs",
+          "member": "string",
+          "name": "CreationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统 ID",
+          "example": "cfs-abc",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统状态，可能出现状态包括：“creating”  创建中, “create_failed” 创建失败, “available” 可用, “unserviced” 不可用, “upgrading” 升级中， “deleting” 删除中。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "LifeCycleState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统已使用容量大小，单位为 Byte",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SizeByte",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区 ID",
+          "example": "800001",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义文件系统名称",
+          "example": "QcloudCfs",
+          "member": "string",
+          "name": "FsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统是否加密",
+          "example": "False",
+          "member": "bool",
+          "name": "Encrypted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsPGroupRequest": {
+      "document": "CreateCfsPGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限组描述信息，1-255个字符",
+          "member": "string",
+          "name": "DescInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsPGroupResponse": {
+      "document": "CreateCfsPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组名字",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组描述信息",
+          "member": "string",
+          "name": "DescInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已经与该权限组绑定的文件系统个数",
+          "member": "int64",
+          "name": "BindCfsNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组创建时间",
+          "member": "string",
+          "name": "CDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsRuleRequest": {
+      "document": "CreateCfsRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
+          "member": "string",
+          "name": "AuthClientIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "读写权限, 值为 RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
+          "member": "string",
+          "name": "RWPermission",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "member": "string",
+          "name": "UserPermission",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCfsRuleResponse": {
+      "document": "CreateCfsRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端 IP",
+          "member": "string",
+          "name": "AuthClientIp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "读写权限",
+          "member": "string",
+          "name": "RWPermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户权限",
+          "member": "string",
+          "name": "UserPermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "优先级",
+          "member": "int64",
+          "name": "Priority",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsFileSystemRequest": {
+      "document": "DeleteCfsFileSystem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID。说明，进行删除文件系统操作前需要先调用 DeleteMountTarget 接口删除该文件系统的挂载点，否则会删除失败。",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsFileSystemResponse": {
+      "document": "DeleteCfsFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsPGroupRequest": {
+      "document": "DeleteCfsPGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsPGroupResponse": {
+      "document": "DeleteCfsPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户 ID",
+          "member": "int64",
+          "name": "AppId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsRuleRequest": {
+      "document": "DeleteCfsRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCfsRuleResponse": {
+      "document": "DeleteCfsRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountTargetRequest": {
+      "document": "DeleteMountTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "挂载点 ID",
+          "member": "string",
+          "name": "MountTargetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMountTargetResponse": {
+      "document": "DeleteMountTarget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableZoneInfoRequest": {
+      "document": "DescribeAvailableZoneInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAvailableZoneInfoResponse": {
+      "document": "DescribeAvailableZoneInfo返回参数结构体",
+      "members": [
+        {
+          "document": "各可用区的资源售卖情况以及支持的存储类型、存储协议等信息",
+          "member": "AvailableRegion",
+          "name": "RegionZones",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsFileSystemClientsRequest": {
+      "document": "DescribeCfsFileSystemClients请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID。",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsFileSystemClientsResponse": {
+      "document": "DescribeCfsFileSystemClients返回参数结构体",
+      "members": [
+        {
+          "document": "客户端列表",
+          "member": "FileSystemClient",
+          "name": "ClientList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsFileSystemsRequest": {
+      "document": "DescribeCfsFileSystems请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络（VPC） ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网 ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsFileSystemsResponse": {
+      "document": "DescribeCfsFileSystems返回参数结构体",
+      "members": [
+        {
+          "document": "文件系统信息",
+          "member": "FileSystemInfo",
+          "name": "FileSystems",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsPGroupsRequest": {
+      "document": "DescribeCfsPGroups请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCfsPGroupsResponse": {
+      "document": "DescribeCfsPGroups返回参数结构体",
+      "members": [
+        {
+          "document": "权限组信息列表",
+          "member": "PGroupInfo",
+          "name": "PGroupList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsRulesRequest": {
+      "document": "DescribeCfsRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsRulesResponse": {
+      "document": "DescribeCfsRules返回参数结构体",
+      "members": [
+        {
+          "document": "权限组规则列表",
+          "member": "PGroupRuleInfo",
+          "name": "RuleList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCfsServiceStatusRequest": {
+      "document": "DescribeCfsServiceStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCfsServiceStatusResponse": {
+      "document": "DescribeCfsServiceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "该用户当前 CFS 服务的状态，none 为未开通，creating 为开通中，created 为已开通",
+          "member": "string",
+          "name": "CfsServiceStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountTargetsRequest": {
+      "document": "DescribeMountTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMountTargetsResponse": {
+      "document": "DescribeMountTargets返回参数结构体",
+      "members": [
+        {
+          "document": "挂载点详情",
+          "member": "MountInfo",
+          "name": "MountTargets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "挂载点数量",
+          "member": "int64",
+          "name": "NumberOfMountTargets",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileSystemClient": {
+      "document": "文件系统客户端信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统IP地址",
+          "member": "string",
+          "name": "CfsVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端IP地址",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统所属VPCID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区中文名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该文件系统被挂载到客户端上的路径信息",
+          "member": "string",
+          "name": "MountDirectory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FileSystemInfo": {
+      "document": "文件系统基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义名称",
+          "example": "无",
+          "member": "string",
+          "name": "CreationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "example": "无",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统状态",
+          "example": "无",
+          "member": "string",
+          "name": "LifeCycleState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统已使用容量",
+          "example": "无",
+          "member": "uint64",
+          "name": "SizeByte",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统最大空间限制",
+          "example": "无",
+          "member": "uint64",
+          "name": "SizeLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域 ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域名称",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统协议类型",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统存储类型",
+          "example": "无",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统绑定的预付费存储包",
+          "example": "无",
+          "member": "string",
+          "name": "StorageResourcePkg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统绑定的预付费带宽包（暂未支持）",
+          "example": "无",
+          "member": "string",
+          "name": "BandwidthResourcePkg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统绑定权限组信息",
+          "example": "无",
+          "member": "PGroup",
+          "name": "PGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义名称",
+          "example": "无",
+          "member": "string",
+          "name": "FsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统是否加密",
+          "example": "无",
+          "member": "bool",
+          "name": "Encrypted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密所使用的密钥，可以为密钥的 ID 或者 ARN",
+          "example": "无",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定",
+          "example": "无",
+          "member": "float",
+          "name": "BandwidthLimit",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统总容量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MountInfo": {
+      "document": "挂载点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "example": "cfs-hge16re9",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载点 ID",
+          "example": "mount-0ylt3o7o",
+          "member": "string",
+          "name": "MountTargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载点 IP",
+          "example": "10.1.0.7",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载根目录",
+          "example": "fwsuvz0l",
+          "member": "string",
+          "name": "FSID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载点状态",
+          "example": "available",
+          "member": "string",
+          "name": "LifeCycleState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetworkInterface",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络 ID",
+          "example": "vpc-hq13cw04",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "example": "qcloudtest",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 Id",
+          "example": "subnet-jdl08no5",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网名称",
+          "example": "qcloudtest",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CFS Turbo使用的云联网ID",
+          "example": "ccn-1xhbcp41",
+          "member": "string",
+          "name": "CcnID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网中CFS Turbo使用的网段",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PGroup": {
+      "document": "文件系统绑定权限组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PGroupInfo": {
+      "document": "权限组数组",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限组名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息",
+          "member": "string",
+          "name": "DescInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联文件系统个数",
+          "member": "int64",
+          "name": "BindCfsNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PGroupRuleInfo": {
+      "document": "权限组规则列表",
+      "members": [
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许访问的客户端IP",
+          "member": "string",
+          "name": "AuthClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写权限, ro为只读，rw为读写",
+          "member": "string",
+          "name": "RWPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。",
+          "member": "string",
+          "name": "UserPermission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SignUpCfsServiceRequest": {
+      "document": "SignUpCfsService请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SignUpCfsServiceResponse": {
+      "document": "SignUpCfsService返回参数结构体",
+      "members": [
+        {
+          "document": "该用户当前 CFS 服务的状态，none 是未开通，creating 是开通中，created 是已开通",
+          "member": "string",
+          "name": "CfsServiceStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagInfo": {
+      "document": "Tag信息单元",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateCfsFileSystemNameRequest": {
+      "document": "UpdateCfsFileSystemName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义文件系统名称",
+          "member": "string",
+          "name": "FsName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsFileSystemNameResponse": {
+      "document": "UpdateCfsFileSystemName返回参数结构体",
+      "members": [
+        {
+          "document": "用户自定义文件系统名称",
+          "member": "string",
+          "name": "CreationToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义文件系统名称",
+          "member": "string",
+          "name": "FsName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsFileSystemPGroupRequest": {
+      "document": "UpdateCfsFileSystemPGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsFileSystemPGroupResponse": {
+      "document": "UpdateCfsFileSystemPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件系统 ID",
+          "member": "string",
+          "name": "FileSystemId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsFileSystemSizeLimitRequest": {
+      "document": "UpdateCfsFileSystemSizeLimit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统容量限制大小，输入范围0-1073741824, 单位为GB；其中输入值为0时，表示不限制文件系统容量。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "FsLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件系统ID，目前仅支持标准型文件系统。",
+          "example": "cfs-12345",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsFileSystemSizeLimitResponse": {
+      "document": "UpdateCfsFileSystemSizeLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsPGroupRequest": {
+      "document": "UpdateCfsPGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限组描述信息，1-255个字符",
+          "member": "string",
+          "name": "DescInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsPGroupResponse": {
+      "document": "UpdateCfsPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "权限组ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权限组名称",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "描述信息",
+          "member": "string",
+          "name": "DescInfo",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsRuleRequest": {
+      "document": "UpdateCfsRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
+          "member": "string",
+          "name": "AuthClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
+          "member": "string",
+          "name": "RWPermission",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "member": "string",
+          "name": "UserPermission",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCfsRuleResponse": {
+      "document": "UpdateCfsRule返回参数结构体",
+      "members": [
+        {
+          "document": "权限组 ID",
+          "member": "string",
+          "name": "PGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "允许访问的客户端 IP 或者 IP 段",
+          "member": "string",
+          "name": "AuthClientIp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "读写权限",
+          "member": "string",
+          "name": "RWPermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户权限",
+          "member": "string",
+          "name": "UserPermission",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "优先级",
+          "member": "int64",
+          "name": "Priority",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

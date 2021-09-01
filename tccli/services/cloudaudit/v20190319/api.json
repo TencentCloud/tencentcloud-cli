@@ -1,0 +1,1466 @@
+{
+  "actions": {
+    "CreateAudit": {
+      "document": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项",
+      "input": "CreateAuditRequest",
+      "name": "创建跟踪集",
+      "output": "CreateAuditResponse"
+    },
+    "DeleteAudit": {
+      "document": "删除跟踪集",
+      "input": "DeleteAuditRequest",
+      "name": "删除跟踪集",
+      "output": "DeleteAuditResponse"
+    },
+    "DescribeAudit": {
+      "document": "查询跟踪集详情",
+      "input": "DescribeAuditRequest",
+      "name": "查询跟踪集详情",
+      "output": "DescribeAuditResponse"
+    },
+    "DescribeEvents": {
+      "document": "查询云审计日志",
+      "input": "DescribeEventsRequest",
+      "name": "查询云审计日志",
+      "output": "DescribeEventsResponse"
+    },
+    "GetAttributeKey": {
+      "document": "查询AttributeKey的有效取值范围",
+      "input": "GetAttributeKeyRequest",
+      "name": "查询AttributeKey的有效取值范围",
+      "output": "GetAttributeKeyResponse"
+    },
+    "InquireAuditCredit": {
+      "document": "查询用户可创建跟踪集的数量",
+      "input": "InquireAuditCreditRequest",
+      "name": "查询用户可创建跟踪集的数量",
+      "output": "InquireAuditCreditResponse"
+    },
+    "ListAudits": {
+      "document": "查询跟踪集概要",
+      "input": "ListAuditsRequest",
+      "name": "查询跟踪集概要",
+      "output": "ListAuditsResponse"
+    },
+    "ListCmqEnableRegion": {
+      "document": "查询云审计支持的cmq的可用区",
+      "input": "ListCmqEnableRegionRequest",
+      "name": "查询云审计支持的cmq的可用区",
+      "output": "ListCmqEnableRegionResponse"
+    },
+    "ListCosEnableRegion": {
+      "document": "查询云审计支持的cos可用区",
+      "input": "ListCosEnableRegionRequest",
+      "name": "查询云审计支持的cos可用区",
+      "output": "ListCosEnableRegionResponse"
+    },
+    "ListKeyAliasByRegion": {
+      "document": "根据地域获取KMS密钥别名",
+      "input": "ListKeyAliasByRegionRequest",
+      "name": "根据地域获取KMS密钥别名",
+      "output": "ListKeyAliasByRegionResponse"
+    },
+    "LookUpEvents": {
+      "document": "用于对操作日志进行检索，便于用户进行查询相关的操作信息。",
+      "input": "LookUpEventsRequest",
+      "name": "检索日志",
+      "output": "LookUpEventsResponse"
+    },
+    "StartLogging": {
+      "document": "开启跟踪集",
+      "input": "StartLoggingRequest",
+      "name": "开启跟踪集",
+      "output": "StartLoggingResponse"
+    },
+    "StopLogging": {
+      "document": "关闭跟踪集",
+      "input": "StopLoggingRequest",
+      "name": "关闭跟踪集",
+      "output": "StopLoggingResponse"
+    },
+    "UpdateAudit": {
+      "document": "参数要求：\n1、如果IsCreateNewBucket的值存在的话，cosRegion和cosBucketName都是必填参数。\n2、如果IsEnableCmqNotify的值是1的话，IsCreateNewQueue、CmqRegion和CmqQueueName都是必填参数。\n3、如果IsEnableCmqNotify的值是0的话，IsCreateNewQueue、CmqRegion和CmqQueueName都不能传。\n4、如果IsEnableKmsEncry的值是1的话，KmsRegion和KeyId属于必填项",
+      "input": "UpdateAuditRequest",
+      "name": "更新跟踪集",
+      "output": "UpdateAuditResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-19",
+    "api_brief": "介绍如何使用API对云审计进行操作，包括更新跟踪集、检索日志、查询日志等。",
+    "serviceNameCN": "云审计",
+    "serviceShortName": "cloudaudit"
+  },
+  "objects": {
+    "AttributeKeyDetail": {
+      "document": "AttributeKey值详情",
+      "members": [
+        {
+          "default": "",
+          "document": "输入框类型",
+          "example": "xx",
+          "member": "string",
+          "name": "LabelType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化展示",
+          "example": "xx",
+          "member": "string",
+          "name": "Starter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "展示排序",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AttributeKey值",
+          "example": "xx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文标签",
+          "example": "xx",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditSummary": {
+      "document": "跟踪集概览",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集状态，1：开启，0：关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS存储桶名称",
+          "example": "xx",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志前缀",
+          "example": "xx",
+          "member": "string",
+          "name": "LogFilePrefix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CmqRegionInfo": {
+      "document": "cmq地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域描述",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqRegionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cmq地域",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CosRegionInfo": {
+      "document": "cos地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cos地域",
+          "example": "xx",
+          "member": "string",
+          "name": "CosRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域描述",
+          "example": "xx",
+          "member": "string",
+          "name": "CosRegionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateAuditRequest": {
+      "document": "CreateAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableCmqNotify",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "管理事件的读写属性。1：只读，2：只写，3：全部。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReadWriteAttribute",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟踪集名称。3-128字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9，下划线 _。",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos地域。目前支持的地域可以使用ListCosEnableRegion来获取。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否创建新的cos存储桶。1：是，0：否。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCreateNewBucket",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cos的存储桶名称。仅支持小写英文字母和数字即[a-z，0-9]、中划线“-”及其组合。用户自定义的字符串支持1 - 40个字符。存储桶命名不能以“-”开头或结尾。如果不是新创建的存储桶，云审计不会去校验该存储桶是否真的存在，请谨慎填写，避免日志投递不成功，导致您的数据丢失。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。",
+          "example": "xx",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列名称。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。如果IsEnableCmqNotify值是1的话，此值属于必填字段。如果不是新创建的队列，云审计不会去校验该队列是否真的存在，请谨慎填写，避免日志通知不成功，导致您的数据丢失。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqQueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。",
+          "example": "1",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableKmsEncry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "队列所在的地域。可以通过ListCmqEnableRegion获取支持的cmq地域。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。可以不填，默认以账号ID作为日志前缀。",
+          "example": "xx",
+          "member": "string",
+          "name": "LogFilePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCreateNewQueue",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditResponse": {
+      "document": "CreateAudit返回参数结构体",
+      "members": [
+        {
+          "document": "是否创建成功。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditRequest": {
+      "document": "DeleteAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditResponse": {
+      "document": "DeleteAudit返回参数结构体",
+      "members": [
+        {
+          "document": "是否删除成功",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRequest": {
+      "document": "DescribeAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditResponse": {
+      "document": "DescribeAudit返回参数结构体",
+      "members": [
+        {
+          "document": "是否开启cmq消息通知。1：是，0：否。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableCmqNotify",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "管理事件读写属性，1：只读，2：只写，3：全部",
+          "example": "1",
+          "member": "int64",
+          "name": "ReadWriteAttribute",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CMK的全局唯一标识符。",
+          "example": "xx",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪集状态，1：开启，0：停止。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "跟踪集名称。",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cos存储桶所在地域。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列名称。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqQueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CMK别名。",
+          "example": "xx",
+          "member": "string",
+          "name": "KmsAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "kms地域。",
+          "example": "xx",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableKmsEncry",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cos存储桶名称。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列所在地域。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志前缀。",
+          "example": "xx",
+          "member": "string",
+          "name": "LogFilePrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsRequest": {
+      "document": "DescribeEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间戳（单位秒，不超过当前时间 90 天）",
+          "example": "1612171581",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳（单位秒，查询时间跨度小于 30 天）",
+          "example": "1612173581",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查看更多日志的凭证",
+          "example": "123213213312313",
+          "member": "uint64",
+          "name": "NextToken",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回日志的最大条数（最大 50 条）",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码）",
+          "example": "[{\"AttributeKey:XX,\"AttributeValue\":xx}]",
+          "member": "LookupAttribute",
+          "name": "LookupAttributes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否返回 IP 归属地（1 返回，0 不返回）",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsReturnLocation",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsResponse": {
+      "document": "DescribeEvents返回参数结构体",
+      "members": [
+        {
+          "document": "日志集合是否结束",
+          "example": "False",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查看更多日志的凭证",
+          "example": "123123213",
+          "member": "uint64",
+          "name": "NextToken",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "Event",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Event": {
+      "document": "日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "日志ID",
+          "example": "xx",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xx",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件时间",
+          "example": "xx",
+          "member": "string",
+          "name": "EventTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志详情",
+          "example": "xx",
+          "member": "string",
+          "name": "CloudAuditEvent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
+          "example": "xx",
+          "member": "string",
+          "name": "ResourceTypeCn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴权错误码",
+          "example": "1",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件名称",
+          "example": "xx",
+          "member": "string",
+          "name": "EventName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SecretId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求来源",
+          "example": "xx",
+          "member": "string",
+          "name": "EventSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求ID",
+          "example": "xx",
+          "member": "string",
+          "name": "RequestID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源地域",
+          "example": "xx",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号ID",
+          "example": "1",
+          "member": "int64",
+          "name": "AccountID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SourceIPAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
+          "example": "xx",
+          "member": "string",
+          "name": "EventNameCn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源对",
+          "example": "xx",
+          "member": "Resource",
+          "name": "Resources",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件地域",
+          "example": "xx",
+          "member": "string",
+          "name": "EventRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP 归属地",
+          "example": "中国 江苏省 南京市 腾讯网络",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetAttributeKeyRequest": {
+      "document": "GetAttributeKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网站类型，取值范围是zh和en。如果不传值默认zh",
+          "example": "xx",
+          "member": "string",
+          "name": "WebsiteType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAttributeKeyResponse": {
+      "document": "GetAttributeKey返回参数结构体",
+      "members": [
+        {
+          "document": "AttributeKey的有效取值范围",
+          "example": "xx",
+          "member": "AttributeKeyDetail",
+          "name": "AttributeKeyDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquireAuditCreditRequest": {
+      "document": "InquireAuditCredit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InquireAuditCreditResponse": {
+      "document": "InquireAuditCredit返回参数结构体",
+      "members": [
+        {
+          "document": "可创建跟踪集的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KeyMetadata": {
+      "document": "CMK属性",
+      "members": [
+        {
+          "default": "",
+          "document": "作为密钥更容易辨识，更容易被人看懂的别名",
+          "example": "xx",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CMK的全局唯一标识",
+          "example": "xx",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ListAuditsRequest": {
+      "document": "ListAudits请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListAuditsResponse": {
+      "document": "ListAudits返回参数结构体",
+      "members": [
+        {
+          "document": "查询跟踪集概要集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "AuditSummary",
+          "name": "AuditSummarys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCmqEnableRegionRequest": {
+      "document": "ListCmqEnableRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点类型。zh表示中国区，en表示国际区。默认中国区。",
+          "example": "xx",
+          "member": "string",
+          "name": "WebsiteType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCmqEnableRegionResponse": {
+      "document": "ListCmqEnableRegion返回参数结构体",
+      "members": [
+        {
+          "document": "云审计支持的cmq的可用区",
+          "example": "xx",
+          "member": "CmqRegionInfo",
+          "name": "EnableRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCosEnableRegionRequest": {
+      "document": "ListCosEnableRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点类型。zh表示中国区，en表示国际区。默认中国区。",
+          "example": "xx",
+          "member": "string",
+          "name": "WebsiteType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCosEnableRegionResponse": {
+      "document": "ListCosEnableRegion返回参数结构体",
+      "members": [
+        {
+          "document": "云审计支持的cos可用区",
+          "example": "xx",
+          "member": "CosRegionInfo",
+          "name": "EnableRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListKeyAliasByRegionRequest": {
+      "document": "ListKeyAliasByRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Kms地域",
+          "example": "xx",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListKeyAliasByRegionResponse": {
+      "document": "ListKeyAliasByRegion返回参数结构体",
+      "members": [
+        {
+          "document": "CMK的总数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "密钥别名",
+          "example": "[xx,xx]",
+          "member": "KeyMetadata",
+          "name": "KeyMetadatas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LookUpEventsRequest": {
+      "document": "LookUpEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1553056487",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1553056687",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检索条件",
+          "example": "无",
+          "member": "LookupAttribute",
+          "name": "LookupAttributes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查看更多日志的凭证",
+          "example": "xxx",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回日志的最大条数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云审计模式，有效值：standard | quick，其中standard是标准模式，quick是极速模式。默认为标准模式",
+          "example": "standard ",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LookUpEventsResponse": {
+      "document": "LookUpEvents返回参数结构体",
+      "members": [
+        {
+          "document": "查看更多日志的凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "NextToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Event",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志集合是否结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LookupAttribute": {
+      "document": "检索条件",
+      "members": [
+        {
+          "default": "",
+          "document": "AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "AttributeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AttributeValue的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "AttributeValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "Resource": {
+      "document": "资源类型",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "xx",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "StartLoggingRequest": {
+      "document": "StartLogging请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLoggingResponse": {
+      "document": "StartLogging返回参数结构体",
+      "members": [
+        {
+          "document": "是否开启成功",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLoggingRequest": {
+      "document": "StopLogging请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLoggingResponse": {
+      "document": "StopLogging返回参数结构体",
+      "members": [
+        {
+          "document": "是否关闭成功",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAuditRequest": {
+      "document": "UpdateAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "跟踪集名称",
+          "example": "xx",
+          "member": "string",
+          "name": "AuditName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启cmq消息通知。1：是，0：否。目前仅支持cmq的队列服务。如果开启cmq消息通知服务，云审计会将您的日志内容实时投递到您指定地域的指定队列中。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableCmqNotify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "管理事件的读写属性。1：只读，2：只写，3：全部。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReadWriteAttribute",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "CMK的全局唯一标识符，如果不是新创建的kms，该值是必填值。可以通过ListKeyAliasByRegion来获取。云审计不会校验KeyId的合法性，请您谨慎填写，避免给您的数据造成损失。",
+          "example": "xx",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cos地域。目前支持的地域可以使用ListCosEnableRegion来获取。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列名称。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。如果IsEnableCmqNotify值是1的话，此值属于必填字段。如果不是新创建的队列，云审计不会去校验该队列是否真的存在，请谨慎填写，避免日志通知不成功，导致您的数据丢失。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqQueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否创建新的cos存储桶。1：是，0：否。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCreateNewBucket",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "kms地域。目前支持的地域可以使用ListKmsEnableRegion来获取。必须要和cos的地域保持一致。",
+          "example": "xx",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启kms加密。1：是，0：否。如果开启KMS加密，数据在投递到cos时，会将数据加密。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnableKmsEncry",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "cos的存储桶名称。仅支持小写英文字母和数字即[a-z，0-9]、中划线“-”及其组合。用户自定义的字符串支持1 - 40个字符。存储桶命名不能以“-”开头或结尾。如果不是新创建的存储桶，云审计不会去校验该存储桶是否真的存在，请谨慎填写，避免日志投递不成功，导致您的数据丢失。",
+          "example": "xx",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列所在的地域。可以通过ListCmqEnableRegion获取支持的cmq地域。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
+          "example": "xx",
+          "member": "string",
+          "name": "CmqRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志文件前缀。3-40个字符，只能包含 ASCII 编码字母 a-z，A-Z，数字 0-9。",
+          "example": "xx",
+          "member": "string",
+          "name": "LogFilePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否创建新的队列。1：是，0：否。如果IsEnableCmqNotify值是1的话，此值属于必填字段。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCreateNewQueue",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAuditResponse": {
+      "document": "UpdateAudit返回参数结构体",
+      "members": [
+        {
+          "document": "是否更新成功",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSuccess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

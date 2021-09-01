@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "DescribeStatus": {
+      "document": "查询指定md5样本是否分析完成，并获取分析日志下载地址。",
+      "input": "DescribeStatusRequest",
+      "name": "获取分析结果",
+      "output": "DescribeStatusResponse"
+    },
+    "StartAnalyse": {
+      "document": "上传样本到哈勃进行分析，异步生成分析日志。",
+      "input": "StartAnalyseRequest",
+      "name": "分析样本",
+      "output": "StartAnalyseResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-03",
+    "serviceShortName": "habo"
+  },
+  "objects": {
+    "DescribeStatusRequest": {
+      "document": "DescribeStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "购买服务后获得的授权帐号，用于保证请求有效性",
+          "member": "string",
+          "name": "Pk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要获取分析结果的样本md5",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStatusResponse": {
+      "document": "DescribeStatus返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用状态，1表示成功，非1表示失败",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成功时返回success，失败时返回具体的失败原因，如样本分析未完成",
+          "member": "string",
+          "name": "Info",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成功时返回样本日志下载地址，该地址10分钟内有效",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAnalyseRequest": {
+      "document": "StartAnalyse请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "购买服务后获得的授权帐号，用于保证请求有效性",
+          "member": "string",
+          "name": "Pk",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "样本md5，用于对下载获得的样本完整性进行校验",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待分析样本下载地址",
+          "member": "string",
+          "name": "DlUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAnalyseResponse": {
+      "document": "StartAnalyse返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用状态，1表示成功，非1表示失败",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成功时返回success，失败时返回具体的失败原因",
+          "member": "string",
+          "name": "Info",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保留字段",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

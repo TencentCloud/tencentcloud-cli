@@ -1,0 +1,4797 @@
+{
+  "actions": {
+    "CreateInstance": {
+      "document": "创建EMR集群实例",
+      "input": "CreateInstanceRequest",
+      "name": "创建EMR实例",
+      "output": "CreateInstanceResponse"
+    },
+    "DescribeClusterNodes": {
+      "document": "查询硬件节点信息",
+      "input": "DescribeClusterNodesRequest",
+      "name": "查询硬件节点信息",
+      "output": "DescribeClusterNodesResponse"
+    },
+    "DescribeCvmQuota": {
+      "document": "获取账户的CVM配额",
+      "input": "DescribeCvmQuotaRequest",
+      "name": "获取账户的CVM配额",
+      "output": "DescribeCvmQuotaResponse"
+    },
+    "DescribeInstanceRenewNodes": {
+      "document": "预付费集群隔离后续费资源查询",
+      "input": "DescribeInstanceRenewNodesRequest",
+      "name": "预付费集群隔离后续费资源查询",
+      "output": "DescribeInstanceRenewNodesResponse"
+    },
+    "DescribeInstances": {
+      "document": "查询EMR实例",
+      "input": "DescribeInstancesRequest",
+      "name": "查询EMR实例",
+      "output": "DescribeInstancesResponse"
+    },
+    "DescribeJobFlow": {
+      "document": "查询流程任务",
+      "input": "DescribeJobFlowRequest",
+      "name": "查询流程任务",
+      "output": "DescribeJobFlowResponse"
+    },
+    "InquirePriceRenewEmr": {
+      "document": "集群续费询价。",
+      "input": "InquirePriceRenewEmrRequest",
+      "name": "集群续费询价",
+      "output": "InquirePriceRenewEmrResponse"
+    },
+    "InquiryPriceCreateInstance": {
+      "document": "创建实例询价",
+      "input": "InquiryPriceCreateInstanceRequest",
+      "name": "创建实例询价",
+      "output": "InquiryPriceCreateInstanceResponse"
+    },
+    "InquiryPriceRenewInstance": {
+      "document": "续费询价。",
+      "input": "InquiryPriceRenewInstanceRequest",
+      "name": "续费询价",
+      "output": "InquiryPriceRenewInstanceResponse"
+    },
+    "InquiryPriceScaleOutInstance": {
+      "document": "扩容询价. 当扩容时候，请通过该接口查询价格。",
+      "input": "InquiryPriceScaleOutInstanceRequest",
+      "name": "扩容询价",
+      "output": "InquiryPriceScaleOutInstanceResponse"
+    },
+    "InquiryPriceUpdateInstance": {
+      "document": "变配询价",
+      "input": "InquiryPriceUpdateInstanceRequest",
+      "name": "变配询价",
+      "output": "InquiryPriceUpdateInstanceResponse"
+    },
+    "RunJobFlow": {
+      "document": "创建流程作业",
+      "input": "RunJobFlowRequest",
+      "name": "创建流程作业",
+      "output": "RunJobFlowResponse"
+    },
+    "ScaleOutInstance": {
+      "document": "实例扩容",
+      "input": "ScaleOutInstanceRequest",
+      "name": "实例扩容",
+      "output": "ScaleOutInstanceResponse"
+    },
+    "SyncPodState": {
+      "document": "EMR同步TKE中POD状态",
+      "input": "SyncPodStateRequest",
+      "name": "EMR同步POD状态",
+      "output": "SyncPodStateResponse"
+    },
+    "TerminateInstance": {
+      "document": "销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。",
+      "input": "TerminateInstanceRequest",
+      "name": "销毁EMR实例",
+      "output": "TerminateInstanceResponse"
+    },
+    "TerminateTasks": {
+      "document": "缩容Task节点",
+      "input": "TerminateTasksRequest",
+      "name": "缩容Task节点",
+      "output": "TerminateTasksResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-01-03",
+    "api_brief": "介绍如何使用API对弹性MapReduce进行操作，包括信息查询、集群生命周期等。",
+    "serviceNameCN": "弹性 MapReduce",
+    "serviceShortName": "emr"
+  },
+  "objects": {
+    "BootstrapAction": {
+      "document": "引导脚本",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本位置，支持cos上的文件，且只支持https协议。",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行时间。\nresourceAfter 表示在机器资源申请成功后执行。\nclusterBefore 表示在集群初始化前执行。\nclusterAfter 表示在集群初始化后执行。",
+          "member": "string",
+          "name": "WhenRun",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脚本参数",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "COSSettings": {
+      "document": "COS 相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "COS SecretId",
+          "example": "SecretId ",
+          "member": "string",
+          "name": "CosSecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS SecrectKey",
+          "example": "SecrectKey",
+          "member": "string",
+          "name": "CosSecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志存储在COS上的路径",
+          "example": "cosn://ad-data-xxxxxx/data/logs/xxxxxxx",
+          "member": "string",
+          "name": "LogOnCosPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CdbInfo": {
+      "document": "出参",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库磁盘规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Volume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PayType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "ExpireFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "续费标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsAutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterInstancesInfo": {
+      "document": "集群实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ftitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SubnetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的状态码。取值范围：\n<li>2：表示集群运行中。</li>\n<li>3：表示集群创建中。</li>\n<li>4：表示集群扩容中。</li>\n<li>5：表示集群增加router节点中。</li>\n<li>6：表示集群安装组件中。</li>\n<li>7：表示集群执行命令中。</li>\n<li>8：表示重启服务中。</li>\n<li>9：表示进入维护中。</li>\n<li>10：表示服务暂停中。</li>\n<li>11：表示退出维护中。</li>\n<li>12：表示退出暂停中。</li>\n<li>13：表示配置下发中。</li>\n<li>14：表示销毁集群中。</li>\n<li>15：表示销毁core节点中。</li>\n<li>16：销毁task节点中。</li>\n<li>17：表示销毁router节点中。</li>\n<li>18：表示更改webproxy密码中。</li>\n<li>19：表示集群隔离中。</li>\n<li>20：表示集群冲正中。</li>\n<li>21：表示集群回收中。</li>\n<li>22：表示变配等待中。</li>\n<li>23：表示集群已隔离。</li>\n<li>24：表示缩容节点中。</li>\n<li>33：表示集群等待退费中。</li>\n<li>34：表示集群已退费。</li>\n<li>301：表示创建失败。</li>\n<li>302：表示扩容失败。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已经运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RunTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群产品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EmrProductConfigOutter",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主节点外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MasterIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "EMR版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EmrVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TradeVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ResourceOrderId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否计费集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsTradeCluster",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群错误状态告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlarmInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否采用新架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "IsWoodpeckerCluster",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "元数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MetaDb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Hive元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HiveMetaDb",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型:EMR,CLICKHOUSE,DRUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群所有节点的别名序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AliasInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群版本Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterSetting": {
+      "document": "集群配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "付费方式。\nPREPAID 包年包月。\nPOSTPAID_BY_HOUR 按量计费，默认方式。",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为HA集群。",
+          "member": "bool",
+          "name": "SupportHA",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群所使用的安全组，目前仅支持一个。",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例位置。",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所在VPC。",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例登录配置。",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例标签。",
+          "member": "string",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元数据库配置。",
+          "member": "MetaDbInfo",
+          "name": "MetaDB",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例硬件配置。",
+          "member": "JobFlowResourceSpec",
+          "name": "ResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否申请公网IP，默认为false。",
+          "member": "bool",
+          "name": "PublicIpAssigned",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包年包月配置，只对包年包月集群生效。",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群置放群组。",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用cbs加密。",
+          "member": "bool",
+          "name": "CbsEncryptFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用远程登录，默认为false。",
+          "member": "bool",
+          "name": "RemoteTcpDefaultPort",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Configuration": {
+      "document": "自定义配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键\"content\"传入所有内容。",
+          "member": "string",
+          "name": "Properties",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>\n<li>9：表示EMR-V2.2.0。</li>\n<li>11：表示CLICKHOUSE-V1.0.0。</li>\n<li>13：表示DRUID-V1.0.0。</li>\n<li>15：表示EMR-V2.2.1。</li>\n<li>16：表示EMR-V2.3.0。</li>\n<li>17：表示CLICKHOUSE-V1.1.0。</li>\n<li>19：表示EMR-V2.4.0。</li>\n<li>20：表示EMR-V2.5.0。</li>\n<li>22：表示CLICKHOUSE-V1.2.0。</li>\n<li>24：表示EMR-TianQiong-V1.0.0。</li>\n<li>25：表示EMR-V3.1.0。</li>\n<li>26：表示DORIS-V1.0.0。</li>\n<li>27：表示KAFKA-V1.0.0。</li>\n<li>28：表示EMR-V3.2.0。</li>\n<li>29：表示EMR-V2.5.1。</li>\n<li>30：表示EMR-V2.6.0。</li>",
+          "example": "4",
+          "member": "uint64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "example": "无",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
+          "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
+          "member": "string",
+          "name": "Software",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点资源的规格。",
+          "example": "无",
+          "member": "NewResourceSpec",
+          "name": "ResourceSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SupportHA",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
+          "example": "emr测试",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "开启COS访问需要设置的参数。",
+          "example": "无",
+          "member": "COSSettings",
+          "name": "COSSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
+          "example": "sg-xxxxxxxxxx",
+          "member": "string",
+          "name": "SgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
+          "example": "无",
+          "member": "PreExecuteFileSettings",
+          "name": "PreExecutedFileSettings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "包年包月实例是否自动续费。取值范围：\n<li>0：表示不自动续费。</li>\n<li>1：表示自动续费。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端Token。",
+          "example": "sdcdwxxxws",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
+          "example": "NEED_MASTER_WAN",
+          "member": "string",
+          "name": "NeedMasterWan",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要开启外网远程登录，即22号端口。在SgId不为空时，该参数无效。",
+          "example": "22",
+          "member": "int64",
+          "name": "RemoteLoginAtCreate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启安全集群。0表示不开启，非0表示开启。",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckSecurity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "访问外部文件系统。",
+          "example": "fs",
+          "member": "string",
+          "name": "ExtendFsField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/213/15486 ) 的返回值中的SecurityGroupId字段来获取。",
+          "example": "[\"disa-xxxxx\"]",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群维度CBS加密盘，默认0表示不加密，1表示加密",
+          "example": "0",
+          "member": "uint64",
+          "name": "CbsEncrypt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "example": "EMR_EXIT_META",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EMR-MetaDB实例",
+          "example": "instdxxxxx",
+          "member": "string",
+          "name": "UnifyMetaInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义MetaDB信息",
+          "example": "无",
+          "member": "CustomMetaInfo",
+          "name": "MetaDBInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义应用角色。",
+          "example": "roleName",
+          "member": "string",
+          "name": "ApplicationRole",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-xxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomMetaInfo": {
+      "document": "用户自建Hive-MetaDB信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义MetaDB的JDBC连接，请以 jdbc:mysql:// 开头",
+          "example": "jdbc:mysql://ip:port/hive",
+          "member": "string",
+          "name": "MetaDataJdbcUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义MetaDB用户名",
+          "example": "userName",
+          "member": "string",
+          "name": "MetaDataUser",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义MetaDB密码",
+          "example": "pwd",
+          "member": "string",
+          "name": "MetaDataPass",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeClusterNodesRequest": {
+      "document": "DescribeClusterNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
+          "example": "emr-6deluvd4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点标识，取值为：\n<li>all：表示获取全部类型节点，cdb信息除外。</li>\n<li>master：表示获取master节点信息。</li>\n<li>core：表示获取core节点信息。</li>\n<li>task：表示获取task节点信息。</li>\n<li>common：表示获取common节点信息。</li>\n<li>router：表示获取router节点信息。</li>\n<li>db：表示获取正常状态的cdb信息。</li>\n<li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>\n<li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>\n注意：现在只支持以上取值，输入其他值会导致错误。",
+          "example": "all",
+          "member": "string",
+          "name": "NodeFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页编号，默认值为0，表示第一页。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页返回数量，默认值为100，最大值为100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源类型:支持all/host/pod，默认为all",
+          "example": "all",
+          "member": "string",
+          "name": "HardwareResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持搜索的字段",
+          "example": "无",
+          "member": "SearchItem",
+          "name": "SearchFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodesResponse": {
+      "document": "DescribeClusterNodes返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的节点总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeHardwareInfo",
+          "name": "NodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareResourceTypeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmQuotaRequest": {
+      "document": "DescribeCvmQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EMR集群ID",
+          "example": "emr-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区ID",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmQuotaResponse": {
+      "document": "DescribeCvmQuota返回参数结构体",
+      "members": [
+        {
+          "document": "后付费配额列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "QuotaEntity",
+          "name": "PostPaidQuotaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "竞价实例配额列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "QuotaEntity",
+          "name": "SpotPaidQuotaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "eks配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "PodSaleSpec",
+          "name": "EksQuotaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRenewNodesRequest": {
+      "document": "DescribeInstanceRenewNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
+          "example": "emr-6deluvd4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRenewNodesResponse": {
+      "document": "DescribeInstanceRenewNodes返回参数结构体",
+      "members": [
+        {
+          "document": "查询到的节点总数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RenewInstancesInfo",
+          "name": "NodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
+          "member": "string",
+          "name": "MetaInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群筛选策略。取值范围：\n<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>\n<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>\n<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>",
+          "example": "clusterList",
+          "member": "string",
+          "name": "DisplayStrategy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。",
+          "example": "[\"emr-p9f700x8\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页编号，默认值为0，表示第一页。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页返回数量，默认值为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "建议必填-1，表示拉取所有项目下的集群。\n不填默认值为0，表示拉取默认项目下的集群。\n实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段。取值范围：\n<li>clusterId：表示按照实例ID排序。</li>\n<li>addTime：表示按照实例创建时间排序。</li>\n<li>status：表示按照实例的状态码排序。</li>",
+          "example": "clusterid",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照OrderField升序或者降序进行排序。取值范围：\n<li>0：表示降序。</li>\n<li>1：表示升序。</li>默认值为0。\u0007",
+          "example": "0",
+          "member": "int64",
+          "name": "Asc",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "EMR实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterInstancesInfo",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例关联的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFlowRequest": {
+      "document": "DescribeJobFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流程任务Id，RunJobFlow接口返回的值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobFlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobFlowResponse": {
+      "document": "DescribeJobFlow返回参数结构体",
+      "members": [
+        {
+          "document": "流程任务状态，可以为以下值：\nJobFlowInit，流程任务初始化。\nJobFlowResourceApplied，资源申请中，通常为JobFlow需要新建集群时的状态。\nJobFlowResourceReady，执行流程任务的资源就绪。\nJobFlowStepsRunning，流程任务步骤已提交。\nJobFlowStepsComplete，流程任务步骤已完成。\nJobFlowTerminating，流程任务所需资源销毁中。\nJobFlowFinish，流程任务已完成。",
+          "example": "JobFlowFinish",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程任务步骤结果。",
+          "example": "无",
+          "member": "JobResult",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiskGroup": {
+      "document": "磁盘组。",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘规格。",
+          "member": "DiskSpec",
+          "name": "Spec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同类型磁盘数量。",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DiskSpec": {
+      "document": "磁盘描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘类型。\nLOCAL_BASIC  本地盘。\nCLOUD_BASIC 云硬盘。\nLOCAL_SSD 本地SSD。\nCLOUD_SSD 云SSD。\nCLOUD_PREMIUM 高效云盘。\nCLOUD_HSSD 增强型云SSD。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘大小，单位GB。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DynamicPodSpec": {
+      "document": "POD浮动规格",
+      "members": [
+        {
+          "default": "",
+          "document": "需求最小cpu核数",
+          "example": "0.1234",
+          "member": "float",
+          "name": "RequestCpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最大cpu核数",
+          "example": "1.2345",
+          "member": "float",
+          "name": "LimitCpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最小memory，单位MB",
+          "example": "1234.5678",
+          "member": "float",
+          "name": "RequestMemory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需求最大memory，单位MB",
+          "example": "8765.4321",
+          "member": "float",
+          "name": "LimitMemory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmrProductConfigOutter": {
+      "document": "EMR产品配置",
+      "members": [
+        {
+          "default": "",
+          "document": "软件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "SoftInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Master节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MasterNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Core节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "CoreNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Task节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "TaskNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Common节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "ComNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Master节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "OutterResource",
+          "name": "MasterResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Core节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "OutterResource",
+          "name": "CoreResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Task节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "OutterResource",
+          "name": "TaskResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Common节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "OutterResource",
+          "name": "ComResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否使用COS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "OnCos",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Router节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "RouterNodeSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持HA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportHA",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持安全模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SecurityOn",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"111\"",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启Cbs加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "CbsEncrypt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义应用角色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "ApplicationRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-3xxx\"]",
+          "member": "string",
+          "name": "SecurityGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Execution": {
+      "document": "执行动作。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务类型，目前支持以下类型。\n1. “MR”，将通过hadoop jar的方式提交。\n2. \"HIVE\"，将通过hive -f的方式提交。\n3. \"SPARK\"，将通过spark-submit的方式提交。",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务参数，提供除提交指令以外的参数。",
+          "member": "string",
+          "name": "Args",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HostVolumeContext": {
+      "document": "Pod HostPath挂载方式描述",
+      "members": [
+        {
+          "default": "",
+          "document": "Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VolumePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InquirePriceRenewEmrRequest": {
+      "document": "InquirePriceRenewEmr请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "待续费集群ID列表。",
+          "example": "emr-vm-jv1s4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewEmrResponse": {
+      "document": "InquirePriceRenewEmr返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "898.9",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "596.54",
+          "member": "float",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateInstanceRequest": {
+      "document": "InquiryPriceCreateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "询价的节点规格。",
+          "member": "NewResourceSpec",
+          "name": "ResourceSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。\u0007</li>",
+          "member": "uint64",
+          "name": "SupportHA",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>",
+          "member": "string",
+          "name": "Software",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EMR-MetaDB实例",
+          "member": "string",
+          "name": "UnifyMetaInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义MetaDB信息",
+          "member": "CustomMetaInfo",
+          "name": "MetaDBInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>",
+          "member": "uint64",
+          "name": "ProductId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateInstanceResponse": {
+      "document": "InquiryPriceCreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "OriginalCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DiscountCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeUnit",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "购买实例的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TimeSpan",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewInstanceRequest": {
+      "document": "InquiryPriceRenewInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否按量转包年包月。0：否，1：是。",
+          "example": "1",
+          "member": "int64",
+          "name": "ModifyPayMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewInstanceResponse": {
+      "document": "InquiryPriceRenewInstance返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "898.9",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "596.54",
+          "member": "float",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例续费的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceScaleOutInstanceRequest": {
+      "document": "InquiryPriceScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。",
+          "example": "100003",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "emr-3ida6zmi",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩容的Core节点数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CoreCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容的Task节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TaskCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩容的Router节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RouterCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容的Master节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MasterCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceScaleOutInstanceResponse": {
+      "document": "InquiryPriceScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiscountCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "询价的节点规格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceResource",
+          "name": "PriceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceUpdateInstanceRequest": {
+      "document": "InquiryPriceUpdateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "变配的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "变配的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点变配的目标配置。",
+          "member": "UpdateInstanceSettings",
+          "name": "UpdateSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
+          "member": "string",
+          "name": "Currency",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceUpdateInstanceResponse": {
+      "document": "InquiryPriceUpdateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "OriginalCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DiscountCost",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "变配的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TimeUnit",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "变配的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TimeSpan",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceChargePrepaid": {
+      "document": "实例预付费参数，只有在付费类型为PREPAID时生效。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "包年包月时间，默认为1，单位：月。\n取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费，默认为否。",
+          "member": "bool",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobFlowResource": {
+      "document": "机器资源描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "机器类型描述。",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型描述，可参考CVM的该含义。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签KV对。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘描述列表。",
+          "member": "DiskGroup",
+          "name": "DiskGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobFlowResourceSpec": {
+      "document": "流程作业资源描述",
+      "members": [
+        {
+          "default": "",
+          "document": "主节点数量。",
+          "member": "int64",
+          "name": "MasterCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主节点配置。",
+          "member": "JobFlowResource",
+          "name": "MasterResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Core节点数量",
+          "member": "int64",
+          "name": "CoreCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Core节点配置。",
+          "member": "JobFlowResource",
+          "name": "CoreResourceSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Task节点数量。",
+          "member": "int64",
+          "name": "TaskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Common节点数量。",
+          "member": "int64",
+          "name": "CommonCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Task节点配置。",
+          "member": "JobFlowResource",
+          "name": "TaskResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Common节点配置。",
+          "member": "JobFlowResource",
+          "name": "CommonResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobResult": {
+      "document": "任务步骤结果描述",
+      "members": [
+        {
+          "default": "",
+          "document": "任务步骤名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务步骤失败时的处理策略，可以为以下值：\n\"CONTINUE\"，跳过当前失败步骤，继续后续步骤。\n“TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。\n“CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActionOnFailure",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前步骤的状态，可以为以下值：\n“JobFlowStepStatusInit”，初始化状态，等待执行。\n“JobFlowStepStatusRunning”，任务步骤正在执行。\n“JobFlowStepStatusFailed”，任务步骤执行失败。\n“JobFlowStepStatusSucceed”，任务步骤执行成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "JobState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginSettings": {
+      "document": "登录设置",
+      "members": [
+        {
+          "default": "",
+          "document": "Password",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Public Key",
+          "member": "string",
+          "name": "PublicKeyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MetaDbInfo": {
+      "document": "元数据库信息",
+      "members": [
+        {
+          "default": "",
+          "document": "元数据类型。",
+          "member": "string",
+          "name": "MetaType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统一元数据库实例ID。",
+          "member": "string",
+          "name": "UnifyMetaInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自建元数据库信息。",
+          "member": "CustomMetaInfo",
+          "name": "MetaDBInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MultiDisk": {
+      "document": "多云盘参数",
+      "members": [
+        {
+          "default": "",
+          "document": "云盘类型\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘大小",
+          "example": "20000",
+          "member": "int64",
+          "name": "Volume",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该类型云盘个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MultiDiskMC": {
+      "document": "多云盘参数",
+      "members": [
+        {
+          "default": "",
+          "document": "该类型云盘个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Volume",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NewResourceSpec": {
+      "document": "资源描述",
+      "members": [
+        {
+          "default": "",
+          "document": "描述Master节点资源",
+          "example": "无",
+          "member": "Resource",
+          "name": "MasterResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述Core节点资源",
+          "example": "无",
+          "member": "Resource",
+          "name": "CoreResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述Task节点资源",
+          "example": "无",
+          "member": "Resource",
+          "name": "TaskResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Master节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "MasterCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Core节点数量",
+          "example": "3",
+          "member": "int64",
+          "name": "CoreCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Task节点数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述Common节点资源",
+          "example": "无",
+          "member": "Resource",
+          "name": "CommonResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Common节点数量",
+          "example": "3",
+          "member": "int64",
+          "name": "CommonCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeHardwareInfo": {
+      "document": "节点硬件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "master节点绑定外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "WanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Flag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点内存描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MemDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点所在region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点所在Zone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "释放时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FreeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DiskSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NameTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点部署服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Services",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RootSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CdbIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CdbPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "HwDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘容量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HwDiskSizeDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "HwMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存容量描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HwMemSizeDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EmrResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DeviceClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持变配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Mutable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多云盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MultiDiskMC",
+          "name": "MCMultiDisk",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdbInfo",
+          "name": "CdbNodeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "此节点是否可销毁，1可销毁，0不可销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Destroyable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是自动扩缩容节点，0为普通节点，1为自动扩缩容节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型, host/pod\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HardwareResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否浮动规格，1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDynamicSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "浮动规格值json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DynamicPodSpec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持变更计费类型 1是，0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SupportModifyPayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutterResource": {
+      "document": "资源详情",
+      "members": [
+        {
+          "default": "",
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RootSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PersistentVolumeContext": {
+      "document": "Pod PVC存储方式描述",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘大小，单位为GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘类型。CLOUD_PREMIUM;CLOUD_SSD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Placement": {
+      "document": "描述集群实例位置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例所属项目ID。该参数可以通过调用 DescribeProject 的返回值中的 projectId 字段来获取。填0为默认项目。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用 DescribeZones 的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PodParameter": {
+      "document": "POD自定义权限和自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "TKE或EKS集群ID",
+          "example": "cls-1234abcd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义权限\n如：\n{\n  \"apiVersion\": \"v1\",\n  \"clusters\": [\n    {\n      \"cluster\": {\n        \"certificate-authority-data\": \"xxxxxx==\",\n        \"server\": \"https://xxxxx.com\"\n      },\n      \"name\": \"cls-xxxxx\"\n    }\n  ],\n  \"contexts\": [\n    {\n      \"context\": {\n        \"cluster\": \"cls-xxxxx\",\n        \"user\": \"100014xxxxx\"\n      },\n      \"name\": \"cls-a44yhcxxxxxxxxxx\"\n    }\n  ],\n  \"current-context\": \"cls-a4xxxx-context-default\",\n  \"kind\": \"Config\",\n  \"preferences\": {},\n  \"users\": [\n    {\n      \"name\": \"100014xxxxx\",\n      \"user\": {\n        \"client-certificate-data\": \"xxxxxx\",\n        \"client-key-data\": \"xxxxxx\"\n      }\n    }\n  ]\n}",
+          "example": "{   \"apiVersion\": \"v1\",   \"clusters\": [     {       \"cluster\": {",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数\n如：\n{\n    \"apiVersion\": \"apps/v1\",\n    \"kind\": \"Deployment\",\n    \"metadata\": {\n      \"name\": \"test-deployment\",\n      \"labels\": {\n        \"app\": \"test\"\n      }\n    },\n    \"spec\": {\n      \"replicas\": 3,\n      \"selector\": {\n        \"matchLabels\": {\n          \"app\": \"test-app\"\n        }\n      },\n      \"template\": {\n        \"metadata\": {\n          \"annotations\": {\n            \"your-organization.com/department-v1\": \"test-example-v1\",\n            \"your-organization.com/department-v2\": \"test-example-v2\"\n          },\n          \"labels\": {\n            \"app\": \"test-app\",\n            \"environment\": \"production\"\n          }\n        },\n        \"spec\": {\n          \"nodeSelector\": {\n            \"your-organization/node-test\": \"test-node\"\n          },\n          \"containers\": [\n            {\n              \"name\": \"nginx\",\n              \"image\": \"nginx:1.14.2\",\n              \"ports\": [\n                {\n                  \"containerPort\": 80\n                }\n              ]\n            }\n          ],\n          \"affinity\": {\n            \"nodeAffinity\": {\n              \"requiredDuringSchedulingIgnoredDuringExecution\": {\n                \"nodeSelectorTerms\": [\n                  {\n                    \"matchExpressions\": [\n                      {\n                        \"key\": \"disk-type\",\n                        \"operator\": \"In\",\n                        \"values\": [\n                          \"ssd\",\n                          \"sas\"\n                        ]\n                      },\n                      {\n                        \"key\": \"cpu-num\",\n                        \"operator\": \"Gt\",\n                        \"values\": [\n                          \"6\"\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            }\n          }\n        }\n      }\n    }\n  }",
+          "example": "{   \"apiVersion\": \"apps/v1\",   \"kind\": \"Deployment\",   \"metadata",
+          "member": "string",
+          "name": "Parameter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PodSaleSpec": {
+      "document": "Pod资源售卖规格",
+      "members": [
+        {
+          "default": "",
+          "document": "可售卖的资源规格，仅为以下值:\"TASK\",\"CORE\",\"MASTER\",\"ROUTER\"。",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu核数。",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存数量，单位为GB。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格资源可申请的最大数量。",
+          "member": "uint64",
+          "name": "Number",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PodSpec": {
+      "document": "扩容容器资源时的资源描述",
+      "members": [
+        {
+          "default": "",
+          "document": "外部资源提供者的标识符，例如\"cls-a1cd23fa\"。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResourceProviderIdentifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部资源提供者类型，例如\"tke\",当前仅支持\"tke\"。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResourceProviderType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源的用途，即节点类型，当前仅支持\"TASK\"。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU核数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存大小，单位为GB。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用",
+          "example": "[]",
+          "member": "string",
+          "name": "DataVolumes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Eks集群-CPU类型，当前支持\"intel\"和\"amd\"",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Pod节点数据目录挂载信息。",
+          "example": "[]",
+          "member": "PodVolume",
+          "name": "PodVolumes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否浮动规格，1是，0否",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsDynamicSpec",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "浮动规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DynamicPodSpec",
+          "name": "DynamicPodSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代表vpc网络唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代表vpc子网唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PodState": {
+      "document": "单个pod状态",
+      "members": [
+        {
+          "default": "",
+          "document": "pod的名称",
+          "example": "1234-5677-3352-2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod uuid",
+          "example": "1234-5677-3352-2",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod的状态",
+          "example": "POD_STATE_DELETED",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod处于该状态原因",
+          "example": "pod is deleted",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod所属集群",
+          "example": "emr-cluster",
+          "member": "string",
+          "name": "OwnerCluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod内存大小",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PodVolume": {
+      "document": "Pod的存储设备描述信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "存储类型，可为\"pvc\"，\"hostpath\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VolumeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当VolumeType为\"pvc\"时，该字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PersistentVolumeContext",
+          "name": "PVCVolume",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当VolumeType为\"hostpath\"时，该字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HostVolumeContext",
+          "name": "HostVolume",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PreExecuteFileSettings": {
+      "document": "预执行脚本配置",
+      "members": [
+        {
+          "default": "",
+          "document": "脚本在COS上路径，已废弃",
+          "example": "emr/emr_init.sh",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行脚本参数",
+          "example": "无",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS的Bucket名称，已废弃",
+          "example": "starmaker-research-xxxx",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS的Region名称，已废弃",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS的Domain数据，已废弃",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "RunOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "resourceAfter 或 clusterAfter",
+          "example": "resourceAfter",
+          "member": "string",
+          "name": "WhenRun",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脚本文件名，已废弃",
+          "example": "无",
+          "member": "string",
+          "name": "CosFileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脚本的cos地址",
+          "example": "cos://xxxxx",
+          "member": "string",
+          "name": "CosFileURI",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos的SecretId",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CosSecretId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cos的SecretKey",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "CosSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos的appid，已废弃",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PriceResource": {
+      "document": "询价资源",
+      "members": [
+        {
+          "default": "",
+          "document": "需要的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RootSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "核心数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MultiDisk",
+          "name": "MultiDisks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "DiskNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地盘的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LocalDiskNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QuotaEntity": {
+      "document": "获取CVM配额",
+      "members": [
+        {
+          "default": "",
+          "document": "已使用配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainingQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewInstancesInfo": {
+      "document": "集群续费实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点资源ID",
+          "example": "emr-vm-wwwe2",
+          "member": "string",
+          "name": "EmrResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点",
+          "example": "1",
+          "member": "int64",
+          "name": "Flag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "example": "192.182.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内存描述",
+          "example": "8G",
+          "member": "string",
+          "name": "MemDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点核数",
+          "example": "4",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘大小",
+          "example": "100G",
+          "member": "string",
+          "name": "DiskSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "2021-02-01",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点规格",
+          "example": "CVM.S2",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘类型",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Resource": {
+      "document": "资源详情",
+      "members": [
+        {
+          "default": "",
+          "document": "节点规格描述，如CVM.SA2。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM.SA2",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储类型\n取值范围：\n<li>4：表示云SSD。</li>\n<li>5：表示高效云盘。</li>\n<li>6：表示增强型SSD云硬盘。</li>\n<li>11：表示吞吐型云硬盘。</li>\n<li>12：表示极速型SSD云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘类型\n取值范围：\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_BASIC：表示云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内存容量,单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "131072",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RootSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiDisk",
+          "name": "MultiDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格类型，如S2.MEDIUM8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S2.MEDIUM8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地盘数量，该字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LocalDiskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本地盘数量，如2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "DiskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RunJobFlowRequest": {
+      "document": "RunJobFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否新创建集群。\ntrue，新创建集群，则使用Instance中的参数进行集群创建。\nfalse，使用已有集群，则通过InstanceId传入。",
+          "example": "false",
+          "member": "bool",
+          "name": "CreateCluster",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "作业流程执行步骤。",
+          "example": "无",
+          "member": "Step",
+          "name": "Steps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业流程正常完成时，集群的处理方式，可选择:\nTerminate 销毁集群。\nReserve 保留集群。",
+          "example": "Terminate",
+          "member": "string",
+          "name": "InstancePolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只有CreateCluster为true时生效，目前只支持EMR版本，例如EMR-2.2.0，不支持ClickHouse和Druid版本。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效。\ntrue 表示安装kerberos，false表示不安装kerberos。",
+          "example": "无",
+          "member": "bool",
+          "name": "SecurityClusterFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效。\n新建集群时，要安装的软件列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Software",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引导脚本。",
+          "example": "无",
+          "member": "BootstrapAction",
+          "name": "BootstrapActions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定配置创建集群。",
+          "example": "无",
+          "member": "Configuration",
+          "name": "Configurations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业日志保存地址。",
+          "example": "无",
+          "member": "string",
+          "name": "LogUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为false时生效。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义应用角色，大数据应用访问外部服务时使用的角色，默认为\"EME_QCSRole\"。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重入标签，用来可重入检查，防止在一段时间内，创建相同的流程作业。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只在CreateCluster为true时生效，使用该配置创建集群。",
+          "example": "无",
+          "member": "ClusterSetting",
+          "name": "Instance",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RunJobFlowResponse": {
+      "document": "RunJobFlow返回参数结构体",
+      "members": [
+        {
+          "document": "作业流程ID。",
+          "example": "42",
+          "member": "int64",
+          "name": "JobFlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceRequest": {
+      "document": "ScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "emr-5n3l5c83",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端Token。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引导操作脚本设置。",
+          "example": "无",
+          "member": "PreExecuteFileSettings",
+          "name": "PreExecutedFileSettings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扩容的Task节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TaskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容的Core节点数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CoreCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容时不需要安装的进程。",
+          "example": "[]",
+          "member": "uint64",
+          "name": "UnNecessaryNodeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扩容的Router节点数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RouterCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "部署的服务。\n<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>\n<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
+          "example": "[]",
+          "member": "uint64",
+          "name": "SoftDeployInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "启动的进程。",
+          "example": "[]",
+          "member": "uint64",
+          "name": "ServiceNodeInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分散置放群组ID列表，当前仅支持指定一个。",
+          "example": "[]",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扩容节点绑定标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HardwareResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用Pod资源扩容时，指定的Pod规格以及来源等信息",
+          "example": "无",
+          "member": "PodSpec",
+          "name": "PodSpec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用clickhouse集群扩容时，选择的机器分组名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ClickHouseClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ClickHouseClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则扩容指定 yarn node label",
+          "example": "\"\"",
+          "member": "string",
+          "name": "YarnNodeLabel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "POD自定义权限和自定义参数",
+          "example": "无",
+          "member": "PodParameter",
+          "name": "PodParameter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "扩容的Master节点的数量。\n使用clickhouse集群扩容时，该参数不生效。\n使用kafka集群扩容时，该参数不生效。\n当HardwareResourceType=POD时，该参数不生效。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MasterCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容后是否启动服务，true：启动，false：不启动",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "StartServiceAfterScaleOut",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceResponse": {
+      "document": "ScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID。",
+          "example": "emr-5n3l5c83",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20200309357833\",\"20200309357834\",\"20200309357835\",\"20200309357836\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端Token。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ClientToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扩容流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "大订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchItem": {
+      "document": "搜索字段",
+      "members": [
+        {
+          "default": "",
+          "document": "支持搜索的类型",
+          "member": "string",
+          "name": "SearchType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持搜索的值",
+          "member": "string",
+          "name": "SearchValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Step": {
+      "document": "执行步骤",
+      "members": [
+        {
+          "default": "",
+          "document": "执行步骤名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行动作。",
+          "member": "Execution",
+          "name": "ExecutionStep",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行失败策略。\n1. TERMINATE_CLUSTER 执行失败时退出并销毁集群。\n2. CANCEL_AND_WAIT 执行失败时阻塞等待。\n3. CONTINUE 执行失败时跳过并执行后续步骤。",
+          "member": "string",
+          "name": "ActionOnFailure",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定执行Step时的用户名，非必须，默认为hadoop。",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SyncPodStateRequest": {
+      "document": "SyncPodState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EmrService中pod状态信息",
+          "example": "{”pod-1\"，”pod-1\"，““POD_STATE_DELETED”,\"pod is deleted\",\"1223456\"",
+          "member": "PodState",
+          "name": "Message",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncPodStateResponse": {
+      "document": "SyncPodState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "depart-xxx",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "Intelligent-xxx",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TerminateInstanceRequest": {
+      "document": "TerminateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销毁节点ID。该参数为预留参数，用户无需配置。",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstanceResponse": {
+      "document": "TerminateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateTasksRequest": {
+      "document": "TerminateTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateTasksResponse": {
+      "document": "TerminateTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceSettings": {
+      "document": "变配资源规格",
+      "members": [
+        {
+          "default": "",
+          "document": "内存容量，单位为G",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU核数",
+          "member": "uint64",
+          "name": "CPUCores",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器资源ID（EMR测资源标识）",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变配机器规格",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VPCSettings": {
+      "document": "VPC 参数",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Subnet ID",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

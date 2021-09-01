@@ -1,0 +1,129 @@
+{
+  "actions": {
+    "AssessQuality": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssessQuality\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LongImage\": false,\n        \"BlackAndWhite\": false,\n        \"SmallImage\": false,\n        \"BigImage\": true,\n        \"PureImage\": false,\n        \"ClarityScore\": 93,\n        \"AestheticScore\": 92,\n        \"RequestId\": \"bfd478e1-5c94-4e37-ad22-4a5224a09492\"\n    }\n}",
+        "title": "图像质量评估请求成功"
+      }
+    ],
+    "CropImage": [
+      {
+        "document": "输入一张图片，输出裁剪坐标结果",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CropImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Width\": 1100,\n    \"Height\": 880\n}",
+        "output": "{\n    \"Response\": {\n        \"X\": 0,\n        \"Y\": 110,\n        \"Width\": 1100,\n        \"Height\": 880,\n        \"OriginalWidth\": 1100,\n        \"OriginalHeight\": 1390,\n        \"CropResult\": 0,\n        \"RequestId\": \"bfd478e1-5c94-4e37-ad22-4a5224a09492\"\n    }\n}",
+        "title": "图像智能裁剪成功"
+      }
+    ],
+    "DetectCelebrity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectCelebrity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://n.sinaimg.cn/sinacn/20171026/52e7-fynhhay5373192.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Faces\": [\n            {\n                \"Name\": \"程潇\",\n                \"Labels\": [\n                    {\n                        \"FirstLabel\": \"娱乐明星\",\n                        \"SecondLabel\": \"歌手\"\n                    }\n                ],\n                \"BasicInfo\": \"中国女歌手\",\n                \"ID\": \"70004506\",\n                \"Confidence\": 61,\n                \"X\": 163,\n                \"Y\": 192,\n                \"Width\": 96,\n                \"Height\": 122\n            }\n        ],\n        \"Threshold\": {\n            \"FalseRate1Percent\": 80,\n            \"FalseRate5Permil\": 85,\n            \"FalseRate1Permil\": 90\n        },\n        \"RequestId\": \"393fa9e0-3827-4183-9fe7-68ed622028a1\"\n    }\n}",
+        "title": "单个公众人物识别示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectCelebrity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://a.hiphotos.baidu.com/image/pic/item/e61190ef76c6a7efcefee3c3f3faaf51f2de667e.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Faces\": [],\n        \"Threshold\": null,\n        \"RequestId\": \"fa73f07f-ecc8-48be-ada1-9534b64089b9\"\n    }\n}",
+        "title": "图片中无人脸示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectCelebrity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://detectproduct-1253284268.cos.ap-guangzhou.myqcloud.com/6b3c4866af0c03c6a87ff4c6a016e28b.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Faces\": [\n            {\n                \"Name\": \"吕凉\",\n                \"Labels\": [\n                    {\n                        \"FirstLabel\": \"娱乐明星\",\n                        \"SecondLabel\": \"影视明星\"\n                    }\n                ],\n                \"BasicInfo\": \"中国男演员\",\n                \"ID\": \"30058074\",\n                \"Confidence\": 100,\n                \"X\": 58,\n                \"Y\": 56,\n                \"Width\": 60,\n                \"Height\": 73\n            },\n            {\n                \"Name\": \"胡歌\",\n                \"Labels\": [\n                    {\n                        \"FirstLabel\": \"娱乐明星\",\n                        \"SecondLabel\": \"影视明星\"\n                    }\n                ],\n                \"BasicInfo\": \"中国男演员\",\n                \"ID\": \"40001288\",\n                \"Confidence\": 100,\n                \"X\": 177,\n                \"Y\": 46,\n                \"Width\": 52,\n                \"Height\": 68\n            },\n            {\n                \"Name\": \"许亚军\",\n                \"Labels\": [\n                    {\n                        \"FirstLabel\": \"娱乐明星\",\n                        \"SecondLabel\": \"影视明星\"\n                    }\n                ],\n                \"BasicInfo\": \"中国男演员\",\n                \"ID\": \"19992439\",\n                \"Confidence\": 100,\n                \"X\": 282,\n                \"Y\": 64,\n                \"Width\": 52,\n                \"Height\": 66\n            },\n            {\n                \"Name\": \"韩东君\",\n                \"Labels\": [\n                    {\n                        \"FirstLabel\": \"娱乐明星\",\n                        \"SecondLabel\": \"影视明星\"\n                    },\n                    {\n                        \"FirstLabel\": \"体育明星\",\n                        \"SecondLabel\": \"赛车\"\n                    }\n                ],\n                \"BasicInfo\": \"中国男演员、赛车手\",\n                \"ID\": \"40007144\",\n                \"Confidence\": 97,\n                \"X\": 382,\n                \"Y\": 37,\n                \"Width\": 55,\n                \"Height\": 72\n            }\n        ],\n        \"Threshold\": {\n            \"FalseRate1Percent\": 80,\n            \"FalseRate5Permil\": 85,\n            \"FalseRate1Permil\": 90\n        },\n        \"RequestId\": \"866f3d73-ead9-409a-9848-164d8d4e059c\"\n    }\n}",
+        "title": "多个公众人物识别示例"
+      }
+    ],
+    "DetectDisgust": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectDisgust\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Confidence\": 0.98,\n        \"Type\": \"蛇\",\n        \"RequestId\": \"40afdbfc-be4c-4530-bb1a-3f1683b05dba\"\n    }\n}",
+        "title": "恶心检测接口调用成功"
+      }
+    ],
+    "DetectLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Scenes\": [\n        \"WEB\",\n        \"CAMERA\",\n        \"ALBUM\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Name\": \"塔楼\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 81\n            },\n            {\n                \"Name\": \"夜晚\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 79\n            },\n            {\n                \"Name\": \"天际线\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市景观\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 72\n            },\n            {\n                \"Name\": \"都市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 69\n            }\n        ],\n        \"CameraLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 92\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 3\n            },\n            {\n                \"Name\": \"游乐园\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 2\n            },\n            {\n                \"Name\": \"大厦\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 1\n            },\n            {\n                \"Name\": \"桥\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 0\n            }\n        ],\n        \"AlbumLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 93\n            },\n            {\n                \"Name\": \"塔\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 82\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 5\n            }\n        ],\n        \"RequestId\": \"e6d685b1-d898-4dc9-a545-cfeb3a988da8\"\n    }\n}",
+        "title": "图像标签检测请求成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "图像标签检测请求失败"
+      }
+    ],
+    "DetectLabelBeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelBeta\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "图像标签检测请求失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelBeta\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Scenes\": [\n        \"WEB\",\n        \"CAMERA\",\n        \"ALBUM\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Name\": \"塔楼\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 81\n            },\n            {\n                \"Name\": \"夜晚\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 79\n            },\n            {\n                \"Name\": \"天际线\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市景观\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 72\n            },\n            {\n                \"Name\": \"都市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 69\n            }\n        ],\n        \"CameraLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 92\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 3\n            },\n            {\n                \"Name\": \"游乐园\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 2\n            },\n            {\n                \"Name\": \"大厦\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 1\n            },\n            {\n                \"Name\": \"桥\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 0\n            }\n        ],\n        \"AlbumLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 93\n            },\n            {\n                \"Name\": \"塔\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 82\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 5\n            }\n        ],\n        \"NoneCamLabels\": null,\n        \"LocationLabels\": null,\n        \"NewsLabels\": null,\n        \"RequestId\": \"e6d685b1-d898-4dc9-a545-cfeb3a988da8\"\n    }\n}",
+        "title": "图像标签检测请求成功"
+      }
+    ],
+    "DetectMisbehavior": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectMisbehavior\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Confidence\": 0.5,\n        \"Type\": \"赌博\",\n        \"RequestId\": \"seqqq948487\"\n    }\n}",
+        "title": "不良行为识别调用成功"
+      }
+    ],
+    "DetectProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectProduct\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://a.vpimg2.com/upload/merchandise/41498/CABBEEN-3030701301-1.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"Name\": \"男士西服套装\",\n                \"Parents\": \"服饰内衣-男装\",\n                \"Confidence\": 59,\n                \"XMin\": 336,\n                \"YMin\": 191,\n                \"XMax\": 799,\n                \"YMax\": 775\n            },\n            {\n                \"Name\": \"休闲鞋\",\n                \"Parents\": \"鞋靴-时尚女鞋\",\n                \"Confidence\": 40,\n                \"XMin\": 466,\n                \"YMin\": 1209,\n                \"XMax\": 695,\n                \"YMax\": 1377\n            }\n        ],\n        \"RequestId\": \"2bd4243f-4d26-4246-a5f4-0f2dbc730d62\"\n    }\n}",
+        "title": "商品识别检测请求成功"
+      }
+    ],
+    "DetectProductBeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectProductBeta\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionDetected\": [\n            {\n                \"Category\": \"家电数码\",\n                \"CategoryScore\": 0.894864857197,\n                \"Location\": {\n                    \"XMin\": 175,\n                    \"YMin\": 12,\n                    \"XMax\": 401,\n                    \"YMax\": 376\n                }\n            }\n        ],\n        \"ProductInfo\": {\n            \"FindSKU\": 1,\n            \"Location\": {\n                \"XMin\": 175,\n                \"YMin\": 12,\n                \"XMax\": 401,\n                \"YMax\": 376\n            },\n            \"Name\": \"手机\",\n            \"Brand\": \"iphone\",\n            \"Price\": \"￥7299\",\n            \"ProductCategory\": \"家电数码\",\n            \"Score\": 0.544267654419,\n            \"Image\": \"https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74\"\n        },\n        \"ProductInfoList\": [\n            {\n                \"FindSKU\": 1,\n                \"Location\": {\n                    \"XMin\": 175,\n                    \"YMin\": 12,\n                    \"XMax\": 401,\n                    \"YMax\": 376\n                },\n                \"Name\": \"手机\",\n                \"Brand\": \"iphone\",\n                \"Price\": \"￥7299\",\n                \"ProductCategory\": \"家电数码\",\n                \"Score\": 0.544267654419,\n                \"Image\": \"https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74\"\n            }\n        ],\n        \"RequestId\": \"2054720d-0c93-4028-9843-8fb9114ce2e2\"\n    }\n}",
+        "title": "商品识别-微信识物版接口调用成功"
+      }
+    ],
+    "EnhanceImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnhancedImage\": \"/9j/4AAQSkZJRgABAQAAAQABA...\",\n        \"RequestId\": \"75ad21c9-1db4-4032-9066-ab03e297349b\"\n    }\n}",
+        "title": "图像清晰度增强请求成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97c5502b-ecfd-498a-84f2-28de25a3c71c\"\n    }\n}",
+        "title": "图像清晰度增强下载失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://big.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1c397c8-5caf-44ce-975e-bf5e7c8242ef\"\n    }\n}",
+        "title": "文件过大"
+      }
+    ],
+    "RecognizeCar": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCar\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CarCoords\": [\n            {\n                \"X\": 513,\n                \"Y\": 651\n            },\n            {\n                \"X\": 513,\n                \"Y\": 441\n            },\n            {\n                \"X\": 780,\n                \"Y\": 441\n            },\n            {\n                \"X\": 780,\n                \"Y\": 651\n            }\n        ],\n        \"CarTags\": [\n            {\n                \"Serial\": \"途安\",\n                \"Brand\": \"大众\",\n                \"Type\": \"MPV\",\n                \"Color\": \"白\",\n                \"Confidence\": 93,\n                \"Year\": 2008,\n                \"CarLocation\": [\n                    {\n                        \"X\": 513,\n                        \"Y\": 651\n                    },\n                    {\n                        \"X\": 513,\n                        \"Y\": 441\n                    },\n                    {\n                        \"X\": 780,\n                        \"Y\": 441\n                    },\n                    {\n                        \"X\": 780,\n                        \"Y\": 651\n                    }\n                ]\n            },\n            {\n                \"Serial\": \"君越\",\n                \"Brand\": \"别克\",\n                \"Type\": \"中型车\",\n                \"Color\": \"银灰\",\n                \"Confidence\": 47,\n                \"Year\": 2009,\n                \"CarLocation\": [\n                    {\n                        \"X\": 45,\n                        \"Y\": 658\n                    },\n                    {\n                        \"X\": 45,\n                        \"Y\": 459\n                    },\n                    {\n                        \"X\": 313,\n                        \"Y\": 459\n                    },\n                    {\n                        \"X\": 313,\n                        \"Y\": 658\n                    }\n                ]\n            },\n            {\n                \"Serial\": \"神行者2\",\n                \"Brand\": \"路虎\",\n                \"Type\": \"中型SUV\",\n                \"Color\": \"黑\",\n                \"Confidence\": 13,\n                \"Year\": 2010,\n                \"CarLocation\": [\n                    {\n                        \"X\": 1013,\n                        \"Y\": 580\n                    },\n                    {\n                        \"X\": 1013,\n                        \"Y\": 433\n                    },\n                    {\n                        \"X\": 1202,\n                        \"Y\": 433\n                    },\n                    {\n                        \"X\": 1202,\n                        \"Y\": 580\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"81235fb9-d91e-4a40-91ac-9ef5675954a2\"\n    }\n}",
+        "title": "车辆识别示例代码"
+      }
+    ]
+  },
+  "version": "1.0"
+}

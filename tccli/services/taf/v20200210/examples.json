@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "DetectFraudKOL": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=DetectFraudKOL\r\n&BspData.DataList.0.Type=1&BspData.DataList.0.Id=dgxyx0769&BspData.DataList.0.Name=testname&BspData.DataList.0.Phone=15718322162&BspData.DataList.0.AgentInfo=kol_agent\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"Id\": \"dgxyx0769\",\n                    \"IsCheck\": 1,\n                    \"FraudPScore\": 23,\n                    \"EvilPScore\": 56\n                }\n            ]\n        },\n        \"RequestId\": \"19f4cd87-29b3-4fac-bf36-62cd7e785e27\"\n    }\n}",
+        "title": "DetectFraudKOL"
+      }
+    ],
+    "EnhanceTaDegree": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=EnhanceTaDegree\r\n&BspData.Seq=13169423425&BspData.OsType=1&BspData.ImeiMd5=bfd81ee3ed27ad31c95ca75e21365973&BspData.AgeFloor=23&BspData.AgeCeil=30&BspData.Gender=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"IsCheck\": 0,\n                \"IsMatch\": 0\n            }\n        },\n        \"RequestId\": \"d12af039-0a21-4519-ba88-f621b1850720\"\n    }\n}",
+        "title": "EnhanceTaDegree"
+      }
+    ],
+    "RecognizeCustomizedAudience": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeCustomizedAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"ModelId\": 5128,\n                    \"IsFound\": 1,\n                    \"Score\": 120\n                },\n                {\n                    \"ModelId\": 5129,\n                    \"IsFound\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "RecognizeCustomizedAudience"
+      }
+    ],
+    "RecognizeEffectiveFlow": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeEffectiveFlow\n&BusinessSecurityData.MsgPhone=13112345678\n&BusinessSecurityData.MsgSignature=oz5I********************GfVv\n&BusinessSecurityData.MsgContext=qw########wqer\n&BusinessSecurityData.MsgType=1\n&BusinessSecurityData.MsgSubType=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"Lable\": \"1\",\n                \"Score\": 10.0\n            }\n        },\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
+        "title": "RecognizeEffectiveFlow"
+      }
+    ],
+    "RecognizePreciseTargetAudience": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizePreciseTargetAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"ModelId\": 5128,\n                    \"IsFound\": 1,\n                    \"Score\": 120\n                },\n                {\n                    \"ModelId\": 5129,\n                    \"IsFound\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "RecognizePreciseTargetAudience"
+      }
+    ],
+    "RecognizeTargetAudience": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeTargetAudience\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\n&BspData.AccountType=2\n&BspData.ModelIdList.0=5128\n&BspData.ModelIdList.1=5129\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"xx\",\n            \"Code\": 0,\n            \"Value\": [\n                {\n                    \"IsFound\": 0,\n                    \"Score\": 0.0,\n                    \"ModelId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "RecognizeTargetAudience"
+      }
+    ],
+    "SendTrafficSecuritySmsMessage": [
+      {
+        "document": "",
+        "input": "https://taf.tencentcloudapi.com/?Action=SendTrafficSecuritySmsMessage\r\n&BspData.TaskId=4128\r\n&BspData.Mobiles.0=1382350****\r\n&BspData.Mobiles.1=1382351****\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "SendTrafficSecuritySmsMessage"
+      }
+    ]
+  },
+  "version": "1.0"
+}

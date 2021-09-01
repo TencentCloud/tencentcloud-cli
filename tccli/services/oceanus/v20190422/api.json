@@ -1,0 +1,2162 @@
+{
+  "actions": {
+    "CreateJob": {
+      "document": "新建作业接口，一个 AppId 最多允许创建1000个作业",
+      "input": "CreateJobRequest",
+      "name": "新建作业",
+      "output": "CreateJobResponse"
+    },
+    "CreateJobConfig": {
+      "document": "创建作业配置，一个作业最多有100个配置版本",
+      "input": "CreateJobConfigRequest",
+      "name": "创建作业配置",
+      "output": "CreateJobConfigResponse"
+    },
+    "CreateResource": {
+      "document": "创建资源接口",
+      "input": "CreateResourceRequest",
+      "name": "创建资源接口",
+      "output": "CreateResourceResponse"
+    },
+    "CreateResourceConfig": {
+      "document": "创建资源配置接口",
+      "input": "CreateResourceConfigRequest",
+      "name": "创建资源配置接口",
+      "output": "CreateResourceConfigResponse"
+    },
+    "DeleteResourceConfigs": {
+      "document": "删除资源版本",
+      "input": "DeleteResourceConfigsRequest",
+      "name": "删除资源版本",
+      "output": "DeleteResourceConfigsResponse"
+    },
+    "DeleteResources": {
+      "document": "删除资源接口",
+      "input": "DeleteResourcesRequest",
+      "name": "删除资源接口",
+      "output": "DeleteResourcesResponse"
+    },
+    "DeleteTableConfig": {
+      "document": "删除作业表配置",
+      "input": "DeleteTableConfigRequest",
+      "name": "删除作业表配置",
+      "output": "DeleteTableConfigResponse"
+    },
+    "DescribeJobConfigs": {
+      "document": "查询作业配置列表，一次最多查询100个",
+      "input": "DescribeJobConfigsRequest",
+      "name": "查询作业配置",
+      "output": "DescribeJobConfigsResponse"
+    },
+    "DescribeJobs": {
+      "document": "查询作业",
+      "input": "DescribeJobsRequest",
+      "name": "查询作业",
+      "output": "DescribeJobsResponse"
+    },
+    "DescribeResourceConfigs": {
+      "document": "描述资源配置接口",
+      "input": "DescribeResourceConfigsRequest",
+      "name": "描述资源配置接口",
+      "output": "DescribeResourceConfigsResponse"
+    },
+    "DescribeResourceRelatedJobs": {
+      "document": "获取资源关联作业信息",
+      "input": "DescribeResourceRelatedJobsRequest",
+      "name": "获取资源关联作业信息",
+      "output": "DescribeResourceRelatedJobsResponse"
+    },
+    "DescribeResources": {
+      "document": "描述资源接口",
+      "input": "DescribeResourcesRequest",
+      "name": "描述资源接口",
+      "output": "DescribeResourcesResponse"
+    },
+    "DescribeSystemResources": {
+      "document": "描述系统资源接口",
+      "input": "DescribeSystemResourcesRequest",
+      "name": "描述系统资源接口",
+      "output": "DescribeSystemResourcesResponse"
+    },
+    "RunJobs": {
+      "document": "批量启动或者恢复作业，批量操作数量上限20",
+      "input": "RunJobsRequest",
+      "name": "运行作业",
+      "output": "RunJobsResponse"
+    },
+    "StopJobs": {
+      "document": "批量停止作业，批量操作数量上限为20",
+      "input": "StopJobsRequest",
+      "name": "停止作业",
+      "output": "StopJobsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-04-22",
+    "api_brief": "用户可以使用云 API 来实现作业、资源的管理。",
+    "serviceNameCN": "流计算 Oceanus",
+    "serviceShortName": "oceanus"
+  },
+  "objects": {
+    "CreateJobConfigRequest": {
+      "document": "CreateJobConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "example": "cql-abcdefg",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主类",
+          "example": "com.tencent.cloud.test.WordCount",
+          "member": "string",
+          "name": "EntrypointClass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主类入参",
+          "example": "--conf Key=Value",
+          "member": "string",
+          "name": "ProgramArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "example",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源引用数组",
+          "example": "[]",
+          "member": "ResourceRef",
+          "name": "ResourceRefs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业默认并行度",
+          "example": "2",
+          "member": "uint64",
+          "name": "DefaultParallelism",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "系统参数",
+          "example": "[]",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "1: 作业配置达到上限之后，自动删除可删除的最早版本",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoDelete",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "作业使用的 COS 存储桶名",
+          "example": "example-oceanus-1257058918",
+          "member": "string",
+          "name": "COSBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否采集作业日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogCollect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "JobManager规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "JobManagerSpec",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "TaskManager规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "TaskManagerSpec",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobConfigResponse": {
+      "document": "CreateJobConfig返回参数结构体",
+      "members": [
+        {
+          "document": "作业配置版本号",
+          "example": "1",
+          "member": "uint64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobRequest": {
+      "document": "CreateJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业名称，允许输入长度小于等于50个字符的中文、英文、数字、-（横线）、_（下划线）、.（点），且符号必须半角字符。注意作业名不能和现有作业同名",
+          "example": "job_new",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业的类型，1 表示 SQL 作业，2 表示 JAR 作业",
+          "example": "2",
+          "member": "int64",
+          "name": "JobType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群的类型，1 表示共享集群，2 表示独享集群",
+          "example": "2",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当 ClusterType=2 时，必选，用来指定该作业提交的独享集群 ID",
+          "example": "cluster-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置每 CU 的内存规格，单位为 GB，支持 2、4、8、16（需申请开通白名单后使用）。默认为 4，即 1 CU 对应 4 GB 的运行内存",
+          "example": "4",
+          "member": "uint64",
+          "name": "CuMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "作业的备注信息，可以随意设置",
+          "example": "测试作业",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业名所属文件夹ID，根目录为\"root\"",
+          "example": "folder-xxxxxxxx",
+          "member": "string",
+          "name": "FolderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobResponse": {
+      "document": "CreateJob返回参数结构体",
+      "members": [
+        {
+          "document": "作业Id",
+          "example": "cql-qlpn5o2a",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceConfigRequest": {
+      "document": "CreateResourceConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "位置信息",
+          "member": "ResourceLoc",
+          "name": "ResourceLoc",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源描述信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1： 资源版本达到上限，自动删除最早可删除的版本",
+          "member": "int64",
+          "name": "AutoDelete",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceConfigResponse": {
+      "document": "CreateResourceConfig返回参数结构体",
+      "members": [
+        {
+          "document": "资源版本ID",
+          "member": "int64",
+          "name": "Version",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceRequest": {
+      "document": "CreateResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源位置",
+          "example": "[]",
+          "member": "ResourceLoc",
+          "name": "ResourceLoc",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型。目前只支持 JAR，取值为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源描述",
+          "example": "v1",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源版本描述",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceConfigRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceResponse": {
+      "document": "CreateResource返回参数结构体",
+      "members": [
+        {
+          "document": "资源ID",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源版本",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceConfigsRequest": {
+      "document": "DeleteResourceConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源版本数组",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceConfigVersions",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceConfigsResponse": {
+      "document": "DeleteResourceConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourcesRequest": {
+      "document": "DeleteResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除资源ID列表",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourcesResponse": {
+      "document": "DeleteResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableConfigRequest": {
+      "document": "DeleteTableConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业ID",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调试作业ID",
+          "member": "int64",
+          "name": "DebugId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表名",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableConfigResponse": {
+      "document": "DeleteTableConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobConfigsRequest": {
+      "document": "DescribeJobConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "example": "cql-xxxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业配置版本",
+          "example": "[]",
+          "member": "uint64",
+          "name": "JobConfigVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认20，最大100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "true 表示只展示草稿",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyDraft",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobConfigsResponse": {
+      "document": "DescribeJobConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "总的配置版本数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "作业配置列表",
+          "example": "[]",
+          "member": "JobConfig",
+          "name": "JobConfigSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsRequest": {
+      "document": "DescribeJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
+          "example": "[]",
+          "member": "string",
+          "name": "JobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId。每次请求的 Filters 个数的上限为 3，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsResponse": {
+      "document": "DescribeJobs返回参数结构体",
+      "members": [
+        {
+          "document": "作业总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "作业列表",
+          "example": "[]",
+          "member": "JobV1",
+          "name": "JobSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceConfigsRequest": {
+      "document": "DescribeResourceConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，仅当设置 Limit 时该参数有效",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回值大小，不填则返回全量数据",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源配置Versions集合",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceConfigVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "作业配置版本",
+          "example": "无",
+          "member": "int64",
+          "name": "JobConfigVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "作业ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceConfigsResponse": {
+      "document": "DescribeResourceConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "资源配置描述数组",
+          "example": "[]",
+          "member": "ResourceConfigItem",
+          "name": "ResourceConfigSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源配置数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceRelatedJobsRequest": {
+      "document": "DescribeResourceRelatedJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认0;   1： 按照作业版本创建时间降序",
+          "example": "0",
+          "member": "int64",
+          "name": "DESCByJobConfigCreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceRelatedJobsResponse": {
+      "document": "DescribeResourceRelatedJobs返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "关联作业信息",
+          "example": "[]",
+          "member": "ResourceRefJobInfo",
+          "name": "RefJobInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesRequest": {
+      "document": "DescribeResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。",
+          "example": "[\"resource-8udfak5k\",\"resource-8udfak5j\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，仅当设置 Limit 参数时有效",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "条数限制。如果不填，默认返回 20 条",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<li><strong>ResourceName</strong></li>\n<p style=\"padding-left: 30px;\">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style=\"padding-left: 30px;\">类型: String</p><p style=\"padding-left: 30px;\">必选: 否</p>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesResponse": {
+      "document": "DescribeResources返回参数结构体",
+      "members": [
+        {
+          "document": "资源详细信息集合",
+          "example": "无",
+          "member": "ResourceItem",
+          "name": "ResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "[]",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSystemResourcesRequest": {
+      "document": "DescribeSystemResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的资源ID数组",
+          "example": "[]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，仅当设置 Limit 参数时有效",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "条数限制，默认返回 20 条",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cluster-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSystemResourcesResponse": {
+      "document": "DescribeSystemResources返回参数结构体",
+      "members": [
+        {
+          "document": "资源详细信息集合",
+          "example": "[]",
+          "member": "SystemResourceItem",
+          "name": "ResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询作业列表时的过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "要过滤的字段",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "JobConfig": {
+      "document": "作业配置详情",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "example": "cql-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
+          "member": "string",
+          "name": "EntrypointClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主类入参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--config key=value",
+          "member": "string",
+          "name": "ProgramArgs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hello",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业配置创建时间",
+          "example": "2021-01-22 20:06:19",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业配置的版本号",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作业默认并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DefaultParallelism",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Property",
+          "name": "Properties",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ResourceRefDetail",
+          "name": "ResourceRefDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1132",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业配置上次启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-22 20:06:19",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业绑定的存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "oceanus-example",
+          "member": "string",
+          "name": "COSBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用日志收集，0-未启用，1-已启用，2-历史集群未设置日志集，3-历史集群已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogCollect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业的最大并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2048",
+          "member": "uint64",
+          "name": "MaxParallelism",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JobManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "JobManagerSpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TaskManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "TaskManagerSpec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "JobV1": {
+      "document": "Job详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "作业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业类型，1：sql作业，2：Jar作业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业状态，1：未初始化，2：未发布，3：操作中，4：运行中，5：停止，6：暂停，-1：故障\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
+          "member": "string",
+          "name": "StopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-11 16:44:44",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业累计运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13864986",
+          "member": "int64",
+          "name": "TotalRunMillis",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作错误提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "LastOpResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最新配置版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "LatestJobConfigVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已发布的配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PublishedJobConfigVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RunningCuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "CuMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行状态时表示单次运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124",
+          "member": "int64",
+          "name": "CurrentRunMillis",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业所在的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业管理WEB UI 入口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://175.24.255.193//cql-czvy480r-78/?defaultToken=0",
+          "member": "string",
+          "name": "WebUIUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SchedulerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作业所在集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "细粒度下的运行的CU数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "RunningCu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Property": {
+      "document": "系统配置属性",
+      "members": [
+        {
+          "default": "",
+          "document": "系统配置的Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统配置的Value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ResourceConfigItem": {
+      "document": "描述资源配置的返回参数",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所属地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所属AppId",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号Uin",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子账号Uin",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源位置描述",
+          "member": "ResourceLoc",
+          "name": "ResourceLoc",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源版本",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源描述",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源状态：0: 资源同步中，1:资源已就绪\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联作业个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RefJobCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceItem": {
+      "document": "资源详细描述",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源位置",
+          "member": "ResourceLoc",
+          "name": "ResourceLoc",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号Uin",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子账号Uin",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源最后更新时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源的资源版本ID",
+          "member": "int64",
+          "name": "LatestResourceConfigVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VersionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联作业数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RefJobCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceLoc": {
+      "document": "资源位置描述",
+      "members": [
+        {
+          "default": "",
+          "document": "资源位置的存储类型，目前只支持1:COS",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述资源位置的json",
+          "example": "{\"Bucket\":\"bucket1\",\"Path\":\"your/path\",\"Region\":\"ap-guangzhou\"}",
+          "member": "ResourceLocParam",
+          "name": "Param",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceLocParam": {
+      "document": "资源参数描述",
+      "members": [
+        {
+          "default": "",
+          "document": "资源bucket",
+          "example": "scs-online-1257058945",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源路径",
+          "example": "251008563/100000006047/flink-cos-fs-hadoop-oceanus-1-20210304112",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所在地域，如果不填，则使用Resource的Region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceRef": {
+      "document": "资源引用参数",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源版本ID，-1表示使用最新版本",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引用资源类型，例如主资源设置为1，代表main class所在的jar包",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ResourceRefDetail": {
+      "document": "JobConfig引用资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源版本，-1表示使用最新版本",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1: 主资源",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1: 系统内置资源",
+          "member": "int64",
+          "name": "SystemProvide",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceRefJobInfo": {
+      "document": "资源被Job 引用信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Job id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Job配置版本",
+          "member": "int64",
+          "name": "JobConfigVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源版本",
+          "member": "int64",
+          "name": "ResourceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunJobDescription": {
+      "document": "作业启动详情",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "example": "cql-6w8eab6f",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行类型，1：启动，2：恢复",
+          "example": "1",
+          "member": "int64",
+          "name": "RunType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点",
+          "example": "LATEST",
+          "member": "string",
+          "name": "StartMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前作业的某个版本",
+          "example": "1",
+          "member": "uint64",
+          "name": "JobConfigVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RunJobsRequest": {
+      "document": "RunJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量启动作业的描述信息",
+          "example": "无",
+          "member": "RunJobDescription",
+          "name": "RunJobDescriptions",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RunJobsResponse": {
+      "document": "RunJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopJobDescription": {
+      "document": "停止作业的描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "停止类型，1 停止 2 暂停",
+          "member": "int64",
+          "name": "StopType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StopJobsRequest": {
+      "document": "StopJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量停止作业的描述信息",
+          "member": "StopJobDescription",
+          "name": "StopJobDescriptions",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopJobsResponse": {
+      "document": "StopJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SystemResourceItem": {
+      "document": "系统资源返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource-9ds0xim0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "SampleProgram",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型。1 表示 JAR 包，目前只支持该值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源备注",
+          "example": "我的测试程序包",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源的最新版本",
+          "example": "2",
+          "member": "int64",
+          "name": "LatestResourceConfigVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

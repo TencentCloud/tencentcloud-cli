@@ -1,0 +1,368 @@
+{
+  "actions": {
+    "DescribeInstances": {
+      "document": "获取Cmem实例列表",
+      "input": "DescribeInstancesRequest",
+      "name": "获取Cmem实例列表",
+      "output": "DescribeInstancesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-18",
+    "api_brief": "介绍如何使用API对即云数据库Memcached进行操作，包括获取Cmem实例列表等。",
+    "serviceNameCN": "云数据库 Memcached",
+    "serviceShortName": "memcached"
+  },
+  "objects": {
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID组成的数组，数组下标从0开始",
+          "is_public": true,
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例名称组成的数组，数组下标从0开始",
+          "is_public": true,
+          "member": "string",
+          "name": "InstanceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例列表的大小，参数默认值100",
+          "is_public": true,
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，取Limit整数倍",
+          "is_public": true,
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "枚举范围： AddTimeStamp, InstanceName, ProjectId",
+          "is_public": true,
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0倒序，1正序，默认倒序",
+          "is_public": true,
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID组成的数组，数组下标从0开始",
+          "is_public": true,
+          "member": "int64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "搜索关键词：支持实例ID、实例名称、完整IP",
+          "is_public": true,
+          "member": "string",
+          "name": "SearchKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2",
+          "is_public": true,
+          "member": "string",
+          "name": "UniqSubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk",
+          "is_public": true,
+          "member": "string",
+          "name": "UniqVpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例服务IP组成的数组，数组下标从0开始",
+          "is_public": true,
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例详细信息列表",
+          "member": "InstanceListInfo",
+          "name": "InstanceList",
+          "type": "list"
+        },
+        {
+          "document": "实例数量",
+          "member": "int64",
+          "name": "TotalNum",
+          "type": "int"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceListInfo": {
+      "document": "实例详细信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "实例关联的标签信息",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "member": "datetime",
+          "name": "AddTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户AppID",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例是否设置自动续费标识，1：设置自动续费；0：未设置自动续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例内置ID",
+          "member": "int64",
+          "name": "CmemId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例截止时间",
+          "member": "datetime",
+          "name": "DeadlineTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期策略",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例描述信息",
+          "member": "string",
+          "name": "InstanceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例隔离时间",
+          "member": "datetime",
+          "name": "IsolateTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例修改时间",
+          "member": "datetime",
+          "name": "ModTimeStamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计费模式：0-按量计费，1-包年包月",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仓库ID",
+          "member": "int64",
+          "name": "SetId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例当前状态，0：待初始化；1：实例在流程中；2：实例运行中；-2：实例已隔离；-3：实例待删除",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vpc网络下子网id 如：46315",
+          "member": "int64",
+          "name": "SubnetId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vpc网络下子网id 如：subnet-fd3j6l35mm0",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc网络id 如：vpc-fk33jsf43kgv",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例vip",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc网络id 如：75101",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例端口号",
+          "member": "int64",
+          "name": "Vport",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "区域ID",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "TagInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,621 @@
+{
+  "actions": {
+    "ApplyAIModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyAIModel\n<公共请求参数>\n\n{\n    \"ProductId\": \"test\",\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "申请AI模型"
+      }
+    ],
+    "BatchUpdateFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchUpdateFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"2.0.0\",\n    \"FirmwareOriVersion\": \"1.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "批量更新固件"
+      }
+    ],
+    "BindCloudStorageUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindCloudStorageUser\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"UserId\": \"xx\",\n    \"ProductId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定云存用户"
+      }
+    ],
+    "CancelAIModelApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAIModelApplication\n<公共请求参数>\n\n{\n    \"ProductId\": \"test\",\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取消AI模型申请"
+      }
+    ],
+    "CancelDeviceFirmwareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelDeviceFirmwareTask\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"TaskId\": 10000,\n    \"DeviceName\": \"dev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "取消设备升级任务"
+      }
+    ],
+    "CheckForwardAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckForwardAuth\n<公共请求参数>\n\n{\n    \"QueueType\": 1,\n    \"Skey\": \"1231523awe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Endpoint\": \"12321514\",\n        \"QueueType\": 1,\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\",\n        \"Productid\": \"PTROMP3AOB\",\n        \"ErrMsg\": \"ok\",\n        \"Result\": 1\n    }\n}",
+        "title": "判断是否开启的转发的权限"
+      }
+    ],
+    "ControlDeviceData": [
+      {
+        "document": "设置设备数据",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ControlDeviceData\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&Data={\"brightness\":1}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
+        "title": "设置设备数据"
+      }
+    ],
+    "CreateAIDetection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIDetection\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_38675007_1\",\n    \"ModelId\": \"body_detect\",\n    \"EndTime\": 10,\n    \"StartTime\": 1,\n    \"ProductId\": \"098ASFA6ED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "发起AI推理请求"
+      }
+    ],
+    "CreateBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatch\n<公共请求参数>\n\n{\n    \"DevNum\": 1,\n    \"DevPre\": \"test\",\n    \"ProductId\": \"37MFSSRMZY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": 12,\n        \"RequestId\": \"c05cb7bb-6d8e-431f-bb38-b4a11597d885\"\n    }\n}",
+        "title": "创建批次"
+      }
+    ],
+    "CreateCOSCredentials": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCOSCredentials\n<公共请求参数>\n\n{\n    \"DeviceName\": \"device\",\n    \"ProductId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StoragePath\": \"path\",\n        \"SecretKey\": \"key\",\n        \"Token\": \"token\",\n        \"ExpiredTime\": 1625556088,\n        \"StorageBucket\": \"bucket\",\n        \"RequestId\": \"xx\",\n        \"SecretID\": \"id\",\n        \"StorageRegion\": \"gz\"\n    }\n}",
+        "title": "创建COS上传密钥"
+      }
+    ],
+    "CreateCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"yc1m3d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "CreateCloudStorage"
+      }
+    ],
+    "CreateDataForward": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=CreateDataForward\n&ProductId=TOIDHQ3AOQ,\n&ForwardAddr=[{\"forward\":{\"api\":\"http://127.0.0.1:1080/sub.php\"}}]\n&DataChose=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3315e4a3e97e\"\n    }\n}",
+        "title": "创建数据转发"
+      }
+    ],
+    "CreateForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"ProductID\": \"TIUHIHHII\",\n    \"MsgType\": 3,\n    \"QueueRegion\": \"ap-guangzhou\",\n    \"QueueType\": 1,\n    \"QueueName\": \"hub_test_topic\",\n    \"InstanceId\": \"ckafka-cy614eit\",\n    \"InstanceName\": \"iot_test_no_delete\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductID\": \"TDCZ2WD29Z\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"\",\n        \"Endpoint\": \"100004557990\",\n        \"Result\": 0,\n        \"QueueRegion\": \"ap-guangzhou\",\n        \"QueueName\": \"hub_test_topic\",\n        \"RoleName\": \"cmqIOTRole100004557990_1522374592\",\n        \"MsgType\": 3,\n        \"RoleID\": 16576,\n        \"ErrMsg\": \"\",\n        \"QueueType\": 1,\n        \"RequestId\": \"d5c0b643-8a2d-4f03-8207-40c4602c652d\"\n    }\n}",
+        "title": "创建转发规则"
+      }
+    ],
+    "CreateProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProduct\n<公共请求参数>\n\n{\n    \"ProductDescription\": \"test\",\n    \"Features\": [\n        \"test1\"\n    ],\n    \"ChipId\": \"chip1\",\n    \"ProductName\": \"test\",\n    \"DeviceType\": 1,\n    \"ProductVaildYears\": 1,\n    \"ChipManufactureId\": \"x86\",\n    \"ChipOs\": \"linux\",\n    \"EncryptionType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UpdateTime\": 1,\n            \"ProductDescription\": \"test\",\n            \"EncryptionType\": 2,\n            \"ChipId\": \"chip1\",\n            \"ProductName\": \"test\",\n            \"DeviceType\": 1,\n            \"ChipManufactureId\": \"x86\",\n            \"ChipOs\": \"linux\",\n            \"ProductId\": \"ZPDHQH7YHR\",\n            \"CreateTime\": 1612216201,\n            \"Features\": [\n                \"test1\"\n            ]\n        },\n        \"RequestId\": \"055cdcffeed5\"\n    }\n}",
+        "title": "创建产品"
+      }
+    ],
+    "CreateTaskFileUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFileUrl\n<公共请求参数>\n\n{\n    \"ProductId\": \"ABCDE12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://iothub-tasktest-****\",\n        \"FileName\": \"111111_ABCDE12345_1586228400\",\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "获取任务文件上传链接"
+      }
+    ],
+    "DeleteDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"ProductId\": \"WYILLHRQ4O\",\n    \"DeviceName\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"216abff3-4465-4a70-82bd-4b98504d9fea\"\n    }\n}",
+        "title": "删除设备"
+      }
+    ],
+    "DeleteFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "删除固件"
+      }
+    ],
+    "DeleteForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteForwardRule\n<公共请求参数>\n\n{\n    \"ProductID\": \"TDCZ2WD29Z\",\n    \"Skey\": \"d\",\n    \"QueueType\": 1,\n    \"QueueName\": \"hub_test_topic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"Endpoint\": \"100004557990\",\n        \"QueueName\": \"\",\n        \"ProductID\": \"TDCZ2WD29Z\",\n        \"RequestId\": \"0eefd3f4-cb3a-4793-8127-0905c69be0cd\"\n    }\n}",
+        "title": "删除转发规则"
+      }
+    ],
+    "DeleteProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"ZPDHQH7YHR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"055cdcffeed5\"\n    }\n}",
+        "title": "删除产品"
+      }
+    ],
+    "DescribeAIModelApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModelApplications\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"ProductId\": \"test\",\n    \"Limit\": 1,\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Applications\": [\n            {\n                \"Status\": 1,\n                \"ProductName\": \"name\",\n                \"ProductId\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "用户AI模型申请记录"
+      }
+    ],
+    "DescribeAIModelChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModelChannel\n<公共请求参数>\n\n{\n    \"ProductId\": \"test\",\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ForwardKey\": \"\",\n        \"ForwardAddress\": \"\",\n        \"CKafkaTopic\": \"test_ai_result\",\n        \"CKafkaRegion\": \"gz\",\n        \"RequestId\": \"xx\",\n        \"CKafkaInstance\": \"ckafka-insfeae\",\n        \"Type\": \"ckafka\"\n    }\n}",
+        "title": "查看AI推理结果推送配置"
+      }
+    ],
+    "DescribeAIModelUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModelUsage\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"ProductId\": \"test\",\n    \"Limit\": 1,\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageInfo\": [\n            {\n                \"Used\": 100,\n                \"CreateTime\": 1625555521,\n                \"Total\": 100000\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看AI模型资源包"
+      }
+    ],
+    "DescribeAIModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIModels\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"ModelId\": \"body_detect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"Status\": 1,\n                \"ApprovalTime\": 1625555521,\n                \"Used\": 0,\n                \"ApplyTime\": 1625555521,\n                \"ProductName\": \"test\",\n                \"Total\": 0,\n                \"ProductId\": \"testid\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取AI模型列表"
+      }
+    ],
+    "DescribeBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBalance\n<公共请求参数>\n\n{\n    \"AccountType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9374cc56-9c23-4de2-b3a0-e4e4bede435d\",\n        \"Balance\": 99990010\n    }\n}",
+        "title": "查询账户余额"
+      }
+    ],
+    "DescribeBalanceTransactions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBalanceTransactions\n<公共请求参数>\n\n{\n    \"Operation\": \"CreateOrder\",\n    \"Limit\": \"10\",\n    \"AccountType\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d6e94e0-4552-4ab3-86fe-1f767db2ceba\",\n        \"TotalCount\": 12,\n        \"Transactions\": [\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"a5b504ba-acab-43d1-8694-bcd5ce0f0802\",\n                \"Amount\": 90,\n                \"Balance\": 99990010,\n                \"OperationTime\": 1611830100\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"19f9d419-4db5-4cb5-9242-3f245dd1627c\",\n                \"Amount\": 900,\n                \"Balance\": 99990100,\n                \"OperationTime\": 1609147842\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"01bcd194-e330-478e-b7df-2912f52cfc80\",\n                \"Amount\": 900,\n                \"Balance\": 99991000,\n                \"OperationTime\": 1609147835\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"51ecad70-262b-4251-a536-345c1c0b31e9\",\n                \"Amount\": 900,\n                \"Balance\": 99991900,\n                \"OperationTime\": 1609147651\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"cc7c13d5-c838-4588-89be-6b354af48adf\",\n                \"Amount\": 900,\n                \"Balance\": 99992800,\n                \"OperationTime\": 1609147330\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"4a4db67c-9b9f-46e4-9eec-59cc0ed41ebc\",\n                \"Amount\": 900,\n                \"Balance\": 99993700,\n                \"OperationTime\": 1609147235\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"4f27575e-5002-492b-84ed-fca0a40b5f6c\",\n                \"Amount\": 900,\n                \"Balance\": 99994600,\n                \"OperationTime\": 1609146690\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"fdd0d195-a23a-4129-a22c-46a53c13a5c0\",\n                \"Amount\": 900,\n                \"Balance\": 99995500,\n                \"OperationTime\": 1609146311\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"849e416b-8d02-449f-ba17-4e479e5e3810\",\n                \"Amount\": 900,\n                \"Balance\": 99996400,\n                \"OperationTime\": 1609145974\n            },\n            {\n                \"AccountType\": 1,\n                \"Operation\": \"CreateOrder\",\n                \"DealId\": \"12a0ef42-ceec-4078-879b-a45d2d78b154\",\n                \"Amount\": 900,\n                \"Balance\": 99997300,\n                \"OperationTime\": 1609145857\n            }\n        ]\n    }\n}",
+        "title": "拉取账户流水"
+      }
+    ],
+    "DescribeBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 1,\n            \"DevNum\": 1,\n            \"UpdateTime\": 1612237826,\n            \"DevNumCreated\": 1,\n            \"DevPre\": \"test\",\n            \"UserId\": \"100004557990\",\n            \"CreateTime\": 1612237826,\n            \"BatchURL\": \"url\",\n            \"Id\": 12,\n            \"ProductId\": \"37MFSSRMZY\"\n        },\n        \"RequestId\": \"719fe65a\"\n    }\n}",
+        "title": "获取批次详情"
+      }
+    ],
+    "DescribeBatchs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchs\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ProductId\": \"37MFSSRMZY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Status\": 1,\n                \"DevNum\": 1,\n                \"UpdateTime\": 1612237826,\n                \"DevNumCreated\": 1,\n                \"DevPre\": \"test\",\n                \"UserId\": \"100004557990\",\n                \"CreateTime\": 1612237826,\n                \"BatchURL\": \"url\",\n                \"Id\": 1,\n                \"ProductId\": \"37MFSSRMZY\"\n            }\n        ],\n        \"RequestId\": \"719fe65a\"\n    }\n}",
+        "title": "获取批次列表"
+      }
+    ],
+    "DescribeCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCategory\n<公共请求参数>\n\n{\n    \"Id\": 113\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CategoryName\": \"video\",\n            \"CategoryKey\": \"video\",\n            \"ListOrder\": 1,\n            \"IconUrl\": \"url\",\n            \"IconUrlGrid\": \"grid\",\n            \"ParentId\": 0,\n            \"ModelTemplate\": \"{}\",\n            \"Id\": 113\n        },\n        \"RequestId\": \"d8de3a44\"\n    }\n}",
+        "title": "获取Category详情"
+      }
+    ],
+    "DescribeCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"UserId\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f889deee-70ec-4391-9b91-bb0f3f09b5a4\",\n        \"Status\": 1,\n        \"Type\": 1,\n        \"ExpireTime\": 1614670782,\n        \"ShiftDuration\": 86400,\n        \"UserId\": \"default\"\n    }\n}",
+        "title": "获取设备云存服务详情"
+      }
+    ],
+    "DescribeCloudStorageDate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageDate\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77d90d07-e48c-4cf0-bec5-afe5b137f80e\",\n        \"Data\": [\n            \"2021-01-14\"\n        ]\n    }\n}",
+        "title": "获取具有云存的日期"
+      }
+    ],
+    "DescribeCloudStorageEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageEvents\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"sp01_32820237_10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd3ad0f6-5b9f-47cd-83db-223356926772\",\n        \"Total\": 13,\n        \"Events\": [\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 842084401,\n                \"EndTime\": 842084401,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            },\n            {\n                \"StartTime\": 1614847697,\n                \"EndTime\": 167000000,\n                \"Thumbnail\": \"face_dection.jpg\",\n                \"EventId\": \"id1_data\"\n            }\n        ],\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoKAAAAAABxjxlFmlDUHBXME5XVE55eUdHMDUwZTV4WWcAAAAAAcaq9BZFeGQwTXM5X1RvNnFRMFNhRm1MNTlRAAAAAAHGqvYWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxk0BFnN5Q1hWNUp0UjcyZkZma2licmF3SmcAAAAAAcaq9RZFeGQwTXM5X1RvNnFRMFNhRm1MNTlRAAAAAAHGhvUWTzl2c3FBNVdUWnFSWXh4d012MGlzdwAAAAABxjxmFmlDUHBXME5XVE55eUdHMDUwZTV4WWcAAAAAAcaG9xZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGVbkWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxk0AFnN5Q1hWNUp0UjcyZkZma2licmF3SmcAAAAAAcaG-BZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGqvgWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxkfDFjdNdGYtaTR5UTBPNmFFcHkyUmlUVHcAAAAAAcY88hZOVnkwbjNfNFRqV2YwSWk1LWczc2V3AAAAAAHGhvYWTzl2c3FBNVdUWnFSWXh4d012MGlzdwAAAAABxqr3FkV4ZDBNczlfVG82cVEwU2FGbUw1OVEAAAAAAcaG-RZPOXZzcUE1V1RacVJZeHh3TXYwaXN3AAAAAAHGR8IWN010Zi1pNHlRME82YUVweTJSaVRUdwAAAAABxquSFnJKTjhzbk5mUmZxMVVCcVhpVUNTZFEAAAAAAcY8ZxZpQ1BwVzBOV1ROeXlHRzA1MGU1eFlnAAAAAAHGehEWTTRRa1JkRDhUek9qem1CSmNFbHhUZwAAAAABxqr5FkV4ZDBNczlfVG82cVEwU2FGbUw1OVEAAAAAAcZNBBZzeUNYVjVKdFI3MmZGZmtpYnJhd0pnAAAAAAHGVboWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxnoQFk00UWtSZEQ4VHpPanptQkpjRWx4VGcAAAAAAcarkxZySk44c25OZlJmcTFVQnFYaVVDU2RRAAAAAAHGTQIWc3lDWFY1SnRSNzJmRmZraWJyYXdKZwAAAAABxpZ4Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcY88xZOVnkwbjNfNFRqV2YwSWk1LWczc2V3AAAAAAHGTQMWc3lDWFY1SnRSNzJmRmZraWJyYXdKZwAAAAABxkfEFjdNdGYtaTR5UTBPNmFFcHkyUmlUVHcAAAAAAcarlBZySk44c25OZlJmcTFVQnFYaVVDU2RRAAAAAAHGqvoWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxpZ6Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcZHxRY3TXRmLWk0eVEwTzZhRXB5MlJpVFR3AAAAAAHGVbsWTVBJSndzX0VReVNoU3JOb2pWUm40UQAAAAABxpZ5Fno4eVNTTDlLUVUyblVfMFFFcnhramcAAAAAAcY8aBZpQ1BwVzBOV1ROeXlHRzA1MGU1eFlnAAAAAAHGqvsWRXhkME1zOV9UbzZxUTBTYUZtTDU5UQAAAAABxpZ7Fno4eVNTTDlLUVUyblVfMFFFcnhramc=\",\n        \"Listover\": false,\n        \"VideoURL\": \"http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8\"\n    }\n}",
+        "title": "拉取云存事件列表"
+      }
+    ],
+    "DescribeCloudStorageThumbnail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageThumbnail\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"sp01_32820237_5\",\n    \"Thumbnail\": \"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c299d2c9-805f-41a5-853d-db32ba1a16b5\",\n        \"ThumbnailURL\": \"https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100008401725%2FAQTV2839QJ%2Fsp01_32820237_5%2Fevents%2F1614908216.jpg?q-sign-algorithm=sha1&q-ak=AKIDAbqpXyZb6KJ6dtvwkRwAqLbfNvIZlYJp&q-sign-time=1614909378%3B1614912978&q-key-time=1614909378%3B1614912978&q-header-list=host&q-url-param-list=&q-signature=59cfa8d69bb77980ba757cb111de62fc6c4880f5\"\n    }\n}",
+        "title": "拉取云存事件缩略图"
+      }
+    ],
+    "DescribeCloudStorageTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageTime\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\",\n    \"Date\": \"2021-01-14\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac74ecca-b866-4ab1-87e0-18b92816fb20\",\n        \"Data\": {\n            \"VideoURL\": \"47b9d579-9088-4cc2-a16e-2b8cf245319b\",\n            \"TimeList\": [\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                },\n                {\n                    \"StartTime\": 1610607600,\n                    \"EndTime\": 1610608200\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取某一天云存时间轴"
+      }
+    ],
+    "DescribeCloudStorageUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageUsers\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ProductId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Users\": [\n            {\n                \"UserId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取云存用户列表"
+      }
+    ],
+    "DescribeDataForwardList": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeDataForwardList\n&ProductIds=[\"78PZBTDLX6\"]\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataForwardList\": [\n            {\n                \"ProductId\": \"78PZBTDLX6\",\n                \"ForwardAddr\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n                \"Status\": 0,\n                \"CreateTime\": 1567407826,\n                \"UpdateTime\": 1567407826\n            }\n        ],\n        \"RequestId\": \"4ccc27e9-4525-4396-9db3-369b2cd3d28a\"\n    }\n}",
+        "title": "获取数据转发列表"
+      }
+    ],
+    "DescribeDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"test1\",\n    \"ProductId\": \"PTROMP3AOB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"test1\",\n        \"DevicePsk\": \"awefwaef==\",\n        \"EnableState\": 1,\n        \"ExpireTime\": 1657024055,\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\",\n        \"Online\": 1,\n        \"LoginTime\": 1608880525,\n        \"LogLevel\": 1\n    }\n}",
+        "title": "查看设备详情"
+      }
+    ],
+    "DescribeDeviceActionHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceActionHistory\n<公共请求参数>\n\n{\n    \"ProductId\": \"TDCZ2WD29Z\",\n    \"DeviceName\": \"autotest_33842121_13\",\n    \"MinTime\": 1612235884839,\n    \"MaxTime\": 1612237684839\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionHistories\": [],\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAgnMbFnZpOEh2MVNWUm95SjdoYTNGUGtGR1EAAAAAAJNMzBZwaXcxNlFBOFJWdVJxbU44SHlfNUx3AAAAAABDhPQWaUdjOWIxWTBUQ3lWNGxVOC1CeGQ5ZwAAAAAAgpygFkNOenVGZk81UVVHWksxYXhDdXl4M1EAAAAAAF9k3BZfQkg2bHZxNVJDaW5id1N5XzU1Rl9B\",\n        \"Listover\": false,\n        \"RequestId\": \"1f6b8618-7fdf-4983-90b8-2816a1ea25dd\",\n        \"TotalCounts\": 0\n    }\n}",
+        "title": "获取设备动作历史"
+      }
+    ],
+    "DescribeDeviceCommLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCommLog\n<公共请求参数>\n\n{\n    \"ProductId\": \"TDCZ2WD29Z\",\n    \"DeviceName\": \"DoNotDelete_34082530_1\",\n    \"MinTime\": 1612235855834,\n    \"MaxTime\": 1612237655834\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAk0zFFnBpdzE2UUE4UlZ1UnFtTjhIeV81THcAAAAAAIJzFxZ2aThIdjFTVlJveUo3aGEzRlBrRkdRAAAAAABDhPEWaUdjOWIxWTBUQ3lWNGxVOC1CeGQ5ZwAAAAAAX2TWFl9CSDZsdnE1UkNpbmJ3U3lfNTVGX0EAAAAAAIKcmhZDTnp1RmZPNVFVR1pLMWF4Q3V5eDNR\",\n        \"Listover\": true,\n        \"RequestId\": \"ce3c2fd6-e5d2-4676-9696-3d27e52f608d\",\n        \"Results\": []\n    }\n}",
+        "title": "获取设备通讯日志"
+      }
+    ],
+    "DescribeDeviceData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceData\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac74ecca-b866-4ab1-87e0-18b92816fb20\",\n        \"Data\": \"\"\n    }\n}",
+        "title": "获取设备属性数据"
+      }
+    ],
+    "DescribeDeviceDataHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceDataHistory\n<公共请求参数>\n\n{\n    \"ProductId\": \"TDCZ2WD29Z\",\n    \"DeviceName\": \"DoNotDelete_34082530_1\",\n    \"MinTime\": 1612235965943,\n    \"MaxTime\": 1612237765943,\n    \"FieldName\": \"tencent_handsome\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAk0zcFnBpdzE2UUE4UlZ1UnFtTjhIeV81THcAAAAAAIscIRY2LTRMWW96VFQtQ3A5aDZFb043ZU5RAAAAAABnASsWaDVJZWNmbTJSNmlBckIyYy1mbEFVQQAAAAAAX2TnFl9CSDZsdnE1UkNpbmJ3U3lfNTVGX0EAAAAAAIKcqRZDTnp1RmZPNVFVR1pLMWF4Q3V5eDNR\",\n        \"FieldName\": \"tencent_handsome\",\n        \"Listover\": true,\n        \"RequestId\": \"082a4de2-b0ec-4a8f-9f19-4fe08c887393\",\n        \"Results\": []\n    }\n}",
+        "title": "获取设备历史数据"
+      }
+    ],
+    "DescribeDeviceEventHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceEventHistory\n<公共请求参数>\n\n{\n    \"ProductId\": \"QDA1PZLBNB\",\n    \"DeviceName\": \"dev01\",\n    \"Type\": \"\",\n    \"EventId\": \"low_voltage\",\n    \"StartTime\": 1560355200,\n    \"EndTime\": 1601196327,\n    \"Size\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Listover\": true,\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\",\n        \"EventHistory\": [\n            {\n                \"TimeStamp\": 1561619346000,\n                \"ProductId\": \"QDA1PZLBNB\",\n                \"DeviceName\": \"dev01\",\n                \"EventId\": \"low_voltage\",\n                \"Type\": \"alert\",\n                \"Data\": \"{\\\"voltage\\\": 3.487172}\"\n            }\n        ],\n        \"Total\": 1,\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATuBZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE7kWQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABO6FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATuxZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE7wWQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABO9FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATvhZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE78WQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABPAFkI2SzRCVTJYUjZxUVRnbUJRaUJzc0E=\"\n    }\n}",
+        "title": "获取设备的历史事件"
+      }
+    ],
+    "DescribeDeviceStatusLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceStatusLog\n<公共请求参数>\n\n{\n    \"MinTime\": 1548677099000,\n    \"MaxTime\": 1548763499000,\n    \"ProductId\": \"QY8BAN391G\",\n    \"DeviceName\": \"dev_test\",\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Listover\": true,\n        \"Results\": [\n            {\n                \"Data\": \"xx\",\n                \"Type\": \"xx\",\n                \"Time\": \"xx\"\n            }\n        ],\n        \"Context\": \"xx\",\n        \"RequestId\": \"5e9bb8c5-95d3-40f8-ba9f-9d74a31004f2\"\n    }\n}",
+        "title": "获取设备上下线日志"
+      }
+    ],
+    "DescribeDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{\n    \"Offset\": \"0\",\n    \"Limit\": \"10\",\n    \"ProductId\": \"PTROMP3AOB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c56647c-17be-4ff7-a80c-245cabe0a42c\",\n        \"TotalCount\": 49,\n        \"Devices\": [\n            {\n                \"DeviceName\": \"siva_31337976_1\",\n                \"Online\": 0,\n                \"LoginTime\": 1609293765,\n                \"DevicePsk\": \"k2o3rxGV0zLHBxabvpszGg==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_2\",\n                \"Online\": 0,\n                \"LoginTime\": 1609730065,\n                \"DevicePsk\": \"0FY5jg8MFuapHipHaICb/Q==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_3\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"csxPuMxoS3NgoawPKtRHRA==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_4\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"KK1lXS/yy7QHaWBG0xPeMQ==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_5\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"ptrRs+mGSU2M3P8lu6ronQ==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_6\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"1xpMhJrnlOLjkcmVEu+foA==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_7\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"MSm99MKWJGk+JssfngaJNA==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_8\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"Jeziu8yQXvG/vPpd9jiLlg==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337976_9\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"GWnZSYzGsKrfhvXZ5CZ3IQ==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681977\n            },\n            {\n                \"DeviceName\": \"siva_31337857_9\",\n                \"Online\": 3,\n                \"LoginTime\": 0,\n                \"DevicePsk\": \"2BxKJKBoqncpl8F/Q/oJxg==\",\n                \"EnableState\": 1,\n                \"ExpireTime\": 1640681857\n            }\n        ]\n    }\n}",
+        "title": "获取设备列表"
+      }
+    ],
+    "DescribeFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"7ZISKXPJVU\",\n    \"FirmwareVersion\": \"1.0.3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"desc\",\n        \"Md5sum\": \"md5\",\n        \"Createtime\": 1597047368,\n        \"RequestId\": \"xxxxxxxxxx\",\n        \"Version\": \"1.0.3\",\n        \"ProductId\": \"7ZISKXPJVU\",\n        \"Name\": \"name\",\n        \"ProductName\": \"ABC\"\n    }\n}",
+        "title": "查询固件信息"
+      }
+    ],
+    "DescribeFirmwareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"TaskId\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1000175,\n        \"Status\": 3,\n        \"CreateTime\": 1589466879,\n        \"Type\": 1,\n        \"ProductName\": \"门锁\",\n        \"OriginalVersion\": \"xx\",\n        \"UpgradeMode\": \"originalVersion\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeFirmwareTaskDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDevices\n<公共请求参数>\n\n{\n    \"ProductID\": \"O4CCMMZE3A\",\n    \"FirmwareVersion\": \"1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Devices\": [\n            {\n                \"TaskId\": 1,\n                \"DeviceName\": \"123\",\n                \"LastProcessTime\": 1597141763,\n                \"Status\": 5,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\"\n            },\n            {\n                \"TaskId\": 2,\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"abc\",\n                \"LastProcessTime\": 1597140525,\n                \"Status\": 0,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0\n            },\n            {\n                \"TaskId\": 3,\n                \"LastProcessTime\": 1597141811,\n                \"Status\": 6,\n                \"ErrMsg\": \"\",\n                \"DstVersion\": \"1.0\",\n                \"Retcode\": 0,\n                \"Percent\": 0,\n                \"OriVersion\": \"0.1\",\n                \"DeviceName\": \"123\"\n            }\n        ],\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
+        "title": "查询固件升级任务的设备列表"
+      }
+    ],
+    "DescribeFirmwareTaskDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDistribution\n<公共请求参数>\n\n{\n    \"ProductID\": \"O4CCMMZE3A\",\n    \"FirmwareVersion\": \"1.0\",\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusInfos\": [\n            {\n                \"Total\": 1,\n                \"Status\": 0\n            },\n            {\n                \"Status\": 5,\n                \"Total\": 1\n            },\n            {\n                \"Total\": 1,\n                \"Status\": 6\n            }\n        ],\n        \"RequestId\": \"25a4a01b-8146-4388-90f9-2d8ca18bbb1f\"\n    }\n}",
+        "title": "查询固件升级任务状态分布"
+      }
+    ],
+    "DescribeFirmwareTaskStatistics": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeFirmwareTaskStatistics\n&ProductID=O4CCMMZE3A\n&FirmwareVersion=1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SuccessTotal\": 1,\n        \"FailureTotal\": 0,\n        \"UpgradingTotal\": 1,\n        \"RequestId\": \"968ac21f-815f-4f32-852f-c0729c40e724\"\n    }\n}",
+        "title": "查询固件升级任务统计信息"
+      }
+    ],
+    "DescribeFirmwareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTasks\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"Offset\": 1,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询固件升级任务列表"
+      }
+    ],
+    "DescribeForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"1213123\",\n    \"QueueType\": 1,\n    \"Consecretid\": \"fawefwe\",\n    \"ProductID\": \"PTROMP3AOB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Endpoint\": \"1234141234\",\n        \"QueueType\": 1,\n        \"InstanceId\": \"topic-123aw\",\n        \"RoleID\": 123,\n        \"Result\": 1,\n        \"MsgType\": 1,\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\",\n        \"QueueRegion\": \"gz\",\n        \"RoleName\": \"role-fawe\",\n        \"InstanceName\": \"kafka-test\",\n        \"QueueName\": \"kafka-t1132\",\n        \"ErrMsg\": \"\",\n        \"ProductID\": \"PTROMP3AOB\"\n    }\n}",
+        "title": "获取产品转发规则"
+      }
+    ],
+    "DescribeModelDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelDefinition\n<公共请求参数>\n\n{\n    \"ProductId\": \"055cdcffeed5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"UpdateTime\": 1612216201,\n            \"CategoryModel\": \"{}\",\n            \"ModelDefine\": \"{}\",\n            \"NetTypeModel\": \"{}\",\n            \"CreateTime\": 1612216201,\n            \"ProductId\": \"055cdcffeed5\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询产品数据模板"
+      }
+    ],
+    "DescribeProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"PTROMP3AOB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductId\": \"PTROMP3AOB\",\n            \"ProductName\": \"siva_003\",\n            \"DeviceType\": 1,\n            \"EncryptionType\": 2,\n            \"Features\": [\n                \"ypsxth\",\n                \"spdxth\"\n            ],\n            \"ChipOs\": \"Linux\",\n            \"ChipManufactureId\": \"x86\",\n            \"ChipId\": \"x86\",\n            \"ProductDescription\": \"123\",\n            \"CreateTime\": 1608880525,\n            \"UpdateTime\": 1611830563\n        },\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\"\n    }\n}",
+        "title": "获取产品详情"
+      }
+    ],
+    "DescribeProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ProductId\": \"PTROMP3AOB\",\n                \"ProductName\": \"siva_003\",\n                \"DeviceType\": 1,\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"x86\",\n                \"ChipId\": \"x86\",\n                \"ProductDescription\": \"123\",\n                \"CreateTime\": 1608880525,\n                \"UpdateTime\": 1611830563\n            },\n            {\n                \"ProductId\": \"BPCJPETFZU\",\n                \"ProductName\": \"test_siva_123\",\n                \"DeviceType\": 1,\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"ak\",\n                \"ChipId\": \"AK3918EV331\",\n                \"ProductDescription\": \"dd12\",\n                \"CreateTime\": 1608786160,\n                \"UpdateTime\": 1608868038\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"bb92aaff-508b-4d10-8e42-5841e796ffda\"\n    }\n}",
+        "title": "获取产品列表"
+      }
+    ],
+    "DescribeSDKLog": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeSDKLog\n&MinTime=1591089960000\n&MaxTime=1591091819999\n&Keywords=productid%3ABJQM4UXMKN+devicename%3Adev01\n&Context=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMjxEFjM2eHBiRXhJVGctQWhqdHoxNUxEeWcAAAAAADI8QRYzNnhwYkV4SVRnLUFoanR6MTVMRHlnAAAAAAAyPEMWMzZ4cGJFeElUZy1BaGp0ejE1TER5ZwAAAAAAMjxCFjM2eHBiRXhJVGctQWhqdHoxNUxEeWcAAAAAADI8RRYzNnhwYkV4SVRnLUFoanR6MTVMRHln\",\n        \"Listover\": true,\n        \"RequestId\": \"f9201fc1-c2fb-42c9-a08d-be971a1d248b\",\n        \"Results\": []\n    }\n}",
+        "title": "获取设备上报的日志"
+      }
+    ],
+    "EditFirmware": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=EditFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&FirmwareName=name\n&FirmwareDescription=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "编辑固件信息"
+      }
+    ],
+    "GenerateSignedVideoURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateSignedVideoURL\n<公共请求参数>\n\n{\n    \"ExpireTime\": 1619331648,\n    \"VideoURL\": \"http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SignedVideoURL\": \"http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取视频防盗链播放URL"
+      }
+    ],
+    "GetAllFirmwareVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAllFirmwareVersion\n<公共请求参数>\n\n{\n    \"ProductID\": \"asdfbasd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Version\": [\n            \"1.0.0\",\n            \"1.0.1\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取所有版本列表"
+      }
+    ],
+    "GetFirmwareURL": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=GetFirmwareURL\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取固件下载地址"
+      }
+    ],
+    "ImportModelDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportModelDefinition\n<公共请求参数>\n\n{\n    \"ModelSchema\": \"{}\",\n    \"ProductId\": \"TDCZ2WD29Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8de3a44\"\n    }\n}",
+        "title": "导入其它产品的数据模板"
+      }
+    ],
+    "InheritCloudStorageUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InheritCloudStorageUser\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"ToUserId\": \"xx2\",\n    \"UserId\": \"xx\",\n    \"ProductId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "继承云存用户"
+      }
+    ],
+    "ListFirmwares": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFirmwares\n<公共请求参数>\n\n{\n    \"ProductID\": \"ABCDE12345\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Firmwares\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductId\": \"xx\",\n                \"Description\": \"xx\",\n                \"Version\": \"1.0.0\",\n                \"Md5sum\": \"ahbdjshfuisdfoisjfos\",\n                \"CreateTime\": \"147873872173\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "获取固件列表"
+      }
+    ],
+    "ModifyDataForward": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ModifyDataForward\n&ProductId=TOIDHQ3AOQ,\n&ForwardAddr=[{\"forward\":{\"api\":\"http://127.0.0.1:1080/sub.php\"}}]\n&DataChose=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e07e\"\n    }\n}",
+        "title": "修改数据转发"
+      }
+    ],
+    "ModifyDataForwardStatus": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ModifyDataForwardStatus\n&ProductId=TOIDHQ3AOQ\n&Status=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "设置数据转发状态"
+      }
+    ],
+    "ModifyDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDevice\n<公共请求参数>\n\n{\n    \"ProductId\": \"WYILLHRQ4\",\n    \"DeviceName\": \"test1\",\n    \"EnableState\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"216abff3-4465-4a70-82bd-4b98504d9fea\"\n    }\n}",
+        "title": "修改设备信息"
+      }
+    ],
+    "ModifyDeviceLogLevel": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ModifyDeviceLogLevel\n&ProductId=PVEF3ZB22G\n&DeviceName=dev01\n&LogLevel=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "更新设备日志级别"
+      }
+    ],
+    "ModifyForwardRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"ProductID\": \"PV1674YINM\",\n    \"MsgType\": 3,\n    \"QueueRegion\": \"ap-guangzhou\",\n    \"QueueType\": 1,\n    \"QueueName\": \"iot_hub_test\",\n    \"InstanceId\": \"ckafka-cy614eit\",\n    \"InstanceName\": \"iot_test_no_delete\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Endpoint\": \"100004557990\",\n        \"RequestId\": \"4eeccf4d-65e9-495f-8ac8-d4b84d373c1d\",\n        \"ProductID\": \"PV1674YINM\",\n        \"Result\": 0,\n        \"ErrMsg\": \"\",\n        \"QueueType\": 1\n    }\n}",
+        "title": "修改转发规则"
+      }
+    ],
+    "ModifyModelDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelDefinition\n<公共请求参数>\n\n{\n    \"ModelSchema\": \"{}\",\n    \"ProductId\": \"51QVOSSPT9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8de3a44\"\n    }\n}",
+        "title": "修改产品数据模板"
+      }
+    ],
+    "ModifyProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"37MFSSRMZY\",\n    \"ProductName\": \"测试\",\n    \"ProductDescription\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"719fe65a-40fd-40b3-8fe9-eb166873e050\"\n    }\n}",
+        "title": "修改产品信息"
+      }
+    ],
+    "PublishMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"RL0BAZKZ6V/dev1/control\",\n    \"Payload\": \"AASDFASFSADFASDF\",\n    \"ProductId\": \"Nlasdf****ABCd\",\n    \"DeviceName\": \"dev1\",\n    \"Qos\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "透传Payload至设备"
+      }
+    ],
+    "ReportAliveDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportAliveDevice\n<公共请求参数>\n\n{\n    \"ProductId\": \"098ASFA6ED\",\n    \"DeviceName\": \"event_38675007_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "上报活跃设备"
+      }
+    ],
+    "ResetCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "ResetCloudStorage"
+      }
+    ],
+    "RetryDeviceFirmwareTask": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=RetryDeviceFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&DeviceName=dev\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "重试设备升级任务"
+      }
+    ],
+    "SetForwardAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetForwardAuth\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"QueueType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrMsg\": \"\",\n        \"RoleName\": \"ckafkaIoTCloud_QCSRole\",\n        \"RoleID\": 1724847,\n        \"RequestId\": \"6e85b1e5-6bbe-4731-8902-df7b6c308fda\",\n        \"QueueType\": 1,\n        \"Endpoint\": \"100011064235\",\n        \"Result\": 0\n    }\n}",
+        "title": "设置转发权限"
+      }
+    ],
+    "TransferCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ToDeviceName\": \"event_36502632_2\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "转移云存服务"
+      }
+    ],
+    "UpdateAIModelChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIModelChannel\n<公共请求参数>\n\n{\n    \"CKafkaTopic\": \"test_ai_result\",\n    \"CKafkaRegion\": \"gz\",\n    \"CKafkaInstance\": \"ckafka-8bfqjfa\",\n    \"ModelId\": \"body_detect\",\n    \"Type\": \"ckafka\",\n    \"ProductId\": \"JEOPP372CL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ForwardKey\": \"\"\n    }\n}",
+        "title": "更新AI推理结果推送配置"
+      }
+    ],
+    "UploadFirmware": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=UploadFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&Md5sum=hfshfspodkoiwuidoiwjcuie\n&FileSize=1024\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "上传固件信息"
+      }
+    ],
+    "WakeUpDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WakeUpDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"dev\",\n    \"ProductId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设备唤醒"
+      }
+    ]
+  },
+  "version": "1.0"
+}

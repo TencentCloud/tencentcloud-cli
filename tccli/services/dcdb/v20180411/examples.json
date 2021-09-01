@@ -1,0 +1,403 @@
+{
+  "actions": {
+    "AssociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&Product=dcdb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "CancelDcnJob": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CancelDcnJob\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 11211,\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "CloneAccount": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CloneAccount\n&InstanceId=dcdbt-ovulpcjf\n&SrcUser=testuser1\n&SrcHost=172.17.%\n&DstUser=testuser1\n&DstHost=172.20.%\n&DstDesc=testclone\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8875137e-4ce2-43cb-a0ab-704b775790d1\",\n        \"FlowId\": 4127\n    }\n}",
+        "title": "克隆已存在的账号"
+      }
+    ],
+    "CloseDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\r\n&InstanceId=dcdbt-avw0207d\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d1e21a2-b29a-490a-8be0-b61287d92e28\",\n        \"FlowId\": 3024\n    }\n}",
+        "title": "关闭云数据库实例的外网访问"
+      }
+    ],
+    "CopyAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CopyAccountPrivileges\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&DstUserName=testuser2\r\n&DstHost=%\r\n&SrcUserName=testuser1\r\n&SrcHost=172.17.%\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95208d7c-66dc-446c-bc03-856738604611\"\n    }\n}",
+        "title": "复制云数据库账号权限"
+      }
+    ],
+    "CreateAccount": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateAccount\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Password=1234qweri#\r\n&Description=测试帐号\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc4e4dc-c3e9-4858-ab80-03e3526cf24d\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\"\n    }\n}",
+        "title": "为云数据库实例创建访问账号"
+      }
+    ],
+    "CreateDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateDCDBInstance\n&ShardMemory=2\n&ShardStorage=10\n&ShardNodeCount=3\n&ShardCount=2\n&DbVersionId=5.7.17\n&Count=1\n&Period=1\n&Zones.0=ap-guangzhou-2\n&Zones.1=ap-guangzhou-2\n&AutoVoucher=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20181103110163\",\n        \"InstanceIds\": [\n            \"dcdbt-avw0207d\"\n        ]\n    }\n}",
+        "title": "创建包年包月的分布式数据库实例"
+      }
+    ],
+    "DeleteAccount": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DeleteAccount\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9405fe4-65af-4936-a465-038578636567\"\n    }\n}",
+        "title": "删除云数据库账号"
+      }
+    ],
+    "DescribeAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeAccountPrivileges\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&DbName=*\r\n&Type=*\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3381c9e9-d87f-4e21-ba1d-596d6f697a7e\",\n        \"InstanceId\": \"dcdbt-fdpjf5zh\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\",\n        \"Privileges\": [\n            \"SELECT\",\n            \"UPDATE\"\n        ]\n    }\n}",
+        "title": "查询云数据库账号全局权限"
+      }
+    ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeAccounts\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e74e824-6d2b-495d-b347-5250cdf8e964\",\n        \"InstanceId\": \"dcdbt-fdpjf5zh\",\n        \"Users\": [\n            {\n                \"UserName\": \"testuser1\",\n                \"Host\": \"172.17.%\",\n                \"Description\": \"测试帐号\",\n                \"CreateTime\": \"2016-07-15 18:39:47\",\n                \"UpdateTime\": \"2016-07-18 12:42:31\",\n                \"ReadOnly\": 0,\n                \"DelayThresh\": 0\n            },\n            {\n                \"UserName\": \"testuser2\",\n                \"Host\": \"%\",\n                \"Description\": \"测试帐号\",\n                \"CreateTime\": \"2016-07-18 11:51:33\",\n                \"UpdateTime\": \"2016-07-18 12:42:44\",\n                \"ReadOnly\": 0,\n                \"DelayThresh\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询云数据库账号列表"
+      }
+    ],
+    "DescribeDBLogFiles": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBLogFiles\r\n&InstanceId=dcdbt-2t4cf98d\r\n&ShardId=shard-gdqcdn39\r\n&Type=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"Length\": 5253724,\n                \"Mtime\": 1468822981,\n                \"Uri\": \"/1/noshard_108/group_1520844319_37793941/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272/1/shard-5ps4rppj/set_1516333432_6\"\n            }\n        ],\n        \"InstanceId\": \"dcdbt-2t4cf98d\",\n        \"ShardId\": \"shard-gdqcdn39\",\n        \"NormalPrefix\": \"http://10.66.255.253:8083\",\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"Total\": 1,\n        \"Type\": 1,\n        \"VpcPrefix\": \"http://169.254.0.27:8083\"\n    }\n}",
+        "title": "获取日志列表"
+      }
+    ],
+    "DescribeDBParameters": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBParameters\r\n&InstanceId=dcdbt-ige1a5k3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"dcdbt-ige1a5k3\",\n        \"Params\": [\n            {\n                \"Default\": \"1\",\n                \"SetValue\": \"\",\n                \"Value\": \"1\",\n                \"Param\": \"auto_increment_increment\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"65535\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1\",\n                \"SetValue\": \"\",\n                \"Value\": \"1\",\n                \"Param\": \"auto_increment_offset\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"65535\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"ON\",\n                \"SetValue\": \"\",\n                \"Value\": \"ON\",\n                \"Param\": \"autocommit\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"ROW\",\n                \"SetValue\": \"\",\n                \"Value\": \"ROW\",\n                \"Param\": \"binlog_format\",\n                \"Constraint\": {\n                    \"Enum\": \"ROW,STATEMENT,MIXED\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"utf8\",\n                \"SetValue\": \"\",\n                \"Value\": \"utf8\",\n                \"Param\": \"character_set_server\",\n                \"Constraint\": {\n                    \"Enum\": \"utf8,latin1,gbk,utf8mb4\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"\",\n                \"SetValue\": \"\",\n                \"Value\": \"utf8_general_ci\",\n                \"Param\": \"collation_server\",\n                \"Constraint\": {\n                    \"Enum\": \"latin1_general_cs,latin1_general_ci,latin1_bin,latin1_swedish_ci,gbk_chinese_ci,gbk_bin,utf8_general_ci,utf8_bin,utf8_unicode_ci,utf8mb4_general_ci,utf8mb4_bin,utf8mb4_unicode_ci\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"10\",\n                \"SetValue\": \"\",\n                \"Value\": \"10\",\n                \"Param\": \"connect_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"3600\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"0\",\n                \"SetValue\": \"\",\n                \"Value\": \"0\",\n                \"Param\": \"default_week_format\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"7\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"ON\",\n                \"SetValue\": \"\",\n                \"Value\": \"ON\",\n                \"Param\": \"delay_key_write\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF,ALL\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"100\",\n                \"SetValue\": \"\",\n                \"Value\": \"100\",\n                \"Param\": \"delayed_insert_limit\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4294967295\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"300\",\n                \"SetValue\": \"\",\n                \"Value\": \"300\",\n                \"Param\": \"delayed_insert_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"3600\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1000\",\n                \"SetValue\": \"\",\n                \"Value\": \"1000\",\n                \"Param\": \"delayed_queue_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4294967295\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"4\",\n                \"SetValue\": \"\",\n                \"Value\": \"4\",\n                \"Param\": \"div_precision_increment\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"30\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"event_scheduler\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"1024\",\n                \"SetValue\": \"\",\n                \"Value\": \"1024\",\n                \"Param\": \"group_concat_max_len\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"18446744073709547520\",\n                        \"Min\": \"4\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"5000\",\n                \"SetValue\": \"\",\n                \"Value\": \"5000\",\n                \"Param\": \"innodb_concurrency_tickets\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"10000\",\n                        \"Min\": \"100\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"ON\",\n                \"Param\": \"innodb_large_prefix\",\n                \"Constraint\": {\n                    \"Enum\": \"OFF,ON\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"50\",\n                \"SetValue\": \"\",\n                \"Value\": \"20\",\n                \"Param\": \"innodb_lock_wait_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1073741824\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"10\",\n                \"SetValue\": \"\",\n                \"Value\": \"70.000000\",\n                \"Param\": \"innodb_max_dirty_pages_pct\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"90\",\n                        \"Min\": \"10\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"37\",\n                \"SetValue\": \"\",\n                \"Value\": \"37\",\n                \"Param\": \"innodb_old_blocks_pct\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"95\",\n                        \"Min\": \"5\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1000\",\n                \"SetValue\": \"\",\n                \"Value\": \"1000\",\n                \"Param\": \"innodb_old_blocks_time\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1000\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"4096\",\n                \"SetValue\": \"\",\n                \"Value\": \"16384\",\n                \"Param\": \"innodb_page_size\",\n                \"Constraint\": {\n                    \"Enum\": \"4096,8192,16384,32768,65536\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"300\",\n                \"SetValue\": \"\",\n                \"Value\": \"1000\",\n                \"Param\": \"innodb_purge_batch_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1024\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"56\",\n                \"SetValue\": \"\",\n                \"Value\": \"56\",\n                \"Param\": \"innodb_read_ahead_threshold\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"64\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"nulls_equal\",\n                \"SetValue\": \"\",\n                \"Value\": \"nulls_equal\",\n                \"Param\": \"innodb_stats_method\",\n                \"Constraint\": {\n                    \"Enum\": \"nulls_equal,nulls_unequal,nulls_ignored\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"innodb_stats_on_metadata\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"8\",\n                \"SetValue\": \"\",\n                \"Value\": \"8\",\n                \"Param\": \"innodb_stats_sample_pages\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4294967296\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"innodb_strict_mode\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"ON\",\n                \"SetValue\": \"\",\n                \"Value\": \"ON\",\n                \"Param\": \"innodb_table_locks\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"0\",\n                \"SetValue\": \"\",\n                \"Value\": \"64\",\n                \"Param\": \"innodb_thread_concurrency\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"128\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"10000\",\n                \"SetValue\": \"\",\n                \"Value\": \"0\",\n                \"Param\": \"innodb_thread_sleep_delay\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"3600000\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"28800\",\n                \"SetValue\": \"\",\n                \"Value\": \"28800\",\n                \"Param\": \"interactive_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"86400\",\n                        \"Min\": \"10\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"262144\",\n                \"SetValue\": \"\",\n                \"Value\": \"2097152\",\n                \"Param\": \"join_buffer_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"18446744073709547520\",\n                        \"Min\": \"128\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"300\",\n                \"SetValue\": \"\",\n                \"Value\": \"300\",\n                \"Param\": \"key_cache_age_threshold\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4294967295\",\n                        \"Min\": \"100\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1024\",\n                \"SetValue\": \"\",\n                \"Value\": \"1024\",\n                \"Param\": \"key_cache_block_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"16384\",\n                        \"Min\": \"512\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"100\",\n                \"SetValue\": \"\",\n                \"Value\": \"100\",\n                \"Param\": \"key_cache_division_limit\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"100\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"5\",\n                \"SetValue\": \"\",\n                \"Value\": \"5\",\n                \"Param\": \"lock_wait_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"31536000\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"log_queries_not_using_indexes\",\n                \"Constraint\": {\n                    \"Enum\": \"ON,OFF\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"1.000000\",\n                \"SetValue\": \"\",\n                \"Value\": \"1.000000\",\n                \"Param\": \"long_query_time\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"10\",\n                        \"Min\": \"0.05\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"low_priority_updates\",\n                \"Constraint\": {\n                    \"Enum\": \"OFF,ON\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"1\",\n                \"SetValue\": \"\",\n                \"Value\": \"0\",\n                \"Param\": \"lower_case_table_names\",\n                \"Constraint\": {\n                    \"Enum\": \"0,1\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"134217728\",\n                \"SetValue\": \"\",\n                \"Value\": \"1073741824\",\n                \"Param\": \"max_allowed_packet\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1073741824\",\n                        \"Min\": \"16384\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"2000\",\n                \"SetValue\": \"\",\n                \"Value\": \"2000\",\n                \"Param\": \"max_connect_errors\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4096\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"4096\",\n                \"SetValue\": \"\",\n                \"Value\": \"10000\",\n                \"Param\": \"max_connections\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"32768\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"16382\",\n                \"SetValue\": \"\",\n                \"Value\": \"200000\",\n                \"Param\": \"max_prepared_stmt_count\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1048576\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"4194304\",\n                \"SetValue\": \"\",\n                \"Value\": \"4194304\",\n                \"Param\": \"myisam_sort_buffer_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"16777216\",\n                        \"Min\": \"262144\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"16384\",\n                \"SetValue\": \"\",\n                \"Value\": \"16384\",\n                \"Param\": \"net_buffer_length\",\n                \"Constraint\": {\n                    \"Enum\": \"4096,8192,16384,32768,65536,1048576\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"30\",\n                \"SetValue\": \"\",\n                \"Value\": \"30\",\n                \"Param\": \"net_read_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"3153600\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"10\",\n                \"SetValue\": \"\",\n                \"Value\": \"10\",\n                \"Param\": \"net_retry_count\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"4294967295\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"60\",\n                \"SetValue\": \"\",\n                \"Value\": \"60\",\n                \"Param\": \"net_write_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"3153600\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,optimize_join_buffer_size=on\",\n                \"SetValue\": \"\",\n                \"Value\": \"batched_key_access=off,block_nested_loop=on,condition_fanout_filter=on,derived_merge=on,duplicateweedout=on,engine_condition_pushdown=on,firstmatch=on,index_condition_pushdown=on,index_merge=on,index_merge_intersection=on,index_merge_sort_union=on,index_merge_union=on,loosescan=on,materialization=on,mrr=on,mrr_cost_based=on,semijoin=on,subquery_materialization_cost_based=on,use_index_extensions=on\",\n                \"Param\": \"optimizer_switch\",\n                \"Constraint\": {\n                    \"Type\": \"string\"\n                }\n            },\n            {\n                \"Default\": \"8192\",\n                \"SetValue\": \"\",\n                \"Value\": \"16384\",\n                \"Param\": \"query_alloc_block_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"16384\",\n                        \"Min\": \"1024\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1048576\",\n                \"SetValue\": \"\",\n                \"Value\": \"1048576\",\n                \"Param\": \"query_cache_limit\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1048576\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"0\",\n                \"SetValue\": \"\",\n                \"Value\": \"0\",\n                \"Param\": \"query_cache_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"104857600\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"OFF\",\n                \"SetValue\": \"\",\n                \"Value\": \"OFF\",\n                \"Param\": \"query_cache_type\",\n                \"Constraint\": {\n                    \"Enum\": \"OFF,ON,DEMAND\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"8192\",\n                \"SetValue\": \"\",\n                \"Value\": \"24576\",\n                \"Param\": \"query_prealloc_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1048576\",\n                        \"Min\": \"8192\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"10\",\n                \"SetValue\": \"\",\n                \"Value\": \"\",\n                \"Param\": \"slave_parallel_threads\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"16383\",\n                        \"Min\": \"0\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"2\",\n                \"SetValue\": \"\",\n                \"Value\": \"2\",\n                \"Param\": \"slow_launch_time\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1024\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"2097152\",\n                \"SetValue\": \"\",\n                \"Value\": \"2097152\",\n                \"Param\": \"sort_buffer_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"1073741824\",\n                        \"Min\": \"32768\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"\",\n                \"SetValue\": \"\",\n                \"Value\": \"NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES\",\n                \"Param\": \"sql_mode\",\n                \"Constraint\": {\n                    \"Type\": \"string\"\n                }\n            },\n            {\n                \"Default\": \"10\",\n                \"SetValue\": \"\",\n                \"Value\": \"30\",\n                \"Param\": \"sqlasyntimeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"100\",\n                        \"Min\": \"10\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"400\",\n                \"SetValue\": \"\",\n                \"Value\": \"400\",\n                \"Param\": \"table_definition_cache\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"2048\",\n                        \"Min\": \"400\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"1024\",\n                \"SetValue\": \"\",\n                \"Value\": \"10240\",\n                \"Param\": \"table_open_cache\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"524288\",\n                        \"Min\": \"400\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"3\",\n                \"SetValue\": \"\",\n                \"Value\": \"30\",\n                \"Param\": \"thread_pool_oversubscribe\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"65536\",\n                        \"Min\": \"1\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"33554432\",\n                \"SetValue\": \"\",\n                \"Value\": \"33554432\",\n                \"Param\": \"tmp_table_size\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"67108864\",\n                        \"Min\": \"262144\"\n                    },\n                    \"Type\": \"section\"\n                }\n            },\n            {\n                \"Default\": \"REPEATABLE-READ\",\n                \"SetValue\": \"\",\n                \"Value\": \"REPEATABLE-READ\",\n                \"Param\": \"tx_isolation\",\n                \"Constraint\": {\n                    \"Enum\": \"REPEATABLE-READ,SERIALIZABLE,READ-COMMITTED,READ-UNCOMMITTED\",\n                    \"Type\": \"enum\"\n                }\n            },\n            {\n                \"Default\": \"28800\",\n                \"SetValue\": \"\",\n                \"Value\": \"28800\",\n                \"Param\": \"wait_timeout\",\n                \"Constraint\": {\n                    \"Range\": {\n                        \"Max\": \"259200\",\n                        \"Min\": \"60\"\n                    },\n                    \"Type\": \"section\"\n                }\n            }\n        ],\n        \"RequestId\": \"affa5c39-02b7-482a-a16f-a74e660e7b7f\"\n    }\n}",
+        "title": "获取数据库当前参数"
+      }
+    ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": 3306,\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"dcdb\"\n            }\n        ]\n    }\n}",
+        "title": "示例1 查询实例安全组信息"
+      }
+    ],
+    "DescribeDBSyncMode": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSyncMode\n&InstanceId=dcdbt-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"SyncMode\": 0,\n        \"CurrentSyncMode\": 0,\n        \"IsModifying\": 1\n    }\n}",
+        "title": "查询云数据库同步模式"
+      }
+    ],
+    "DescribeDCDBInstanceNodeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDCDBInstanceNodeInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-8upuqubt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodesInfo\": [\n            {\n                \"NodeId\": \"b991a3d602da35cf7bf64dcafcd5f7ad589aa6d9\",\n                \"Role\": \"master\",\n                \"ShardId\": \"shard-he2hj3al\"\n            },\n            {\n                \"NodeId\": \"9a498278e1775355cac16c23d65c59204aec52f1\",\n                \"Role\": \"slave\",\n                \"ShardId\": \"shard-he2hj3al\"\n            },\n            {\n                \"NodeId\": \"3c698ab9547674e361bae013439225356175668d\",\n                \"Role\": \"master\",\n                \"ShardId\": \"shard-mgsnag2z\"\n            },\n            {\n                \"NodeId\": \"2f0714ded5eaef1dd927fdc1429350470ce0017b\",\n                \"Role\": \"slave\",\n                \"ShardId\": \"shard-mgsnag2z\"\n            }\n        ],\n        \"RequestId\": \"6b8b1984-c226-46d9-ac0a-81e241cf7cdc\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "获取实例节点信息"
+      }
+    ],
+    "DescribeDCDBInstances": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBInstances\n&InstanceIds.0=tdsqlshard-hptutl5t\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AppId\": 251000022,\n                \"AutoRenewFlag\": 1,\n                \"Cpu\": 2,\n                \"CreateTime\": \"2021-03-26 16:14:31\",\n                \"DbEngine\": \"MariaDB\",\n                \"DbVersion\": \"10.1.9\",\n                \"DcnDstNum\": 0,\n                \"DcnFlag\": 0,\n                \"DcnStatus\": 0,\n                \"ExclusterId\": \"\",\n                \"Id\": 2000091,\n                \"InstanceId\": \"tdsqlshard-hptutl5t\",\n                \"InstanceName\": \"tdsqlshard-hptutl5t\",\n                \"InstanceType\": 2,\n                \"Ipv6Flag\": 0,\n                \"IsAuditSupported\": 1,\n                \"IsTmp\": 0,\n                \"IsolatedTimestamp\": \"0000-00-00 00:00:00\",\n                \"Locker\": 0,\n                \"Memory\": 4,\n                \"NodeCount\": 2,\n                \"Paymode\": \"prepaid\",\n                \"PeriodEndTime\": \"2021-04-26 16:14:31\",\n                \"Pid\": 1001670,\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"ShardCount\": 2,\n                \"ShardDetail\": [\n                    {\n                        \"Cpu\": 1,\n                        \"Createtime\": \"2021-03-26 16:14:31\",\n                        \"Memory\": 2,\n                        \"NodeCount\": 1,\n                        \"Pid\": 1001670,\n                        \"ShardId\": 12208,\n                        \"ShardInstanceId\": \"shard-qihco4rx\",\n                        \"ShardSerialId\": \"set_1616746585_1\",\n                        \"Status\": 2,\n                        \"Storage\": 10\n                    },\n                    {\n                        \"Cpu\": 1,\n                        \"Createtime\": \"2021-03-26 16:14:31\",\n                        \"Memory\": 2,\n                        \"NodeCount\": 1,\n                        \"Pid\": 1001670,\n                        \"ShardId\": 12209,\n                        \"ShardInstanceId\": \"shard-d3moxo2r\",\n                        \"ShardSerialId\": \"set_1616746676_3\",\n                        \"Status\": 2,\n                        \"Storage\": 10\n                    }\n                ],\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Storage\": 20,\n                \"SubnetId\": 1479311,\n                \"Uin\": \"918700682\",\n                \"UniqueSubnetId\": \"subnet-au6ics6s\",\n                \"UniqueVpcId\": \"vpc-737mtr2f\",\n                \"UpdateTime\": \"2021-03-29 15:35:33\",\n                \"Vip\": \"10.1.0.6\",\n                \"Vipv6\": \"\",\n                \"VpcId\": 74809,\n                \"Vport\": 3306,\n                \"WanDomain\": \"\",\n                \"WanPort\": 0,\n                \"WanPortIpv6\": 0,\n                \"WanStatus\": 0,\n                \"WanStatusIpv6\": 0,\n                \"WanVip\": \"\",\n                \"WanVipv6\": \"\",\n                \"Zone\": \"ap-guangzhou-1\"\n            }\n        ],\n        \"RequestId\": \"a44a3d24-1e71-4bbf-bc22-f6d583b084d8\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据实例ID查询实例列表"
+      }
+    ],
+    "DescribeDCDBPrice": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBPrice\r\n&ShardMemory=2\r\n&ShardStorage=10\r\n&ShardNodeCount=3\r\n&ShardCount=2\r\n&Zone=ap-guangzhou-2\r\n&Count=1\r\n&Period=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e1000c2-190a-d0df-ff75-59fbdf5ff381\",\n        \"OriginalPrice\": 42240,\n        \"Price\": 42240\n    }\n}",
+        "title": "查询新购分布式数据库实例的价格（示例中返回价格仅供参考）"
+      }
+    ],
+    "DescribeDCDBRenewalPrice": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBRenewalPrice\r\n&InstanceId=dcdvt-fdpjf5zh\r\n&Period=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b637383-8059-b0f8-3dcd-59fbdff262b6\",\n        \"OriginalPrice\": 42240,\n        \"Price\": 42240\n    }\n}",
+        "title": "查询分布式数据库实例续费的价格"
+      }
+    ],
+    "DescribeDCDBSaleInfo": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBSaleInfo\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c70bafb9-914e-4160-a92c-a3d4582fcbbc\",\n        \"RegionList\": [\n            {\n                \"AvailableChoice\": [\n                    {\n                        \"SlaveZones\": [\n                            {\n                                \"ZoneName\": \"成都一区\",\n                                \"Zone\": \"ap-chengdu-1\",\n                                \"ZoneId\": 160001\n                            }\n                        ],\n                        \"MasterZone\": {\n                            \"ZoneName\": \"成都一区\",\n                            \"Zone\": \"ap-chengdu-1\",\n                            \"ZoneId\": 160001\n                        }\n                    }\n                ],\n                \"Region\": \"ap-chengdu\",\n                \"RegionId\": 16,\n                \"ZoneList\": [\n                    {\n                        \"ZoneName\": \"成都二区\",\n                        \"Zone\": \"ap-chengdu-2\",\n                        \"ZoneId\": 160002\n                    },\n                    {\n                        \"ZoneName\": \"成都一区\",\n                        \"Zone\": \"ap-chengdu-1\",\n                        \"ZoneId\": 160001\n                    }\n                ],\n                \"RegionName\": \"成都\"\n            }\n        ]\n    }\n}",
+        "title": "查询分布式数据库可售卖地域和可用区信息"
+      }
+    ],
+    "DescribeDCDBShards": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBShards\n&InstanceId=dcdbt-ovulpcjf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09d5c691-c180-4c7f-8bcf-1ef6d1bab40c\",\n        \"TotalCount\": 2,\n        \"Shards\": [\n            {\n                \"ShardId\": 10244,\n                \"InstanceId\": \"dcdbt-ovulpcjf\",\n                \"ShardSerialId\": \"set_1536756357_1\",\n                \"ShardInstanceId\": \"shard-5d4efnj7\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"CreateTime\": \"2018-09-12 20:44:47\",\n                \"VpcId\": \"vpc-5rkcp0wb\",\n                \"SubnetId\": \"subnet-6ffate6q\",\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Memory\": 2,\n                \"Storage\": 10,\n                \"PeriodEndTime\": \"2018-10-12 20:44:47\",\n                \"NodeCount\": 2,\n                \"StorageUsage\": 0.1,\n                \"MemoryUsage\": 37.2\n            },\n            {\n                \"ShardId\": 10245,\n                \"InstanceId\": \"dcdbt-ovulpcjf\",\n                \"ShardSerialId\": \"set_1536756415_3\",\n                \"ShardInstanceId\": \"shard-8huhv1y9\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"CreateTime\": \"2018-09-12 20:44:47\",\n                \"VpcId\": \"vpc-5rkcp0wb\",\n                \"SubnetId\": \"subnet-6ffate6q\",\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Memory\": 2,\n                \"Storage\": 10,\n                \"PeriodEndTime\": \"2018-10-12 20:44:47\",\n                \"NodeCount\": 2,\n                \"StorageUsage\": 0.1,\n                \"MemoryUsage\": 15.1\n            }\n        ]\n    }\n}",
+        "title": "查询云数据库分片信息"
+      }
+    ],
+    "DescribeDCDBUpgradePrice": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDCDBUpgradePrice\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"OriginalPrice\": 7020,\n        \"Price\": 7020,\n        \"Formula\": \"变配订单金额：退款3.45 元[1、退费3.45 元=变配差价3.45 元*现金比例100 %，>代金券不可退；2、变配差价3.45 = 资源清退金额258.42 元(订单号20210425458003134632561：部件dcdb:现金支付267.32元-原价393.12*使用时间3.33%*折扣:68=剩余258.42元;)- 新配置费用254.97 元(月单价380.16*天数30/(365/12)*折扣68%) 3、现金比例=清退现金总和/清退原价总和=258.42 /258.42\"\n    }\n}",
+        "title": "查询升级分布式数据库实例的价格"
+      }
+    ],
+    "DescribeDatabaseObjects": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDatabaseObjects\r\n&InstanceId=dcdbt-52s53yyh\r\n&DbName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"742443a5-4683-48ba-b30e-5151d26cf62d\",\n        \"InstanceId\": \"dcdbt-52s53yyh\",\n        \"DbName\": \"test\",\n        \"Tables\": [],\n        \"Views\": [],\n        \"Procs\": [\n            {\n                \"Proc\": \"AddGeometryColumn\"\n            },\n            {\n                \"Proc\": \"DropGeometryColumn\"\n            }\n        ],\n        \"Funcs\": []\n    }\n}",
+        "title": "查询数据库对象信息"
+      }
+    ],
+    "DescribeDatabaseTable": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDatabaseTable\r\n&InstanceId=dcdbt-52s53yyh\r\n&DbName=test\r\n&Table=persons\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6defc797-13eb-47ec-9a8f-dd3e407ff12c\",\n        \"InstanceId\": \"dcdbt-52s53yyh\",\n        \"DbName\": \"test\",\n        \"Table\": \"persons\",\n        \"Cols\": [\n            {\n                \"Col\": \"id\",\n                \"Type\": \"bigint(20) unsigned\"\n            },\n            {\n                \"Col\": \"name\",\n                \"Type\": \"varchar(60)\"\n            },\n            {\n                \"Col\": \"nick\",\n                \"Type\": \"varchar(60)\"\n            }\n        ]\n    }\n}",
+        "title": "查询数据库表中有哪些列"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDatabases\r\n&InstanceId=dcdbt-52s53yyh\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\",\n        \"InstanceId\": \"dcdbt-52s53yyh\",\n        \"Databases\": [\n            {\n                \"DbName\": \"information_schema\"\n            },\n            {\n                \"DbName\": \"mysql\"\n            },\n            {\n                \"DbName\": \"performance_schema\"\n            },\n            {\n                \"DbName\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "查询云数据库实例上的数据库列表"
+      }
+    ],
+    "DescribeDcnDetail": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDcnDetail\n&InstanceId=tdsql-2rn9lmpx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DcnDetails\": [\n            {\n                \"DcnFlag\": 1,\n                \"DcnStatus\": 0,\n                \"InstanceId\": \"tdsql-2rn9lmpx\",\n                \"InstanceName\": \"tdsql-2rn9lmpx\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Vip\": \"10.0.0.24\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-4\"\n            },\n            {\n                \"DcnFlag\": 2,\n                \"DcnStatus\": 2,\n                \"InstanceId\": \"tdsql-cbr0g5v1\",\n                \"InstanceName\": \"tdsql-cbr0g5v1\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2,\n                \"StatusDesc\": \"运行中\",\n                \"Vip\": \"10.0.0.29\",\n                \"Vipv6\": \"\",\n                \"Vport\": 3306,\n                \"Zone\": \"ap-guangzhou-4\"\n            }\n        ],\n        \"RequestId\": \"cbca1c8e-e123-11ea-a777-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "DescribeFlow": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeFlow\n&FlowId=3340\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f63a9e3a-cfe9-4fa3-a690-9671ebdf6bd8\",\n        \"Status\": 1\n    }\n}",
+        "title": "查询任务流程执行状态"
+      }
+    ],
+    "DescribeOrders": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeOrders\r\n&DealNames.0=20181103110163\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": 1,\n        \"Deals\": [\n            {\n                \"DealName\": \"20181103110163\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"dcdbt-avw0207d\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询订单信息"
+      }
+    ],
+    "DescribeProjectSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&Product=dcdb\n&ProjectId=11954\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 11988,\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"dcdb\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "示例1 查询项目安全组信息"
+      }
+    ],
+    "DescribeProjects": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjects\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Projects\": [\n            {\n                \"AppId\": 0,\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"CreatorUin\": 0,\n                \"Info\": \"默认项目\",\n                \"IsDefault\": 1,\n                \"Name\": \"默认项目\",\n                \"OwnerUin\": 0,\n                \"ProjectId\": 0,\n                \"SrcAppId\": 0,\n                \"SrcPlat\": \"qcloud\",\n                \"Status\": 3\n            },\n            {\n                \"AppId\": 1251966477,\n                \"CreateTime\": \"2019-09-17 15:47:05\",\n                \"CreatorUin\": 3374998458,\n                \"Info\": \"\",\n                \"IsDefault\": 0,\n                \"Name\": \"ryanforredis\",\n                \"OwnerUin\": 3374998458,\n                \"ProjectId\": 1159121,\n                \"SrcAppId\": 0,\n                \"SrcPlat\": \"qcloud\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"31666e3c-f5bf-4862-8876-68f81131eef1\"\n    }\n}",
+        "title": "拉取账户所拥有的项目"
+      }
+    ],
+    "DescribeShardSpec": [
+      {
+        "document": "查询可创建的分布式数据库可售卖的分片规格配置。",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeShardSpec\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SpecConfig\": [\n            {\n                \"Machine\": \"TS85\",\n                \"SpecConfigInfos\": [\n                    {\n                        \"SuitInfo\": \"日独立用户数上百万人的中型应用\",\n                        \"Pid\": 10820,\n                        \"MaxStorage\": 3000000,\n                        \"Memory\": 64000,\n                        \"NodeCount\": 3,\n                        \"Qps\": 33000,\n                        \"MinStorage\": 10000\n                    },\n                    {\n                        \"SuitInfo\": \"日独立用户数上百万人的中型应用\",\n                        \"Pid\": 10890,\n                        \"MaxStorage\": 3000000,\n                        \"Memory\": 64000,\n                        \"NodeCount\": 2,\n                        \"Qps\": 33000,\n                        \"MinStorage\": 10000\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a4ad50e3-ba73-4736-b207-954c2976613c\"\n    }\n}",
+        "title": "查询分布式数据库可售卖分片规格"
+      }
+    ],
+    "DescribeSqlLogs": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\r\n&InstanceId=dcdbt-ovulpcjf\r\n&Limit=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ce0cbb4-3863-4214-b7b2-d060a3f530d8\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 0,\n        \"Count\": 0,\n        \"SqlItems\": []\n    }\n}",
+        "title": "拉取SQL日志起始偏移及日志数量"
+      },
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\r\n&InstanceId=tdsql-6a0lwzzj\r\n&Offset=53560502\r\n&Limit=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c08964d6-e5c2-4a50-9936-2c4a6e0bb640\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 1,\n        \"Count\": 1,\n        \"SqlItems\": [\n            {\n                \"Offset\": 1,\n                \"User\": \"testaccount\",\n                \"Client\": \"172.16.0.5:47503\",\n                \"DbName\": \"\",\n                \"Sql\": \"select @@version_comment limit 1\",\n                \"SelectRowNum\": 1,\n                \"AffectRowNum\": 0,\n                \"Timestamp\": 1537932957,\n                \"TimeCostMs\": 0,\n                \"ResultCode\": 0\n            }\n        ]\n    }\n}",
+        "title": "拉取SQL日志"
+      }
+    ],
+    "DescribeUserTasks": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeUserTasks\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"RequestId\": \"136034\",\n        \"FlowSet\": [\n            {\n                \"Status\": 2,\n                \"InstanceId\": \"tdsqlshard-d7tnnu13\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10182],\\\"RetreatedTime\\\":\\\"2016-02-18 04:01:40\\\"}\",\n                \"CreateTime\": \"2016-03-17 16:08:10\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-03-17 16:10:48\",\n                \"InstanceName\": \"tdsqlshard-d7tnnu13\",\n                \"Id\": 23,\n                \"ErrMsg\": \"\"\n            },\n            {\n                \"Status\": 2,\n                \"InstanceId\": \"tdsqlshard-d7tnnu13\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10182],\\\"RetreatedTime\\\":\\\"2016-02-11 01:21:37\\\"}\",\n                \"CreateTime\": \"2016-03-10 20:57:05\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-03-10 20:59:09\",\n                \"InstanceName\": \"tdsqlshard-d7tnnu13\",\n                \"Id\": 22,\n                \"ErrMsg\": \"\"\n            },\n            {\n                \"Status\": 2,\n                \"InstanceId\": \"tdsqlshard-7aqf6abn\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10182],\\\"RetreatedTime\\\":\\\"2016-02-18 01:21:37\\\"}\",\n                \"CreateTime\": \"2016-03-10 19:19:54\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-03-10 19:22:54\",\n                \"InstanceName\": \"tdsqlshard-7aqf6abn\",\n                \"Id\": 21,\n                \"ErrMsg\": \"\"\n            },\n            {\n                \"Status\": 3,\n                \"InstanceId\": \"tdsqlshard-7aqf6abn\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10160],\\\"RetreatedTime\\\":\\\"2016-01-01 01:30:30\\\"}\",\n                \"CreateTime\": \"2016-01-29 18:14:44\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-01-29 18:22:13\",\n                \"InstanceName\": \"tdsqlshard-7aqf6abn\",\n                \"Id\": 18,\n                \"ErrMsg\": \"pickValidBinlog error\"\n            },\n            {\n                \"Status\": 3,\n                \"InstanceId\": \"tdsqlshard-7aqf6abn\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10160],\\\"RetreatedTime\\\":\\\"2015-12-30 03:48:33\\\"}\",\n                \"CreateTime\": \"2016-01-18 20:01:47\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-01-18 20:09:16\",\n                \"InstanceName\": \"tdsqlshard-7aqf6abn\",\n                \"Id\": 16,\n                \"ErrMsg\": \"pickValidBinlog error\"\n            },\n            {\n                \"Status\": 3,\n                \"InstanceId\": \"tdsqlshard-7aqf6abn\",\n                \"RegionId\": 1,\n                \"InputData\": \"{\\\"AppId\\\":1251664966,\\\"UserType\\\":1,\\\"Uin\\\":\\\"1410643447\\\",\\\"Operator\\\":\\\"1410643447\\\",\\\"Ids\\\":[10160],\\\"RetreatedTime\\\":\\\"2015-12-29 03:48:33\\\"}\",\n                \"CreateTime\": \"2016-01-18 19:37:18\",\n                \"AppId\": 251000022,\n                \"UserTaskType\": 0,\n                \"EndTime\": \"2016-01-18 19:44:47\",\n                \"InstanceName\": \"tdsqlshard-7aqf6abn\",\n                \"Id\": 15,\n                \"ErrMsg\": \"pickValidBinlog error\"\n            }\n        ]\n    }\n}",
+        "title": "拉取用户任务列表"
+      }
+    ],
+    "DestroyDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DestroyDCDBInstance\n&InstanceId=tdsqlshard-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsqlshard-avw0207d\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
+    "DestroyHourDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DestroyHourDCDBInstance\n&InstanceId=tdsqlshard-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsqlshard-avw0207d\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
+    "DisassociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DisassociateSecurityGroups\n&Product=dcdb\n&SecurityGroupId=sg-xxxxxx\n&InstanceIds.0=tdsql-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "FlushBinlog": [
+      {
+        "document": "当需要最新的binlog文件时调用。\n该api相当于在mysqld中执行flush logs。binlog切分后将自动上传到cos，展示在控制台分片的binlog列表里，用户可下载。",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=FlushBinlog\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\"\n    }\n}",
+        "title": "切分Binlog"
+      }
+    ],
+    "GrantAccountPrivileges": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=GrantAccountPrivileges\n&InstanceId=dcdbt-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&DbName=*\n&Type=*\n&Privileges.0=select\n&Privileges.1=update\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"87201772-351f-4fb5-9164-fe757fbadb79\"\n    }\n}",
+        "title": "给云数据库账号赋权"
+      }
+    ],
+    "InitDCDBInstances": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=InitDCDBInstances\r\n&InstanceIds.0=dcdbt-fdpjf5zh\r\n&InstanceIds.1=dcdbt-avw0207d\r\n&Params.0.Param=lower_case_table_names\r\n&Params.0.Value=1\r\n&Params.1.Param=innodb_page_size\r\n&Params.1.Value=16384\r\n&Params.2.Param=character_set_server\r\n&Params.2.Value=utf8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d94ef093-ff84-4851-b2e0-a5c5920d618e\",\n        \"InstanceIds\": [\n            \"dcdbt-fdpjf5zh\",\n            \"dcdbt-avw0207d\"\n        ],\n        \"FlowIds\": [\n            3340,\n            3341\n        ]\n    }\n}",
+        "title": "批量初始化云数据库实例"
+      }
+    ],
+    "KillSession": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=KillSession\n&InstanceId=tdsqlshard-2gk4nxyz\n&ShardId=shard-ljilb4st\n&SessionId.0=1111\n&SessionId.1=2222\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"TaskId\": 11\n    }\n}",
+        "title": "杀死指定会话"
+      }
+    ],
+    "ModifyAccountDescription": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyAccountDescription\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Description=用于测试的账号\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aef9be24-4d49-4358-8022-3405a361fd3b\"\n    }\n}",
+        "title": "修改云数据库账号备注"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\"\n    }\n}",
+        "title": "示例1 修改云数据库安全组"
+      }
+    ],
+    "ModifyDBInstancesProject": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyDBInstancesProject\r\n&InstanceIds.0=dcdbt-fdpjf5zh\r\n&ProjectId=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改云数据库实例所属项目"
+      }
+    ],
+    "ModifyDBParameters": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyDBParameters\r\n&InstanceId=dcdbt-ige1a5k3\r\n&Params.0.Param=character_set_server\r\n&Params.0.Value=utf8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"dcdbt-ige1a5k3\",\n        \"Result\": [\n            {\n                \"Code\": 0,\n                \"Param\": \"character_set_server\"\n            }\n        ],\n        \"RequestId\": \"3381c9e9-d87f-4e21-ba1d-596d6f697a7e\"\n    }\n}",
+        "title": "修改数据库参数"
+      }
+    ],
+    "ModifyDBSyncMode": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyDBSyncMode\r\n&InstanceId=dcdbt-avw0207d\r\n&SyncMode=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"FlowId\": 3521\n    }\n}",
+        "title": "修改云数据库实例的同步模式"
+      }
+    ],
+    "ModifyRealServerAccessStrategy": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyRealServerAccessStrategy\n&InstanceId=tdsqshard-f35wr6wj\n&RsAccessStrategy=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
+    "OpenDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=OpenDBExtranetAccess\r\n&InstanceId=dcdbt-avw0207d\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"FlowId\": 3023\n    }\n}",
+        "title": "开通云数据库实例的外网访问"
+      }
+    ],
+    "RenewDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=RenewDCDBInstance\r\n&InstanceId=dcdbt-avw0207d\r\n&Period=1\r\n&AutoVoucher=false\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e87698f2-4576-730e-cba6-59fabe133cf8\",\n        \"DealName\": \"20171103110253\"\n    }\n}",
+        "title": "续费分布式数据库实例"
+      }
+    ],
+    "ResetAccountPassword": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=ResetAccountPassword\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Password=abcd8765_.\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7b1680d-db03-4f20-8684-a865ce7bcd38\"\n    }\n}",
+        "title": "修改云数据库账号的密码"
+      }
+    ],
+    "UpgradeDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeDCDBInstance\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UpgradeType=ADD\r\n&AddShardConfig.ShardCount=2\r\n&AddShardConfig.ShardMemory=2\r\n&AddShardConfig.ShardStorage=10\r\n&AutoVoucher=false\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"DealName\": \"20180103110035\"\n    }\n}",
+        "title": "升级分布式数据库"
+      }
+    ]
+  },
+  "version": "1.0"
+}

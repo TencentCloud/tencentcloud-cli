@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "ClearQueue": [
+      {
+        "document": "清空队列中堆积的消息",
+        "input": "https://cmq.tencentcloudapi.com/?Action=ClearQueue\r\n&QueueName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "清空队列中堆积的消息"
+      }
+    ],
+    "ClearSubscriptionFilterTags": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=ClearSubscriptionFilterTags\r\n&TopicName=ConnTopic&SubscriptionName=Queue\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "清空订阅者消息标签"
+      }
+    ],
+    "CreateQueue": [
+      {
+        "document": "创建队列示例",
+        "input": "https://cmq.tencentcloudapi.com/?Action=CreateQueue\r\n&QueueName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建队列"
+      }
+    ],
+    "CreateSubscribe": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=CreateSubscribe\r\n&TopicName=ConnTopic&SubscriptionName=ConnSubQueue&Protocol=queue&Endpoint=queue_sub\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SubscriptionId\": \"subsc-39gyuuhd\",\n        \"RequestId\": \"1620b635-6071-47c7-ac1e-975afe5104a7\"\n    }\n}",
+        "title": "创建订阅接口"
+      }
+    ],
+    "CreateTopic": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=CreateTopic\r\n&TopicName=ConnTopic\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建主题"
+      }
+    ],
+    "DeleteQueue": [
+      {
+        "document": "删除队列",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DeleteQueue\r\n&QueueName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "删除队列"
+      }
+    ],
+    "DeleteSubscribe": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DeleteSubscribe\r\n&TopicName=ConnTopic&SubscriptionName=york\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8efab10-0ac6-44cf-8d09-67bb228deaf4\"\n    }\n}",
+        "title": "删除订阅"
+      }
+    ],
+    "DeleteTopic": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DeleteTopic\r\n&TopicName=ConnTopic\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96b28b30-393a-48aa-9f00-07dbe6d86229\"\n    }\n}",
+        "title": "删除主题"
+      }
+    ],
+    "DescribeDeadLetterSourceQueues": [
+      {
+        "document": "枚举死信队列源队列",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DescribeDeadLetterSourceQueues\r\n&DeadLetterQueueName=test123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"test\",\n                \"QueueId\": \"queue-kc7m75to\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83fce81a-7305-49b4-a154-983dd76204da\"\n    }\n}",
+        "title": "枚举死信队列源队列"
+      }
+    ],
+    "DescribeQueueDetail": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DescribeQueueDetail\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"QueueSet\": [\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-kc7m75to\",\n                \"QueueName\": \"test\",\n                \"CreateUin\": 20548499,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 100000000,\n                \"PollingWaitSeconds\": 0,\n                \"MsgRetentionSeconds\": 345600,\n                \"VisibilityTimeout\": 30,\n                \"MaxMsgSize\": 65536,\n                \"RewindSeconds\": 0,\n                \"CreateTime\": 1581471003,\n                \"LastModifyTime\": 1581471003,\n                \"Transaction\": null,\n                \"DeadLetterSource\": [],\n                \"DeadLetterPolicy\": {\n                    \"DeadLetterQueue\": \"queue-0v0y40j4\",\n                    \"DeadLetterQueueName\": \"test123\",\n                    \"Policy\": 0,\n                    \"MaxReceiveCount\": 1,\n                    \"MaxTimeToLive\": null\n                },\n                \"TransactionPolicy\": null,\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 1582015467\n            },\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-0v0y40j4\",\n                \"QueueName\": \"test123\",\n                \"CreateUin\": 20548499,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 23232323,\n                \"PollingWaitSeconds\": 3,\n                \"MsgRetentionSeconds\": 232323,\n                \"VisibilityTimeout\": 12,\n                \"MaxMsgSize\": 121223,\n                \"RewindSeconds\": 0,\n                \"CreateTime\": 1581412802,\n                \"LastModifyTime\": 1581471003,\n                \"Transaction\": null,\n                \"DeadLetterSource\": [\n                    {\n                        \"QueueId\": \"queue-kc7m75to\",\n                        \"QueueName\": \"test\"\n                    }\n                ],\n                \"DeadLetterPolicy\": null,\n                \"TransactionPolicy\": null,\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 1582015467\n            },\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-dvukxexc\",\n                \"QueueName\": \"dead\",\n                \"CreateUin\": 20548499,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 100000000,\n                \"PollingWaitSeconds\": 0,\n                \"MsgRetentionSeconds\": 345600,\n                \"VisibilityTimeout\": 30,\n                \"MaxMsgSize\": 65536,\n                \"RewindSeconds\": 0,\n                \"CreateTime\": 1581418590,\n                \"LastModifyTime\": 1581418590,\n                \"Transaction\": null,\n                \"DeadLetterSource\": [],\n                \"DeadLetterPolicy\": null,\n                \"TransactionPolicy\": null,\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 1582015467\n            },\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-cdb91yt6\",\n                \"QueueName\": \"test21\",\n                \"CreateUin\": 20548499,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 100000000,\n                \"PollingWaitSeconds\": 0,\n                \"MsgRetentionSeconds\": 345600,\n                \"VisibilityTimeout\": 30,\n                \"MaxMsgSize\": 65536,\n                \"RewindSeconds\": 0,\n                \"CreateTime\": 1581413384,\n                \"LastModifyTime\": 1581413384,\n                \"Transaction\": null,\n                \"DeadLetterSource\": [],\n                \"DeadLetterPolicy\": null,\n                \"TransactionPolicy\": null,\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 1582015467\n            }\n        ],\n        \"RequestId\": \"3f9a8b31-ac0d-4abd-8af2-e8564ceac30a\"\n    }\n}",
+        "title": "获取队列列表"
+      }
+    ],
+    "DescribeSubscriptionDetail": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DescribeSubscriptionDetail\r\n&TopicName=Conn\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SubscriptionSet\": [\n            {\n                \"SubscriptionName\": \"ConnSub\",\n                \"SubscriptionId\": \"subsc-8y7fn4t2\",\n                \"TopicOwner\": 0,\n                \"MsgCount\": 0,\n                \"LastModifyTime\": 1590632987,\n                \"CreateTime\": 1590632987,\n                \"BindingKey\": null,\n                \"Endpoint\": \"test1\",\n                \"FilterTags\": [],\n                \"Protocol\": \"queue\",\n                \"NotifyStrategy\": \"EXPONENTIAL_DECAY_RETRY\",\n                \"NotifyContentFormat\": \"SIMPLIFIED\"\n            }\n        ],\n        \"RequestId\": \"72cd2d9d-d666-45ad-963a-cf5065a1984c\"\n    }\n}",
+        "title": "查询订阅详情"
+      }
+    ],
+    "DescribeTopicDetail": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=DescribeTopicDetail\r\n&Offset=0&Limit=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TopicSet\": [\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-rga4l1o4\",\n                \"TopicName\": \"ConnTopic\",\n                \"CreateUin\": 20548499,\n                \"MsgRetentionSeconds\": 10000,\n                \"MaxMsgSize\": 20000,\n                \"Qps\": 10000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1581516588,\n                \"LastModifyTime\": 1581563581,\n                \"MsgCount\": 0\n            },\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-388k6x98\",\n                \"TopicName\": \"test123\",\n                \"CreateUin\": 20548499,\n                \"MsgRetentionSeconds\": 86400,\n                \"MaxMsgSize\": 65536,\n                \"Qps\": 5000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1581493669,\n                \"LastModifyTime\": 1581495310,\n                \"MsgCount\": 0\n            }\n        ],\n        \"RequestId\": \"68ebb46b-5eac-467a-9942-1a5da83a65ca\"\n    }\n}",
+        "title": "查询主题详情"
+      }
+    ],
+    "ModifyQueueAttribute": [
+      {
+        "document": "修改队列属性",
+        "input": "https://cmq.tencentcloudapi.com/?Action=ModifyQueueAttribute\r\n&QueueName=test&MaxMsgSize=1024\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改队列属性"
+      }
+    ],
+    "ModifySubscriptionAttribute": [
+      {
+        "document": "修改订阅属性",
+        "input": "https://cmq.tencentcloudapi.com/?Action=ModifySubscriptionAttribute\r\n&TopicName=test&SubscriptionName=test&BindingKey.0=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改订阅属性"
+      }
+    ],
+    "ModifyTopicAttribute": [
+      {
+        "document": "",
+        "input": "https://cmq.tencentcloudapi.com/?Action=ModifyTopicAttribute\r\n&TopicName=ConnTopic&Qps=20000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a04c6b1-dec5-4979-b3b2-34ab3b3402b2\"\n    }\n}",
+        "title": "修改主题属性"
+      }
+    ],
+    "RewindQueue": [
+      {
+        "document": "回溯队列消费位置",
+        "input": "https://cmq.tencentcloudapi.com/?Action=RewindQueue\r\n&QueueName=test&StartConsumeTime=1582108595\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "回溯队列消费位置"
+      }
+    ],
+    "UnbindDeadLetter": [
+      {
+        "document": "解绑死信队列",
+        "input": "https://cmq.tencentcloudapi.com/?Action=UnbindDeadLetter\r\n&QueueName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "解绑死信队列"
+      }
+    ]
+  },
+  "version": "1.0"
+}

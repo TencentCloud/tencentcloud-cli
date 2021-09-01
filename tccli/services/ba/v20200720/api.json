@@ -1,0 +1,171 @@
+{
+  "actions": {
+    "CreateWeappQRUrl": {
+      "document": "创建渠道备案小程序二维码",
+      "input": "CreateWeappQRUrlRequest",
+      "name": "创建渠道备案小程序二维码",
+      "output": "CreateWeappQRUrlResponse"
+    },
+    "DescribeGetAuthInfo": {
+      "document": "获取实名认证信息",
+      "input": "DescribeGetAuthInfoRequest",
+      "name": "获取实名认证信息",
+      "output": "DescribeGetAuthInfoResponse"
+    },
+    "SyncIcpOrderWebInfo": {
+      "document": "将备案ICP订单下的一个网站信息 同步给订单下其他网站，需要被同步的网站被检查通过(isCheck:true)；\n只有指定的网站信息字段能被同步",
+      "input": "SyncIcpOrderWebInfoRequest",
+      "name": "同步备案ICP订单网站信息",
+      "output": "SyncIcpOrderWebInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-20",
+    "api_brief": "介绍如何使用API对备案进行操作，包括提交备案、查看备案信息、创建备案授权码等。",
+    "serviceNameCN": "网站备案",
+    "serviceShortName": "ba"
+  },
+  "objects": {
+    "CreateWeappQRUrlRequest": {
+      "document": "CreateWeappQRUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "代理角色临时密钥的Token",
+          "member": "string",
+          "name": "SessionKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWeappQRUrlResponse": {
+      "document": "CreateWeappQRUrl返回参数结构体",
+      "members": [
+        {
+          "document": "渠道备案小程序二维码",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGetAuthInfoRequest": {
+      "document": "DescribeGetAuthInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGetAuthInfoResponse": {
+      "document": "DescribeGetAuthInfo返回参数结构体",
+      "members": [
+        {
+          "document": "实名认证状态：0未实名，1已实名",
+          "example": "1",
+          "member": "string",
+          "name": "IsTenPayMasked",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实名认证类型：0个人，1企业",
+          "example": "1",
+          "member": "string",
+          "name": "IsAuthenticated",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "认证类型，个人0，企业1",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncIcpOrderWebInfoRequest": {
+      "document": "SyncIcpOrderWebInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "备案ICP订单号",
+          "example": "30159962067561775",
+          "member": "string",
+          "name": "IcpOrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单里的webId",
+          "example": "1000032",
+          "member": "string",
+          "name": "SourceWebId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单里的webId 数组(如果传入的webIds含有 订单中不包含的webId，会自动跳过)",
+          "example": "[\"10001\",\"10002\"]",
+          "member": "string",
+          "name": "TargetWebIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "网站信息字段名 数组",
+          "example": "[\"urlQCloud\",\"siteLiveBodyVerifyUrl\"]",
+          "member": "string",
+          "name": "SyncFields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否先判断同步的网站负责人是否一致 (这里会判断 sitePersonName, sitePersonCerType,sitePersonCerNum三个字段完全一致)  默认:true. 非必要 不建议关闭修改该参数默认值",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckSamePerson",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncIcpOrderWebInfoResponse": {
+      "document": "SyncIcpOrderWebInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

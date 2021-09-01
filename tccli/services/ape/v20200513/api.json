@@ -1,0 +1,1052 @@
+{
+  "actions": {
+    "BatchDescribeOrderCertificate": {
+      "document": "批量获取授权书下载地址",
+      "input": "BatchDescribeOrderCertificateRequest",
+      "name": "批量获取授权书下载地址",
+      "output": "BatchDescribeOrderCertificateResponse"
+    },
+    "BatchDescribeOrderImage": {
+      "document": "批量获取图片下载地址",
+      "input": "BatchDescribeOrderImageRequest",
+      "name": "批量获取图片下载地址",
+      "output": "BatchDescribeOrderImageResponse"
+    },
+    "CreateOrderAndDownloads": {
+      "document": "核销图片，获取原图URL地址",
+      "input": "CreateOrderAndDownloadsRequest",
+      "name": "获取图片下载地址",
+      "output": "CreateOrderAndDownloadsResponse"
+    },
+    "CreateOrderAndPay": {
+      "document": "购买一张图片并且支付",
+      "input": "CreateOrderAndPayRequest",
+      "name": "创建订单并支付",
+      "output": "CreateOrderAndPayResponse"
+    },
+    "DescribeAuthUsers": {
+      "document": "分页查询授权人列表",
+      "input": "DescribeAuthUsersRequest",
+      "name": "查询授权人列表",
+      "output": "DescribeAuthUsersResponse"
+    },
+    "DescribeDownloadInfos": {
+      "document": "获取用户图片下载记录",
+      "input": "DescribeDownloadInfosRequest",
+      "name": "获取图片下载记录",
+      "output": "DescribeDownloadInfosResponse"
+    },
+    "DescribeImage": {
+      "document": "根据ID查询一张图片的详细信息",
+      "input": "DescribeImageRequest",
+      "name": "查询图片详情",
+      "output": "DescribeImageResponse"
+    },
+    "DescribeImages": {
+      "document": "根据关键字搜索图片列表",
+      "input": "DescribeImagesRequest",
+      "name": "查询图片列表",
+      "output": "DescribeImagesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-05-13",
+    "api_brief": "介绍如何使用API对正版图库直通车进行操作，包括素材获取、素材订购等。",
+    "serviceNameCN": "正版图库直通车",
+    "serviceShortName": "ape"
+  },
+  "objects": {
+    "AuthInfo": {
+      "document": "授权人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主键",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权人名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证号/社会信用代码",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权人类型",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchDescribeOrderCertificateRequest": {
+      "document": "BatchDescribeOrderCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要下载授权书的订单id",
+          "member": "string",
+          "name": "OrderIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeOrderCertificateResponse": {
+      "document": "BatchDescribeOrderCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "授权书的下载地址",
+          "member": "string",
+          "name": "CertificateUrls",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeOrderImageRequest": {
+      "document": "BatchDescribeOrderImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要下载图片的订单id",
+          "member": "string",
+          "name": "OrderIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeOrderImageResponse": {
+      "document": "BatchDescribeOrderImage返回参数结构体",
+      "members": [
+        {
+          "document": "图片的下载地址",
+          "member": "string",
+          "name": "ImageUrls",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrderAndDownloadsRequest": {
+      "document": "CreateOrderAndDownloads请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ImageId必填，单张购买，所有必填，会员身份可以省略部分参数",
+          "example": "\"ImageInfos\":[{\"ImageId\":10561576,\"DimensionsNameId\":8,\"LicenseS",
+          "member": "ImageInfo",
+          "name": "ImageInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrderAndDownloadsResponse": {
+      "document": "CreateOrderAndDownloads返回参数结构体",
+      "members": [
+        {
+          "document": "成功核销后可以获取图片基本信息和原图地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[       {         \"ConsumeType\": 2,         \"DownloadId\": \"apid-",
+          "member": "DownloadInfo",
+          "name": "DownloadInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "可下载图片数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrderAndPayRequest": {
+      "document": "CreateOrderAndPay请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片ID",
+          "member": "uint64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "授权人ID",
+          "member": "string",
+          "name": "AuthUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "售卖组合id",
+          "member": "uint64",
+          "name": "MarshalId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrderAndPayResponse": {
+      "document": "CreateOrderAndPay返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthUsersRequest": {
+      "document": "DescribeAuthUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuthUsersResponse": {
+      "document": "DescribeAuthUsers返回参数结构体",
+      "members": [
+        {
+          "document": "授权人信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AuthInfo",
+          "name": "Users",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否是老策略用户",
+          "member": "bool",
+          "name": "OldUser",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadInfosRequest": {
+      "document": "DescribeDownloadInfos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间晚于指定时间",
+          "example": "2020-05-01T12:00:00Z",
+          "member": "datetime_iso",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间早于指定时间",
+          "example": "2020-05-01T14:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无效值，过滤结果为空",
+          "example": "[1245,6456]",
+          "member": "int64",
+          "name": "ImageIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadInfosResponse": {
+      "document": "DescribeDownloadInfos返回参数结构体",
+      "members": [
+        {
+          "document": "核销下载记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[       {         \"ConsumeType\": 2,         \"DownloadId\": \"apid-",
+          "member": "DownloadInfo",
+          "name": "DownloadInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageRequest": {
+      "document": "DescribeImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片ID",
+          "example": "4654365",
+          "member": "uint64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageResponse": {
+      "document": "DescribeImage返回参数结构体",
+      "members": [
+        {
+          "document": "图片ID",
+          "example": "345345",
+          "member": "uint64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片标题",
+          "example": "图片标题",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片描述",
+          "example": "图片描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片预览链接",
+          "example": "https://xxxxxxx024.jpg?imageMogr2/thumbnail/600x600/interlace/0",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片缩略图",
+          "example": "https://xxxxxxx024.jpg?imageMogr2/thumbnail/600x600/interlace/0",
+          "member": "string",
+          "name": "ThumbUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片供应商",
+          "example": "图片供应商",
+          "member": "string",
+          "name": "Vendor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片售卖组合信息",
+          "example": "[]",
+          "member": "ImageMarshal",
+          "name": "Marshals",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "宽",
+          "example": "683",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高",
+          "example": "1024",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片格式 jpg/eps/psd/...",
+          "example": "jpg",
+          "member": "string",
+          "name": "ImageFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片类型 摄影图片、插画、漫画、图表、矢量、psd、全景、gif、模板",
+          "example": "photo",
+          "member": "string",
+          "name": "ImageSenseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "关键词，多关键词用空格分隔",
+          "example": "关键词",
+          "member": "string",
+          "name": "Keywords",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分层图库id",
+          "example": "2",
+          "member": "int64",
+          "name": "LayeredGalleryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "构图方式：horizontal:横图、vertical:竖图、square:方图",
+          "example": "horizontal",
+          "member": "string",
+          "name": "Orientation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "天空",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "构图方式，可选以下值：horizontal、vertical、square，分别代表以下含义：横图、竖图、方图",
+          "example": "horizontal",
+          "member": "string",
+          "name": "Orientation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片类型，可选以下值：照片、插画",
+          "example": "照片",
+          "member": "string",
+          "name": "ImageSenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分层图库id数组，可选以下数值：1(基础)，2(精选)，3(高级)",
+          "example": "1",
+          "member": "int64",
+          "name": "LayeredGalleryIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "999",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否有下一页",
+          "example": "true",
+          "member": "bool",
+          "name": "HaveMore",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片信息数组",
+          "example": " [       {         \"Description\": \"天空\",         \"Height\": 933,  ",
+          "member": "ImageItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadInfo": {
+      "document": "图片下载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片基础信息",
+          "example": "{“ImageId”:6546,\"LicenseScopeId\"8,\"DimensionsNameId\":8}",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片原图URL",
+          "example": "https://xxxxx/xx.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片缩略图URL",
+          "example": "https://xxxxx/xx.jpg",
+          "member": "string",
+          "name": "ImageThumbUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单Id",
+          "example": "apod-7xxtp6tx",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单创建时间",
+          "example": "2021-02-01T15:51:03+08:00",
+          "member": "datetime_iso",
+          "name": "OrderCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载Id",
+          "example": "apid-4djgfg99",
+          "member": "string",
+          "name": "DownloadId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载时间",
+          "example": "2021-02-01T15:51:03+08:00",
+          "member": "datetime_iso",
+          "name": "DownloadTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片购买类型，单张/会员",
+          "example": "1:单张/2:会员",
+          "member": "int64",
+          "name": "ConsumeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否首次下载",
+          "example": "true",
+          "member": "bool",
+          "name": "FirstDownload",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageInfo": {
+      "document": "图片基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片Id",
+          "example": "436456",
+          "member": "int64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权场景Id",
+          "example": "8",
+          "member": "int64",
+          "name": "LicenseScopeId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "尺寸名称Id",
+          "example": "8",
+          "member": "int64",
+          "name": "DimensionsNameId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台用户标识",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台用户下载图片购买的价格(单位:分)",
+          "example": "9800",
+          "member": "uint64",
+          "name": "DownloadPrice",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载类型。匹配集合中的任意元素：\n<li>Single: 单张购买下载</li>\n<li>BasicEnterpriseMember: 企业基础会员下载</li>\n<li>AdvancedEnterpriseMember: 企业高级会员下载</li>\n<li>DistinguishedEnterpriseMember: 企业尊享会员下载</li>",
+          "example": "单张购买下载",
+          "member": "string",
+          "name": "DownloadType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageItem": {
+      "document": "图片信息条目",
+      "members": [
+        {
+          "default": "",
+          "document": "图片ID",
+          "example": "3038506",
+          "member": "uint64",
+          "name": "ImageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片标题",
+          "example": "天空",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片描述",
+          "example": "白色塑料卷上的透明线程",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片预览链接",
+          "example": "https://cdc-material.gtimg.com/ewesion_hdd/WS-IMAGE-01/WS0100186",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片缩略图",
+          "example": "https://cdc-material.gtimg.com/ewesion_hdd/WS-IMAGE-01/WS0100186",
+          "member": "string",
+          "name": "ThumbUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片供应商",
+          "example": "XXX科技有限公司",
+          "member": "string",
+          "name": "Vendor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片关键词",
+          "example": "纱线卷，纱线，帘线，",
+          "member": "string",
+          "name": "Keywords",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽",
+          "example": "654",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高",
+          "example": "1024",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageMarshal": {
+      "document": "图片售卖组合信息",
+      "members": [
+        {
+          "default": "",
+          "document": "售卖组合唯一标识",
+          "example": "3",
+          "member": "uint64",
+          "name": "MarshalId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片高度",
+          "example": "234",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片宽度",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片格式",
+          "example": "jpg",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片价格(单位:分)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Price",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权范围",
+          "example": "广告",
+          "member": "string",
+          "name": "LicenseScope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持VIP购买",
+          "example": "true",
+          "member": "bool",
+          "name": "IsVip",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权范围id",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseScopeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "尺寸",
+          "example": "s",
+          "member": "string",
+          "name": "DimensionsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "尺寸id",
+          "example": "1",
+          "member": "int64",
+          "name": "DimensionsNameId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

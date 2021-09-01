@@ -1,0 +1,235 @@
+{
+  "actions": {
+    "AutoSummarization": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=AutoSummarization\n&Text=\"中新经纬客户端4月4日电 中方于3月31日宣布对美国进口汽车及零部件暂停加征关税3个月，商务部发言人高峰4日在例行记者会上表示，3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限。双方上述决定有助于为中美经贸磋商创造良好的氛围。发布会上，高峰表示，中美两国元首在G20阿根廷峰会期间举行会晤，就经贸问题达成重要共识。作为两国元首共识的一部分，美方对中国输美产品加征关税税率提升至25%的期限从2019年1月1日推迟到3月2日。之后，为推动磋商，中方宣布对原产于美国的汽车及零部件暂停加征关税3个月，截止日期为3月31日。3月5日，美方正式宣布再次推迟对中国输美产品加征关税税率提升至25%的期限，具体期限另行通知。3月31日，中国国务院关税税则委员会宣布延长对原产于美国的汽车及零部件暂停加征关税措施，截止日期另行通知。高峰指出，双方上述决定无疑有助于为中美经贸磋商创造良好的氛围。\"\n&Length=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111f52b2-66e5-48f6-8cc8-a307942887d2\",\n        \"Summary\": \"中新经纬客户端4月4日电 中方于3月31日宣布对美国进口汽车及零部件暂停加征关税3个月，商务部发言人高峰4日在例行记者会上表示，双方上述决定有助于为中美经贸磋商创造良好的氛围。中美两国元首在G20阿根廷峰会期间举行会晤，就经贸问题达成重要共识。美方对中国输美产品加征关税税率提升至25%的期限从2019年1月1日推迟到3月2日。为推动磋商，中方宣布对原产于美国的汽车及零部件暂停加征关税3个月。\"\n    }\n}",
+        "title": "自动摘要示例"
+      }
+    ],
+    "ChatBot": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=ChatBot\n&Flag=1\n&OpenId=no23391003\n&Query=给我讲个故事可以\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Reply\": \"宝贝，最近好多小朋友都在听下面这些故事呢\",\n        \"Confidence\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "儿童闲聊示例"
+      },
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=ChatBot\n&Flag=0\n&Query=我要买股票\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Reply\": \"股市有风险，入市须谨慎\",\n        \"Confidence\": 0.8,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "通用闲聊示例"
+      }
+    ],
+    "CreateDict": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=CreateDict\n&Description=王者荣耀4月份新增英雄人名\n&Name=王者荣耀人名\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9acba6d-bbb9-4e84-aaf3-0ced77ee83ff\",\n        \"DictId\": \"udf-1b6b79e4cc\"\n    }\n}",
+        "title": "自定义词库创建接口示例"
+      }
+    ],
+    "CreateWordItems": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=CreateWordItems\n&DictId=udf-066edc3449\n&WordItems.0.Text=理想的目标是不再继续下跌了\n&WordItems.0.Pos=nr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb716d37-6669-405b-93ff-f4187f95576f\"\n    }\n}",
+        "title": "新增词条接口示例"
+      }
+    ],
+    "DeleteDict": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DeleteDict\n&DictId=udf-1b6b79e4cc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c156e32-143e-4d5e-864f-054835ba678b\"\n    }\n}",
+        "title": "删除自定义词库接口示例"
+      }
+    ],
+    "DeleteWordItems": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DeleteWordItems\n&DictId=udf-066edc3449\n&WordItems.0.Text=理想\n&WordItems.0.Pos=nr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb716d37-6669-405b-93ff-f4187f95576f\"\n    }\n}",
+        "title": "删除词条接口示例"
+      }
+    ],
+    "DependencyParsing": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DependencyParsing\n&Text=\"飞蛾扑火似地牺牲演出\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-7113-f6a929ce5076\",\n        \"DpTokens\": [\n            {\n                \"Word\": \"演出\",\n                \"Id\": 4,\n                \"HeadId\": 3,\n                \"Relation\": \"并列关系\"\n            },\n            {\n                \"Word\": \"牺牲\",\n                \"Id\": 3,\n                \"HeadId\": 1,\n                \"Relation\": \"并列关系\"\n            },\n            {\n                \"Word\": \"似地\",\n                \"Id\": 2,\n                \"HeadId\": 1,\n                \"Relation\": \"右附加关系\"\n            },\n            {\n                \"Word\": \"飞蛾扑火\",\n                \"Id\": 1,\n                \"HeadId\": 0,\n                \"Relation\": \"核心关系\"\n            }\n        ]\n    }\n}",
+        "title": "句法依存分析示例"
+      }
+    ],
+    "DescribeDict": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeDict\n&DictId=udf-066edc3449\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Dicts\": [\n            {\n                \"Description\": \"王者荣耀4月份新增英雄人名\",\n                \"CreateTime\": \"2020-05-12 08:10:15\",\n                \"UpdateTime\": \"2020-05-12 08:10:52\",\n                \"Id\": \"udf-066edc3449\",\n                \"Name\": \"王者荣耀人名2\"\n            }\n        ],\n        \"RequestId\": \"986c5ae4-d6e1-4e33-a7a3-baba21ad8aba\"\n    }\n}",
+        "title": "查询自定义词库接口示例"
+      }
+    ],
+    "DescribeDicts": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeDicts\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"Dicts\": [\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2020-05-12 06:06:34\",\n                \"UpdateTime\": \"\",\n                \"Id\": \"8d6c66a9b6afd22c7aeb717db07c3dfe\",\n                \"Name\": \"test5\"\n            },\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2020-05-12 03:04:03\",\n                \"UpdateTime\": \"\",\n                \"Id\": \"da7b62e7d7869b5304de61401190a7dc\",\n                \"Name\": \"测试2\"\n            },\n            {\n                \"Description\": \"\",\n                \"CreateTime\": \"2020-05-12 05:31:41\",\n                \"UpdateTime\": \"\",\n                \"Id\": \"e211041f0fd6cbe3ef94d10c792f1571\",\n                \"Name\": \"test4\"\n            }\n        ],\n        \"RequestId\": \"e6c9edb5-1ec0-4292-8187-fe38f7a90c92\"\n    }\n}",
+        "title": "查询自定义词典列表接口示例"
+      }
+    ],
+    "DescribeEntity": [
+      {
+        "document": "给定实体的名称，查询实体的所有属性和属性值。常用于个性化推荐、搜索，智能问答等业务场景。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeEntity\n&EntityName=腾讯云\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"{\\\"Alias\\\":[{\\\"Name\\\":\\\"腾讯云\\\",\\\"Order\\\":0}],\\\"Extra\\\":[{\\\"Name\\\":\\\"腾讯云\\\"}],\\\"Foundin\\\":[{\\\"Name\\\":\\\"http://baike.baidu.com/item/%E8%85%BE%E8%AE%AF%E4%BA%91\\\"},{\\\"Name\\\":\\\"http://baike.baidu.com/item/%E8%85%BE%E8%AE%AF%E4%BA%91/9905046\\\"},{\\\"Name\\\":\\\"http://baike.baidu.com/view/10880522.htm\\\"},{\\\"Name\\\":\\\"https://baike.sogou.com/m/fullLemma?lid=66901919\\\"}],\\\"Id\\\":[{\\\"Name\\\":\\\"87bc7630-9ed9-4bf0-a3d6-363eeeac4e21\\\"}],\\\"ImageDigest\\\":[{\\\"Name\\\":\\\"1fbf6a63b562ce566635b09342ecd91a\\\",\\\"Order\\\":1000}],\\\"Name\\\":[{\\\"Name\\\":\\\"腾讯云\\\"}],\\\"Popular\\\":[{\\\"Name\\\":523}],\\\"Type\\\":[{\\\"Name\\\":\\\"科技产品类_产品 (174)\\\"}],\\\"Types\\\":[{\\\"Name\\\":174}],\\\"上位词\\\":[{\\\"Name\\\":\\\"用户体验\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"应用系统\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"网站\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"数据中心\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"社交\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"平台\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"解决方案\\\",\\\"Order\\\":1000},{\\\"Name\\\":\\\"互联网\\\",\\\"Order\\\":1000}],\\\"中文名\\\":[{\\\"Name\\\":\\\"腾讯云\\\",\\\"Order\\\":0}],\\\"使用领域\\\":[{\\\"Name\\\":\\\"社交\\\",\\\"Order\\\":0},{\\\"Name\\\":\\\"游戏和其他领域\\\",\\\"Order\\\":1}],\\\"原始名称\\\":[{\\\"Name\\\":\\\"腾讯云\\\",\\\"Order\\\":1}],\\\"名称\\\":[{\\\"Name\\\":\\\"腾讯云\\\",\\\"Order\\\":0}],\\\"外文名\\\":[{\\\"Name\\\":\\\"qcloud\\\",\\\"Order\\\":0}],\\\"应用\\\":[{\\\"Name\\\":\\\"云空间\\\",\\\"Order\\\":0}],\\\"搜狗简介\\\":[{\\\"Name\\\":\\\"腾讯云 有着深厚的基础架构，并且有着多年对海量互联网服务的经验，不管是社交、游戏还是其他领域，都有多年的成熟产品来提供产品服务。腾讯在云端完成重要部署，为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案。 具体包括云服务器、云存储、云数据库和弹性web引擎等基础云服务；腾讯云分析（MTA）、腾讯云推送（信鸽）等腾讯整体大数据能力；以及 QQ互联、QQ空间、微云、微社区等云端链接社交体系。这些正是腾讯云可以提供给这个行业的差异化优势，造就了可支持各种互联网使用场景的高品质的腾讯云技术平台。 2018年12月24日，腾讯云宣布印度二区正式对外开放服务。该数据中心的开服，正式确立了腾讯云在南亚市场双可用区格局。\\\",\\\"Order\\\":1}],\\\"相关实体\\\":[{\\\"Id\\\":\\\"cb41b3d9-084d-47e9-a7c6-db9f34291e72\\\",\\\"Name\\\":\\\"云服务器\\\",\\\"Order\\\":1,\\\"Popular\\\":0},{\\\"Id\\\":\\\"f4ef5a26-5004-464c-b330-e00e240eb51a\\\",\\\"Name\\\":\\\"阿里云\\\",\\\"Order\\\":1,\\\"Popular\\\":0},{\\\"Id\\\":\\\"a8d63f3a-65af-49ef-84fc-b02e3fc85a8c\\\",\\\"Name\\\":\\\"行业解决方案\\\",\\\"Order\\\":1,\\\"Popular\\\":0},{\\\"Id\\\":\\\"a594c811-139c-4211-807b-3fe71da289ef\\\",\\\"Name\\\":\\\"云服务\\\",\\\"Order\\\":1,\\\"Popular\\\":0}],\\\"简介\\\":[{\\\"Name\\\":\\\"腾讯云有着深厚的基础架构,并且有着多年对海量互联网服务的经验,不管是社交、游戏还是其他领域,都有多年的成熟产品来提供产品服务。腾讯在云端完成重要部署,为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案。|@|具体包括云服务器、云存储、云数据库和弹性web引擎等基础云服务；腾讯云分析(mta)、腾讯云推送(信鸽)等腾讯整体大数据能力；以及 qq互联、qq空间、微云、微社区等云端链接社交体系。这些正是腾讯云可以提供给这个行业的差异化优势,造就了可支持各种互联网使用场景的高品质的腾讯云技术平台。\\\",\\\"Order\\\":0}],\\\"类别\\\":[{\\\"Name\\\":\\\"互联网\\\",\\\"Order\\\":0}],\\\"精选上位词\\\":[{\\\"Name\\\":\\\"产品\\\",\\\"Order\\\":1},{\\\"Name\\\":\\\"成熟产品来提供产品服务\\\",\\\"Order\\\":1},{\\\"Name\\\":\\\"互联网\\\",\\\"Order\\\":1}],\\\"英文名\\\":[{\\\"Name\\\":\\\"qcloud\\\",\\\"Order\\\":0}]}\",\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "实体信息查询"
+      }
+    ],
+    "DescribeRelation": [
+      {
+        "document": "给定两个实体的名称，查询两个实体的边关系。常用于个性化推荐、搜索，智能问答等业务场景。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeRelation\n&LeftEntityName=广东省\n&RightEntityName=深圳市\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Object\": [\n                    {\n                        \"Id\": [\n                            \"6b989d08-ecc5-4695-8857-5a5780c7bda1\"\n                        ],\n                        \"Name\": [\n                            \"深圳\"\n                        ],\n                        \"Popular\": [\n                            900\n                        ]\n                    }\n                ],\n                \"Relation\": \"下辖地区\",\n                \"Subject\": [\n                    {\n                        \"Id\": [\n                            \"b7d24d73-621a-4fdc-af5b-0c6e69a2c12f\"\n                        ],\n                        \"Name\": [\n                            \"广东\"\n                        ],\n                        \"Popular\": [\n                            902\n                        ]\n                    }\n                ]\n            },\n            {\n                \"Object\": [\n                    {\n                        \"Id\": [\n                            \"6b989d08-ecc5-4695-8857-5a5780c7bda1\"\n                        ],\n                        \"Name\": [\n                            \"深圳\"\n                        ],\n                        \"Popular\": [\n                            900\n                        ]\n                    }\n                ],\n                \"Relation\": \"相关实体\",\n                \"Subject\": [\n                    {\n                        \"Id\": [\n                            \"b7d24d73-621a-4fdc-af5b-0c6e69a2c12f\"\n                        ],\n                        \"Name\": [\n                            \"广东\"\n                        ],\n                        \"Popular\": [\n                            902\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "实体关系查询"
+      }
+    ],
+    "DescribeTriple": [
+      {
+        "document": "通过查询的嵌套，实现知识图谱中实体N度跳转查询。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"property\": [\"所属洲\"], \"subject\": {\"property\": [\"所属国家\"], \"subject\": {\"property\": [\"首都\"], \"subject\": {\"name\": \"中国\"}}}}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"\",\n                \"Name\": \"亚洲\",\n                \"Popular\": 0,\n                \"Order\": 0\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "嵌套查询"
+      },
+      {
+        "document": "对查询结果进行排序。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"order\": {\"direction\": \"decr\", \"property\": \"上映时间\"}, \"property\": [\"电影\"], \"subject\": {\"name\": \"梅兰芳\"}, \"type\": [\"视频类_影视明星\"]}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"71d0209c-1c8f-4b3d-9c9d-edf52658345f\",\n                \"Name\": \"贵妃醉酒\",\n                \"Popular\": 658,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"095886bc-4bb9-4041-b8b5-7aa9aa1f1740\",\n                \"Name\": \"西施\",\n                \"Popular\": 487,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"507e890e-9d8d-4811-8824-b4b6c01afca1\",\n                \"Name\": \"生死恨\",\n                \"Popular\": 381,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"882e0876-a157-4cab-b7a9-92db3ff8d6d9\",\n                \"Name\": \"梅兰芳的世界\",\n                \"Popular\": 200,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"6f6aba07-c3d2-44e5-be6b-5bd7b38b275a\",\n                \"Name\": \"黛玉葬花\",\n                \"Popular\": 329,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"d0788847-9143-469b-a579-2c87fecea964\",\n                \"Name\": \"游园惊梦\",\n                \"Popular\": 518,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"c43fd30d-8407-48ec-bc0a-17b772f4f1e5\",\n                \"Name\": \"洛神\",\n                \"Popular\": 445,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"e9d4bf5f-0585-4b6f-9ee8-e52401f08bcc\",\n                \"Name\": \"红线盗盒\",\n                \"Popular\": 553,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"27da5e26-c32b-4fb0-9cb0-4cbc61c6ff38\",\n                \"Name\": \"谢尔盖.爱森斯坦\",\n                \"Popular\": 131,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"85f04bb3-109b-4473-b34f-b34238673e15\",\n                \"Name\": \"木兰从军\",\n                \"Popular\": 345,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"2f97f741-f160-42ef-8042-9b8cc76f173b\",\n                \"Name\": \"天女散花\",\n                \"Popular\": 323,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"f6ff86c6-1636-4df2-9c12-ffce53125eb9\",\n                \"Name\": \"春香闹学\",\n                \"Popular\": 240,\n                \"Order\": 0\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "排序查询"
+      },
+      {
+        "document": "简单PO查询表示已知宾语和谓语，查询主语，每一个PO查询都是一个可独立执行的查询。常用于推荐、搜索等业务场景。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"type\": [\"人物类_人物\"], \"condition\": {\"and\": [{\"property\": [\"代表作品\"], \"equal\": \"文心雕龙\"}]}}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"bed741ab-26c0-4d9b-80b1-75a304b2390e\",\n                \"Name\": \"刘勰\",\n                \"Popular\": 719,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"30947aa5-84da-4477-b64e-65780f9759b3\",\n                \"Name\": \"戚德良\",\n                \"Popular\": 144,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"52b3c62b-499a-4e83-aa71-8d5b9a15f6fa\",\n                \"Name\": \"刘邦景\",\n                \"Popular\": 125,\n                \"Order\": 0\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "简单PO查询"
+      },
+      {
+        "document": "简单SP查询表示已知主语和谓语查询宾语，每一个SP查询都是一个可独立执行的查询，TQL支持SP查询的嵌套查询，即主语可以是一个嵌套的子查询。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"property\": [\"妻子\"], \"subject\": {\"name\": \"诸葛亮\"}}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"7d88c892-c50a-42e8-b81d-c393a7b0da88\",\n                \"Name\": \"黄月英\",\n                \"Popular\": 644,\n                \"Order\": 1000\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "简单SP查询"
+      },
+      {
+        "document": "对多个子查询的查询结果求交或求并操作。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeTriple\n&TripleCondition={\"operation\": \"query\", \"union\": [{\"property\": [\"代表作品\"], \"subject\": {\"name\": \"李白\"}}, {\"property\": [\"代表作品\"], \"subject\": {\"name\": \"杜甫\"}}]}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"b259e95d-e399-4c66-8839-8a9a011e9ad1\",\n                \"Name\": \"蜀道难\",\n                \"Popular\": 744,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"dd10f9bc-1042-48cd-98a6-3b4399d63ba2\",\n                \"Name\": \"茅屋为秋风所破歌\",\n                \"Popular\": 734,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"454060c3-5f59-4906-8d19-9b6fac76019d\",\n                \"Name\": \"梦游天姥吟留别\",\n                \"Popular\": 703,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"7c9bbff1-f9f6-4ffb-bb08-da9a8987880c\",\n                \"Name\": \"望岳\",\n                \"Popular\": 687,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"915d354a-eb8d-481f-b55a-e0c11a38979e\",\n                \"Name\": \"登高\",\n                \"Popular\": 667,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"6742c919-a7b7-4278-b6e3-8e5a093b41e7\",\n                \"Name\": \"春望\",\n                \"Popular\": 652,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"5b8377b8-a478-4f14-8677-aa8d63318c5d\",\n                \"Name\": \"静夜思\",\n                \"Popular\": 624,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"b1c38da4-f778-432c-82bc-fc919d56e8e9\",\n                \"Name\": \"三别\",\n                \"Popular\": 608,\n                \"Order\": 0\n            },\n            {\n                \"Id\": \"cc18263a-5aeb-420e-ad3b-0bf202bea178\",\n                \"Name\": \"三吏\",\n                \"Popular\": 554,\n                \"Order\": 0\n            }\n        ],\n        \"RequestId\": \"0e113f49-853d-4ab1-af86-f504a47c68a1\"\n    }\n}",
+        "title": "集合操作"
+      }
+    ],
+    "DescribeWordItems": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=DescribeWordItems\n&Offset=0\n&Limit=10\n&DictId=udf-066edc3449\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"RequestId\": \"2e064c2d-ee8f-4138-b153-c6b7656bf29b\",\n        \"WordItems\": [\n            {\n                \"Text\": \"男朋友\",\n                \"Pos\": \"\",\n                \"CreateTime\": \"2020-08-04 20:51:51\"\n            },\n            {\n                \"Text\": \"理想型\",\n                \"Pos\": \"\",\n                \"CreateTime\": \"2020-08-04 20:51:52\"\n            },\n            {\n                \"Text\": \"舒畅\",\n                \"Pos\": \"\",\n                \"CreateTime\": \"2020-08-04 20:51:53\"\n            }\n        ]\n    }\n}",
+        "title": "查询自定义词库的词条接口示例"
+      }
+    ],
+    "KeywordsExtraction": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=KeywordsExtraction\n&Text=\"印发《关于促进中小企业健康发展的指导意见》《改革国有资本授权经营体制方案》；启动第四批国企混合所有制改革试点，推进石油天然气电力等重点领域改革；颁布《外商投资法》，着手压减外商投资负面清单；设立科创板及试点注册制……今年以来，我国进一步放宽市场准入，继续削减行政审批和许可事项，使市场机制更加灵活、市场竞争更加公平，市场在资源配置中的决定性作用进一步发挥。\"\n&Num=6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Keywords\": [\n            {\n                \"Score\": 1,\n                \"Word\": \"改革\"\n            },\n            {\n                \"Score\": 0.71901304,\n                \"Word\": \"外商投资\"\n            },\n            {\n                \"Score\": 0.71288997,\n                \"Word\": \"市场竞争\"\n            },\n            {\n                \"Score\": 0.7022306,\n                \"Word\": \"经营\"\n            },\n            {\n                \"Score\": 0.69770753,\n                \"Word\": \"市场机制\"\n            },\n            {\n                \"Score\": 0.6859139,\n                \"Word\": \"事项\"\n            }\n        ],\n        \"RequestId\": \"669b5a3b-f159-42ea-8ac8-13b41557227c\"\n    }\n}",
+        "title": "关键词提取示例"
+      }
+    ],
+    "LexicalAnalysis": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=LexicalAnalysis\n&Text=\"欢迎使用腾讯知文自然语言处理\"\n&Flag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"PosTokens\": [\n            {\n                \"BeginOffset\": 0,\n                \"Word\": \"欢迎\",\n                \"Length\": 2,\n                \"Pos\": \"v\"\n            },\n            {\n                \"BeginOffset\": 2,\n                \"Word\": \"使用\",\n                \"Length\": 2,\n                \"Pos\": \"v\"\n            },\n            {\n                \"BeginOffset\": 4,\n                \"Word\": \"腾讯\",\n                \"Length\": 2,\n                \"Pos\": \"ntc\"\n            },\n            {\n                \"BeginOffset\": 6,\n                \"Word\": \"知文\",\n                \"Length\": 2,\n                \"Pos\": \"n\"\n            },\n            {\n                \"BeginOffset\": 8,\n                \"Word\": \"自然语言处理\",\n                \"Length\": 6,\n                \"Pos\": \"nz\"\n            }\n        ],\n        \"NerTokens\": [\n            {\n                \"BeginOffset\": 4,\n                \"Type\": \"ORG\",\n                \"Word\": \"腾讯\",\n                \"Length\": 2\n            }\n        ]\n    }\n}",
+        "title": "词法分析示例"
+      }
+    ],
+    "SearchWordItems": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=SearchWordItems\n&DictId=udf-066edc3449\n&WordItems.0.Text=理想型\n&WordItems.0.Pos=nr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb716d37-6669-405b-93ff-f4187f95576f\",\n        \"Results\": [\n            {\n                \"IsExist\": 1,\n                \"Pos\": \"\",\n                \"MatchText\": \"理想型\",\n                \"Text\": \"理想型\"\n            }\n        ]\n    }\n}",
+        "title": "检索词条接口示例"
+      }
+    ],
+    "SentenceEmbedding": [
+      {
+        "document": "特别说明：为方便观看，如下示例中，向量维度仅显示10维。实际维度以原API说明为准。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=SentenceEmbedding\n&Text=\"自然语言处理（英语：Natural Language Processing，缩写作 NLP）是人工智能和语言学领域的分支学科。\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"Dimension\": 10,\n        \"Vector\": [\n            0.030723740675431842,\n            -0.01908946710446959,\n            -0.011224565822083284,\n            -0.022616868427790263,\n            0.03715618769980639,\n            0.013664625324856709,\n            -0.0033610665978973404,\n            -0.0128242685664993,\n            -0.002694337080944987,\n            0.025049578069764024\n        ]\n    }\n}",
+        "title": "句向量示例"
+      }
+    ],
+    "SentimentAnalysis": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=SentimentAnalysis\n&Text=\"今天受了委屈，心情很差。\"\n&Mode=\"3class\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Neutral\": 9.115e-05,\n        \"Negative\": 0.99992788,\n        \"RequestId\": \"2d938c8b-d4cf-4b4e-9c1b-b587eb56d602\",\n        \"Positive\": 1.098e-05,\n        \"Sentiment\": \"negative\"\n    }\n}",
+        "title": "情感分析示例"
+      }
+    ],
+    "SimilarWords": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=SimilarWords\n&Text=\"腾讯\"\n&WordNumber=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SimilarWords\": [\n            \"腾迅\",\n            \"腾讯网\",\n            \"腾讯公司\",\n            \"搜狐\",\n            \"网易\",\n            \"新浪\",\n            \"中华网\",\n            \"QQ\",\n            \"和讯网\",\n            \"17173\",\n            \"搜搜\",\n            \"优酷网\",\n            \"拍拍网\",\n            \"SINA\",\n            \"酷讯\",\n            \"海网\",\n            \"空中网\",\n            \"奇虎\",\n            \"Qzone\",\n            \"猫扑网\"\n        ],\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\"\n    }\n}",
+        "title": "相似词示例"
+      }
+    ],
+    "TextClassification": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=TextClassification\n&Text=\"为迎接下周的比赛，今日巴萨队又开始了集训。\"\n&Flag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"Classes\": [\n            {\n                \"FirstClassName\": \"体育\",\n                \"FirstClassProbability\": 1,\n                \"SecondClassName\": \"西甲\",\n                \"SecondClassProbability\": 1\n            }\n        ]\n    }\n}",
+        "title": "文本分类示例"
+      }
+    ],
+    "TextCorrection": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=TextCorrection\n&Text=\"令天天气很好，我们很早起床，去学小读书。\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"CCITokens\": [\n            {\n                \"BeginOffset\": 0,\n                \"Word\": \"令\",\n                \"CorrectWord\": \"今\"\n            },\n            {\n                \"BeginOffset\": 16,\n                \"Word\": \"小\",\n                \"CorrectWord\": \"校\"\n            }\n        ],\n        \"ResultText\": \"今天天气很好，我们很早起床，去学校读书。\"\n    }\n}",
+        "title": "文本纠错示例"
+      }
+    ],
+    "TextSimilarity": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=TextSimilarity\n&SrcText=\"北京到上海的火车票\"\n&TargetText.0=\"北京到上海的飞机票\"\n&TargetText.1=\"北京到上海的高铁票\"\n&TargetText.2=\"上海到北京的火车票\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Similarity\": [\n            {\n                \"Score\": 0.9943903139727261,\n                \"Text\": \"北京到上海的飞机票\"\n            },\n            {\n                \"Score\": 0.9823085983303148,\n                \"Text\": \"北京到上海的高铁票\"\n            },\n            {\n                \"Score\": 0.6515947587356785,\n                \"Text\": \"上海到北京的火车票\"\n            }\n        ],\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\"\n    }\n}",
+        "title": "句子相似度示例"
+      }
+    ],
+    "UpdateDict": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=UpdateDict\n&DictId=udf-1b6b79e4cc\n&Name=王者荣耀人名2\n&Description=5月份新增\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9dbe8eac-4e64-4c97-8123-99fe7ded4d5f\"\n    }\n}",
+        "title": "修改自定义词库接口示例"
+      }
+    ],
+    "WordEmbedding": [
+      {
+        "document": "特别说明：为方便观看，如下示例中，向量维度仅显示10维。实际维度以原API说明为准。",
+        "input": "https://nlp.tencentcloudapi.com/?Action=WordEmbedding\n&Text=\"自然语言处理\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"Dimension\": 10,\n        \"Vector\": [\n            0.0723935,\n            0.138519,\n            0.0297711,\n            0.0160847,\n            0.0354727,\n            0.0133147,\n            0.0901527,\n            0.116386,\n            0.0905767,\n            -0.0555024\n        ]\n    }\n}",
+        "title": "词向量示例"
+      }
+    ],
+    "WordSimilarity": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=WordSimilarity\n&SrcWord=\"腾讯\"\n&TargetWord=\"QQ\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Similarity\": 0.6516934029987806,\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\"\n    }\n}",
+        "title": "词相似度示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

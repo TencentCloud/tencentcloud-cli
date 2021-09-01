@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeEisConnectorConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEisConnectorConfig\n<公共请求参数>\n\n{\n    \"ConnectorName\": \"xx\",\n    \"ConnectorVersion\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectorParameter\": \"{\\\"attributes\\\":{\\\"apiType\\\":\\\"XML\\\",\\\"apiVersion\\\":\\\"1.0.0\\\",\\\"description\\\":\\\"集成腾讯乐享通讯录管理等API\\\",\\\"displayName\\\":\\\"腾讯乐享\\\",\\\"expressionType\\\":\\\"dataway\\\",\\\"expressionVersion\\\":\\\"1.0.0\\\",\\\"name\\\":\\\"tencent-lexiang\\\",\\\"version\\\":\\\"1.0.0\\\"},\\\"properties\\\":[{\\\"attributes\\\":{\\\"displayName\\\":\\\"授权类型\\\",\\\"name\\\":\\\"grant_type\\\",\\\"required\\\":\\\"false\\\",\\\"type\\\":\\\"string\\\"}},{\\\"attributes\\\":{\\\"displayName\\\":\\\"开发者ID\\\",\\\"name\\\":\\\"app_key\\\",\\\"required\\\":\\\"true\\\",\\\"type\\\":\\\"string\\\"}},{\\\"attributes\\\":{\\\"displayName\\\":\\\"开发者secret\\\",\\\"name\\\":\\\"app_secret\\\",\\\"required\\\":\\\"true\\\",\\\"type\\\":\\\"string\\\"}}]}\",\n        \"RequestId\": \"s1621938120801752507\"\n    }\n}",
+        "title": "获取连接器配置参数"
+      }
+    ],
+    "ListEisConnectorOperations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEisConnectorOperations\n<公共请求参数>\n\n{\n    \"ConnectorName\": \"xx\",\n    \"ConnectorVersion\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Operations\": [\n            {\n                \"DisplayName\": \"更新成员\",\n                \"IsTrigger\": false,\n                \"OperationName\": \"update-user\"\n            },\n            {\n                \"DisplayName\": \"删除成员\",\n                \"IsTrigger\": false,\n                \"OperationName\": \"resign-user\"\n            }\n        ],\n        \"RequestId\": \"s1621939905452658979\"\n    }\n}",
+        "title": "获取连接器操作列表"
+      }
+    ],
+    "ListEisConnectors": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEisConnectors\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Connectors\": [\n            {\n                \"Company\": \"\",\n                \"ConnectorName\": \"tencent-lexiang\",\n                \"ConnectorVersion\": \"1.0.0\",\n                \"CreateTime\": 1621684293,\n                \"DisplayName\": \"腾讯乐享\",\n                \"Product\": \"\"\n            }\n        ],\n        \"RequestId\": \"s1621939791738929666\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取已上架连接器列表（最新版本）"
+      }
+    ]
+  },
+  "version": "1.0"
+}

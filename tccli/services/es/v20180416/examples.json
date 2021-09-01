@@ -1,0 +1,163 @@
+{
+  "actions": {
+    "CreateInstance": [
+      {
+        "document": "根据输入参数创建ES集群实例",
+        "input": "https://es.tencentcloudapi.com/?Action=CreateInstance\n&InstanceName=es_test\n&EsVersion=6.4.3\n&ChargeType=POSTPAID_BY_HOUR\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&Zone=ap-guangzhou-3\n&Password=xxxxxx\n&NodeInfoList.0.Type=hotData\n&NodeInfoList.0.NodeNum=2\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\n&NodeInfoList.0.DiskType=CLOUD_SSD\n&NodeInfoList.0.DiskSize=100\n&NodeInfoList.1.Type=dedicatedMaster\n&NodeInfoList.1.NodeNum=3\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-xxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
+        "title": "创建ES集群实例"
+      }
+    ],
+    "DeleteInstance": [
+      {
+        "document": "删除指定ID的集群实例",
+        "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\r\n&InstanceId=es-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
+        "title": "删除ES集群实例"
+      }
+    ],
+    "DescribeInstanceLogs": [
+      {
+        "document": "查询实例最新的主日志",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstanceLogs\r\n&InstanceId=es-f5mwm28u\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 71633,\n        \"InstanceLogList\": [\n            {\n                \"Time\": \"2019-01-22T10:45:36.220+08:00\",\n                \"Ip\": \"10.0.128.65\",\n                \"Level\": \"INFO\",\n                \"Message\": \"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:cdc62072721547678872c0448c1ecaf9, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.43, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\n            },\n            {\n                \"Time\": \"2019-01-22T10:45:35.730+08:00\",\n                \"Ip\": \"10.0.128.65\",\n                \"Level\": \"INFO\",\n                \"Message\": \"[o.e.p.o.OPackActionFilter] [1547723102001286009] forbidden request: { ID:1a8a5b7ea41a485ebdd769586c1dcdf6, TYP:MainRequest, USR:null, BRS:false, ACT:cluster:monitor/main, OA:10.0.128.73, IDX:, MET:GET, PTH:/, CNT:<OMITTED, LENGTH=0>, HDR:content-length, EFF:0 } Reason: null\"\n            }\n        ],\n        \"RequestId\": \"783d9290-dc60-4862-9340-10b632605374\"\n    }\n}",
+        "title": "查询ES集群日志"
+      }
+    ],
+    "DescribeInstanceOperations": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstanceOperations\r\n&InstanceId=es-f5mwm28u\r\n&StartTime=2019-01-30 20:18:03\r\n&EndTime=2019-03-30 20:18:03\r\n&Offset=0\r\n&Limit=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Operations\": [\n            {\n                \"Id\": 6173,\n                \"StartTime\": \"2019-03-07 16:30:39\",\n                \"Type\": \"CreateInstance\",\n                \"Detail\": {\n                    \"OldInfo\": [],\n                    \"NewInfo\": []\n                },\n                \"Result\": \"completed\",\n                \"Tasks\": [\n                    {\n                        \"Name\": \"prepareResource\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:31:11\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"deployESCluster\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:34:32\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"deployKibana\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:13\",\n                        \"SubTasks\": []\n                    },\n                    {\n                        \"Name\": \"configLB\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:15\",\n                        \"SubTasks\": []\n                    }\n                ],\n                \"Progress\": 1\n            }\n        ],\n        \"RequestId\": \"870dd618-b1ae-40cc-a5a9-22b867367ed7\"\n    }\n}",
+        "title": "查询ES集群实例操作记录"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "根据给定条件查询符合条件的ES集群实例并返回详细信息",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstances\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"es-sample\",\n                \"InstanceName\": \"es-sample\",\n                \"InstanceType\": 2,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"AppId\": 0,\n                \"Uin\": \"xxxxxxxx\",\n                \"VpcUid\": \"vpc-sample\",\n                \"SubnetUid\": \"subnet-sample\",\n                \"Status\": 1,\n                \"ChargeType\": \"PREPAID\",\n                \"ChargePeriod\": 1,\n                \"RenewFlag\": \"RENEW_FLAG_DEFAULT\",\n                \"NodeType\": \"ES.S1.SMALL2\",\n                \"NodeNum\": 2,\n                \"CpuNum\": 1,\n                \"MemSize\": 2,\n                \"DiskType\": \"\",\n                \"DiskSize\": 100,\n                \"EsDomain\": \"es-sample.tencentelasticsearch.com\",\n                \"EsVip\": \"0.0.0.0\",\n                \"EsPort\": 9200,\n                \"KibanaUrl\": \"https://es-sample.kibana.tencentelasticsearch.com:5601\",\n                \"EsVersion\": \"5.6.4\",\n                \"EsConfig\": \"{}\",\n                \"EsAcl\": {\n                    \"WhiteIpList\": [],\n                    \"BlackIpList\": []\n                },\n                \"CreateTime\": \"2018-07-27 17:28:04\",\n                \"UpdateTime\": \"2018-07-30 10:22:29\",\n                \"Deadline\": \"2018-08-27 17:28:04\"\n            },\n            {\n                \"InstanceId\": \"es-sample2\",\n                \"InstanceName\": \"es-sample2\",\n                \"InstanceType\": 2,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-4\",\n                \"AppId\": 0,\n                \"Uin\": \"xxxxxx\",\n                \"VpcUid\": \"vpc-sample\",\n                \"SubnetUid\": \"subnet-sample\",\n                \"Status\": 1,\n                \"ChargeType\": \"PREPAID\",\n                \"ChargePeriod\": 1,\n                \"RenewFlag\": \"RENEW_FLAG_DEFAULT\",\n                \"NodeType\": \"ES.S1.MEDIUM4\",\n                \"NodeNum\": 2,\n                \"CpuNum\": 2,\n                \"MemSize\": 4,\n                \"DiskType\": \"\",\n                \"DiskSize\": 100,\n                \"EsDomain\": \"es-sample.tencentelasticsearch.com\",\n                \"EsVip\": \"0.0.0.0\",\n                \"EsPort\": 9200,\n                \"KibanaUrl\": \"https://es-sample.kibana.tencentelasticsearch.com:5601\",\n                \"EsVersion\": \"5.6.4\",\n                \"EsConfig\": \"{}\",\n                \"EsAcl\": {\n                    \"WhiteIpList\": [],\n                    \"BlackIpList\": []\n                },\n                \"CreateTime\": \"2018-07-26 17:47:47\",\n                \"UpdateTime\": \"2018-07-26 18:16:50\",\n                \"Deadline\": \"2018-08-26 17:47:47\"\n            }\n        ],\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccxxxxxx\"\n    }\n}",
+        "title": "查询ES集群实例"
+      }
+    ],
+    "DiagnoseInstance": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DiagnoseInstance\n&InstanceId=ex-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "智能运维诊断集群"
+      }
+    ],
+    "GetRequestTargetNodeTypes": [
+      {
+        "document": "对于冷热分离的集群，可以通过该接口获取到当前集群用于接收客户端请求的节点类型",
+        "input": "https://es.tencentcloudapi.com/?Action=GetRequestTargetNodeTypes\n&InstanceId=es-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fd57721-808b-4f21-8f6b-51bca79ff1xx\",\n        \"TargetNodeTypes\": [\n            \"hot\",\n            \"warm\"\n        ]\n    }\n}",
+        "title": "获取接收客户端请求的节点类型"
+      }
+    ],
+    "RestartInstance": [
+      {
+        "document": "用以进行版本更新等操作",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "重启ES集群实例"
+      }
+    ],
+    "RestartKibana": [
+      {
+        "document": "重启Kibana",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartKibana\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
+        "title": "重启Kibana"
+      }
+    ],
+    "RestartNodes": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=RestartNodes\r\n&InstanceId=es-xxxxxxxx\r\n&NodeNames.0=159229897700074xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "重启集群节点"
+      }
+    ],
+    "UpdateDiagnoseSettings": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateDiagnoseSettings\n&InstanceId=es-xxxxxx\n&Status=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "开启智能运维"
+      }
+    ],
+    "UpdateInstance": [
+      {
+        "document": "用以修改指定ES集群实例的名称",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxx\n&InstanceName=newName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "修改ES集群实例名称"
+      },
+      {
+        "document": "用以对指定ES集群实例进行横向扩缩容，纵向扩缩容，增加专用主节点，专用主节点横向扩缩容，纵向扩缩容等操作，NodeInfoList要传递目标的全量节点信息",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxx\n&NodeInfoList.0.Type=hotData\n&NodeInfoList.0.NodeNum=2\n&NodeInfoList.0.NodeType=ES.S1.SMALL2\n&NodeInfoList.0.DiskType=CLOUD_SSD\n&NodeInfoList.0.DiskSize=100\n&NodeInfoList.1.Type=dedicatedMaster\n&NodeInfoList.1.NodeNum=3\n&NodeInfoList.1.NodeType=ES.S1.SMALL2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6001962a-17c5-4604-a0af-0d4719xxxxxx\"\n    }\n}",
+        "title": "ES集群节点规格变更"
+      },
+      {
+        "document": "用以对指定的ES集群实例的配置进行修改操作",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&EsConfig={\"action.destructive_requires_name\":\"true\"}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7c1bb22-e5f2-42f1-8a12-a97a6dxxxxxx\"\n    }\n}",
+        "title": "修改ES集群实例配置"
+      },
+      {
+        "document": "重置指定ES集群实例Kibana密码",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&Password=newPwd_123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b72089e-720f-4f95-a4ae-4da461xxxxxx\"\n    }\n}",
+        "title": "重置Kibana密码"
+      },
+      {
+        "document": "用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateInstance\n&InstanceId=es-xxxxxxxx\n&NodeType=ES.S1.MEDIUM4\n&DiskSize=150\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd3f624d-9a72-4057-85cb-f5d32exxxxxx\"\n    }\n}",
+        "title": "ES集群纵向扩缩容"
+      }
+    ],
+    "UpdatePlugins": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\n&InstanceId=es-xxxxxxxx\n&InstallPluginList.0=analysis-qq\n&InstallPluginList.1=sql\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "批量安装插件"
+      },
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdatePlugins\n&InstanceId=es-xxxxxxxx\n&RemovePluginList.0=analysis-qq\n&RemovePluginList.1=sql\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "批量卸载插件"
+      }
+    ],
+    "UpdateRequestTargetNodeTypes": [
+      {
+        "document": "对于冷热分离的集群，在温节点节点规格比较小的情况下，可以把来自客户端的请求只发送到热节点上，只让热节点承担协调节点的功能。",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateRequestTargetNodeTypes\n&InstanceId=es-xxxxxx\n&TargetNodeTypes.0=hot\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fd57721-808b-4f21-8f6b-51bca79ff1xx\"\n    }\n}",
+        "title": "更新接收客户端请求的节点类型"
+      }
+    ],
+    "UpgradeInstance": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpgradeInstance\r\n&InstanceId=es-xxxxxxxx\r\n&EsVersion=6.4.3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "升级ES集群版本"
+      }
+    ],
+    "UpgradeLicense": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=UpgradeLicense\r\n&InstanceId=es-xxxxxxxx\r\n&LicenseType=platinum\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "升级ES商业特性"
+      }
+    ]
+  },
+  "version": "1.0"
+}

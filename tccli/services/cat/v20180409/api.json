@@ -1,0 +1,3249 @@
+{
+  "actions": {
+    "BindAlarmPolicy": {
+      "document": "绑定拨测任务和告警策略组",
+      "input": "BindAlarmPolicyRequest",
+      "name": "绑定告警策略组",
+      "output": "BindAlarmPolicyResponse"
+    },
+    "CreateAgentGroup": {
+      "document": "添加拨测分组",
+      "input": "CreateAgentGroupRequest",
+      "name": "添加拨测分组",
+      "output": "CreateAgentGroupResponse"
+    },
+    "CreateTaskEx": {
+      "document": "创建拨测任务(扩展)",
+      "input": "CreateTaskExRequest",
+      "name": "创建拨测任务(扩展)",
+      "output": "CreateTaskExResponse"
+    },
+    "DeleteAgentGroup": {
+      "document": "删除拨测分组",
+      "input": "DeleteAgentGroupRequest",
+      "name": "删除拨测分组",
+      "output": "DeleteAgentGroupResponse"
+    },
+    "DeleteTasks": {
+      "document": "删除多个拨测任务",
+      "input": "DeleteTasksRequest",
+      "name": "删除拨测任务",
+      "output": "DeleteTasksResponse"
+    },
+    "DescribeAgentGroups": {
+      "document": "查询拨测分组列表",
+      "input": "DescribeAgentGroupsRequest",
+      "name": "查询拨测分组列表",
+      "output": "DescribeAgentGroupsResponse"
+    },
+    "DescribeAgents": {
+      "document": "查询本用户可选的拨测点列表",
+      "input": "DescribeAgentsRequest",
+      "name": "查询本用户可选的拨测点列表",
+      "output": "DescribeAgentsResponse"
+    },
+    "DescribeAlarmTopic": {
+      "document": "查询用户的告警主题列表",
+      "input": "DescribeAlarmTopicRequest",
+      "name": "查询用户的告警主题列表",
+      "output": "DescribeAlarmTopicResponse"
+    },
+    "DescribeAlarms": {
+      "document": "查询拨测告警列表",
+      "input": "DescribeAlarmsRequest",
+      "name": "查询拨测告警列表",
+      "output": "DescribeAlarmsResponse"
+    },
+    "DescribeAlarmsByTask": {
+      "document": "按任务查询拨测告警列表",
+      "input": "DescribeAlarmsByTaskRequest",
+      "name": "按任务查询拨测告警列表",
+      "output": "DescribeAlarmsByTaskResponse"
+    },
+    "DescribeCatLogs": {
+      "document": "查询拨测流水",
+      "input": "DescribeCatLogsRequest",
+      "name": "查询拨测流水",
+      "output": "DescribeCatLogsResponse"
+    },
+    "DescribeTaskDetail": {
+      "document": "查询拨测任务信息",
+      "input": "DescribeTaskDetailRequest",
+      "name": "查询拨测任务信息",
+      "output": "DescribeTaskDetailResponse"
+    },
+    "DescribeTasksByType": {
+      "document": "按类型查询拨测任务列表",
+      "input": "DescribeTasksByTypeRequest",
+      "name": "按类型查询拨测任务列表",
+      "output": "DescribeTasksByTypeResponse"
+    },
+    "DescribeUserLimit": {
+      "document": "获取用户可用资源限制",
+      "input": "DescribeUserLimitRequest",
+      "name": "获取用户可用资源限制",
+      "output": "DescribeUserLimitResponse"
+    },
+    "GetAvailRatioHistory": {
+      "document": "获取指定时刻的可用率地图信息",
+      "input": "GetAvailRatioHistoryRequest",
+      "name": "获取指定时刻的可用率地图信息",
+      "output": "GetAvailRatioHistoryResponse"
+    },
+    "GetDailyAvailRatio": {
+      "document": "获取一天的整体可用率信息",
+      "input": "GetDailyAvailRatioRequest",
+      "name": "获取一天的整体可用率信息",
+      "output": "GetDailyAvailRatioResponse"
+    },
+    "GetRealAvailRatio": {
+      "document": "获取实时可用率信息",
+      "input": "GetRealAvailRatioRequest",
+      "name": "获取实时可用率信息",
+      "output": "GetRealAvailRatioResponse"
+    },
+    "GetRespTimeTrendEx": {
+      "document": "查询拨测任务的走势数据",
+      "input": "GetRespTimeTrendExRequest",
+      "name": "查询拨测任务的走势数据",
+      "output": "GetRespTimeTrendExResponse"
+    },
+    "GetResultSummary": {
+      "document": "获取任务列表的实时数据",
+      "input": "GetResultSummaryRequest",
+      "name": "获取任务列表的实时数据",
+      "output": "GetResultSummaryResponse"
+    },
+    "GetReturnCodeHistory": {
+      "document": "查询拨测任务的历史返回码信息",
+      "input": "GetReturnCodeHistoryRequest",
+      "name": "查询拨测任务的历史返回码信息",
+      "output": "GetReturnCodeHistoryResponse"
+    },
+    "GetReturnCodeInfo": {
+      "document": "查询拨测任务的返回码统计信息",
+      "input": "GetReturnCodeInfoRequest",
+      "name": "查询拨测任务的返回码统计信息",
+      "output": "GetReturnCodeInfoResponse"
+    },
+    "GetTaskTotalNumber": {
+      "document": "获取AppId下的拨测任务总数",
+      "input": "GetTaskTotalNumberRequest",
+      "name": "获取拨测任务总数",
+      "output": "GetTaskTotalNumberResponse"
+    },
+    "ModifyAgentGroup": {
+      "document": "修改拨测分组",
+      "input": "ModifyAgentGroupRequest",
+      "name": "修改拨测分组",
+      "output": "ModifyAgentGroupResponse"
+    },
+    "ModifyTaskEx": {
+      "document": "修改拨测任务(扩展)",
+      "input": "ModifyTaskExRequest",
+      "name": "修改拨测任务(扩展)",
+      "output": "ModifyTaskExResponse"
+    },
+    "PauseTask": {
+      "document": "暂停拨测任务",
+      "input": "PauseTaskRequest",
+      "name": "暂停拨测任务",
+      "output": "PauseTaskResponse"
+    },
+    "RunTask": {
+      "document": "运行拨测任务",
+      "input": "RunTaskRequest",
+      "name": "运行拨测任务",
+      "output": "RunTaskResponse"
+    },
+    "VerifyResult": {
+      "document": "验证拨测任务，结果验证查询（验证成功的，才建议创建拨测任务）",
+      "input": "VerifyResultRequest",
+      "name": "验证拨测结果",
+      "output": "VerifyResultResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-09",
+    "api_brief": "介绍如何使用API对云拨测进行操作，包括拨测任务、拨测告警等。",
+    "serviceNameCN": "云拨测",
+    "serviceShortName": "cat"
+  },
+  "objects": {
+    "AgentGroup": {
+      "document": "拨测分组",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测分组ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测分组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否默认拨测分组。1表示是，0表示否",
+          "member": "uint64",
+          "name": "IsDefault",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用本拨测分组的任务数",
+          "member": "uint64",
+          "name": "TaskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测结点列表",
+          "member": "CatAgent",
+          "name": "GroupDetail",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大拨测分组数",
+          "member": "uint64",
+          "name": "MaxGroupNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmInfo": {
+      "document": "拨测告警信息",
+      "members": [
+        {
+          "default": "",
+          "document": "告警对象的名称",
+          "member": "string",
+          "name": "ObjName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警发生的时间",
+          "member": "string",
+          "name": "FirstOccurTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警结束的时间",
+          "member": "string",
+          "name": "LastOccurTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态。1 表示已恢复，0 表示未恢复，2表示数据不足",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警的内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特征项名字",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特征项数值",
+          "member": "string",
+          "name": "MetricValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警对象的ID",
+          "member": "string",
+          "name": "ObjId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AlarmTopic": {
+      "document": "告警主题",
+      "members": [
+        {
+          "default": "",
+          "document": "主题的ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题的名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindAlarmPolicyRequest": {
+      "document": "BindAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警策略组Id",
+          "member": "uint64",
+          "name": "PolicyGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否绑定操作。非0 为绑定， 0 为 解绑。缺省表示 绑定。",
+          "member": "uint64",
+          "name": "IfBind",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警主题Id",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAlarmPolicyResponse": {
+      "document": "BindAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CatAgent": {
+      "document": "拨测Agent 所在省份、运营商",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测结点所在的省份（拼音缩写）",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测结点所在的运营商（英文缩写）",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测结点所在的省份（中文名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProvinceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拨测结点所在的运营商（中文名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IspName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CatLog": {
+      "document": "拨测记录",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测时间点",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测类型",
+          "member": "string",
+          "name": "CatTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测点所在城市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测点所在运营商",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被拨测Server的IP",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被拨测Server的域名",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行耗时，单位毫秒",
+          "member": "uint64",
+          "name": "TotalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功失败(1 失败，0 成功）",
+          "member": "uint64",
+          "name": "ResultType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败错误码",
+          "member": "uint64",
+          "name": "ResultCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包大小",
+          "member": "uint64",
+          "name": "ReqPkgSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回应包大小",
+          "member": "uint64",
+          "name": "RspPkgSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测请求",
+          "member": "string",
+          "name": "ReqMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测回应",
+          "member": "string",
+          "name": "RespMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测点所在城市名称",
+          "member": "string",
+          "name": "CityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测点所在运营商名称",
+          "member": "string",
+          "name": "IspName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析耗时，单位毫秒",
+          "member": "uint64",
+          "name": "ParseTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接耗时，单位毫秒",
+          "member": "uint64",
+          "name": "ConnectTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据发送耗时，单位毫秒",
+          "member": "uint64",
+          "name": "SendTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "等待耗时，单位毫秒",
+          "member": "uint64",
+          "name": "WaitTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收耗时，单位毫秒",
+          "member": "uint64",
+          "name": "ReceiveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CatReturnDetail": {
+      "document": "拨测失败详情",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商名称",
+          "member": "string",
+          "name": "IspName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份全拼",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份中文名称",
+          "member": "string",
+          "name": "ProvinceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Map键值",
+          "member": "string",
+          "name": "MapKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测目标的IP",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测失败个数",
+          "member": "uint64",
+          "name": "ResultCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测失败返回码",
+          "member": "uint64",
+          "name": "ResultCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测失败原因描述",
+          "member": "string",
+          "name": "ErrorReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CatReturnSummary": {
+      "document": "拨测失败返回情况汇总",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测失败个数",
+          "member": "uint64",
+          "name": "ResultCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测失败返回码",
+          "member": "uint64",
+          "name": "ResultCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测失败原因描述",
+          "member": "string",
+          "name": "ErrorReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CatTaskDetail": {
+      "document": "任务信息和告警策略组",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务周期，单位为分钟。目前支持1，5，15，30几种取值",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测类型。http, https, ping, tcp 之一",
+          "member": "string",
+          "name": "CatTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测任务的URL",
+          "member": "string",
+          "name": "CgiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测分组ID",
+          "member": "uint64",
+          "name": "AgentGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略组ID",
+          "member": "uint64",
+          "name": "PolicyGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。1表示暂停，2表示运行中，0为初始态",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型。0 站点监控，2 可用性监控",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的统一告警主题ID",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态。0 未启用，1, 启用",
+          "member": "uint64",
+          "name": "AlarmStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定的域名",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测目标的端口号",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "要在结果中进行匹配的字符串",
+          "member": "string",
+          "name": "CheckStr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1 表示通过检查结果是否包含CheckStr 进行校验",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Agent信息",
+          "member": "string",
+          "name": "UserAgent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置的Cookie信息",
+          "member": "string",
+          "name": "Cookie",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "POST 请求数据。空字符串表示非POST请求",
+          "member": "string",
+          "name": "PostData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SSL协议版本",
+          "member": "string",
+          "name": "SslVer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为Header请求。非0 Header 请求",
+          "member": "uint64",
+          "name": "IsHeader",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的DNS服务器",
+          "member": "string",
+          "name": "DnsSvr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要检验是否在DNS IP列表的IP",
+          "member": "string",
+          "name": "DnsCheckIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DNS查询类型",
+          "member": "string",
+          "name": "DnsQueryType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录服务器的账号",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录服务器的密码",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用安全链接SSL， 0 不使用，1 使用",
+          "member": "uint64",
+          "name": "UseSecConn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "FTP登录验证方式  0 不验证  1 匿名登录  2 需要身份验证",
+          "member": "uint64",
+          "name": "NeedAuth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求数据类型。0 表示请求为字符串类型。1表示为二进制类型",
+          "member": "uint64",
+          "name": "ReqDataType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起TCP, UDP请求的协议请求数据",
+          "member": "string",
+          "name": "ReqData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "响应数据类型。0 表示响应为字符串类型。1表示为二进制类型",
+          "member": "uint64",
+          "name": "RespDataType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预期的UDP请求的回应数据",
+          "member": "string",
+          "name": "RespData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跟随跳转次数",
+          "member": "uint64",
+          "name": "RedirectFollowNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAgentGroupRequest": {
+      "document": "CreateAgentGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测分组名称，不超过32个字符",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为默认分组，取值可为 0 或 1。取 1 时表示设置为默认分组",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。",
+          "member": "CatAgent",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentGroupResponse": {
+      "document": "CreateAgentGroup返回参数结构体",
+      "members": [
+        {
+          "document": "拨测分组Id",
+          "member": "uint64",
+          "name": "GroupId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskExRequest": {
+      "document": "CreateTaskEx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "http, https, ping, tcp, ftp, smtp, udp, dns 之一",
+          "member": "string",
+          "name": "CatTypeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测的URL， 例如：www.qq.com (URL域名解析需要能解析出具体的IP)",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测周期。取值可为1,5,15,30之一, 单位：分钟。精度不能低于用户等级规定的最小精度",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测任务名称不能超过32个字符。同一个用户创建的任务名不可重复",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroups 接口，本参数使用返回结果里的GroupId的值。注意： Type为0时，AgentGroupId为必填",
+          "member": "uint64",
+          "name": "AgentGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定域名(如需要)",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为Header请求（非0 发起Header 请求。为0，且PostData 非空，发起POST请求。为0，PostData 为空，发起GET请求）",
+          "member": "uint64",
+          "name": "IsHeader",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "URL中含有\"https\"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一",
+          "member": "string",
+          "name": "SslVer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "POST请求数据。空字符串表示非POST请求",
+          "member": "string",
+          "name": "PostData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Agent信息",
+          "member": "string",
+          "name": "UserAgent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要在结果中进行匹配的字符串",
+          "member": "string",
+          "name": "CheckStr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1 表示通过检查结果是否包含CheckStr 进行校验",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要设置的Cookie信息",
+          "member": "string",
+          "name": "Cookie",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID，用于验证且修改任务时传入原任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录服务器的密码",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缺省为0。0 表示请求为字符串类型。1表示为二进制类型",
+          "member": "uint64",
+          "name": "ReqDataType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发起TCP, UDP请求的协议请求数据",
+          "member": "string",
+          "name": "ReqData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缺省为0。0 表示响应为字符串类型。1表示为二进制类型",
+          "member": "uint64",
+          "name": "RespDataType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过",
+          "member": "string",
+          "name": "RespData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的DNS服务器  可以为空字符串",
+          "member": "string",
+          "name": "DnsSvr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验",
+          "member": "string",
+          "name": "DnsCheckIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要为下列值之一。缺省为A。A, MX, NS, CNAME, TXT, ANY",
+          "member": "string",
+          "name": "DnsQueryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否使用安全链接SSL， 0 不使用，1 使用",
+          "member": "uint64",
+          "name": "UseSecConn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "FTP登录验证方式， 0 不验证 ， 1 匿名登录， 2 需要身份验证",
+          "member": "uint64",
+          "name": "NeedAuth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测目标的端口号",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Type=0 默认 （站点监控）Type=2 可用率监控",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IsVerify=0 非验证任务 IsVerify=1 验证任务，不传则默认为0",
+          "member": "uint64",
+          "name": "IsVerify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟随跳转次数，取值范围0-5，不传则表示不跟随",
+          "member": "uint64",
+          "name": "RedirectFollowNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskExResponse": {
+      "document": "CreateTaskEx返回参数结构体",
+      "members": [
+        {
+          "document": "拨测结果查询ID。接下来可以使用查询拨测是否能够成功，验证能否通过。",
+          "member": "uint64",
+          "name": "ResultId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataPoint": {
+      "document": "时延等数据，数据点",
+      "members": [
+        {
+          "default": "",
+          "document": "数据点的时间",
+          "member": "datetime",
+          "name": "LogTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据值",
+          "member": "float",
+          "name": "MetricValue",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DataPointMetric": {
+      "document": "包含MetricName的DataPoint数据",
+      "members": [
+        {
+          "default": "",
+          "document": "数据项",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据点的时间和值",
+          "member": "DataPoint",
+          "name": "Points",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteAgentGroupRequest": {
+      "document": "DeleteAgentGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测分组id",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentGroupResponse": {
+      "document": "DeleteAgentGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTasksRequest": {
+      "document": "DeleteTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务id",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTasksResponse": {
+      "document": "DeleteTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentGroupsRequest": {
+      "document": "DescribeAgentGroups请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAgentGroupsResponse": {
+      "document": "DescribeAgentGroups返回参数结构体",
+      "members": [
+        {
+          "document": "用户所属的系统默认拨测分组",
+          "member": "AgentGroup",
+          "name": "SysDefaultGroup",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户创建的拨测分组列表",
+          "member": "AgentGroup",
+          "name": "CustomGroups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentsRequest": {
+      "document": "DescribeAgents请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAgentsResponse": {
+      "document": "DescribeAgents返回参数结构体",
+      "members": [
+        {
+          "document": "本用户可选的拨测点列表",
+          "member": "CatAgent",
+          "name": "Agents",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmTopicRequest": {
+      "document": "DescribeAlarmTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "如果不存在拨测相关的主题，是否自动创建一个。取值可为0, 1，默认为0",
+          "member": "uint64",
+          "name": "NeedAdd",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmTopicResponse": {
+      "document": "DescribeAlarmTopic返回参数结构体",
+      "members": [
+        {
+          "document": "主题个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题列表",
+          "member": "AlarmTopic",
+          "name": "Topics",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsByTaskRequest": {
+      "document": "DescribeAlarmsByTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "从第Offset 条开始查询。缺省值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本批次查询Limit 条记录。缺省值为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0 全部, 1 已恢复, 2 未恢复  默认为0。其他值，视为0 查全部状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-09 00:00:00  缺省为7天前0点",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-10 00:00:00  缺省为明天0点",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，可为Time, ObjName, Duration, Status, Content 之一。缺省为Time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升序或降序。可为Desc, Asc之一。缺省为Desc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警对象的名称",
+          "member": "string",
+          "name": "ObjName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsByTaskResponse": {
+      "document": "DescribeAlarmsByTask返回参数结构体",
+      "members": [
+        {
+          "document": "告警信息列表",
+          "member": "AlarmInfo",
+          "name": "AlarmInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "故障率",
+          "member": "float",
+          "name": "FaultRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "故障总时长",
+          "member": "string",
+          "name": "FaultTimeSpec",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsRequest": {
+      "document": "DescribeAlarms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "从第Offset 条开始查询。缺省值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本批次查询Limit 条记录。缺省值为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0 全部, 1 已恢复, 2 未恢复  默认为0。其他值，视为0 查全部状态。",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-09 00:00:00  缺省为7天前0点",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-10 00:00:00  缺省为明天0点",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警任务名",
+          "member": "string",
+          "name": "ObjName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，可为Time, ObjName, Duration, Status, Content 之一。缺省为Time。",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升序或降序。可为Desc, Asc之一。缺省为Desc。",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmsResponse": {
+      "document": "DescribeAlarms返回参数结构体",
+      "members": [
+        {
+          "document": "告警总条数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本批告警信息列表",
+          "member": "AlarmInfo",
+          "name": "AlarmInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatLogsRequest": {
+      "document": "DescribeCatLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "从第Offset 条开始查询。缺省值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本批次查询Limit 条记录。缺省值为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-09 00:00:00  缺省为当天0点，最多拉取1天的数据",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "格式如：2017-05-10 00:00:00  缺省为当前时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按时间升序或降序。默认降序。可选值： Desc, Asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatLogsResponse": {
+      "document": "DescribeCatLogs返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的总记录数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拨测记录列表",
+          "member": "CatLog",
+          "name": "CatLogs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailRequest": {
+      "document": "DescribeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务id 数组",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailResponse": {
+      "document": "DescribeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "document": "拨测任务列表",
+          "member": "CatTaskDetail",
+          "name": "Tasks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksByTypeRequest": {
+      "document": "DescribeTasksByType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "从第Offset 条开始查询。缺省值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "本批次查询Limit 条记录。缺省值为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测任务类型。0 站点监控，2 可用性监控。缺省值为2",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksByTypeResponse": {
+      "document": "DescribeTasksByType返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的总任务数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务列表",
+          "member": "TaskAlarm",
+          "name": "Tasks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserLimitRequest": {
+      "document": "DescribeUserLimit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserLimitResponse": {
+      "document": "DescribeUserLimit返回参数结构体",
+      "members": [
+        {
+          "document": "用户可建立的最大任务数",
+          "member": "uint64",
+          "name": "MaxTaskNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户可用的最大拨测结点数",
+          "member": "uint64",
+          "name": "MaxAgentNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户可建立的最大拨测分组数",
+          "member": "uint64",
+          "name": "MaxGroupNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户可用的最小拨测间隔",
+          "member": "uint64",
+          "name": "MinPeriod",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DimensionsDetail": {
+      "document": "拨测点维度信息",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商列表",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份列表",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetAvailRatioHistoryRequest": {
+      "document": "GetAvailRatioHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "具体时间点",
+          "member": "datetime",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAvailRatioHistoryResponse": {
+      "document": "GetAvailRatioHistory返回参数结构体",
+      "members": [
+        {
+          "document": "整体平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各省份最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用率最低的省份",
+          "member": "string",
+          "name": "LowestProvince",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用率最低的运营商",
+          "member": "string",
+          "name": "LowestIsp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分省份的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国内平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外可用率最低的区域",
+          "member": "string",
+          "name": "LowestProvince2",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外可用率最低的运营商",
+          "member": "string",
+          "name": "LowestIsp2",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外分区域的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData2",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDailyAvailRatioRequest": {
+      "document": "GetDailyAvailRatio请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDailyAvailRatioResponse": {
+      "document": "GetDailyAvailRatio返回参数结构体",
+      "members": [
+        {
+          "document": "整体平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各省份最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用率最低的省份",
+          "member": "string",
+          "name": "LowestProvince",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分省份的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国内平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外可用率最低的区域",
+          "member": "string",
+          "name": "LowestProvince2",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外分区域的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData2",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealAvailRatioRequest": {
+      "document": "GetRealAvailRatio请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRealAvailRatioResponse": {
+      "document": "GetRealAvailRatio返回参数结构体",
+      "members": [
+        {
+          "document": "国内平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各省份最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用率最低的省份",
+          "member": "string",
+          "name": "LowestProvince",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用率最低的运营商",
+          "member": "string",
+          "name": "LowestIsp",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分省份的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国内平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均可用率",
+          "member": "float",
+          "name": "AvgAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外最低可用率",
+          "member": "float",
+          "name": "LowestAvailRatio2",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外可用率最低的区域",
+          "member": "string",
+          "name": "LowestProvince2",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外可用率最低的运营商",
+          "member": "string",
+          "name": "LowestIsp2",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国外分区域的可用率数据",
+          "member": "ProvinceDetail",
+          "name": "ProvinceData2",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRespTimeTrendExRequest": {
+      "document": "GetRespTimeTrendEx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证成功的拨测任务id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计数据的发生日期。格式如：2017-05-09",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据的采集周期，单位分钟。取值可为 1, 5, 15, 30",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可为 Isp, Province",
+          "member": "DimensionsDetail",
+          "name": "Dimensions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "可为  totalTime, parseTime, connectTime, sendTime, waitTime, receiveTime, availRatio。缺省值为 totalTime",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRespTimeTrendExResponse": {
+      "document": "GetRespTimeTrendEx返回参数结构体",
+      "members": [
+        {
+          "document": "数据点集合，时延等走势数据",
+          "member": "DataPointMetric",
+          "name": "DataPoints",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResultSummaryRequest": {
+      "document": "GetResultSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id列表",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResultSummaryResponse": {
+      "document": "GetResultSummary返回参数结构体",
+      "members": [
+        {
+          "document": "实时统计数据",
+          "member": "ResultSummary",
+          "name": "RealData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "按天的统计数据",
+          "member": "ResultSummary",
+          "name": "DayData",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReturnCodeHistoryRequest": {
+      "document": "GetReturnCodeHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "正整数。验证成功的拨测任务id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间点。格式如：2017-05-09 10:20:00。注意，BeginTime 和 EndTime 需要在同一天",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点。格式如：2017-05-09 10:25:00。注意，BeginTime 和 EndTime 需要在同一天",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "省份名称的全拼",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReturnCodeHistoryResponse": {
+      "document": "GetReturnCodeHistory返回参数结构体",
+      "members": [
+        {
+          "document": "拨测失败详情列表",
+          "member": "CatReturnDetail",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拨测失败汇总列表",
+          "member": "CatReturnSummary",
+          "name": "Summary",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间",
+          "member": "datetime",
+          "name": "BeginTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "截至时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReturnCodeInfoRequest": {
+      "document": "GetReturnCodeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "正整数。验证成功的拨测任务id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间点。格式如：2017-05-09 10:20:00，最多拉群两天的数据",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间点。格式如：2017-05-09 10:25:00，最多拉群两天的数据",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "省份名称的全拼",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReturnCodeInfoResponse": {
+      "document": "GetReturnCodeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "拨测失败详情列表",
+          "member": "CatReturnDetail",
+          "name": "Details",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拨测失败汇总列表",
+          "member": "CatReturnSummary",
+          "name": "Summary",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间",
+          "member": "datetime",
+          "name": "BeginTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "截至时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskTotalNumberRequest": {
+      "document": "GetTaskTotalNumber请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTaskTotalNumberResponse": {
+      "document": "GetTaskTotalNumber返回参数结构体",
+      "members": [
+        {
+          "document": "拨测任务总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IspDetail": {
+      "document": "运营商可用率",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商名称",
+          "member": "string",
+          "name": "IspName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用率",
+          "member": "float",
+          "name": "AvailRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "AvgTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAgentGroupRequest": {
+      "document": "ModifyAgentGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测分组ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测分组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为默认分组。取值可为0，1。取 1 时表示设置为默认分组",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Province, Isp 需要成对地进行选择。参数对的取值范围。参见：DescribeAgents 的返回结果。",
+          "member": "CatAgent",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentGroupResponse": {
+      "document": "ModifyAgentGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskExRequest": {
+      "document": "ModifyTaskEx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "http, https, ping, tcp, ftp, smtp, udp, dns 之一",
+          "member": "string",
+          "name": "CatTypeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测的URL，例如：www.qq.com (URL域名解析需要能解析出具体的IP)",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测周期。取值可为1,5,15,30之一, 单位：分钟。精度不能低于用户等级规定的最小精度",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测任务名称不能超过32个字符。同一个用户创建的任务名不可重复",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证成功的拨测任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测分组ID，体现本拨测任务要采用哪些运营商作为拨测源。一般可直接填写本用户的默认拨测分组。参见：DescribeAgentGroupList 接口，本参数使用返回结果里的GroupId的值。注意，Type为0时，AgentGroupId为必填",
+          "member": "uint64",
+          "name": "AgentGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定域名(如需要)",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拨测目标的端口号",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为Header请求（非0 发起Header 请求。为0，且PostData非空，发起POST请求。为0，PostData为空，发起GET请求）",
+          "member": "uint64",
+          "name": "IsHeader",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "URL中含有\"https\"时有用。缺省为SSLv23。需要为 TLSv1_2, TLSv1_1, TLSv1, SSLv2, SSLv23, SSLv3 之一",
+          "member": "string",
+          "name": "SslVer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "POST 请求数据，空字符串表示非POST请求",
+          "member": "string",
+          "name": "PostData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Agent信息",
+          "member": "string",
+          "name": "UserAgent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要在结果中进行匹配的字符串",
+          "member": "string",
+          "name": "CheckStr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1 表示通过检查结果是否包含CheckStr 进行校验",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要设置的Cookie信息",
+          "member": "string",
+          "name": "Cookie",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录服务器的账号。如果为空字符串，表示不用校验用户密码。只做简单连接服务器的拨测",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登录服务器的密码",
+          "member": "string",
+          "name": "PassWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缺省为0，0 表示请求为字符串类型, 1表示为二进制类型",
+          "member": "uint64",
+          "name": "ReqDataType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发起TCP, UDP请求的协议请求数据",
+          "member": "string",
+          "name": "ReqData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缺省为0。0 表示请求为字符串类型。1表示为二进制类型",
+          "member": "string",
+          "name": "RespDataType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预期的UDP请求的回应数据。字符串型，只需要返回的结果里包含本字符串算校验通过。二进制型，则需要严格等于才算通过",
+          "member": "string",
+          "name": "RespData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目的DNS服务器，可以为空字符串",
+          "member": "string",
+          "name": "DnsSvr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要检验是否在DNS IP列表的IP。可以为空字符串，表示不校验",
+          "member": "string",
+          "name": "DnsCheckIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要为下列值之一。缺省为A。A, MX, NS, CNAME, TXT, ANY",
+          "member": "string",
+          "name": "DnsQueryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否使用安全链接SSL， 0 不使用，1 使用",
+          "member": "uint64",
+          "name": "UseSecConn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "FTP登录验证方式，  0 不验证  1 匿名登录  2 需要身份验证",
+          "member": "uint64",
+          "name": "NeedAuth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Type=0 默认 （站点监控） Type=2 可用率监控",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "跟随跳转次数，取值范围0-5，不传则表示不跟随",
+          "member": "uint64",
+          "name": "RedirectFollowNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskExResponse": {
+      "document": "ModifyTaskEx返回参数结构体",
+      "members": [
+        {
+          "document": "拨测任务ID。验证通过后，创建任务时使用，传递给CreateTask 接口。",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseTaskRequest": {
+      "document": "PauseTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务id",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseTaskResponse": {
+      "document": "PauseTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProvinceDetail": {
+      "document": "省份可用率",
+      "members": [
+        {
+          "default": "",
+          "document": "可用率",
+          "member": "float",
+          "name": "AvgAvailRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份名称",
+          "member": "string",
+          "name": "ProvinceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份英文名称",
+          "member": "string",
+          "name": "Mapkey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计时间点",
+          "member": "datetime",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分运营商可用率",
+          "member": "IspDetail",
+          "name": "IspDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均耗时，单位毫秒",
+          "member": "float",
+          "name": "AvgTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultSummary": {
+      "document": "实时统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "统计时间",
+          "member": "datetime",
+          "name": "LogTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时可用率",
+          "member": "float",
+          "name": "AvailRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实时响应时间",
+          "member": "float",
+          "name": "ReponseTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunTaskRequest": {
+      "document": "RunTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RunTaskResponse": {
+      "document": "RunTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TaskAlarm": {
+      "document": "可用性监控任务状态及告警信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务周期，单位为分钟。目前支持1，5，15，30几种取值",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测类型。http, https, ping, tcp, udp, smtp, pop3, dns 之一",
+          "member": "string",
+          "name": "CatTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。1表示暂停，2表示运行中，0为初始态",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测任务的URL",
+          "member": "string",
+          "name": "CgiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态。1 故障，0 正常",
+          "member": "uint64",
+          "name": "AlarmStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警状态描述，统计信息",
+          "member": "string",
+          "name": "StatusInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifyResultRequest": {
+      "document": "VerifyResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的拨测任务的结果id",
+          "member": "uint64",
+          "name": "ResultId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyResultResponse": {
+      "document": "VerifyResult返回参数结构体",
+      "members": [
+        {
+          "document": "错误的原因",
+          "member": "string",
+          "name": "ErrorReason",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误号",
+          "member": "int64",
+          "name": "ResultCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,3328 @@
+{
+  "actions": {
+    "ApplySnapshot": {
+      "document": "本接口（ApplySnapshot）用于回滚快照到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘快照，如果您需要复制快照数据到其它云硬盘上，请使用[CreateDisks](/document/product/362/16312)接口创建新的弹性云盘，将快照数据复制到新购云盘上。 \n* 用于回滚的快照必须处于NORMAL状态。快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 如果是弹性云盘，则云盘必须处于未挂载状态，云硬盘挂载状态可以通过[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云盘，则实例必须处于关机状态，实例状态可以通过[DescribeInstancesStatus](/document/product/213/15738)接口查询。",
+      "input": "ApplySnapshotRequest",
+      "name": "回滚快照",
+      "output": "ApplySnapshotResponse"
+    },
+    "AttachDisks": {
+      "document": "本接口（AttachDisks）用于挂载云硬盘。\n \n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘中存在不允许挂载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。",
+      "input": "AttachDisksRequest",
+      "name": "挂载云硬盘",
+      "output": "AttachDisksResponse"
+    },
+    "BindAutoSnapshotPolicy": {
+      "document": "本接口（BindAutoSnapshotPolicy）用于绑定云硬盘到指定的定期快照策略。\n\n* 每个地域下的定期快照策略配额限制请参考文档[定期快照](/document/product/362/8191)。\n* 当已绑定定期快照策略的云硬盘处于未使用状态（即弹性云盘未挂载或非弹性云盘的主机处于关机状态）将不会创建定期快照。",
+      "input": "BindAutoSnapshotPolicyRequest",
+      "name": "绑定定期快照策略",
+      "output": "BindAutoSnapshotPolicyResponse"
+    },
+    "CreateAutoSnapshotPolicy": {
+      "document": "本接口（CreateAutoSnapshotPolicy）用于创建定期快照策略。\n\n* 每个地域可创建的定期快照策略数量限制请参考文档[定期快照](/document/product/362/8191)。\n* 每个地域可创建的快照有数量和容量的限制，具体请见腾讯云控制台快照页面提示，如果快照超配额，定期快照创建会失败。",
+      "input": "CreateAutoSnapshotPolicyRequest",
+      "name": "创建定期快照策略",
+      "output": "CreateAutoSnapshotPolicyResponse"
+    },
+    "CreateDisks": {
+      "document": "本接口（CreateDisks）用于创建云硬盘。\n\n* 预付费云盘的购买会预先扣除本次云盘购买所需金额，在调用本接口前请确保账户余额充足。\n* 本接口支持传入数据盘快照来创建云盘，实现将快照数据复制到新购云盘上。\n* 本接口为异步接口，当创建请求下发成功后会返回一个新建的云盘ID列表，此时云盘的创建并未立即完成。可以通过调用[DescribeDisks](/document/product/362/16315)接口根据DiskId查询对应云盘，如果能查到云盘，且状态为'UNATTACHED'或'ATTACHED'，则表示创建成功。",
+      "input": "CreateDisksRequest",
+      "name": "创建云硬盘",
+      "output": "CreateDisksResponse"
+    },
+    "CreateSnapshot": {
+      "document": "本接口（CreateSnapshot）用于对指定云盘创建快照。\n\n* 只有具有快照能力的云硬盘才能创建快照。云硬盘是否具有快照能力可由[DescribeDisks](/document/product/362/16315)接口查询，见SnapshotAbility字段。\n* 可创建快照数量限制见[产品使用限制](https://cloud.tencent.com/doc/product/362/5145)。",
+      "input": "CreateSnapshotRequest",
+      "name": "创建快照",
+      "output": "CreateSnapshotResponse"
+    },
+    "DeleteAutoSnapshotPolicies": {
+      "document": "本接口（DeleteAutoSnapshotPolicies）用于删除定期快照策略。\n\n*  支持批量操作。如果多个定期快照策略存在无法删除的，则操作不执行，以特定错误码返回。",
+      "input": "DeleteAutoSnapshotPoliciesRequest",
+      "name": "删除定期快照策略",
+      "output": "DeleteAutoSnapshotPoliciesResponse"
+    },
+    "DeleteSnapshots": {
+      "document": "本接口（DeleteSnapshots）用于删除快照。\n\n* 快照必须处于NORMAL状态，快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。\n* 支持批量操作。如果多个快照存在无法删除的快照，则操作不执行，以特定的错误码返回。",
+      "input": "DeleteSnapshotsRequest",
+      "name": "删除快照",
+      "output": "DeleteSnapshotsResponse"
+    },
+    "DescribeAutoSnapshotPolicies": {
+      "document": "本接口（DescribeAutoSnapshotPolicies）用于查询定期快照策略。\n\n* 可以根据定期快照策略ID、名称或者状态等信息来查询定期快照策略的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的定期快照策略表。\n",
+      "input": "DescribeAutoSnapshotPoliciesRequest",
+      "name": "查询定期快照策略",
+      "output": "DescribeAutoSnapshotPoliciesResponse"
+    },
+    "DescribeDiskAssociatedAutoSnapshotPolicy": {
+      "document": "本接口（DescribeDiskAssociatedAutoSnapshotPolicy）用于查询云盘绑定的定期快照策略。",
+      "input": "DescribeDiskAssociatedAutoSnapshotPolicyRequest",
+      "name": "查询云硬盘关联定期快照策略",
+      "output": "DescribeDiskAssociatedAutoSnapshotPolicyResponse"
+    },
+    "DescribeDiskConfigQuota": {
+      "document": "本接口（DescribeDiskConfigQuota）用于查询云硬盘配额。",
+      "input": "DescribeDiskConfigQuotaRequest",
+      "name": "查询云硬盘配额",
+      "output": "DescribeDiskConfigQuotaResponse"
+    },
+    "DescribeDiskOperationLogs": {
+      "document": "查询云盘操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeDiskOperationLogs）即将下线，后续不再提供调用，请知悉。",
+      "input": "DescribeDiskOperationLogsRequest",
+      "name": "查询云盘操作日志列表",
+      "output": "DescribeDiskOperationLogsResponse"
+    },
+    "DescribeDisks": {
+      "document": "本接口（DescribeDisks）用于查询云硬盘列表。\n\n* 可以根据云硬盘ID、云硬盘类型或者云硬盘状态等信息来查询云硬盘的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘列表。",
+      "input": "DescribeDisksRequest",
+      "name": "查询云硬盘列表",
+      "output": "DescribeDisksResponse"
+    },
+    "DescribeInstancesDiskNum": {
+      "document": "本接口（DescribeInstancesDiskNum）用于查询实例已挂载云硬盘数量。\n\n* 支持批量操作，当传入多个云服务器实例ID，返回结果会分别列出每个云服务器挂载的云硬盘数量。",
+      "input": "DescribeInstancesDiskNumRequest",
+      "name": "查询实例关联的云硬盘数量",
+      "output": "DescribeInstancesDiskNumResponse"
+    },
+    "DescribeSnapshotOperationLogs": {
+      "document": "本接口（DescribeSnapshotOperationLogs）用于查询快照操作日志列表。\n\n可根据快照ID过滤。快照ID形如：snap-a1kmcp13。\n",
+      "input": "DescribeSnapshotOperationLogsRequest",
+      "name": "查询快照操作日志列表",
+      "output": "DescribeSnapshotOperationLogsResponse"
+    },
+    "DescribeSnapshotSharePermission": {
+      "document": "本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。",
+      "input": "DescribeSnapshotSharePermissionRequest",
+      "name": "查看快照分享信息",
+      "output": "DescribeSnapshotSharePermissionResponse"
+    },
+    "DescribeSnapshots": {
+      "document": "本接口（DescribeSnapshots）用于查询快照的详细信息。\n\n* 根据快照ID、创建快照的云硬盘ID、创建快照的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n*  如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照列表。",
+      "input": "DescribeSnapshotsRequest",
+      "name": "查询快照列表",
+      "output": "DescribeSnapshotsResponse"
+    },
+    "DetachDisks": {
+      "document": "本接口（DetachDisks）用于卸载云硬盘。\n\n* 支持批量操作，卸载挂载在同一主机上的多块云盘。如果多块云盘中存在不允许卸载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当请求成功返回时，云盘并未立即从主机卸载，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHED”变为“UNATTACHED”，则为卸载成功。",
+      "input": "DetachDisksRequest",
+      "name": "卸载云硬盘",
+      "output": "DetachDisksResponse"
+    },
+    "GetSnapOverview": {
+      "document": "获取快照概览信息",
+      "input": "GetSnapOverviewRequest",
+      "name": "获取快照概览信息",
+      "output": "GetSnapOverviewResponse"
+    },
+    "InquirePriceModifyDiskExtraPerformance": {
+      "document": "本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。",
+      "input": "InquirePriceModifyDiskExtraPerformanceRequest",
+      "name": "调整云硬盘额外性能询价",
+      "output": "InquirePriceModifyDiskExtraPerformanceResponse"
+    },
+    "InquiryPriceCreateDisks": {
+      "document": "本接口（InquiryPriceCreateDisks）用于创建云硬盘询价。\n\n* 支持查询创建多块云硬盘的价格，此时返回结果为总价格。",
+      "input": "InquiryPriceCreateDisksRequest",
+      "name": "创建云硬盘询价",
+      "output": "InquiryPriceCreateDisksResponse"
+    },
+    "InquiryPriceRenewDisks": {
+      "document": "本接口（InquiryPriceRenewDisks）用于续费云硬盘询价。\n\n* 只支持查询预付费模式的弹性云盘续费价格。\n* 支持与挂载实例一起续费的场景，需要在[DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid)参数中指定CurInstanceDeadline，此时会按对齐到实例续费后的到期时间来续费询价。\n* 支持为多块云盘指定不同的续费时长，此时返回的价格为多块云盘续费的总价格。",
+      "input": "InquiryPriceRenewDisksRequest",
+      "name": "续费云硬盘询价",
+      "output": "InquiryPriceRenewDisksResponse"
+    },
+    "InquiryPriceResizeDisk": {
+      "document": "本接口（InquiryPriceResizeDisk）用于扩容云硬盘询价。\n\n* 只支持预付费模式的云硬盘扩容询价。",
+      "input": "InquiryPriceResizeDiskRequest",
+      "name": "扩容云硬盘询价",
+      "output": "InquiryPriceResizeDiskResponse"
+    },
+    "ModifyAutoSnapshotPolicyAttribute": {
+      "document": "本接口（ModifyAutoSnapshotPolicyAttribute）用于修改定期快照策略属性。\n\n* 可通过该接口修改定期快照策略的执行策略、名称、是否激活等属性。\n* 修改保留天数时必须保证不与是否永久保留属性冲突，否则整个操作失败，以特定的错误码返回。",
+      "input": "ModifyAutoSnapshotPolicyAttributeRequest",
+      "name": "修改定期快照策略信息",
+      "output": "ModifyAutoSnapshotPolicyAttributeResponse"
+    },
+    "ModifyDiskAttributes": {
+      "document": "* 只支持修改弹性云盘的项目ID。随云主机创建的云硬盘项目ID与云主机联动。可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。\n* “云硬盘名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行云盘管理操作的依据。\n* 支持批量操作，如果传入多个云盘ID，则所有云盘修改为同一属性。如果存在不允许操作的云盘，则操作不执行，以特定错误码返回。",
+      "input": "ModifyDiskAttributesRequest",
+      "name": "修改云硬盘属性",
+      "output": "ModifyDiskAttributesResponse"
+    },
+    "ModifyDiskExtraPerformance": {
+      "document": "本接口（ModifyDiskExtraPerformance）用于调整云硬盘额外的性能。\n\n* 目前仅支持极速型SSD云硬盘（CLOUD_TSSD）和高性能SSD云硬盘(CLOUD_HSSD)。",
+      "input": "ModifyDiskExtraPerformanceRequest",
+      "name": "调整云硬盘额外性能",
+      "output": "ModifyDiskExtraPerformanceResponse"
+    },
+    "ModifyDisksChargeType": {
+      "document": "接口请求域名： cbs.tencentcloudapi.com 。\n\n本接口 (ModifyDisksChargeType) 用于切换云盘的计费模式。\n\n只支持从 POSTPAID_BY_HOUR 计费模式切换为PREPAID计费模式。\n非弹性云盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云盘一起转换。\n默认接口请求频率限制：10次/秒。\n",
+      "input": "ModifyDisksChargeTypeRequest",
+      "name": "修改弹性云盘计费模式",
+      "output": "ModifyDisksChargeTypeResponse"
+    },
+    "ModifyDisksRenewFlag": {
+      "document": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识，支持批量修改。",
+      "input": "ModifyDisksRenewFlagRequest",
+      "name": "修改云硬盘续费标识",
+      "output": "ModifyDisksRenewFlagResponse"
+    },
+    "ModifySnapshotAttribute": {
+      "document": "本接口（ModifySnapshotAttribute）用于修改指定快照的属性。\n\n* 当前仅支持修改快照名称及将非永久快照修改为永久快照。\n* “快照名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行快照管理操作的依据。",
+      "input": "ModifySnapshotAttributeRequest",
+      "name": "修改快照信息",
+      "output": "ModifySnapshotAttributeResponse"
+    },
+    "ModifySnapshotsSharePermission": {
+      "document": "本接口（ModifySnapshotsSharePermission）用于修改快照分享信息。\n\n分享快照后，被分享账户可以通过该快照创建云硬盘。\n* 每个快照最多可分享给50个账户。\n* 分享快照无法更改名称，描述，仅可用于创建云硬盘。\n* 只支持分享到对方账户相同地域。\n* 仅支持分享数据盘快照。",
+      "input": "ModifySnapshotsSharePermissionRequest",
+      "name": "修改快照分享信息",
+      "output": "ModifySnapshotsSharePermissionResponse"
+    },
+    "RenewDisk": {
+      "document": "本接口（RenewDisk）用于续费云硬盘。\n\n* 只支持预付费的云硬盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中DiskChargeType字段解释。\n* 支持与挂载实例一起续费的场景，需要在[DiskChargePrepaid](/document/product/362/15669#DiskChargePrepaid)参数中指定CurInstanceDeadline，此时会按对齐到子机续费后的到期时间来续费。",
+      "input": "RenewDiskRequest",
+      "name": "续费云硬盘",
+      "output": "RenewDiskResponse"
+    },
+    "ResizeDisk": {
+      "document": "本接口（ResizeDisk）用于扩容云硬盘。\n\n* 只支持扩容弹性云盘。云硬盘类型可以通过[DescribeDisks](/document/product/362/16315)接口查询，见输出参数中Portable字段解释。非弹性云硬盘需通过[ResizeInstanceDisks](/document/product/213/15731)接口扩容。\n* 本接口为异步接口，接口成功返回时，云盘并未立即扩容到指定大小，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态为“EXPANDING”，表示正在扩容中。 ",
+      "input": "ResizeDiskRequest",
+      "name": "扩容云硬盘",
+      "output": "ResizeDiskResponse"
+    },
+    "TerminateDisks": {
+      "document": "本接口（TerminateDisks）用于退还云硬盘。\n\n* 不再使用的云盘，可通过本接口主动退还。\n* 本接口支持退还预付费云盘和按小时后付费云盘。按小时后付费云盘可直接退还，预付费云盘需符合退还规则。\n* 支持批量操作，每次请求批量云硬盘的上限为50。如果批量云盘存在不允许操作的，请求会以特定错误码返回。",
+      "input": "TerminateDisksRequest",
+      "name": "退还云硬盘",
+      "output": "TerminateDisksResponse"
+    },
+    "UnbindAutoSnapshotPolicy": {
+      "document": "本接口（UnbindAutoSnapshotPolicy）用于解除云硬盘绑定的定期快照策略。\n\n* 支持批量操作，可一次解除多个云盘与同一定期快照策略的绑定。 \n* 如果传入的云盘未绑定到当前定期快照策略，接口将自动跳过，仅解绑与当前定期快照策略绑定的云盘。",
+      "input": "UnbindAutoSnapshotPolicyRequest",
+      "name": "解绑定期快照策略",
+      "output": "UnbindAutoSnapshotPolicyResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2017-03-12",
+    "api_brief": "介绍如何使用API对云硬盘和快照进行相关操作，如创建弹性云盘、创建快照或回滚快照等。",
+    "serviceNameCN": "云硬盘",
+    "serviceShortName": "cbs"
+  },
+  "objects": {
+    "ApplySnapshotRequest": {
+      "document": "ApplySnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "snap-3xvkxxmp",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照原云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-ouxaxxt2",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplySnapshotResponse": {
+      "document": "ApplySnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDetail": {
+      "document": "描述一个实例已挂载和可挂载数据盘的数量。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "ins-jw0vit58",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例已挂载数据盘的数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AttachedDiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例最大可挂载数据盘的数量。",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxAttachCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachDisksRequest": {
+      "document": "AttachDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云服务器实例ID。云盘将被挂载到此云服务器上，通过[DescribeInstances](/document/product/213/15728)接口查询。",
+          "example": "ins-9oxguxa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将要被挂载的弹性云盘ID。通过[DescribeDisks](/document/product/362/16315)接口查询。单次最多可挂载10块弹性云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选参数，不传该参数则仅执行挂载操作。传入`True`时，会在挂载成功后将云硬盘设置为随云主机销毁模式，仅对按量计费云硬盘有效。",
+          "example": "TRUE",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "可选参数，用于控制云盘挂载时使用的挂载模式，目前仅对黑石裸金属机型有效。取值范围：<br><li>PF<br><li>VF",
+          "example": "PF",
+          "member": "string",
+          "name": "AttachMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDisksResponse": {
+      "document": "AttachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AutoSnapshotPolicy": {
+      "document": "描述了定期快照策略的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "定期快照策略ID。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照策略名称。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照策略是否激活。",
+          "member": "bool",
+          "name": "IsActivated",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用该定期快照策略创建出来的快照是否永久保留。",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用该定期快照策略创建出来的快照保留天数。",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照策略的创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照下次触发的时间。",
+          "member": "datetime",
+          "name": "NextTriggerTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照的执行策略。",
+          "member": "Policy",
+          "name": "Policy",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已绑定当前定期快照策略的云盘ID列表。",
+          "member": "string",
+          "name": "DiskIdSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindAutoSnapshotPolicyRequest": {
+      "document": "BindAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要绑定的定期快照策略ID。",
+          "example": "asp-6xtxct37",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的云硬盘ID列表，一次请求最多绑定80块云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAutoSnapshotPolicyResponse": {
+      "document": "BindAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoSnapshotPolicyRequest": {
+      "document": "CreateAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定期快照的执行策略。",
+          "member": "Policy",
+          "name": "Policy",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。",
+          "member": "bool",
+          "name": "IsActivated",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "通过该定期快照策略创建的快照保留天数，默认保留7天。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoSnapshotPolicyResponse": {
+      "document": "CreateAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的定期快照策略ID。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "首次开始备份的时间。",
+          "member": "string",
+          "name": "NextTriggerTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisksRequest": {
+      "document": "CreateDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目。若不指定项目，将在默认项目下进行创建。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDCPAID：独享集群付费<br>各类型价格请参考云硬盘[价格总览](/document/product/362/2413)。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云盘显示名称。不传则默认为“未命名”。最大长度不能超60个字节。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云盘绑定的标签。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照，可通过[DescribeSnapshots](/document/product/362/15647)接口查询快照，见输出参数DiskUsage解释。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建云硬盘数量，不传则默认为1。单次请求最多可创建的云盘数有限制，具体参见[云硬盘使用限制](https://cloud.tencent.com/doc/product/362/5145)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
+          "example": "100",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云硬盘大小，单位为GB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小<br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小<br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "example": "500",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选参数，默认为False。传入True时，云盘将创建为共享型云盘。",
+          "example": "无",
+          "member": "bool",
+          "name": "Shareable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT。",
+          "example": "无",
+          "member": "string",
+          "name": "Encrypt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteSnapshot",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisksResponse": {
+      "document": "CreateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "创建的云硬盘ID列表。",
+          "example": "[\"disk-lzrg2pwi\"]",
+          "member": "string",
+          "name": "DiskIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotRequest": {
+      "document": "CreateSnapshot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l7mxexxc",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照名称，不传则新快照名称默认为“未命名”。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照的到期时间，到期后该快照将会自动删除",
+          "example": "2020-08-01 00:00:00",
+          "member": "datetime_iso",
+          "name": "Deadline",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotResponse": {
+      "document": "CreateSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的快照ID。",
+          "example": "snap-3xvkxyxp",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoSnapshotPoliciesRequest": {
+      "document": "DeleteAutoSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的定期快照策略ID列表。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoSnapshotPoliciesResponse": {
+      "document": "DeleteAutoSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsRequest": {
+      "document": "DeleteSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "[\"snap-gybrif0z\\n\"]",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否强制删除快照关联的镜像",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteBindImages",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsResponse": {
+      "document": "DeleteSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoSnapshotPoliciesRequest": {
+      "document": "DescribeAutoSnapshotPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的定期快照策略ID列表。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。<br><li>auto-snapshot-policy-id - Array of String - 是否必填：否 -（过滤条件）按定期快照策略ID进行过滤。定期快照策略ID形如：`asp-11112222`。<br><li>auto-snapshot-policy-state - Array of String - 是否必填：否 -（过滤条件）按定期快照策略的状态进行过滤。定期快照策略ID形如：`asp-11112222`。(NORMAL：正常 | ISOLATED：已隔离。)<br><li>auto-snapshot-policy-name - Array of String - 是否必填：否 -（过滤条件）按定期快照策略名称进行过滤。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出定期快照列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期快照列表排序的依据字段。取值范围：<br><li>CREATETIME：依据定期快照的创建时间排序<br>默认按创建时间排序。",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoSnapshotPoliciesResponse": {
+      "document": "DescribeAutoSnapshotPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "有效的定期快照策略数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期快照策略列表。",
+          "member": "AutoSnapshotPolicy",
+          "name": "AutoSnapshotPolicySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskAssociatedAutoSnapshotPolicyRequest": {
+      "document": "DescribeDiskAssociatedAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的云硬盘ID。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskAssociatedAutoSnapshotPolicyResponse": {
+      "document": "DescribeDiskAssociatedAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "云盘绑定的定期快照数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云盘绑定的定期快照列表。",
+          "member": "AutoSnapshotPolicy",
+          "name": "AutoSnapshotPolicySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskConfigQuotaRequest": {
+      "document": "DescribeDiskConfigQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询类别，取值范围。<br><li>INQUIRY_CBS_CONFIG：查询云盘配置列表<br><li>INQUIRY_CVM_CONFIG：查询云盘与实例搭配的配置列表。",
+          "member": "string",
+          "name": "InquiryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。",
+          "member": "string",
+          "name": "DiskTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)",
+          "member": "string",
+          "name": "InstanceFamilies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例CPU核数。",
+          "member": "uint64",
+          "name": "CPU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例内存大小。",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskConfigQuotaResponse": {
+      "document": "DescribeDiskConfigQuota返回参数结构体",
+      "members": [
+        {
+          "document": "云盘配置列表。",
+          "member": "DiskConfig",
+          "name": "DiskConfigSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskOperationLogsRequest": {
+      "document": "DescribeDiskOperationLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。支持以下条件：\n<li>disk-id - Array of String - 是否必填：是 - 按云盘ID过滤，每个请求最多可指定10个云盘ID。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
+          "example": "无",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
+          "example": "无",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskOperationLogsResponse": {
+      "document": "DescribeDiskOperationLogs返回参数结构体",
+      "members": [
+        {
+          "document": "云盘的操作日志列表。",
+          "example": "无",
+          "member": "DiskOperationLog",
+          "name": "DiskOperationLogSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksRequest": {
+      "document": "DescribeDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。参数不支持同时指定`DiskIds`和`Filters`。<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按云盘类型过滤。 (SYSTEM_DISK：表示系统盘 | DATA_DISK：表示数据盘)<br><li>disk-charge-type - Array of String - 是否必填：否 -（过滤条件）按照云硬盘计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费。)<br><li>portable - Array of String - 是否必填：否 -（过滤条件）按是否为弹性云盘过滤。 (TRUE：表示弹性云盘 | FALSE：表示非弹性云盘。)<br><li>project-id - Array of Integer - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br><li>disk-id - Array of String - 是否必填：否 -（过滤条件）按照云硬盘ID过滤。云盘ID形如：`disk-11112222`。<br><li>disk-name - Array of String - 是否必填：否 -（过滤条件）按照云盘名称过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：表示SSD云硬盘 | CLOUD_HSSD：表示增强型SSD云硬盘。| CLOUD_TSSD：表示极速型云硬盘。)<br><li>disk-state - Array of String - 是否必填：否 -（过滤条件）按照云盘状态过滤。(UNATTACHED：未挂载 | ATTACHING：挂载中 | ATTACHED：已挂载 | DETACHING：解挂中 | EXPANDING：扩容中 | ROLLBACKING：回滚中 | TORECYCLE：待回收。)<br><li>instance-id - Array of String - 是否必填：否 -（过滤条件）按照云盘挂载的云主机实例ID过滤。可根据此参数查询挂载在指定云主机下的云硬盘。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>instance-ip-address - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载云主机的内网或外网IP过滤。<br><li>instance-name - Array of String - 是否必填：否 -（过滤条件）按云盘所挂载的实例名称过滤。<br><li>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。<br><li>tag-value - Array of String - 是否必填：否 -（过滤条件）照标签值进行过滤。<br><li>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云盘列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据云盘的创建时间排序<br><li>DEADLINE：依据云盘的到期时间排序<br>默认按云盘创建时间排序。",
+          "example": "CREATE_TIME",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云盘详情中是否需要返回云盘绑定的定期快照策略ID，TRUE表示需要返回，FALSE表示不返回。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "ReturnBindAutoSnapshotPolicy",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个云硬盘ID查询。云硬盘ID形如：`disk-11112222`，此参数的具体格式可参考API[简介](/document/product/362/15633)的ids.N一节）。参数不支持同时指定`DiskIds`和`Filters`。",
+          "example": "[\"disk-xxxxxxxx\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "输出云盘列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksResponse": {
+      "document": "DescribeDisks返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的云硬盘数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "云硬盘的详细信息列表。",
+          "example": "无",
+          "member": "Disk",
+          "name": "DiskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumRequest": {
+      "document": "DescribeInstancesDiskNum请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云服务器实例ID，通过[DescribeInstances](/document/product/213/15728)接口查询。",
+          "example": "[\"ins-9w5d2buw\\r\\n\",\"ins-jw0vit58\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumResponse": {
+      "document": "DescribeInstancesDiskNum返回参数结构体",
+      "members": [
+        {
+          "document": "各个云服务器已挂载和可挂载弹性云盘的数量。",
+          "example": "无",
+          "member": "AttachDetail",
+          "name": "AttachDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotOperationLogsRequest": {
+      "document": "DescribeSnapshotOperationLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。支持以下条件：\n<li>snapshot-id - Array of String - 是否必填：是 - 按快照ID过滤，每个请求最多可指定10个快照ID。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
+          "member": "date",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
+          "member": "date",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotOperationLogsResponse": {
+      "document": "DescribeSnapshotOperationLogs返回参数结构体",
+      "members": [
+        {
+          "document": "快照操作日志列表。",
+          "member": "SnapshotOperationLog",
+          "name": "SnapshotOperationLogSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotSharePermissionRequest": {
+      "document": "DescribeSnapshotSharePermission请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询快照的ID。可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotSharePermissionResponse": {
+      "document": "DescribeSnapshotSharePermission返回参数结构体",
+      "members": [
+        {
+          "document": "快照的分享信息的集合",
+          "member": "SharePermission",
+          "name": "SharePermissionSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsRequest": {
+      "document": "DescribeSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询快照的ID列表。参数不支持同时指定`SnapshotIds`和`Filters`。",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。参数不支持同时指定`SnapshotIds`和`Filters`。<br><li>snapshot-id - Array of String - 是否必填：否 -（过滤条件）按照快照的ID过滤。快照ID形如：`snap-11112222`。<br><li>snapshot-name - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。<br><li>snapshot-state - Array of String - 是否必填：否 -（过滤条件）按照快照状态过滤。 (NORMAL：正常 | CREATING：创建中 | ROLLBACKING：回滚中。)<br><li>disk-usage - Array of String - 是否必填：否 -（过滤条件）按创建快照的云盘类型过滤。 (SYSTEM_DISK：代表系统盘 | DATA_DISK：代表数据盘。)<br><li>project-id  - Array of String - 是否必填：否 -（过滤条件）按云硬盘所属项目ID过滤。<br><li>disk-id  - Array of String - 是否必填：否 -（过滤条件）按照创建快照的云硬盘ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按照[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>encrypt - Array of String - 是否必填：否 -（过滤条件）按是否加密盘快照过滤。 (TRUE：表示加密盘快照 | FALSE：表示非加密盘快照。)\n<li>snapshot-type- Array of String - 是否必填：否 -（过滤条件）根据snapshot-type指定的快照类型查询对应的快照。\n(SHARED_SNAPSHOT：表示共享过来的快照 | PRIVATE_SNAPSHOT：表示自己私有快照。)",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出云盘列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据快照的创建时间排序<br>默认按创建时间排序。",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsResponse": {
+      "document": "DescribeSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "快照的数量。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照的详情列表。",
+          "member": "Snapshot",
+          "name": "SnapshotSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachDisksRequest": {
+      "document": "DetachDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "将要卸载的云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询，单次请求最多可卸载10块弹性云盘。",
+          "example": "[\"disk-l7mxexxc\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "对于非共享型云盘，会忽略该参数；对于共享型云盘，该参数表示要从哪个CVM实例上卸载云盘。",
+          "example": "ins-arxix3xm",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachDisksResponse": {
+      "document": "DetachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Disk": {
+      "document": "描述了云硬盘的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "云盘是否与挂载的实例一起销毁。<br><li>true:销毁实例时会同时销毁云盘，只支持按小时后付费云盘。<br><li>false：销毁实例时不销毁云盘。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘状态。取值范围：<br><li>UNATTACHED：未挂载<br><li>ATTACHING：挂载中<br><li>ATTACHED：已挂载<br><li>DETACHING：解挂中<br><li>EXPANDING：扩容中<br><li>ROLLBACKING：回滚中<br><li>TORECYCLE：待回收<br><li>DUMPING：拷贝硬盘中。",
+          "example": "UNATTACHED",
+          "member": "string",
+          "name": "DiskState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘拥有的快照总数。",
+          "example": "0",
+          "member": "int64",
+          "name": "SnapshotCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘已挂载到子机，且子机与云盘都是包年包月。<br><li>true：子机设置了自动续费标识，但云盘未设置<br><li>false：云盘自动续费标识正常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlagError",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘是否处于快照回滚状态。取值范围：<br><li>false:表示不处于快照回滚状态<br><li>true:表示处于快照回滚状态。",
+          "example": "false",
+          "member": "bool",
+          "name": "Rollbacking",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对于非共享型云盘，该参数为空数组。对于共享型云盘，则表示该云盘当前被挂载到的CVM实例InstanceId",
+          "example": "[]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘名称。",
+          "example": "unname",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘因欠费销毁或者到期销毁时， 是否使用快照备份数据的标识。true表示销毁时创建快照进行数据备份。false表示直接销毁，不进行数据备份。",
+          "example": "true",
+          "member": "bool",
+          "name": "BackupDisk",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与云盘绑定的标签，云盘未绑定标签则取值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘挂载的云主机ID。",
+          "example": "ins-xxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘的挂载类型。取值范围：<br><li>PF: PF挂载<br><li>VF: VF挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PF",
+          "member": "string",
+          "name": "AttachMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘关联的定期快照ID。只有在调用DescribeDisks接口时，入参ReturnBindAutoSnapshotPolicy取值为TRUE才会返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "AutoSnapshotPolicyIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘额外性能值，单位MB/s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘是否处于类型变更中。取值范围：<br><li>false:表示云盘不处于类型变更中<br><li>true:表示云盘已发起类型变更，正处于迁移中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Migrating",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘ID。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘拥有的快照总容量，单位为MB。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SnapshotSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘所在的位置。",
+          "example": "{\"Zone\":\"ap-guangzhou-2\",\"ProjectId\":0}",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "判断预付费的云盘是否支持主动退还。<br><li>true:支持主动退还<br><li>false:不支持主动退还。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsReturnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘的到期时间。",
+          "example": "2021-02-01 12:00:00",
+          "member": "datetime",
+          "name": "DeadlineTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘是否挂载到云主机上。取值范围：<br><li>false:表示未挂载<br><li>true:表示已挂载。",
+          "example": "false",
+          "member": "bool",
+          "name": "Attached",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘大小，单位GB。",
+          "example": "50",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘类型变更的迁移进度，取值0到100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MigratePercent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "example": "SYSTEM_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式。取值范围：<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：后付费，即按量计费。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为弹性云盘，false表示非弹性云盘，true表示弹性云盘。",
+          "example": "true",
+          "member": "bool",
+          "name": "Portable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘是否具备创建快照的能力。取值范围：<br><li>false表示不具备<br><li>true表示具备。",
+          "example": "true",
+          "member": "bool",
+          "name": "SnapshotAbility",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在云盘已挂载到实例，且实例与云盘都是包年包月的条件下，此字段才有意义。<br><li>true:云盘到期时间早于实例。<br><li>false：云盘到期时间晚于实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeadlineError",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘快照回滚的进度。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RollbackPercent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前时间距离盘到期的天数（仅对预付费盘有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "DifferDaysOfDeadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费云盘在不支持主动退还的情况下，该参数表明不支持主动退还的具体原因。取值范围：<br><li>1：云硬盘已经退还<br><li>2：云硬盘已过期<br><li>3：云盘不支持退还<br><li>8：超过可退还数量的限制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ReturnFailCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云盘是否为共享型云盘。",
+          "example": "false",
+          "member": "bool",
+          "name": "Shareable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘的创建时间。",
+          "example": "2021-01-01 12:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskChargePrepaid": {
+      "document": "描述了实例的计费模式",
+      "members": [
+        {
+          "default": "",
+          "document": "购买云盘的时长，默认单位为月，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要将云盘的到期时间与挂载的子机对齐时，可传入该参数。该参数表示子机当前的到期时间，此时Period如果传入，则表示子机需要续费的时长，云盘会自动按对齐到子机续费后的到期时间续费，示例取值：2018-03-30 20:15:03。",
+          "example": "2018-03-30 20:15:03",
+          "member": "datetime",
+          "name": "CurInstanceDeadline",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DiskConfig": {
+      "document": "云盘配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "配置是否可用。",
+          "member": "bool",
+          "name": "Available",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大可配置云盘大小，单位GB。",
+          "member": "uint64",
+          "name": "MaxDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小可配置云盘大小，单位GB。",
+          "member": "uint64",
+          "name": "MinDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeviceClass",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例机型系列。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceFamily",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskOperationLog": {
+      "document": "云盘操作日志。",
+      "members": [
+        {
+          "default": "",
+          "document": "操作的状态。取值范围：\nSUCCESS :表示操作成功 \nFAILED :表示操作失败 \nPROCESSING :表示操作中。",
+          "example": "无",
+          "member": "string",
+          "name": "OperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者的UIN。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型。取值范围：\nCBS_OPERATION_ATTACH：挂载云硬盘\nCBS_OPERATION_DETACH：解挂云硬盘\nCBS_OPERATION_RENEW：续费\nCBS_OPERATION_EXPAND：扩容\nCBS_OPERATION_CREATE：创建\nCBS_OPERATION_ISOLATE：隔离\nCBS_OPERATION_MODIFY：修改云硬盘属性\nASP_OPERATION_BIND：关联定期快照策略\nASP_OPERATION_UNBIND：取消关联定期快照策略",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作的云盘ID。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "example": "[\"SYSTEM_DISK\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "example": "disk-usage",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetSnapOverviewRequest": {
+      "document": "GetSnapOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetSnapOverviewResponse": {
+      "document": "GetSnapOverview返回参数结构体",
+      "members": [
+        {
+          "document": "用户快照总大小",
+          "member": "float",
+          "name": "TotalSize",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户快照总大小（用于计费）",
+          "member": "float",
+          "name": "RealTradeSize",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照免费额度",
+          "member": "float",
+          "name": "FreeQuota",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照总个数",
+          "member": "int64",
+          "name": "TotalNums",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Image": {
+      "document": "镜像。",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像实例ID。",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像名称。",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InquirePriceModifyDiskExtraPerformanceRequest": {
+      "document": "InquirePriceModifyDiskExtraPerformance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceModifyDiskExtraPerformanceResponse": {
+      "document": "InquirePriceModifyDiskExtraPerformance返回参数结构体",
+      "members": [
+        {
+          "document": "描述了调整云盘额外性能时对应的价格。",
+          "member": "Price",
+          "name": "DiskPrice",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateDisksRequest": {
+      "document": "InquiryPriceCreateDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘大小，单位为GB。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "购买云盘的数量。不填则默认为1。",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云盘所属项目ID。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateDisksResponse": {
+      "document": "InquiryPriceCreateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "描述了新购云盘的价格。",
+          "member": "Price",
+          "name": "DiskPrice",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewDisksRequest": {
+      "document": "InquiryPriceRenewDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l9mxezxc",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "NewDeadline",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云盘所属项目ID。 如传入则仅用于鉴权。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewDisksResponse": {
+      "document": "InquiryPriceRenewDisks返回参数结构体",
+      "members": [
+        {
+          "document": "描述了续费云盘的价格。",
+          "example": "无",
+          "member": "PrepayPrice",
+          "name": "DiskPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceResizeDiskRequest": {
+      "document": "InquiryPriceResizeDisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘扩容后的大小，单位为GB，不得小于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云盘所属项目ID。 如传入则仅用于鉴权。",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceResizeDiskResponse": {
+      "document": "InquiryPriceResizeDisk返回参数结构体",
+      "members": [
+        {
+          "document": "描述了扩容云盘的价格。",
+          "member": "PrepayPrice",
+          "name": "DiskPrice",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoSnapshotPolicyAttributeRequest": {
+      "document": "ModifyAutoSnapshotPolicyAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定期快照策略ID。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期快照的执行策略。",
+          "member": "Policy",
+          "name": "Policy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。",
+          "member": "bool",
+          "name": "IsActivated",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoSnapshotPolicyAttributeResponse": {
+      "document": "ModifyAutoSnapshotPolicyAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskAttributesRequest": {
+      "document": "ModifyDiskAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。",
+          "example": "[\"disk-l7mxexxc\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新的云硬盘名称。",
+          "example": "test",
+          "member": "string",
+          "name": "DiskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为弹性云盘，FALSE表示非弹性云盘，TRUE表示弹性云盘。仅支持非弹性云盘修改为弹性云盘。",
+          "example": "TRUE",
+          "member": "bool",
+          "name": "Portable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "变更云盘类型时，可传入该参数，表示变更的目标类型，取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘。<br>当前不支持批量变更类型，即传入DiskType时，DiskIds仅支持传入一块云盘；<br>变更云盘类型时不支持同时变更其他属性。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskAttributesResponse": {
+      "document": "ModifyDiskAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceRequest": {
+      "document": "ModifyDiskExtraPerformance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskExtraPerformanceResponse": {
+      "document": "ModifyDiskExtraPerformance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksChargeTypeRequest": {
+      "document": "ModifyDisksChargeType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待操作的云硬盘ID。每次请求批量云盘上限为100。",
+          "example": "[\"disk-jwk0zvrg\\r\\n\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "后付费模式",
+          "example": "True",
+          "member": "bool",
+          "name": "DiskChargePostpaid",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksChargeTypeResponse": {
+      "document": "ModifyDisksChargeType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksRenewFlagRequest": {
+      "document": "ModifyDisksRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待操作的云硬盘ID。",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksRenewFlagResponse": {
+      "document": "ModifyDisksRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotAttributeRequest": {
+      "document": "ModifySnapshotAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的快照名称。最长为60个字符。",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。",
+          "member": "datetime_iso",
+          "name": "Deadline",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotAttributeResponse": {
+      "document": "ModifySnapshotAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotsSharePermissionRequest": {
+      "document": "ModifySnapshotsSharePermission请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "接收分享快照的账号Id列表，array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
+          "member": "string",
+          "name": "AccountIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作，包括 SHARE，CANCEL。其中SHARE代表分享操作，CANCEL代表取消分享操作。",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询获取。",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotsSharePermissionResponse": {
+      "document": "ModifySnapshotsSharePermission返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Placement": {
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，以及所属的独享集群的ID和名字。",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘所属的[可用区](/document/product/213/15753#ZoneInfo)。该参数也可以通过调用  [DescribeZones](/document/product/213/15707) 的返回值中的Zone字段来获取。",
+          "example": "ap-shanghai-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cage-xxxxxxxx",
+          "member": "string",
+          "name": "CageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](/document/api/378/4400) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CdcName",
+          "member": "string",
+          "name": "CdcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-xxxxxxxx",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享集群id。",
+          "example": "cluster-xxxxxxxx",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Policy": {
+      "document": "描述了定期快照的执行策略。可理解为在DayOfWeek指定的那几天中，在Hour指定的小时执行该条定期快照策略。",
+      "members": [
+        {
+          "default": "",
+          "document": "指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。",
+          "member": "uint64",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定定期快照策略的触发时间。单位为小时，取值范围：[0, 23]。00:00 ~ 23:00 共 24 个时间点可选，1表示 01:00，依此类推。",
+          "member": "uint64",
+          "name": "Hour",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PrepayPrice": {
+      "document": "预付费订单的费用。",
+      "members": [
+        {
+          "default": "",
+          "document": "预付费云盘或快照预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费云盘或快照预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的原价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘或快照预支费用的折扣价，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"h\"",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "UnitPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "UnitPriceDiscountHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Price": {
+      "document": "描述预付费或后付费云盘的价格。",
+      "members": [
+        {
+          "default": "",
+          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘预支费用的原价, 单位：元\t。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘预支费用的折扣价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UnitPriceDiscountHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RenewDiskRequest": {
+      "document": "RenewDisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的续费时长。<br>在云盘与挂载的实例一起续费的场景下，可以指定参数CurInstanceDeadline，此时云盘会按对齐到实例续费后的到期时间来续费。",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewDiskResponse": {
+      "document": "RenewDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDiskRequest": {
+      "document": "ResizeDisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l7mxexxc",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "example": "100",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDiskResponse": {
+      "document": "ResizeDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SharePermission": {
+      "document": "快照分享信息集合",
+      "members": [
+        {
+          "default": "",
+          "document": "快照分享的时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分享的账号Id",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Snapshot": {
+      "document": "描述了快照的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "快照ID。",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照所在的位置。",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘ID。",
+          "member": "string",
+          "name": "DiskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘大小，单位GB。",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照的状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中<br><li>COPYING_FROM_REMOTE：跨地域复制中<br><li>CHECKING_COPIED：复制校验中<br><li>TORECYCLE：待回收。",
+          "member": "string",
+          "name": "SnapshotState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照创建进度百分比，快照创建成功后此字段恒为100。",
+          "member": "uint64",
+          "name": "Percent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照的创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照到期时间。如果快照为永久保留，此字段为空。",
+          "member": "datetime",
+          "name": "DeadlineTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为加密盘创建的快照。取值范围：<br><li>true：该快照为加密盘创建的<br><li>false:非加密盘创建的快照。",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为永久快照。取值范围：<br><li>true：永久快照<br><li>false：非永久快照。",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
+          "member": "string",
+          "name": "CopyingToRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为跨地域复制的快照。取值范围：<br><li>true：表示为跨地域复制的快照。<br><li>false:本地域的快照。",
+          "member": "bool",
+          "name": "CopyFromRemote",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照关联的镜像列表。",
+          "member": "Image",
+          "name": "Images",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照关联的镜像个数。",
+          "member": "uint64",
+          "name": "ImageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT",
+          "member": "string",
+          "name": "SnapshotType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照当前被共享数。",
+          "member": "uint64",
+          "name": "ShareReference",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照开始共享的时间。",
+          "member": "date",
+          "name": "TimeStartShare",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotOperationLog": {
+      "document": "快照操作日志。",
+      "members": [
+        {
+          "default": "",
+          "document": "操作者的UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作类型。取值范围：\nSNAP_OPERATION_DELETE：删除快照\nSNAP_OPERATION_ROLLBACK：回滚快照\nSNAP_OPERATION_MODIFY：修改快照属性\nSNAP_OPERATION_CREATE：创建快照\nSNAP_OPERATION_COPY：跨地域复制快照\nASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照\nASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作的快照ID。",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作的状态。取值范围：\nSUCCESS :表示操作成功 \nFAILED :表示操作失败 \nPROCESSING :表示操作中。",
+          "member": "string",
+          "name": "OperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签。",
+      "members": [
+        {
+          "default": "",
+          "document": "标签健。",
+          "example": "TagKey",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值。",
+          "example": "TagValue",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TerminateDisksRequest": {
+      "document": "TerminateDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需退还的云盘ID列表。",
+          "example": "[\"disk-l7mxexxc\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateDisksResponse": {
+      "document": "TerminateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindAutoSnapshotPolicyRequest": {
+      "document": "UnbindAutoSnapshotPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要解绑定期快照策略的云盘ID列表。",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要解绑的定期快照策略ID。",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindAutoSnapshotPolicyResponse": {
+      "document": "UnbindAutoSnapshotPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,431 @@
+{
+  "actions": {
+    "AddDBInstanceToReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=AddDBInstanceToReadOnlyGroup\n&DBInstanceId=\"postgres-k95qzetn\"\n&ReadOnlyGroupId=\"pgrogrp-test\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "将实例postgres-k95qzetn加入只读组pgrogrp-test中"
+      }
+    ],
+    "CloseDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CloseDBExtranetAccess\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1234,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "关闭实例外网链接"
+      }
+    ],
+    "CloseServerlessDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CloseServerlessDBExtranetAccess\n&DBInstanceId=postgres-apzvwncr\n&DBInstanceName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "关闭serverless外网"
+      }
+    ],
+    "CreateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateDBInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=9.3.5\n&AutoVoucher=0\n&AutoRenewFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"123\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "创建PostgreSQL实例"
+      }
+    ],
+    "CreateInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=9.3.5\n&AutoVoucher=0\n&AutoRenewFlag=1\n&Charset=UTF8\n&AdminName=test2313\n&AdminPassword= xxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "创建PostgreSQL实例"
+      }
+    ],
+    "CreateReadOnlyDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateReadOnlyDBInstance\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=9.3.5\n&AutoVoucher=0\n&AutoRenewFlag=1\n&MasterDBInstanceId=Postgres-testmaster\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"123\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "CreateReadOnlyDBInstance"
+      }
+    ],
+    "CreateReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateReadOnlyGroup\n&ProjectId=0\n&VpcId=\"vpc-e0tfm161\"\n&SubnetId=\"subnet-443a3lv6\"\n&MasterDBInstanceId=\"postgres-k95qzetn\"\n&Name=\"test\"\n&ReplayLagEliminate=0\n&MaxReplayLag=0\n&MinDelayEliminateReserve=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912,\n        \"ReadOnlyGroupId\": \"pgrogrp-dh6873gz\"\n    }\n}",
+        "title": "创建只读组"
+      }
+    ],
+    "CreateServerlessDBInstance": [
+      {
+        "document": "创建一个实例名为“serverlessdb-test”的serverless实例，实例数据库版本为10.4，服务端database字符集为UTF8。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateServerlessDBInstance\n&Zone=ap-guangzhou-3\n&VpcId=vpc-xxxx\n&SubnetId=subnet-xxx\n&DBInstanceName=serverlessdb-test\n&DBVersion=10.4\n&DBCharset=UTF8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DBInstanceId\": \"postgres-xxxxx\"\n    }\n}",
+        "title": "创建serverlessDB实例"
+      }
+    ],
+    "DeleteReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DeleteReadOnlyGroup\n&ReadOnlyGroupId=\"pgrogrp-k95qzetn\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1000,\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "删除只读组"
+      }
+    ],
+    "DeleteServerlessDBInstance": [
+      {
+        "document": "以指定实例ID方式删除实例，删除一个实例ID为“postgres-xxxxx”的serverless实例。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DeleteServerlessDBInstance\n&DBInstanceId=postgres-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "指定实例ID删除serverlessDB实例"
+      },
+      {
+        "document": "以指定实例名方式删除实例，删除一个实例名为“serverlessdb-test”的serverless实例。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DeleteServerlessDBInstance\n&DBInstanceName=serverlessdb-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "指定实例名删除serverlessDB实例"
+      }
+    ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeAccounts\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Details\": [\n            {\n                \"UserName\": \"root\",\n                \"Status\": 2,\n                \"Remark\": \"（测试）这个账户是无效的\",\n                \"DBInstanceId\": \"postgres-apzvwncr\",\n                \"UpdateTime\": \"2018-06-12 17:21:57\",\n                \"CreateTime\": \"2018-06-12 17:21:54\"\n            }\n        ]\n    }\n}",
+        "title": "获取实例postgres-apzvwncr的用户列表"
+      }
+    ],
+    "DescribeDBBackups": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBBackups\n&DBInstanceId=postgres-6fego161\n&Type=1\n&StartTime=2018-06-10 17:06:38\n&EndTime=2018-06-11 17:06:38\n&Limit=20\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"BackupList\": [\n            {\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"StartTime\": \"2018-06-22 01:56:01.181971\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db1\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-22 01:56:55.071181\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654968\n            },\n            {\n                \"Status\": 2,\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"StartTime\": \"2018-06-21 01:55:04.199169\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=\",\n                \"Strategy\": 1,\n                \"DbList\": [\n                    \"db2\"\n                ],\n                \"Way\": 1,\n                \"EndTime\": \"2018-06-21 01:55:58.477232\",\n                \"Type\": 1,\n                \"Id\": 450,\n                \"Size\": 3654991\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "查询实例postgres-6fego161备份列表"
+      }
+    ],
+    "DescribeDBErrlogs": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBErrlogs\n&DBInstanceId=postgres-apzvwncr\n&StartTime=2018-06-10 17:06:38\n&EndTime=2018-06-11 17:06:38\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"061bdcc0-6845-431a-a85e-ff591a352760\",\n        \"Details\": [\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:22:52\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:09\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:10\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:11\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"postgres\",\n                \"ErrTime\": \"2018-06-22 15:23:29\",\n                \"ErrMsg\": \"WARNING:  there is no transaction in progress \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:01\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.orders\\\" \",\n                \"Database\": \"dee\"\n            },\n            {\n                \"UserName\": \"root\",\n                \"ErrTime\": \"2018-06-22 15:25:10\",\n                \"ErrMsg\": \"ERROR:  canceling autovacuum task CONTEXT:  automatic analyze of table \\\"dee.public.partsupp\\\" \",\n                \"Database\": \"dee\"\n            }\n        ]\n    }\n}",
+        "title": "获取错误日志"
+      }
+    ],
+    "DescribeDBInstanceAttribute": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBInstanceAttribute\n&DBInstanceId=postgres-6bwgamo3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DBInstance\": {\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"AppId\": 100000000,\n            \"Uid\": 1000001,\n            \"ProjectId\": 0,\n            \"VpcId\": \"\",\n            \"SubnetId\": \"\",\n            \"DBInstanceId\": \"postgres-6bwgamo3\",\n            \"MasterDBInstanceId\": \"postgres-omi7b91z\",\n            \"Type\": 1,\n            \"DBInstanceName\": \"未命名\",\n            \"DBInstanceStatus\": \"running\",\n            \"DBInstanceMemory\": 4,\n            \"DBInstanceStorage\": 20,\n            \"DBInstanceCpu\": 2,\n            \"DBInstanceClass\": \"cdb.pg.z1.4g\",\n            \"DBInstanceType\": \"primary\",\n            \"DBInstanceVersion\": \"standard\",\n            \"DBInstanceNetInfo\": [\n                {\n                    \"Address\": \"\",\n                    \"Ip\": \"xxxxx\",\n                    \"Port\": 5432,\n                    \"Status\": \"opened\",\n                    \"NetType\": \"inner\"\n                },\n                {\n                    \"Address\": \"\",\n                    \"Ip\": \"\",\n                    \"Port\": 0,\n                    \"Status\": \"0\",\n                    \"NetType\": \"public\"\n                }\n            ],\n            \"DBCharset\": \"UTF8\",\n            \"DBVersion\": \"9.5.4\",\n            \"CreateTime\": \"2017-12-28 19:23:19\",\n            \"UpdateTime\": \"2018-01-18 15:54:32\",\n            \"ExpireTime\": \"2018-01-28 19:23:23\",\n            \"IsolatedTime\": \"0000-00-00 00:00:00\",\n            \"PayType\": \"prepaid\",\n            \"AutoRenew\": 1,\n            \"ReadOnlyInstanceNum\": 1,\n            \"StatusInReadonlyGroup\": \"running\",\n            \"SupportIpv6\": 0,\n            \"TagList\": [\n                {\n                    \"TagKey\": \"tag1\",\n                    \"TagValue\": \"v1\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询实例的详细信息"
+      }
+    ],
+    "DescribeDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBInstances\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DBInstanceSet\": [\n            {\n                \"Zone\": \"xx\",\n                \"DBInstanceName\": \"xx\",\n                \"Type\": \"xx\",\n                \"ReadOnlyInstanceNum\": 1,\n                \"MasterDBInstanceId\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"VpcId\": \"xx\",\n                \"IsolatedTime\": \"2020-09-22 00:00:00\",\n                \"DBVersion\": \"xx\",\n                \"DBInstanceVersion\": \"xx\",\n                \"AutoRenew\": 1,\n                \"StatusInReadonlyGroup\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"DBInstanceMemory\": 1,\n                \"DBInstanceType\": \"xx\",\n                \"DBInstanceStatus\": \"xx\",\n                \"OfflineTime\": \"xx\",\n                \"Region\": \"xx\",\n                \"ProjectId\": 1,\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"Ip\": \"xx\",\n                        \"Port\": 1,\n                        \"NetType\": \"xx\",\n                        \"Address\": \"xx\"\n                    },\n                    {\n                        \"Status\": \"xx\",\n                        \"Ip\": \"xx\",\n                        \"Port\": 1,\n                        \"NetType\": \"xx\",\n                        \"Address\": \"xx\"\n                    }\n                ],\n                \"DBInstanceStorage\": 1,\n                \"Uid\": 1,\n                \"DBCharset\": \"xx\",\n                \"DBInstanceId\": \"xx\",\n                \"PayType\": \"xx\",\n                \"ExpireTime\": \"2020-09-22 00:00:00\",\n                \"SupportIpv6\": 1,\n                \"AppId\": 1,\n                \"DBInstanceClass\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"DBInstanceCpu\": 1,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ]\n            },\n            {\n                \"Zone\": \"xx\",\n                \"DBInstanceName\": \"xx\",\n                \"Type\": \"xx\",\n                \"ReadOnlyInstanceNum\": 1,\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"VpcId\": \"xx\",\n                \"IsolatedTime\": \"2020-09-22 00:00:00\",\n                \"DBVersion\": \"xx\",\n                \"DBInstanceVersion\": \"xx\",\n                \"AutoRenew\": 1,\n                \"ProjectId\": 1,\n                \"SubnetId\": \"xx\",\n                \"DBInstanceMemory\": 1,\n                \"DBInstanceType\": \"xx\",\n                \"DBInstanceStatus\": \"xx\",\n                \"OfflineTime\": \"xx\",\n                \"Region\": \"xx\",\n                \"StatusInReadonlyGroup\": \"xx\",\n                \"MasterDBInstanceId\": \"xx\",\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"Ip\": \"xx\",\n                        \"Port\": 1,\n                        \"NetType\": \"xx\",\n                        \"Address\": \"xx\"\n                    },\n                    {\n                        \"Status\": \"xx\",\n                        \"Ip\": \"xx\",\n                        \"Port\": 1,\n                        \"NetType\": \"xx\",\n                        \"Address\": \"xx\"\n                    }\n                ],\n                \"DBInstanceStorage\": 1,\n                \"Uid\": 1,\n                \"DBCharset\": \"xx\",\n                \"DBInstanceId\": \"xx\",\n                \"PayType\": \"xx\",\n                \"ExpireTime\": \"2020-09-22 00:00:00\",\n                \"SupportIpv6\": 1,\n                \"AppId\": 1,\n                \"DBInstanceClass\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"DBInstanceCpu\": 1,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询所有实例列表"
+      },
+      {
+        "document": "例如：查询实例ID为postgres-6bwgamo3的实例信息",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBInstances\n&Limit=10\n&Offset=0\n&Filters.0.Name=db-instance-id\n&Filters.0.Values.0=postgres-6bwgamo3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d849664a-191c-48bf-b42f-444caa189557\",\n        \"TotalCount\": 2,\n        \"DBInstanceSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"AppId\": 100000000,\n                \"Uid\": 1000001,\n                \"ProjectId\": 0,\n                \"VpcId\": \"\",\n                \"SubnetId\": \"\",\n                \"Type\": 1,\n                \"DBInstanceId\": \"postgres-6bwgamo3\",\n                \"MasterDBInstanceId\": \"\",\n                \"DBInstanceName\": \"test\",\n                \"DBInstanceStatus\": \"running\",\n                \"DBInstanceMemory\": 4,\n                \"DBInstanceStorage\": 20,\n                \"DBInstanceCpu\": 2,\n                \"DBInstanceClass\": \"cdb.pg.z1.4g\",\n                \"DBInstanceType\": \"primary\",\n                \"DBInstanceVersion\": \"standard\",\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"xxxx\",\n                        \"Port\": 5432,\n                        \"Status\": \"opened\",\n                        \"NetType\": \"inner\"\n                    },\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"\",\n                        \"Port\": 0,\n                        \"Status\": \"0\",\n                        \"NetType\": \"public\"\n                    }\n                ],\n                \"DBCharset\": \"UTF8\",\n                \"DBVersion\": \"9.5.4\",\n                \"CreateTime\": \"2017-12-28 19:23:19\",\n                \"UpdateTime\": \"2018-01-18 15:54:32\",\n                \"ExpireTime\": \"2018-01-28 19:23:23\",\n                \"IsolatedTime\": \"0000-00-00 00:00:00\",\n                \"OfflineTime\": \"2019-12-28 19:23:19\",\n                \"StatusInReadonlyGroup\": \"ruuning\",\n                \"ReadOnlyInstanceNum\": 1,\n                \"PayType\": \"prepaid\",\n                \"AutoRenew\": 1,\n                \"SupportIpv6\": 0,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"tag1\",\n                        \"TagValue\": \"v1\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "根据实例ID查询实例信息"
+      }
+    ],
+    "DescribeDBSlowlogs": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBSlowlogs\n&DBInstanceId=postgres-apzvwncr\n&StartTime=2018-06-10 17:06:38\n&EndTime=2018-06-11 17:06:38\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Detail\": {\n            \"TotalTime\": 0.0,\n            \"NormalQueries\": [\n                {\n                    \"UserName\": \"user\",\n                    \"MaxCostTime\": 0.0,\n                    \"Rows\": 0,\n                    \"CostTime\": 0.0,\n                    \"SharedReadBlks\": 0,\n                    \"Calls\": 0,\n                    \"WriteCostTime\": 0,\n                    \"ReadCostTime\": 0,\n                    \"CallsGrids\": [\n                        0\n                    ],\n                    \"NormalQuery\": \"xx\",\n                    \"MinCostTime\": 0.0,\n                    \"DatabaseName\": \"xx\",\n                    \"FirstTime\": \"xx\",\n                    \"LastTime\": \"xx\",\n                    \"SharedWriteBlks\": 0\n                }\n            ],\n            \"TotalCalls\": 0\n        },\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "获取实例慢查询日志"
+      }
+    ],
+    "DescribeDBXlogs": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDBXlogs\n&DBInstanceId=postgres-apzvwncr\n&StartTime=2018-06-10 17:06:38\n&EndTime=2018-06-11 17:06:38\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"XlogList\": [\n            {\n                \"StartTime\": \"2018-06-22 01:56:46\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"EndTime\": \"2018-06-22 01:56:53\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"Id\": 450,\n                \"Size\": 247967\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:17\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"EndTime\": \"2018-06-22 01:56:45\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"Id\": 450,\n                \"Size\": 899618\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:10\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"EndTime\": \"2018-06-22 01:56:10\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"Id\": 450,\n                \"Size\": 41749\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:49\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"EndTime\": \"2018-06-21 01:55:57\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"Id\": 450,\n                \"Size\": 247941\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:20\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"EndTime\": \"2018-06-21 01:55:48\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"Id\": 450,\n                \"Size\": 899646\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:13\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"EndTime\": \"2018-06-21 01:55:13\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"Id\": 450,\n                \"Size\": 41744\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "获取实例postgres-apzvwncr的Xlog列表"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeDatabases\n&DBInstanceId=postgres-6bwgamo3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86eb714c-500f-412e-8090-3b3f76843d86\",\n        \"Items\": [\n            \"postgres\",\n            \"testdatabase\"\n        ]\n    }\n}",
+        "title": "拉取数据库列表"
+      }
+    ],
+    "DescribeOrders": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20180615110033\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Deals\": [\n            {\n                \"Count\": 1,\n                \"OwnerUin\": \"909619400\",\n                \"DBInstanceIdSet\": [\n                    \"postgres-2uepfuz1\"\n                ],\n                \"PayMode\": 1,\n                \"FlowId\": 36,\n                \"DealName\": \"20180615110033\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "获取订单信息"
+      }
+    ],
+    "DescribeProductConfig": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeProductConfig\n&Zone=ap-guangzhou-2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaa0a364-08c9-42f6-888e-4e3b7e99b50d\",\n        \"SpecInfoList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"SpecItemInfoList\": [\n                    {\n                        \"SpecCode\": \"cdb.pg.z1.2g\",\n                        \"Version\": \"9.5.4\",\n                        \"VersionName\": \"PostgreSQL 9.5.4\",\n                        \"Cpu\": 1,\n                        \"Memory\": 2048,\n                        \"MaxStorage\": 1000,\n                        \"MinStorage\": 10,\n                        \"Qps\": 2100,\n                        \"Pid\": 11004,\n                        \"Type\": \"TS85\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询某个地域某个可用区的售卖规格信息"
+      }
+    ],
+    "DescribeReadOnlyGroups": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeReadOnlyGroups\n&PageSize=10\n&PageNumber=0\n&OrderBy=Name\n&OrderByType=desc\n&Filters.0.Name=db-master-instance-id\n&Filters.0.Values.0=postgres-6bwgamo3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ReadOnlyGroupList\": [\n            {\n                \"Status\": \"xx\",\n                \"MaxReplayLag\": 0.0,\n                \"ReplayLagEliminate\": 1,\n                \"Zone\": \"xx\",\n                \"MaxReplayLatency\": 0,\n                \"ProjectId\": 1,\n                \"Region\": \"xx\",\n                \"ReadOnlyDBInstanceList\": [\n                    {\n                        \"Zone\": \"xx\",\n                        \"DBInstanceName\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"ReadOnlyInstanceNum\": 0,\n                        \"UpdateTime\": \"2020-09-22 00:00:00\",\n                        \"VpcId\": \"xx\",\n                        \"IsolatedTime\": \"2020-09-22 00:00:00\",\n                        \"DBVersion\": \"xx\",\n                        \"DBInstanceVersion\": \"xx\",\n                        \"AutoRenew\": 1,\n                        \"StatusInReadonlyGroup\": \"xx\",\n                        \"SubnetId\": \"xx\",\n                        \"DBInstanceMemory\": 1,\n                        \"DBInstanceType\": \"xx\",\n                        \"DBInstanceStatus\": \"xx\",\n                        \"ProjectId\": 1,\n                        \"Region\": \"xx\",\n                        \"MasterDBInstanceId\": \"xx\",\n                        \"DBInstanceNetInfo\": [\n                            {\n                                \"Status\": \"xx\",\n                                \"Ip\": \"xx\",\n                                \"Port\": 1,\n                                \"NetType\": \"xx\",\n                                \"Address\": \"xx\"\n                            }\n                        ],\n                        \"DBInstanceStorage\": 1,\n                        \"Uid\": 1,\n                        \"DBCharset\": \"xx\",\n                        \"DBInstanceId\": \"xx\",\n                        \"PayType\": \"xx\",\n                        \"ExpireTime\": \"2020-09-22 00:00:00\",\n                        \"SupportIpv6\": 1,\n                        \"AppId\": 1,\n                        \"DBInstanceClass\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\",\n                        \"DBInstanceCpu\": 1,\n                        \"TagList\": [\n                            {\n                                \"TagKey\": \"xx\",\n                                \"TagValue\": \"xx\"\n                            }\n                        ]\n                    }\n                ],\n                \"MasterDBInstanceId\": \"xx\",\n                \"MinDelayEliminateReserve\": 3,\n                \"ReadOnlyGroupName\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"ReadOnlyGroupId\": \"xx\",\n                \"ReplayLatencyEliminate\": 0,\n                \"SubnetId\": \"xx\",\n                \"Rebalance\": 0,\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"Ip\": \"xx\",\n                        \"Port\": 1,\n                        \"NetType\": \"xx\",\n                        \"Address\": \"xx\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询postgres-6bwgamo3实例下只读组详情"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0872c9bb-0540-4ac4-80cf-ba63bd771b0a\",\n        \"TotalCount\": 7,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区(广州)\",\n                \"RegionId\": 1,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-chengdu\",\n                \"RegionName\": \"西南地区(成都)\",\n                \"RegionId\": 16,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"华东地区(上海)\",\n                \"RegionId\": 4,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"na-toronto\",\n                \"RegionName\": \"北美地区(多伦多)\",\n                \"RegionId\": 6,\n                \"SupportInternational\": 1,\n                \"RegionState\": \"UNAVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-shanghai-fsi\",\n                \"RegionName\": \"华东地区(上海金融)\",\n                \"RegionId\": 7,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-beijing\",\n                \"RegionName\": \"华北地区(北京)\",\n                \"RegionId\": 8,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"na-siliconvalley\",\n                \"RegionName\": \"美国西部(硅谷)\",\n                \"RegionId\": 15,\n                \"SupportInternational\": 1,\n                \"RegionState\": \"AVAILABLE\"\n            }\n        ]\n    }\n}",
+        "title": "查询所有地域"
+      }
+    ],
+    "DescribeServerlessDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeServerlessDBInstances\n&Filter.0.Name=\"xxx\",\n&Limit=0\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DBInstanceSet\": [\n            {\n                \"DBInstanceId\": \"postgres-gqmunix5\",\n                \"DBInstanceName\": \"anita_10\",\n                \"DBInstanceStatus\": \"initing\",\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ProjectId\": 0,\n                \"VpcId\": \"vpc-0mocsnzb\",\n                \"SubnetId\": \"subnet-mutl5yka\",\n                \"DBCharset\": \"UTF8\",\n                \"DBVersion\": \"10.4\",\n                \"CreateTime\": \"2020-03-20 12:19:14\",\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"\",\n                        \"Port\": 0,\n                        \"Status\": \"opened\",\n                        \"NetType\": \"private\"\n                    },\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"\",\n                        \"Port\": 0,\n                        \"Status\": \"0\",\n                        \"NetType\": \"public\"\n                    }\n                ],\n                \"DBAccountSet\": [],\n                \"DBDatabaseList\": null\n            }\n        ],\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "查询ServerlessDB实例列表"
+      }
+    ],
+    "DescribeSlowQueryAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryAnalysis\n<公共请求参数>\n\n{\n    \"StartTime\": \"2021-06-17 20:00:07\",\n    \"EndTime\": \"2021-06-17 20:15:07\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"DBInstanceId\": \"postgres-nbvqjlhf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"AnalysisItems\": [\n                {\n                    \"AvgCostTime\": 101.01300048828125,\n                    \"ClientAddr\": \"\",\n                    \"CostPercent\": 11.703700311890035,\n                    \"CostTime\": 101.01300048828125,\n                    \"DatabaseName\": \"postgres\",\n                    \"FirstTime\": \"2021-07-27 03:12:01\",\n                    \"LastTime\": \"2021-07-27 03:12:01\",\n                    \"MaxCostTime\": 101.01300048828125,\n                    \"MinCostTime\": 101.01300048828125,\n                    \"NormalQuery\": \"select $1 from information_schema.tables where table_schema = $2 and table_name = $3\",\n                    \"UserName\": \"postgres\"\n                }\n            ],\n            \"TotalCallNum\": 6,\n            \"TotalTime\": 863.0860137939453\n        },\n        \"RequestId\": \"221334ddc4f\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "慢查询统计分析接口实例"
+      }
+    ],
+    "DescribeSlowQueryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryList\n<公共请求参数>\n\n{\n    \"StartTime\": \"2021-07-22 10:00:07\",\n    \"EndTime\": \"2021-07-27 20:15:07\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"DBInstanceId\": \"postgres-nbvqjlhf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DurationAnalysis\": [\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"10-20s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"40-50s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"50s-\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"5-6s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"6-7s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"2-3s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"20-30s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"3-4s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"4-5s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"7-8s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"8-9s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"9-10s\"\n            },\n            {\n                \"Count\": 0,\n                \"TimeSegment\": \"30-40s\"\n            },\n            {\n                \"Count\": 6,\n                \"TimeSegment\": \"1-2s\"\n            }\n        ],\n        \"RawSlowQueryList\": [\n            {\n                \"ClientAddr\": \"[local]\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 101.013,\n                \"RawQuery\": \"select 1 from information_schema.tables where table_schema = 'pg_catalog' and table_name = 'pg_file_settings'\",\n                \"SessionStartTime\": \"2021-07-27 03:12:01 CST\",\n                \"UserName\": \"postgres\"\n            },\n            {\n                \"ClientAddr\": \"::1:34301\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 155.283,\n                \"RawQuery\": \"select count(*)::text as value from pg_stat_activity where now()-backend_start < '5  second';\",\n                \"SessionStartTime\": \"2021-07-25 02:25:09 CST\",\n                \"UserName\": \"postgres\"\n            },\n            {\n                \"ClientAddr\": \"::1:34295\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 168.119,\n                \"RawQuery\": \"select count(*)::text as value from pg_stat_activity where state='active';\",\n                \"SessionStartTime\": \"2021-07-25 02:25:09 CST\",\n                \"UserName\": \"postgres\"\n            },\n            {\n                \"ClientAddr\": \"::1:34296\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 168.757,\n                \"RawQuery\": \"select count(*)::text as value from pg_stat_activity where wait_event_type is not null\",\n                \"SessionStartTime\": \"2021-07-25 02:25:09 CST\",\n                \"UserName\": \"postgres\"\n            },\n            {\n                \"ClientAddr\": \"::1:34298\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 165.119,\n                \"RawQuery\": \"select application_name,COALESCE(pg_catalog.pg_wal_lsn_diff(sent_lsn, replay_lsn),0) from pg_stat_replication;\",\n                \"SessionStartTime\": \"2021-07-25 02:25:09 CST\",\n                \"UserName\": \"postgres\"\n            },\n            {\n                \"ClientAddr\": \"::1:34297\",\n                \"DatabaseName\": \"postgres\",\n                \"Duration\": 104.795,\n                \"RawQuery\": \"select count(*)::text as value from pg_stat_activity where state='idle';\",\n                \"SessionStartTime\": \"2021-07-25 02:25:09 CST\",\n                \"UserName\": \"postgres\"\n            }\n        ],\n        \"RequestId\": \"221334ddcf\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "慢SQL列表查询示例"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeZones\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59c438d4-95ab-4865-993d-dc388d2660d8\",\n        \"TotalCount\": 3,\n        \"ZoneSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneName\": \"广州二区\",\n                \"ZoneId\": 100002,\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneSupportIpv6\": 0\n            },\n            {\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ZoneName\": \"广州三区\",\n                \"ZoneId\": 100003,\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneSupportIpv6\": 0\n            },\n            {\n                \"Zone\": \"ap-guangzhou-4\",\n                \"ZoneName\": \"广州四区\",\n                \"ZoneId\": 100004,\n                \"ZoneState\": \"AVAILABLE\",\n                \"ZoneSupportIpv6\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询特定地域下的可用区"
+      }
+    ],
+    "DestroyDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DestroyDBInstance\n&DBInstanceId=postgres-19nmz2xb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
+        "title": "销毁PostgreSQL实例"
+      }
+    ],
+    "DisIsolateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DisIsolateDBInstances\n&DBInstanceIdSet.0=postgres-xxxxxxxx\n&Period=1\n&AutoVoucher=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad1ca88b-5cc8-4c4c-ab10-a882123f8daa\"\n    }\n}",
+        "title": "解隔离实例"
+      }
+    ],
+    "InitDBInstances": [
+      {
+        "document": "例如：初始化的实例Id为: postgres-6fego161",
+        "input": "https://postgres.tencentcloudapi.com/?Action=InitDBInstances\n&DBInstanceIdSet.0=postgres-6fego161\n&AdminName=testuser\n&AdminPassword=testuser%40123\n&Charset=UTF8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98fe67de-f7a7-4285-b1f2-40c2a2a3495e\",\n        \"DBInstanceIdSet\": [\n            \"postgres-6fego161\"\n        ]\n    }\n}",
+        "title": "初始化单个实例"
+      },
+      {
+        "document": "例如：同时初始化2个实例，实例Id分别为：postgres-6fego161、postgres-lnp6j617",
+        "input": "https://postgres.tencentcloudapi.com/?Action=InitDBInstances\n&DBInstanceIdSet.0=postgres-6fego161\n&DBInstanceIdSet.1=postgres-lnp6j617\n&AdminName=testuser\n&AdminPassword=testuser%40123\n&Charset=UTF8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b895b34-5448-4c55-9ad1-a61427c15837\",\n        \"DBInstanceIdSet\": [\n            \"postgres-6fego161\",\n            \"postgres-lnp6j617\"\n        ]\n    }\n}",
+        "title": "初始化多个实例"
+      }
+    ],
+    "InquiryPriceCreateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=InquiryPriceCreateDBInstances\n&Zone=ap-guangzhou-2\n&SpecCode=cdb.pg.z1.2g\n&Storage=100\n&InstanceCount=1\n&Period=1\n&Pid=11004\n&InstanceChargeType=PREPAID\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"OriginalPrice\": 27600,\n        \"Price\": 27600\n    }\n}",
+        "title": "查询实例的售卖价格"
+      }
+    ],
+    "InquiryPriceRenewDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=InquiryPriceRenewDBInstance\n&DBInstanceId=postgres-6fego161\n&Period=12\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": 210355,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"OriginalPrice\": 253440\n    }\n}",
+        "title": "查询实例postgres-6fego161续费价格"
+      }
+    ],
+    "InquiryPriceUpgradeDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=InquiryPriceUpgradeDBInstance\n&DBInstanceId=postgres-6fego161\n&Memory=4\n&Storage=500\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": 1300,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"OriginalPrice\": 1300\n    }\n}",
+        "title": "查询实例扩容价格"
+      }
+    ],
+    "IsolateDBInstances": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=IsolateDBInstances\n&DBInstanceIdSet.0=postgres-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "隔离实例"
+      }
+    ],
+    "ModifyAccountRemark": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyAccountRemark\n&DBInstanceId=postgres-6bwgamo3\n&UserName=test\n&Remark=testModifyRemark\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "修改帐号备注"
+      }
+    ],
+    "ModifyDBInstanceName": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceName\n&DBInstanceId=postgres-6fego161\n&InstanceName=testModifyInstanceName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
+        "title": "将实例postgres-6fego161名字修改为testModifyInstanceName"
+      },
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceName\n&DBInstanceId=postgres-6ougo465\n&InstanceName=testModifyInstanceName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61f510-aa33-454c-9ec2-dq2a368c39ab\"\n    }\n}",
+        "title": "修改实例postgres-6ougo465名字，修改失败"
+      }
+    ],
+    "ModifyDBInstanceReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceReadOnlyGroup\n&DBInstanceId=postgres-k95qzetn\n&NewReadOnlyGroupId=NewGroup\n&ReadOnlyGroupId=OldGroup\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "ModifyDBInstanceReadOnlyGroup"
+      }
+    ],
+    "ModifyDBInstancesProject": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstancesProject\n&DBInstanceIdSet.0=postgres-6bwgamo3\n&DBInstanceIdSet.1=postgres-lnp6j6172\n&ProjectId=10467\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Count\": 2\n    }\n}",
+        "title": "将实例转至其他项目"
+      },
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstancesProject\n&DBInstanceIdSet.0=postgres-6bwgamo3\n&ProjectId=10467\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "将实例postgres-6bwgamo3转移至项目ID为10467的项目里面去"
+      }
+    ],
+    "ModifyReadOnlyGroupConfig": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyReadOnlyGroupConfig\n&ReadOnlyGroupId=\"vpc-e0tfm161\"\n&ReadOnlyGroupName=\"test\"\n&ReplayLagEliminate=0\n&MaxReplayLag=0\n&MaxReplayLatency=512\n&MinDelayEliminateReserve=0\n&Rebalance=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "修改只读组配置信息"
+      }
+    ],
+    "ModifySwitchTimePeriod": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifySwitchTimePeriod\n&DBInstanceId=postgres-19nmz2xb\n&SwitchTag=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
+        "title": "立即切换"
+      }
+    ],
+    "OpenDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=OpenDBExtranetAccess\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1234,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "开启外网地址"
+      }
+    ],
+    "OpenServerlessDBExtranetAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=OpenServerlessDBExtranetAccess\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "根据实例ID开通serverless实例外网"
+      },
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=OpenServerlessDBExtranetAccess\n&DBInstanceName=db-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "根据实例名开通serverless实例外网"
+      }
+    ],
+    "RebalanceReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=RebalanceReadOnlyGroup\n&ReadOnlyGroupId=\"pgrogrp-e0tfm161\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "只读组内实例流量重新负载"
+      }
+    ],
+    "RemoveDBInstanceFromReadOnlyGroup": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=RemoveDBInstanceFromReadOnlyGroup\n&DBInstanceId=\"pgro-k95qzetn\"\n&ReadOnlyGroupId=\"pgrogrp-k95qzetn\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "用户将实例从只读组中移除"
+      }
+    ],
+    "RenewInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=RenewInstance\n&DBInstanceId=postgres-apzvwncr\n&Period=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806181256\"\n    }\n}",
+        "title": "续费实例postgres-apzvwncr"
+      }
+    ],
+    "ResetAccountPassword": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ResetAccountPassword\n&DBInstanceId=postgres-lnp6j6172\n&UserName=test\n&Password=1234qwer()\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "重置postgres-lnp6j6172的账户密码，失败"
+      },
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ResetAccountPassword\n&DBInstanceId=postgres-lnp6j6172\n&UserName=test\n&Password=1234qwer()\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "重置postgres-lnp6j6172的账户密码，成功"
+      }
+    ],
+    "RestartDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=RestartDBInstance\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1234,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "重启实例"
+      }
+    ],
+    "SetAutoRenewFlag": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=SetAutoRenewFlag\n&DBInstanceIdSet.0=postgres-6fego161\n&AutoRenewFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Count\": 1\n    }\n}",
+        "title": "设置自动续费"
+      }
+    ],
+    "UpgradeDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=UpgradeDBInstance\n&DBInstanceId=postgres-6bwgamo3\n&Memory=2\n&Storage=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "升级实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

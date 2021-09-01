@@ -1,0 +1,1106 @@
+{
+  "actions": {
+    "AcceptOrganizationInvitation": {
+      "document": "接受加入企业组织邀请",
+      "input": "AcceptOrganizationInvitationRequest",
+      "name": "接受加入企业组织邀请",
+      "output": "AcceptOrganizationInvitationResponse"
+    },
+    "AddOrganizationNode": {
+      "document": "添加企业组织单元",
+      "input": "AddOrganizationNodeRequest",
+      "name": "添加企业组织单元",
+      "output": "AddOrganizationNodeResponse"
+    },
+    "CancelOrganizationInvitation": {
+      "document": "取消企业组织邀请",
+      "input": "CancelOrganizationInvitationRequest",
+      "name": "取消企业组织邀请",
+      "output": "CancelOrganizationInvitationResponse"
+    },
+    "CreateOrganization": {
+      "document": "创建企业组织",
+      "input": "CreateOrganizationRequest",
+      "name": "创建企业组织",
+      "output": "CreateOrganizationResponse"
+    },
+    "DeleteOrganization": {
+      "document": "删除企业组织",
+      "input": "DeleteOrganizationRequest",
+      "name": "删除企业组织",
+      "output": "DeleteOrganizationResponse"
+    },
+    "DeleteOrganizationMemberFromNode": {
+      "document": "删除企业组织成员",
+      "input": "DeleteOrganizationMemberFromNodeRequest",
+      "name": "删除企业组织成员",
+      "output": "DeleteOrganizationMemberFromNodeResponse"
+    },
+    "DeleteOrganizationMembers": {
+      "document": "批量删除企业组织成员",
+      "input": "DeleteOrganizationMembersRequest",
+      "name": "批量删除企业组织成员",
+      "output": "DeleteOrganizationMembersResponse"
+    },
+    "DeleteOrganizationNodes": {
+      "document": "批量删除企业组织单元",
+      "input": "DeleteOrganizationNodesRequest",
+      "name": "批量删除企业组织单元",
+      "output": "DeleteOrganizationNodesResponse"
+    },
+    "DenyOrganizationInvitation": {
+      "document": "拒绝企业组织邀请",
+      "input": "DenyOrganizationInvitationRequest",
+      "name": "拒绝企业组织邀请",
+      "output": "DenyOrganizationInvitationResponse"
+    },
+    "GetOrganization": {
+      "document": "获取企业组织信息",
+      "input": "GetOrganizationRequest",
+      "name": "获取企业组织信息",
+      "output": "GetOrganizationResponse"
+    },
+    "GetOrganizationMember": {
+      "document": "获取企业组织成员",
+      "input": "GetOrganizationMemberRequest",
+      "name": "获取企业组织成员",
+      "output": "GetOrganizationMemberResponse"
+    },
+    "ListOrganizationInvitations": {
+      "document": "获取邀请信息列表",
+      "input": "ListOrganizationInvitationsRequest",
+      "name": "获取邀请信息列表",
+      "output": "ListOrganizationInvitationsResponse"
+    },
+    "ListOrganizationMembers": {
+      "document": "获取企业组织成员列表",
+      "input": "ListOrganizationMembersRequest",
+      "name": "获取企业组织成员列表",
+      "output": "ListOrganizationMembersResponse"
+    },
+    "ListOrganizationNodeMembers": {
+      "document": "获取企业组织单元成员列表",
+      "input": "ListOrganizationNodeMembersRequest",
+      "name": "获取企业组织单元成员列表",
+      "output": "ListOrganizationNodeMembersResponse"
+    },
+    "ListOrganizationNodes": {
+      "document": "获取企业组织单元列表",
+      "input": "ListOrganizationNodesRequest",
+      "name": "获取企业组织单元列表",
+      "output": "ListOrganizationNodesResponse"
+    },
+    "MoveOrganizationMembersToNode": {
+      "document": "移动成员到指定企业组织单元",
+      "input": "MoveOrganizationMembersToNodeRequest",
+      "name": "移动成员到指定企业组织单元",
+      "output": "MoveOrganizationMembersToNodeResponse"
+    },
+    "QuitOrganization": {
+      "document": "退出企业组织",
+      "input": "QuitOrganizationRequest",
+      "name": "退出企业组织",
+      "output": "QuitOrganizationResponse"
+    },
+    "SendOrganizationInvitation": {
+      "document": "发送企业组织邀请",
+      "input": "SendOrganizationInvitationRequest",
+      "name": "发送企业组织邀请",
+      "output": "SendOrganizationInvitationResponse"
+    },
+    "UpdateOrganizationMember": {
+      "document": "更新企业成员信息",
+      "input": "UpdateOrganizationMemberRequest",
+      "name": "更新企业成员信息",
+      "output": "UpdateOrganizationMemberResponse"
+    },
+    "UpdateOrganizationNode": {
+      "document": "更新企业组织单元",
+      "input": "UpdateOrganizationNodeRequest",
+      "name": "更新企业组织单元",
+      "output": "UpdateOrganizationNodeResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-25",
+    "api_brief": "介绍如何使用API对企业组织进行操作，包括获取企业组织单元列表、更新企业组织单元等。",
+    "serviceNameCN": "企业组织",
+    "serviceShortName": "organization"
+  },
+  "objects": {
+    "AcceptOrganizationInvitationRequest": {
+      "document": "AcceptOrganizationInvitation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邀请ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptOrganizationInvitationResponse": {
+      "document": "AcceptOrganizationInvitation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrganizationNodeRequest": {
+      "document": "AddOrganizationNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "父组织单元ID",
+          "member": "uint64",
+          "name": "ParentNodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "组织单元名字",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOrganizationNodeResponse": {
+      "document": "AddOrganizationNode返回参数结构体",
+      "members": [
+        {
+          "document": "组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOrganizationInvitationRequest": {
+      "document": "CancelOrganizationInvitation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邀请ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOrganizationInvitationResponse": {
+      "document": "CancelOrganizationInvitation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationRequest": {
+      "document": "CreateOrganization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组织类型（目前固定为1）",
+          "member": "uint64",
+          "name": "OrgType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationResponse": {
+      "document": "CreateOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "企业组织ID",
+          "member": "uint64",
+          "name": "OrgId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者昵称",
+          "member": "string",
+          "name": "Nickname",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者邮箱",
+          "member": "string",
+          "name": "Mail",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组织类型",
+          "member": "uint64",
+          "name": "OrgType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMemberFromNodeRequest": {
+      "document": "DeleteOrganizationMemberFromNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "被删除成员UIN",
+          "member": "uint64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMemberFromNodeResponse": {
+      "document": "DeleteOrganizationMemberFromNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersRequest": {
+      "document": "DeleteOrganizationMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "被删除成员的UIN列表",
+          "example": "[\"1\\r\\n\"]",
+          "member": "uint64",
+          "name": "Uins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersResponse": {
+      "document": "DeleteOrganizationMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationNodesRequest": {
+      "document": "DeleteOrganizationNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组织单元ID列表",
+          "member": "uint64",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationNodesResponse": {
+      "document": "DeleteOrganizationNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationRequest": {
+      "document": "DeleteOrganization请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteOrganizationResponse": {
+      "document": "DeleteOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DenyOrganizationInvitationRequest": {
+      "document": "DenyOrganizationInvitation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邀请ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DenyOrganizationInvitationResponse": {
+      "document": "DenyOrganizationInvitation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOrganizationMemberRequest": {
+      "document": "GetOrganizationMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组织成员UIN",
+          "member": "uint64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOrganizationMemberResponse": {
+      "document": "GetOrganizationMember返回参数结构体",
+      "members": [
+        {
+          "document": "组织成员UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组织成员名称",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "加入时间",
+          "member": "datetime",
+          "name": "JoinTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组织单元名称",
+          "member": "string",
+          "name": "NodeName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "父组织单元ID",
+          "member": "uint64",
+          "name": "ParentNodeId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOrganizationRequest": {
+      "document": "GetOrganization请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetOrganizationResponse": {
+      "document": "GetOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "企业组织ID",
+          "member": "uint64",
+          "name": "OrgId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者UIN",
+          "member": "uint64",
+          "name": "HostUin",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者昵称",
+          "member": "string",
+          "name": "Nickname",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建者邮箱",
+          "member": "string",
+          "name": "Mail",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "企业组织类型",
+          "member": "uint64",
+          "name": "OrgType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否为空",
+          "member": "uint64",
+          "name": "IsEmpty",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationInvitationsRequest": {
+      "document": "ListOrganizationInvitations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否被邀请。1：被邀请，0：发出的邀请",
+          "member": "uint64",
+          "name": "Invited",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationInvitationsResponse": {
+      "document": "ListOrganizationInvitations返回参数结构体",
+      "members": [
+        {
+          "document": "邀请信息列表",
+          "member": "OrgInvitation",
+          "name": "Invitations",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationMembersRequest": {
+      "document": "ListOrganizationMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationMembersResponse": {
+      "document": "ListOrganizationMembers返回参数结构体",
+      "members": [
+        {
+          "document": "成员列表",
+          "member": "OrgMember",
+          "name": "Members",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationNodeMembersRequest": {
+      "document": "ListOrganizationNodeMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationNodeMembersResponse": {
+      "document": "ListOrganizationNodeMembers返回参数结构体",
+      "members": [
+        {
+          "document": "总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "成员列表",
+          "member": "OrgMember",
+          "name": "Members",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationNodesRequest": {
+      "document": "ListOrganizationNodes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListOrganizationNodesResponse": {
+      "document": "ListOrganizationNodes返回参数结构体",
+      "members": [
+        {
+          "document": "企业组织单元列表",
+          "member": "OrgNode",
+          "name": "Nodes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveOrganizationMembersToNodeRequest": {
+      "document": "MoveOrganizationMembersToNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "成员UIN列表",
+          "member": "uint64",
+          "name": "Uins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveOrganizationMembersToNodeResponse": {
+      "document": "MoveOrganizationMembersToNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrgInvitation": {
+      "document": "企业组织邀请",
+      "members": [
+        {
+          "default": "",
+          "document": "邀请ID",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被邀请UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者UIN",
+          "member": "uint64",
+          "name": "HostUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者名称",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者邮箱",
+          "member": "string",
+          "name": "HostMail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邀请状态。-1：已过期，0：正常，1：已接受，2：已失效，3：已取消",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业组织类型",
+          "member": "uint64",
+          "name": "OrgType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邀请时间",
+          "member": "datetime",
+          "name": "InviteTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "datetime",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgMember": {
+      "document": "企业组织成员",
+      "members": [
+        {
+          "default": "",
+          "document": "UIN",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加入时间",
+          "member": "datetime",
+          "name": "JoinTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OrgNode": {
+      "document": "企业组织单元",
+      "members": [
+        {
+          "default": "",
+          "document": "组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父单元ID",
+          "member": "uint64",
+          "name": "ParentNodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成员数量",
+          "member": "uint64",
+          "name": "MemberCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QuitOrganizationRequest": {
+      "document": "QuitOrganization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业组织ID",
+          "member": "uint64",
+          "name": "OrgId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QuitOrganizationResponse": {
+      "document": "QuitOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendOrganizationInvitationRequest": {
+      "document": "SendOrganizationInvitation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "被邀请账户UIN",
+          "example": "100005229292",
+          "member": "uint64",
+          "name": "InviteUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "testAccount",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendOrganizationInvitationResponse": {
+      "document": "SendOrganizationInvitation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationMemberRequest": {
+      "document": "UpdateOrganizationMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "成员UIN",
+          "member": "uint64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationMemberResponse": {
+      "document": "UpdateOrganizationMember返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationNodeRequest": {
+      "document": "UpdateOrganizationNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "企业组织单元ID",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "父单元ID",
+          "member": "uint64",
+          "name": "ParentNodeId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationNodeResponse": {
+      "document": "UpdateOrganizationNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,719 @@
+{
+  "actions": {
+    "ChangeRoomPlayerProfile": {
+      "document": "修改房间玩家自定义属性",
+      "input": "ChangeRoomPlayerProfileRequest",
+      "name": "修改房间玩家自定义属性",
+      "output": "ChangeRoomPlayerProfileResponse"
+    },
+    "ChangeRoomPlayerStatus": {
+      "document": "修改玩家自定义状态",
+      "input": "ChangeRoomPlayerStatusRequest",
+      "name": "修改玩家自定义状态",
+      "output": "ChangeRoomPlayerStatusResponse"
+    },
+    "DescribePlayer": {
+      "document": "该接口用于查询玩家信息。支持两种用法，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
+      "input": "DescribePlayerRequest",
+      "name": "查询玩家信息",
+      "output": "DescribePlayerResponse"
+    },
+    "DescribeRoom": {
+      "document": "该接口用于查询房间信息。支持两种用法，当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，玩家Id可不传，按照房间Id查询房间信息。",
+      "input": "DescribeRoomRequest",
+      "name": "查询房间信息",
+      "output": "DescribeRoomResponse"
+    },
+    "DismissRoom": {
+      "document": "通过game_id、room_id解散房间",
+      "input": "DismissRoomRequest",
+      "name": "解散房间",
+      "output": "DismissRoomResponse"
+    },
+    "ModifyRoom": {
+      "document": "修改房间",
+      "input": "ModifyRoomRequest",
+      "name": "修改房间",
+      "output": "ModifyRoomResponse"
+    },
+    "RemoveRoomPlayer": {
+      "document": "踢出房间玩家",
+      "input": "RemoveRoomPlayerRequest",
+      "name": "踢出房间玩家",
+      "output": "RemoveRoomPlayerResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-14",
+    "api_brief": "介绍如何使用API对联机对战引擎各对象进行操作，包括房间、玩家、匹配等。",
+    "serviceNameCN": "游戏联机对战引擎",
+    "serviceShortName": "mgobe"
+  },
+  "objects": {
+    "ChangeRoomPlayerProfileRequest": {
+      "document": "ChangeRoomPlayerProfile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发起修改的玩家Id。",
+          "member": "string",
+          "name": "PlayerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的玩家自定义属性。",
+          "member": "string",
+          "name": "CustomProfile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeRoomPlayerProfileResponse": {
+      "document": "ChangeRoomPlayerProfile返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息。",
+          "member": "Room",
+          "name": "Room",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeRoomPlayerStatusRequest": {
+      "document": "ChangeRoomPlayerStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家自定义状态。",
+          "member": "uint64",
+          "name": "CustomStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "玩家id。",
+          "member": "string",
+          "name": "PlayerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeRoomPlayerStatusResponse": {
+      "document": "ChangeRoomPlayerStatus返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息",
+          "member": "Room",
+          "name": "Room",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayerRequest": {
+      "document": "DescribePlayer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "example": "obg-fr4vwil4",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家OpenId。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
+          "example": "joe123455das",
+          "member": "string",
+          "name": "PlayerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlayerResponse": {
+      "document": "DescribePlayer返回参数结构体",
+      "members": [
+        {
+          "document": "玩家信息。",
+          "example": "无",
+          "member": "Player",
+          "name": "Player",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomRequest": {
+      "document": "DescribeRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "example": "obg-fr4vwil4",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。",
+          "example": "joe123455das",
+          "member": "string",
+          "name": "PlayerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间Id。",
+          "example": "xxsdsdasdas",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomResponse": {
+      "document": "DescribeRoom返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息。",
+          "example": "无",
+          "member": "Room",
+          "name": "Room",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomRequest": {
+      "document": "DismissRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表示游戏资源唯一 ID, 由后台自动分配, 无法修改。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表示游戏房间唯一ID。",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomResponse": {
+      "document": "DismissRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomRequest": {
+      "document": "ModifyRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间ID。",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发起者的PlayerId。",
+          "member": "string",
+          "name": "PlayerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。",
+          "member": "int64",
+          "name": "ChangeRoomOptionList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "房间名称。",
+          "member": "string",
+          "name": "RoomName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "变更房主。",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否支持观战。",
+          "member": "bool",
+          "name": "IsViewed",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否支持邀请码/密码。",
+          "member": "bool",
+          "name": "IsInvited",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否私有。",
+          "member": "bool",
+          "name": "IsPrivate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自定义房间属性。",
+          "member": "string",
+          "name": "CustomProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间是否禁止加人。",
+          "member": "bool",
+          "name": "IsForbidJoin",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoomResponse": {
+      "document": "ModifyRoom返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息",
+          "member": "Room",
+          "name": "Room",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Player": {
+      "document": "玩家信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "玩家 OpenId。最长不超过64个字符。",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "玩家昵称。最长不超过32个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队伍 ID。最长不超过16个字符。",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为机器人。",
+          "member": "bool",
+          "name": "IsRobot",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "玩家 PlayerId。出参使用，由后端返回。",
+          "member": "string",
+          "name": "PlayerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义玩家状态。非负数，最大不超过4294967295。默认为0。",
+          "member": "uint64",
+          "name": "CustomPlayerStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义玩家属性。最长不超过256个字符。默认为空字符串。",
+          "member": "string",
+          "name": "CustomProfile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RemoveRoomPlayerRequest": {
+      "document": "RemoveRoomPlayer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏资源Id。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被踢出房间的玩家Id。",
+          "member": "string",
+          "name": "RemovePlayerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveRoomPlayerResponse": {
+      "document": "RemoveRoomPlayer返回参数结构体",
+      "members": [
+        {
+          "document": "房间信息",
+          "member": "Room",
+          "name": "Room",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Room": {
+      "document": "房间信息详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "表示房间名称。最长不超过32个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房间最大玩家数量。最大不超过100人。",
+          "member": "int64",
+          "name": "MaxPlayers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房主OpenId。最长不超过16个字符。",
+          "member": "string",
+          "name": "OwnerOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示是否私有，私有指的是不允许其他玩家通过匹配加入房间。",
+          "member": "bool",
+          "name": "IsPrivate",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示玩家详情列表。",
+          "member": "Player",
+          "name": "Players",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示团队属性列表。",
+          "member": "Team",
+          "name": "Teams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房间 ID。出参用，由后端返回。",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房间类型。最长不超过32个字符。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示创建方式：0.单人主动发起创建房间请求；1.多人在线匹配请求分配房间；2. 直接创建满员房间。调用云API的创房请求默认为3，目前通过云API调用只支持第3种方式。",
+          "member": "int64",
+          "name": "CreateType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示自定义房间属性，不传为空字符串。最长不超过1024个字符。",
+          "member": "string",
+          "name": "CustomProperties",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房间帧同步状态。0表示未开始帧同步，1表示已开始帧同步，用于出参。",
+          "member": "int64",
+          "name": "FrameSyncState",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示帧率。由控制台设置，用于出参。",
+          "member": "int64",
+          "name": "FrameRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示路由ID。用于出参。",
+          "member": "string",
+          "name": "RouteId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房间创建的时间戳（单位：秒）。",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示开始帧同步时的时间戳（单位：秒）,未开始帧同步时返回为0。",
+          "member": "int64",
+          "name": "StartGameTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示是否禁止加入房间。出参使用，默认为False，通过SDK的ChangeRoom接口可以修改。",
+          "member": "bool",
+          "name": "IsForbidJoin",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示房主PlayerId。",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Team": {
+      "document": "团队属性",
+      "members": [
+        {
+          "default": "",
+          "document": "队伍ID。最长不超过16个字符。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队伍名称。最长不超过32个字符。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队伍最小人数。最大不超过100人。",
+          "member": "int64",
+          "name": "MinPlayers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队伍最大人数。最大不超过100人。",
+          "member": "int64",
+          "name": "MaxPlayers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

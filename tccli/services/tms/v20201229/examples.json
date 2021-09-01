@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "TextModeration": [
+      {
+        "document": "",
+        "input": "https://tms.tencentcloudapi.com/?Action=TextModeration\n&Content=57uY5aOw57uY6Imy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataId\": \"123\",\n        \"Extra\": \"xx\",\n        \"BizType\": \"0\",\n        \"RiskDetails\": [\n            {\n                \"Level\": 2,\n                \"Label\": \"RiskAccount\"\n            }\n        ],\n        \"DetailResults\": [\n            {\n                \"LibName\": \"Porn\",\n                \"Score\": 72,\n                \"Label\": \"Porn\",\n                \"LibId\": \"12\",\n                \"Suggestion\": \"Review\",\n                \"Keywords\": [\n                    \"色情\"\n                ],\n                \"LibType\": 0\n            },\n            {\n                \"LibName\": \"Porn\",\n                \"Score\": 0,\n                \"Label\": \"\",\n                \"LibId\": \"1\",\n                \"Suggestion\": \"Block\",\n                \"Keywords\": [\n                    \"色情\"\n                ],\n                \"LibType\": 2\n            }\n        ],\n        \"Label\": \"Ad\",\n        \"Score\": 87,\n        \"RequestId\": \"x2123-123123-123\",\n        \"Suggestion\": \"Block\",\n        \"Keywords\": [\n            \"加我好友，给你发优惠券\"\n        ]\n    }\n}",
+        "title": "文本内容安全"
+      }
+    ]
+  },
+  "version": "1.0"
+}

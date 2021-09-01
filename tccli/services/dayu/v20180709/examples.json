@@ -1,0 +1,925 @@
+{
+  "actions": {
+    "CreateBasicDDoSAlarmThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateBasicDDoSAlarmThreshold\r\n&Business=bgpip\r\n&Method=set\r\n&AlarmThreshold=1000\r\n&AlarmType=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AlarmThreshold\": 1000,\n        \"AlarmType\": 1\n    }\n}",
+        "title": "设置基础防护的DDoS告警阈值"
+      }
+    ],
+    "CreateBoundIP": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateBoundIP\r\n&Business=bgp\r\n&Id=bgp-000000xe\r\n&BoundDevList.0.Ip=1.1.1.1\r\n&BoundDevList.0.BizType=public\r\n&BoundDevList.0.DeviceType=cvm\r\n&BoundDevList.0.InstanceId=ins-f2f9ssbo\r\n&CopyPolicy=yes\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "绑定IP到高防包实例"
+      }
+    ],
+    "CreateCCFrequencyRules": [
+      {
+        "document": "想转发规则下的所有URI填加一致的频率控制规则，则只需要设置Uri=/即可",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateCCFrequencyRules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-00000001\r\n&Uri=/\r\n&Mode=include\r\n&Period=60\r\n&ReqNumber=30\r\n&Act=alg\r\n&ExeDuration=120\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CCFrequencyRuleId\": \"ccRule-000003h7\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "添加CC防护的访问频率控制规则"
+      }
+    ],
+    "CreateCCSelfDefinePolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateCCSelfDefinePolicy\n&Business=bgp\n&Id=bgp-000000xe\n&Policy.Name=test\n&Policy.Smode=speedlimit\n&Policy.Frequency=1002\n&Policy.IpList.0=1.1.1.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "创建CC自定义策略"
+      }
+    ],
+    "CreateDDoSPolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateDDoSPolicy\n&Business=bgpip\n&Name=testpolicy\n&DropOptions.0.DropTcp=0\n&DropOptions.0.DropUdp=0\n&DropOptions.0.DropIcmp=1\n&DropOptions.0.DropOther=1\n&DropOptions.0.DropAbroad=1\n&DropOptions.0.CheckSyncConn=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": \"policy-000003h7\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "添加DDoS高级策略"
+      }
+    ],
+    "CreateDDoSPolicyCase": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateDDoSPolicyCase\r\n&Business=bgpip\r\n&CaseName=testpolicycase\r\n&PlatformTypes.0=PC\r\n&PlatformTypes.1=TV\r\n&AppType=WEB\r\n&AppProtocols.0=tcp\r\n&TcpPortList=80,443,600-700,888\r\n&UdpPortList=80,443,600-700,888\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SceneId\": \"scene-000003h7\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "添加策略场景"
+      }
+    ],
+    "CreateInstanceName": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateInstanceName\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Name=测试\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "资源实例重命名"
+      }
+    ],
+    "CreateL4HealthConfig": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL4HealthConfig\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&HealthConfig.0.Protocol=TCP\r\n&HealthConfig.0.VirtualPort=666\r\n&HealthConfig.0.Enable=1\r\n&HealthConfig.0.TimeOut=60\r\n&HealthConfig.0.Interval=300\r\n&HealthConfig.0.KickNum=3\r\n&HealthConfig.0.AliveNum=3\r\n&HealthConfig.0.KeepTime=60\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "上传四层健康检查配置"
+      }
+    ],
+    "CreateL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL4Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=TCP\r\n&Rules.0.VirtualPort=18888\r\n&Rules.0.SourcePort=18888\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.KeepEnable=0\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加L4转发规则"
+      }
+    ],
+    "CreateL7CCRule": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL7CCRule\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-00000001\r\n&Method=query\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07efcf74-79b1-4faa-a61e-ec9310675b67\",\n        \"RuleConfig\": [\n            {\n                \"Period\": 60,\n                \"ReqNumber\": 1,\n                \"Action\": \"drop\",\n                \"ExeDuration\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询7层CC的访问频控自定义规则"
+      }
+    ],
+    "CreateL7HealthConfig": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL7HealthConfig\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&HealthConfig.0.Protocol=https\r\n&HealthConfig.0.Domain=443\r\n&HealthConfig.0.Enable=1\r\n&HealthConfig.0.Interval=300\r\n&HealthConfig.0.KickNum=3\r\n&HealthConfig.0.AliveNum=3\r\n&HealthConfig.0.Method=HEAD\r\n&HealthConfig.0.StatusCode=15\r\n&HealthConfig.0.Url=/\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "上传七层健康检查配置"
+      }
+    ],
+    "CreateL7RuleCert": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL7RuleCert\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-00000001\r\n&CertType=2\r\n&SSLId=sslid123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "配置L7转发规则的证书"
+      }
+    ],
+    "CreateL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL7Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=http\r\n&Rules.0.Domain=www.abc.com\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&Rules.0.CertType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加L7转发规则"
+      }
+    ],
+    "CreateL7RulesUpload": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateL7RulesUpload\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=http\r\n&Rules.0.Domain=www.abc.com\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&Rules.0.CertType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "批量上传L7转发规则"
+      }
+    ],
+    "CreateNetReturn": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNetReturn\r\n&Business=net\r\n&Id=net-0000000e\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "一键切回"
+      }
+    ],
+    "CreateNewL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNewL4Rules\n&Business=bgpip\n&IdList.0=bgpip-0000011t\n&VipList.0=129.28.240.44\n&Rules.0.RuleName=test\n&Rules.0.Protocol=TCP\n&Rules.0.VirtualPort=18888\n&Rules.0.SourcePort=18888\n&Rules.0.SourceType=2\n&Rules.0.LbType=1\n&Rules.0.KeepTime=300\n&Rules.0.SourceList.0.Source=1.1.1.10\n&Rules.0.SourceList.0.Weight=100\n&Rules.0.SourceList.1.Source=1.1.1.20\n&Rules.0.SourceList.1.Weight=100\n&Rules.0.KeepEnable=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加四层转发规则"
+      }
+    ],
+    "CreateNewL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNewL7Rules\r\n&Business=bgpip\r\n&IdList.0=bgpip-000001\r\n&VipList.0=192.168.1.1\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=http\r\n&Rules.0.Domain=www.abc.com\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&Rules.0.CertType=0\r\n&Rules.0.KeepEnable=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加7层转发规则"
+      }
+    ],
+    "CreateNewL7RulesUpload": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateNewL7RulesUpload\r\n&Business=bgpip\r\n&IdList.0=bgpip-000001\r\n&VipList.0=192.168.1.1\r\n&Rules.0.RuleName=test\r\n&Rules.0.Protocol=http\r\n&Rules.0.Domain=www.abc.com\r\n&Rules.0.SourceType=2\r\n&Rules.0.LbType=1\r\n&Rules.0.KeepTime=300\r\n&Rules.0.SourceList.0.Source=1.1.1.10\r\n&Rules.0.SourceList.0.Weight=100\r\n&Rules.0.SourceList.1.Source=1.1.1.20\r\n&Rules.0.SourceList.1.Weight=100\r\n&Rules.0.CertType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加7层转发规则"
+      }
+    ],
+    "CreateUnblockIp": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=CreateUnblockIp\r\n&Ip=1.1.1.1\r\n&ActionType=user\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActionType\": \"user\",\n        \"Ip\": \"111.230.156.235\",\n        \"RequestId\": \"a78db8c5-598e-459e-87d0-37682739920e\",\n        \"UnblockTime\": \"2018-09-10 21:15:23\"\n    }\n}",
+        "title": "IP解封操作"
+      }
+    ],
+    "DeleteCCFrequencyRules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteCCFrequencyRules\r\n&Business=bgpip\r\n&CCFrequencyRuleId=ccRule-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除CC防护的访问频率控制规则"
+      }
+    ],
+    "DeleteCCSelfDefinePolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteCCSelfDefinePolicy\n&Business=bgp\n&Id=bgp-000000xe\n&SetId=ccPolicy-000000sd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除CC自定义策略"
+      }
+    ],
+    "DeleteDDoSPolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteDDoSPolicy\r\n&Business=bgpip\r\n&PolicyId=policy-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除DDoS高级策略"
+      }
+    ],
+    "DeleteDDoSPolicyCase": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteDDoSPolicyCase\r\n&Business=bgpip\r\n&SceneId=scene-00000003\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除策略场景"
+      }
+    ],
+    "DeleteL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteL4Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xd\r\n&RuleIdList.0=rule-00000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除L4转发规则"
+      }
+    ],
+    "DeleteL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteL7Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xd\r\n&RuleIdList.0=rule-00000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除L7转发规则"
+      }
+    ],
+    "DeleteNewL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL4Rules\n&Business=bgpip\n&Rule.0.Id=bgpip-000001\n&Rule.0.Ip=192.168.1.1\n&Rule.0.RuleIdList.0=rule-000002uq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除L4转发规则"
+      }
+    ],
+    "DeleteNewL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DeleteNewL7Rules\n&Business=bgpip\n&Rule.0.Id=bgpip-0000001\n&Rule.0.Ip=11.11.11.11\n&Rule.0.RuleIdList.0=rule-000004qq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除L7转发规则"
+      }
+    ],
+    "DescribeActionLog": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeActionLog\r\n&StartTime=2018-11-23 00:00:00\r\n&EndTime=2018-11-24 00:00:00\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"AppId\",\n                        \"Value\": \"251000862\"\n                    },\n                    {\n                        \"Key\": \"Uin\",\n                        \"Value\": \"1445149556\"\n                    },\n                    {\n                        \"Key\": \"Business\",\n                        \"Value\": \"bgp\"\n                    },\n                    {\n                        \"Key\": \"RsIdStr\",\n                        \"Value\": \"bgp-0000000o\"\n                    },\n                    {\n                        \"Key\": \"Action\",\n                        \"Value\": \"NS.BGP.ServicePack.SetCCThreshold\"\n                    },\n                    {\n                        \"Key\": \"ActionDesc\",\n                        \"Value\": \"Set CC Threshold\"\n                    },\n                    {\n                        \"Key\": \"Params\",\n                        \"Value\": \"{\\\"id\\\":\\\"bgp-0000000o\\\",\\\"threshold\\\":\\\"850\\\"}\"\n                    },\n                    {\n                        \"Key\": \"RespCode\",\n                        \"Value\": \"success\"\n                    },\n                    {\n                        \"Key\": \"Timestamp\",\n                        \"Value\": \"2018-11-23 11:46:47\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c451fdf9-d24d-4578-a40c-fe34e34829db\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取操作日志"
+      }
+    ],
+    "DescribeBGPIPL7RuleMaxCnt": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeBGPIPL7RuleMaxCnt\r\n&Business=bgpip\r\n&Id=bgpip-0000000e\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Count\": 1\n    }\n}",
+        "title": "获取高防IP可添加的最多7层规则数量"
+      }
+    ],
+    "DescribeBaradData": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeBaradData\r\n&Business=bgpip\r\n&Id=bgpip-000000x7\r\n&Period=300\r\n&StartTime=2018-08-28 07:15:00\r\n&EndTime=2018-08-28 10:05:00\r\n&Statistics=max\r\n&MetricName=connum\r\n&ProtocolPort.0.Protocol=tcp\r\n&ProtocolPort.0.Port=80\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            {\n                \"MetricName\": \"connum\",\n                \"Data\": [\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236,\n                    236\n                ],\n                \"Count\": 35\n            },\n            {\n                \"MetricName\": \"new_conn\",\n                \"Data\": [\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0\n                ],\n                \"Count\": 35\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取转发报表数据"
+      }
+    ],
+    "DescribeBasicCCThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeBasicCCThreshold\r\n&BasicIp=\"1.1.1.1\"\r\n&BasicRegion=\"gz\"\r\n&BasicBizType=\"nat\"\r\n&BasicDeviceType=\"cvm\"\r\n&BasicIpInstance=“aaa\"\r\n&BasicIspCode=5\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"CCEnable\": 1,\n        \"CCThreshold\": 100\n    }\n}",
+        "title": "获取基础防护CC防护阈值"
+      }
+    ],
+    "DescribeBasicDeviceThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeBasicDeviceThreshold\r\n&BasicIp=\"1.1.1.1\"\r\n&BasicRegion=\"gz\"\r\n&BasicBizType=\"nat\"\r\n&BasicDeviceType=\"cvm\"\r\n&BasicIpInstance=“aaa\"\r\n&BasicIspCode=5\r\n&BasicCheckFlag=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Threshold\": 10000\n    }\n}",
+        "title": "DescribeBasicDeviceThreshold"
+      }
+    ],
+    "DescribeBizHttpStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dayu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizHttpStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Statistics\": \"xx\",\n    \"Business\": \"xx\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HttpStatusMap\": {\n            \"SourceHttp2xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http5xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp5xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp404\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http4xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp4xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http2xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http404\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"SourceHttp3xx\": [\n                1,\n                2,\n                3,\n                2\n            ],\n            \"Http3xx\": [\n                1,\n                2,\n                3,\n                2\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取业务流量状态码统计曲线"
+      }
+    ],
+    "DescribeBizTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dayu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Statistics\": \"xx\",\n    \"Business\": \"xx\",\n    \"ProtoInfo\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Port\": 1\n        }\n    ],\n    \"Period\": 1,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"intraffic\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取业务流量曲线"
+      }
+    ],
+    "DescribeCCAlarmThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCAlarmThreshold\r\n&Business=bgpip\r\n&RsId=net-0000002h\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"CCAlarmThreshold\": {\n            \"AlarmThreshold\": 1000\n        }\n    }\n}",
+        "title": "获取CC告警阈值"
+      }
+    ],
+    "DescribeCCEvList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCEvList\r\n&Business=bgp\r\n&Id=bgp-00000010\r\n&IpList.0=3.3.3.3\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&Limit=30\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgp\",\n        \"Data\": [\n            {\n                \"Business\": \"bgp\",\n                \"Id\": \"bgp-00000010\",\n                \"Vip\": \"3.3.3.3\",\n                \"StartTime\": \"2018-08-27 15:05:10\",\n                \"EndTime\": \"2018-08-27 16:05:10\",\n                \"ReqQps\": 544231,\n                \"DropQps\": 13232,\n                \"AttackStatus\": 1,\n                \"DomainList\": \"www.dw.com;www.ksd.com\",\n                \"UriList\": \"/sef/sdf;/tesf/sdf\",\n                \"AttackipList\": \"1.1.1.1;2.2.3.2\"\n            }\n        ],\n        \"EndTime\": \"2019-03-07 14:50:00\",\n        \"Id\": \"bgp-00000010\",\n        \"IpList\": [\n            \"3.3.3.3\"\n        ],\n        \"RequestId\": \"69b1692b-4b6e-47c0-a7d6-0ff0da286874\",\n        \"StartTime\": \"2019-03-07 00:00:00\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取CC攻击事件列表"
+      }
+    ],
+    "DescribeCCFrequencyRules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCFrequencyRules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"CCFrequencyRuleList\": [\n            {\n                \"CCFrequencyRuleId\": \"ccRule-0000001i\",\n                \"Uri\": \"/\",\n                \"UserAgent\": \"\",\n                \"Cookie\": \"\",\n                \"Mode\": \"include\",\n                \"Period\": 10,\n                \"ReqNumber\": 1,\n                \"Act\": \"drop\",\n                \"ExeDuration\": 1\n            }\n        ],\n        \"CCFrequencyRuleStatus\": \"on\"\n    }\n}",
+        "title": "获取CC防护的访问频率控制规则"
+      }
+    ],
+    "DescribeCCIpAllowDeny": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Type.0=black\r\n&Protocol=http\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"white\",\n                \"Value\": \"123.20.10.0/24,1.1.11.1\"\n            },\n            {\n                \"Key\": \"total\",\n                \"Value\": \"2\"\n            }\n        ],\n        \"RecordList\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"ip\",\n                        \"Value\": \"123.20.10.0/24\"\n                    },\n                    {\n                        \"Key\": \"domain\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"protocol\",\n                        \"Value\": \"http\"\n                    },\n                    {\n                        \"Key\": \"type\",\n                        \"Value\": \"white\"\n                    }\n                ]\n            },\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"ip\",\n                        \"Value\": \"1.1.11.1\"\n                    },\n                    {\n                        \"Key\": \"domain\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"protocol\",\n                        \"Value\": \"http\"\n                    },\n                    {\n                        \"Key\": \"type\",\n                        \"Value\": \"white\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"40fc168e-a7c1-4bdc-92b9-d5b3f88369a9\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取CC的IP黑白名单"
+      }
+    ],
+    "DescribeCCSelfDefinePolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCSelfDefinePolicy\r\n&Business=bgp\r\n&Id=bgp-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"Policys\": [\n            {\n                \"SetId\": 1262,\n                \"Name\": \"12434\",\n                \"Smode\": \"matching\",\n                \"Frequency\": 0,\n                \"ExeMode\": \"drop\",\n                \"Switch\": 1,\n                \"CreateTime\": \"2019-04-24 12:32:12\",\n                \"RuleList\": [\n                    {\n                        \"Skey\": \"host\",\n                        \"Operator\": \"include\",\n                        \"Value\": \"24234\"\n                    }\n                ],\n                \"Protocol\": \"http\",\n                \"Domain\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取CC自定义策略"
+      }
+    ],
+    "DescribeCCTrend": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCTrend\n&Business=bgp\n&Id=bgp-00000010\n&Ip=3.3.3.3\n&MetricName=inqps\n&StartTime=2018-08-2715:05:10\n&EndTime=2018-08-2716:05:10\n&Period=3600\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgp\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"EndTime\": \"2018-08-27 16:05:10\",\n        \"Id\": \"bgp-00000010\",\n        \"Ip\": \"3.3.3.3\",\n        \"MetricName\": \"inqps\",\n        \"Period\": 300,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2018-08-27 15:05:10\"\n    }\n}",
+        "title": "获取CC攻击指标数据"
+      }
+    ],
+    "DescribeCCUrlAllow": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Type.0=white\r\n&Protocol=http\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"whiteurllist\",\n                \"Value\": \"\"\n            },\n            {\n                \"Key\": \"whitetotal\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"RecordList\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"url\",\n                        \"Value\": \"http://2.2.2.2/test.html\"\n                    },\n                    {\n                        \"Key\": \"domain\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"protocol\",\n                        \"Value\": \"http\"\n                    },\n                    {\n                        \"Key\": \"type\",\n                        \"Value\": \"white\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6084150e-f2f7-4024-8821-a51fe7115ea0\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取CC的URL白名单"
+      }
+    ],
+    "DescribeDDoSAlarmThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSAlarmThreshold\r\n&Business=bgpip\r\n&RsId=net-0000002h\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"DDoSAlarmThreshold\": {\n            \"AlarmType\": 1,\n            \"AlarmThreshold\": 1000\n        }\n    }\n}",
+        "title": "获取DDoS告警阈值"
+      }
+    ],
+    "DescribeDDoSAttackIPRegionMap": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSAttackIPRegionMap\r\n&Business=bgpip\r\n&Id=bgpip-0000000x\r\n&IpList.0=1.1.1.1\r\n&StartTime=2019-07-23 11:32:12\r\n&EndTime=2019-07-27 13:35:16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8466d9e1-70a9-4575-8e02-df15bd50bc49\",\n        \"NationCount\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"Nation\",\n                        \"Value\": \"韩国\"\n                    },\n                    {\n                        \"Key\": \"AttackCount\",\n                        \"Value\": \"10\"\n                    },\n                    {\n                        \"Key\": \"PacketCount\",\n                        \"Value\": \"1350\"\n                    },\n                    {\n                        \"Key\": \"PacketBytes\",\n                        \"Value\": \"564090\"\n                    }\n                ]\n            },\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"Nation\",\n                        \"Value\": \"保加利亚\"\n                    },\n                    {\n                        \"Key\": \"AttackCount\",\n                        \"Value\": \"15\"\n                    },\n                    {\n                        \"Key\": \"PacketCount\",\n                        \"Value\": \"3520\"\n                    },\n                    {\n                        \"Key\": \"PacketBytes\",\n                        \"Value\": \"894090\"\n                    }\n                ]\n            }\n        ],\n        \"ProvinceCount\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"Province\",\n                        \"Value\": \"浙江省\"\n                    },\n                    {\n                        \"Key\": \"AttackCount\",\n                        \"Value\": \"25\"\n                    },\n                    {\n                        \"Key\": \"PacketCount\",\n                        \"Value\": \"3460\"\n                    },\n                    {\n                        \"Key\": \"PacketBytes\",\n                        \"Value\": \"56790\"\n                    }\n                ]\n            },\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"Province\",\n                        \"Value\": \"台湾省\"\n                    },\n                    {\n                        \"Key\": \"AttackCount\",\n                        \"Value\": \"35\"\n                    },\n                    {\n                        \"Key\": \"PacketCount\",\n                        \"Value\": \"3590\"\n                    },\n                    {\n                        \"Key\": \"PacketBytes\",\n                        \"Value\": \"894990\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "DDoS攻击源IP地域分布图"
+      }
+    ],
+    "DescribeDDoSAttackSource": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSAttackSource\r\n&Business=bgpip\r\n&Id=bgpip-0000000x\r\n&IpList.0=1.1.1.1\r\n&StartTime=2019-07-23 11:32:12\r\n&EndTime=2019-07-27 13:35:16\r\n&Limit=1\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"AttackSourceList\": [\n            {\n                \"SrcIp\": \"1.1.1.1\",\n                \"Province\": \"浙江省\",\n                \"Nation\": \"中国\",\n                \"PacketSum\": 132124,\n                \"PacketLen\": 12512551\n            }\n        ]\n    }\n}",
+        "title": "获取DDoS攻击源列表"
+      }
+    ],
+    "DescribeDDoSCount": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSCount\r\n&Business=bgp\r\n&Id=bgp-00000010\r\n&Ip=3.3.3.3\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&MetricName=pkg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgpip\",\n        \"Data\": [],\n        \"EndTime\": \"2019-03-07 14:50:00\",\n        \"Id\": \"bgpip-000000y0\",\n        \"Ip\": \"3.3.3.3\",\n        \"RequestId\": \"69b1692b-4b6e-47c0-a7d6-0ff0da286874\",\n        \"StartTime\": \"2019-03-07 00:00:00\"\n    }\n}",
+        "title": "获取DDoS攻击占比分析"
+      }
+    ],
+    "DescribeDDoSDefendStatus": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSDefendStatus\r\n&Business=base\r\n&Ip=1.1.1.1\r\n&BizType=public\r\n&.DeviceType=cvm\r\n&InstanceId=ins-f2f9ssbo\r\n&IPRegion=gz\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"DefendStatus\": 0,\n        \"UndefendExpire\": \"2019-11-14 15:00:00\",\n        \"ShowFlag\": 1\n    }\n}",
+        "title": "获取DDoS防护状态"
+      }
+    ],
+    "DescribeDDoSEvInfo": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSEvInfo\r\n&Business=bgp\r\n&Id=bgp-00000010\r\n&IpList.0=1.1.1.1\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgp\",\n        \"EndTime\": \"2019-03-06 09:48:00\",\n        \"IcmpKBSum\": 0,\n        \"IcmpPacketSum\": 0,\n        \"Id\": \"bgp-00000010\",\n        \"Ip\": \"1.1.1.1\",\n        \"Mbps\": 0,\n        \"OtherKBSum\": 0,\n        \"OtherPacketSum\": 0,\n        \"PcapUrl\": [\n            \"http://sign-pcap-1256159550.cos.ap-guangzhou.myqcloud.com/1.1.1.1_1551838173_482869894.cap?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDxjGYdU1UeaHk13gNjtoTt32nJbkgczPb%26q-sign-time%3D1551863991%3B1551864891%26q-key-time%3D1551863991%3B1551864891%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D801afa43c768b215557863c2d7768ffdac3513db%00\"\n        ],\n        \"Pps\": 0,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2019-03-06 09:32:00\",\n        \"TcpKBSum\": 0,\n        \"TcpPacketSum\": 0,\n        \"TotalTraffic\": 0,\n        \"UdpKBSum\": 0,\n        \"UdpPacketSum\": 0\n    }\n}",
+        "title": "获取DDoS攻击事件详情"
+      }
+    ],
+    "DescribeDDoSEvList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSEvList\r\n&Business=bgp\r\n&Id=bgp-00000010\r\n&IpList.0=3.3.3.3\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&OverLoad=no\r\n&Limit=30\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgpip\",\n        \"Data\": [\n            {\n                \"Business\": \"bgp\",\n                \"Id\": \"bgp-00000010\",\n                \"Vip\": \"3.3.3.3\",\n                \"StartTime\": \"2018-08-27 15:05:10\",\n                \"EndTime\": \"2018-08-27 16:05:10\",\n                \"Mbps\": 231,\n                \"Pps\": 13232,\n                \"AttackType\": \"UDPFLOOD\",\n                \"AttackStatus\": 1,\n                \"BlockFlag\": 0,\n                \"OverLoad\": \"no\"\n            }\n        ],\n        \"EndTime\": \"2019-03-07 14:50:00\",\n        \"Id\": \"bgpip-000000y0\",\n        \"IpList\": [\n            \"3.3.3.3\"\n        ],\n        \"RequestId\": \"69b1692b-4b6e-47c0-a7d6-0ff0da286874\",\n        \"StartTime\": \"2019-03-07 00:00:00\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取DDoS攻击事件列表"
+      }
+    ],
+    "DescribeDDoSIpLog": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSIpLog\r\n&Business=net\r\n&Id=net-00000010\r\n&IpList.0=1.1.1.1\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"Id\": \"net-00000010\",\n        \"Ip\": \"3.3.1.6\",\n        \"StartTime\": \"2019-03-06 09:32:00\",\n        \"EndTime\": \"2019-03-06 09:48:00\",\n        \"Data\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"LogTime\",\n                        \"Value\": \"2019-03-12 10:35:15\"\n                    },\n                    {\n                        \"Key\": \"LogMessage\",\n                        \"Value\": \"3.3.1.6(上海, 联通)受到DDoS攻击, 攻击流量达10123Mbps\"\n                    }\n                ]\n            },\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"LogTime\",\n                        \"Value\": \"2019-03-12 10:35:05\"\n                    },\n                    {\n                        \"Key\": \"LogMessage\",\n                        \"Value\": \"3.3.1.6(上海, 联通)遭受的DDoS攻击已停止\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取DDoSIP攻击日志"
+      }
+    ],
+    "DescribeDDoSNetCount": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSNetCount\n&Business=net\n&Id=net-00000010\n&StartTime=2018-08-2715:05:10\n&EndTime=2018-08-2716:05:10\n&MetricName=pkg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"Data\": [],\n        \"EndTime\": \"2019-03-07 14:50:00\",\n        \"MetricName\": \"pkg\",\n        \"Id\": \"net-000000y0\",\n        \"RequestId\": \"69b1692b-4b6e-47c0-a7d6-0ff0da286874\",\n        \"StartTime\": \"2019-03-07 00:00:00\"\n    }\n}",
+        "title": "获取高防IP专业版资源的DDoS攻击占比分析"
+      }
+    ],
+    "DescribeDDoSNetEvInfo": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSNetEvInfo\r\n&Business=net\r\n&Id=net-00000010\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"EndTime\": \"2019-03-06 09:48:00\",\n        \"IcmpKBSum\": 0,\n        \"IcmpPacketSum\": 0,\n        \"Id\": \"net-00000010\",\n        \"Mbps\": 0,\n        \"OtherKBSum\": 0,\n        \"OtherPacketSum\": 0,\n        \"PcapUrl\": [\n            \"http://sign-pcap-1256159550.cos.ap-guangzhou.myqcloud.com/1.1.1.1_1551838173_482869894.cap?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDxjGYdU1UeaHk13gNjtoTt32nJbkgczPb%26q-sign-time%3D1551863991%3B1551864891%26q-key-time%3D1551863991%3B1551864891%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D801afa43c768b215557863c2d7768ffdac3513db%00\"\n        ],\n        \"Pps\": 0,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2019-03-06 09:32:00\",\n        \"TcpKBSum\": 0,\n        \"TcpPacketSum\": 0,\n        \"TotalTraffic\": 0,\n        \"UdpKBSum\": 0,\n        \"UdpPacketSum\": 0\n    }\n}",
+        "title": "获取高防IP专业版资源的DDoS攻击事件详情"
+      }
+    ],
+    "DescribeDDoSNetEvList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSNetEvList\r\n&Business=net\r\n&Id=net-00000010\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&Limit=30\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"Data\": [\n            {\n                \"Business\": \"bgp\",\n                \"Id\": \"bgp-00000010\",\n                \"StartTime\": \"2018-08-27 15:05:10\",\n                \"EndTime\": \"2018-08-27 16:05:10\",\n                \"Mbps\": 231,\n                \"Pps\": 13232,\n                \"AttackType\": \"UDPFLOOD\",\n                \"AttackStatus\": 1,\n                \"BlockFlag\": 2,\n                \"OverLoad\": \"\"\n            }\n        ],\n        \"EndTime\": \"2019-03-07 14:50:00\",\n        \"Id\": \"net-000000y0\",\n        \"RequestId\": \"69b1692b-4b6e-47c0-a7d6-0ff0da286874\",\n        \"StartTime\": \"2019-03-07 00:00:00\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取高防IP专业版资源的DDoS攻击事件列表"
+      }
+    ],
+    "DescribeDDoSNetIpLog": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSNetIpLog\r\n&Business=net\r\n&Id=net-00000010\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"Id\": \"net-00000010\",\n        \"StartTime\": \"2019-03-06 09:32:00\",\n        \"EndTime\": \"2019-03-06 09:48:00\",\n        \"Data\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"LogTime\",\n                        \"Value\": \"2019-03-12 10:35:15\"\n                    },\n                    {\n                        \"Key\": \"LogMessage\",\n                        \"Value\": \"3.3.1.6(上海, 联通)受到DDoS攻击, 攻击流量达10123Mbps\"\n                    }\n                ]\n            },\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"LogTime\",\n                        \"Value\": \"2019-03-12 10:35:05\"\n                    },\n                    {\n                        \"Key\": \"LogMessage\",\n                        \"Value\": \"3.3.1.6(上海, 联通)遭受的DDoS攻击已停止\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取高防IP专业版资源的DDoSIP攻击日志"
+      }
+    ],
+    "DescribeDDoSNetTrend": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSNetTrend\r\n&Business=net\r\n&Id=net-00000010\r\n&MetricName=bps\r\n&StartTime=2018-08-27 15:05:10\r\n&EndTime=2018-08-27 16:05:10\r\n&Period=3600\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"net\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"EndTime\": \"2018-08-27 16:05:10\",\n        \"Id\": \"net-00000010\",\n        \"MetricName\": \"bps\",\n        \"Period\": 3600,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2018-08-27 15:05:10\"\n    }\n}",
+        "title": "获取高防IP专业版资源的DDoS攻击指标数据"
+      }
+    ],
+    "DescribeDDoSPolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSPolicy\r\n&Business=bgp\r\n&Id=bgpip-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DDosPolicyList\": [\n            {\n                \"PolicyId\": \"policy-000003h6\",\n                \"PolicyName\": \"name2\",\n                \"DropOptions\": {\n                    \"DropTcp\": 1,\n                    \"DropUdp\": 1,\n                    \"DropIcmp\": 1,\n                    \"DropOther\": 1,\n                    \"DropAbroad\": 1,\n                    \"CheckSyncConn\": 1\n                },\n                \"PortLimits\": [\n                    {\n                        \"Protocol\": \"tcp\",\n                        \"DPortStart\": 0,\n                        \"DPortEnd\": 6000\n                    }\n                ],\n                \"IpBlackWhiteLists\": [\n                    {\n                        \"Ip\": \"1.1.1.13\",\n                        \"Type\": \"white\"\n                    },\n                    {\n                        \"Ip\": \"153.45.0.78\",\n                        \"Type\": \"black\"\n                    }\n                ],\n                \"PacketFilters\": [\n                    {\n                        \"Protocol\": \"tcp\",\n                        \"SportStart\": 0,\n                        \"SportEnd\": 65535,\n                        \"DportStart\": 0,\n                        \"DportEnd\": 65535,\n                        \"PktlenMin\": 520,\n                        \"PktlenMax\": 1024,\n                        \"MatchBegin\": \"no_match\",\n                        \"MatchType\": \"sunday\",\n                        \"Str\": \"\",\n                        \"Depth\": 0,\n                        \"Offset\": 0,\n                        \"IsNot\": 0,\n                        \"Action\": \"transmit\"\n                    }\n                ],\n                \"Resources\": [\n                    {\n                        \"Id\": \"bgpip-000000xe\",\n                        \"IpList\": [\n                            \"123.206.79.197\"\n                        ]\n                    }\n                ],\n                \"WaterPrint\": [\n                    {\n                        \"Offset\": 0,\n                        \"RemoveSwitch\": 1,\n                        \"OpenStatus\": 1,\n                        \"TcpPortList\": [\n                            \"1000-2000\"\n                        ],\n                        \"UdpPortList\": [\n                            \"1000-2000\"\n                        ]\n                    }\n                ],\n                \"WaterKey\": [\n                    {\n                        \"KeyId\": 1234,\n                        \"KeyContent\": \"abc6b301-a322-493a-8e36-83b295453497\",\n                        \"KeyVersion\": \"123\",\n                        \"OpenStatus\": 1\n                    }\n                ],\n                \"CreateTime\": \"2018-11-07 11:13:14\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取DDoS高级策略"
+      }
+    ],
+    "DescribeDDoSTrend": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSTrend\n&Business=bgp\n&Id=bgp-00000010\n&Ip=3.3.3.3\n&MetricName=bps\n&StartTime=2018-08-2715:05:10\n&EndTime=2018-08-2716:05:10\n&Period=3600\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Business\": \"bgp\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"EndTime\": \"2018-08-27 16:05:10\",\n        \"Id\": \"bgp-00000010\",\n        \"Ip\": \"3.3.3.3\",\n        \"MetricName\": \"bps\",\n        \"Period\": 3600,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": \"2018-08-27 15:05:10\"\n    }\n}",
+        "title": "获取DDoS攻击指标数据"
+      }
+    ],
+    "DescribeDDoSUsedStatis": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeDDoSUsedStatis\r\n&Business=bgpip\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"Days\",\n                \"Value\": \"365\"\n            },\n            {\n                \"Key\": \"Attacks\",\n                \"Value\": \"30\"\n            }\n        ],\n        \"RequestId\": \"8f7a9451-2372-4a88-a69d-9868b8991076\"\n    }\n}",
+        "title": "获取DDoS防护使用统计"
+      }
+    ],
+    "DescribeIPProductInfo": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeIPProductInfo\r\n&Business=bgp\r\n&IpList.0=1.1.1.1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8466d9e1-70a9-4575-8e02-df15bd50bc49\"\n    }\n}",
+        "title": "获取独享包或共享包IP对应的云资产信息"
+      }
+    ],
+    "DescribeInsurePacks": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeInsurePacks\r\n&IdList.0=insure-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"InsurePacks\": []\n    }\n}",
+        "title": "获取保险包套餐列表"
+      }
+    ],
+    "DescribeIpBlockList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeIpBlockList\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Ip\": \"111.230.156.235\",\n                \"Status\": \"UnBloking\",\n                \"BlockTime\": \"2018-09-07 17:12:10\",\n                \"UnBlockTime\": \"2018-09-07 17:36:41\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取IP封堵列表"
+      }
+    ],
+    "DescribeIpUnBlockList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeIpUnBlockList\n&BeginTime=2018-09-0111:59:46\n&EndTime=2018-09-1011:59:46\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BeginTime\": \"2018-09-01 11:59:46\",\n        \"EndTime\": \"2018-09-10 11:59:46\",\n        \"List\": [\n            {\n                \"Ip\": \"111.230.156.235\",\n                \"BlockTime\": \"2018-09-07 17:12:10\",\n                \"UnBlockTime\": \"2018-09-07 17:36:41\",\n                \"ActionType\": \"user\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取IP解封记录"
+      }
+    ],
+    "DescribeL4HealthConfig": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeL4HealthConfig\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleIdList.0=rule-00000002\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"HealthConfig\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"VirtualPort\": 666,\n                \"Enable\": 1,\n                \"TimeOut\": 30,\n                \"Interval\": 300,\n                \"KickNum\": 2,\n                \"AliveNum\": 2,\n                \"KeepTime\": 60\n            }\n        ]\n    }\n}",
+        "title": "导出四层健康检查配置"
+      }
+    ],
+    "DescribeL4RulesErrHealth": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeL4RulesErrHealth\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"ErrHealths\": [\n            {\n                \"Key\": \"rule-00000001\",\n                \"Value\": \"1.1.1.1,2.2.2.2\"\n            }\n        ],\n        \"ExtErrHealths\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"RuleId\",\n                        \"Value\": \"rule-00000001\"\n                    },\n                    {\n                        \"Key\": \"Protocol\",\n                        \"Value\": \"TCP\"\n                    },\n                    {\n                        \"Key\": \"VirtualPort\",\n                        \"Value\": \"1234\"\n                    },\n                    {\n                        \"Key\": \"ErrMessage\",\n                        \"Value\": \"SourceIp:1.1.1.1|SourcePort:1234|AbnormalStatTime:1570689065|AbnormalReason:connection time out|Interval:20|CheckNum:6|FailNum:6,SourceIp:2.2.2.2|SourcePort:1234|AbnormalStatTime:1570689065|AbnormalReason:connection time out|Interval:20|CheckNum:6|FailNum:6\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取L4转发规则健康检查异常结果"
+      }
+    ],
+    "DescribeL7HealthConfig": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeL7HealthConfig\n&Business=bgpip\n&Id=bgpip-000000xe\n&RuleIdList.0=rule-00000002\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"HealthConfig\": [\n            {\n                \"Protocol\": \"http\",\n                \"Enable\": 1,\n                \"Interval\": 300,\n                \"KickNum\": 2,\n                \"AliveNum\": 2,\n                \"Method\": \"HEAD\",\n                \"StatusCode\": 15,\n                \"Url\": \"/index.php\",\n                \"Domain\": \"www.a.com\"\n            }\n        ]\n    }\n}",
+        "title": "导出七层健康检查配置"
+      }
+    ],
+    "DescribeNewL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4Rules\n&Business=bgpip\n&Ip=192.168.1.1\n&VirtualPort=123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"Rules\": [\n            {\n                \"Region\": 1,\n                \"Ip\": \"192.168.1.1\",\n                \"Id\": \"bgpip-0000011t\",\n                \"RuleId\": \"rule-000002uq\",\n                \"RuleName\": \"test\",\n                \"Protocol\": \"TCP\",\n                \"VirtualPort\": 123,\n                \"SourcePort\": 123,\n                \"SourceType\": 2,\n                \"LbType\": 1,\n                \"KeepTime\": 0,\n                \"KeepEnable\": 1,\n                \"ModifyTime\": \"2020-03-09 21:37:25\",\n                \"SourceList\": [\n                    {\n                        \"Source\": \"119.29.205.248\",\n                        \"Weight\": 100\n                    }\n                ]\n            }\n        ],\n        \"Healths\": [\n            {\n                \"Enable\": 1,\n                \"RuleId\": \"xx\",\n                \"Interval\": 1,\n                \"AliveNum\": 1,\n                \"KickNum\": 1,\n                \"TimeOut\": 1\n            }\n        ]\n    }\n}",
+        "title": "获取L4转发规则"
+      }
+    ],
+    "DescribeNewL4RulesErrHealth": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL4RulesErrHealth\n&Business=bgpip\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"ErrHealths\": [\n            {\n                \"Key\": \"rule-00000001\",\n                \"Value\": \"1.1.1.1,2.2.2.2\"\n            }\n        ]\n    }\n}",
+        "title": "获取L4转发规则健康检查异常结果"
+      }
+    ],
+    "DescribeNewL7RulesErrHealth": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeNewL7RulesErrHealth\r\n&Business=bgpip\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"ErrHealths\": [\n            {\n                \"Key\": \"rule-00000001\",\n                \"Value\": \"1.1.1.1 400,2.2.2.2 500\"\n            }\n        ]\n    }\n}",
+        "title": "获取L7转发规则健康检查异常结果"
+      }
+    ],
+    "DescribePackIndex": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribePackIndex\r\n&Business=bgp\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"TotalPackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"AttackPackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"BlockPackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"ExpiredPackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"ExpireingPackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"IsolatePackCount\",\n                \"Value\": \"0\"\n            }\n        ],\n        \"RequestId\": \"8f7a9451-2372-4a88-a69d-9868b8991076\"\n    }\n}",
+        "title": "获取产品总览"
+      }
+    ],
+    "DescribePcap": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribePcap\r\n&Business=shield\r\n&Id=bgp-00000001\r\n&StartTime=2018-08-28 07:15:00\r\n&EndTime=2018-08-28 10:05:00\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PcapUrlList\": [\n            \"http://test.com/123456789/xx.pcap\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "下载攻击事件的pcap包"
+      }
+    ],
+    "DescribePolicyCase": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribePolicyCase\r\n&Business=bgpip\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"CaseList\": []\n    }\n}",
+        "title": "DescribePolicyCase"
+      }
+    ],
+    "DescribeResIpList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeResIpList\r\n&Business=bgpip\r\n&Id.0=bgpip-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Resource\": [\n            {\n                \"Id\": \"bgpip-000000xe\",\n                \"IpList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取资源的IP列表"
+      }
+    ],
+    "DescribeResourceList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeResourceList\n&Business=bgpip\n&RegionList.0=gz\n&Line.0=1\n&IdList.0=bgpip-000000001\n&IpList.0=3.3.3.3\n&Name=\"\"\n&Status.0=0\n&Status.1=1\n&Status.2=2\n&Expire=0\n&OderBy.0.Field=bandwidth\n&OderBy.0.Order=DESC\n&Limit=30\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8466d9e1-70a9-4575-8e02-df15bd50bc49\",\n        \"Business\": \"bgpip\",\n        \"ServicePacks\": [\n            {\n                \"Record\": [\n                    {\n                        \"Key\": \"Id\",\n                        \"Value\": \"net-0000000v\"\n                    },\n                    {\n                        \"Key\": \"DdosMax\",\n                        \"Value\": \"20000\"\n                    },\n                    {\n                        \"Key\": \"ElasticLimit\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"AutoRenewFlag\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"DDoSLevel\",\n                        \"Value\": \"middle\"\n                    },\n                    {\n                        \"Key\": \"RuleLimit\",\n                        \"Value\": \"60\"\n                    },\n                    {\n                        \"Key\": \"DdosThreshold\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"CurrentRegion\",\n                        \"Value\": \"bj\"\n                    },\n                    {\n                        \"Key\": \"DdosOverload\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"CCMax\",\n                        \"Value\": \"40000\"\n                    },\n                    {\n                        \"Key\": \"CName\",\n                        \"Value\": \"17fa9bb3.dayugslb.com\"\n                    },\n                    {\n                        \"Key\": \"CreateTime\",\n                        \"Value\": \"2018-09-26 21:39:55\"\n                    },\n                    {\n                        \"Key\": \"IsolateTime\",\n                        \"Value\": \"0000-00-00 00:00:00\"\n                    },\n                    {\n                        \"Key\": \"Name\",\n                        \"Value\": \"多少\"\n                    },\n                    {\n                        \"Key\": \"OriginRegion\",\n                        \"Value\": \"bj\"\n                    },\n                    {\n                        \"Key\": \"CurrentGroup\",\n                        \"Value\": \"100\"\n                    },\n                    {\n                        \"Key\": \"ReturnHour\",\n                        \"Value\": \"2\"\n                    },\n                    {\n                        \"Key\": \"Expire\",\n                        \"Value\": \"2018-10-26 21:39:55\"\n                    },\n                    {\n                        \"Key\": \"ServiceBandwidth\",\n                        \"Value\": \"100\"\n                    },\n                    {\n                        \"Key\": \"CCEnabled\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"AutoReturn\",\n                        \"Value\": \"1\"\n                    },\n                    {\n                        \"Key\": \"CCThreshold\",\n                        \"Value\": \"0\"\n                    },\n                    {\n                        \"Key\": \"Status\",\n                        \"Value\": \"idle\"\n                    },\n                    {\n                        \"Key\": \"TransRules\",\n                        \"Value\": \"0\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "获取资源列表"
+      }
+    ],
+    "DescribeRuleSets": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeRuleSets\r\n&Business=bgpip\r\n&IdList.0=bgpip-000000xe\r\n&<公共请求参数>",
+        "output": "{\r\n    \"RequestId\": \"677f6c12-f53e-47d4-a4e6-66b932ef950d\",\r\n    \"L4RuleSets\": [\r\n        {\r\n            \"Record\": [\r\n                {\r\n                    \"Key\": \"Id\",\r\n                    \"Value\": \"net-0000000a\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleIdList\",\r\n                    \"Value\": \"rule-00000003,rule-00000004,rule-00000005\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleNameList\",\r\n                    \"Value\": \"baidu.com,baidu1.com,baidu.com\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleNum\",\r\n                    \"Value\": \"3\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"L7RuleSets\": [\r\n        {\r\n            \"Record\": [\r\n                {\r\n                    \"Key\": \"Id\",\r\n                    \"Value\": \"net-0000000a\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleIdList\",\r\n                    \"Value\": \"rule-00000013,rule-00000014,rule-00000015\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleNameList\",\r\n                    \"Value\": \"baidu.com,baidu1.com,baidu.com\"\r\n                },\r\n                {\r\n                    \"Key\": \"RuleNum\",\r\n                    \"Value\": \"3\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+        "title": "获取资源的规则数"
+      }
+    ],
+    "DescribeSchedulingDomainList": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeSchedulingDomainList\r\n&Limit=30\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8466d9e1-70a9-4575-8e02-df15bd50bc49\",\n        \"Total\": 1,\n        \"DomainList\": [\n            {\n                \"Domain\": \"1.test.com\",\n                \"BGPIpList\": [],\n                \"CTCCIpList\": [],\n                \"CUCCIpList\": [],\n                \"CMCCIpList\": [],\n                \"OverseaIpList\": [],\n                \"Method\": \"priority\",\n                \"CreateTime\": \"2019-08-21 12:32:12\",\n                \"Status\": 1,\n                \"ModifyTime\": \"2019-08-21 12:32:45\"\n            }\n        ]\n    }\n}",
+        "title": "获取调度域名列表"
+      }
+    ],
+    "DescribeSecIndex": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeSecIndex\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BeginDate\": \"2018-10-01 00:00:00\",\n        \"EndDate\": \"2018-10-31 23:59:59\",\n        \"Data\": [\n            {\n                \"Key\": \"AttackIpCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"AttackCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"BlockCount\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"MaxMbps\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"IpNum\",\n                \"Value\": \"0\"\n            }\n        ],\n        \"RequestId\": \"f264b10e-da87-456e-8398-3389b69e39fb\"\n    }\n}",
+        "title": "获取安全统计"
+      }
+    ],
+    "DescribeSourceIpSegment": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeSourceIpSegment\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": \"1.1.1.0/24;2.2.2.0/24\"\n    }\n}",
+        "title": "获取回源IP段"
+      }
+    ],
+    "DescribeTransmitStatis": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeTransmitStatis\r\n&Business=bgpip\r\n&Id=bgpip-000000x7\r\n&Period=300\r\n&StartTime=2018-08-28 07:15:00\r\n&EndTime=2018-08-28 10:05:00\r\n&MetricName=traffic\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InDataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"OutDataList\": [\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236,\n            236\n        ],\n        \"MetricName\": \"traffic\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取业务转发统计数据"
+      }
+    ],
+    "DescribeUnBlockStatis": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribeUnBlockStatis\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BeginTime\": \"2018-09-10 00:00:00\",\n        \"EndTime\": \"2018-09-11 00:00:00\",\n        \"RequestId\": \"20fe3e59-03ab-4418-86d6-242851af62e4\",\n        \"Total\": 3,\n        \"Used\": 0\n    }\n}",
+        "title": "获取黑洞解封次数"
+      }
+    ],
+    "DescribleL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleL4Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleIdList.0=rule-00000002\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"Rules\": [\n            {\n                \"RuleId\": \"rule-00000002\",\n                \"RuleName\": \"test\",\n                \"Protocol\": \"TCP\",\n                \"VirtualPort\": 2888,\n                \"SourcePort\": 2888,\n                \"SourceType\": 2,\n                \"LbType\": 1,\n                \"KeepTime\": 300,\n                \"SourceList\": [\n                    {\n                        \"Source\": \"2.1.1.1\",\n                        \"Weight\": 50\n                    },\n                    {\n                        \"Source\": \"2.1.1.2\",\n                        \"Weight\": 50\n                    }\n                ]\n            }\n        ]\n    },\n    \"Healths\": [\n        {\n            \"RuleId\": \"rule-00000001\",\n            \"Enable\": 1,\n            \"TimeOut\": 30,\n            \"Interval\": 300,\n            \"KickNum\": 2,\n            \"AliveNum\": 2\n        }\n    ]\n}",
+        "title": "获取L4转发规则"
+      }
+    ],
+    "DescribleL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleL7Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleIdList.0=rule-00000002\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"Rules\": [\n            {\n                \"RuleId\": \"rule-00000002\",\n                \"RuleName\": \"test\",\n                \"Protocol\": \"http\",\n                \"VirtualPort\": 80,\n                \"SourceType\": 2,\n                \"LbType\": 1,\n                \"KeepTime\": 300,\n                \"SourceList\": [\n                    {\n                        \"Source\": \"2.1.1.1\",\n                        \"Weight\": 50\n                    },\n                    {\n                        \"Source\": \"2.1.1.2\",\n                        \"Weight\": 50\n                    }\n                ]\n            }\n        ]\n    },\n    \"Healths\": [\n        {\n            \"RuleId\": \"rule-00000001\",\n            \"Enable\": 1,\n            \"Interval\": 300,\n            \"KickNum\": 2,\n            \"AliveNum\": 2,\n            \"Method\": \"HEAD\",\n            \"StatusCode\": 15,\n            \"Url\": \"/index.php\",\n            \"Status\": 1\n        }\n    ]\n}",
+        "title": "获取L7转发规则"
+      }
+    ],
+    "DescribleNewL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleNewL7Rules\n&Business=bgpip\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"KeepTime\": 1,\n                \"HttpsToHttpEnable\": 1,\n                \"Status\": 1,\n                \"LbType\": 1,\n                \"CCLevel\": \"xx\",\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"Region\": 1,\n                \"VirtualPort\": 1,\n                \"SourceList\": [\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    },\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    }\n                ],\n                \"Cert\": \"xx\",\n                \"KeepEnable\": 1,\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": 1,\n                \"RuleId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"PrivateKey\": \"xx\",\n                \"CertType\": 1,\n                \"RuleName\": \"xx\",\n                \"CCStatus\": 1,\n                \"SSLId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Healths\": [\n            {\n                \"Status\": 1,\n                \"Enable\": 1,\n                \"RuleId\": \"xx\",\n                \"Url\": \"xx\",\n                \"Interval\": 1,\n                \"AliveNum\": 1,\n                \"KickNum\": 1,\n                \"Method\": \"xx\",\n                \"StatusCode\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取7层规则"
+      }
+    ],
+    "DescribleRegionCount": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=DescribleRegionCount\r\n&Business=bgpip\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"RegionList\": [\n            {\n                \"Count\": 5,\n                \"Region\": \"gz\",\n                \"RegionV3\": \"ap-guangzhou\"\n            },\n            {\n                \"Count\": 4,\n                \"Region\": \"sh\",\n                \"RegionV3\": \"ap-shanghai\"\n            }\n        ]\n    }\n}",
+        "title": "获取地域的资源实例数"
+      }
+    ],
+    "ModifyCCAlarmThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCAlarmThreshold\r\n&Business=bgpip\r\n&IpList.1=212.64.63.57\r\n&IpList.2=129.28.240.128\r\n&RsId=net-0000002h\r\n&AlarmThreshold=1000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "设置CC告警阈值"
+      }
+    ],
+    "ModifyCCFrequencyRules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCFrequencyRules\r\n&Business=bgpip\r\n&CCFrequencyRuleId=ccRule-000003h7\r\n&Uri=/\r\n&Mode=include\r\n&Period=60\r\n&ReqNumber=30\r\n&Act=alg\r\n&ExeDuration=120\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改CC防护的访问频率控制规则"
+      }
+    ],
+    "ModifyCCFrequencyRulesStatus": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCFrequencyRulesStatus\r\n&Business=bgpip\r\n&Id=bgpip-00000001\r\n&RuleId=rule-000000xe\r\n&Method=off\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "开启或关闭CC防护的访问频率控制规则"
+      }
+    ],
+    "ModifyCCHostProtection": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCHostProtection\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-00000002\r\n&Method=open\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "开启或关闭CC域名防护"
+      }
+    ],
+    "ModifyCCIpAllowDeny": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=http\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTP协议的CC防护IP黑白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTPS协议的CC防护IP黑白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=delete\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=https\r\n&Domain=test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除HTTPS协议的CC防护IP黑白名单"
+      }
+    ],
+    "ModifyCCLevel": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCLevel\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Level=default\r\n&Protocol=https\r\n&RuleId=rule-0000000x\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改CC防护等级"
+      }
+    ],
+    "ModifyCCPolicySwitch": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCPolicySwitch\n&Business=bgp\n&Id=bgp-000000xe\n&SetId=ccPolicy-000000sd\n&Switch=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改CC自定义策略开关"
+      }
+    ],
+    "ModifyCCSelfDefinePolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCSelfDefinePolicy\r\n&Business=bgp\r\n&Id=bgp-000000xe\r\n&SetId=ccPolicy-000000sd\r\n&Policy.Name=test\r\n&Policy.Smode=speedlimit\r\n&Policy.Frequency=1002\r\n&Policy.IpList.0=1.1.1.1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改CC自定义策略"
+      }
+    ],
+    "ModifyCCThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCThreshold\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Threshold=1000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改CC的防护阈值"
+      }
+    ],
+    "ModifyCCUrlAllow": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=http\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTP协议的CC防护URL白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTPS协议的CC防护URL白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=delete\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=https\r\n&Domain=test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "删除HTTPS协议的CC防护URL白名单"
+      }
+    ],
+    "ModifyDDoSAIStatus": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSAIStatus\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=set\r\n&DDoSAI=on\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DDoSAI\": \"on\",\n        \"Id\": \"bgpip-000000xe\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改DDoS的AI防护状态"
+      }
+    ],
+    "ModifyDDoSAlarmThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSAlarmThreshold\r\n&Business=bgpip\r\n&IpList.1=212.64.63.57\r\n&IpList.2=129.28.240.128\r\n&RsId=net-0000002h\r\n&AlarmThreshold=1000\r\n&AlarmType=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "设置DDoS告警阈值"
+      }
+    ],
+    "ModifyDDoSDefendStatus": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSDefendStatus\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Status=0\r\n&Hour=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改DDoS防护状态"
+      }
+    ],
+    "ModifyDDoSLevel": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSLevel\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=set\r\n&Level=middle\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DDoSLevel\": \"middle\",\n        \"Id\": \"bgpip-000000xe\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改DDoS的防护等级"
+      }
+    ],
+    "ModifyDDoSPolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSPolicy\r\n&Business=bgpip\r\n&PolicyId=policy-000000xe\r\n&DropOptions.0.DropTcp=0\r\n&DropOptions.0.DropUdp=0\r\n&DropOptions.0.DropIcmp=1\r\n&DropOptions.0.DropOther=1\r\n&DropOptions.0.DropAbroad=1\r\n&DropOptions.0.CheckSyncConn=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改DDoS高级策略"
+      }
+    ],
+    "ModifyDDoSPolicyCase": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSPolicyCase\r\n&Business=bgpip\r\n&SceneId=scene-00000003\r\n&PlatformTypes.0=PC\r\n&PlatformTypes.1=TV\r\n&AppType=WEB\r\n&AppProtocols.0=tcp\r\n&TcpPortList=80,443,600-700,888\r\n&UdpPortList=80,443,600-700,888\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改策略场景"
+      }
+    ],
+    "ModifyDDoSPolicyName": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSPolicyName\r\n&Business=bgpip\r\n&PolicyId=policy-000000xe\r\n&Name=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改DDoS高级策略名称"
+      }
+    ],
+    "ModifyDDoSSwitch": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSSwitch\r\n&Business=basic\r\n&Method=set\r\n&Status=0\r\n&Ip=1.1.1.1\r\n&BizType=public\r\n&DeviceType=cvm\r\n&InstanceId=cvm-abdcasddd1\r\n&IPRegion=gz\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Status\": 0\n    }\n}",
+        "title": "开启或关闭DDoS防护"
+      }
+    ],
+    "ModifyDDoSThreshold": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSThreshold\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Threshold=1000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改DDoS清洗阈值"
+      }
+    ],
+    "ModifyDDoSWaterKey": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyDDoSWaterKey\r\n&Business=bgpip\r\n&PolicyId=policy-000000xe\r\n&Method=add\r\n&KeyId=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"KeyList\": [\n            {\n                \"KeyId\": 1234,\n                \"KeyContent\": \"abc6b301-a322-493a-8e36-83b295453497\",\n                \"KeyVersion\": \"123\",\n                \"OpenStatus\": 1,\n                \"CreateTime\": \"2019-11-21 11:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "修改水印密钥"
+      }
+    ],
+    "ModifyElasticLimit": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyElasticLimit\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Limit=10000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改弹性防护阈值"
+      }
+    ],
+    "ModifyL4Health": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyL4Health\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Healths.0.RuleId=rule-000000xe\r\n&Healths.0.Enable=1\r\n&Healths.0.TimeOut=60\r\n&Healths.0.Interval=300\r\n&Healths.0.KickNum=3\r\n&Healths.0.AliveNum=3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改L4转发规则健康检查参数"
+      }
+    ],
+    "ModifyL4KeepTime": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyL4KeepTime\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&RuleId=rule-000000xe\r\n&KeepEnable=1\r\n&KeepTime=300\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改L4转发规则的会话保持"
+      }
+    ],
+    "ModifyL4Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyL4Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rule.RuleId=rule-000000xe\r\n&Rule.RuleName=test\r\n&Rule.Protocol=TCP\r\n&Rule.VirtualPort=18888\r\n&Rule.SourcePort=18888\r\n&Rule.SourceType=2\r\n&Rule.LbType=1\r\n&Rule.KeepTime=300\r\n&Rule.KeepEnable=0\r\n&Rule.SourceList.0.Source=1.1.1.10\r\n&Rule.SourceList.0.Weight=100\r\n&Rule.SourceList.1.Source=1.1.1.20\r\n&Rule.SourceList.1.Weight=100\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改L4转发规则"
+      }
+    ],
+    "ModifyL7Rules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyL7Rules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rule.RuleName=test\r\n&Rule.Protocol=http\r\n&Rule.Domain=www.abc.com\r\n&Rule.SourceType=2\r\n&Rule.LbType=1\r\n&Rule.KeepTime=300\r\n&Rule.SourceList.0.Source=1.1.1.10\r\n&Rule.SourceList.0.Weight=100\r\n&Rule.SourceList.1.Source=1.1.1.20\r\n&Rule.SourceList.1.Weight=100\r\n&Rule.CertType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改L7转发规则"
+      }
+    ],
+    "ModifyNetReturnSwitch": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyNetReturnSwitch\r\n&Business=net\r\n&Id=net-0000000e\r\n&Status=1\r\n&Hour=3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置自动切回"
+      }
+    ],
+    "ModifyNewDomainRules": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyNewDomainRules\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Rule.RuleName=test\r\n&Rule.Protocol=http\r\n&Rule.Domain=www.abc.com\r\n&Rule.SourceType=2\r\n&Rule.LbType=1\r\n&Rule.KeepTime=300\r\n&Rule.SourceList.0.Source=1.1.1.10\r\n&Rule.SourceList.0.Weight=100\r\n&Rule.SourceList.1.Source=1.1.1.20\r\n&Rule.SourceList.1.Weight=100\r\n&Rule.CertType=0\r\n&Rule.VirtualPort=8443\r\n&Rule.KeepEnable=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改7层转发规则"
+      }
+    ],
+    "ModifyNewL4Rule": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyNewL4Rule\n&Business=bgpip\n&Id=bgpip-000000xe\n&Rule.RuleId=rule-000000xe\n&Rule.RuleName=test\n&Rule.Protocol=TCP\n&Rule.VirtualPort=18888\n&Rule.SourcePort=18888\n&Rule.SourceType=2\n&Rule.LbType=1\n&Rule.KeepTime=300\n&Rule.KeepEnable=0\n&Rule.SourceList.0.Source=1.1.1.10\n&Rule.SourceList.0.Weight=100\n&Rule.SourceList.1.Source=1.1.1.20\n&Rule.SourceList.1.Weight=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改4层转发规则"
+      }
+    ],
+    "ModifyResBindDDoSPolicy": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyResBindDDoSPolicy\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&PolicyId=policy-000000xe\r\n&Method=bind\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "资源实例绑定DDoS高级策略"
+      }
+    ],
+    "ModifyResourceRenewFlag": [
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyResourceRenewFlag\r\n&Business=bgpip\r\n&Id=bgpip-000000x7\r\n&RenewFlag=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改资源自动续费标记"
+      }
+    ]
+  },
+  "version": "1.0"
+}

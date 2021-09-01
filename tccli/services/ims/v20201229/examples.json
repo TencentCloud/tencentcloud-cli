@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "ImageModeration": [
+      {
+        "document": "图片内容安全识别",
+        "input": "https://ims.tencentcloudapi.com/?Action=ImageModeration\n&FileUrl=https://xxx.jpg\n&DataId=1213\n&BizType=test_1001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"BizType\": \"test_1001\",\n        \"Suggestion\": \"Block\",\n        \"FileMD5\": \"\",\n        \"Label\": \"Porn\",\n        \"SubLabel\": \"SexBehavior\",\n        \"Score\": 90,\n        \"LabelResults\": [\n            {\n                \"Scene\": \"Porn\",\n                \"Suggestion\": \"Block\",\n                \"Label\": \"Porn\",\n                \"SubLabel\": \"SexBehavior\",\n                \"Score\": 90,\n                \"Details\": []\n            }\n        ],\n        \"ObjectResults\": [\n            {\n                \"Scene\": \"QrCode\",\n                \"Suggestion\": \"Block\",\n                \"Label\": \"Ad\",\n                \"SubLabel\": \"\",\n                \"Score\": 100,\n                \"Names\": [\n                    \"QRCODE\"\n                ],\n                \"Details\": [\n                    {\n                        \"Id\": 0,\n                        \"Name\": \"QRCODE\",\n                        \"Score\": 100,\n                        \"Location\": {\n                            \"X\": 155.01746,\n                            \"Y\": 396.01746,\n                            \"Width\": 769.9824,\n                            \"Height\": 769.98254,\n                            \"Rotate\": 0\n                        }\n                    }\n                ]\n            }\n        ],\n        \"OcrResults\": [],\n        \"LibResults\": [],\n        \"Extra\": \"\"\n    }\n}",
+        "title": "图片内容识别"
+      }
+    ],
+    "ImageRecognition": [
+      {
+        "document": "图片内容安全识别",
+        "input": "https://ims.tencentcloudapi.com/?Action=ImageRecognition\n&FileUrl=https://xxx.jpg\n&DataId=1213\n&BizType=test_1001\n&Interval=1\n&MaxFrames=1\n&Channel=1\n&CustomAppId=123456\n&CustomUin=123456\n&CustomSubAccountUin=123456\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"BizType\": \"test_1001\",\n        \"Suggestion\": \"Block\",\n        \"Label\": \"Porn\",\n        \"SubLabel\": \"SexBehavior\",\n        \"Score\": 90,\n        \"ObjectResults\": [\n            {\n                \"Scene\": \"QrCode\",\n                \"Suggestion\": \"Block\",\n                \"Label\": \"Ad\",\n                \"SubLabel\": \"\",\n                \"Score\": 100,\n                \"Names\": [\n                    \"QRCODE\"\n                ],\n                \"Details\": [\n                    {\n                        \"Id\": 0,\n                        \"Name\": \"QRCODE\",\n                        \"Score\": 100,\n                        \"Location\": {\n                            \"X\": 155.01746,\n                            \"Y\": 396.01746,\n                            \"Width\": 769.9824,\n                            \"Height\": 769.98254,\n                            \"Rotate\": 0\n                        }\n                    }\n                ]\n            }\n        ],\n        \"OcrResults\": [],\n        \"Extra\": \"\"\n    }\n}",
+        "title": "图片内容识别"
+      }
+    ]
+  },
+  "version": "1.0"
+}

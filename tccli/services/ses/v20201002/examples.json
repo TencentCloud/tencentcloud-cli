@@ -1,0 +1,173 @@
+{
+  "actions": {
+    "CreateEmailAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailAddress\n<公共请求参数>\n\n{\n    \"EmailAddress\": \"service@mail.qcloud.com\",\n    \"EmailSenderName\": \"腾讯云邮件通知\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "创建发信地址"
+      }
+    ],
+    "CreateEmailIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailIdentity\n<公共请求参数>\n\n{\n    \"EmailIdentity\": \"mail.qcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"IdentityType\": \"DOMAIN\",\n        \"VerifiedForSendingStatus\": false,\n        \"Attributes\": [\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail.qcloud.com\",\n                \"ExpectedValue\": \"v=spf1 include:qcloudmail.com ~all\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            },\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail._domainkey.mail.qcloud.com\",\n                \"ExpectedValue\": \"k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeMVIzrCa3T14JsNY0IRv5/2V1/v2itlviLQBwXsa7shBD6TrBkswsFUToPyMRWC9tbR/5ey0nRBH0ZVxp+lsmTxid2Y2z+FApQ6ra2VsXfbJP3HE6wAO0YTVEJt1TmeczhEd2Jiz/fcabIISgXEdSpTYJhb0ct0VJRxcg4c8c7wIDAQAB\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            }\n        ]\n    }\n}",
+        "title": "创建发信域名"
+      }
+    ],
+    "CreateEmailTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateContent\": {\n        \"Html\": \"PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+\"\n    },\n    \"TemplateName\": \"TestName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "创建HTML邮件模板"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateContent\": {\n        \"Text\": \"dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX0=\"\n    },\n    \"TemplateName\": \"TestName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "创建文本邮件模板"
+      }
+    ],
+    "DeleteBlackList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlackList\n<公共请求参数>\n\n{\n    \"EmailAddressList\": [\n        \"23423434@qq.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除收件人黑名单"
+      }
+    ],
+    "DeleteEmailAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEmailAddress\n<公共请求参数>\n\n{\n    \"EmailAddress\": \"service@mail.qcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除发信地址"
+      }
+    ],
+    "DeleteEmailIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEmailIdentity\n<公共请求参数>\n\n{\n    \"EmailIdentity\": \"mail.qcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除发信域名"
+      }
+    ],
+    "DeleteEmailTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateID\": 10086\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除发信模版"
+      }
+    ],
+    "GetEmailIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmailIdentity\n<公共请求参数>\n\n{\n    \"EmailIdentity\": \"mail.qcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"IdentityType\": \"DOMAIN\",\n        \"VerifiedForSendingStatus\": false,\n        \"Attributes\": [\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail.qcloud.com\",\n                \"ExpectedValue\": \"v=spf1 include:qcloudmail.com ~all\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            },\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail._domainkey.mail.qcloud.com\",\n                \"ExpectedValue\": \"k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeMVIzrCa3T14JsNY0IRv5/2V1/v2itlviLQBwXsa7shBD6TrBkswsFUToPyMRWC9tbR/5ey0nRBH0ZVxp+lsmTxid2Y2z+FApQ6ra2VsXfbJP3HE6wAO0YTVEJt1TmeczhEd2Jiz/fcabIISgXEdSpTYJhb0ct0VJRxcg4c8c7wIDAQAB\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            }\n        ]\n    }\n}",
+        "title": "获取域名配置详情"
+      }
+    ],
+    "GetEmailTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateID\": 10091\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TemplateContent\": {\n            \"Html\": \"PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+\",\n            \"Text\": \"dGhpcyBpcyBhIGV4YW1wbGU=\"\n        }\n    }\n}",
+        "title": "获取模板内容"
+      }
+    ],
+    "GetSendEmailStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSendEmailStatus\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"RequestDate\": \"2020-09-22\",\n    \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EmailStatusList\": [\n            {\n                \"UserOpened\": true,\n                \"UserUnsubscribed\": true,\n                \"RequestTime\": 1609831698,\n                \"UserComplainted\": true,\n                \"ToEmailAddress\": \"example@cloud.com\",\n                \"FromEmailAddress\": \"noreply@tencent.com\",\n                \"UserClicked\": true,\n                \"DeliverTime\": 1609831698,\n                \"DeliverMessage\": \"\",\n                \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\",\n                \"SendStatus\": 0,\n                \"DeliverStatus\": 0\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "根据MessageId查询发送结果"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSendEmailStatus\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"RequestDate\": \"2020-09-22\",\n    \"ToEmailAddress\": \"example@cloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EmailStatusList\": [\n            {\n                \"UserOpened\": true,\n                \"UserUnsubscribed\": true,\n                \"RequestTime\": 1609831698,\n                \"UserComplainted\": true,\n                \"ToEmailAddress\": \"example@cloud.com\",\n                \"FromEmailAddress\": \"noreply@tencent.com\",\n                \"UserClicked\": true,\n                \"DeliverTime\": 1609831698,\n                \"DeliverMessage\": \"\",\n                \"MessageId\": \"qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1\",\n                \"SendStatus\": 0,\n                \"DeliverStatus\": 0\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "根据收件人查询发送结果"
+      }
+    ],
+    "GetStatisticsReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStatisticsReport\n<公共请求参数>\n\n{\n    \"Domain\": \"qcloud.com\",\n    \"StartDate\": \"2020-10-01\",\n    \"EndDate\": \"2020-10-03\",\n    \"ReceivingMailboxType\": \"gmail.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"DailyVolumes\": [\n            {\n                \"SendDate\": \"2020-10-01\",\n                \"RequestCount\": 1000,\n                \"AcceptedCount\": 999,\n                \"DeliveredCount\": 998,\n                \"OpenedCount\": 300,\n                \"ClickedCount\": 199,\n                \"BounceCount\": 5,\n                \"UnsubscribeCount\": 1\n            }\n        ],\n        \"OverallVolume\": {\n            \"SendDate\": \"2020-10-01\",\n            \"RequestCount\": 1000,\n            \"AcceptedCount\": 999,\n            \"DeliveredCount\": 998,\n            \"OpenedCount\": 300,\n            \"ClickedCount\": 199,\n            \"BounceCount\": 5,\n            \"UnsubscribeCount\": 1\n        }\n    }\n}",
+        "title": "获取统计数据"
+      }
+    ],
+    "ListBlackEmailAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBlackEmailAddress\n<公共请求参数>\n\n{\n    \"StartDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BlackList\": [\n            {\n                \"BounceTime\": \"2020-09-22 00:00:00\",\n                \"EmailAddress\": \"432843@qq.com\"\n            },\n            {\n                \"BounceTime\": \"2020-10-22 12:10:00\",\n                \"EmailAddress\": \"43fdaf2843@gmail.com\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "获取黑名单邮箱地址"
+      }
+    ],
+    "ListEmailAddress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEmailAddress\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"EmailSenders\": [\n            {\n                \"EmailAddress\": \"service@mail.qcloud.com\",\n                \"EmailSenderName\": \"腾讯云邮件通知\",\n                \"CreatedTimestamp\": 1602143617\n            },\n            {\n                \"EmailAddress\": \"verify@mail.qcloud.com\",\n                \"EmailSenderName\": \"腾讯云验证码\",\n                \"CreatedTimestamp\": 1602143617\n            }\n        ]\n    }\n}",
+        "title": "获取发信地址列表"
+      }
+    ],
+    "ListEmailIdentities": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEmailIdentities\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"EmailIdentities\": [\n            {\n                \"IdentityName\": \"mail.qcloud.com\",\n                \"IdentityType\": \"DOMAIN\",\n                \"SendingEnabled\": false\n            }\n        ]\n    }\n}",
+        "title": "获取列表"
+      }
+    ],
+    "ListEmailTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEmailTemplates\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TotalCount\": 1,\n        \"TemplatesMetadata\": [\n            {\n                \"TemplateID\": 10091,\n                \"CreatedTimestamp\": 1607512575,\n                \"TemplateName\": \"Test Template\",\n                \"ReviewReason\": \"通过\",\n                \"TemplateStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取模板列表"
+      }
+    ],
+    "SendEmail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
+        "title": "发送纯文本邮件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Html\": \"PGh0bWw+PGRpdj5IZWxsb1dvcmxkPC9kaXY+PC9odG1sPg==\",\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
+        "title": "发送富文本邮件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Template\": {\n        \"TemplateID\": \"100091\",\n        \"TemplateData\": \"{\\\"code\\\":\\\"1234\\\"}\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
+        "title": "发送模板邮件"
+      }
+    ],
+    "UpdateEmailIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEmailIdentity\n<公共请求参数>\n\n{\n    \"EmailIdentity\": \"mail.qcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"IdentityType\": \"DOMAIN\",\n        \"VerifiedForSendingStatus\": false,\n        \"Attributes\": [\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail.qcloud.com\",\n                \"ExpectedValue\": \"v=spf1 include:qcloudmail.com ~all\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            },\n            {\n                \"Type\": \"TXT\",\n                \"SendDomain\": \"mail._domainkey.mail.qcloud.com\",\n                \"ExpectedValue\": \"k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeMVIzrCa3T14JsNY0IRv5/2V1/v2itlviLQBwXsa7shBD6TrBkswsFUToPyMRWC9tbR/5ey0nRBH0ZVxp+lsmTxid2Y2z+FApQ6ra2VsXfbJP3HE6wAO0YTVEJt1TmeczhEd2Jiz/fcabIISgXEdSpTYJhb0ct0VJRxcg4c8c7wIDAQAB\",\n                \"CurrentValue\": \"\",\n                \"Status\": false\n            }\n        ]\n    }\n}",
+        "title": "请求验证"
+      }
+    ],
+    "UpdateEmailTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateID\": 10091,\n    \"TemplateName\": \"xx\",\n    \"TemplateContent\": {\n        \"Html\": \"PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+\",\n        \"Text\": \"dGhpcyBpcyBhIGV4YW1wbGU=\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "更新模板内容"
+      }
+    ]
+  },
+  "version": "1.0"
+}

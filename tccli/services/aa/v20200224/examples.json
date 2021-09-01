@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "ManageMarketingRisk": [
+      {
+        "document": "",
+        "input": "https://aa.tencentcloudapi.com/?Action=ManageMarketingRisk\n&BusinessSecurityData.Account.AccountType=2\n&BusinessSecurityData.Account.WeChatAccount.WeChatOpenId=oz5I********************GfVv\n&BusinessSecurityData.PostTime=1590753783\n&BusinessSecurityData.UserIp=127.0.0.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"UserId\": \"oz5I********************GfVv\",\n                \"UserIp\": \"127.0.0.1\",\n                \"PostTime\": 1590753783,\n                \"AssociateAccount\": \"\",\n                \"RiskType\": [\n                    101,\n                    1,\n                    2,\n                    105\n                ]\n            }\n        },\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
+        "title": "ManageMarketingRisk"
+      }
+    ],
+    "QueryActivityAntiRush": [
+      {
+        "document": "",
+        "input": "https://aa.tencentcloudapi.com/?Action=QueryActivityAntiRush\r\n&AccountType=10004\r\n&Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&UserIp=101.231.62.66\r\n&PostTime=1582029456\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Level\": 1,\n        \"PostTime\": \"1582029456\",\n        \"RequestId\": \"fafjdlsajfldsj\",\n        \"RiskType\": [\n            1,\n            2\n        ],\n        \"UserIp\": \"101.231.62.66\",\n        \"CodeDesc\": \"Success\",\n        \"Uid\": \"bfd81ee3ed27ad31c95ca75e21365973\"\n    }\n}",
+        "title": "活动防刷接口示范"
+      }
+    ],
+    "QueryActivityAntiRushAdvanced": [
+      {
+        "document": "",
+        "input": "https://aa.tencentcloudapi.com/?Action=QueryActivityAntiRushAdvanced\r\n&BusinessSecurityData.Account.AccountAccountType=2\r\n&BusinessSecurityData.Account.WeChatAccount.WeChatOpenId=\"oz5I2tz55hxIIFCDxIflGfVv****\"\r\n&BusinessSecurityData.OnlineScam.ContentLabel=\"Text\"\r\n&BusinessSecurityData.OnlineScam.ContentRiskLevel=1\r\n&BusinessSecurityData.OnlineScam.ContentType=1\r\n&BusinessSecurityData.OnlineScam.FraudType=2\r\n&BusinessSecurityData.OnlineScam.FraudAccount=\"55277****\"\r\n&BusinessSecurityData.PostTime=1590753783\r\n&BusinessSecurityData.UserIp=\"117.136.105.74\"\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"UserId\": \"oz5I2tz55hxIIFCDxIflGfVv****\",\n                \"UserIp\": \"117.136.105.74\",\n                \"PostTime\": 1590753783,\n                \"AssociateAccount\": \"\",\n                \"Level\": 4,\n                \"RiskType\": [\n                    101,\n                    1,\n                    2,\n                    105\n                ]\n            }\n        },\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
+        "title": "活动防刷高级版"
+      }
+    ]
+  },
+  "version": "1.0"
+}

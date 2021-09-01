@@ -1,0 +1,237 @@
+{
+  "actions": {
+    "AssociateAccessGroups": [
+      {
+        "document": "绑定权限组列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=AssociateAccessGroups\n&MountPointId=f4mnvilzmdd-Tx5f\n&AccessGroupIds.0=ag-fmfpk1hk\n&AccessGroupIds.1=ag-avgx2dox\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "绑定权限组列表"
+      }
+    ],
+    "CreateAccessGroup": [
+      {
+        "document": "创建权限组",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateAccessGroup\n&AccessGroupName=test\n&Description=test\n&VpcType=1\n&VpcId=vpc-967aipkx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessGroup\": {\n            \"AccessGroupId\": \"ag-f8xoises\",\n            \"AccessGroupName\": \"test\",\n            \"Description\": \"test\",\n            \"VpcType\": 1,\n            \"VpcId\": \"vpc-967aipkx\",\n            \"CreateTime\": \"2019-07-30T16:04:30+08:00\"\n        },\n        \"RequestId\": \"ab3fff6b-7a36-4b7f-b2bb-bba87b5945a6\"\n    }\n}",
+        "title": "创建权限组"
+      }
+    ],
+    "CreateAccessRules": [
+      {
+        "document": "批量创建权限规则",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateAccessRules\n&AccessGroupId=ag-jwmfdcul\n&AccessRules.0.Address=127.0.0.1\n&AccessRules.0.AccessMode=1\n&AccessRules.0.Priority=1\n&AccessRules.1.Address=127.0.0.1\n&AccessRules.1.AccessMode=2\n&AccessRules.1.Priority=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "批量创建权限规则"
+      }
+    ],
+    "CreateFileSystem": [
+      {
+        "document": "创建文件系统",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateFileSystem\n&FileSystemName=test\n&Description=test\n&CapacityQuota=1073741824\n&SuperUsers.0=hadoop\n&PosixAcl=true\n&RootInodeUser=hadoop\n&RootInodeGroup=supergroup\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FileSystem\": {\n            \"AppId\": 1251006373,\n            \"FileSystemName\": \"test\",\n            \"Description\": \"test\",\n            \"Region\": \"ap-guangzhou\",\n            \"FileSystemId\": \"f4mhaqkciq0\",\n            \"CreateTime\": \"2019-07-30T16:51:41+08:00\",\n            \"BlockSize\": 4194304,\n            \"CapacityQuota\": 1073741824,\n            \"SuperUsers\": [\n                \"hadoop\"\n            ],\n            \"PosixAcl\": true,\n            \"Status\": 1\n        },\n        \"RequestId\": \"ecba2ede-de08-41d5-99cc-b5444912b7f2\"\n    }\n}",
+        "title": "创建文件系统"
+      }
+    ],
+    "CreateLifeCycleRules": [
+      {
+        "document": "批量创建生命周期规则",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateLifeCycleRules\n&FileSystemId=f4mhaqkciq0\n&LifeCycleRules.0.LifeCycleRuleName=test1\n&LifeCycleRules.0.Path=/test1\n&LifeCycleRules.0.Transitions.0.Days=7\n&LifeCycleRules.0.Transitions.0.Type=1\n&LifeCycleRules.0.Status=1\n&LifeCycleRules.1.LifeCycleRuleName=test2\n&LifeCycleRules.1.Path=/test2\n&LifeCycleRules.1.Transitions.0.Days=7\n&LifeCycleRules.1.Transitions.0.Type=1\n&LifeCycleRules.1.Transitions.1.Days=7\n&LifeCycleRules.1.Transitions.1.Type=2\n&LifeCycleRules.1.Status=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "批量创建生命周期规则"
+      }
+    ],
+    "CreateMountPoint": [
+      {
+        "document": "创建挂载点",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateMountPoint\n&MountPointName=test\n&FileSystemId=f4mnvilzmdd\n&MountPointStatus=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MountPoint\": {\n            \"MountPointId\": \"f4mnvilzmdd-Tx5f\",\n            \"MountPointName\": \"test\",\n            \"FileSystemId\": \"f4mnvilzmdd\",\n            \"AccessGroupIds\": [],\n            \"Status\": 1,\n            \"CreateTime\": \"2019-07-30T18:19:18+08:00\"\n        },\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "创建挂载点"
+      }
+    ],
+    "CreateRestoreTasks": [
+      {
+        "document": "批量创建回热任务",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateRestoreTasks\n&FileSystemId=f4mhaqkciq0\n&RestoreTasks.0.FilePath=/test/file1\n&RestoreTasks.0.Type=1\n&RestoreTasks.0.Days=7\n&RestoreTasks.1.FilePath=/test/file2\n&RestoreTasks.1.Type=2\n&RestoreTasks.1.Days=7\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6d3ef8-db1d-40de-afa1-d340302458bb\"\n    }\n}",
+        "title": "批量创建回热任务"
+      }
+    ],
+    "DeleteAccessGroup": [
+      {
+        "document": "删除权限组",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteAccessGroup\n&AccessGroupId=ag-f8xoises\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad3bd8a7-e9b8-436c-b32c-d285654ff592\"\n    }\n}",
+        "title": "删除权限组"
+      }
+    ],
+    "DeleteAccessRules": [
+      {
+        "document": "批量删除权限规则",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteAccessRules\n&AccessRuleIds.0=13001\n&AccessRuleIds.1=13002\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b629358c-ed40-4747-9060-3fcd34a8f32f\"\n    }\n}",
+        "title": "批量删除权限规则"
+      }
+    ],
+    "DeleteFileSystem": [
+      {
+        "document": "删除文件系统",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteFileSystem\n&FileSystemId=f4mhaqkciq0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a66caf7a-0f2b-48d8-bfb6-1ff9e0713d75\"\n    }\n}",
+        "title": "删除文件系统"
+      }
+    ],
+    "DeleteLifeCycleRules": [
+      {
+        "document": "批量删除生命周期规则",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteLifeCycleRules\n&LifeCycleRuleIds.0=1\n&LifeCycleRuleIds.1=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b629358c-ed40-4747-9060-3fcd34a8f32f\"\n    }\n}",
+        "title": "批量删除生命周期规则"
+      }
+    ],
+    "DeleteMountPoint": [
+      {
+        "document": "删除挂载点",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DeleteMountPoint\n&MountPointId=f4mnvilzmdd-fj7A\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85a1accb-0456-45b3-9eb2-52ae76430ca3\"\n    }\n}",
+        "title": "删除挂载点"
+      }
+    ],
+    "DescribeAccessGroup": [
+      {
+        "document": "查看权限组详细信息",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeAccessGroup\n&AccessGroupId=ag-f8xoises\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessGroup\": {\n            \"AccessGroupId\": \"ag-f8xoises\",\n            \"AccessGroupName\": \"test\",\n            \"Description\": \"test\",\n            \"VpcType\": 1,\n            \"VpcId\": \"vpc-967aipkx\",\n            \"CreateTime\": \"2019-07-30T16:04:30+08:00\"\n        },\n        \"RequestId\": \"ab3fff6b-7a36-4b7f-b2bb-bba87b5945a6\"\n    }\n}",
+        "title": "查看权限组详细信息"
+      }
+    ],
+    "DescribeAccessGroups": [
+      {
+        "document": "查看权限组列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeAccessGroups\n&VpcId=vpc-967aipkx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessGroups\": [\n            {\n                \"AccessGroupId\": \"ag-f8xoises\",\n                \"AccessGroupName\": \"test\",\n                \"Description\": \"test\",\n                \"VpcId\": \"vpc-967aipkx\",\n                \"VpcType\": 1,\n                \"CreateTime\": \"2019-07-30T16:04:30+08:00\"\n            }\n        ],\n        \"RequestId\": \"726c9744-6e89-457e-b8c0-7008e0a1cc51\"\n    }\n}",
+        "title": "查看权限组列表"
+      }
+    ],
+    "DescribeAccessRules": [
+      {
+        "document": "查看权限规则列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeAccessRules\n&AccessGroupId=ag-jwmfdcul\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessRules\": [\n            {\n                \"AccessRuleId\": 13001,\n                \"Address\": \"127.0.0.1\",\n                \"AccessMode\": 1,\n                \"Priority\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            },\n            {\n                \"AccessRuleId\": 13002,\n                \"Address\": \"127.0.0.1\",\n                \"AccessMode\": 2,\n                \"Priority\": 2,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            }\n        ],\n        \"RequestId\": \"19d240f4-156d-4a3c-856c-216d64a6bb4a\"\n    }\n}",
+        "title": "查看权限规则列表"
+      }
+    ],
+    "DescribeFileSystem": [
+      {
+        "document": "查看文件系统详细信息",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeFileSystem\n&FileSystemId=f4mhaqkciq0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FileSystem\": {\n            \"AppId\": 1251006373,\n            \"FileSystemName\": \"test\",\n            \"Description\": \"\",\n            \"Region\": \"ap-guangzhou\",\n            \"FileSystemId\": \"f4mhaqkciq0\",\n            \"CreateTime\": \"2019-07-30T17:03:20+08:00\",\n            \"BlockSize\": 4194304,\n            \"CapacityQuota\": 1073741824,\n            \"SuperUsers\": [\n                \"hadoop\"\n            ],\n            \"PosixAcl\": true,\n            \"Status\": 2\n        },\n        \"CapacityUsed\": 0,\n        \"ArchiveCapacityUsed\": 0,\n        \"RequestId\": \"22e36f95-9295-4132-a75e-09a08d2e13fc\"\n    }\n}",
+        "title": "查看文件系统详细信息"
+      }
+    ],
+    "DescribeFileSystems": [
+      {
+        "document": "查看文件系统列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeFileSystems\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FileSystems\": [\n            {\n                \"AppId\": 1251006373,\n                \"FileSystemName\": \"test\",\n                \"Description\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"FileSystemId\": \"f4mnvilzmdd\",\n                \"CreateTime\": \"2019-07-30T17:03:20+08:00\",\n                \"BlockSize\": 4194304,\n                \"CapacityQuota\": 1073741824,\n                \"SuperUsers\": [\n                    \"hadoop\"\n                ],\n                \"PosixAcl\": true,\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"a6d1c90a-a86a-45e2-b031-0de50f1ffc35\"\n    }\n}",
+        "title": "查看文件系统列表"
+      }
+    ],
+    "DescribeLifeCycleRules": [
+      {
+        "document": "查看生命周期规则列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeLifeCycleRules\n&FileSystemId=f4mnvilzmdd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LifeCycleRules\": [\n            {\n                \"LifeCycleRuleId\": 1,\n                \"LifeCycleRuleName\": \"test1\",\n                \"Path\": \"/test1\",\n                \"Transitions\": [\n                    {\n                        \"Days\": 7,\n                        \"Type\": 1\n                    }\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            },\n            {\n                \"LifeCycleRuleId\": 2,\n                \"LifeCycleRuleName\": \"test2\",\n                \"Path\": \"/test2\",\n                \"Transitions\": [\n                    {\n                        \"Days\": 7,\n                        \"Type\": 1\n                    },\n                    {\n                        \"Days\": 7,\n                        \"Type\": 2\n                    }\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            }\n        ],\n        \"RequestId\": \"19d240f4-156d-4a3c-856c-216d64a6bb4a\"\n    }\n}",
+        "title": "查看生命周期规则列表"
+      }
+    ],
+    "DescribeMountPoint": [
+      {
+        "document": "查看挂载点详细信息",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeMountPoint\n&MountPointId=f4mnvilzmdd-Tx5f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MountPoint\": {\n            \"MountPointId\": \"f4mnvilzmdd-Tx5f\",\n            \"MountPointName\": \"test\",\n            \"FileSystemId\": \"f4mnvilzmdd\",\n            \"AccessGroupIds\": [\n                \"ag-fmfpk1hk\"\n            ],\n            \"Status\": 2,\n            \"CreateTime\": \"2019-07-30T18:19:18+08:00\"\n        },\n        \"RequestId\": \"9e0a4f46-e326-4e03-bc84-721008bb7a9d\"\n    }\n}",
+        "title": "查看挂载点详细信息"
+      }
+    ],
+    "DescribeMountPoints": [
+      {
+        "document": "查看挂载点列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeMountPoints\n&AccessGroupId=ag-fmfpk1hk\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MountPoints\": [\n            {\n                \"MountPointId\": \"f4mnvilzmdd-Tx5f\",\n                \"MountPointName\": \"test\",\n                \"FileSystemId\": \"f4mnvilzmdd\",\n                \"AccessGroupIds\": [\n                    \"ag-fmfpk1hk\"\n                ],\n                \"Status\": 2,\n                \"CreateTime\": \"2019-07-30T18:19:18+08:00\"\n            },\n            {\n                \"MountPointId\": \"f4mnvilzmdd-fj7A\",\n                \"MountPointName\": \"test\",\n                \"FileSystemId\": \"f4mnvilzmdd\",\n                \"AccessGroupIds\": [\n                    \"ag-fmfpk1hk\"\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T18:14:45+08:00\"\n            },\n            {\n                \"MountPointId\": \"f4mnvilzmdd-k2tC\",\n                \"MountPointName\": \"test\",\n                \"FileSystemId\": \"f4mnvilzmdd\",\n                \"AccessGroupIds\": [\n                    \"ag-fmfpk1hk\"\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T18:15:53+08:00\"\n            }\n        ],\n        \"RequestId\": \"ff98aad2-e290-4512-af5c-ab24993591e3\"\n    }\n}",
+        "title": "查看挂载点列表"
+      }
+    ],
+    "DescribeResourceTags": [
+      {
+        "document": "查看资源标签列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeResourceTags\n&FileSystemId=f4mhaqkciq0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Tags\": [\n            {\n                \"Key\": \"key1\",\n                \"Value\": \"value1\"\n            },\n            {\n                \"Key\": \"key2\",\n                \"Value\": \"value2\"\n            }\n        ],\n        \"RequestId\": \"22e36f95-9295-4132-a75e-09a08d2e13fc\"\n    }\n}",
+        "title": "查看资源标签列表"
+      }
+    ],
+    "DescribeRestoreTasks": [
+      {
+        "document": "查看回热任务列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DescribeRestoreTasks\n&FileSystemId=f4mnvilzmdd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RestoreTasks\": [\n            {\n                \"RestoreTaskId\": 1,\n                \"FilePath\": \"/test/file1\",\n                \"Type\": 1,\n                \"Days\": 7,\n                \"Status\": 1,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            },\n            {\n                \"RestoreTaskId\": 2,\n                \"FilePath\": \"/test/file2\",\n                \"Type\": 2,\n                \"Days\": 7,\n                \"Status\": 2,\n                \"CreateTime\": \"2019-07-30T16:24:38+08:00\"\n            }\n        ],\n        \"RequestId\": \"19d240f4-156d-4a3c-856c-216d64a6bb4a\"\n    }\n}",
+        "title": "查看回热任务列表"
+      }
+    ],
+    "DisassociateAccessGroups": [
+      {
+        "document": "解绑权限组列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=DisassociateAccessGroups\n&MountPointId=f4mnvilzmdd-Tx5f\n&AccessGroupIds.0=ag-fmfpk1hk\n&AccessGroupIds.1=ag-avgx2dox\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "解绑权限组列表"
+      }
+    ],
+    "ModifyAccessGroup": [
+      {
+        "document": "修改权限组属性",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyAccessGroup\n&AccessGroupId=ag-f8xoises\n&AccessGroupName=test\n&Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c77b62ec-b019-46fe-80e9-c842785cf9dc\"\n    }\n}",
+        "title": "修改权限组属性"
+      }
+    ],
+    "ModifyAccessRules": [
+      {
+        "document": "批量修改权限规则属性",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyAccessRules\n&AccessRules.0.AccessRuleId=13001\n&AccessRules.0.Address=127.0.0.1\n&AccessRules.0.AccessMode=1\n&AccessRules.0.Priority=2\n&AccessRules.1.AccessRuleId=13002\n&AccessRules.1.Address=127.0.0.1\n&AccessRules.1.AccessMode=1\n&AccessRules.1.Priority=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"baaf73f9-0c42-441b-afdb-b9da71a50f47\"\n    }\n}",
+        "title": "批量修改权限规则属性"
+      }
+    ],
+    "ModifyFileSystem": [
+      {
+        "document": "修改文件系统属性",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyFileSystem\n&FileSystemId=f4mhaqkciq0\n&FileSystemName=test\n&Description=test\n&CapacityQuota=1073741824\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61046a25-2eda-4495-b9b6-eab6edf41d79\"\n    }\n}",
+        "title": "修改文件系统属性"
+      }
+    ],
+    "ModifyLifeCycleRules": [
+      {
+        "document": "批量修改生命周期规则属性",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyLifeCycleRules\n&LifeCycleRules.0.LifeCycleRuleId=1\n&LifeCycleRules.0.LifeCycleRuleName=test1\n&LifeCycleRules.0.Status=1\n&LifeCycleRules.1.LifeCycleRuleId=2\n&LifeCycleRules.1.Path=/test2\n&LifeCycleRules.1.Transitions.0.Days=7\n&LifeCycleRules.1.Transitions.0.Type=1\n&LifeCycleRules.1.Transitions.1.Days=7\n&LifeCycleRules.1.Transitions.1.Type=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"baaf73f9-0c42-441b-afdb-b9da71a50f47\"\n    }\n}",
+        "title": "批量修改生命周期规则属性"
+      }
+    ],
+    "ModifyMountPoint": [
+      {
+        "document": "修改挂载点属性",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyMountPoint\n&MountPointId=f4mnvilzmdd-Tx5f\n&MountPointName=test\n&MountPointStatus=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7de3434f-ad14-403b-8138-7396549d4bc1\"\n    }\n}",
+        "title": "修改挂载点属性"
+      }
+    ],
+    "ModifyResourceTags": [
+      {
+        "document": "修改资源标签列表",
+        "input": "https://chdfs.tencentcloudapi.com/?Action=ModifyResourceTags\n&FileSystemId=f1mhaqkciq0\n&Tags.0.Key=key1\n&Tags.0.Value=value1\n&Tags.1.Key=key2\n&Tags.1.Value=value2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61046a25-2eda-4495-b9b6-eab6edf41d79\"\n    }\n}",
+        "title": "修改资源标签列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,504 @@
+{
+  "actions": {
+    "GetOpenId": {
+      "document": "根据DevicceToken查询OpenID。",
+      "input": "GetOpenIdRequest",
+      "name": "RPopenID查询",
+      "output": "GetOpenIdResponse"
+    },
+    "GetToken": {
+      "document": "获取token接口。",
+      "input": "GetTokenRequest",
+      "name": "获取token",
+      "output": "GetTokenResponse"
+    },
+    "QueryDevAndRisk": {
+      "document": "腾讯天御设备风险查询接口，输入由客户应用自主采集的设备信息， 通过腾讯大数据风控能力，可以准确根据输入设备信息，还原设备库中的设备ID，并且识别设备的风险，解决客户业务过程中的设备风险，降低企业损失。",
+      "input": "QueryDevAndRiskRequest",
+      "name": "Devid及风险查询",
+      "output": "QueryDevAndRiskResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-12-09",
+    "api_brief": null,
+    "serviceNameCN": "风险探针",
+    "serviceShortName": "rkp"
+  },
+  "objects": {
+    "DevInfoQ": {
+      "document": "设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "devid",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险值",
+          "member": "int64",
+          "name": "RiskScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RiskDetail",
+          "name": "RiskInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "概率值",
+          "member": "float",
+          "name": "Probability",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetOpenIdRequest": {
+      "document": "GetOpenId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "dev临时token，通过sdk接口获取",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务ID",
+          "member": "int64",
+          "name": "BusinessId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务侧账号体系下的用户ID",
+          "member": "string",
+          "name": "BusinessUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台：0-Android， 1-iOS， 2-web",
+          "member": "int64",
+          "name": "Platform",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "选项",
+          "member": "string",
+          "name": "Option",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOpenIdResponse": {
+      "document": "GetOpenId返回参数结构体",
+      "members": [
+        {
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OpenId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RiskInfo",
+          "name": "RiskInfo",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTokenRequest": {
+      "document": "GetToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务ID",
+          "member": "int64",
+          "name": "BusinessId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务子场景",
+          "member": "int64",
+          "name": "Scene",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务侧账号体系下的用户ID",
+          "member": "string",
+          "name": "BusinessUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户侧的IP",
+          "member": "string",
+          "name": "AppClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "上一个token",
+          "member": "string",
+          "name": "OldToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTokenResponse": {
+      "document": "GetToken返回参数结构体",
+      "members": [
+        {
+          "document": "返回token",
+          "member": "string",
+          "name": "Token",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期时间",
+          "member": "int64",
+          "name": "ExpireTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDevAndRiskRequest": {
+      "document": "QueryDevAndRisk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备类型 0表示Android， 1表示IOS",
+          "member": "int64",
+          "name": "DevType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Android Imei号",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mac地址",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "android  Aid",
+          "member": "string",
+          "name": "Aid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Android Cid",
+          "member": "string",
+          "name": "Cid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机Imsi",
+          "member": "string",
+          "name": "Imsi",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Df 磁盘分区信息",
+          "member": "string",
+          "name": "Df",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内核版本",
+          "member": "string",
+          "name": "KernelVer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储大小",
+          "member": "string",
+          "name": "Storage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备驱动指纹",
+          "member": "string",
+          "name": "Dfp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动时间",
+          "member": "string",
+          "name": "BootTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分辨率 水平*垂直 格式",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "铃声列表",
+          "member": "string",
+          "name": "RingList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字体列表",
+          "member": "string",
+          "name": "FontList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传感器列表",
+          "member": "string",
+          "name": "SensorList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CPU型号",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电池容量",
+          "member": "string",
+          "name": "Battery",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "信通院广告ID",
+          "member": "string",
+          "name": "Oaid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IOS 广告ID",
+          "member": "string",
+          "name": "Idfa",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IOS 应用ID",
+          "member": "string",
+          "name": "Idfv",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IOS手机型号",
+          "member": "string",
+          "name": "IphoneModel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Android 指纹",
+          "member": "string",
+          "name": "Fingerprint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Android序列号",
+          "member": "string",
+          "name": "SerialId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDevAndRiskResponse": {
+      "document": "QueryDevAndRisk返回参数结构体",
+      "members": [
+        {
+          "document": "是否查得",
+          "member": "int64",
+          "name": "Found",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "匹配数量级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AllCnt",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DevInfoQ",
+          "name": "Matches",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RiskDetail": {
+      "document": "风险详情",
+      "members": [
+        {
+          "default": "",
+          "document": "风险码",
+          "member": "int64",
+          "name": "RiskCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RiskCodeValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskInfo": {
+      "document": "风险信息",
+      "members": [
+        {
+          "default": "",
+          "document": "风险码",
+          "member": "int64",
+          "name": "Key",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

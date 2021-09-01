@@ -1,0 +1,499 @@
+{
+  "actions": {
+    "CreateSession": {
+      "document": "创建会话",
+      "input": "CreateSessionRequest",
+      "name": "创建会话",
+      "output": "CreateSessionResponse"
+    },
+    "DescribeInstancesCount": {
+      "document": "获取实例总数和运行数",
+      "input": "DescribeInstancesCountRequest",
+      "name": "获取实例总数和运行数",
+      "output": "DescribeInstancesCountResponse"
+    },
+    "SaveGameArchive": {
+      "document": "保存游戏存档",
+      "input": "SaveGameArchiveRequest",
+      "name": "保存游戏存档",
+      "output": "SaveGameArchiveResponse"
+    },
+    "StopGame": {
+      "document": "强制退出游戏",
+      "input": "StopGameRequest",
+      "name": "强制退出游戏",
+      "output": "StopGameResponse"
+    },
+    "SwitchGameArchive": {
+      "document": "切换游戏存档",
+      "input": "SwitchGameArchiveRequest",
+      "name": "切换游戏存档",
+      "output": "SwitchGameArchiveResponse"
+    },
+    "TrylockWorker": {
+      "document": "尝试锁定机器",
+      "input": "TrylockWorkerRequest",
+      "name": "尝试锁定机器",
+      "output": "TrylockWorkerResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-11-18",
+    "api_brief": "介绍如何使用API对云游戏操作，包括尝试锁定机器、创建会话或强制退出游戏等。",
+    "serviceNameCN": "云游戏解决方案",
+    "serviceShortName": "gs"
+  },
+  "objects": {
+    "CreateSessionRequest": {
+      "document": "CreateSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端session信息，从JSSDK请求中获得",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClientSession",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-abcd1234",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【已废弃】只在TrylockWorker时生效",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "GameRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏参数",
+          "example": "StartFor=1",
+          "member": "string",
+          "name": "GameParas",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分辨率,，可设置为1080p或720p或1920x1080格式",
+          "example": "1080p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "背景图url，格式为png或jpeg，宽高1920*1080",
+          "example": "http://ip:port/test.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【已废弃】",
+          "example": "1",
+          "member": "uint64",
+          "name": "SetNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单位Mbps，固定码率建议值，有一定浮动范围，后端不动态调整(MaxBitrate和MinBitrate将无效)",
+          "example": "2",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单位Mbps，动态调整最大码率建议值，会按实际情况调整",
+          "example": "4",
+          "member": "uint64",
+          "name": "MaxBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单位Mbps，动态调整最小码率建议值，会按实际情况调整",
+          "example": "2",
+          "member": "uint64",
+          "name": "MinBitrate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "帧率，可设置为30、45、60、90、120、144",
+          "example": "60",
+          "member": "uint64",
+          "name": "Fps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "【已废弃】只在TrylockWorker时生效",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【已废弃】优化项，便于客户灰度开启新的优化项，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Optimization",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "【互动云游】游戏主机用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "HostUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
+          "example": "Player",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏相关参数",
+          "example": "{}",
+          "member": "string",
+          "name": "GameContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionResponse": {
+      "document": "CreateSession返回参数结构体",
+      "members": [
+        {
+          "document": "服务端session信息，返回给JSSDK",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServerSession",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "【已废弃】",
+          "example": "xx",
+          "member": "string",
+          "name": "RoleNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
+          "example": "Player",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesCountRequest": {
+      "document": "DescribeInstancesCount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-abcd1234",
+          "member": "string",
+          "name": "GameId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例分组ID",
+          "example": "cgg-1234abcd",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesCountResponse": {
+      "document": "DescribeInstancesCount返回参数结构体",
+      "members": [
+        {
+          "document": "客户的实例总数",
+          "example": "590",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户的实例运行数",
+          "example": "480",
+          "member": "uint64",
+          "name": "Running",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveGameArchiveRequest": {
+      "document": "SaveGameArchive请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "example": "1621578692",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-a7l8c3ab",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveGameArchiveResponse": {
+      "document": "SaveGameArchive返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopGameRequest": {
+      "document": "StopGame请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【多人游戏】游戏主机用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "HostUserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopGameResponse": {
+      "document": "StopGame返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchGameArchiveRequest": {
+      "document": "SwitchGameArchive请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "example": "161394323449",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-av2bl5r5",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏存档Url",
+          "example": "http://archive.cdn.com/user123.zip",
+          "member": "string",
+          "name": "GameArchiveUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏相关参数",
+          "example": "{\\\"ArchiveEnv\\\":\\\"tcg\\\",\\\"ArchiveCategoryId\\\":\\\"393\\\",\\\"ArchiveG",
+          "member": "string",
+          "name": "GameContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchGameArchiveResponse": {
+      "document": "SwitchGameArchive返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrylockWorkerRequest": {
+      "document": "TrylockWorker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "example": "game-abcd1234",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "GameRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "【废弃】资源池编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "SetNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "【必选】用户IP，用于就近调度，不填将严重影响用户体验",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分组ID",
+          "example": "cgg-1234abcd",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrylockWorkerResponse": {
+      "document": "TrylockWorker返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

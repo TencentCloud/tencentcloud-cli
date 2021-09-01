@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateWeappQRUrl": [
+      {
+        "document": "创建渠道备案小程序二维码",
+        "input": "POST / HTTP/1.1\nHost: ba.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWeappQRUrl\n<公共请求参数>\n\n{\n    \"SessionKey\": \"SessionKey_rTj1h8ckt9t9KPmQBnnvvNBufi7Et17\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://beianapi.cloud.tencent.com?exchangeKey=8c713eb6-11d2-4982-be66-ed9cb8a34f6c\",\n        \"RequestId\": \"9cd8fade-e77e-402f-a3be-a1134730d8a8\"\n    }\n}",
+        "title": "创建渠道备案小程序二维码"
+      }
+    ],
+    "DescribeGetAuthInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ba.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGetAuthInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTenPayMasked\": \"0\",\n        \"IsAuthenticated\": \"1\",\n        \"Type\": \"0\",\n        \"RequestId\": \"9b4ddc4725e84bc5241d7fOK\"\n    }\n}",
+        "title": "获取实名认证信息"
+      }
+    ],
+    "SyncIcpOrderWebInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ba.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncIcpOrderWebInfo\n<公共请求参数>\n\n{\n    \"IcpOrderId\": \"30159962067561775\",\n    \"SourceWebId\": \"1000230\",\n    \"TargetWebIds\": [\n        \"10023\",\n        \"10024\"\n    ],\n    \"SyncFields\": [\n        \"urlQCloud\",\n        \"siteLiveBodyVerifyUrl\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "title": "返回成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

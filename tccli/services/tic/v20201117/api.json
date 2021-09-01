@@ -1,0 +1,958 @@
+{
+  "actions": {
+    "ApplyStack": {
+      "document": "本接口（ApplyStack）用于触发资源栈下某个版本的Apply事件。\n\n- 当版本处于PLAN_IN_PROGRESS或APPLY_IN_PROGRESS状态时，将无法再执行本操作\n- 当版本处于APPLY_COMPLETED状态时，本操作无法执行",
+      "input": "ApplyStackRequest",
+      "name": "执行Apply事件",
+      "output": "ApplyStackResponse"
+    },
+    "CreateStack": {
+      "document": "本接口（CreateStack）用于通过传递一个COS的terraform zip模版URL来创建一个资源栈。创建资源栈后仍需要用户调用对应的plan, apply, destory执行对应的事件。",
+      "input": "CreateStackRequest",
+      "name": "创建资源栈",
+      "output": "CreateStackResponse"
+    },
+    "CreateStackVersion": {
+      "document": "本接口（CreateStackVersion）用于给资源栈新增一个HCL模版版本，仅限COS链接，且为zip格式。",
+      "input": "CreateStackVersionRequest",
+      "name": "给资源栈新增一个版本",
+      "output": "CreateStackVersionResponse"
+    },
+    "DeleteStack": {
+      "document": "本接口（DeleteStack）用于删除一个资源栈（配置、版本、事件信息）。但不会销毁资源管理的云资源。如果需要销毁资源栈管理的云资源，请调用 DestoryStack 接口销毁云资源。",
+      "input": "DeleteStackRequest",
+      "name": "删除资源栈",
+      "output": "DeleteStackResponse"
+    },
+    "DeleteStackVersion": {
+      "document": "本接口（DeleteStackVersion）用于删除一个版本，处于PLAN_IN_PROGRESS和APPLY_IN_PROGRESS状态中的版本无法删除。",
+      "input": "DeleteStackVersionRequest",
+      "name": "删除一个版本",
+      "output": "DeleteStackVersionResponse"
+    },
+    "DescribeStackEvent": {
+      "document": "本接口（DescribeStackEvent）用于获取单个事件详情，尤其是可以得到事件的详细控制台输出文本。",
+      "input": "DescribeStackEventRequest",
+      "name": "获取单个事件详情",
+      "output": "DescribeStackEventResponse"
+    },
+    "DescribeStackEvents": {
+      "document": "本接口（DescribeStackEvents）用于查看一个或多个事件详细信息。\n\n- 可以根据事件ID过滤感兴趣的事件\n- 也可以根据版本ID，资源栈ID，事件类型，事件状态过滤事件，过滤信息详细请见过滤器Filter\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的事件",
+      "input": "DescribeStackEventsRequest",
+      "name": "查询事件列表",
+      "output": "DescribeStackEventsResponse"
+    },
+    "DescribeStackVersions": {
+      "document": "本接口（DescribeStackVersions）用于查询一个或多个版本的详细信息。\n\n- 可以根据版本ID查询感兴趣的版本\n- 可以根据版本名字和状态来过滤版本，详见过滤器Filter\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的版本",
+      "input": "DescribeStackVersionsRequest",
+      "name": "查询版本列表",
+      "output": "DescribeStackVersionsResponse"
+    },
+    "DescribeStacks": {
+      "document": "本接口（DescribeStacks）用于查询一个或多个资源栈的详细信息。\n\n- 可以根据资源栈ID来查询感兴趣的资源栈信息\n- 若参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的资源栈",
+      "input": "DescribeStacksRequest",
+      "name": "查询资源栈列表",
+      "output": "DescribeStacksResponse"
+    },
+    "DestroyStack": {
+      "document": "本接口（DestroyStack）用于删除资源栈下的某个版本所创建的资源。",
+      "input": "DestroyStackRequest",
+      "name": "执行Destroy事件",
+      "output": "DestroyStackResponse"
+    },
+    "PlanStack": {
+      "document": "本接口（PlanStack）用于触发资源栈下某个版本的PLAN事件。\n\n- 当版本处于PLAN_IN_PROGRESS或APPLY_IN_PROGRESS状态时，将无法再执行本操作\n- 当版本处于APPLY_COMPLETED状态时，本操作无法执行",
+      "input": "PlanStackRequest",
+      "name": "执行Plan事件",
+      "output": "PlanStackResponse"
+    },
+    "UpdateStack": {
+      "document": "本接口（UpdateStack）用于更新资源栈的名称和描述。",
+      "input": "UpdateStackRequest",
+      "name": "更新资源栈",
+      "output": "UpdateStackResponse"
+    },
+    "UpdateStackVersion": {
+      "document": "本接口（UpdateStackVersion）用于更新一个版本的模版内容，名称或描述，模版仅限COS URL，且为zip格式。",
+      "input": "UpdateStackVersionRequest",
+      "name": "更新资源栈版本的内容",
+      "output": "UpdateStackVersionResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-11-17",
+    "api_brief": "介绍如何使用API对资源栈进行操作，包括创建资源栈、创建资源栈版本、预览资源栈、发布资源栈、销毁资源栈以及删除资源栈等。",
+    "serviceNameCN": "腾讯云IaC平台",
+    "serviceShortName": "tic"
+  },
+  "objects": {
+    "ApplyStackRequest": {
+      "document": "ApplyStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待执行apply事件的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyStackResponse": {
+      "document": "ApplyStack返回参数结构体",
+      "members": [
+        {
+          "document": "执行的事件ID",
+          "member": "string",
+          "name": "EventId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStackRequest": {
+      "document": "CreateStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源栈名称，不得超过60个字符",
+          "member": "string",
+          "name": "StackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源栈所在地域",
+          "member": "string",
+          "name": "StackRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
+          "member": "string",
+          "name": "TemplateUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源栈描述，不得超过200个字符",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStackResponse": {
+      "document": "CreateStack返回参数结构体",
+      "members": [
+        {
+          "document": "创建得到的资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源栈版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStackVersionRequest": {
+      "document": "CreateStackVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待增加版本的资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
+          "member": "string",
+          "name": "TemplateUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名称，不得超过60个字符",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本描述，不得超过200个字符",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStackVersionResponse": {
+      "document": "CreateStackVersion返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStackRequest": {
+      "document": "DeleteStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStackResponse": {
+      "document": "DeleteStack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStackVersionRequest": {
+      "document": "DeleteStackVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStackVersionResponse": {
+      "document": "DeleteStackVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackEventRequest": {
+      "document": "DescribeStackEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件ID",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackEventResponse": {
+      "document": "DescribeStackEvent返回参数结构体",
+      "members": [
+        {
+          "document": "事件ID",
+          "member": "string",
+          "name": "EventId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件类型",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件状态",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态信息",
+          "member": "string",
+          "name": "EventMessage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "控制台输出文本",
+          "member": "string",
+          "name": "ConsoleLog",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackEventsRequest": {
+      "document": "DescribeStackEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照⼀个或者多个事件ID查询",
+          "member": "string",
+          "name": "EventIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<li>**VersionId**</li>\n按照【**版本ID**】过滤，VersionId形如 `ver-kg8hn58h`\n类型：string\n\n<li>**StackId**</li>\n按照【**资源栈ID**】过滤，StackId形如 `stk-hz5vn3te`\n类型：string\n\n<li>**Type**</li>\n按照【**事件类型**】过滤，Type 形如 plan, apply, destroy\n类型：string\n\n<li>**Status**</li>\n按照【**事件状态**】过滤，Status形如 queueing, running, success, failed\n类型：string",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackEventsResponse": {
+      "document": "DescribeStackEvents返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的事件数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详细信息列表",
+          "member": "EventInfo",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackVersionsRequest": {
+      "document": "DescribeStackVersions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照⼀个或者多个版本ID查询",
+          "member": "string",
+          "name": "VersionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<li>**Name**</li>\n按照【**版本名称**】进行过滤\n类型：string\n\n<li>**Status**</li>\n按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等\n类型：string\n\n<li>**StackId**</li>\n按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`\n类型：string",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStackVersionsResponse": {
+      "document": "DescribeStackVersions返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的版本数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本详细信息列表",
+          "member": "VersionInfo",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStacksRequest": {
+      "document": "DescribeStacks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照⼀个或者多个资源栈ID查询",
+          "member": "string",
+          "name": "StackIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStacksResponse": {
+      "document": "DescribeStacks返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的资源栈数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源栈详细信息列表",
+          "member": "StackInfo",
+          "name": "Stacks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyStackRequest": {
+      "document": "DestroyStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待执行destroy事件的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyStackResponse": {
+      "document": "DestroyStack返回参数结构体",
+      "members": [
+        {
+          "document": "事件ID",
+          "member": "string",
+          "name": "EventId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EventInfo": {
+      "document": "事件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "事件ID",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态信息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "条件名字",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配的值，可以有多个",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PlanStackRequest": {
+      "document": "PlanStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待执行plan事件的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PlanStackResponse": {
+      "document": "PlanStack返回参数结构体",
+      "members": [
+        {
+          "document": "执行的事件ID",
+          "member": "string",
+          "name": "EventId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StackInfo": {
+      "document": "资源栈信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源栈名称",
+          "member": "string",
+          "name": "StackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源栈描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所处地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源栈状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateStackRequest": {
+      "document": "UpdateStack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待更新的资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源栈名称，不得超过60个字符",
+          "member": "string",
+          "name": "StackName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源栈描述，不得超过200个字符",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStackResponse": {
+      "document": "UpdateStack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStackVersionRequest": {
+      "document": "UpdateStackVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待更新的版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
+          "member": "string",
+          "name": "TemplateUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名称，不得超过60个字符",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本描述，不得超过200个字符",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStackVersionResponse": {
+      "document": "UpdateStackVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VersionInfo": {
+      "document": "版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本ID",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本名称",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源栈ID",
+          "member": "string",
+          "name": "StackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "AddEcdnDomain": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=AddEcdnDomain\n&Domain=www.test.com\n&Origin.Origins.0=2.2.2.2\n&Area=global\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
+        "title": "新增加速域名"
+      }
+    ],
+    "CreateVerifyRecord": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=CreateVerifyRecord\n&Domain=www.qq.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\"\n    }\n}",
+        "title": "生成解析记录"
+      }
+    ],
+    "DeleteEcdnDomain": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DeleteEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "删除加速域名"
+      }
+    ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomains\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"104fcdb5-293c-4f6f-b63d-0c9e430264e3\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cname\": \"test.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxx\",\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询域名简要信息"
+      }
+    ],
+    "DescribeDomainsConfig": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomainsConfig\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"932fe708-0ce1-46ec-b403-bcd8bdb08fdd\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cache\": {\n                    \"CacheRules\": [\n                        {\n                            \"CacheType\": \"all\",\n                            \"CacheContents\": [\n                                \"*\"\n                            ],\n                            \"CacheTime\": 0\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"gif\",\n                                \"png\",\n                                \"bmp\",\n                                \"jpg\",\n                                \"jpeg\",\n                                \"mp3\",\n                                \"wma\",\n                                \"flv\",\n                                \"mp4\",\n                                \"wmv\",\n                                \"avi\",\n                                \"m3u8\",\n                                \"ts\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"doc\",\n                                \"docx\",\n                                \"xls\",\n                                \"xlsx\",\n                                \"ppt\",\n                                \"pptx\",\n                                \"txt\",\n                                \"pdf\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"exe\",\n                                \"apk\",\n                                \"ipa\",\n                                \"rar\",\n                                \"zip\",\n                                \"7z\",\n                                \"css\",\n                                \"js\",\n                                \"xml\",\n                                \"ini\",\n                                \"swf\",\n                                \"ico\"\n                            ],\n                            \"CacheTime\": 86400\n                        }\n                    ]\n                },\n                \"CacheKey\": {\n                    \"FullUrlCache\": \"on\"\n                },\n                \"Cname\": \"test.com.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"ForceRedirect\": null,\n                \"Https\": {\n                    \"Switch\": \"off\",\n                    \"Http2\": \"off\",\n                    \"Spdy\": \"off\",\n                    \"OcspStapling\": \"off\",\n                    \"VerifyClient\": \"off\",\n                    \"CertInfo\": null,\n                    \"ClientCertInfo\": null,\n                    \"SslStatus\": \"closed\"\n                },\n                \"IpFilter\": {\n                    \"Switch\": \"off\",\n                    \"FilterType\": \"blacklist\",\n                    \"Filters\": []\n                },\n                \"IpFreqLimit\": {\n                    \"Switch\": \"off\",\n                    \"Qps\": null\n                },\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxxxx\",\n                \"ResponseHeader\": {\n                    \"HeaderRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "title": "查询域名详细配置"
+      }
+    ],
+    "DescribeEcdnDomainLogs": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeEcdnDomainLogs\r\n&StartTime=2019-09-04 00:00:00\r\n&EndTime=2019-09-04 12:00:00\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\",\n        \"DomainLogs\": [\n            {\n                \"StartTime\": \"2019-09-04 23:00:00\",\n                \"EndTime\": \"2019-09-04 23:59:59\",\n                \"LogPath\": \"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\"\n            }\n        ],\n        \"TotalCount\": 300\n    }\n}",
+        "title": "查询域名日志下载链接"
+      }
+    ],
+    "DescribeEcdnDomainStatistics": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeEcdnDomainStatistics\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metrics.0=flux\n&Metrics.1=delay\n&Metrics.2=request\n&Metrics.3=bandwidth\n&Domains.0=www.test.com\n&Projects.0=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\",\n        \"Data\": [\n            {\n                \"Resource\": \"stsdk.vivo.com.cn\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"request\",\n                        \"Value\": 5628872958\n                    },\n                    {\n                        \"Name\": \"flux\",\n                        \"Value\": 3535122082980\n                    },\n                    {\n                        \"Name\": \"delay\",\n                        \"Value\": 87\n                    },\n                    {\n                        \"Name\": \"bandwidth\",\n                        \"Value\": 825782981\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
+        "title": "域名统计指标查询"
+      }
+    ],
+    "DescribeEcdnStatistics": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeEcdnStatistics\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metrics.0=flux\n&Interval=60\n&Domains.0=www.test.com\n&Projects.0=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"EcdnData\": {\n                    \"Metrics\": [\n                        \"flux\",\n                        \"request\"\n                    ],\n                    \"DetailData\": [\n                        {\n                            \"Time\": \"2019-12-13 00:00:00\",\n                            \"Value\": [\n                                10,\n                                20\n                            ]\n                        },\n                        {\n                            \"Time\": \"2019-12-13 00:05:00\",\n                            \"Value\": [\n                                20,\n                                30\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+        "title": "访问数据查询"
+      }
+    ],
+    "DescribeIpStatus": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeIpStatus\n&Domain=www.test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"District\": \"广东\",\n                \"Isp\": \"电信\",\n                \"City\": \"深圳\",\n                \"Status\": \"online\",\n                \"CreateTime\": \"2019-10-12 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询域名节点信息"
+      }
+    ],
+    "DescribePurgeQuota": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeQuota\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\n        \"UrlPurge\": {\n            \"Batch\": 1000,\n            \"Total\": 10000,\n            \"Available\": 10000\n        },\n        \"PathPurge\": {\n            \"Batch\": 20,\n            \"Total\": 100,\n            \"Available\": 100\n        }\n    }\n}",
+        "title": "DescribePurgeQuota"
+      }
+    ],
+    "DescribePurgeTasks": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeTasks\r\n&PurgeType=ur\r\n&TaskId=1234567\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\"\n    }\n}",
+        "title": "刷新历史查询"
+      }
+    ],
+    "PurgePathCache": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgePathCache\r\n&Paths.0=http://www.test.com/test/&FlushType=flush&Area=mainland\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
+        "title": "刷新Url目录"
+      }
+    ],
+    "PurgeUrlsCache": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgeUrlsCache\r\n&Urls.0=http://www.test.com/1.jpg&Area=mainland\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
+        "title": "刷新Url"
+      }
+    ],
+    "StartEcdnDomain": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=StartEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
+        "title": "启用加速域名"
+      }
+    ],
+    "StopEcdnDomain": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=StopEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
+        "title": "停用加速域名"
+      }
+    ],
+    "UpdateDomainConfig": [
+      {
+        "document": "",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=UpdateDomainConfig\n&ProjectId=0\n&Domain=www.test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
+        "title": "更新域名配置"
+      }
+    ]
+  },
+  "version": "1.0"
+}

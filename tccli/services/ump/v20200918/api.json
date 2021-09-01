@@ -1,0 +1,1972 @@
+{
+  "actions": {
+    "CreateCameraAlerts": {
+      "document": "上报相机移动、遮挡等告警信息\n\n",
+      "input": "CreateCameraAlertsRequest",
+      "name": "上报相机告警信息",
+      "output": "CreateCameraAlertsResponse"
+    },
+    "CreateCameraState": {
+      "document": "上报当前场内所有相机的当前状态",
+      "input": "CreateCameraStateRequest",
+      "name": "相机状态上报接口",
+      "output": "CreateCameraStateResponse"
+    },
+    "CreateCapture": {
+      "document": "场内抓拍上报接口",
+      "input": "CreateCaptureRequest",
+      "name": "抓拍上报接口",
+      "output": "CreateCaptureResponse"
+    },
+    "CreateMultiBizAlert": {
+      "document": "集团广场的多经点位告警",
+      "input": "CreateMultiBizAlertRequest",
+      "name": "多经点位告警",
+      "output": "CreateMultiBizAlertResponse"
+    },
+    "CreateProgramState": {
+      "document": "上报所有进程监控信息",
+      "input": "CreateProgramStateRequest",
+      "name": "进程监控信息上报",
+      "output": "CreateProgramStateResponse"
+    },
+    "CreateServerState": {
+      "document": "上报所有服务器硬件监控信息",
+      "input": "CreateServerStateRequest",
+      "name": "服务器监控信息上报",
+      "output": "CreateServerStateResponse"
+    },
+    "DeleteMultiBizAlert": {
+      "document": "集团广场的多经点位消警",
+      "input": "DeleteMultiBizAlertRequest",
+      "name": "多经点位消警",
+      "output": "DeleteMultiBizAlertResponse"
+    },
+    "DeleteTask": {
+      "document": "删除集团广场对应的任务",
+      "input": "DeleteTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteTaskResponse"
+    },
+    "DescribeCameras": {
+      "document": "获取集团广场对应的摄像头列表",
+      "input": "DescribeCamerasRequest",
+      "name": "获取摄像头状态列表",
+      "output": "DescribeCamerasResponse"
+    },
+    "DescribeConfig": {
+      "document": "获取摄像头配置信息\nmac不为空返回指定相机配置\nmac为空返回对应GroupCode和MallId全量配置",
+      "input": "DescribeConfigRequest",
+      "name": "获取摄像头配置信息",
+      "output": "DescribeConfigResponse"
+    },
+    "DescribeImage": {
+      "document": "实时获取底图接口",
+      "input": "DescribeImageRequest",
+      "name": "获取底图",
+      "output": "DescribeImageResponse"
+    },
+    "DescribeMultiBizBaseImage": {
+      "document": "获取多经点位底图",
+      "input": "DescribeMultiBizBaseImageRequest",
+      "name": "获取多经点位底图",
+      "output": "DescribeMultiBizBaseImageResponse"
+    },
+    "DescribeTasks": {
+      "document": "查询集团广场对应的任务列表",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTasksResponse"
+    },
+    "DescribeZones": {
+      "document": "获取集团广场的点位列表",
+      "input": "DescribeZonesRequest",
+      "name": "获取点位列表",
+      "output": "DescribeZonesResponse"
+    },
+    "ModifyMultiBizConfig": {
+      "document": "集团广场的多经点位配置更新",
+      "input": "ModifyMultiBizConfigRequest",
+      "name": "多经点位配置更新",
+      "output": "ModifyMultiBizConfigResponse"
+    },
+    "ReportServiceRegister": {
+      "document": "上报服务注册自身的服务地址作为回调地址, 用于信息回传。",
+      "input": "ReportServiceRegisterRequest",
+      "name": "上报服务注册",
+      "output": "ReportServiceRegisterResponse"
+    },
+    "SearchImage": {
+      "document": "以图搜图",
+      "input": "SearchImageRequest",
+      "name": "以图搜图",
+      "output": "SearchImageResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-09-18",
+    "api_brief": "基于优图ReID算法能力，通过灵活的设备配置平台，实现购物中心&品牌门店数字化",
+    "serviceNameCN": "客流数字化平台",
+    "serviceShortName": "ump"
+  },
+  "objects": {
+    "BunkZone": {
+      "document": "点位包含铺位信息",
+      "members": [
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "铺位编码",
+          "member": "string",
+          "name": "BunkCodes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CameraConfig": {
+      "document": "摄像头配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "楼层ID",
+          "member": "int64",
+          "name": "FloorId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头IP",
+          "member": "string",
+          "name": "CameraIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头Mac",
+          "member": "string",
+          "name": "CameraMac",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头类型:\n1: 码流机\n2: AI相机",
+          "member": "int64",
+          "name": "CameraType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头功能:\n1: 人脸\n2: 人体",
+          "member": "int64",
+          "name": "CameraFeature",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头是否启用:\n0: 下线\n1: 启用",
+          "member": "int64",
+          "name": "CameraState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
+          "member": "int64",
+          "name": "ZoneType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "member": "Config",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CameraState": {
+      "document": "用于场内上报当前相机的状态",
+      "members": [
+        {
+          "default": "",
+          "document": "相机ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相机状态:\n10: 初始化\n11: 未知状态\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 状态正常",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CameraZones": {
+      "document": "摄像头包含简单的点位信息",
+      "members": [
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头名称",
+          "member": "string",
+          "name": "CameraName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头功能:\n1: 人脸\n2: 人体",
+          "member": "int64",
+          "name": "CameraFeature",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头IP",
+          "member": "string",
+          "name": "CameraIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头状态:\n0: 异常 (不再使用)\n1: 正常 (不再使用)\n10: 初始化\n11: 未知状态 (因服务内部错误产生)\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 正常",
+          "member": "int64",
+          "name": "CameraState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位列表",
+          "member": "BunkZone",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "像素:\n130W(1280*960)\n200W(1920*1080)\n400W(2560*1440)",
+          "member": "string",
+          "name": "Pixel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相机Rtsp地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RTSP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Config": {
+      "document": "摄像头配置",
+      "members": [
+        {
+          "default": "",
+          "document": "摄像头厂商:\nH: 海康\nD: 大华\nY: 英飞拓\nL: 联纵",
+          "member": "string",
+          "name": "CameraProducer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "rtsp 地址",
+          "member": "string",
+          "name": "RTSP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摄像头帧率",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解码帧率",
+          "member": "int64",
+          "name": "DecodeFps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否做客流计算:\n0: 否\n1: 是",
+          "member": "int64",
+          "name": "PassengerFlow",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否打开人脸曝光:\n0: 关闭\n1: 开启",
+          "member": "int64",
+          "name": "FaceExpose",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "门线标注",
+          "member": "Point",
+          "name": "MallArea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "店门标注",
+          "member": "Point",
+          "name": "ShopArea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测区标注",
+          "member": "Polygon",
+          "name": "TrackAreas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位列表（品类区）",
+          "member": "ZoneArea",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCameraAlertAlert": {
+      "document": "告警信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相机ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳,ms,默认为告警请求到达时间",
+          "member": "int64",
+          "name": "CaptureTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片base64编码",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "移动告警",
+          "member": "CreateCameraAlertsMoveAlert",
+          "name": "MoveAlert",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "遮挡告警",
+          "member": "CreateCameraAlertsCoverAlert",
+          "name": "CoverAlert",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCameraAlertsCoverAlert": {
+      "document": "遮挡告警",
+      "members": [
+        {
+          "default": "",
+          "document": "是否遮挡",
+          "member": "bool",
+          "name": "Cover",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否移动置信度",
+          "member": "float",
+          "name": "CoverConfidence",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCameraAlertsMoveAlert": {
+      "document": "移动告警",
+      "members": [
+        {
+          "default": "",
+          "document": "是否移动",
+          "member": "bool",
+          "name": "Move",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否移动置信度",
+          "member": "float",
+          "name": "MoveConfidence",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCameraAlertsRequest": {
+      "document": "CreateCameraAlerts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警信息列表",
+          "member": "CreateCameraAlertAlert",
+          "name": "Alerts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCameraAlertsResponse": {
+      "document": "CreateCameraAlerts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCameraStateRequest": {
+      "document": "CreateCameraState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "场内所有相机的状态值",
+          "member": "CameraState",
+          "name": "CameraStates",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCameraStateResponse": {
+      "document": "CreateCameraState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCaptureRequest": {
+      "document": "CreateCapture请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "原始抓拍报文",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCaptureResponse": {
+      "document": "CreateCapture返回参数结构体",
+      "members": [
+        {
+          "document": "原始应答报文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RspData",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultiBizAlertRequest": {
+      "document": "CreateMultiBizAlert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间戳，毫秒",
+          "member": "uint64",
+          "name": "CaptureTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "状态: \n1: 侵占\n2: 消失\n3: 即侵占又消失",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片base64字符串",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警列表",
+          "member": "MultiBizWarning",
+          "name": "Warnings",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultiBizAlertResponse": {
+      "document": "CreateMultiBizAlert返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProgramStateRequest": {
+      "document": "CreateProgramState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进程监控信息列表",
+          "member": "ProgramStateItem",
+          "name": "ProgramStateItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "商场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProgramStateResponse": {
+      "document": "CreateProgramState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerStateRequest": {
+      "document": "CreateServerState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器监控信息列表",
+          "member": "ServerStateItem",
+          "name": "ServerStateItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "商场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务器监控信息上报时间戳，单位毫秒",
+          "member": "uint64",
+          "name": "ReportTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerStateResponse": {
+      "document": "CreateServerState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMultiBizAlertRequest": {
+      "document": "DeleteMultiBizAlert请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消警动作:\n1: 误报\n2: 正报合规\n3: 正报不合规，整改完成",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片base64字符串",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMultiBizAlertResponse": {
+      "document": "DeleteMultiBizAlert返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskRequest": {
+      "document": "DeleteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskResponse": {
+      "document": "DeleteTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCamerasRequest": {
+      "document": "DescribeCameras请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCamerasResponse": {
+      "document": "DescribeCameras返回参数结构体",
+      "members": [
+        {
+          "document": "摄像头列表",
+          "member": "CameraZones",
+          "name": "Cameras",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigRequest": {
+      "document": "DescribeConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "会话ID",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "摄像头签名",
+          "member": "string",
+          "name": "CameraSign",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "摄像头app id",
+          "member": "string",
+          "name": "CameraAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "摄像头时间戳，毫秒",
+          "member": "int64",
+          "name": "CameraTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "MAC地址，字母大写",
+          "member": "string",
+          "name": "ServerMac",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigResponse": {
+      "document": "DescribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "会话ID",
+          "member": "string",
+          "name": "SessionId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "配置版本号",
+          "member": "int64",
+          "name": "Version",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "摄像头列表",
+          "member": "CameraConfig",
+          "name": "Cameras",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageRequest": {
+      "document": "DescribeImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageResponse": {
+      "document": "DescribeImage返回参数结构体",
+      "members": [
+        {
+          "document": "cos 临时 url，异步上传图片，client需要轮询",
+          "member": "string",
+          "name": "ImageUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultiBizBaseImageRequest": {
+      "document": "DescribeMultiBizBaseImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultiBizBaseImageResponse": {
+      "document": "DescribeMultiBizBaseImage返回参数结构体",
+      "members": [
+        {
+          "document": "cos 临时 url",
+          "member": "string",
+          "name": "ImageUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务类型:\n1: 底图拉取",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表",
+          "member": "Task",
+          "name": "Tasks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "点位列表",
+          "member": "ZoneConfig",
+          "name": "Zones",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiskInfo": {
+      "document": "硬盘监控信息",
+      "members": [
+        {
+          "default": "",
+          "document": "硬盘名字",
+          "member": "string",
+          "name": "DiskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘使用率",
+          "member": "float",
+          "name": "Usage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyMultiBizConfigRequest": {
+      "document": "ModifyMultiBizConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "监控区域",
+          "member": "Polygon",
+          "name": "MonitoringAreas",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMultiBizConfigResponse": {
+      "document": "ModifyMultiBizConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MultiBizWarning": {
+      "document": "多经点位告警",
+      "members": [
+        {
+          "default": "",
+          "document": "编号",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控区域",
+          "member": "Point",
+          "name": "MonitoringArea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警列表",
+          "member": "MultiBizWarningInfo",
+          "name": "WarningInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MultiBizWarningInfo": {
+      "document": "多经点位告警信息",
+      "members": [
+        {
+          "default": "",
+          "document": "告警类型：\n0: 无变化\n1: 侵占\n2: 消失",
+          "member": "int64",
+          "name": "WarningType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警侵占或消失面积",
+          "member": "float",
+          "name": "WarningAreaSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警侵占或消失坐标",
+          "member": "Point",
+          "name": "WarningLocation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警侵占或消失轮廓",
+          "member": "Point",
+          "name": "WarningAreaContour",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Point": {
+      "document": "点",
+      "members": [
+        {
+          "default": "",
+          "document": "X坐标",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Y坐标",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Polygon": {
+      "document": "多边形",
+      "members": [
+        {
+          "default": "",
+          "document": "标注列表",
+          "member": "Point",
+          "name": "Points",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProgramStateItem": {
+      "document": "进程状态监控项",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器IP",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程名字",
+          "member": "string",
+          "name": "ProgramName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在线个数",
+          "member": "uint64",
+          "name": "OnlineCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "离线个数",
+          "member": "uint64",
+          "name": "OfflineCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上报状态:\n1: 正常上报\n2: 异常上报\n注：此处异常上报是指本次上报由于场内服务内部原因导致上报数据不可信等。此时离线个数重置为1，在线个数重置为0",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportServiceRegisterRequest": {
+      "document": "ReportServiceRegister请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务上报当前的服务能力信息",
+          "member": "ServiceRegisterInfo",
+          "name": "ServiceRegisterInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务内网Ip",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报服务所在服务器的唯一ID",
+          "member": "string",
+          "name": "ServerNodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报时间戳, 单位毫秒",
+          "member": "int64",
+          "name": "ReportTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportServiceRegisterResponse": {
+      "document": "ReportServiceRegister返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchImageRequest": {
+      "document": "SearchImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片base64字符串",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间戳，毫秒",
+          "member": "uint64",
+          "name": "ImageTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchImageResponse": {
+      "document": "SearchImage返回参数结构体",
+      "members": [
+        {
+          "document": "face id",
+          "member": "string",
+          "name": "FaceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "搜索结果列表",
+          "member": "SearchResult",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchResult": {
+      "document": "以图搜图检索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "图片base64数据",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份ID",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相似度",
+          "member": "float",
+          "name": "Similarity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerStateItem": {
+      "document": "服务器监控状态上报项",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器状态\n1: 在线\n2: 离线\n3: 重启",
+          "member": "int64",
+          "name": "ServerState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "member": "string",
+          "name": "ServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘监控信息列表",
+          "member": "DiskInfo",
+          "name": "DiskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ServiceRegisterInfo": {
+      "document": "用于服务注册时表示当前服务的具体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "当前服务的回调地址",
+          "member": "string",
+          "name": "CgiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前服务类型:\n1: 多经服务\n2: 相机误报警确认\n3: 底图更新",
+          "member": "uint64",
+          "name": "ServiceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Task": {
+      "document": "任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集团编码",
+          "member": "string",
+          "name": "GroupCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "广场ID",
+          "member": "uint64",
+          "name": "MallId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务内容",
+          "member": "TaskContent",
+          "name": "TaskContent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型:\n1: 底图拉取",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskContent": {
+      "document": "任务内容",
+      "members": [
+        {
+          "default": "",
+          "document": "摄像头ID",
+          "member": "uint64",
+          "name": "CameraId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "rtsp 地址",
+          "member": "string",
+          "name": "RTSP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片上传地址",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneArea": {
+      "document": "点位包含店门标注",
+      "members": [
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "店门标注",
+          "member": "Point",
+          "name": "ShopArea",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneConfig": {
+      "document": "点位包含绑定、调试信息",
+      "members": [
+        {
+          "default": "",
+          "document": "点位ID",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
+          "member": "int64",
+          "name": "ZoneType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "铺位编码",
+          "member": "string",
+          "name": "BunkCodes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "楼层名称",
+          "member": "string",
+          "name": "FloorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "楼层ID",
+          "member": "int64",
+          "name": "FloorId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定数",
+          "member": "int64",
+          "name": "BindNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调试数",
+          "member": "int64",
+          "name": "DebugNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下发状态:\n1: 不可下发\n2: 可下发\n3: 已下发",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

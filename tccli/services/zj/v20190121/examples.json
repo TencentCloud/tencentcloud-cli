@@ -1,0 +1,173 @@
+{
+  "actions": {
+    "AddCrowdPackInfo": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=AddCrowdPackInfo\n&Name=aaa\n&FileName=aaa.txt\n&Desc=0\n&PhoneNum=0\n&CosUrl=\"http:/xxx.cos.ap-shanghai.myqcloud.com/xxx/5ce38bcc-969f-4963-995d-4126065f3700.txt\"\n&License=xsdf\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": {\r\n\t\t\t\"ID\": 1\r\n\t\t},\r\n\t\t\"RequestId\": \"111111\"\r\n\t}\r\n}",
+        "title": "AddCrowdPackInfo"
+      }
+    ],
+    "AddSmsSign": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=AddSmsSign\r\n&License=KA3431QZPU\r\n&SignName=“test”\r\n&SignType=0\r\n&DocumentType=1\r\n&International=0\r\n&ProofImage=\"xxxx\"\r\n&Remark=\"xxxx\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": {\r\n      \"SignId\": 1047\r\n    },\r\n    \"RequestId\": \"111111\"\r\n  }\r\n}",
+        "title": "创建签名"
+      }
+    ],
+    "AddSmsTemplate": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=AddSmsTemplate\n&License=xsdf\n&SignID=2222222\n&TemplateName=腾讯云\n&TemplateContent=\"xxx\"\n&SmsType=0\n&International=0\n&Remark=“xxx”\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": {\r\n      \"TemplateId\": 1110\r\n    },\r\n    \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n  }\r\n}",
+        "title": "AddSmsTemplate"
+      }
+    ],
+    "CancelCampaign": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=CancelCampaign\r\n&License=KA3431QZPU\r\n&CampaignId=47\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"Data\":{\"Message\":\"success\"},\"RequestId\":\"111111\"}}",
+        "title": "CancelCampaign"
+      }
+    ],
+    "CreateCampaign": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=CreateCampaign\n&License=KA3431QZPU\n&SendTime=1578977657\n&Name=paas\n&Strategies.0.CrowdID=192\n&Strategies.0.Items.0.Id=1486\n&Strategies.0.Items.0.ContentType=1\n&Strategies.0.Items.1.Id=569943\n&Strategies.0.Items.1.ContentType=1\n&<公共请求参数>",
+        "output": "{\"Response\":{\"Data\":{\"CampaignId\":47},\"RequestId\":\"111111\"}}",
+        "title": "CreateCampaign"
+      }
+    ],
+    "CreateMmsInstance": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=CreateMmsInstance\n&License=KA3431QZPU\n&InstanceName=aaa\n&Title=bbb\n&Sign=腾讯科技\n&Contents.0.ContentType=1\n&Contents.0.Content=abcdefg\n&Contents.1.ContentType=2\n&Contents.1.Content=https://zhuji-public-beta-1256886009.cos.ap-shanghai.myqcloud.com/za/202002/dc293ac5260adc2d84637c1ad993feed.jpg\n&<公共请求参数>",
+        "output": "{\"Response\":{\"Data\":{\"ReturnCode\":0,\"ReturnMsg\":\"\",\"InstanceId\":1140},\"RequestId\":\"111111\"}}",
+        "title": "CreateMmsInstance"
+      }
+    ],
+    "DelCrowdPack": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DelCrowdPack\r\n&ID=34\r\n&License=xsdf\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"Message\": \"success\"\r\n        },\r\n        \"RequestId\": \"0d869ce9-e454-4e8d-94c2-b67597c0dd51\"\r\n    }\r\n}",
+        "title": "DelCrowdPack"
+      }
+    ],
+    "DelTemplate": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DelTemplate\r\n&TemplateID=222222\r\n&License=xsdf\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"Message\": \"success\"\r\n        },\r\n        \"RequestId\": \"0d869ce9-e454-4e8d-94c2-b67597c0dd51\"\r\n    }\r\n}",
+        "title": "DelTemplate"
+      }
+    ],
+    "DeleteMmsInstance": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DeleteMmsInstance\r\n&License=xxx\r\n&InstanceId=1256886\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"InstanceId\": 123456\r\n        },\r\n        \"RequestId\": \"87242041-7de8-4562-96ac-2d853eca3e44\"\r\n    }\r\n}",
+        "title": "DeleteMmsInstance"
+      }
+    ],
+    "DescribeMmsInstanceInfo": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DescribeMmsInstanceInfo\r\n&License=xxx\r\n&InstanceId=1256886\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"InstanceId\": 123456,\r\n            \"InstanceName\": \"test\",\r\n            \"Status\": 1,\r\n            \"StatusInfo\": [\r\n                {\r\n                    \"Operator\": \"gmcc\",\r\n                    \"State\": 1\r\n                },\r\n                {\r\n                    \"Operator\": \"unicom\",\r\n                    \"State\": 1\r\n                },\r\n                {\r\n                    \"Operator\": \"cdma\",\r\n                    \"State\": 0\r\n                }\r\n            ],\r\n            \"AppSubId\": \"MBOSS1542\",\r\n            \"Title\": \"test\",\r\n            \"Sign\": \"\",\r\n            \"Contents\": \"test data\",\r\n            \"CreatedAt\": \"0001-01-01 00:00:00\"\r\n        },\r\n        \"RequestId\": \"87242041-7de8-4562-96ac-2d853eca3e44\"\r\n    }\r\n}",
+        "title": "DescribeMmsInstanceInfo"
+      }
+    ],
+    "DescribeMmsInstanceList": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DescribeMmsInstanceList\r\n&License=xxx\r\n&AppSubId=1256886009\r\n&Title =11\r\n&Offset=0\r\n&Limit=907\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"Total\": 2,\r\n            \"List\": [\r\n                {\r\n                    \"InstanceId\": 123456,\r\n                    \"InstanceName\": \"test\",\r\n                    \"Status\": 1,\r\n                    \"StatusInfo\": [\r\n                        {\r\n                            \"Operator\": \"gmcc\",\r\n                            \"State\": 1\r\n                        },\r\n                        {\r\n                            \"Operator\": \"unicom\",\r\n                            \"State\": 1\r\n                        },\r\n                        {\r\n                            \"Operator\": \"cdma\",\r\n                            \"State\": 0\r\n                        }\r\n                    ],\r\n                    \"AppSubId\": \"MBOSS1542\",\r\n                    \"Title\": \"test\",\r\n                    \"Sign\": \"\",\r\n                    \"Contents\": \"test data\",\r\n                    \"CreatedAt\": \"0001-01-01 00:00:00\"\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"b3b2d6fd-5484-4d4f-a2a2-9eb76e818325\"\r\n    }\r\n}",
+        "title": "DescribeMmsInstanceList"
+      }
+    ],
+    "DescribeSmsCampaignStatistics": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DescribeSmsCampaignStatistics\r\n&License=xxx\r\n&CampaignId=1256886\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"CampaignId\": 123456,\r\n            \"Statistics\":[\r\n                {\r\n                    \"CrowdId\":123,\r\n                    \"CrowdName\":\"xx\",\r\n                    \"CrowdCount\":123,\r\n                    \"TemplateList\":[\r\n                        {\r\n                            \"TemplateId\":\"xxx\",\r\n                            \"TemplateContent\":\"xxx\",\r\n                            \"SendCount\":123,\r\n                            \"ClickCount\":123\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        \"RequestId\": \"87242041-7de8-4562-96ac-2d853eca3e44\"\r\n    }\r\n}",
+        "title": "DescribeSmsCampaignStatistics"
+      }
+    ],
+    "DescribeSmsSignList": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DescribeSmsSignList\r\n&License=KA3431QZPU\r\n&SignIdSet.0=1110\r\n&SignIdSet.1=1111\r\n&International=0\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": [\r\n      {\r\n        \"SignId\": 1110,\r\n        \"International\": 0,\r\n        \"StatusCode\": 0,\r\n        \"ReviewReply\": \"xxx\",\r\n        \"SignName\": \"xxx\",\r\n        \"CreateTime\": \"2020-01-13 15:18:20\"\r\n      },\r\n      {\r\n        \"SignId\": 1111,\r\n        \"International\": 0,\r\n        \"StatusCode\": 0,\r\n        \"ReviewReply\": \"xxx\",\r\n        \"SignName\": \"xxx\",\r\n        \"CreateTime\": \"2020-01-13 15:18:21\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n  }\r\n}",
+        "title": "DescribeSmsSignList"
+      }
+    ],
+    "DescribeSmsTemplateList": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=DescribeSmsTemplateList\r\n&License=xsdf\r\n&TemplateIdSet.0=1110\r\n&TemplateIdSet.1=1111\r\n&International=0\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": [\r\n      {\r\n        \"TemplateId\": 1110,\r\n        \"International\": 0,\r\n        \"StatusCode\": 0,\r\n        \"ReviewReply\": \"xxx\",\r\n        \"TemplateName\": \"xxx\",\r\n        \"CreateTime\": \"2020-01-13 15:18:20\"\r\n      },\r\n      {\r\n        \"TemplateId\": 1111,\r\n        \"International\": 0,\r\n        \"StatusCode\": 0,\r\n        \"ReviewReply\": \"xxx\",\r\n        \"TemplateName\": \"xxx\",\r\n        \"CreateTime\": \"2020-01-13 15:18:21\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n  }\r\n}",
+        "title": "DescribeSmsTemplateList"
+      }
+    ],
+    "GetCrowdPackList": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=GetCrowdPackList\r\n&Name=aaa\r\n&Status=-1\r\n&Offset=0\r\n&Limit=-1\r\n&License=xsdf\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": {\r\n\t\t\t\"Total\": 14,\r\n\t\t\t\"List\": [{\r\n\t\t\t\t\"ID\": 68,\r\n\t\t\t\t\"CreatedAt\": \"2020-01-03T11:15:22+08:00\",\r\n\t\t\t\t\"Name\": \"test\",\r\n\t\t\t\t\"Status\": 2,\r\n\t\t\t\t\"PhoneNum\": 11,\r\n\t\t\t\t\"Tag\": \"aaa\",\r\n\t\t\t\t\"MD5\": \"088a2a5ac1961e79dc7a55cac59a6d67\",\r\n\t\t\t\t\"FileName\": \"1bdcb971-f57a-4c9b-98eb-46c64ba1cf98.txt\",\r\n\t\t\t\t\"Desc\": \"\"\r\n\t\t\t}]\r\n\t\t},\r\n\t\t\"RequestId\": \"111111\"\r\n\t}\r\n}",
+        "title": "GetCrowdPackList"
+      }
+    ],
+    "GetCrowdUploadInfo": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=GetCrowdUploadInfo\r\n&FileName=111.txt\r\n&License=xsdf\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"ExpireTime\":1565768870,\r\n            \"SessionToken\":\"#######\",\r\n            \"TmpSecretId\":\"########\",\r\n            \"TmpSecretKey\":\"########\",\r\n            \"CosInfo\": {\r\n                \"Bucket\":\"zhuji-beta-1256886009\",\r\n                \"Key\":\"/<FolderPath>/<FileName>.txt\",\r\n                \"Region\":\"ap-shanghai\"\r\n             }\r\n        },\r\n        \"RequestId\":\"123456789\"\r\n    }\r\n}",
+        "title": "GetCrowdUploadInfo"
+      }
+    ],
+    "GetSmsAmountInfo": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=GetSmsAmountInfo\n&License=xxx\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"SmsCampaignAmount\": 123,\r\n            \"SmsCampaignConsume\": 123,\r\n            \"SmsSendAmount\": 123,\r\n            \"SmsSendConsume\": 123,\r\n            \"MmsCampaignAmount\": 123,\r\n            \"MmsCampaignConsume\": 123,\r\n            \"MmsSendAmount\": 123,\r\n            \"MmsSendConsume\": 123\r\n        },\r\n        \"RequestId\": \"xxx\"\r\n    }\r\n}",
+        "title": "GetSmsAmountInfo"
+      }
+    ],
+    "GetSmsCampaignStatus": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=GetSmsCampaignStatus\r\n&License=KA3431QZPU\r\n&CampaignId=101\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": {\r\n            \"Status\": 1\r\n        },\r\n        \"RequestId\": \"7c2ce956-8b92-456c-97b5-63da7342d312\"\r\n    }\r\n}",
+        "title": "GetCampaignStatus"
+      }
+    ],
+    "ModifySmsTemplate": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=ModifySmsTemplate\n&License=xsdf\n&TemplageId=123\n&SignID=2222222\n&TemplateName=腾讯云\n&TemplateContent=\"xxx\"\n&SmsType=0\n&International=0\n&Remark=“xxx”\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Data\": {\r\n      \"TemplateId\": 1110\r\n    },\r\n    \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\r\n  }\r\n}",
+        "title": "ModifySmsTemplate"
+      }
+    ],
+    "PushMmsContent": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=PushMmsContent\r\n&License=KA3431QZPU\r\n&InstanceId=1138\r\n&Session=bbb\r\n&Tel=123456\r\n&<公共请求参数>",
+        "output": "{\"Response\":{\"Data\":{\"ReturnCode\":0,\"ReturnMsg\":\"submitted\",\"MessageId\":15923841632},\"RequestId\":\"111111\"}}",
+        "title": "PushMmsContent"
+      }
+    ],
+    "SendSms": [
+      {
+        "document": "",
+        "input": "https://zj.tencentcloudapi.com/?Action=SendSms\r\n&License=KA3431QZPU\r\n&Phone.0=+8613800138000\r\n&TemplateId=bbb\r\n&Sign=签名\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Data\": [{\r\n\t\t\t\"SerialNo\": \"xxxxxx\",\r\n\t\t\t\"PhoneNumber\": \"+8613800138000\",\r\n\t\t\t\"Fee\": 1,\r\n\t\t\t\"Code\": \"Ok\",\r\n\t\t\t\"Message\": \"send success\"\r\n\t\t}],\r\n\t\t\"RequestId\": \"xxxxx\"\r\n\t}\r\n}",
+        "title": "SendSms"
+      }
+    ]
+  },
+  "version": "1.0"
+}

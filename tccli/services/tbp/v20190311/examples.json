@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CreateBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tbp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBot\n<公共请求参数>\n\n{\n    \"BotCnName\": \"xx\",\n    \"BotName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"*******\",\n        \"TaskRequestId\": \"*******\",\n        \"RequestId\": \"*******\"\n    }\n}",
+        "title": "创建机器人"
+      }
+    ],
+    "Reset": [
+      {
+        "document": "重置机器人的会话状态",
+        "input": "https://tbp.tencentcloudapi.com/?Action=Reset\r\n&BotId=972445\r\n&BotVersion=dev\r\n&UserId=123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20190117150912\",\n        \"DialogStatus\": \"COMPLETE\",\n        \"BotName\": \"订票机器人\",\n        \"IntentName\": \"Intent_book_tickets\",\n        \"ResponseText\": \"好的，我这就去办。\",\n        \"SlotInfoList\": [\n            {\n                \"SlotName\": \"CityName\",\n                \"SlotValue\": \"北京\"\n            }\n        ],\n        \"WaveData\": \"\",\n        \"SessionAttributes\": \"\",\n        \"Question\": \"北京\",\n        \"WaveUrl\": \"http://stevinpan-chatflow-1255628450.cos.ap-guangzhou.myqcloud.com/100008/123/1551412004.pcm\"\n    }\n}",
+        "title": "机器人对话服务接口"
+      }
+    ],
+    "TextProcess": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextProcess\r\n&BotId=972445\r\n&InputText=北京\r\n&TerminalId=123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20190117150912\",\n        \"DialogStatus\": \"COMPLETE\",\n        \"BotName\": \"订票机器人\",\n        \"IntentName\": \"Intent_book_tickets\",\n        \"ResponseText\": \"好的，我这就去办。\",\n        \"SlotInfoList\": [\n            {\n                \"SlotName\": \"CityName\",\n                \"SlotValue\": \"北京\"\n            }\n        ],\n        \"SessionAttributes\": \"\",\n        \"InputText\": \"北京\"\n    }\n}",
+        "title": "机器人对话服务接口"
+      }
+    ],
+    "TextReset": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextReset\r\n&BotId=972445\r\n&TerminalId=123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20190117150912\",\n        \"DialogStatus\": \"COMPLETE\",\n        \"BotName\": \"订票机器人\",\n        \"IntentName\": \"Intent_book_tickets\",\n        \"ResponseText\": \"好的，我这就去办。\",\n        \"SlotInfoList\": [\n            {\n                \"SlotName\": \"CityName\",\n                \"SlotValue\": \"北京\"\n            }\n        ],\n        \"SessionAttributes\": \"\",\n        \"InputText\": \"北京\"\n    }\n}",
+        "title": "机器人对话服务接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,1875 @@
+{
+  "actions": {
+    "AddResourceTag": {
+      "document": "本接口用于给标签关联资源",
+      "input": "AddResourceTagRequest",
+      "name": "标签关联资源",
+      "output": "AddResourceTagResponse"
+    },
+    "AttachResourcesTag": {
+      "document": "给多个资源关联某个标签",
+      "input": "AttachResourcesTagRequest",
+      "name": "标签关联批量资源",
+      "output": "AttachResourcesTagResponse"
+    },
+    "CreateTag": {
+      "document": "本接口用于创建一对标签键和标签值",
+      "input": "CreateTagRequest",
+      "name": "创建标签",
+      "output": "CreateTagResponse"
+    },
+    "DeleteResourceTag": {
+      "document": "本接口用于解除标签和资源的关联关系",
+      "input": "DeleteResourceTagRequest",
+      "name": "标签解绑资源",
+      "output": "DeleteResourceTagResponse"
+    },
+    "DeleteTag": {
+      "document": "本接口用于删除一对标签键和标签值",
+      "input": "DeleteTagRequest",
+      "name": "删除标签",
+      "output": "DeleteTagResponse"
+    },
+    "DescribeResourceTags": {
+      "document": "查询资源关联标签",
+      "input": "DescribeResourceTagsRequest",
+      "name": "查询资源关联标签",
+      "output": "DescribeResourceTagsResponse"
+    },
+    "DescribeResourceTagsByResourceIds": {
+      "document": "用于批量查询已有资源关联的标签键值对",
+      "input": "DescribeResourceTagsByResourceIdsRequest",
+      "name": "批量查看资源关联的标签",
+      "output": "DescribeResourceTagsByResourceIdsResponse"
+    },
+    "DescribeResourceTagsByResourceIdsSeq": {
+      "document": "按顺序查看资源关联的标签",
+      "input": "DescribeResourceTagsByResourceIdsSeqRequest",
+      "name": "按顺序查看资源关联的标签",
+      "output": "DescribeResourceTagsByResourceIdsSeqResponse"
+    },
+    "DescribeResourceTagsByTagKeys": {
+      "document": "根据标签键获取资源标签",
+      "input": "DescribeResourceTagsByTagKeysRequest",
+      "name": "根据标签键获取资源标签",
+      "output": "DescribeResourceTagsByTagKeysResponse"
+    },
+    "DescribeResourcesByTags": {
+      "document": "通过标签查询资源列表",
+      "input": "DescribeResourcesByTagsRequest",
+      "name": "通过标签查询资源列表",
+      "output": "DescribeResourcesByTagsResponse"
+    },
+    "DescribeResourcesByTagsUnion": {
+      "document": "通过标签查询资源列表并集",
+      "input": "DescribeResourcesByTagsUnionRequest",
+      "name": "通过标签查询资源列表并集",
+      "output": "DescribeResourcesByTagsUnionResponse"
+    },
+    "DescribeTagKeys": {
+      "document": "用于查询已建立的标签列表中的标签键。\n",
+      "input": "DescribeTagKeysRequest",
+      "name": "查询标签键",
+      "output": "DescribeTagKeysResponse"
+    },
+    "DescribeTagValues": {
+      "document": "用于查询已建立的标签列表中的标签值。",
+      "input": "DescribeTagValuesRequest",
+      "name": "查询标签值",
+      "output": "DescribeTagValuesResponse"
+    },
+    "DescribeTagValuesSeq": {
+      "document": "用于查询已建立的标签列表中的标签值。",
+      "input": "DescribeTagValuesSeqRequest",
+      "name": "按顺序查询标签值",
+      "output": "DescribeTagValuesSeqResponse"
+    },
+    "DescribeTags": {
+      "document": "用于查询已建立的标签列表。\n",
+      "input": "DescribeTagsRequest",
+      "name": "查询标签列表",
+      "output": "DescribeTagsResponse"
+    },
+    "DescribeTagsSeq": {
+      "document": "用于查询已建立的标签列表。\n",
+      "input": "DescribeTagsSeqRequest",
+      "name": "按顺序查询标签列表",
+      "output": "DescribeTagsSeqResponse"
+    },
+    "DetachResourcesTag": {
+      "document": "解绑多个资源关联的某个标签",
+      "input": "DetachResourcesTagRequest",
+      "name": "标签解绑批量资源",
+      "output": "DetachResourcesTagResponse"
+    },
+    "ModifyResourceTags": {
+      "document": "本接口用于修改资源关联的所有标签",
+      "input": "ModifyResourceTagsRequest",
+      "name": "批量修改资源关联的标签",
+      "output": "ModifyResourceTagsResponse"
+    },
+    "ModifyResourcesTagValue": {
+      "document": "修改多个资源关联的某个标签键对应的标签值",
+      "input": "ModifyResourcesTagValueRequest",
+      "name": "修改批量资源关联的标签值",
+      "output": "ModifyResourcesTagValueResponse"
+    },
+    "UpdateResourceTagValue": {
+      "document": "本接口用于修改资源已关联的标签值（标签键不变）",
+      "input": "UpdateResourceTagValueRequest",
+      "name": "修改资源标签值",
+      "output": "UpdateResourceTagValueResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-08-13",
+    "api_brief": "介绍如何使用API对标签操作，包括查询标签、标签关联资源等。",
+    "serviceNameCN": "标签",
+    "serviceShortName": "tag"
+  },
+  "objects": {
+    "AddResourceTagRequest": {
+      "document": "AddResourceTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddResourceTagResponse": {
+      "document": "AddResourceTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachResourcesTagRequest": {
+      "document": "AttachResourcesTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID数组，资源个数最多为50",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachResourcesTagResponse": {
+      "document": "AttachResourcesTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagRequest": {
+      "document": "CreateTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "testTagKey",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "testTagValue",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagResponse": {
+      "document": "CreateTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceTagRequest": {
+      "document": "DeleteResourceTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceTagResponse": {
+      "document": "DeleteResourceTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagRequest": {
+      "document": "DeleteTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的标签键",
+          "example": "testTagKey",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要删除的标签值",
+          "example": "testTagValue",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagResponse": {
+      "document": "DeleteTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByResourceIdsRequest": {
+      "document": "DescribeResourceTagsByResourceIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID数组，大小不超过50",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByResourceIdsResponse": {
+      "document": "DescribeResourceTagsByResourceIds返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "TagResource",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByResourceIdsSeqRequest": {
+      "document": "DescribeResourceTagsByResourceIdsSeq请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源唯一标记",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByResourceIdsSeqResponse": {
+      "document": "DescribeResourceTagsByResourceIdsSeq返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "TagResource",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByTagKeysRequest": {
+      "document": "DescribeResourceTagsByTagKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源地域",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源唯一标识",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源标签键",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 400",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsByTagKeysResponse": {
+      "document": "DescribeResourceTagsByTagKeys返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源标签",
+          "member": "ResourceIdTag",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsRequest": {
+      "document": "DescribeResourceTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建者uin",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源唯一标识。只输入ResourceId进行查询可能会查询较慢，或者无法匹配到结果，建议在输入ResourceId的同时也输入ServiceType、ResourcePrefix和ResourceRegion（不区分地域的资源可忽略该参数）",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否是cos的资源（0或者1），输入的ResourceId为cos资源时必填",
+          "member": "uint64",
+          "name": "CosResourceId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTagsResponse": {
+      "document": "DescribeResourceTags返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源标签",
+          "member": "TagResource",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByTagsRequest": {
+      "document": "DescribeResourcesByTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签过滤数组",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "创建标签者uin",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "example": "instance",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源唯一标记",
+          "example": "ins-1234",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务类型",
+          "example": "cvm",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByTagsResponse": {
+      "document": "DescribeResourcesByTags返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源标签",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByTagsUnionRequest": {
+      "document": "DescribeResourcesByTagsUnion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签过滤数组",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "创建标签者uin",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源前缀",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源唯一标记",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务类型",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesByTagsUnionResponse": {
+      "document": "DescribeResourcesByTagsUnion返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源标签",
+          "member": "ResourceTag",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagKeysRequest": {
+      "document": "DescribeTagKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否展现项目",
+          "member": "uint64",
+          "name": "ShowProject",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagKeysResponse": {
+      "document": "DescribeTagKeys返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "string",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagValuesRequest": {
+      "document": "DescribeTagValues请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键列表",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagValuesResponse": {
+      "document": "DescribeTagValues返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "Tag",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagValuesSeqRequest": {
+      "document": "DescribeTagValuesSeq请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键列表",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagValuesSeqResponse": {
+      "document": "DescribeTagValuesSeq返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "Tag",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsRequest": {
+      "document": "DescribeTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "example": "testTagKey",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "example": "testTagValue",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "example": "15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "example": "121",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
+          "example": "Key",
+          "member": "string",
+          "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否展现项目标签",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShowProject",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsResponse": {
+      "document": "DescribeTags返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "example": "15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "example": "无",
+          "member": "TagWithDelete",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsSeqRequest": {
+      "document": "DescribeTagsSeq请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页大小，默认为 15",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
+          "member": "uint64",
+          "name": "CreateUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
+          "member": "string",
+          "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否展现项目标签",
+          "member": "uint64",
+          "name": "ShowProject",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagsSeqResponse": {
+      "document": "DescribeTagsSeq返回参数结构体",
+      "members": [
+        {
+          "document": "结果总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据位移偏量",
+          "member": "uint64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表",
+          "member": "TagWithDelete",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachResourcesTagRequest": {
+      "document": "DetachResourcesTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID数组，资源个数最多为50",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要解绑的标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachResourcesTagResponse": {
+      "document": "DetachResourcesTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceTagsRequest": {
+      "document": "ModifyResourceTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要增加或修改的标签集合。如果Resource描述的资源未关联输入的标签键，则增加关联；若已关联，则将该资源关联的键对应的标签值修改为输入值。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
+          "member": "Tag",
+          "name": "ReplaceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要解关联的标签集合。本接口中ReplaceTags和DeleteTags二者必须存在其一，且二者不能包含相同的标签键。可以不传该参数，但不能是空数组。",
+          "member": "TagKeyObject",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceTagsResponse": {
+      "document": "ModifyResourceTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcesTagValueRequest": {
+      "document": "ModifyResourcesTagValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源所属业务名称（资源六段式中的第三段）",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID数组，资源个数最多为50",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcesTagValueResponse": {
+      "document": "ModifyResourcesTagValue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceIdTag": {
+      "document": "资源标签键值",
+      "members": [
+        {
+          "default": "",
+          "document": "资源唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "TagKeyValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceTag": {
+      "document": "资源标签",
+      "members": [
+        {
+          "default": "",
+          "document": "资源所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "表示一个标签键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagFilter": {
+      "document": "tag过滤数组多个是与的关系",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值数组 多个值的话是或的关系",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagKeyObject": {
+      "document": "标签键对象",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagResource": {
+      "document": "标签键值对以及资源ID",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签键MD5值",
+          "member": "string",
+          "name": "TagKeyMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值MD5值",
+          "member": "string",
+          "name": "TagValueMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagWithDelete": {
+      "document": "表示一个标签键值对以及是否允许删除",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可以删除",
+          "member": "uint64",
+          "name": "CanDelete",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateResourceTagValueRequest": {
+      "document": "UpdateResourceTagValue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源关联的标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改后的标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateResourceTagValueResponse": {
+      "document": "UpdateResourceTagValue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

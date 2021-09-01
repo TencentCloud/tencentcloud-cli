@@ -1,0 +1,251 @@
+{
+  "actions": {
+    "CreateSnapshotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshotTask\n<公共请求参数>\n\n{\n    \"COS\": {\n        \"TargetDir\": \"snapshot/\",\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"test-123070000\",\n        \"Domain\": \"xxx.file.com\",\n        \"Uin\": 130001358\n    },\n    \"Whiteboard\": {\n        \"Width\": 1280,\n        \"InitParams\": \"{\\\"ratio\\\":\\\"16:9\\\"}\",\n        \"Height\": 720\n    },\n    \"RoomId\": 12345,\n    \"SdkAppId\": 1400123480,\n    \"CallbackURL\": \"http://xx/callback\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskID\": \"d1806f20-25b8-4c30-8176-c0832bf84e02\",\n        \"RequestId\": \"fe36df20-25b8-4c30-8176-cff28afacb25\"\n    }\n}",
+        "title": "创建白板板书生成任务"
+      }
+    ],
+    "CreateTranscode": [
+      {
+        "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&ThumbnailResolution=960x540\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
+        "title": "创建PPT动态转码任务"
+      },
+      {
+        "document": "创建PPT静态转码任务",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&IsStaticPPT=True\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
+        "title": "创建PPT静态转码任务"
+      }
+    ],
+    "CreateVideoGenerationTask": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g7khk7f809vterp942mb\"\n    }\n}",
+        "title": "开始录制视频生成"
+      }
+    ],
+    "DescribeOnlineRecord": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOnlineRecord\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExceptionCnt\": 0,\n        \"FinishReason\": \"USER_CALL\",\n        \"GroupId\": \"880528\",\n        \"OmittedDurations\": [],\n        \"RecordStartTime\": 1568949369,\n        \"RecordStopTime\": 1568949392,\n        \"RecordUserId\": \"tic_record_user_880528_test-01\",\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"RoomId\": 880528,\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"ghucnligqtgtvk2624mb\",\n        \"TotalTime\": 18317,\n        \"ReplayUrl\": \"http://replayurl\",\n        \"Interrupts\": [],\n        \"VideoInfos\": [\n            {\n                \"UserId\": \"Mac_trtc_04\",\n                \"VideoDuration\": 17969,\n                \"VideoFormat\": \"mp4\",\n                \"VideoId\": \"dace3518e865e76a9e36712c629822ba\",\n                \"VideoPlayTime\": 0,\n                \"VideoSize\": 593418,\n                \"VideoType\": 0,\n                \"Width\": 640,\n                \"Height\": 360,\n                \"VideoUrl\": \"http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/d124f518e865e76a9e36712c629822ba.mp4\"\n            },\n            {\n                \"UserId\": \"tic_mixstream_880528_101\",\n                \"VideoDuration\": 18205,\n                \"VideoFormat\": \"mp4\",\n                \"VideoId\": \"763d1f6b8679c3f17fb118bd37d05c85\",\n                \"VideoPlayTime\": 3,\n                \"VideoSize\": 765545,\n                \"VideoType\": 3,\n                \"Width\": 640,\n                \"Height\": 360,\n                \"VideoUrl\": \"http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/763d1f6b86724f51fb118bd37d05c85.mp4\"\n            },\n            {\n                \"UserId\": \"tic_mixstream_880528_3\",\n                \"VideoDuration\": 18222,\n                \"VideoFormat\": \"mp4\",\n                \"VideoId\": \"1b9623df0516dc7318df89f6e7fffc1e\",\n                \"VideoPlayTime\": 95,\n                \"VideoSize\": 402038,\n                \"VideoType\": 3,\n                \"Width\": 640,\n                \"Height\": 360,\n                \"VideoUrl\": \"http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/1b9623df05124f51318df89f6e7fffc1e.mp4\"\n            },\n            {\n                \"UserId\": \"\",\n                \"VideoDuration\": 17605,\n                \"VideoFormat\": \"mp4\",\n                \"VideoId\": \"a8152f8faa2cfe621dc965a066a5813c\",\n                \"VideoPlayTime\": 623,\n                \"VideoSize\": 226337,\n                \"VideoType\": 2,\n                \"Width\": 640,\n                \"Height\": 360,\n                \"VideoUrl\": \"http://online-recording-1259648581.file.myqcloud.com/00sp43mantgtv4r842mb/a815224f512cfe621dc965a066a5813c.mp4\"\n            }\n        ]\n    }\n}",
+        "title": "查询实时录制任务"
+      },
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOnlineRecord\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "title": "查询录制失败的实时录制任务"
+      }
+    ],
+    "DescribeOnlineRecordCallback": [
+      {
+        "document": "查询实时录制回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOnlineRecordCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/online/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询实时录制回调地址"
+      }
+    ],
+    "DescribeQualityMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400296030,\n    \"Metric\": \"image_load_fail_count\",\n    \"Interval\": \"1h\",\n    \"StartTime\": 1617874404,\n    \"EndTime\": 1618479204\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c41b5df-2326-4c0b-baca-2fd85ebb4097\",\n        \"Metric\": \"image_load_fail_count\",\n        \"Content\": [\n            {\n                \"Time\": 1617872400,\n                \"Value\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询白板图片加载失败统计"
+      }
+    ],
+    "DescribeSnapshotTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400127230,\n    \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": 1626249427,\n        \"FinishTime\": 1626250455,\n        \"RequestId\": \"38d75752-85e0-4931-9837-d41be5409a0a\",\n        \"Result\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMessage\": \"\",\n            \"Snapshots\": [\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255368873480.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255373174978.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255375472670.png\"\n            ],\n            \"Total\": 3\n        },\n        \"Status\": \"Finished\",\n        \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n    }\n}",
+        "title": "获取任务信息"
+      }
+    ],
+    "DescribeTranscode": [
+      {
+        "document": "查询文档动态转码任务结果",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/index.html\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"https://transcode-thumbnal/0agdnligqtgtvkm65emb/\",\n        \"ThumbnailResolution\": \"793x1122\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "title": "查询文档动态转码任务"
+      },
+      {
+        "document": "查询文档静态转码任务结果",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"\",\n        \"ThumbnailResolution\": \"\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "title": "查询文档静态转码任务"
+      }
+    ],
+    "DescribeTranscodeCallback": [
+      {
+        "document": "查询文档转码回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscodeCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/transcode/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询文档转码回调地址"
+      }
+    ],
+    "DescribeVideoGenerationTask": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeVideoGenerationTask\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"900822\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"RoomId\": 900822,\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"00e1jv8ve0jcqk7da9lb\",\n        \"TotalTime\": 156750,\n        \"VideoInfoList\": [\n            {\n                \"UserId\": \"\",\n                \"VideoDuration\": 156750,\n                \"VideoFormat\": \"mp4\",\n                \"VideoId\": \"5285890792776509100\",\n                \"VideoPlayTime\": 0,\n                \"VideoSize\": 318384,\n                \"VideoType\": 2,\n                \"Width\": 1024,\n                \"Height\": 768,\n                \"VideoUrl\": \"http://1257240443.vod2.myqcloud.com/cc35b442vodcq1257240443/video.mp4\"\n            }\n        ],\n        \"VideoInfos\": {\n            \"VideoType\": 0,\n            \"VideoUrl\": \"已废弃，请使用VideoInfoList\",\n            \"UserId\": \"xx\",\n            \"VideoId\": \"xx\",\n            \"VideoSize\": 0,\n            \"VideoDuration\": 0,\n            \"Width\": 0,\n            \"Height\": 0,\n            \"VideoPlayTime\": 0,\n            \"VideoFormat\": \"xx\"\n        }\n    }\n}",
+        "title": "查询录制视频生成"
+      }
+    ],
+    "DescribeVideoGenerationTaskCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeVideoGenerationTaskCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/offline/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询录制视频生成回调地址"
+      }
+    ],
+    "DescribeWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExceptionCnt\": 0,\n        \"FinishReason\": \"USER_CALL\",\n        \"GroupId\": \"880528\",\n        \"IMSyncTime\": 0,\n        \"PushStartTime\": 1610591726,\n        \"PushStopTime\": 1610591759,\n        \"PushUserId\": \"tic_push_user_880528_test1\",\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"RoomId\": 880528,\n        \"Status\": \"STOPPED\",\n        \"Backup\": \"\",\n        \"TaskId\": \"g42lfmu5uc3lpoqrqvvb\"\n    }\n}",
+        "title": "查询白板推流任务"
+      },
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "title": "查询推流失败的白板推流任务"
+      }
+    ],
+    "DescribeWhiteboardPushCallback": [
+      {
+        "document": "查询白板推流回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPushCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/online/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询白板推流回调地址"
+      }
+    ],
+    "PauseOnlineRecord": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=PauseOnlineRecord\n&SdkAppId=1400000001\n&TaskId=bj0mt2l23osdj300hl30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "暂停实时录制"
+      }
+    ],
+    "ResumeOnlineRecord": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=ResumeOnlineRecord\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "恢复实时录制任务"
+      }
+    ],
+    "SetOnlineRecordCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetOnlineRecordCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/online/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置实时录制回调地址"
+      }
+    ],
+    "SetOnlineRecordCallbackKey": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetOnlineRecordCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置实时录制回调鉴权密钥"
+      }
+    ],
+    "SetTranscodeCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetTranscodeCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/transcode/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置文档转码回调地址"
+      }
+    ],
+    "SetTranscodeCallbackKey": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetTranscodeCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置文档转码回调鉴权密钥"
+      }
+    ],
+    "SetVideoGenerationTaskCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetVideoGenerationTaskCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/videoGeneration/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置录制视频生成回调地址"
+      }
+    ],
+    "SetVideoGenerationTaskCallbackKey": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetVideoGenerationTaskCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置视频生成回调鉴权密钥"
+      }
+    ],
+    "SetWhiteboardPushCallback": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetWhiteboardPushCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/online/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置白板推流回调地址"
+      }
+    ],
+    "SetWhiteboardPushCallbackKey": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetWhiteboardPushCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置白板推流回调鉴权密钥"
+      }
+    ],
+    "StartOnlineRecord": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StartOnlineRecord\n&SdkAppId=1400000001\n&RoomId=1203\n&RecordUserId=tic_record_user_1203_141551\n&RecordUserSig=usersig_of_<tic_record_user_1203_141551>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
+        "title": "开始实时录制"
+      },
+      {
+        "document": "使用内置混流布局进行混流录制",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StartOnlineRecord\n&SdkAppId=1400000001\n&RoomId=1203\n&RecordUserId=tic_record_user_1203_141551\n&RecordUserSig=usersig_of_<tic_record_user_1203_141551>\n&Whiteboard.Width=1280\n&Whiteboard.Height=960\n&Whiteboard.InitParam={\"ratio\":\"16:9\"}\n&Concat.Enabled=true\n&Concat.Image=http://background/image.jpg\n&MixStream.Enabled=true\n&MixStream.DisableAudio=false\n&MixStream.ModelId=2\n&MixStream.TeacherId=teacher\n&Extras.0=MIX_STREAM\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
+        "title": "开始带混流的实时录制"
+      }
+    ],
+    "StartWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StartWhiteboardPush\n&SdkAppId=1400000001\n&RoomId=1203\n&PushUserId=tic_push_user_1203_141551\n&PushUserSig=usersig_of_<tic_push_user_1203_141551>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
+        "title": "开始白板推流"
+      }
+    ],
+    "StopOnlineRecord": [
+      {
+        "document": "停止在线录制",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StopOnlineRecord\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "停止在线录制"
+      }
+    ],
+    "StopWhiteboardPush": [
+      {
+        "document": "",
+        "input": "https://tiw.tencentcloudapi.com/?Action=StopWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"87c334b8-dbf6-4013-8d65-9a9ea60eff27\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "停止白板推流"
+      }
+    ]
+  },
+  "version": "1.0"
+}

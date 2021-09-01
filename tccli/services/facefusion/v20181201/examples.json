@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "DescribeMaterialList": [
+      {
+        "document": "拉起素材列表(对外)",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=DescribeMaterialList\r\n&ActivityId=10\r\n&MaterialId=\"q-materialId-000\"\r\n&Limit=10\r\n&Offset=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"testDescribeMaterialList1589864389240\"\n    }\n}",
+        "title": "素材列表"
+      }
+    ],
+    "FaceFusion": [
+      {
+        "document": "",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=FaceFusion\n&ProjectId=100646\n&ModelId=qc_100646_154021_9\n&RspImgType=url\n&Image=base64_string\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"https://facefusion-1254418846.cos.ap-guangzhou.myqcloud.com/qc_100646_204857_1_1543312645513131155.jpg\",\n        \"RequestId\": \"66676130-5588-4cdb-a81e-8bd3c99cea1f\",\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"丁俊晖\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "调用返回成功"
+      },
+      {
+        "document": "",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=FaceFusion\n&ProjectId=100646\n&ModelId=qc_100646_154021_9\n&RspImgType=url\n&Image=base64_string\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ae581fd-c25f-4a63-83b3-d9fcd97230c8\"\n    }\n}",
+        "title": "调用返回失败"
+      }
+    ],
+    "FaceFusionLite": [
+      {
+        "document": "",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=FaceFusionLite\n&ProjectId=100646\n&ModelId=qc_100646_154021_9\n&MergeInfos.0.Url=https://test-139.cos.ap-nan.cloud.com/bk.jpeg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"https://facefusion-1254418846.cos.ap-guangzhou.myqcloud.com/qc_100646_204857_1_1543312645513131155.jpg\",\n        \"RequestId\": \"66676130-5588-4cdb-a81e-8bd3c99cea1f\",\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"丁俊晖\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "FuseFace": [
+      {
+        "document": "",
+        "input": "https://facefusion.tencentcloudapi.com/?Action=FuseFace\n&ProjectId=300029\n&ModelId=qc_300029_453345_1\n&RspImgType=url\n&MergeInfos.0.Image=/9/242342342342\n&MergeInfos.0.Url=http://test.image.myqcloud.com/testB.jpg\n&MergeInfos.0.InputImageFaceRect.X=1\n&MergeInfos.0.InputImageFaceRect.Y=2\n&MergeInfos.0.InputImageFaceRect.Width=11\n&MergeInfos.0.InputImageFaceRect.Height=22\n&MergeInfos.0.TemplateFaceID=1\n&FuseProfileDegree=1\n&FuseFaceDegree=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FusedImage\": \"/9/tetwtwe\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReviewResultSet\": [\n            {\n                \"Category\": \"Politics\",\n                \"Code\": \"0\",\n                \"CodeDescription\": \"OK\",\n                \"Suggestion\": \"PASS\",\n                \"Confidence\": 30,\n                \"DetailSet\": [\n                    {\n                        \"Field\": \"\",\n                        \"Label\": \"丁俊晖\",\n                        \"Confidence\": 30,\n                        \"Suggestion\": \"PASS\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "人脸融合-选脸融合"
+      }
+    ]
+  },
+  "version": "1.0"
+}

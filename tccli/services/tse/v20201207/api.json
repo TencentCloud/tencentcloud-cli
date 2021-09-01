@@ -1,0 +1,547 @@
+{
+  "actions": {
+    "DescribeSREInstanceAccessAddress": {
+      "document": "查询引擎实例访问地址",
+      "input": "DescribeSREInstanceAccessAddressRequest",
+      "name": "查询引擎实例访问地址",
+      "output": "DescribeSREInstanceAccessAddressResponse"
+    },
+    "DescribeSREInstances": {
+      "document": "用于查询引擎实例列表",
+      "input": "DescribeSREInstancesRequest",
+      "name": "查询引擎实例列表",
+      "output": "DescribeSREInstancesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-07",
+    "api_brief": "介绍如何使用 API 对腾讯云微服务引擎进行操作，包括创建托管服务集群、查询集群信息等。",
+    "serviceNameCN": "腾讯云微服务引擎",
+    "serviceShortName": "tse"
+  },
+  "objects": {
+    "DescribeSREInstanceAccessAddressRequest": {
+      "document": "DescribeSREInstanceAccessAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "注册引擎实例Id",
+          "example": "sre-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSREInstanceAccessAddressResponse": {
+      "document": "DescribeSREInstanceAccessAddress返回参数结构体",
+      "members": [
+        {
+          "document": "内网访问地址",
+          "example": "10.1.8.15",
+          "member": "string",
+          "name": "IntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公网访问地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "InternetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "apollo多环境公网ip",
+          "example": "无",
+          "member": "EnvAddressInfo",
+          "name": "EnvAddressInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSREInstancesRequest": {
+      "document": "DescribeSREInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "翻页单页查询限制数量[0,1000], 默认值0",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页单页偏移量，默认值0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型",
+          "example": "config",
+          "member": "string",
+          "name": "QueryType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSREInstancesResponse": {
+      "document": "DescribeSREInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例记录",
+          "example": "无",
+          "member": "SREInstance",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnvAddressInfo": {
+      "document": "多环境网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境名",
+          "example": "dev",
+          "member": "string",
+          "name": "EnvName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启config公网",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConfigInternet",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "config公网ip",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConfigInternetServiceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvInfo": {
+      "document": "环境具体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "环境名称",
+          "example": "pro",
+          "member": "string",
+          "name": "EnvName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境对应的网络信息",
+          "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxxx\"}]",
+          "member": "VpcInfo",
+          "name": "VpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘容量",
+          "example": "50",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Admin service 访问地址",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "AdminServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Config service访问地址",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "ConfigServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启config-server公网",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableConfigInternet",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "config-server公网访问地址",
+          "example": "xx.xx.xx.xx",
+          "member": "string",
+          "name": "ConfigInternetServiceIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "查询过滤通用对象",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤参数名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤参数值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SREInstance": {
+      "document": "微服务注册引擎实例",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "inst-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "example": "1.8.6",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态, 枚举值:creating/create_fail/running/updating/update_fail/restarting/restart_fail/destroying/destroy_fail",
+          "example": "creating",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格ID",
+          "example": "spec-12345678",
+          "member": "string",
+          "name": "SpecId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本数",
+          "example": "3",
+          "member": "int64",
+          "name": "Replica",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "consul",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc iD",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"subnet-12345678\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启持久化存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStorage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据存储方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云硬盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "Paymode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "EKS集群的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-1234567",
+          "member": "string",
+          "name": "EKSClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-08 16:20:58",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎所在的区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "注册引擎是否开启公网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternet",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有网络列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VpcInfo",
+          "name": "VpcInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcInfo": {
+      "document": "私有网络信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpc Id",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx.xx.xx.xx",
+          "member": "string",
+          "name": "IntranetAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

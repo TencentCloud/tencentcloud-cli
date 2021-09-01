@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "BindOrganizationMemberAuthAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOrganizationMemberAuthAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": \"100000546922\",\n    \"PolicyId\": \"98081\",\n    \"OrgSubAccountUins\": [\n        \"100000546921\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c2f4b68-01b2-4841-a927-6ca8fe40649b\"\n    }\n}",
+        "title": "绑定成员和子账号的授权关系"
+      }
+    ]
+  },
+  "version": "1.0"
+}

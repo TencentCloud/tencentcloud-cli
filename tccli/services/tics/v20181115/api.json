@@ -1,0 +1,602 @@
+{
+  "actions": {
+    "DescribeDomainInfo": {
+      "document": "提供域名相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "input": "DescribeDomainInfoRequest",
+      "name": "查询域名信誉",
+      "output": "DescribeDomainInfoResponse"
+    },
+    "DescribeFileInfo": {
+      "document": "提供文件相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "input": "DescribeFileInfoRequest",
+      "name": "查询文件信誉",
+      "output": "DescribeFileInfoResponse"
+    },
+    "DescribeIpInfo": {
+      "document": "提供IP相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "input": "DescribeIpInfoRequest",
+      "name": "查询IP信誉",
+      "output": "DescribeIpInfoResponse"
+    },
+    "DescribeThreatInfo": {
+      "document": "提供IP和域名相关威胁情报信息查询，这些信息可以辅助检测失陷主机、帮助SIEM/SOC等系统做研判决策、帮助运营团队对设备报警的编排处理。",
+      "input": "DescribeThreatInfoRequest",
+      "name": "查询威胁情报",
+      "output": "DescribeThreatInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-11-15",
+    "api_brief": "介绍如何使用API对威胁情报云查服务进行操作，包括查询威胁情报、查询域名信誉等。",
+    "serviceNameCN": "威胁情报云查服务",
+    "serviceShortName": "tics"
+  },
+  "objects": {
+    "DescribeDomainInfoRequest": {
+      "document": "DescribeDomainInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的域名",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
+          "member": "uint64",
+          "name": "Option",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainInfoResponse": {
+      "document": "DescribeDomainInfo返回参数结构体",
+      "members": [
+        {
+          "document": "是否有数据，0代表有数据，1代表没有数据",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "判定结果，如：black、white、grey",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "置信度，取值0-100",
+          "member": "uint64",
+          "name": "Confidence",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
+          "member": "string",
+          "name": "ThreatTypes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意标签，对应的团伙，家族等信息。",
+          "member": "TagType",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对应的历史上的威胁情报事件",
+          "member": "IntelligenceType",
+          "name": "Intelligences",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "情报相关的上下文",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileInfoRequest": {
+      "document": "DescribeFileInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询文件的MD5",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
+          "member": "uint64",
+          "name": "Option",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileInfoResponse": {
+      "document": "DescribeFileInfo返回参数结构体",
+      "members": [
+        {
+          "document": "是否有数据，0代表有数据，1代表没有数据",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "判定结果，如：black、white、grey",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "置信度，取值0-100",
+          "member": "uint64",
+          "name": "Confidence",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件类型，文件hash\n（md5,sha1,sha256）,文件大小等等文件\n基础信息",
+          "member": "FileInfoType",
+          "name": "FileInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意标签，对应的团伙，家族等信息。",
+          "member": "TagType",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对应的历史上的威胁情报事件",
+          "member": "IntelligenceType",
+          "name": "Intelligences",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "情报相关的上下文",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInfoRequest": {
+      "document": "DescribeIpInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的IP",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
+          "member": "uint64",
+          "name": "Option",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpInfoResponse": {
+      "document": "DescribeIpInfo返回参数结构体",
+      "members": [
+        {
+          "document": "是否有数据，0代表有数据，1代表没有数据",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "判定结果，如：black、white、grey",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "置信度，取值0-100",
+          "member": "uint64",
+          "name": "Confidence",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
+          "member": "string",
+          "name": "ThreatTypes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意标签，对应的团伙，家族等信息。",
+          "member": "TagType",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对应的历史上的威胁情报事件",
+          "member": "IntelligenceType",
+          "name": "Intelligences",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "情报相关的上下文",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeThreatInfoRequest": {
+      "document": "DescribeThreatInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询对象，域名或IP",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询类型，当前取值为domain或ip",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
+          "member": "uint64",
+          "name": "Option",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeThreatInfoResponse": {
+      "document": "DescribeThreatInfo返回参数结构体",
+      "members": [
+        {
+          "document": "是否有数据，0代表有数据，1代表没有数据",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "判定结果，如：black、white、grey",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "置信度，取值0-100",
+          "member": "uint64",
+          "name": "Confidence",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "威胁类型。\nbotnet = 僵尸网络\ntrojan = 木马\nransomware = 勒索软件\nworm = 蠕虫\ndga = 域名生成算法\nc2 = c&c\ncompromised = 失陷主机\ndynamicIP = 动态IP\nproxy = 代理\nidc = idc 机房\nwhitelist = 白名单\ntor = 暗网\nminer = 挖矿\nmaleware site = 恶意站点\nmalware IP = 恶意IP\n等等",
+          "member": "string",
+          "name": "ThreatTypes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意标签，对应的团伙，家族等信息。",
+          "member": "string",
+          "name": "Tags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前状态\nactive = 活跃\nsinkholed = sinkholed\ninactive = 不活跃\nunknown = 未知\nexpired = 过期",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "情报相关的上下文，参数option=1 的时候提供\n每个数据默认为3 条",
+          "member": "string",
+          "name": "Context",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileInfoType": {
+      "document": "文件信息类型",
+      "members": [
+        {
+          "default": "",
+          "document": "判定渠道",
+          "member": "string",
+          "name": "DetectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测优先级",
+          "member": "string",
+          "name": "DetectPriority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎优先级",
+          "member": "string",
+          "name": "EnginePriority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "样本是否存在",
+          "member": "string",
+          "name": "FileExist",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件上传",
+          "member": "string",
+          "name": "FileForceUpload",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小",
+          "member": "string",
+          "name": "FileSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件上传时间",
+          "member": "string",
+          "name": "FileupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "病毒文件全名",
+          "member": "string",
+          "name": "FullVirusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IDC位置",
+          "member": "string",
+          "name": "IdcPosition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件md5值",
+          "member": "string",
+          "name": "Md5Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PE结构是否存在",
+          "member": "string",
+          "name": "PeExist",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PE结构上传",
+          "member": "string",
+          "name": "PeForceUpload",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全性等级",
+          "member": "string",
+          "name": "SafeLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描时间",
+          "member": "string",
+          "name": "ScanModiTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子判定渠道",
+          "member": "string",
+          "name": "SubdetectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "病毒名",
+          "member": "string",
+          "name": "UserDefName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "病毒类型",
+          "member": "string",
+          "name": "VirusType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单分数",
+          "member": "string",
+          "name": "WhiteScore",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntelligenceType": {
+      "document": "{ \"source\": \"inergj_ai_predict\", \"stamp\": \"msraminer\", \"time\": 1531994023 }",
+      "members": [
+        {
+          "default": "",
+          "document": "来源",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标记",
+          "member": "string",
+          "name": "Stamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间",
+          "member": "uint64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagType": {
+      "document": "标签及对应的解释",
+      "members": [
+        {
+          "default": "",
+          "document": "标签",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签对应的中文解释",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

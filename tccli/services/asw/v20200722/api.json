@@ -1,0 +1,965 @@
+{
+  "actions": {
+    "CreateFlowService": {
+      "document": "该接口用于生成状态机服务",
+      "input": "CreateFlowServiceRequest",
+      "name": "创建状态机",
+      "output": "CreateFlowServiceResponse"
+    },
+    "DescribeExecution": {
+      "document": "查询执行详细信息",
+      "input": "DescribeExecutionRequest",
+      "name": "查询执行详细信息",
+      "output": "DescribeExecutionResponse"
+    },
+    "DescribeExecutionHistory": {
+      "document": "一次执行会有很多步骤，经过很多节点，这个接口描述某一次执行的事件的历史",
+      "input": "DescribeExecutionHistoryRequest",
+      "name": "查询执行的事件历史",
+      "output": "DescribeExecutionHistoryResponse"
+    },
+    "DescribeExecutions": {
+      "document": "对状态机的执行历史进行描述.",
+      "input": "DescribeExecutionsRequest",
+      "name": "查询状态机执行列表",
+      "output": "DescribeExecutionsResponse"
+    },
+    "DescribeFlowServiceDetail": {
+      "document": "查询该用户指定状态机下的详情数据。",
+      "input": "DescribeFlowServiceDetailRequest",
+      "name": "查询状态机详情",
+      "output": "DescribeFlowServiceDetailResponse"
+    },
+    "DescribeFlowServices": {
+      "document": "查询指定用户下所有状态机，以列表形式返回",
+      "input": "DescribeFlowServicesRequest",
+      "name": "查询状态机列表",
+      "output": "DescribeFlowServicesResponse"
+    },
+    "ModifyFlowService": {
+      "document": "该接口用于修改状态机",
+      "input": "ModifyFlowServiceRequest",
+      "name": "修改状态机",
+      "output": "ModifyFlowServiceResponse"
+    },
+    "StartExecution": {
+      "document": "为指定的状态机启动一次执行",
+      "input": "StartExecutionRequest",
+      "name": "启动执行",
+      "output": "StartExecutionResponse"
+    },
+    "StopExecution": {
+      "document": "终止某个状态机",
+      "input": "StopExecutionRequest",
+      "name": "停止状态机",
+      "output": "StopExecutionResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-22",
+    "api_brief": "介绍如何使用API对应用与服务编排工作流进行操作，包括创建工作流、启动工作流、获得工作流执行情况等。",
+    "serviceNameCN": "应用与服务编排工作流",
+    "serviceShortName": "asw"
+  },
+  "objects": {
+    "CreateFlowServiceRequest": {
+      "document": "CreateFlowService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "定义文本（JSON格式）",
+          "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
+          "member": "string",
+          "name": "Definition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态机所属服务名",
+          "example": "Hello-World",
+          "member": "string",
+          "name": "FlowServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是不是新的角色",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNewRole",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "状态机类型（EXPRESS，STANDARD）",
+          "example": "EXPRESS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态机所属服务中文名",
+          "example": "你好ASW",
+          "member": "string",
+          "name": "FlowServiceChineseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine",
+          "example": "qcs::cam::uin/12345:roleName/NameOfARole",
+          "member": "string",
+          "name": "RoleResource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "这是一个ASW工作流示例",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启CLS日志投递功能",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "该状态机的默认输入",
+          "example": "{}",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowServiceResponse": {
+      "document": "CreateFlowService返回参数结构体",
+      "members": [
+        {
+          "document": "状态机所属服务资源",
+          "example": "flowservicetest",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生成日期",
+          "example": "1595227100",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionHistoryRequest": {
+      "document": "DescribeExecutionHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行资源名",
+          "example": "qrn:qcs:asw:ap-guangzhou:12345:http:json:flowmachine:bfhzs4j8",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionHistoryResponse": {
+      "document": "DescribeExecutionHistory返回参数结构体",
+      "members": [
+        {
+          "document": "执行的事件列表",
+          "example": "无",
+          "member": "ExecutionEvent",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionRequest": {
+      "document": "DescribeExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行资源名",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionResponse": {
+      "document": "DescribeExecution返回参数结构体",
+      "members": [
+        {
+          "document": "执行资源名",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源名称",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行开始时间，毫秒",
+          "member": "string",
+          "name": "StartDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行结束时间，毫秒",
+          "member": "string",
+          "name": "StopDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态机资源名",
+          "member": "string",
+          "name": "StateMachineResourceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行状态。INIT，RUNNING，SUCCEED，FAILED，TERMINATED",
+          "member": "string",
+          "name": "Status",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行的输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Input",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行的输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Output",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "启动执行时，状态机的定义",
+          "member": "string",
+          "name": "ExecutionDefinition",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionsRequest": {
+      "document": "DescribeExecutions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机资源名",
+          "member": "string",
+          "name": "StateMachineResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页大小，最大100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页序号，从1开始",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED",
+          "member": "string",
+          "name": "FilterExecutionStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按执行名过滤条件",
+          "member": "string",
+          "name": "FilterExecutionResourceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutionsResponse": {
+      "document": "DescribeExecutions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowServiceDetailRequest": {
+      "document": "DescribeFlowServiceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机所属服务资源名",
+          "example": "qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicete",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowServiceDetailResponse": {
+      "document": "DescribeFlowServiceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "状态机所属服务名",
+          "example": "flowservicetest",
+          "member": "string",
+          "name": "FlowServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态机状态",
+          "example": "Online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定义文本（JSON格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Comment\":\"An example of the Amazon States Language using a map state to process elements of an array with a max concurrency of 2.\",\"StartAt\":\"Map\",\"States\":{\"Map\":{\"Type\":\"Map\",\"ItemsPath\":\"$.job-spec\",\"ResultPath\":\"$.array\",\"MaxConcurrency\":2,\"Next\":\"Final State\",\"Iterator\":{\"StartAt\":\"My Stage\",\"States\":{\"My Stage\":{\"Type\":\"Task\",\"Resource\":\"arn:aws:states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"arn:aws:lambda:us-east-1:<>:function:some-lambda:$LATEST\",\"Payload\":{\"Input.$\":\"$.array\"}},\"End\":true}}}},\"Final State\":{\"Type\":\"Pass\",\"End\":true}}}",
+          "member": "string",
+          "name": "Definition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "角色资源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qrn:qcs:asw:sh:1300074211:http:qrn",
+          "member": "string",
+          "name": "RoleResource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态机的类型，可以为 （EXPRESS/STANDARD）",
+          "example": "EXPRESS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生成时间",
+          "example": "1595227100",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个用来做演示的状态机",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态机所属服务中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "状态机中文名称",
+          "member": "string",
+          "name": "FlowServiceChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启日志CLS服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CLS日志查看地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://console.cloud.tencent.com/cls",
+          "member": "string",
+          "name": "CLSUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "工作流提示输入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowInput",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowServicesRequest": {
+      "document": "DescribeFlowServices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filter.Values的上限为5。参数名字仅支持FlowServiceName， Status, Type三种情况",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowServicesResponse": {
+      "document": "DescribeFlowServices返回参数结构体",
+      "members": [
+        {
+          "document": "用户的状态机列表",
+          "member": "StateMachine",
+          "name": "FlowServiceSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户的状态机总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutionEvent": {
+      "document": "执行的事件历史",
+      "members": [
+        {
+          "default": "",
+          "document": "执行资源名",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自增序号",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "string",
+          "name": "EventCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤节点名称",
+          "member": "string",
+          "name": "StepName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该步骤引用的资源名",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该事件发生时间，毫秒",
+          "member": "string",
+          "name": "Timestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Exception",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "模版过滤类型",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤器名字",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤器值的数组",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyFlowServiceRequest": {
+      "document": "ModifyFlowService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机资源名",
+          "example": "无",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定义JSON",
+          "example": "无",
+          "member": "string",
+          "name": "Definition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态机所属服务名",
+          "example": "无",
+          "member": "string",
+          "name": "FlowServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态机所属服务中文名",
+          "example": "无",
+          "member": "string",
+          "name": "FlowServiceChineseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是新角色",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNewRole",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "状态机类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色资源名",
+          "example": "无",
+          "member": "string",
+          "name": "RoleResource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态机备注",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否允许日志投递",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCLS",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlowServiceResponse": {
+      "document": "ModifyFlowService返回参数结构体",
+      "members": [
+        {
+          "document": "状态机资源名",
+          "example": "qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:w",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "1596628154044",
+          "member": "string",
+          "name": "UpdateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartExecutionRequest": {
+      "document": "StartExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机资源名",
+          "member": "string",
+          "name": "StateMachineResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入参数",
+          "member": "string",
+          "name": "Input",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次执行名。如果不填，系统会自动生成。如果填，应保证状态机下唯一",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartExecutionResponse": {
+      "document": "StartExecution返回参数结构体",
+      "members": [
+        {
+          "document": "执行资源名",
+          "member": "string",
+          "name": "ExecutionResourceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行开始时间",
+          "member": "string",
+          "name": "StartDate",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StateMachine": {
+      "document": "状态机",
+      "members": [
+        {
+          "default": "",
+          "document": "状态机资源",
+          "member": "string",
+          "name": "FlowServiceResource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机类型。EXPRESS，STANDARD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机名称",
+          "member": "string",
+          "name": "FlowServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机中文名",
+          "member": "string",
+          "name": "FlowServiceChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。timestamp",
+          "member": "string",
+          "name": "CreateDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间。timestamp",
+          "member": "string",
+          "name": "ModifyDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态机状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Modifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态机id",
+          "member": "string",
+          "name": "FlowServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StopExecutionRequest": {
+      "document": "StopExecution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行名称",
+          "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
+          "member": "string",
+          "name": "ExecutionQrn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopExecutionResponse": {
+      "document": "StopExecution返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

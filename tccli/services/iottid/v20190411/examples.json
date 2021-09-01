@@ -1,0 +1,95 @@
+{
+  "actions": {
+    "AuthTestTid": [
+      {
+        "document": "测试单向认证TID:021000005d244b1719f5af867cd7445c通过",
+        "input": "https://iottid.tencentcloudapi.com/?Action=AuthTestTid\r\n&Data=AZACEAAAXSRLFxn1r4Z810Rc3VriVaOdFd8NH5AgiaiuBwAAtNBk5qWRh7x9CIIaA+KBhMoKsw6qIQp0+poRIucWz3nwKzEPLs2jlZvJlUbbvjmnoxMoCQ6dXamqOUuh2E3QQOsNWS0vtU9LGraTbN2RN75p7MJLHQpAMwvW+vz1XmFG\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b410542c-b7b1-439f-99b7-6767cbf41f59\",\n        \"Pass\": true\n    }\n}",
+        "title": "测试单向认证TID-2"
+      },
+      {
+        "document": "测试单向认证TID:021000005d244b1719f5af867cd7445c不通过",
+        "input": "https://iottid.tencentcloudapi.com/?Action=AuthTestTid\r\n&Data=12ACEAAAXSRLFxn1r4Z810Rc3VriVaOdFd8NH5AgiaiuBwAAtNBk5qWRh7x9CIIaA+KBhMoKsw6qIQp0+poRIucWz3nwKzEPLs2jlZvJlUbbvjmnoxMoCQ6dXamqOUuh2E3QQOsNWS0vtU9LGraTbN2RN75p7MJLHQpAMwvW+vz1XmFG\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b410542c-b7b1-439f-99b7-6767cbf41f59\",\n        \"Pass\": false\n    }\n}",
+        "title": "测试单向认证TID"
+      }
+    ],
+    "BurnTidNotify": [
+      {
+        "document": "",
+        "input": "https://iottid.tencentcloudapi.com/?Action=BurnTidNotify\r\nBurnTidNotify：https://iottid.tencentcloudapi.com/?Action=BurnTidNotify\r\n&OrderId=p8ZcXGuqus\r\n&Tid=000001035D0C97E3D2A46283D27BC612\r\n&<公共请求参数>\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37ce9615-4038-4b62-a6dc-5aebe2c45380\",\n        \"Tid\": \"000001035D0C97E3D2A46283D27BC612\"\n    }\n}",
+        "title": "烧录回执"
+      }
+    ],
+    "DeliverTidNotify": [
+      {
+        "document": "",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DeliverTidNotify\r\n&OrderId=4BI47CqhHQ\r\n&Tid=000001035D0C97E3D2A46283D27BC612\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductKey\": \"testProductKey\",\n        \"RemaindCount\": 887,\n        \"RequestId\": \"b410542c-b7b1-439f-99b7-6767cbf41f59\",\n        \"Tid\": \"000001035D0C97E3D2A46283D27BC612\"\n    }\n}",
+        "title": "空发回执"
+      }
+    ],
+    "DeliverTids": [
+      {
+        "document": "",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DeliverTids\r\n&OrderId=SbRTDKP1L4\r\n&Quantity=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductKey\": \"432hfbb4324132etgzsdbgfxhg14344gfdsgbgfrrttgrhgfcgh251bd08aa58f048591087c7f551292eb6da1d56ffb0d32bc81fa97b92f1d42b138099f97fd676d0680357b9cb5a4\",\n        \"RequestId\": \"96a3691c-25ff-471b-94c2-48526757510e\",\n        \"TidSet\": [\n            {\n                \"PrivateKey\": \"1c09446f8ebc03b3b3b148f9c236e221768ccd2e1df24ec6fd02db26043f576a\",\n                \"Psk\": \"4a802bbe514395496b93a4dd9776af0352c060290f504396b8357ae9d571a5f3\",\n                \"PublicKey\": \"99a7bcac2cb6f4e94e1d4e4c23fb940dfddb251bd08aa58f048591087c7f551292eb6da1d56ffb0d32bc81fa97b92f1d42b138099f97fd676d0680357b9cb5a4\",\n                \"Tid\": \"010001015D0C939457E5860182C4FC14\"\n            }\n        ]\n    }\n}",
+        "title": "空发TID"
+      }
+    ],
+    "DescribeAvailableLibCount": [
+      {
+        "document": "订单编号p8ZcXGuqus，类型为软加固产品，历史上传1000个硬件标识码，尚未空发过任何软加固TID。",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DescribeAvailableLibCount\r\n&OrderId=p8ZcXGuqus\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"006b23f0-d768-439e-99e9-1c09af0432af\",\n        \"Quantity\": 1000\n    }\n}",
+        "title": "查询软加固订单可空发数量-2"
+      },
+      {
+        "document": "订单编号p8ZcXGuqus，类型为软加固产品，历史上传1000个硬件标识码，已通过DeliverTids空发接口发送100个TID，剩余900未空发。",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DescribeAvailableLibCount\r\n&OrderId=p8ZcXGuqus\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"006b23f0-d768-439e-99e9-1c09af0432af\",\n        \"Quantity\": 900\n    }\n}",
+        "title": "查询软加固订单可空发数量"
+      }
+    ],
+    "DescribePermission": [
+      {
+        "document": "",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DescribePermission\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DownloadPermission\": \"agree\",\n        \"EnterpriseUser\": true,\n        \"RequestId\": \"eade12c8-30fc-43ea-9324-7b879435c609\",\n        \"UsePermission\": \"agree\"\n    }\n}",
+        "title": "请求当前控制台权限"
+      }
+    ],
+    "DownloadTids": [
+      {
+        "document": "",
+        "input": "https://iottid.tencentcloudapi.com/?Action=DownloadTids\r\n&OrderId=p8ZcXGuqus\r\n&Quantity=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"006b23f0-d768-439e-99e9-1c09af0432af\",\n        \"TidSet\": [\n            {\n                \"PrivateKey\": \"5c1c4318562efb748d6d70a06ab15919453a7f55ffb7cccc6a8041b720c5c664\",\n                \"Psk\": \"7ac9f2ef19bd5b753b85e1b7ad62282fbc219b96d4aec7e09946074f68d7c68e\",\n                \"PublicKey\": \"6e10d5b47fe15166048cc1035bdab17a763dbbe97bbf232eab4b1416356c56a392ec7a997a671277b27f25dc97a2a24fccfc021c37465c4028ad19cefda76211\",\n                \"Tid\": \"000001035D0C97E3D2A46283D27BC612\"\n            }\n        ]\n    }\n}",
+        "title": "下载TID"
+      }
+    ],
+    "UploadDeviceUniqueCode": [
+      {
+        "document": "向申请编号为SbRTDKP1L4的软加固订单，添加3个硬件标识码[\"000001\",\"000002\",\"000003\"]，如订单内不存在相同硬件标识码，返回成功，并说明剩余可上传数量=申请配额-已上传硬件标识码。",
+        "input": "https://iottid.tencentcloudapi.com/?Action=UploadDeviceUniqueCode\r\n&OrderId=SbRTDKP1L4\r\n&CodeSet.0=000001\r\n&CodeSet.1=000002\r\n&CodeSet.2=000003\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96a3691c-25ff-471b-94c2-48526757510e\",\n        \"Count\": 3,\n        \"ExistedCodeSet\": [],\n        \"IllegalCodeSet\": [],\n        \"LeftQuantity\": 997\n    }\n}",
+        "title": "上传硬件唯一标识码"
+      }
+    ],
+    "VerifyChipBurnInfo": [
+      {
+        "document": "第三次认证成功，剩余7次验证次数。",
+        "input": "https://iottid.tencentcloudapi.com/?Action=VerifyChipBurnInfo\r\n&Data=AZAAEAAAXS6R1BkGt8oo4rkDePv8168JJOMMG3yqIxfBEgAAtNBk5qWRh7x9CIIaA+KBhMoKsw6qIQp0+poRIucWz3nwKzEPLs2jlZvJlUbbvjmnoxMoCQ6dXamqOUuh2E3QQGUyMQFobtbW8Fu0za9BpiaUTPCiTZWB6jLVPlFDcwU9\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LeftTimes\": 7,\n        \"Pass\": true,\n        \"RequestId\": \"b410542c-b7b1-439f-99b7-6767cbf41f59\",\n        \"VerifiedTimes\": 3\n    }\n}",
+        "title": "验证芯片烧录信息"
+      },
+      {
+        "document": "TID[001000005d3eabdb5e14103e8b542d21]非烧录完成状态（未烧录或已在使用控制台被空发/激活）",
+        "input": "https://iottid.tencentcloudapi.com/?Action=VerifyChipBurnInfo\r\n&Data=AZAAEAAAXS6R1BkGt8oo4rkDePv8168JJOMMG3yqIxfBEgAAtNBk5qWRh7x9CIIaA+KBhMoKsw6qIQp0+poRIucWz3nwKzEPLs2jlZvJlUbbvjmnoxMoCQ6dXamqOUuh2E3QQGUyMQFobtbW8Fu0za9BpiaUTPCiTZWB6jLVPlFDcwU9\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb65e97b-8913-4259-82a3-7a618a3abda5\"\n    }\n}",
+        "title": "验证芯片烧录信息失败"
+      }
+    ]
+  },
+  "version": "1.0"
+}

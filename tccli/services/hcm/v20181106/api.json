@@ -1,0 +1,299 @@
+{
+  "actions": {
+    "Evaluation": {
+      "document": "速算题目批改接口，根据用户上传的图片或图片的URL识别图片中的数学算式，进而给出算式的正确性评估。",
+      "input": "EvaluationRequest",
+      "name": "速算题目批改接口",
+      "output": "EvaluationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-11-06",
+    "api_brief": "介绍如何使用API对数学作业批改进行操作，包括速算题目批改等。",
+    "serviceNameCN": "数学作业批改",
+    "serviceShortName": "hcm"
+  },
+  "objects": {
+    "EvaluationRequest": {
+      "document": "Evaluation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片唯一标识，一张图片一个SessionId；",
+          "example": "17c1a0ba-0b66-4b28-892f-f248dcc5f548",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片数据，需要使用base64对图片的二进制数据进行编码，与url参数二者填一即可；",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0V",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 HcmAppid 可以在[控制台](https://console.cloud.tencent.com/hcm)【应用管理】下新建。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HcmAppid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片url，与Image参数二者填一即可；",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "横屏拍摄开关，若开启则支持传输横屏拍摄的图片；",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportHorizontalImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "拒绝非速算图（如风景图、人物图）开关，若开启，则遇到非速算图会快速返回拒绝的结果，但极端情况下可能会影响评估结果（比如算式截图贴到风景画里可能被判为非速算图直接返回了）。",
+          "example": "false",
+          "member": "bool",
+          "name": "RejectNonArithmeticImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否展开耦合算式中的竖式计算",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDispRelatedVertical",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否展示竖式算式的中间结果和格式控制字符",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDispMidresult",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启pdf识别，默认开启",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePdfRecognize",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "pdf页码，从0开始，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "PdfPageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否返回LaTex，默认为0返回普通格式，设置成1返回LaTex格式",
+          "example": "0",
+          "member": "int64",
+          "name": "LaTex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于选择是否拒绝模糊题 目。打开则丢弃模糊题目， 不进行后续的判题返回结 果。",
+          "example": "false",
+          "member": "bool",
+          "name": "RejectVagueArithmetic",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "EvaluationResponse": {
+      "document": "Evaluation返回参数结构体",
+      "members": [
+        {
+          "document": "图片唯一标识，一张图片一个SessionId；",
+          "example": "17c1a0ba-0b66-4b28-892f-f248dcc5f548",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别出的算式信息；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{ \t\t\t\t\"Item\": \"YES\", \t\t\t\t\"ItemString\": \"600*5=6*500\", \t\t\t\t\"Item",
+          "member": "Item",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务 id，用于查询接口",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Item": {
+      "document": "识别出的算术式信息及评估结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别的算式是否正确，算式运算结果: ‘YES’:正确 ‘NO’: 错误 ‘NA’: 非法参数",
+          "example": "\"YES\"",
+          "member": "string",
+          "name": "Item",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的算式，识别出的文本行字符串",
+          "example": "\"45.5-37.3=8.2\"",
+          "member": "string",
+          "name": "ItemString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别的算式在图片上的位置信息，文本行在旋转纠正之后的图像中的像素坐 标，表示为(左上角 x, 左上角 y，宽 width， 高 height)",
+          "example": "{ \"y\": 298, \"x\": 600, \"height\": 43, \"width\": 180 }",
+          "member": "ItemCoord",
+          "name": "ItemCoord",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错题推荐答案，算式运算结果正确返回为 \"\"，算式运算结果错误返回推荐答案 (注:暂不支持多个关系运算符(如 1<10<7)、 无关系运算符(如 frac(1,2)+frac(2,3))、单 位换算(如 1 元=100 角)错题的推荐答案 返回)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Answer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算式题型编号，如加减乘除四则题型，具体题型及编号如下：1 加减乘除四则 2 加减乘除已知结果求运算因子3 判断大小 4 约等于估算 5 带余数除法 6 分数四则运算 7 单位换算 8 竖式加减法 9 竖式乘除法 10 脱式计算 11 解方程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "ExpressionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本行置信度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "ItemConf",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于标识题目 id，如果有若干算式属于同一 题，则其对应的 id 相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "QuestionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ItemCoord": {
+      "document": "目标算式在图片上的坐标信息",
+      "members": [
+        {
+          "default": "",
+          "document": "算式高度",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算式宽度",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算式图的左上角横坐标",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算式图的左上角纵坐标",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,261 @@
+{
+  "actions": {
+    "AddUsersToWorkGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUsersToWorkGroup\n<公共请求参数>\n\n{\n    \"AddInfo\": {\n        \"WorkGroupId\": 0,\n        \"UserIds\": [\n            \"xx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "添加用户到工作组"
+      }
+    ],
+    "AttachUserPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "绑定鉴权策略到用户"
+      }
+    ],
+    "AttachWorkGroupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachWorkGroupPolicy\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 0,\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定鉴权策略到工作组"
+      }
+    ],
+    "BindWorkGroupsToUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindWorkGroupsToUser\n<公共请求参数>\n\n{\n    \"AddInfo\": {\n        \"UserId\": \"xx\",\n        \"WorkGroupIds\": [\n            0\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "绑定工作组到用户"
+      }
+    ],
+    "CancelTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "取消任务执行"
+      }
+    ],
+    "CreateDatabase": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DatabaseInfo\": {\n        \"Comment\": \"xx\",\n        \"Properties\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"DatabaseName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "生成建库SQL语句"
+      }
+    ],
+    "CreateScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScript\n<公共请求参数>\n\n{\n    \"ScriptDesc\": \"xx\",\n    \"ScriptName\": \"xx\",\n    \"DatabaseName\": \"xx\",\n    \"SQLStatement\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建sql查询"
+      }
+    ],
+    "CreateStoreLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStoreLocation\n<公共请求参数>\n\n{\n    \"StoreLocation\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建或修改计算结果存储路径"
+      }
+    ],
+    "CreateTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"TableInfo\": {\n        \"Columns\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"DataFormat\": {\n            \"CSV\": {\n                \"HeadLines\": 0,\n                \"CodeCompress\": \"xx\",\n                \"Format\": \"xx\",\n                \"CSVSerde\": {\n                    \"Quote\": \"xx\",\n                    \"Separator\": \"xx\",\n                    \"Escape\": \"xx\"\n                }\n            },\n            \"AVRO\": {\n                \"Format\": \"xx\"\n            },\n            \"Json\": {\n                \"Format\": \"xx\"\n            },\n            \"Parquet\": {\n                \"Format\": \"xx\"\n            },\n            \"TextFile\": {\n                \"Regex\": \"xx\",\n                \"Format\": \"xx\"\n            },\n            \"ORC\": {\n                \"Format\": \"xx\"\n            }\n        },\n        \"Location\": \"xx\",\n        \"TableBaseInfo\": {\n            \"TableName\": \"xx\",\n            \"DatabaseName\": \"xx\"\n        },\n        \"Partitions\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "建表"
+      }
+    ],
+    "CreateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        },\n        \"SparkSQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"DatabaseName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "创建sql任务"
+      }
+    ],
+    "CreateTasks": [
+      {
+        "document": "批量创建任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasks\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量创建任务"
+      }
+    ],
+    "CreateTasksInOrder": [
+      {
+        "document": "按顺序创建任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasksInOrder\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "按顺序创建任务"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"Test User\",\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
+    "CreateWorkGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupName\": \"Group1\",\n    \"WorkGroupDescription\": \"testGroup\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkGroupId\": 1,\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "创建工作组"
+      }
+    ],
+    "DeleteScript": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScript\n<公共请求参数>\n\n{\n    \"ScriptIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ScriptsAffected\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除sql查询"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户"
+      }
+    ],
+    "DeleteUsersFromWorkGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsersFromWorkGroup\n<公共请求参数>\n\n{\n    \"AddInfo\": {\n        \"WorkGroupId\": 0,\n        \"UserIds\": [\n            \"xx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "从工作组中删除用户"
+      }
+    ],
+    "DeleteWorkGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupIds\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除工作组"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "查询数据库列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DatabaseList\": [\n            {\n                \"Comment\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"DatabaseName\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeScripts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"xx\",\n    \"Limit\": 0,\n    \"SortBy\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Scripts\": [\n            {\n                \"UpdateTime\": 0,\n                \"DatabaseName\": \"xx\",\n                \"ScriptName\": \"xx\",\n                \"ScriptDesc\": \"xx\",\n                \"SQLStatement\": \"xx\",\n                \"ScriptId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取所有sql查询"
+      }
+    ],
+    "DescribeStoreLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStoreLocation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"StoreLocation\": \"cosn://buckname/\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询计算结果存储路径"
+      }
+    ],
+    "DescribeTable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"database-test\",\n    \"TableName\": \"table-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Table\": {\n            \"InputFormat\": \"xx\",\n            \"ModifiedTime\": \"xx\",\n            \"TableBaseInfo\": {\n                \"TableName\": \"xx\",\n                \"DatabaseName\": \"xx\"\n            },\n            \"CreateTime\": \"xx\",\n            \"Location\": \"xx\",\n            \"Properties\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Columns\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Partitions\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTables": [
+      {
+        "document": "查询数据表列表。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableList\": [\n            {\n                \"InputFormat\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"TableBaseInfo\": {\n                    \"TableName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"CreateTime\": \"xx\",\n                \"Location\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Partitions\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"DataSet\": \"xx\",\n                \"SQLType\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"SQL\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"State\": 0,\n                \"UsedTime\": 0,\n                \"DataAmount\": 0,\n                \"Error\": \"xx\",\n                \"Percentage\": 0,\n                \"CreateTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"RowAffectInfo\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务列表"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Sorting\": \"create-time\",\n    \"UserId\": \"1248065439\",\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"Creator\": \"1248065439\",\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"TableName\",\n                        \"Catalog\": \"COSDataCatalog\",\n                        \"Operation\": \"ALL\",\n                        \"Database\": \"DatabaseName\"\n                    }\n                ],\n                \"UserId\": \"1248065439\",\n                \"IsOwner\": true,\n                \"UserDescription\": \"Test User\",\n                \"WorkGroupSet\": [\n                    {\n                        \"WorkGroupId\": 0,\n                        \"WorkGroupName\": \"Group1\",\n                        \"CreateTime\": \"2021-07-28 16:19:32\",\n                        \"WorkGroupDescription\": \"test group\",\n                        \"Creator\": \"1248065439\"\n                    }\n                ],\n                \"CreateTime\": \"2021-07-28 16:19:32\"\n            }\n        ],\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "获取用户列表信息"
+      }
+    ],
+    "DescribeViews": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ViewList\": [\n            {\n                \"ModifiedTime\": \"xx\",\n                \"ViewBaseInfo\": {\n                    \"ViewName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询视图列表"
+      }
+    ],
+    "DescribeWorkGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkGroups\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"WorkGroupId\": 1,\n    \"Limit\": 0,\n    \"SortBy\": \"create-time\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"workgroup-name\"\n            ],\n            \"Name\": \"Group1\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkGroupSet\": [\n            {\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"TableName\",\n                        \"Catalog\": \"COSDataCatalog\",\n                        \"Operation\": \"ALL\",\n                        \"Database\": \"DatabaseName\"\n                    }\n                ],\n                \"WorkGroupId\": 1,\n                \"Creator\": \"1248065439\",\n                \"UserNum\": 1,\n                \"WorkGroupDescription\": \"test group\",\n                \"WorkGroupName\": \"Group1\",\n                \"UserSet\": [\n                    {\n                        \"UserDescription\": \"test user\",\n                        \"UserId\": \"1248065439\",\n                        \"CreateTime\": \"2021-07-28 16:19:32\",\n                        \"Creator\": \"1248065439\"\n                    }\n                ],\n                \"CreateTime\": \"2021-07-28 16:19:32\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "title": "获取工作组列表"
+      }
+    ],
+    "DetachUserPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "解绑用户鉴权策略"
+      }
+    ],
+    "DetachWorkGroupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachWorkGroupPolicy\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 0,\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "解绑工作组鉴权策略"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"xx\",\n    \"UserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改用户信息"
+      }
+    ],
+    "ModifyWorkGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 0,\n    \"WorkGroupDescription\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改工作组信息"
+      }
+    ],
+    "UnbindWorkGroupsFromUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindWorkGroupsFromUser\n<公共请求参数>\n\n{\n    \"AddInfo\": {\n        \"UserId\": \"xx\",\n        \"WorkGroupIds\": [\n            0\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "解绑用户上的用户组"
+      }
+    ]
+  },
+  "version": "1.0"
+}

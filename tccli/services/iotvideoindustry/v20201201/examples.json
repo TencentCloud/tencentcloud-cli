@@ -1,0 +1,321 @@
+{
+  "actions": {
+    "BindGroupDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindGroupDevices\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-1234abcd\",\n    \"DeviceList\": [\n        \"test01\",\n        \"test02\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6937d6\"\n    }\n}",
+        "title": "绑定设备到分组示例"
+      }
+    ],
+    "ControlDevicePTZ": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlDevicePTZ\n<公共请求参数>\n\n{\n    \"DeviceId\": \"xxx\",\n    \"Command\": \"left\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6997d9\"\n    }\n}",
+        "title": "PTZ设备远程控制示例"
+      }
+    ],
+    "ControlRecordStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlRecordStream\n<公共请求参数>\n\n{\n    \"DeviceId\": \"34020000001180000036_34020000001320000092\",\n    \"StreamId\": \"1038455659\",\n    \"Command\": \"{\\\"Action\\\":\\\"pause\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDevice\n<公共请求参数>\n\n{\n    \"NickName\": \"myDevice\",\n    \"PassWord\": \"password\",\n    \"GroupId\": \"group_root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceCode\": \"99999999991320000001\",\n        \"DeviceId\": \"99999999991320000001_99999999991320000001\",\n        \"VirtualGroupId\": \"\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "创建设备"
+      }
+    ],
+    "CreateDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"myGroup\",\n    \"GroupDescribe\": \"this is my group\",\n    \"ParentId\": \"group_root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"group-1234abcd\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "创建设备"
+      }
+    ],
+    "CreateRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordPlan\n<公共请求参数>\n\n{\n    \"Name\": \"myPlan\",\n    \"TimeTemplateId\": \"template-xxxxx\",\n    \"EventId\": 1,\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanId\": \"plan-xxxx\",\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "CreateRecordPlan"
+      }
+    ],
+    "CreateTimeTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTimeTemplate\n<公共请求参数>\n\n{\n    \"IsAllWeek\": 0,\n    \"TimeTemplateSpecs\": [\n        {\n            \"DayofWeek\": 1,\n            \"EndTime\": \"12:30\",\n            \"BeginTime\": \"14:30\"\n        }\n    ],\n    \"Name\": \"myTemplate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6997d9\",\n        \"TemplateId\": \"template-xxx\"\n    }\n}",
+        "title": "CreateTimeTemplate"
+      }
+    ],
+    "DeleteDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"device01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "删除设备"
+      }
+    ],
+    "DeleteDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "删除分组"
+      }
+    ],
+    "DeleteRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "DeleteRecordPlan"
+      }
+    ],
+    "DeleteTimeTemplate": [
+      {
+        "document": "",
+        "input": "https://iotvideoindustry.tencentcloudapi.com/?Action=DeleteTimeTemplate\n&TemplateId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6997d9\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "删除时间模板"
+      }
+    ],
+    "DescribeAllDeviceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllDeviceList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceId\": \"xxxxxx\",\n                \"Status\": 3,\n                \"CreateTime\": 1607073128,\n                \"ExtraInformation\": \"{\\\"DeviceModel\\\":\\\"xxx\\\",\\\"Manufacturer\\\":\\\"xxx\\\"}\",\n                \"NickName\": \"myDevice01\",\n                \"GroupPath\": \"\"\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取所有设备列表"
+      }
+    ],
+    "DescribeDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroup\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"99999999991320000001_99999999991320000001\",\n        \"99999999991320000002_99999999991320000002\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DevGroups\": [\n            {\n                \"DeviceId\": \"99999999991320000001_99999999991320000001\",\n                \"GroupId\": \"group_root\",\n                \"GroupPath\": \"\",\n                \"ParentId\": \"\",\n                \"Error\": \"\"\n            },\n            {\n                \"DeviceId\": \"99999999991320000002_99999999991320000002\",\n                \"GroupId\": \"group_root\",\n                \"GroupPath\": \"\",\n                \"ParentId\": \"\",\n                \"Error\": \"\"\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "根据设备ID查询设备所在分组信息"
+      }
+    ],
+    "DescribeDevicePassWord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePassWord\n<公共请求参数>\n\n{\n    \"DeviceId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"PassWord\": \"xxxxxxxx\"\n    }\n}",
+        "title": "修改设备密码"
+      }
+    ],
+    "DescribeDeviceStreams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceStreams\n<公共请求参数>\n\n{\n    \"DeviceId\": \"xxx\",\n    \"ExpireTime\": 1610199034\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RtspAddr\": \"NULL\",\n            \"RtmpAddr\": \"rtmp://dev-pl.video.tencentcs.com/live/0035752400?txSecret=1a52a468ed68ce343d42bdb1c80ae855&txTime=5FE720C7\",\n            \"HlsAddr\": \"http://dev-pl.video.tencentcs.com/live/0035752400.m3u8?txSecret=1a52a468ed68ce343d42bdb1c80ae855&txTime=5FE720C7\",\n            \"FlvAddr\": \"http://dev-pl.video.tencentcs.com/live/0035752400.flv?txSecret=1a52a468ed68ce343d42bdb1c80ae855&txTime=5FE720C7\"\n        },\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "获取设备流地址"
+      }
+    ],
+    "DescribeGroupById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupById\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": {\n            \"GroupName\": \"myGroup\",\n            \"ParentId\": \"group_root\",\n            \"GroupId\": \"group-xxx\",\n            \"GroupPath\": \"/group-xxx\",\n            \"GroupDescribe\": \"this is xxx\",\n            \"DeviceNum\": 2,\n            \"SubGroupNum\": 0,\n            \"CreateTime\": 1608256825\n        },\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "根据分组ID查询分组"
+      }
+    ],
+    "DescribeGroupByPath": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupByPath\n<公共请求参数>\n\n{\n    \"GroupPath\": \"/group-aaa/group-bbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": {\n            \"GroupName\": \"groupXXX\",\n            \"ParentId\": \"group-aaa\",\n            \"GroupId\": \"group-bbb\",\n            \"GroupPath\": \"/group-aaa/group-bbb\",\n            \"GroupDescribe\": \"this is xxx\",\n            \"DeviceNum\": 2,\n            \"SubGroupNum\": 0,\n            \"CreateTime\": 1608256825\n        },\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "删除分组"
+      }
+    ],
+    "DescribeGroupDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupDevices\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceList\": [\n            {\n                \"NickName\": \"test4\",\n                \"DeviceId\": \"99350367561320000005_99350367561320000005\",\n                \"Status\": 3,\n                \"ExtraInformation\": \"{\\\"DeviceModel\\\":\\\"xxx\\\",\\\"Manufacturer\\\":\\\"xxx\\\"}\",\n                \"DeviceType\": 2,\n                \"DeviceCode\": \"99350367561320000005\"\n            },\n            {\n                \"NickName\": \"nameCN22\",\n                \"DeviceId\": \"99350367561320000004_99350367561320000004\",\n                \"Status\": 3,\n                \"ExtraInformation\": \"{\\\"DeviceModel\\\":\\\"xxx\\\",\\\"Manufacturer\\\":\\\"xxx\\\"}\",\n                \"DeviceType\": 2,\n                \"DeviceCode\": \"99350367561320000004\"\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询分组下设备"
+      }
+    ],
+    "DescribeGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroups\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"group-aaa\",\n        \"group-bbb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"GroupId\": \"group-aaa\",\n                \"GroupName\": \"分组A\",\n                \"GroupPath\": \"/group-aaa\",\n                \"ParentId\": \"group_root\",\n                \"GroupDescribe\": \"this is xxx\",\n                \"CreateTime\": 1608256825\n            },\n            {\n                \"GroupId\": \"group-bbb\",\n                \"GroupName\": \"分组B\",\n                \"GroupPath\": \"/group-bbb\",\n                \"ParentId\": \"group_root\",\n                \"GroupDescribe\": \"this is xxx\",\n                \"CreateTime\": 1608705289\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "批量查询分组信息"
+      }
+    ],
+    "DescribeIPCChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPCChannels\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99576636581320000278_99576636581320000278\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceList\": [\n            {\n                \"NickName\": \"Camera 01\",\n                \"DeviceId\": \"99576636581320000278_99576636581320000278\",\n                \"Status\": 0,\n                \"ExtraInformation\": \"{\\\"Manufacturer\\\":\\\"Hikvision\\\",\\\"Model\\\":\\\"IP Camera\\\"}\",\n                \"DeviceType\": 6,\n                \"IsRecord\": 0,\n                \"DeviceCode\": \"99576636581320000278\",\n                \"Recordable\": 1,\n                \"Protocol\": \"\"\n            },\n            {\n                \"NickName\": \"Camera 02\",\n                \"DeviceId\": \"99576636581320000278_99576636581320000279\",\n                \"Status\": 0,\n                \"ExtraInformation\": \"{\\\"Model\\\":\\\"IP Camera\\\",\\\"Manufacturer\\\":\\\"Hikvision\\\"}\",\n                \"DeviceType\": 6,\n                \"IsRecord\": 0,\n                \"DeviceCode\": \"99576636581320000279\",\n                \"Recordable\": 1,\n                \"Protocol\": \"\"\n            }\n        ],\n        \"RequestId\": \"20e4eb35-5429-4b25-8e4e-d7435518f194\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "获取设备下属通道"
+      }
+    ],
+    "DescribeRecordStream": [
+      {
+        "document": "使用StartTime/EndTime",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStream\n<公共请求参数>\n\n{\n    \"DeviceId\": \"34020000001180000036_34020000001320000092\",\n    \"StartTime\": 1615998219,\n    \"EndTime\": 1616001641,\n    \"ExpireTime\": 1616914614\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RtspAddr\": \"NULL\",\n            \"RtmpAddr\": \"rtmp://dev-pl.video.tencentcs.com/live/1073160348?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"HlsAddr\": \"https://dev-pl.video.tencentcs.com/live/1073160348.m3u8?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"FlvAddr\": \"https://dev-pl.video.tencentcs.com/live/1073160348.flv?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"StreamId\": \"1073160348\"\n        },\n        \"RequestId\": \"c5afa3fc-a71e-4fc1-b266-3c3ba49bdf40\"\n    }\n}",
+        "title": "获取回放视频流(NVR录制用)，使用StartTime/EndTime"
+      },
+      {
+        "document": "使用RecordId",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStream\n<公共请求参数>\n\n{\n    \"DeviceId\": \"34020000001180000036_34020000001320000092\",\n    \"RecordId\": \"1615998219_1616001641\",\n    \"ExpireTime\": 1616914614\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RtspAddr\": \"NULL\",\n            \"RtmpAddr\": \"rtmp://dev-pl.video.tencentcs.com/live/1073160348?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"HlsAddr\": \"https://dev-pl.video.tencentcs.com/live/1073160348.m3u8?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"FlvAddr\": \"https://dev-pl.video.tencentcs.com/live/1073160348.flv?txSecret=cbb387785ac54bd84b6838ea3b42ffc0&txTime=60653086\",\n            \"StreamId\": \"1073160348\"\n        },\n        \"RequestId\": \"c5afa3fc-a71e-4fc1-b266-3c3ba49bdf40\"\n    }\n}",
+        "title": "获取回放视频流(NVR录制用)，使用RecordId"
+      }
+    ],
+    "DescribeSIPServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSIPServer\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Host\": \"127.0.0.1\",\n            \"Port\": 5060,\n            \"Serial\": \"44020000002000000001\",\n            \"Realm\": \"4402000000\"\n        },\n        \"RequestId\": \"2a8acbcc-f3f5-4e04-898f-33593f460798\"\n    }\n}",
+        "title": "获取SIP服务器配置"
+      }
+    ],
+    "DescribeStatisticDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticDetails\n<公共请求参数>\n\n{\n    \"StartDate\": \"2020-12-09\",\n    \"EndDate\": \"2020-12-14\",\n    \"StatisticField\": \"StorageUsage\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Date\": \"2020-12-06 00:00:00\",\n                \"Sum\": 3.0\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "查询指定统计项详情"
+      }
+    ],
+    "DescribeStatisticSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticSummary\n<公共请求参数>\n\n{\n    \"Date\": \"2020-12-09\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordingDevice\": 3,\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"StorageUsage\": 1.22,\n        \"NonRecordingDevice\": 1,\n        \"WatchFlux\": 2.21,\n        \"P2PFluxTotal\": 1.2,\n        \"P2PPeakValue\": 2.4\n    }\n}",
+        "title": "查询统计指标概览数据"
+      }
+    ],
+    "DescribeSubGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubGroups\n<公共请求参数>\n\n{\n    \"GroupId\": \"group_root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupList\": [\n            {\n                \"GroupName\": \"groupA\",\n                \"ParentId\": \"group_root\",\n                \"GroupId\": \"gro-30to7hxt\",\n                \"GroupPath\": \"/gro-30to7hxt\",\n                \"GroupDescribe\": \"this is xxx\",\n                \"DeviceNum\": 2,\n                \"SubGroupNum\": 0,\n                \"CreateTime\": 1608256825\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询子分组列表"
+      }
+    ],
+    "DescribeVideoList": [
+      {
+        "document": "根据时间获取回放文件列表(云端录制用)",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoList\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99870353841320000007_99870353841320000007\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"StartTime\": 1616660711,\n    \"EndTime\": 1616661017\n}",
+        "output": "{\n    \"Response\": {\n        \"VideoList\": {\n            \"EventId\": 1,\n            \"VideoUrl\": \"xx\",\n            \"RecordTaskId\": \"xx\",\n            \"StartTime\": 1616661013,\n            \"RecordStatus\": 0,\n            \"RecordPlanId\": \"xx\",\n            \"EndTime\": 1616661314\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RecordList\": [\n            {\n                \"EventId\": 0,\n                \"VideoUrl\": \"xx\",\n                \"RecordTaskId\": \"xx\",\n                \"StartTime\": 0,\n                \"RecordStatus\": 0,\n                \"RecordPlanId\": \"xx\",\n                \"EndTime\": 0\n            }\n        ]\n    }\n}",
+        "title": "根据时间获取回放文件列表(云端录制用)"
+      }
+    ],
+    "GetRecordDatesByDev": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecordDatesByDev\n<公共请求参数>\n\n{\n    \"DeviceId\": \"device01\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Dates\": [\n            \"2020-12-18\",\n            \"2020-12-19\",\n            \"2020-12-20\",\n            \"2020-12-21\",\n            \"2020-12-22\"\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "获取设备录像日期列表"
+      }
+    ],
+    "GetRecordPlanByDev": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecordPlanByDev\n<公共请求参数>\n\n{\n    \"DeviceId\": \"dev001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plan\": {\n            \"PlanId\": \"plan-xxxxx\",\n            \"Name\": \"xxx\",\n            \"TimeTemplateId\": \"tgrp-xxxx\",\n            \"TimeTemplateName\": \"xxxx\",\n            \"EventId\": 0,\n            \"Devices\": [\n                {\n                    \"DeviceId\": \"dev001\"\n                }\n            ]\n        },\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "获取设备绑定的录制计划"
+      }
+    ],
+    "GetRecordPlanById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecordPlanById\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plan\": {\n            \"PlanId\": \"plan-xxxxx\",\n            \"Name\": \"xxx\",\n            \"TimeTemplateId\": \"tgrp-xxxx\",\n            \"TimeTemplateName\": \"xxxx\",\n            \"EventId\": 0,\n            \"Devices\": [\n                {\n                    \"DeviceId\": \"dev02\"\n                }\n            ]\n        },\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "根据录制计划ID获取录制计划"
+      }
+    ],
+    "GetRecordPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecordPlans\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Plans\": [\n            {\n                \"PlanId\": \"plan-yhp5zzq9\",\n                \"Name\": \"myPlan\",\n                \"TimeTemplateId\": \"tgrp-a6gvpkzu\",\n                \"TimeTemplateName\": \"myTimeTemplate\",\n                \"EventId\": 1,\n                \"Devices\": []\n            }\n        ],\n        \"RequestId\": \"c6cc4efc-a7db-4c93-a373-0ce2a383023a\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取全部录制计划"
+      }
+    ],
+    "GetTimeTemplateById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTimeTemplateById\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tgrp-i90oxywh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Template\": {\n            \"TemplateId\": \"tgrp-xxxxxxx\",\n            \"Name\": \"vzzlin3\",\n            \"IsAllWeek\": 0,\n            \"Type\": 1,\n            \"TimeTemplateSpecs\": [\n                {\n                    \"DayofWeek\": 2,\n                    \"BeginTime\": \"10:30\",\n                    \"EndTime\": \"15:30\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "根据模板ID获取时间模板"
+      }
+    ],
+    "GetTimeTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTimeTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8375a13-7189-42f2-93f7-1aaca6eaf25d\",\n        \"Templates\": [\n            {\n                \"TemplateId\": \"tgrp-jfs89ahg\",\n                \"Name\": \"全天候模板\",\n                \"IsAllWeek\": 1,\n                \"Type\": 0,\n                \"TimeTemplateSpecs\": []\n            },\n            {\n                \"TemplateId\": \"tgrp-fmwq1f1a\",\n                \"Name\": \"工作日模板\",\n                \"IsAllWeek\": 0,\n                \"Type\": 0,\n                \"TimeTemplateSpecs\": [\n                    {\n                        \"DayofWeek\": 1,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    },\n                    {\n                        \"DayofWeek\": 2,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    },\n                    {\n                        \"DayofWeek\": 3,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    },\n                    {\n                        \"DayofWeek\": 4,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    },\n                    {\n                        \"DayofWeek\": 5,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    }\n                ]\n            },\n            {\n                \"TemplateId\": \"tgrp-ttcqknio\",\n                \"Name\": \"周末模板\",\n                \"IsAllWeek\": 0,\n                \"Type\": 0,\n                \"TimeTemplateSpecs\": [\n                    {\n                        \"DayofWeek\": 6,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    },\n                    {\n                        \"DayofWeek\": 7,\n                        \"BeginTime\": \"00:00\",\n                        \"EndTime\": \"23:59\"\n                    }\n                ]\n            },\n            {\n                \"TemplateId\": \"tgrp-qfr07ro5\",\n                \"Name\": \"\\\"\\\"\",\n                \"IsAllWeek\": 1,\n                \"Type\": 1,\n                \"TimeTemplateSpecs\": []\n            },\n            {\n                \"TemplateId\": \"tgrp-712kfd0s\",\n                \"Name\": \"@#@#@%\",\n                \"IsAllWeek\": 1,\n                \"Type\": 1,\n                \"TimeTemplateSpecs\": []\n            },\n            {\n                \"TemplateId\": \"tgrp-a6gvpkzu\",\n                \"Name\": \"lzz\",\n                \"IsAllWeek\": 1,\n                \"Type\": 1,\n                \"TimeTemplateSpecs\": []\n            }\n        ],\n        \"TotalCount\": 6\n    }\n}",
+        "title": "获取时间模板列表"
+      }
+    ],
+    "GetVideoListByCon": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVideoListByCon\n<公共请求参数>\n\n{\n    \"DeviceId\": \"xxxxx\",\n    \"LatestDay\": 1,\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1,\n        \"VideoList\": [\n            {\n                \"RecordTaskId\": \"xxxxxx\",\n                \"RecordPlanId\": \"plan-xxxxx\",\n                \"StartTime\": 1608603764,\n                \"EndTime\": 0,\n                \"VideoUrl\": \"\",\n                \"RecordStatus\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询指定设备最近一天的录像情况"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVideoListByCon\n<公共请求参数>\n\n{\n    \"DeviceId\": \"xxxxx\",\n    \"Date\": \"2020-12-12\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1,\n        \"VideoList\": [\n            {\n                \"RecordTaskId\": \"xxxxxx\",\n                \"RecordPlanId\": \"plan-xxxxx\",\n                \"StartTime\": 1608603764,\n                \"EndTime\": 0,\n                \"EventId\": 1,\n                \"VideoUrl\": \"\",\n                \"RecordStatus\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询指定设备某天的录制情况"
+      }
+    ],
+    "ModifyDeviceData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceData\n<公共请求参数>\n\n{\n    \"DeviceId\": \"device01\",\n    \"NickName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11111\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "编辑设备信息"
+      }
+    ],
+    "UpdateDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDeviceGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"testgroup\",\n    \"GroupDescribe\": \"this is test\",\n    \"GroupId\": \"aaaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\"\n    }\n}",
+        "title": "修改分组信息"
+      }
+    ],
+    "UpdateDevicePassWord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevicePassWord\n<公共请求参数>\n\n{\n    \"PassWord\": \"password\",\n    \"DeviceId\": \"devce01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "修改设备密码"
+      }
+    ],
+    "UpdateRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxxx\",\n    \"Name\": \"xxxxxx\",\n    \"TimeTemplateId\": \"tgrp-xxxxx\",\n    \"EventId\": 1,\n    \"IsModifyDevices\": 1,\n    \"Devices\": [\n        {\n            \"DeviceId\": \"xxxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "更新录制计划"
+      }
+    ],
+    "UpdateTimeTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTimeTemplate\n<公共请求参数>\n\n{\n    \"IsAllWeek\": 0,\n    \"TimeTemplateSpecs\": [\n        {\n            \"DayofWeek\": 0,\n            \"EndTime\": \"xx\",\n            \"BeginTime\": \"xx\"\n        }\n    ],\n    \"Name\": \"xx\",\n    \"TemplateId\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6997d9\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "更新时间模板"
+      }
+    ]
+  },
+  "version": "1.0"
+}

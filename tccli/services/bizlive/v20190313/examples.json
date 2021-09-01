@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "CreateSession": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=CreateSession\n&UserId=字符串型\n&GameId=字符串型\n&GameRegion=字符串型\n&ClientSession=字符串型\n&<公共请求参数>",
+        "output": "{\n    \"Response\":{\n          \"ServerSession\":\"xyz\"\n     },\n    \"RequestId\":\"7d95d7cd-2141-4ad6-a011-7ee116513407\"\n}",
+        "title": "CreateSession示例"
+      }
+    ],
+    "DescribeStreamPlayInfoList": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=DescribeStreamPlayInfoList\n&PlayDomain=5000.playdomain.com\n&StreamName=stream1\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"DataInfoList\": [\n\t\t\t{\n\t\t\t\t\"Time\": \"2019-03-01 00:00:00\",\n\t\t\t\t\"Bandwidth\": 300.0,\n                                \"Flux\": 30.0,\n\t\t\t\t\"Request\": 50,\n\t\t\t\t\"Online\": 50\n\t\t\t}\n\t\t],\n\t\t\"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n\t}\n}",
+        "title": "文档示例"
+      }
+    ],
+    "DescribeWorkers": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=DescribeWorkers&<公共请求参数>",
+        "output": "{\n\t\"Response\": {\n\t\t\"Idle\": 66,\n\t\t\"RegionNum\": 2,\n\t\t\"RegionDetail\": [{\n\t\t\t\"region\": \"ap-gaungzhou\",\n\t\t\t\"idle\": 31\n\t\t}, {\n\t\t\t\"region\": \"ap-shanghai\",\n\t\t\t\"idle\": 35\n\t\t}]\n\t},\n\t\"RequestId\": \"7d95d7cd-2141-4ad6-a011-7ee116513407\"\n}",
+        "title": "DescribeWorkers示例"
+      }
+    ],
+    "ForbidLiveStream": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=ForbidLiveStream\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&ResumeTime=2018-11-24T12:00:00Z\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n  }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "RegisterIM": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=RegisterIM\n&UserId=OpenIDWithSalt\n&Nickname=somebody\n&Level=0\n&<公共请求参数>",
+        "output": "{\n  \"Response\": {\n    \"UserKey\": \"eyJPcGVuaWQiOiJPcGVuSURXaXRoU2FsdCIsIlVzZXJTaWciOiJlSnhNajkxdXNrQVFRTjlscnI5OHpnb0lrdlJDbExaV0c1SWlWYmtoRkJhZHRDNmJaYXpkTkgzM3hoKlMzcDR6UHpuZnNGcW0tOHVxYW8qS0M3WmFRZ2dJLTY1WWE2cUxrZ3ZIMUgqdy1OSmtaRkUyTEEyRUlEelBHeUwybG1xcG1CcTZ1RVJMTloqdGlmZHAqY0czaWE1Kkx5Nm56OHN1SXZwKkVJaGUwZzVDZUk2ejZmeio5SFJLNjAyU1ZxM2R0Sy01dypqZ2NMNFFPeDNGVWktTk9QTGZxdWlvYkRLWVVEenB4aVl6TnJaN2I4Rlo2YXR0LWpJTFBFY01zTmttKkxpeXlxcDJhbkdOMmQzdEdkTkJYZ3NDZ1M2NmZjT25OQjIxQ2tJWW9oZ0pGQUxQZ1QqLUFRQUEtLTluZDFzNSIsIk5pY2tOYW1lIjoic29tZWJvZHkifQ==\",\n    \"RequestId\": \"9a3a7474-dd72-45ab-b3bd-f2e61c9a86bf\"\n  }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopGame": [
+      {
+        "document": "",
+        "input": "https://bizlive.tencentcloudapi.com/?Action=StopGame\n&UserId=字符串型\n&<公共请求参数>",
+        "output": "{\n    \"RequestId\":\"7d95d7cd-2141-4ad6-a011-7ee116513407\"\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

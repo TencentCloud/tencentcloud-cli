@@ -1,0 +1,1118 @@
+{
+  "actions": {
+    "CheckVcode": {
+      "document": "检测验证码接口。此接口用于企业电子合同平台通过给用户发送短信验证码，以短信授权方式签署合同。此接口配合发送验证码接口使用。\n\n用户在企业电子合同平台输入收到的验证码后，由企业电子合同平台调用该接口向腾讯云提交确认受托签署合同验证码命令。验证码验证正确时，本次合同签署的授权成功。",
+      "input": "CheckVcodeRequest",
+      "name": "检测验证码",
+      "output": "CheckVcodeResponse"
+    },
+    "CreateContractByUpload": {
+      "document": "此接口适用于：客户平台通过上传PDF文件作为合同，以备未来进行签署。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。",
+      "input": "CreateContractByUploadRequest",
+      "name": "通过上传创建合同",
+      "output": "CreateContractByUploadResponse"
+    },
+    "CreateEnterpriseAccount": {
+      "document": "为企业电子合同平台的最终企业用户进行开户。在企业电子合同平台进行操作的企业用户，企业电子合同平台向腾讯云发送企业用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的企业用户生成一张数字证书。",
+      "input": "CreateEnterpriseAccountRequest",
+      "name": "企业开户",
+      "output": "CreateEnterpriseAccountResponse"
+    },
+    "CreatePersonalAccount": {
+      "document": "为企业电子合同平台的最终个人用户进行开户。在企业电子合同平台进行操作的个人用户，企业电子合同平台向腾讯云发送个人用户的信息，提交开户命令。腾讯云接到请求后，自动为企业电子合同平台的个人用户生成一张数字证书。",
+      "input": "CreatePersonalAccountRequest",
+      "name": "个人开户",
+      "output": "CreatePersonalAccountResponse"
+    },
+    "CreateSeal": {
+      "document": "此接口用于客户电子合同平台增加某用户的印章图片。客户平台可以调用此接口增加某用户的印章图片。",
+      "input": "CreateSealRequest",
+      "name": "新增签章",
+      "output": "CreateSealResponse"
+    },
+    "DeleteAccount": {
+      "document": "删除企业电子合同平台的最终用户。调用该接口后，腾讯云将删除该用户账号。删除账号后，已经签名的合同不受影响。",
+      "input": "DeleteAccountRequest",
+      "name": "删除帐号",
+      "output": "DeleteAccountResponse"
+    },
+    "DeleteSeal": {
+      "document": "删除印章接口，删除指定账号的某个印章",
+      "input": "DeleteSealRequest",
+      "name": "删除签章",
+      "output": "DeleteSealResponse"
+    },
+    "DescribeTaskStatus": {
+      "document": "接口使用于：客户平台可使用该接口查询任务执行状态或者执行结果",
+      "input": "DescribeTaskStatusRequest",
+      "name": "获取任务状态",
+      "output": "DescribeTaskStatusResponse"
+    },
+    "DownloadContract": {
+      "document": "下载合同接口。调用该接口可以下载签署中和签署完成的合同。接口返回任务号，可调用DescribeTaskStatus接口查看任务执行结果。",
+      "input": "DownloadContractRequest",
+      "name": "下载合同",
+      "output": "DownloadContractResponse"
+    },
+    "SendVcode": {
+      "document": "发送验证码接口。此接口用于：企业电子合同平台需要腾讯云发送验证码对其用户进行验证时调用，腾讯云将向其用户联系手机(企业电子合同平台为用户开户时通过接口传入)发送验证码，以验证码授权方式签署合同。用户验证工作由企业电子合同平台自身完成。",
+      "input": "SendVcodeRequest",
+      "name": "发送验证码",
+      "output": "SendVcodeResponse"
+    },
+    "SignContractByCoordinate": {
+      "document": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口提供详细的PDF文档签名坐标进行签署。",
+      "input": "SignContractByCoordinateRequest",
+      "name": "按坐标签署合同",
+      "output": "SignContractByCoordinateResponse"
+    },
+    "SignContractByKeyword": {
+      "document": "此接口适用于：客户平台在创建好合同后，由合同签署方对创建的合同内容进行确认，无误后再进行签署。客户平台使用该接口对PDF合同文档按照关键字和坐标进行签署。",
+      "input": "SignContractByKeywordRequest",
+      "name": "按关键字签署合同",
+      "output": "SignContractByKeywordResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-05-23",
+    "api_brief": null,
+    "serviceNameCN": "电子合同服务",
+    "serviceShortName": "ds"
+  },
+  "objects": {
+    "CheckVcodeRequest": {
+      "document": "CheckVcode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名VerifyCode",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名CheckVcode",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同ID",
+          "member": "string",
+          "name": "ContractResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckVcodeResponse": {
+      "document": "CheckVcode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractByUploadRequest": {
+      "document": "CreateContractByUpload请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名ContractMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名CreateContractByUpload",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署人信息",
+          "member": "SignInfo",
+          "name": "SignInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "合同上传链接地址",
+          "member": "string",
+          "name": "ContractFile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同名称",
+          "member": "string",
+          "name": "ContractName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remarks",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同发起方腾讯云帐号ID（由平台自动填写）",
+          "member": "string",
+          "name": "Initiator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同长时间未签署的过期时间",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractByUploadResponse": {
+      "document": "CreateContractByUpload返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnterpriseAccountRequest": {
+      "document": "CreateEnterpriseAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名AccountMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名CreateEnterpriseAccount",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业用户名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业用户证件类型，8代表营业执照，详情请见常见问题",
+          "member": "int64",
+          "name": "IdentType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "企业用户营业执照号码",
+          "member": "string",
+          "name": "IdentNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业联系人手机号",
+          "member": "string",
+          "name": "MobilePhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "经办人姓名",
+          "member": "string",
+          "name": "TransactorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "经办人证件类型，0代表身份证",
+          "member": "int64",
+          "name": "TransactorIdentType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "经办人证件号码",
+          "member": "string",
+          "name": "TransactorIdentNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "经办人手机号",
+          "member": "string",
+          "name": "TransactorPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业联系人邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnterpriseAccountResponse": {
+      "document": "CreateEnterpriseAccount返回参数结构体",
+      "members": [
+        {
+          "document": "帐号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonalAccountRequest": {
+      "document": "CreatePersonalAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名AccountMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名CreatePersonalAccount",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "个人用户姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "个人用户证件类型，0代表身份证，详情请见常见问题",
+          "member": "int64",
+          "name": "IdentType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "个人用户证件号码",
+          "member": "string",
+          "name": "IdentNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "个人用户手机号",
+          "member": "string",
+          "name": "MobilePhone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonalAccountResponse": {
+      "document": "CreatePersonalAccount返回参数结构体",
+      "members": [
+        {
+          "document": "账号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealRequest": {
+      "document": "CreateSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名SealMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名CreateSeal",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签章链接，图片必须为png格式",
+          "member": "string",
+          "name": "ImgUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片数据，base64编码",
+          "member": "string",
+          "name": "ImgData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealResponse": {
+      "document": "CreateSeal返回参数结构体",
+      "members": [
+        {
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealResId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountRequest": {
+      "document": "DeleteAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名AccountMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名DeleteAccount",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号ID列表",
+          "member": "string",
+          "name": "AccountList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountResponse": {
+      "document": "DeleteAccount返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功帐号ID列表",
+          "member": "string",
+          "name": "DelSuccessList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除失败帐号ID列表",
+          "member": "string",
+          "name": "DelFailedList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSealRequest": {
+      "document": "DeleteSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名SealMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名DeleteSeal",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealResId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSealResponse": {
+      "document": "DeleteSeal返回参数结构体",
+      "members": [
+        {
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealResId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名CommonMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名DescribeTaskStatus",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "任务结果",
+          "member": "string",
+          "name": "TaskResult",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务类型，010代表合同上传结果，020代表合同下载结果",
+          "member": "string",
+          "name": "TaskType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadContractRequest": {
+      "document": "DownloadContract请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名ContractMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名DownloadContract",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同ID",
+          "member": "string",
+          "name": "ContractResId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadContractResponse": {
+      "document": "DownloadContract返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendVcodeRequest": {
+      "document": "SendVcode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名VerifyCode",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名SendVcode",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同ID",
+          "member": "string",
+          "name": "ContractResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐号ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendVcodeResponse": {
+      "document": "SendVcode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignContractByCoordinateRequest": {
+      "document": "SignContractByCoordinate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名ContractMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名SignContractByCoordinate",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同ID",
+          "member": "string",
+          "name": "ContractResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "帐户ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界",
+          "member": "SignLocation",
+          "name": "SignLocations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "授权时间（由平台自动填充）",
+          "member": "string",
+          "name": "AuthorizationTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权IP地址（由平台自动填充）",
+          "member": "string",
+          "name": "Position",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealResId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "签名图片，base64编码",
+          "member": "string",
+          "name": "ImageData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignContractByCoordinateResponse": {
+      "document": "SignContractByCoordinate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignContractByKeywordRequest": {
+      "document": "SignContractByKeyword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块名ContractMng",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作名SignContractByKeyword",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同ID",
+          "member": "string",
+          "name": "ContractResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署关键字，偏移坐标原点为关键字中心",
+          "member": "SignKeyword",
+          "name": "SignKeyword",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "授权时间（由平台自动填充）",
+          "member": "string",
+          "name": "AuthorizationTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权IP地址（由平台自动填充）",
+          "member": "string",
+          "name": "Position",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealResId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "签名图片，base64编码",
+          "member": "string",
+          "name": "ImageData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignContractByKeywordResponse": {
+      "document": "SignContractByKeyword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignInfo": {
+      "document": "签署人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账户ID",
+          "member": "string",
+          "name": "AccountResId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权时间（上传合同可不传该参数）",
+          "member": "string",
+          "name": "AuthorizationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权IP地址（上传合同可不传该参数）",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签章ID",
+          "member": "string",
+          "name": "SealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名图片，优先级比SealId高",
+          "member": "string",
+          "name": "ImageData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
+          "member": "int64",
+          "name": "CertType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域的标签值",
+          "member": "string",
+          "name": "SignLocation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SignKeyword": {
+      "document": "签署关键字信息",
+      "members": [
+        {
+          "default": "",
+          "document": "关键字",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "X轴偏移坐标",
+          "member": "string",
+          "name": "OffsetCoordX",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Y轴偏移坐标",
+          "member": "string",
+          "name": "OffsetCoordY",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签章图片宽度",
+          "member": "string",
+          "name": "ImageWidth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签章图片高度",
+          "member": "string",
+          "name": "ImageHeight",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SignLocation": {
+      "document": "签署坐标对象",
+      "members": [
+        {
+          "default": "",
+          "document": "签名域页数",
+          "member": "string",
+          "name": "SignOnPage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域左下角X轴坐标轴",
+          "member": "string",
+          "name": "SignLocationLBX",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域左下角Y轴坐标轴",
+          "member": "string",
+          "name": "SignLocationLBY",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域右上角X轴坐标轴",
+          "member": "string",
+          "name": "SignLocationRUX",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名域右上角Y轴坐标轴",
+          "member": "string",
+          "name": "SignLocationRUY",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

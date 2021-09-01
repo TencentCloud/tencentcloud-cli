@@ -1,0 +1,303 @@
+{
+  "actions": {
+    "CreateQos": {
+      "document": "移动网络发起Qos加速过程",
+      "input": "CreateQosRequest",
+      "name": "发起Qos加速过程",
+      "output": "CreateQosResponse"
+    },
+    "DeleteQos": {
+      "document": "移动网络停止Qos加速过程",
+      "input": "DeleteQosRequest",
+      "name": "停止Qos加速过程",
+      "output": "DeleteQosResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-01-19",
+    "api_brief": "介绍如何使用API对移动业务加速进行操作，包括启动加速、停止加速、上报接口状态等",
+    "serviceNameCN": "移动网络加速",
+    "serviceShortName": "mna"
+  },
+  "objects": {
+    "Capacity": {
+      "document": "接口能力扩展，用于填充电信的加速Token，并为未来参数提供兼容空间",
+      "members": [
+        {
+          "default": "",
+          "document": "电信鉴权的Token。要加速的电信手机终端访问 http://qos.189.cn/qos-api/getToken?appid=TencentCloud 页面，获取返回结果中result的值",
+          "example": "177cc9c4ab0-7b93546e8a7a89c7716b38139af3ba6b580045e9",
+          "member": "string",
+          "name": "CTCCToken",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端所处在的省份，建议不填写由服务端自动获取，若需填写请填写带有省、市、自治区、特别行政区等后缀的省份中文全称",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateQosRequest": {
+      "document": "CreateQos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加速业务源地址信息，SrcIpv6和（SrcIpv4+SrcPublicIpv4）二选一，目前Ipv6不可用，全部填写以Ipv4参数为准。",
+          "example": "{\"SrcIpv4\": \"192.168.2.11\", \"SrcPublicIpv4\": \"10.22.33.14\"}",
+          "member": "SrcAddressInfo",
+          "name": "SrcAddressInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "加速业务目标地址信息",
+          "example": "{\"DestIpv4\": \"128.22.36.40\"}",
+          "member": "DestAddressInfo",
+          "name": "DestAddressInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "加速套餐\nT100K：上/下行保障 100kbps\nT200K：上/下行保障 200kbps\nT400K：上/下行保障 400kbps\nBD1M：下行带宽保障1Mbps\nBD2M：下行带宽保障2Mbps\nBD4M：下行带宽保障4Mbps\nBU1M：上行带宽保障1Mbps\nBU2M：上行带宽保障2Mbps\nBU4M：上行带宽保障4Mbps",
+          "example": "T100K",
+          "member": "string",
+          "name": "QosMenu",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请加速的设备信息，包括运营商，操作系统，设备唯一标识等。",
+          "example": "{\"OS\": 1, \"Vendor\": 2, \"IMEI\": \"357315094232545\"}",
+          "member": "DeviceInfo",
+          "name": "DeviceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "期望加速时长（单位分钟），默认值30分钟",
+          "example": "30",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接口能力扩展，如果是电信用户，必须填充CTCC Token字段",
+          "example": "{ \"CTCCToken\" : \"177cc9c4ab0-7b93546\", \"Province\": \"Guangdong\" }",
+          "member": "Capacity",
+          "name": "Capacity",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "应用模板ID",
+          "example": "app-1abcedf",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQosResponse": {
+      "document": "CreateQos返回参数结构体",
+      "members": [
+        {
+          "document": "单次加速唯一 Id",
+          "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前加速剩余时长（单位秒）",
+          "example": "1790",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQosRequest": {
+      "document": "DeleteQos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单次加速唯一 Id",
+          "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQosResponse": {
+      "document": "DeleteQos返回参数结构体",
+      "members": [
+        {
+          "document": "单次加速唯一 Id",
+          "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本次加速会话持续时间（单位秒）",
+          "example": "300",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestAddressInfo": {
+      "document": "移动网络加速目标地址结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加速业务目标 ip 地址数组",
+          "example": "[10.1.135.152, 10.1.133.14]",
+          "member": "string",
+          "name": "DestIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeviceInfo": {
+      "document": "设备信息结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商\n1：移动 \n2：电信\n3：联通\n4：广电\n99：其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "Vendor",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备操作系统：\n1：Android\n2： IOS\n99：其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "OS",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备唯一标识\nIOS 填写 IDFV\nAndroid 填写 IMEI",
+          "example": "357315094232545",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号码",
+          "example": "18649853764",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无线信息\n1：4G\n2：5G\n3：WIFI\n99：其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "Wireless",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SrcAddressInfo": {
+      "document": "移动网络加速源地址结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户私网 ipv4 地址",
+          "example": "10.1.135.152",
+          "member": "string",
+          "name": "SrcIpv4",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户公网 ipv4 地址",
+          "example": "223.104.63.10",
+          "member": "string",
+          "name": "SrcPublicIpv4",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户 ipv6 地址",
+          "example": "1050:0:0:0:5:600:300c:326b",
+          "member": "string",
+          "name": "SrcIpv6",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

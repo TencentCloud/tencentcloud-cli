@@ -1,0 +1,403 @@
+{
+  "actions": {
+    "ArchiveKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=ArchiveKey\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "密钥归档"
+      }
+    ],
+    "AsymmetricRsaDecrypt": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=AsymmetricRsaDecrypt\r\n&KeyId=554ef4b3-3071-11ea-a86a-5254006d0810\r\n&Ciphertext=Fb0UICocErQgNEkYKJagtoKNed7DLeo5UkZzPJMyI94CfWh6yKHGgb/0PBHrCve2Avo4gJI5pJMWP3Aq5ggX0aunLv87UX+sgO1/3HXW+q4ARaiwZ9Q73RQuPg6qJ2Eg33uZ2Xjey3l+5yHiOdZYmCVePtKAsuhxzKw/sALTbGTYYnbJXnGKr3Yu7Hs0hCC1bOz0sNqd1IXdUyMtQtbDOV8NWg2ecdZPIOdbnrCKIQ4rpMUghjSFv3rSHo5VbpuOGPXqEZT4goou42psIXb03li3TXxFZMTAdxVMzpqEuTfRxiMPEqyPEHe6xG92vJX0FZfWU8Y5SxlfXp+mvBbAmw==\r\n&Algorithm=RSAES_OAEP_SHA_1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c076c83-1402-41d8-8ce6-73a350a9eaf6\",\n        \"KeyId\": \"554ef4b3-3071-11ea-a86a-5254006d0810\",\n        \"Plaintext\": \"dGVzdA==\"\n    }\n}",
+        "title": "非对称密钥RSA解密"
+      }
+    ],
+    "AsymmetricSm2Decrypt": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=AsymmetricSm2Decrypt\r\n&KeyId=554ef4b3-3071-11ea-a86a-5254006d0810\r\n&Ciphertext=Fb0UICocErQgNEkYKJagtoKNed7DLeo5UkZzPJMyI94CfWh6yKHGgb/0PBHrCve2Avo4gJI5pJMWP3Aq5ggX0aunLv87UX+sgO1/3HXW+q4ARaiwZ9Q73RQuPg6qJ2Eg33uZ2Xjey3l+5yHiOdZYmCVePtKAsuhxzKw/sALTbGTYYnbJXnGKr3Yu7Hs0hCC1bOz0sNqd1IXdUyMtQtbDOV8NWg2ecdZPIOdbnrCKIQ4rpMUghjSFv3rSHo5VbpuOGPXqEZT4goou42psIXb03li3TXxFZMTAdxVMzpqEuTfRxiMPEqyPEHe6xG92vJX0FZfWU8Y5SxlfXp+mvBbAmw==\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c076c83-1402-41d8-8ce6-73a350a9eaf6\",\n        \"KeyId\": \"554ef4b3-3071-11ea-a86a-5254006d0810\",\n        \"Plaintext\": \"dGVzdA==\"\n    }\n}",
+        "title": "非对称密钥Sm2解密"
+      }
+    ],
+    "BindCloudResource": [
+      {
+        "document": "绑定密钥和云产品资源的使用关系",
+        "input": "https://kms.tencentcloudapi.com/?Action=BindCloudResource\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&ProductId=ssm\r\n&ResourceId=resourceId\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe11aa29-0cc2-4204-bfea-6ebb30cc00d7\"\n    }\n}",
+        "title": "绑定密钥和云产品资源的使用关系"
+      }
+    ],
+    "CancelKeyArchive": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=CancelKeyArchive\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "取消密钥归档"
+      }
+    ],
+    "CancelKeyDeletion": [
+      {
+        "document": "取消对CMK的计划删除",
+        "input": "https://kms.tencentcloudapi.com/?Action=CancelKeyDeletion\r\n&KeyId=\"23e80852-1e38-11e9-b129-5cb9019b4b01\"\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
+        "title": "取消计划删除接口示例"
+      }
+    ],
+    "CreateKey": [
+      {
+        "document": "创建用户管理数据密钥的主密钥CMK（Custom Master Key），通过CMK后续可以调用其他接口诸如创建数据密钥、加解密等操作。",
+        "input": "https://kms.tencentcloudapi.com/?Action=CreateKey\n&Alias=mykey\n&KeyUsage=ENCRYPT_DECRYPT\n&Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\n        \"Alias\": \"alias-0001\",\n        \"CreateTime\": 1552897190,\n        \"Description\": \"test cmk\",\n        \"TagMsg\": \"Success\",\n        \"TagCode\": 0,\n        \"KeyState\": \"Enabled\",\n        \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "title": "创建主密钥示例"
+      }
+    ],
+    "CreateWhiteBoxKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=CreateWhiteBoxKey\r\n&Alias=test_alias&Description=test_description&Algorithm=SM4\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3691b76c-1ba5-4f93-88ad-858d23ba6c8a\",\n        \"EncryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"DecryptKey\": \"AAAAAHP6lsgUa4mYE/cT5LGkquR3xKzUG+cB6oWJ7exbmfR37G6QCB2dEjpdq6+JvmC7cbiDXUFaExxSHQTjlJAzTh/T4p6BZy31uiPXogOnsDEm/vGnh3AJQBopXreiUYe54ZlpJPd/yZocQhsFhiNw2Bmqy6bkp4LrzT2FvzHh5YhwNLRuJnou3G5OecuvaNQoz2L9hkCSc4s7iUaiCMzzDgCnfCYhqgKP+HtaqOMv0LKRzTjSYKxdmzWjPT1vMUxv2Mtk+fF/5gEI6z++eybnWsyJHTx03YnF52sVw5RNs3axXRmOQWUOIoswKmb8M/urWdUio6ZZeE2fMPBg2H2GJvf5wbtCsHLFwdUZBQJ/VcgLXHj0VQxUdUFffL/yZfvIOXAzACvkiZmUEIRP422s5EXIJFfLzA5S+aJgl1Kwp7XI\",\n        \"KeyId\": \"3235f222-6e40-11ea-8f2f-5254006d0810\"\n    }\n}",
+        "title": "创建白盒密钥"
+      }
+    ],
+    "Decrypt": [
+      {
+        "document": "用于对密文解密",
+        "input": "https://kms.tencentcloudapi.com/?Action=Decrypt\r\n&CiphertextBlob=Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n        \"Plaintext\": \"dGVzdCUyMHBsYWluJTIwdGV4dA==\",\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "解密接口示例"
+      }
+    ],
+    "DeleteImportedKeyMaterial": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DeleteImportedKeyMaterial\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "删除导入的密钥材料"
+      }
+    ],
+    "DeleteWhiteBoxKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DeleteWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "title": "删除白盒密钥"
+      }
+    ],
+    "DescribeKey": [
+      {
+        "document": "获取指定CMK的属性详情信息。",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyMetadata\": {\n            \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n            \"Alias\": \"myalias\",\n            \"CreateTime\": 1548210729,\n            \"Description\": \"test cmk\",\n            \"KeyState\": \"Enabled\",\n            \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n            \"Type\": 1,\n            \"CreatorUin\": 1001,\n            \"KeyRotationEnabled\": true,\n            \"Owner\": \"user\",\n            \"NextRotateTime\": 1553151489,\n            \"DeletionDate\": 0,\n            \"Origin\": \"TENCENT_KMS\",\n            \"ValidTo\": 0\n        },\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "获取主密钥属性示例"
+      },
+      {
+        "document": "此CMK被计划删除",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyMetadata\": {\n            \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b02\",\n            \"Alias\": \"myalias\",\n            \"CreateTime\": 1548210729,\n            \"Description\": \"test cmk\",\n            \"KeyState\": \"PendingDelete\",\n            \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n            \"Type\": 1,\n            \"CreatorUin\": 1001,\n            \"KeyRotationEnabled\": true,\n            \"Owner\": \"user\",\n            \"NextRotateTime\": 1553151489,\n            \"DeletionDate\": 1560580015,\n            \"Origin\": \"TENCENT_KMS\",\n            \"ValidTo\": 0\n        },\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "获取被计划删除主密钥属性示例"
+      }
+    ],
+    "DescribeKeys": [
+      {
+        "document": "获取多个主密钥属性。",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&KeyIds.2=23e80852-1e38-11e9-b129-5cb9019b4b03\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyMetadatas\": [\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n                \"Alias\": \"myalias\",\n                \"CreateTime\": 1548210729,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"Enabled\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 0,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            },\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b02\",\n                \"Alias\": \"testalias\",\n                \"CreateTime\": 1548210730,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"Disabled\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 0,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            },\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b03\",\n                \"Alias\": \"testalias3\",\n                \"CreateTime\": 1548210730,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"PendingDelete\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 1560580015,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            }\n        ],\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "获取多个主密钥属性"
+      }
+    ],
+    "DescribeWhiteBoxDecryptKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDecryptKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8788b5f3-8eaa-48a8-915a-b7c52f57065e\",\n        \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n    }\n}",
+        "title": "获取白盒解密密钥"
+      }
+    ],
+    "DescribeWhiteBoxDeviceFingerprints": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxDeviceFingerprints\r\n&KeyId=cd850a3d-9b1b-11ea-a96a-5254006d0810\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f643be96-3ea8-4abe-b148-0cc74436b2c1\",\n        \"DeviceFingerprints\": [\n            {\n                \"Identity\": \"c19c024c-2ba1-11b2-a85c-96f970f4a8e1\",\n                \"Description\": \"desc\"\n            }\n        ]\n    }\n}",
+        "title": "获取指定密钥的设备指纹列表"
+      }
+    ],
+    "DescribeWhiteBoxKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"395989ef-4e4a-4f16-856d-3bb5a86ba99c\",\n        \"KeyInfo\": {\n            \"KeyId\": \"244dab8c-6dad-11ea-80c6-5254006d0810\",\n            \"Alias\": \"xx\",\n            \"CreateTime\": 1585040099,\n            \"Description\": \"xx\",\n            \"CreatorUin\": 0,\n            \"OwnerUin\": 0,\n            \"Status\": \"Disabled\",\n            \"Algorithm\": \"SM4\",\n            \"EncryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n            \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n        }\n    }\n}",
+        "title": "展示白盒密钥的信息"
+      }
+    ],
+    "DescribeWhiteBoxKeyDetails": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxKeyDetails\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6308605-f9d7-4a69-9401-c542cd414e00\",\n        \"KeyInfos\": [\n            {\n                \"KeyId\": \"244dab8c-6dad-11ea-80c6-5254006d0810\",\n                \"Alias\": \"xx\",\n                \"CreateTime\": 1585040099,\n                \"Description\": \"xx\",\n                \"CreatorUin\": 0,\n                \"OwnerUin\": 0,\n                \"Status\": \"Disabled\",\n                \"Algorithm\": \"SM4\",\n                \"EncryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\",\n                \"DecryptKey\": \"AAAAACL4R9T1M3r3/S9XpMbUbwHJUKbq/tll0Bop7LG90lHpj+DKmOiEE0Rs5rRrMNaCYIWzWJyU0SNQoX1WNn06QB2qrhDCXEPdwMwgJHx+YfJHUh/eSF5/LUEv27ltidqJyUk3HF5CZgjkN901hFEPf9ZCJcEo5XrORpopW7Ur6svPAjDtIPN3kUDCTqgTPC+FBX0cO/zEZFeMMAU2BPwe6f5O1x5BTrCBEf4qJDpZqT/WxXvSid8pFQ8uSxMqaf0ot57NzfuWG92oAe9HQ7bDCcfuBN7nXX+QipQIBxD/LVWk7zrHtLD/TJfAAoTuE7QKc/lSTOpI1xkTxJq/AFLd5K9EaBN7kpAkAsponZc20Tpk+KlyWE3NHdQrION9fsxtUBl5tz/l6T1j49SR5J2axZ2nnkA3o7L1WIGiv7r3tkd+\"\n            },\n            {\n                \"KeyId\": \"3d2de9cd-6daf-11ea-af24-5254006d0810\",\n                \"Alias\": \"xxx\",\n                \"CreateTime\": 1585041000,\n                \"Description\": \"xx\",\n                \"CreatorUin\": 0,\n                \"OwnerUin\": 0,\n                \"Status\": \"Enabled\",\n                \"Algorithm\": \"SM4\",\n                \"EncryptKey\": \"AAAAAE2+4Kz2XEgQkdJk2tZuDunuvGOrGd2lbD6tIZESi2sBNR/aTF2Bx/GWdl5sBNlfUKTIsrwxONNABo65mm6x1KmTUIZT/3aVVqK7PLINZ51g0t7i0gERdiimLxjVwQUstPLFqR2hrfcVR+TvheGskQgYJEpdQ1wthcOlm37SRjAvd6OdDx7gQtdutgf49SZ9YCVoYRf5phQDrKSc2WfxI96UwO2zoTCKD+aRB9u3hTzd7Z305kMJ6e+thcgUd+zzCy8KR/nAMeZ/8PKDsrQW/UsugZJLEBdrVk0vD0dQUCYGG7nSTjzS877+570H+WvyNfCCvzLvfu50PA7gLvyXLodppwqWJPOhqfPw9muoec9BD6vA1jxDnhlF6nb0GEh5V6QsAJUyVXzWMXJEce99u1DzeS4pRsc09/7GQ0HauJRz\",\n                \"DecryptKey\": \"AAAAAE2+4Kz2XEgQkdJk2tZuDunuvGOrGd2lbD6tIZESi2sBNR/aTF2Bx/GWdl5sBNlfUKTIsrwxONNABo65mm6x1KmTUIZT/3aVVqK7PLINZ51g0t7i0gERdiimLxjVwQUstPLFqR2hrfcVR+TvheGskQgYJEpdQ1wthcOlm37SRjAvd6OdDx7gQtdutgf49SZ9YCVoYRf5phQDrKSc2WfxI96UwO2zoTCKD+aRB9u3hTzd7Z305kMJ6e+thcgUd+zzCy8KR/nAMeZ/8PKDsrQW/UsugZJLEBdrVk0vD0dQUCYGG7nSTjzS877+570H+WvyNfCCvzLvfu50PA7gLvyXLodppwqWJPOhqfPw9muoec9BD6vA1jxDnhlF6nb0GEh5V6QsAJUyVXzWMXJEce99u1DzeS4pRsc09/7GQ0HauJRz\"\n            }\n        ]\n    }\n}",
+        "title": "获取白盒密钥列表"
+      }
+    ],
+    "DescribeWhiteBoxServiceStatus": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DescribeWhiteBoxServiceStatus\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a5ab931-bb22-4d55-9042-e1ef1a36c941\",\n        \"ServiceEnabled\": true\n    }\n}",
+        "title": "获取白盒密钥服务状态"
+      }
+    ],
+    "DisableKey": [
+      {
+        "document": "禁用指定的CMK。",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "禁用主密钥示例"
+      }
+    ],
+    "DisableKeyRotation": [
+      {
+        "document": "对指定的CMK禁止密钥交换功能。",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableKeyRotation\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "禁止密钥交换示例"
+      }
+    ],
+    "DisableKeys": [
+      {
+        "document": "对指定的CMK 列表进行批量禁止。",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "批量禁止CMK"
+      }
+    ],
+    "DisableWhiteBoxKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableWhiteBoxKey\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "title": "禁用白盒密钥"
+      }
+    ],
+    "DisableWhiteBoxKeys": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=DisableWhiteBoxKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "批量禁用白盒密钥"
+      }
+    ],
+    "EnableKey": [
+      {
+        "document": "启用一个主密钥，允许该 CMK 被使用。",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "启用主密钥示例"
+      }
+    ],
+    "EnableKeyRotation": [
+      {
+        "document": "对指定的CMK开启密钥轮换功能。",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableKeyRotation\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "启用密钥交换示例"
+      }
+    ],
+    "EnableKeys": [
+      {
+        "document": "对指定的CMK 列表进行批量启用。",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "批量启用主密钥示例"
+      }
+    ],
+    "EnableWhiteBoxKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "title": "启用白盒密钥"
+      }
+    ],
+    "EnableWhiteBoxKeys": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=EnableWhiteBoxKeys\r\n&KeyIds.0=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeyIds.1=23e80852-1e38-11e9-b129-5cb9019b4b02\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
+        "title": "批量启用白盒密钥"
+      }
+    ],
+    "Encrypt": [
+      {
+        "document": "使用CMK对小于4KB的数据加密。",
+        "input": "https://kms.tencentcloudapi.com/?Action=Encrypt\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&Plaintext=dGVzdCUyMHBsYWluJTIwdGV4dA==\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"816c6886-2147-4ee7-86f0-9400a7a398a5\",\n        \"KeyId\": \"9999aed0-4956-11e9-bc70-5254005e86b4\",\n        \"CiphertextBlob\": \"g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-zJshb0kBH7C2J5I3XXbbEg==-k-o1O+7H9HFAzWbCkftO2ZtPKewS3diSB4zGKOJhMn7LcKRhYr\"\n    }\n}",
+        "title": "加密接口示例"
+      }
+    ],
+    "EncryptByWhiteBox": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=EncryptByWhiteBox\r\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\r\n&PlainText=UGxhaW5UZXh0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b3be01e-117a-43f5-aa34-dd5034efe3dd\",\n        \"InitializationVector\": \"BQbVImt3p_xr8VQebZaXGQ==\",\n        \"CipherText\": \"ZKHH2la4DpwlkwjANQ5hgw==\"\n    }\n}",
+        "title": "使用白盒密钥进行加密"
+      }
+    ],
+    "GenerateDataKey": [
+      {
+        "document": "使用指定的CMK生成Datakey。",
+        "input": "https://kms.tencentcloudapi.com/?Action=GenerateDataKey\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&KeySpec=AES_256\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe11aa29-0cc2-4204-bfea-6ebb30cc00d7\",\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n        \"Plaintext\": \"uW9wqntw+FAgnfsIrxOpOA==\",\n        \"CiphertextBlob\": \"g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-h/nUfRbaTUY7/KWXwuSK1Py+ZFRTK5WQiUz6yQE5XBFUN3UwPOUbl8P3A3caow2rlqTjUw==\"\n    }\n}",
+        "title": "生成数据密钥示例"
+      }
+    ],
+    "GenerateRandom": [
+      {
+        "document": "生成随机数",
+        "input": "https://kms.tencentcloudapi.com/?Action=GenerateRandom\r\n&NumberOfBytes=16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Plaintext\": \"17mvQgMl0sbM7OAJ7fpLsA==\",\n        \"RequestId\": \"6010cd3d-a85a-4e00-b37b-22606d017420\"\n    }\n}",
+        "title": "随机数生成接口示例"
+      }
+    ],
+    "GetKeyRotationStatus": [
+      {
+        "document": "查询指定的CMK密钥轮换功能是否开启。",
+        "input": "https://kms.tencentcloudapi.com/?Action=GetKeyRotationStatus\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyRotationEnabled\": false,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "查询密钥轮换状态"
+      }
+    ],
+    "GetParametersForImport": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=GetParametersForImport\r\n&KeyId=1ff78c0d-c54b-11e9-9cc9-5254006d0810\r\n&WrappingAlgorithm=RSAES_OAEP_SHA_1\r\n&WrappingKeySpec=RSA_2048\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"KeyId\": \"1ff78c0d-c54b-11e9-9cc9-5254006d0810\",\n        \"ImportToken\": \"Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpw3adjEFXyCP2yqzV8xdD5GMY4gIZoDfJ33SnnbxDMRND8lzh4mZjzFNM8PsjhYrgVSxIiJOCHupZvD4QcoGco8\",\n        \"PublicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1IjpYRubNKn97lPU0/eR8UBaV11glfQLNqlub+YspXwBsvVqcnSvu5c8GoLTEYGSTVbvsREDCq6VfFoSeoIqbv8aWukxbPGWgI1nu55ocvWwthzROFA5UPGC8LOuH0ftZ5Z7cIaigEenS3ngfo4MYTJtg6/Bl1jJVWvjnKzgswsZeFclSURedSXUcMxfSI344s6I17DTNAQ/vQqyjFGIyo2+JctaxVlY2XuBZf7tPimNdoxAoJ14QxAl1gQGu959xnRJ4rwZbxsklJnEivQqTBeFIiv3KTzFJS6bkz2eqRJ1p4jTBDWbHEWTVt6tdXPj4+4D21RFGAt3706vf4PIrwIDAQAB\",\n        \"ParametersValidTo\": 1566614716,\n        \"RequestId\": \"5e137679-519f-409f-9a99-579a034cc320\"\n    }\n}",
+        "title": "获取导入主密钥（CMK）材料的参数"
+      }
+    ],
+    "GetPublicKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=GetPublicKey\n&KeyId=554ef4b3-3071-11ea-a86a-5254006d0810\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8918bd5b-e189-4e2d-b718-01c9f99acd45\",\n        \"KeyId\": \"554ef4b3-3071-11ea-a86a-5254006d0810\",\n        \"PublicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz0OTVMh28VCjOE5DMlBM8a2qIjgipYByb7WE/GyTRLUiIGDUq44VIM5fNI9nVeIf2D+4pIiU0s4LUYnLxkGcFKUVWkz3nubUzbNdSHRbNjKhbFyyRGT6YYxqMfvCmNXMA3OE56EmvsWU9VwVXqRPOFTaODCx8bRd+R6O+Aho9GaRfwLKHtlX7dochdDs9SWC6iybRISgpLEh4tvzcSlBemEuyx5U/X/BoL+sVnSsC/XT8J9w0EvJVHZaBW7OhIbBOolhzWTF8TpL/7ncZZUbtfP4SrAkvKgoEIEfRhv5vh5LfSxiS2zQzIShrT6JYqh5IgDIHTdCcPiYmTsk/lmM2wIDAQAB\",\n        \"PublicKeyPem\": \"-----BEGIN PUBLIC KEY-----\\nTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF6ME9U\\nVk1oMjhWQ2pPRTVETWxCTThhMnFJamdpcFlCeWI3V0UvR3lUUkxVaUlHRFVxNDRW\\nSU01Zk5JOW5WZUlmMkQrNHBJaVUwczRMVVluTHhrR2NGS1VWV2t6M251YlV6Yk5k\\nU0hSYk5qS2hiRnl5UkdUNllZeHFNZnZDbU5YTUEzT0U1NkVtdnNXVTlWd1ZYcVJQ\\nT0ZUYU9EQ3g4YlJkK1I2TytBaG85R2FSZndMS0h0bFg3ZG9jaGREczlTV0M2aXli\\nUklTZ3BMRWg0dHZ6Y1NsQmVtRXV5eDVVL1gvQm9MK3NWblNzQy9YVDhKOXcwRXZK\\nVkhaYUJXN09oSWJCT29saHpXVEY4VHBMLzduY1paVWJ0ZlA0U3JBa3ZLZ29FSUVm\\nUmh2NXZoNUxmU3hpUzJ6UXpJU2hyVDZKWXFoNUlnRElIVGRDY1BpWW1Uc2svbG1N\\nMndJREFRQUI=\\n-----END PUBLIC KEY-----\\n\"\n    }\n}",
+        "title": "获取非对称密钥的公钥。"
+      }
+    ],
+    "GetRegions": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=GetRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Regions\": [\n            \"ap-hongkong\",\n            \"ap-guangzhou\"\n        ],\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "查询可用区域列表"
+      }
+    ],
+    "GetServiceStatus": [
+      {
+        "document": "查询服务状态",
+        "input": "https://kms.tencentcloudapi.com/?Action=GetServiceStatus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"UserLevel\": 0,\n        \"ProResourceId\": \"kms_pro_12345\",\n        \"ProRenewFlag\": 1,\n        \"ProExpireTime\": 1603701385,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "查询服务状态"
+      }
+    ],
+    "ImportKeyMaterial": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=ImportKeyMaterial\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&EncryptedKeyMaterial=dgqtAzLde+xsR5q3kwOsWu4bst7FaE4sbhhf1OHCMujhjTJTnFGEubKowVFnFC96e2vUvO5fwGvfNcPIDkg6q7iuFviM0BepCmF9Fyk3tluJVRf/Nv8FCccANXmsZDPxtSHdcD00/dQg1i2BIaLMP3/VFBDVEK7AzRhlTkrNiout4pavGSCAF+uBl2Vmnq6fF4DT37B0Q0WQ4NyfUwDCSR0VSF9vwqommhudJUhv4+21xHMgUCdbFvVoOmZP/Md5Sb4rbMbWi5qRpLusi8W3KKTyJ8onp7UC+0qi6DTw4XCq4UPniFNJXIxUOSVXpZHQKFCJXr6/cxNAci8eMTTwfA==\r\n&ImportToken=Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpxBApJqYG9zc37OM0Z3qT/mvLofzM3hwVJSTzIITcAo6ew3LidOJ3nwNoVNOM2wnrL+g9puwP0GpbbSwTd16X9E\r\n&ValidTo=0\r\n&KeyId=1ff78c0d-c54b-11e9-9cc9-5254006d0800\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "导入密钥材料"
+      }
+    ],
+    "ListAlgorithms": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=ListAlgorithms\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"460fe7ff-f4db-4509-9b20-208badcfb915\",\n        \"SymmetricAlgorithms\": [\n            {\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Algorithm\": \"SM4\"\n            }\n        ],\n        \"AsymmetricAlgorithms\": [\n            {\n                \"KeyUsage\": \"ASYMMETRIC_DECRYPT_SM2\",\n                \"Algorithm\": \"SM2\"\n            },\n            {\n                \"KeyUsage\": \"ASYMMETRIC_DECRYPT_RSA_2048\",\n                \"Algorithm\": \"RSA_2048\"\n            }\n        ],\n        \"AsymmetricSignVerifyAlgorithms\": [\n            {\n                \"KeyUsage\": \"ASYMMETRIC_SIGN_VERIFY_SM2\",\n                \"Algorithm\": \"SM2\"\n            }\n        ]\n    }\n}",
+        "title": "列出当前Region支持的加密方式"
+      }
+    ],
+    "ListKeyDetail": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=ListKeyDetail\n&Offset=0\n&Limit=3\n&Role=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"KeyMetadatas\": [\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n                \"Alias\": \"myalias\",\n                \"CreateTime\": 1548210729,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"Enabled\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 0,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            },\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b02\",\n                \"Alias\": \"testalias\",\n                \"CreateTime\": 1548210730,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"Disabled\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 0,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            },\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b03\",\n                \"Alias\": \"testalias2\",\n                \"CreateTime\": 1548210730,\n                \"Description\": \"test cmk\",\n                \"KeyState\": \"PendingDelete\",\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Type\": 1,\n                \"CreatorUin\": 1001,\n                \"KeyRotationEnabled\": true,\n                \"Owner\": \"user\",\n                \"NextRotateTime\": 1553151489,\n                \"DeletionDate\": 1560580015,\n                \"Origin\": \"TENCENT_KMS\",\n                \"ValidTo\": 0\n            }\n        ],\n        \"TotalCount\": 100\n    }\n}",
+        "title": "获取主密钥列表详情"
+      }
+    ],
+    "ListKeys": [
+      {
+        "document": "获取主密钥列表",
+        "input": "https://kms.tencentcloudapi.com/?Action=ListKeys\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\",\n        \"Keys\": [\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n            },\n            {\n                \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b02\"\n            }\n        ],\n        \"TotalCount\": 100\n    }\n}",
+        "title": "获取主密钥列表示例"
+      }
+    ],
+    "OverwriteWhiteBoxDeviceFingerprints": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=OverwriteWhiteBoxDeviceFingerprints\n&KeyId=cd850a3d-9b1b-11ea-a96a-5254006d0810\n&DeviceFingerprints.0.Identity=c19c024c-2ba1-11b2-a85c-96f970f4a8e1\n&DeviceFingerprints.0.Description=desc1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8d1f1b9-632a-4c0b-b369-9bcf8e7e6ef9\"\n    }\n}",
+        "title": "覆盖指定密钥的设备指纹信息"
+      }
+    ],
+    "ReEncrypt": [
+      {
+        "document": "对密文进行重新加密。",
+        "input": "https://kms.tencentcloudapi.com/?Action=ReEncrypt\r\n&DestinationKeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&CiphertextBlob=Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CiphertextBlob\": \"g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-zJshb0kBH7C2J5I3XXbbEg==-k-o1O+7H9HFAzWbCkftO2ZtPKewS3diSB4zGKOJhMn7LcKRhYr\",\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\",\n        \"SourceKeyId\": \"23e80852-1e38-11e9-b129-5cb9019b0000\",\n        \"ReEncrypted\": true,\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "重加密接口示例"
+      }
+    ],
+    "ScheduleKeyDeletion": [
+      {
+        "document": "指定CMK于累计7天后被删除",
+        "input": "https://kms.tencentcloudapi.com/?Action=ScheduleKeyDeletion\r\n&KeyId=\"23e80852-1e38-11e9-b129-5cb9019b4b01\"\r\n&PendingWindowInDays=7\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DeletionDate\": 1559318399,\n        \"KeyId\": \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    }\n}",
+        "title": "计划删除接口请求示例"
+      }
+    ],
+    "SignByAsymmetricKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=SignByAsymmetricKey\n&Algorithm=SM2DSA\n&Message=Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D\n&KeyId=6cdf26d1-44ff-11eb-841c-5254006d0810\n&MessageType=DIGEST\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86d6131-2830-4e1c-9d03-d421affd646c\",\n        \"Signature\": \"MEUCICr/JCV52BqGvI0iYxdZ1eL8zzJjx39mWNv2ZWdLOMvRAiEApO6os3Wj0Tg302fbTBr02IxHO1aCr0Zr41t4hi6yTG8=\"\n    }\n}",
+        "title": "非对称密钥签名"
+      }
+    ],
+    "UnbindCloudResource": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=UnbindCloudResource\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&ProductId=ssm\r\n&ResourceId=resourceId\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe11aa29-0cc2-4204-bfea-6ebb30cc00d7\"\n    }\n}",
+        "title": "解绑CMK和云资源的关联关系"
+      }
+    ],
+    "UpdateAlias": [
+      {
+        "document": "对指定的CMK修改别名。",
+        "input": "https://kms.tencentcloudapi.com/?Action=UpdateAlias\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&Alias=NewAlias\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "修改别名示例"
+      }
+    ],
+    "UpdateKeyDescription": [
+      {
+        "document": "对指定的CMK修改描述信息",
+        "input": "https://kms.tencentcloudapi.com/?Action=UpdateKeyDescription\r\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\r\n&Description=NewDescription\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
+        "title": "修改主密钥描述信息示例"
+      }
+    ],
+    "VerifyByAsymmetricKey": [
+      {
+        "document": "",
+        "input": "https://kms.tencentcloudapi.com/?Action=VerifyByAsymmetricKey\n&Algorithm=SM2DSA\n&Message=Zsfw9GLu7dnR8tRr3BDk4kFnxIdc8veiKX2gK49LqOA%3D\n&KeyId=6cdf26d1-44ff-11eb-841c-5254006d0810\n&MessageType=DIGEST\n&SignatureValue=MEUCIQDeO1wB%2F5dEfprulvh9Zw06UJylDt9R8MQY5qRMjzhXJgIgPKO2kKicFKemwOft8SgniUA692ORrqVEabS3kcbPL8U%3D\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e634985-c311-4790-953a-44990f7bec6b\",\n        \"SignatureValid\": true\n    }\n}",
+        "title": "使用非对称密钥验签"
+      }
+    ]
+  },
+  "version": "1.0"
+}

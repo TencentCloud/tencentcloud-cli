@@ -1,0 +1,4089 @@
+{
+  "actions": {
+    "AddUserContact": {
+      "document": "添加邮件接收联系人的姓名， 邮件地址，返回值为添加成功的联系人id。Region统一选择广州。",
+      "input": "AddUserContactRequest",
+      "name": "添加联系人信息",
+      "output": "AddUserContactResponse"
+    },
+    "CreateDBDiagReportTask": {
+      "document": "创建健康报告，并可以选择是否发送邮件。",
+      "input": "CreateDBDiagReportTaskRequest",
+      "name": "创建健康报告生成任务",
+      "output": "CreateDBDiagReportTaskResponse"
+    },
+    "CreateDBDiagReportUrl": {
+      "document": "创建健康报告的浏览地址。",
+      "input": "CreateDBDiagReportUrlRequest",
+      "name": "创建健康报告浏览地址",
+      "output": "CreateDBDiagReportUrlResponse"
+    },
+    "CreateMailProfile": {
+      "document": "创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。",
+      "input": "CreateMailProfileRequest",
+      "name": "创建邮件配置",
+      "output": "CreateMailProfileResponse"
+    },
+    "CreateSchedulerMailProfile": {
+      "document": "该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。",
+      "input": "CreateSchedulerMailProfileRequest",
+      "name": "创建定期生成的邮件发送配置",
+      "output": "CreateSchedulerMailProfileResponse"
+    },
+    "CreateSecurityAuditLogExportTask": {
+      "document": "创建安全审计日志导出任务。",
+      "input": "CreateSecurityAuditLogExportTaskRequest",
+      "name": "创建安全审计日志导出任务",
+      "output": "CreateSecurityAuditLogExportTaskResponse"
+    },
+    "DeleteSecurityAuditLogExportTasks": {
+      "document": "删除安全审计日志导出任务。",
+      "input": "DeleteSecurityAuditLogExportTasksRequest",
+      "name": "删除安全审计日志导出任务",
+      "output": "DeleteSecurityAuditLogExportTasksResponse"
+    },
+    "DescribeAllUserContact": {
+      "document": "获取邮件发送中联系人的相关信息。",
+      "input": "DescribeAllUserContactRequest",
+      "name": "获取邮件发送中联系人信息",
+      "output": "DescribeAllUserContactResponse"
+    },
+    "DescribeAllUserGroup": {
+      "document": "获取邮件发送联系组的相关信息。",
+      "input": "DescribeAllUserGroupRequest",
+      "name": "获取邮件发送中联系组信息",
+      "output": "DescribeAllUserGroupResponse"
+    },
+    "DescribeDBDiagEvent": {
+      "document": "获取实例异常诊断事件的详情信息。",
+      "input": "DescribeDBDiagEventRequest",
+      "name": "获取诊断事件详情",
+      "output": "DescribeDBDiagEventResponse"
+    },
+    "DescribeDBDiagHistory": {
+      "document": "获取实例诊断事件的列表。",
+      "input": "DescribeDBDiagHistoryRequest",
+      "name": "获取实例诊断历史",
+      "output": "DescribeDBDiagHistoryResponse"
+    },
+    "DescribeDBDiagReportTasks": {
+      "document": "查询健康报告生成任务列表。",
+      "input": "DescribeDBDiagReportTasksRequest",
+      "name": "查询健康报告生成任务列表",
+      "output": "DescribeDBDiagReportTasksResponse"
+    },
+    "DescribeDBSpaceStatus": {
+      "document": "获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。",
+      "input": "DescribeDBSpaceStatusRequest",
+      "name": "获取指定时间段内的实例空间使用概览",
+      "output": "DescribeDBSpaceStatusResponse"
+    },
+    "DescribeDiagDBInstances": {
+      "document": "获取实例信息列表。Region统一选择广州。",
+      "input": "DescribeDiagDBInstancesRequest",
+      "name": "获取实例信息列表",
+      "output": "DescribeDiagDBInstancesResponse"
+    },
+    "DescribeHealthScore": {
+      "document": "根据实例ID获取指定时间段（30分钟）的健康得分，以及异常扣分项。",
+      "input": "DescribeHealthScoreRequest",
+      "name": "获取健康得分",
+      "output": "DescribeHealthScoreResponse"
+    },
+    "DescribeMailProfile": {
+      "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。Region统一选择广州。",
+      "input": "DescribeMailProfileRequest",
+      "name": "获取邮件配置",
+      "output": "DescribeMailProfileResponse"
+    },
+    "DescribeSecurityAuditLogDownloadUrls": {
+      "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
+      "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
+      "name": "查询安全审计日志导出文件下载链接",
+      "output": "DescribeSecurityAuditLogDownloadUrlsResponse"
+    },
+    "DescribeSecurityAuditLogExportTasks": {
+      "document": "查询安全审计日志导出任务列表。",
+      "input": "DescribeSecurityAuditLogExportTasksRequest",
+      "name": "查询安全审计日志导出任务列表",
+      "output": "DescribeSecurityAuditLogExportTasksResponse"
+    },
+    "DescribeSlowLogTimeSeriesStats": {
+      "document": "获取慢日志统计柱状图。",
+      "input": "DescribeSlowLogTimeSeriesStatsRequest",
+      "name": "获取慢日志统计柱状图",
+      "output": "DescribeSlowLogTimeSeriesStatsResponse"
+    },
+    "DescribeSlowLogTopSqls": {
+      "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
+      "input": "DescribeSlowLogTopSqlsRequest",
+      "name": "按照Sql模板查询指定时间段内的慢日志统计结果",
+      "output": "DescribeSlowLogTopSqlsResponse"
+    },
+    "DescribeSlowLogUserHostStats": {
+      "document": "获取慢日志来源地址统计分布图。",
+      "input": "DescribeSlowLogUserHostStatsRequest",
+      "name": "获取慢日志来源地址统计分布图",
+      "output": "DescribeSlowLogUserHostStatsResponse"
+    },
+    "DescribeTopSpaceSchemaTimeSeries": {
+      "document": "获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
+      "input": "DescribeTopSpaceSchemaTimeSeriesRequest",
+      "name": "获取Top库在指定时间段内的每日空间统计信息",
+      "output": "DescribeTopSpaceSchemaTimeSeriesResponse"
+    },
+    "DescribeTopSpaceSchemas": {
+      "document": "获取实例Top库的实时空间统计信息，默认返回按大小排序。",
+      "input": "DescribeTopSpaceSchemasRequest",
+      "name": "获取Top库的空间统计信息",
+      "output": "DescribeTopSpaceSchemasResponse"
+    },
+    "DescribeTopSpaceTableTimeSeries": {
+      "document": "获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
+      "input": "DescribeTopSpaceTableTimeSeriesRequest",
+      "name": "获取Top表在指定时间段内的每日空间统计信息",
+      "output": "DescribeTopSpaceTableTimeSeriesResponse"
+    },
+    "DescribeTopSpaceTables": {
+      "document": "获取实例Top表的实时空间统计信息，默认返回按大小排序。",
+      "input": "DescribeTopSpaceTablesRequest",
+      "name": "获取Top表的空间统计信息",
+      "output": "DescribeTopSpaceTablesResponse"
+    },
+    "DescribeUserSqlAdvice": {
+      "document": "获取SQL优化建议。",
+      "input": "DescribeUserSqlAdviceRequest",
+      "name": "获取SQL优化建议",
+      "output": "DescribeUserSqlAdviceResponse"
+    },
+    "ModifyDiagDBInstanceConf": {
+      "document": "修改实例巡检开关。",
+      "input": "ModifyDiagDBInstanceConfRequest",
+      "name": "修改实例巡检开关状态",
+      "output": "ModifyDiagDBInstanceConfResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-16",
+    "api_brief": "介绍如何使用API对数据库智能管家 Dbbrain 进行操作，包括慢日志分析、异常检测等。",
+    "serviceNameCN": "数据库智能管家 DBbrain",
+    "serviceShortName": "dbbrain"
+  },
+  "objects": {
+    "AddUserContactRequest": {
+      "document": "AddUserContact请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "联系人姓名，大小写字母+数字+下划线，最小 2 位最大 60 位的长度， 不能以\"_\"开头，且联系人名保持唯一。",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱地址，大小写字母、数字及下划线组成， 不能以\"_\"开头。",
+          "example": "test@qq.com",
+          "member": "string",
+          "name": "ContactInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，固定值：\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserContactResponse": {
+      "document": "AddUserContact返回参数结构体",
+      "members": [
+        {
+          "document": "添加成功的联系人id。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ContactItem": {
+      "document": "联系人contact描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "联系人id。",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人姓名。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人绑定的邮箱。",
+          "member": "string",
+          "name": "Mail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDBDiagReportTaskRequest": {
+      "document": "CreateDBDiagReportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，如“2020-11-08T14:00:00+08:00”。",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，如“2020-11-09T14:00:00+08:00”。",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否发送邮件: 0 - 否，1 - 是。",
+          "member": "int64",
+          "name": "SendMailFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "接收邮件的联系人ID数组。",
+          "member": "int64",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接收邮件的联系组ID数组。",
+          "member": "int64",
+          "name": "ContactGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认值为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportTaskResponse": {
+      "document": "CreateDBDiagReportTask返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportUrlRequest": {
+      "document": "CreateDBDiagReportUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "健康报告相应的任务ID，可通过DescribeDBDiagReportTasks查询。",
+          "example": "63452",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBDiagReportUrlResponse": {
+      "document": "CreateDBDiagReportUrl返回参数结构体",
+      "members": [
+        {
+          "document": "健康报告浏览地址。",
+          "example": "https://dbbrain-sh-1256569818.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "ReportUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "健康报告浏览地址到期时间戳（秒）。",
+          "example": "1618890295",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMailProfileRequest": {
+      "document": "CreateMailProfile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "邮件配置内容。",
+          "example": "-",
+          "member": "ProfileInfo",
+          "name": "ProfileInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。",
+          "example": "Instance",
+          "member": "string",
+          "name": "ProfileLevel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
+          "example": "test",
+          "member": "string",
+          "name": "ProfileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
+          "example": "scheduler_mail_configuration",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置绑定的实例ID，当配置级别为\"Instance\"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。",
+          "example": "[\"cdb-test\"]",
+          "member": "string",
+          "name": "BindInstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMailProfileResponse": {
+      "document": "CreateMailProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSchedulerMailProfileRequest": {
+      "document": "CreateSchedulerMailProfile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "取值范围1-7，分别代表周一至周日。",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "WeekConfiguration",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "邮件配置内容。",
+          "example": "-",
+          "member": "ProfileInfo",
+          "name": "ProfileInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "配置名称，需要保持唯一性，定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
+          "example": "scheduler_cdb-test",
+          "member": "string",
+          "name": "ProfileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置订阅的实例ID。",
+          "example": "cdb-123456",
+          "member": "string",
+          "name": "BindInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSchedulerMailProfileResponse": {
+      "document": "CreateSchedulerMailProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAuditLogExportTaskRequest": {
+      "document": "CreateSecurityAuditLogExportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出日志开始时间，例如2020-12-28 00:00:00。",
+          "example": "2020-12-28 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出日志结束时间，例如2020-12-28 01:00:00。",
+          "example": "2020-12-28 01:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志风险等级列表，支持值包括：0 无风险；1 低风险；2 中风险；3 高风险。",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "DangerLevels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAuditLogExportTaskResponse": {
+      "document": "CreateSecurityAuditLogExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAuditLogExportTasksRequest": {
+      "document": "DeleteSecurityAuditLogExportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出任务Id列表，接口会忽略不存在或已删除的任务Id。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值： \"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAuditLogExportTasksResponse": {
+      "document": "DeleteSecurityAuditLogExportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserContactRequest": {
+      "document": "DescribeAllUserContact请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务产品类型，固定值：mysql。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人名数组，支持模糊搜索。",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserContactResponse": {
+      "document": "DescribeAllUserContact返回参数结构体",
+      "members": [
+        {
+          "document": "联系人的总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "联系人的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "ContactItem",
+          "name": "Contacts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserGroupRequest": {
+      "document": "DescribeAllUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务产品类型，固定值：mysql。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系组名称数组，支持模糊搜索。",
+          "example": "group1",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllUserGroupResponse": {
+      "document": "DescribeAllUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "组总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "组信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "GroupItem",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagEventRequest": {
+      "document": "DescribeDBDiagEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。",
+          "example": "5",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagEventResponse": {
+      "document": "DescribeDBDiagEvent返回参数结构体",
+      "members": [
+        {
+          "document": "诊断项。",
+          "example": "健康巡检",
+          "member": "string",
+          "name": "DiagItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断类型。",
+          "example": "数据库快照",
+          "member": "string",
+          "name": "DiagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件 ID 。",
+          "example": "5",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件详情。",
+          "example": "[]",
+          "member": "string",
+          "name": "Explanation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "概要。",
+          "example": "数据库健康检查，发现1个问题",
+          "member": "string",
+          "name": "Outline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断出的问题。",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"事务快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Innodb状态快照\"}}]",
+          "member": "string",
+          "name": "Problem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
+          "example": "4",
+          "member": "int64",
+          "name": "Severity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间",
+          "example": "2019-11-06 12:05:40",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "建议。",
+          "example": "[]",
+          "member": "string",
+          "name": "Suggestions",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结束时间。",
+          "example": "2019-11-06 12:05:50",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagHistoryRequest": {
+      "document": "DescribeDBDiagHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，如“2019-09-11 12:13:14”，结束时间与开始时间的间隔最大可为2天。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagHistoryResponse": {
+      "document": "DescribeDBDiagHistory返回参数结构体",
+      "members": [
+        {
+          "document": "事件描述。",
+          "member": "DiagHistoryEventItem",
+          "name": "Events",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagReportTasksRequest": {
+      "document": "DescribeDBDiagReportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "第一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最后一个任务的开始时间，用于范围查询，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID数组，用于筛选指定实例的任务列表。",
+          "example": "[\"cdb-c1nl9rpv\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
+          "example": "[\"DAILY_INSPECTION\"]",
+          "member": "string",
+          "name": "Sources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报告的健康等级，支持的取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\" - 危险；\"HIGH_RISK\" - 高危。",
+          "example": "[\"HEALTH\"]",
+          "member": "string",
+          "name": "HealthLevels",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务的状态，支持的取值包括：\"created\" - 新建；\"chosen\" - 待执行； \"running\" - 执行中；\"failed\" - 失败；\"finished\" - 已完成。",
+          "example": "[\"finished\"]",
+          "member": "string",
+          "name": "TaskStatuses",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagReportTasksResponse": {
+      "document": "DescribeDBDiagReportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务总数目。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务列表。",
+          "example": "-",
+          "member": "HealthReportTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSpaceStatusRequest": {
+      "document": "DescribeDBSpaceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间段天数，截止日期为当日，默认为7天。",
+          "member": "int64",
+          "name": "RangeDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSpaceStatusResponse": {
+      "document": "DescribeDBSpaceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘增长量(MB)。",
+          "member": "int64",
+          "name": "Growth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "磁盘剩余(MB)。",
+          "member": "int64",
+          "name": "Remain",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "磁盘总量(MB)。",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预计可用天数。",
+          "member": "int64",
+          "name": "AvailableDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiagDBInstancesRequest": {
+      "document": "DescribeDiagDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否是DBbrain支持的实例，固定传 true。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupported",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数，分页值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据实例名称条件查询。",
+          "example": "[\"cdb-测试\"]",
+          "member": "string",
+          "name": "InstanceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据实例ID条件查询。",
+          "example": "[\"cdb-test\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据地域条件查询。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiagDBInstancesResponse": {
+      "document": "DescribeDiagDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "全实例巡检状态：0：开启全实例巡检；1：未开启全实例巡检。",
+          "example": "1",
+          "member": "int64",
+          "name": "DbScanStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例相关信息。",
+          "example": "-",
+          "member": "InstanceInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthScoreRequest": {
+      "document": "DescribeHealthScore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取健康得分的实例ID。",
+          "example": "cdb-test123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "获取健康得分的时间。",
+          "example": "2019-01-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "Time",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthScoreResponse": {
+      "document": "DescribeHealthScore返回参数结构体",
+      "members": [
+        {
+          "document": "健康得分以及异常扣分项。",
+          "example": "-",
+          "member": "HealthScoreInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMailProfileRequest": {
+      "document": "DescribeMailProfile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
+          "example": "scheduler_mail_configuration",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单位，最大支持50。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据邮件配置名称查询，定期发送的邮件配置名称遵循：\"scheduler_\"+{instanceId}的规则。",
+          "example": "scheduler_cdb-of66x11l",
+          "member": "string",
+          "name": "ProfileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMailProfileResponse": {
+      "document": "DescribeMailProfile返回参数结构体",
+      "members": [
+        {
+          "document": "邮件配置详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "UserProfile",
+          "name": "ProfileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "邮件模版总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogDownloadUrlsRequest": {
+      "document": "DescribeSecurityAuditLogDownloadUrls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异步任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogDownloadUrlsResponse": {
+      "document": "DescribeSecurityAuditLogDownloadUrls返回参数结构体",
+      "members": [
+        {
+          "document": "导出结果的COS链接列表。当结果集很大时，可能会切分为多个url下载。",
+          "example": "[\"https://xxx\"]",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogExportTasksRequest": {
+      "document": "DescribeSecurityAuditLogExportTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "安全审计组Id。",
+          "example": "sag-01z37k3f",
+          "member": "string",
+          "name": "SecAuditGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出任务Id列表。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AsyncRequestIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAuditLogExportTasksResponse": {
+      "document": "DescribeSecurityAuditLogExportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "安全审计日志导出任务列表。",
+          "example": "无",
+          "member": "SecLogExportTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全审计日志导出任务总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTimeSeriesStatsRequest": {
+      "document": "DescribeSlowLogTimeSeriesStats请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，如“2019-09-10 12:13:14”，结束时间与开始时间的间隔最大可为7天。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTimeSeriesStatsResponse": {
+      "document": "DescribeSlowLogTimeSeriesStats返回参数结构体",
+      "members": [
+        {
+          "document": "柱间单位时间间隔，单位为秒。",
+          "member": "int64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单位时间间隔内慢日志数量统计。",
+          "member": "TimeSlice",
+          "name": "TimeSeries",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单位时间间隔内的实例 cpu 利用率监控数据。",
+          "member": "MonitorMetricSeriesData",
+          "name": "SeriesData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTopSqlsRequest": {
+      "document": "DescribeSlowLogTopSqls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截止时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔最大可为7天。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序键，目前支持 QueryTime,ExecTimes,RowsSent,LockTime以及RowsExamined 等排序键。",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，支持ASC（升序）以及DESC（降序）。",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库名称数组。",
+          "member": "SchemaItem",
+          "name": "SchemaList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogTopSqlsResponse": {
+      "document": "DescribeSlowLogTopSqls返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的记录总数。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢日志 top sql 列表",
+          "member": "SlowLogTopSqlItem",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogUserHostStatsRequest": {
+      "document": "DescribeSlowLogUserHostStats请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询范围的开始时间，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询范围的结束时间，时间格式如：2019-09-10 12:13:14。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogUserHostStatsResponse": {
+      "document": "DescribeSlowLogUserHostStats返回参数结构体",
+      "members": [
+        {
+          "document": "来源地址数目。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各来源地址的慢日志占比详情列表。",
+          "example": "-",
+          "member": "SlowLogHost",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceSchemaTimeSeriesRequest": {
+      "document": "DescribeTopSpaceSchemaTimeSeries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top库数量，最大值为100，默认为20。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
+          "example": "TableRows",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始日期，如“2021-01-01”，最早为当日的前第29天，默认为截止日期的前第6天。",
+          "example": "2021-01-01",
+          "member": "date",
+          "name": "StartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截止日期，如“2021-01-01”，最早为当日的前第29天，默认为当日。",
+          "example": "2021-01-01",
+          "member": "date",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceSchemaTimeSeriesResponse": {
+      "document": "DescribeTopSpaceSchemaTimeSeries返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top库空间统计信息的时序数据列表。",
+          "example": "无",
+          "member": "SchemaSpaceTimeSeries",
+          "name": "TopSpaceSchemaTimeSeries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceSchemasRequest": {
+      "document": "DescribeTopSpaceSchemas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top库数量，最大值为100，默认为20。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
+          "example": "TableRows",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceSchemasResponse": {
+      "document": "DescribeTopSpaceSchemas返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top库空间统计信息列表。",
+          "example": "无",
+          "member": "SchemaSpaceData",
+          "name": "TopSpaceSchemas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采集库空间数据的时间戳（秒）。",
+          "example": "1603819881",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTableTimeSeriesRequest": {
+      "document": "DescribeTopSpaceTableTimeSeries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top表数量，最大值为100，默认为20。",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize，默认为 PhysicalFileSize。",
+          "example": "TableRows",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始日期，如“2021-01-01”，最早为当日的前第29天，默认为截止日期的前第6天。",
+          "example": "2020-01-01",
+          "member": "date",
+          "name": "StartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截止日期，如“2021-01-01”，最早为当日的前第29天，默认为当日。",
+          "example": "2020-01-01",
+          "member": "date",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTableTimeSeriesResponse": {
+      "document": "DescribeTopSpaceTableTimeSeries返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top表空间统计信息的时序数据列表。",
+          "example": "无",
+          "member": "TableSpaceTimeSeries",
+          "name": "TopSpaceTableTimeSeries",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTablesRequest": {
+      "document": "DescribeTopSpaceTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的Top表数量，最大值为100，默认为20。",
+          "example": "2",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
+          "example": "TableRows",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTablesResponse": {
+      "document": "DescribeTopSpaceTables返回参数结构体",
+      "members": [
+        {
+          "document": "返回的Top表空间统计信息列表。",
+          "example": "无",
+          "member": "TableSpaceData",
+          "name": "TopSpaceTables",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采集表空间数据的时间戳（秒）。",
+          "example": "1603819881",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSqlAdviceRequest": {
+      "document": "DescribeUserSqlAdvice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL语句。",
+          "example": "select * from t1",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSqlAdviceResponse": {
+      "document": "DescribeUserSqlAdvice返回参数结构体",
+      "members": [
+        {
+          "document": "SQL优化建议，可解析为JSON数组。",
+          "example": "PossibleKeys",
+          "member": "string",
+          "name": "Advices",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL优化建议备注，可解析为String数组。",
+          "example": "SQL解析不通过",
+          "member": "string",
+          "name": "Comments",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL语句。",
+          "example": "select * from t1",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相关表的DDL信息，可解析为JSON数组。",
+          "example": "TableDDL",
+          "member": "string",
+          "name": "Tables",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL执行计划，可解析为JSON。",
+          "example": "Before",
+          "member": "string",
+          "name": "SqlPlan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL优化后的成本节约详情，可解析为JSON。",
+          "example": "After",
+          "member": "string",
+          "name": "Cost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagHistoryEventItem": {
+      "document": "实例诊断历史事件",
+      "members": [
+        {
+          "default": "",
+          "document": "诊断类型。",
+          "member": "string",
+          "name": "DiagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件 ID 。",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
+          "member": "int64",
+          "name": "Severity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "概要。",
+          "member": "string",
+          "name": "Outline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断项。",
+          "member": "string",
+          "name": "DiagItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EventInfo": {
+      "document": "异常事件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "事件 ID 。",
+          "example": "123456",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断类型。",
+          "example": "复制",
+          "member": "string",
+          "name": "DiagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间。",
+          "example": "2019-01-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "example": "2019-01-01T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "概要。",
+          "example": "复制IO线程中断",
+          "member": "string",
+          "name": "Outline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "严重程度。严重程度分为5级，按影响程度从高至低分别为：1：致命，2：严重，3：告警，4：提示，5：健康。",
+          "example": "1",
+          "member": "int64",
+          "name": "Severity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分。",
+          "example": "5",
+          "member": "int64",
+          "name": "ScoreLost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留字段。",
+          "example": "slave_io_running",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警数目。",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupItem": {
+      "document": "描述组信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "组id。",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组成员数量。",
+          "member": "int64",
+          "name": "MemberCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthReportTask": {
+      "document": "健康报告任务详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "异步任务请求 ID。",
+          "example": "63452",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
+          "example": "DAILY_INSPECTION",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务完成进度，单位%。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始执行时间。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务完成执行时间。",
+          "example": "2019-09-10 12:13:14",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务所属实例的基础信息。",
+          "example": "-",
+          "member": "InstanceBasicInfo",
+          "name": "InstanceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康报告中的健康信息。",
+          "example": "-",
+          "member": "HealthStatus",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthScoreInfo": {
+      "document": "获取健康得分返回的详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "异常详情。",
+          "example": "-",
+          "member": "IssueTypeInfo",
+          "name": "IssueTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件总数。",
+          "example": "3",
+          "member": "int64",
+          "name": "EventsTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康得分。",
+          "example": "100",
+          "member": "int64",
+          "name": "HealthScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康等级, 如：\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"。",
+          "example": "RISK",
+          "member": "string",
+          "name": "HealthLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthStatus": {
+      "document": "实例健康详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "健康分数，满分100。",
+          "example": "100",
+          "member": "int64",
+          "name": "HealthScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康等级，取值包括：\"HEALTH\" - 健康；\"SUB_HEALTH\" - 亚健康；\"RISK\"- 危险；\"HIGH_RISK\" - 高危。",
+          "example": "HEALTH",
+          "member": "string",
+          "name": "HealthLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总扣分分数。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScoreLost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "ScoreDetail",
+          "name": "ScoreDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceBasicInfo": {
+      "document": "实例基础信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内网IP。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内网Port。",
+          "example": "3600",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例产品。",
+          "example": "MySQL",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例引擎版本。",
+          "example": "5.6",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceConfs": {
+      "document": "实例配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库巡检开关, Yes/No。",
+          "example": "Yes",
+          "member": "string",
+          "name": "DailyInspection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例概览开关，Yes/No。",
+          "example": "Yes",
+          "member": "string",
+          "name": "OverviewDisplay",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceInfo": {
+      "document": "查询实例列表，返回实例的相关信息的对象。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "example": "cdb-测试",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康得分。",
+          "example": "100",
+          "member": "int64",
+          "name": "HealthScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属产品。",
+          "example": "MySql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型：1:MASTER；2:DR，3：RO，4:SDR。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核心数。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存，单位MB。",
+          "example": "4000",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘存储，单位GB。",
+          "example": "50",
+          "member": "int64",
+          "name": "Volume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库版本。",
+          "example": "5.6",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网地址。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网端口。",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入来源。",
+          "example": "TENCENT_CLOUD",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组ID。",
+          "example": "test-group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组组名。",
+          "example": "test-group-name",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态：0：发货中；1：运行正常；4：销毁中；5：隔离中。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网统一ID。",
+          "example": "subnet-igztest",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cdb类型。",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "DeployMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cdb实例初始化标志：0：未初始化；1：已初始化。",
+          "example": "1",
+          "member": "int64",
+          "name": "InitFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络统一ID。",
+          "example": "vpc-fstest",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例巡检/概览的状态。",
+          "example": "-",
+          "member": "InstanceConfs",
+          "name": "InstanceConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源到期时间。",
+          "example": "2021-02-25 16:33:26",
+          "member": "datetime",
+          "name": "DeadlineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是DBbrain支持的实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupported",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例安全审计日志开启状态：ON： 安全审计开启；OFF： 未开启安全审计。",
+          "example": "OFF",
+          "member": "string",
+          "name": "SecAuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例审计日志开启状态，ALL_AUDIT： 开启全审计；RULE_AUDIT： 开启规则审计；UNBOUND： 未开启审计。",
+          "example": "UNBOUND",
+          "member": "string",
+          "name": "AuditPolicyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例审计日志运行状态：normal： 运行中； paused： 欠费暂停。",
+          "example": "normal",
+          "member": "string",
+          "name": "AuditRunningStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IssueTypeInfo": {
+      "document": "指标信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "指标分类：AVAILABILITY：可用性，MAINTAINABILITY：可维护性，PERFORMANCE，性能，RELIABILITY可靠性。",
+          "example": "AVAILABILITY",
+          "member": "string",
+          "name": "IssueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件。",
+          "example": "-",
+          "member": "EventInfo",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常事件总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MailConfiguration": {
+      "document": "邮件发送配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启邮件发送: 0, 否; 1, 是。",
+          "example": "1",
+          "member": "int64",
+          "name": "SendMail",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域配置, 如[\"ap-guangzhou\", \"ap-shanghai\"]。巡检的邮件发送模版，配置需要发送巡检邮件的地域；订阅的邮件发送模版，配置当前订阅实例的所属地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送指定的健康等级的报告, 如[\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"]。",
+          "example": "[\"HEALTH\"]",
+          "member": "string",
+          "name": "HealthStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系人id, 联系人/联系组不能都为空。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ContactPerson",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系组id, 联系人/联系组不能都为空。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ContactGroup",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDiagDBInstanceConfRequest": {
+      "document": "ModifyDiagDBInstanceConf请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "巡检开关。",
+          "member": "InstanceConfs",
+          "name": "InstanceConfs",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "生效实例地域，取值为\"All\"，代表全地域。",
+          "member": "string",
+          "name": "Regions",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定更改巡检状态的实例ID。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiagDBInstanceConfResponse": {
+      "document": "ModifyDiagDBInstanceConf返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MonitorFloatMetric": {
+      "document": "监控数据（浮点型）",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位。",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorFloatMetricSeriesData": {
+      "document": "单位时间间隔内的监控指标数据（浮点型）",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标。",
+          "member": "MonitorFloatMetric",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对应的时间戳。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorMetric": {
+      "document": "监控数据",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称。",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位。",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MonitorMetricSeriesData": {
+      "document": "单位时间间隔内的监控指标数据",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标。",
+          "member": "MonitorMetric",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对应的时间戳。",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProfileInfo": {
+      "document": "用户配置的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "语言, 如\"zh\"。",
+          "member": "string",
+          "name": "Language",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮件模板的内容。",
+          "member": "MailConfiguration",
+          "name": "MailConfiguration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SchemaItem": {
+      "document": "SchemaItem数组",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SchemaSpaceData": {
+      "document": "库空间统计数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据空间（MB）。",
+          "example": "2.2",
+          "member": "float",
+          "name": "DataLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引空间（MB）。",
+          "example": "1.0",
+          "member": "float",
+          "name": "IndexLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片空间（MB）。",
+          "example": "0",
+          "member": "float",
+          "name": "DataFree",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总使用空间（MB）。",
+          "example": "3.2",
+          "member": "float",
+          "name": "TotalLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片率（%）。",
+          "example": "0",
+          "member": "float",
+          "name": "FragRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TableRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库中所有表对应的独立物理文件大小加和（MB）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.2",
+          "member": "float",
+          "name": "PhysicalFileSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SchemaSpaceTimeSeries": {
+      "document": "库空间时序数据",
+      "members": [
+        {
+          "default": "",
+          "document": "库名",
+          "example": "test",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位时间间隔内的空间指标数据。",
+          "example": "无",
+          "member": "MonitorMetricSeriesData",
+          "name": "SeriesData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScoreDetail": {
+      "document": "扣分详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "扣分项分类，取值包括：可用性、可维护性、性能及可靠性。",
+          "example": "性能",
+          "member": "string",
+          "name": "IssueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分总分。",
+          "example": "-20",
+          "member": "int64",
+          "name": "ScoreLost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分总分上限。",
+          "example": "-30",
+          "member": "int64",
+          "name": "ScoreLostMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分项列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "ScoreItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScoreItem": {
+      "document": "诊断扣分项。",
+      "members": [
+        {
+          "default": "",
+          "document": "异常诊断项名称。",
+          "example": "慢SQL",
+          "member": "string",
+          "name": "DiagItem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断项分类，取值包括：可用性、可维护性、性能及可靠性。",
+          "example": "性能",
+          "member": "string",
+          "name": "IssueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康等级，取值包括：信息、提示、告警、严重、致命。",
+          "example": "严重",
+          "member": "string",
+          "name": "TopSeverity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该异常诊断项出现次数。",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣分分数。",
+          "example": "-30",
+          "member": "int64",
+          "name": "ScoreLost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecLogExportTaskInfo": {
+      "document": "安全审计日志导出任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "异步任务Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:02",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "2019-06-06 12:50:02",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态。",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行进度。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导出日志开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 12:00:00",
+          "member": "datetime",
+          "name": "LogStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导出日志结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-06-06 13:00:00",
+          "member": "datetime",
+          "name": "LogEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志文件总大小，单位KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "DangerLevels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogHost": {
+      "document": "慢日志来源地址详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "来源地址。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "UserHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该来源地址的慢日志数目占总数目的比例，单位%。",
+          "example": "50.0",
+          "member": "float",
+          "name": "Ratio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该来源地址的慢日志数目。",
+          "example": "30",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogTopSqlItem": {
+      "document": "慢日志TopSql",
+      "members": [
+        {
+          "default": "",
+          "document": "sql总锁等待时间",
+          "example": "0.00008",
+          "member": "float",
+          "name": "LockTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大锁等待时间",
+          "example": "0.000096",
+          "member": "float",
+          "name": "LockTimeMax",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小锁等待时间",
+          "example": "0.000041",
+          "member": "float",
+          "name": "LockTimeMin",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总扫描行数",
+          "example": "584832",
+          "member": "int64",
+          "name": "RowsExamined",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大扫描行数",
+          "example": "101782",
+          "member": "int64",
+          "name": "RowsExaminedMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小扫描行数",
+          "example": "584832",
+          "member": "int64",
+          "name": "RowsExaminedMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总耗时",
+          "example": "0.513363",
+          "member": "float",
+          "name": "QueryTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大执行时间",
+          "example": "0.765213",
+          "member": "float",
+          "name": "QueryTimeMax",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小执行时间",
+          "example": "0.629921",
+          "member": "float",
+          "name": "QueryTimeMin",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总返回行数",
+          "example": "292416",
+          "member": "int64",
+          "name": "RowsSent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大返回行数",
+          "example": "292416",
+          "member": "int64",
+          "name": "RowsSentMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小返回行数",
+          "example": "292416",
+          "member": "int64",
+          "name": "RowsSentMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行次数",
+          "example": "37",
+          "member": "int64",
+          "name": "ExecTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql模板",
+          "example": "select * from t;",
+          "member": "string",
+          "name": "SqlTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带参数SQL（随机）",
+          "example": "SELECT * FROM t;",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "test_center",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总耗时占比",
+          "example": "2.44",
+          "member": "float",
+          "name": "QueryTimeRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql总锁等待时间占比",
+          "example": "1.92",
+          "member": "float",
+          "name": "LockTimeRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总扫描行数占比",
+          "example": "2.3",
+          "member": "float",
+          "name": "RowsExaminedRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总返回行数占比",
+          "example": "18.67",
+          "member": "float",
+          "name": "RowsSentRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均执行时间",
+          "example": "0.513363",
+          "member": "float",
+          "name": "QueryTimeAvg",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均返回行数",
+          "example": "26518.0",
+          "member": "float",
+          "name": "RowsSentAvg",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均锁等待时间",
+          "example": "0.000096",
+          "member": "float",
+          "name": "LockTimeAvg",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均扫描行数",
+          "example": "584832.0",
+          "member": "float",
+          "name": "RowsExaminedAvg",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableSpaceData": {
+      "document": "库表空间统计数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "表名。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库表的存储引擎。",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据空间（MB）。",
+          "member": "float",
+          "name": "DataLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引空间（MB）。",
+          "member": "float",
+          "name": "IndexLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片空间（MB）。",
+          "member": "float",
+          "name": "DataFree",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总使用空间（MB）。",
+          "member": "float",
+          "name": "TotalLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "碎片率（%）。",
+          "member": "float",
+          "name": "FragRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行数。",
+          "member": "int64",
+          "name": "TableRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表对应的独立物理文件大小（MB）。",
+          "member": "float",
+          "name": "PhysicalFileSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableSpaceTimeSeries": {
+      "document": "库表空间时序数据",
+      "members": [
+        {
+          "default": "",
+          "document": "表名。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库名。",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库表的存储引擎。",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位时间间隔内的空间指标数据。",
+          "member": "MonitorFloatMetricSeriesData",
+          "name": "SeriesData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeSlice": {
+      "document": "单位时间间隔内的慢日志统计",
+      "members": [
+        {
+          "default": "",
+          "document": "总数",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserProfile": {
+      "document": "用户配置的相关信息，包括邮件配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "配置的id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "ProfileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbScan_mail_configuration",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置级别，\"User\"或\"Instance\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "User",
+          "member": "string",
+          "name": "ProfileLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ProfileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置详情。",
+          "example": "-",
+          "member": "ProfileInfo",
+          "name": "ProfileInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

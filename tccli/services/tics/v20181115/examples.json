@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "DescribeDomainInfo": [
+      {
+        "document": "根据域名查询相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+        "input": "https://tics.tencentcloudapi.com/?Action=DescribeDomainInfo\r\n&Key=003143.sdyintong.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"Result\": \"black\",\n        \"Confidence\": 90,\n        \"ThreatTypes\": [\n            \"malware site\"\n        ],\n        \"Tags\": [],\n        \"Intelligences\": [],\n        \"Context\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询域名信誉度"
+      }
+    ],
+    "DescribeFileInfo": [
+      {
+        "document": "根据文件MD5查询相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+        "input": "https://tics.tencentcloudapi.com/?Action=DescribeFileInfo\r\n&Key=011d6ce51b7806dca26c300e8d26f9bb\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"Result\": \"black\",\n        \"Confidence\": 90,\n        \"FileInfo\": {},\n        \"Tags\": [],\n        \"Intelligences\": [],\n        \"Context\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询文件信誉度"
+      }
+    ],
+    "DescribeIpInfo": [
+      {
+        "document": "根据IP查询相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+        "input": "https://tics.tencentcloudapi.com/?Action=DescribeIpInfo\r\n&Key=8.8.8.8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"Result\": \"white\",\n        \"Confidence\": 90,\n        \"ThreatTypes\": [\n            \"whitelist\",\n            \"IDC\"\n        ],\n        \"Tags\": [],\n        \"Intelligences\": [\n            {}\n        ],\n        \"Context\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询IP信誉度"
+      }
+    ],
+    "DescribeThreatInfo": [
+      {
+        "document": "根据域名，查询该域名是否失陷及相关信息",
+        "input": "https://tics.tencentcloudapi.com/?Action=DescribeThreatInfo\r\n&Key=003143.sdyintong.com\r\n&Type=domain\r\n&Option=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"Result\": \"black\",\n        \"Confidence\": 90,\n        \"ThreatTypes\": [\n            \"malware site\"\n        ],\n        \"Tags\": [],\n        \"Status\": \"inactive\",\n        \"Context\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询域名是否失陷"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,123 @@
+{
+  "actions": {
+    "DescribeAgentShell": {
+      "document": "获取服务接入信息",
+      "input": "DescribeAgentShellRequest",
+      "name": "获取服务接入信息",
+      "output": "DescribeAgentShellResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-09-24",
+    "api_brief": "使用API查看应用、接口、数据库实例被调用的监控数据。\r\n以及展示依赖拓扑图，查询调用链。\r\n修改链路追踪agent的配置参数",
+    "serviceNameCN": "腾讯微服务观测平台 TSW",
+    "serviceShortName": "tsw"
+  },
+  "objects": {
+    "AgentShell": {
+      "document": "agent安装脚本串",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴权token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据接收Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EtlIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EtlPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手动接入脚本串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ByHandAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动接入脚本串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ByShellAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SkyWalking数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SkyWalkingPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Zipkin数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ZipkinPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Jaeger数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "JaegerPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAgentShellRequest": {
+      "document": "DescribeAgentShell请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAgentShellResponse": {
+      "document": "DescribeAgentShell返回参数结构体",
+      "members": [
+        {
+          "document": "接入信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "AgentShell",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

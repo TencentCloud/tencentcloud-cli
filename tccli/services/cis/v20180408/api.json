@@ -1,0 +1,803 @@
+{
+  "actions": {
+    "CreateContainerInstance": {
+      "document": "此接口（CreateContainerInstance）用于创建容器实例",
+      "input": "CreateContainerInstanceRequest",
+      "name": "创建容器实例",
+      "output": "CreateContainerInstanceResponse"
+    },
+    "DeleteContainerInstance": {
+      "document": "此接口（DeleteContainerInstance）用于删除容器实例",
+      "input": "DeleteContainerInstanceRequest",
+      "name": "删除容器实例",
+      "output": "DeleteContainerInstanceResponse"
+    },
+    "DescribeContainerInstance": {
+      "document": "此接口（DescribeContainerInstance）用于获取容器实例详情",
+      "input": "DescribeContainerInstanceRequest",
+      "name": "获取容器实例信息",
+      "output": "DescribeContainerInstanceResponse"
+    },
+    "DescribeContainerInstanceEvents": {
+      "document": "此接口（DescribeContainerInstanceEvents）用于查询容器实例事件列表",
+      "input": "DescribeContainerInstanceEventsRequest",
+      "name": "查询容器实例事件",
+      "output": "DescribeContainerInstanceEventsResponse"
+    },
+    "DescribeContainerInstances": {
+      "document": "此接口（DescribeContainerInstances）查询容器实例列表",
+      "input": "DescribeContainerInstancesRequest",
+      "name": "查询容器实例列表",
+      "output": "DescribeContainerInstancesResponse"
+    },
+    "DescribeContainerLog": {
+      "document": "此接口（DescribeContainerLog）用于获取容器日志信息",
+      "input": "DescribeContainerLogRequest",
+      "name": "获取容器日志信息",
+      "output": "DescribeContainerLogResponse"
+    },
+    "InquiryPriceCreateCis": {
+      "document": "此接口（InquiryPriceCreateCis）用于查询容器实例价格",
+      "input": "InquiryPriceCreateCisRequest",
+      "name": "创建容器实例询价",
+      "output": "InquiryPriceCreateCisResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-08",
+    "serviceShortName": "cis"
+  },
+  "objects": {
+    "Container": {
+      "document": "容器实例中容器结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器启动命令",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器启动参数",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "容器环境变量",
+          "member": "EnvironmentVar",
+          "name": "EnvironmentVars",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "镜像",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器名，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 63个字符",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CPU，单位：核",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "内存，单位：Gi",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "重启次数",
+          "member": "uint64",
+          "name": "RestartCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前状态",
+          "member": "ContainerState",
+          "name": "CurrentState",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "上一次状态",
+          "member": "ContainerState",
+          "name": "PreviousState",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器工作目录",
+          "member": "string",
+          "name": "WorkingDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器ID",
+          "member": "string",
+          "name": "ContainerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerInstance": {
+      "document": "容器实例的具体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例所属VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例所属SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例状态",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器列表",
+          "member": "Container",
+          "name": "Containers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "重启策略",
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "启动时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vpc名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VpcCidr",
+          "member": "string",
+          "name": "VpcCidr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SubnetName",
+          "member": "string",
+          "name": "SubnetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Cidr",
+          "member": "string",
+          "name": "SubnetCidr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "member": "string",
+          "name": "LanIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerLog": {
+      "document": "容器日志",
+      "members": [
+        {
+          "default": "",
+          "document": "容器名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志记录时间",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "out"
+    },
+    "ContainerState": {
+      "document": "容器状态",
+      "members": [
+        {
+          "default": "",
+          "document": "容器运行开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器状态",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态详情",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器运行结束时间",
+          "member": "datetime",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器运行退出码",
+          "member": "int64",
+          "name": "ExitCode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateContainerInstanceRequest": {
+      "document": "CreateContainerInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "subnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重启策略（Always,OnFailure,Never）",
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器列表",
+          "member": "Container",
+          "name": "Containers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContainerInstanceResponse": {
+      "document": "CreateContainerInstance返回参数结构体",
+      "members": [
+        {
+          "document": "容器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteContainerInstanceRequest": {
+      "document": "DeleteContainerInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteContainerInstanceResponse": {
+      "document": "DeleteContainerInstance返回参数结构体",
+      "members": [
+        {
+          "document": "操作信息",
+          "member": "string",
+          "name": "Msg",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstanceEventsRequest": {
+      "document": "DescribeContainerInstanceEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstanceEventsResponse": {
+      "document": "DescribeContainerInstanceEvents返回参数结构体",
+      "members": [
+        {
+          "document": "容器实例事件列表",
+          "member": "Event",
+          "name": "EventList",
+          "type": "list"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstanceRequest": {
+      "document": "DescribeContainerInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstanceResponse": {
+      "document": "DescribeContainerInstance返回参数结构体",
+      "members": [
+        {
+          "document": "容器实例详细信息",
+          "member": "ContainerInstance",
+          "name": "ContainerInstance",
+          "type": "object"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstancesRequest": {
+      "document": "DescribeContainerInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n- Zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。\n- VpcId - String - 是否必填：否 -（过滤条件）按照VpcId过滤。\n- InstanceName - String - 是否必填：否 -（过滤条件）按照容器实例名称做模糊查询。",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerInstancesResponse": {
+      "document": "DescribeContainerInstances返回参数结构体",
+      "members": [
+        {
+          "document": "容器实例列表",
+          "member": "ContainerInstance",
+          "name": "ContainerInstanceList",
+          "type": "list"
+        },
+        {
+          "document": "容器实例总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerLogRequest": {
+      "document": "DescribeContainerLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器名称",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志显示尾部行数",
+          "member": "uint64",
+          "name": "Tail",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志起始时间",
+          "member": "string",
+          "name": "SinceTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContainerLogResponse": {
+      "document": "DescribeContainerLog返回参数结构体",
+      "members": [
+        {
+          "document": "容器日志数组",
+          "member": "ContainerLog",
+          "name": "ContainerLogList",
+          "type": "list"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnvironmentVar": {
+      "document": "容器环境变量",
+      "members": [
+        {
+          "default": "",
+          "document": "环境变量名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "both"
+    },
+    "Event": {
+      "document": "容器实例事件",
+      "members": [
+        {
+          "default": "",
+          "document": "事件首次出现时间",
+          "member": "string",
+          "name": "FirstSeen",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件上次出现时间",
+          "member": "string",
+          "name": "LastSeen",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件等级",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件出现次数",
+          "member": "string",
+          "name": "Count",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件出现原因",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件消息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段，可选值 - Zone，VpcId，InstanceName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤值列表",
+          "member": "string",
+          "name": "ValueList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "InquiryPriceCreateCisRequest": {
+      "document": "InquiryPriceCreateCis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CPU，单位：核",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "内存，单位：Gi",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateCisResponse": {
+      "document": "InquiryPriceCreateCis返回参数结构体",
+      "members": [
+        {
+          "document": "价格",
+          "member": "Price",
+          "name": "Price",
+          "type": "object"
+        },
+        {
+          "document": "唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Price": {
+      "document": "价格",
+      "members": [
+        {
+          "default": "",
+          "document": "原价，单位：元",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "折扣价，单位：元",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float"
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

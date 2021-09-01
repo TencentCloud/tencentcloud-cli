@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "GetRuntimeMC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRuntimeMC\n<公共请求参数>\n\n{\n    \"RuntimeId\": 12,\n    \"Zone\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtime\": {\n            \"Status\": 1,\n            \"DisplayName\": \"xx\",\n            \"Zone\": \"xx\",\n            \"Uin\": \"xx\",\n            \"WorkerReplica\": 0,\n            \"UpdatedAt\": 1624354153,\n            \"Type\": 2,\n            \"RuntimeId\": 123,\n            \"CreatedAt\": 1624354153,\n            \"WorkerSize\": 2,\n            \"RunningInstanceCount\": 3\n        }\n    }\n}",
+        "title": "获取运行时详情"
+      }
+    ],
+    "GetRuntimeResourceMonitorMetricMC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRuntimeResourceMonitorMetricMC\n<公共请求参数>\n\n{\n    \"RuntimeId\": 12,\n    \"StartTime\": 1619656971,\n    \"EndTime\": 1619656971,\n    \"Interval\": 300,\n    \"MetricType\": 2,\n    \"RateType\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Values\": [\n            {\n                \"Time\": 1619656971,\n                \"Val\": 10.3\n            },\n            {\n                \"Time\": 1619656972,\n                \"Val\": 10.9\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"MetricType\": \"K8sWorkloadNetworkReceiveBytesBw\"\n    }\n}",
+        "title": "获取运行时资源监控详情"
+      }
+    ],
+    "ListDeployableRuntimesMC": [
+      {
+        "document": "返回用户可用的运行时列表，发布应用时返回的运行时环境，仅shared和standalone运行时，无sandbox运行时，并且只有running状态的",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeployableRuntimesMC\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtimes\": [\n            {\n                \"DisplayName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Type\": 2,\n                \"RuntimeId\": 123,\n                \"Area\": \"zz\",\n                \"Addr\": \"ipaas.tianjin.com\"\n            }\n        ]\n    }\n}",
+        "title": "获取可部署运行时列表"
+      }
+    ],
+    "ListRuntimeDeployedInstancesMC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimeDeployedInstancesMC\n<公共请求参数>\n\n{\n    \"Sort\": \"xx\",\n    \"SortType\": 2,\n    \"Zone\": \"xx\",\n    \"Limit\": 20,\n    \"Offset\": 21,\n    \"RuntimeId\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": 0,\n                \"InstanceCreatedAt\": 1619656971,\n                \"InstanceId\": 3,\n                \"ProjectId\": 2,\n                \"UpdatedAt\": 1624354153,\n                \"GroupName\": \"xx\",\n                \"ProjectName\": \"xx\",\n                \"InstanceVersion\": 2,\n                \"GroupId\": 1,\n                \"CreatedAt\": 1624354153\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 100\n    }\n}",
+        "title": "ListRuntimeDeployedInstances"
+      }
+    ],
+    "ListRuntimesMC": [
+      {
+        "document": "返回用户的运行时列表，运行时管理主页使用，包含沙箱、共享运行时及独立运行时环境，不包含已经删除的运行时",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimesMC\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtimes\": [\n            {\n                \"Status\": 0,\n                \"DisplayName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Uin\": \"xx\",\n                \"WorkerReplica\": 0,\n                \"UpdatedAt\": 1624354153,\n                \"Type\": 2,\n                \"RuntimeId\": 123,\n                \"CreatedAt\": 1624354153,\n                \"WorkerSize\": 2,\n                \"RunningInstanceCount\": 2\n            }\n        ]\n    }\n}",
+        "title": "获取运行时列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

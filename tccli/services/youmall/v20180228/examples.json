@@ -1,0 +1,313 @@
+{
+  "actions": {
+    "CreateAccount": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=CreateAccount\r\n&CompanyId=\"xx1\"\r\n&Name=\"135652123256\"\r\n&Password=\"1235$#1233\"\r\n&Remark=\"管理员张三\"\r\n&ShopCode=\"123\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建集团门店管理员账号-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=CreateAccount\r\n&CompanyId=\"xx1\"\r\n&Name=\"1234\"\r\n&Password=\"1235$#1233\"\r\n&Remark=\"管理员张三\"\r\n&ShopCode=\"123\"\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"FailedOperation.InvalidParameter\",\r\n      \"Message\": \"parameter is invalid\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "创建集团门店管理员账号-失败"
+      }
+    ],
+    "CreateFacePicture": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=CreateFacePicture\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&PersonType=1\r\n&Picture=8ADQW312887XV878\r\n&PictureName=test.jpg\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"PersonId\": 1,\r\n    \"Status\":0,\r\n    \"PictureUrl\":\"\"\r\n  }\r\n}",
+        "title": "上传人脸图片"
+      }
+    ],
+    "DeletePersonFeature": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DeletePersonFeature\r\n&CompanyId=TestCompany\r\n&ShopId=1\r\n&PersonId=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除顾客特征-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DeletePersonFeature\r\n&CompanyId=TestCompany\r\n&ShopId=1\r\n&PersonId=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter ShopId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "删除顾客特征-失败"
+      }
+    ],
+    "DescribeCameraPerson": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeCameraPerson\r\n&CompanyId=tencent\r\n&ShopId=10086\r\n&CameraId=11\r\n&PosId=test\r\n&StartTime=1536743684\r\n&EndTime=1536743686\r\n&Num=4\r\n&IsNeedPic=0\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"07079dc5-5a08-4298-9aa8-6733cd940a05\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 10086,\r\n        \"CameraId\": 11,\r\n        \"PosId\": \"test\",\r\n        \"Infos\": [\r\n            {\r\n                \"IdType\": 2,\r\n                \"TempId\": \"tencent_10086_11_20180912171447_2753739885041997564_1072_887_91_105\",\r\n                \"FaceId\": 0,\r\n                \"FacePic\": \"\",\r\n                \"Time\": 1536743684\r\n            },\r\n            {\r\n                \"IdType\": 2,\r\n                \"TempId\": \"tencent_10086_11_20180912171537_2753740732643727005_1072_887_91_105\",\r\n                \"FaceId\": 0,\r\n                \"FacePic\": \"\",\r\n                \"Time\": 1536743684\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取摄像头抓图"
+      }
+    ],
+    "DescribeClusterPersonArrivedMall": [
+      {
+        "document": "输出开始时间到结束时间段内的进出场数据。按天聚合的情况下，每天多次进出场算一次，以最初进场时间为进场时间，最后离场时间为离场时间。停留时间为多次进出场的停留时间之和。",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeClusterPersonArrivedMall\r\n&MallId=1\r\n&PersonId=1\r\n&StartTime=2018-09-27 00:00:00\r\n&EndTime=2018-09-27 23:59:59\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ArrivedMallSet\": [\r\n            {\r\n                \"ArrivedTime\": \"2018-09-27 13:31:11\",\r\n                \"InCapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_3_288449730259515327_a1175ff6-1b11-4f25-8e7b-6ed12e78e1cf.jpg\",\r\n                \"LeaveTime\": \"2018-09-27 13:23:03\",\r\n                \"OutCapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_138_297948106269193687_2fc54858-2ced-4059-9df2-dcecc7f1b6ed.jpg\",\r\n                \"StaySecond\": 0\r\n            }\r\n        ],\r\n        \"MallCode\": \"\",\r\n        \"MallId\": \"1\",\r\n        \"PersonId\": \"10140248215740304679\",\r\n        \"RequestId\": \"zephyryi-1538450366114636317\"\r\n    }\r\n}",
+        "title": "查询客户到场信息（按天聚合）"
+      }
+    ],
+    "DescribeClusterPersonTrace": [
+      {
+        "document": "输出开始时间到结束时间段内的进出场数据。按天聚合的情况下，每天多次进出场算一次，以最初进场时间为进场时间，最后离场时间为离场时间。",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeClusterPersonTrace\r\n&MallId=1\r\n&PersonId=1\r\n&StartTime=2018-09-27 00:00:00\r\n&EndTime=2018-09-27 23:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"MallCode\": \"\",\r\n        \"MallId\": \"1\",\r\n        \"PersonId\": \"10140248215740304679\",\r\n        \"RequestId\": \"zephyryi-1538452703894742255\",\r\n        \"TracePointSet\": [\r\n            {\r\n                \"TraceDate\": \"2018-09-27\",\r\n                \"TracePointSet\": [\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_138_297948106269193687_2fc54858-2ced-4059-9df2-dcecc7f1b6ed.jpg\",\r\n                        \"MallAreaId\": 54,\r\n                        \"MallAreaType\": 8,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:23:03\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_106_295694296410814118_ca47a068-d11e-48bc-996c-97b0c639b7d8.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:26:30\",\r\n                        \"TraceEventType\": 1\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_3_288449730259515327_a1175ff6-1b11-4f25-8e7b-6ed12e78e1cf.jpg\",\r\n                        \"MallAreaId\": 54,\r\n                        \"MallAreaType\": 8,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:31:11\",\r\n                        \"TraceEventType\": 1\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_115_296327597928546205_351eada9-77a1-4ae7-926a-f57a1d122708.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:04:45\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_145_298439038210999344_fe5cf3be-617c-423b-841a-f9225d4aade3.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:24:16\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_54_292038196910163335_6a79df72-6cdc-4002-93ea-bc8dc2b69222.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:29:59\",\r\n                        \"TraceEventType\": 1\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询客户单次到场轨迹（按天聚合）"
+      }
+    ],
+    "DescribeFaceIdByTempId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeFaceIdByTempId\r\n&CompanyId=tencent\r\n&ShopId=10086\r\n&TempId=tencent_10086_21_20180722080857_2677813760953992720_306_271_39_39\r\n&CameraId=21\r\n&PosId=test\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"4060c99c-47e7-4706-ab51-a00f91baac39\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 10086,\r\n        \"CameraId\": 21,\r\n        \"PosId\": \"test\",\r\n        \"TempId\": \"tencent_10086_21_20180722080857_2677813760953992720_306_271_39_39\",\r\n        \"FaceId\": 120,\r\n        \"PersonInfo\":{\r\n                \"Age\": 20,\r\n                \"Gender\": 0,\r\n                \"PersonId\": 1,\r\n                \"PersonType\": 1,\r\n                \"PersonSubType\": 1,\r\n                \"PersonPictureUrl\": \"xxxx\"\r\n      }\r\n    }\r\n}",
+        "title": "根据临时ip获取face id"
+      }
+    ],
+    "DescribeHistoryNetworkInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeHistoryNetworkInfo\r\n&Time=1536135402\r\n&CompanyId=tencent\r\n&ShopId=10086\r\n&StartDay=2018-09-04\r\n&EndDay=2018-09-05\r\n&Limit=3\r\n&Offset=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"08f44066-6850-4a77-b663-166fff95fb7b\",\r\n        \"InstanceSet\": {\r\n            \"Count\": 48,\r\n            \"CompanyId\": \"tencent\",\r\n            \"ShopId\": 10086,\r\n            \"Province\": \"上海\",\r\n            \"City\": \"浦东\",\r\n            \"ShopName\": \"优图实验室\",\r\n            \"Infos\": [\r\n                {\r\n                    \"Upload\": 29.15,\r\n                    \"Download\": 221.29,\r\n                    \"MinRtt\": -1,\r\n                    \"AvgRtt\": -1,\r\n                    \"MaxRtt\": -1,\r\n                    \"MdevRtt\": -1,\r\n                    \"Loss\": 100,\r\n                    \"UpdateTime\": 1536071030\r\n                },\r\n                {\r\n                    \"Upload\": 2.47,\r\n                    \"Download\": 1.22,\r\n                    \"MinRtt\": -1,\r\n                    \"AvgRtt\": -1,\r\n                    \"MaxRtt\": -1,\r\n                    \"MdevRtt\": -1,\r\n                    \"Loss\": 100,\r\n                    \"UpdateTime\": 1536067912\r\n                },\r\n                {\r\n                    \"Upload\": 74.33,\r\n                    \"Download\": 230.16,\r\n                    \"MinRtt\": -1,\r\n                    \"AvgRtt\": -1,\r\n                    \"MaxRtt\": -1,\r\n                    \"MdevRtt\": -1,\r\n                    \"Loss\": 100,\r\n                    \"UpdateTime\": 1536066884\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "title": "拉取指定店铺网络状态历史"
+      }
+    ],
+    "DescribeNetworkInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeNetworkInfo\r\n&Time=1536139452\r\n&CompanyId=tencent\r\n&ShopId=10086\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fd2705d2-7444-4522-a9af-46c4b2911b40\",\r\n        \"InstanceSet\": {\r\n            \"Count\": 1,\r\n            \"Infos\": [\r\n                {\r\n                    \"CompanyId\": \"tencent\",\r\n                    \"ShopId\": 10086,\r\n                    \"Province\": \"上海\",\r\n                    \"City\": \"浦东\",\r\n                    \"ShopName\": \"优图实验室\",\r\n                    \"Upload\": 2.29,\r\n                    \"Download\": 1.01,\r\n                    \"MinRtt\": -1,\r\n                    \"AvgRtt\": -1,\r\n                    \"MaxRtt\": -1,\r\n                    \"MdevRtt\": -1,\r\n                    \"Loss\": 100,\r\n                    \"UpdateTime\": 1536136734\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+        "title": "请求店铺当前网络状态"
+      }
+    ],
+    "DescribePerson": [
+      {
+        "document": "查询指定卖场的多个客户信息",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePerson\r\n&MallId=1\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"PersonSet\": [\r\n            {\r\n                \"Age\": 36,\r\n                \"ArrivedCount\": 16,\r\n                \"FirstArrivedTime\": \"2018-03-18 00:00:00\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"78\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 28,\r\n                \"ArrivedCount\": 10,\r\n                \"FirstArrivedTime\": \"2018-03-02 00:00:00\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"123\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 36,\r\n                \"ArrivedCount\": 16,\r\n                \"FirstArrivedTime\": \"2018-03-18 00:00:00\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"362\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 24,\r\n                \"ArrivedCount\": 30,\r\n                \"FirstArrivedTime\": \"2018-01-23 00:00:00\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"467\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 20,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-06 14:40:33\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"362347623\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 22,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-18 17:06:08\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"393731663149746\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 24,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-14 17:31:52\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"2645250752598047\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 21,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-14 12:58:48\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"10526545872139612\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 19,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-14 17:31:54\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"11652450007324432\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 28,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"18408230188136202\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 32,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"21785929908663282\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 22,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-29 11:53:10\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"24037629746704827\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 34,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-14 12:59:00\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"30792744195306845\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 35,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"31919029070242542\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 35,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-13 14:13:48\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"33044528809806896\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 28,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"33044928977089521\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 46,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"35296728790776086\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 20,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-09-13 20:27:19\",\r\n                \"Gender\": 2,\r\n                \"PersonId\": \"36422228530328097\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 24,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"37548528650778933\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            },\r\n            {\r\n                \"Age\": 33,\r\n                \"ArrivedCount\": 1,\r\n                \"FirstArrivedTime\": \"2018-10-02 09:34:07\",\r\n                \"Gender\": 1,\r\n                \"PersonId\": \"38674428511297514\",\r\n                \"PicUrl\": \"\",\r\n                \"Similarity\": 0\r\n            }\r\n        ],\r\n        \"RequestId\": \"zephyryi-1538448929679252515\",\r\n        \"TotalCount\": 10029\r\n    }\r\n}",
+        "title": "查询客户信息"
+      }
+    ],
+    "DescribePersonArrivedMall": [
+      {
+        "document": "输出开始时间到结束时间段内的进出场数据。不做按天聚合的情况下，每次进出场，产生一条进出场数据。",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonArrivedMall\r\n&MallId=1\r\n&PersonId=1\r\n&StartTime=2018-09-27 00:00:00\r\n&EndTime=2018-09-27 23:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ArrivedMallSet\": [\r\n            {\r\n                \"ArrivedTime\": \"\",\r\n                \"InCapPic\": \"\",\r\n                \"LeaveTime\": \"2018-09-27 13:23:03\",\r\n                \"OutCapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_138_297948106269193687_2fc54858-2ced-4059-9df2-dcecc7f1b6ed.jpg\",\r\n                \"StaySecond\": 0,\r\n                \"TraceId\": \"7628580459830422170\"\r\n            },\r\n            {\r\n                \"ArrivedTime\": \"2018-09-27 13:31:11\",\r\n                \"InCapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_3_288449730259515327_a1175ff6-1b11-4f25-8e7b-6ed12e78e1cf.jpg\",\r\n                \"LeaveTime\": \"\",\r\n                \"OutCapPic\": \"\",\r\n                \"StaySecond\": 0,\r\n                \"TraceId\": \"11997948484189277222\"\r\n            }\r\n        ],\r\n        \"MallCode\": \"\",\r\n        \"MallId\": \"1\",\r\n        \"PersonId\": \"10140248215740304679\",\r\n        \"RequestId\": \"zephyryi-1538450928539757861\"\r\n    }\r\n}",
+        "title": "查询客户到场信息"
+      }
+    ],
+    "DescribePersonInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonInfo\r\n&CompanyId=TestCompany\r\n&ShopId=1\r\n&StartPersonId=0\r\n&Offset=0\r\n&Limit=100\r\n&PersonType=1\r\n&PictureExpires=600\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"CompanyId\": \"TestCompany\",\r\n    \"TotalCount\": 2,\r\n    \"PersonInfoSet\": [\r\n      {\r\n        \"Age\": 20,\r\n        \"Gender\": 0,\r\n        \"PersonId\": 1,\r\n        \"PersonType\": 1,\r\n        \"PersonSubType\": 1,\r\n        \"PersonPictureUrl\": \"xxxx\"\r\n      },\r\n      {\r\n        \"Age\": 20,\r\n        \"Gender\": 0,\r\n        \"PersonId\": 2,\r\n        \"PersonType\": 1,\r\n        \"PersonSubType\": 1,\r\n        \"PersonPictureUrl\": \"xxxx\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"ShopId\": \"1\"\r\n  }\r\n}",
+        "title": "获取顾客详情列表接口-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonInfo\r\n&CompanyId=TestCompany\r\n&ShopId=1\r\n&StartPersonId=0\r\n&Offset=0\r\n&Limit=100\r\n&PersonType=1\r\n&PictureExpires=600\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter ShopId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取顾客详情列表接口-失败"
+      }
+    ],
+    "DescribePersonInfoByFacePicture": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonInfoByFacePicture\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&Picture=8ADQW312887XV878\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"CompanyId\": \"testCompany1\",\r\n    \"ShopId\": 10086,\r\n    \"PersonId\": 1,\r\n    \"PictureUrl\": \"http://xxx.jpg\",\r\n    \"PersonType\": 0,\r\n    \"FirstVisitTime\":\"2018-11-22 11:22:33\",\r\n    \"VisitTimes\": 5\r\n  }\r\n}",
+        "title": "根据人脸图片获取顾客身份信息"
+      }
+    ],
+    "DescribePersonTrace": [
+      {
+        "document": "输出开始时间到结束时间段内的进出场数据。",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonTrace\r\n&MallId=1\r\n&PersonId=1\r\n&StartTime=2018-09-27 00:00:00\r\n&EndTime=2018-09-27 23:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"MallCode\": \"\",\r\n        \"MallId\": \"1\",\r\n        \"PersonId\": \"10140248215740304679\",\r\n        \"RequestId\": \"zephyryi-1538451506953823130\",\r\n        \"TraceRouteSet\": [\r\n            {\r\n                \"TraceId\": \"7628580459830422170\",\r\n                \"TracePointSet\": [\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_138_297948106269193687_2fc54858-2ced-4059-9df2-dcecc7f1b6ed.jpg\",\r\n                        \"MallAreaId\": 54,\r\n                        \"MallAreaType\": 8,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:23:03\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_106_295694296410814118_ca47a068-d11e-48bc-996c-97b0c639b7d8.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:26:30\",\r\n                        \"TraceEventType\": 1\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"TraceId\": \"11997948484189277222\",\r\n                \"TracePointSet\": [\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180927/23/1_3_288449730259515327_a1175ff6-1b11-4f25-8e7b-6ed12e78e1cf.jpg\",\r\n                        \"MallAreaId\": 54,\r\n                        \"MallAreaType\": 8,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 13:31:11\",\r\n                        \"TraceEventType\": 1\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_115_296327597928546205_351eada9-77a1-4ae7-926a-f57a1d122708.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:04:45\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_145_298439038210999344_fe5cf3be-617c-423b-841a-f9225d4aade3.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:24:16\",\r\n                        \"TraceEventType\": 2\r\n                    },\r\n                    {\r\n                        \"CapPic\": \"http://wanda-1257179956.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20180928/00/1_54_292038196910163335_6a79df72-6cdc-4002-93ea-bc8dc2b69222.jpg\",\r\n                        \"MallAreaId\": 56,\r\n                        \"MallAreaType\": 4,\r\n                        \"ShopId\": 0,\r\n                        \"TraceEventTime\": \"2018-09-27 14:29:59\",\r\n                        \"TraceEventType\": 1\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查询客户单次到场轨迹"
+      }
+    ],
+    "DescribePersonTraceDetail": [
+      {
+        "document": "查询客户单次到场轨迹明细",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonTraceDetail\r\n&MallId=1\r\n&PersonId=1\r\n&TraceId=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"CoordinateSet\": [\r\n            {\r\n                \"CADX\": 0,\r\n                \"CADY\": 0,\r\n                \"CapPic\": \"http://wanda-1256308313.cos.ap-chengdu.myqcloud.com/2936-wanda-wanda-fengke/20181011/01/1_132_5503890484051949956_0653a91f-2df9-45a7-82a7-3bc1cfd1de96.jpg\",\r\n                \"CapTime\": \"50745-01-06 15:02:37\",\r\n                \"Event\": \"IN\",\r\n                \"MallAreaType\": 1,\r\n                \"PosId\": 0,\r\n                \"ShopId\": 38\r\n            }\r\n        ],\r\n        \"MallId\": \"1\",\r\n        \"PersonId\": \"9930830833069357712\",\r\n        \"RequestId\": \"zephyryi-1538462485268220533\",\r\n        \"TraceId\": \"10225355919859684727\"\r\n    }\r\n}",
+        "title": "查询客户单次到场轨迹明细"
+      }
+    ],
+    "DescribePersonVisitInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonVisitInfo\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&StartDateTime=2016-10-10 00:00:10\r\n&EndDateTime=2017-06-01 00:00:10\r\n&Offset=100\r\n&Limit=100\r\n&PictureExpires=10\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"CompanyId\": \"testCompany1\",\r\n    \"TotalCount\": 2,\r\n    \"PersonVisitInfoSet\": [\r\n      {\r\n        \"CapturedPictureUrl\": \"xxx\",\r\n        \"GlassType\": 1,\r\n        \"HairType\": 2,\r\n        \"InTime\": 1529565964,\r\n        \"MaskType\": 0,\r\n        \"PersonId\": 1,\r\n        \"VisitId\": 123\r\n      },\r\n      {\r\n        \"CapturedPictureUrl\": \"xxx\",\r\n        \"GlassType\": 1,\r\n        \"HairType\": 2,\r\n        \"InTime\": 1529565964,\r\n        \"MaskType\": 0,\r\n        \"PersonId\": 1,\r\n        \"VisitId\": 123\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"ShopId\": 1\r\n  }\r\n}",
+        "title": "获取顾客到访信息列表接口-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribePersonVisitInfo\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&StartDateTime=2016-10-10 00:00:10\r\n&EndDateTime=2017-06-01 00:00:10\r\n&Offset=100\r\n&Limit=100\r\n&PictureExpires=10\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter CompanyId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取顾客到访信息列表接口-失败"
+      }
+    ],
+    "DescribeShopHourTrafficInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopHourTrafficInfo\r\n&CompanyId=testCompany1\r\n&ShopId=123\r\n&StartDate=2018-06-01\r\n&EndDate=2018-06-15\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"CompanyId\": \"testCompany1\",\r\n    \"TotalCount\": 2,\r\n    \"ShopHourTrafficInfoSet\": [\r\n      {\r\n        \"Date\": \"2018-06-01\",\r\n        \"HourTrafficInfoDetailSet\": [\r\n          {\r\n            \"Hour\": 12,\r\n            \"HourTrafficCount\": 1000\r\n          },\r\n          {\r\n            \"Hour\": 11,\r\n            \"HourTrafficCount\": 1000\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"Date\": \"2018-06-02\",\r\n        \"HourTrafficInfoDetailSet\": [\r\n          {\r\n            \"Hour\": 12,\r\n            \"HourTrafficCount\": 1000\r\n          },\r\n          {\r\n            \"Hour\": 11,\r\n            \"HourTrafficCount\": 1000\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"ShopId\": 123\r\n  }\r\n}",
+        "title": "获取每小时客流人数接口-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopHourTrafficInfo\r\n&ShopId=123\r\n&StartDate=2018-06-01\r\n&EndDate=2018-06-15\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter CompanyId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取每小时客流人数接口-失败"
+      }
+    ],
+    "DescribeShopInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopInfo\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"TotalCount\": 100,\r\n    \"ShopInfoSet\": [\r\n      {\r\n        \"City\": \"北京市\",\r\n        \"CompanyId\": \"testCompany1\",\r\n        \"CompanyName\": \"测试1\",\r\n        \"Province\": \"北京市\",\r\n        \"ShopCode\": \"xxx\",\r\n        \"ShopId\": 2,\r\n        \"ShopName\": \"门店XXX\"\r\n      },\r\n      {\r\n        \"City\": \"成都市\",\r\n        \"CompanyId\": \"testCompany1\",\r\n        \"CompanyName\": \"测试1\",\r\n        \"Province\": \"四川省\",\r\n        \"ShopCode\": \"xxx1\",\r\n        \"ShopId\": 2,\r\n        \"ShopName\": \"门店XXX1\"\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\"\r\n  }\r\n}",
+        "title": "获取客户所属门店列表接口 - 成功示例"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopInfo\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"FailedOperation.NoRight\",\r\n      \"Message\": \"have no right access\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取客户所属门店列表接口 - 失败示例"
+      }
+    ],
+    "DescribeShopTrafficInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopTrafficInfo\r\n&CompanyId=testCompany1\r\n&ShopId=123\r\n&StartDate=2018-06-01\r\n&EndDate=2018-06-15\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"CompanyId\": \"testCompany1\",\r\n    \"TotalCount\": 2,\r\n    \"ShopDayTrafficInfoSet\": [\r\n      {\r\n        \"Date\": \"2018-06-01\",\r\n        \"DayTrafficCount\": 1000,\r\n        \"GenderAgeTrafficDetailSet\": [\r\n          {\r\n            \"AgeGap\": \"12-10\",\r\n            \"Gender\": 1,\r\n            \"TrafficCount\": 123\r\n          },\r\n          {\r\n            \"AgeGap\": \"12-10\",\r\n            \"Gender\": 0,\r\n            \"TrafficCount\": 123\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"Date\": \"2018-06-02\",\r\n        \"DayTrafficCount\": 1000,\r\n        \"GenderAgeTrafficDetailSet\": [\r\n          {\r\n            \"AgeGap\": \"12-10\",\r\n            \"Gender\": 1,\r\n            \"TrafficCount\": 123\r\n          },\r\n          {\r\n            \"AgeGap\": \"12-10\",\r\n            \"Gender\": 0,\r\n            \"TrafficCount\": 123\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"ShopId\": 123\r\n  }\r\n}",
+        "title": "获取每日客流人数接口-成功实例"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeShopTrafficInfo\r\n&ShopId=123\r\n&StartDate=2018-06-01\r\n&EndDate=2018-06-15\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter CompanyId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取每日客流人数接口-失败实例"
+      }
+    ],
+    "DescribeTrajectoryData": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeTrajectoryData\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&Limit=10\r\n&Gender=0\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Data\": [],\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"TotalPerson\": 0,\r\n        \"TotalTrajectory\": 0,\r\n        \"Person\": 0,\r\n        \"Trajectory\": 0,\r\n        \"RequestId\": \"7494e219-3387-451b-bd48-6de7a5baf92f\"\r\n    }\r\n}",
+        "title": "获取动线轨迹信息"
+      }
+    ],
+    "DescribeZoneFlowAgeInfoByZoneId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowAgeInfoByZoneId\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&ZoneId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"803ce68a-1bf4-4cbc-89da-6e3a6c7710ea\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"ZoneId\": 1,\r\n        \"ZoneName\": \"餐饮区\",\r\n        \"Data\": [\r\n            0,\r\n            0,\r\n            0,\r\n            0,\r\n            0,\r\n            0,\r\n            0\r\n        ]\r\n    }\r\n}",
+        "title": "获取指定区域人流各年龄占比"
+      }
+    ],
+    "DescribeZoneFlowAndStayTime": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowAndStayTime\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"111a6cae-3bae-45ee-a8bd-9b2ec6f028e7\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"Data\": [\r\n            {\r\n                \"ZoneId\": 2,\r\n                \"ZoneName\": \"方便面区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 3,\r\n                \"ZoneName\": \"收银区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 4,\r\n                \"ZoneName\": \"麦子工坊\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 5,\r\n                \"ZoneName\": \"水果区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 6,\r\n                \"ZoneName\": \"出入口\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 7,\r\n                \"ZoneName\": \"冷饮区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 8,\r\n                \"ZoneName\": \"干百区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 9,\r\n                \"ZoneName\": \"吧台区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 10,\r\n                \"ZoneName\": \"冷冻区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 11,\r\n                \"ZoneName\": \"生活区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            },\r\n            {\r\n                \"ZoneId\": 12,\r\n                \"ZoneName\": \"酒类区\",\r\n                \"FlowCount\": 0,\r\n                \"AvrStayTime\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取区域人流和停留时间"
+      }
+    ],
+    "DescribeZoneFlowDailyByZoneId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowDailyByZoneId\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&ZoneId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"9bf7fde2-a9dc-4ad0-a04c-35d30e01c605\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"ZoneId\": 1,\r\n        \"ZoneName\": \"餐饮区\",\r\n        \"Data\": [\r\n            {\r\n                \"Day\": \"2018-09-21\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-22\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-23\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-24\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-25\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-26\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-27\",\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Day\": \"2018-09-28\",\r\n                \"FlowCount\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取指定区域每日客流量"
+      }
+    ],
+    "DescribeZoneFlowGenderAvrStayTimeByZoneId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowGenderAvrStayTimeByZoneId\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&ZoneId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"17dc5fc2-f482-42ed-b5c1-f92d028dad79\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"ZoneId\": 1,\r\n        \"ZoneName\": \"餐饮区\",\r\n        \"Data\": [\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            },\r\n            {\r\n                \"MaleAvrStayTime\": 0,\r\n                \"FemaleAvrStayTime\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取指定区域不同年龄段男女平均停留时间"
+      }
+    ],
+    "DescribeZoneFlowGenderInfoByZoneId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowGenderInfoByZoneId\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&ZoneId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"16719a3d-4826-43e7-b726-dce6062a59e4\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 12345,\r\n        \"ZoneId\": 1,\r\n        \"ZoneName\": \"餐饮区\",\r\n        \"MalePercent\": 0,\r\n        \"FemalePercent\": 0\r\n    }\r\n}",
+        "title": "获取指定区域性别占比"
+      }
+    ],
+    "DescribeZoneFlowHourlyByZoneId": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneFlowHourlyByZoneId\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&ZoneId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"78cd194f-459f-4b65-8b0a-fd3b69abb768\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 10086,\r\n        \"ZoneId\": 1,\r\n        \"ZoneName\": \"西北出口\",\r\n        \"Data\": [\r\n            {\r\n                \"Hour\": 0,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 1,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 2,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 3,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 4,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 5,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 6,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 7,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 8,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 9,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 10,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 11,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 12,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 13,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 14,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 15,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 16,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 17,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 18,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 19,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 20,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 21,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 22,\r\n                \"FlowCount\": 0\r\n            },\r\n            {\r\n                \"Hour\": 23,\r\n                \"FlowCount\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "获取指定区域分时客流量"
+      }
+    ],
+    "DescribeZoneTrafficInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneTrafficInfo\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"CompanyId\": \"testCompany1\",\r\n    \"TotalCount\": 2,\r\n    \"ZoneTrafficInfoSet\": [\r\n      {\r\n        \"Date\": \"2016-10-10\",\r\n        \"ZoneTrafficInfoDetailSet\": [\r\n          {\r\n            \"AvgStayTime\": 130,\r\n            \"TrafficCount\": 122,\r\n            \"ZoneId\": 1,\r\n            \"ZoneName\": \"洗漱用品区\"\r\n          },\r\n          {\r\n            \"AvgStayTime\": 1300,\r\n            \"TrafficCount\": 1202,\r\n            \"ZoneId\": 2,\r\n            \"ZoneName\": \"厨房用品区\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"Date\": \"2016-10-11\",\r\n        \"ZoneTrafficInfoDetailSet\": [\r\n          {\r\n            \"AvgStayTime\": 130,\r\n            \"TrafficCount\": 122,\r\n            \"ZoneId\": 1,\r\n            \"ZoneName\": \"洗漱用品区\"\r\n          },\r\n          {\r\n            \"AvgStayTime\": 1300,\r\n            \"TrafficCount\": 1202,\r\n            \"ZoneId\": 2,\r\n            \"ZoneName\": \"厨房用品区\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\",\r\n    \"ShopId\": 1\r\n  }\r\n}",
+        "title": "获取区域客流人次及停留时间 - 成功示例"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=DescribeZoneTrafficInfo\r\n&CompanyId=testCompany1\r\n&StartDate=2016-10-10\r\n&EndDate=2017-06-01\r\n&Offset=0\r\n&Limit=100\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter ShopId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "获取区域客流人次及停留时间 - 失败示例"
+      }
+    ],
+    "ModifyPersonFeatureInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=ModifyPersonFeatureInfo\r\n&CompanyId=tencent\r\n&ShopId=3030003\r\n&PersonId=3921\r\n&Picture=picture\r\n&PictureName=picName\r\n&PersonType=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"83718397-3997-4e9f-b326-73a672697260\",\r\n        \"CompanyId\": \"tencent\",\r\n        \"ShopId\": 3030003,\r\n        \"PersonId\": 3921,\r\n        \"PersonIdBind\": 3921,\r\n        \"PersonType\": 1,\r\n        \"SimilarPersonIds\": [\r\n            3921\r\n        ]\r\n    }\r\n}",
+        "title": "修改顾客特征信息"
+      }
+    ],
+    "ModifyPersonTagInfo": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=ModifyPersonTagInfo\r\n&CompanyId=tencent\r\n&ShopId=10086\r\n&Tags.0.OldType=0\r\n&Tags.0.NewType=2\r\n&Tags.0.PersonId=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"fbedb77c-66c4-4472-a4b2-f2b8890a8bac\"\r\n    }\r\n}",
+        "title": "设置顾客身份"
+      }
+    ],
+    "ModifyPersonType": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=ModifyPersonType\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&PersonId=1\r\n&PersonType=1\r\n&PersonSubType=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\"\r\n  }\r\n}",
+        "title": "修改顾客身份类型接口-成功"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=ModifyPersonType\r\n&CompanyId=testCompany1\r\n&ShopId=1\r\n&PersonId=1\r\n&PersonType=1\r\n&PersonSubType=1\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter\",\r\n      \"Message\": \"Parameter CompanyId is missing\"\r\n    },\r\n    \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\r\n  }\r\n}",
+        "title": "修改顾客身份类型接口-失败"
+      }
+    ],
+    "RegisterCallback": [
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=RegisterCallback\r\n&CompanyId=TestCompany\r\n&BackUrl=TestUrl\r\n&Time=1529898082\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\"\r\n  }\r\n}",
+        "title": "门店到访通知回调地址注册接口 - 成功示例"
+      },
+      {
+        "document": "",
+        "input": "https://youmall.tencentcloudapi.com/?Action=RegisterCallback\r\n&CompanyId=TestCompany\r\n&BackUrl=TestUrl\r\n&Time=1529898082\r\n&<公共请求参数>",
+        "output": "{\r\n  \"Response\": {\r\n    \"Error\": {\r\n      \"Code\": \"InvalidParameter \",\r\n      \"Message\": \"参数错误\"\r\n    },\r\n    \"RequestId\": \"6ec80684-0879-405e-8932-72e7c0c48ef8\"\r\n  }\r\n}",
+        "title": "门店到访通知回调地址注册接口 - 失败示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

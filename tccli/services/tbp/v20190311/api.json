@@ -1,0 +1,420 @@
+{
+  "actions": {
+    "CreateBot": {
+      "document": "创建机器人",
+      "input": "CreateBotRequest",
+      "name": "创建机器人",
+      "output": "CreateBotResponse"
+    },
+    "Reset": {
+      "document": "对当前机器人的会话状态进行复位",
+      "input": "ResetRequest",
+      "name": "复位",
+      "output": "ResetResponse"
+    },
+    "TextProcess": {
+      "document": "接收调用侧的文本输入，返回应答文本。已废弃，推荐使用最新版TextProcess接口。",
+      "input": "TextProcessRequest",
+      "name": "文本处理",
+      "output": "TextProcessResponse"
+    },
+    "TextReset": {
+      "document": "会话重置接口。已废弃，推荐使用最新版TextReset接口。",
+      "input": "TextResetRequest",
+      "name": "会话重置",
+      "output": "TextResetResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-11",
+    "api_brief": "介绍如何使用API对腾讯智能对话平台进行操作，包括会话重置、文本处理等。",
+    "serviceNameCN": "腾讯智能对话平台",
+    "serviceShortName": "tbp"
+  },
+  "objects": {
+    "CreateBotRequest": {
+      "document": "CreateBot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人名称",
+          "member": "string",
+          "name": "BotName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人中文名称",
+          "member": "string",
+          "name": "BotCnName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBotResponse": {
+      "document": "CreateBot返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务信息",
+          "member": "string",
+          "name": "Msg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRequest": {
+      "document": "Reset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人标识",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子账户id，每个终端对应一个",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "''",
+          "document": "机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
+          "member": "string",
+          "name": "BotVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "''",
+          "document": "机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
+          "member": "string",
+          "name": "BotEnv",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetResponse": {
+      "document": "Reset返回参数结构体",
+      "members": [
+        {
+          "document": "当前会话状态。取值:\"start\"/\"continue\"/\"complete\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DialogStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的机器人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BotName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的意图名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IntentName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机器人回答",
+          "member": "string",
+          "name": "ResponseText",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语义解析的槽位结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SlotInfo",
+          "name": "SlotInfoList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "透传字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionAttributes",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户说法。该说法是用户原生说法或ASR识别结果，未经过语义优化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Question",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "tts合成pcm音频存储链接。仅当请求参数NeedTts=true时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WaveUrl",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "tts合成的pcm音频。二进制数组经过base64编码(暂时不返回)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WaveData",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SlotInfo": {
+      "document": "槽位信息",
+      "members": [
+        {
+          "default": "",
+          "document": "槽位名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SlotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "槽位值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SlotValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TextProcessRequest": {
+      "document": "TextProcess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人标识，用于定义抽象机器人。",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端标识，每个终端(或线程)对应一个，区分并发多用户。",
+          "member": "string",
+          "name": "TerminalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求的文本。",
+          "member": "string",
+          "name": "InputText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。",
+          "member": "string",
+          "name": "BotEnv",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，透传给用户自定义的WebService服务。",
+          "member": "string",
+          "name": "SessionAttributes",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextProcessResponse": {
+      "document": "TextProcess返回参数结构体",
+      "members": [
+        {
+          "document": "当前会话状态{会话开始: START; 会话中: COUTINUE; 会话结束: COMPLETE}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DialogStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BotName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IntentName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SlotInfo",
+          "name": "SlotInfoList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InputText",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionAttributes",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机器人对话的应答文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResponseText",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextResetRequest": {
+      "document": "TextReset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人标识，用于定义抽象机器人。",
+          "member": "string",
+          "name": "BotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端标识，每个终端(或线程)对应一个，区分并发多用户。",
+          "member": "string",
+          "name": "TerminalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。",
+          "member": "string",
+          "name": "BotEnv",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextResetResponse": {
+      "document": "TextReset返回参数结构体",
+      "members": [
+        {
+          "document": "当前会话状态，取值：\"START\"/\"COUTINUE\"/\"COMPLETE\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DialogStatus",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BotName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IntentName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SlotInfo",
+          "name": "SlotInfoList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InputText",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SessionAttributes",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机器人对话的应答文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResponseText",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

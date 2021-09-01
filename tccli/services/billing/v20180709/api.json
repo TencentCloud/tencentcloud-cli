@@ -1,0 +1,4307 @@
+{
+  "actions": {
+    "DescribeAccountBalance": {
+      "document": "获取云账户余额信息。",
+      "input": "DescribeAccountBalanceRequest",
+      "name": "获取账户余额",
+      "output": "DescribeAccountBalanceResponse"
+    },
+    "DescribeBillDetail": {
+      "document": "查询账单明细数据",
+      "input": "DescribeBillDetailRequest",
+      "name": "查询账单明细数据",
+      "output": "DescribeBillDetailResponse"
+    },
+    "DescribeBillList": {
+      "document": "获取收支明细列表，支持翻页和参数过滤",
+      "input": "DescribeBillListRequest",
+      "name": "获取收支明细列表",
+      "output": "DescribeBillListResponse"
+    },
+    "DescribeBillResourceSummary": {
+      "document": "查询账单资源汇总数据 ",
+      "input": "DescribeBillResourceSummaryRequest",
+      "name": "查询账单资源汇总数据",
+      "output": "DescribeBillResourceSummaryResponse"
+    },
+    "DescribeBillSummaryByPayMode": {
+      "document": "获取按付费模式汇总费用分布",
+      "input": "DescribeBillSummaryByPayModeRequest",
+      "name": "获取按付费模式汇总费用分布",
+      "output": "DescribeBillSummaryByPayModeResponse"
+    },
+    "DescribeBillSummaryByProduct": {
+      "document": "获取产品汇总费用分布",
+      "input": "DescribeBillSummaryByProductRequest",
+      "name": "获取产品汇总费用分布",
+      "output": "DescribeBillSummaryByProductResponse"
+    },
+    "DescribeBillSummaryByProject": {
+      "document": "获取按项目汇总费用分布",
+      "input": "DescribeBillSummaryByProjectRequest",
+      "name": "获取按项目汇总费用分布",
+      "output": "DescribeBillSummaryByProjectResponse"
+    },
+    "DescribeBillSummaryByRegion": {
+      "document": "获取按地域汇总费用分布",
+      "input": "DescribeBillSummaryByRegionRequest",
+      "name": "获取按地域汇总费用分布",
+      "output": "DescribeBillSummaryByRegionResponse"
+    },
+    "DescribeBillSummaryByTag": {
+      "document": "获取按标签汇总费用分布",
+      "input": "DescribeBillSummaryByTagRequest",
+      "name": "获取按标签汇总费用分布",
+      "output": "DescribeBillSummaryByTagResponse"
+    },
+    "DescribeCostDetail": {
+      "document": "查询消耗明细",
+      "input": "DescribeCostDetailRequest",
+      "name": "查询消耗明细",
+      "output": "DescribeCostDetailResponse"
+    },
+    "DescribeCostSummaryByProduct": {
+      "document": "获取按产品汇总消耗详情",
+      "input": "DescribeCostSummaryByProductRequest",
+      "name": "获取按产品汇总消耗详情",
+      "output": "DescribeCostSummaryByProductResponse"
+    },
+    "DescribeCostSummaryByProject": {
+      "document": "获取按项目汇总消耗详情",
+      "input": "DescribeCostSummaryByProjectRequest",
+      "name": "获取按项目汇总消耗详情",
+      "output": "DescribeCostSummaryByProjectResponse"
+    },
+    "DescribeCostSummaryByRegion": {
+      "document": "获取按地域汇总消耗详情",
+      "input": "DescribeCostSummaryByRegionRequest",
+      "name": "获取按地域汇总消耗详情",
+      "output": "DescribeCostSummaryByRegionResponse"
+    },
+    "DescribeCostSummaryByResource": {
+      "document": "获取按资源汇总消耗详情",
+      "input": "DescribeCostSummaryByResourceRequest",
+      "name": "获取按资源汇总消耗详情",
+      "output": "DescribeCostSummaryByResourceResponse"
+    },
+    "DescribeDealsByCond": {
+      "document": "查询订单",
+      "input": "DescribeDealsByCondRequest",
+      "name": "查询订单数据",
+      "output": "DescribeDealsByCondResponse"
+    },
+    "DescribeDosageCosDetailByDate": {
+      "document": "获取COS产品用量明细",
+      "input": "DescribeDosageCosDetailByDateRequest",
+      "name": "获取COS产品用量明细",
+      "output": "DescribeDosageCosDetailByDateResponse"
+    },
+    "DescribeDosageDetailByDate": {
+      "document": "按日期获取产品用量明细",
+      "input": "DescribeDosageDetailByDateRequest",
+      "name": "按日期获取产品用量明细",
+      "output": "DescribeDosageDetailByDateResponse"
+    },
+    "PayDeals": {
+      "document": "支付订单",
+      "input": "PayDealsRequest",
+      "name": "支付订单",
+      "output": "PayDealsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-07-09",
+    "api_brief": "介绍如何使用API对计费相关进行操作，包括资金管理、账单管理、订单管理等。",
+    "serviceNameCN": "计费相关",
+    "serviceShortName": "billing"
+  },
+  "objects": {
+    "ActionSummaryOverviewItem": {
+      "document": "按交易类型汇总消费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型名称",
+          "member": "string",
+          "name": "ActionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单月份，格式2019-08",
+          "member": "string",
+          "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillDetail": {
+      "document": "账单明细数据对象",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1",
+          "member": "string",
+          "name": "ProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式：包年包月和按量计费",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目:资源所属项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域：资源所属地域，如华南地区（广州）",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区：资源所属可用区，如广州三区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型",
+          "member": "string",
+          "name": "ActionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易ID",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣费时间",
+          "member": "datetime",
+          "name": "PayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始使用时间",
+          "member": "datetime",
+          "name": "FeeBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束使用时间",
+          "member": "datetime",
+          "name": "FeeEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件列表",
+          "member": "BillDetailComponent",
+          "name": "ComponentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付者UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用者UIN",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者UIN",
+          "member": "string",
+          "name": "OperateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BillTagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易类型代码（未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目ID:资源所属项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillDetailComponent": {
+      "document": "账单明细组件对象",
+      "members": [
+        {
+          "default": "",
+          "document": "组件类型:资源组件类型的名称，如内存、硬盘等",
+          "member": "string",
+          "name": "ComponentCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件名称:资源组件的名称，如云数据库MySQL-内存等",
+          "member": "string",
+          "name": "ItemCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件刊例价:资源组件的原始价格，保持原始粒度",
+          "member": "string",
+          "name": "SinglePrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件指定价",
+          "member": "string",
+          "name": "SpecifiedPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "价格单位",
+          "member": "string",
+          "name": "PriceUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件用量",
+          "member": "string",
+          "name": "UsedAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件用量单位",
+          "member": "string",
+          "name": "UsedAmountUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用时长",
+          "member": "string",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时长单位",
+          "member": "string",
+          "name": "TimeUnitName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件原价",
+          "member": "string",
+          "name": "Cost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣率",
+          "member": "string",
+          "name": "Discount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠类型",
+          "member": "string",
+          "name": "ReduceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠后总价",
+          "member": "string",
+          "name": "RealCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券支付金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金支付金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送账户支付金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ItemCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组件名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ComponentCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContractPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BillResourceSummary": {
+      "document": "账单资源汇总数据对象",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回\"-\"",
+          "member": "string",
+          "name": "ProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式：包年包月和按量计费",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
+          "member": "string",
+          "name": "ActionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣费时间",
+          "member": "datetime",
+          "name": "PayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始使用时间",
+          "member": "datetime",
+          "name": "FeeBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束使用时间",
+          "member": "datetime",
+          "name": "FeeEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置描述",
+          "member": "string",
+          "name": "ConfigDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段1",
+          "member": "string",
+          "name": "ExtendField1",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段2",
+          "member": "string",
+          "name": "ExtendField2",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元",
+          "member": "string",
+          "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣率",
+          "member": "string",
+          "name": "Discount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠类型",
+          "member": "string",
+          "name": "ReduceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠后总价，单位为元",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券支付金额，单位为元",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金账户支付金额，单位为元",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送账户支付金额，单位为元",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段3",
+          "member": "string",
+          "name": "ExtendField3",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段4",
+          "member": "string",
+          "name": "ExtendField4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展字段5",
+          "member": "string",
+          "name": "ExtendField5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BillTagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方uin",
+          "member": "string",
+          "name": "PayerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源所有者uin,无值则返回\"-\"",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者uin,无值则返回\"-\"",
+          "member": "string",
+          "name": "OperateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品名称代码",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子商品名称代码",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域ID",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillTagInfo": {
+      "document": "账单 Tag 信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分账标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillTransactionInfo": {
+      "document": "收支明细的流水信息",
+      "members": [
+        {
+          "default": "",
+          "document": "收支类型：deduct 扣费, recharge 充值, return 退费， block 冻结, unblock 解冻",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水金额，单位（分）；正数表示入账，负数表示出账",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用余额，单位（分）；正数表示入账，负数表示出账",
+          "member": "int64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水号，如20190131020000236005203583326401",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息",
+          "member": "string",
+          "name": "OperationInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作时间\"2019-01-31 23:35:10.000\"",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金账户余额，单位（分）",
+          "member": "int64",
+          "name": "Cash",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金余额，单位（分）",
+          "member": "int64",
+          "name": "Incentive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "冻结余额，单位（分）",
+          "member": "int64",
+          "name": "Freezing",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易渠道",
+          "member": "string",
+          "name": "PayChannel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扣费模式：trade 包年包月(预付费)，hourh  按量-小时结，hourd 按量-日结，hourm 按量-月结，month 按量-月结",
+          "member": "string",
+          "name": "DeductMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BusinessSummaryOverviewItem": {
+      "document": "按产品汇总产品详情",
+      "members": [
+        {
+          "default": "",
+          "document": "产品码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单月份，格式2019-08",
+          "member": "string",
+          "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BusinessSummaryTotal": {
+      "document": "按产品汇总总费用",
+      "members": [
+        {
+          "default": "",
+          "document": "总花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConditionBusiness": {
+      "document": "产品过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "产品码",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConditionPayMode": {
+      "document": "付费模式过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "付费模式",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式名称",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConditionProject": {
+      "document": "项目过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConditionRegion": {
+      "document": "地域过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Conditions": {
+      "document": "账单筛选条件对象",
+      "members": [
+        {
+          "default": "6",
+          "document": "只支持6和12两个值",
+          "member": "uint64",
+          "name": "TimeRange",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品编码",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式，可选prePay和postPay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源关键字",
+          "member": "string",
+          "name": "ResourceKeyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品编码",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子产品编码",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "int64",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式，可选prePay和postPay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "是否隐藏0元流水",
+          "member": "int64",
+          "name": "HideFreeCost",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序规则，可选desc和asc",
+          "member": "string",
+          "name": "OrderByCost",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易ID",
+          "member": "string",
+          "name": "BillIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件编码",
+          "member": "string",
+          "name": "ComponentCodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件ID",
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件类型",
+          "member": "string",
+          "name": "FileTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ConsumptionBusinessSummaryDataItem": {
+      "document": "消耗按产品汇总详情",
+      "members": [
+        {
+          "default": "",
+          "document": "产品码",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用趋势",
+          "member": "ConsumptionSummaryTrend",
+          "name": "Trend",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionProjectSummaryDataItem": {
+      "document": "消耗按项目汇总详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "趋势",
+          "member": "ConsumptionSummaryTrend",
+          "name": "Trend",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品消耗详情",
+          "member": "ConsumptionBusinessSummaryDataItem",
+          "name": "Business",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionRegionSummaryDataItem": {
+      "document": "消耗按地域汇总详情",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "趋势",
+          "member": "ConsumptionSummaryTrend",
+          "name": "Trend",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品消费详情",
+          "member": "ConsumptionBusinessSummaryDataItem",
+          "name": "Business",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionResourceSummaryConditionValue": {
+      "document": "消耗按资源汇总过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "产品列表",
+          "member": "ConditionBusiness",
+          "name": "Business",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目列表",
+          "member": "ConditionProject",
+          "name": "Project",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域列表",
+          "member": "ConditionRegion",
+          "name": "Region",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式列表",
+          "member": "ConditionPayMode",
+          "name": "PayMode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionResourceSummaryDataItem": {
+      "document": "消耗按资源汇总详情",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金花费",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式名称",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品码",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消耗类型",
+          "member": "string",
+          "name": "ConsumptionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionSummaryTotal": {
+      "document": "消耗汇总详情",
+      "members": [
+        {
+          "default": "",
+          "document": "折后总价",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumptionSummaryTrend": {
+      "document": "消耗费用趋势",
+      "members": [
+        {
+          "default": "",
+          "document": "趋势类型，upward上升/downward下降/none无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "趋势值，Type为none是该字段值为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CosDetailSets": {
+      "document": "cos产品用量明细返回数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "存储桶名称",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量开始时间",
+          "member": "string",
+          "name": "DosageBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量结束时间",
+          "member": "string",
+          "name": "DosageEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级产品类型名称",
+          "member": "string",
+          "name": "SubProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级产品类型名称",
+          "member": "string",
+          "name": "BillingItemCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量",
+          "member": "string",
+          "name": "DosageValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CostComponentSet": {
+      "document": "消耗组件明细",
+      "members": [
+        {
+          "default": "",
+          "document": "组件类型名称",
+          "member": "string",
+          "name": "ComponentCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件名称",
+          "member": "string",
+          "name": "ItemCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "刊例价",
+          "member": "string",
+          "name": "SinglePrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "刊例价单位",
+          "member": "string",
+          "name": "PriceUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量",
+          "member": "string",
+          "name": "UsedAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量单位",
+          "member": "string",
+          "name": "UsedAmountUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价",
+          "member": "string",
+          "name": "Cost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣",
+          "member": "string",
+          "name": "Discount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后价",
+          "member": "string",
+          "name": "RealCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券支付金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金支付金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金支付金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CostDetail": {
+      "document": "消耗明细数据类型",
+      "members": [
+        {
+          "default": "",
+          "document": "支付者uin",
+          "member": "string",
+          "name": "PayerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务名称",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "ProductCodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费模式名称",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地区名称",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ActionTypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单id",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易id",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用开始时间",
+          "member": "string",
+          "name": "FeeBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用结束时间",
+          "member": "string",
+          "name": "FeeEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件明细",
+          "member": "CostComponentSet",
+          "name": "ComponentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品代码",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Deal": {
+      "document": "订单数据对象",
+      "members": [
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付者",
+          "member": "string",
+          "name": "Payer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建人",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际支付金额（分）",
+          "member": "int64",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券抵扣金额（分）",
+          "member": "int64",
+          "name": "VoucherDecline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品分类ID",
+          "member": "int64",
+          "name": "GoodsCategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品详情",
+          "member": "ProductInfo",
+          "name": "ProductInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时长",
+          "member": "float",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间单位",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "货币单位",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣率",
+          "member": "float",
+          "name": "Policy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单价（分）",
+          "member": "float",
+          "name": "Price",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价（分）",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子产品编码",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大订单号",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "退费公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Formula",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退费涉及订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RefReturnDeals",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费模式：prePay 预付费 postPay后付费 riPay预留实例",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAccountBalanceRequest": {
+      "document": "DescribeAccountBalance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccountBalanceResponse": {
+      "document": "DescribeAccountBalance返回参数结构体",
+      "members": [
+        {
+          "document": "接口做过变更,为兼容老接口,本字段与RealBalance相同,为当前真实可用余额,单位 分",
+          "example": "10000",
+          "member": "int64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询的用户Uin",
+          "example": "1",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前真实可用余额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "RealBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "现金账户余额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "CashAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "收益转入账户余额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "IncomeIntoAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "赠送账户余额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "PresentAccountBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结金额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "FreezeAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "欠费金额,单位 分",
+          "example": "1",
+          "member": "float",
+          "name": "OweAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否允许欠费消费",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAllowArrears",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否限制信用额度",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCreditLimited",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "CreditAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "CreditBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "真实可用信用额度",
+          "example": "1",
+          "member": "float",
+          "name": "RealCreditBalance",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillDetailRequest": {
+      "document": "DescribeBillDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数量，最大值为100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "member": "string",
+          "name": "PeriodType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。(不支持跨月查询)",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。（不支持跨月查询）",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "member": "int64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询指定产品信息（暂时未开放获取）",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式 prePay/postPay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定资源信息",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID:资源所属项目ID",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillDetailResponse": {
+      "document": "DescribeBillDetail返回参数结构体",
+      "members": [
+        {
+          "document": "详情列表",
+          "member": "BillDetail",
+          "name": "DetailSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillListRequest": {
+      "document": "DescribeBillList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询范围的起始时间（包含）",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询范围的结束时间（包含）",
+          "example": "2020-01-02",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，初始值为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页的限制数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "交易类型： all所有交易类型，recharge充值，return退款，unblock解冻，agentin资金转入，advanced垫付，cash提现，deduct扣费，block冻结，agentout资金转出，repay垫付回款，repayment还款(仅国际信用账户)，adj_refund调增(仅国际信用账户)，adj_deduct调减(仅国际信用账户)",
+          "example": "['deduct']",
+          "member": "string",
+          "name": "PayType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "扣费模式，\n当所选的交易类型为扣费deduct时： \nall所有扣费类型;trade预付费支付;hour_h按量小时结;hour_d按量日结;hour_m按量月结;decompensate调账扣费;other第三方扣费;panshi 线下项目扣费;offline 线下产品扣费;\n\n当所选的交易类型为扣费recharge时： \nonline 在线充值;bank-enterprice 银企直连;offline 线下充值;transfer 分成充值\n\n当所选的交易类型为扣费cash时： \nonline 线上提现;offline 线下提现;panshi 赠送金清零\n\n当所选的交易类型为扣费advanced时： \nadvanced 垫付充值\n\n当所选的交易类型为扣费repay时： \npanshi 垫付回款\n\n当所选的交易类型为扣费block时： \nother 第三方冻结;hour 按量冻结;month按月冻结\n\n当所选的交易类型为扣费return时： \ncompensate 调账补偿;trade 预付费退款\n\n当所选的交易类型为扣费unblock时：\nother 第三方解冻;hour 按量解冻;month 按月解冻",
+          "example": "all",
+          "member": "string",
+          "name": "SubPayType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否返回0元交易金额的交易项，取值：0-不返回，1-返回。不传该参数则不返回",
+          "example": "1",
+          "member": "uint64",
+          "name": "WithZeroAmount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillListResponse": {
+      "document": "DescribeBillList返回参数结构体",
+      "members": [
+        {
+          "document": "收支明细列表",
+          "example": "[]",
+          "member": "BillTransactionInfo",
+          "name": "TransactionList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "退费总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "ReturnAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "充值总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "RechargeAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "BlockAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解冻总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "UnblockAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扣费总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "DeductAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资金转入总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "AgentInAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "垫付充值总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "AdvanceRechargeAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "提现扣减总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "WithdrawAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资金转出总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "AgentOutAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "还垫付总额，单位（分）",
+          "example": "1",
+          "member": "float",
+          "name": "AdvancePayAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillResourceSummaryRequest": {
+      "document": "DescribeBillResourceSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数量，最大值为1000",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "example": "byPayTime",
+          "member": "string",
+          "name": "PeriodType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "example": "2018-08",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "example": "无",
+          "member": "int64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "example": "按量计费扣费",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定资源信息",
+          "example": "ins-1op7g2iz",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式 prePay/postPay",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillResourceSummaryResponse": {
+      "document": "DescribeBillResourceSummary返回参数结构体",
+      "members": [
+        {
+          "document": "资源汇总列表",
+          "example": "无",
+          "member": "BillResourceSummary",
+          "name": "ResourceSummarySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源汇总列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "103",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByPayModeRequest": {
+      "document": "DescribeBillSummaryByPayMode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByPayModeResponse": {
+      "document": "DescribeBillSummaryByPayMode返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PayModeSummaryOverviewItem",
+          "name": "SummaryOverview",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByProductRequest": {
+      "document": "DescribeBillSummaryByProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByProductResponse": {
+      "document": "DescribeBillSummaryByProduct返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessSummaryTotal",
+          "name": "SummaryTotal",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessSummaryOverviewItem",
+          "name": "SummaryOverview",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByProjectRequest": {
+      "document": "DescribeBillSummaryByProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByProjectResponse": {
+      "document": "DescribeBillSummaryByProject返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各项目花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProjectSummaryOverviewItem",
+          "name": "SummaryOverview",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByRegionRequest": {
+      "document": "DescribeBillSummaryByRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByRegionResponse": {
+      "document": "DescribeBillSummaryByRegion返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RegionSummaryOverviewItem",
+          "name": "SummaryOverview",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByTagRequest": {
+      "document": "DescribeBillSummaryByTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillSummaryByTagResponse": {
+      "document": "DescribeBillSummaryByTag返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagSummaryOverviewItem",
+          "name": "SummaryOverview",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostDetailRequest": {
+      "document": "DescribeCostDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数量，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
+          "member": "datetime",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "member": "uint64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通成本分析的月份，最多可拉取24个月内的数据。",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定产品信息（暂时未开放获取）",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式 prePay/postPay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定资源信息",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostDetailResponse": {
+      "document": "DescribeCostDetail返回参数结构体",
+      "members": [
+        {
+          "document": "消耗明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CostDetail",
+          "name": "DetailSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByProductRequest": {
+      "document": "DescribeCostSummaryByProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次获取数据量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
+          "member": "uint64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByProductResponse": {
+      "document": "DescribeCostSummaryByProduct返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗详情",
+          "member": "ConsumptionSummaryTotal",
+          "name": "Total",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗按产品汇总详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumptionBusinessSummaryDataItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录数量，NeedRecordNum为0是返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RecordNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByProjectRequest": {
+      "document": "DescribeCostSummaryByProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次获取数据量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
+          "member": "uint64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByProjectResponse": {
+      "document": "DescribeCostSummaryByProject返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗详情",
+          "member": "ConsumptionSummaryTotal",
+          "name": "Total",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗按业务汇总详情",
+          "member": "ConsumptionProjectSummaryDataItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录数量，NeedRecordNum为0是返回null",
+          "member": "uint64",
+          "name": "RecordNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByRegionRequest": {
+      "document": "DescribeCostSummaryByRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次获取数据量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
+          "member": "uint64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByRegionResponse": {
+      "document": "DescribeCostSummaryByRegion返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗详情",
+          "member": "ConsumptionSummaryTotal",
+          "name": "Total",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗按地域汇总详情",
+          "member": "ConsumptionRegionSummaryDataItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录数量，NeedRecordNum为0是返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RecordNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByResourceRequest": {
+      "document": "DescribeCostSummaryByResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次获取数据量",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询账单数据的用户UIN",
+          "member": "string",
+          "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回记录数量，0不需要，1需要，默认不需要",
+          "member": "uint64",
+          "name": "NeedRecordNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否需要返回过滤条件，0不需要，1需要，默认不需要",
+          "member": "uint64",
+          "name": "NeedConditionValue",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，只支持ResourceKeyword(资源关键字，支持资源id及资源名称模糊查询)，ProjectIds（项目id），RegionIds(地域id)，PayModes(付费模式，可选prePay和postPay)，HideFreeCost（是否隐藏0元流水，可选0和1），OrderByCost（按费用排序规则，可选desc和asc）",
+          "member": "Conditions",
+          "name": "Conditions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostSummaryByResourceResponse": {
+      "document": "DescribeCostSummaryByResource返回参数结构体",
+      "members": [
+        {
+          "document": "数据是否准备好，0未准备好，1准备好",
+          "member": "uint64",
+          "name": "Ready",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消耗详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumptionSummaryTotal",
+          "name": "Total",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumptionResourceSummaryConditionValue",
+          "name": "ConditionValue",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RecordNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源消耗详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ConsumptionResourceSummaryDataItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDealsByCondRequest": {
+      "document": "DescribeDealsByCond请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一页多少条数据，默认是20条，最大不超过1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第多少页，从0开始，默认是0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单状态,默认为4（成功的订单）\n订单的状态\n1：未支付\n2：已支付3：发货中\n4：已发货\n5：发货失败\n6：已退款\n7：已关单\n8：订单过期\n9：订单已失效\n10：产品已失效\n11：代付拒绝\n12：支付中",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "大订单号",
+          "member": "string",
+          "name": "BigDealId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDealsByCondResponse": {
+      "document": "DescribeDealsByCond返回参数结构体",
+      "members": [
+        {
+          "document": "订单列表",
+          "member": "Deal",
+          "name": "Deals",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageCosDetailByDateRequest": {
+      "document": "DescribeDosageCosDetailByDate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询用量开始时间",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询用量结束时间（与开始时间同月，不支持跨月查询）",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "COS 存储桶名称，可通过Get Service 接口是用来获取请求者名下的所有存储空间列表（Bucket list）https://tcloud-dev.oa.com/document/product/555/30925?!preview&!document=1",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageCosDetailByDateResponse": {
+      "document": "DescribeDosageCosDetailByDate返回参数结构体",
+      "members": [
+        {
+          "document": "用量数组",
+          "member": "CosDetailSets",
+          "name": "DetailSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageDetailByDateRequest": {
+      "document": "DescribeDosageDetailByDate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询账单开始日期，如 2019-01-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询账单结束日期，如 2019-01-01， 时间跨度不超过7天",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "互动直播：\n10194   互动直播-核心机房           :\n10195   互动直播-边缘机房\n\ncdn业务：\n10180：CDN静态加速流量(国内)\n10181：CDN静态加速带宽(国内)\n10182：CDN静态加速普通流量\n10183：CDN静态加速普通带宽\n10231：CDN静态加速流量(海外)\n10232：CDN静态加速带宽(海外)\n\n100967：弹性公网IP-按流量计费\n101065：公网负载均衡-按流量计费\n\n视频直播\n10226 视频直播流量(国内)\n10227 视频直播带宽(国内)\n100763 视频直播流量(海外)\n100762 视频直播宽带(海外)",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询域名 例如 www.qq.com\n非CDN业务查询时值为空",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1、如果为空，则返回EIP或CLB所有实例的明细；\n2、如果传入实例名，则返回该实例明细",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageDetailByDateResponse": {
+      "document": "DescribeDosageDetailByDate返回参数结构体",
+      "members": [
+        {
+          "document": "计量单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Unit",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用量数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetailSet",
+          "name": "DetailSets",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "RetCode",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RetMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetailPoint": {
+      "document": "由时间和值组成的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DetailSet": {
+      "document": "由域名和使用明细组成的数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用数据明细",
+          "member": "DetailPoint",
+          "name": "DetailPoints",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayDealsRequest": {
+      "document": "PayDeals请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数",
+          "member": "string",
+          "name": "OrderIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券,1:是,0否,默认0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表,目前仅支持指定一张代金券",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数",
+          "member": "string",
+          "name": "BigDealIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PayDealsResponse": {
+      "document": "PayDeals返回参数结构体",
+      "members": [
+        {
+          "document": "此次操作支付成功的子订单号数组",
+          "member": "string",
+          "name": "OrderIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "此次操作支付成功的资源Id数组",
+          "member": "string",
+          "name": "ResourceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "此次操作支付成功的大订单号数组",
+          "member": "string",
+          "name": "BigDealIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PayModeSummaryOverviewItem": {
+      "document": "按付费模式汇总消费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "付费模式",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式名称",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情",
+          "member": "ActionSummaryOverviewItem",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductInfo": {
+      "document": "商品详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "商品详情名称标识",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品详情",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProjectSummaryOverviewItem": {
+      "document": "按项目汇总消费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单月份，格式2019-08",
+          "member": "string",
+          "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionSummaryOverviewItem": {
+      "document": "按地域汇总消费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域名称",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实际花费",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "现金金额",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "赠送金金额",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券金额",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账单月份，格式2019-08",
+          "member": "string",
+          "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagSummaryOverviewItem": {
+      "document": "按标签汇总消费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实际花费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "费用所占百分比，两位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

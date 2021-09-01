@@ -1,0 +1,505 @@
+{
+  "actions": {
+    "AcceptVpcPeerConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=AcceptVpcPeerConnection\r\n&Version=2018-06-25\r\n&VpcPeerConnectionId=pcx-5p7vkch8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "接收黑石对等连接"
+      }
+    ],
+    "AsyncRegisterIps": [
+      {
+        "document": "创建了虚拟子网或者DOCKER子网，要使用子网的IP，首先需要注册IP",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=AsyncRegisterIps\r\n&VpcId=vpc-xxxx\r\n&SubnetId=subnet-6tgv9t88\r\n&Ips.0=10.10.245.162\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"c3c16932-2531-4535-8303-ffb2081315ae\"\n    }\n}",
+        "title": "批量注册虚拟IP(异步接口)"
+      }
+    ],
+    "BindEipsToNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AssignedEips.0=139.199.40.16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18413,\n        \"RequestId\": \"a63cf9af-5529-459e-93b8-8f45e38b5770\"\n    }\n}",
+        "title": "NAT网关绑定已申请的EIP"
+      },
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AutoAllocEipNum=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18415,\n        \"RequestId\": \"cb2be9db-6ab7-4fd6-a1c1-935bf78dd8f3\"\n    }\n}",
+        "title": "NAT网关绑定新建EIP"
+      }
+    ],
+    "BindIpsToNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindIpsToNatGateway\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\r\n&IpInfoSet.0.Ips.0=192.168.88.2\r\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\r\n&IpInfoSet.1.Ips.0=192.168.222.2\r\n&IpInfoSet.1.Ips.1=192.168.222.3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18425,\n        \"RequestId\": \"758c3c3b-1f86-4930-a533-99549fc14a2c\"\n    }\n}",
+        "title": "NAT网关绑定IP"
+      }
+    ],
+    "BindSubnetsToNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindSubnetsToNatGateway\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&SubnetIds.0=subnet-d3668cur\r\n&SubnetIds.1=subnet-o9lo3es1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18419,\n        \"RequestId\": \"28260e47-0047-4f9a-9d2d-405053e284ac\"\n    }\n}",
+        "title": "NAT网关绑定子网"
+      }
+    ],
+    "CreateCustomerGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateCustomerGateway\r\n&Version=2018-06-25\r\n&CustomerGatewayName=test-cgw\r\n&IpAddress=58.211.1.12\r\n&Zone=ap-guangzhou\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CustomerGateway\": {\n            \"CustomerGatewayId\": \"bmcgw-mgp33pll\",\n            \"IpAddress\": \"58.211.1.12\",\n            \"CustomerGatewayName\": \"test-cgw\",\n            \"CreateTime\": \"2018-04-18 10:00:00\"\n        },\n        \"RequestId\": \"5bd98433-263a-47b6-9a1c-84aa613a8ff6\"\n    }\n}",
+        "title": "创建对端网关"
+      }
+    ],
+    "CreateDockerSubnetWithVlan": [
+      {
+        "document": "创建黑石DOCKER子网，DOCKER子网专门用于部署DOCKER。会分配VlanId给DOCKER子网。DOCKER子网是关闭分布式网关的，DOCKER子网最好限制于在一个物理机上使用",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateDockerSubnetWithVlan\r\n&VpcId=vpc-44cxlz7z\r\n&SubnetSet.0.SubnetName=ownDocker1\r\n&SubnetSet.0.CidrBlock=10.10.246.0/26\r\n&SubnetSet.1.SubnetName=ownDocker2\r\n&SubnetSet.1.CidrBlock=10.10.246.64/26\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "创建黑石DOCKER子网"
+      }
+    ],
+    "CreateHostedInterface": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateHostedInterface\r\n&VpcId=vpc-34cxlz7z\r\n&SubnetId=subnet-1oo8hlkg\r\n&InstanceIds.0=chm-343fqw4\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"chm-343fqw4\"\n        ],\n        \"TaskId\": 20871,\n        \"RequestId\": \"bd15d748-8c81-450b-8a40-91e883ff38d6\"\n    }\n}",
+        "title": "黑石托管机器加入子网"
+      }
+    ],
+    "CreateInterfaces": [
+      {
+        "document": "物理机加入子网",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateInterfaces\r\n&VpcId=vpc-q1j48dkd\r\n&SubnetId=subnet-q1j48dkd\r\n&InstanceIds.0=cpm-q1j48dkd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
+        "title": "物理机加入子网"
+      }
+    ],
+    "CreateNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=1\r\n&VpcId=vpc-mi51u7gs\r\n&NatName=test\r\n&MaxConcurrent=10000000\r\n&AssignedEips.0=139.199.40.59\r\n&SubnetIds.0=subnet-d3668cur\r\n&SubnetIds.1=subnet-dipbsl5n\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18403,\n        \"RequestId\": \"6e9f212d-b3cb-417e-b78e-3ae6ec690e4d\"\n    }\n}",
+        "title": "网段方式创建NAT网关"
+      },
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=0\r\n&VpcId=vpc-mi51u7gs\r\n&SubnetIds.0=subnet-kmoq5ugh\r\n&SubnetIds.1=subnet-j74dmsz5\r\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\r\n&IpInfoSet.0.Ips.0=192.168.88.2\r\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\r\n&IpInfoSet.1.Ips.0=192.168.222.2\r\n&IpInfoSet.1.Ips.1=192.168.222.3\r\n&NatName=test\r\n&MaxConcurrent=1000000\r\n&AutoAllocEipNum=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18405,\n        \"RequestId\": \"7d18fca8-4b3c-4bc6-818e-ec291764b8fb\"\n    }\n}",
+        "title": "IP方式创建NAT网关"
+      }
+    ],
+    "CreateRoutePolicies": [
+      {
+        "document": "新增自定义的路由条目",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateRoutePolicies\r\n&RouteTableId=rtb-19yps3nz\r\n&RoutePolicySet.0.DestinationCidrBlock=10.151.0.0/16\r\n&RoutePolicySet.0.GatewayType=CPM\r\n&RoutePolicySet.0.GatewayId=10.1.10.2\r\n&RoutePolicySet.0.RouteDescription=test\r\n&RoutePolicySet.0.RoutePolicyType=USER\r\n&RoutePolicySet.0.Enabled=true\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
+        "title": "新增自定义的路由条目"
+      }
+    ],
+    "CreateSubnet": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateSubnet\r\n&VpcId=vpc-44cxlz7z\r\n&SubnetSet.0.SubnetName=ownDocker1\r\n&SubnetSet.0.CidrBlock=10.10.246.0/26\r\n&SubnetSet.1.SubnetName=ownDocker2\r\n&SubnetSet.1.CidrBlock=10.10.246.64/26\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "创建黑石私有网络的子网"
+      }
+    ],
+    "CreateVirtualSubnetWithVlan": [
+      {
+        "document": "创建黑石虚拟子网，虚拟子网专门用于在黑石上做虚拟话。会分配VlanId给虚拟子网。",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateVirtualSubnetWithVlan\r\n&VpcId=vpc-44cxlz7z\r\n&SubnetSet.0.SubnetName=ownSubnet1\r\n&SubnetSet.0.CidrBlock=10.10.246.0/26\r\n&SubnetSet.1.SubnetName=ownDocker2\r\n&SubnetSet.1.CidrBlock=10.10.246.64/26\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "创建黑石虚拟子网"
+      }
+    ],
+    "CreateVpc": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateVpc\r\n&VpcName=test\r\n&CidrBlock=10.10.0.0/16\r\n&SubnetSet.0.SubnetName=ownDocker1\r\n&SubnetSet.0.CidrBlock=10.10.246.0/26\r\n&SubnetSet.0.Zone=ap-test-1\r\n&Zone=ap-test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "创建黑石私有网络"
+      }
+    ],
+    "CreateVpcPeerConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateVpcPeerConnection\r\n&Version=2018-06-25\r\n&VpcId=vpc-gapcv96p\r\n&PeerVpcId=vpc-ac09bc8y\r\n&PeerRegion=sh_bm\r\n&VpcPeerConnectionName=test-peer\r\n&Bandwidth=1000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "创建对等连接"
+      }
+    ],
+    "DeleteCustomerGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteCustomerGateway\r\n&Version=2018-06-25\r\n&CustomerGatewayId=bmcgw-mgp33pll\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "删除对端网关"
+      }
+    ],
+    "DeleteHostedInterface": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteHostedInterface\r\n&VpcId=vpc-34cxlz7z\r\n&SubnetId=subnet-1oo8hlkg\r\n&InstanceIds.0=chm-343fqw4\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"chm-343fqw4\"\n        ],\n        \"TaskId\": 20871,\n        \"RequestId\": \"bd15d748-8c81-450b-8a40-91e883ff38d6\"\n    }\n}",
+        "title": "黑石托管机器移除子网"
+      }
+    ],
+    "DeleteHostedInterfaces": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteHostedInterfaces\r\n&InstanceId=chm-xxxxxxxx\r\n&SubnetIds.0=subnet-xxxxxxxx\r\n&SubnetIds.1=subnet-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"5383060b-435d-4a54-8201-9e7c2cb5c6ad\"\n    }\n}",
+        "title": "托管机器移除子网(批量接口)"
+      }
+    ],
+    "DeleteInterfaces": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteInterfaces\r\n&InstanceId=chm-xxxxxxxx\r\n&SubnetIds.0=subnet-xxxxxxxx\r\n&SubnetIds.1=subnet-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"5383060b-435d-4a54-8201-9e7c2cb5c6ad\"\n    }\n}",
+        "title": "DeleteBmInterfaceBatch"
+      }
+    ],
+    "DeleteNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteNatGateway\r\n&NatId=nat-kdm476mp\r\n&VpcId=vpc-mi51u7gs\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18407,\n        \"RequestId\": \"fb836c6d-487f-4ea5-8742-549be18aca77\"\n    }\n}",
+        "title": "删除NAT网关"
+      }
+    ],
+    "DeleteRoutePolicy": [
+      {
+        "document": "删除路由表路由条目",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteRoutePolicy\r\n&RouteTableId=rtb-19yps3nz\r\n&RoutePolicyId=rti-xudf23xd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
+        "title": "删除路由表路由条目"
+      }
+    ],
+    "DeleteSubnet": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteSubnet\r\n&VpcId=vpc-ox7p0l9u\r\n&SubnetId=subnet-jvxdy07y\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 20886,\n        \"RequestId\": \"7908b4e8-8b78-4698-b50c-48fdb11d4d15\"\n    }\n}",
+        "title": "删除子网"
+      }
+    ],
+    "DeleteVirtualIp": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteVirtualIp\r\n&VpcId=vpc-muinpf9z\r\n&Ips.0=10.1.254.243\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 20886,\n        \"RequestId\": \"7908b4e8-8b78-4698-b50c-48fdb11d4d15\"\n    }\n}",
+        "title": "退还虚拟IP"
+      }
+    ],
+    "DeleteVpc": [
+      {
+        "document": "删除已创建的黑石私有网络",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteVpc\r\n&VpcId=vpc-muinpf9z\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 20886,\n        \"RequestId\": \"7908b4e8-8b78-4698-b50c-48fdb11d4d15\"\n    }\n}",
+        "title": "删除黑石私有网络"
+      }
+    ],
+    "DeleteVpcPeerConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteVpcPeerConnection\r\n&Version=2018-06-25\r\n&VpcPeerConnectionId=pcx-5p7vkch8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "删除黑石对等连接"
+      }
+    ],
+    "DeleteVpnConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteVpnConnection\r\n&Version=2018-06-25\r\n&VpnConnectionId=bmvpnx-5p7vkch8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "删除VPN通道"
+      }
+    ],
+    "DeleteVpnGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteVpnGateway\r\n&Version=2018-06-25\r\n&VpnGatewayId=bmvpngw-ab3cde\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "删除VPN网关"
+      }
+    ],
+    "DeregisterIps": [
+      {
+        "document": "注销私有网络IP",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeregisterIps\r\n&VpcId=vpc-q1j48dkd\r\n&IpSet.0=10.0.0.10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30a4b438-a5f1-4fca-a34e-95dfd07695ca\"\n    }\n}",
+        "title": "注销私有网络IP"
+      }
+    ],
+    "DescribeCustomerGateways": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeCustomerGateways\r\n&Version=2018-06-25\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CustomerGatewaySet\": [\n            {\n                \"CustomerGatewayId\": \"bmcgw-mgp33pll\",\n                \"IpAddress\": \"58.211.1.12\",\n                \"CustomerGatewayName\": \"test-cgw\",\n                \"VpnConnNum\": 0,\n                \"CreateTime\": \"2018-03-25 17:52:39\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e5500b60-4964-43c7-8a6c-4bff98f59aeb\"\n    }\n}",
+        "title": "查询对端网关"
+      }
+    ],
+    "DescribeNatGateways": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeNatGateways\r\n&VpcId=vpc-mi51u7gs\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"NatGatewayInfoSet\": [\n            {\n                \"NatId\": \"nat-2duawe5v\",\n                \"NatName\": \"测试\",\n                \"VpcId\": \"vpc-mi51u7gs\",\n                \"VpcName\": \"test网络\",\n                \"ProductionStatus\": 1,\n                \"Eips\": [\n                    \"139.199.40.18\",\n                    \"139.199.40.53\"\n                ],\n                \"Zone\": \"ap-guangzhou-blsh3-1\",\n                \"MaxConcurrent\": 1000000,\n                \"Type\": \"small\",\n                \"Exclusive\": 0,\n                \"ForwardMode\": 0,\n                \"VpcCidrBlock\": \"192.168.0.0/16\",\n                \"CreateTime\": \"2018-10-18 11:04:12\"\n            },\n            {\n                \"NatId\": \"nat-1tw1oc0t\",\n                \"NatName\": \"test\",\n                \"VpcId\": \"vpc-mi51u7gs\",\n                \"VpcName\": \"test网络\",\n                \"ProductionStatus\": 1,\n                \"Eips\": [\n                    \"139.199.40.17\"\n                ],\n                \"Zone\": \"ap-guangzhou-blsh3-1\",\n                \"MaxConcurrent\": 3000000,\n                \"Type\": \"middle\",\n                \"Exclusive\": 0,\n                \"ForwardMode\": 0,\n                \"VpcCidrBlock\": \"192.168.0.0/16\",\n                \"CreateTime\": \"2018-10-19 17:17:26\"\n            }\n        ],\n        \"RequestId\": \"182fc08f-016a-4a03-b4a7-d92d88fb81ab\"\n    }\n}",
+        "title": "获取NAT网关列表"
+      }
+    ],
+    "DescribeNatSubnets": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeNatSubnets\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NatSubnetInfoSet\": [\n            {\n                \"Name\": \"测试子网3\",\n                \"SubnetId\": \"subnet-3s06hsd7\",\n                \"SubnetNatType\": 0,\n                \"CidrBlock\": \"192.168.33.0/24\"\n            },\n            {\n                \"Name\": \"TMI\",\n                \"SubnetId\": \"subnet-d3668cur\",\n                \"SubnetNatType\": 1,\n                \"CidrBlock\": \"192.168.188.0/23\"\n            },\n            {\n                \"Name\": \"虚拟机子网1\",\n                \"SubnetId\": \"subnet-hod8wpo9\",\n                \"SubnetNatType\": 1,\n                \"CidrBlock\": \"192.168.99.0/24\"\n            },\n            {\n                \"Name\": \"H3C-测试子网1\",\n                \"SubnetId\": \"subnet-kmoq5ugh\",\n                \"SubnetNatType\": 0,\n                \"CidrBlock\": \"192.168.1.0/24\"\n            },\n            {\n                \"Name\": \"123\",\n                \"SubnetId\": \"subnet-o9lo3es1\",\n                \"SubnetNatType\": 0,\n                \"CidrBlock\": \"192.168.222.0/24\"\n            }\n        ],\n        \"RequestId\": \"b2ef2aca-f585-49fb-92cc-7889784475f5\"\n    }\n}",
+        "title": "获取NAT关联的子网信息"
+      }
+    ],
+    "DescribeRoutePolicies": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\r\n&RouteTableId=rtb-afg8md3c\r\n&RoutePolicyIds.0=rti-q1j48dkd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RoutePolicySet\": [\n            {\n                \"RoutePolicyId\": \"Local\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"Local\",\n                \"GatewayType\": \"LOCAL\",\n                \"GatewayId\": \"Local\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            },\n            {\n                \"RoutePolicyId\": \"rti-q9eyoybe\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"169.254.0.0/23\",\n                \"GatewayType\": \"SSHSSLVPN\",\n                \"GatewayId\": \"sslvpngw-o7tpr54i\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
+        "title": "查询黑石路由表条目"
+      }
+    ],
+    "DescribeRouteTables": [
+      {
+        "document": "查询路由列表",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRouteTables\r\n&RouteTableIds.0=rtb-q1j48dkd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-lqrdo8yu\",\n                \"RouteTableId\": \"rtb-19yps3nz\",\n                \"RouteTableName\": \"default\",\n                \"VpcName\": \"test\",\n                \"VpcCidrBlock\": \"10.1.0.0/16\",\n                \"Zone\": \"ap-guangzhou-h3-1\",\n                \"CreateTime\": \"2019-01-02 15:05:26\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c2e7a91b-e358-4391-acc0-9f0cd57bd971\"\n    }\n}",
+        "title": "查询路由列表"
+      }
+    ],
+    "DescribeSubnetAvailableIps": [
+      {
+        "document": "获取子网内可用IP列表",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeSubnetAvailableIps\r\n&SubnetId=subnet-q1j48dkd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IpSet\": [\n            \"10.27.2.2\",\n            \"10.27.2.5-10.27.2.15\",\n            \"10.27.2.17-10.27.2.20\",\n            \"10.27.2.22-10.27.2.254\"\n        ],\n        \"RequestId\": \"ff20d849-1137-423f-8be7-bca8bc1cb44a\"\n    }\n}",
+        "title": "获取子网内可用IP列表"
+      }
+    ],
+    "DescribeSubnetByDevice": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeSubnetByDevice\r\n&InstanceId=cpm-5im64oip\r\n&Offset=2\r\n&Limit=3\r\n&Types.0=7\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 16,\n        \"Data\": [\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-f5lsmjdu\",\n                \"SubnetName\": \"kvm-net-2183\",\n                \"CidrBlock\": \"10.50.183.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2183,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.183.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:34:00\"\n            },\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-p7mczxs4\",\n                \"SubnetName\": \"kvm-net-2184\",\n                \"CidrBlock\": \"10.50.184.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2184,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.184.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:39:52\"\n            },\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-69x7na3y\",\n                \"SubnetName\": \"kvm-net-2185\",\n                \"CidrBlock\": \"10.50.185.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2185,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.185.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:39:53\"\n            }\n        ],\n        \"RequestId\": \"25465fbf-df82-417e-9d75-040e7b76f479\"\n    }\n}",
+        "title": "查询物理机加入的子网列表"
+      }
+    ],
+    "DescribeSubnetByHostedDevice": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeSubnetByHostedDevice\r\n&InstanceId=chm-5im64oip\r\n&Offset=2\r\n&Limit=3\r\n&Types.=7\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 16,\n        \"Data\": [\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-f5lsmjdu\",\n                \"SubnetName\": \"kvm-net-2183\",\n                \"CidrBlock\": \"10.50.183.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2183,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.183.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:34:00\"\n            },\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-p7mczxs4\",\n                \"SubnetName\": \"kvm-net-2184\",\n                \"CidrBlock\": \"10.50.184.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2184,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.184.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:39:52\"\n            },\n            {\n                \"VpcId\": \"vpc-13uonit1\",\n                \"VpcName\": \"mogujie-??\",\n                \"VpcCidrBlock\": \"10.50.128.0/17\",\n                \"SubnetId\": \"subnet-69x7na3y\",\n                \"SubnetName\": \"kvm-net-2185\",\n                \"CidrBlock\": \"10.50.185.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000400001,\n                \"CpmNum\": 0,\n                \"VlanId\": 2185,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 1,\n                \"DhcpServerIp\": [\n                    \"10.50.185.11\"\n                ],\n                \"IpReserve\": 1,\n                \"AvailableIpNum\": 0,\n                \"TotalIpNum\": 0,\n                \"SubnetCreateTime\": \"2017-11-20 10:39:53\"\n            }\n        ],\n        \"RequestId\": \"25465fbf-df82-417e-9d75-040e7b76f479\"\n    }\n}",
+        "title": "DescribeSubnetByHostedDevice"
+      }
+    ],
+    "DescribeSubnets": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeSubnets\r\n&SubnetIds.0=subnet-jzc4ky5d\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"VpcId\": \"vpc-ajhuxpbc\",\n                \"VpcName\": \"test_vpc33333333\",\n                \"VpcCidrBlock\": \"10.27.0.0/16\",\n                \"SubnetId\": \"subnet-d6tl3i45\",\n                \"SubnetName\": \"test_sub2\",\n                \"CidrBlock\": \"10.27.2.0/24\",\n                \"Type\": 0,\n                \"ZoneId\": 1000100002,\n                \"Zone\": \"ap-guangzhoutest-blshw-1\",\n                \"VpcZoneId\": 1000100002,\n                \"VpcZone\": \"ap-guangzhoutest-blshw-1\",\n                \"CpmNum\": 1,\n                \"VlanId\": 5,\n                \"DistributedFlag\": 1,\n                \"DhcpEnable\": 0,\n                \"DhcpServerIp\": [],\n                \"IpReserve\": 0,\n                \"AvailableIpNum\": 249,\n                \"TotalIpNum\": 253,\n                \"SubnetCreateTime\": \"2017-01-12 16:17:07\",\n                \"IsSmartNic\": 0,\n                \"BroadcastFlag\": 0\n            }\n        ],\n        \"TotalCount\": 69,\n        \"RequestId\": \"d6f18c72-704e-4205-8bf4-9b7bbc5257bd\"\n    }\n}",
+        "title": "查询子网列表"
+      }
+    ],
+    "DescribeTaskStatus": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeTaskStatus\r\n&TaskId=18427\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"f38deefd-9f45-45cf-81ac-d7de96c9c2bc\"\n    }\n}",
+        "title": "获取任务状态"
+      }
+    ],
+    "DescribeVpcPeerConnections": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpcPeerConnections\r\n&Version=2018-06-25\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\",\n        \"TotalCount\": 1,\n        \"VpcPeerConnectionSet\": [\n            {\n                \"VpcId\": \"vpc-3l4sx5zj\",\n                \"PeerVpcId\": \"vpc-i4pt50rc\",\n                \"AppId\": \"251001815\",\n                \"PeerAppId\": \"251000873\",\n                \"VpcPeerConnectionId\": \"pcx-l9nnly7y\",\n                \"VpcPeerConnectionName\": \"ericxing-NotDelete-peer\",\n                \"State\": \"available\",\n                \"VpcZone\": null,\n                \"PeerVpcZone\": \"1000100002\",\n                \"DeleteFlag\": 1,\n                \"CreateTime\": \"2018-04-23 11:02:54\",\n                \"Uin\": 100000005204,\n                \"PeerUin\": 1307774067,\n                \"PeerType\": 1,\n                \"Bandwidth\": 10000,\n                \"PeerRegion\": \"sh_bm\",\n                \"Region\": \"gz\"\n            }\n        ]\n    }\n}",
+        "title": "查询对等连接列表"
+      }
+    ],
+    "DescribeVpcQuota": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpcQuota\r\n&TypeIds.0=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VpcQuotaSet\": [\n            {\n                \"TypeId\": 0,\n                \"Quota\": 5\n            }\n        ],\n        \"RequestId\": \"5866860f-4d88-46c5-80ca-683b8ea1e453\"\n    }\n}",
+        "title": "DescribeVpcQuota"
+      }
+    ],
+    "DescribeVpcResource": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpcResource&\r\nOffset=0&Limit=2&OrderField=VpcId&OrderDirection=desc&Filters.0.Name=vpc-name&Filters.0.Values.0=yxvpc1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VpcResourceSet\": [\n            {\n                \"VpcId\": \"vpc-rqip228w\",\n                \"VpcName\": \"yxvpc1\",\n                \"CidrBlock\": \"10.10.0.0/16\",\n                \"SubnetNum\": 1,\n                \"NatNum\": 0,\n                \"State\": \"available\",\n                \"MonitorFlag\": false,\n                \"CpmNum\": 0,\n                \"LeaveIpNum\": 65512,\n                \"LbNum\": 0,\n                \"TrafficMirrorNum\": 0,\n                \"EipNum\": 0,\n                \"PlgwNum\": 0,\n                \"PlvpNum\": 0,\n                \"IsOld\": false,\n                \"SslVpnGwNum\": 0,\n                \"VpcPeerNum\": 0,\n                \"IpsecVpnGwNum\": 0,\n                \"CcnServiceNum\": 1,\n                \"CreateTime\": \"2018-07-13 15:09:36\",\n                \"Zone\": \"ap-guangzhoutest-blsh3-1\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ecad1294-3131-42d1-b1e2-bbc358834d75\"\n    }\n}",
+        "title": "查询账户下私有网络的资源占用情况"
+      }
+    ],
+    "DescribeVpcView": [
+      {
+        "document": "查询黑石VPC视图",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpcView\r\n&VpcId=vpc-ox7p0l9u\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VpcView\": {\n            \"VpcId\": \"vpc-ox7p0l9u\",\n            \"VpcName\": \"test\",\n            \"CidrBlock\": \"10.0.0.0/16\",\n            \"Zone\": \"ap-guangzhoutest-blsh3-1\",\n            \"LbNum\": 0,\n            \"EipNum\": 0,\n            \"NatNum\": 0,\n            \"SubnetSet\": [\n                {\n                    \"SubnetId\": \"subnet-fgorv065\",\n                    \"SubnetName\": \"fda\",\n                    \"CidrBlock\": \"10.0.0.0/17\",\n                    \"CpmNum\": 0,\n                    \"LbNum\": 0,\n                    \"Zone\": \"ap-guangzhoutest-blsh3-1\"\n                }\n            ]\n        },\n        \"RequestId\": \"c2e83630-6084-44ef-8478-07340d0f5170\"\n    }\n}",
+        "title": "查询黑石VPC视图"
+      }
+    ],
+    "DescribeVpcs": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpcs\r\n&VpcIds.0=vpc-ox7p0l9u\r\n&VpcIds.1=vpc-jvxdy07y\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-ox7p0l9u\",\n                \"VpcName\": \"autocreate_20180320\",\n                \"CidrBlock\": \"10.104.0.0/16\",\n                \"Zone\": \"1000100003\",\n                \"State\": \"available\",\n                \"CreateTime\": \"2018-03-20 11:40:49\"\n            },\n            {\n                \"VpcId\": \"vpc-jvxdy07y\",\n                \"VpcName\": \"test-vpc\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"Zone\": \"1000100003\",\n                \"State\": \"available\",\n                \"CreateTime\": \"2018-06-12 10:13:17\"\n            }\n        ],\n        \"RequestId\": \"72899e7e-dbeb-4add-bf8f-8efe5a315f98\"\n    }\n}",
+        "title": "查询VPC列表"
+      }
+    ],
+    "DescribeVpnConnections": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpnConnections\r\n&Version=2018-06-25\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\",\n        \"TotalCount\": 1,\n        \"VpnConnectionSet\": [\n            {\n                \"VpcId\": \"vpc-0a36uwkr\",\n                \"VpnConnectionId\": \"vpnx-5p7vkch8\",\n                \"VpnConnectionName\": \"testjoan\",\n                \"VpnGatewayId\": \"vpngw-p4lmqawn\",\n                \"CustomerGatewayId\": \"cgw-l4rblw63\",\n                \"PreShareKey\": \"123456\",\n                \"VpnProto\": \"IPSEC\",\n                \"IKEOptionsSpecification\": {\n                    \"PropoAuthenAlgorithm\": \"MD5\",\n                    \"PropoEncryAlgorithm\": \"3DES-CBC\",\n                    \"ExchangeMode\": \"MAIN\",\n                    \"LocalIdentity\": \"ADDRESS\",\n                    \"RemoteIdentity\": \"ADDRESS\",\n                    \"LocalAddress\": \"183.60.249.17\",\n                    \"RemoteAddress\": \"183.60.249.126\",\n                    \"LocalFqdnName\": \"\",\n                    \"RemoteFqdnName\": \"\",\n                    \"DhGroupName\": \"GROUP1\",\n                    \"IKESaLifetimeSeconds\": \"86400\",\n                    \"IKEVersion\": \"IKEV1\"\n                },\n                \"IPSECOptionsSpecification\": {\n                    \"EncryptAlgorithm\": \"3DES-CBC\",\n                    \"IntegrityAlgorith\": \"MD5\",\n                    \"EncapMode\": \"TUNNEL\",\n                    \"SecurityProto\": \"ESP\",\n                    \"PfsDhGroup\": \"NULL\",\n                    \"IPSECSaLifetimeSeconds\": \"3600\",\n                    \"IPSECSaLifetimeTraffic\": \"1843200\"\n                },\n                \"CreateTime\": \"2017-08-0510: 27: 32\",\n                \"State\": \"AVAILABLE\",\n                \"NetStatus\": \"UNAVAILABLE\",\n                \"SecurityPolicyDatabaseSet\": [\n                    {\n                        \"LocalCidrBlock\": \"172.16.0.0/16\",\n                        \"RemoteCidrBlock\": [\n                            \"10.10.0.0/16\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询VPN通道列表"
+      }
+    ],
+    "DescribeVpnGateways": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeVpnGateways\r\n&Version=2018-06-25\r\n&Offset=0\r\n&Limit=2\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VpnGatewaySet\": [\n            {\n                \"VpcId\": \"vpc-ah9e9qu9\",\n                \"VpnGatewayId\": \"bmvpngw-5aluhh9t\",\n                \"VpnGatewayName\": \"joantest\",\n                \"State\": 0,\n                \"PublicIpAddress\": \"\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"CreateTime\": \"2015-08-20 19:39:01\",\n                \"VpcName\": \"test\",\n                \"VpcCidrBlock\": \"172.16.0.0/16\",\n                \"VpnConnNum\": 2,\n                \"Zone\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"feb949ef-8eb8-4eda-ba73-4fc5705bf8f5\"\n    }\n}",
+        "title": "查询VPN网关"
+      }
+    ],
+    "DownloadCustomerGatewayConfiguration": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DownloadCustomerGatewayConfiguration\r\n&Version=2018-06-25\r\n&VpnConnectionId=vpnx-5p7vkch8\r\n&VendorName=h3c\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CustomerGatewayConfiguration\": \"# VPC utilizes unique identifiers to manipulate the configuration of\\r\\n# a VPN Connection. Each VPN Connection is assigned an identifier and is\\r\\n# associated with Virtual Private Gateway ...\",\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "title": "下载VPN通道配置"
+      }
+    ],
+    "ModifyCustomerGatewayAttribute": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyCustomerGatewayAttribute\r\n&Version=2018-06-25\r\n&CustomerGatewayId=bmcgw-mgp33pll\r\n&CustomerGatewayName=NewName\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "修改对端网关"
+      }
+    ],
+    "ModifyRoutePolicy": [
+      {
+        "document": "修改路由表路由条目",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRoutePolicy\r\n&RouteTableId=rtb-19yps3nz\r\n&RoutePolicy.DestinationCidrBlock=10.151.0.0/16\r\n&RoutePolicy.GatewayType=CPM\r\n&RoutePolicy.GatewayId=10.1.10.2\r\n&RoutePolicy.RouteDescription=test\r\n&RoutePolicy.RoutePolicyId=rti-3xx8yzru\r\n&RoutePolicy.RoutePolicyType=USER\r\n&RoutePolicy.Enabled=true\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
+        "title": "修改路由表路由条目"
+      }
+    ],
+    "ModifyRouteTable": [
+      {
+        "document": "修改路由表",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRouteTable\r\n&RouteTableId=rtb-q1j48dkd\r\n&RouteTableName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2e7a91b-e358-4391-acc0-9f0cd57bd971\"\n    }\n}",
+        "title": "修改路由表"
+      }
+    ],
+    "ModifySubnetAttribute": [
+      {
+        "document": "修改子网名称",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifySubnetAttribute\r\n&VpcId=vpc-q1j48dkd\r\n&SubnetId=subnet-q1j48dkd\r\n&SubnetName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30a4b438-a5f1-4fca-a34e-95dfd07695ca\"\n    }\n}",
+        "title": "修改子网名称"
+      }
+    ],
+    "ModifySubnetDHCPRelay": [
+      {
+        "document": "修改子网DHCP Relay属性",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifySubnetDHCPRelay\r\n&VpcId=vpc-q1j48dkd\r\n&SubnetId=subnet-q1j48dkd\r\n&EnableDHCP=false\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30a4b438-a5f1-4fca-a34e-95dfd07695ca\"\n    }\n}",
+        "title": "修改子网DHCP Relay属性"
+      }
+    ],
+    "ModifyVpcAttribute": [
+      {
+        "document": "修改私有网络的名称或者监控标识",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyVpcAttribute\r\n&VpcId=vpc-ox7p0l9u\r\n&VpcIName=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72899e7e-dbeb-4add-bf8f-8efe5a315f98\"\n    }\n}",
+        "title": "修改私有网络VPC的属性"
+      }
+    ],
+    "ModifyVpcPeerConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyVpcPeerConnection\r\n&Version=2018-06-25\r\n&VpcPeerConnectionId=pcx-gapcv96p\r\n&VpcPeerConnectionName=test-peer\r\n&Bandwidth=1000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "修改黑石对等连接属性"
+      }
+    ],
+    "ModifyVpnConnectionAttribute": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyVpnConnectionAttribute\r\n&Version=2018-06-25\r\n&VpnConnectionId=bmvpnx-qc8cz8y8\r\n&VpnConnectionName=TEST_CONN\r\n&VpcId=vpc-q8cz9732\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "修改VPN通道"
+      }
+    ],
+    "ModifyVpnGatewayAttribute": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyVpnGatewayAttribute\r\n&Version=2017-03-12\r\n&VpnGatewayId=bmvpngw-9jj97wyn\r\n&VpnGatewayName=new_name\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "title": "修改VPN网关属性"
+      }
+    ],
+    "RejectVpcPeerConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=RejectVpcPeerConnection\r\n&Version=2018-06-25\r\n&VpcPeerConnectionId=pcx-5p7vkch8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1234,\n        \"RequestId\": \"09186e64-d19e-4ca1-968f-df4fc8139192\"\n    }\n}",
+        "title": "拒绝黑石对等连接申请"
+      }
+    ],
+    "ResetVpnConnection": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ResetVpnConnection\r\n&Version=2018-06-25\r\n&VpcId=vpc-p4lmqawn\r\n&VpnConnectionId=bmvpnx-5p7vkch8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "title": "重置VPN通道"
+      }
+    ],
+    "UnbindEipsFromNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=UnbindEipsFromNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AssignedEips.0=139.199.40.16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18417,\n        \"RequestId\": \"e16cdd36-43e2-4748-bcf8-56e999953bed\"\n    }\n}",
+        "title": "NAT网关解绑EIP"
+      }
+    ],
+    "UnbindIpsFromNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=UnbindIpsFromNatGateway\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\r\n&IpInfoSet.0.Ips.0=192.168.88.2\r\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\r\n&IpInfoSet.1.Ips.0=192.168.222.2\r\n&IpInfoSet.1.Ips.1=192.168.222.3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18427,\n        \"RequestId\": \"e563a40e-95d9-4d00-8807-3e0fd3efcd0b\"\n    }\n}",
+        "title": "NAT网关解绑IP"
+      }
+    ],
+    "UnbindSubnetsFromNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=UnbindSubnetsFromNatGateway\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&SubnetIds.0=subnet-d3668cur\r\n&SubnetIds.1=subnet-o9lo3es1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18421,\n        \"RequestId\": \"cc33a7eb-e3c2-4c04-a9ae-e3872f24ab18\"\n    }\n}",
+        "title": "NAT网关解绑子网"
+      }
+    ],
+    "UpgradeNatGateway": [
+      {
+        "document": "",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=UpgradeNatGateway\r\n&NatId=nat-1tw1oc0t\r\n&VpcId=vpc-mi51u7gs\r\n&MaxConcurrent=3000000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 18411,\n        \"RequestId\": \"b38f56e9-4830-486f-a596-fb425f9e6e6b\"\n    }\n}",
+        "title": "升级NAT网关"
+      }
+    ]
+  },
+  "version": "1.0"
+}

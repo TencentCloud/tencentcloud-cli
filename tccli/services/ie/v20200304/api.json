@@ -1,0 +1,4115 @@
+{
+  "actions": {
+    "CreateEditingTask": {
+      "document": "创建编辑理解任务，可以同时选择视频标签识别、分类识别、智能拆条、智能集锦、智能封面和片头片尾识别中的一项或者多项能力。",
+      "input": "CreateEditingTaskRequest",
+      "name": "创建编辑理解任务",
+      "output": "CreateEditingTaskResponse"
+    },
+    "CreateMediaProcessTask": {
+      "document": "用于创建编辑处理任务，如媒体截取、媒体编辑、媒体拼接、媒体字幕。",
+      "input": "CreateMediaProcessTaskRequest",
+      "name": "创建编辑处理任务",
+      "output": "CreateMediaProcessTaskResponse"
+    },
+    "CreateMediaQualityRestorationTask": {
+      "document": "创建画质重生任务，对视频进行转码、去噪、去划痕、去毛刺、超分、细节增强和色彩增强。",
+      "input": "CreateMediaQualityRestorationTaskRequest",
+      "name": "创建画质重生任务",
+      "output": "CreateMediaQualityRestorationTaskResponse"
+    },
+    "CreateQualityControlTask": {
+      "document": "通过接口可以智能检测视频画面中抖动重影、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等在内的多个场景，还可以自动检测视频无音频异常、无声音片段。",
+      "input": "CreateQualityControlTaskRequest",
+      "name": "创建媒体质检任务",
+      "output": "CreateQualityControlTaskResponse"
+    },
+    "DescribeEditingTaskResult": {
+      "document": "获取编辑理解任务结果。",
+      "input": "DescribeEditingTaskResultRequest",
+      "name": "获取编辑理解任务结果",
+      "output": "DescribeEditingTaskResultResponse"
+    },
+    "DescribeMediaProcessTaskResult": {
+      "document": "用于获取编辑处理任务的结果。",
+      "input": "DescribeMediaProcessTaskResultRequest",
+      "name": "获取编辑处理任务结果",
+      "output": "DescribeMediaProcessTaskResultResponse"
+    },
+    "DescribeMediaQualityRestorationTaskRusult": {
+      "document": "获取画质重生任务结果，查看结束后的文件信息",
+      "input": "DescribeMediaQualityRestorationTaskRusultRequest",
+      "name": "获取画质重生任务结果",
+      "output": "DescribeMediaQualityRestorationTaskRusultResponse"
+    },
+    "DescribeQualityControlTaskResult": {
+      "document": "获取媒体质检任务结果",
+      "input": "DescribeQualityControlTaskResultRequest",
+      "name": "获取媒体质检任务结果",
+      "output": "DescribeQualityControlTaskResultResponse"
+    },
+    "StopMediaProcessTask": {
+      "document": "用于停止正在进行中的编辑处理任务。",
+      "input": "StopMediaProcessTaskRequest",
+      "name": "停止编辑处理任务",
+      "output": "StopMediaProcessTaskResponse"
+    },
+    "StopMediaQualityRestorationTask": {
+      "document": "删除正在进行的画质重生任务",
+      "input": "StopMediaQualityRestorationTaskRequest",
+      "name": "删除画质重生任务",
+      "output": "StopMediaQualityRestorationTaskResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-03-04",
+    "api_brief": "介绍如何使用API对智能编辑进行操作，包括获取智能编辑任务结果、创建智能编辑任务等。",
+    "serviceNameCN": "智能编辑",
+    "serviceShortName": "ie"
+  },
+  "objects": {
+    "ArtifactReduction": {
+      "document": "去编码毛刺、伪影参数",
+      "members": [
+        {
+          "default": "",
+          "document": "去毛刺方式：weak,,strong",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去毛刺算法，可选项：\nedaf,\nwdaf，\n默认edaf。\n注意：此参数已经弃用",
+          "example": "edaf",
+          "member": "string",
+          "name": "Algorithm",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AudioEnhance": {
+      "document": "音频音效增强，只支持无背景音的音频",
+      "members": [
+        {
+          "default": "",
+          "document": "音效增强种类，可选项：normal",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AudioInfo": {
+      "document": "音频参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频码率，取值范围：0 和 [26, 256]，单位：kbps。\n注意：当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频编码器，可选项：aac,mp3,ac3,flac,mp2。",
+          "example": "aac",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "声道数，可选项：\n1：单声道，\n2：双声道，\n6：立体声。",
+          "example": "6",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采样率，单位：Hz。可选项：32000，44100,48000",
+          "example": "44100",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频降噪信息",
+          "example": "无",
+          "member": "Denoise",
+          "name": "Denoise",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启添加静音，可选项：\n0：不开启，\n1：开启，\n默认不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableMuteAudio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频响度信息",
+          "example": "无",
+          "member": "LoudnessInfo",
+          "name": "LoudnessInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频音效增强",
+          "example": "无",
+          "member": "AudioEnhance",
+          "name": "AudioEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去除混音",
+          "example": "无",
+          "member": "RemoveReverb",
+          "name": "RemoveReverb",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AudioInfoResultItem": {
+      "document": "任务结束后生成的文件音频信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频流的流id。",
+          "example": "1",
+          "member": "int64",
+          "name": "Stream",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频采样率 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44100",
+          "member": "int64",
+          "name": "Sample",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频声道数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编码格式，如aac, mp3等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aac",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128188",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CallbackInfo": {
+      "document": "任务结果回调地址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "回调URL。",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClassificationEditingInfo": {
+      "document": "视频分类识别任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启视频分类识别。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClassificationTaskResult": {
+      "document": "视频分类识别结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频分类识别结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClassificationTaskResultItem",
+          "name": "ItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassificationTaskResultItem": {
+      "document": "视频分类识别结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "分类名称。",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ColorEnhance": {
+      "document": "颜色增强参数",
+      "members": [
+        {
+          "default": "",
+          "document": "颜色增强类型，可选项：\n1.  tra；\n2.  weak；\n3.  normal;\n4.  strong;\n注意：tra不支持自适应调整，处理速度更快；weak,normal,strong支持基于画面颜色自适应，处理速度更慢。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CosAuthMode": {
+      "document": "任务视频cos授权信息",
+      "members": [
+        {
+          "default": "",
+          "document": "授权类型，可选值： \n0：bucket授权，需要将对应bucket授权给本服务帐号（3020447271），否则会读写cos失败； \n1：key托管，把cos的账号id和key托管于本服务，本服务会提供一个托管id； \n3：临时key授权。\n注意：目前智能编辑还不支持临时key授权；画质重生目前只支持bucket授权",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos账号托管id，Type等于1时必选。",
+          "member": "string",
+          "name": "HostedId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos身份识别id，Type等于3时必选。",
+          "member": "string",
+          "name": "SecretId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos身份秘钥，Type等于3时必选。",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时授权 token，Type等于3时必选。",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CosInfo": {
+      "document": "任务视频cos信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cos 区域值。例如：ap-beijing。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos 存储桶，格式为BuketName-AppId。例如：test-123456。",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos 路径。 \n对于写表示目录，例如：/test； \n对于读表示文件路径，例如：/test/test.mp4。",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos 授权信息，不填默认为公有权限。",
+          "member": "CosAuthMode",
+          "name": "CosAuthMode",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CoverEditingInfo": {
+      "document": "智能封面任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启智能封面。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CoverTaskResult": {
+      "document": "智能封面结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能封面结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "CoverTaskResultItem",
+          "name": "ItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CoverTaskResultItem": {
+      "document": "智能封面结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "智能封面地址。",
+          "member": "string",
+          "name": "CoverUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateEditingTaskRequest": {
+      "document": "CreateEditingTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "智能编辑任务参数。",
+          "member": "EditingInfo",
+          "name": "EditingInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频源信息。",
+          "member": "DownInfo",
+          "name": "DownInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。",
+          "member": "SaveInfo",
+          "name": "SaveInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务结果回调地址信息。",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEditingTaskResponse": {
+      "document": "CreateEditingTask返回参数结构体",
+      "members": [
+        {
+          "document": "编辑任务 ID，可以通过该 ID 查询任务状态。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaProcessTaskRequest": {
+      "document": "CreateMediaProcessTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务参数。",
+          "member": "MediaProcessInfo",
+          "name": "MediaProcessInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编辑处理任务输入源列表。",
+          "member": "MediaSourceInfo",
+          "name": "SourceInfoSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。",
+          "member": "SaveInfo",
+          "name": "SaveInfoSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。",
+          "member": "CallbackInfo",
+          "name": "CallbackInfoSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaProcessTaskResponse": {
+      "document": "CreateMediaProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "编辑任务 ID，可以通过该 ID 查询任务状态和结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaQualityRestorationTaskRequest": {
+      "document": "CreateMediaQualityRestorationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "源文件地址。",
+          "member": "DownInfo",
+          "name": "DownInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "画质重生任务参数信息。",
+          "member": "SubTaskTranscodeInfo",
+          "name": "TransInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务结束后文件存储信息。",
+          "member": "SaveInfo",
+          "name": "SaveInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务结果回调地址信息。",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaQualityRestorationTaskResponse": {
+      "document": "CreateMediaQualityRestorationTask返回参数结构体",
+      "members": [
+        {
+          "document": "画质重生任务ID，可以通过该ID查询任务状态。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQualityControlTaskRequest": {
+      "document": "CreateQualityControlTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "质检任务参数",
+          "member": "QualityControlInfo",
+          "name": "QualityControlInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频源信息",
+          "member": "DownInfo",
+          "name": "DownInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务结果回调地址信息",
+          "member": "CallbackInfo",
+          "name": "CallbackInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQualityControlTaskResponse": {
+      "document": "CreateQualityControlTask返回参数结构体",
+      "members": [
+        {
+          "document": "质检任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DarInfo": {
+      "document": "视频Dar信息",
+      "members": [
+        {
+          "default": "",
+          "document": "填充模式，可选值：\n1：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。\n2：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“。\n默认为2。",
+          "member": "uint64",
+          "name": "FillMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Denoise": {
+      "document": "音频降噪",
+      "members": [
+        {
+          "default": "",
+          "document": "音频降噪强度，可选项：\n1. weak\n2.normal，\n3.strong\n默认为weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Denoising": {
+      "document": "去噪参数",
+      "members": [
+        {
+          "default": "",
+          "document": "去噪方式，可选项：\ntempl：时域降噪；\nspatial：空域降噪,\nfast-spatial：快速空域降噪。\n注意：可选择组合方式：\n1.type:\"templ,spatial\" ;\n2.type:\"templ,fast-spatial\"。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时域去噪强度，可选值：0.0-1.0 。小于0.0的默认为0.0，大于1.0的默认为1.0。",
+          "member": "float",
+          "name": "TemplStrength",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空域去噪强度，可选值：0.0-1.0 。小于0.0的默认为0.0，大于1.0的默认为1.0。",
+          "member": "float",
+          "name": "SpatialStrength",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeEditingTaskResultRequest": {
+      "document": "DescribeEditingTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务 ID。",
+          "example": "8E312055EBF7A503B92947E6D3B21EFF_1573715265075",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEditingTaskResultResponse": {
+      "document": "DescribeEditingTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "编辑任务结果信息。",
+          "example": "无",
+          "member": "EditingTaskResult",
+          "name": "TaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaProcessTaskResultRequest": {
+      "document": "DescribeMediaProcessTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaProcessTaskResultResponse": {
+      "document": "DescribeMediaProcessTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "任务处理结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaProcessTaskResult",
+          "name": "TaskResult",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaQualityRestorationTaskRusultRequest": {
+      "document": "DescribeMediaQualityRestorationTaskRusult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "画质重生任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaQualityRestorationTaskRusultResponse": {
+      "document": "DescribeMediaQualityRestorationTaskRusult返回参数结构体",
+      "members": [
+        {
+          "document": "画质重生任务结果信息",
+          "member": "MediaQualityRestorationTaskResult",
+          "name": "TaskResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityControlTaskResultRequest": {
+      "document": "DescribeQualityControlTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "质检任务 ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityControlTaskResultResponse": {
+      "document": "DescribeQualityControlTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "质检任务结果信息",
+          "member": "QualityControlInfoTaskResult",
+          "name": "TaskResult",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownInfo": {
+      "document": "视频源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "下载类型，可选值： \n0：UrlInfo； \n1：CosInfo。",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Url形式下载信息，当Type等于0时必选。",
+          "member": "UrlInfo",
+          "name": "UrlInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cos形式下载信息，当Type等于1时必选。",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EditInfo": {
+      "document": "画质重生子任务视频剪辑参数",
+      "members": [
+        {
+          "default": "",
+          "document": "剪辑开始时间，单位：ms。",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剪辑结束时间，单位：ms",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EditingInfo": {
+      "document": "智能编辑任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频标签识别任务参数，不填则不开启。",
+          "example": "null",
+          "member": "TagEditingInfo",
+          "name": "TagEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频分类识别任务参数，不填则不开启。",
+          "example": "null",
+          "member": "ClassificationEditingInfo",
+          "name": "ClassificationEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能拆条任务参数，不填则不开启。",
+          "example": "null",
+          "member": "StripEditingInfo",
+          "name": "StripEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能集锦任务参数，不填则不开启。",
+          "example": "null",
+          "member": "HighlightsEditingInfo",
+          "name": "HighlightsEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能封面任务参数，不填则不开启。",
+          "example": "null",
+          "member": "CoverEditingInfo",
+          "name": "CoverEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片头片尾识别任务参数，不填则不开启。",
+          "example": "null",
+          "member": "OpeningEndingEditingInfo",
+          "name": "OpeningEndingEditingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EditingTaskResult": {
+      "document": "智能识别任务结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务 ID。",
+          "example": "null",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：已完成。",
+          "example": "null",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频标签识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "TagTaskResult",
+          "name": "TagTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频分类识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ClassificationTaskResult",
+          "name": "ClassificationTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能拆条结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "StripTaskResult",
+          "name": "StripTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能集锦结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "HighlightsTaskResult",
+          "name": "HighlightsTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能封面结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "CoverTaskResult",
+          "name": "CoverTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "片头片尾识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "OpeningEndingTaskResult",
+          "name": "OpeningEndingTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceProtect": {
+      "document": "人脸保护参数",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸区域增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。",
+          "member": "float",
+          "name": "FaceUsmRatio",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FileInfo": {
+      "document": "画质重生处理后文件的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务结束后生成的文件大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束后生成的文件格式，例如：mp4,flv等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束后生成的文件整体码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束后生成的文件时长，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束后生成的文件视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoInfoResultItem",
+          "name": "VideoInfoResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束后生成的文件音频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioInfoResultItem",
+          "name": "AudioInfoResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FrameTagItem": {
+      "document": "帧标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签起始时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "StartPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句结束时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "EndPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串形式的起始结束时间",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签数组",
+          "member": "TagItem",
+          "name": "TagItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FrameTagRec": {
+      "document": "帧标签任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "标签类型：\n\"Common\": 通用类型\n\"Game\":游戏类型",
+          "member": "string",
+          "name": "TagType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "游戏具体类型:\n\"HonorOfKings_AnchorViews\":王者荣耀主播视角\n\"HonorOfKings_GameViews\":王者荣耀比赛视角\n\"LOL_AnchorViews\":英雄联盟主播视角\n\"LOL_GameViews\":英雄联盟比赛视角\n\"PUBG_AnchorViews\":和平精英主播视角\n\"PUBG_GameViews\":和平精英比赛视角",
+          "member": "string",
+          "name": "GameExtendType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FrameTagResult": {
+      "document": "帧标签结果",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签结果数组",
+          "member": "FrameTagItem",
+          "name": "FrameTagItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HiddenMarkInfo": {
+      "document": "数字水印",
+      "members": [
+        {
+          "default": "",
+          "document": "数字水印路径,，如果不从Cos拉取水印，则必填",
+          "example": "https://aidata-1251820392.cos.ap-guangzhou.myqcloud.com/logo.png",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印频率，可选值：[1,256]，默认值为30",
+          "example": "30",
+          "member": "int64",
+          "name": "Frequency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印强度，可选值：[32,128]，默认值为64",
+          "example": "64",
+          "member": "int64",
+          "name": "Strength",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印的Cos 信息，从Cos上拉取图片水印时必填。",
+          "example": "无",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "HighlightsEditingInfo": {
+      "document": "智能集锦任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启智能集锦。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "HighlightsTaskResult": {
+      "document": "智能集锦结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能集锦结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "HighlightsTaskResultItem",
+          "name": "ItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "HighlightsTaskResultItem": {
+      "document": "智能集锦结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "智能集锦地址。",
+          "member": "string",
+          "name": "HighlightUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能集锦封面地址。",
+          "member": "string",
+          "name": "CovImgUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能集锦持续时间，单位：秒。",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能集锦子片段结果集，集锦片段由这些子片段拼接生成。",
+          "member": "HighlightsTaskResultItemSegment",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HighlightsTaskResultItemSegment": {
+      "document": "智能集锦结果片段",
+      "members": [
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集锦片段起始的偏移时间，单位：秒。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集锦片段终止的偏移时间，单位：秒。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntervalTime": {
+      "document": "周期时间点信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "间隔周期，单位ms",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间点，单位ms",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LoudnessInfo": {
+      "document": "音频响度信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频整体响度",
+          "example": "-10.5",
+          "member": "float",
+          "name": "Loudness",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频响度范围",
+          "example": "10.5",
+          "member": "float",
+          "name": "LoudnessRange",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LowLightEnhance": {
+      "document": "低光照增强参数",
+      "members": [
+        {
+          "default": "",
+          "document": "低光照增强类型，可选项：normal。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingInfo": {
+      "document": "编辑处理/剪切任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "截取时间信息。",
+          "member": "MediaCuttingTimeInfo",
+          "name": "TimeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出结果信息。",
+          "member": "MediaTargetInfo",
+          "name": "TargetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取结果形式信息。",
+          "member": "MediaCuttingOutForm",
+          "name": "OutForm",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "member": "string",
+          "name": "ResultListSaveType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingOutForm": {
+      "document": "编辑处理/剪切任务/输出形式信息",
+      "members": [
+        {
+          "default": "",
+          "document": "输出类型，可选值：\nStatic：静态图；\nDynamic：动态图；\nSprite：雪碧图；\nVideo：视频。\n\n注1：不同类型时，对应的 TargetInfo.Format 格式支持如下：\nStatic：jpg、png；\nDynamic：gif；\nSprite：jpg、png；\nVideo：mp4。\n\n注2：当 Type=Sprite时，TargetInfo指定的尺寸表示小图的大小，最终结果尺寸以输出为准。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "背景填充方式，可选值：\nWhite：白色填充；\nBlack：黑色填充；\nStretch：拉伸；\nGaussian：高斯模糊；\n默认White。",
+          "member": "string",
+          "name": "FillType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Sprite时有效，表示雪碧图行数，范围为 [1,200]，默认100。",
+          "member": "int64",
+          "name": "SpriteRowCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Sprite时有效，表示雪碧图列数，范围为 [1,200]，默认100。",
+          "member": "int64",
+          "name": "SpriteColumnCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingTaskResult": {
+      "document": "编辑处理/剪切任务/处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "ListFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结果个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ResultCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "FirstFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "LastFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaCuttingTimeInfo": {
+      "document": "编辑处理/剪切任务/时间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "时间类型，可选值：\nPointSet：时间点集合；\nIntervalPoint：周期采样点；\nSectionSet：时间片段集合。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截取时间点集合，单位毫秒，Type=PointSet时必选。",
+          "member": "int64",
+          "name": "PointSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "周期采样点信息，Type=IntervalPoint时必选。",
+          "member": "IntervalTime",
+          "name": "IntervalPoint",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间区间集合信息，Type=SectionSet时必选。",
+          "member": "SectionTime",
+          "name": "SectionSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaJoiningInfo": {
+      "document": "编辑处理/拼接任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。\n其中Format只支持mp4.",
+          "member": "MediaTargetInfo",
+          "name": "TargetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaJoiningTaskResult": {
+      "document": "编辑处理/拼接任务/处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "拼接结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TaskResultFile",
+          "name": "File",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaProcessInfo": {
+      "document": "编辑处理/任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务类型，可选值：\nMediaEditing：媒体编辑（待上线）；\nMediaCutting：媒体剪切；\nMediaJoining：媒体拼接。\nMediaRecognition: 媒体识别。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频剪切任务参数，Type=MediaCutting时必选。",
+          "member": "MediaCuttingInfo",
+          "name": "MediaCuttingInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频拼接任务参数，Type=MediaJoining时必选。",
+          "member": "MediaJoiningInfo",
+          "name": "MediaJoiningInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体识别任务参数，Type=MediaRecognition时必选",
+          "member": "MediaRecognitionInfo",
+          "name": "MediaRecognitionInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaProcessTaskResult": {
+      "document": "编辑处理/任务处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编辑处理任务类型，取值：\nMediaEditing：视频编辑（待上线）；\nMediaCutting：视频剪切；\nMediaJoining：视频拼接。\nMediaRecognition：媒体识别；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理进度，范围：[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态：\n1100：等待中；\n1200：执行中；\n2000：成功；\n5000：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剪切任务处理结果，当Type=MediaCutting时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaCuttingTaskResult",
+          "name": "MediaCuttingTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拼接任务处理结果，当Type=MediaJoining时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaJoiningTaskResult",
+          "name": "MediaJoiningTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体识别任务处理结果，当Type=MediaRecognition时才有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MediaRecognitionTaskResult",
+          "name": "MediaRecognitionTaskResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaQualityRestorationTaskResult": {
+      "document": "画质重生任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "画质重生任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画质重生处理后文件的详细信息。",
+          "member": "SubTaskResultItem",
+          "name": "SubTaskResult",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaRecognitionInfo": {
+      "document": "媒体识别任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签识别",
+          "member": "FrameTagRec",
+          "name": "FrameTagRec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语音字幕识别",
+          "member": "SubtitleRec",
+          "name": "SubtitleRec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaRecognitionTaskResult": {
+      "document": "媒体识别任务处理结果",
+      "members": [
+        {
+          "default": "",
+          "document": "帧标签识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FrameTagResult",
+          "name": "FrameTagResults",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语音字幕识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SubtitleResult",
+          "name": "SubtitleResults",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaResultInfo": {
+      "document": "结果文件媒体信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ResultVideoInfo",
+          "name": "ResultVideoInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "ResultAudioInfo",
+          "name": "ResultAudioInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaSourceInfo": {
+      "document": "编辑处理的媒体源",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体源资源下载信息。",
+          "example": "null",
+          "member": "DownInfo",
+          "name": "DownInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体源ID标记，用于多个输入源时，请内媒体源的定位，对于多输入的任务，一般要求必选。\nID只能包含字母、数字、下划线、中划线，长读不能超过128。",
+          "example": "“id”",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体源类型，具体类型如下：\nVideo：视频\nImage：图片\nAudio：音频",
+          "example": "Video",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaTargetInfo": {
+      "document": "目标媒体信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。\n\n注1：部分子服务支持占位符，形式为： {parameter}\n预设parameter有：\nindex：序号；",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体封装格式，最长5字符，具体格式支持根据子任务确定。",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流信息。",
+          "member": "TargetVideoInfo",
+          "name": "TargetVideoInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "member": "string",
+          "name": "ResultListSaveType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MuxInfo": {
+      "document": "流封装信息",
+      "members": [
+        {
+          "default": "",
+          "document": "删除流，可选项：video,audio。",
+          "example": "video",
+          "member": "string",
+          "name": "DeleteStream",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Flv 参数，目前支持add_keyframe_index",
+          "example": "add_keyframe_index",
+          "member": "string",
+          "name": "FlvFlags",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OpeningEndingEditingInfo": {
+      "document": "片头片尾识别任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启片头片尾识别。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OpeningEndingTaskResult": {
+      "document": "片头片尾识别结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片头片尾识别结果项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "OpeningEndingTaskResultItem",
+          "name": "Item",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OpeningEndingTaskResultItem": {
+      "document": "片头片尾识别结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "视频片头的结束时间点，单位：秒。",
+          "member": "float",
+          "name": "OpeningTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片头识别置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "OpeningConfidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频片尾的开始时间点，单位：秒。",
+          "member": "float",
+          "name": "EndingTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片尾识别置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "EndingConfidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PicMarkInfoItem": {
+      "document": "图片水印信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片水印的X坐标。",
+          "member": "int64",
+          "name": "PosX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印的Y坐标 。",
+          "member": "int64",
+          "name": "PosY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印路径,，如果不从Cos拉取水印，则必填",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印的Cos 信息，从Cos上拉取图片水印时必填。",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印宽度，不填为图片原始宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印高度，不填为图片原始高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加图片水印的开始时间,单位：ms。",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加图片水印的结束时间,单位：ms。",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QualityControlInfo": {
+      "document": "媒体质检任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "对流进行截图的间隔ms，默认1000ms",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否保存截图",
+          "member": "bool",
+          "name": "VideoShot",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测抖动重影",
+          "member": "bool",
+          "name": "Jitter",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测模糊",
+          "member": "bool",
+          "name": "Blur",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测低光照、过曝",
+          "member": "bool",
+          "name": "AbnormalLighting",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测花屏",
+          "member": "bool",
+          "name": "CrashScreen",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测黑边、白边、黑屏、白屏、绿屏",
+          "member": "bool",
+          "name": "BlackWhiteEdge",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测噪点",
+          "member": "bool",
+          "name": "Noise",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测马赛克",
+          "member": "bool",
+          "name": "Mosaic",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测二维码，包括小程序码、条形码",
+          "member": "bool",
+          "name": "QRCode",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启画面质量评价",
+          "member": "bool",
+          "name": "QualityEvaluation",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画面质量评价过滤阈值，结果只返回低于阈值的时间段，默认60",
+          "member": "uint64",
+          "name": "QualityEvalScore",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检测视频音频，包含静音、低音、爆音",
+          "member": "bool",
+          "name": "Voice",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QualityControlInfoTaskResult": {
+      "document": "媒体质检结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "质检任务 ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "质检任务状态。\n1：执行中；2：成功；3：失败",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示处理进度百分比",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理时长(s)",
+          "member": "uint64",
+          "name": "UsedTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费时长(s)",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "为true时表示视频无音频轨\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "NoAudio",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "为true时表示视频无视频轨\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "NoVideo",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频无参考质量打分，百分制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "QualityEvaluationScore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面无参考评分低于阈值的时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "QualityEvaluationResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面抖动时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "JitterResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面模糊时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "BlurResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面低光、过曝时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "AbnormalLightingResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面花屏时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "CrashScreenResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面黑边、白边、黑屏、白屏、纯色屏时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "BlackWhiteEdgeResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面有噪点时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "NoiseResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面有马赛克时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "MosaicResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频画面有二维码的时间段，包括小程序码、条形码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "QRCodeResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频音频异常时间段，包括静音、低音、爆音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "QualityControlResultItems",
+          "name": "VoiceResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityControlItem": {
+      "document": "质检结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出现的起始时间戳，秒",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出现的结束时间戳，秒",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域坐标(px)，即左上角坐标、右下角坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "AreaCoordsSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityControlResultItems": {
+      "document": "质检结果项数组",
+      "members": [
+        {
+          "default": "",
+          "document": "异常类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "质检结果项",
+          "member": "QualityControlItem",
+          "name": "QualityControlItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveReverb": {
+      "document": "音频去除混响",
+      "members": [
+        {
+          "default": "",
+          "document": "去混响类型，可选项：normal",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ResultAudioInfo": {
+      "document": "结果媒体文件的视频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultVideoInfo": {
+      "document": "结果媒体文件的视频流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流在媒体文件中的流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流的时长，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画面宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画面高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频帧率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SaveInfo": {
+      "document": "任务存储信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储类型，可选值： \n1：CosInfo。",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cos形式存储信息，当Type等于1时必选。",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ScratchRepair": {
+      "document": "去划痕参数",
+      "members": [
+        {
+          "default": "",
+          "document": "去划痕方式，取值：normal。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去划痕强度， 可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。",
+          "member": "float",
+          "name": "Ratio",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SectionTime": {
+      "document": "时间区间。",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间点，单位ms",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间区间时长，单位ms",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SegmentInfo": {
+      "document": "输出文件切片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "每个切片平均时长，默认10s。",
+          "member": "int64",
+          "name": "FragmentTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "切片类型，可选项：hls，不填时默认hls。",
+          "member": "string",
+          "name": "SegmentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "切片文件名字。注意：\n1.不填切片文件名时，默认按照按照如下格式命名：m3u8文件名{order}。\n2.若填了切片文件名字，则会按照如下格式命名：用户指定文件名{order}。",
+          "member": "string",
+          "name": "FragmentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Sharp": {
+      "document": "细节增强参数",
+      "members": [
+        {
+          "default": "",
+          "document": "细节增强方式,取值：normal。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "细节增强强度，可选项：0.0-1.0。小于0.0的默认为0.0，大于1.0的默认为1.0。",
+          "member": "float",
+          "name": "Ratio",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StopMediaProcessTaskRequest": {
+      "document": "StopMediaProcessTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑处理任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMediaProcessTaskResponse": {
+      "document": "StopMediaProcessTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMediaQualityRestorationTaskRequest": {
+      "document": "StopMediaQualityRestorationTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的画质重生任务ID。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMediaQualityRestorationTaskResponse": {
+      "document": "StopMediaQualityRestorationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StripEditingInfo": {
+      "document": "智能拆条任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启智能拆条。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StripTaskResult": {
+      "document": "智能拆条结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能拆条结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StripTaskResultItem",
+          "name": "ItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StripTaskResultItem": {
+      "document": "智能拆条结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "视频拆条片段地址。",
+          "member": "string",
+          "name": "SegmentUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拆条封面图片地址。",
+          "member": "string",
+          "name": "CovImgUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拆条片段起始的偏移时间，单位：秒。",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拆条片段终止的偏移时间，单位：秒。",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubTaskResultItem": {
+      "document": "画质重生子任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "子任务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子任务状态。\n0：成功；\n1：执行中；\n其他值：失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务状态描述。",
+          "example": "success",
+          "member": "string",
+          "name": "StatusMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "ProgressRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画质重生处理后文件的下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://yayunhui-1251820392.cos.ap-beijing.myqcloud.com/test.mp4",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画质重生处理后文件的MD5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e993da7f46b38b48efa3b9f0d7ba17d5",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "画质重生处理后文件的详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubTaskTranscodeInfo": {
+      "document": "画质重生子任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子任务名称。",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标文件信息。",
+          "member": "TargetInfo",
+          "name": "TargetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频剪辑信息。注意：如果填写了EditInfo，则VideoInfo和AudioInfo必填",
+          "member": "EditInfo",
+          "name": "EditInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频转码信息，不填保持和源文件一致。",
+          "member": "VideoInfo",
+          "name": "VideoInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频转码信息，不填保持和源文件一致。",
+          "member": "AudioInfo",
+          "name": "AudioInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定封装信息。",
+          "member": "MuxInfo",
+          "name": "MuxInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubtitleItem": {
+      "document": "语音字幕识别项",
+      "members": [
+        {
+          "default": "",
+          "document": "语音识别结果",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Zh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "英文翻译结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "En",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "语句起始时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "StartPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句结束时间戳PTS(ms)",
+          "member": "uint64",
+          "name": "EndPts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串形式的起始结束时间",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的置信度（百分制）",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前语句是否结束",
+          "member": "bool",
+          "name": "EndFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语句分割时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PuncEndTs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubtitleRec": {
+      "document": "语音字幕任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "语音识别：\nzh：中文\nen：英文",
+          "member": "string",
+          "name": "AsrDst",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "翻译识别：\nzh：中文\nen：英文",
+          "member": "string",
+          "name": "TransDst",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubtitleResult": {
+      "document": "语音字幕识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "语音字幕数组",
+          "member": "SubtitleItem",
+          "name": "SubtitleItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagEditingInfo": {
+      "document": "视频标签识别任务参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启视频标签识别。0为关闭，1为开启。其他非0非1值默认为0。",
+          "member": "int64",
+          "name": "Switch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外定制化服务参数。参数为序列化的Json字符串，例如：{\"k1\":\"v1\"}。",
+          "member": "string",
+          "name": "CustomInfo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagItem": {
+      "document": "标签项",
+      "members": [
+        {
+          "default": "",
+          "document": "标签内容",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的置信度（百分制）",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分级数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Categorys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ext",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagTaskResult": {
+      "document": "视频标签识别结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "编辑任务状态。 \n1：执行中；2：成功；3：失败。",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误码。 \n0：成功；其他值：失败。",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编辑任务失败错误描述。",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频标签识别结果集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagTaskResultItem",
+          "name": "ItemSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagTaskResultItem": {
+      "document": "视频标签识别结果项",
+      "members": [
+        {
+          "default": "",
+          "document": "标签名称。",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，取值范围是 0 到 100。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetInfo": {
+      "document": "输出文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标文件切片信息",
+          "member": "SegmentInfo",
+          "name": "SegmentInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TargetVideoInfo": {
+      "document": "目标视频信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频宽度，单位像素",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频高度，单位像素",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频帧率，范围在1到120之间",
+          "member": "int64",
+          "name": "FrameRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskResultFile": {
+      "document": "任务结果文件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件大小，部分任务支持，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体信息，对于媒体文件，部分任务支持返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "MediaResultInfo",
+          "name": "MediaInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TextMarkInfoItem": {
+      "document": "画质重生子任务文字水印信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文字内容。",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字水印X坐标。",
+          "member": "int64",
+          "name": "PosX",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字水印Y坐标。",
+          "member": "int64",
+          "name": "PosY",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字大小",
+          "member": "int64",
+          "name": "FontSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体，可选项：hei,song，simkai,arial；默认hei(黑体）。",
+          "member": "string",
+          "name": "FontFile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体颜色，颜色见附录，不填默认black。",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字透明度，可选值0-1。0：不透明，1：全透明。默认为0",
+          "member": "float",
+          "name": "FontAlpha",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UrlInfo": {
+      "document": "任务视频Url形式下载信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "视频 URL。\n注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频地址格式，可选值： \n0：音视频 ;\n1：直播流。 \n默认为0。其他非0非1值默认为0。画质重生任务只支持0。",
+          "member": "int64",
+          "name": "Format",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定请求资源时，HTTP头部host的值。",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoEnhance": {
+      "document": "画质增强参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "去编码毛刺、伪影参数。",
+          "example": "无",
+          "member": "ArtifactReduction",
+          "name": "ArtifactReduction",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去噪声参数。",
+          "example": "无",
+          "member": "Denoising",
+          "name": "Denoising",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "颜色增强参数。",
+          "example": "无",
+          "member": "ColorEnhance",
+          "name": "ColorEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "细节增强参数。",
+          "example": "无",
+          "member": "Sharp",
+          "name": "Sharp",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超分参数，可选项：2，目前仅支持2倍超分。\n注意：此参数已经弃用，超分可以使用VideoSuperResolution参数",
+          "example": "2",
+          "member": "int64",
+          "name": "WdSuperResolution",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸保护信息。",
+          "example": "无",
+          "member": "FaceProtect",
+          "name": "FaceProtect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插帧，取值范围：[0, 60]，单位：Hz。\n注意：当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "30",
+          "member": "int64",
+          "name": "WdFps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "去划痕参数",
+          "example": "无",
+          "member": "ScratchRepair",
+          "name": "ScratchRepair",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "低光照增强参数",
+          "example": "无",
+          "member": "LowLightEnhance",
+          "name": "LowLightEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频超分参数",
+          "example": "无",
+          "member": "VideoSuperResolution",
+          "name": "VideoSuperResolution",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频画质修复参数",
+          "example": "无",
+          "member": "VideoRepair",
+          "name": "VideoRepair",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoInfo": {
+      "document": "视频转码信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频帧率，取值范围：[0, 60]，单位：Hz。\n注意：当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "25",
+          "member": "int64",
+          "name": "Fps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽度，取值范围：0 和 [128, 4096]\n注意：\n当 Width、Height 均为 0，则分辨率同源；\n当 Width 为 0，Height 非 0，则 Width 按比例缩放；\n当 Width 非 0，Height 为 0，则 Height 按比例缩放；\n当 Width、Height 均非 0，则分辨率按用户指定。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高度，取值范围：0 和 [128, 4096]\n注意：\n当 Width、Height 均为 0，则分辨率同源；\n当 Width 为 0，Height 非 0，则 Width 按比例缩放；\n当 Width 非 0，Height 为 0，则 Height 按比例缩放；\n当 Width、Height 均非 0，则分辨率按用户指定。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "长边分辨率，取值范围：0 和 [128, 4096]\n注意：\n当 LongSide、ShortSide 均为 0，则分辨率按照Width，Height；\n当 LongSide 为 0，ShortSide 非 0，则 LongSide 按比例缩放；\n当 LongSide非 0，ShortSide为 0，则 ShortSide 按比例缩放；\n当 LongSide、ShortSide 均非 0，则分辨率按用户指定。\n长短边优先级高于Weight,Height,设置长短边则忽略宽高。",
+          "example": "1280",
+          "member": "int64",
+          "name": "LongSide",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短边分辨率，取值范围：0 和 [128, 4096]\n注意：\n当 LongSide、ShortSide 均为 0，则分辨率按照Width，Height；\n当 LongSide 为 0，ShortSide 非 0，则 LongSide 按比例缩放；\n当 LongSide非 0，ShortSide为 0，则 ShortSide 按比例缩放；\n当 LongSide、ShortSide 均非 0，则分辨率按用户指定。\n长短边优先级高于Weight,Height,设置长短边则忽略宽高。",
+          "example": "720",
+          "member": "int64",
+          "name": "ShortSide",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "20000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固定I帧之间，视频帧数量，取值范围： [25, 2500]，如果不填，使用编码默认最优序列。",
+          "example": "25",
+          "member": "int64",
+          "name": "Gop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码器支持选项，可选值：\nh264,\nh265,\nav1。\n不填默认h264。",
+          "example": "h264",
+          "member": "string",
+          "name": "VideoCodec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片水印。",
+          "example": "无",
+          "member": "PicMarkInfoItem",
+          "name": "PicMarkInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。",
+          "example": "无",
+          "member": "DarInfo",
+          "name": "DarInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持hdr,可选项：\nhdr10,\nhlg。\n此时，VideoCodec会强制设置为h265, 编码位深为10",
+          "example": "hdr10",
+          "member": "string",
+          "name": "Hdr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "画质增强参数信息。",
+          "example": "无",
+          "member": "VideoEnhance",
+          "name": "VideoEnhance",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字水印参数信息。",
+          "example": "无",
+          "member": "HiddenMarkInfo",
+          "name": "HiddenMarkInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文本水印参数信息。",
+          "example": "无",
+          "member": "TextMarkInfoItem",
+          "name": "TextMarkInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoInfoResultItem": {
+      "document": "任务结束后生成的文件视频信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频流的流id。",
+          "example": "0",
+          "member": "int64",
+          "name": "Stream",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频宽度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频高度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频码率，单位：bps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频帧率，用分数格式表示，如：25/1, 99/32等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25",
+          "member": "string",
+          "name": "Fps",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "编码格式，如h264,h265等等 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "h264",
+          "member": "string",
+          "name": "Codec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "播放旋转角度，可选值0-360。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180",
+          "member": "int64",
+          "name": "Rotate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频时长，单位：ms 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "颜色空间，如yuv420p，yuv444p等等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yuv420p",
+          "member": "string",
+          "name": "PixFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoRepair": {
+      "document": "综合画质修复，包括：去噪，去毛刺，细节增强，主观画质提升。",
+      "members": [
+        {
+          "default": "",
+          "document": "画质修复类型，可选值：weak，normal，strong;\n默认值: weak",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoSuperResolution": {
+      "document": "视频超分",
+      "members": [
+        {
+          "default": "",
+          "document": "超分视频类型：可选值：lq,hq\nlq: 针对低清晰度有较多噪声视频的超分;\nhq: 针对高清晰度视频超分;\n默认取值：lq。",
+          "example": "lq",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超分倍数，可选值：2。\n注意：当前只支持两倍超分。",
+          "example": "2",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

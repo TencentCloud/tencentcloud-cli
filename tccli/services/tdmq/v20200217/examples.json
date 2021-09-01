@@ -1,0 +1,405 @@
+{
+  "actions": {
+    "AcknowledgeMessage": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=AcknowledgeMessage\n&AckTopic=tenant/namespace/topic\n&MessageId=\"71:12:0\"\n&SubName=“test-sub”\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"ErrorMsg\": \"xxx\"\n    }\n}",
+        "title": "确认消息"
+      }
+    ],
+    "ClearCmqQueue": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ClearCmqQueue\n&QueueName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "清空队列中堆积的消息"
+      }
+    ],
+    "ClearCmqSubscriptionFilterTags": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ClearCmqSubscriptionFilterTags\n&TopicName=ConnTopic\n&SubscriptionName=Queue\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "清空订阅者消息标签"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCluster\n&ClusterName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"pulsar-5r59xd4vnx\",\n        \"RequestId\": \"c1e66353-c87b-4a30-804d-94c6c2c8bac5\"\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "CreateCmqQueue": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqQueue\n&QueueName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建队列"
+      }
+    ],
+    "CreateCmqSubscribe": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqSubscribe\n&TopicName=ConnTopic\n&SubscriptionName=ConnSubQueue\n&Protocol=queue\n&Endpoint=queue_sub\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SubscriptionId\": \"subsc-39gyuuhd\",\n        \"RequestId\": \"1620b635-6071-47c7-ac1e-975afe5104a7\"\n    }\n}",
+        "title": "创建订阅接口"
+      }
+    ],
+    "CreateCmqTopic": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqTopic\n&TopicName=ConnTopic\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建主题"
+      }
+    ],
+    "CreateEnvironment": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateEnvironment\n&EnvironmentId=test1\n&MsgTTL=100\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test1\",\n        \"NamespaceId\": \"namespace-8893gp3428\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"0843ea4f-d6ba-463b-952c-75708a7e8901\"\n    }\n}",
+        "title": "创建命名空间"
+      }
+    ],
+    "CreateSubscription": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateSubscription\n&EnvironmentId=default\n&TopicName=cloud_test\n&SubscriptionName=cloud_sub\n&IsIdempotent=true\n&AutoCreatePolicyTopic=true\n&Remark=创建订阅关系\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"15288803-dadb-4499-9b5b-ff2f631ca68e\"\n    }\n}",
+        "title": "创建订阅关系"
+      }
+    ],
+    "CreateTopic": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateTopic\n&EnvironmentId=default\n&TopicName=test_topic\n&Partitions=2\n&Remark=2个分区的普通消息队列\n&TopicType=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"default\",\n        \"TopicName\": \"test_topic\",\n        \"Partitions\": 2,\n        \"TopicType\": 0,\n        \"Remark\": \"2个分区的普通消息队列\",\n        \"RequestId\": \"d9686bf9-8d7d-4e78-bb44-5140d70a1ffa\"\n    }\n}",
+        "title": "创建主题"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteCluster\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"pulsar-5r59xd4vnx\",\n        \"RequestId\": \"0f368d07-3648-4546-9c51-65dad19a3234\"\n    }\n}",
+        "title": "删除集群"
+      }
+    ],
+    "DeleteCmqQueue": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteCmqQueue\n&QueueName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "删除队列"
+      }
+    ],
+    "DeleteCmqSubscribe": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteCmqSubscribe\n&TopicName=ConnTopic\n&SubscriptionName=york\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8efab10-0ac6-44cf-8d09-67bb228deaf4\"\n    }\n}",
+        "title": "删除订阅"
+      }
+    ],
+    "DeleteCmqTopic": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteCmqTopic\n&TopicName=ConnTopic\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96b28b30-393a-48aa-9f00-07dbe6d86229\"\n    }\n}",
+        "title": "删除主题"
+      }
+    ],
+    "DeleteEnvironments": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteEnvironments\n&EnvironmentIds.0=test1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentIds\": [\n            \"test1\"\n        ],\n        \"RequestId\": \"db8bd520-496e-4e7c-a4a1-e7414d3c315c\"\n    }\n}",
+        "title": "删除命名空间"
+      }
+    ],
+    "DeleteSubscriptions": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteSubscriptions\n&SubscriptionTopicSets.0.EnvironmentId=default\n&SubscriptionTopicSets.0.TopicName=sun_topic\n&SubscriptionTopicSets.0.SubscriptionName=test_2_1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SubscriptionTopicSets\": [\n            {\n                \"EnvironmentId\": \"default\",\n                \"SubscriptionName\": \"test_2_1\",\n                \"TopicName\": \"sun_topic\"\n            }\n        ],\n        \"RequestId\": \"cd14f283-ccb5-4b13-b858-a0a38fa6348b\"\n    }\n}",
+        "title": "删除订阅关系"
+      }
+    ],
+    "DeleteTopics": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DeleteTopics\n&TopicSets.0.EnvironmentId=default\n&TopicSets.0.TopicName=cloud_test_1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TopicSets\": [\n            {\n                \"EnvironmentId\": \"default\",\n                \"TopicName\": \"cloud_test_1\"\n            }\n        ],\n        \"RequestId\": \"5f4eabe4-94f2-4f91-8285-86f24ef8bcfa\"\n    }\n}",
+        "title": "删除主题列表"
+      }
+    ],
+    "DescribeBindClusters": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeBindClusters\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClusterName\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"32a34a4c-58a8-445f-80ff-7152399b18f7\"\n    }\n}",
+        "title": "获取用户绑定的专享集群列表"
+      }
+    ],
+    "DescribeBindVpcs": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeBindVpcs\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VpcSets\": [\n            {\n                \"UniqueVpcId\": \"vpc-c96rbu5r\",\n                \"UniqueSubnetId\": \"subnet-hiqrqjp6\",\n                \"RouterId\": \"pulsar-xxxxxxxx/vpc-c96rbu5r/subnet-hiqrqjp6\",\n                \"Ip\": \"192.168.0.1\",\n                \"Port\": 6000,\n                \"Remark\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b9765efb-62dd-4946-b2bd-61e958c0f7a7\"\n    }\n}",
+        "title": "获取租户VPC绑定关系"
+      }
+    ],
+    "DescribeClusterDetail": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeClusterDetail\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": {\n            \"ClusterId\": \"pulsar-xxxxxxxx\",\n            \"ClusterName\": \"sdfsdfsdf\",\n            \"Remark\": \"\",\n            \"EndPointNum\": 0,\n            \"CreateTime\": \"2021-01-13 15:43:29\",\n            \"Healthy\": 1,\n            \"HealthyInfo\": \"\",\n            \"Status\": 1,\n            \"MaxNamespaceNum\": 50,\n            \"MaxTopicNum\": 1000,\n            \"MaxQps\": 10000,\n            \"MessageRetentionTime\": 86400,\n            \"VpcEndPoint\": \"xx\",\n            \"NamespaceNum\": 0,\n            \"Version\": \"xx\",\n            \"PublicEndPoint\": \"xx\",\n            \"MaxStorageCapacity\": 100\n        },\n        \"RequestId\": \"020eb354-144e-4cf8-9607-c6771cd24421\"\n    }\n}",
+        "title": "获取集群的详细信息"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeClusters\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"pulsar-p37angkrqd\",\n                \"ClusterName\": \"default\",\n                \"Remark\": \"default\",\n                \"EndPointNum\": 0,\n                \"CreateTime\": \"2020-11-30 20:45:36\",\n                \"Healthy\": 1,\n                \"HealthyInfo\": \"\",\n                \"Status\": 1,\n                \"MaxNamespaceNum\": 10,\n                \"MaxTopicNum\": 1000,\n                \"MaxQps\": 10000,\n                \"MessageRetentionTime\": 86400,\n                \"NamespaceNum\": 0,\n                \"VpcEndPoint\": \"xx\",\n                \"PublicEndPoint\": \"xx\",\n                \"Version\": \"xx\",\n                \"MaxStorageCapacity\": 100\n            }\n        ],\n        \"RequestId\": \"137c3d2c-eae6-4545-95dd-0d332074fd0e\"\n    }\n}",
+        "title": "获取集群列表"
+      }
+    ],
+    "DescribeCmqDeadLetterSourceQueues": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqDeadLetterSourceQueues\n&DeadLetterQueueName=test123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"test\",\n                \"QueueId\": \"queue-kc7m75to\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83fce81a-7305-49b4-a154-983dd76204da\"\n    }\n}",
+        "title": "枚举死信队列源队列"
+      }
+    ],
+    "DescribeCmqQueueDetail": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqQueueDetail\n&QueueName=cmq-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QueueDescribe\": {\n            \"QueueId\": \"xx\",\n            \"RewindSeconds\": 1,\n            \"CreateUin\": 1,\n            \"TenantId\": \"xx\",\n            \"LastModifyTime\": 1,\n            \"VisibilityTimeout\": 1,\n            \"QueueName\": \"xx\",\n            \"Trace\": true,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"NamespaceName\": \"xx\",\n            \"RewindMsgNum\": 1,\n            \"MaxDelaySeconds\": 1,\n            \"TransactionPolicy\": {\n                \"MaxQueryCount\": 1,\n                \"FirstQueryInterval\": 1\n            },\n            \"MsgRetentionSeconds\": 1,\n            \"DelayMsgNum\": 1,\n            \"MaxMsgHeapNum\": 1,\n            \"PollingWaitSeconds\": 1,\n            \"Bps\": 1,\n            \"InactiveMsgNum\": 1,\n            \"DeadLetterPolicy\": {\n                \"DeadLetterQueue\": \"xx\",\n                \"Policy\": 1,\n                \"MaxTimeToLive\": 1,\n                \"MaxReceiveCount\": 1\n            },\n            \"ActiveMsgNum\": 1,\n            \"MaxMsgSize\": 1,\n            \"MinMsgTime\": 1,\n            \"DeadLetterSource\": [\n                {\n                    \"QueueId\": \"xx\",\n                    \"QueueName\": \"xx\"\n                }\n            ],\n            \"Transaction\": true,\n            \"Qps\": 1,\n            \"CreateTime\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取cmq队列详情"
+      }
+    ],
+    "DescribeCmqQueues": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqQueues\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2005,\n        \"QueueList\": [\n            {\n                \"Tags\": [],\n                \"QueueId\": \"queue-6zs45b15\",\n                \"QueueName\": \"QTA-5cd25c1e-5c7c-11ea-b510-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"Qps\": 5000,\n                \"Bps\": 52428800,\n                \"MaxDelaySeconds\": 3600,\n                \"MaxMsgHeapNum\": 10000000,\n                \"PollingWaitSeconds\": 0,\n                \"MsgRetentionSeconds\": 345600,\n                \"VisibilityTimeout\": 30,\n                \"MaxMsgSize\": 65536,\n                \"RewindSeconds\": 43200,\n                \"CreateTime\": 1583149980,\n                \"LastModifyTime\": 1583149980,\n                \"Transaction\": false,\n                \"DeadLetterSource\": [],\n                \"DeadLetterPolicy\": [],\n                \"TransactionPolicy\": [],\n                \"ActiveMsgNum\": 0,\n                \"InactiveMsgNum\": 0,\n                \"DelayMsgNum\": 0,\n                \"RewindMsgNum\": 0,\n                \"MinMsgTime\": 0\n            }\n        ],\n        \"RequestId\": \"6bab9048-bc14-4142-80c6-3ec119729bed\"\n    }\n}",
+        "title": "枚举队列（不区分用户）"
+      }
+    ],
+    "DescribeCmqSubscriptionDetail": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqSubscriptionDetail\n&TopicName=Conn\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SubscriptionSet\": [\n            {\n                \"SubscriptionName\": \"ConnSub\",\n                \"SubscriptionId\": \"subsc-8y7fn4t2\",\n                \"TopicOwner\": 0,\n                \"MsgCount\": 0,\n                \"LastModifyTime\": 1590632987,\n                \"CreateTime\": 1590632987,\n                \"BindingKey\": null,\n                \"Endpoint\": \"test1\",\n                \"FilterTags\": [],\n                \"Protocol\": \"queue\",\n                \"NotifyStrategy\": \"EXPONENTIAL_DECAY_RETRY\",\n                \"NotifyContentFormat\": \"SIMPLIFIED\"\n            }\n        ],\n        \"RequestId\": \"72cd2d9d-d666-45ad-963a-cf5065a1984c\"\n    }\n}",
+        "title": "查询订阅详情"
+      }
+    ],
+    "DescribeCmqTopicDetail": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqTopicDetail\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TopicDescribe\": {\n            \"MsgCount\": 1,\n            \"TopicId\": \"xx\",\n            \"MaxMsgSize\": 1,\n            \"Trace\": true,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"CreateUin\": 1,\n            \"FilterType\": 1,\n            \"TenantId\": \"xx\",\n            \"LastModifyTime\": 1,\n            \"MsgRetentionSeconds\": 1,\n            \"NamespaceName\": \"xx\",\n            \"Qps\": 1,\n            \"CreateTime\": 1,\n            \"TopicName\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "cmq查询主题详情"
+      }
+    ],
+    "DescribeCmqTopics": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqTopics\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 360,\n        \"TopicList\": [\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-catv1v6h\",\n                \"TopicName\": \"QTA-6d1dfa44-5c70-11ea-8575-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"MsgRetentionSeconds\": 86400,\n                \"MaxMsgSize\": 65536,\n                \"Qps\": 5000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1583144853,\n                \"LastModifyTime\": 1583144874,\n                \"MsgCount\": 0\n            },\n            {\n                \"Tags\": [],\n                \"TopicId\": \"topic-caysfz7j\",\n                \"TopicName\": \"QTA-8f9162e2-5c6f-11ea-8dea-460d8830b47a\",\n                \"CreateUin\": 100002742997,\n                \"MsgRetentionSeconds\": 86400,\n                \"MaxMsgSize\": 1025,\n                \"Qps\": 5000,\n                \"FilterType\": 1,\n                \"CreateTime\": 1583144481,\n                \"LastModifyTime\": 1583144484,\n                \"MsgCount\": 0\n            }\n        ],\n        \"RequestId\": \"104f0831-f81a-4d65-81e4-ff0c6217ae23\"\n    }\n}",
+        "title": "枚举主题（不区分用户）"
+      }
+    ],
+    "DescribeEnvironmentAttributes": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironmentAttributes\n&EnvironmentId=test1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MsgTTL\": 2000,\n        \"RateInByte\": 0,\n        \"RateInSize\": 0,\n        \"Replicas\": 2,\n        \"RetentionHours\": 0,\n        \"RetentionSize\": 0,\n        \"EnvironmentId\": \"test1\",\n        \"Remark\": \"备注\",\n        \"RequestId\": \"dec113a8-599a-4e70-b143-14425d48ffc4\"\n    }\n}",
+        "title": "列出指定命名空间属性"
+      }
+    ],
+    "DescribeEnvironmentRoles": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironmentRoles\n&EnvironmentId=default\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"default\",\n                \"RoleName\": \"test_role\",\n                \"Permissions\": [\n                    \"produce\",\n                    \"consume\"\n                ],\n                \"RoleDescribe\": \"Remark1\",\n                \"CreateTime\": \"2020-08-03 19:46:37\",\n                \"UpdateTime\": \"2020-08-04 15:59:29\"\n            }\n        ],\n        \"RequestId\": \"gggxxxx\"\n    }\n}",
+        "title": "获取命名空间角色列表"
+      }
+    ],
+    "DescribeEnvironments": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeEnvironments\n&EnvironmentId=default\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentSet\": [\n            {\n                \"EnvironmentId\": \"xx\",\n                \"Remark\": \"xx\",\n                \"NamespaceName\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"NamespaceId\": \"xx\",\n                \"TopicNum\": 0,\n                \"MsgTTL\": 0,\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"2235829c-2c9d-44b0-bce4-0ce0a147cce0\"\n    }\n}",
+        "title": "获取命名空间列表"
+      }
+    ],
+    "DescribeNamespaceBundlesOpt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaceBundlesOpt\n<公共请求参数>\n\n{\n    \"ClusterName\": \"tdmq_txy_gz_01\",\n    \"Limit\": 20,\n    \"NamespaceName\": \"ns_1\",\n    \"NeedMetrics\": true,\n    \"Offset\": 0,\n    \"TenantId\": \"pulsar-pbkdk57xz9wv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2d3e253-3b1d-4471-a350-25e6ae20916c\",\n        \"TotalCount\": 30,\n        \"BundleSet\": [\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {}\n        ]\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeNodeHealthOpt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeHealthOpt\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-lyzxwt0q\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9933e0f7-77fa-4c62-905d-dbd7936a7372\",\n        \"NodeState\": 1,\n        \"LatestHealthCheckTime\": \"2021-07-19 20:46:50\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeProducers": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeProducers\n&EnvironmentId=default\n&TopicName=U_TOPIC_nfa_game_push_retry_kb\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProducerSets\": [\n            {\n                \"EnvironmentId\": \"default\",\n                \"TopicName\": \"U_TOPIC_nfa_game_push_retry_kb\",\n                \"CountConnect\": 6,\n                \"ConnectionSets\": [\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 1,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-119-53_sandbox-cluster-1-120-1347_sandbox-cluster-1-121-34_sandbox-cluster-1-122-54\",\n                        \"ProducerId\": \"5\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    },\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 0,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-119-54_sandbox-cluster-1-120-1296_sandbox-cluster-1-121-24_sandbox-cluster-1-122-55\",\n                        \"ProducerId\": \"8\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    },\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 5,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-120-61_sandbox-cluster-1-120-1373_sandbox-cluster-1-121-0_sandbox-cluster-1-122-50\",\n                        \"ProducerId\": \"2\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    },\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 3,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-120-62_sandbox-cluster-1-120-1324_sandbox-cluster-1-121-27_sandbox-cluster-1-122-49\",\n                        \"ProducerId\": \"4\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    },\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 7,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-120-63_sandbox-cluster-1-120-1371_sandbox-cluster-1-121-23_sandbox-cluster-1-122-41\",\n                        \"ProducerId\": \"1\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    },\n                    {\n                        \"Address\": \"127.0.0.1:41062\",\n                        \"Partitions\": 6,\n                        \"ClientVersion\": \"\",\n                        \"ProducerName\": \"sandbox-cluster-1-120-64_sandbox-cluster-1-120-1321_sandbox-cluster-1-121-65_sandbox-cluster-1-122-45\",\n                        \"ProducerId\": \"6\",\n                        \"AverageMsgSize\": \"0.0\",\n                        \"MsgThroughputIn\": \"0.0\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"21120f4e-9073-4c08-af19-0886accbbdac\"\n    }\n}",
+        "title": "获取生产者列表"
+      }
+    ],
+    "DescribeSubscriptions": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeSubscriptions\n&EnvironmentId=test1\n&TopicName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SubscriptionSets\": [\n            {\n                \"EnvironmentId\": \"test1\",\n                \"TopicName\": \"test\",\n                \"ConnectedSince\": \"\",\n                \"ConsumerAddr\": \"\",\n                \"ConsumerCount\": \"6\",\n                \"ConsumerName\": \"\",\n                \"MsgBacklog\": \"1087\",\n                \"MsgRateExpired\": \"0.0\",\n                \"MsgRateOut\": \"0.0\",\n                \"MsgThroughputOut\": \"0.0\",\n                \"SubscriptionName\": \"test\",\n                \"Remark\": \"\",\n                \"CreateTime\": \"2020-09-18 14:32:41\",\n                \"UpdateTime\": \"2021-01-13 15:23:35\",\n                \"IsOnline\": true,\n                \"ConsumerSets\": [\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:19:21.03+08:00\",\n                        \"ConsumerAddr\": \"/9.219.234.200:9056\",\n                        \"ConsumerName\": \"axjoy\",\n                        \"ClientVersion\": \"\"\n                    },\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:22:20.197+08:00\",\n                        \"ConsumerAddr\": \"/9.219.234.202:6374\",\n                        \"ConsumerName\": \"dkhtb\",\n                        \"ClientVersion\": \"\"\n                    },\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:22:50.282+08:00\",\n                        \"ConsumerAddr\": \"/9.219.237.139:57322\",\n                        \"ConsumerName\": \"ejbij\",\n                        \"ClientVersion\": \"\"\n                    },\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:18:50.927+08:00\",\n                        \"ConsumerAddr\": \"/9.219.233.137:62564\",\n                        \"ConsumerName\": \"hijsf\",\n                        \"ClientVersion\": \"\"\n                    },\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:21:50.227+08:00\",\n                        \"ConsumerAddr\": \"/9.219.234.202:11554\",\n                        \"ConsumerName\": \"nbcra\",\n                        \"ClientVersion\": \"\"\n                    },\n                    {\n                        \"ConnectedSince\": \"2021-01-13T15:19:51.032+08:00\",\n                        \"ConsumerAddr\": \"/9.219.232.202:19345\",\n                        \"ConsumerName\": \"vjmts\",\n                        \"ClientVersion\": \"\"\n                    }\n                ],\n                \"ConsumersScheduleSets\": [\n                    {\n                        \"NumberOfEntries\": 4642,\n                        \"Partitions\": 0,\n                        \"MsgBacklog\": 1087,\n                        \"MsgRateOut\": \"0.0\",\n                        \"MsgThroughputOut\": \"0.0\",\n                        \"MsgRateExpired\": \"0.0\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"39ab02af-30c8-41d4-9ac4-46cb519ceac0\"\n    }\n}",
+        "title": "消费订阅列表"
+      }
+    ],
+    "DescribeTopics": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeTopics\n&EnvironmentId=test1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"TopicSets\": [\n            {\n                \"EnvironmentId\": \"xx\",\n                \"Remark\": \"xx\",\n                \"TopicType\": 1,\n                \"ProducerCount\": \"xx\",\n                \"LastConfirmedEntry\": \"xx\",\n                \"TotalSize\": \"xx\",\n                \"SubTopicSets\": [\n                    {\n                        \"TopicType\": 1,\n                        \"ProducerCount\": \"xx\",\n                        \"LastConfirmedEntry\": \"xx\",\n                        \"TotalSize\": \"xx\",\n                        \"NumberOfEntries\": \"xx\",\n                        \"ConsumerCount\": \"xx\",\n                        \"MsgRateOut\": \"xx\",\n                        \"AverageMsgSize\": \"xx\",\n                        \"MsgThroughputIn\": \"xx\",\n                        \"MsgRateIn\": \"xx\",\n                        \"Partitions\": 0,\n                        \"LastLedgerCreatedTimestamp\": \"xx\",\n                        \"MsgThroughputOut\": \"xx\"\n                    }\n                ],\n                \"NumberOfEntries\": \"xx\",\n                \"ConsumerCount\": \"xx\",\n                \"MsgRateOut\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"ConsumerLimit\": \"xx\",\n                \"AverageMsgSize\": \"xx\",\n                \"MsgThroughputIn\": \"xx\",\n                \"MsgRateIn\": \"xx\",\n                \"Partitions\": 1,\n                \"ProducerLimit\": \"xx\",\n                \"LastLedgerCreatedTimestamp\": \"xx\",\n                \"TopicName\": \"xx\",\n                \"MsgThroughputOut\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取环境下主题列表"
+      }
+    ],
+    "ModifyCluster": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyCluster\n&ClusterId=pulsar-xxxxxxxx\n&Remark=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"pulsar-5r59xd4vnx\",\n        \"RequestId\": \"b84bf1d8-2794-4c20-a50f-02b7a4698814\"\n    }\n}",
+        "title": "更新集群信息"
+      }
+    ],
+    "ModifyCmqQueueAttribute": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyCmqQueueAttribute\n&QueueName=test\n&MaxMsgSize=1024\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改队列属性"
+      }
+    ],
+    "ModifyCmqSubscriptionAttribute": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyCmqSubscriptionAttribute\n&TopicName=test\n&SubscriptionName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改订阅属性"
+      }
+    ],
+    "ModifyCmqTopicAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmqTopicAttribute\n<公共请求参数>\n\n{\n    \"MaxMsgSize\": 1,\n    \"TopicName\": \"xx\",\n    \"Trace\": true,\n    \"MsgRetentionSeconds\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a04c6b1-dec5-4979-b3b2-34ab3b3402b2\"\n    }\n}",
+        "title": "修改主题属性"
+      }
+    ],
+    "ModifyEnvironmentAttributes": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyEnvironmentAttributes\n&EnvironmentId=test\n&ClusterId=pulsar-xxxxxxxx\n&MsgTTL=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test\",\n        \"NamespaceId\": \"namespace-5r59xen74x\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"7db00a30-933c-4f6f-bba9-79cdf6be7d8c\"\n    }\n}",
+        "title": "修改指定命名空间的属性值"
+      }
+    ],
+    "ModifyTopic": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyTopic\n&EnvironmentId=default\n&TopicName=test_topic\n&Partitions=3\n&Remark=修改分区为3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Partitions\": 3,\n        \"Remark\": \"修改分区为3\",\n        \"RequestId\": \"c276a96f-1612-47ad-9562-da06d4fdf1ed\"\n    }\n}",
+        "title": "修改主题属性"
+      }
+    ],
+    "PublishCmqMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=PublishCmqMsg\n&TopicName=test-queue\n&MsgContent=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"MsgId\": \"50169152:0:0:-1\",\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "title": "发送cmq主题消息"
+      }
+    ],
+    "ReceiveMessage": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ReceiveMessage\n&Topic=tenant/namespace/topic\n&SubscriptionName=\"test-sub\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageID\": \"71:12:0:0\",\n        \"MessagePayload\": \"hello TDMQ\",\n        \"SubName\": \"xx\",\n        \"AckTopic\": \"persistent://tenant/namespace/topic\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
+        "title": "接收消息"
+      }
+    ],
+    "ResetMsgSubOffsetByTimestamp": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=ResetMsgSubOffsetByTimestamp\n&EnvironmentId=default\n&TopicName=cloud_test\n&Subscription=cloud_sub\n&ToTimestamp=1585901708600\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "title": "回溯消息"
+      }
+    ],
+    "RewindCmqQueue": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=RewindCmqQueue\n&QueueName=test\n&StartConsumeTime=1582108595000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "回溯队列消费位置"
+      }
+    ],
+    "SendBatchMessages": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendBatchMessages\n&Topic=tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:12:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "成功发送多条消息"
+      }
+    ],
+    "SendCmqMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendCmqMsg\n&QueueName=test-queue\n&MsgContent=test\n&DelaySeconds=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"MsgId\": \"50169152:0:0:-1\",\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "title": "发送消息"
+      }
+    ],
+    "SendMessages": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMessages\n&Topic=tenant/namespace/topic\n&Payload=\"hello TDMQ\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageId\": \"71:11:0:0\",\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "成功发送单条消息"
+      }
+    ],
+    "SendMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=SendMsg\n&EnvironmentId=default\n&TopicName=cloud_test\n&MsgContent=one_msg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
+        "title": "发送一个消息"
+      }
+    ],
+    "UnbindCmqDeadLetter": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=UnbindCmqDeadLetter\n&SourceQueueName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "解绑死信队列"
+      }
+    ]
+  },
+  "version": "1.0"
+}

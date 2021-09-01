@@ -1,0 +1,5545 @@
+{
+  "actions": {
+    "ClearTables": {
+      "document": "根据给定的表信息，清除表数据。",
+      "input": "ClearTablesRequest",
+      "name": "清除表数据",
+      "output": "ClearTablesResponse"
+    },
+    "CompareIdlFiles": {
+      "document": "选中目标表格，上传并校验改表文件，返回是否允许修改表格结构的结果。",
+      "input": "CompareIdlFilesRequest",
+      "name": "上传并校验改表文件",
+      "output": "CompareIdlFilesResponse"
+    },
+    "CreateBackup": {
+      "document": "用户创建备份任务",
+      "input": "CreateBackupRequest",
+      "name": "创建备份",
+      "output": "CreateBackupResponse"
+    },
+    "CreateCluster": {
+      "document": "本接口用于创建TcaplusDB集群",
+      "input": "CreateClusterRequest",
+      "name": "创建集群",
+      "output": "CreateClusterResponse"
+    },
+    "CreateSnapshots": {
+      "document": "构造表格过去时间点的快照",
+      "input": "CreateSnapshotsRequest",
+      "name": "创建表格快照",
+      "output": "CreateSnapshotsResponse"
+    },
+    "CreateTableGroup": {
+      "document": "在TcaplusDB集群下创建表格组",
+      "input": "CreateTableGroupRequest",
+      "name": "新建表格组",
+      "output": "CreateTableGroupResponse"
+    },
+    "CreateTables": {
+      "document": "根据选择的IDL文件列表，批量创建表格",
+      "input": "CreateTablesRequest",
+      "name": "批量创建表",
+      "output": "CreateTablesResponse"
+    },
+    "DeleteCluster": {
+      "document": "删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。",
+      "input": "DeleteClusterRequest",
+      "name": "删除集群",
+      "output": "DeleteClusterResponse"
+    },
+    "DeleteIdlFiles": {
+      "document": "指定集群ID和待删除IDL文件的信息，删除目标文件，如果文件正在被表关联则删除失败。",
+      "input": "DeleteIdlFilesRequest",
+      "name": "删除IDL描述文件",
+      "output": "DeleteIdlFilesResponse"
+    },
+    "DeleteSnapshots": {
+      "document": "删除表格的快照",
+      "input": "DeleteSnapshotsRequest",
+      "name": "删除表格快照",
+      "output": "DeleteSnapshotsResponse"
+    },
+    "DeleteTableGroup": {
+      "document": "删除表格组",
+      "input": "DeleteTableGroupRequest",
+      "name": "删除表格组",
+      "output": "DeleteTableGroupResponse"
+    },
+    "DeleteTableIndex": {
+      "document": "删除表格的分布式索引",
+      "input": "DeleteTableIndexRequest",
+      "name": "删除表格的分布式索引",
+      "output": "DeleteTableIndexResponse"
+    },
+    "DeleteTables": {
+      "document": "删除指定的表,第一次调用此接口代表将表移动至回收站，再次调用代表将此表格从回收站中彻底删除。",
+      "input": "DeleteTablesRequest",
+      "name": "删除表",
+      "output": "DeleteTablesResponse"
+    },
+    "DescribeApplications": {
+      "document": "获取审批管理的申请单",
+      "input": "DescribeApplicationsRequest",
+      "name": "获取审批管理的申请单",
+      "output": "DescribeApplicationsResponse"
+    },
+    "DescribeClusterTags": {
+      "document": "获取集群关联的标签列表",
+      "input": "DescribeClusterTagsRequest",
+      "name": "获取集群关联的标签列表",
+      "output": "DescribeClusterTagsResponse"
+    },
+    "DescribeClusters": {
+      "document": "查询TcaplusDB集群列表，包含集群详细信息。",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群信息列表",
+      "output": "DescribeClustersResponse"
+    },
+    "DescribeIdlFileInfos": {
+      "document": "查询表描述文件详情",
+      "input": "DescribeIdlFileInfosRequest",
+      "name": "查询表描述文件详情",
+      "output": "DescribeIdlFileInfosResponse"
+    },
+    "DescribeMachine": {
+      "document": "查询独占集群可以申请的剩余机器",
+      "input": "DescribeMachineRequest",
+      "name": "查询独占集群剩余机器",
+      "output": "DescribeMachineResponse"
+    },
+    "DescribeRegions": {
+      "document": "查询TcaplusDB服务支持的地域列表",
+      "input": "DescribeRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeRegionsResponse"
+    },
+    "DescribeSnapshots": {
+      "document": "查询快照列表",
+      "input": "DescribeSnapshotsRequest",
+      "name": "查询快照列表",
+      "output": "DescribeSnapshotsResponse"
+    },
+    "DescribeTableGroupTags": {
+      "document": "获取表格组关联的标签列表",
+      "input": "DescribeTableGroupTagsRequest",
+      "name": "获取表格组关联的标签列表",
+      "output": "DescribeTableGroupTagsResponse"
+    },
+    "DescribeTableGroups": {
+      "document": "查询表格组列表",
+      "input": "DescribeTableGroupsRequest",
+      "name": "查询表格组列表",
+      "output": "DescribeTableGroupsResponse"
+    },
+    "DescribeTableTags": {
+      "document": "获取表格标签",
+      "input": "DescribeTableTagsRequest",
+      "name": "获取表格标签",
+      "output": "DescribeTableTagsResponse"
+    },
+    "DescribeTables": {
+      "document": "查询表详情",
+      "input": "DescribeTablesRequest",
+      "name": "查询表详情",
+      "output": "DescribeTablesResponse"
+    },
+    "DescribeTablesInRecycle": {
+      "document": "查询回收站中的表详情",
+      "input": "DescribeTablesInRecycleRequest",
+      "name": "查询回收站中的表详情",
+      "output": "DescribeTablesInRecycleResponse"
+    },
+    "DescribeTasks": {
+      "document": "查询任务列表",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTasksResponse"
+    },
+    "DescribeUinInWhitelist": {
+      "document": "查询本用户是否在白名单中，控制是否能创建TDR类型的APP或表",
+      "input": "DescribeUinInWhitelistRequest",
+      "name": "查询本用户是否在白名单中",
+      "output": "DescribeUinInWhitelistResponse"
+    },
+    "DisableRestProxy": {
+      "document": "当restful api为关闭状态时，可以通过此接口关闭restful api",
+      "input": "DisableRestProxyRequest",
+      "name": "关闭restful api",
+      "output": "DisableRestProxyResponse"
+    },
+    "EnableRestProxy": {
+      "document": "当restful api为关闭状态时，可以通过此接口开启restful apu",
+      "input": "EnableRestProxyRequest",
+      "name": "开启restful api",
+      "output": "EnableRestProxyResponse"
+    },
+    "ImportSnapshots": {
+      "document": "将快照数据导入到新表或当前表",
+      "input": "ImportSnapshotsRequest",
+      "name": "导入快照数据",
+      "output": "ImportSnapshotsResponse"
+    },
+    "MergeTablesData": {
+      "document": "合并指定表格",
+      "input": "MergeTablesDataRequest",
+      "name": "合服",
+      "output": "MergeTablesDataResponse"
+    },
+    "ModifyCensorship": {
+      "document": "修改集群审批状态",
+      "input": "ModifyCensorshipRequest",
+      "name": "修改集群审批状态",
+      "output": "ModifyCensorshipResponse"
+    },
+    "ModifyClusterMachine": {
+      "document": "修改独占集群机器",
+      "input": "ModifyClusterMachineRequest",
+      "name": "修改独占集群机器",
+      "output": "ModifyClusterMachineResponse"
+    },
+    "ModifyClusterName": {
+      "document": "修改指定的集群名称",
+      "input": "ModifyClusterNameRequest",
+      "name": "修改集群名称",
+      "output": "ModifyClusterNameResponse"
+    },
+    "ModifyClusterPassword": {
+      "document": "修改指定集群的密码，后台将在旧密码失效之前同时支持TcaplusDB SDK使用旧密码和新密码访问数据库。在旧密码失效之前不能提交新的密码修改请求，在旧密码失效之后不能提交修改旧密码过期时间的请求。",
+      "input": "ModifyClusterPasswordRequest",
+      "name": "修改集群密码",
+      "output": "ModifyClusterPasswordResponse"
+    },
+    "ModifyClusterTags": {
+      "document": "修改集群标签",
+      "input": "ModifyClusterTagsRequest",
+      "name": "修改集群标签",
+      "output": "ModifyClusterTagsResponse"
+    },
+    "ModifySnapshots": {
+      "document": "修改表格快照的过期时间",
+      "input": "ModifySnapshotsRequest",
+      "name": "修改表格快照",
+      "output": "ModifySnapshotsResponse"
+    },
+    "ModifyTableGroupName": {
+      "document": "修改TcaplusDB表格组名称",
+      "input": "ModifyTableGroupNameRequest",
+      "name": "修改表格组名称",
+      "output": "ModifyTableGroupNameResponse"
+    },
+    "ModifyTableGroupTags": {
+      "document": "修改表格组标签",
+      "input": "ModifyTableGroupTagsRequest",
+      "name": "修改表格组标签",
+      "output": "ModifyTableGroupTagsResponse"
+    },
+    "ModifyTableMemos": {
+      "document": "修改表备注信息",
+      "input": "ModifyTableMemosRequest",
+      "name": "修改表备注信息",
+      "output": "ModifyTableMemosResponse"
+    },
+    "ModifyTableQuotas": {
+      "document": "表格扩缩容",
+      "input": "ModifyTableQuotasRequest",
+      "name": "表扩缩容",
+      "output": "ModifyTableQuotasResponse"
+    },
+    "ModifyTableTags": {
+      "document": "修改表格标签",
+      "input": "ModifyTableTagsRequest",
+      "name": "修改表格标签",
+      "output": "ModifyTableTagsResponse"
+    },
+    "ModifyTables": {
+      "document": "根据用户选定的表定义IDL文件，批量修改指定的表",
+      "input": "ModifyTablesRequest",
+      "name": "批量修改表结构",
+      "output": "ModifyTablesResponse"
+    },
+    "RecoverRecycleTables": {
+      "document": "恢复回收站中，用户自行删除的表。对欠费待释放的表无效。",
+      "input": "RecoverRecycleTablesRequest",
+      "name": "恢复回收站中的表",
+      "output": "RecoverRecycleTablesResponse"
+    },
+    "RollbackTables": {
+      "document": "表格数据回档",
+      "input": "RollbackTablesRequest",
+      "name": "表格数据回档",
+      "output": "RollbackTablesResponse"
+    },
+    "SetTableIndex": {
+      "document": "设置表格分布式索引",
+      "input": "SetTableIndexRequest",
+      "name": "设置表格分布式索引",
+      "output": "SetTableIndexResponse"
+    },
+    "UpdateApply": {
+      "document": "更新申请单状态",
+      "input": "UpdateApplyRequest",
+      "name": "更新申请单状态",
+      "output": "UpdateApplyResponse"
+    },
+    "VerifyIdlFiles": {
+      "document": "上传并校验创建表格文件，返回校验合法的表格定义",
+      "input": "VerifyIdlFilesRequest",
+      "name": "上传并校验创建表格文件",
+      "output": "VerifyIdlFilesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-08-23",
+    "api_brief": "介绍如何使用API对游戏数据库TcaplusDB进行操作，包括表格组、集群操作等。",
+    "serviceNameCN": "游戏数据库 TcaplusDB",
+    "serviceShortName": "tcaplusdb"
+  },
+  "objects": {
+    "Application": {
+      "document": "审批申请单",
+      "members": [
+        {
+          "default": "",
+          "document": "审批单号",
+          "example": "10001",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请类型",
+          "example": "表格合并",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "1822112",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "Test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db_user",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称",
+          "example": "db_user_info",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请人",
+          "example": "yuxinfan",
+          "member": "string",
+          "name": "Applicant",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建单时间",
+          "example": "2021-01-18 20:10:21",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理状态 -1 撤回 0-待审核 1-已经审核并提交任务 2-已驳回",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplicationStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组Id",
+          "example": "222",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已提交的任务Id，未提交申请为0",
+          "example": "222",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云上table的唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcaplus_dsdfsdf",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-18 20:10:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审批人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yuxinfan",
+          "member": "string",
+          "name": "ExecuteUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ExecuteStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该申请单是否可以被当前用户审批\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "bool",
+          "name": "CanCensor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该申请单是否可以被当前用户撤回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "bool",
+          "name": "CanWithdrawal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyResult": {
+      "document": "更新申请单结果",
+      "members": [
+        {
+          "default": "",
+          "document": "申请单id",
+          "example": "10001",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理状态 0-待审核 1-已经审核并提交任务 2-已驳回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplicationStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已提交的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyStatus": {
+      "document": "申请单id及其状态",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id-申请单id",
+          "example": "1-10001",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplicationStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请单类型",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "10001",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ClearTablesRequest": {
+      "document": "ClearTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属集群实例ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待清理表信息列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearTablesResponse": {
+      "document": "ClearTables返回参数结构体",
+      "members": [
+        {
+          "document": "清除表结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "清除表结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClusterInfo": {
+      "document": "集群详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "0",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群所在地域",
+          "example": "0",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群数据描述语言类型，如：`PROTO`,`TDR`",
+          "example": "0",
+          "member": "string",
+          "name": "IdlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "0",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群关联的用户私有网络实例ID",
+          "example": "0",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群关联的用户子网实例ID",
+          "example": "0",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "0",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群密码",
+          "example": "0",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码状态",
+          "example": "0",
+          "member": "string",
+          "name": "PasswordStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB SDK连接参数，接入ID",
+          "example": "0",
+          "member": "string",
+          "name": "ApiAccessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB SDK连接参数，接入地址",
+          "example": "0",
+          "member": "string",
+          "name": "ApiAccessIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB SDK连接参数，接入端口",
+          "example": "0",
+          "member": "int64",
+          "name": "ApiAccessPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "OldPasswordExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB SDK连接参数，接入ipv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ApiAccessIpv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReadCapacityUnit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WriteCapacityUnit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独占server机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ServerDetailInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独占proxy机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ProxyDetailInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启审核 0-不开启 1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Censorship",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审批人uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DbaUins",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CompareIdlFilesRequest": {
+      "document": "CompareIdlFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改表格所在集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "选中的已上传IDL文件列表，与NewIdlFiles必选其一",
+          "member": "IdlFileInfo",
+          "name": "ExistingIdlFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "本次上传IDL文件列表，与ExistingIdlFiles必选其一",
+          "member": "IdlFileInfo",
+          "name": "NewIdlFiles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CompareIdlFilesResponse": {
+      "document": "CompareIdlFiles返回参数结构体",
+      "members": [
+        {
+          "document": "本次上传校验所有的IDL文件信息列表",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本次校验合法的表格数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "读取IDL描述文件后,根据用户指示的所选中表格解析校验结果",
+          "member": "ParsedTableInfoNew",
+          "name": "TableInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CompareTablesInfo": {
+      "document": "比较表格的Meta信息",
+      "members": [
+        {
+          "default": "",
+          "document": "源表格的集群id",
+          "member": "string",
+          "name": "SrcTableClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源表格的表格组id",
+          "member": "string",
+          "name": "SrcTableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源表格的表名",
+          "member": "string",
+          "name": "SrcTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标表格的集群id",
+          "member": "string",
+          "name": "DstTableClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标表格的表格组id",
+          "member": "string",
+          "name": "DstTableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标表格的表名",
+          "member": "string",
+          "name": "DstTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源表格的实例id",
+          "member": "string",
+          "name": "SrcTableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标表格的实例id",
+          "member": "string",
+          "name": "DstTableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateBackupRequest": {
+      "document": "CreateBackup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待创建备份表所属集群ID",
+          "example": "0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待创建备份表信息列表",
+          "example": "0",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "0",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupResponse": {
+      "document": "CreateBackup返回参数结构体",
+      "members": [
+        {
+          "document": "创建的备份任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建的备份申请ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterRequest": {
+      "document": "CreateCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`",
+          "member": "string",
+          "name": "IdlType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称，可使用中文或英文字符，最大长度32个字符",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群所绑定的子网实例ID，形如：subnet-pxir56ns",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群标签列表",
+          "member": "TagInfoUnit",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群是否开启IPv6功能",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "独占集群占用的svr机器",
+          "member": "MachineInfo",
+          "name": "ServerList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "独占集群占用的proxy机器",
+          "member": "MachineInfo",
+          "name": "ProxyList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群类型1共享2独占",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterResponse": {
+      "document": "CreateCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotsRequest": {
+      "document": "CreateSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群id",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照列表",
+          "example": "无",
+          "member": "SnapshotInfo",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotsResponse": {
+      "document": "CreateSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "批量创建的快照数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批量创建的快照结果列表",
+          "example": "无",
+          "member": "SnapshotResult",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableGroupRequest": {
+      "document": "CreateTableGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格组名称，可以采用中文、英文或数字字符，最大长度32个字符",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格组标签列表",
+          "member": "TagInfoUnit",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTableGroupResponse": {
+      "document": "CreateTableGroup返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功的表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTablesRequest": {
+      "document": "CreateTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待创建表格所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户选定的建表格IDL文件列表",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待创建表格信息列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "表格标签列表",
+          "member": "TagInfoUnit",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTablesResponse": {
+      "document": "CreateTables返回参数结构体",
+      "members": [
+        {
+          "document": "批量创建表格结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批量创建表格结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterRequest": {
+      "document": "DeleteCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterResponse": {
+      "document": "DeleteCluster返回参数结构体",
+      "members": [
+        {
+          "document": "删除集群生成的任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIdlFilesRequest": {
+      "document": "DeleteIdlFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "IDL所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除的IDL文件信息列表",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIdlFilesResponse": {
+      "document": "DeleteIdlFiles返回参数结构体",
+      "members": [
+        {
+          "document": "结果记录数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除结果",
+          "member": "IdlFileInfoWithoutContent",
+          "name": "IdlFileInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsRequest": {
+      "document": "DeleteSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群id",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除的快照列表",
+          "example": "无",
+          "member": "SnapshotInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotsResponse": {
+      "document": "DeleteSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "批量删除的快照数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批量删除的快照结果",
+          "example": "无",
+          "member": "SnapshotResult",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableGroupRequest": {
+      "document": "DeleteTableGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组所属的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableGroupResponse": {
+      "document": "DeleteTableGroup返回参数结构体",
+      "members": [
+        {
+          "document": "删除表格组所创建的任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableIndexRequest": {
+      "document": "DeleteTableIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群实例ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除分布式索引的表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableIndexResponse": {
+      "document": "DeleteTableIndex返回参数结构体",
+      "members": [
+        {
+          "document": "删除表格分布式索引结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除表格分布式索引结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTablesRequest": {
+      "document": "DeleteTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除表所在集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除表信息列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTablesResponse": {
+      "document": "DeleteTables返回参数结构体",
+      "members": [
+        {
+          "document": "删除表结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除表结果详情列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsRequest": {
+      "document": "DescribeApplications请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID，用于获取指定集群的单据",
+          "example": "10001",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "12",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "申请单状态，用于过滤",
+          "example": "0",
+          "member": "int64",
+          "name": "CensorStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表格组id，用于过滤",
+          "example": "xx",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格名，用于过滤",
+          "example": "xx",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请人uin，用于过滤",
+          "example": "xx",
+          "member": "string",
+          "name": "Applicant",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "申请类型，用于过滤",
+          "example": "0",
+          "member": "int64",
+          "name": "ApplyType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsResponse": {
+      "document": "DescribeApplications返回参数结构体",
+      "members": [
+        {
+          "document": "申请单列表",
+          "example": "无",
+          "member": "Application",
+          "name": "Applications",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "申请单个数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterTagsRequest": {
+      "document": "DescribeClusterTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterTagsResponse": {
+      "document": "DescribeClusterTags返回参数结构体",
+      "members": [
+        {
+          "document": "集群标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagsInfoOfCluster",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定查询的集群ID列表",
+          "example": "10001",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询过滤条件",
+          "example": "0",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询列表偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询列表返回记录数，默认值20",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否启用Ipv6",
+          "example": "0",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群实例数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群实例列表",
+          "example": "0",
+          "member": "ClusterInfo",
+          "name": "Clusters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdlFileInfosRequest": {
+      "document": "DescribeIdlFileInfos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件所属表格组ID",
+          "member": "string",
+          "name": "TableGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定文件ID列表",
+          "member": "string",
+          "name": "IdlFileIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询列表偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询列表返回记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdlFileInfosResponse": {
+      "document": "DescribeIdlFileInfos返回参数结构体",
+      "members": [
+        {
+          "document": "文件数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件详情列表",
+          "member": "IdlFileInfo",
+          "name": "IdlFileInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineRequest": {
+      "document": "DescribeMachine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "不为0，表示查询支持ipv6的机器",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineResponse": {
+      "document": "DescribeMachine返回参数结构体",
+      "members": [
+        {
+          "document": "独占机器资源列表",
+          "member": "PoolInfo",
+          "name": "PoolList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "document": "可用区详情结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区详情结果列表",
+          "member": "RegionInfo",
+          "name": "RegionInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsRequest": {
+      "document": "DescribeSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群id",
+          "example": "18685341856",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "所属表格组ID",
+          "example": "1",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "example": "cl_generic",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照名称",
+          "example": "SnapshotName",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsResponse": {
+      "document": "DescribeSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "快照数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "快照结果列表",
+          "example": "无",
+          "member": "SnapshotResult",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableGroupTagsRequest": {
+      "document": "DescribeTableGroupTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询标签表格组所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待查询标签表格组ID列表",
+          "member": "string",
+          "name": "TableGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableGroupTagsResponse": {
+      "document": "DescribeTableGroupTags返回参数结构体",
+      "members": [
+        {
+          "document": "表格组标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagsInfoOfTableGroup",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableGroupsRequest": {
+      "document": "DescribeTableGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格组ID列表",
+          "member": "string",
+          "name": "TableGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，本接口支持：TableGroupName，TableGroupId",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询列表偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询列表返回记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableGroupsResponse": {
+      "document": "DescribeTableGroups返回参数结构体",
+      "members": [
+        {
+          "document": "表格组数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格组信息列表",
+          "member": "TableGroupInfo",
+          "name": "TableGroups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableTagsRequest": {
+      "document": "DescribeTableTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableTagsResponse": {
+      "document": "DescribeTableTags返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格标签信息列表",
+          "member": "TagsInfoOfTable",
+          "name": "Rows",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesInRecycleRequest": {
+      "document": "DescribeTablesInRecycle请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询表格所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待查询表格所属表格组ID列表",
+          "member": "string",
+          "name": "TableGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，本接口支持：TableName，TableInstanceId",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询结果偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结果返回记录数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesInRecycleResponse": {
+      "document": "DescribeTablesInRecycle返回参数结构体",
+      "members": [
+        {
+          "document": "表格数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格详情结果列表",
+          "member": "TableInfoNew",
+          "name": "TableInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesRequest": {
+      "document": "DescribeTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询表格所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待查询表格所属表格组ID列表",
+          "member": "string",
+          "name": "TableGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待查询表格信息列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，本接口支持：TableName，TableInstanceId",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询结果偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结果返回记录数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesResponse": {
+      "document": "DescribeTables返回参数结构体",
+      "members": [
+        {
+          "document": "表格数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格详情结果列表",
+          "member": "TableInfoNew",
+          "name": "TableInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询任务所属的集群ID列表",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要查询的任务ID列表",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，本接口支持：Content，TaskType, Operator, Time",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询列表偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询列表返回记录数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的任务详情列表",
+          "member": "TaskInfoNew",
+          "name": "TaskInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUinInWhitelistRequest": {
+      "document": "DescribeUinInWhitelist请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUinInWhitelistResponse": {
+      "document": "DescribeUinInWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果：`FALSE` 否；`TRUE` 是",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRestProxyRequest": {
+      "document": "DisableRestProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对应appid",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRestProxyResponse": {
+      "document": "DisableRestProxy返回参数结构体",
+      "members": [
+        {
+          "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "member": "uint64",
+          "name": "RestProxyStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRestProxyRequest": {
+      "document": "EnableRestProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对应于appid",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRestProxyResponse": {
+      "document": "EnableRestProxy返回参数结构体",
+      "members": [
+        {
+          "document": "RestProxy的状态，0为关闭，1为开启中，2为开启，3为关闭中",
+          "member": "uint64",
+          "name": "RestProxyStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ErrorInfo": {
+      "document": "描述每个实例（应用，大区或表）处理过程中可能出现的错误详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "错误码",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FieldInfo": {
+      "document": "表格字段信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "表格字段名称",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段是否是主键字段",
+          "member": "string",
+          "name": "IsPrimaryKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段类型",
+          "member": "string",
+          "name": "FieldType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段长度",
+          "member": "int64",
+          "name": "FieldSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名",
+          "example": "\"name\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "\"value\"",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "[\"value1\", \"value2\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "IdlFileInfo": {
+      "document": "表定义描述文件详情，包含文件内容",
+      "members": [
+        {
+          "default": "",
+          "document": "文件名称，不包含扩展名",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据描述语言（IDL）类型",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件扩展名",
+          "member": "string",
+          "name": "FileExtType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小（Bytes）",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件ID，对于已上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FileId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件内容，对于本次新上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IdlFileInfoWithoutContent": {
+      "document": "表定义描述文件详情，不包含文件内容",
+      "members": [
+        {
+          "default": "",
+          "document": "文件名称，不包含扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据描述语言（IDL）类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileExtType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件大小（Bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FileId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImportSnapshotsRequest": {
+      "document": "ImportSnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属的集群id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于导入的快照信息",
+          "example": "无",
+          "member": "SnapshotInfo",
+          "name": "Snapshots",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否导入部分记录，TRUE表示导入部分记录，FALSE表示全表导入",
+          "example": "无",
+          "member": "string",
+          "name": "ImportSpecialKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否导入到当前表，TRUE表示导入到当前表，FALSE表示导入到新表",
+          "example": "无",
+          "member": "string",
+          "name": "ImportOriginTable",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部分记录的key文件",
+          "example": "无",
+          "member": "KeyFile",
+          "name": "KeyFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "如果导入到新表，此为新表所属的表格组id",
+          "example": "无",
+          "member": "string",
+          "name": "NewTableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果导入到新表，此为新表的表名，系统会以该名称自动创建一张结构相同的空表",
+          "example": "无",
+          "member": "string",
+          "name": "NewTableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportSnapshotsResponse": {
+      "document": "ImportSnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KeyFile": {
+      "document": "部分key导入快照数据时所需要的key文件",
+      "members": [
+        {
+          "default": "",
+          "document": "key文件名称",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key文件扩展名",
+          "member": "string",
+          "name": "FileExtType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key文件内容",
+          "member": "string",
+          "name": "FileContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key文件大小",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MachineInfo": {
+      "document": "机器类型和数量",
+      "members": [
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器数量",
+          "member": "int64",
+          "name": "MachineNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MergeTableResult": {
+      "document": "合服结果",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成功时此字段返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对比的表格信息",
+          "example": "0",
+          "member": "CompareTablesInfo",
+          "name": "Table",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请单Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MergeTablesDataRequest": {
+      "document": "MergeTablesData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "选取的表格",
+          "example": "无",
+          "member": "MergeTablesInfo",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "true只做对比，false既对比又执行",
+          "example": "无",
+          "member": "bool",
+          "name": "IsOnlyCompare",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "MergeTablesDataResponse": {
+      "document": "MergeTablesData返回参数结构体",
+      "members": [
+        {
+          "document": "合服结果集",
+          "example": "无",
+          "member": "MergeTableResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MergeTablesInfo": {
+      "document": "合服请求入参",
+      "members": [
+        {
+          "default": "",
+          "document": "合服的表格信息",
+          "member": "CompareTablesInfo",
+          "name": "MergeTables",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否检查索引",
+          "member": "bool",
+          "name": "CheckIndex",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyCensorshipRequest": {
+      "document": "ModifyCensorship请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "2143435",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群是否开启审核 0-关闭 1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Censorship",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "审批人uin列表",
+          "example": "54654,4544564",
+          "member": "string",
+          "name": "Uins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCensorshipResponse": {
+      "document": "ModifyCensorship返回参数结构体",
+      "members": [
+        {
+          "document": "集群id",
+          "example": "10001",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已加入审批人的uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Uins",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群是否开启审核 0-关闭 1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Censorship",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterMachineRequest": {
+      "document": "ModifyClusterMachine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "svr占用的机器",
+          "member": "MachineInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "proxy占用的机器",
+          "member": "MachineInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群类型1共享集群2独占集群",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterMachineResponse": {
+      "document": "ModifyClusterMachine返回参数结构体",
+      "members": [
+        {
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterNameRequest": {
+      "document": "ModifyClusterName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改名称的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的集群名称，可使用中文或英文字符，最大长度32个字符",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterNameResponse": {
+      "document": "ModifyClusterName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterPasswordRequest": {
+      "document": "ModifyClusterPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要修改密码的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群旧密码",
+          "member": "string",
+          "name": "OldPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群旧密码预期失效时间",
+          "member": "datetime",
+          "name": "OldPasswordExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群新密码，密码必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
+          "member": "string",
+          "name": "NewPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新模式： `1` 更新密码；`2` 更新旧密码失效时间，默认为`1` 模式",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterPasswordResponse": {
+      "document": "ModifyClusterPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterTagsRequest": {
+      "document": "ModifyClusterTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改标签的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待增加或修改的标签列表",
+          "member": "TagInfoUnit",
+          "name": "ReplaceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待删除的标签",
+          "member": "TagInfoUnit",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterTagsResponse": {
+      "document": "ModifyClusterTags返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotsRequest": {
+      "document": "ModifySnapshots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群id",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照列表",
+          "example": "无",
+          "member": "SnapshotInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySnapshotsResponse": {
+      "document": "ModifySnapshots返回参数结构体",
+      "members": [
+        {
+          "document": "批量创建的快照数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批量创建的快照结果列表",
+          "example": "无",
+          "member": "SnapshotResult",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableGroupNameRequest": {
+      "document": "ModifyTableGroupName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组所属的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改名称的表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的表格组名称，可以使用中英文字符和符号",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableGroupNameResponse": {
+      "document": "ModifyTableGroupName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableGroupTagsRequest": {
+      "document": "ModifyTableGroupTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改标签表格组所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改标签表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待增加或修改的标签列表",
+          "member": "TagInfoUnit",
+          "name": "ReplaceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待删除的标签",
+          "member": "TagInfoUnit",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableGroupTagsResponse": {
+      "document": "ModifyTableGroupTags返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableMemosRequest": {
+      "document": "ModifyTableMemos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属集群实例ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选定表详情列表",
+          "member": "SelectedTableInfoNew",
+          "name": "TableMemos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableMemosResponse": {
+      "document": "ModifyTableMemos返回参数结构体",
+      "members": [
+        {
+          "document": "表备注修改结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表备注修改结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableQuotasRequest": {
+      "document": "ModifyTableQuotas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "带扩缩容表所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已选中待修改的表配额列表",
+          "member": "SelectedTableInfoNew",
+          "name": "TableQuotas",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableQuotasResponse": {
+      "document": "ModifyTableQuotas返回参数结构体",
+      "members": [
+        {
+          "document": "扩缩容结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩缩容结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableTagsRequest": {
+      "document": "ModifyTableTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改标签表格所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改标签表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待增加或修改的标签列表",
+          "member": "TagInfoUnit",
+          "name": "ReplaceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待删除的标签列表",
+          "member": "TagInfoUnit",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTableTagsResponse": {
+      "document": "ModifyTableTags返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTablesRequest": {
+      "document": "ModifyTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改表格所在集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选中的改表IDL文件",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待改表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTablesResponse": {
+      "document": "ModifyTables返回参数结构体",
+      "members": [
+        {
+          "document": "修改表结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改表结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParsedTableInfoNew": {
+      "document": "从IDL表描述文件中解析出来的表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格描述语言类型：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyFields",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OldKeyFields",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "非主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValueFields",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原非主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "OldValueFields",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SumKeyFieldSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "非主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SumValueFieldSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引键集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IndexKeySet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分表因子集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShardingKeySet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TDR版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TdrVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ListElementNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SortFieldNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SortRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PoolInfo": {
+      "document": "center资源池中的机器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一id",
+          "member": "int64",
+          "name": "PoolUid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持ipv6",
+          "member": "int64",
+          "name": "Ipv6Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余可用app",
+          "member": "int64",
+          "name": "AvailableAppCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "svr机器列表",
+          "member": "ServerMachineInfo",
+          "name": "ServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "proxy机器列表",
+          "member": "ProxyMachineInfo",
+          "name": "ProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyDetailInfo": {
+      "document": "独占的proxy详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "proxy的唯一id",
+          "member": "string",
+          "name": "ProxyUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包速度",
+          "member": "int64",
+          "name": "ProcessSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求包时延",
+          "member": "int64",
+          "name": "AverageProcessDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "慢处理包速度",
+          "member": "int64",
+          "name": "SlowProcessSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProxyMachineInfo": {
+      "document": "proxy机器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一id",
+          "member": "string",
+          "name": "ProxyUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecoverRecycleTablesRequest": {
+      "document": "RecoverRecycleTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所在集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待恢复表信息",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverRecycleTablesResponse": {
+      "document": "RecoverRecycleTables返回参数结构体",
+      "members": [
+        {
+          "document": "恢复表结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恢复表信息列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionInfo": {
+      "document": "TcaplusDB服务地域信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "地域Ap-Code",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域缩写",
+          "member": "string",
+          "name": "RegionAbbr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持ipv6，0:不支持，1:支持",
+          "member": "uint64",
+          "name": "Ipv6Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RollbackTablesRequest": {
+      "document": "RollbackTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待回档表格所在集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待回档表格列表",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待回档时间",
+          "member": "datetime",
+          "name": "RollbackTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回档模式，支持：`KEYS`",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackTablesResponse": {
+      "document": "RollbackTables返回参数结构体",
+      "members": [
+        {
+          "document": "表格回档任务结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格回档任务结果列表",
+          "member": "TableRollbackResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SelectedTableInfoNew": {
+      "document": "被选中的表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格名称",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表实例ID",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格描述语言类型：`PROTO`或`TDR`",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型：`GENERIC`或`LIST`",
+          "member": "string",
+          "name": "TableType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LIST表元素个数",
+          "member": "int64",
+          "name": "ListElementNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格预留容量（GB）",
+          "member": "int64",
+          "name": "ReservedVolume",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格预留读CU",
+          "member": "int64",
+          "name": "ReservedReadQps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格预留写CU",
+          "member": "int64",
+          "name": "ReservedWriteQps",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格备注信息",
+          "member": "string",
+          "name": "Memo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key回档文件名，回档专用",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key回档文件扩展名，回档专用",
+          "member": "string",
+          "name": "FileExtType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key回档文件大小，回档专用",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key回档文件内容，回档专用",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SelectedTableWithField": {
+      "document": "附带被选中字段信息的表格列表",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格名称",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表实例ID",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格描述语言类型：`PROTO`或`TDR`",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型：`GENERIC`或`LIST`",
+          "member": "string",
+          "name": "TableType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待创建索引的字段列表",
+          "member": "FieldInfo",
+          "name": "SelectedFields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引分片数",
+          "member": "uint64",
+          "name": "ShardNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ServerDetailInfo": {
+      "document": "server独占机器的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "svr唯一id",
+          "member": "string",
+          "name": "ServerUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存占用量",
+          "member": "int64",
+          "name": "MemoryRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘占用量",
+          "member": "int64",
+          "name": "DiskRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读次数",
+          "member": "int64",
+          "name": "ReadNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "写次数",
+          "member": "int64",
+          "name": "WriteNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerMachineInfo": {
+      "document": "svr的机器列表ServerList",
+      "members": [
+        {
+          "default": "",
+          "document": "机器唯一id",
+          "member": "string",
+          "name": "ServerUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SetTableIndexRequest": {
+      "document": "SetTableIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属集群实例ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待创建分布式索引表格列表",
+          "member": "SelectedTableWithField",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTableIndexResponse": {
+      "document": "SetTableIndex返回参数结构体",
+      "members": [
+        {
+          "document": "表格分布式索引创建结果数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格分布式索引创建结果列表",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SnapshotInfo": {
+      "document": "快照列表",
+      "members": [
+        {
+          "default": "",
+          "document": "所属表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照时间点",
+          "member": "datetime",
+          "name": "SnapshotTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照过期时间点",
+          "member": "datetime",
+          "name": "SnapshotDeadTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SnapshotInfoNew": {
+      "document": "新的快照过期时间",
+      "members": [
+        {
+          "default": "",
+          "document": "所属表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照过期时间点",
+          "member": "datetime",
+          "name": "SnapshotDeadTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SnapshotResult": {
+      "document": "创建快照结果",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照的时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "datetime",
+          "name": "SnapshotTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照的过期时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "datetime",
+          "name": "SnapshotDeadTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照创建时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "datetime",
+          "name": "SnapshotCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SnapshotSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SnapshotStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableGroupInfo": {
+      "document": "表格组详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组名称",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组创建时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组包含的表格数量",
+          "member": "uint64",
+          "name": "TableCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格组包含的表格存储总量（MB）",
+          "member": "uint64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableInfoNew": {
+      "document": "表格详情信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KeyStruct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格非主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValueStruct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格分表因子集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ShardingKeySet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格索引键字段集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IndexStruct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ListElementNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所关联IDL文件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格预留容量（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReservedVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格预留读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReservedReadQps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格预留写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReservedWriteQps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格实际数据量大小（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TableSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Memo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TcaplusDB SDK数据访问接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApiAccessId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SortFieldNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SortRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格分布式索引信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DbClusterInfoStruct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableResultNew": {
+      "document": "表处理结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯云申请审核单Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableRollbackResultNew": {
+      "document": "表格回档结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableIdlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上传的key文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "校验成功Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "SuccKeyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Key文件中包含总的Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalKeyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfoUnit": {
+      "document": "标签信息单元",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TagsInfoOfCluster": {
+      "document": "集群的标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfoUnit",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagsInfoOfTable": {
+      "document": "表格标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfoUnit",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagsInfoOfTableGroup": {
+      "document": "表格组标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfoUnit",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskInfoNew": {
+      "document": "任务信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务所关联的TcaplusDB内部事务ID",
+          "member": "string",
+          "name": "TransId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务所属集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务所属集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务最后更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务详情",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateApplyRequest": {
+      "document": "UpdateApply请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "申请单状态",
+          "example": "无",
+          "member": "ApplyStatus",
+          "name": "ApplyStatus",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateApplyResponse": {
+      "document": "UpdateApply返回参数结构体",
+      "members": [
+        {
+          "document": "已更新的申请单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyResult",
+          "name": "ApplyResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "更新数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyIdlFilesRequest": {
+      "document": "VerifyIdlFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待创建表格的集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待创建表格的表格组ID",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "曾经上传过的IDL文件信息列表，与NewIdlFiles至少有一者",
+          "member": "IdlFileInfo",
+          "name": "ExistingIdlFiles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待上传的IDL文件信息列表，与ExistingIdlFiles至少有一者",
+          "member": "IdlFileInfo",
+          "name": "NewIdlFiles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyIdlFilesResponse": {
+      "document": "VerifyIdlFiles返回参数结构体",
+      "members": [
+        {
+          "document": "本次上传校验所有的IDL文件信息列表",
+          "member": "IdlFileInfo",
+          "name": "IdlFiles",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "读取IDL描述文件后解析出的合法表数量，不包含已经创建的表",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "读取IDL描述文件后解析出的合法表列表，不包含已经创建的表",
+          "member": "ParsedTableInfoNew",
+          "name": "TableInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

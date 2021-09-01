@@ -1,0 +1,263 @@
+{
+  "actions": {
+    "QueryAntiFraud": {
+      "document": "天御反欺诈服务，主要应用于银行、证券、保险、消费金融等金融行业客户，通过腾讯的大数据风控能力，\n可以准确识别恶意用户信息，解决客户在支付、活动、理财，风控等业务环节遇到的欺诈威胁，降低企业\n的损失。",
+      "input": "QueryAntiFraudRequest",
+      "name": "借贷反欺诈",
+      "output": "QueryAntiFraudResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-02-26",
+    "api_brief": "介绍如何使用API对借贷反欺诈进行操作，包括借贷反欺诈等。",
+    "serviceNameCN": "借贷反欺诈",
+    "serviceShortName": "af"
+  },
+  "objects": {
+    "QueryAntiFraudRequest": {
+      "document": "QueryAntiFraud请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码(五选二)",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Id(五选二)",
+          "member": "string",
+          "name": "IdNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行卡号(五选二)",
+          "member": "string",
+          "name": "BankCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户请求来源 IP(五选二)",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "国际移动设备识别码(五选二)",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ios 系统广告标示符(五选二)",
+          "member": "string",
+          "name": "Idfa",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务场景 ID，需要找技术对接",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱地址",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户住址",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "MAC 地址",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "国际移动用户识别码",
+          "member": "string",
+          "name": "Imsi",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关联的腾讯帐号 QQ：1；\n开放帐号微信： 2；",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选的 QQ 或微信 openid",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "qq 或微信分配给网站或应用的 appid，用来\n唯一标识网站或应用",
+          "member": "string",
+          "name": "AppIdU",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WIFI MAC",
+          "member": "string",
+          "name": "WifiMac",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WIFI 服务集标识",
+          "member": "string",
+          "name": "WifiSSID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "WIFI-BSSID",
+          "member": "string",
+          "name": "WifiBSSID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务 ID，在多个业务中使用此服务，通过此\nID 区分统计数据",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Id加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
+          "member": "string",
+          "name": "IdCryptoType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号加密类型\n0：不加密（默认值）\n1：md5, 2：sha256\n3：SM3",
+          "member": "string",
+          "name": "PhoneCryptoType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
+          "member": "string",
+          "name": "NameCryptoType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAntiFraudResponse": {
+      "document": "QueryAntiFraud返回参数结构体",
+      "members": [
+        {
+          "document": "表示该条记录能否查到：1为能查到，-1为查不到",
+          "member": "int64",
+          "name": "Found",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表示该条Id能否查到：1为能查到，-1为查不到",
+          "member": "int64",
+          "name": "IdFound",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0~100;值越高 欺诈可能性越大",
+          "member": "uint64",
+          "name": "RiskScore",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展字段，对风险类型的说明",
+          "member": "RiskDetail",
+          "name": "RiskInfo",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务侧错误码。成功时返回Success，错误时返回具体业务错误原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CodeDesc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RiskDetail": {
+      "document": "扩展字段，对风险类型的说明",
+      "members": [
+        {
+          "default": "",
+          "document": "风险码 参数详细定义请加微信：TYXGJ-01",
+          "member": "uint64",
+          "name": "RiskCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

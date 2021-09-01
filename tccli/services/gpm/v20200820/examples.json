@@ -1,0 +1,149 @@
+{
+  "actions": {
+    "CancelMatching": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=CancelMatching\n&MatchCode=match_code_1\n&MatchTicketId=match_ticket_id_1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": 0,\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
+        "title": "取消匹配返回示例"
+      }
+    ],
+    "CreateMatch": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=CreateMatch\n&MatchName=test\n&MatchDesc=test\n&RuleCode=rule-r4x6tk49\n&Timeout=60\n&NotifyUrl=https://test.com\n&ServerType=1\n&ServerRegion=ap-shanghai\n&ServerQueue=gpmtest\n&CustomPushData=test\n&ServerSessionData=test\n&LogSwitch=1\n&GameProperties.0.Key=test\n&GameProperties.0.Value=test\n&Tags.0.Key=字符串\n&Tags.0.Value=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"2020-09-29 15:24:19\",\n            \"CreateUin\": \"100012125188\",\n            \"CustomPushData\": \"test\",\n            \"GameProperties\": [\n                {\n                    \"Key\": \"test\",\n                    \"Value\": \"test\"\n                }\n            ],\n            \"LogSwitch\": 1,\n            \"LogTopicId\": \"\",\n            \"LogTopicName\": \"\",\n            \"LogsetId\": \"\",\n            \"LogsetName\": \"\",\n            \"MatchCode\": \"match-58mnuqlz\",\n            \"MatchDesc\": \"test\",\n            \"MatchName\": \"test\",\n            \"NotifyUrl\": \"https://test.com\",\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-r4x6tk49\",\n            \"RuleName\": \"\",\n            \"ServerQueue\": \"gpmtest\",\n            \"ServerRegion\": \"ap-shanghai\",\n            \"ServerSessionData\": \"test\",\n            \"ServerType\": 1,\n            \"Tags\": [\n                {\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ],\n            \"Timeout\": 60,\n            \"Uin\": \"100012125188\"\n        },\n        \"RequestId\": \"20e5c29d-fa33-45bd-8e90-5b00773fa4cb\"\n    }\n}",
+        "title": "创建匹配示例"
+      }
+    ],
+    "CreateRule": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=CreateRule\n&RuleName=test\n&RuleDesc=test\n&RuleScript=test\n&Tags.0.Key=字符串\n&Tags.0.Value=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d49cff57-ac1e-437e-a89e-5372fd6538ed\",\n        \"RuleInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"2020-09-29 15:15:36\",\n            \"CreateUin\": \"100012125188\",\n            \"MatchCodeList\": [],\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-v879tr24\",\n            \"RuleDesc\": \"test\",\n            \"RuleName\": \"test\",\n            \"RuleScript\": \"test\",\n            \"Tags\": [\n                {\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ],\n            \"Uin\": \"100012125188\"\n        }\n    }\n}",
+        "title": "创建匹配示例"
+      }
+    ],
+    "DeleteMatch": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DeleteMatch\n&MatchCode=match-58mnuqlz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56200c07-6508-469e-ae9c-e11f21eea9ea\"\n    }\n}",
+        "title": "删除匹配"
+      }
+    ],
+    "DeleteRule": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DeleteRule\n&RuleCode=rule-v879tr24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f37c0f52-ed2a-49e0-a574-f075402a1faf\"\n    }\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DescribeData": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeData\n&MatchCode=match-v87jcr87\n&StartTime=1600741736\n&EndTime=1601000936\n&TimeType=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"OverviewData\": {\n            \"AverageSec\": 1.91,\n            \"FailPercent\": 2.86,\n            \"SuccessPercent\": 22.86,\n            \"TimeoutPercent\": 40,\n            \"TotalTimes\": \"35\"\n        },\n        \"RequestId\": \"024cba11-2f69-40ac-ac14-bbd31b210159\",\n        \"TrendData\": {\n            \"CancelList\": [\n                \"0\",\n                \"0\",\n                \"0\"\n            ],\n            \"FailList\": [\n                \"0\",\n                \"0\",\n                \"0\"\n            ],\n            \"SuccessList\": [\n                \"0\",\n                \"2\",\n                \"0\"\n            ],\n            \"TimeList\": [\n                \"1601103600\",\n                \"1601107200\",\n                \"1601110800\",\n                \"1601362800\"\n            ],\n            \"TimeoutList\": [\n                \"0\",\n                \"1\",\n                \"0\",\n                \"0\"\n            ],\n            \"TotalList\": [\n                \"0\",\n                \"3\",\n                \"0\",\n                \"0\"\n            ]\n        }\n    }\n}",
+        "title": "查询数据"
+      }
+    ],
+    "DescribeMatch": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatch\n&MatchCode=match-58mnuqlz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"2020-09-29 15:24:20\",\n            \"CreateUin\": \"100012125188\",\n            \"CustomPushData\": \"test\",\n            \"GameProperties\": [\n                {\n                    \"Key\": \"test\",\n                    \"Value\": \"test\"\n                }\n            ],\n            \"LogSwitch\": 1,\n            \"LogTopicId\": \"\",\n            \"LogTopicName\": \"\",\n            \"LogsetId\": \"\",\n            \"LogsetName\": \"\",\n            \"MatchCode\": \"match-58mnuqlz\",\n            \"MatchDesc\": \"test\",\n            \"MatchName\": \"test\",\n            \"NotifyUrl\": \"https://test.com\",\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-r4x6tk49\",\n            \"RuleName\": \"test\",\n            \"ServerQueue\": \"gpmtest\",\n            \"ServerRegion\": \"ap-shanghai\",\n            \"ServerSessionData\": \"test\",\n            \"ServerType\": 1,\n            \"Tags\": [\n                {\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ],\n            \"Timeout\": 60,\n            \"Uin\": \"100012125188\"\n        },\n        \"RequestId\": \"ab6ab15a-ab3a-495c-8818-e826084ea072\"\n    }\n}",
+        "title": "查询匹配示例"
+      }
+    ],
+    "DescribeMatchCodes": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatchCodes\n&Offset=1\n&Limit=15\n&MatchCode=match-rzsfvf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchCodes\": [\n            \"match-rzsfvf\"\n        ],\n        \"RequestId\": \"eefe26e0-fc8a-41e4-a9be-69694662c6cc\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "分页查询匹配code"
+      }
+    ],
+    "DescribeMatches": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatches\n&PageNumber=1\n&PageSize=10\n&SearchType=matchCode\n&Keyword=match-58mnuqlz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Keyword\": \"match-58mnuqlz\",\n        \"MatchInfoList\": [\n            {\n                \"AppId\": \"1300704415\",\n                \"CreateTime\": \"2020-09-29 15:24:20\",\n                \"CreateUin\": \"100012125188\",\n                \"CustomPushData\": \"test\",\n                \"GameProperties\": [\n                    {\n                        \"Key\": \"test\",\n                        \"Value\": \"test\"\n                    }\n                ],\n                \"LogSwitch\": 1,\n                \"LogTopicId\": \"\",\n                \"LogTopicName\": \"\",\n                \"LogsetId\": \"\",\n                \"LogsetName\": \"\",\n                \"MatchCode\": \"match-58mnuqlz\",\n                \"MatchDesc\": \"test\",\n                \"MatchName\": \"test\",\n                \"NotifyUrl\": \"https://test.com\",\n                \"Region\": \"ap-shanghai\",\n                \"RuleCode\": \"rule-r4x6tk49\",\n                \"RuleName\": \"test\",\n                \"ServerQueue\": \"gpmtest\",\n                \"ServerRegion\": \"ap-shanghai\",\n                \"ServerSessionData\": \"test\",\n                \"ServerType\": 1,\n                \"Tags\": [\n                    {\n                        \"Key\": \"字符串\",\n                        \"Value\": \"字符串\"\n                    }\n                ],\n                \"Timeout\": 60,\n                \"Uin\": \"100012125188\"\n            }\n        ],\n        \"PageNumber\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"6e0c3a5d-a8cc-4eaf-bdff-214789ac2326\",\n        \"SearchType\": \"matchCode\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询匹配列表"
+      }
+    ],
+    "DescribeMatchingProgress": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeMatchingProgress\n&MatchTicketIds.0.MatchCode=match-lipp\n&MatchTicketIds.0.MatchTicketId=ml0urJm\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": 0,\n        \"MatchTickets\": [\n            {\n                \"EndTime\": \"\",\n                \"Id\": \"ml0urJm\",\n                \"MatchCode\": \"match-lipp\",\n                \"MatchResult\": \"\",\n                \"MatchType\": \"\",\n                \"Players\": [\n                    {\n                        \"CustomPlayerStatus\": 0,\n                        \"CustomProfile\": \"\",\n                        \"Id\": \"fisher0\",\n                        \"MatchAttributes\": [\n                            {\n                                \"ListValue\": [],\n                                \"MapValue\": [],\n                                \"Name\": \"numberAttr\",\n                                \"NumberValue\": 10,\n                                \"StringValue\": \"\",\n                                \"Type\": 0\n                            },\n                            {\n                                \"ListValue\": [],\n                                \"MapValue\": [],\n                                \"Name\": \"stringAttr\",\n                                \"NumberValue\": 0,\n                                \"StringValue\": \"stringAttrVal\",\n                                \"Type\": 1\n                            },\n                            {\n                                \"ListValue\": [\n                                    \"listAttrVal1\",\n                                    \"listAttrVal2\",\n                                    \"listAttrVal3\"\n                                ],\n                                \"MapValue\": [],\n                                \"Name\": \"listAttr\",\n                                \"NumberValue\": 0,\n                                \"StringValue\": \"\",\n                                \"Type\": 2\n                            },\n                            {\n                                \"ListValue\": [],\n                                \"MapValue\": [\n                                    {\n                                        \"Key\": \"mapAttrVal1\",\n                                        \"Value\": 10\n                                    },\n                                    {\n                                        \"Key\": \"mapAttrVal2\",\n                                        \"Value\": 20\n                                    },\n                                    {\n                                        \"Key\": \"mapAttrVal3\",\n                                        \"Value\": 30\n                                    }\n                                ],\n                                \"Name\": \"mapAttr\",\n                                \"NumberValue\": 0,\n                                \"StringValue\": \"\",\n                                \"Type\": 3\n                            }\n                        ],\n                        \"Name\": \"playerName0\",\n                        \"RegionLatencies\": [\n                            {\n                                \"Latency\": 100,\n                                \"Region\": \"ap-guangzhou\"\n                            },\n                            {\n                                \"Latency\": 100,\n                                \"Region\": \"ap-beijing\"\n                            }\n                        ],\n                        \"Team\": \"playerTeam0\"\n                    }\n                ],\n                \"StartTime\": \"2020-09-05T11:11:15Z\",\n                \"Status\": \"TIMEDOUT\",\n                \"StatusMessage\": \"\",\n                \"StatusReason\": \"\"\n            }\n        ],\n        \"RequestId\": \"1a68664b-d796-407b-ab7b-2dbc2a12f8f5\"\n    }\n}",
+        "title": "获取匹配进度信息示例"
+      }
+    ],
+    "DescribeRule": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeRule\n&RuleCode=rule-r4x6tk49\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16a99485-c55a-4202-9302-dc329e710d00\",\n        \"RuleInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"2020-09-29 10:52:48\",\n            \"CreateUin\": \"100012125188\",\n            \"MatchCodeList\": [\n                {\n                    \"Key\": \"match-74w0ckl8\",\n                    \"Value\": \"test\"\n                }\n            ],\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-r4x6tk49\",\n            \"RuleDesc\": \"test\",\n            \"RuleName\": \"test\",\n            \"RuleScript\": \"1\",\n            \"Tags\": [],\n            \"Uin\": \"100012125188\"\n        }\n    }\n}",
+        "title": "查询规则示例"
+      }
+    ],
+    "DescribeRules": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeRules\n&PageNumber=1\n&PageSize=10\n&SearchType=ruleCode\n&Keyword=rule-r4x6tk49\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Keyword\": \"rule-r4x6tk49\",\n        \"PageNumber\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"a2719713-1ee9-4a67-894a-e776fa52d203\",\n        \"RuleInfoList\": [\n            {\n                \"CreateTime\": \"2020-09-29 10:52:48\",\n                \"MatchCodeList\": [\n                    {\n                        \"Key\": \"match-74w0ckl8\",\n                        \"Value\": \"test\"\n                    }\n                ],\n                \"RuleCode\": \"rule-r4x6tk49\",\n                \"RuleName\": \"test\"\n            }\n        ],\n        \"SearchType\": \"ruleCode\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询规则列表"
+      }
+    ],
+    "DescribeToken": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=DescribeToken\n&MatchCode=match-58mnuqlz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchToken\": \"mytoken\",\n        \"CompatibleSpan\": 180,\n        \"RequestId\": \"ab6ab15a-ab3a-495c-8818-e826084ea072\"\n    }\n}",
+        "title": "查询匹配Token示例"
+      }
+    ],
+    "ModifyMatch": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=ModifyMatch\n&MatchName=test\n&MatchDesc=test\n&RuleCode=rule-r4x6tk49\n&Timeout=60\n&NotifyUrl=https://test.com\n&ServerType=1\n&ServerRegion=apshanghai\n&ServerQueue=gpmtest\n&CustomPushData=test\n&ServerSessionData=test\n&LogSwitch=1\n&MatchCode=match-58mnuqlz\n&GameProperties.0.Key=test\n&GameProperties.0.Value=test\n&Tags.0.Key=字符串\n&Tags.0.Value=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"\",\n            \"CreateUin\": \"100012125188\",\n            \"CustomPushData\": \"test\",\n            \"GameProperties\": [\n                {\n                    \"Key\": \"test\",\n                    \"Value\": \"test\"\n                }\n            ],\n            \"LogSwitch\": 1,\n            \"LogTopicId\": \"\",\n            \"LogTopicName\": \"\",\n            \"LogsetId\": \"\",\n            \"LogsetName\": \"\",\n            \"MatchCode\": \"match-58mnuqlz\",\n            \"MatchDesc\": \"test\",\n            \"MatchName\": \"test\",\n            \"NotifyUrl\": \"https://test.com\",\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-r4x6tk49\",\n            \"RuleName\": \"test\",\n            \"ServerQueue\": \"gpmtest\",\n            \"ServerRegion\": \"ap-shanghai\",\n            \"ServerSessionData\": \"test\",\n            \"ServerType\": 1,\n            \"Tags\": [\n                {\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ],\n            \"Timeout\": 60,\n            \"Uin\": \"100012125188\"\n        },\n        \"RequestId\": \"b6184808-9699-43db-837c-110344620c5d\"\n    }\n}",
+        "title": "修改匹配示例"
+      }
+    ],
+    "ModifyRule": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=ModifyRule\n&RuleDesc=test\n&RuleCode=rule-v879tr24\n&RuleName=test\n&Tags.0.Key=字符串\n&Tags.0.Value=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c34a20b9-0fba-4c37-8819-c25a271778f6\",\n        \"RuleInfo\": {\n            \"AppId\": \"1300704415\",\n            \"CreateTime\": \"2020-09-29 15:15:36\",\n            \"CreateUin\": \"100012125188\",\n            \"MatchCodeList\": [],\n            \"Region\": \"ap-shanghai\",\n            \"RuleCode\": \"rule-v879tr24\",\n            \"RuleDesc\": \"test\",\n            \"RuleName\": \"test\",\n            \"RuleScript\": \"test\",\n            \"Tags\": [\n                {\n                    \"Key\": \"字符串\",\n                    \"Value\": \"字符串\"\n                }\n            ],\n            \"Uin\": \"100012125188\"\n        }\n    }\n}",
+        "title": "修改规则示例"
+      }
+    ],
+    "ModifyToken": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=ModifyToken\n&MatchCode=match-58mnuqlz\n&MatchToken=mytoken\n&CompatibleSpan=300\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchToken\": \"mytoken\",\n        \"CompatibleSpan\": 180,\n        \"RequestId\": \"ab6ab15a-ab3a-495c-8818-e826084ea072\"\n    }\n}",
+        "title": "更新匹配Token示例"
+      }
+    ],
+    "StartMatching": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=StartMatching\n&MatchCode=match_code\n&MatchTicketId=match_ticket_id\n&Players.0.Id=player_id_0\n&Players.0.Name=player_name\n&Players.0.Team=player_team\n&Players.0.CustomPlayerStatus=0\n&Players.0.CustomProfile=player_custom_profile\n&Players.0.MatchAttributes.0.Name=player_match_attributes_name\n&Players.0.MatchAttributes.0.Type=0\n&Players.0.MatchAttributes.0.NumberValue=10\n&Players.0.RegionLatencies.0.Region=ap-shanghai\n&Players.0.RegionLatencies.0.Latency=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": 0,\n        \"MatchTicketId\": \"match_ticket_id\",\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
+        "title": "开启匹配返回示例"
+      }
+    ],
+    "StartMatchingBackfill": [
+      {
+        "document": "",
+        "input": "https://gpm.tencentcloudapi.com/?Action=StartMatchingBackfill\n&MatchCode=match_code\n&MatchTicketId=match_ticket_id\n&Players.0.Id=player_id_0\n&Players.0.Name=player_name\n&Players.0.Team=player_team\n&Players.0.CustomPlayerStatus=0\n&Players.0.CustomProfile=player_custom_profile\n&Players.0.MatchAttributes.0.Name=player_match_attributes_name\n&Players.0.MatchAttributes.0.Type=0\n&Players.0.MatchAttributes.0.NumberValue=10\n&Players.0.RegionLatencies.0.Region=ap-shanghai\n&Players.0.RegionLatencies.0.Latency=100\n&GameServerSessionId=game_server_session_id\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MatchTicket\": {\n            \"EndTime\": \"\",\n            \"Id\": \"ml0urJm\",\n            \"MatchCode\": \"match-lipp\",\n            \"MatchResult\": \"\",\n            \"MatchType\": \"\",\n            \"Players\": [\n                {\n                    \"CustomPlayerStatus\": 0,\n                    \"CustomProfile\": \"\",\n                    \"Id\": \"fisher0\",\n                    \"MatchAttributes\": [\n                        {\n                            \"ListValue\": [],\n                            \"MapValue\": [],\n                            \"Name\": \"numberAttr\",\n                            \"NumberValue\": 10,\n                            \"StringValue\": \"\",\n                            \"Type\": 0\n                        },\n                        {\n                            \"ListValue\": [],\n                            \"MapValue\": [],\n                            \"Name\": \"stringAttr\",\n                            \"NumberValue\": 0,\n                            \"StringValue\": \"stringAttrVal\",\n                            \"Type\": 1\n                        },\n                        {\n                            \"ListValue\": [\n                                \"listAttrVal1\",\n                                \"listAttrVal2\",\n                                \"listAttrVal3\"\n                            ],\n                            \"MapValue\": [],\n                            \"Name\": \"listAttr\",\n                            \"NumberValue\": 0,\n                            \"StringValue\": \"\",\n                            \"Type\": 2\n                        },\n                        {\n                            \"ListValue\": [],\n                            \"MapValue\": [\n                                {\n                                    \"Key\": \"mapAttrVal1\",\n                                    \"Value\": 10\n                                },\n                                {\n                                    \"Key\": \"mapAttrVal2\",\n                                    \"Value\": 20\n                                },\n                                {\n                                    \"Key\": \"mapAttrVal3\",\n                                    \"Value\": 30\n                                }\n                            ],\n                            \"Name\": \"mapAttr\",\n                            \"NumberValue\": 0,\n                            \"StringValue\": \"\",\n                            \"Type\": 3\n                        }\n                    ],\n                    \"Name\": \"playerName0\",\n                    \"RegionLatencies\": [\n                        {\n                            \"Latency\": 100,\n                            \"Region\": \"ap-guangzhou\"\n                        },\n                        {\n                            \"Latency\": 100,\n                            \"Region\": \"ap-beijing\"\n                        }\n                    ],\n                    \"Team\": \"playerTeam0\"\n                }\n            ],\n            \"StartTime\": \"2020-09-05T11:11:15Z\",\n            \"Status\": \"TIMEDOUT\",\n            \"StatusMessage\": \"\",\n            \"StatusReason\": \"\"\n        },\n        \"RequestId\": \"1a68664b-d796-407b-ab7b-2dbc2a12f8f5\"\n    }\n}",
+        "title": "开启回填匹配返回示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

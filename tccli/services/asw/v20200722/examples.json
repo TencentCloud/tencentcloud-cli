@@ -1,0 +1,77 @@
+{
+  "actions": {
+    "CreateFlowService": [
+      {
+        "document": "生成状态机服务",
+        "input": "https://asw.tencentcloudapi.com/?Action=CreateFlowService\n&FlowServiceName=FlowServiceTest\n&Definition=\"{}\"\n&IsNewRole=false\n&RoleResource=qcs%3A%3Acam%3A%3Auin%2F20103392%3AroleName%2FSomeRoleForYourStateMachine\n&Type=EXPRESS\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowServiceResource\": \"flowservicetest\",\n        \"CreateDate\": \"1595227100\",\n        \"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\n    }\n}",
+        "title": "生成状态机"
+      }
+    ],
+    "DescribeExecution": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeExecution\n&ExecutionResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:execution:bfhzs4j8:bgh9v6u1bgh9v6u2-bgh9v6u3-bgh9v6u4-bgh9v6u5\",\n        \"Name\": \"bgh9v6u1bgh9v6u2-bgh9v6u3-bgh9v6u4-bgh9v6u5\",\n        \"StartDate\": \"1596703766354\",\n        \"StopDate\": \"0\",\n        \"StateMachineResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\",\n        \"ExecutionDefinition\": \"{}\",\n        \"Status\": \"INIT\",\n        \"Input\": \"\",\n        \"Output\": \"\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "查询执行详细信息"
+      }
+    ],
+    "DescribeExecutionHistory": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeExecutionHistory\n&ExecutionResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 1,\n                \"EventCategory\": \"ExecutionStart\",\n                \"StepName\": \"START\",\n                \"ResourceName\": \"\",\n                \"Timestamp\": \"1596716960310\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 2,\n                \"EventCategory\": \"Unknown\",\n                \"StepName\": \"START\",\n                \"ResourceName\": \"\",\n                \"Timestamp\": \"1596716960310\",\n                \"Content\": \"null\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 3,\n                \"EventCategory\": \"PassNodeEnter\",\n                \"StepName\": \"ReceivedVideo\",\n                \"ResourceName\": \"\",\n                \"Timestamp\": \"1596716960310\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 4,\n                \"EventCategory\": \"PassNodeExit\",\n                \"StepName\": \"ReceivedVideo\",\n                \"ResourceName\": \"\",\n                \"Timestamp\": \"1596716960310\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 5,\n                \"EventCategory\": \"TaskNodeEnter\",\n                \"StepName\": \"MPSAudioSeparate\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:mps:audioSeparate\",\n                \"Timestamp\": \"1596716960311\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 6,\n                \"EventCategory\": \"TaskNodeExit\",\n                \"StepName\": \"MPSAudioSeparate\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:mps:audioSeparate\",\n                \"Timestamp\": \"1596716960514\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 7,\n                \"EventCategory\": \"TaskNodeEnter\",\n                \"StepName\": \"CheckMPS\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:mps:checkMpsJob\",\n                \"Timestamp\": \"1596716960514\",\n                \"Content\": \"\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 8,\n                \"EventCategory\": \"TaskNodeExit\",\n                \"StepName\": \"CheckMPS\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:mps:checkMpsJob\",\n                \"Timestamp\": \"1596716993478\",\n                \"Content\": \"\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 9,\n                \"EventCategory\": \"TaskNodeEnter\",\n                \"StepName\": \"GetMPSAudioURL\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:scf:Invoke/GetMPSAudioURL\",\n                \"Timestamp\": \"1596716993481\",\n                \"Content\": \"\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 10,\n                \"EventCategory\": \"TaskNodeExit\",\n                \"StepName\": \"GetMPSAudioURL\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:scf:Invoke/GetMPSAudioURL\",\n                \"Timestamp\": \"1596716993747\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 11,\n                \"EventCategory\": \"TaskNodeEnter\",\n                \"StepName\": \"ASR\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:asr:generalASR\",\n                \"Timestamp\": \"1596716993748\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 12,\n                \"EventCategory\": \"TaskNodeExit\",\n                \"StepName\": \"ASR\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:asr:generalASR\",\n                \"Timestamp\": \"1596716994159\",\n                \"Content\": \"{}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 13,\n                \"EventCategory\": \"TaskNodeEnter\",\n                \"StepName\": \"CheckASR\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:asr:checkASR\",\n                \"Timestamp\": \"1596716994160\",\n                \"Content\": \"{\\\"input\\\":\\\"{\\\"TaskId\\\":12345}\\\"}\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 14,\n                \"EventCategory\": \"TaskNodeExit\",\n                \"StepName\": \"CheckASR\",\n                \"ResourceName\": \"qrn:qcs:asw:sh:1300074211:sdk:json:qcloud:asr:checkASR\",\n                \"Timestamp\": \"1596717016158\",\n                \"Content\": \"\",\n                \"Exception\": \"\"\n            },\n            {\n                \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:12345:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-xxxxx\",\n                \"EventId\": 15,\n                \"EventCategory\": \"Unknown\",\n                \"StepName\": \"END\",\n                \"ResourceName\": \"\",\n                \"Timestamp\": \"1596717016159\",\n                \"Content\": \"null\",\n                \"Exception\": \"\"\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "查询执行的事件历史"
+      }
+    ],
+    "DescribeExecutions": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeExecutions\n&StateMachineResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&PageSize=100\n&PageIndex=1\n&FilterExecutionStatus=INIT\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "状态机执行列表"
+      }
+    ],
+    "DescribeFlowServiceDetail": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeFlowServiceDetail\n&FlowServiceResource=qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bcrlj428\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowServiceName\": \"flowservicetest\",\n        \"FlowServiceChineseName\": \"状态机中文名称\",\n        \"Status\": \"Online\",\n        \"Definition\": \"{\\\"Comment\\\":\\\"An example of the Amazon States Language using a map state to process elements of an array with a max concurrency of 2.\\\",\\\"StartAt\\\":\\\"Map\\\",\\\"States\\\":{\\\"Map\\\":{\\\"Type\\\":\\\"Map\\\",\\\"ItemsPath\\\":\\\"$.job-spec\\\",\\\"ResultPath\\\":\\\"$.array\\\",\\\"MaxConcurrency\\\":2,\\\"Next\\\":\\\"Final State\\\",\\\"Iterator\\\":{\\\"StartAt\\\":\\\"My Stage\\\",\\\"States\\\":{\\\"My Stage\\\":{\\\"Type\\\":\\\"Task\\\",\\\"Resource\\\":\\\"arn:aws:states:::lambda:invoke\\\",\\\"Parameters\\\":{\\\"FunctionName\\\":\\\"arn:aws:lambda:us-east-1:<>:function:some-lambda:$LATEST\\\",\\\"Payload\\\":{\\\"Input.$\\\":\\\"$.array\\\"}},\\\"End\\\":true}}}},\\\"Final State\\\":{\\\"Type\\\":\\\"Pass\\\",\\\"End\\\":true}}}\",\n        \"RoleResource\": \"qrn:qcs:asw:sh:1300074211:http:qrn\",\n        \"Type\": \"EXPRESS\",\n        \"CreateDate\": \"1595227100\",\n        \"Description\": \"这是一个用来做演示的状态机\",\n        \"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\",\n        \"EnableCLS\": 1,\n        \"CLSUrl\": \"https://console.cloud.tencent.com/cls\",\n        \"FlowInput\": \"xx\"\n    }\n}",
+        "title": "查询状态机详情"
+      }
+    ],
+    "DescribeFlowServices": [
+      {
+        "document": "查询指定用户下所有状态机，以列表形式返回",
+        "input": "https://asw.tencentcloudapi.com/?Action=DescribeFlowServices\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FlowServiceSet\": [\n            {\n                \"FlowServiceResource\": \"qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicetest:bdp8sj4v\",\n                \"Type\": \"EXPRESS\",\n                \"FlowServiceName\": \"flowservicetest\",\n                \"FlowServiceChineseName\": \"你好\",\n                \"CreateDate\": \"1595227100\",\n                \"ModifyDate\": \"1595227100\",\n                \"Status\": \"Online\",\n                \"Creator\": \"\",\n                \"Modifier\": \"\",\n                \"FlowServiceId\": \"svc-bdp8sj4u\",\n                \"TemplateId\": \"tpl-bdp8sj4w\",\n                \"Description\": \"描述\"\n            }\n        ],\n        \"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43w\"\n    }\n}",
+        "title": "查询状态机列表"
+      }
+    ],
+    "ModifyFlowService": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=ModifyFlowService\n&FlowServiceName=flowservicetest\n&FlowServiceResource=qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:wintest:bg0rx4qy\n&Definition=\"{}\"\n&FlowServiceChineseName=工作流中文名称\n&IsNewRole=false\n&Type=EXPRESS\n&RoleResource=qrn:qcs:asw:ap-guangzhou:1300000779:http:json\n&EnableCLS=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowServiceResource\": \"qrn:qcs:asw:ap-guangzhou:1300000779:http:json:flowmachine:wintest:bg0rx4qy\",\n        \"UpdateDate\": \"1596628154044\",\n        \"RequestId\": \"ab1b30fc-3503-4b27-96dc-94c14d2fd43q\"\n    }\n}",
+        "title": "编辑状态机"
+      }
+    ],
+    "StartExecution": [
+      {
+        "document": "",
+        "input": "https://asw.tencentcloudapi.com/?Action=StartExecution\n&StateMachineResourceName=qrn:qcs:asw:ap-guangzhou:1300074211:http:json:flowmachine:bilibili-machine:bfhzs4j8\n&Input={\"Bucket\":\"bilibili-1300074231\",\"Region\":\"ap-shanghai\",\"Object\":\"demo1.mp4\"}\n&Name=thaf04gr-yjs96hs-fgjsfg464-u89yjfg5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ExecutionResourceName\": \"qrn:qcs:asw:ap-guangzhou:1300074211:execution:bfhzs4j8:bgi61l31bgi61l32-bgi61l33-bgi61kw0-bgi61kw1\",\n        \"StartDate\": \"1596716960181\",\n        \"RequestId\": \"hnr533hdf-yky4ye56-dhst6-jt7sdfgq552f\"\n    }\n}",
+        "title": "指定状态机启动执行"
+      }
+    ],
+    "StopExecution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopExecution\n<公共请求参数>\n\n{\n    \"ExecutionQrn\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "停止状态机"
+      }
+    ]
+  },
+  "version": "1.0"
+}

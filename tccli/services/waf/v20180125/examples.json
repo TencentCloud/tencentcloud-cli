@@ -1,0 +1,139 @@
+{
+  "actions": {
+    "AddCustomRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddCustomRule\n&Name=test\n&SortId=100\n&Redirect=/\n&ExpireTime=\"\"\n&Strategies.0.Field=COOKIE\n&Strategies.0.CompareFunc=null\n&Strategies.0.Content=\"\"\n&Strategies.0.Arg=\"\"\n&Domain=www.test.com\n&ActionType=1\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a16a333-76ac-42f5-8066-c0ea93cc8dc7\",\n        \"RuleId\": 7025,\n        \"Success\": {\n            \"Message\": \"Success\",\n            \"Code\": \"Success\"\n        }\n    }\n}",
+        "title": "增加自定义规则"
+      }
+    ],
+    "CreateAccessExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"From\": 1625395948532,\n    \"To\": 1626000748532,\n    \"Count\": 6221,\n    \"Query\": \"*\",\n    \"Order\": \"desc\",\n    \"Format\": \"json\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExportId\": \"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\",\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "创建访问日志导出"
+      }
+    ],
+    "CreateAttackDownloadTask": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=CreateAttackDownloadTask\n&FromTime=2019-12-30 00:00:00\n&ToTime=2019-12-30 23:59:59\n&Domain=abc.qcloudwaf.com\n&Name=d0wnload\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Flow\": \"XXXX-XXXX-XXXX\",\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "创建攻击日志下载任务"
+      }
+    ],
+    "DeleteAccessExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"ExportId\": \"export-5912305a-668a-45c6-98ab-c49e8b04dfac\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "删除访问日志导出"
+      }
+    ],
+    "DeleteAttackDownloadRecord": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteAttackDownloadRecord\n&Id=60001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "删除攻击日志下载任务记录"
+      }
+    ],
+    "DeleteDownloadRecord": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteDownloadRecord\n&Flow=xxxxxx-xxxxxx-xxxxxx \n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
+        "title": "删除下载记录"
+      }
+    ],
+    "DeleteSession": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteSession\n&Domain=test.com\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"0746a563-2597-43ec-8aaf-d3267b093efa\"\n    }\n}",
+        "title": "Waf  会话定义 Delete接口"
+      }
+    ],
+    "DescribeAccessExports": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessExports\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Exports\": [\n            {\n                \"ExportId\": \"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\",\n                \"Query\": \"*\",\n                \"FileName\": \"log_100005604621_1ae37c76-df99-4e2b-998c-20f39eba6226_20210713_export-61daca5c-f341-4796-aeb3-4f2f598a06c7_1626174454.tar.gz\",\n                \"FileSize\": 279519,\n                \"Order\": \"desc\",\n                \"Format\": \"json\",\n                \"Count\": 6221,\n                \"Status\": \"Completed\",\n                \"From\": 1625395948532,\n                \"To\": 1626000748532,\n                \"CosPath\": \"https://export-cd-1254077820.cos.ap-chengdu.myqcloud.com/%2Fexport%2F20210713%2Flog_100005604621_1ae37c76-df99-4e2b-998c-20f39eba6226_20210713_export-61daca5c-f341-4796-aeb3-4f2f598a06c7_1626174454.tar.gz?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1626175178%3B1626178778&q-key-time=1626175178%3B1626178778&q-header-list=host&q-url-param-list=&q-signature=ebb37d76834b5be4ff0c8bfa263d88d1adf5685d\",\n                \"CreateTime\": \"2021-07-13 19:07:15\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "获取访问日志导出列表"
+      }
+    ],
+    "DescribeAccessFastAnalysis": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessFastAnalysis\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "搜索访问日志"
+      }
+    ],
+    "DescribeAccessIndex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessIndex\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"Rule\": {\n            \"FullText\": {\n                \"CaseSensitive\": true,\n                \"Tokenizer\": \"!@#%^&*()-_=\\\"', <>/?|\\\\;:\\n\\t\\r[]{}\",\n                \"ContainZH\": false\n            },\n            \"KeyValue\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"method\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"schema\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"host\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"url\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"client\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"status\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"upstream_status\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"user_agent\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"x_forwarded_for\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"referer\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"domain\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"cookie\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"body\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"uuid\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"query\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    }\n                ]\n            }\n        },\n        \"ModifyTime\": \"2021-06-18 16:02:20\",\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "访问日志索引配置信息"
+      }
+    ],
+    "DescribeCustomRules": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取自定义规则列表"
+      },
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCustomRules\n&Domain=www.test.com\n&Edition=clb-waf\n&Paging.Offset=0\n&Paging.Limit=10\n&Search=\"1\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d54d3c1-f60b-4766-bf2e-cb29738ed13d\",\n        \"RuleList\": [],\n        \"TotalCount\": \"0\"\n    }\n}",
+        "title": "带过滤参数返回结果为0的场景"
+      }
+    ],
+    "DescribeFlowTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTrend\n<公共请求参数>\n\n{\n    \"Domain\": \"www.baidu.com\",\n    \"StartTs\": 1620144000,\n    \"EndTs\": 1620180000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Key\": \"xx\",\n                \"Value\": 21,\n                \"Label\": \"xx\",\n                \"TimeStamp\": \"312312\"\n            }\n        ]\n    }\n}",
+        "title": "获取流量趋势数据"
+      }
+    ],
+    "DescribeUserClbWafRegions": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserClbWafRegions\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\"\n        ],\n        \"RequestId\": \"4c8827fc-839c-4ecc-8ac5-d39456d163b9\"\n    }\n}",
+        "title": "获取对客户已经开放的负载均衡型WAF的地域"
+      }
+    ],
+    "ModifyAccessPeriod": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessPeriod\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"Period\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "删除访问日志导出"
+      }
+    ],
+    "ModifyCustomRuleStatus": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRuleStatus\n&Domain=\"test.qlcoud.com\"\n&RuleId=12\n&Status=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c30f037-a684-4d5b-b0a8-0bc0acc668d1\",\n        \"Success\": {\n            \"Message\": \"Success\",\n            \"Code\": \"Success\"\n        }\n    }\n}",
+        "title": "切换自定义规则的开关"
+      }
+    ],
+    "SearchAccessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAccessLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"From\": 1625395948532,\n    \"To\": 1626000748532,\n    \"Query\": \"\",\n    \"Limit\": 2,\n    \"Context\": \"\",\n    \"Sort\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC1jMDhiYjAyMy1mMjZmLTQ1NjUtOTEzMy1iZjIwYWUzNmY1MzMxNjI2MTU5NDU4MjQy\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": null,\n        \"Results\": [\n            {\n                \"Time\": 1625995282703,\n                \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n                \"LogJson\": \"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\\"\\\",\\\"ipinfo_state\\\":\\\"\\\",\\\"ipinfo_city\\\":\\\"\\\",\\\"edition\\\":\\\"sparta-waf\\\",\\\"ipinfo_dimensionality\\\":\\\"\\\",\\\"language\\\":\\\"\\\",\\\"body\\\":\\\"\\\",\\\"uuid\\\":\\\"b285a612f62f5b76478fce8960d2327e-c613c8e835f1d2a48221efa4a21c4247\\\",\\\"upstream_status\\\":\\\"200\\\",\\\"request_time\\\":\\\"0.141\\\",\\\"content_type\\\":\\\"\\\",\\\"host\\\":\\\"bangskt.qcloudwaf.com\\\",\\\"client\\\":\\\"100.88.193.73\\\",\\\"connection\\\":\\\"\\\",\\\"ipinfo_nation\\\":\\\"共享地址\\\",\\\"user_agent\\\":\\\"TSecWaf_AccessCheckClient\\\",\\\"headers\\\":\\\"Accept-Encoding: \\\",\\\"upstream\\\":\\\"119.29.90.203:80\\\",\\\"cookie\\\":\\\"\\\",\\\"method\\\":\\\"GET\\\",\\\"query\\\":\\\"\\\",\\\"ipinfo_detail\\\":\\\"\\\",\\\"encoding\\\":\\\"\\\",\\\"ipinfo_isp\\\":\\\"\\\",\\\"bytes_sent\\\":\\\"718\\\",\\\"url\\\":\\\"/\\\",\\\"accept\\\":\\\"\\\",\\\"x_forwarded_for\\\":\\\"\\\",\\\"upstream_connect_time\\\":\\\"0.036\\\",\\\"request_length\\\":\\\"86\\\",\\\"appid\\\":\\\"251011484\\\",\\\"domain\\\":\\\"bangskt.qcloudwaf.com\\\",\\\"msec\\\":\\\"1625995282.703\\\",\\\"upstream_response_time\\\":\\\"0.068\\\",\\\"time\\\":\\\"11/Jul/2021:17:21:22 +0800\\\",\\\"ipinfo_longitude\\\":\\\"\\\",\\\"status\\\":\\\"200\\\"}\"\n            },\n            {\n                \"Time\": 1625968977668,\n                \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n                \"LogJson\": \"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\\"\\\",\\\"ipinfo_state\\\":\\\"\\\",\\\"ipinfo_city\\\":\\\"\\\",\\\"edition\\\":\\\"sparta-waf\\\",\\\"ipinfo_dimensionality\\\":\\\"\\\",\\\"language\\\":\\\"\\\",\\\"body\\\":\\\"\\\",\\\"uuid\\\":\\\"577cd8369f7e153a04ded334b6880595-c96150599abcedfc3459c880a1922987\\\",\\\"upstream_status\\\":\\\"200\\\",\\\"request_time\\\":\\\"0.134\\\",\\\"content_type\\\":\\\"\\\",\\\"host\\\":\\\"attack_log.qcloudwaf.com\\\",\\\"client\\\":\\\"100.88.193.73\\\",\\\"connection\\\":\\\"\\\",\\\"ipinfo_nation\\\":\\\"共享地址\\\",\\\"user_agent\\\":\\\"TSecWaf_AccessCheckClient\\\",\\\"headers\\\":\\\"Accept-Encoding: \\\",\\\"upstream\\\":\\\"119.29.90.203:80\\\",\\\"cookie\\\":\\\"\\\",\\\"method\\\":\\\"GET\\\",\\\"query\\\":\\\"\\\",\\\"ipinfo_detail\\\":\\\"\\\",\\\"encoding\\\":\\\"\\\",\\\"ipinfo_isp\\\":\\\"\\\",\\\"bytes_sent\\\":\\\"718\\\",\\\"url\\\":\\\"/\\\",\\\"accept\\\":\\\"\\\",\\\"x_forwarded_for\\\":\\\"\\\",\\\"upstream_connect_time\\\":\\\"0.032\\\",\\\"request_length\\\":\\\"89\\\",\\\"appid\\\":\\\"251011484\\\",\\\"domain\\\":\\\"attack_log.qcloudwaf.com\\\",\\\"msec\\\":\\\"1625968977.668\\\",\\\"upstream_response_time\\\":\\\"0.060\\\",\\\"time\\\":\\\"11/Jul/2021:10:02:57 +0800\\\",\\\"ipinfo_longitude\\\":\\\"\\\",\\\"status\\\":\\\"200\\\"}\"\n            }\n        ],\n        \"AnalysisResults\": null,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "搜索访问日志"
+      }
+    ]
+  },
+  "version": "1.0"
+}

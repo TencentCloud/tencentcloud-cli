@@ -1,0 +1,285 @@
+{
+  "actions": {
+    "CreateAcl": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\n&InstanceId=xxx\n&ResourceType=2\n&ResourceName=test1\n&Operation=2\n&PermissionType=2\n&Host=1.1.1.1\n&Principal=User:user1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
+        "title": "添加 ACL 策略"
+      }
+    ],
+    "CreateInstancePre": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateInstancePre\n&InstanceName=test\n&MsgRetentionTime=1440\n&InstanceType=1\n&ZoneId=100003\n&Period=1m\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {}\n}",
+        "title": "创建实例(预付费包年包月)"
+      }
+    ],
+    "CreatePartition": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreatePartition\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&PartitionNum=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\"\n        },\n        \"RequestId\": \"483c3edd-a2ac-420c-905d-47a5ec7de4ad\"\n    }\n}",
+        "title": "增加主题分区"
+      }
+    ],
+    "CreateTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopic\n&InstanceId=xxx\n&TopicName=xxx\n&PartitionNum=1\n&ReplicaNum=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicId\": \"topic-k766ruye\"\n        },\n        \"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\n    }\n}",
+        "title": "创建主题"
+      }
+    ],
+    "CreateTopicIpWhiteList": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateTopicIpWhiteList\r\n&InstanceId=xxxx\r\n&TopicName=xxx\r\n&IpWhiteList.n=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\"\n        },\n        \"RequestId\": \"7a6f7927-a435-4e55-8687-f24a8838f744\"\n    }\n}",
+        "title": "创建主题IP白名单"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=CreateUser\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&Password=Password\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        },\n        \"RequestId\": \"8bdec3bf-585d-4129-9a87-5a7813797c1f\"\n    }\n}",
+        "title": "添加用户"
+      }
+    ],
+    "DeleteAcl": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteAcl\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=1\r\n&Operation=2\r\n&PermissionType=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        },\n        \"RequestId\": \"2140f435-b350-4429-a105-9b83efe104b0\"\n    }\n}",
+        "title": "删除ACL"
+      }
+    ],
+    "DeleteAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAclRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-123456\",\n    \"RuleName\": \"testRule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 12,\n        \"RequestId\": \"8c3daa3a-d87b-47ef-9ddd-f0905eeb8d84\"\n    }\n}",
+        "title": "删除ACL规则示例"
+      }
+    ],
+    "DeleteRouteTriggerTime": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteRouteTriggerTime\n&InstanceId='ckafka-xxx'\n&DelayTime='2020-08-21 11:15:54'\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91b6b112-7f0a-4e18-b353-5202bcafd2c2\"\n    }\n}",
+        "title": "修改路由触发时间"
+      }
+    ],
+    "DeleteTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteTopic\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\"\n        },\n        \"RequestId\": \"bf88d4c8-06f5-4643-be86-5ffc179dc325\"\n    }\n}",
+        "title": "删除主题"
+      }
+    ],
+    "DeleteTopicIpWhiteList": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteTopicIpWhiteList\r\n&InstanceId=xxx\r\n&TopicName=xxxx\r\n&IpWhiteList.n=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\"\n        },\n        \"RequestId\": \"b800c966-083a-40f5-8d54-44f40c6b364f\"\n    }\n}",
+        "title": "删除主题IP白名单"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteUser\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        },\n        \"RequestId\": \"c0f25f9c-4a80-48bb-ad2a-a5107041d486\"\n    }\n}",
+        "title": "删除用户"
+      }
+    ],
+    "DescribeACL": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeACL\r\n&InstanceId=xxx\r\n&ResourceType=xxx\r\n&ResourceName=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"AclList\": [\n                {\n                    \"ResourceType\": 2,\n                    \"ResourceName\": \"test\",\n                    \"Principal\": \"User:test\",\n                    \"Host\": \"*\",\n                    \"Operation\": 3,\n                    \"PermissionType\": 3\n                }\n            ]\n        },\n        \"RequestId\": \"62d589e0-53d5-47e0-95ff-237c48b8fb77\"\n    }\n}",
+        "title": "枚举ACL"
+      }
+    ],
+    "DescribeAppInfo": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAppInfo\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 11,\n            \"AppIdList\": [\n                1251000011,\n                1255426940,\n                251000873,\n                251000691,\n                251006545,\n                1251762227,\n                1256134262,\n                251006131,\n                1251006288,\n                1251006373\n            ]\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
+        "title": "查询用户列表"
+      }
+    ],
+    "DescribeCkafkaZone": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeCkafkaZone\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ZoneList\": [\n                {\n                    \"ZoneId\": \"300001\",\n                    \"IsInternalApp\": 2,\n                    \"AppId\": 1255613487,\n                    \"Flag\": true,\n                    \"ZoneName\": \"香港一区\",\n                    \"ZoneStatus\": 4,\n                    \"Exflag\": \"1\",\n                    \"SoldOut\": \"false\"\n                },\n                {\n                    \"ZoneId\": \"300002\",\n                    \"IsInternalApp\": 2,\n                    \"AppId\": 1255613487,\n                    \"Flag\": false,\n                    \"ZoneName\": \"香港二区\",\n                    \"ZoneStatus\": 4,\n                    \"Exflag\": \"1\",\n                    \"SoldOut\": \"false\"\n                },\n                {\n                    \"ZoneId\": \"300003\",\n                    \"IsInternalApp\": 2,\n                    \"AppId\": 1255613487,\n                    \"Flag\": false,\n                    \"ZoneName\": \"香港三区\",\n                    \"ZoneStatus\": 4,\n                    \"Exflag\": \"1\",\n                    \"SoldOut\": \"true\"\n                }\n            ],\n            \"MaxBuyInstanceNum\": 20,\n            \"MaxBandwidth\": 1200,\n            \"UnitPrice\": {\n                \"RealTotalCost\": 2.376,\n                \"TotalCost\": 0\n            },\n            \"MessagePrice\": {\n                \"RealTotalCost\": 0.18,\n                \"TotalCost\": 0\n            },\n            \"ClusterInfo\": [],\n            \"Standard\": \"{}\",\n            \"StandardS2\": \"{\\\"InstanceTypeConfigSet\\\":[{\\\"Type\\\":\\\"sv_ckafka_instance_s2_1\\\",\\\"Desc\\\":\\\"入门型\\\",\\\"Bandwidth\\\":320,\\\"DiskSize\\\":500,\\\"Pid\\\":15127,\\\"MaximumInstancePartition\\\":100,\\\"MaximumInstanceTopic\\\":40},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_2\\\",\\\"Desc\\\":\\\"标准型\\\",\\\"Bandwidth\\\":800,\\\"DiskSize\\\":1500,\\\"Pid\\\":15128,\\\"MaximumInstancePartition\\\":160,\\\"MaximumInstanceTopic\\\":80},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_3\\\",\\\"Desc\\\":\\\"进阶型\\\",\\\"Bandwidth\\\":1200,\\\"DiskSize\\\":3000,\\\"Pid\\\":15129,\\\"MaximumInstancePartition\\\":200,\\\"MaximumInstanceTopic\\\":100},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_4\\\",\\\"Desc\\\":\\\"容量型\\\",\\\"Bandwidth\\\":1600,\\\"DiskSize\\\":4500,\\\"Pid\\\":15130,\\\"MaximumInstancePartition\\\":300,\\\"MaximumInstanceTopic\\\":150},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_5\\\",\\\"Desc\\\":\\\"高阶型1\\\",\\\"Bandwidth\\\":2400,\\\"DiskSize\\\":6000,\\\"Pid\\\":15131,\\\"MaximumInstancePartition\\\":500,\\\"MaximumInstanceTopic\\\":250},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_6\\\",\\\"Desc\\\":\\\"高阶型2\\\",\\\"Bandwidth\\\":3200,\\\"DiskSize\\\":8000,\\\"Pid\\\":15132,\\\"MaximumInstancePartition\\\":600,\\\"MaximumInstanceTopic\\\":300},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_7\\\",\\\"Desc\\\":\\\"高阶型3\\\",\\\"Bandwidth\\\":4800,\\\"DiskSize\\\":10000,\\\"Pid\\\":15133,\\\"MaximumInstancePartition\\\":800,\\\"MaximumInstanceTopic\\\":400},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_8\\\",\\\"Desc\\\":\\\"高阶型4\\\",\\\"Bandwidth\\\":7200,\\\"DiskSize\\\":12000,\\\"Pid\\\":15134,\\\"MaximumInstancePartition\\\":1000,\\\"MaximumInstanceTopic\\\":500}],\\\"maximumTopicPartition\\\":1000,\\\"maximumInstanceConsumerGroup\\\":0}\\n\",\n            \"Profession\": \"{\\\"BasicEdition\\\":{\\\"Bandwidth\\\":{\\\"Maximum\\\":1200,\\\"Minimal\\\":40,\\\"Step\\\":20},\\\"DiskCapacity\\\":{\\\"40\\\":{\\\"Maximum\\\":5000,\\\"Minimal\\\":500,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":10000,\\\"Minimal\\\":1000,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":30000,\\\"Minimal\\\":3000,\\\"Step\\\":100},\\\"620\\\":{\\\"Maximum\\\":54000,\\\"Minimal\\\":5400,\\\"Step\\\":100},\\\"920\\\":{\\\"Maximum\\\":75000,\\\"Minimal\\\":7500,\\\"Step\\\":100}},\\\"DiskTypes\\\":[\\\"SSD\\\",\\\"CLOUD_BASIC\\\"],\\\"MessageRetention\\\":{\\\"Maximum\\\":2160,\\\"Minimal\\\":24,\\\"Step\\\":1},\\\"Partition\\\":{\\\"40\\\":{\\\"Maximum\\\":1000,\\\"Minimal\\\":500,\\\"Step\\\":100},\\\"60\\\":{\\\"Maximum\\\":1200,\\\"Minimal\\\":600,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":1600,\\\"Minimal\\\":800,\\\"Step\\\":100},\\\"180\\\":{\\\"Maximum\\\":2000,\\\"Minimal\\\":1000,\\\"Step\\\":100},\\\"240\\\":{\\\"Maximum\\\":2400,\\\"Minimal\\\":1200,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":2800,\\\"Minimal\\\":1400,\\\"Step\\\":100},\\\"400\\\":{\\\"Maximum\\\":3200,\\\"Minimal\\\":1600,\\\"Step\\\":100},\\\"500\\\":{\\\"Maximum\\\":3600,\\\"Minimal\\\":1800,\\\"Step\\\":100},\\\"600\\\":{\\\"Maximum\\\":4000,\\\"Minimal\\\":2000,\\\"Step\\\":100},\\\"800\\\":{\\\"Maximum\\\":4500,\\\"Minimal\\\":2400,\\\"Step\\\":100},\\\"1000\\\":{\\\"Maximum\\\":5000,\\\"Minimal\\\":2800,\\\"Step\\\":100},\\\"1200\\\":{\\\"Maximum\\\":5500,\\\"Minimal\\\":3200,\\\"Step\\\":100}},\\\"Topic\\\":{\\\"40\\\":{\\\"Maximum\\\":100,\\\"Minimal\\\":50,\\\"Step\\\":1},\\\"60\\\":{\\\"Maximum\\\":120,\\\"Minimal\\\":60,\\\"Step\\\":1},\\\"120\\\":{\\\"Maximum\\\":160,\\\"Minimal\\\":80,\\\"Step\\\":1},\\\"180\\\":{\\\"Maximum\\\":200,\\\"Minimal\\\":100,\\\"Step\\\":1},\\\"240\\\":{\\\"Maximum\\\":240,\\\"Minimal\\\":120,\\\"Step\\\":1},\\\"320\\\":{\\\"Maximum\\\":280,\\\"Minimal\\\":160,\\\"Step\\\":1},\\\"400\\\":{\\\"Maximum\\\":320,\\\"Minimal\\\":200,\\\"Step\\\":1},\\\"500\\\":{\\\"Maximum\\\":360,\\\"Minimal\\\":240,\\\"Step\\\":1},\\\"600\\\":{\\\"Maximum\\\":400,\\\"Minimal\\\":280,\\\"Step\\\":1},\\\"800\\\":{\\\"Maximum\\\":450,\\\"Minimal\\\":320,\\\"Step\\\":1},\\\"1000\\\":{\\\"Maximum\\\":500,\\\"Minimal\\\":360,\\\"Step\\\":1},\\\"1200\\\":{\\\"Maximum\\\":550,\\\"Minimal\\\":400,\\\"Step\\\":1}}},\\\"HighPerformanceEdition\\\":{\\\"Bandwidth\\\":{\\\"Maximum\\\":3200,\\\"Minimal\\\":1600,\\\"Step\\\":400},\\\"DiskCapacity\\\":{\\\"1600\\\":{\\\"Maximum\\\":120000,\\\"Minimal\\\":12000,\\\"Step\\\":100},\\\"2000\\\":{\\\"Maximum\\\":160000,\\\"Minimal\\\":16000,\\\"Step\\\":100},\\\"2400\\\":{\\\"Maximum\\\":200000,\\\"Minimal\\\":20000,\\\"Step\\\":100},\\\"2800\\\":{\\\"Maximum\\\":240000,\\\"Minimal\\\":24000,\\\"Step\\\":100},\\\"3200\\\":{\\\"Maximum\\\":280000,\\\"Minimal\\\":28000,\\\"Step\\\":100}},\\\"DiskTypes\\\":[\\\"SSD\\\",\\\"CLOUD_BASIC\\\"],\\\"MessageRetention\\\":{\\\"Maximum\\\":2160,\\\"Minimal\\\":24,\\\"Step\\\":1},\\\"Partition\\\":{\\\"1600\\\":{\\\"Maximum\\\":6000,\\\"Minimal\\\":4000,\\\"Step\\\":100},\\\"2000\\\":{\\\"Maximum\\\":7000,\\\"Minimal\\\":4500,\\\"Step\\\":100},\\\"2400\\\":{\\\"Maximum\\\":8000,\\\"Minimal\\\":5000,\\\"Step\\\":100},\\\"2800\\\":{\\\"Maximum\\\":9000,\\\"Minimal\\\":5500,\\\"Step\\\":100},\\\"3200\\\":{\\\"Maximum\\\":10000,\\\"Minimal\\\":6000,\\\"Step\\\":100}},\\\"Topic\\\":{\\\"1600\\\":{\\\"Maximum\\\":600,\\\"Minimal\\\":500,\\\"Step\\\":1},\\\"2000\\\":{\\\"Maximum\\\":700,\\\"Minimal\\\":600,\\\"Step\\\":1},\\\"2400\\\":{\\\"Maximum\\\":800,\\\"Minimal\\\":700,\\\"Step\\\":1},\\\"2800\\\":{\\\"Maximum\\\":900,\\\"Minimal\\\":800,\\\"Step\\\":1},\\\"3200\\\":{\\\"Maximum\\\":1000,\\\"Minimal\\\":900,\\\"Step\\\":1}}}}\",\n            \"Physical\": \"{}\"\n        },\n        \"RequestId\": \"4831a936-0a03-408e-9ffc-a813a11ad769\"\n    }\n}",
+        "title": "查看可用区列表"
+      }
+    ],
+    "DescribeConsumerGroup": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeConsumerGroup\r\n&InstanceId=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"topic-g8ud11it\",\n                    \"TopicName\": \"connect-offset\"\n                }\n            ],\n            \"GroupList\": [\n                {\n                    \"ConsumerGroupName\": \"connect-cluster-1\",\n                    \"SubscribedInfo\": []\n                },\n                {\n                    \"ConsumerGroupName\": \"qcloud_tocos\",\n                    \"SubscribedInfo\": [\n                        {\n                            \"TopicName\": \"connect-offset\",\n                            \"PartitionOffset\": [\n                                {\n                                    \"Partition\": \"0\",\n                                    \"Offset\": 966186803\n                                },\n                                {\n                                    \"Partition\": \"1\",\n                                    \"Offset\": 968552882\n                                },\n                                {\n                                    \"Partition\": \"2\",\n                                    \"Offset\": 957792934\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"TotalPartition\": 0,\n            \"PartitionListForMonitor\": [],\n            \"TotalTopic\": 1,\n            \"TopicListForMonitor\": [\n                {\n                    \"TopicId\": \"topic-g8ud11it\",\n                    \"TopicName\": \"connect-offset\"\n                }\n            ],\n            \"GroupListForMonitor\": [\n                {\n                    \"GroupName\": \"connect-cluster-1\"\n                },\n                {\n                    \"GroupName\": \"qcloud_tocos\"\n                }\n            ]\n        },\n        \"RequestId\": \"3c8a91a3-5921-4d7f-9fd9-6b4261cca363\"\n    }\n}",
+        "title": "列出消费分组"
+      }
+    ],
+    "DescribeGroup": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroup\r\n&InstanceId=xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GroupList\": [\n                {\n                    \"Group\": \"qcloud_tocos\",\n                    \"Protocol\": \"consumer\"\n                }\n            ]\n        },\n        \"RequestId\": \"c931f394-7d72-4ad4-8d70-5a225708c762\"\n    }\n}",
+        "title": "枚举消费分组"
+      }
+    ],
+    "DescribeGroupInfo": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupInfo\r\n&InstanceId=xxxx\r\n&GroupList.0=xx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"ErrorCode\": \"0\",\n                \"State\": \"Stable\",\n                \"ProtocolType\": \"consumer\",\n                \"Protocol\": \"range\",\n                \"Members\": [\n                    {\n                        \"MemberId\": \"consumer-1-/10.53.88.65-2018-08-10 10:17:19:639-88206ef1-9248-43a0-9ff4-e22c3ab21e92\",\n                        \"ClientId\": \"consumer-1\",\n                        \"ClientHost\": \"/10.53.88.65\",\n                        \"Assignment\": {\n                            \"Version\": 0,\n                            \"Topics\": [\n                                {\n                                    \"Topic\": \"test\",\n                                    \"Partitions\": [\n                                        0\n                                    ]\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Group\": \"perf-consumer-97910\"\n            }\n        ],\n        \"RequestId\": \"8e9b234e-0c3e-4340-9733-adbd05879b10\"\n    }\n}",
+        "title": "获取消费分组信息"
+      }
+    ],
+    "DescribeGroupOffsets": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupOffsets\r\n&InstanceId=10\r\n&Group=\"group\"\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TopicList\": [\n                {\n                    \"Topic\": \"test\",\n                    \"Partitions\": [\n                        {\n                            \"Partition\": 0,\n                            \"Offset\": 22689638,\n                            \"Metadata\": \"\",\n                            \"ErrorCode\": 0,\n                            \"LogEndOffset\": 207927929,\n                            \"Lag\": 185238291\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"fd9afa97-cc0f-4ea7-9da8-63914a0877e1\"\n    }\n}",
+        "title": "获取消费分组offset"
+      }
+    ],
+    "DescribeInstanceAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstanceAttributes\n&InstanceId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"MsgRetentionTime\": 1440,\n            \"Version\": \"xx\",\n            \"Config\": {\n                \"DefaultNumPartitions\": 0,\n                \"AutoCreateTopicsEnable\": true,\n                \"DefaultReplicationFactor\": 2\n            },\n            \"Status\": 1,\n            \"CreatedTopics\": 0,\n            \"VpcId\": \"xx\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"InstanceId\": \"xx\",\n            \"Vip\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"InstanceType\": \"xx\",\n            \"RemainderTopics\": 17,\n            \"MaxConnection\": 1,\n            \"PublicNetwork\": 48000,\n            \"Healthy\": 1,\n            \"ZoneId\": 100003,\n            \"Cvm\": 0,\n            \"DiskSize\": 120000,\n            \"HealthyMessage\": \"xx\",\n            \"RemainderPartitions\": 45,\n            \"InstanceName\": \"xx\",\n            \"CreatedPartitions\": 0,\n            \"Features\": [\n                \"xx\"\n            ],\n            \"ZoneIds\": [\n                0\n            ],\n            \"ExpireTime\": 1,\n            \"Bandwidth\": 48000,\n            \"MaxGroupNum\": 0,\n            \"RetentionTimeConfig\": {\n                \"StepForwardPercentage\": 10,\n                \"DiskQuotaPercentage\": 90,\n                \"Enable\": 0,\n                \"BottomRetention\": 360\n            },\n            \"Vport\": \"xx\",\n            \"CreateTime\": 1,\n            \"VipList\": [\n                {\n                    \"Vip\": \"xx\",\n                    \"Vport\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例属性"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstances\r\n&InstanceId=instance-will-s\r\n&SearchWord=tre\r\n&Offset=0&Limit=10\r\n&Status.0=0\r\n&Status.1=1\r\n&Status.2=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"InstanceList\": [\n                {\n                    \"InstanceId\": \"instance-will-s\",\n                    \"InstanceName\": \"treTest\",\n                    \"IfCommunity\": true,\n                    \"Status\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"31740399-5d06-404b-a4b5-3652e21c8a1d\"\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
+    "DescribeInstancesDetail": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstancesDetail\r\n&InstanceId=instance-will-s\r\n&SearchWord=tre\r\n&Offset=0&Limit=10\r\n&Status.0=0\r\n&Status.1=1\r\n&Status.2=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"InstanceList\": [\n                {\n                    \"InstanceId\": \"instance-will-s\",\n                    \"InstanceName\": \"treTest\",\n                    \"Status\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"31740399-5d06-404b-a4b5-3652e21c8a2d\"\n    }\n}",
+        "title": "获取实例列表详情"
+      }
+    ],
+    "DescribeRegion": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRegion\n&Business=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"RegionId\": 8,\n                \"RegionName\": \"北京\",\n                \"AreaName\": \"华北地区\",\n                \"RegionCode\": \"bj\",\n                \"RegionCodeV3\": \"ap-beijing\"\n            },\n            {\n                \"RegionId\": 16,\n                \"RegionName\": \"成都\",\n                \"AreaName\": \"西南地区\",\n                \"RegionCode\": \"cd\",\n                \"RegionCodeV3\": \"ap-chengdu\"\n            },\n            {\n                \"RegionId\": 19,\n                \"RegionName\": \"重庆\",\n                \"AreaName\": \"西南地区\",\n                \"RegionCode\": \"cq\",\n                \"RegionCodeV3\": \"ap-chongqing\"\n            },\n            {\n                \"RegionId\": 5,\n                \"RegionName\": \"香港\",\n                \"AreaName\": \"东南亚地区\",\n                \"RegionCode\": \"hk\",\n                \"RegionCodeV3\": \"ap-hongkong\"\n            },\n            {\n                \"RegionId\": 9,\n                \"RegionName\": \"新加坡\",\n                \"AreaName\": \"东南亚地区\",\n                \"RegionCode\": \"sg\",\n                \"RegionCodeV3\": \"ap-singapore\"\n            },\n            {\n                \"RegionId\": 21,\n                \"RegionName\": \"孟买\",\n                \"AreaName\": \"亚太地区\",\n                \"RegionCode\": \"in\",\n                \"RegionCodeV3\": \"ap-mumbai\"\n            },\n            {\n                \"RegionId\": 25,\n                \"RegionName\": \"东京\",\n                \"AreaName\": \"亚太地区\",\n                \"RegionCode\": \"jp\",\n                \"RegionCodeV3\": \"ap-tokyo\"\n            },\n            {\n                \"RegionId\": 6,\n                \"RegionName\": \"多伦多\",\n                \"AreaName\": \"北美地区\",\n                \"RegionCode\": \"ca\",\n                \"RegionCodeV3\": \"na-toronto\"\n            },\n            {\n                \"RegionId\": 15,\n                \"RegionName\": \"硅谷\",\n                \"AreaName\": \"美国西部\",\n                \"RegionCode\": \"usw\",\n                \"RegionCodeV3\": \"na-siliconvalley\"\n            },\n            {\n                \"RegionId\": 22,\n                \"RegionName\": \"弗吉尼亚\",\n                \"AreaName\": \"美国东部\",\n                \"RegionCode\": \"use\",\n                \"RegionCodeV3\": \"na-ashburn\"\n            }\n        ],\n        \"RequestId\": \"fe2ba3b1-90bb-425d-abd4-08a62d0c3686\"\n    }\n}",
+        "title": "枚举地域"
+      }
+    ],
+    "DescribeRoute": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRoute\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Routers\": [\n                {\n                    \"AccessType\": 0,\n                    \"RouteId\": 2,\n                    \"VipType\": 4,\n                    \"VipList\": [\n                        {\n                            \"Vip\": \"9.13.100.63\",\n                            \"Vport\": \"8774\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"e36d80f9-21aa-4a22-9932-91e1fbd12f39\"\n    }\n}",
+        "title": "查看路由信息"
+      }
+    ],
+    "DescribeTopic": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopic\n&InstanceId=ckafka-xxooa0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicList\": [\n                {\n                    \"TopicId\": \"inter-topic-8sj6wxwi\",\n                    \"TopicName\": \"test1\",\n                    \"Note\": \"\"\n                },\n                {\n                    \"TopicId\": \"inter-topic-844bkmry\",\n                    \"TopicName\": \"test10\",\n                    \"Note\": \"\"\n                }\n            ],\n            \"TotalCount\": 12\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
+        "title": "获取某个实例下的主题列表"
+      }
+    ],
+    "DescribeTopicAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopicAttributes\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicId\": \"inter-topic-d7a2f7fq\",\n            \"CreateTime\": \"1970-01-19 09:47:17\",\n            \"Note\": \"\",\n            \"PartitionNum\": 3,\n            \"EnableWhiteList\": 0,\n            \"IpWhiteList\": [],\n            \"Config\": {\n                \"Retention\": 300000000\n            },\n            \"Partitions\": [\n                {\n                    \"Partition\": 0,\n                    \"LeaderStatus\": 0,\n                    \"IsrNum\": 2,\n                    \"ReplicaNum\": 2\n                },\n                {\n                    \"Partition\": 1,\n                    \"LeaderStatus\": 0,\n                    \"IsrNum\": 2,\n                    \"ReplicaNum\": 2\n                },\n                {\n                    \"Partition\": 2,\n                    \"LeaderStatus\": 0,\n                    \"IsrNum\": 2,\n                    \"ReplicaNum\": 2\n                }\n            ]\n        },\n        \"RequestId\": \"b660ef69-993b-4760-a599-995cadb56bbe\"\n    }\n}",
+        "title": "获取主题属性"
+      }
+    ],
+    "DescribeTopicDetail": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeTopicDetail\n&InstanceId=ckafka-xxooa0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicList\": [\n                {\n                    \"TopicName\": \"test\",\n                    \"TopicId\": \"inter-topic-d7a2f7fq\",\n                    \"PartitionNum\": 3,\n                    \"ReplicaNum\": 2,\n                    \"Note\": \"\",\n                    \"CreateTime\": 1561637447,\n                    \"EnableWhiteList\": false,\n                    \"IpWhiteListCount\": 0,\n                    \"ForwardCosBucket\": \"\",\n                    \"ForwardStatus\": 1,\n                    \"ForwardInterval\": 0,\n                    \"Config\": {\n                        \"Retention\": 300000000\n                    },\n                    \"RetentionTimeConfig\": {\n                        \"Expect\": 1440,\n                        \"Current\": 480,\n                        \"ModTimeStamp\": 1561637447\n                    }\n                }\n            ],\n            \"TotalCount\": 12\n        },\n        \"RequestId\": \"98fdae03-9bc2-4c2e-b429-0a96cca7144b\"\n    }\n}",
+        "title": "获取实例列表详情"
+      }
+    ],
+    "DescribeTopicSubscribeGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSubscribeGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-kmex0nvv\",\n    \"TopicName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": 0,\n            \"TotalCount\": 1,\n            \"StatusCountInfo\": \"xx\",\n            \"GroupsInfo\": [\n                {\n                    \"Protocol\": \"xx\",\n                    \"ProtocolType\": \"xx\",\n                    \"ErrorCode\": \"xx\",\n                    \"State\": \"xx\",\n                    \"Members\": [\n                        {\n                            \"ClientHost\": \"xx\",\n                            \"MemberId\": \"xx\",\n                            \"ClientId\": \"xx\",\n                            \"Assignment\": {\n                                \"Topics\": [\n                                    {\n                                        \"Topic\": \"xx\",\n                                        \"Partitions\": [\n                                            0\n                                        ]\n                                    }\n                                ],\n                                \"Version\": 0\n                            }\n                        }\n                    ],\n                    \"Group\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询订阅某主题消息分组信息"
+      }
+    ],
+    "DescribeTopicSyncReplica": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSyncReplica\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"TopicName\": \"xxx\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OutOfSyncReplicaOnly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TopicInSyncReplicaList\": [\n                {\n                    \"Partition\": \"xxxx\",\n                    \"Leader\": 1,\n                    \"Replica\": \"110,3551,2315\",\n                    \"InSyncReplica\": \"100,5526\",\n                    \"BeginOffset\": 10,\n                    \"EndOffset\": 10,\n                    \"MessageCount\": 1,\n                    \"OutOfSyncReplica\": \"120,51\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Topic 未同步详情"
+      }
+    ],
+    "DescribeUser": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeUser\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Users\": [\n                {\n                    \"UserId\": 41,\n                    \"Name\": \"ANONYMOUS\",\n                    \"CreateTime\": \"2019-09-05 00:53:28\",\n                    \"UpdateTime\": \"2019-09-05 00:53:28\"\n                },\n                {\n                    \"UserId\": 40,\n                    \"Name\": \"test\",\n                    \"CreateTime\": \"2019-09-05 00:20:36\",\n                    \"UpdateTime\": \"2019-09-05 00:20:36\"\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"26f6afd4-2966-43f5-a7a2-d506de3e881f\"\n    }\n}",
+        "title": "查询用户信息"
+      }
+    ],
+    "FetchMessageByOffset": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=FetchMessageByOffset\n&InstanceId=xxx\n&Topic=xxx\n&Partition=1\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Timestamp\": 0,\n            \"Topic\": \"xxx\",\n            \"Partition\": 2,\n            \"Offset\": 2,\n            \"Key\": \"xxx\",\n            \"Value\": \"xxx\"\n        },\n        \"RequestId\": \"62d589e0-53d5-47e0-95ff-237c48b8fb77\"\n    }\n}",
+        "title": "消息查询"
+      }
+    ],
+    "ModifyGroupOffsets": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=10\n&Group=\"group\"\n&Strategy=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        },\n        \"RequestId\": \"ae362db8-81f6-4441-b0cc-1f6ffa31127e\"\n    }\n}",
+        "title": "设置Groups 消费分组offset"
+      }
+    ],
+    "ModifyInstanceAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyInstanceAttributes\n&InstanceId=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[no param set]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"dfc46e62-73d6-4b6b-9cd8-4512259888f5\"\n    }\n}",
+        "title": "设置实例属性"
+      }
+    ],
+    "ModifyPassword": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyPassword\r\n&InstanceId=xxx\r\n&Name=xxx\r\n&Password=1\r\n&PasswordNew=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\"\n        },\n        \"RequestId\": \"21c3d702-ae87-4a2a-a51b-b3d4516f121a\"\n    }\n}",
+        "title": "修改密码"
+      }
+    ],
+    "ModifyTopicAttributes": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyTopicAttributes\r\n&InstanceId=xxx\r\n&TopicName=xxx\r\n&Note=xxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply success]\"\n        },\n        \"RequestId\": \"83d1142c-2754-46fb-99ca-46d9d87f5e3e\"\n    }\n}",
+        "title": "设置主题属性"
+      }
+    ]
+  },
+  "version": "1.0"
+}

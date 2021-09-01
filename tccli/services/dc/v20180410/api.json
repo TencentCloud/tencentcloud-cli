@@ -1,0 +1,3000 @@
+{
+  "actions": {
+    "AcceptDirectConnectTunnel": {
+      "document": "接受专用通道申请",
+      "input": "AcceptDirectConnectTunnelRequest",
+      "name": "接受专用通道申请",
+      "output": "AcceptDirectConnectTunnelResponse"
+    },
+    "ApplyInternetAddress": {
+      "document": "申请互联网CIDR地址",
+      "input": "ApplyInternetAddressRequest",
+      "name": "申请互联网地址",
+      "output": "ApplyInternetAddressResponse"
+    },
+    "CreateDirectConnect": {
+      "document": "申请物理专线接入。\n调用该接口时，请注意：\n账号要进行实名认证，否则不允许申请物理专线；\n若账户下存在欠费状态的物理专线，则不能申请更多的物理专线。",
+      "input": "CreateDirectConnectRequest",
+      "name": "申请物理专线",
+      "output": "CreateDirectConnectResponse"
+    },
+    "CreateDirectConnectTunnel": {
+      "document": "用于创建专用通道的接口",
+      "input": "CreateDirectConnectTunnelRequest",
+      "name": "创建专用通道",
+      "output": "CreateDirectConnectTunnelResponse"
+    },
+    "DeleteDirectConnect": {
+      "document": "删除物理专线。\n只能删除处于已连接状态的物理专线。",
+      "input": "DeleteDirectConnectRequest",
+      "name": "删除物理专线",
+      "output": "DeleteDirectConnectResponse"
+    },
+    "DeleteDirectConnectTunnel": {
+      "document": "删除专用通道",
+      "input": "DeleteDirectConnectTunnelRequest",
+      "name": "删除专用通道",
+      "output": "DeleteDirectConnectTunnelResponse"
+    },
+    "DescribeAccessPoints": {
+      "document": "查询物理专线接入点\n",
+      "input": "DescribeAccessPointsRequest",
+      "name": "查询物理专线接入点",
+      "output": "DescribeAccessPointsResponse"
+    },
+    "DescribeDirectConnectTunnelExtra": {
+      "document": "本接口（DescribeDirectConnectTunnelExtra）用于查询专用通道扩展信息",
+      "input": "DescribeDirectConnectTunnelExtraRequest",
+      "name": "查询专用通道扩展信息",
+      "output": "DescribeDirectConnectTunnelExtraResponse"
+    },
+    "DescribeDirectConnectTunnels": {
+      "document": "用于查询专用通道列表。",
+      "input": "DescribeDirectConnectTunnelsRequest",
+      "name": "查询专用通道列表",
+      "output": "DescribeDirectConnectTunnelsResponse"
+    },
+    "DescribeDirectConnects": {
+      "document": "查询物理专线列表。",
+      "input": "DescribeDirectConnectsRequest",
+      "name": "查询物理专线列表",
+      "output": "DescribeDirectConnectsResponse"
+    },
+    "DescribeInternetAddress": {
+      "document": "获取用户互联网公网地址信息",
+      "input": "DescribeInternetAddressRequest",
+      "name": "获取用户互联网公网地址信息",
+      "output": "DescribeInternetAddressResponse"
+    },
+    "DescribeInternetAddressQuota": {
+      "document": "获取用户互联网公网地址配额",
+      "input": "DescribeInternetAddressQuotaRequest",
+      "name": "获取互联网公网地址配额",
+      "output": "DescribeInternetAddressQuotaResponse"
+    },
+    "DescribeInternetAddressStatistics": {
+      "document": "获取用户互联网公网地址分配统计信息",
+      "input": "DescribeInternetAddressStatisticsRequest",
+      "name": "获取用户互联网公网地址统计信息",
+      "output": "DescribeInternetAddressStatisticsResponse"
+    },
+    "DescribePublicDirectConnectTunnelRoutes": {
+      "document": "本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表",
+      "input": "DescribePublicDirectConnectTunnelRoutesRequest",
+      "name": "查询互联网通道路由列表",
+      "output": "DescribePublicDirectConnectTunnelRoutesResponse"
+    },
+    "DisableInternetAddress": {
+      "document": "停用用户申请的公网互联网地址",
+      "input": "DisableInternetAddressRequest",
+      "name": "停用公网互联网地址",
+      "output": "DisableInternetAddressResponse"
+    },
+    "EnableInternetAddress": {
+      "document": "启用已停用的互联网公网地址",
+      "input": "EnableInternetAddressRequest",
+      "name": "启用互联网公网地址",
+      "output": "EnableInternetAddressResponse"
+    },
+    "ModifyDirectConnectAttribute": {
+      "document": "修改物理专线的属性。",
+      "input": "ModifyDirectConnectAttributeRequest",
+      "name": "修改物理专线属性",
+      "output": "ModifyDirectConnectAttributeResponse"
+    },
+    "ModifyDirectConnectTunnelAttribute": {
+      "document": "修改专用通道属性",
+      "input": "ModifyDirectConnectTunnelAttributeRequest",
+      "name": "修改专用通道属性",
+      "output": "ModifyDirectConnectTunnelAttributeResponse"
+    },
+    "ModifyDirectConnectTunnelExtra": {
+      "document": "本接口（ModifyDirectConnectTunnelExtra）用于修改专用通道扩展信息",
+      "input": "ModifyDirectConnectTunnelExtraRequest",
+      "name": "修改专用通道扩展信息",
+      "output": "ModifyDirectConnectTunnelExtraResponse"
+    },
+    "RejectDirectConnectTunnel": {
+      "document": "拒绝专用通道申请",
+      "input": "RejectDirectConnectTunnelRequest",
+      "name": "拒绝专用通道申请",
+      "output": "RejectDirectConnectTunnelResponse"
+    },
+    "ReleaseInternetAddress": {
+      "document": "释放已申请的互联网地址",
+      "input": "ReleaseInternetAddressRequest",
+      "name": "释放互联网地址",
+      "output": "ReleaseInternetAddressResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-10",
+    "api_brief": "介绍如何使用API对专线接入进行操作，包括删除物理专线、创建专用通道、接受专用通道申请等。",
+    "serviceNameCN": "专线接入",
+    "serviceShortName": "dc"
+  },
+  "objects": {
+    "AcceptDirectConnectTunnelRequest": {
+      "document": "AcceptDirectConnectTunnel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理专线拥有者接受共享专用通道申请",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptDirectConnectTunnelResponse": {
+      "document": "AcceptDirectConnectTunnel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AccessPoint": {
+      "document": "接入点信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "接入点的名称。",
+          "example": "成都-A-西区",
+          "member": "string",
+          "name": "AccessPointName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点唯一ID。",
+          "example": "ap-chengdu-a-xq",
+          "member": "string",
+          "name": "AccessPointId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点的状态。可用，不可用。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点的位置。",
+          "example": "成都电信西区803DC",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点支持的运营商列表。",
+          "example": "[\"ChinaTelecom\"]",
+          "member": "string",
+          "name": "LineOperator",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点管理的大区ID。",
+          "example": "cd",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1000BASE-T\", \"1000BASE-LX\"]",
+          "member": "string",
+          "name": "AvailablePortType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点经纬度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Lat\": \"0.0\", \"Lng\": \"0.0\"}",
+          "member": "Coordinate",
+          "name": "Coordinate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华北",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接入点类型。VXLAN/QCPL/QCAR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VXLAN",
+          "member": "string",
+          "name": "AccessPointType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyInternetAddressRequest": {
+      "document": "ApplyInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CIDR地址掩码长度",
+          "member": "int64",
+          "name": "MaskLen",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0:BGP类型地址\n1：中国电信\n2：中国移动\n3：中国联通",
+          "member": "int64",
+          "name": "AddrType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0：IPv4\n1:IPv6",
+          "member": "int64",
+          "name": "AddrProto",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyInternetAddressResponse": {
+      "document": "ApplyInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BFDInfo": {
+      "document": "BFD配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "健康检查次数",
+          "member": "int64",
+          "name": "ProbeFailedTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BGPStatus": {
+      "document": "bgp状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯侧主互联IP BGP状态",
+          "member": "string",
+          "name": "TencentAddressBgpState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备互联IP BGP状态",
+          "member": "string",
+          "name": "TencentBackupAddressBgpState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BgpPeer": {
+      "document": "bgp参数，包括Asn，AuthKey",
+      "members": [
+        {
+          "default": "",
+          "document": "用户侧，BGP Asn",
+          "member": "int64",
+          "name": "Asn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP密钥",
+          "member": "string",
+          "name": "AuthKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Coordinate": {
+      "document": "坐标，经维度描述",
+      "members": [
+        {
+          "default": "",
+          "document": "纬度",
+          "member": "float",
+          "name": "Lat",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经度",
+          "member": "float",
+          "name": "Lng",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDirectConnectRequest": {
+      "document": "CreateDirectConnect请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理专线的名称。",
+          "member": "string",
+          "name": "DirectConnectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线所在的接入点。\n您可以通过调用 DescribeAccessPoints接口获取地域ID。所选择的接入点必须存在且处于可接入的状态。",
+          "member": "string",
+          "name": "AccessPointId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。",
+          "member": "string",
+          "name": "LineOperator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。",
+          "member": "string",
+          "name": "PortType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "member": "string",
+          "name": "CircuitCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本地数据中心的地理位置。",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "冗余物理专线的ID。",
+          "member": "string",
+          "name": "RedundantDirectConnectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。",
+          "member": "int64",
+          "name": "Vlan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试腾讯侧互联 IP。默认自动分配。",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试用户侧互联 IP。默认自动分配。",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
+          "member": "string",
+          "name": "CustomerContactMail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系号码。默认从账户体系获取。",
+          "member": "string",
+          "name": "CustomerContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报障联系人。",
+          "member": "string",
+          "name": "FaultReportContactPerson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报障联系电话。",
+          "member": "string",
+          "name": "FaultReportContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者是否签署了用户使用协议。默认已签署",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDirectConnectResponse": {
+      "document": "CreateDirectConnect返回参数结构体",
+      "members": [
+        {
+          "document": "物理专线的ID。",
+          "member": "string",
+          "name": "DirectConnectIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDirectConnectTunnelRequest": {
+      "document": "CreateDirectConnectTunnel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专线 ID，例如：dc-kd7d06of",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道名称",
+          "member": "string",
+          "name": "DirectConnectTunnelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线 owner，缺省为当前客户（物理专线 owner）\n共享专线时这里需要填写共享专线的开发商账号 ID",
+          "member": "string",
+          "name": "DirectConnectOwnerAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型，分别为VPC、BMVPC，CCN，默认是VPC\nVPC：私有网络\nBMVPC：黑石网络\nCCN：云联网",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络地域",
+          "member": "string",
+          "name": "NetworkRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID 或者黑石网络统一 ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专线网关 ID，例如 dcg-d545ddf",
+          "member": "string",
+          "name": "DirectConnectGatewayId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专线带宽，单位：Mbps\n默认是物理专线带宽值",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "BGP ：BGP路由\nSTATIC：静态\n默认为 BGP 路由",
+          "member": "string",
+          "name": "RouteType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "静态路由，用户IDC的网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "vlan，范围：0 ~ 3000\n0：不开启子接口\n默认值是非0",
+          "member": "int64",
+          "name": "Vlan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "TencentAddress，腾讯侧互联 IP",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CustomerAddress，用户侧互联 IP",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TencentBackupAddress，腾讯侧备用互联 IP",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高速上云服务ID",
+          "member": "string",
+          "name": "CloudAttachId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDirectConnectTunnelResponse": {
+      "document": "CreateDirectConnectTunnel返回参数结构体",
+      "members": [
+        {
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDirectConnectRequest": {
+      "document": "DeleteDirectConnect请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理专线的ID。",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDirectConnectResponse": {
+      "document": "DeleteDirectConnect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDirectConnectTunnelRequest": {
+      "document": "DeleteDirectConnectTunnel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDirectConnectTunnelResponse": {
+      "document": "DeleteDirectConnectTunnel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessPointsRequest": {
+      "document": "DescribeAccessPoints请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "接入点所在的地域。使用DescribeRegions查询\n\n您可以通过调用 DescribeRegions接口获取地域ID。",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessPointsResponse": {
+      "document": "DescribeAccessPoints返回参数结构体",
+      "members": [
+        {
+          "document": "接入点信息。",
+          "member": "AccessPoint",
+          "name": "AccessPointSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合接入点数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectTunnelExtraRequest": {
+      "document": "DescribeDirectConnectTunnelExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectTunnelExtraResponse": {
+      "document": "DescribeDirectConnectTunnelExtra返回参数结构体",
+      "members": [
+        {
+          "document": "专用通道扩展信息",
+          "member": "DirectConnectTunnelExtra",
+          "name": "DirectConnectTunnelExtra",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectTunnelsRequest": {
+      "document": "DescribeDirectConnectTunnels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专用通道名称。</li>\n<li> direct-connect-tunnel-id, 专用通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "专用通道 ID数组",
+          "member": "string",
+          "name": "DirectConnectTunnelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectTunnelsResponse": {
+      "document": "DescribeDirectConnectTunnels返回参数结构体",
+      "members": [
+        {
+          "document": "专用通道列表",
+          "member": "DirectConnectTunnel",
+          "name": "DirectConnectTunnelSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合专用通道数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectsRequest": {
+      "document": "DescribeDirectConnects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件:",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "物理专线 ID数组",
+          "member": "string",
+          "name": "DirectConnectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDirectConnectsResponse": {
+      "document": "DescribeDirectConnects返回参数结构体",
+      "members": [
+        {
+          "document": "物理专线列表。",
+          "member": "DirectConnect",
+          "name": "DirectConnectSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合物理专线列表数量。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户名下物理专线是否都签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "AllSignLaw",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressQuotaRequest": {
+      "document": "DescribeInternetAddressQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInternetAddressQuotaResponse": {
+      "document": "DescribeInternetAddressQuota返回参数结构体",
+      "members": [
+        {
+          "document": "IPv6互联网公网允许的最小前缀长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv6PrefixLen",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4BgpQuota",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "非BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4OtherQuota",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BGP类型IPv4互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4BgpNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "非BGP类型互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Ipv4OtherNum",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressRequest": {
+      "document": "DescribeInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：\n<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>\n<li>AddrProto地址类型。0：IPv4 1:IPv6</li>\n<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>\n<li>Subnet 互联网公网地址，数组</li>\n<InstanceIds>互联网公网地址ID，数组</li>",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressResponse": {
+      "document": "DescribeInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "互联网公网地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAddressDetail",
+          "name": "Subnets",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetAddressStatisticsRequest": {
+      "document": "DescribeInternetAddressStatistics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInternetAddressStatisticsResponse": {
+      "document": "DescribeInternetAddressStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "互联网公网地址统计信息数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "互联网公网地址统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InternetAddressStatistics",
+          "name": "InternetAddressStatistics",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicDirectConnectTunnelRoutesRequest": {
+      "document": "DescribePublicDirectConnectTunnelRoutes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：\nroute-type：路由类型，取值：BGP/STATIC\nroute-subnet：路由cidr，取值如：192.68.1.0/24",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicDirectConnectTunnelRoutesResponse": {
+      "document": "DescribePublicDirectConnectTunnelRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "互联网通道路由列表",
+          "member": "DirectConnectTunnelRoute",
+          "name": "Routes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DirectConnect": {
+      "document": "物理专线信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "物理专线ID。",
+          "example": "dc-psjiehij",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的名称。",
+          "example": "test",
+          "member": "string",
+          "name": "DirectConnectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的接入点ID。",
+          "example": "ap-beijing-c-jxq",
+          "member": "string",
+          "name": "AccessPointId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的状态。\n申请中：PENDING \n申请驳回：REJECTED   \n待付款：TOPAY \n已付款：PAID \n建设中：ALLOCATED   \n已开通：AVAILABLE  \n删除中 ：DELETING\n已删除：DELETED 。",
+          "example": "PENDINGPAY",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线创建时间。",
+          "example": "2020-12-08 16:57:43",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的开通时间。",
+          "example": "2021-01-06 10:39:41",
+          "member": "datetime_iso",
+          "name": "EnabledTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。",
+          "example": "In-houseWiring",
+          "member": "string",
+          "name": "LineOperator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地数据中心的地理位置。",
+          "example": "test",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线接入接口带宽，单位为Mbps。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）",
+          "example": "1000Base-LX",
+          "member": "string",
+          "name": "PortType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商或者服务商为物理专线提供的电路编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "CircuitCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冗余物理专线的ID。",
+          "example": "dc-1234",
+          "member": "string",
+          "name": "RedundantDirectConnectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Vlan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线调试腾讯侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.2",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线调试用户侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者姓名。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "CustomerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "274907341@qq.com",
+          "member": "string",
+          "name": "CustomerContactMail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系号码。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15802738654",
+          "member": "string",
+          "name": "CustomerContactNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线的过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2040-01-06 10:39:41",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NON_RECURRING_CHARGE",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "报障联系人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "FaultReportContactPerson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "报障联系电话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15802738654",
+          "member": "string",
+          "name": "FaultReportContactNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线的接入点类型。",
+          "example": "VXLAN",
+          "member": "string",
+          "name": "AccessPointType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IDC所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都",
+          "member": "string",
+          "name": "IdcCity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ChargeState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-08 16:57:43",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线是否已签署用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线是否为LocalZone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该物理专线下vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VlanZeroDirectConnectTunnelCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该物理专线下非vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OtherVlanDirectConnectTunnelCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物理专线最小带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MinBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectConnectTunnel": {
+      "document": "专用通道信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线ID",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的拥有者，开发商账号 ID",
+          "member": "string",
+          "name": "DirectConnectOwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的拥有者，开发商账号 ID",
+          "member": "string",
+          "name": "OwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC地域对应的网络名，如ap-guangzhou",
+          "member": "string",
+          "name": "NetworkRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID 或者黑石网络统一 ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关 ID",
+          "member": "string",
+          "name": "DirectConnectGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
+          "member": "string",
+          "name": "RouteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，Asn，AuthKey",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的Vlan",
+          "member": "int64",
+          "name": "Vlan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TencentAddress，腾讯侧互联 IP",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CustomerAddress，用户侧互联 IP",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道名称",
+          "member": "string",
+          "name": "DirectConnectTunnelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道创建时间",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道标签值",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的网络自定义探测ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NetDetectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "BGP community开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "EnableBGPCommunity",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为Nat通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "NatType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC地域简码，如gz、cd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启BFD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "BfdEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专用通道接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AccessPointType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专线网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DirectConnectGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TencentBackupAddress，腾讯侧备用互联 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专用通道关联的物理专线是否签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高速上云服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CloudAttachId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectConnectTunnelExtra": {
+      "document": "专用通道扩展信息",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "example": "dcx-xxxxxxxx",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线ID",
+          "example": "dc-xxxxxxxx",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
+          "example": "ALLOCATING",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物理专线的拥有者，开发商账号 ID",
+          "example": "1233453",
+          "member": "string",
+          "name": "DirectConnectOwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的拥有者，开发商账号 ID",
+          "example": "12343252",
+          "member": "string",
+          "name": "OwnerAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC地域对应的网络名，如ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "NetworkRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID 或者黑石网络统一 ID",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关 ID",
+          "example": "dcx-xxxxxxxx",
+          "member": "string",
+          "name": "DirectConnectGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
+          "example": "STATIC",
+          "member": "string",
+          "name": "RouteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，Asn，AuthKey",
+          "example": "无",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "example": "无",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "互联网通道公网网段地址",
+          "example": "无",
+          "member": "RouteFilterPrefix",
+          "name": "PublicAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道的Vlan",
+          "example": "100",
+          "member": "int64",
+          "name": "Vlan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联 IP",
+          "example": "192.168.1.1/29",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IP",
+          "example": "192.168.1.2/29",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧互联 IP",
+          "example": "192.168.1.3/29",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道名称",
+          "example": "通道",
+          "member": "string",
+          "name": "DirectConnectTunnelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道创建时间",
+          "example": "2020-09-23 00:00:00",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值",
+          "example": "2020-09-23 00:00:00",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的网络自定义探测ID",
+          "example": "netid-xxxxxxxx",
+          "member": "string",
+          "name": "NetDetectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP community开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableBGPCommunity",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为Nat通道",
+          "example": "1",
+          "member": "int64",
+          "name": "NatType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC地域简码，如gz、cd",
+          "example": "gz",
+          "member": "string",
+          "name": "VpcRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启BFD",
+          "example": "1",
+          "member": "int64",
+          "name": "BfdEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启NQA",
+          "example": "1",
+          "member": "int64",
+          "name": "NqaEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道接入点类型",
+          "example": "1",
+          "member": "string",
+          "name": "AccessPointType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专线网关名称",
+          "example": "网关",
+          "member": "string",
+          "name": "DirectConnectGatewayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC名称",
+          "example": "VPC",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用通道关联的物理专线是否签署了用户协议",
+          "example": "true",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BFD配置信息",
+          "example": "无",
+          "member": "BFDInfo",
+          "name": "BfdInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NQA配置信息",
+          "example": "无",
+          "member": "NQAInfo",
+          "name": "NqaInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BGP状态",
+          "example": "无",
+          "member": "BGPStatus",
+          "name": "BgpStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IPv6Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2402:4e00:4011:1004::5/126",
+          "member": "string",
+          "name": "TencentIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2402:4e00:4011:1004::5/126",
+          "member": "string",
+          "name": "TencentBackupIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "BGPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BGPStatus",
+          "name": "BgpIPv6Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2402:4e00:4011:1004::5/126",
+          "member": "string",
+          "name": "CustomerIPv6Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专用通道是否支持巨帧。1 支持，0 不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JumboEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectConnectTunnelRoute": {
+      "document": "专用通道路由",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道路由ID",
+          "example": "dcxr-69sg663r",
+          "member": "string",
+          "name": "RouteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网段CIDR",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由类型：BGP/STATIC路由",
+          "example": "BGP",
+          "member": "string",
+          "name": "RouteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ENABLE：路由启用，DISABLE：路由禁用",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ASPath信息",
+          "example": "['123', '342']",
+          "member": "string",
+          "name": "ASPath",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由下一跳IP",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "NextHop",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DisableInternetAddressRequest": {
+      "document": "DisableInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公网互联网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableInternetAddressResponse": {
+      "document": "DisableInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInternetAddressRequest": {
+      "document": "EnableInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "互联网公网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInternetAddressResponse": {
+      "document": "EnableInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "用于条件过滤查询",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "InternetAddressDetail": {
+      "document": "互联网地址详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "互联网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "互联网网络地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Subnet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络地址掩码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaskLen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:BGP\n1:电信\n2:移动\n3:联通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AddrType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:使用中\n1:已停用\n2:已退还",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "停用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StopTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退还时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ReleaseTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:IPv4 1:IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AddrProto",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "释放状态的IP地址保留的天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReserveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternetAddressStatistics": {
+      "document": "互联网公网地址统计",
+      "members": [
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "互联网公网地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SubnetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDirectConnectAttributeRequest": {
+      "document": "ModifyDirectConnectAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理专线的ID。",
+          "example": "dcx-abcdefgh",
+          "member": "string",
+          "name": "DirectConnectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线名称。",
+          "example": "abc",
+          "member": "string",
+          "name": "DirectConnectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "example": "ABF_123",
+          "member": "string",
+          "name": "CircuitCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试VLAN。",
+          "example": "100",
+          "member": "int64",
+          "name": "Vlan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试腾讯侧互联 IP。",
+          "example": "172.168.1.1/30",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线调试用户侧互联 IP。",
+          "example": "172.168.1.2/30",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "example": "张三",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
+          "example": "12345@qq.com",
+          "member": "string",
+          "name": "CustomerContactMail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者联系号码。默认从账户体系获取。",
+          "example": "18812345678",
+          "member": "string",
+          "name": "CustomerContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报障联系人。",
+          "example": "张三",
+          "member": "string",
+          "name": "FaultReportContactPerson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报障联系电话。",
+          "example": "18812345678",
+          "member": "string",
+          "name": "FaultReportContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理专线申请者补签用户使用协议",
+          "example": "true",
+          "member": "bool",
+          "name": "SignLaw",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "物理专线带宽",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectAttributeResponse": {
+      "document": "ModifyDirectConnectAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectTunnelAttributeRequest": {
+      "document": "ModifyDirectConnectTunnelAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道名称",
+          "member": "string",
+          "name": "DirectConnectTunnelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，包括Asn，AuthKey",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联IP",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户侧互联IP",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值，单位为M。",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IP",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectTunnelAttributeResponse": {
+      "document": "ModifyDirectConnectTunnelAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectTunnelExtraRequest": {
+      "document": "ModifyDirectConnectTunnelExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用通道ID",
+          "example": "dcx-r3sml04o",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道的Vlan",
+          "example": "90",
+          "member": "int64",
+          "name": "Vlan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户侧BGP，Asn，AuthKey",
+          "example": "无",
+          "member": "BgpPeer",
+          "name": "BgpPeer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户侧过滤网段地址",
+          "example": "无",
+          "member": "RouteFilterPrefix",
+          "name": "RouteFilterPrefixes",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧互联IP",
+          "example": "192.168.1.1/29",
+          "member": "string",
+          "name": "TencentAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯侧备用互联IP",
+          "example": "192.168.1.1/29",
+          "member": "string",
+          "name": "TencentBackupAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户侧互联IP",
+          "example": "192.168.1.1/29",
+          "member": "string",
+          "name": "CustomerAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用通道带宽值",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "BGP community开关",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBGPCommunity",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启BFD",
+          "example": "1",
+          "member": "int64",
+          "name": "BfdEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启NQA",
+          "example": "1",
+          "member": "int64",
+          "name": "NqaEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "BFD配置信息",
+          "example": "无",
+          "member": "BFDInfo",
+          "name": "BfdInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "NQA配置信息",
+          "example": "无",
+          "member": "NQAInfo",
+          "name": "NqaInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "0：停用IPv6\n1: 启用IPv6",
+          "example": "1",
+          "member": "int64",
+          "name": "IPv6Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "去往用户侧的路由信息",
+          "example": "无",
+          "member": "RouteFilterPrefix",
+          "name": "CustomerIDCRoutes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启巨帧\n1：开启\n0：不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "JumboEnable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDirectConnectTunnelExtraResponse": {
+      "document": "ModifyDirectConnectTunnelExtra返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NQAInfo": {
+      "document": "nqa配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "健康检查次数",
+          "member": "int64",
+          "name": "ProbeFailedTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查间隔",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查地址",
+          "member": "string",
+          "name": "DestinationIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RejectDirectConnectTunnelRequest": {
+      "document": "RejectDirectConnectTunnel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "member": "string",
+          "name": "DirectConnectTunnelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectDirectConnectTunnelResponse": {
+      "document": "RejectDirectConnectTunnel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseInternetAddressRequest": {
+      "document": "ReleaseInternetAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "公网互联网地址ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseInternetAddressResponse": {
+      "document": "ReleaseInternetAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RouteFilterPrefix": {
+      "document": "用户侧网段地址",
+      "members": [
+        {
+          "default": "",
+          "document": "用户侧网段地址",
+          "member": "string",
+          "name": "Cidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

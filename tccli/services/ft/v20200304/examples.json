@@ -1,0 +1,71 @@
+{
+  "actions": {
+    "CancelFaceMorphJob": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=CancelFaceMorphJob\n&JobId=Iyjz4Rj3OCt5Az91\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea89354b-209d-4abf-ba04-eef6d4e664f3\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "ChangeAgePic": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=ChangeAgePic\n&Image=xxxxx\n&AgeInfos.0.Age=10\n&AgeInfos.0.FaceRect.X=10\n&AgeInfos.0.FaceRect.Y=10\n&AgeInfos.0.FaceRect.Width=20\n&AgeInfos.0.FaceRect.Height=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "title": "调用返回失败"
+      },
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=ChangeAgePic\n&Image=xxxxx\n&AgeInfos.0.Age=10\n&AgeInfos.0.FaceRect.X=10\n&AgeInfos.0.FaceRect.Y=10\n&AgeInfos.0.FaceRect.Width=20\n&AgeInfos.0.FaceRect.Height=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "FaceCartoonPic": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=FaceCartoonPic\n&Image=xxxxx\n&Url=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "title": "调用返回失败"
+      },
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=FaceCartoonPic\n&Image=xxxxx\n&Url=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"ResultUrl\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "MorphFace": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=MorphFace\n&Urls.0=http://test.image.myqcloud.com/testA.jpg\n&Urls.1=http://test.image.myqcloud.com/testA.jpg\n&GradientInfos.0.Tempo=2\n&GradientInfos.0.MorphTime=1\n&Fps=10\n&OutputType=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"HQ3tBY79dsKl65ob\",\n        \"EstimatedProcessTime\": 30,\n        \"RequestId\": \"327cd4c8-e544-43db-ba0c-3afda873ac73\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "QueryFaceMorphJob": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=QueryFaceMorphJob\n&JobId=Iyjz4Rj3OCt5Az9a\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JobStatus\": \"处理完成\",\n        \"FaceMorphOutput\": {\n            \"MorphUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_morph_test/1/251009261/20200825102457_19635278-0738-4d87-a264-159832228363_result.mp4\",\n            \"MorphMd5\": \"31CDA040BA0F1CE7C59DB3F0B3334AA8\",\n            \"CoverImage\": \"\"\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ],
+    "SwapGenderPic": [
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=SwapGenderPic\n&Image=xxxxx\n&GenderInfos.0.Gender=1\n&GenderInfos.0.FaceRect.X=10\n&GenderInfos.0.FaceRect.Y=10\n&GenderInfos.0.FaceRect.Width=20\n&GenderInfos.0.FaceRect.Height=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "title": "调用返回失败"
+      },
+      {
+        "document": "",
+        "input": "https://ft.tencentcloudapi.com/?Action=SwapGenderPic\n&Image=xxxxx\n&GenderInfos.0.Gender=1\n&GenderInfos.0.FaceRect.X=10\n&GenderInfos.0.FaceRect.Y=10\n&GenderInfos.0.FaceRect.Width=20\n&GenderInfos.0.FaceRect.Height=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "调用返回成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

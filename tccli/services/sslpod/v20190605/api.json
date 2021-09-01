@@ -1,0 +1,968 @@
+{
+  "actions": {
+    "CreateDomain": {
+      "document": "通过域名端口添加监控",
+      "input": "CreateDomainRequest",
+      "name": "添加域名",
+      "output": "CreateDomainResponse"
+    },
+    "DeleteDomain": {
+      "document": "通过域名ID删除监控的域名",
+      "input": "DeleteDomainRequest",
+      "name": "删除域名",
+      "output": "DeleteDomainResponse"
+    },
+    "DescribeDashboard": {
+      "document": "获取仪表盘数据",
+      "input": "DescribeDashboardRequest",
+      "name": "仪表盘数据",
+      "output": "DescribeDashboardResponse"
+    },
+    "DescribeDomainCerts": {
+      "document": "获取域名关联证书",
+      "input": "DescribeDomainCertsRequest",
+      "name": "获取域名证书",
+      "output": "DescribeDomainCertsResponse"
+    },
+    "DescribeDomainTags": {
+      "document": "获取账号下所有tag",
+      "input": "DescribeDomainTagsRequest",
+      "name": "获取账号的tags",
+      "output": "DescribeDomainTagsResponse"
+    },
+    "DescribeDomains": {
+      "document": "通过searchType搜索已经添加的域名",
+      "input": "DescribeDomainsRequest",
+      "name": "搜索域名",
+      "output": "DescribeDomainsResponse"
+    },
+    "DescribeNoticeInfo": {
+      "document": "获取通知额度信息",
+      "input": "DescribeNoticeInfoRequest",
+      "name": "通知额度信息",
+      "output": "DescribeNoticeInfoResponse"
+    },
+    "ModifyDomainTags": {
+      "document": "修改域名tag",
+      "input": "ModifyDomainTagsRequest",
+      "name": "修改域名tag",
+      "output": "ModifyDomainTagsResponse"
+    },
+    "RefreshDomain": {
+      "document": "强制重新检测域名",
+      "input": "RefreshDomainRequest",
+      "name": "重新检测域名",
+      "output": "RefreshDomainResponse"
+    },
+    "ResolveDomain": {
+      "document": "解析域名获得多个IP地址",
+      "input": "ResolveDomainRequest",
+      "name": "域名解析",
+      "output": "ResolveDomainResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-06-05",
+    "api_brief": "介绍如何使用 API对证书监控进行操作，包括域名管理、证书管理等。",
+    "serviceNameCN": "SSL 证书监控",
+    "serviceShortName": "sslpod"
+  },
+  "objects": {
+    "CertInfo": {
+      "document": "证书信息",
+      "members": [
+        {
+          "default": "",
+          "document": "证书sha1",
+          "member": "string",
+          "name": "Hash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书通用名称",
+          "member": "string",
+          "name": "CN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备用名称",
+          "member": "string",
+          "name": "SANs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公钥算法",
+          "member": "string",
+          "name": "KeyAlgo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "颁发者",
+          "member": "string",
+          "name": "Issuer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效期开始",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效期结束",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余天数",
+          "member": "int64",
+          "name": "Days",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "信任状态",
+          "member": "string",
+          "name": "TrustStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CertType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChartHistogram": {
+      "document": "直方图数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目值",
+          "member": "ChartNameValue",
+          "name": "Children",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChartNameValue": {
+      "document": "通用图表键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "图表项名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图表项值",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDomainRequest": {
+      "document": "CreateDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "监控的服务器类型（0：web，1：smtp，2：imap，3：pops）",
+          "example": "0",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "添加的域名",
+          "example": "cloud.tencent.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "添加的端口",
+          "example": "443",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名的IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启通知告警；true：开启通知告警，false：关闭通知告警",
+          "example": "1",
+          "member": "bool",
+          "name": "Notice",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "给域名添加标签，多个以逗号隔开",
+          "example": "123",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainResponse": {
+      "document": "CreateDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DashboardResult": {
+      "document": "面板数据",
+      "members": [
+        {
+          "default": "",
+          "document": "安全等级图表",
+          "member": "ChartNameValue",
+          "name": "SecurityLevelPie",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书品牌图表",
+          "member": "ChartNameValue",
+          "name": "CertBrandsPie",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书有效时间图表",
+          "member": "ChartNameValue",
+          "name": "CertValidTimePie",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书类型图表",
+          "member": "ChartNameValue",
+          "name": "CertTypePie",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ssl bugs图表",
+          "member": "ChartHistogram",
+          "name": "SSLBugsLoopholeHistogram",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合规图表",
+          "member": "ChartHistogram",
+          "name": "ComplianceHistogram",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteDomainRequest": {
+      "document": "DeleteDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID，可通过<a href=\"https://cloud.tencent.com/document/api/1084/49339\">搜索域名</a>接口获得",
+          "example": "13076",
+          "member": "int64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainResponse": {
+      "document": "DeleteDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardRequest": {
+      "document": "DescribeDashboard请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDashboardResponse": {
+      "document": "DescribeDashboard返回参数结构体",
+      "members": [
+        {
+          "document": "dashboard面板数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DashboardResult",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainCertsRequest": {
+      "document": "DescribeDomainCerts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名ID，可通过搜索域名接口获得",
+          "member": "int64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainCertsResponse": {
+      "document": "DescribeDomainCerts返回参数结构体",
+      "members": [
+        {
+          "document": "证书信息",
+          "member": "CertInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainTagsRequest": {
+      "document": "DescribeDomainTags请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDomainTagsResponse": {
+      "document": "DescribeDomainTags返回参数结构体",
+      "members": [
+        {
+          "document": "Tag数组",
+          "member": "string",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomains": {
+      "document": "监控域名列表",
+      "members": [
+        {
+          "default": "",
+          "document": "列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DomainSiteInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "搜索出来的数量",
+          "member": "int64",
+          "name": "SearchTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许的监控数量",
+          "member": "int64",
+          "name": "AllowMonitoringCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前监控的数量",
+          "member": "int64",
+          "name": "CurrentMonitoringCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "允许添加域名总数",
+          "member": "int64",
+          "name": "AllowMaxAddDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDomainsRequest": {
+      "document": "DescribeDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "获取数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索的类型有：none，tags，grade，brand，code，hash，limit。\n选tags，入参请填Tag，\n选grade，入参请填Grade，\n选brand，入参请填Brand，\n选code，入参请填Code，\n选hash，入参请填Hash\n选limit，标识只返回数量信息",
+          "example": "none",
+          "member": "string",
+          "name": "SearchType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签，多个标签用逗号分隔",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "等级",
+          "example": "无",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "无",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "混合搜索",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书指纹",
+          "example": "无",
+          "member": "string",
+          "name": "Hash",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索图标类型",
+          "example": "无",
+          "member": "string",
+          "name": "Item",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索图标值",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainsResponse": {
+      "document": "DescribeDomains返回参数结构体",
+      "members": [
+        {
+          "document": "列表数据",
+          "example": "无",
+          "member": "DescribeDomains",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNoticeInfoRequest": {
+      "document": "DescribeNoticeInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNoticeInfoResponse": {
+      "document": "DescribeNoticeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "通知信息结果",
+          "member": "NoticeInfoResult",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DomainSiteInfo": {
+      "document": "监控的域名站点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ID标识",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动获取IP：true：是，false:否",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoIP",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "评级\n\"A+\"，\n \"A\"，\n\"A-\"，\n\"B\"，\n\"C\"，\n\"D\"，\n \"E\"，\n \"F\"，\n\"T\"，",
+          "example": "无",
+          "member": "string",
+          "name": "Grade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书品牌",
+          "example": "无",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控服务类型\n0 :Web\n1: SMTP\n2: IMAP\n3: POP3",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "评级Code\n0：\"unknown\"，\n1：\"A+\"，\n2： \"A\"，\n3：\"A-\"，\n4：\"B\"，\n5：\"C\"，\n6：\"D\"，\n7： \"E\"，\n8： \"F\"，\n9：\"T\"，",
+          "example": "无",
+          "member": "int64",
+          "name": "GradeCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否监控告警；true：是，false:否",
+          "example": "无",
+          "member": "bool",
+          "name": "Notice",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号域名关系ID",
+          "example": "无",
+          "member": "int64",
+          "name": "AccountDomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名状态:\n连接异常，\n证书已过期，\n证书已吊销，\n证书黑名单，\n证书域名不匹配，\n证书不可信，\n证书密钥弱，\n证书即将过期，少于7天，\n证书即将过期，少于30天，\n正常，\n部分异常",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名端口",
+          "example": "无",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LimitInfo": {
+      "document": "通知额度限制信息",
+      "members": [
+        {
+          "default": "",
+          "document": "通知类型：\nlimit_emai：邮件\nlimit_wechat：微信\nlimit_phone：手机",
+          "example": "limit_emai",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总量",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已发送",
+          "example": "无",
+          "member": "int64",
+          "name": "Sent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDomainTagsRequest": {
+      "document": "ModifyDomainTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号下域名ID",
+          "member": "int64",
+          "name": "AccountDomainId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "更新后的tag，多个以逗号隔开",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainTagsResponse": {
+      "document": "ModifyDomainTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NoticeInfoResult": {
+      "document": "通知信息结果",
+      "members": [
+        {
+          "default": "",
+          "document": "通知ID",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知开关信息；0：关闭；15开启",
+          "example": "0",
+          "member": "int64",
+          "name": "NoticeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额度信息",
+          "example": "无",
+          "member": "LimitInfo",
+          "name": "LimitInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RefreshDomainRequest": {
+      "document": "RefreshDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名列表中的ID，可通过搜索域名接口获得",
+          "member": "int64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshDomainResponse": {
+      "document": "RefreshDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResolveDomainRequest": {
+      "document": "ResolveDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResolveDomainResponse": {
+      "document": "ResolveDomain返回参数结构体",
+      "members": [
+        {
+          "document": "响应数据",
+          "member": "string",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

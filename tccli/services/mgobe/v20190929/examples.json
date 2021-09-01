@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DismissRoom": [
+      {
+        "document": "通过game_id、room_id解散房间",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DismissRoom\n&GameId=\"obg-hvhvbs\"\n&RoomId=\"Sfsfdf\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f481b4a1-1efd-48fd-a35a-5d544c40b5b2\"\n    }\n}",
+        "title": "解散房间"
+      }
+    ]
+  },
+  "version": "1.0"
+}

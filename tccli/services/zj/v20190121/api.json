@@ -1,0 +1,2444 @@
+{
+  "actions": {
+    "AddCrowdPackInfo": {
+      "document": "添加短信人群包信息",
+      "input": "AddCrowdPackInfoRequest",
+      "name": "添加短信人群包信息",
+      "output": "AddCrowdPackInfoResponse"
+    },
+    "AddSmsSign": {
+      "document": "创建普通短信签名信息",
+      "input": "AddSmsSignRequest",
+      "name": "短信签名创建接口",
+      "output": "AddSmsSignResponse"
+    },
+    "AddSmsTemplate": {
+      "document": "根据短信标题、模板内容等创建短信模板",
+      "input": "AddSmsTemplateRequest",
+      "name": "短信模板创建接口",
+      "output": "AddSmsTemplateResponse"
+    },
+    "CancelCampaign": {
+      "document": "取消短信推送活动",
+      "input": "CancelCampaignRequest",
+      "name": "取消短信活动",
+      "output": "CancelCampaignResponse"
+    },
+    "CreateCampaign": {
+      "document": "创建短信推送活动",
+      "input": "CreateCampaignRequest",
+      "name": "创建短信活动",
+      "output": "CreateCampaignResponse"
+    },
+    "CreateMmsInstance": {
+      "document": "创建超级短信的素材样例内容",
+      "input": "CreateMmsInstanceRequest",
+      "name": "创建超级短信素材样例",
+      "output": "CreateMmsInstanceResponse"
+    },
+    "DelCrowdPack": {
+      "document": "删除人群包",
+      "input": "DelCrowdPackRequest",
+      "name": "删除人群包",
+      "output": "DelCrowdPackResponse"
+    },
+    "DelTemplate": {
+      "document": "删除短信模板",
+      "input": "DelTemplateRequest",
+      "name": "删除短信模板",
+      "output": "DelTemplateResponse"
+    },
+    "DeleteMmsInstance": {
+      "document": "删除超级短信样例",
+      "input": "DeleteMmsInstanceRequest",
+      "name": "删除超级短信样例",
+      "output": "DeleteMmsInstanceResponse"
+    },
+    "DescribeMmsInstanceInfo": {
+      "document": "获取彩信实例信息",
+      "input": "DescribeMmsInstanceInfoRequest",
+      "name": "获取彩信实例信息",
+      "output": "DescribeMmsInstanceInfoResponse"
+    },
+    "DescribeMmsInstanceList": {
+      "document": "获取彩信实例列表",
+      "input": "DescribeMmsInstanceListRequest",
+      "name": "获取彩信实例列表",
+      "output": "DescribeMmsInstanceListResponse"
+    },
+    "DescribeSmsCampaignStatistics": {
+      "document": "获取短信超短活动统计数据",
+      "input": "DescribeSmsCampaignStatisticsRequest",
+      "name": "获取短信超短活动统计数据",
+      "output": "DescribeSmsCampaignStatisticsResponse"
+    },
+    "DescribeSmsSignList": {
+      "document": "获取普通短信签名信息",
+      "input": "DescribeSmsSignListRequest",
+      "name": "短信签名查询接口",
+      "output": "DescribeSmsSignListResponse"
+    },
+    "DescribeSmsTemplateList": {
+      "document": "获取模板信息",
+      "input": "DescribeSmsTemplateListRequest",
+      "name": "短信模板查询接口",
+      "output": "DescribeSmsTemplateListResponse"
+    },
+    "GetCrowdPackList": {
+      "document": "获取人群包列表接口",
+      "input": "GetCrowdPackListRequest",
+      "name": "获取人群包列表",
+      "output": "GetCrowdPackListResponse"
+    },
+    "GetCrowdUploadInfo": {
+      "document": "获取短信人群包cos上传需要的信息",
+      "input": "GetCrowdUploadInfoRequest",
+      "name": "获取短信人群包cos上传信息",
+      "output": "GetCrowdUploadInfoResponse"
+    },
+    "GetSmsAmountInfo": {
+      "document": "获取账号短信额度配置信息",
+      "input": "GetSmsAmountInfoRequest",
+      "name": "获取账号短信额度配置信息",
+      "output": "GetSmsAmountInfoResponse"
+    },
+    "GetSmsCampaignStatus": {
+      "document": "获取短信活动状态信息",
+      "input": "GetSmsCampaignStatusRequest",
+      "name": "获取短信活动状态",
+      "output": "GetSmsCampaignStatusResponse"
+    },
+    "ModifySmsTemplate": {
+      "document": "对未审核或者审核未通过的短信模板内容进行编辑修改",
+      "input": "ModifySmsTemplateRequest",
+      "name": "短信模板编辑接口",
+      "output": "ModifySmsTemplateResponse"
+    },
+    "PushMmsContent": {
+      "document": "推送超级短信",
+      "input": "PushMmsContentRequest",
+      "name": "推送超级短信内容",
+      "output": "PushMmsContentResponse"
+    },
+    "SendSms": {
+      "document": "发送短信",
+      "input": "SendSmsRequest",
+      "name": "发送短信",
+      "output": "SendSmsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-01-21",
+    "api_brief": "接口主要包含了珠玑以下功能：\n1、珠玑短信；\n2、珠玑超级短信；\n3、珠玑公众号千人千面触达；\n4、珠玑小程序千人千面推荐。",
+    "serviceNameCN": "珠玑",
+    "serviceShortName": "zj"
+  },
+  "objects": {
+    "AddCrowdPackInfoRequest": {
+      "document": "AddCrowdPackInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包文件名称,人群包文件必须为utf8编码，动态参数只能是汉字、数字、英文字母的组合，不能包含其他字符",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已经上传好的人群包cos地址",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包手机号数量",
+          "member": "int64",
+          "name": "PhoneNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCrowdPackInfoResponse": {
+      "document": "AddCrowdPackInfo返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回",
+          "member": "SmsAddCrowdPackInfoResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSmsSignRequest": {
+      "document": "AddSmsSign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司（0，1，2，3）。\n1：APP（0，1，2，3，4） 。\n2：网站（0，1，2，3，5）。\n3：公众号或者小程序（0，1，2，3，6）。\n4：商标（7）。\n5：政府/机关事业单位/其他机构（2，3）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
+          "member": "uint64",
+          "name": "SignType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书",
+          "member": "uint64",
+          "name": "DocumentType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资质图片url",
+          "member": "string",
+          "name": "ProofImage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名内容",
+          "member": "string",
+          "name": "SignName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名备注，比如申请原因，使用场景等,可以填空",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSmsSignResponse": {
+      "document": "AddSmsSign返回参数结构体",
+      "members": [
+        {
+          "document": "签名id数组",
+          "member": "PaasCreateSignResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSmsTemplateDataStruct": {
+      "document": "短信模板创建接口返回",
+      "members": [
+        {
+          "default": "",
+          "document": "短信模板ID",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddSmsTemplateRequest": {
+      "document": "AddSmsTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信签名，创建签名时返回",
+          "member": "uint64",
+          "name": "SignID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板名称",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信内容，动态内容使用占位符{1}，{2}等表示",
+          "member": "string",
+          "name": "TemplateContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信类型：{0:普通短信，1:营销短信}",
+          "member": "uint64",
+          "name": "SmsType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "短信模板标签",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时配置的落地链接地址,仅用作短信活动",
+          "member": "string",
+          "name": "Urls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号",
+          "member": "int64",
+          "name": "CommonParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时用于展示短连接模板占位符序号,仅用作短信活动",
+          "member": "int64",
+          "name": "UrlParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSmsTemplateResponse": {
+      "document": "AddSmsTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "短信模板创建接口返回",
+          "member": "AddSmsTemplateDataStruct",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelActivityData": {
+      "document": "取消活动的返回值Data部分",
+      "members": [
+        {
+          "default": "",
+          "document": "成功返回时的文字描述",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CancelCampaignRequest": {
+      "document": "CancelCampaign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信活动id",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelCampaignResponse": {
+      "document": "CancelCampaign返回参数结构体",
+      "members": [
+        {
+          "document": "处理结果",
+          "member": "CancelActivityData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCampaignRequest": {
+      "document": "CreateCampaign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信活动发送时间",
+          "member": "int64",
+          "name": "SendTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "短信活动名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送策略",
+          "member": "PaasStrategy",
+          "name": "Strategies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "废弃",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "废弃",
+          "member": "int64",
+          "name": "CrowdID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "活动类型(0-短信,1-超短,不填默认为超短)",
+          "member": "uint64",
+          "name": "SmsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCampaignResponse": {
+      "document": "CreateCampaign返回参数结构体",
+      "members": [
+        {
+          "document": "活动信息",
+          "member": "SmsCreateCampaignResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMmsInstanceItem": {
+      "document": "创建样例时候content元素",
+      "members": [
+        {
+          "default": "",
+          "document": "素材类型：1-文本 2-图片 3-视频 4-音频",
+          "member": "int64",
+          "name": "ContentType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材内容：如果素材是文本类型，直接填写文本内容，否则填写素材文件上传到cos后的url地址",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateMmsInstanceRequest": {
+      "document": "CreateMmsInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "样例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标题",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "素材内容",
+          "member": "CreateMmsInstanceItem",
+          "name": "Contents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "样例中链接动态变量对应的链接，和占位符顺序一致",
+          "member": "string",
+          "name": "Urls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机型列表",
+          "member": "uint64",
+          "name": "PhoneType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送超短活动时用于展示人群包动态参数模板占位符序号或接口发送时变量占位符序号",
+          "member": "uint64",
+          "name": "CommonParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送超短活动时用于展示短连接模板占位符序号,仅用作超短活动",
+          "member": "uint64",
+          "name": "UrlParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMmsInstanceResp": {
+      "document": "创建超级短信样例返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "返回码：0-成功 其它-失败",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回信息",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "样例id",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateMmsInstanceResponse": {
+      "document": "CreateMmsInstance返回参数结构体",
+      "members": [
+        {
+          "document": "创建样例返回信息",
+          "member": "CreateMmsInstanceResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DelCrowdPackRequest": {
+      "document": "DelCrowdPack请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包id",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DelCrowdPackResponse": {
+      "document": "DelCrowdPack返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回",
+          "member": "SmsSuccessResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DelMmsInstanceData": {
+      "document": "删除超短样例响应",
+      "members": [
+        {
+          "default": "",
+          "document": "样例id",
+          "member": "uint64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DelTemplateRequest": {
+      "document": "DelTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信模板ID",
+          "member": "int64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DelTemplateResponse": {
+      "document": "DelTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回",
+          "member": "SmsSuccessResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMmsInstanceRequest": {
+      "document": "DeleteMmsInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "超级短信样例id",
+          "member": "uint64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMmsInstanceResponse": {
+      "document": "DeleteMmsInstance返回参数结构体",
+      "members": [
+        {
+          "document": "删除信息返回",
+          "member": "DelMmsInstanceData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMmsInstanceInfoRequest": {
+      "document": "DescribeMmsInstanceInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "彩信实例id",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMmsInstanceInfoResponse": {
+      "document": "DescribeMmsInstanceInfo返回参数结构体",
+      "members": [
+        {
+          "document": "彩信实例信息",
+          "member": "MmsInstanceInfo",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMmsInstanceListRequest": {
+      "document": "DescribeMmsInstanceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务代码",
+          "member": "string",
+          "name": "AppSubId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例标题",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMmsInstanceListResponse": {
+      "document": "DescribeMmsInstanceList返回参数结构体",
+      "members": [
+        {
+          "document": "彩信实例信息列表返回",
+          "member": "MmsInstanceInfoList",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsCampaignStatisticsRequest": {
+      "document": "DescribeSmsCampaignStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id",
+          "member": "uint64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsCampaignStatisticsResponse": {
+      "document": "DescribeSmsCampaignStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "响应数据",
+          "member": "SmsCampaignStatisticsData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsSignListDataStruct": {
+      "document": "获取普通短信签名信息返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签名Id",
+          "member": "uint64",
+          "name": "SignId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请签名状态。其中：\n0：表示审核通过。\n-1：表示审核未通过或审核失败。",
+          "member": "int64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
+          "member": "string",
+          "name": "ReviewReply",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名名称。",
+          "member": "string",
+          "name": "SignName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSmsSignListRequest": {
+      "document": "DescribeSmsSignList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名ID数组",
+          "member": "uint64",
+          "name": "SignIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsSignListResponse": {
+      "document": "DescribeSmsSignList返回参数结构体",
+      "members": [
+        {
+          "document": "返回数据",
+          "member": "DescribeSmsSignListDataStruct",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsTemplateListDataStruct": {
+      "document": "获取短信模板状态返回",
+      "members": [
+        {
+          "default": "",
+          "document": "模板Id",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "申请签名状态。其中：\n0：表示审核通过。\n-1：表示审核未通过或审核失败。",
+          "member": "int64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
+          "member": "string",
+          "name": "ReviewReply",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名称。",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSmsTemplateListRequest": {
+      "document": "DescribeSmsTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信模板id数组",
+          "member": "uint64",
+          "name": "TemplateIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmsTemplateListResponse": {
+      "document": "DescribeSmsTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "返回数据信息",
+          "member": "DescribeSmsTemplateListDataStruct",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCrowdPackListRequest": {
+      "document": "GetCrowdPackList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制返回数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "人群包名称，用于过滤人群包",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "人群包状态，默认-1，用于过滤人群包",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCrowdPackListResponse": {
+      "document": "GetCrowdPackList返回参数结构体",
+      "members": [
+        {
+          "document": "人群包信息列表",
+          "member": "SmsGetCrowdPackListResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCrowdUploadInfoRequest": {
+      "document": "GetCrowdUploadInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传文件名称",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCrowdUploadInfoResponse": {
+      "document": "GetCrowdUploadInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回信息",
+          "member": "SmsGetCrowdUploadInfoResponse",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSmsAmountInfoRequest": {
+      "document": "GetSmsAmountInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSmsAmountInfoResponse": {
+      "document": "GetSmsAmountInfo返回参数结构体",
+      "members": [
+        {
+          "document": "短信账号额度接口",
+          "member": "SmsAmountDataStruct",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSmsCampaignStatusRequest": {
+      "document": "GetSmsCampaignStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动ID",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSmsCampaignStatusResponse": {
+      "document": "GetSmsCampaignStatus返回参数结构体",
+      "members": [
+        {
+          "document": "活动状态",
+          "member": "PaasSmsCampaignStatusResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MmsInstanceInfo": {
+      "document": "彩信实例信息\nInstanceId   int\n\tInstanceName string\n\tStatus       int\n\tStatusInfo   string\n\tAppSubId     string\n\tTitle        string\n\tSign         string\n\tContents     string\n\tCreatedAt    string",
+      "members": [
+        {
+          "default": "",
+          "document": "彩信实例id",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "彩信实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态是否通知",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例审核状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MmsInstanceStateInfo",
+          "name": "StatusInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务码",
+          "member": "string",
+          "name": "AppSubId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "彩信标题",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "彩信内容",
+          "member": "string",
+          "name": "Contents",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "样例配置的链接地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PhoneType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "普通参数序号数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CommonParams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "链接参数序号数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UrlParams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MmsInstanceInfoList": {
+      "document": "彩信实例状态列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总数据量",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "彩信实例状态信息列表",
+          "member": "MmsInstanceInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MmsInstanceStateInfo": {
+      "document": "彩信实例审核状态",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核状态：0未审核，1审核通过，2审核拒绝",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifySmsTemplateDataStruct": {
+      "document": "短信模板编辑接口出参",
+      "members": [
+        {
+          "default": "",
+          "document": "短信模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifySmsTemplateRequest": {
+      "document": "ModifySmsTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信模板id",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "短信签名，创建签名时返回",
+          "member": "uint64",
+          "name": "SignID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板名称",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信内容，动态内容使用占位符{1}，{2}等表示",
+          "member": "string",
+          "name": "TemplateContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信类型：{0:普通短信，1:营销短信}",
+          "member": "uint64",
+          "name": "SmsType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
+          "member": "uint64",
+          "name": "International",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "短信模板标签",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时配置的落地链接地址,仅用作短信活动",
+          "member": "string",
+          "name": "Urls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时用于展示人群包动态参数模板占位符序号,仅用作短信活动",
+          "member": "int64",
+          "name": "CommonParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "发送短信活动时用于展示短连接模板占位符序号,仅用作短信活动",
+          "member": "int64",
+          "name": "UrlParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySmsTemplateResponse": {
+      "document": "ModifySmsTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "返回",
+          "member": "ModifySmsTemplateDataStruct",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PaasCreateSignResp": {
+      "document": "创建签名返回结构",
+      "members": [
+        {
+          "default": "",
+          "document": "签名id",
+          "member": "int64",
+          "name": "SignId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PaasSmsCampaignStatusResp": {
+      "document": "拉取活动状态返回",
+      "members": [
+        {
+          "default": "",
+          "document": "0-未发送 1-发送中 2-发送结束 3-发送取消",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PaasStrategy": {
+      "document": "短信发送人群包策略",
+      "members": [
+        {
+          "default": "",
+          "document": "人群包id",
+          "member": "int64",
+          "name": "CrowdID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待选素材数组",
+          "member": "PaasStrategyItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PaasStrategyItem": {
+      "document": "短信活动策略元素",
+      "members": [
+        {
+          "default": "",
+          "document": "短信模板id或超级短信样例id",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材类型 0-普短 1-超短",
+          "member": "int64",
+          "name": "ContentType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PushMmsContentRequest": {
+      "document": "PushMmsContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "素材样例id",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Tel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "附带数据字段",
+          "member": "string",
+          "name": "Session",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "动态参数key(即申请样例时设置的u_或p_开头的动态参数,要求序号有序)",
+          "member": "string",
+          "name": "DynamicParaKey",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "动态参数值,和DynamicParaKey对应",
+          "member": "string",
+          "name": "DynamicParaValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PushMmsContentResp": {
+      "document": "发送超级短信返回",
+      "members": [
+        {
+          "default": "",
+          "document": "返回码：0-成功 其它-失败",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回信息",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息回执id",
+          "member": "int64",
+          "name": "MessageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PushMmsContentResponse": {
+      "document": "PushMmsContent返回参数结构体",
+      "members": [
+        {
+          "document": "推送短信返回信息",
+          "member": "PushMmsContentResp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsPaasDataStruct": {
+      "document": "发送短信返回",
+      "members": [
+        {
+          "default": "",
+          "document": "发送流水号",
+          "member": "string",
+          "name": "SerialNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号码,e.164标准，+[国家或地区码][手机号] ，示例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费条数",
+          "member": "uint64",
+          "name": "Fee",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OK为成功",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信请求错误码描述",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SendSmsRequest": {
+      "document": "SendSms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户证书",
+          "member": "string",
+          "name": "License",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码,采用 e.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号,如:+8613800138000",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "短信模板id(推荐使用模板id发送,使用内容发送时模板id留空)",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板参数，若无模板参数，则设置为空。",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名。注：国内短信为必填参数。",
+          "member": "string",
+          "name": "Sign",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "国际/港澳台短信 senderid，国内短信填空",
+          "member": "string",
+          "name": "SenderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信类型：{0:普通短信，1:营销短信}，使用内容发送时必填",
+          "member": "uint64",
+          "name": "SmsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。使用内容发送时必填",
+          "member": "uint64",
+          "name": "International",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发送使用的模板内容,如果有占位符,此处也包括占位符,占位符的实际内容通过Params参数传递,使用模板id发送时此字段为空",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsResponse": {
+      "document": "SendSms返回参数结构体",
+      "members": [
+        {
+          "document": "出参数据",
+          "member": "SendSmsPaasDataStruct",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SmsAddCrowdPackInfoResponse": {
+      "document": "添加短信人群包信息接口返回",
+      "members": [
+        {
+          "default": "",
+          "document": "人群包id",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsAmountDataStruct": {
+      "document": "短信子账号额度接口出参",
+      "members": [
+        {
+          "default": "",
+          "document": "短信活动配额",
+          "member": "uint64",
+          "name": "SmsCampaignAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信活动消耗配额",
+          "member": "uint64",
+          "name": "SmsCampaignConsume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信发送额度",
+          "member": "uint64",
+          "name": "SmsSendAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信发送消耗额度",
+          "member": "uint64",
+          "name": "SmsSendConsume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超短活动额度",
+          "member": "uint64",
+          "name": "MmsCampaignAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超短活动消耗额度",
+          "member": "uint64",
+          "name": "MmsCampaignConsume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超短短信额度",
+          "member": "uint64",
+          "name": "MmsSendAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超短短信消耗额度",
+          "member": "uint64",
+          "name": "MmsSendConsume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsCampaignStatisticsCrowdData": {
+      "document": "短信活动统计人群包数据",
+      "members": [
+        {
+          "default": "",
+          "document": "人群包id",
+          "member": "uint64",
+          "name": "CrowdId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包名称",
+          "member": "string",
+          "name": "CrowdName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包目标触达总数",
+          "member": "uint64",
+          "name": "CrowdCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板列表",
+          "member": "SmsCampaignStatisticsTemplateData",
+          "name": "TemplateList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsCampaignStatisticsData": {
+      "document": "短信活动统计响应",
+      "members": [
+        {
+          "default": "",
+          "document": "活动Id",
+          "member": "uint64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计数据",
+          "member": "SmsCampaignStatisticsCrowdData",
+          "name": "Statistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsCampaignStatisticsTemplateData": {
+      "document": "短信活动统计模板展示结构",
+      "members": [
+        {
+          "default": "",
+          "document": "模板或样例id",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板内容",
+          "member": "string",
+          "name": "TemplateContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触达成功数",
+          "member": "uint64",
+          "name": "SendCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短链点击数",
+          "member": "uint64",
+          "name": "ClickCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsCreateCampaignResponse": {
+      "document": "创建短信活动返回结构",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsGetCrowdPackList": {
+      "document": "短信获取人群包列表的返回数据信息",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包id",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包手机号数量",
+          "member": "int64",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包标签信息",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包md5",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包文件名称",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsGetCrowdPackListResponse": {
+      "document": "短信人群包返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人群包总数",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人群包返回数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SmsGetCrowdPackList",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsGetCrowdUploadInfoResponse": {
+      "document": "获取短信人群包上传信息返回",
+      "members": [
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话token",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时密钥id",
+          "member": "string",
+          "name": "TmpSecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时密钥",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos信息",
+          "member": "UploadFansInfoCosInfo",
+          "name": "CosInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmsSuccessResponse": {
+      "document": "短信api成功返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "成功返回信息",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadFansInfoCosInfo": {
+      "document": "接口返回给服务商的COS路径等信息",
+      "members": [
+        {
+          "default": "",
+          "document": "COS bucket",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS路径",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS区域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

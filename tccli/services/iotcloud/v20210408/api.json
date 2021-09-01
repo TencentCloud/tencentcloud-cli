@@ -1,0 +1,1765 @@
+{
+  "actions": {
+    "CreateDevice": {
+      "document": "本接口（CreateDevice）用于新建一个物联网通信设备。 ",
+      "input": "CreateDeviceRequest",
+      "name": "创建设备",
+      "output": "CreateDeviceResponse"
+    },
+    "CreatePrivateCA": {
+      "document": "创建私有CA证书",
+      "input": "CreatePrivateCARequest",
+      "name": "创建私有CA证书",
+      "output": "CreatePrivateCAResponse"
+    },
+    "DeleteDevice": {
+      "document": "本接口（DeleteDevice）用于删除物联网通信设备。 ",
+      "input": "DeleteDeviceRequest",
+      "name": "删除设备",
+      "output": "DeleteDeviceResponse"
+    },
+    "DeletePrivateCA": {
+      "document": "删除私有CA证书",
+      "input": "DeletePrivateCARequest",
+      "name": "删除私有CA证书",
+      "output": "DeletePrivateCAResponse"
+    },
+    "DeleteProduct": {
+      "document": "本接口（DeleteProduct）用于删除一个物联网通信产品",
+      "input": "DeleteProductRequest",
+      "name": "删除产品",
+      "output": "DeleteProductResponse"
+    },
+    "DescribeDevice": {
+      "document": "本接口（DescribeDevice）用于查看设备信息",
+      "input": "DescribeDeviceRequest",
+      "name": "查看设备详情",
+      "output": "DescribeDeviceResponse"
+    },
+    "DescribeDevices": {
+      "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 ",
+      "input": "DescribeDevicesRequest",
+      "name": "获取设备列表",
+      "output": "DescribeDevicesResponse"
+    },
+    "DescribePrivateCA": {
+      "document": "查询私有化CA信息",
+      "input": "DescribePrivateCARequest",
+      "name": "查询私有化CA信息",
+      "output": "DescribePrivateCAResponse"
+    },
+    "DescribePrivateCABindedProducts": {
+      "document": "查询私有CA绑定的产品列表",
+      "input": "DescribePrivateCABindedProductsRequest",
+      "name": "查询私有CA绑定的产品列表",
+      "output": "DescribePrivateCABindedProductsResponse"
+    },
+    "DescribePrivateCAs": {
+      "document": "查询私有CA证书列表",
+      "input": "DescribePrivateCAsRequest",
+      "name": "查询私有CA证书列表",
+      "output": "DescribePrivateCAsResponse"
+    },
+    "DescribeProduct": {
+      "document": "本接口（DescribeProduct）用于查看产品详情",
+      "input": "DescribeProductRequest",
+      "name": "查看产品详情",
+      "output": "DescribeProductResponse"
+    },
+    "DescribeProductCA": {
+      "document": "查询产品绑定的CA证书",
+      "input": "DescribeProductCARequest",
+      "name": "查询产品绑定的CA证书",
+      "output": "DescribeProductCAResponse"
+    },
+    "UpdateDeviceLogLevel": {
+      "document": "设置设备上报的日志级别  ",
+      "input": "UpdateDeviceLogLevelRequest",
+      "name": "更新设备日志级别",
+      "output": "UpdateDeviceLogLevelResponse"
+    },
+    "UpdateDevicesEnableState": {
+      "document": "批量启用或者禁用设备 ",
+      "input": "UpdateDevicesEnableStateRequest",
+      "name": "批量切换设备可用状态",
+      "output": "UpdateDevicesEnableStateResponse"
+    },
+    "UpdatePrivateCA": {
+      "document": "更新私有CA证书",
+      "input": "UpdatePrivateCARequest",
+      "name": "更新私有CA证书",
+      "output": "UpdatePrivateCAResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-04-08",
+    "api_brief": "介绍如何使用API对物联网通信进行操作，包括规则引擎等。",
+    "serviceNameCN": "物联网通信",
+    "serviceShortName": "iotcloud"
+  },
+  "objects": {
+    "Attribute": {
+      "document": "设备属性",
+      "members": [
+        {
+          "default": "",
+          "document": "属性列表",
+          "example": "无",
+          "member": "DeviceTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BindProductInfo": {
+      "document": "子产品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CertInfo": {
+      "document": "X509证书信息",
+      "members": [
+        {
+          "default": "",
+          "document": "证书名称",
+          "example": "IotHub",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书的序列号，16进制编码",
+          "example": "5ff69e4c8afce5d6de8d395b34672944f5b4765a",
+          "member": "string",
+          "name": "CertSN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书颁发着名称",
+          "example": "CN=AAA,O=AAA,L=shenzhen,ST=guangdong,C=CN",
+          "member": "string",
+          "name": "IssuerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书主题",
+          "example": "CN=AAA,O=AAA,L=shenzhen,ST=guangdong,C=CN",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书创建时间，秒级时间戳",
+          "example": "1622619674",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书生效时间，秒级时间戳",
+          "example": "1622448592",
+          "member": "uint64",
+          "name": "EffectiveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书失效时间，秒级时间戳",
+          "example": "1653984592",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "X509证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nBz4FQdeV1+Xyf+Eg==\\n-----END CERTIF",
+          "member": "string",
+          "name": "CertText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateDeviceRequest": {
+      "document": "CreateDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品 ID 。创建产品时腾讯云为用户分配全局唯一的 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。",
+          "example": "test_device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备属性",
+          "example": "无",
+          "member": "Attribute",
+          "name": "Attribute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否使用自定义PSK，默认不使用",
+          "example": "ABC",
+          "member": "string",
+          "name": "DefinedPsk",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商类型，当产品是NB-IoT产品时，此字段必填。1表示中国电信，2表示中国移动，3表示中国联通",
+          "example": "Isp",
+          "member": "uint64",
+          "name": "Isp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IMEI，当产品是NB-IoT产品时，此字段必填",
+          "example": "Imsi",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "LoRa设备的DevEui，当创建LoRa时，此字段必填",
+          "example": "Eui",
+          "member": "string",
+          "name": "LoraDevEui",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "LoRa设备的MoteType",
+          "example": "Type",
+          "member": "uint64",
+          "name": "LoraMoteType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建LoRa设备需要skey",
+          "example": "skey",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "LoRa设备的AppKey",
+          "example": "key",
+          "member": "string",
+          "name": "LoraAppKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有CA创建的设备证书",
+          "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
+          "member": "string",
+          "name": "TlsCrt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceResponse": {
+      "document": "CreateDevice返回参数结构体",
+      "members": [
+        {
+          "document": "设备名称",
+          "example": "test_device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "对称加密密钥，base64编码。采用对称加密时返回该参数",
+          "example": "xxxxxxxxxxxxx",
+          "member": "string",
+          "name": "DevicePsk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数",
+          "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
+          "member": "string",
+          "name": "DeviceCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数",
+          "example": "-----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgw",
+          "member": "string",
+          "name": "DevicePrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "LoRa设备的DevEui，当设备是LoRa设备时，会返回该字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "LoraDevEui",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "LoRa设备的MoteType，当设备是LoRa设备时，会返回该字段",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "LoraMoteType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "LoRa设备的AppKey，当设备是LoRa设备时，会返回该字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "LoraAppKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "LoRa设备的NwkKey，当设备是LoRa设备时，会返回该字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "LoraNwkKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateCARequest": {
+      "document": "CreatePrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CA证书名称",
+          "example": "Cert_dev",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CA证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "校验CA证书的证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "VerifyCertText",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateCAResponse": {
+      "document": "CreatePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceRequest": {
+      "document": "DeleteDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属的产品 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要删除的设备名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除LoRa设备以及LoRa网关设备需要skey",
+          "example": "xxx",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResponse": {
+      "document": "DeleteDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateCARequest": {
+      "document": "DeletePrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有CA证书名称",
+          "example": "certname",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateCAResponse": {
+      "document": "DeletePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductRequest": {
+      "document": "DeleteProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的产品 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除LoRa产品需要skey",
+          "example": "xxx",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductResponse": {
+      "document": "DeleteProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRequest": {
+      "document": "DescribeDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResponse": {
+      "document": "DescribeDevice返回参数结构体",
+      "members": [
+        {
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备是否在线，0不在线，1在线",
+          "example": "1",
+          "member": "uint64",
+          "name": "Online",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备登录时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "LoginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备固件版本",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备最后更新时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "LastUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备证书",
+          "example": "-----BEGIN CERTIFICATE-----IIDS...Fw==-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "DeviceCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备密钥",
+          "example": "PSK",
+          "member": "string",
+          "name": "DevicePsk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备属性",
+          "example": "无",
+          "member": "DeviceTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备类型",
+          "example": "3",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国际移动设备识别码 IMEI",
+          "example": "imei",
+          "member": "string",
+          "name": "Imei",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "Isp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IP地址",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConnIP",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "NB IoT运营商处的DeviceID",
+          "example": "1233445",
+          "member": "string",
+          "name": "NbiotDeviceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Lora设备的dev eui",
+          "example": "eui",
+          "member": "string",
+          "name": "LoraDevEui",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Lora设备的mote type",
+          "example": "1",
+          "member": "uint64",
+          "name": "LoraMoteType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备的sdk日志等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LogLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "FirstOnlineTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "LastOfflineTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备证书获取状态，0 未获取过设备密钥, 1 已获取过设备密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
+          "member": "uint64",
+          "name": "CertState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备启用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceLabel",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "MQTT客户端IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备固件更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "FirmwareUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesRequest": {
+      "document": "DescribeDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查看设备列表的产品 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，数值范围 10-250",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的设备名称",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备是否启用，0禁用状态1启用状态，默认不区分",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesResponse": {
+      "document": "DescribeDevices返回参数结构体",
+      "members": [
+        {
+          "document": "设备总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备详细信息列表",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCABindedProductsRequest": {
+      "document": "DescribePrivateCABindedProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书名称",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的数据量，默认为20， 最大为200",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCABindedProductsResponse": {
+      "document": "DescribePrivateCABindedProducts返回参数结构体",
+      "members": [
+        {
+          "document": "私有CA绑定的产品列表",
+          "example": "无",
+          "member": "BindProductInfo",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCARequest": {
+      "document": "DescribePrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有化CA名称",
+          "example": "IotHub",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCAResponse": {
+      "document": "DescribePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "私有化CA详情",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CA",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCAsRequest": {
+      "document": "DescribePrivateCAs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrivateCAsResponse": {
+      "document": "DescribePrivateCAs返回参数结构体",
+      "members": [
+        {
+          "document": "私有CA证书列表",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CAs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductCARequest": {
+      "document": "DescribeProductCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductCAResponse": {
+      "document": "DescribeProductCA返回参数结构体",
+      "members": [
+        {
+          "document": "CA证书列表",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CAs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductRequest": {
+      "document": "DescribeProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResponse": {
+      "document": "DescribeProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品名",
+          "example": "Test_1",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品元数据",
+          "example": "无",
+          "member": "ProductMetadata",
+          "name": "ProductMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品属性",
+          "example": "无",
+          "member": "ProductProperties",
+          "name": "ProductProperties",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceInfo": {
+      "document": "设备详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备是否在线，0不在线，1在线",
+          "example": "1",
+          "member": "uint64",
+          "name": "Online",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备登录时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "LoginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备版本",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备证书，证书加密的设备返回",
+          "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
+          "member": "string",
+          "name": "DeviceCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备密钥，密钥加密的设备返回",
+          "example": "PSK",
+          "member": "string",
+          "name": "DevicePsk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备属性",
+          "example": "无",
+          "member": "DeviceTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备类型",
+          "example": "5",
+          "member": "uint64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国际移动设备识别码 IMEI",
+          "example": "imei",
+          "member": "string",
+          "name": "Imei",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商类型",
+          "example": "isp",
+          "member": "uint64",
+          "name": "Isp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NB IOT运营商处的DeviceID",
+          "example": "12345",
+          "member": "string",
+          "name": "NbiotDeviceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "123124121",
+          "member": "uint64",
+          "name": "ConnIP",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备最后更新时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "LastUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LoRa设备的dev eui",
+          "example": "eui",
+          "member": "string",
+          "name": "LoraDevEui",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LoRa设备的Mote type",
+          "example": "2",
+          "member": "uint64",
+          "name": "LoraMoteType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "FirstOnlineTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "LastOfflineTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LogLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备证书获取状态, 1 已获取过设备密钥，0 未获取过设备密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CertState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备可用状态，0禁用，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceLabel",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "MQTT客户端IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ota最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "FirmwareUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceLabel": {
+      "document": "设备标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签标识",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceTag": {
+      "document": "设备属性",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名称",
+          "example": "tagkey",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性值的类型，1 int，2 string",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性的值",
+          "example": "123",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性描述名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xyz",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProductMetadata": {
+      "document": "产品元数据",
+      "members": [
+        {
+          "default": "",
+          "document": "产品创建时间",
+          "example": "12345",
+          "member": "uint64",
+          "name": "CreationDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductProperties": {
+      "document": "产品属性",
+      "members": [
+        {
+          "default": "",
+          "document": "产品描述",
+          "example": "IotHub",
+          "member": "string",
+          "name": "ProductDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密类型，1表示证书认证，2表示签名认证。如不填写，默认值是1",
+          "example": "2",
+          "member": "string",
+          "name": "EncryptionType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品所属区域，目前只支持广州（gz）",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品类型，各个类型值代表的节点-类型如下：\n0 普通产品，2 NB-IoT产品，4 LoRa产品，3 LoRa网关产品，5 普通网关产品   默认值是0",
+          "example": "5",
+          "member": "uint64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据格式，取值为json或者custom，默认值是json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品所属平台，默认值是0",
+          "example": "0",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LoRa产品运营侧APPEUI，只有LoRa产品需要填写",
+          "example": "appeui",
+          "member": "string",
+          "name": "Appeui",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品绑定的物模型ID，-1表示不绑定",
+          "example": "123",
+          "member": "string",
+          "name": "ModelId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品绑定的物模型名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品密钥，suite产品才会有",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "ProductKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动态注册类型 0-关闭, 1-预定义设备名 2-动态定义设备名",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动态注册产品秘钥",
+          "example": "key",
+          "member": "string",
+          "name": "ProductSecret",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RegisterType为2时，设备动态创建的限制数量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "划归的产品，展示为源产品ID，其余为空",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "OriginProductId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有CA名称",
+          "example": "caname",
+          "member": "string",
+          "name": "PrivateCAName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "划归的产品，展示为源用户ID，其余为空",
+          "example": "12345",
+          "member": "uint64",
+          "name": "OriginUserId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateDeviceLogLevelRequest": {
+      "document": "UpdateDeviceLogLevel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志级别，0：关闭，1：错误，2：告警，3：信息，4：调试",
+          "example": "1",
+          "member": "uint64",
+          "name": "LogLevel",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceLogLevelResponse": {
+      "document": "UpdateDeviceLogLevel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicesEnableStateRequest": {
+      "document": "UpdateDevicesEnableState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属产品id",
+          "example": "SB9OJFCJ1C",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称集合",
+          "example": "[\"test123\\n\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要设置的设备状态，1为启用，0为禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicesEnableStateResponse": {
+      "document": "UpdateDevicesEnableState返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrivateCARequest": {
+      "document": "UpdatePrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CA证书名称",
+          "example": "Cert_dev",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CA证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "校验CA证书的证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "VerifyCertText",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrivateCAResponse": {
+      "document": "UpdatePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

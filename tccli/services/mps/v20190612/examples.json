@@ -1,0 +1,657 @@
+{
+  "actions": {
+    "CreateAIAnalysisTemplate": [
+      {
+        "document": "创建一个自定义视频内容分析模板，开启智能分类任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板1\r\n&ClassificationConfigure.Switch=ON\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建指定一项分析任务的模板"
+      },
+      {
+        "document": "创建一个自定义视频内容分析模板，开启智能分类和智能标签任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板2\r\n&ClassificationConfigure.Switch=ON\r\n&TagConfigure.Switch=ON\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建指定多项分析任务的模板"
+      },
+      {
+        "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板3\r\n&ClassificationConfigure.Switch=ON\r\n&TagConfigure.Switch=ON\r\n&CoverConfigure.Switch=NO\r\n&FrameTagConfigure.Switch=ON\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建开启全部内容分析任务的模板"
+      }
+    ],
+    "CreateAIRecognitionTemplate": [
+      {
+        "document": "创建一个自定义视频内容识别模板，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板2\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=Default\n&FaceConfigure.Score=90\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建支持多项视频内容识别任务的模板"
+      },
+      {
+        "document": "创建一个自定义视频内容识别模板，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板3\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=All\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
+      }
+    ],
+    "CreateAdaptiveDynamicStreamingTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAdaptiveDynamicStreamingTemplate\n&Name=转自适应码流模板1\n&Format=HLS\n&StreamInfos.0.Video.Codec=libx264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=2000\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30018,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建转自适应码流模板"
+      }
+    ],
+    "CreateAnimatedGraphicsTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAnimatedGraphicsTemplate\r\n&Name=动图图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=gif\r\n&Fps=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建转动图模板"
+      }
+    ],
+    "CreateContentReviewTemplate": [
+      {
+        "document": "创建一个自定义 AI 内容智能识别模板，仅开启画面内容令人反感的信息任务，判定为违规的分数阈值和判定为需要人工识别的分数阈值都为默认值，不指定过滤标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的内容智能识别模板"
+      },
+      {
+        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工识别的阈值分数为 30 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板2\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=80\n&PornConfigure.ImgReviewInfo.ReviewConfidence=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的任务内容智能识别模板，并指定分数阈值和截帧间隔"
+      },
+      {
+        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板3\n&PornConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.OcrReviewInfo.Switch=OFF\n&PoliticalConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"88aee3e9-2qd3-4151-9d4b-4390a45227a9\"\n    }\n}",
+        "title": "创建开启多项识别任务的内容智能识别模板"
+      },
+      {
+        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模块\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=porn\n&PornConfigure.ImgReviewInfo.LabelSet.1=sexy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"67aee3e9-2qd3-2395-9d4b-4390a96837a7\"\n    }\n}",
+        "title": "创建开启画面令人反感的信息的内容识别模板，并指定过滤标签"
+      }
+    ],
+    "CreateImageSpriteTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateImageSpriteTemplate\r\n&Name=雪碧图模板1\r\n&Width=54\r\n&Height=96\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&RowCount=5\r\n&ColumnCount=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建雪碧图模板"
+      }
+    ],
+    "CreatePersonSample": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreatePersonSample\n&Name=张三\n&Tags.0=美国\n&Tags.1=明星\n&Description=华语影视男演员、导演、制片人\n&Usages.0=Recognition.Face\n&Usages.1=Review.Face\n&FaceContents.0=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\n&FaceContents.1=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\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"10703\",\n            \"Name\": \"张三\",\n            \"Description\": \"华语影视男演员、导演、制片人\",\n            \"FaceInfoSet\": [\n                {\n                    \"FaceId\": \"10109\",\n                    \"Url\": \"http://1251659802.vod2.myqcloud.com/vodcq1251659802/ai_samples/251006362/faces/15517827183907093125.jpeg\"\n                }\n            ],\n            \"TagSet\": [\n                \"美国\",\n                \"明星\"\n            ],\n            \"UsageSet\": [\n                \"Recognition.Face\",\n                \"Review.Face\"\n            ],\n            \"CreateTime\": \"2019-01-16T11:34:46Z\",\n            \"UpdateTime\": \"2019-01-16T11:34:46Z\"\n        },\n        \"FailFaceInfoSet\": [\n            {\n                \"Index\": 1,\n                \"ErrCode\": 18004,\n                \"Message\": \"face picture format error\"\n            }\n        ],\n        \"RequestId\": \"2e63f898-cafd-4840-a17d-b8db9f02a9d6\"\n    }\n}",
+        "title": "创建素材样本"
+      }
+    ],
+    "CreateSampleSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateSampleSnapshotTemplate\r\n&Name=采样截图模板1\r\n&Width=540\r\n&Height=960\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&Format=jpg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建采样截图模板"
+      }
+    ],
+    "CreateSnapshotByTimeOffsetTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateSnapshotByTimeOffsetTemplate\r\n&Name=指定时间点截图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=jpg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建指定时间点截图模板"
+      }
+    ],
+    "CreateTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateTranscodeTemplate\n&Container=mp4\n&Name=转码模板1\n&RemoveVideo=0\n&RemoveAudio=0\n&VideoTemplate.Codec=libx264\n&VideoTemplate.Fps=45\n&VideoTemplate.Bitrate=256\n&AudioTemplate.Codec=libfdk_aac\n&AudioTemplate.Bitrate=200\n&AudioTemplate.SampleRate=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建转码模板"
+      }
+    ],
+    "CreateWatermarkTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWatermarkTemplate\n&Type=image\n&Name=模板1\n&ImageTemplate.ImageContent=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\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 1001,\n        \"ImageUrl\": \"http://1256768367.vts2.myqcloud.com/8b0dd2b5vtscq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建水印模板"
+      }
+    ],
+    "CreateWordSamples": [
+      {
+        "document": "Usages=Review，则该关键词可用于通过 OCR 技术、ASR 技术，进行不适宜内容识别。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWordSamples\n&Usages.0=Review\n&Words.0.Keyword=张三\n&Words.0.Tags.0=政治\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建关键词素材-Review"
+      },
+      {
+        "document": "Usages=[\"Recognition.Ocr\",\"Review.Ocr\"]，则该关键词可用于通过 OCR 技术，进行内容识别、不适宜内容识别。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWordSamples\n&Usages.0=Recognition.Ocr\n&Usages.1=Review.Ocr\n&Words.0.Keyword=网红\n&Words.0.Tags.0=娱乐\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建关键词素材-Recognition"
+      },
+      {
+        "document": "Usages=All，则该关键词可用于通过 OCR 技术、ASR 技术，进行内容识别、不适宜内容识别。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWordSamples\n&Usages.0=All\n&Words.0.Keyword=网红\n&Words.0.Tags.0=娱乐\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建关键词素材-All"
+      }
+    ],
+    "CreateWorkflow": [
+      {
+        "document": "对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为\"trans-100020-100030-100040\"转码规则，转出100020，100030，100040三种格式。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWorkflow\n&WorkflowName=trans-100020-100030-100040\n&Trigger.Type=CosFileUpload\n&Trigger.CosFileUploadTrigger.Bucket=TopRankVideo-125xxx88\n&Trigger.CosFileUploadTrigger.Region=ap-chongqing\n&Trigger.CosFileUploadTrigger.Dir=/movie/201907/\n&MediaProcessTask.TranscodeTaskSet.0.Definition=100020\n&MediaProcessTask.TranscodeTaskSet.1.Definition=100030\n&MediaProcessTask.TranscodeTaskSet.2.Definition=100040\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"WorkflowId\": 157482\n    }\n}",
+        "title": "设置转码规则"
+      },
+      {
+        "document": "对名为 TopRankVideo-125xxx88 的 Bucket 设置名称为\"snapshot\"转码规则，转出100010规格。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateWorkflow\n&WorkflowName=snapshot\n&Trigger.Type=CosFileUpload\n&Trigger.CosFileUploadTrigger.Bucket=TopRankVideo-125xxx88\n&Trigger.CosFileUploadTrigger.Region=ap-chongqing\n&Trigger.CosFileUploadTrigger.Dir=/movie/201907/\n&MediaProcessTask.SampleSnapshotTaskSet.0.Definition=100010\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"WorkflowId\": 3457482\n    }\n}",
+        "title": "设置采样截图规则"
+      }
+    ],
+    "DeleteAIAnalysisTemplate": [
+      {
+        "document": "删除用户自定义视频内容分析模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
+        "title": "删除模板 ID 为 30 的内容分析模板"
+      }
+    ],
+    "DeleteAIRecognitionTemplate": [
+      {
+        "document": "删除用户自定义视频内容识别模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
+        "title": "删除模板 ID 为 30 的视频内容识别模板"
+      }
+    ],
+    "DeleteAdaptiveDynamicStreamingTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAdaptiveDynamicStreamingTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除转自适应码流模板"
+      }
+    ],
+    "DeleteAnimatedGraphicsTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除转动图模板"
+      }
+    ],
+    "DeleteContentReviewTemplate": [
+      {
+        "document": "删除用户自定义 AI 内容智能识别模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteContentReviewTemplate\n&Definition=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
+        "title": "删除模板 ID 为 30 的内容智能识别模板"
+      }
+    ],
+    "DeleteImageSpriteTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除雪碧图模板"
+      }
+    ],
+    "DeletePersonSample": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeletePersonSample\n&PersonId=10562\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"510f4d68-09c9-44a3-ab55-192ff22297c9\"\n    }\n}",
+        "title": "删除素材样本"
+      }
+    ],
+    "DeleteSampleSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSampleSnapshotTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除采样截图模板"
+      }
+    ],
+    "DeleteSnapshotByTimeOffsetTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除指定时间点截图模板"
+      }
+    ],
+    "DeleteTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\r\n&Definition=1008\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除转码模板"
+      }
+    ],
+    "DeleteWatermarkTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteWatermarkTemplate\r\n&Definition=1001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除水印模板"
+      }
+    ],
+    "DeleteWordSamples": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteWordSamples\r\n&Keywords.0=张三\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"510f4d68-09c9-44a3-ab55-192ff22297c9\"\n    }\n}",
+        "title": "删除关键词样本"
+      }
+    ],
+    "DeleteWorkflow": [
+      {
+        "document": "删除工作流",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteWorkflow\r\n&WorkflowId=45781\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "删除工作流"
+      }
+    ],
+    "DescribeAIAnalysisTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\r\n&Definitions.0=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取模板 ID 为 30 的视频内容分析模板"
+      },
+      {
+        "document": "指定从序号 0 开始，总共 10 个视频内容分析模板，包括系统默认视频内容分析模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CreateTime\": \"2019-01-01T13:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T17:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取指定个数的视频内容分析模板"
+      }
+    ],
+    "DescribeAIRecognitionTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\r\n&Definitions.0=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取模板 ID 为 30 的视频内容识别模板"
+      },
+      {
+        "document": "获取序号从 0 开始，总共 10 个视频内容识别模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能识别模板\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"CreateTime\": \"2019-01-01T11:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T12:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取指定个数的视频内容识别模板"
+      }
+    ],
+    "DescribeAdaptiveDynamicStreamingTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Comment\": \"转自适应码流模板1\",\n                \"Definition\": 1001,\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DisableHigherVideoBitrate\": 1,\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"DisableHigherVideoResolution\": 1,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 200\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 1080,\n                            \"Height\": 960,\n                            \"Vcrf\": 23,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 1000,\n                            \"Gop\": 50\n                        },\n                        \"RemoveAudio\": 0\n                    }\n                ],\n                \"Type\": \"Preset\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "查询转自适应码流模板列表"
+      }
+    ],
+    "DescribeAnimatedGraphicsTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获转动图模板列表"
+      }
+    ],
+    "DescribeContentReviewTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Definitions.0=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容智能识别模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取模板 ID 为 30 的内容智能识别模板"
+      },
+      {
+        "document": "从序号 0 开始，获取 10 个内容智能识别模板，包括系统默认内容智能识别模板。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容智能识别模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"内容审核模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取指定个数的内容智能识别模板"
+      }
+    ],
+    "DescribeImageSpriteTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"雪碧图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"RowCount\": 10,\n                \"ColumnCount\": 5,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取雪碧图模板列表"
+      }
+    ],
+    "DescribeMediaMetaData": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeMediaMetaData\n&InputInfo.Type=COS\n&InputInfo.CosInputInfo.Bucket=TopRankVideo-125xxx88\n&InputInfo.CosInputInfo.Region=ap-chongqing\n&InputInfo.CosInputInfo.Object=/movie/201907/WildAnimal.mov\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MetaData\": {\n            \"AudioDuration\": 380.9465637207031,\n            \"AudioStreamSet\": [\n                {\n                    \"Bitrate\": 95999,\n                    \"Codec\": \"aac\",\n                    \"SamplingRate\": 44100\n                }\n            ],\n            \"Bitrate\": 409657,\n            \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n            \"Duration\": 380.9465637207031,\n            \"Height\": 360,\n            \"Rotate\": 0,\n            \"Size\": 19626862,\n            \"VideoDuration\": 380.8804931640625,\n            \"VideoStreamSet\": [\n                {\n                    \"Bitrate\": 313658,\n                    \"Codec\": \"h264\",\n                    \"Fps\": 29,\n                    \"Height\": 360,\n                    \"Width\": 480\n                }\n            ],\n            \"Width\": 480\n        },\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取视频信息"
+      }
+    ],
+    "DescribePersonSamples": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribePersonSamples\n&PersonIds.0=10569\n&Names.0=张三\n&Tags.0=明星\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PersonSet\": [\n            {\n                \"PersonId\": \"10569\",\n                \"Name\": \"张三\",\n                \"Description\": \"华语影视男演员、导演、制片人\",\n                \"FaceInfoSet\": [\n                    {\n                        \"FaceId\": \"10024\",\n                        \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/face.jpeg\"\n                    }\n                ],\n                \"UsageSet\": [\n                    \"Recognition\"\n                ],\n                \"TagSet\": [\n                    \"美国\",\n                    \"明星\"\n                ],\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"7d80775f-fb6d-4204-9540-1876f0d1c5a9\"\n    }\n}",
+        "title": "获取素材样本列表"
+      }
+    ],
+    "DescribeSampleSnapshotTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSampleSnapshotTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SampleSnapshotTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"采样截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "查询采样截图模板列表"
+      }
+    ],
+    "DescribeSnapshotByTimeOffsetTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSnapshotByTimeOffsetTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotByTimeOffsetTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"指定时间点截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取指定时间点截图模板列表"
+      }
+    ],
+    "DescribeTaskDetail": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTaskDetail\n&TaskId=235303****-WorkflowTask-80108cc3380155d98b2e3573a48a******\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskType\": \"WorkflowTask\",\n        \"Status\": \"FINISH\",\n        \"CreateTime\": \"2019-07-16T06:21:27Z\",\n        \"BeginProcessTime\": \"2019-07-16T06:21:28Z\",\n        \"FinishTime\": \"2019-07-16T06:21:46Z\",\n        \"WorkflowTask\": {\n            \"TaskId\": \"235303****-WorkflowTask-80108cc3380155d98b2e3573a48a******\",\n            \"Status\": \"FINISH\",\n            \"ErrCode\": 0,\n            \"Message\": \"\",\n            \"InputInfo\": {\n                \"Type\": \"COS\",\n                \"CosInputInfo\": {\n                    \"Bucket\": \"vodtestbj-235303****\",\n                    \"Region\": \"ap-beijing\",\n                    \"Object\": \"/input/videoplayback.mp4\"\n                }\n            },\n            \"MetaData\": {\n                \"AudioDuration\": 380.9465637207031,\n                \"AudioStreamSet\": [\n                    {\n                        \"Bitrate\": 95999,\n                        \"Codec\": \"aac\",\n                        \"SamplingRate\": 44100\n                    }\n                ],\n                \"Bitrate\": 409657,\n                \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                \"Duration\": 380.9465637207031,\n                \"Height\": 360,\n                \"Rotate\": 0,\n                \"Size\": 19626862,\n                \"VideoDuration\": 380.8804931640625,\n                \"VideoStreamSet\": [\n                    {\n                        \"Bitrate\": 313658,\n                        \"Codec\": \"h264\",\n                        \"Fps\": 29,\n                        \"Height\": 360,\n                        \"Width\": 480\n                    }\n                ],\n                \"Width\": 480\n            },\n            \"MediaProcessResultSet\": [\n                {\n                    \"Type\": \"Transcode\",\n                    \"TranscodeTask\": {\n                        \"Status\": \"SUCCESS\",\n                        \"ErrCode\": 0,\n                        \"Message\": \"SUCCESS\",\n                        \"Input\": {\n                            \"Definition\": 210,\n                            \"WatermarkSet\": [],\n                            \"OutputStorage\": {\n                                \"Type\": \"COS\",\n                                \"CosOutputStorage\": {\n                                    \"Bucket\": \"vodtestgz-235303****\",\n                                    \"Region\": \"ap-guangzhou\"\n                                }\n                            },\n                            \"OutputObjectPath\": \"/hello/world/what/ever/videoplayback_transcode111_210\",\n                            \"SegmentObjectName\": \"/hello/world/what/ever/no/problem/videoplayback_transcode11_210_{number}\",\n                            \"ObjectNumberFormat\": {\n                                \"InitialValue\": 2,\n                                \"Increment\": 3,\n                                \"MinLength\": 1,\n                                \"PlaceHolder\": \"0\"\n                            }\n                        },\n                        \"Output\": {\n                            \"OutputStorage\": {\n                                \"Type\": \"COS\",\n                                \"CosOutputStorage\": {\n                                    \"Bucket\": \"vodtestgz-235303****\",\n                                    \"Region\": \"ap-guangzhou\"\n                                }\n                            },\n                            \"Path\": \"/hello/world/what/ever/videoplayback_transcode111_210.m3u8\",\n                            \"Definition\": 210,\n                            \"Bitrate\": 353297,\n                            \"Height\": 240,\n                            \"Width\": 320,\n                            \"Size\": 5692,\n                            \"Duration\": 380.9580078125,\n                            \"Container\": \"hls,applehttp\",\n                            \"Md5\": \"ae0dfe7c7336291d6243463b7bb14fea\",\n                            \"VideoStreamSet\": [\n                                {\n                                    \"Bitrate\": 302307,\n                                    \"Codec\": \"h264\",\n                                    \"Fps\": 24,\n                                    \"Height\": 240,\n                                    \"Width\": 320\n                                }\n                            ],\n                            \"AudioStreamSet\": [\n                                {\n                                    \"Bitrate\": 50990,\n                                    \"Codec\": \"aac\",\n                                    \"SamplingRate\": 44100\n                                }\n                            ]\n                        }\n                    },\n                    \"AnimatedGraphicTask\": null,\n                    \"SnapshotByTimeOffsetTask\": null,\n                    \"SampleSnapshotTask\": null,\n                    \"ImageSpriteTask\": null\n                }\n            ]\n        },\n        \"TaskNotifyConfig\": null,\n        \"TasksPriority\": 0,\n        \"SessionId\": \"\",\n        \"SessionContext\": \"\",\n        \"ExtInfo\": \"\",\n        \"RequestId\": \"04db7d25-f590-414a-a341-8f1584f15f84\"\n    }\n}",
+        "title": "获取任务详情"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\r\n&Status=FINISH\r\n&Limit=5\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId1\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId2\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId3\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId4\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            },\n            {\n                \"TaskId\": \"taskId5\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            }\n        ],\n        \"ScrollToken\": \"taskId6\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取任务列表"
+      },
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\r\n&Status=FINISH\r\n&Limit=5\r\n&ScrollToken=taskId6\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\"\n            }\n        ],\n        \"ScrollToken\": \"\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取任务列表-翻页"
+      },
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTasks\r\n&Status=PROCESSING\r\n&Limit=5\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId7\",\n                \"TaskType\": \"WorkflowTask\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"0000-00-00T00:00:00Z\"\n            }\n        ],\n        \"ScrollToken\": \"\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取任务列表-处理中"
+      }
+    ],
+    "DescribeTranscodeTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeTranscodeTemplates\n&Definitions.0=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": null,\n                \"Type\": \"Preset\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0,\n                    \"FillType\": \"black\",\n                    \"Vcrf\": 23\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"TEHDConfig\": {\n                    \"MaxVideoBitrate\": 1,\n                    \"Type\": \"TEHD-100\"\n                },\n                \"ContainerType\": \"Video\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取转码模板"
+      }
+    ],
+    "DescribeWatermarkTemplates": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeWatermarkTemplates\n&Definitions.0=1001\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WatermarkTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"image\",\n                \"Name\": \"示例结构体待完善\",\n                \"Comment\": \"测试模板\",\n                \"XPos\": \"10%\",\n                \"YPos\": \"10%\",\n                \"ImageTemplate\": {\n                    \"ImageUrl\": \"http://1256768367.vts2.myqcloud.com/8b0dd2b5vtscq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\n                    \"Width\": \"80%\",\n                    \"Height\": \"80%\",\n                    \"RepeatType\": \"repeat\"\n                },\n                \"TextTemplate\": {\n                    \"FontType\": \"arial.ttf\",\n                    \"FontSize\": \"16px\",\n                    \"FontColor\": \"0xFF0000\",\n                    \"FontAlpha\": 1\n                },\n                \"SvgTemplate\": {\n                    \"Width\": \"10W%\",\n                    \"Height\": \"0px\"\n                },\n                \"CoordinateOrigin\": \"topLeft\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取水印模板"
+      }
+    ],
+    "DescribeWordSamples": [
+      {
+        "document": "不带任何条件，遍历关键词列表。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeWordSamples\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"WordSet\": [\n            {\n                \"Keyword\": \"张三\",\n                \"TagSet\": [\n                    \"明星\",\n                    \"艺人\"\n                ],\n                \"UsageSet\": [\n                    \"Recognition.Ocr\",\n                    \"Recognition.Asr\"\n                ],\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            },\n            {\n                \"Keyword\": \"李四\",\n                \"TagSet\": [\n                    \"总统\"\n                ],\n                \"UsageSet\": [\n                    \"Review.Ocr\",\n                    \"Review.Asr\"\n                ],\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取关键词样本列表-无条件"
+      },
+      {
+        "document": "限定应用场景等条件的关键词查询。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeWordSamples\n&Usages.0=Recognition\n&Usages.1=Review.Ocr\n&Keywords.0=张三\n&Tags.0=明星\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WordSet\": [\n            {\n                \"Keyword\": \"张三\",\n                \"TagSet\": [\n                    \"明星\",\n                    \"艺人\"\n                ],\n                \"UsageSet\": [\n                    \"Recognition.Ocr\",\n                    \"Recognition.Asr\"\n                ],\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取关键词样本列表-有条件"
+      }
+    ],
+    "DescribeWorkflows": [
+      {
+        "document": "查询 ID 为78459的工作流。",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeWorkflows\n&WorkflowIds.0=78459\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TotalCount\": 1,\n        \"WorkflowInfoSet\": [\n            {\n                \"WorkflowId\": 78459,\n                \"WorkflowName\": \"transcode-10\",\n                \"Status\": \"Enabled\",\n                \"Trigger\": {\n                    \"Type\": \"CosFileUpload\",\n                    \"CosFileUploadTrigger\": {\n                        \"Bucket\": \"TopRankVideo-125xxx88\",\n                        \"Region\": \"ap-chongqing\",\n                        \"Dir\": \"/movie/201907/\"\n                    }\n                },\n                \"OutputStorage\": {\n                    \"Type\": \"COS\",\n                    \"CosOutputStorage\": {\n                        \"Bucket\": \"TopRankVideo-125xxx88\",\n                        \"Region\": \"ap-chongqing\"\n                    }\n                },\n                \"MediaProcessTask\": {\n                    \"TranscodeTaskSet\": [\n                        {\n                            \"Definition\": 10,\n                            \"WatermarkSet\": []\n                        }\n                    ]\n                },\n                \"OutputDir\": \"/movie/201907/\",\n                \"AiContentReviewTask\": null,\n                \"AiRecognitionTask\": null,\n                \"AiAnalysisTask\": null,\n                \"TaskNotifyConfig\": null,\n                \"TaskPriority\": 0,\n                \"CreateTime\": \"2019-07-18T10:00:00Z\",\n                \"UpdateTime\": \"2019-07-18T11:00:03Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询特定工作流"
+      }
+    ],
+    "DisableWorkflow": [
+      {
+        "document": "禁用工作流19000",
+        "input": "https://mps.tencentcloudapi.com/?Action=DisableWorkflow\r\n&WorkflowId=19000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "禁用工作流"
+      }
+    ],
+    "EditMedia": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=EditMedia\n&FileInfos.0.InputInfo.Type=COS\n&FileInfos.0.InputInfo.CosInputInfo.Bucket=TopRankVideo-125xxx88\n&FileInfos.0.InputInfo.CosInputInfo.Region=ap-chongqing\n&FileInfos.0.InputInfo.CosInputInfo.Object=/movie/201907/WildAnimal.mov\n&FileInfos.0.StartTimeOffset=60.0\n&FileInfos.0.EndTimeOffset=120.0\n&OutputStorage.Type=COS\n&OutputStorage.CosOutputStorage.Bucket=TopRankVideo-125xxx88\n&OutputStorage.CosOutputStorage.Region=ap-chongqing\n&OutputObjectPath=/clip_result/clip_WildAnimal.{format}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx88-EditMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
+        "title": "对一个文件进行剪辑，生成一个新的视频"
+      }
+    ],
+    "EnableWorkflow": [
+      {
+        "document": "启用工作流10000",
+        "input": "https://mps.tencentcloudapi.com/?Action=EnableWorkflow\r\n&WorkflowId=10000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "启用工作流"
+      }
+    ],
+    "ExecuteFunction": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ExecuteFunction\n&FunctionName=ExampleFunc\n&FunctionArg=XXX\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"XXX\"\n    }\n}",
+        "title": "A 客户发起定制的视频处理"
+      }
+    ],
+    "ManageTask": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ManageTask\n&OperationType=Abort\n&TaskId=2459149217-procedure-live-xxx51da009t0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\n    }\n}",
+        "title": "终止指定的直播流处理任务"
+      }
+    ],
+    "ModifyAIAnalysisTemplate": [
+      {
+        "document": "修改自定义视频内容分析模板，开启智能封面任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=ON\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "开启智能封面任务"
+      },
+      {
+        "document": "修改自定义视频内容分析模板，关闭智能封面任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "关闭智能封面任务"
+      },
+      {
+        "document": "修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&TagConfigure.Switch=ON\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "同时开启一项和关闭一项内容分析任务"
+      }
+    ],
+    "ModifyAIRecognitionTemplate": [
+      {
+        "document": "修改自定义视频内容识别模板，关闭文本全文识别任务，开启文本关键词识别任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&OcrFullTextConfigure.Switch=OFF\n&OcrWordsConfigure.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "同时关闭和开启一项识别任务"
+      }
+    ],
+    "ModifyAdaptiveDynamicStreamingTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAdaptiveDynamicStreamingTemplate\n&Definition=10038\n&Name=转自适应码流模板2\n&Format=HLS\n&StreamInfos.0.Video.Codec=libx264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=25\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改转自适应码流模板"
+      }
+    ],
+    "ModifyAnimatedGraphicsTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&Name=转动图模板1\r\n&Width=540\r\n&Height=960\r\n&Fps=30\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改转动图模板"
+      }
+    ],
+    "ModifyContentReviewTemplate": [
+      {
+        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面令人反感的信息的任务判定为违规的分数阈值和画面令人反感的信息的任务判定为需要人工智能识别的分数阈值修改为默认。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改内容智能识别模板，开启画面令人反感的智能识别任务"
+      },
+      {
+        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82ae8d8e-dce3-4151-9d4b-5594145223e1\"\n    }\n}",
+        "title": "修改内容智能识别模板，开启画面令人反感的信息的智能识别任务并指定分数阈值"
+      },
+      {
+        "document": "修改自定义 AI 内容智能识别模板。指定过滤标签为性感，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息的任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=sexy\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改内容智能识别模板，开启画面令人反感的信息任务并指定过滤标签及分数阈值"
+      }
+    ],
+    "ModifyImageSpriteTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\r\n&Definition=10001\r\n&Name=雪碧图模板1\r\n&Width=54\r\n&Height=96\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&RowCount=5\r\n&ColumnCount=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改雪碧图模板"
+      }
+    ],
+    "ModifyPersonSample": [
+      {
+        "document": "修改素材名称、描述。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyPersonSample\n&PersonId=10569\n&Name=张三\n&Description=华语影视男演员、导演、制片人\n&Usages.0=All\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"10569\",\n            \"Name\": \"张三\",\n            \"Description\": \"华语影视男演员、导演、制片人\",\n            \"FaceInfoSet\": [\n                {\n                    \"FaceId\": \"10023\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg\"\n                }\n            ],\n            \"TagSet\": [],\n            \"CreateTime\": \"2018-10-01T10:00:00Z\",\n            \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n        },\n        \"FailFaceInfoSet\": null,\n        \"RequestId\": \"33737bdf-e2ed-4eda-b09b-f3782d8a9710\"\n    }\n}",
+        "title": "修改素材样本"
+      },
+      {
+        "document": "新增五官图片、新增素材标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyPersonSample\n&PersonId=10569\n&Name=张三\n&Description=华语影视男演员、导演、制片人\n&FaceOperationInfo.Type=add\n&FaceOperationInfo.FaceContents.0=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\n&TagOperationInfo.Type=add\n&TagOperationInfo.Tags.0=美国\n&TagOperationInfo.Tags.1=明星\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"10569\",\n            \"Name\": \"张三\",\n            \"Description\": \"华语影视男演员、导演、制片人\",\n            \"FaceInfoSet\": [\n                {\n                    \"FaceId\": \"10023\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg\"\n                },\n                {\n                    \"FaceId\": \"10024\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281554/face.jpeg\"\n                }\n            ],\n            \"TagSet\": [\n                \"中国\",\n                \"明星\"\n            ],\n            \"CreateTime\": \"2018-10-01T10:00:00Z\",\n            \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n        },\n        \"FailFaceInfoSet\": null,\n        \"RequestId\": \"33737bdf-e2ed-4eda-b09b-f3782d8a9710\"\n    }\n}",
+        "title": "修改素材样本-add"
+      },
+      {
+        "document": "重置五官图片、素材标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyPersonSample\n&PersonId=10569\n&Name=张三\n&Description=华语影视男演员、导演、制片人\n&FaceOperationInfo.Type=reset\n&FaceOperationInfo.FaceContents.0=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\n&FaceOperationInfo.FaceContents.1=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\n&TagOperationInfo.Type=reset\n&TagOperationInfo.Tags.0=美国\n&TagOperationInfo.Tags.1=明星\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"10569\",\n            \"Name\": \"张三\",\n            \"Description\": \"华语影视男演员、导演、制片人\",\n            \"FaceInfoSet\": [\n                {\n                    \"FaceId\": \"10025\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg\"\n                },\n                {\n                    \"FaceId\": \"10026\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281556/face.jpeg\"\n                }\n            ],\n            \"TagSet\": [\n                \"中国\",\n                \"明星\"\n            ],\n            \"CreateTime\": \"2018-10-01T10:00:00Z\",\n            \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n        },\n        \"FailFaceInfoSet\": null,\n        \"RequestId\": \"33737bdf-e2ed-4eda-b09b-f3782d8a9710\"\n    }\n}",
+        "title": "修改素材样本-reset"
+      },
+      {
+        "document": "删除五官图片、素材标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyPersonSample\n&PersonId=10569\n&Name=张三\n&Description=华语影视男演员、导演、制片人\n&FaceOperationInfo.Type=delete\n&FaceOperationInfo.FaceIds.0=10026\n&TagOperationInfo.Type=delete\n&TagOperationInfo.Tags.0=中国\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Person\": {\n            \"PersonId\": \"10569\",\n            \"Name\": \"张三\",\n            \"Description\": \"华语影视男演员、导演、制片人\",\n            \"FaceInfoSet\": [\n                {\n                    \"FaceId\": \"10025\",\n                    \"Url\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg\"\n                }\n            ],\n            \"TagSet\": [\n                \"明星\"\n            ],\n            \"CreateTime\": \"2018-10-01T10:00:00Z\",\n            \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n        },\n        \"FailFaceInfoSet\": null,\n        \"RequestId\": \"33737bdf-e2ed-4eda-b09b-f3782d8a9710\"\n    }\n}",
+        "title": "修改素材样本-delete"
+      }
+    ],
+    "ModifySampleSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\r\n&Definition=10001\r\n&Name=采样截图模板1\r\n&Width=540\r\n&Height=960\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&Format=jpg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改采样截图模板"
+      }
+    ],
+    "ModifySnapshotByTimeOffsetTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&Name=指定时间点截图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=jpg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改指定时间点截图模板"
+      }
+    ],
+    "ModifyTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyTranscodeTemplate\n&Definition=1008\n&Container=mp4\n&VideoTemplate.Codec=libx264\n&VideoTemplate.Fps=60\n&VideoTemplate.Bitrate=256\n&AudioTemplate.Codec=libfdk_aac\n&AudioTemplate.Bitrate=200\n&AudioTemplate.SampleRate=200\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改转码模板"
+      }
+    ],
+    "ModifyWatermarkTemplate": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyWatermarkTemplate\n&Definition=1001\n&Name=模板2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ImageUrl\": null,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改水印模板"
+      }
+    ],
+    "ModifyWordSample": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyWordSample\n&Keyword=格斗\n&Usages.0=Review\n&TagOperationInfo.Type=reset\n&TagOperationInfo.Tags.0=涉暴\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "修改关键词样本"
+      }
+    ],
+    "ParseLiveStreamProcessNotification": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ParseLiveStreamProcessNotification\r\n&Content={\"NotificationType\":\"AiReviewResult\",XXX\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NotificationType\": \"AiReviewResult\",\n        \"TaskId\": \"2459149217-procedure-live-xxx51da009t0\",\n        \"ProcessEofInfo\": null,\n        \"AiReviewResultInfo\": {\n            \"ResultSet\": [\n                {\n                    \"Type\": \"VoicePorn\",\n                    \"ImagePornResultSet\": [],\n                    \"ImageTerrorismResultSet\": [],\n                    \"ImagePoliticalResultSet\": [],\n                    \"VoicePornResultSet\": [\n                        {\n                            \"StartPtsTime\": 0.266,\n                            \"EndPtsTime\": 4.146,\n                            \"Confidence\": 98,\n                            \"Suggestion\": \"block\",\n                            \"Label\": \"sexual_moan\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"SessionId\": \"\",\n        \"SessionContext\": \"\",\n        \"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\n    }\n}",
+        "title": "解析直播流事件通知内容"
+      }
+    ],
+    "ParseNotification": [
+      {
+        "document": "",
+        "input": "https://mps.tencentcloudapi.com/?Action=ParseNotification\n&Content={\"EventType\":\"ProcedureStateChanged\",XXX\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventType\": \"WorkflowTask\",\n        \"WorkflowTaskEvent\": {\n            \"TaskId\": \"1256768367-Procedure-475b7237438a39560b9879a4556cb177t1\",\n            \"Status\": \"FINISH\",\n            \"ErrCode\": 0,\n            \"Message\": \"\",\n            \"InputInfo\": {\n                \"Type\": \"COS\",\n                \"CosInputInfo\": {\n                    \"Bucket\": \"TopRankVideo-125xxx88\",\n                    \"Region\": \"ap-chongqing\",\n                    \"Object\": \"/movie/201907/WildAnimal.mov\"\n                }\n            },\n            \"MetaData\": {\n                \"AudioDuration\": 59.990001678467,\n                \"AudioStreamSet\": [\n                    {\n                        \"Bitrate\": 383854,\n                        \"Codec\": \"aac\",\n                        \"SamplingRate\": 48000\n                    }\n                ],\n                \"Bitrate\": 1021028,\n                \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                \"Duration\": 60,\n                \"Height\": 480,\n                \"Rotate\": 0,\n                \"Size\": 7700180,\n                \"VideoDuration\": 60,\n                \"VideoStreamSet\": [\n                    {\n                        \"Bitrate\": 637174,\n                        \"Codec\": \"h264\",\n                        \"Fps\": 23,\n                        \"Height\": 480,\n                        \"Width\": 640\n                    }\n                ],\n                \"Width\": 640\n            },\n            \"MediaProcessResultSet\": [\n                {\n                    \"Type\": \"Transcode\",\n                    \"TranscodeTask\": {\n                        \"Status\": \"SUCCESS\",\n                        \"ErrCode\": 0,\n                        \"Message\": \"SUCCESS\",\n                        \"Input\": {\n                            \"Definition\": 20,\n                            \"WatermarkSet\": null\n                        },\n                        \"Output\": {\n                            \"Path\": \"/movie/201907/WildAnimal_transcode_20.mp4\",\n                            \"Size\": 4189073,\n                            \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                            \"Height\": 480,\n                            \"Width\": 640,\n                            \"Bitrate\": 552218,\n                            \"Md5\": \"eff7031ad7877865f9a3240e9ab165ad\",\n                            \"Duration\": 60.04700088501,\n                            \"VideoStreamSet\": [\n                                {\n                                    \"Bitrate\": 503727,\n                                    \"Codec\": \"h264\",\n                                    \"Fps\": 24,\n                                    \"Height\": 480,\n                                    \"Width\": 640\n                                }\n                            ],\n                            \"AudioStreamSet\": [\n                                {\n                                    \"Bitrate\": 48491,\n                                    \"Codec\": \"aac\",\n                                    \"SamplingRate\": 44100\n                                }\n                            ],\n                            \"Definition\": 0\n                        }\n                    },\n                    \"AnimatedGraphicTask\": null,\n                    \"SnapshotByTimeOffsetTask\": null,\n                    \"SampleSnapshotTask\": null,\n                    \"ImageSpriteTask\": null\n                }\n            ]\n        },\n        \"RequestId\": \"335bdaa3-db0e-46ce-9946-51941d9cb0f5\"\n    }\n}",
+        "title": "解析事件通知内容"
+      }
+    ],
+    "ProcessLiveStream": [
+      {
+        "document": "对 URL 为 http://www.abc.com/abc.m3u8 的直播流发起内容识别任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ProcessLiveStream\n&Url=http://www.abc.com/abc.m3u8\n&TaskNotifyConfig.CmqModel=Queue\n&TaskNotifyConfig.CmqRegion=gz\n&TaskNotifyConfig.QueueName=queue-125717729292\n&AiRecognitionTask.Definition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"TaskId\": \"125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92\"\n    }\n}",
+        "title": "发起直播流审核任务"
+      }
+    ],
+    "ProcessMedia": [
+      {
+        "document": "对指定 COS 地址的视频发起转码任务，转出20，30，40三种格式。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ProcessMedia\n&InputInfo.Type=COS\n&InputInfo.CosInputInfo.Bucket=TopRankVideo-125xxx88\n&InputInfo.CosInputInfo.Region=ap-chongqing\n&InputInfo.CosInputInfo.Object=/movie/201907/WildAnimal.mov\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
+        "title": "发起转码任务"
+      }
+    ],
+    "RecognizeMediaForZhiXue": [
+      {
+        "document": "默认开启全部识别功能。",
+        "input": "https://mps.tencentcloudapi.com/?Action=RecognizeMediaForZhiXue\n&InputInfo.Type=COS\n&InputInfo.CosInputInfo.Bucket=TopRankVideo-125xxx88\n&InputInfo.CosInputInfo.Region=ap-chongqing\n&InputInfo.CosInputInfo.Object=/movie/201907/WildAnimal.mov\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"125xxx65-RecognizeMediaForZhiXue-bffb15f07530b57bc1aabb01fac74bca\",\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "发起媒体智能识别"
+      }
+    ],
+    "ResetWorkflow": [
+      {
+        "document": "重设工作流 ID 为2573的转码规则，转码输出加上水印。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ResetWorkflow\n&WorkflowId=2573\n&WorkflowName=trans-100020-100030-100040\n&Trigger.Type=CosFileUpload\n&Trigger.CosFileUploadTrigger.Bucket=TopRankVideo-125xxx88\n&Trigger.CosFileUploadTrigger.Region=ap-chongqing\n&Trigger.CosFileUploadTrigger.Dir=/movie/201907/\n&MediaProcessTask.TranscodeTaskSet.0.Definition=100020\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition=12580\n&MediaProcessTask.TranscodeTaskSet.1.Definition=100030\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition=12580\n&MediaProcessTask.TranscodeTaskSet.2.Definition=100040\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition=12580\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "重设转码规则"
+      }
+    ]
+  },
+  "version": "1.0"
+}

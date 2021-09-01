@@ -1,0 +1,1652 @@
+{
+  "actions": {
+    "BindEipAcls": {
+      "document": "此接口用于为某个 EIP 关联 ACL。",
+      "input": "BindEipAclsRequest",
+      "name": "绑定弹性公网IP ACL",
+      "output": "BindEipAclsResponse"
+    },
+    "BindHosted": {
+      "document": "BindHosted接口用于绑定黑石弹性公网IP到黑石托管机器上",
+      "input": "BindHostedRequest",
+      "name": "黑石托管机器绑定EIP",
+      "output": "BindHostedResponse"
+    },
+    "BindRs": {
+      "document": "绑定黑石EIP",
+      "input": "BindRsRequest",
+      "name": "绑定黑石EIP",
+      "output": "BindRsResponse"
+    },
+    "BindVpcIp": {
+      "document": "黑石EIP绑定VPCIP",
+      "input": "BindVpcIpRequest",
+      "name": "黑石EIP绑定VPCIP",
+      "output": "BindVpcIpResponse"
+    },
+    "CreateEip": {
+      "document": "创建黑石弹性公网IP",
+      "input": "CreateEipRequest",
+      "name": "创建黑石EIP",
+      "output": "CreateEipResponse"
+    },
+    "CreateEipAcl": {
+      "document": "创建黑石弹性公网 EIPACL",
+      "input": "CreateEipAclRequest",
+      "name": "创建黑石弹性公网 EIPACL",
+      "output": "CreateEipAclResponse"
+    },
+    "DeleteEip": {
+      "document": "释放黑石弹性公网IP",
+      "input": "DeleteEipRequest",
+      "name": "释放黑石弹性公网IP",
+      "output": "DeleteEipResponse"
+    },
+    "DeleteEipAcl": {
+      "document": "删除弹性公网IP ACL",
+      "input": "DeleteEipAclRequest",
+      "name": "删除弹性公网IP ACL",
+      "output": "DeleteEipAclResponse"
+    },
+    "DescribeEipAcls": {
+      "document": "查询弹性公网IP ACL",
+      "input": "DescribeEipAclsRequest",
+      "name": "查询弹性公网IP ACL",
+      "output": "DescribeEipAclsResponse"
+    },
+    "DescribeEipQuota": {
+      "document": "查询黑石EIP 限额",
+      "input": "DescribeEipQuotaRequest",
+      "name": "查询黑石EIP 限额",
+      "output": "DescribeEipQuotaResponse"
+    },
+    "DescribeEipTask": {
+      "document": "黑石EIP查询任务状态",
+      "input": "DescribeEipTaskRequest",
+      "name": "黑石EIP查询任务状态",
+      "output": "DescribeEipTaskResponse"
+    },
+    "DescribeEips": {
+      "document": "黑石EIP查询接口",
+      "input": "DescribeEipsRequest",
+      "name": "黑石EIP查询接口",
+      "output": "DescribeEipsResponse"
+    },
+    "ModifyEipAcl": {
+      "document": "修改弹性公网IP ACL",
+      "input": "ModifyEipAclRequest",
+      "name": "修改弹性公网IP ACL",
+      "output": "ModifyEipAclResponse"
+    },
+    "ModifyEipCharge": {
+      "document": "黑石EIP修改计费方式",
+      "input": "ModifyEipChargeRequest",
+      "name": "黑石EIP修改计费方式",
+      "output": "ModifyEipChargeResponse"
+    },
+    "ModifyEipName": {
+      "document": "更新黑石EIP名称",
+      "input": "ModifyEipNameRequest",
+      "name": "更新黑石EIP名称",
+      "output": "ModifyEipNameResponse"
+    },
+    "UnbindEipAcls": {
+      "document": "解绑弹性公网IP ACL",
+      "input": "UnbindEipAclsRequest",
+      "name": "解绑弹性公网IP ACL",
+      "output": "UnbindEipAclsResponse"
+    },
+    "UnbindHosted": {
+      "document": "UnbindHosted接口用于解绑托管机器上的EIP",
+      "input": "UnbindHostedRequest",
+      "name": "黑石托管机器解绑EIP",
+      "output": "UnbindHostedResponse"
+    },
+    "UnbindRs": {
+      "document": "解绑黑石EIP",
+      "input": "UnbindRsRequest",
+      "name": "解绑黑石EIP",
+      "output": "UnbindRsResponse"
+    },
+    "UnbindRsList": {
+      "document": "批量解绑物理机弹性公网IP接口",
+      "input": "UnbindRsListRequest",
+      "name": "批量解绑物理机弹性公网IP",
+      "output": "UnbindRsListResponse"
+    },
+    "UnbindVpcIp": {
+      "document": "黑石EIP解绑VPCIP",
+      "input": "UnbindVpcIpRequest",
+      "name": "黑石EIP解绑VPCIP",
+      "output": "UnbindVpcIpResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-06-25",
+    "api_brief": null,
+    "serviceNameCN": "黑石弹性公网IP",
+    "serviceShortName": "bmeip"
+  },
+  "objects": {
+    "BindEipAclsRequest": {
+      "document": "BindEipAcls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待关联的 EIP 与 ACL关系列表",
+          "example": "无",
+          "member": "EipAclMap",
+          "name": "EipIdAclIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindEipAclsResponse": {
+      "document": "BindEipAcls返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindHostedRequest": {
+      "document": "BindHosted请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID，可通过DescribeBmEip 接口返回字段中的 eipId获取。Eip和EipId参数必须要填写一个。",
+          "example": "eip-kwn5q7mt",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "托管机器实例ID",
+          "example": "chm-343fqw4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindHostedResponse": {
+      "document": "BindHosted返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID，可以通过EipBmQueryTask查询任务状态",
+          "example": "2388708",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindRsRequest": {
+      "document": "BindRs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理服务器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindRsResponse": {
+      "document": "BindRs返回参数结构体",
+      "members": [
+        {
+          "document": "绑定黑石物理机异步任务ID，可以通过DescribeEipTask查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindVpcIpRequest": {
+      "document": "BindVpcIp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定的VPC内IP地址",
+          "member": "string",
+          "name": "VpcIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindVpcIpResponse": {
+      "document": "BindVpcIp返回参数结构体",
+      "members": [
+        {
+          "document": "EIP绑定VPC网络IP异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEipAclRequest": {
+      "document": "CreateEipAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ACL 名称",
+          "example": "acltest",
+          "member": "string",
+          "name": "AclName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL 状态 0：无状态，1：有状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEipAclResponse": {
+      "document": "CreateEipAcl返回参数结构体",
+      "members": [
+        {
+          "document": "ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ACL 实例状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ACL 实例名称",
+          "example": "acltest",
+          "member": "string",
+          "name": "AclName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ACL 实例创建时间",
+          "example": "2018-10-26 14:42:09",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEipRequest": {
+      "document": "CreateEip请求参数结构体",
+      "members": [
+        {
+          "default": "1",
+          "document": "申请数量，默认为1, 最大 20",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "flow",
+          "document": "EIP计费方式，flow-流量计费；bandwidth-带宽计费",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "带宽设定值（只在带宽计费时生效）",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "fullnat",
+          "document": "EIP模式，目前支持tunnel和fullnat",
+          "member": "string",
+          "name": "SetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "0",
+          "document": "是否使用独占集群，0：不使用，1：使用。默认为0",
+          "member": "uint64",
+          "name": "Exclusive",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EIP归属私有网络ID，例如vpc-k7j1t2x1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定申请的IP列表",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEipResponse": {
+      "document": "CreateEip返回参数结构体",
+      "members": [
+        {
+          "document": "EIP列表",
+          "member": "string",
+          "name": "EipIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务ID",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEipAclRequest": {
+      "document": "DeleteEipAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的 ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEipAclResponse": {
+      "document": "DeleteEipAcl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEipRequest": {
+      "document": "DeleteEip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID列表",
+          "member": "string",
+          "name": "EipIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEipResponse": {
+      "document": "DeleteEip返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipAclsRequest": {
+      "document": "DescribeEipAcls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ACL 名称，支持模糊查找",
+          "example": "abc",
+          "member": "string",
+          "name": "AclName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL 实例 ID 列表，数组下标从 0 开始",
+          "example": "[\"bmeipacl-s1hf4voq\\r\\n\"]",
+          "member": "string",
+          "name": "AclIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页参数。偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数。每一页的 EIPACL 列表数目",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EIP实例ID列表",
+          "example": "[\"eip-1234abcd\", \"eip-abcd1234\"]",
+          "member": "string",
+          "name": "EipIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EIP IP地址列表",
+          "example": "[\"1,1,1,1\"]",
+          "member": "string",
+          "name": "EipIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EIP名称列表",
+          "example": "name",
+          "member": "string",
+          "name": "EipNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，取值：0:增序(默认)，1:降序",
+          "example": "1",
+          "member": "uint64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ACL名称列表，支持模糊查找",
+          "example": "[\"abc\", \"def\"]",
+          "member": "string",
+          "name": "AclNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipAclsResponse": {
+      "document": "DescribeEipAcls返回参数结构体",
+      "members": [
+        {
+          "document": "返回 EIPACL 列表总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "EIPACL列表",
+          "example": "无",
+          "member": "EipAcl",
+          "name": "EipAclList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipQuotaRequest": {
+      "document": "DescribeEipQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEipQuotaResponse": {
+      "document": "DescribeEipQuota返回参数结构体",
+      "members": [
+        {
+          "document": "能拥有的EIP个数的总配额，默认是100个",
+          "member": "int64",
+          "name": "EipNumQuota",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前已使用的EIP个数，包括创建中、绑定中、已绑定、解绑中、未绑定几种状态的EIP个数总和",
+          "member": "int64",
+          "name": "CurrentEipNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当天申请EIP次数",
+          "member": "int64",
+          "name": "DailyApplyCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每日申请EIP的次数限制",
+          "member": "int64",
+          "name": "DailyApplyQuota",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "BatchApplyMax",
+          "member": "int64",
+          "name": "BatchApplyMax",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipTaskRequest": {
+      "document": "DescribeEipTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP查询任务ID",
+          "example": "2488126",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipTaskResponse": {
+      "document": "DescribeEipTask返回参数结构体",
+      "members": [
+        {
+          "document": "当前任务状态码：0-成功，1-失败，2-进行中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipsRequest": {
+      "document": "DescribeEips请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP实例ID列表",
+          "member": "string",
+          "name": "EipIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EIP IP 列表",
+          "member": "string",
+          "name": "Eips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主机实例ID 列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EIP名称,模糊匹配",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态列表, 默认所有",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回EIP数量，默认 20, 最大值 100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持： EipId,Eip,Status, InstanceId,CreatedAt",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式 0:递增 1:递减(默认)",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费模式,流量：flow，带宽：bandwidth",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定类型，-1：未绑定，0：物理机，1：nat网关，2：虚拟IP, 3:托管机器",
+          "member": "int64",
+          "name": "BindTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "独占标志，0：共享，1：独占",
+          "member": "int64",
+          "name": "ExclusiveTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EIP ACL实例ID",
+          "member": "string",
+          "name": "AclId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索条件，是否绑定了EIP ACL， 0：未绑定，1：绑定",
+          "member": "int64",
+          "name": "BindAcl",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipsResponse": {
+      "document": "DescribeEips返回参数结构体",
+      "members": [
+        {
+          "document": "返回EIP信息数组",
+          "member": "EipInfo",
+          "name": "EipSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回EIP数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EipAcl": {
+      "document": "EipAcl信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ACL 实例 ID。",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ACL 实例名称",
+          "member": "string",
+          "name": "AclName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ACL 状态。0：无状态，1：有状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIPACL 创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIPACL 已关联的 eip 数目",
+          "member": "int64",
+          "name": "EipNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出站规则",
+          "member": "EipAclRule",
+          "name": "OutRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "入站规则",
+          "member": "EipAclRule",
+          "name": "InRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EipAclMap": {
+      "document": "eipid与aclid关联关系",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP 实例 ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ACL 实例 ID",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EipAclRule": {
+      "document": "eipacl规则",
+      "members": [
+        {
+          "default": "\"\"",
+          "document": "源 IP",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "\"\"",
+          "document": "目标端口",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "\"\"",
+          "document": "协议(TCP/UDP/ICMP/ANY)",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "\"\"",
+          "document": "策略（accept/drop）",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "\"\"",
+          "document": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EipInfo": {
+      "document": "Eip信息",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP实例ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP名称",
+          "member": "string",
+          "name": "EipName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP地址",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港",
+          "member": "int64",
+          "name": "IspId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态 0：创建中； 1：绑定中； 2：已绑定； 3：解绑中； 4：未绑定； 6：下线中； 9：创建失败",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否欠费隔离 1： 欠费隔离； 0： 正常。处在欠费隔离情况下的EIP不能进行任何管理操作。",
+          "member": "int64",
+          "name": "Arrears",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP所绑定的服务器实例ID，未绑定则为空",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器别名",
+          "member": "string",
+          "name": "InstanceAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP解绑时间",
+          "member": "string",
+          "name": "FreeAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP更新时间",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP未绑定服务器时长（单位：秒）",
+          "member": "int64",
+          "name": "FreeSecond",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP所绑定的资源类型，-1：未绑定资源；0：黑石物理机，字段对应unInstanceId；1：Nat网关，字段对应natUid；2：云服务器字段对应vpcIp; 3: 托管机器，字段对应HInstanceId, HInstanceAlias",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP计费模式，\"flow\"：流量计费； \"bandwidth\"：带宽计费",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP带宽计费模式下的带宽上限（单位：MB）",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次操作变更的EIP计费模式，\"flow\"：流量计费； \"bandwidth\"：带宽计费",
+          "member": "string",
+          "name": "LatestPayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近一次操作变更的EIP计费模式对应的带宽上限值，仅在带宽计费模式下有效（单位：MB）",
+          "member": "int64",
+          "name": "LatestBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP所绑定的NAT网关的数字ID，形如：1001,，未绑定则为空",
+          "member": "int64",
+          "name": "NatId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP所绑定的NAT网关实例ID，形如：\"nat-n47xxxxx\"，未绑定则为空",
+          "member": "string",
+          "name": "NatUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP所绑定的云服务器IP(托管或者云服务器的IP），形如：\"10.1.1.3\"。 注意：IP资源需要通过bmvpc模块注册或者申请后才可以绑定eip，接口使用申请子网IP和注册子网IP：,未绑定则为空",
+          "member": "string",
+          "name": "VpcIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络实例ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为独占类型EIP",
+          "member": "int64",
+          "name": "Exclusive",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的cidr",
+          "member": "string",
+          "name": "VpcCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP ACL实例ID",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP ACL名称",
+          "member": "string",
+          "name": "AclName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "托管机器实例ID",
+          "member": "string",
+          "name": "HInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "托管机器别名",
+          "member": "string",
+          "name": "HInstanceAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EipRsMap": {
+      "document": "EipId与InstanceId绑定关系",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP实例 ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑石物理机实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyEipAclRequest": {
+      "document": "ModifyEipAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ACL 实例 ID",
+          "example": "bmeipacl-s1hf4voq",
+          "member": "string",
+          "name": "AclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL 名称",
+          "example": "abc",
+          "member": "string",
+          "name": "AclName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL 状态。0：无状态 1：有状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则类型（in/out）。in：入站规则 out：出站规则",
+          "example": "in",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ACL规则列表",
+          "example": "无",
+          "member": "EipAclRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEipAclResponse": {
+      "document": "ModifyEipAcl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEipChargeRequest": {
+      "document": "ModifyEipCharge请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EIP计费方式，flow-流量计费；bandwidth-带宽计费",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Eip实例ID列表",
+          "member": "string",
+          "name": "EipIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "1",
+          "document": "带宽设定值（只在带宽计费时生效）",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEipChargeResponse": {
+      "document": "ModifyEipCharge返回参数结构体",
+      "members": [
+        {
+          "document": "修改计费模式的异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEipNameRequest": {
+      "document": "ModifyEipName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIP 实例别名",
+          "member": "string",
+          "name": "EipName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEipNameResponse": {
+      "document": "ModifyEipName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindEipAclsRequest": {
+      "document": "UnbindEipAcls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待解关联的 EIP 与 ACL列表",
+          "example": "无",
+          "member": "EipAclMap",
+          "name": "EipIdAclIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindEipAclsResponse": {
+      "document": "UnbindEipAcls返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindHostedRequest": {
+      "document": "UnbindHosted请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "托管机器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Eip实例ID，可通过DescribeBmEip 接口返回字段中的 eipId获取。Eip和EipId参数必须要填写一个。",
+          "member": "string",
+          "name": "EipId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性IP。Eip和EipId参数必须要填写一个。",
+          "member": "string",
+          "name": "Eip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindHostedResponse": {
+      "document": "UnbindHosted返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID，可以通过EipBmQueryTask查询任务状态",
+          "member": "uint64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindRsListRequest": {
+      "document": "UnbindRsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "物理机绑定的EIP列表",
+          "member": "EipRsMap",
+          "name": "EipRsList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindRsListResponse": {
+      "document": "UnbindRsList返回参数结构体",
+      "members": [
+        {
+          "document": "解绑操作的异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindRsRequest": {
+      "document": "UnbindRs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物理服务器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindRsResponse": {
+      "document": "UnbindRs返回参数结构体",
+      "members": [
+        {
+          "document": "解绑操作的异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindVpcIpRequest": {
+      "document": "UnbindVpcIp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eip实例ID",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定的VPC内IP地址",
+          "member": "string",
+          "name": "VpcIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindVpcIpResponse": {
+      "document": "UnbindVpcIp返回参数结构体",
+      "members": [
+        {
+          "document": "绑定黑石物理机异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

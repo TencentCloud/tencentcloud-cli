@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "TextProcess": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextProcess\r\n&BotId=972445\r\n&InputText=北京\r\n&TerminalId=123\r\n&BotEnv=dev\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DialogStatus\": \"START\",\n        \"BotName\": \"botname\",\n        \"IntentName\": \"intentName\",\n        \"SlotInfoList\": null,\n        \"InputText\": \"hi\",\n        \"ResponseMessage\": {\n            \"GroupList\": [\n                {\n                    \"ContentType\": \"text/plain\",\n                    \"Url\": \"www.baidu.com\",\n                    \"Content\": \"hello\"\n                },\n                {\n                    \"ContentType\": \"audio/wav\",\n                    \"Url\": \"www.baidu.com\",\n                    \"Content\": \"xccv\"\n                }\n            ]\n        },\n        \"ResultType\": \"1\",\n        \"SessionAttributes\": \"xxx\"\n    }\n}",
+        "title": "机器人对话服务接口"
+      }
+    ],
+    "TextReset": [
+      {
+        "document": "",
+        "input": "https://tbp.tencentcloudapi.com/?Action=TextReset\r\n&BotId=972445\r\n&TerminalId=123\r\n&BotEnv=dev\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DialogStatus\": \"START\",\n        \"BotName\": \"botname\",\n        \"IntentName\": \"intentName\",\n        \"SlotInfoList\": null,\n        \"InputText\": \"hi\",\n        \"ResponseMessage\": {\n            \"GroupList\": [\n                {\n                    \"ContentType\": \"text/plain\",\n                    \"Url\": \"www.baidu.com\",\n                    \"Content\": \"hello\"\n                },\n                {\n                    \"ContentType\": \"audio/wav\",\n                    \"Url\": \"www.baidu.com\",\n                    \"Content\": \"xccv\"\n                }\n            ]\n        },\n        \"ResultType\": \"1\",\n        \"SessionAttributes\": \"xxx\"\n    }\n}",
+        "title": "机器人对话服务接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

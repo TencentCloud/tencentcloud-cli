@@ -1,0 +1,439 @@
+{
+  "actions": {
+    "CreateSession": {
+      "document": "创建会话",
+      "input": "CreateSessionRequest",
+      "name": "创建会话",
+      "output": "CreateSessionResponse"
+    },
+    "DescribeStreamPlayInfoList": {
+      "document": "查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据。",
+      "input": "DescribeStreamPlayInfoListRequest",
+      "name": "查询流的播放信息列表",
+      "output": "DescribeStreamPlayInfoListResponse"
+    },
+    "DescribeWorkers": {
+      "document": "查询空闲机器数量",
+      "input": "DescribeWorkersRequest",
+      "name": "查询空闲机器数量",
+      "output": "DescribeWorkersResponse"
+    },
+    "ForbidLiveStream": {
+      "document": "禁止某条流的推送，可以预设某个时刻将流恢复。",
+      "input": "ForbidLiveStreamRequest",
+      "name": "禁播直播流",
+      "output": "ForbidLiveStreamResponse"
+    },
+    "RegisterIM": {
+      "document": "注册聊天室",
+      "input": "RegisterIMRequest",
+      "name": "注册聊天室",
+      "output": "RegisterIMResponse"
+    },
+    "StopGame": {
+      "document": "强制退出游戏",
+      "input": "StopGameRequest",
+      "name": "强制退出游戏",
+      "output": "StopGameResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-13",
+    "serviceNameCN": "商业直播",
+    "serviceShortName": "bizlive"
+  },
+  "objects": {
+    "CreateSessionRequest": {
+      "document": "CreateSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端session信息，从JSSDK请求中获得",
+          "is_public": true,
+          "member": "string",
+          "name": "ClientSession",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏ID",
+          "is_public": true,
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "is_public": true,
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏参数",
+          "is_public": true,
+          "member": "string",
+          "name": "GameParas",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏区域",
+          "is_public": true,
+          "member": "string",
+          "name": "GameRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "背景图url",
+          "is_public": true,
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分辨率",
+          "is_public": true,
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionResponse": {
+      "document": "CreateSession返回参数结构体",
+      "members": [
+        {
+          "document": "服务端session信息，返回给JSSDK",
+          "member": "string",
+          "name": "ServerSession",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DayStreamPlayInfo": {
+      "document": "流播放信息",
+      "members": [
+        {
+          "default": "",
+          "document": "带宽（单位Mbps）。",
+          "member": "float",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "流量 （单位MB）。",
+          "member": "float",
+          "name": "Flux",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "在线人数。",
+          "member": "uint64",
+          "name": "Online",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求数。",
+          "member": "uint64",
+          "name": "Request",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据时间点，格式：yyyy-mm-dd HH:MM:SS。",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeStreamPlayInfoListRequest": {
+      "document": "DescribeStreamPlayInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "结束时间，北京时间，格式：2019-04-28 10:36:00\n结束时间 和 开始时间  必须在同一天内。",
+          "is_public": true,
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "播放域名。",
+          "is_public": true,
+          "member": "string",
+          "name": "PlayDomain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，北京时间，格式：2019-04-28 10:36:00\n当前时间 和 开始时间 间隔不超过30天。",
+          "is_public": true,
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流名称，精确匹配。\n若不填，则为查询总体播放数据。",
+          "is_public": true,
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPlayInfoListResponse": {
+      "document": "DescribeStreamPlayInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "统计信息列表。",
+          "member": "DayStreamPlayInfo",
+          "name": "DataInfoList",
+          "type": "list"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkersRequest": {
+      "document": "DescribeWorkers请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWorkersResponse": {
+      "document": "DescribeWorkers返回参数结构体",
+      "members": [
+        {
+          "document": "各个区域的机器情况",
+          "member": "WorkerRegionInfo",
+          "name": "RegionDetail",
+          "type": "list"
+        },
+        {
+          "document": "空闲机器总数量",
+          "member": "uint64",
+          "name": "Idle",
+          "type": "int"
+        },
+        {
+          "document": "区域个数",
+          "member": "uint64",
+          "name": "RegionNum",
+          "type": "int"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidLiveStreamRequest": {
+      "document": "ForbidLiveStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "is_public": true,
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "您的推流域名。",
+          "is_public": true,
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "is_public": true,
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：默认禁播90天，且最长支持禁播90天。",
+          "is_public": true,
+          "member": "string",
+          "name": "ResumeTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidLiveStreamResponse": {
+      "document": "ForbidLiveStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterIMRequest": {
+      "document": "RegisterIM请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户昵称",
+          "is_public": true,
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户唯一ID，建议采用用户小程序OpenID加盐形式",
+          "is_public": true,
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户头像URL",
+          "is_public": true,
+          "member": "string",
+          "name": "HeadImgUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户身份，默认值：0，表示无特殊身份",
+          "is_public": true,
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterIMResponse": {
+      "document": "RegisterIM返回参数结构体",
+      "members": [
+        {
+          "document": "用来传递给插件的关键字段",
+          "member": "string",
+          "name": "UserKey",
+          "type": "string"
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopGameRequest": {
+      "document": "StopGame请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "游戏用户ID",
+          "is_public": true,
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopGameResponse": {
+      "document": "StopGame返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WorkerRegionInfo": {
+      "document": "worker的区域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "该区域空闲机器数量",
+          "member": "uint64",
+          "name": "Idle",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "区域",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

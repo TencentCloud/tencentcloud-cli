@@ -1,0 +1,189 @@
+{
+  "actions": {
+    "DescribeNewUserAcquisition": {
+      "document": "判断新用户信誉值",
+      "input": "DescribeNewUserAcquisitionRequest",
+      "name": "拉新判断服务",
+      "output": "DescribeNewUserAcquisitionResponse"
+    },
+    "DescribeStockEstimation": {
+      "document": "查询存量判断服务",
+      "input": "DescribeStockEstimationRequest",
+      "name": "存量判断服务",
+      "output": "DescribeStockEstimationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-07-01",
+    "api_brief": "调用此api接口使用私域安全产品服务，通过此接口获得用户安全安全分。",
+    "serviceNameCN": "私域安全",
+    "serviceShortName": "pds"
+  },
+  "objects": {
+    "DescribeNewUserAcquisitionRequest": {
+      "document": "DescribeNewUserAcquisition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfos",
+          "name": "ServiceParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewUserAcquisitionResponse": {
+      "document": "DescribeNewUserAcquisition返回参数结构体",
+      "members": [
+        {
+          "document": "用户信誉分，1-5从低到高",
+          "example": "无",
+          "member": "Score",
+          "name": "ServiceRsp",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStockEstimationRequest": {
+      "document": "DescribeStockEstimation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfos",
+          "name": "ServiceParams",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStockEstimationResponse": {
+      "document": "DescribeStockEstimation返回参数结构体",
+      "members": [
+        {
+          "document": "用户信誉分，1-5从低到高",
+          "example": "无",
+          "member": "Score",
+          "name": "ServiceRsp",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Score": {
+      "document": "信誉分，1-5从低到高",
+      "members": [
+        {
+          "default": "",
+          "document": "信誉分，1-5从低到高",
+          "example": "1",
+          "member": "int64",
+          "name": "Star",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserInfos": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户的手机号",
+          "example": "13800138000",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户的微信OpenID",
+          "example": "oOpAR5aURf7wgM_WLPtzSeixpozs",
+          "member": "string",
+          "name": "Openid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户移动设备的客户端IP",
+          "example": "192.168.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户WiFi的BSSID",
+          "example": "FF:FF:FF:FF:FF:FF",
+          "member": "string",
+          "name": "WiFiBssid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Android设备的IMEI",
+          "example": "861144041825914",
+          "member": "string",
+          "name": "IMEI",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Android设备的OAID",
+          "example": "a919ac7f-7fcc-42ee-97e3-755a4f22a017",
+          "member": "string",
+          "name": "OAID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户iOS设备的IDFA",
+          "example": "04D3E988-6A31-4AFC-883A-5547F78EC644",
+          "member": "string",
+          "name": "IDFA",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

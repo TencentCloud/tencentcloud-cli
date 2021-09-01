@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CreateCredential": [
+      {
+        "document": "创建凭证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCredential\n<公共请求参数>\n\n{\n    \"TransactionArg\": {\n        \"InvokerTDid\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\"\n    },\n    \"VersionCredential\": \"1.0.0\",\n    \"FunctionArg\": {\n        \"ClaimJson\": \"{\\\"name\\\": \\\"zhang san\\\", \\\"id\\\": \\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\", \\\"age\\\": 18}\",\n        \"ExpirationDate\": \"2029-04-18T21:12:33Z\",\n        \"CptId\": 2000000,\n        \"Issuer\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialData\": \"{\\\"claim\\\":{\\\"age\\\":18,\\\"id\\\":\\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\",\\\"name\\\":\\\"zhang san\\\"},\\\"context\\\":\\\"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\\\",\\\"cptId\\\":2000000,\\\"expirationDate\\\":1871212353,\\\"id\\\":\\\"0a581276-35e8-4835-ae5d-66705c76335d\\\",\\\"issuanceDate\\\":1628136106,\\\"issuer\\\":\\\"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\\\",\\\"proof\\\":{\\\"created\\\":1628136106,\\\"creator\\\":\\\"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484#keys-0\\\",\\\"salt\\\":{\\\"age\\\":\\\"APoZk\\\",\\\"id\\\":\\\"LxxnG\\\",\\\"name\\\":\\\"9upnW\\\"},\\\"signatureValue\\\":\\\"3qFEuH8Oa7oVWEBSRHSG/iHYVqmTFtnQH+bES3UQTuYYw9m82hP87cDf4s2P5C+h5/I7UqsEJzXz1KRBklrhpAA=\\\",\\\"type\\\":\\\"Secp256k1\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\"]}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateCredential"
+      }
+    ],
+    "CreateSelectiveCredential": [
+      {
+        "document": "验证凭证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSelectiveCredential\n<公共请求参数>\n\n{\n    \"FunctionArg\": {\n        \"Type\": [\n            \"VerifiableCredential\",\n            \"original\"\n        ],\n        \"Context\": \"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\",\n        \"ClaimJson\": \"{\\\"name\\\": \\\"zhang san\\\", \\\"id\\\": \\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\", \\\"age\\\": 18}\",\n        \"CptId\": 2000000,\n        \"ExpirationDate\": 1871212353,\n        \"Id\": \"657b9ea7-99d3-4068-9c2b-fe1593929474\",\n        \"IssuanceDate\": 1628588966,\n        \"Issuer\": \"did:tdid:cb591-1:0x0e6c51028750e90815bbb3968fbb58c1c9fe8e08\",\n        \"Proof\": {\n            \"Created\": 1628588966,\n            \"Creator\": \"did:tdid:cb591-1:0x0e6c51028750e90815bbb3968fbb58c1c9fe8e08#keys-0\",\n            \"SignatureValue\": \"KhaMad6Y80VqKRFUH++j7odpEQwtlhCJhiON8lvo+fd9XJF9yV9skrd5khNSGcFSI8hibZpJvkN+Lp4tVG10nwA=\",\n            \"Type\": \"Secp256k1\",\n            \"SaltJson\": \"{\\\"age\\\":\\\"bTPhh\\\",\\\"id\\\":\\\"sSPRi\\\",\\\"name\\\":\\\"GB5uR\\\"}\"\n        }\n    },\n    \"PolicyId\": 2000014\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialData\": \"{\\\"claim\\\":{\\\"age\\\":\\\"0xa5082cabd3bba770fb2fb8fd75ecd660de978b4ddfa78ad9eeca2758acdf74d3\\\",\\\"id\\\":\\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\",\\\"name\\\":\\\"zhang san\\\"},\\\"context\\\":\\\"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\\\",\\\"cptId\\\":2000000,\\\"credentialType\\\":\\\"ORIGINAL\\\",\\\"expirationDate\\\":1871212353,\\\"hash\\\":\\\"0x737480f2e94f32b957223365c84b991ab578a677dfefdee73fe1640cc614d443\\\",\\\"id\\\":\\\"657b9ea7-99d3-4068-9c2b-fe1593929474\\\",\\\"issuanceDate\\\":1628588966,\\\"issuer\\\":\\\"did:tdid:cb591-1:0x0e6c51028750e90815bbb3968fbb58c1c9fe8e08\\\",\\\"proof\\\":{\\\"created\\\":1628588966,\\\"creator\\\":\\\"did:tdid:cb591-1:0x0e6c51028750e90815bbb3968fbb58c1c9fe8e08#keys-0\\\",\\\"salt\\\":{\\\"age\\\":\\\"0\\\",\\\"id\\\":\\\"sSPRi\\\",\\\"name\\\":\\\"GB5uR\\\"},\\\"signatureValue\\\":\\\"KhaMad6Y80VqKRFUH++j7odpEQwtlhCJhiON8lvo+fd9XJF9yV9skrd5khNSGcFSI8hibZpJvkN+Lp4tVG10nwA=\\\",\\\"type\\\":\\\"Secp256k1\\\"},\\\"proofType\\\":\\\"Secp256k1\\\",\\\"salt\\\":{\\\"age\\\":\\\"0\\\",\\\"id\\\":\\\"sSPRi\\\",\\\"name\\\":\\\"GB5uR\\\"},\\\"signature\\\":\\\"KhaMad6Y80VqKRFUH++j7odpEQwtlhCJhiON8lvo+fd9XJF9yV9skrd5khNSGcFSI8hibZpJvkN+Lp4tVG10nwA=\\\",\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\"]}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateSelectiveCredential"
+      }
+    ],
+    "CreateTDid": [
+      {
+        "document": "创建机构DID",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDid\n<公共请求参数>\n\n{\n    \"GroupId\": 1,\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"Relegation\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"did:tdid:1:0xdab41eb32082044366f1b5712504d0b623b095c1\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "创建DID"
+      }
+    ],
+    "VerifyCredential": [
+      {
+        "document": "验证凭证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyCredential\n<公共请求参数>\n\n{\n    \"FunctionArg\": {\n        \"ClaimJson\": \"{\\\"name\\\": \\\"zhang san\\\", \\\"id\\\": \\\"did:tdid:15:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\", \\\"age\\\": 18}\",\n        \"CptId\": 2000000,\n        \"ExpirationDate\": 1871212353,\n        \"Context\": \"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\",\n        \"Proof\": {\n            \"SignatureValue\": \"IL/CtZKrg+g395nYZbXT/Uzk1N3/NG/tgjbjeMf03shcGl7jSRXgVk3zz+x5zp11OBApb43By6VjWdPUJJLJMQA=\",\n            \"Created\": 1627803566,\n            \"Type\": \"Secp256k1\",\n            \"SaltJson\": \"{\\\"age\\\":\\\"o58g1\\\",\\\"id\\\":\\\"X5efp\\\",\\\"name\\\":\\\"pu2UZ\\\"}\",\n            \"Creator\": 1627803566\n        },\n        \"Id\": \"9bff9f22-2794-4d1e-b598-894163392cd9\",\n        \"Type\": [\n            \"VerifiableCredential\",\n            \"original\"\n        ],\n        \"IssuanceDate\": 1627803566,\n        \"Issuer\": \"did:tdid:15:0x4c59267a10ed54857842674d0c76ab708c6275f5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"VerifyCode\": 0,\n        \"VerifyMessage\": \"success\",\n        \"RequestId\": \"72a6643f-7123-4288-9584-8dd4db7e8373\"\n    }\n}",
+        "title": "VerifyCredential"
+      }
+    ]
+  },
+  "version": "1.0"
+}

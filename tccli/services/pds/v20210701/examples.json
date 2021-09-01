@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeNewUserAcquisition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNewUserAcquisition\n<公共请求参数>\n\n{\n    \"ServiceParams\": {\n        \"Openid\": \"xx\",\n        \"IP\": \"xx\",\n        \"PhoneNum\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceRsp\": {\n            \"Star\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户信誉值"
+      }
+    ],
+    "DescribeStockEstimation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pds.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStockEstimation\n<公共请求参数>\n\n{\n    \"ServiceParams\": {\n        \"Openid\": \"xx\",\n        \"PhoneNum\": \"xx\",\n        \"IP\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceRsp\": {\n            \"Star\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户信誉分"
+      }
+    ]
+  },
+  "version": "1.0"
+}

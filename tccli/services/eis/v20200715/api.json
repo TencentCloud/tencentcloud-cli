@@ -1,0 +1,286 @@
+{
+  "actions": {
+    "DescribeEisConnectorConfig": {
+      "document": "获取连接器配置参数",
+      "input": "DescribeEisConnectorConfigRequest",
+      "name": "获取连接器配置参数",
+      "output": "DescribeEisConnectorConfigResponse"
+    },
+    "ListEisConnectorOperations": {
+      "document": "获取连接器操作列表",
+      "input": "ListEisConnectorOperationsRequest",
+      "name": "获取连接器操作列表",
+      "output": "ListEisConnectorOperationsResponse"
+    },
+    "ListEisConnectors": {
+      "document": "连接器列表",
+      "input": "ListEisConnectorsRequest",
+      "name": "获取连接器列表",
+      "output": "ListEisConnectorsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-07-15",
+    "api_brief": null,
+    "serviceNameCN": "企业集成服务",
+    "serviceShortName": "eis"
+  },
+  "objects": {
+    "DescribeEisConnectorConfigRequest": {
+      "document": "DescribeEisConnectorConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEisConnectorConfigResponse": {
+      "document": "DescribeEisConnectorConfig返回参数结构体",
+      "members": [
+        {
+          "document": "连接器配置参数描述（json结构），示例如下：\n{\n    \"attributes\":{\n        \"description\":\"测试\", // 连接器的描述\n        \"displayName\":\"测试\", // 连接器的展示名\n        \"name\":\"test\", // 连接器的名称\n        \"version\":\"1.0.0\" // 连接器的版本号\n    },\n    \"properties\":[\n        {\n            \"attributes\":{\n                \"displayName\":\"企业ID\", // 参数的展示名\n                \"name\":\"para1\", // 参数名\n                \"required\":\"true\", // 是否必填\n                \"type\":\"int\" // 参数的类型\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"成员管理密钥\",\n                \"name\":\"para2\",\n                \"required\":\"true\",\n                \"type\":\"float\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"应用管理密钥\",\n                \"name\":\"para3\",\n                \"required\":\"true\",\n                \"type\":\"string\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"企业ID\",\n                \"name\":\"para4\",\n                \"required\":\"true\",\n                \"type\":\"decimal\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"成员管理密钥\",\n                \"name\":\"para5\",\n                \"required\":\"true\",\n                \"type\":\"bool\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"应用管理密钥\",\n                \"name\":\"para6\",\n                \"required\":\"true\",\n                \"type\":\"date\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"企业ID\",\n                \"name\":\"para7\",\n                \"required\":\"true\",\n                \"type\":\"time\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"成员管理密钥\",\n                \"name\":\"para8\",\n                \"required\":\"true\",\n                \"type\":\"datetime\"\n            }\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"应用管理密钥\",\n                \"name\":\"para9\",\n                \"required\":\"true\",\n                \"type\":\"map\"\n            },\n            \"children\":[\n                {\n                    \"attributes\":{\n                        \"displayName\":\"key\",\n                        \"name\":\"key\",\n                        \"required\":\"true\",\n                        \"type\":\"string\"\n                    }\n                },\n                {\n                    \"attributes\":{\n                        \"displayName\":\"value\",\n                        \"name\":\"value\",\n                        \"required\":\"true\",\n                        \"type\":\"any\"\n                    }\n                }\n            ]\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"企业ID\",\n                \"name\":\"para10\",\n                \"required\":\"true\",\n                \"type\":\"list\" // list，list里元素的类型是结构体，children里是结构体的描述\n            },\n            \"children\":[\n                {\n                    \"attributes\":{\n                        \"displayName\":\"field1\",\n                        \"name\":\"field1\",\n                        \"required\":\"true\",\n                        \"type\":\"string\"\n                    }\n                },\n                {\n                    \"attributes\":{\n                        \"displayName\":\"field2\",\n                        \"name\":\"field2\",\n                        \"required\":\"true\",\n                        \"type\":\"any\"\n                    }\n                }\n            ]\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"成员管理密钥\",\n                \"name\":\"para11\",\n                \"required\":\"true\",\n                \"type\":\"struct\"\n            },\n            \"children\":[\n                {\n                    \"attributes\":{\n                        \"displayName\":\"field1\", // 结构体属性的展示名\n                        \"name\":\"field1\", // 结构体属性的名称\n                        \"required\":\"true\", // 是否必填\n                        \"type\":\"string\" // 属性的类型\n                    }\n                },\n                {\n                    \"attributes\":{\n                        \"displayName\":\"field2\",\n                        \"name\":\"field2\",\n                        \"required\":\"true\",\n                        \"type\":\"any\"\n                    }\n                }\n            ]\n        },\n        {\n            \"attributes\":{\n                \"displayName\":\"应用管理密钥\",\n                \"name\":\"para12\",\n                \"required\":\"true\",\n                \"type\":\"enum\"\n            },\n            \"children\":[\n                {\n                    \"attributes\":{\n                        \"displayName\":\"PC\", // 枚举值的展示名\n                        \"name\":\"PC\" // 枚举值的名称\n                    }\n                },\n                {\n                    \"attributes\":{\n                        \"displayName\":\"MAC\",\n                        \"name\":\"MAC\"\n                    }\n                }\n            ]\n        }\n    ]\n}",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorParameter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EisConnectionOperation": {
+      "document": "连接器操作",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器操作名称",
+          "example": "无",
+          "member": "string",
+          "name": "OperationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作是否为触发器",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTrigger",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EisConnectorSummary": {
+      "document": "连接器概要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器展示名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器对应企业",
+          "example": "无",
+          "member": "string",
+          "name": "Company",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器对应产品",
+          "example": "无",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器创建时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListEisConnectorOperationsRequest": {
+      "document": "ListEisConnectorOperations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorOperationsResponse": {
+      "document": "ListEisConnectorOperations返回参数结构体",
+      "members": [
+        {
+          "document": "连接器列表",
+          "example": "无",
+          "member": "EisConnectionOperation",
+          "name": "Operations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorsRequest": {
+      "document": "ListEisConnectors请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器名称,非必输，如输入则按照输入值模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数,数据偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数,每页显示的条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEisConnectorsResponse": {
+      "document": "ListEisConnectors返回参数结构体",
+      "members": [
+        {
+          "document": "连接器总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "连接器列表",
+          "example": "无",
+          "member": "EisConnectorSummary",
+          "name": "Connectors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

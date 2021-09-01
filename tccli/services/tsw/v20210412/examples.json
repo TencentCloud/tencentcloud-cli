@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeComponentAlertObject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComponentAlertObject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"635011ad-8786-4150-9275-6529f8ecc6bd\"\n    }\n}",
+        "title": "tsw 组件告警对象"
+      }
+    ],
+    "DescribeServiceAlertObject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAlertObject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"635011ad-8786-4150-9275-6529f8ecc6bd\"\n    }\n}",
+        "title": "获取告警对象-服务告警表"
+      }
+    ],
+    "DescribeToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeToken\n<公共请求参数>\n\n{\n    \"Namespace\": \"tsw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"Result\": \"dfsafjsdklajfklsdajflsjdf\"\n    }\n}",
+        "title": "查询token"
+      }
+    ]
+  },
+  "version": "1.0"
+}

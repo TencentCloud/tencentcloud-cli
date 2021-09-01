@@ -1,0 +1,216 @@
+{
+  "actions": {
+    "DescribeBRI": {
+      "document": "输入业务名 (bri_num, bri_dev, bri_ip, bri_apk, bri_url, bri_social 六种之一)  及其 相应字段, 获取业务风险分数和标签。\n\n当业务名为bri_num时，必须填PhoneNumber字段.\n\n当业务名为bri_dev时, 必须填Imei字段.\n\n当业务名为bri_ip时，必须填IP字段.\n\n当业务名为bri_apk时，必须填 (PackageName,CertMd5,FileSize) 三个字段 或者 FileMd5一个字段.\n\n当业务名为bri_url时，必须填Url字段.\n\n当业务名为bri_social时，必须填QQ和Wechat字段两者其中一个或者两个.",
+      "input": "DescribeBRIRequest",
+      "name": "获取业务风险情报",
+      "output": "DescribeBRIResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-28",
+    "api_brief": "介绍如何使用API对业务风险情报进行操作，包括获取业务风险情报等。",
+    "serviceNameCN": "业务风险情报",
+    "serviceShortName": "bri"
+  },
+  "objects": {
+    "BRIRequest": {
+      "document": "BRI请求",
+      "members": [
+        {
+          "default": "",
+          "document": "业务名, 必须是以下六个业务名之一(bri_num,bri_dev,bri_ip_bri_apk,bri_url,bri_social)",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QQ号 (业务名为bri_social时必填, 除非已填Wechat)",
+          "member": "string",
+          "name": "QQ",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QQ号的可疑标签",
+          "member": "string",
+          "name": "QQTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网址 (业务名为bri_url时必填)",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk证书Md5  (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "string",
+          "name": "CertMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk安装包名 (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Apk文件Md5 (业务名为bri_apk时必填，除非已填PackageName,CertMd5,FileSize)",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务场景 (1-注册, 2-登录, 3-发消息)",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话号码 (业务名为bri_num时必填)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Apk文件大小  (业务名为bri_apk时必填，除非已填FileMd5)",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点分格式的IP (业务名为bri_ip时必填)",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安卓设备的Imei (业务名为bri_dev时必填)",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信号 (业务名为bri_social时必填, 除非已填QQ)",
+          "member": "string",
+          "name": "Wechat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信号的可疑标签",
+          "member": "string",
+          "name": "WechatTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BRIResponse": {
+      "document": "响应",
+      "members": [
+        {
+          "default": "",
+          "document": "风险分值，取值[0,100], 分值越高风险越高",
+          "member": "float",
+          "name": "Score",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Service为bri_num时,返回的风险标签有:\n1) 疑似垃圾流量     说明: 结合号码的历史数据表现，判断该号码历史用互联网业务作恶行为，其产生的互联网行为对于其他业务来说属于作弊或垃圾流量。 \n2) 疑似新客户       说明: 通过号码互联网行为（社交，浏览等）是否异常判断为小号或接码平台帐号。 \n\n当Service为bri_dev时,返回的风险标签有:\n1) 疑似真机假用户    说明: 根据设备的一些数据表现，我们判定为群控设备\n2) 疑似假机         说明: 根据设备的一些数据表现，我们判定为模拟器或虚假设备ID\n3) 疑似真用户假行为  说明: 根据设备的用户使用情况，我们判定该用户存在使用脚本、外挂、病毒等作弊行为\n\n当Service为bri_ip时,返回的风险标签有:\n1) 疑似垃圾流量     说明:结合IP的历史数据表现，判断该IP历史用互联网业务作恶行为，其产生的互联网行为对于其他业务来说属于作弊或垃圾流量。\n\n当Service为bri_url时,返回的风险标签有:\n1) 社工欺诈    说明: URL为社工欺诈\n2) 信息诈骗    说明: URL为信息诈骗\n3) 虚假销售    说明: URL为虚假销售\n4) 恶意文件    说明: URL为恶意文件\n5) 博彩网站    说明: URL为博彩网站\n6) 色情网站    说明: URL为色情网站\n\n当Service为bri_apk时,返回的风险标签有:\n1) 安全   说明: APK为正规应用\n2) 一般   说明: APK为未发现问题的正常应用\n3) 风险   说明: APK为外挂或色情等风险应用\n4) 病毒   说明: APK为包含恶意代码的恶意软件,可能破坏系统或者其他app正常使用",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeBRIRequest": {
+      "document": "DescribeBRI请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务风险情报请求体",
+          "member": "BRIRequest",
+          "name": "RequestData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "客户用于计费的资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBRIResponse": {
+      "document": "DescribeBRI返回参数结构体",
+      "members": [
+        {
+          "document": "业务风险情报响应体",
+          "member": "BRIResponse",
+          "name": "ResponseData",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

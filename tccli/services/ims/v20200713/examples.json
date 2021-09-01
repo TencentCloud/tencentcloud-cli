@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DescribeImageStat": [
+      {
+        "document": "",
+        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImageStat\n&AuditType=1\n&Filters.0.Name=xxx\n&Filters.0.Values.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TrendCount\": [\n            {\n                \"TotalHour\": 0,\n                \"EvilHour\": 0,\n                \"TotalCount\": 0,\n                \"EvilCount\": 0,\n                \"PassCount\": 0,\n                \"Date\": \"xx\",\n                \"PassHour\": 0,\n                \"SuspectHour\": 0,\n                \"SuspectCount\": 0\n            }\n        ],\n        \"Overview\": {\n            \"TotalHour\": 0,\n            \"EvilHour\": 0,\n            \"TotalCount\": 0,\n            \"EvilCount\": 0,\n            \"PassCount\": 0,\n            \"PassHour\": 0,\n            \"SuspectHour\": 0,\n            \"SuspectCount\": 0\n        },\n        \"RequestId\": \"xx\",\n        \"EvilCount\": [\n            {\n                \"Count\": 0,\n                \"EvilType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "控制台识别统计"
+      }
+    ],
+    "DescribeImsList": [
+      {
+        "document": "",
+        "input": "https://ims.tencentcloudapi.com/?Action=DescribeImsList\n&PageIndex=0\n&PageSize=0\n&Filters.0.Name=\"xx\"\n&Filters.0.Values.0=\"xx\"\n&Filters.0.Values.1=\"xx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 312,\n        \"ImsDetailSet\": {\n            \"UpdateUser\": 0,\n            \"UpdateTime\": \"xx\",\n            \"ModerationTime\": 0,\n            \"ContentId\": 0,\n            \"EvilType\": 0,\n            \"Content\": \"xx\",\n            \"DataSource\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "机器审核详情列表"
+      }
+    ],
+    "ImageModeration": [
+      {
+        "document": "图片内容安全识别",
+        "input": "https://ims.tencentcloudapi.com/?Action=ImageModeration\n&FileUrl=https://xxx.jpg\n&DataId=1213\n&BizType=test_1001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n        \"BizType\": \"test_1001\",\n        \"Suggestion\": \"Block\",\n        \"Label\": \"Porn\",\n        \"SubLabel\": \"SexBehavior\",\n        \"Score\": 90,\n        \"HitFlag\": 1,\n        \"LabelResults\": [\n            {\n                \"Scene\": \"Porn\",\n                \"Suggestion\": \"Block\",\n                \"Label\": \"Porn\",\n                \"SubLabel\": \"SexBehavior\",\n                \"Score\": 90,\n                \"Details\": [\n                    {\n                        \"Id\": 0,\n                        \"Name\": \"SexBehavior\",\n                        \"Score\": 90\n                    }\n                ]\n            }\n        ],\n        \"ObjectResults\": [\n            {\n                \"Scene\": \"QrCode\",\n                \"Suggestion\": \"Block\",\n                \"Label\": \"Ad\",\n                \"SubLabel\": \"\",\n                \"Score\": 100,\n                \"Names\": [\n                    \"QRCODE\"\n                ],\n                \"Details\": [\n                    {\n                        \"Id\": 0,\n                        \"Name\": \"QRCODE\",\n                        \"Score\": 100,\n                        \"Location\": {\n                            \"X\": 155.01746,\n                            \"Y\": 396.01746,\n                            \"Width\": 769.9824,\n                            \"Height\": 769.98254,\n                            \"Rotate\": 0\n                        }\n                    }\n                ]\n            }\n        ],\n        \"OcrResults\": [\n            {\n                \"Scene\": \"OCR\",\n                \"Suggestion\": \"Pass\",\n                \"Label\": \"Normal\",\n                \"SubLabel\": \"\",\n                \"Score\": 0,\n                \"Text\": \"hello world\",\n                \"Details\": [\n                    {\n                        \"Text\": \"hello world\",\n                        \"Label\": \"\",\n                        \"LibId\": \"\",\n                        \"LibName\": \"\",\n                        \"Keywords\": [],\n                        \"Rate\": 0,\n                        \"Score\": 0,\n                        \"Location\": {\n                            \"X\": 8,\n                            \"Y\": 0,\n                            \"Width\": 111,\n                            \"Height\": 19,\n                            \"Rotate\": 0\n                        }\n                    }\n                ]\n            }\n        ],\n        \"LibResults\": [\n            {\n                \"Scene\": \"Similar\",\n                \"Label\": \"Porn\",\n                \"SubLabel\": \"\",\n                \"Score\": 99,\n                \"Details\": [\n                    {\n                        \"LibName\": \"123\",\n                        \"Score\": 99,\n                        \"Label\": \"Porn\",\n                        \"Tag\": \"\",\n                        \"ImageId\": \"111\",\n                        \"Id\": 0,\n                        \"LibId\": \"\"\n                    }\n                ],\n                \"Suggestion\": \"Block\"\n            }\n        ],\n        \"Extra\": \"\"\n    }\n}",
+        "title": "图片内容识别"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,157 @@
+{
+  "actions": {
+    "CreateMonitors": [
+      {
+        "document": "新增一个或多个站点的监测任务",
+        "input": "https://cws.tencentcloudapi.com/?Action=CreateMonitors\r\n&Urls.0=http%3A%2F%2Fwww.qcloud.com\r\n&Name=漏洞扫描监测\r\n&ScannerType=normal\r\n&RateLimit=10\r\n&Crontab=24\r\n&FirstScanStartTime=2018-03-23 02:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "新增监测任务"
+      }
+    ],
+    "CreateSites": [
+      {
+        "document": "新增站点用于漏洞扫描或漏洞监测",
+        "input": "https://cws.tencentcloudapi.com/?Action=CreateSites\r\n&Urls.0=http%3A%2F%2Fwww.qcloud.com\r\n&UserAgent=Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010_13_4)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F66.0.3359.139%20Safari%2F537.36\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Number\": 1,\r\n        \"RequestID\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"Sites\": [\r\n            {\r\n                \"SiteId\": 4402,\r\n                \"Url\": \"http://demo.aisec.cn/demo/aisec/testb\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "新增待扫描站点"
+      }
+    ],
+    "CreateSitesScans": [
+      {
+        "document": "新增一个或多个站点的单次扫描任务",
+        "input": "https://cws.tencentcloudapi.com/?Action=CreateSitesScans\r\n&SiteIds.0=1\r\n&SiteIds.1=2\r\n&ScannerType=normal\r\n&RateLimit=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "新增站点扫描任务"
+      }
+    ],
+    "CreateVulsMisinformation": [
+      {
+        "document": "将漏洞标记为误报",
+        "input": "https://cws.tencentcloudapi.com/?Action=CreateVulsMisinformation\r\n&VulIds.0=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestID\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "新增漏洞误报信息"
+      }
+    ],
+    "CreateVulsReport": [
+      {
+        "document": "本接口 (CreateVulsReport) 用于生成漏洞报告并返回下载链接。",
+        "input": "https://cws.tencentcloudapi.com/?Action=CreateVulsReport\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ReportFileUrl\": \"https://cws-test-1256046992.cos.ap-guangzhou.myqcloud.com/report/1251001047/report_monitor_2.pdf\",\r\n        \"RequestId\": \"905d87e7-e756-473e-b035-7ad74390850f\"\r\n    }\r\n}",
+        "title": "生成漏洞报告"
+      }
+    ],
+    "DeleteMonitors": [
+      {
+        "document": "删除监控任务。",
+        "input": "https://cws.tencentcloudapi.com/?Action=DeleteMonitors\r\n&MonitorIds.0=1\r\n&MonitorIds.1=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "删除监控任务"
+      }
+    ],
+    "DeleteSites": [
+      {
+        "document": "删除已经添加的站点",
+        "input": "https://cws.tencentcloudapi.com/?Action=DeleteSites\r\n&SiteIds.0=1\r\n&SiteIds.1=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "删除站点"
+      }
+    ],
+    "DescribeConfig": [
+      {
+        "document": "查看用户配置列表",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeConfig\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Appid\": 1251001047,\r\n        \"CreatedAt\": \"2018-03-20T20:30:56+08:00\",\r\n        \"Id\": 1,\r\n        \"NoticeLevel\": \"1110\",\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"UpdatedAt\": \"2018-03-24T15:24:10+08:00\"\r\n    }\r\n}",
+        "title": "查看用户配置列表"
+      }
+    ],
+    "DescribeMonitors": [
+      {
+        "document": "查询一个或多个监控任务的详细信息。",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeMonitors\r\n&Filters.0.Name=Name\r\n&Filters.0.Values.0=QQ\r\n&Filters.0.Values.1=微信\r\n&Filters.1.Name=MonitorStatus\r\n&Filters.1.Values.0=1\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Monitors\": [\r\n            {\r\n                \"Basic\": {\r\n                    \"Appid\": 1251001047,\r\n                    \"CreatedAt\": \"2018-03-24T15:25:37+08:00\",\r\n                    \"Crontab\": 2,\r\n                    \"CurrentScanStartTime\": \"2018-03-25T15:43:46+08:00\",\r\n                    \"FirstScanStartTime\": \"2018-03-23T02:23:34+08:00\",\r\n                    \"Id\": 1,\r\n                    \"IncludedVulsTypes\": \"\",\r\n                    \"LastScanFinishTime\": \"2018-03-25T15:44:00+08:00\",\r\n                    \"MonitorStatus\": 1,\r\n                    \"Name\": \"aisec相关\",\r\n                    \"RateLimit\": 20,\r\n                    \"ScanStatus\": 2,\r\n                    \"ScannerType\": \"normal\",\r\n                    \"UpdatedAt\": \"2018-03-25T15:44:00+08:00\"\r\n                },\r\n                \"ImpactSiteNumber\": 2,\r\n                \"ImpactSites\": [\r\n                    {\r\n                        \"SiteId\": \"1\",\r\n                        \"Url\": \"http://demo.aisec.cn/demo/aisec/\"\r\n                    },\r\n                    {\r\n                        \"SiteId\": \"2\",\r\n                        \"Url\": \"http://demo.aisec.cn/demo/wvs/\"\r\n                    }\r\n                ],\r\n                \"SiteNumber\": 2,\r\n                \"Sites\": [\r\n                    {\r\n                        \"SiteId\": \"1\",\r\n                        \"Url\": \"http://demo.aisec.cn/demo/aisec/\"\r\n                    },\r\n                    {\r\n                        \"SiteId\": \"2\",\r\n                        \"Url\": \"http://demo.aisec.cn/demo/wvs/\"\r\n                    }\r\n                ],\r\n                \"VulsHighNumber\": 8,\r\n                \"VulsLowNumber\": 0,\r\n                \"VulsMiddleNumber\": 2,\r\n                \"VulsNoticeNumber\": 2\r\n            }\r\n        ],\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查看监控任务"
+      }
+    ],
+    "DescribeSiteQuota": [
+      {
+        "document": "查询用户购买的站点总数和已使用数",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeSiteQuota\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Available\": 16,\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"Total\": 20,\r\n        \"Used\": 4\r\n    }\r\n}",
+        "title": "查看站点购买配额"
+      }
+    ],
+    "DescribeSites": [
+      {
+        "document": "查看已经添加的站点信息",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeSites\r\n&Filters.0.Name=Name\r\n&Filters.0.Values.0=QQ\r\n&Filters.0.Values.1=微信\r\n&Filters.1.Name=Url\r\n&Filters.1.Values.0=http%3A%2F%2Fdemo.aisec.cn\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"Sites\": [\r\n            {\r\n                \"Appid\": 1251001047,\r\n                \"CreatedAt\": \"2018-03-19T16:33:45+08:00\",\r\n                \"Id\": 4,\r\n                \"LastScanCancelTime\": \"\",\r\n                \"LastScanExtsCount\": \"\",\r\n                \"LastScanFinishTime\": \"2018-03-19T17:38:56+08:00\",\r\n                \"LastScanPageCount\": 0,\r\n                \"LastScanScannerType\": \"\",\r\n                \"LastScanStartTime\": \"2018-03-22T00:00:00+08:00\",\r\n                \"LastScanTaskId\": 0,\r\n                \"LastScanVulsNum\": 10,\r\n                \"LastScanNoticeNum\": 1,\r\n                \"LastScanVulsHighNum\": 0,\r\n                \"LastScanVulsLowNum\": 0,\r\n                \"LastScanVulsMiddleNum\": 0,\r\n                \"LastScanVulsNoticeNum\": 0,\r\n                \"MonitorId\": 0,\r\n                \"MonitorStatus\": 0,\r\n                \"Name\": \"Spqs6w6el\",\r\n                \"ScanStatus\": 0,\r\n                \"Progress\": 0,\r\n                \"UpdatedAt\": \"2018-03-19T17:38:56+08:00\",\r\n                \"Url\": \"http://demo.aisec.cn/demo/aisec/\",\r\n                \"VerifyStatus\": 0,\r\n                \"LoginCheckKw\": \"\",\r\n                \"LoginCheckUrl\": \"\",\r\n                \"LoginCookie\": \"\",\r\n                \"LoginCookieValid\": 0,\r\n                \"NeedLogin\": 0,\r\n                \"ScanDisallow\": \"\",\r\n                \"UserAgent\":\"\"\r\n            }\r\n        ],\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查看站点列表"
+      }
+    ],
+    "DescribeSitesVerification": [
+      {
+        "document": "查看已经添加的站点的验证信息列表",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeSitesVerification\r\n&Urls.0=http%3A%2F%2Fwww.qcloud.com\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"SitesVerification\": [\r\n            {\r\n                \"Appid\": 1251001047,\r\n                \"CreatedAt\": \"2018-03-19T16:07:57+08:00\",\r\n                \"Domain\": \"qq.com\",\r\n                \"Id\": 1,\r\n                \"TxtName\": \"verify-wcpfql\",\r\n                \"TxtText\": \"vps9iq4hmn7suiad7v8sn9isawn5yteh\",\r\n                \"UpdatedAt\": \"2018-03-23T00:02:11+08:00\",\r\n                \"ValidTo\": \"2018-04-18T16:07:57+08:00\",\r\n                \"VerifyStatus\": 1\r\n            }\r\n        ],\r\n        \"TotalCount\": 1\r\n    }\r\n}",
+        "title": "查看站点列表的验证信息列表"
+      }
+    ],
+    "DescribeVuls": [
+      {
+        "document": "查看漏洞列表",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeVuls\r\n&Filters.0.Name=Name\r\n&Filters.0.Values.0=SQL\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"TotalCount\": 10,\r\n        \"Vuls\": [\r\n            {\r\n                \"CreatedAt\": \"2018-03-24T15:38:31+08:00\",\r\n                \"Describe\": \"SQL注入漏洞是一种可能被攻击者通过经过精心构造的请求数据来修改后台SQL查询语句的一种安全威胁。当Web应用程序未对用户输入的数据进行任何处理（如危险字符过滤或者语句过滤），而直接作为SQL语句执行时，SQL注入就发生了。<br/><br/>SQL注入漏洞是目前互联网最常见也是影响非常广泛的漏洞。从2007年下半年开始，很多网站被篡改。攻击者利用SQL注入漏洞修改了用于生成动态网页的数据库中的文本，从而注入了恶意的HTML script标签。这样的攻击在2008年第一季度开始加速传播，并且持续影响有漏洞的Web程序。\",\r\n                \"From\": \"OWASP:<a target=_blank href=\\\"https://www.owasp.org/index.php/SQL_Injection\\\">SQL Injection</a>    WASC:<a target=_blank href=http://projects.webappsec.org/SQL-Injection>SQL Injection</a>    CVE:不适用    CWE:<a target=_blank href=http://cwe.mitre.org/data/definitions/89.html>89</a>\",\r\n                \"Harm\": \"数据泄漏-SQL注入漏洞可导致如下后果：<br/>1.机密数据被窃取<br/>2.核心业务数据被篡改<br/>3.网页被篡改<br/>4.数据库所在服务器被攻击变为傀儡主机，甚至企业网被入侵。\",\r\n                \"Html\": \"<a target=_blank href=\\\"http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-0\\\">http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-0</a>\\n<br><br>[Database Version:MYSQL]: <a target=_blank href=\\\"http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-ROW_COUNT%28%29-%28-ROW_COUNT%28%29%29\\\">http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-ROW_COUNT%28%29-%28-ROW_COUNT%28%29%29</a>\\n<br><br>[Inject SELECT Statement:Success]: <a target=_blank href=\\\"http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-%28%09select%090%09%29\\\">http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-%28%09select%090%09%29</a>\",\r\n                \"Id\": 13,\r\n                \"Level\": \"high\",\r\n                \"Name\": \"SQL Injection\",\r\n                \"Nickname\": \"数据泄漏-SQL注入漏洞\",\r\n                \"Parameter\": \"id\",\r\n                \"SiteId\": 1,\r\n                \"Solution\": \"如下一些方法能够防止注入攻击：<br/>1.在网页代码中需要对用户输入的数据进行严格过滤。<br/>2.使用预处理执行SQL语句，对所有传入SQL语句中的变量做绑定。<br/>3.部署Web应用防火墙<br/>4.对数据库操作进行监控<br/>\",\r\n                \"TaskId\": 949057,\r\n                \"UpdatedAt\": \"2018-03-24T15:38:31+08:00\",\r\n                \"Url\": \"http://demo.aisec.cn:80/demo/aisec/ajax_link.php?t=0.2553907226758148&id=1-0\"\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查看漏洞列表"
+      }
+    ],
+    "DescribeVulsNumber": [
+      {
+        "document": "查询用户网站的漏洞总计数量",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeVulsNumber\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"ImpactSiteNumber\": 1,\r\n        \"PageCount\": 33,\r\n        \"RequestId\": \"de766e0c-963f-4984-b145-f1085ff165a0\",\r\n        \"SiteNumber\": 8,\r\n        \"VulsHighNumber\": 8,\r\n        \"VulsLowNumber\": 0,\r\n        \"VulsMiddleNumber\": 2,\r\n        \"VulsNoticeNumber\": 0\r\n    }\r\n}",
+        "title": "查看当前漏洞总计数量"
+      }
+    ],
+    "DescribeVulsNumberTimeline": [
+      {
+        "document": "本接口 (DescribeVulsNumberTimeline) 用于查询漏洞数随时间变化统计信息",
+        "input": "https://cws.tencentcloudapi.com/?Action=DescribeVulsNumberTimeline\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"33e45f0e-f971-4784-ab50-e8205e995355\",\r\n        \"TotalCount\": 2,\r\n        \"VulsTimeline\": [\r\n            {\r\n                \"Appid\": 1251001047,\r\n                \"CreatedAt\": \"2018-06-12T22:25:00+08:00\",\r\n                \"Date\": \"2018-06-11T00:00:00+08:00\",\r\n                \"Id\": 1,\r\n                \"ImpactSiteNum\": 1,\r\n                \"PageCount\": 33,\r\n                \"SiteNum\": 8,\r\n                \"UpdatedAt\": \"2018-06-12T22:25:00+08:00\",\r\n                \"VulsHighNum\": 8,\r\n                \"VulsLowNum\": 0,\r\n                \"VulsMiddleNum\": 2,\r\n                \"VulsNoticeNum\": 0\r\n            },\r\n            {\r\n                \"Appid\": 1251001047,\r\n                \"CreatedAt\": \"2018-06-13T17:54:41.418296+08:00\",\r\n                \"Date\": \"2018-06-13T00:00:00+08:00\",\r\n                \"Id\": 0,\r\n                \"ImpactSiteNum\": 1,\r\n                \"PageCount\": 33,\r\n                \"SiteNum\": 8,\r\n                \"UpdatedAt\": \"2018-06-13T17:54:41.418298+08:00\",\r\n                \"VulsHighNum\": 8,\r\n                \"VulsLowNum\": 0,\r\n                \"VulsMiddleNum\": 2,\r\n                \"VulsNoticeNum\": 0\r\n            }\r\n        ]\r\n    }\r\n}",
+        "title": "查看漏洞数随时间变化统计信息"
+      }
+    ],
+    "ModifyConfigAttribute": [
+      {
+        "document": "修改用户配置的属性",
+        "input": "https://cws.tencentcloudapi.com/?Action=ModifyConfigAttribute\r\n&NoticeLevel=1110\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "修改用户配置的属性"
+      }
+    ],
+    "ModifyMonitorAttribute": [
+      {
+        "document": "修改监测任务的属性",
+        "input": "https://cws.tencentcloudapi.com/?Action=ModifyMonitorAttribute\r\n&MonitorId=1\r\n&Urls.0=http%3A%2F%2Fwww.qcloud.com\r\n&Name=漏洞扫描监测\r\n&MonitorStatus=1\r\n&ScannerType=normal\r\n&RateLimit=10\r\n&Crontab=24\r\n&FirstScanStartTime=2018-03-23 02:00:00\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "修改监测任务的属性"
+      }
+    ],
+    "ModifySiteAttribute": [
+      {
+        "document": "修改已经添加的站点属性",
+        "input": "https://cws.tencentcloudapi.com/?Action=ModifySiteAttribute\r\n&SiteId=1\r\n&Name=QQ\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\r\n    }\r\n}",
+        "title": "修改站点属性"
+      }
+    ],
+    "VerifySites": [
+      {
+        "document": "验证已经添加的站点",
+        "input": "https://cws.tencentcloudapi.com/?Action=VerifySites\r\n&Urls.0=http%3A%2F%2Fwww.qcloud.com\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"FailNumber\": 2,\r\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\r\n        \"SuccessNumber\": 1\r\n    }\r\n}",
+        "title": "验证站点"
+      }
+    ]
+  },
+  "version": "1.0"
+}

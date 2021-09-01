@@ -1,0 +1,225 @@
+{
+  "actions": {
+    "CreateGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"testG3\",\n    \"GroupId\": \"testG3\",\n    \"Tag\": \"TestG3T3\",\n    \"BodyModelVersion\": \"2.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1d5929c-5d72-4b2a-b354-2767056a6929\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"testG3\",\n    \"GroupId\": \"testG3\",\n    \"Tag\": \"TestG3T3\",\n    \"BodyModelVersion\": \"1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95d7ed2b-4f54-4952-96d0-995981981e37\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "CreatePerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePerson\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG3\",\n    \"PersonName\": \"testG3P1\",\n    \"PersonId\": \"testG3P1\",\n    \"Trace\": {\n        \"Urls\": [\n            \"IamNotUrl\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 1,\n                \"Y\": 2,\n                \"Width\": 3,\n                \"Height\": 4\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"\",\n        \"BodyModelVersion\": \"\",\n        \"InputRetCode\": -1001,\n        \"InputRetCodeDetails\": [\n            -1102\n        ],\n        \"RequestId\": \"78b14df0-9ca6-45e0-b5d4-f053db01f9bb\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePerson\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG3\",\n    \"PersonName\": \"testG3P1\",\n    \"PersonId\": \"testG3P1\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 1,\n                \"Y\": 2,\n                \"Width\": 3,\n                \"Height\": 4\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"testCreatePerson123\",\n        \"BodyModelVersion\": \"1.0\",\n        \"InputRetCode\": 0,\n        \"InputRetCodeDetails\": [\n            0\n        ],\n        \"RequestId\": \"2d44289d-eeb1-4109-8c2e-3c3e514094b9\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "CreateSegmentationTask": [
+      {
+        "document": "创建视频人像分割处理任务成功",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSegmentationTask\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"test.video.url\",\n    \"BackgroundImageUrl\": \"test.image.url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33c35bff-27b6-408f-9ca7-19191303fa07\",\n        \"TaskID\": \"fakeTaskID\",\n        \"EstimatedProcessingTime\": 30\n    }\n}",
+        "title": "创建任务成功"
+      }
+    ],
+    "CreateTrace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrace\n<公共请求参数>\n\n{\n    \"PersonId\": \"3333333333333\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 1,\n                \"Y\": 2,\n                \"Width\": 3,\n                \"Height\": 4\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81ee3a85-1273-4d39-b7b2-2dea15859039\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrace\n<公共请求参数>\n\n{\n    \"PersonId\": \"testG3P1\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 1,\n                \"Y\": 2,\n                \"Width\": 3,\n                \"Height\": 4\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"testTrace123\",\n        \"BodyModelVersion\": \"1.0\",\n        \"InputRetCode\": 0,\n        \"InputRetCodeDetails\": [\n            0\n        ],\n        \"RequestId\": \"d86cada6-1b1a-4ac1-86a4-c1a6bbb3e54c\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DeleteGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"1231231\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb24cce3-beb9-4f8b-9f61-e79fb075a9a4\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc9be78c-6d08-430e-9119-959d903769c9\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DeletePerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"123131231\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27304486-69f3-47fd-b8ce-b7436ec8486b\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"testG10P1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10f9a902-184e-40d6-b09d-e85f0c2dcfba\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DescribeSegmentationTask": [
+      {
+        "document": "查询视频人像分割处理任务成功",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"taskID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0352ed67-66b0-4515-a04f-ddc0ab129658\",\n        \"TaskStatus\": \"FINISHED\",\n        \"ErrorMsg\": \"\",\n        \"ResultVideoUrl\": \"http://resulturl.com/a.mp4\",\n        \"ResultVideoMD5\": \"somemd5\",\n        \"VideoBasicInformation\": {\n            \"FrameWidth\": 1280,\n            \"FrameHeight\": 590,\n            \"FramesPerSecond\": 28,\n            \"Duration\": 21,\n            \"TotalFrames\": 630\n        }\n    }\n}",
+        "title": "查询任务成功"
+      }
+    ],
+    "DetectBody": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBody\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotUrl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBody\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BodyDetectResults\": [\n            {\n                \"BodyRect\": {\n                    \"X\": 260,\n                    \"Y\": 1,\n                    \"Width\": 272,\n                    \"Height\": 365\n                },\n                \"Confidence\": 0.91490805149078,\n                \"BodyAttributeInfo\": {\n                    \"UpperBodyCloth\": {\n                        \"Color\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        },\n                        \"Sleeve\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        },\n                        \"Texture\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        }\n                    },\n                    \"Orientation\": {\n                        \"Type\": \"xx\",\n                        \"Probability\": 0.0\n                    },\n                    \"LowerBodyCloth\": {\n                        \"Color\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        },\n                        \"Length\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        },\n                        \"Type\": {\n                            \"Type\": \"xx\",\n                            \"Probability\": 0.0\n                        }\n                    },\n                    \"Gender\": {\n                        \"Type\": \"xx\",\n                        \"Probability\": 0.0\n                    },\n                    \"Age\": {\n                        \"Type\": \"xx\",\n                        \"Probability\": 0.0\n                    },\n                    \"Bag\": {\n                        \"Type\": \"xx\",\n                        \"Probability\": 0.0\n                    }\n                }\n            }\n        ],\n        \"BodyModelVersion\": \"1.0\",\n        \"RequestId\": \"13ce6864-614a-4a9f-8207-c68fc9c552c4\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DetectBodyJoints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBodyJoints\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotUrl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBodyJoints\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BodyJointsResults\": [\n            {\n                \"BoundBox\": {\n                    \"X\": 134,\n                    \"Y\": 169,\n                    \"Width\": 270,\n                    \"Height\": 486\n                },\n                \"BodyJoints\": [\n                    {\n                        \"X\": 233.458984375,\n                        \"Y\": 212.494140625,\n                        \"KeyPointType\": \"头部\"\n                    },\n                    {\n                        \"X\": 237.619140625,\n                        \"Y\": 249.935546875,\n                        \"KeyPointType\": \"颈部\"\n                    },\n                    {\n                        \"X\": 283.380859375,\n                        \"Y\": 266.576171875,\n                        \"KeyPointType\": \"右肩\"\n                    },\n                    {\n                        \"X\": 324.982421875,\n                        \"Y\": 308.177734375,\n                        \"KeyPointType\": \"右肘\"\n                    },\n                    {\n                        \"X\": 295.861328125,\n                        \"Y\": 349.779296875,\n                        \"KeyPointType\": \"右腕\"\n                    },\n                    {\n                        \"X\": 208.498046875,\n                        \"Y\": 274.896484375,\n                        \"KeyPointType\": \"左肩\"\n                    },\n                    {\n                        \"X\": 183.537109375,\n                        \"Y\": 337.298828125,\n                        \"KeyPointType\": \"左肘\"\n                    },\n                    {\n                        \"X\": 158.576171875,\n                        \"Y\": 387.220703125,\n                        \"KeyPointType\": \"左腕\"\n                    },\n                    {\n                        \"X\": 262.580078125,\n                        \"Y\": 395.541015625,\n                        \"KeyPointType\": \"右髋\"\n                    },\n                    {\n                        \"X\": 237.619140625,\n                        \"Y\": 466.263671875,\n                        \"KeyPointType\": \"右膝\"\n                    },\n                    {\n                        \"X\": 216.818359375,\n                        \"Y\": 557.787109375,\n                        \"KeyPointType\": \"右踝\"\n                    },\n                    {\n                        \"X\": 254.259765625,\n                        \"Y\": 399.701171875,\n                        \"KeyPointType\": \"左髋\"\n                    },\n                    {\n                        \"X\": 266.740234375,\n                        \"Y\": 482.904296875,\n                        \"KeyPointType\": \"左膝\"\n                    },\n                    {\n                        \"X\": 349.943359375,\n                        \"Y\": 545.306640625,\n                        \"KeyPointType\": \"左踝\"\n                    }\n                ],\n                \"Confidence\": 0.99999010562897\n            }\n        ],\n        \"RequestId\": \"97d85578-6b11-4e7c-beea-65601bc0bc04\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "GetGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"Offset\": -1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78ec7830-a1c7-42be-bd65-6d0fa25f6fab\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupNum\": 1,\n        \"GroupInfos\": [\n            {\n                \"GroupName\": \"testG2\",\n                \"GroupId\": \"testG2\",\n                \"Tag\": \"testG2Tag\",\n                \"BodyModelVersion\": \"1.0\",\n                \"CreationTimestamp\": 1581673977535\n            }\n        ],\n        \"RequestId\": \"9ffccff2-4b52-443f-98f4-eb1f6a30399e\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "GetPersonList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPersonList\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG10\",\n    \"Offset\": 0,\n    \"Limit\": 1001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c803e3eb-25b4-48d9-b4df-b74c570d110b\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPersonList\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG10\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonNum\": 1,\n        \"BodyModelVersion\": \"1.0\",\n        \"PersonInfos\": [\n            {\n                \"PersonName\": \"testG10P1\",\n                \"PersonId\": \"testG10P1\",\n                \"TraceInfos\": [\n                    {\n                        \"TraceId\": \"3524775577730961229\",\n                        \"BodyIds\": [\n                            \"3524775577730961229-0\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"2e1841c2-81ee-42db-98ac-6c056aafe9b3\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "ModifyGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"12312312\",\n    \"GroupName\": \"testG3M3\",\n    \"Tag\": \"testG3M3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3661682c-414a-48d0-86fd-939d504bab70\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG3\",\n    \"GroupName\": \"testG3M3\",\n    \"Tag\": \"testG3M3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"32ac4a6a-7a58-4968-b32e-b8d7772eb26e\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "ModifyPersonInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPersonInfo\n<公共请求参数>\n\n{\n    \"PersonId\": \"12313123\",\n    \"PersonName\": \"testG10P1M1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5844914d-b2e1-4afc-9970-8d1cdd6a7138\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPersonInfo\n<公共请求参数>\n\n{\n    \"PersonId\": \"testG10P1\",\n    \"PersonName\": \"testG10P1M1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"327920d1-f111-463d-b9d3-3eaa0a473508\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SearchTrace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTrace\n<公共请求参数>\n\n{\n    \"GroupId\": \"12311111111\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 260,\n                \"Y\": 1,\n                \"Width\": 272,\n                \"Height\": 365\n            }\n        ]\n    },\n    \"MaxPersonNum\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a5de4e8-02a0-4b4e-8c9a-e66e6f26d12a\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTrace\n<公共请求参数>\n\n{\n    \"GroupId\": \"12311111111\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 260,\n                \"Y\": 1,\n                \"Width\": 272,\n                \"Height\": 365\n            }\n        ]\n    },\n    \"MaxPersonNum\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Candidates\": [\n            {\n                \"PersonId\": \"testG10P1\",\n                \"TraceId\": \"3517452339320503246\",\n                \"Score\": 99.99\n            },\n            {\n                \"PersonId\": \"testG10P40\",\n                \"TraceId\": \"3516549744519331668\",\n                \"Score\": 99.99\n            }\n        ],\n        \"BodyModelVersion\": \"1.0\",\n        \"InputRetCode\": 0,\n        \"InputRetCodeDetails\": [\n            0\n        ],\n        \"RequestId\": \"0301e30d-e83c-43c7-b78c-29eafea4762d\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SegmentCustomizedPortraitPic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\",\n    \"SegmentationOptions\": {\n        \"Background\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\",\n    \"SegmentationOptions\": {\n        \"Head\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PortraitImage\": \"iVBORw0KGgoAAAANSUhEUgAAAoAAAAHJCAYAAAAVcogaAAAgAElEQVR4AdThgZZlRRYYybpH3ELr/f/fNnm2D5FMVCcMXJVUdOvJzIXxGxUVlUNFZa3FoXKpXPqNd2aGo6LiqKiA4YXAoKLycqGicizkUpHfqRyuxVfJHzzEkVBxVFx7+K5ihIpriGOAiqPiGuKqOCquiqviqPgrFUfFVfHfonxS/pLKoXKttXin4h15T+VSOVQuFZW1Fmst1lqowHDsvThUVHBQUTmW37gqjoprZnhv8bNUDpWj4qhQOSoqZoaKimOKY2aomBkqKipUroqrAgcViL+j8vekEVj871J5R+VnVPwMlaOi4lBRgeHb64XGWou9N3tv1lqstVDZe6Oy92bvzVqLtRYqxyTHzDAzPM/D8zw8z0PF8zwcM0PFzFAxMxwzUHFUHCqHispVcVT8lYqr4qioqKj4aiE8IL9TOVQulb+TwzjkcFRcFcfMcFUcFd/14p2KQ+UrlWO/fkFFRWWthcpai6NCRUVF5auRT478TiqM38TMgB8wgR8c8cGK3wzw4lhrsffG...\",\n        \"MaskImage\": \"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAALCAHJAoABAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx...\",\n        \"ImageRects\": [\n            {\n                \"Y\": 1,\n                \"X\": 2,\n                \"Height\": 3,\n                \"Width\": 4,\n                \"Label\": \"Head\"\n            }\n        ],\n        \"RequestId\": \"07d71af0-d3af-4d36-8217-1e6836f38007\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SegmentPortraitPic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"iVBORw0KGgoAAAANSUhEUgAAAiYAAAFuCAYAAAC1LdPaAAAgAElEQVR4AbTB0ZJlyXUYy4g8DT1hICNl5P9/50WdFdJqWIJ7ioWahnDl7r/99me+MzM8VTwNh39FxWcqS+Wcw3cqLpUnlUtFZamorMPvqaiorJlBReWcg4rKUuk9/DMqKirWaVCpWBUVFRVXRcWTysi3KpbKUlkq68TfqaioLJWZQWWpqCyVz1SeVN7vN/+IgA4UIaui4vp4x1UxHlbFer//ylWxKr5SsSpWRULFk8pSUXlS+YrKUlkqS0VFZVUsFZWOLBUVFRWVpaKiUlGxVFR+eKioqFBRUVGZGb6jsSqeKtbM8KTyJN8757BUVkVFxTrn8KTyVKHypH...\",\n        \"ResultMask\": \"...XWPBHiy5s9MsfGWqRxIlxe+DdQbyLK9a6lDSLpaFbtC21I3GK/okoooooooooooooooooooooooor+Qb/g73/bN1j4HfsbeCP2evCt7qum6x8e9cuDrN5YnT3spfDWi8T6bfrOHvImnnbfHJbKmQMM/av8AMAJJJJOSeST1J9TRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRXV+BvHPi/wCGni3QPHfgPxDqfhXxf4X1K11jQPEGjXUlnqWl6lZyrNbXdrcREPHLFIoYHocYIIJFf7FX/BAn9qf41fthf8E2fgz8Y/j74oXxl8RdRivtL1LxE1lBZXOow6XcPaW096tviOa8aKNTPcbVaaTLsMk1+0dFFFFFFFFFFFFFFFFFFFFFFFf5jX/B5jqOoSft8fCfTZL68fToPg3p88Fg9zO1lDPJqFwJJorUuYI5ZAAHkSMOwADE4r+Oyiiiiv/Z\",\n        \"RequestId\": \"9cf173a5-4ae5-46fb-9898-6c876263780d\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "TerminateSegmentationTask": [
+      {
+        "document": "取消任务成功",
+        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateSegmentationTask\n<公共请求参数>\n\n{\n    \"TaskID\": \"fakeID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0352ed67-66b0-4515-a04f-ddc0ab129658\"\n    }\n}",
+        "title": "取消任务成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

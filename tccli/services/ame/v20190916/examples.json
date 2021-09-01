@@ -1,0 +1,163 @@
+{
+  "actions": {
+    "DescribeAuthInfo": [
+      {
+        "document": "获取授权项目列表",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeAuthInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AuthInfo\": [\n            {\n                \"ProjectName\": \"xx\",\n                \"Commercialization\": 0,\n                \"Platform\": 0,\n                \"SubjectName\": \"xx\",\n                \"AuthPeriod\": 0,\n                \"AppRegion\": 0,\n                \"AppScene\": 0,\n                \"Id\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeAuthInfo"
+      }
+    ],
+    "DescribeCloudMusic": [
+      {
+        "document": "获取云音乐播放信息",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeCloudMusic\n&MusicId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Duration\": 288,\n        \"MusicId\": \"xxx\",\n        \"MusicImageUrl\": \"http://xxx.com/album/097/976740-JPG-240X240-ALBUM.jpg\",\n        \"MusicName\": \"低温xx\",\n        \"MusicUrl\": \"https://xxx.com/wm/10/384/10384721-MP3-128K-FTW-P.mp3?sign=4d7428e523c0d419e6c05db5912c8c67&t=5fcf112a&transDeliveryCode=CA@0@1607400466@S@c56ea136420f5044\",\n        \"RequestId\": \"s1607400465431774000\",\n        \"Singers\": [\n            \"陈xx\"\n        ]\n    }\n}",
+        "title": "获取云音乐播放信息"
+      }
+    ],
+    "DescribeCloudMusicPurchased": [
+      {
+        "document": "获取授权项目已购云音乐列表",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudMusicPurchased\n<公共请求参数>\n\n{\n    \"AuthInfoId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MusicOpenDetail\": [\n            {\n                \"MusicName\": \"xx\",\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"MusicImageUrl\": \"xx\",\n                \"AlbumName\": \"xx\",\n                \"Duration\": 1,\n                \"AlbumImageUrl\": \"xx\",\n                \"Singers\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeCloudMusicPurchased"
+      }
+    ],
+    "DescribeItemById": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeItemById\n&ItemIDs=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Album\": {\n                    \"AlbumName\": \"你像她\",\n                    \"ImagePathMap\": [\n                        {\n                            \"Key\": \"JPG-240X240-ALBUM\",\n                            \"Value\": \"http://image.tingmall.com/album/172/1727096-JPG-240X240-ALBUM.jpg\"\n                        },\n                        {\n                            \"Key\": \"JPG-320X320-ALBUM\",\n                            \"Value\": \"http://image.tingmall.com/album/172/1727096-JPG-320X320-ALBUM.jpg\"\n                        },\n                        {\n                            \"Key\": \"JPG-600X600-ALBUM\",\n                            \"Value\": \"http://image.tingmall.com/album/172/1727096-JPG-600X600-ALBUM.jpg\"\n                        },\n                        {\n                            \"Key\": \"JPG-1000X1000-ALBUM\",\n                            \"Value\": \"http://image.tingmall.com/album/172/1727096-JPG-1000X1000-ALBUM.jpg\"\n                        }\n                    ]\n                },\n                \"Artists\": [\n                    {\n                        \"ArtistName\": \"炫青\"\n                    }\n                ],\n                \"DataInfo\": {\n                    \"AuditionBegin\": 31000,\n                    \"AuditionEnd\": 58000,\n                    \"Duration\": \"00:04:25\",\n                    \"Name\": \"你像她\",\n                    \"Version\": \"伴奏\"\n                },\n                \"ItemID\": \"58E772961AA8DD0D5569BB40AF7AEF08\"\n            }\n        ],\n        \"RequestId\": \"s1590115749573388000\"\n    }\n}",
+        "title": "根据歌曲ID查询歌曲信息"
+      }
+    ],
+    "DescribeItems": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeItems\n&Limit=1\n&Offset=0\n&CategoryId=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"ItemID\": \"xx\",\n                \"Album\": {\n                    \"ImagePathMap\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\"\n                        },\n                        {\n                            \"Key\": \"xx\",\n                            \"Value\": \"xx\"\n                        },\n                        {\n                            \"Key\": \"xx\",\n                            \"Value\": \"xx\"\n                        },\n                        {\n                            \"Key\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"AlbumName\": \"xx\"\n                },\n                \"Status\": 0,\n                \"DataInfo\": {\n                    \"Duration\": \"xx\",\n                    \"AuditionBegin\": 1,\n                    \"Version\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"AuditionEnd\": 1\n                },\n                \"Artists\": [\n                    {\n                        \"ArtistName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"HaveMore\": 1,\n        \"Offset\": 1,\n        \"Total\": 1,\n        \"Size\": 1\n    }\n}",
+        "title": "获取分类内容下歌曲列表"
+      }
+    ],
+    "DescribeKTVMusicDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicDetail\n<公共请求参数>\n\n{\n    \"MusicId\": \"ame-78d2xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayToken\": \"DUE3344xxxxxx\",\n        \"LyricsUrl\": \"http://xxx.qcloud.com/subtitle.vtt\",\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"MusicId\": \"ame-78d2xxx\",\n            \"Duration\": 120,\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"Name\": \"七里香\",\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询 KTV 曲目详情"
+      }
+    ],
+    "DescribeKTVPlaylistDetail": [
+      {
+        "document": "获取即时广播歌单接口",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylistDetail\n<公共请求参数>\n\n{\n    \"PlaylistId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PlaylistBaseInfo\": {\n            \"Description\": \"xx\",\n            \"MusicNum\": 0,\n            \"PlaylistId\": \"xx\",\n            \"Title\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"xx\"\n                ],\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取即时广播歌单接口"
+      }
+    ],
+    "DescribeKTVPlaylists": [
+      {
+        "document": "获取即时广播曲库推荐歌单",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylists\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlaylistBaseInfoSet\": [\n            {\n                \"Description\": \"xx\",\n                \"MusicNum\": 0,\n                \"PlaylistId\": \"xx\",\n                \"Title\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取即时广播曲库推荐歌单"
+      }
+    ],
+    "DescribeLyric": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeLyric\n&ItemId=xxxxx\n&SubItemType=LRC-LRC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Lyric\": {\n            \"FileNameExt\": \"lrc\",\n            \"SubItemType\": \"LRC-LRC\",\n            \"Url\": \"http://xxx.com/lyric/09/860/9860965-LRC-LRC.lrc\"\n        },\n        \"RequestId\": \"s1568793079544475000\"\n    }\n}",
+        "title": "获取歌词信息"
+      }
+    ],
+    "DescribeMusic": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeMusic\n&ItemId=xxxx\n&IdentityId=xx\n&SubItemType=MP3-64K-FTD-P\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Music\": {\n            \"AuditionBegin\": 0,\n            \"AuditionEnd\": 0,\n            \"FileExtension\": \"mp3\",\n            \"FileSize\": 3475953,\n            \"Url\": \"/content/09/800/9860965-MP3-64K-FTD.mp3?sign=71a19ae9f06313071f5876fbc4fc5c30&t=5d81f154&transDeliveryCode=YQUFAR@0@1568791612@S@3e760189cf194262\",\n            \"FullUrl\": \"http://xxx.com/content/09/800/9860965-MP3-64K-FTD.mp3?sign=71a19ae9f06313071f5876fbc4fc5c30&t=5d81f154&transDeliveryCode=YQUFAR@0@1568791612@S@3e760189cf194262\"\n        },\n        \"RequestId\": \"s1568791637852491000\"\n    }\n}",
+        "title": "获取曲库包歌曲播放信息-正常示例"
+      },
+      {
+        "document": "在Error为ResourceNotFound时，Message中包含Code信息为版权方的错误码，具体含义如下：\n101 无结果\n102 内容无权限获取\n103 内容因版权原因下架\n104 内容仅支持下载，不可在线播放\n105 内容需要付费获取\n106 部分资源内容状态不同\n1001 输入参数错误\n1004 第三方API错误\n1005 支付错误\n1006 非支持支付模式\n1007 系统错误\n1008 其他系统错误\n1009 Token过期\n1205 用户账户不存在\n5023 超过当日下载最大量\n5024 超过当月下载最大量\n5000-5999 其他功能错误定义",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeMusic\n&ItemId=xxxx\n&IdentityId=xx\n&SubItemType=MP3-64K-FTD-P\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1575025791424544000\"\n    }\n}",
+        "title": "获取曲库包歌曲播放信息-版权方错误示例"
+      }
+    ],
+    "DescribeMusicSaleStatus": [
+      {
+        "document": "根据音乐信息查询音乐是否在售",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMusicSaleStatus\n<公共请求参数>\n\n{\n    \"PurchaseType\": 0,\n    \"MusicIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"MusicStatusSet\": [\n            {\n                \"MusicId\": \"xx\",\n                \"SaleStatus\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询歌曲在售状态"
+      }
+    ],
+    "DescribePackageItems": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribePackageItems\n&OrderId=xxx\n&Offset=0\n&Length=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PackageItems\": [\n            {\n                \"ArtistName\": \"格子兮,willen\",\n                \"AuthorizedArea\": \"CN\",\n                \"Duration\": \"00:03:13\",\n                \"Img\": \"http://csimage.tingmall.com/album/095/954833-JPG-600X600-ALBUM.jpg\",\n                \"ItemID\": \"EB9DF7B88A3CF5BF5569BB40AF7AEF08\",\n                \"OrderId\": \"00070710331231100\",\n                \"TrackName\": \"十年寒冬\"\n            }\n        ],\n        \"RequestId\": \"s1596078603574525000\"\n    }\n}",
+        "title": "获取曲库包已核验歌曲列表"
+      }
+    ],
+    "DescribePackages": [
+      {
+        "document": "获取已购曲库包列表",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribePackages\n&Offset=0\n&Length=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Packages\": [\n            {\n                \"AuthorizedArea\": \"CN\",\n                \"AuthorizedLimit\": 2000,\n                \"Commercial\": 0,\n                \"EffectTime\": \"2020-07-03 16:05:01\",\n                \"ExpireTime\": \"2021-07-03 16:05:01\",\n                \"Name\": \"商用通用-在线\",\n                \"OrderId\": \"10070316050031100\",\n                \"PackagePrice\": 200000,\n                \"TermOfValidity\": 365,\n                \"UseRanges\": [\n                    {\n                        \"Name\": \"API音乐使用场景/短视频背景音（免费）\",\n                        \"UseRangeId\": 32\n                    },\n                    {\n                        \"Name\": \"API音乐使用场景/图文背景音（免费）\",\n                        \"UseRangeId\": 33\n                    },\n                    {\n                        \"Name\": \"API音乐使用场景/应用程序背景音（免费）\",\n                        \"UseRangeId\": 34\n                    },\n                    {\n                        \"Name\": \"API音乐使用场景/网页/个人空间背景音乐定制（付费）\",\n                        \"UseRangeId\": 1005\n                    },\n                    {\n                        \"Name\": \"API音乐使用场景/客户端背景音乐内置（付费）\",\n                        \"UseRangeId\": 1008\n                    },\n                    {\n                        \"Name\": \"API音乐使用场景/视频背景音乐（付费）\",\n                        \"UseRangeId\": 1013\n                    }\n                ],\n                \"UsedCount\": 10\n            }\n        ],\n        \"RequestId\": \"s1596075862723742000\"\n    }\n}",
+        "title": "获取已购曲库包列表"
+      }
+    ],
+    "DescribeStations": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=DescribeStations\n&Limit=1\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HaveMore\": 0,\n        \"Offset\": 0,\n        \"RequestId\": \"s1568780320026098000\",\n        \"Size\": 3,\n        \"Stations\": [\n            {\n                \"CategoryCode\": \"\",\n                \"CategoryID\": \"DB5C207AE09E058C\",\n                \"ImagePathMap\": [\n                    {\n                        \"Key\": \"JPG-320X320-STATION\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"JPG-600X600-STATION\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"JPG-NXN-STATION\",\n                        \"Value\": \"\"\n                    }\n                ],\n                \"Name\": \"素材-国风\",\n                \"Rank\": 1\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "title": "获取分类内容（Station）列表"
+      }
+    ],
+    "ModifyMusicOnShelves": [
+      {
+        "document": "供TME侧进行变更歌曲参数",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMusicOnShelves\n<公共请求参数>\n\n{\n    \"MusicDetailInfos\": {\n        \"HitWords\": [\n            \"xx\"\n        ],\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"Bpm\": 0,\n        \"AmeId\": \"xx\",\n        \"MusicId\": \"xx\",\n        \"Score\": 0.0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "变更歌曲参数"
+      }
+    ],
+    "PutMusicOnTheShelves": [
+      {
+        "document": "供TME侧进行歌曲上架",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutMusicOnTheShelves\n<公共请求参数>\n\n{\n    \"MusicIds\": [\n        \"E4CC97317AFDB8BA5569BB40AF7AEF08\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedNum\": 0,\n        \"SuccessNum\": 0,\n        \"FailedMusicIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "上架歌曲接口"
+      }
+    ],
+    "ReportData": [
+      {
+        "document": "",
+        "input": "https://ame.tencentcloudapi.com/?Action=ReportData\n&ReportData=1f8b08000000000000007xxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1578300559628971903\"\n    }\n}",
+        "title": "上报歌曲播放数据"
+      }
+    ],
+    "SearchKTVMusics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"ame-78dxxx\",\n                \"Duration\": 120,\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"七里香\",\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "搜索 KTV 歌曲"
+      }
+    ],
+    "TakeMusicOffShelves": [
+      {
+        "document": "供TME侧进行下架歌曲",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TakeMusicOffShelves\n<公共请求参数>\n\n{\n    \"TakeMusicOffShelves\": [\n        {\n            \"MusicIds\": \"E4CC97317AFDB8BA5569BB40AF7AEF08\",\n            \"SaleStatus\": \"2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedNum\": 0,\n        \"SuccessNum\": 0,\n        \"FailedMusicIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "下架歌曲接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

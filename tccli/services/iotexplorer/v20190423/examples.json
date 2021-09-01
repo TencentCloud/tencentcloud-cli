@@ -1,0 +1,419 @@
+{
+  "actions": {
+    "CallDeviceActionAsync": [
+      {
+        "document": "异步调用设备行为，返回调用 Id 信息。",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CallDeviceActionAsync\n&ProductId=TOIDHQ3AOQ\n&DeviceName=TOIDHQ2AOQ\n&ActionId=actid\n&InputParams={\"vol\":3}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"45016a4535374abcb05e25790b916dc3\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\"\n    }\n}",
+        "title": "异步调用设备行为"
+      }
+    ],
+    "CallDeviceActionSync": [
+      {
+        "document": "同步调用设备行为，返回调用结果。",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CallDeviceActionSync\r\n&ProductId=TOIDHQ3AOQ\r\n&DeviceName=light1\r\n&ActionId=actid\r\n&InputParams={\"vol\":3}\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"0fe1260b7a724b67ba873ca7df703e0d\",\n        \"OutputParams\": \"{\\\"brightness\\\":1,\\\"color\\\":1,\\\"light_switch\\\":1}\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9s4bcf\",\n        \"Status\": \"succ\"\n    }\n}",
+        "title": "同步调用设备行为"
+      }
+    ],
+    "ControlDeviceData": [
+      {
+        "document": "设置设备数据",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ControlDeviceData\r\n&ProductId=LJ0INDNU7U\r\n&DeviceName=light1\r\n&Data={\"brightness\":1}\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"5c982342-fb08-4fac-8e70-f63834667b52\"\n    }\n}",
+        "title": "设置设备数据-2"
+      },
+      {
+        "document": "设置设备数据",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ControlDeviceData\r\n&ProductId=BKTTNGIQOG\r\n&DeviceName=dev01\r\n&Data={\"payload\":\"test\",\"id\":\"abc\"}\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
+        "title": "设置设备数据"
+      }
+    ],
+    "CreateDevice": [
+      {
+        "document": "创建设备",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"dvFeQr1zhBS2CDyYlN31XA==\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "创建设备"
+      },
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&DevAddr=01865bd9\n&AppKey=00000000000000010000000000000001\n&DevEUI=0100000000000021\n&AppSKey=bc97ea1ff62e7a3490135d989aae6bca\n&NwkSKey=bc97ea1ff62e7a3490135d989aae6bca\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"dd1\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"GTnp7I+yckhF3LrmHRtYBQ==\"\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "创建 LoRa 设备"
+      },
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&DefinedPsk=1231\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"1231\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "创建手动指定psk的设备"
+      }
+    ],
+    "CreateLoRaFrequency": [
+      {
+        "document": "创建 LoRa 自定义频点",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoRaFrequency\n<公共请求参数>\n\n{\n    \"FreqName\": \"F10\",\n    \"ChannelsDataUp\": [\n        486300000\n    ],\n    \"ChannelsDataRX1\": [\n        486300000\n    ],\n    \"ChannelsDataRX2\": [\n        486300000\n    ],\n    \"ChannelsJoinUp\": [\n        486300000\n    ],\n    \"ChannelsJoinRX1\": [\n        486300000\n    ],\n    \"ChannelsJoinRX2\": [\n        486300000\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FreqId\": \"0cdd67ed-c198-403f-a2b7-043e09c7639d\",\n            \"FreqName\": \"F10\",\n            \"Description\": \"\",\n            \"ChannelsDataUp\": [\n                486300000\n            ],\n            \"ChannelsDataRX1\": [\n                486300000\n            ],\n            \"ChannelsDataRX2\": [\n                486300000\n            ],\n            \"ChannelsJoinUp\": [\n                486300000\n            ],\n            \"ChannelsJoinRX1\": [\n                486300000\n            ],\n            \"ChannelsJoinRX2\": [\n                486300000\n            ],\n            \"CreateTime\": 1600859096\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "CreateLoRaFrequency"
+      }
+    ],
+    "CreateLoRaGateway": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateLoRaGateway\n&Description=fortest\n&IsPublic=true\n&Position=tfine\n&PositionDetails=fyd\n&GatewayId=ff00000000000002\n&Location.Accuracy=0\n&Location.Altitude=0\n&Location.Latitude=0\n&Location.Longitude=0\n&Name=ddgws\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Gateway\": {\n            \"GatewayId\": \"ff00000000000005\",\n            \"IsPublic\": false,\n            \"Description\": \"fortest\",\n            \"Name\": \"ddgw5\",\n            \"Position\": \"\",\n            \"PositionDetails\": \"\",\n            \"Location\": {\n                \"Latitude\": 0,\n                \"Longitude\": 0,\n                \"Altitude\": 0,\n                \"Accuracy\": 0\n            },\n            \"UpdatedAt\": \"2019-12-05 05:03:02 PM\",\n            \"CreatedAt\": \"2019-12-05 05:03:02 PM\",\n            \"LastSeenAt\": \"\"\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "新建 LoRa 网关"
+      }
+    ],
+    "CreateProject": [
+      {
+        "document": "新建项目",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateProject\n&ProjectName=TestProjectName\n&ProjectDesc=projcet_desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Project\": {\n            \"ProjectId\": \"prj-z6j2tyr0\",\n            \"ProjectName\": \"TestProjectName\",\n            \"ProjectDesc\": \"projcet_desc\",\n            \"CreateTime\": 1560328276,\n            \"UpdateTime\": 1560328276\n        },\n        \"RequestId\": \"17a769e5-b355-4e32-8828-404d596f9b2c\"\n    }\n}",
+        "title": "新建项目"
+      }
+    ],
+    "CreateStudioProduct": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateStudioProduct\r\n&ProductName=name\r\n&CategoryId=10\r\n&ProductType=0\r\n&EncryptionType=1\r\n&NetType=wifi\r\n&DataProtocol=1\r\n&ProductDesc=desc\r\n&ProjectId=prj-zunfat46\r\n&<公共请求参数>\r\n\r\n\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"ROF2GLJ5FS\",\n            \"ProductName\": \"name\",\n            \"CategoryId\": 10,\n            \"ProductType\": 0,\n            \"EncryptionType\": \"1\",\n            \"NetType\": \"wifi\",\n            \"DataProtocol\": 1,\n            \"ProductDesc\": \"desc\",\n            \"ProjectId\": \"prj-zunfat46\",\n            \"DevStatus\": \"dev\",\n            \"CreateTime\": 1557460361,\n            \"UpdateTime\": 1557460361,\n            \"Region\": \"gz\",\n            \"ModuleId\": 0\n        },\n        \"RequestId\": \"ef8a00e2-4166-4336-aa69-a2b5156d471f\"\n    }\n}",
+        "title": "新建产品"
+      }
+    ],
+    "CreateTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"test\",\n        \"RuleDisabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "创建规则"
+      }
+    ],
+    "DeleteDevice": [
+      {
+        "document": "删除设备",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=KO9JAFB9W5\n&DeviceName=dev\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除设备"
+      }
+    ],
+    "DeleteDevices": [
+      {
+        "document": "批量删除设备",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevices\n<公共请求参数>\n\n{\n    \"DevicesItems\": [\n        {\n            \"DeviceName\": \"xx\",\n            \"ProductId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量删除设备"
+      }
+    ],
+    "DeleteLoRaFrequency": [
+      {
+        "document": "删除LoRa自定义频点",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoRaFrequency\n<公共请求参数>\n\n{\n    \"FreqId\": \"90b3df14-a8fe-44da-8f3c-5ccdf57e62dc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "DeleteLoRaFrequency"
+      }
+    ],
+    "DeleteLoRaGateway": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteLoRaGateway\r\n&GatewayId=ff00000000000002\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "删除 LoRa 网关"
+      }
+    ],
+    "DeleteProject": [
+      {
+        "document": "删除项目",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteProject\r\n&ProjectId=prj-z6j2tyr0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1aa7421b-f59b-4ea9-acf5-4bf22681f3be\"\n    }\n}",
+        "title": "删除项目"
+      }
+    ],
+    "DeleteStudioProduct": [
+      {
+        "document": "删除产品",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\n    }\n}",
+        "title": "删除产品"
+      }
+    ],
+    "DeleteTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DescribeDevice": [
+      {
+        "document": "用于查看设备信息",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeDevice\n&ProductId=ABCDE12345\n&DeviceName=dev01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Device\": [\n            {\n                \"DeviceName\": \"dev01\",\n                \"Status\": 3,\n                \"DevicePsk\": \"\",\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0\n            }\n        ],\n        \"RequestId\": \"e020416b-bc15-4563-9afc-0e5a111a5711\"\n    }\n}",
+        "title": "查看设备详情"
+      }
+    ],
+    "DescribeDeviceData": [
+      {
+        "document": "获取设备数据",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeDeviceData\r\n&ProductId=LJ0INDNU7U\r\n&DeviceName=light1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"brightness\\\":{\\\"Value\\\":5,\\\"LastUpdate\\\":1551432955984},\\\"color\\\":{\\\"Value\\\":11,\\\"LastUpdate\\\":1551432955984},\\\"name\\\":{\\\"Value\\\":\\\"light of city\\\",\\\"LastUpdate\\\":1551432955984}}\",\n        \"RequestId\": \"5c982342-fb08-4fac-8e70-f63834667b52\"\n    }\n}",
+        "title": "获取设备数据"
+      }
+    ],
+    "DescribeDeviceDataHistory": [
+      {
+        "document": "获取设备历史数据",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeDeviceDataHistory\r\n&MinTime=1548677099000&MaxTime=1548763499000\r\n&ProductId=LJ0INDNU7U\r\n&DeviceName=light1\r\n&FieldName=color\r\n&Limit=5\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c982342-fb08-4fac-8e70-f63834667b52\",\n        \"FieldName\": \"color\",\n        \"Listover\": true,\n        \"Context\": \"\",\n        \"Results\": [\n            {\n                \"Time\": \"1550055697000\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Time\": \"1550055698000\",\n                \"Value\": \"3\"\n            }\n        ]\n    }\n}",
+        "title": "获取设备历史数据"
+      }
+    ],
+    "DescribeFirmwareTask": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1000175,\n        \"Status\": 3,\n        \"CreateTime\": 1589466879,\n        \"Type\": 1,\n        \"ProductName\": \"门锁\",\n        \"OriginalVersion\": \"xx\",\n        \"UpgradeMode\": \"originalVersion\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeLoRaFrequency": [
+      {
+        "document": "获取LoRa自定义频点详情",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoRaFrequency\n<公共请求参数>\n\n{\n    \"FreqId\": \"0cdd67ed-c198-403f-a2b7-043e09c7639d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FreqId\": \"0cdd67ed-c198-403f-a2b7-043e09c7639d\",\n            \"FreqName\": \"F1\",\n            \"Description\": \"\",\n            \"ChannelsDataUp\": [\n                486300000\n            ],\n            \"ChannelsDataRX1\": [\n                486300000\n            ],\n            \"ChannelsDataRX2\": [\n                486300000\n            ],\n            \"ChannelsJoinUp\": [\n                486300000\n            ],\n            \"ChannelsJoinRX1\": [\n                486300000\n            ],\n            \"ChannelsJoinRX2\": [\n                486300000\n            ],\n            \"CreateTime\": 1600859096\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "DescribeLoRaFrequency"
+      }
+    ],
+    "DescribeModelDefinition": [
+      {
+        "document": "查询产品配置的数据模板信息",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeModelDefinition\n&ProductId=PKRXJVL39S\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"ProductId\": \"PKRXJVL39S\",\n            \"ModelDefine\": \"{\\\"version\\\":\\\"1.0\\\",\\\"profile\\\":{\\\"productID\\\":\\\"PKRXJVL39S\\\"},\\\"properties\\\":[{\\\"id\\\":\\\"light_switch\\\",\\\"name\\\":\\\"电灯开关\\\",\\\"desc\\\":\\\"控制电灯开灭\\\",\\\"required\\\":true,\\\"mode\\\":\\\"rw\\\",\\\"define\\\":{\\\"type\\\":\\\"bool\\\",\\\"mapping\\\":{\\\"0\\\":\\\"关\\\",\\\"1\\\":\\\"开\\\"}}},{\\\"id\\\":\\\"color\\\",\\\"name\\\":\\\"颜色1\\\",\\\"required\\\":false,\\\"desc\\\":\\\"灯光颜色\\\",\\\"mode\\\":\\\"rw\\\",\\\"define\\\":{\\\"type\\\":\\\"enum\\\",\\\"mapping\\\":{\\\"0\\\":\\\"Red\\\",\\\"1\\\":\\\"Green\\\",\\\"2\\\":\\\"Blue\\\"}}},{\\\"id\\\":\\\"brightness\\\",\\\"name\\\":\\\"颜色\\\",\\\"desc\\\":\\\"灯光颜色\\\",\\\"mode\\\":\\\"rw\\\",\\\"define\\\":{\\\"type\\\":\\\"int\\\",\\\"unit\\\":\\\"%\\\",\\\"step\\\":\\\"1\\\",\\\"min\\\":\\\"0\\\",\\\"max\\\":\\\"100\\\"}},{\\\"id\\\":\\\"name\\\",\\\"name\\\":\\\"灯位置名称\\\",\\\"desc\\\":\\\"灯位置名称：书房、客厅等\\\",\\\"mode\\\":\\\"rw\\\",\\\"required\\\":true,\\\"define\\\":{\\\"type\\\":\\\"string\\\",\\\"min\\\":\\\"1\\\",\\\"max\\\":\\\"64\\\"}}],\\\"events\\\":[{\\\"id\\\":\\\"status_report\\\",\\\"name\\\":\\\"DeviceStatus\\\",\\\"desc\\\":\\\"Report the device status我是中文\\\",\\\"type\\\":\\\"info\\\",\\\"required\\\":true,\\\"params\\\":[{\\\"id\\\":\\\"status\\\",\\\"name\\\":\\\"running_state\\\",\\\"desc\\\":\\\"Report current device running state\\\",\\\"define\\\":{\\\"type\\\":\\\"bool\\\",\\\"mapping\\\":{\\\"0\\\":\\\"normal\\\",\\\"1\\\":\\\"fault\\\"}}},{\\\"id\\\":\\\"message\\\",\\\"name\\\":\\\"Message\\\",\\\"desc\\\":\\\"Some extra message\\\",\\\"define\\\":{\\\"type\\\":\\\"string\\\",\\\"min\\\":\\\"1\\\",\\\"max\\\":\\\"64\\\"}}]},{\\\"id\\\":\\\"low_voltage\\\",\\\"name\\\":\\\"LowVoltage\\\",\\\"desc\\\":\\\"Alert for device voltage is low\\\",\\\"type\\\":\\\"alert\\\",\\\"required\\\":false,\\\"params\\\":[{\\\"id\\\":\\\"voltage\\\",\\\"name\\\":\\\"Voltage\\\",\\\"desc\\\":\\\"Current voltage\\\",\\\"define\\\":{\\\"type\\\":\\\"float\\\",\\\"unit\\\":\\\"V\\\",\\\"step\\\":\\\"1\\\",\\\"min\\\":\\\"0.0\\\",\\\"max\\\":\\\"24.0\\\"}}]},{\\\"id\\\":\\\"hardware_fault\\\",\\\"name\\\":\\\"Hardware_fault\\\",\\\"desc\\\":\\\"Report hardware fault\\\",\\\"type\\\":\\\"fault\\\",\\\"required\\\":false,\\\"params\\\":[{\\\"id\\\":\\\"name\\\",\\\"name\\\":\\\"Name\\\",\\\"desc\\\":\\\"Name like: memory,tf card, censors ...\\\",\\\"define\\\":{\\\"type\\\":\\\"string\\\",\\\"min\\\":\\\"1\\\",\\\"max\\\":\\\"64\\\"}},{\\\"id\\\":\\\"error_code\\\",\\\"name\\\":\\\"Error_Code\\\",\\\"desc\\\":\\\"Error code for fault\\\",\\\"define\\\":{\\\"type\\\":\\\"int\\\",\\\"unit\\\":\\\"\\\",\\\"step\\\":\\\"1\\\",\\\"min\\\":\\\"0\\\",\\\"max\\\":\\\"2000\\\"}}]}]}\",\n            \"CategoryModel\": \"xx\",\n            \"NetTypeModel\": \"xx\",\n            \"CreateTime\": 1559646050,\n            \"UpdateTime\": 1559874799\n        },\n        \"RequestId\": \"b76dd3ea-2a5f-4dc3-8a1a-a77e37344b99\"\n    }\n}",
+        "title": "查询产品数据模板"
+      }
+    ],
+    "DescribeProject": [
+      {
+        "document": "查询项目详情",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeProject\r\n&ProjectId=prj-4r2kajtp\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Project\": {\n            \"ProjectId\": \"prj-4r2kajtp\",\n            \"ProjectName\": \"字符串Name\",\n            \"ProjectDesc\": \"字符串Desc\",\n            \"CreateTime\": 1557459725,\n            \"UpdateTime\": 1559743207,\n            \"ProductCount\": 0,\n            \"NativeAppCount\": 0,\n            \"WebAppCount\": 0\n        },\n        \"RequestId\": \"672626b5-dbcd-4b5c-a43c-f731e80164c4\"\n    }\n}",
+        "title": "查询项目详情"
+      }
+    ],
+    "DescribeStudioProduct": [
+      {
+        "document": "获取产品详情",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeStudioProduct\n&ProductId=M5AWDSEUYO\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"M5AWDSEUYO\",\n            \"ProductName\": \"testtproduct\",\n            \"CategoryId\": 3,\n            \"ProductType\": 0,\n            \"EncryptionType\": \"2\",\n            \"NetType\": \"else\",\n            \"DataProtocol\": 1,\n            \"ProductDesc\": \"desc\",\n            \"ProjectId\": \"prj-zunfat46\",\n            \"DevStatus\": \"dev\",\n            \"CreateTime\": 1560341975,\n            \"UpdateTime\": 1560341975,\n            \"Region\": \"gz\",\n            \"ModuleId\": 0\n        },\n        \"RequestId\": \"1c469fbf-d80c-4299-9b54-31340898b839\"\n    }\n}",
+        "title": "获取产品详情"
+      }
+    ],
+    "DescribeTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rule\": {\n            \"RuleName\": \"test_create\",\n            \"Sql\": \"SELECT * FROM '$thing/up/+/ProductId/#'\",\n            \"Description\": \"test\",\n            \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1088/sub.php\\\"}}]\",\n            \"RuleDisabled\": true\n        }\n    }\n}",
+        "title": "获取规则信息"
+      }
+    ],
+    "DisableTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "禁用规则"
+      }
+    ],
+    "EnableTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "启用规则"
+      }
+    ],
+    "GetCOSURL": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetCOSURL\n&ProductID=ABCDE12345\n&FirmwareVersion=2.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"http://abc.com\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetDeviceList": [
+      {
+        "document": "根据某个产品ID获取对应的设备列表",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetDeviceList\n&ProductId=ABCDE12345\n&ProjectId=12\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceName\": \"d1\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            },\n            {\n                \"DeviceName\": \"d1\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            },\n            {\n                \"DeviceName\": \"d10\",\n                \"Status\": 0,\n                \"DevicePsk\": \"\",\n                \"CreateTime\": 0,\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0,\n                \"LogLevel\": 0,\n                \"Version\": \"\",\n                \"DeviceCert\": \"\",\n                \"DevEUI\": \"\",\n                \"AppKey\": \"\",\n                \"DevAddr\": \"\",\n                \"AppSKey\": \"\",\n                \"NwkSKey\": \"\",\n                \"CreatorNickName\": \"\",\n                \"CreateUserId\": 0\n            }\n        ],\n        \"RequestId\": \"8bbbaa15-9918-4fd9-a70c-dbb47dwac0ca\",\n        \"Total\": 15\n    }\n}",
+        "title": "获取设备列表"
+      }
+    ],
+    "GetLoRaGatewayList": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetLoRaGatewayList\r\n&IsCommunity=true\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"ff00000000000003\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw3\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"fyd\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"LastSeenAt\": \"\"\n            },\n            {\n                \"GatewayId\": \"1000000000000019\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"test0233\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"teshu\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"1970-01-01 08:00:00 AM\",\n                \"CreatedAt\": \"2019-12-03 02:32:18 PM\",\n                \"LastSeenAt\": \"\"\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取 LoRa 社区网关列表"
+      },
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetLoRaGatewayList\r\n&IsCommunity=false\r\n&Limit=10\r\n&Offser=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"ff00000000000003\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw3\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"fyd\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"LastSeenAt\": \"\"\n            },\n            {\n                \"GatewayId\": \"ff00000000000004\",\n                \"IsPublic\": false,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw4\",\n                \"Position\": \"\",\n                \"PositionDetails\": \"\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 04:13:50 PM\",\n                \"CreatedAt\": \"2019-12-05 04:13:50 PM\",\n                \"LastSeenAt\": \"\"\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取非社区网关列表"
+      }
+    ],
+    "GetProjectList": [
+      {
+        "document": "当用户在自己的业务系统中想进行产品管理时，可以通过查询项目列表接口查询用户在物联网开发平台创建的项目。",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetProjectList\n&Offset=0\n&Limit=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Projects\": [\n            {\n                \"ProjectId\": \"prj-cmz8cu77\",\n                \"ProjectName\": \"CreatePrj\",\n                \"ProjectDesc\": \"BBBBB\",\n                \"CreateTime\": 1560328009,\n                \"UpdateTime\": 1560328009,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-k1c2y9n6\",\n                \"ProjectName\": \"Name\",\n                \"ProjectDesc\": \"Desc\",\n                \"CreateTime\": 1560322591,\n                \"UpdateTime\": 1560322591,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-qwdtv1p2\",\n                \"ProjectName\": \"PName\",\n                \"ProjectDesc\": \"prjDesc\",\n                \"CreateTime\": 1560311336,\n                \"UpdateTime\": 1560311336,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-v6j6xbq9\",\n                \"ProjectName\": \"prjName\",\n                \"ProjectDesc\": \"prjDesc\",\n                \"CreateTime\": 1560310472,\n                \"UpdateTime\": 1560310472,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-4r2kajtp\",\n                \"ProjectName\": \"字符串\",\n                \"ProjectDesc\": \"字符串\",\n                \"CreateTime\": 1557459725,\n                \"UpdateTime\": 1559743207,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-zunfat46\",\n                \"ProjectName\": \"abcde229环境\",\n                \"ProjectDesc\": \"desc\",\n                \"CreateTime\": 1556250427,\n                \"UpdateTime\": 1559743210,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-9z3jg93n\",\n                \"ProjectName\": \"test229环境\",\n                \"ProjectDesc\": \"afdafd\",\n                \"CreateTime\": 1556248181,\n                \"UpdateTime\": 1559743210,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-zycc6aau\",\n                \"ProjectName\": \"字符串229环境\",\n                \"ProjectDesc\": \"字符串\",\n                \"CreateTime\": 1556245194,\n                \"UpdateTime\": 1559743210,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            },\n            {\n                \"ProjectId\": \"prj-3u6jqd4m\",\n                \"ProjectName\": \"name1229环境\",\n                \"ProjectDesc\": \"desc1\",\n                \"CreateTime\": 1556199700,\n                \"UpdateTime\": 1559743211,\n                \"ProductCount\": 0,\n                \"NativeAppCount\": 0,\n                \"WebAppCount\": 0,\n                \"DeviceCount\": 0,\n                \"ApplicationCount\": 0\n            }\n        ],\n        \"RequestId\": \"9dbce8ec-76e2-4f34-8c32-ad548b3b598a\",\n        \"Total\": 9\n    }\n}",
+        "title": "查询项目列表"
+      }
+    ],
+    "GetStudioProductList": [
+      {
+        "document": "获取产品列表",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetStudioProductList\r\n&ProjectId=prj-zunfat46\r\n&DevStatus=dev\r\n&Offset=0\r\n&Limit=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"4GDIU5HTEN\",\n                \"ProductName\": \"testproduct\",\n                \"CategoryId\": 3,\n                \"ProductType\": 0,\n                \"EncryptionType\": \"2\",\n                \"NetType\": \"else\",\n                \"DataProtocol\": 1,\n                \"ProductDesc\": \"desc\",\n                \"ProjectId\": \"prj-zunfat46\",\n                \"DevStatus\": \"dev\",\n                \"CreateTime\": 1560341825,\n                \"UpdateTime\": 1560341825,\n                \"Region\": \"gz\",\n                \"ModuleId\": 0\n            },\n            {\n                \"ProductId\": \"BJQM4UXMKN\",\n                \"ProductName\": \"testtproduct\",\n                \"CategoryId\": 3,\n                \"ProductType\": 0,\n                \"EncryptionType\": \"2\",\n                \"NetType\": \"else\",\n                \"DataProtocol\": 1,\n                \"ProductDesc\": \"desc\",\n                \"ProjectId\": \"prj-zunfat46\",\n                \"DevStatus\": \"dev\",\n                \"CreateTime\": 1560341975,\n                \"UpdateTime\": 1560341975,\n                \"Region\": \"gz\",\n                \"ModuleId\": 0\n            }\n        ],\n        \"RequestId\": \"55e612b3-ed75-44fe-b141-1c1a35d9a0da\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取产品列表"
+      }
+    ],
+    "GetTopicRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTopicRuleList\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"test\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
+        "title": "获取规则列表"
+      }
+    ],
+    "ListEventHistory": [
+      {
+        "document": "用于查询设备上报的所有类型历史事件信息",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEventHistory\n<公共请求参数>\n\n{\n    \"ProductId\": \"QDA1PZLBNB\",\n    \"DeviceName\": \"dev01\",\n    \"Type\": \"\",\n    \"EventId\": \"low_voltage\",\n    \"StartTime\": 1560355200,\n    \"EndTime\": 1601196327,\n    \"Size\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Listover\": true,\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\",\n        \"EventHistory\": [\n            {\n                \"TimeStamp\": 1561619346000,\n                \"ProductId\": \"QDA1PZLBNB\",\n                \"DeviceName\": \"dev01\",\n                \"EventId\": \"low_voltage\",\n                \"Type\": \"alert\",\n                \"Data\": \"{\\\"voltage\\\": 3.487172}\"\n            }\n        ],\n        \"Total\": 1,\n        \"Context\": \"DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATuBZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE7kWQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABO6FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATuxZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE7wWQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABO9FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EAAAAAAAATvhZCNks0QlUyWFI2cVFUZ21CUWlCc3NBAAAAAAAAE78WQjZLNEJVMlhSNnFRVGdtQlFpQnNzQQAAAAAAABPAFkI2SzRCVTJYUjZxUVRnbUJRaUJzc0E=\"\n    }\n}",
+        "title": "ListEventHistory"
+      }
+    ],
+    "ListFirmwares": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ListFirmwares\n&ProductID=ABCDE12345\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Firmwares\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductId\": \"xx\",\n                \"Description\": \"xx\",\n                \"Version\": \"1.0.0\",\n                \"Md5sum\": \"ahbdjshfuisdfoisjfos\",\n                \"CreateTime\": \"147873872173\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyLoRaFrequency": [
+      {
+        "document": "修改LoRa自定义频点",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoRaFrequency\n<公共请求参数>\n\n{\n    \"FreqId\": \"0cdd67ed-c198-403f-a2b7-043e09c7639d\",\n    \"FreqName\": \"F2\",\n    \"ChannelsDataUp\": [\n        486300000\n    ],\n    \"ChannelsDataRX1\": [\n        486300000\n    ],\n    \"ChannelsDataRX2\": [\n        486300000\n    ],\n    \"ChannelsJoinUp\": [\n        486300000\n    ],\n    \"ChannelsJoinRX1\": [\n        486300000\n    ],\n    \"ChannelsJoinRX2\": [\n        486300000\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FreqId\": \"0cdd67ed-c198-403f-a2b7-043e09c7639d\",\n            \"FreqName\": \"F2\",\n            \"Description\": \"\",\n            \"ChannelsDataUp\": [\n                486300000\n            ],\n            \"ChannelsDataRX1\": [\n                486300000\n            ],\n            \"ChannelsDataRX2\": [\n                486300000\n            ],\n            \"ChannelsJoinUp\": [\n                486300000\n            ],\n            \"ChannelsJoinRX1\": [\n                486300000\n            ],\n            \"ChannelsJoinRX2\": [\n                486300000\n            ],\n            \"CreateTime\": 1600859096\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "ModifyLoRaFrequency"
+      }
+    ],
+    "ModifyLoRaGateway": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyLoRaGateway\n&Description=fortest3\n&IsPublic=false\n&Position=tfine\n&PositionDetails=fyd\n&GatewayId=ff00000000000003\n&Location.Accuracy=0\n&Location.Altitude=1\n&Location.Latitude=120\n&Location.Longitude=113.44\n&Name=gw3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Gateway\": {\n            \"GatewayId\": \"ff00000000000003\",\n            \"IsPublic\": false,\n            \"Description\": \"fortest3\",\n            \"Name\": \"gw3\",\n            \"Position\": \"\",\n            \"PositionDetails\": \"\",\n            \"Location\": {\n                \"Latitude\": 0,\n                \"Longitude\": 0,\n                \"Altitude\": 0,\n                \"Accuracy\": 0\n            },\n            \"UpdatedAt\": \"2019-12-20 02:55:43 PM\",\n            \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n            \"LastSeenAt\": \"\"\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "title": "修改 LoRa 网关信息"
+      }
+    ],
+    "ModifyModelDefinition": [
+      {
+        "document": "设置产品的数据模板配置",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyModelDefinition\r\n&ProductId=LJ0INDNU7U\r\n&ModelSchema ={\"version\":\"1.0\",\"profile\":{\"productID\":\"9IEQWQY47W\"},\"properties\":[{\"id\":\"power_switch\",\"name\":\"电灯开关\",\"desc\":\"控制电灯开灭\",\"required\":true,\"mode\":\"rw\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"关\",\"1\":\"开\"}}},{\"id\":\"color\",\"name\":\"颜色1\",\"required\":false,\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"enum\",\"mapping\":{\"0\":\"Red\",\"1\":\"Green\",\"2\":\"Blue\"}}},{\"id\":\"brightness\",\"name\":\"颜色\",\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"int\",\"unit\":\"%\",\"step\":\"1\",\"min\":\"0\",\"max\":\"100\"}},{\"id\":\"name\",\"name\":\"灯位置名称\",\"desc\":\"灯位置名称：书房、客厅等\",\"mode\":\"rw\",\"required\":true,\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}],\"events\":[{\"id\":\"status_report\",\"name\":\"DeviceStatus\",\"desc\":\"Report the device status我是中文\",\"type\":\"info\",\"required\":true,\"params\":[{\"id\":\"status\",\"name\":\"running_state\",\"desc\":\"Report current device running state\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"normal\",\"1\":\"fault\"}}},{\"id\":\"message\",\"name\":\"Message\",\"desc\":\"Some extra message\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}]},{\"id\":\"low_voltage\",\"name\":\"LowVoltage\",\"desc\":\"Alert for device voltage is low\",\"type\":\"alert\",\"required\":false,\"params\":[{\"id\":\"voltage\",\"name\":\"Voltage\",\"desc\":\"Current voltage\",\"define\":{\"type\":\"float\",\"unit\":\"V\",\"step\":\"1\",\"min\":\"0.0\",\"max\":\"24.0\"}}]},{\"id\":\"hardware_fault\",\"name\":\"Hardware_fault\",\"desc\":\"Report hardware fault\",\"type\":\"fault\",\"required\":false,\"params\":[{\"id\":\"name\",\"name\":\"Name\",\"desc\":\"Name like: memory,tf card, censors ...\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}},{\"id\":\"error_code\",\"name\":\"Error_Code\",\"desc\":\"Error code for fault\",\"define\":{\"type\":\"int\",\"unit\":\"\",\"step\":\"1\",\"min\":\"0\",\"max\":\"2000\"}}]}]}\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c982342-fb08-4fac-8e70-f63834667b52\"\n    }\n}",
+        "title": "设置产品数据模板"
+      }
+    ],
+    "ModifyProject": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyProject\r\n&ProjectId=prj-4r2kajtp\r\n&ProjectName=name\r\n&ProjectDesc=desc\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Project\": {\n            \"ProjectId\": \"prj-4r2kajtp\",\n            \"ProjectName\": \"name\",\n            \"ProjectDesc\": \"desc\",\n            \"CreateTime\": 1544146149,\n            \"UpdateTime\": 1556160627\n        },\n        \"RequestId\": \"77f57c79-8288-4899-9b40-9254c860b053\"\n    }\n}",
+        "title": "修改项目"
+      }
+    ],
+    "ModifyStudioProduct": [
+      {
+        "document": "修改产品名称和描述等信息",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyStudioProduct\r\n&ProductId=4GDIU5HTEN\r\n&ProductName=testProduct\r\n&ProductDesc=Pdesc\r\n&ModuleId=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"4GDIU5HTEN\",\n            \"ProductName\": \"testProduct\",\n            \"CategoryId\": 3,\n            \"ProductType\": 0,\n            \"EncryptionType\": \"2\",\n            \"NetType\": \"else\",\n            \"DataProtocol\": 1,\n            \"ProductDesc\": \"Pdesc\",\n            \"ProjectId\": \"prj-zunfat46\",\n            \"DevStatus\": \"dev\",\n            \"CreateTime\": 1560341825,\n            \"UpdateTime\": 1560414507,\n            \"Region\": \"gz\",\n            \"ModuleId\": 0\n        },\n        \"RequestId\": \"6b6e765c-1625-49e6-9743-452e6ce15caa\"\n    }\n}",
+        "title": "修改产品"
+      }
+    ],
+    "ModifyTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"test\",\n        \"RuleDisabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "修改规则"
+      }
+    ],
+    "PublishMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"RL0BAZKZ6V/dev1/control\",\n    \"Payload\": \"AASDFASFSADFASDF\",\n    \"ProductId\": \"Nlasdf****ABCd\",\n    \"DeviceName\": \"dev1\",\n    \"Qos\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "透传Payload至设备"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"ProductId\": \"ZR2CxxxxMHX\",\n    \"DeviceName\": \"test01\",\n    \"Topic\": \"ZR2xxxxHX/texxx01/data\",\n    \"Payload\": \"5L2g5aW977yM5LiW55WM44CC\",\n    \"PayloadEncoding\": \"base64\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"keyixie_b4f3cb87-2224-46b2-ac2c-e28feadb61c8\"\n    }\n}",
+        "title": "将接收到的经过业务系统base64编码后的Payload进行二进制编码后下发至设备"
+      }
+    ],
+    "ReleaseStudioProduct": [
+      {
+        "document": "发布产品",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ReleaseStudioProduct\r\n&ProductId=BJQM4UXMKN\r\n&DevStatus=released\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5237ed7d-4b7c-4f09-9d7c-e0d46abf3614\"\n    }\n}",
+        "title": "发布产品"
+      }
+    ],
+    "SearchStudioProduct": [
+      {
+        "document": "搜索产品",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=SearchStudioProduct\n&ProjectId=prj-zunfat46\n&ProductName=testtproduct\n&Limit=0\n&Offset=0\n&DevStatus=dev\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"dev\",\n                \"EncryptionType\": \"2\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"prj-zunfat46\",\n                \"Region\": \"gz\",\n                \"EnableProductScript\": \"\",\n                \"UpdateTime\": 1560341975,\n                \"ProductName\": \"testtproduct\",\n                \"ProductDesc\": \"desc\",\n                \"NetType\": \"else\",\n                \"ProductType\": 0,\n                \"ModuleId\": 0,\n                \"CreateTime\": 1560341975,\n                \"CategoryId\": 3,\n                \"ProductId\": \"BJQM4UXMKN\"\n            }\n        ],\n        \"RequestId\": \"0935a11f-a172-4bd8-8bae-f143444aaff3\"\n    }\n}",
+        "title": "搜索产品"
+      }
+    ],
+    "SearchTopicRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"test\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
+        "title": "搜索规则"
+      }
+    ],
+    "UpdateDevicesEnableState": [
+      {
+        "document": "批量禁用启用设备",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevicesEnableState\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"DevicesItems\": [\n        {\n            \"DeviceName\": \"xx\",\n            \"ProductId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"xx\",\n        \"ResultMessage\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量禁用启用设备"
+      }
+    ],
+    "UpdateFirmware": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UpdateFirmware\n&ProductID=ABCDE12345\n&DeviceName=abc\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "更新固件示例"
+      }
+    ],
+    "UploadFirmware": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UploadFirmware\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&Md5sum=hfshfspodkoiwuidoiwjcuie\n&FileSize=1024\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "DismissRoom": {
+      "document": "通过game_id、room_id解散房间",
+      "input": "DismissRoomRequest",
+      "name": "解散房间",
+      "output": "DismissRoomResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-09-29",
+    "api_brief": "介绍如何使用API对联机对战引擎各对象进行操作，包括房间、玩家、匹配等。",
+    "serviceNameCN": "游戏联机对战引擎",
+    "serviceShortName": "mgobe"
+  },
+  "objects": {
+    "DismissRoomRequest": {
+      "document": "DismissRoom请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表示游戏资源唯一 ID, 由后台自动分配, 无法修改。",
+          "member": "string",
+          "name": "GameId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表示游戏房间唯一ID。",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomResponse": {
+      "document": "DismissRoom返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

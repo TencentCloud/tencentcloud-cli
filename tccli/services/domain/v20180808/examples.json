@@ -1,0 +1,173 @@
+{
+  "actions": {
+    "BatchModifyDomainInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyDomainInfo\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-xxxxx\",\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
+        "title": "批量域名信息修改"
+      }
+    ],
+    "CheckBatchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBatchStatus\n<公共请求参数>\n\n{\n    \"LogIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d391e9be-c0ef-11ea-9522-080027f4585e\",\n        \"StatusSet\": [\n            {\n                \"LogId\": 1,\n                \"Status\": \"failed\",\n                \"BatchAction\": \"batch_transfer_prohibition\"\n            },\n            {\n                \"LogId\": 2,\n                \"Status\": \"failed\",\n                \"BatchAction\": \"batch_transfer_prohibition\"\n            }\n        ]\n    }\n}",
+        "title": "批量操作日志状态"
+      }
+    ],
+    "CheckDomain": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=CheckDomain\n&DomainName=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Available\": true,\n        \"Premium\": false,\n        \"RecordSupport\": true,\n        \"DomainName\": \"的国防生的国防生.show\",\n        \"FeeTransfer\": 0,\n        \"Describe\": \"\",\n        \"FeeRestore\": 0,\n        \"Period\": 1,\n        \"Reason\": \"\",\n        \"RequestId\": \"cc5af1aa-544c-11ea-9bcb-525400f1e866\",\n        \"RealPrice\": 10,\n        \"BlackWord\": false,\n        \"Price\": 35,\n        \"FeeRenew\": 0\n    }\n}",
+        "title": "检测域名是否可注册"
+      }
+    ],
+    "CreateDomainBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"PayMode\": 0,\n    \"Period\": 1,\n    \"TemplateId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    },\n    \"ResultStatus\": true\n}",
+        "title": "批量域名注册"
+      }
+    ],
+    "CreateTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTemplate\n<公共请求参数>\n\n{\n    \"ContactInfo\": {\n        \"Province\": \"xx\",\n        \"OrganizationNameCN\": \"xx\",\n        \"OrganizationName\": \"xx\",\n        \"City\": \"xx\",\n        \"CityCN\": \"xx\",\n        \"RegistrantName\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"ZipCode\": \"xx\",\n        \"RegistrantNameCN\": \"xx\",\n        \"StreetCN\": \"xx\",\n        \"Street\": \"xx\",\n        \"ProvinceCN\": \"xx\",\n        \"Country\": \"xx\",\n        \"RegistrantType\": \"xx\",\n        \"CountryCN\": \"xx\",\n        \"Email\": \"xx\"\n    },\n    \"CertificateInfo\": {\n        \"CertificateType\": \"xx\",\n        \"CertificateCode\": \"xx\",\n        \"ImgUrl\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"IsValidTemplate\": 0,\n            \"UpdatedOn\": \"2020-10-16 00:00:00\",\n            \"AuditStatus\": \"Approve\",\n            \"CreatedOn\": \"2020-10-16 00:00:00\",\n            \"InvalidReason\": \"\",\n            \"CertificateInfo\": {\n                \"CertificateType\": \"xx\",\n                \"CertificateCode\": \"xx\",\n                \"ImgUrl\": \"xx\"\n            },\n            \"TemplateId\": \"xx\",\n            \"UserUin\": \"xx\",\n            \"ContactInfo\": {\n                \"Province\": \"xx\",\n                \"OrganizationNameCN\": \"xx\",\n                \"OrganizationName\": \"xx\",\n                \"City\": \"xx\",\n                \"CityCN\": \"xx\",\n                \"RegistrantName\": \"xx\",\n                \"Telephone\": \"xx\",\n                \"ZipCode\": \"xx\",\n                \"RegistrantNameCN\": \"xx\",\n                \"StreetCN\": \"xx\",\n                \"Street\": \"xx\",\n                \"ProvinceCN\": \"xx\",\n                \"Country\": \"xx\",\n                \"RegistrantType\": \"xx\",\n                \"CountryCN\": \"xx\",\n                \"Email\": \"xx\"\n            },\n            \"IsDefault\": \"xx\"\n        }\n    }\n}",
+        "title": "创建模板"
+      }
+    ],
+    "DeleteTemplate": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DeleteTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
+        "title": "删除信息模板"
+      }
+    ],
+    "DescribeBatchOperationLogDetails": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogDetails\n&Offset=0\n&Limit=20\n&LogId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 12,\n        \"RequestId\": \"13f43fa6-7282-4652-a99c-66819145ba5f\",\n        \"DomainBatchDetailSet\": [\n            {\n                \"Status\": \"doing\",\n                \"Domain\": \"qq.com\",\n                \"UpdatedOn\": \"2020-06-10 20:08:50\",\n                \"CreatedOn\": \"2020-06-10 20:08:44\",\n                \"Reason\": \"\",\n                \"Id\": 1\n            }\n        ]\n    },\n    \"ResultStatus\": true\n}",
+        "title": "批量操作日志详情"
+      }
+    ],
+    "DescribeBatchOperationLogs": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogs\n&Offset=1\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 204,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 318,\n                \"CreatedOn\": \"2020-06-10 20:08:43\",\n                \"Number\": 12,\n                \"Status\": \"doing\"\n            }\n        ],\n        \"RequestId\": \"1af07f55-2b13-4076-a301-74c2480f7af7\"\n    },\n    \"ResultStatus\": true\n}",
+        "title": "批量操作日志"
+      }
+    ],
+    "DescribeDomainBaseInfo": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainBaseInfo\n&Domain=域名\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"DomainId\": \"domain-xxxxx\",\n            \"DomainName\": \"tencent.com\",\n            \"NameServer\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RegistrarType\": \"epp\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"ExpirationDate\": \"2020-11-14\",\n            \"CreationDate\": \"2019-11-14\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": true,\n            \"LockEndTime\": \"2021-12-28 18:00:00\"\n        },\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\",\n        \"Uin\": \"1111\"\n    }\n}",
+        "title": "获取域名基础信息"
+      }
+    ],
+    "DescribeDomainNameList": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainNameList\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"DomainSet\": [\n            {\n                \"AutoRenew\": 0,\n                \"IsPremium\": false,\n                \"DomainId\": \"domain-ji1p1g4q\",\n                \"ExpirationDate\": \"2022-09-11\",\n                \"DomainName\": \"tencent.com\",\n                \"CodeTld\": \"com\",\n                \"CreationDate\": \"2019-09-11\",\n                \"Tld\": \".com\",\n                \"BuyStatus\": \"AboutToExpire\"\n            }\n        ],\n        \"RequestId\": \"6cbc0aca-a3ba-42aa-8ced-ae7b93f56049\"\n    }\n}",
+        "title": "我的域名列表"
+      }
+    ],
+    "DescribeDomainPriceList": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainPriceList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PriceList\": [\n            {\n                \"Price\": 1,\n                \"RealPrice\": 1,\n                \"Year\": 1,\n                \"Operation\": \"xx\",\n                \"Tld\": \"xx\"\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            },\n            {\n                \"Price\": 1,\n                \"Operation\": \"xx\",\n                \"RealPrice\": 1,\n                \"Tld\": \"xx\",\n                \"Year\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取域名价格列表"
+      }
+    ],
+    "DescribeTemplate": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c209d0e-f244-435f-8222-d86741c3edbd\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"ContactInfo\": {\n                \"Province\": \"hu nan sheng\",\n                \"RegistrantType\": \"I\",\n                \"OrganizationName\": \"ce shi\",\n                \"OrganizationNameCN\": \"测试\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"ce shi\",\n                \"ZipCode\": \"425000\",\n                \"Telephone\": \"155*********\",\n                \"City\": \"ce shi\",\n                \"RegistrantNameCN\": \"测试\",\n                \"StreetCN\": \"咸嘉湖街道\",\n                \"Street\": \"xian jia hu jie dao\",\n                \"ProvinceCN\": \"湖南省\",\n                \"CityCN\": \"长沙市\",\n                \"CountryCN\": \"中国\",\n                \"Email\": \"dnspod@dnspod.com\"\n            },\n            \"UpdatedOn\": \"2020-07-28 13:33:55\",\n            \"AuditStatus\": \"InAudit\",\n            \"CreatedOn\": \"2020-07-28 12:50:23\",\n            \"UserUin\": \"12334********\",\n            \"IsDefault\": \"no\",\n            \"TemplateId\": \"tmpl-dgmgwpe2\",\n            \"InvalidReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"CertificateInfo\": {\n                \"CertificateType\": \"SFZ\",\n                \"CertificateCode\": \"12345679\",\n                \"ImgUrl\": \"https://tencentyun.com/******\"\n            }\n        }\n    },\n    \"ResultStatus\": true\n}",
+        "title": "获取模板信息"
+      }
+    ],
+    "DescribeTemplateList": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplateList\n&Offset=0\n&Limit=20\n&Status=InAudit\n&Type=E\n&Keyword=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"099e5c01-42b5-468a-97f8-b76af37fa8d4\",\n        \"TemplateSet\": [\n            {\n                \"AuditReason\": \"注册人审核资料上传失败\",\n                \"IsValidTemplate\": 1,\n                \"UpdatedOn\": \"2020-07-20 16:05:10\",\n                \"AuditStatus\": \"Reject\",\n                \"CreatedOn\": \"2020-07-20 12:44:49\",\n                \"InvalidReason\": \"\",\n                \"CertificateInfo\": {\n                    \"CertificateType\": \"YYZZ\",\n                    \"CertificateCode\": \"888888888888888888\",\n                    \"ImgUrl\": \"https://xxx.xxx.com/xxxx.jpg\"\n                },\n                \"TemplateId\": \"tmpl-xxxxxxxx\",\n                \"UserUin\": \"88888888\",\n                \"ContactInfo\": {\n                    \"Province\": \"guang dong sheng\",\n                    \"RegistrantType\": \"E\",\n                    \"OrganizationName\": \"tenxungongsi\",\n                    \"OrganizationNameCN\": \"tencent公司\",\n                    \"Country\": \"CN\",\n                    \"RegistrantName\": \"tencent Gong Si\",\n                    \"ZipCode\": \"100011\",\n                    \"Email\": \"tencent@qq.com\",\n                    \"City\": \"shen zhen shi\",\n                    \"RegistrantNameCN\": \"腾讯公司\",\n                    \"StreetCN\": \"深南大道\",\n                    \"Street\": \"shen nan da dao \",\n                    \"ProvinceCN\": \"广东省\",\n                    \"CountryCN\": \"中国\",\n                    \"CityCN\": \"深圳市\",\n                    \"Telephone\": \"4009100100\"\n                },\n                \"IsDefault\": \"yes\"\n            }\n        ]\n    }\n}",
+        "title": "信息模板列表"
+      }
+    ],
+    "ModifyDomainDNSBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainDNSBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"Dns\": [\n        \"f1g1ns2.dnspod.net\",\n        \"f1g1ns2.dnspod.net\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
+        "title": "批量域名 DNS 修改"
+      }
+    ],
+    "ModifyDomainOwnerBatch": [
+      {
+        "document": "域名批量过户",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwnerBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"NewOwnerUin\": \"123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 425,\n        \"RequestId\": \"3c59eccc-efca-4109-1111-37e2e2bce25f\"\n    }\n}",
+        "title": "域名过户"
+      }
+    ],
+    "RenewDomainBatch": [
+      {
+        "document": "批量域名续费",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDomainBatch\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"Domains\": [\n        \"h101.dlgslb.cn\",\n        \"h103.dlgslb.cn\"\n    ],\n    \"PayMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
+        "title": "批量域名续费"
+      }
+    ],
+    "SetDomainAutoRenew": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=SetDomainAutoRenew\n&DomainId=域名ID\n&AutoRenew=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
+        "title": "设置域名自动续费"
+      }
+    ],
+    "TransferInDomainBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferInDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-xxxxx\",\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"PassWords\": [\n        \"123456\"\n    ],\n    \"PayMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
+        "title": "批量域名转入"
+      }
+    ],
+    "TransferProhibitionBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferProhibitionBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"Status\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
+        "title": "批量禁止转移锁"
+      }
+    ],
+    "UpdateProhibitionBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProhibitionBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"Status\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
+        "title": "批量禁止域名更新"
+      }
+    ],
+    "UploadImage": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=UploadImage\n&ImageFile=资质照片\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"xxxxx\",\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
+        "title": "证件图片上传"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,634 @@
+{
+  "actions": {
+    "GetRuntimeMC": {
+      "document": "获取运行时详情",
+      "input": "GetRuntimeMCRequest",
+      "name": "获取运行时详情",
+      "output": "GetRuntimeMCResponse"
+    },
+    "GetRuntimeResourceMonitorMetricMC": {
+      "document": "获取运行时资源监控详情，cpu，memory，bandwidth",
+      "input": "GetRuntimeResourceMonitorMetricMCRequest",
+      "name": "获取运行时资源监控详情",
+      "output": "GetRuntimeResourceMonitorMetricMCResponse"
+    },
+    "ListDeployableRuntimesMC": {
+      "document": "返回用户可用的运行时列表，发布应用时返回的运行时环境，仅shared和private运行时，无sandbox运行时，并且只有running/scaling状态的",
+      "input": "ListDeployableRuntimesMCRequest",
+      "name": "获取可部署运行时列表",
+      "output": "ListDeployableRuntimesMCResponse"
+    },
+    "ListRuntimeDeployedInstancesMC": {
+      "document": "获取运行时部署的应用实例列表",
+      "input": "ListRuntimeDeployedInstancesMCRequest",
+      "name": "获取运行时部署的应用实例列表",
+      "output": "ListRuntimeDeployedInstancesMCResponse"
+    },
+    "ListRuntimesMC": {
+      "document": "返回用户的运行时列表，运行时管理主页使用，包含沙箱、共享运行时及独立运行时环境，不包含已经删除的运行时",
+      "input": "ListRuntimesMCRequest",
+      "name": "获取运行时列表",
+      "output": "ListRuntimesMCResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-06-01",
+    "api_brief": null,
+    "serviceNameCN": "企业集成服务",
+    "serviceShortName": "eis"
+  },
+  "objects": {
+    "AbstractRuntimeMC": {
+      "document": "运行时精简信息",
+      "members": [
+        {
+          "default": "",
+          "document": "运行时id",
+          "example": "12",
+          "member": "int64",
+          "name": "RuntimeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时名称，用户输入，同一uin内唯一",
+          "example": "天津-2",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时类型：0: sandbox, 1:shared, 2:private",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时所在地域，tianjin，beijiing，guangzhou等",
+          "example": "tianjin",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）",
+          "example": "tianjin",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时应用listener地址后缀",
+          "example": "ipaas.tianjin.com",
+          "member": "string",
+          "name": "Addr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetRuntimeMCRequest": {
+      "document": "GetRuntimeMC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "运行时id",
+          "example": "12",
+          "member": "int64",
+          "name": "RuntimeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "运行时地域",
+          "example": "tinajin",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRuntimeMCResponse": {
+      "document": "GetRuntimeMC返回参数结构体",
+      "members": [
+        {
+          "document": "运行时详情",
+          "example": "无",
+          "member": "RuntimeMC",
+          "name": "Runtime",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRuntimeResourceMonitorMetricMCRequest": {
+      "document": "GetRuntimeResourceMonitorMetricMC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "运行时id",
+          "example": "12",
+          "member": "int64",
+          "name": "RuntimeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "1622615532",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1622615532",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指标类型：0:CPU, 1:MemUsageBytes, 2:K8sWorkloadNetworkReceiveBytesBw, 3:K8sWorkloadNetworkTransmitBytesBw",
+          "example": "2",
+          "member": "int64",
+          "name": "MetricType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否返回百分比数值，仅支持CPU，Memory",
+          "example": "true",
+          "member": "bool",
+          "name": "RateType",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "采样粒度：60(s), 300(s), 3600(s), 86400(s)",
+          "example": "300",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRuntimeResourceMonitorMetricMCResponse": {
+      "document": "GetRuntimeResourceMonitorMetricMC返回参数结构体",
+      "members": [
+        {
+          "document": "指标名称，K8sWorkloadCpuCoreUsed，K8sWorkloadMemUsageBytes，K8sWorkloadNetworkReceiveBytesBw，K8sWorkloadNetworkTransmitBytesBw",
+          "example": "无",
+          "member": "string",
+          "name": "MetricType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "metric数值列表",
+          "example": "无",
+          "member": "MetricValueMC",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDeployableRuntimesMCRequest": {
+      "document": "ListDeployableRuntimesMC请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListDeployableRuntimesMCResponse": {
+      "document": "ListDeployableRuntimesMC返回参数结构体",
+      "members": [
+        {
+          "document": "运行时列表",
+          "example": "无",
+          "member": "AbstractRuntimeMC",
+          "name": "Runtimes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRuntimeDeployedInstancesMCRequest": {
+      "document": "ListRuntimeDeployedInstancesMC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "运行时id",
+          "example": "12",
+          "member": "int64",
+          "name": "RuntimeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大请求数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求偏移量",
+          "example": "21",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序类型：1:创建时间排序, 2:更新时间排序（默认）",
+          "example": "1",
+          "member": "int64",
+          "name": "SortType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式：asc，desc（默认）",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运行时地域",
+          "example": "tianjin",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRuntimeDeployedInstancesMCResponse": {
+      "document": "ListRuntimeDeployedInstancesMC返回参数结构体",
+      "members": [
+        {
+          "document": "运行时所部属的应用实例列表",
+          "example": "无",
+          "member": "RuntimeDeployedInstanceMC",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "满足条件的记录总数，用于分页器",
+          "example": "102",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRuntimesMCRequest": {
+      "document": "ListRuntimesMC请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListRuntimesMCResponse": {
+      "document": "ListRuntimesMC返回参数结构体",
+      "members": [
+        {
+          "document": "运行时列表",
+          "example": "无",
+          "member": "RuntimeMC",
+          "name": "Runtimes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MetricValueMC": {
+      "document": "GetMonitorMetricResponse",
+      "members": [
+        {
+          "default": "",
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11111",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对应的value值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "Val",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuntimeDeployedInstanceMC": {
+      "document": "运行时部署的应用实例详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目名称",
+          "example": "我的项目",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用id",
+          "example": "2",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "邮件系统",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例id",
+          "example": "3",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例版本",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例创建时间",
+          "example": "1619656971",
+          "member": "int64",
+          "name": "InstanceCreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例部署状态. 0:running, 1:deleting",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例部署创建时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用实例部署更新时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuntimeMC": {
+      "document": "运行时详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "运行时id",
+          "example": "123",
+          "member": "int64",
+          "name": "RuntimeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号uin",
+          "example": "12345",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时名称，用户输入，同一uin内唯一",
+          "example": "天津-测试1",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时所在地域，tianjin，beijiing，guangzhou等",
+          "example": "tianjin",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时类型：0: sandbox, 1:shared, 2:private",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时状态：1:running, 2:deleting, 3:creating, 4:scaling, 5:unavailable, 6:deleted, 7:errored",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时创建时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时更新时间",
+          "example": "1624354153",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited",
+          "example": "2",
+          "member": "int64",
+          "name": "WorkerSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时资源配置，worker副本数",
+          "example": "3",
+          "member": "int64",
+          "name": "WorkerReplica",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正在运行的应用实例数量",
+          "example": "2",
+          "member": "int64",
+          "name": "RunningInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

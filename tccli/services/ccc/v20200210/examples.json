@@ -1,0 +1,141 @@
+{
+  "actions": {
+    "BindStaffSkillGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindStaffSkillGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffEmail\": \"staff1@xxx.com\",\n    \"SkillGroupList\": [\n        100,\n        101\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\"\n    }\n}",
+        "title": "绑定坐席所属技能组示例"
+      }
+    ],
+    "CreateSDKLoginToken": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=CreateSDKLoginToken\n&SdkAppId=1400000000\n&SeatUserId=FooOrBar@tencent.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"Token\": \"6bb56a09278740bc80c5dc6dab783eff\",\n        \"SdkURL\": \"https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/\",\n        \"ExpiredTime\": 1601371974\n    }\n}",
+        "title": "创建 SDK 登录 Token"
+      }
+    ],
+    "CreateStaff": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=CreateStaff\n&SdkAppId=1400000000\n&Staffs.0.Phone=联系电话\n&Staffs.0.Mail=联系人邮箱\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ErrorStaffList\": null\n    }\n}",
+        "title": "创建客服示例"
+      }
+    ],
+    "CreateUserSig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSig\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"Uid\": \"staff1@xxx.com\",\n    \"ClientData\": \"abc\",\n    \"ExpiredTime\": 86400\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"UserSig\": \"eJw0jkFPwjAYQP-Ld9Wwfm2HtokHswhK9IBMBtw22uEHbpa1JRrjfzfZ5vW95OX9QP68mtgvR50FrYRSQonrHpKxbaCabAcaEFGmMAhvTqVzZECjZIxPJUc5GjqAho1fJMlpnlfb9iYJx2WZZ*YqnLO1m9Wrh-uXeD48ZR9vkYrl3ZgM1FjQOOXyNkXJ2UCjt10Va9CwLRbH3Xzd7Pi7K5vgqyK97B9n33vxiqY10m4*-1OX-pdPGPz*BQAA--9b7kId\"\n    }\n}",
+        "title": "生成用户数据签名"
+      }
+    ],
+    "DeleteStaff": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffList\": [\n        \"staff1@xxx.com\",\n        \"staff2@xxx.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"OnlineStaffList\": null\n    }\n}",
+        "title": "删除坐席信息示例"
+      }
+    ],
+    "DescribeCallInMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallInMetrics\n<公共请求参数>\n\n{\n    \"EnabledNumber\": true,\n    \"EnabledSkillGroup\": true,\n    \"SdkAppId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Timestamp\": 0,\n        \"SkillGroupMetrics\": [\n            {\n                \"Metrics\": {\n                    \"AvgQueueDuration\": 5,\n                    \"AvgAcceptDuration\": 0,\n                    \"MaxRingDuration\": 4,\n                    \"RingCount\": 1,\n                    \"MaxQueueDuration\": 5,\n                    \"TransferOuterCount\": 0,\n                    \"AcceptCount\": 0,\n                    \"MaxAcceptDuration\": 0,\n                    \"QueueCount\": 1,\n                    \"IvrCount\": 0,\n                    \"AvgRingDuration\": 4\n                },\n                \"Name\": \"xx\",\n                \"SkillGroupId\": 1070\n            }\n        ],\n        \"NumberMetrics\": [\n            {\n                \"Metrics\": {\n                    \"AvgQueueDuration\": 5,\n                    \"AvgAcceptDuration\": 0,\n                    \"MaxRingDuration\": 4,\n                    \"RingCount\": 1,\n                    \"MaxQueueDuration\": 5,\n                    \"TransferOuterCount\": 0,\n                    \"AcceptCount\": 0,\n                    \"MaxAcceptDuration\": 0,\n                    \"QueueCount\": 1,\n                    \"IvrCount\": 0,\n                    \"AvgRingDuration\": 4\n                },\n                \"SkillGroupMetrics\": [\n                    {\n                        \"Metrics\": {\n                            \"AvgQueueDuration\": 5,\n                            \"AvgAcceptDuration\": 0,\n                            \"MaxRingDuration\": 4,\n                            \"RingCount\": 1,\n                            \"MaxQueueDuration\": 5,\n                            \"TransferOuterCount\": 0,\n                            \"AcceptCount\": 0,\n                            \"MaxAcceptDuration\": 0,\n                            \"QueueCount\": 1,\n                            \"IvrCount\": 0,\n                            \"AvgRingDuration\": 4\n                        },\n                        \"Name\": \"xx\",\n                        \"SkillGroupId\": 1070\n                    }\n                ],\n                \"Number\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalMetrics\": {\n            \"AvgQueueDuration\": 5,\n            \"AvgAcceptDuration\": 0,\n            \"MaxRingDuration\": 4,\n            \"RingCount\": 1,\n            \"MaxQueueDuration\": 5,\n            \"TransferOuterCount\": 0,\n            \"AcceptCount\": 0,\n            \"MaxAcceptDuration\": 0,\n            \"QueueCount\": 1,\n            \"IvrCount\": 0,\n            \"AvgRingDuration\": 4\n        }\n    }\n}",
+        "title": "获取呼入实时数据统计指标实例"
+      }
+    ],
+    "DescribeChatMessages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"CdrId\": \"xx\",\n    \"InstanceId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"TotalCount\": 0,\n        \"Messages\": []\n    }\n}",
+        "title": "查询聊天记录示例"
+      }
+    ],
+    "DescribeIMCdrs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIMCdrs\n<公共请求参数>\n\n{\n    \"InstanceId\": 12,\n    \"StartTimestamp\": 1603877878,\n    \"EndTimestamp\": 1603877879\n}",
+        "output": "{\n    \"Response\": {\n        \"IMCdrs\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询在线客服记录示例"
+      }
+    ],
+    "DescribePSTNActiveSessionList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribePSTNActiveSessionList\n&SdkAppId=1400000000\n&Offset=0\n&Limit=25\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"Total\": 1,\n        \"Sessions\": [\n            {\n                \"SessionID\": \"0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\",\n                \"RoomID\": \"32929373\",\n                \"Caller\": \"00864009282737\",\n                \"Callee\": \"00864001783747\",\n                \"StartTimestamp\": 1607702199,\n                \"RingTimestamp\": 1607702299,\n                \"AcceptTimestamp\": 1607702329,\n                \"StaffEmail\": \"foo@tencent.com\",\n                \"StaffNumber\": \"1007\",\n                \"SessionStatus\": \"inProgress\",\n                \"Direction\": 1\n            }\n        ]\n    }\n}",
+        "title": "获取 PSTN 活动会话列表示例"
+      }
+    ],
+    "DescribeSeatUserList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeSeatUserList\n&InstanceId=11\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"TotalCount\": 30,\n        \"SeatUsers\": [\n            {\n                \"Name\": \"张三\",\n                \"Mail\": \"zhangsan@qq.com\",\n                \"Phone\": \"12345678901\",\n                \"Nick\": \"张三\"\n            },\n            {\n                \"Name\": \"李四\",\n                \"Mail\": \"lisi@qq.com\",\n                \"Phone\": \"12345678902\",\n                \"Nick\": \"李四\"\n            },\n            {\n                \"Name\": \"王五\",\n                \"Mail\": \"wangwu@qq.com\",\n                \"Phone\": \"12345678903\",\n                \"Nick\": \"王五\"\n            }\n        ]\n    }\n}",
+        "title": "获取坐席用户列表示例"
+      }
+    ],
+    "DescribeSkillGroupInfoList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeSkillGroupInfoList\n&SdkAppId=1400000000\n&SkillGroupId=12\n&ModifiedTime=1590147606\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 2,\n        \"SkillGroupList\": [\n            {\n                \"SkillGroupId\": 1115,\n                \"SkillGroupName\": \"luluttt\",\n                \"Type\": \"TEL\",\n                \"RoutePolicy\": \"firstCreate\",\n                \"UsingLastSeat\": 0,\n                \"MaxConcurrency\": 1,\n                \"LastModifyTimestamp\": 1613976392\n            }\n        ]\n    }\n}",
+        "title": "获取技能组列表示例"
+      }
+    ],
+    "DescribeStaffInfoList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeStaffInfoList\n&SdkAppId=1400000000\n&StaffMail=“121223@qq.com”\n&ModifiedTime=1590147606\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 602,\n        \"StaffList\": [\n            {\n                \"Name\": \"xiao\",\n                \"Mail\": \"1000273@qq.com\",\n                \"Phone\": \"008617636049517\",\n                \"Nick\": \"测试3\",\n                \"StaffNumber\": \"125\",\n                \"SkillGroupList\": [\n                    {\n                        \"SkillGroupId\": 53,\n                        \"SkillGroupName\": \"ALL-dingoding-测试\",\n                        \"Priority\": 3,\n                        \"Type\": \"ALL\"\n                    },\n                    {\n                        \"SkillGroupId\": 82,\n                        \"SkillGroupName\": \"uu\",\n                        \"Priority\": 1,\n                        \"Type\": \"IM\"\n                    }\n                ],\n                \"LastModifyTimestamp\": 1613988825\n            }\n        ]\n    }\n}",
+        "title": "获取坐席列表示例"
+      }
+    ],
+    "DescribeStaffStatusMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStaffStatusMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 0,\n    \"StaffList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Metrics\": [\n            {\n                \"Status\": \"free\",\n                \"BusyDuration\": 63,\n                \"NotReadyDuration\": 39175,\n                \"ReserveRest\": false,\n                \"ReserveNotReady\": false,\n                \"Reason\": \"xx\",\n                \"OnlineDuration\": 54548,\n                \"AfterCallWorkDuration\": 15,\n                \"FreeDuration\": 15253,\n                \"StatusExtra\": {\n                    \"Type\": \"xx\",\n                    \"Direct\": \"xx\"\n                },\n                \"RestDuration\": 41,\n                \"Email\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取坐席实时状态统计指标示例"
+      }
+    ],
+    "DescribeTelCallInfo": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCallInfo\n&StartTimeStamp=0\n&EndTimeStamp=0\n&SdkAppIdList.0=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"TelCallOutCount\": 10,\n        \"TelCallInCount\": 10,\n        \"SeatUsedCount\": 50\n    }\n}",
+        "title": "获取电话呼叫统计信息示例"
+      }
+    ],
+    "DescribeTelCdr": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelCdr\n&SdkAppId=1400000000\n&StartTimeStamp=1590547606\n&EndTimeStamp=1590147606\n&Limit=0\n&Offset=0\n&PageSize=10\n&PageNumber=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"TotalCount\": 2,\n        \"TelCdrs\": [\n            {\n                \"SessionId\": \"xx\",\n                \"Caller\": \"12345678901\",\n                \"Callee\": \"23456789011\",\n                \"Time\": 1590547606,\n                \"Direction\": 0,\n                \"Duration\": 60,\n                \"RecordURL\": \"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863356.mp3\",\n                \"EndStatus\": 1,\n                \"SkillGroup\": \"test\",\n                \"SeatUser\": {\n                    \"Name\": \"zhangsan\",\n                    \"Phone\": \"12321233455\"\n                },\n                \"CallerLocation\": \"广东深圳\",\n                \"StartTimestamp\": 1590547606,\n                \"AcceptTimestamp\": 1590547606,\n                \"EndedTimestamp\": 1590547606,\n                \"RingTimestamp\": 1590547606,\n                \"HungUpSide\": \"user\",\n                \"ServeParticipants\": {\n                    \"Mail\": \"foo@tencent.com\",\n                    \"Phone\": \"008615793909390\",\n                    \"RingTimestamp\": 1610627284,\n                    \"AcceptTimestamp\": 1610627284,\n                    \"EndedTimestamp\": 1610627284,\n                    \"RecordId\": \"1610622284\",\n                    \"Type\": \"staffPhoneSeat\"\n                },\n                \"IVRDuration\": 5,\n                \"IVRKeyPressed\": [\n                    \"5\"\n                ],\n                \"SkillGroupId\": 100,\n                \"EndStatusString\": \"ok\",\n                \"QueuedSkillGroupId\": 100,\n                \"QueuedTimestamp\": 1610627284,\n                \"PostIVRKeyPressed\": [\n                    {\n                        \"Key\": \"1\",\n                        \"Label\": \"非常满意\"\n                    }\n                ]\n            },\n            {\n                \"SessionId\": \"xx\",\n                \"Caller\": \"12345678902\",\n                \"Callee\": \"23456789011\",\n                \"Time\": 1590547630,\n                \"Direction\": 0,\n                \"Duration\": 62,\n                \"RecordURL\": \"http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863357.mp3\",\n                \"EndStatus\": 1,\n                \"SkillGroup\": \"test\",\n                \"SeatUser\": {\n                    \"Name\": \"wangwu\",\n                    \"Phone\": \"12321233456\"\n                },\n                \"CallerLocation\": \"广东深圳\",\n                \"StartTimestamp\": 1590547630,\n                \"AcceptTimestamp\": 1590547606,\n                \"EndedTimestamp\": 1590547606,\n                \"RingTimestamp\": 1590547606,\n                \"HungUpSide\": \"user\",\n                \"ServeParticipants\": {\n                    \"Mail\": \"foo@tencent.com\",\n                    \"Phone\": \"008615793909390\",\n                    \"RingTimestamp\": 1610627284,\n                    \"AcceptTimestamp\": 1610627284,\n                    \"EndedTimestamp\": 1610627284,\n                    \"RecordId\": \"1610622284\",\n                    \"Type\": \"staffSeat\"\n                },\n                \"IVRDuration\": 5,\n                \"IVRKeyPressed\": [\n                    \"5\"\n                ],\n                \"SkillGroupId\": 100,\n                \"EndStatusString\": \"ok\",\n                \"QueuedSkillGroupId\": 100,\n                \"QueuedTimestamp\": 1610627284,\n                \"PostIVRKeyPressed\": [\n                    {\n                        \"Key\": \"1\",\n                        \"Label\": \"非常满意\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取电话话单示例"
+      }
+    ],
+    "DescribeTelSession": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelSession\n&SdkAppId=1400000000\n&SessionId=0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"Session\": {\n            \"SessionID\": \"0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\",\n            \"RoomID\": \"32929373\",\n            \"Caller\": \"00864009282737\",\n            \"Callee\": \"00864001783747\",\n            \"StartTimestamp\": 1607702199,\n            \"RingTimestamp\": 1607702299,\n            \"AcceptTimestamp\": 1607702329,\n            \"StaffEmail\": \"foo@tencent.com\",\n            \"StaffNumber\": \"1007\",\n            \"SessionStatus\": \"inProgress\",\n            \"Direction\": 1,\n            \"OutBoundCaller\": \"\",\n            \"OutBoundCallee\": \"\"\n        }\n    }\n}",
+        "title": "获取 PSTN 会话信息"
+      }
+    ],
+    "UnbindStaffSkillGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindStaffSkillGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffEmail\": \"staff1@xxx.com\",\n    \"SkillGroupList\": [\n        100,\n        101\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\"\n    }\n}",
+        "title": "解绑坐席所属技能组示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

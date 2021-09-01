@@ -1,0 +1,1268 @@
+{
+  "actions": {
+    "AssessQuality": {
+      "document": "评估输入图片在视觉上的质量，从多个方面评估，并同时给出综合的、客观的清晰度评分，和主观的美观度评分。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "AssessQualityRequest",
+      "name": "图像质量评估",
+      "output": "AssessQualityResponse"
+    },
+    "CropImage": {
+      "document": "根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响。\n\n可以自动裁剪图片，适应不同平台、设备的展示要求，避免简单拉伸带来的变形。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "CropImageRequest",
+      "name": "图片智能裁剪",
+      "output": "CropImageResponse"
+    },
+    "DetectCelebrity": {
+      "document": "传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。\n\n支持识别一张图片中存在的多个人脸，针对每个人脸，会给出与之最相似的公众人物。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectCelebrityRequest",
+      "name": "公众人物识别",
+      "output": "DetectCelebrityResponse"
+    },
+    "DetectDisgust": {
+      "document": "输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。\n\n通过恶心图片识别, 可以判断一张图片是否令人恶心, 同时给出它属于的潜在类别, 让您能够过滤掉使人不愉快的图片。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectDisgustRequest",
+      "name": "恶心检测",
+      "output": "DetectDisgustResponse"
+    },
+    "DetectLabel": {
+      "document": "图像标签利用深度学习技术、海量训练数据，可以对图片进行智能分类、物体识别等。\n\n目前支持8个大类、六十多个子类、数千个标签。涵盖各种日常场景、动植物、物品、美食、卡证等。具体分类请见[图像分析常见问题功能与限制相关](https://cloud.tencent.com/document/product/865/39164)。\n\n图像标签提供四个版本供选择：\n\n• 摄像头版：针对搜索、手机摄像头照片进行优化，涵盖大量卡证、日常物品、二维码条形码。\n\n• 相册版：针对手机相册、网盘进行优化，去除相册和网盘中不常见的标签，针对相册常见图片类型（人像、日常活动、日常物品等）识别效果更好。\n\n• 网络版：针对网络图片进行优化，涵盖标签更多，满足长尾识别需求。\n\n• 新闻版：针对新闻、资讯、广电等行业进行优化，增加定制识别，支持万级图像标签。\n\n每个产品的图像类型都有独特性，建议在接入初期，对四个版本进行对比评估后选择合适的版本使用。\n\n为了方便使用、减少图片传输次数，图像标签包装成多合一接口，实际上是多个服务。\n\n图像标签按照服务的实际使用数量进行收费。例如一张图片同时调用相册版、摄像头版两个服务，那么此次调用按照两次计费。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectLabelRequest",
+      "name": "图像标签",
+      "output": "DetectLabelResponse"
+    },
+    "DetectLabelBeta": {
+      "document": "图像标签测试接口\n\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectLabelBetaRequest",
+      "name": "图像标签测试接口",
+      "output": "DetectLabelBetaResponse"
+    },
+    "DetectMisbehavior": {
+      "document": "可以识别输入的图片中是否包含不良行为，例如打架斗殴、赌博、抽烟等，可以应用于广告图、直播截图、短视频截图等审核，减少不良行为对平台内容质量的影响，维护健康向上的互联网环境。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectMisbehaviorRequest",
+      "name": "不良行为识别",
+      "output": "DetectMisbehaviorResponse"
+    },
+    "DetectProduct": {
+      "document": "本接口支持识别图片中包含的商品，能够输出商品的品类名称、类别，还可以输出商品在图片中的位置。支持一张图片多个商品的识别。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectProductRequest",
+      "name": "商品识别",
+      "output": "DetectProductResponse"
+    },
+    "DetectProductBeta": {
+      "document": "商品识别-微信识物版，基于人工智能技术、海量训练图片、亿级商品库，可以实现全覆盖、细粒度、高准确率的商品识别和商品推荐功能。\n本服务可以识别出图片中的主体位置、主体商品类型，覆盖亿级SKU，输出具体商品的价格、型号等详细信息。\n客户无需自建商品库，即可快速实现商品识别、拍照搜商品等功能。\n\n目前“商品识别-微信识物版”为内测服务，需要申请、开通后方可使用。请在[服务开通申请表](https://cloud.tencent.com/apply/p/y1q2mnf0vdl) 中填写详细信息和需求，如果通过审核，我们将会在2个工作日内与您联系，并开通服务。\n内测期间，本服务免费提供最高2QPS，收费模式和标准会在正式版上线前通过站内信、短信通知客户。如果需要提升并发，请与我们联系洽谈。\n\n注意：本文档为内测版本，仅适用于功能体验和测试，正式业务接入请等待正式版。正式版的输入、输出可能会与内测版存在少量差异。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectProductBetaRequest",
+      "name": "商品识别-微信识物版",
+      "output": "DetectProductBetaResponse"
+    },
+    "EnhanceImage": {
+      "document": "传入一张图片，输出清晰度提升后的图片。\n\n可以消除图片有损压缩导致的噪声，和使用滤镜、拍摄失焦导致的模糊。让图片的边缘和细节更加清晰自然。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "EnhanceImageRequest",
+      "name": "图像清晰度增强",
+      "output": "EnhanceImageResponse"
+    },
+    "RecognizeCar": {
+      "document": "腾讯云车辆属性识别可对汽车车身及车辆属性进行检测与识别，目前支持11种车身颜色、20多种车型、300多种品牌、4000多种车系+年款的识别，同时支持对车辆的位置进行检测。如果图片中存在多辆车，会分别输出每辆车的车型和坐标。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "RecognizeCarRequest",
+      "name": "车辆识别",
+      "output": "RecognizeCarResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-05-29",
+    "api_brief": "介绍如何使用API对图像分析进行操作，包括图像质量检测、图像理解等。",
+    "serviceNameCN": "图像分析",
+    "serviceShortName": "tiia"
+  },
+  "objects": {
+    "AssessQualityRequest": {
+      "document": "AssessQuality请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssessQualityResponse": {
+      "document": "AssessQuality返回参数结构体",
+      "members": [
+        {
+          "document": "取值为TRUE或FALSE，TRUE为长图，FALSE为正常图，长图定义为长宽比大于等于3或小于等于1/3的图片。",
+          "member": "bool",
+          "name": "LongImage",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取值为TRUE或FALSE，TRUE为黑白图，FALSE为否。黑白图即灰度图，指红绿蓝三个通道都是以灰度色阶显示的图片，并非视觉上的“黑白图片”。",
+          "member": "bool",
+          "name": "BlackAndWhite",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取值为TRUE或FALSE，TRUE为小图，FALSE为否, 小图定义为最长边小于179像素的图片。当一张图片被判断为小图时，不建议做推荐和展示，其他字段统一输出为0或FALSE。",
+          "member": "bool",
+          "name": "SmallImage",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取值为TRUE或FALSE，TRUE为大图，FALSE为否，定义为最短边大于1000像素的图片",
+          "member": "bool",
+          "name": "BigImage",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "取值为TRUE或FALSE，TRUE为纯色图或纯文字图，即没有内容或只有简单内容的图片，FALSE为正常图片。",
+          "member": "bool",
+          "name": "PureImage",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "综合评分。图像清晰度的得分，对图片的噪声、曝光、模糊、压缩等因素进行综合评估，取值为[0, 100]，值越大，越清晰。一般大于50为较清晰图片，标准可以自行把握。",
+          "member": "int64",
+          "name": "ClarityScore",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "综合评分。图像美观度得分， 从构图、色彩等多个艺术性维度评价图片，取值为[0, 100]，值越大，越美观。一般大于50为较美观图片，标准可以自行把握。",
+          "member": "int64",
+          "name": "AestheticScore",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CarTagItem": {
+      "document": "车辆属性识别的结果",
+      "members": [
+        {
+          "default": "",
+          "document": "车系",
+          "member": "string",
+          "name": "Serial",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车辆品牌",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车辆类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车辆颜色",
+          "member": "string",
+          "name": "Color",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度，0-100",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "年份，没识别出年份的时候返回0",
+          "member": "int64",
+          "name": "Year",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车辆在图片中的坐标信息",
+          "member": "Coord",
+          "name": "CarLocation",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Coord": {
+      "document": "汽车坐标信息",
+      "members": [
+        {
+          "default": "",
+          "document": "横坐标x",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纵坐标y",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CropImageRequest": {
+      "document": "CropImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要裁剪区域的宽度，与Height共同组成所需裁剪的图片宽高比例；\n输入数字请大于0、小于图片宽度的像素值；",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要裁剪区域的高度，与Width共同组成所需裁剪的图片宽高比例；\n输入数字请请大于0、小于图片高度的像素值；\n宽高比例（Width : Height）会简化为最简分数，即如果Width输入10、Height输入20，会简化为1：2。\nWidth : Height建议取值在[1, 2.5]之间，超过这个范围可能会影响效果；",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CropImageResponse": {
+      "document": "CropImage返回参数结构体",
+      "members": [
+        {
+          "document": "裁剪区域左上角X坐标值",
+          "member": "int64",
+          "name": "X",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "裁剪区域左上角Y坐标值",
+          "member": "int64",
+          "name": "Y",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "裁剪区域的宽度，单位为像素",
+          "member": "int64",
+          "name": "Width",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "裁剪区域的高度，单位为像素",
+          "member": "int64",
+          "name": "Height",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原图宽度，单位为像素",
+          "member": "int64",
+          "name": "OriginalWidth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原图高度，单位为像素",
+          "member": "int64",
+          "name": "OriginalHeight",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0：抠图正常；\n1：原图过长，指原图的高度是宽度的1.8倍以上；\n2：原图过宽，指原图的宽度是高度的1.8倍以上；\n3：抠图区域过长，指抠图的高度是主体备选框高度的1.6倍以上；\n4：抠图区域过宽，指当没有检测到人脸时，抠图区域宽度是检测出的原图主体区域宽度的1.6倍以上；\n5：纯色图，指裁剪区域视觉较为单一、缺乏主体部分 ；\n6：宽高比异常，指Width : Height取值超出[1, 2.5]的范围；\n\n以上是辅助决策的参考建议，可以根据业务需求选择采纳或忽视。",
+          "member": "int64",
+          "name": "CropResult",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectCelebrityRequest": {
+      "document": "DetectCelebrity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectCelebrityResponse": {
+      "document": "DetectCelebrity返回参数结构体",
+      "members": [
+        {
+          "document": "公众人物识别结果数组。如果检测不到人脸，返回为空；最多可以返回10个人脸识别结果。",
+          "member": "Face",
+          "name": "Faces",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本服务在不同误识率水平下（将图片中的人物识别错误的比例）的推荐阈值，可以用于控制识别结果的精度。 \nFalseRate1Percent, FalseRate5Permil, FalseRate1Permil分别代表误识率在百分之一、千分之五、千分之一情况下的推荐阈值。 \n因为阈值会存在变动，请勿将此处输出的固定值处理，而是每次取值与confidence对比，来判断本次的识别结果是否可信。\n 例如，如果您业务中可以接受的误识率是1%，则可以将所有confidence>=FalseRate1Percent的结论认为是正确的。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Threshold",
+          "name": "Threshold",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectDisgustRequest": {
+      "document": "DetectDisgust请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectDisgustResponse": {
+      "document": "DetectDisgust返回参数结构体",
+      "members": [
+        {
+          "document": "对于图片中包含恶心内容的置信度，取值[0,1]，一般超过0.5则表明可能是恶心图片。",
+          "member": "float",
+          "name": "Confidence",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "与图像内容最相似的恶心内容的类别，包含腐烂、密集、畸形、血腥、蛇、虫子、牙齿等。",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectLabelBetaRequest": {
+      "document": "DetectLabelBeta请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://123.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次调用支持的识别场景，可选值如下：\nWEB，针对网络图片优化;\nCAMERA，针对手机摄像头拍摄图片优化;\nALBUM，针对手机相册、网盘产品优化;\nNEWS，针对新闻、资讯、广电等行业优化；\nNONECAM，非实拍图；\nLOCATION，主体位置识别；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
+          "example": "无",
+          "member": "string",
+          "name": "Scenes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectLabelBetaResponse": {
+      "document": "DetectLabelBeta返回参数结构体",
+      "members": [
+        {
+          "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "CameraLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "AlbumLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "NewsLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "非实拍标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "NoneCamLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Product",
+          "name": "LocationLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectLabelItem": {
+      "document": "图像标签检测结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "图片中的物体名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定。",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的一级分类",
+          "member": "string",
+          "name": "FirstCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签的二级分类",
+          "member": "string",
+          "name": "SecondCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DetectLabelRequest": {
+      "document": "DetectLabel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次调用支持的识别场景，可选值如下：\nWEB，针对网络图片优化;\nCAMERA，针对手机摄像头拍摄图片优化;\nALBUM，针对手机相册、网盘产品优化;\nNEWS，针对新闻、资讯、广电等行业优化；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
+          "member": "string",
+          "name": "Scenes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectLabelResponse": {
+      "document": "DetectLabel返回参数结构体",
+      "members": [
+        {
+          "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectLabelItem",
+          "name": "Labels",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectLabelItem",
+          "name": "CameraLabels",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectLabelItem",
+          "name": "AlbumLabels",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DetectLabelItem",
+          "name": "NewsLabels",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectMisbehaviorRequest": {
+      "document": "DetectMisbehavior请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectMisbehaviorResponse": {
+      "document": "DetectMisbehavior返回参数结构体",
+      "members": [
+        {
+          "document": "对于图片中包含不良行为的置信度，取值[0,1]，一般超过0.5则表明可能包含不良行为内容；",
+          "member": "float",
+          "name": "Confidence",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图像中最可能包含的不良行为类别，包括赌博、打架斗殴、吸毒等。",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectProductBetaRequest": {
+      "document": "DetectProductBeta请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 \n建议先对图片进行压缩，以便提升处理速度。",
+          "example": "https://test.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 \n与ImageUrl同时存在时优先使用ImageUrl字段。",
+          "example": "base64",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectProductBetaResponse": {
+      "document": "DetectProductBeta返回参数结构体",
+      "members": [
+        {
+          "document": "检测到的图片中的商品位置和品类预测。 \n当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 \n最多可以输出__3组__检测结果。",
+          "example": "无",
+          "member": "RegionDetected",
+          "name": "RegionDetected",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图像识别出的商品的详细信息。 \n当图像中检测到多个物品时，会对显著性最高的进行识别。",
+          "example": "无",
+          "member": "ProductInfo",
+          "name": "ProductInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相似商品信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ProductInfo",
+          "name": "ProductInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectProductRequest": {
+      "document": "DetectProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectProductResponse": {
+      "document": "DetectProduct返回参数结构体",
+      "members": [
+        {
+          "document": "商品识别结果数组",
+          "member": "Product",
+          "name": "Products",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhanceImageRequest": {
+      "document": "EnhanceImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，最大不超过250万像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhanceImageResponse": {
+      "document": "EnhanceImage返回参数结构体",
+      "members": [
+        {
+          "document": "增强后图片的base64编码。",
+          "member": "string",
+          "name": "EnhancedImage",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Face": {
+      "document": "公众人物识别人脸信息",
+      "members": [
+        {
+          "default": "",
+          "document": "与图片中人脸最相似的公众人物的名字。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公众人物身份标签的数组，一个公众人物可能有多个身份标签。",
+          "member": "Labels",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对人物的简介。",
+          "member": "string",
+          "name": "BasicInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法对于Name的置信度（图像中人脸与公众人物的相似度），0-100之间，值越高，表示对于Name越确定。",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸区域高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公众人物的唯一编号，可以用于区分同名人物、一个人物不同称呼等情况。唯一编号为8个字符构成的字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Labels": {
+      "document": "名人识别的标签",
+      "members": [
+        {
+          "default": "",
+          "document": "公众人物身份标签的一级分类，例如体育明星、娱乐明星、政治人物等；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FirstLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公众人物身份标签的二级分类，例如歌手（对应一级标签为“娱乐明星”）；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SecondLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Location": {
+      "document": "检测到的主体在图片中的矩形框位置（四个顶点坐标）",
+      "members": [
+        {
+          "default": "",
+          "document": "位置矩形框的左上角横坐标",
+          "member": "int64",
+          "name": "XMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置矩形框的左上角纵坐标",
+          "member": "int64",
+          "name": "YMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置矩形框的右下角横坐标",
+          "member": "int64",
+          "name": "XMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置矩形框的右下角纵坐标",
+          "member": "int64",
+          "name": "YMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Product": {
+      "document": "检测到的单个商品结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片中商品的三级分类识别结果，选取所有三级分类中的置信度最大者",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "三级商品分类对应的一级分类和二级分类，两级之间用“-”（中划线）隔开，例如商品名称是“硬盘”，那么Parents输出为“电脑、办公-电脑配件”",
+          "member": "string",
+          "name": "Parents",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定",
+          "member": "int64",
+          "name": "Confidence",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品坐标X轴的最小值",
+          "member": "int64",
+          "name": "XMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品坐标Y轴的最小值",
+          "member": "int64",
+          "name": "YMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品坐标X轴的最大值",
+          "member": "int64",
+          "name": "XMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品坐标Y轴的最大值",
+          "member": "int64",
+          "name": "YMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductInfo": {
+      "document": "图像识别出的商品的详细信息。 \n当图像中检测到多个物品时，会对显著性最高的物品进行识别。",
+      "members": [
+        {
+          "default": "",
+          "document": "1表示找到同款商品，以下字段为同款商品信息； \n0表示未找到同款商品， 具体商品信息为空（参考价格、名称、品牌等），仅提供商品类目和参考图片（商品库中找到的最相似图片，供参考）。  \n是否找到同款的判断依据为Score分值，分值越大则同款的可能性越大。",
+          "member": "int64",
+          "name": "FindSKU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本商品在图片中的坐标，表示为矩形框的四个顶点坐标。",
+          "member": "Location",
+          "name": "Location",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品品牌",
+          "member": "string",
+          "name": "Brand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考价格，综合多个信息源，仅供参考。",
+          "member": "string",
+          "name": "Price",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别结果的商品类目。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。 \n当类别为“非商品”时，除Location、Score和本字段之外的商品信息为空。",
+          "member": "string",
+          "name": "ProductCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入图片中的主体物品和输出结果的相似度。分值越大，输出结果与输入图片是同款的可能性越高。",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "搜索到的商品配图URL。",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecognizeCarRequest": {
+      "document": "RecognizeCar请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**\n支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeCarResponse": {
+      "document": "RecognizeCar返回参数结构体",
+      "members": [
+        {
+          "document": "汽车的四个矩形顶点坐标，如果图片中存在多辆车，则输出最大车辆的坐标。",
+          "member": "Coord",
+          "name": "CarCoords",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "车辆属性识别的结果数组，如果识别到多辆车，则会输出每辆车的top1结果。",
+          "member": "CarTagItem",
+          "name": "CarTags",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionDetected": {
+      "document": "检测到的图片中的商品位置和品类预测。 \n当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 \n最多可以输出__3组__检测结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "商品的品类预测结果。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品品类预测的置信度",
+          "member": "float",
+          "name": "CategoryScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标",
+          "member": "Location",
+          "name": "Location",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Threshold": {
+      "document": "本服务在不同误识率水平下（将图片中的人物识别错误的比例）的推荐阈值，可以用于控制识别结果的精度。\n{FalseRate1Percent, FalseRate5Permil, FalseRate1Permil}分别代表误识率在百分之一、千分之五、千分之一情况下的推荐阈值。\n因为阈值会存在变动，请勿将此处输出的固定值处理，而是每次取值与confidence对比，来判断本次的识别结果是否可信。\n例如，如果您业务中可以接受的误识率是1%，则可以将所有confidence>=FalseRate1Percent的结论认为是正确的。",
+      "members": [
+        {
+          "default": "",
+          "document": "误识率在百分之一时的推荐阈值。",
+          "member": "int64",
+          "name": "FalseRate1Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "误识率在千分之五时的推荐阈值。",
+          "member": "int64",
+          "name": "FalseRate5Permil",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "误识率在千分之一时的推荐阈值。",
+          "member": "int64",
+          "name": "FalseRate1Permil",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

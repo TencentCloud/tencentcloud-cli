@@ -1,0 +1,187 @@
+{
+  "actions": {
+    "CloseAsyncRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CloseAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"TaskId\": 1013279283\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fabc2d63-a1b7-40a0-b4c3-640f78974919\"\n    }\n}",
+        "title": "语音流异步识别任务关闭"
+      }
+    ],
+    "CreateAsrVocab": [
+      {
+        "document": "用户通过上传词权重数组方式创建热词表",
+        "input": "https://asr.tencentcloudapi.com/?Action=CreateAsrVocab\n&Name=词表名称\n&Description=词表描述\n&WordWeights.0.Word=智聆\n&WordWeights.0.Weight=1\n&WordWeights.1.Word=滨海大厦\n&WordWeights.1.Weight=6\n&WordWeights.2.Word=存储桶\n&WordWeights.2.Weight=8\n&WordWeights.3.Word=核保\n&WordWeights.3.Weight=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "title": "创建热词表"
+      }
+    ],
+    "CreateAsyncRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"EngineType\": \"16k_zh\",\n    \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"CallbackUrl\": \"http://test.com/callback\",\n    \"SignToken\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fabc2d63-a1b7-40a0-b4c3-640f78974919\",\n        \"Data\": {\n            \"TaskId\": 1000000007\n        }\n    }\n}",
+        "title": "语音流异步识别任务创建"
+      }
+    ],
+    "CreateCustomization": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=CreateCustomization\n&ModelName=自学习模型\n&TextUrl=http://www.download.com/test.txt\n&ModelType=16k\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a23740a1-4bb5-4154-9f1f-ea36b1bfe2ea\",\n        \"ModelId\": \"413c479df72d11eaacd3c81fbecfd0bd\"\n    }\n}",
+        "title": "创建自学习模型"
+      }
+    ],
+    "CreateRecTask": [
+      {
+        "document": "用户通过语音Url的方式（SourceType为0）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateRecTask\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"ChannelNum\": 1,\n    \"EngineModelType\": \"16k_zh\",\n    \"ResTextFormat\": 0,\n    \"SourceType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": 1393265\n        }\n    }\n}",
+        "title": "通过语音Url来调用接口"
+      },
+      {
+        "document": "用户通过上传语音数据（Data）的方式（SourceType为1）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateRecTask\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"ChannelNum\": 1,\n    \"EngineModelType\": \"16k_zh\",\n    \"ResTextFormat\": 0,\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"SourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": 1396665\n        }\n    }\n}",
+        "title": "通过语音数据来调用接口"
+      }
+    ],
+    "DeleteAsrVocab": [
+      {
+        "document": "用户通过该API，传入热词表ID，可以删除对应的热词表",
+        "input": "https://asr.tencentcloudapi.com/?Action=DeleteAsrVocab\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7eccebcb-2d60-4cee-8fa8-7f8001a71ab2\"\n    }\n}",
+        "title": "删除热词表"
+      }
+    ],
+    "DeleteCustomization": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=DeleteCustomization\n&ModelId=f3520776f31211ea9d26c81fbecfd0bd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cc30534-edde-4969-b281-7a30c5cbf806\"\n    }\n}",
+        "title": "删除自学习模型"
+      }
+    ],
+    "DescribeAsyncRecognitionTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeAsyncRecognitionTasks\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"Tasks\": [\n                {\n                    \"TaskId\": 9266418,\n                    \"Url\": \"\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询运行中的任务列表"
+      }
+    ],
+    "DescribeTaskStatus": [
+      {
+        "document": "用户通过轮询方式获取识别结果，任务成功，并返回识别结果。",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6Bxxxxx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a73b14a6-5044-41cb-bf32-e735d5bd69de\",\n        \"Data\": {\n            \"TaskId\": 9266418,\n            \"Status\": 2,\n            \"StatusStr\": \"success\",\n            \"Result\": \"[0:0.020,0:2.380]  腾讯云语音识别欢迎您。\\n\",\n            \"ResultDetail\": [\n                {\n                    \"FinalSentence\": \"腾讯云语音识别欢迎您。\",\n                    \"SliceSentence\": \"腾讯云 语音识别 欢迎 您\",\n                    \"StartMs\": 20,\n                    \"EndMs\": 2380,\n                    \"SpeechSpeed\": 5.9,\n                    \"WordsNum\": 4,\n                    \"Words\": [\n                        {\n                            \"OffsetStartMs\": 120,\n                            \"OffsetEndMs\": 780,\n                            \"Word\": \"腾讯云\"\n                        },\n                        {\n                            \"OffsetStartMs\": 780,\n                            \"OffsetEndMs\": 1530,\n                            \"Word\": \"语音识别\"\n                        },\n                        {\n                            \"OffsetStartMs\": 1530,\n                            \"OffsetEndMs\": 1860,\n                            \"Word\": \"欢迎\"\n                        },\n                        {\n                            \"OffsetStartMs\": 1860,\n                            \"OffsetEndMs\": 2250,\n                            \"Word\": \"您\"\n                        }\n                    ]\n                }\n            ],\n            \"ErrorMsg\": \"\"\n        }\n    }\n}",
+        "title": "轮询结果——任务成功"
+      },
+      {
+        "document": "用户通过轮询方式获取识别结果，任务等待，说明任务还在识别队列中，请用户耐心等候。",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6Bxxxxx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 0,\n            \"StatusStr\": \"waiting\",\n            \"Result\": \"\",\n            \"ErrorMsg\": \"\",\n            \"ResultDetail\": []\n        }\n    }\n}",
+        "title": "轮询结果——任务等待"
+      },
+      {
+        "document": "用户通过轮询方式获取识别结果，任务执行中，说明任务已经开始识别，请用户耐心等候。",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6Bxxxxx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 1,\n            \"StatusStr\": \"doing\",\n            \"Result\": \"\",\n            \"ErrorMsg\": \"\",\n            \"ResultDetail\": []\n        }\n    }\n}",
+        "title": "轮询结果——任务执行中"
+      },
+      {
+        "document": "用户通过轮询方式获取识别结果，任务失败，具体原因请用户查看返回中ErrorMsg提示。",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6Bxxxxx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 3,\n            \"StatusStr\": \"failed\",\n            \"Result\": \"\",\n            \"ErrorMsg\": \"Failed to download audio file!\",\n            \"ResultDetail\": []\n        }\n    }\n}",
+        "title": "轮询结果——任务失败"
+      }
+    ],
+    "DownloadAsrVocab": [
+      {
+        "document": "用户通过该接口可以获得相应热词表里的内容， 即 word|weight 形式的 base64 值。",
+        "input": "https://asr.tencentcloudapi.com/?Action=DownloadAsrVocab\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"WordWeightStr\": \"5a2X56ym5LiyfDQNCg==\",\n        \"RequestId\": \"1085dec9-df56-4124-8a6d-acb198177923\"\n    }\n}",
+        "title": "下载热词表"
+      }
+    ],
+    "DownloadCustomization": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=DownloadCustomization\n&ModelId=bc4a37d9f18511ea9a1ec81fbecfd0bd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"864d6a32-3b1c-462d-b019-ebdd65b3a644\",\n        \"DownloadUrl\": \"https://customization-download-temp-1256237915.cos.ap-guangzhou.myqcloud.com/bc4a37d9f18511ea9a1ec81fbecfd0bd_0.dict\"\n    }\n}",
+        "title": "下载自学习模型"
+      }
+    ],
+    "GetAsrVocab": [
+      {
+        "document": "用户通过热词表ID获取热词表内容",
+        "input": "https://asr.tencentcloudapi.com/?Action=GetAsrVocab\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a31edb26-3b6a-481e-91f8-d0009065eaed\",\n        \"Name\": \"词表名称\",\n        \"Description\": \"词表描述\",\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"WordWeights\": [\n            {\n                \"Word\": \"智聆\",\n                \"Weight\": 1\n            },\n            {\n                \"Word\": \"滨海大厦\",\n                \"Weight\": 6\n            },\n            {\n                \"Word\": \"存储桶\",\n                \"Weight\": 8\n            },\n            {\n                \"Word\": \"核保\",\n                \"Weight\": 10\n            }\n        ],\n        \"CreateTime\": \"2020-01-14T10:24:07+08:00\",\n        \"UpdateTime\": \"2020-01-14T10:24:07+08:00\",\n        \"State\": 0\n    }\n}",
+        "title": "获取热词表"
+      }
+    ],
+    "GetAsrVocabList": [
+      {
+        "document": "用户通过该接口，可获得所有的热词表及其信息。",
+        "input": "https://asr.tencentcloudapi.com/?Action=GetAsrVocabList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4c745a1-27a0-4143-972e-2ced14645ab4\",\n        \"VocabList\": [\n            {\n                \"Name\": \"词表1\",\n                \"Description\": \"业务1\",\n                \"VocabId\": \"e92bd0d632d211eab508446a2eb5fd98\",\n                \"WordWeights\": [\n                    {\n                        \"Word\": \"智聆\",\n                        \"Weight\": 1\n                    }\n                ],\n                \"CreateTime\": \"2020-01-09T19:26:42+08:00\",\n                \"UpdateTime\": \"2020-01-14T10:43:07+08:00\",\n                \"State\": 0\n            },\n            {\n                \"Name\": \"词表2\",\n                \"Description\": \"业务2\",\n                \"VocabId\": \"f10b9bf4367411eab508446a2eb5fd98\",\n                \"WordWeights\": [\n                    {\n                        \"Word\": \"滨海大厦\",\n                        \"Weight\": 6\n                    }\n                ],\n                \"CreateTime\": \"2020-01-14T10:24:07+08:00\",\n                \"UpdateTime\": \"2020-01-14T10:24:07+08:00\",\n                \"State\": 0\n            },\n            {\n                \"Name\": \"词表3\",\n                \"Description\": \"业务3\",\n                \"VocabId\": \"540acf7332d311eab508446a2eb5fd98\",\n                \"WordWeights\": [\n                    {\n                        \"Word\": \"存储桶\",\n                        \"Weight\": 8\n                    }\n                ],\n                \"CreateTime\": \"2020-01-09T19:29:41+08:00\",\n                \"UpdateTime\": \"2020-01-09T19:29:42+08:00\",\n                \"State\": 0\n            }\n        ]\n    }\n}",
+        "title": "列举热词表"
+      }
+    ],
+    "GetCustomizationList": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=GetCustomizationList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f44d72be3a308c9b62158b0\",\n        \"TotalCount\": 2,\n        \"Data\": [\n            {\n                \"ModelName\": \"dd\",\n                \"DictName\": \"example.txt\",\n                \"ModelId\": \"a07acb16e60311ea9a76b49691037310\",\n                \"ModelType\": \"8k\",\n                \"ServiceType\": \"realtime\",\n                \"ModelState\": -1,\n                \"AtUpdated\": \"2020-08-24 20:16:25\",\n                \"TagInfos\": null\n            },\n            {\n                \"ModelName\": \"ddd\",\n                \"DictName\": \"example.txt\",\n                \"ModelId\": \"98bda0fee60311ea9a76b49691037310\",\n                \"ModelType\": \"16k\",\n                \"ServiceType\": \"realtime\",\n                \"ModelState\": -1,\n                \"AtUpdated\": \"2020-08-24 20:16:15\",\n                \"TagInfos\": null\n            }\n        ]\n    }\n}",
+        "title": "查询自学习模型列表"
+      }
+    ],
+    "ModifyCustomization": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=ModifyCustomization\n&ModelId=413c479df72d11eaacd3c81fbecfd0bd\n&ModelName=修改名称\n&ModelType=16k\n&TextUrl=http://www.download.com/test.txt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "title": "修改自学习模型"
+      }
+    ],
+    "ModifyCustomizationState": [
+      {
+        "document": "",
+        "input": "https://asr.tencentcloudapi.com/?Action=ModifyCustomizationState\n&ModelId=aa6f402f263f12ea856fc81fbecfd0sd\n&ToState=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ModelId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
+        "title": "修改自学习模型状态"
+      }
+    ],
+    "SentenceRecognition": [
+      {
+        "document": "用户通过语音Url的方式（SourceType为0）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav（采样率为8k，单声道）",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"UsrAudioKey\": \"test\",\n    \"SubServiceType\": 2,\n    \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"SourceType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41ed9283-0c09-46fb-917b-0b83fa95f0be\",\n        \"Result\": \"腾讯云语音识别欢迎您。\",\n        \"AudioDuration\": 2430,\n        \"WordSize\": 4,\n        \"WordList\": [\n            {\n                \"Word\": \"腾讯云\",\n                \"StartTime\": 120,\n                \"EndTime\": 810\n            },\n            {\n                \"Word\": \"语音识别\",\n                \"StartTime\": 810,\n                \"EndTime\": 1530\n            },\n            {\n                \"Word\": \"欢迎\",\n                \"StartTime\": 1530,\n                \"EndTime\": 1890\n            },\n            {\n                \"Word\": \"您\",\n                \"StartTime\": 1890,\n                \"EndTime\": 2250\n            }\n        ]\n    }\n}",
+        "title": "通过语音Url来调用接口"
+      },
+      {
+        "document": "用户通过上传语音数据（Data）的方式（SourceType为1）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav（采样率为8k，单声道）",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: SentenceRecognition\nX-TC-Timestamp: 1599140479\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=aa5e2b8b16ced1ac9f877c9a92dab641dcd940837f5869a9e933688c181094de\n<公共请求参数>\n\n{\n    \"UsrAudioKey\": \"test\",\n    \"SubServiceType\": 2,\n    \"ProjectId\": 0,\n    \"EngSerViceType\": \"8k_zh\",\n    \"VoiceFormat\": \"wav\",\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"SourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41ed9283-0c09-46fb-917b-0b83fa95f0be\",\n        \"Result\": \"腾讯云语音识别欢迎您。\",\n        \"AudioDuration\": 2430,\n        \"WordSize\": 4,\n        \"WordList\": [\n            {\n                \"Word\": \"腾讯云\",\n                \"StartTime\": 120,\n                \"EndTime\": 810\n            },\n            {\n                \"Word\": \"语音识别\",\n                \"StartTime\": 810,\n                \"EndTime\": 1530\n            },\n            {\n                \"Word\": \"欢迎\",\n                \"StartTime\": 1530,\n                \"EndTime\": 1890\n            },\n            {\n                \"Word\": \"您\",\n                \"StartTime\": 1890,\n                \"EndTime\": 2250\n            }\n        ]\n    }\n}",
+        "title": "通过语音数据来调用接口"
+      }
+    ],
+    "SetVocabState": [
+      {
+        "document": "用户通过该接口可以将热词表设置为默认状态（State=1），或者取消默认状态（State=0）。",
+        "input": "https://asr.tencentcloudapi.com/?Action=SetVocabState\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&State=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"9910af1f-d479-4cb5-a303-b0a4c1c03137\"\n    }\n}",
+        "title": "设置热词表状态"
+      }
+    ],
+    "UpdateAsrVocab": [
+      {
+        "document": "用户通过该API传入已经创建的热词表ID，可以更新其相应的内容",
+        "input": "https://asr.tencentcloudapi.com/?Action=UpdateAsrVocab\n&VocabId=aa6f402f263f12ea856fc81fbecfd0sd\n&Name=新的词表名称\n&Description=新的词表描述\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
+        "title": "更新热词表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

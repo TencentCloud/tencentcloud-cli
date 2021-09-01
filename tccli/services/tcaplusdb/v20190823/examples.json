@@ -1,0 +1,395 @@
+{
+  "actions": {
+    "ClearTables": [
+      {
+        "document": "清除表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"122bb375-7464-4536-a3c5-8ddbdd6f4ce4\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1199\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "清除表"
+      }
+    ],
+    "CompareIdlFiles": [
+      {
+        "document": "上传并校验修改表格结构文件",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompareIdlFiles\n<公共请求参数>\n\n{\n    \"ExistingIdlFiles\": [\n        {\n            \"FileExtType\": \"xx\",\n            \"FileType\": \"xx\",\n            \"FileName\": \"xx\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ],\n    \"NewIdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"tb_example_modify\",\n            \"FileSize\": 0,\n            \"FileContent\": \"syntax%3d%22proto2%22%3bpackage+myTcaplusTable%3bimport+%22tcaplusservice.optionv1.proto%22%3bmessage+tb_example%7boption(tcaplusservice.tcaplus_primary_key)%3d%22uin%2cname%22%3brequired+int64+uin+%3d+1%3brequired+string+name+%3d+2%3brequired+int32+gamesvrid+%3d+3%3boptional+string+logintime+%3d+4%3boptional+int32+add_v1+%3d+5%3b%7d\",\n            \"FileId\": 0\n        }\n    ],\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IdlFiles\": [\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 600,\n                \"FileName\": \"tb_example_modify\",\n                \"FileSize\": 287,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"81274902-0df6-4574-a3b0-2ea229ef903f\",\n        \"TableInfos\": [\n            {\n                \"Error\": null,\n                \"IndexKeySet\": null,\n                \"KeyFields\": \"{\\\"KeyField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"uin\\\",\\\"Type\\\":\\\"int64\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"name\\\",\\\"Type\\\":\\\"string\\\"}],\\\"Num\\\":2}\",\n                \"TableGroupId\": \"101\",\n                \"OldKeyFields\": \"{\\\"KeyField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"uin\\\",\\\"Type\\\":\\\"int64\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"name\\\",\\\"Type\\\":\\\"string\\\"}],\\\"Num\\\":2}\",\n                \"OldValueFields\": \"{\\\"Num\\\":2,\\\"ValueField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"gamesvrid\\\",\\\"Type\\\":\\\"int32\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"optional\\\",\\\"Name\\\":\\\"logintime\\\",\\\"Type\\\":\\\"string\\\"}]}\",\n                \"ShardingKeySet\": \"\",\n                \"SumKeyFieldSize\": 1022,\n                \"SumValueFieldSize\": 262144,\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": \"GENERIC\",\n                \"TdrVersion\": 1,\n                \"ListElementNum\": null,\n                \"SortFieldNum\": null,\n                \"SortRule\": null,\n                \"ValueFields\": \"{\\\"Num\\\":3,\\\"ValueField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"gamesvrid\\\",\\\"Type\\\":\\\"int32\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"optional\\\",\\\"Name\\\":\\\"logintime\\\",\\\"Type\\\":\\\"string\\\"},{\\\"Label\\\":\\\"optional\\\",\\\"Name\\\":\\\"add_v1\\\",\\\"Type\\\":\\\"int32\\\"}]}\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "上传并校验修改表格结构文件"
+      }
+    ],
+    "CreateBackup": [
+      {
+        "document": "创建备份",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=CreateBackup\n&ClusterId=22762983670\n&SelectedTables.0.TableInstanceId=tcaplus-1f224454\n&SelectedTables.0.TableGroupId=101\n&SelectedTables.0.TableName=tb_example\n&Remark=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3446e81-4d07-4a80-a07f-f34f94b598bc\",\n        \"TaskIds\": [\n            \"22762983670-1\"\n        ],\n        \"ApplicationIds\": [\n            \"34324234\"\n        ]\n    }\n}",
+        "title": "创建备份"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "新创建TcaplusDB集群",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=CreateCluster\n&IdlType=TDR\n&ClusterName=gz测试TDR\n&VpcId=vpc-kppg4pm1\n&SubnetId=subnet-3sww53pa\n&Password=84ea4cbf06573ED\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"6179109757\",\n        \"RequestId\": \"8f1cc454-4a80-4ed3-a6c3-b7df2b0e8ec7\"\n    }\n}",
+        "title": "创建集群Cluster"
+      }
+    ],
+    "CreateSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"SnapshotTime\": \"2020-09-22 00:00:00\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "创建快照"
+      }
+    ],
+    "CreateTableGroup": [
+      {
+        "document": "在集群下创建TcaplusDB表格组",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTableGroup\n<公共请求参数>\n\n{\n    \"TableGroupName\": \"tdr区1\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"6179109757\",\n    \"TableGroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TableGroupId\": \"1\",\n        \"RequestId\": \"d87c0378-47af-4d59-920d-82fd2a778e6c\"\n    }\n}",
+        "title": "创建表格组"
+      }
+    ],
+    "CreateTables": [
+      {
+        "document": "批量创建表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTables\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"22762983670\",\n    \"IdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"table_test_2_modify\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ],\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"2\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"xx\",\n            \"Memo\": \"test\",\n            \"TableName\": \"PLAYERONLINECNT\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"GENERIC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableResults\": [\n            {\n                \"TableIdlType\": \"TDR\",\n                \"TableInstanceId\": \"tcaplus-c6187008\",\n                \"TableName\": \"PLAYERONLINECNT\",\n                \"TableGroupId\": \"2\",\n                \"TaskId\": \"22762983670-144\",\n                \"TableType\": \"GENERIC\"\n            }\n        ],\n        \"RequestId\": \"8cEcE3E8-2fE2-6d4b-5E34-Fdc01E35f2C6\"\n    }\n}",
+        "title": "批量创建表"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "指定集群ID删除TcaplusDB集群。",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"6179109757\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TaskId\": \"6179109757-1210\"\n    }\n}",
+        "title": "删除集群"
+      }
+    ],
+    "DeleteIdlFiles": [
+      {
+        "document": "删除目标idl文件",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIdlFiles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"6084038577\",\n    \"IdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"tb_example\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IdlFileInfos\": [\n            {\n                \"Error\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 849,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"4e79897b-5696-4d1b-b337-d2b46824de64\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "删除目标idl文件"
+      }
+    ],
+    "DeleteSnapshots": [
+      {
+        "document": "删除快照数据",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "删除快照"
+      }
+    ],
+    "DeleteTableGroup": [
+      {
+        "document": "根据集群ID和表格组ID参数删除表格组",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTableGroup\n<公共请求参数>\n\n{\n    \"TableGroupId\": \"1\",\n    \"ClusterId\": \"6179109757\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7ba682-570c-4589-9624-7b463cd5d852\",\n        \"TaskId\": \"6179109757-1208\"\n    }\n}",
+        "title": "删除表格组"
+      }
+    ],
+    "DeleteTableIndex": [
+      {
+        "document": "删除表格分布式索引",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTableIndex\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"122bb375-7464-4536-a3c5-8ddbdd6f4ce4\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1199\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "删除表格分布式索引"
+      }
+    ],
+    "DeleteTables": [
+      {
+        "document": "删除表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebc273d5-d56c-4c54-ad19-9b5a25815eed\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1180\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "删除表"
+      }
+    ],
+    "DescribeApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"TableGroupId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Applicant\": \"xx\",\n    \"TableName\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"CensorStatus\": 0,\n    \"ApplyType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Applications\": [\n            {\n                \"Applicant\": \"100000012683\",\n                \"ApplicationId\": \"4-169\",\n                \"ApplicationStatus\": 2,\n                \"ApplicationType\": 2,\n                \"CanCensor\": true,\n                \"CanWithdrawal\": false,\n                \"ClusterId\": \"4\",\n                \"ClusterName\": \"xml_1_ly\",\n                \"CreatedTime\": \"2021-02-25 11:58:37\",\n                \"ExecuteStatus\": \"-1\",\n                \"ExecuteUser\": \"222\",\n                \"TableGroupId\": \"1\",\n                \"TableGroupName\": \"zone_1_1\",\n                \"TableInstanceId\": \"null\",\n                \"TableName\": \"add_table10\",\n                \"TaskId\": \"0\",\n                \"UpdateTime\": \"2021-02-25 11:58:37\"\n            }\n        ],\n        \"RequestId\": \"fdsfdsfdsfdsf\",\n        \"TotalCount\": 92\n    }\n}",
+        "title": "获取审批申请"
+      }
+    ],
+    "DescribeClusterTags": [
+      {
+        "document": "获取集群关联的标签列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterTags\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"5674209986\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"ClusterId\": \"5674209986\",\n                \"Tags\": {\n                    \"TagKey\": \"test1\",\n                    \"TagValue\": \"value1\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取集群关联的标签列表"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "查询用户所属的集群列表",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DescribeClusters\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ApiAccessId\": \"8\",\n                \"ApiAccessIp\": \"10.18.7.15\",\n                \"ApiAccessIpv6\": \"\",\n                \"ApiAccessPort\": 9999,\n                \"ClusterId\": \"5462425805\",\n                \"ClusterName\": \"gz测试应用\",\n                \"CreatedTime\": \"2019-12-04 11:28:16\",\n                \"IdlType\": \"PROTO\",\n                \"NetworkType\": \"vpc-normal\",\n                \"OldPasswordExpireTime\": \"\",\n                \"Password\": \"gz123AppTest56\",\n                \"PasswordStatus\": \"modifiable\",\n                \"Region\": \"ap-guangzhou\",\n                \"SubnetId\": \"subnet-jq2cqev2\",\n                \"VpcId\": \"vpc-oezt2hwl\",\n                \"Censorship\": 0,\n                \"DbaUins\": []\n            },\n            {\n                \"ApiAccessId\": \"2\",\n                \"ApiAccessIp\": \"10.18.7.9\",\n                \"ApiAccessIpv6\": \"2001:3CA1:010F:001A:121B:0000:0000:0010\",\n                \"ApiAccessPort\": 9999,\n                \"ClusterId\": \"6032569361\",\n                \"ClusterName\": \"雷霆战机Test\",\n                \"CreatedTime\": \"2019-12-25 11:54:02\",\n                \"IdlType\": \"PROTO\",\n                \"NetworkType\": \"vpc-normal\",\n                \"OldPasswordExpireTime\": \"\",\n                \"Password\": \"ltzj123123X\",\n                \"PasswordStatus\": \"modifiable\",\n                \"Region\": \"ap-guangzhou\",\n                \"SubnetId\": \"subnet-jq2cqev2\",\n                \"VpcId\": \"vpc-oezt2hwl\",\n                \"Censorship\": 1,\n                \"DbaUins\": [\n                    \"342\",\n                    \"432432\",\n                    \"342342\"\n                ]\n            }\n        ],\n        \"RequestId\": \"34680b61-9836-44d9-bae9-e231f4b61a48\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
+    "DescribeIdlFileInfos": [
+      {
+        "document": "指定集群ID查询描述文件列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdlFileInfos\n<公共请求参数>\n\n{\n    \"TableGroupIds\": [\n        \"xx\"\n    ],\n    \"ClusterId\": \"5674209986\",\n    \"Limit\": 0,\n    \"IdlFileIds\": [\n        \"xx\"\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"IdlFileInfos\": [\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 600,\n                \"FileName\": \"tb_example_modify\",\n                \"FileSize\": 292,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 548,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 298,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 549,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 298,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 550,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 551,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 552,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 553,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 559,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 560,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 561,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 562,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 267,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 563,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 380,\n                \"FileType\": \"PROTO\"\n            },\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 564,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"1b6a5d3f-beb3-4380-9b6d-3d9f2d83654c\",\n        \"TotalCount\": 13\n    }\n}",
+        "title": "查询描述文件详情"
+      },
+      {
+        "document": "指定集群ID和文件ID查询文件详情",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdlFileInfos\n<公共请求参数>\n\n{\n    \"TableGroupIds\": [\n        \"xx\"\n    ],\n    \"ClusterId\": \"5674209986\",\n    \"Limit\": 0,\n    \"IdlFileIds\": [\n        \"564\"\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"IdlFileInfos\": [\n            {\n                \"FileContent\": \"syntax%3D%22proto2%22%3Bpackage%20myTcaplusTable%3Bimport%20%22tcaplusservice.optionv1.proto%22%3Bmessage%20tb_example%7Boption%28tcaplusservice.tcaplus_primary_key%29%3D%22uin%2Cname%22%3Brequired%20int64%20uin%20%3D%201%3Brequired%20string%20name%20%3D%202%3Brequired%20int32%20gamesvrid%20%3D%203%3Boptional%20string%20logintime%20%3D%204%3B%7D\",\n                \"FileExtType\": \"proto\",\n                \"FileId\": 564,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 266,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"5d592aa1-ee73-4b5e-90bf-062efcc05966\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "指定集群ID和文件ID查询文件详情"
+      }
+    ],
+    "DescribeMachine": [
+      {
+        "document": "查询独占集群可用机器资源",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DescribeMachine\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PoolList\": [\n            {\n                \"PoolUid\": 1,\n                \"Ipv6Enable\": 0,\n                \"AvailableAppCount\": 100,\n                \"ServerList\": [\n                    {\n                        \"ServerUid\": \"svr1\",\n                        \"MachineType\": \"T1\"\n                    },\n                    {\n                        \"ServerUid\": \"svr2\",\n                        \"MachineType\": \"T2\"\n                    }\n                ],\n                \"ProxyList\": [\n                    {\n                        \"ProxyUid\": \"proxy1\",\n                        \"MachineType\": \"T1\"\n                    },\n                    {\n                        \"ProxyUid\": \"proxy1\",\n                        \"MachineType\": \"T2\"\n                    }\n                ]\n            },\n            {\n                \"PoolUid\": 2,\n                \"Ipv6Enable\": 0,\n                \"AvailableAppCount\": 100,\n                \"ServerList\": [\n                    {\n                        \"ServerUid\": \"svr1\",\n                        \"MachineType\": \"T1\"\n                    },\n                    {\n                        \"ServerUid\": \"svr2\",\n                        \"MachineType\": \"T2\"\n                    }\n                ],\n                \"ProxyList\": [\n                    {\n                        \"ProxyUid\": \"proxy1\",\n                        \"MachineType\": \"T1\"\n                    },\n                    {\n                        \"ProxyUid\": \"proxy1\",\n                        \"MachineType\": \"T2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"34680b61-9836-44d9-bae9-e231f4b61a48\"\n    }\n}",
+        "title": "查询独占集群机器资源"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "获取地域列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionInfos\": [\n            {\n                \"RegionAbbr\": \"sh\",\n                \"RegionId\": 4,\n                \"RegionName\": \"Shanghai\",\n                \"Ipv6Enable\": \"1\"\n            },\n            {\n                \"RegionAbbr\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"Guangzhou\",\n                \"Ipv6Enable\": \"0\"\n            },\n            {\n                \"RegionAbbr\": \"hk\",\n                \"RegionId\": 5,\n                \"RegionName\": \"Hongkong\",\n                \"Ipv6Enable\": \"1\"\n            }\n        ],\n        \"RequestId\": \"b64fa31b-a0ca-4a06-82e9-211d610ba516\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "获取地域列表"
+      }
+    ],
+    "DescribeSnapshots": [
+      {
+        "document": "查询表的快照",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"18685341856\",\n    \"TableGroupId\": \"1\",\n    \"TableName\": \"cl_generic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableResults\": [\n            {\n                \"SnapshotCreateTime\": \"2020-09-22 00:00:00\",\n                \"TableGroupId\": \"1\",\n                \"SnapshotSize\": 1,\n                \"SnapshotName\": \"test\",\n                \"SnapshotTime\": \"2020-09-22 00:00:00\",\n                \"TableName\": \"cl_generic\",\n                \"SnapshotStatus\": 1,\n                \"TaskId\": \"xx\",\n                \"Error\": {\n                    \"Message\": \"xx\",\n                    \"Code\": \"xx\"\n                },\n                \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询快照列表"
+      }
+    ],
+    "DescribeTableGroupTags": [
+      {
+        "document": "获取表格组关联的标签列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableGroupTags\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"TableGroupIds\": [\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"ClusterId\": \"5674209986\",\n                \"TableGroupId\": \"1\",\n                \"Tags\": {\n                    \"TagKey\": \"test1\",\n                    \"TagValue\": \"value1\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取表格组关联的标签列表"
+      }
+    ],
+    "DescribeTableGroups": [
+      {
+        "document": "查询表格组列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableGroups\n<公共请求参数>\n\n{\n    \"TableGroupIds\": [\n        \"xx\"\n    ],\n    \"ClusterId\": \"6179109757\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbaf73f4-3d1d-4f7b-b3b3-259d53e546be\",\n        \"TotalCount\": 2,\n        \"TableGroups\": [\n            {\n                \"CreatedTime\": \"2019-08-30 18:57:02\",\n                \"TableGroupId\": \"1\",\n                \"TableCount\": 0,\n                \"TotalSize\": 0,\n                \"TableGroupName\": \"tdr测试区1\"\n            },\n            {\n                \"CreatedTime\": \"2019-08-30 18:58:03\",\n                \"TableGroupId\": \"1001\",\n                \"TableCount\": 0,\n                \"TotalSize\": 0,\n                \"TableGroupName\": \"tdr正式区1\"\n            }\n        ]\n    }\n}",
+        "title": "查询表格组列表"
+      }
+    ],
+    "DescribeTableTags": [
+      {
+        "document": "获取表格标签",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableTags\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"1\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-0xm12ck1\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_test\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"TableInstanceId\": \"tcaplus-0xm12ck1\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"tb_test\",\n                \"Tags\": {\n                    \"TagKey\": \"test1\",\n                    \"TagValue\": \"value1\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取表格标签"
+      }
+    ],
+    "DescribeTables": [
+      {
+        "document": "查询表列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"TableGroupIds\": [\n        \"xx\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"xx\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"xx\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"xx\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68821f04-f15b-46e6-b4ce-669341e6c848\",\n        \"TableInfos\": [\n            {\n                \"ApiAccessId\": \"10\",\n                \"ClusterName\": \"gz测试App\",\n                \"ClusterId\": \"5674209986\",\n                \"CreatedTime\": \"2019-08-29 22:03:27\",\n                \"Error\": null,\n                \"IdlFiles\": [\n                    {\n                        \"FileContent\": null,\n                        \"FileExtType\": \"proto\",\n                        \"FileId\": 551,\n                        \"FileName\": \"tb_example\",\n                        \"FileSize\": 266,\n                        \"FileType\": \"PROTO\"\n                    }\n                ],\n                \"IndexStruct\": null,\n                \"KeyStruct\": null,\n                \"ListElementNum\": 1,\n                \"TableGroupId\": \"101\",\n                \"Memo\": \"pb测试表1\",\n                \"ReservedReadQps\": 80,\n                \"ReservedVolume\": 1,\n                \"ReservedWriteQps\": 26,\n                \"ShardingKeySet\": \"key\",\n                \"Status\": \"RUNNING\",\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableSize\": 48566336,\n                \"TableType\": \"GENERIC\",\n                \"UpdatedTime\": \"\",\n                \"ValueStruct\": null,\n                \"SortFieldNum\": null,\n                \"SortRule\": null,\n                \"TableGroupName\": \"test_zone_1\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询表列表"
+      }
+    ],
+    "DescribeTablesInRecycle": [
+      {
+        "document": "查询回收站表格列表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTablesInRecycle\n<公共请求参数>\n\n{\n    \"TableGroupIds\": [\n        \"xx\"\n    ],\n    \"ClusterId\": \"5674209986\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d7da70a-2aa6-4e61-9389-46a92770974c\",\n        \"TableInfos\": [\n            {\n                \"ApiAccessId\": \"10\",\n                \"ClusterName\": \"gz测试App\",\n                \"ClusterId\": \"5674209986\",\n                \"CreatedTime\": \"2019-08-29 22:03:27\",\n                \"Error\": null,\n                \"IdlFiles\": [\n                    {\n                        \"FileContent\": null,\n                        \"FileExtType\": \"proto\",\n                        \"FileId\": 551,\n                        \"FileName\": \"tb_example\",\n                        \"FileSize\": 266,\n                        \"FileType\": \"PROTO\"\n                    }\n                ],\n                \"IndexStruct\": null,\n                \"KeyStruct\": null,\n                \"ListElementNum\": 1,\n                \"TableGroupId\": \"101\",\n                \"Memo\": null,\n                \"ReservedReadQps\": 80,\n                \"ReservedVolume\": 1,\n                \"ReservedWriteQps\": 26,\n                \"ShardingKeySet\": \"key\",\n                \"Status\": \"RECYCLING\",\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableSize\": 48566336,\n                \"TableType\": \"GENERIC\",\n                \"UpdatedTime\": \"\",\n                \"ValueStruct\": null,\n                \"SortFieldNum\": null,\n                \"SortRule\": null,\n                \"TableGroupName\": \"test_zone_1\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询回收站表格列表"
+      }
+    ],
+    "DescribeTasks": [
+      {
+        "document": "指定任务ID，查询任务详情",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DescribeTasks\n&ClusterIds.0=5674209986\n&Offset=3\n&Limit=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72fc70ce-2396-4b8e-ac54-9bce72058da1\",\n        \"TaskInfos\": [\n            {\n                \"ClusterName\": \"gz测试PROTO\",\n                \"ClusterId\": \"5674209986\",\n                \"Content\": \"20548499 modify quotas table(tb_example) of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, Storage Layer Expand: volume[1 -> 2], owner 20548499\",\n                \"Operator\": \"20548499\",\n                \"Progress\": 0,\n                \"StartTime\": \"2019-08-30 18:16:50\",\n                \"TaskId\": \"5674209986-1202\",\n                \"TaskType\": \"ModifyTableQuotas\",\n                \"TransId\": \"0\",\n                \"UpdateTime\": \"2019-08-30 18:16:50\"\n            },\n            {\n                \"ClusterName\": \"gz测试PROTO\",\n                \"ClusterId\": \"5674209986\",\n                \"Content\": \"20548499 modify table(tb_example)'s structure of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, owner 20548499\",\n                \"Operator\": \"20548499\",\n                \"Progress\": 100,\n                \"StartTime\": \"2019-08-30 18:02:50\",\n                \"TaskId\": \"5674209986-1200\",\n                \"TaskType\": \"ModifyTables\",\n                \"TransId\": \"558\",\n                \"UpdateTime\": \"2019-08-30 18:02:51\"\n            },\n            {\n                \"ClusterName\": \"gz测试PROTO\",\n                \"ClusterId\": \"5674209986\",\n                \"Content\": \"20548499 clear table(tb_example) of Cluster(5674209986) TableGroup(101), InstanceId tcaplus-1f224454, owner 20548499\",\n                \"Operator\": \"20548499\",\n                \"Progress\": 0,\n                \"StartTime\": \"2019-08-30 17:34:07\",\n                \"TaskId\": \"5674209986-1199\",\n                \"TaskType\": \"ClearTables\",\n                \"TransId\": \"557\",\n                \"UpdateTime\": \"2019-08-30 17:34:07\"\n            }\n        ],\n        \"TotalCount\": 19\n    }\n}",
+        "title": "查询任务列表"
+      }
+    ],
+    "DescribeUinInWhitelist": [
+      {
+        "document": "查询本用户是否在白名单中",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUinInWhitelist\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5401419-d469-4a9b-8317-bf844ceebb09\",\n        \"Result\": \"FALSE\"\n    }\n}",
+        "title": "查询本用户是否在白名单中"
+      }
+    ],
+    "DisableRestProxy": [
+      {
+        "document": "制定clusterid，关闭restful api",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=DisableRestProxy\n&ClusterId=5674209986\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RestProxyStatus\": 3,\n        \"RequestId\": \"request-xxx123\",\n        \"TaskId\": \"838418134-44\"\n    }\n}",
+        "title": "关闭restful api"
+      }
+    ],
+    "EnableRestProxy": [
+      {
+        "document": "制定clusterid，开启restful api",
+        "input": "https://tcaplusdb.tencentcloudapi.com/?Action=EnableRestProxy\n&ClusterId=5674209986\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RestProxyStatus\": 1,\n        \"RequestId\": \"request-xxx123\",\n        \"TaskId\": \"838418134-44\"\n    }\n}",
+        "title": "开启restful api"
+      }
+    ],
+    "ImportSnapshots": [
+      {
+        "document": "导入快照数据",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"Snapshots\": {\n        \"SnapshotName\": \"xx\",\n        \"TableGroupId\": \"xx\",\n        \"SnapshotTime\": \"2020-09-22 00:00:00\",\n        \"TableName\": \"xx\",\n        \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n    },\n    \"NewTableGroupId\": \"xx\",\n    \"ImportOriginTable\": \"xx\",\n    \"KeyFile\": {\n        \"FileExtType\": \"xx\",\n        \"FileSize\": 0,\n        \"FileContent\": \"xx\",\n        \"FileName\": \"xx\"\n    },\n    \"ImportSpecialKey\": \"xx\",\n    \"NewTableName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "导入快照"
+      }
+    ],
+    "MergeTablesData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MergeTablesData\n<公共请求参数>\n\n{\n    \"IsOnlyCompare\": false,\n    \"SelectedTables\": [\n        {\n            \"MergeTables\": {\n                \"DstTableClusterId\": \"xx\",\n                \"DstTableName\": \"xx\",\n                \"SrcTableGroupId\": \"xx\",\n                \"SrcTableInstanceId\": \"xx\",\n                \"SrcTableName\": \"xx\",\n                \"SrcTableClusterId\": \"xx\",\n                \"DstTableGroupId\": \"xx\",\n                \"DstTableInstanceId\": \"xx\"\n            },\n            \"CheckIndex\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdsfdsfdsfdsf\",\n        \"Results\": [\n            {\n                \"ApplicationId\": null,\n                \"Error\": null,\n                \"Table\": {\n                    \"DstTableClusterId\": \"3\",\n                    \"DstTableGroupId\": \"2\",\n                    \"DstTableInstanceId\": \"tcaplus-83c6c2d8\",\n                    \"DstTableName\": \"cl_list_2\",\n                    \"SrcTableClusterId\": \"3\",\n                    \"SrcTableGroupId\": \"1\",\n                    \"SrcTableInstanceId\": \"tcaplus-0b2c635d\",\n                    \"SrcTableName\": \"cl_list\"\n                },\n                \"TaskId\": \"3-418\"\n            }\n        ]\n    }\n}",
+        "title": "合并指定表格"
+      }
+    ],
+    "ModifyCensorship": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCensorship\n<公共请求参数>\n\n{\n    \"Uins\": [\n        \"xx\"\n    ],\n    \"ClusterId\": \"xx\",\n    \"Censorship\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Uins\": [\n            \"xx\"\n        ],\n        \"ClusterId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Censorship\": 0\n    }\n}",
+        "title": "更新审核状态"
+      }
+    ],
+    "ModifyClusterMachine": [
+      {
+        "document": "修改集群Cluster的独占机器",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterMachine\n<公共请求参数>\n\n{\n    \"ProxyList\": [\n        {\n            \"MachineNum\": 0,\n            \"MachineType\": \"T1\"\n        }\n    ],\n    \"ServerList\": [\n        {\n            \"MachineNum\": 0,\n            \"MachineType\": \"T1\"\n        }\n    ],\n    \"ClusterId\": \"6179109757\",\n    \"ClusterType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"6179109757\",\n        \"RequestId\": \"8f1cc454-4a80-4ed3-a6c3-b7df2b0e8ec7\"\n    }\n}",
+        "title": "修改集群Cluster的独占机器"
+      }
+    ],
+    "ModifyClusterName": [
+      {
+        "document": "根据ClusterId修改集群名称",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterName\n<公共请求参数>\n\n{\n    \"ClusterName\": \"gz测试PROTO\",\n    \"ClusterId\": \"5674209986\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"87562838-1eda-45f3-abda-59a704135fe7\"\n    }\n}",
+        "title": "修改集群名称"
+      }
+    ],
+    "ModifyClusterPassword": [
+      {
+        "document": "修改集群密码",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterPassword\n<公共请求参数>\n\n{\n    \"NewPassword\": \"99c59cb345c61063db\",\n    \"OldPassword\": \"canmkdmk1215LM\",\n    \"ClusterId\": \"23311894780\",\n    \"Mode\": \"xx\",\n    \"OldPasswordExpireTime\": \"2020-09-22 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8cEcE3E8-2fE2-6d4b-5E34-Fdc01E35f2C6\"\n    }\n}",
+        "title": "修改集群密码"
+      }
+    ],
+    "ModifyClusterTags": [
+      {
+        "document": "修改集群标签",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"test1\",\n            \"TagValue\": \"value1\"\n        }\n    ],\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"delete1\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"5674209986\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TaskId\": \"5674209986-1210\"\n    }\n}",
+        "title": "修改集群标签"
+      }
+    ],
+    "ModifySnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySnapshots\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"SnapshotName\": \"666\",\n            \"TableGroupId\": \"1\",\n            \"TableName\": \"cl_generic\",\n            \"SnapshotDeadTime\": \"2020-09-22 00:00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17af6a7a-1fcc-4c1d-a4a2-caab4d9e75cc\",\n        \"TableResults\": [\n            {\n                \"Error\": {\n                    \"Code\": \"\",\n                    \"Message\": \"\"\n                },\n                \"SnapshotCreateTime\": \"2021-03-19 11:40:40\",\n                \"SnapshotDeadTime\": \"2021-03-20 11:40:30\",\n                \"SnapshotName\": \"666\",\n                \"SnapshotSize\": 0,\n                \"SnapshotStatus\": 0,\n                \"SnapshotTime\": \"2021-03-12 11:40:32\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"cl_generic\",\n                \"TaskId\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "修改快照"
+      }
+    ],
+    "ModifyTableGroupName": [
+      {
+        "document": "修改表格组名称",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableGroupName\n<公共请求参数>\n\n{\n    \"TableGroupId\": \"1\",\n    \"ClusterId\": \"6179109757\",\n    \"TableGroupName\": \"tdr测试区1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3d85d90-65a6-46ed-9187-b2a429e18cfc\"\n    }\n}",
+        "title": "修改表格组名称"
+      }
+    ],
+    "ModifyTableGroupTags": [
+      {
+        "document": "修改表格组标签",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableGroupTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"test1\",\n            \"TagValue\": \"value1\"\n        }\n    ],\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"delete1\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"TableGroupId\": \"1\",\n    \"ClusterId\": \"5674209986\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TaskId\": \"5674209986-1211\"\n    }\n}",
+        "title": "修改表格组标签"
+      }
+    ],
+    "ModifyTableMemos": [
+      {
+        "document": "修改表备注信息",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableMemos\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"TableMemos\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"pb测试表1xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3446e81-4d07-4a80-a07f-f34f94b598bc\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": \"PROTO\",\n                \"TaskId\": null,\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "修改表备注信息"
+      }
+    ],
+    "ModifyTableQuotas": [
+      {
+        "document": "表格扩缩容",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableQuotas\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"TableQuotas\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bb90baab-4189-4d01-9e92-250b57c571b3\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": null,\n                \"TaskIds\": [\n                    \"5674209986-1201\",\n                    \"5674209986-1202\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "表格扩缩容"
+      }
+    ],
+    "ModifyTableTags": [
+      {
+        "document": "修改表格标签",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTableTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"test1\",\n            \"TagValue\": \"value1\"\n        }\n    ],\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"delete1\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"1\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-0xm12ck1\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_test\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abd7111a-62d4-4bbb-a781-3646040e9530\",\n        \"TotalCount\": 1,\n        \"TableResults\": [\n            {\n                \"TableInstanceId\": \"tcaplus-0xm12ck1\",\n                \"TableGroupId\": \"1\",\n                \"TableName\": \"tb_test\",\n                \"TaskId\": \"5674209986-1212\"\n            }\n        ]\n    }\n}",
+        "title": "修改表格标签"
+      }
+    ],
+    "ModifyTables": [
+      {
+        "document": "修改表结构",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"IdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"tb_example_modify\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ],\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007a279d-fd19-452c-842e-46a804e8564b\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": \"GENERIC\",\n                \"TaskId\": \"5674209986-1200\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "修改表结构"
+      }
+    ],
+    "RecoverRecycleTables": [
+      {
+        "document": "根据指定的表信息，恢复回收站中的表",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverRecycleTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"xx\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"xx\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileName\": \"xx\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f19ec9d8-ecd6-41f2-9da1-712dfdbe9ef7\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1198\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "恢复回收站中的表"
+      }
+    ],
+    "RollbackTables": [
+      {
+        "document": "表格按主键回档",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackTables\n<公共请求参数>\n\n{\n    \"RollbackTime\": \"2019-08-29 10:00:00\",\n    \"ClusterId\": \"5674209986\",\n    \"Mode\": \"xx\",\n    \"SelectedTables\": [\n        {\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"FileExtType\": \"txt\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"Memo\": \"xx\",\n            \"TableName\": \"tb_example\",\n            \"ReservedReadQps\": 0,\n            \"ListElementNum\": 0,\n            \"ReservedVolume\": 0,\n            \"ReservedWriteQps\": 0,\n            \"FileSize\": 0,\n            \"FileContent\": \"uin%20name%0A1%20calvin%0A2%20jacob%0A3%20matthew%0A%0A\",\n            \"FileName\": \"tb_example_key1\",\n            \"TableType\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128a5622-0de1-41ed-9850-483944f11370\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"FileId\": \"604\",\n                \"TableGroupId\": \"101\",\n                \"SuccKeyNum\": 3,\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1212\",\n                \"TaskIds\": null,\n                \"TotalKeyNum\": 3\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "表格按主键回档"
+      }
+    ],
+    "SetTableIndex": [
+      {
+        "document": "设置表格分布式索引",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetTableIndex\n<公共请求参数>\n\n{\n    \"ClusterId\": \"5674209986\",\n    \"SelectedTables\": [\n        {\n            \"ShardNum\": 1,\n            \"TableIdlType\": \"PROTO\",\n            \"TableGroupId\": \"101\",\n            \"TableInstanceId\": \"tcaplus-1f224454\",\n            \"TableName\": \"tb_example\",\n            \"TableType\": \"GENERIC\",\n            \"SelectedFields\": [\n                {\n                    \"IsPrimaryKey\": \"No\",\n                    \"FieldName\": \"id\",\n                    \"FieldType\": \"int32\",\n                    \"FieldSize\": 0\n                },\n                {\n                    \"IsPrimaryKey\": \"Yes\",\n                    \"FieldName\": \"name\",\n                    \"FieldType\": \"string\",\n                    \"FieldSize\": 0\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"122bb375-7464-4536-a3c5-8ddbdd6f4ce4\",\n        \"TableResults\": [\n            {\n                \"Error\": null,\n                \"TableGroupId\": \"101\",\n                \"TableIdlType\": null,\n                \"TableInstanceId\": \"tcaplus-1f224454\",\n                \"TableName\": \"tb_example\",\n                \"TableType\": null,\n                \"TaskId\": \"5674209986-1199\",\n                \"TaskIds\": null\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "设置表格分布式索引"
+      }
+    ],
+    "UpdateApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApply\n<公共请求参数>\n\n{\n    \"ApplyStatus\": [\n        {\n            \"ApplicationStatus\": 1,\n            \"ClusterId\": \"xx\",\n            \"ApplicationId\": \"xx\",\n            \"ApplicationType\": 7\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplyResults\": [\n            {\n                \"ApplicationId\": \"2-273\",\n                \"ApplicationStatus\": null,\n                \"ApplicationType\": 7,\n                \"Error\": {\n                    \"Code\": \"OperationDenied\",\n                    \"Message\": \"Application has been processed.\"\n                },\n                \"TaskId\": null\n            }\n        ],\n        \"RequestId\": \"fdsfdsfdsfdsf\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "更新申请单状态"
+      }
+    ],
+    "VerifyIdlFiles": [
+      {
+        "document": "选中已上传的创建表格IDL文件并校验",
+        "input": "POST / HTTP/1.1\nHost: tcaplusdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyIdlFiles\n<公共请求参数>\n\n{\n    \"ExistingIdlFiles\": [\n        {\n            \"FileExtType\": \"proto\",\n            \"FileType\": \"PROTO\",\n            \"FileName\": \"tb_example\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ],\n    \"TableGroupId\": \"101\",\n    \"NewIdlFiles\": [\n        {\n            \"FileExtType\": \"xx\",\n            \"FileType\": \"xx\",\n            \"FileName\": \"xx\",\n            \"FileSize\": 0,\n            \"FileContent\": \"xx\",\n            \"FileId\": 0\n        }\n    ],\n    \"ClusterId\": \"5674209986\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IdlFiles\": [\n            {\n                \"FileContent\": null,\n                \"FileExtType\": \"proto\",\n                \"FileId\": 564,\n                \"FileName\": \"tb_example\",\n                \"FileSize\": 261,\n                \"FileType\": \"PROTO\"\n            }\n        ],\n        \"RequestId\": \"70707604-2031-4c7e-a85f-a52daf354eb0\",\n        \"TableInfos\": [\n            {\n                \"Error\": null,\n                \"IndexKeySet\": \"{\\\"Num\\\":0}\",\n                \"KeyFields\": \"{\\\"KeyField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"uin\\\",\\\"Type\\\":\\\"int64\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"name\\\",\\\"Type\\\":\\\"string\\\"}],\\\"Num\\\":2}\",\n                \"TableGroupId\": null,\n                \"OldKeyFields\": null,\n                \"OldValueFields\": null,\n                \"ShardingKeySet\": \"\",\n                \"SumKeyFieldSize\": 1022,\n                \"SumValueFieldSize\": 262144,\n                \"TableIdlType\": \"PROTO\",\n                \"TableInstanceId\": null,\n                \"TableName\": \"tb_example\",\n                \"TableType\": \"GENERIC\",\n                \"TdrVersion\": 1,\n                \"ListElementNum\": null,\n                \"SortFieldNum\": null,\n                \"SortRule\": null,\n                \"ValueFields\": \"{\\\"Num\\\":2,\\\"ValueField\\\":[{\\\"Label\\\":\\\"required\\\",\\\"Name\\\":\\\"gamesvrid\\\",\\\"Type\\\":\\\"int32\\\"},{\\\"Crypto\\\":false,\\\"Label\\\":\\\"optional\\\",\\\"Name\\\":\\\"logintime\\\",\\\"Type\\\":\\\"string\\\"}]}\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "创建表格文件校验"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,1591 @@
+{
+  "actions": {
+    "DescribeHSMBySubnetId": {
+      "document": "通过SubnetId获取Hsm资源数",
+      "input": "DescribeHSMBySubnetIdRequest",
+      "name": "通过SubnetId获取Hsm资源数",
+      "output": "DescribeHSMBySubnetIdResponse"
+    },
+    "DescribeHSMByVpcId": {
+      "document": "通过VpcId获取Hsm资源数",
+      "input": "DescribeHSMByVpcIdRequest",
+      "name": "通过VpcId获取Hsm资源数",
+      "output": "DescribeHSMByVpcIdResponse"
+    },
+    "DescribeSubnet": {
+      "document": "查询子网列表",
+      "input": "DescribeSubnetRequest",
+      "name": "查询子网列表",
+      "output": "DescribeSubnetResponse"
+    },
+    "DescribeSupportedHsm": {
+      "document": "获取当前地域所支持的设备列表",
+      "input": "DescribeSupportedHsmRequest",
+      "name": "获取当前地域所支持的设备列表",
+      "output": "DescribeSupportedHsmResponse"
+    },
+    "DescribeUsg": {
+      "document": "根据用户的AppId获取用户安全组列表",
+      "input": "DescribeUsgRequest",
+      "name": "获取用户安全组列表",
+      "output": "DescribeUsgResponse"
+    },
+    "DescribeUsgRule": {
+      "document": "获取安全组详情",
+      "input": "DescribeUsgRuleRequest",
+      "name": "获取安全组详情",
+      "output": "DescribeUsgRuleResponse"
+    },
+    "DescribeVpc": {
+      "document": "查询用户的私有网络列表",
+      "input": "DescribeVpcRequest",
+      "name": "查询私有网络列表",
+      "output": "DescribeVpcResponse"
+    },
+    "DescribeVsmAttributes": {
+      "document": "获取VSM属性",
+      "input": "DescribeVsmAttributesRequest",
+      "name": "获取VSM属性",
+      "output": "DescribeVsmAttributesResponse"
+    },
+    "DescribeVsms": {
+      "document": "获取用户VSM列表",
+      "input": "DescribeVsmsRequest",
+      "name": "获取用户VSM列表",
+      "output": "DescribeVsmsResponse"
+    },
+    "InquiryPriceBuyVsm": {
+      "document": "购买询价接口",
+      "input": "InquiryPriceBuyVsmRequest",
+      "name": "询价",
+      "output": "InquiryPriceBuyVsmResponse"
+    },
+    "ModifyVsmAttributes": {
+      "document": "修改VSM属性",
+      "input": "ModifyVsmAttributesRequest",
+      "name": "修改VSM属性",
+      "output": "ModifyVsmAttributesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-11-12",
+    "api_brief": "介绍如何使用API对云加密机进行操作，包括虚拟加密机实例相关操作等。",
+    "serviceNameCN": "云加密机",
+    "serviceShortName": "cloudhsm"
+  },
+  "objects": {
+    "DescribeHSMBySubnetIdRequest": {
+      "document": "DescribeHSMBySubnetId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Subnet标识符",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHSMBySubnetIdResponse": {
+      "document": "DescribeHSMBySubnetId返回参数结构体",
+      "members": [
+        {
+          "document": "HSM数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "作为查询条件的SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHSMByVpcIdRequest": {
+      "document": "DescribeHSMByVpcId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC标识符",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHSMByVpcIdResponse": {
+      "document": "DescribeHSMByVpcId返回参数结构体",
+      "members": [
+        {
+          "document": "HSM数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "作为查询条件的VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetRequest": {
+      "document": "DescribeSubnet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询指定VpcId下的子网信息。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查找关键字",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubnetResponse": {
+      "document": "DescribeSubnet返回参数结构体",
+      "members": [
+        {
+          "document": "返回的子网数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的子网实例列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Subnet",
+          "name": "SubnetList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupportedHsmRequest": {
+      "document": "DescribeSupportedHsm请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSupportedHsmResponse": {
+      "document": "DescribeSupportedHsm返回参数结构体",
+      "members": [
+        {
+          "document": "当前地域所支持的设备列表",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "DeviceTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsgRequest": {
+      "document": "DescribeUsg请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsgResponse": {
+      "document": "DescribeUsg返回参数结构体",
+      "members": [
+        {
+          "document": "用户的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                     \"SgId\":\"SgIdxxxxx\",                     \"S",
+          "member": "SgUnit",
+          "name": "SgList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的安全组数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsgRuleRequest": {
+      "document": "DescribeUsgRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "根据安全组Id获取安全组详情",
+          "member": "string",
+          "name": "SgIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsgRuleResponse": {
+      "document": "DescribeUsgRule返回参数结构体",
+      "members": [
+        {
+          "document": "安全组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UsgRuleDetail",
+          "name": "SgRules",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "安全组详情数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcRequest": {
+      "document": "DescribeVpc请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcResponse": {
+      "document": "DescribeVpc返回参数结构体",
+      "members": [
+        {
+          "document": "可查询到的所有Vpc实例总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Vpc对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Vpc",
+          "name": "VpcList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVsmAttributesRequest": {
+      "document": "DescribeVsmAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "hsm-xxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVsmAttributesResponse": {
+      "document": "DescribeVsmAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "资源Id",
+          "example": "hsm-xxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源名称",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源状态，1表示资源为正常，2表示资源处于隔离状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源IP",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源所属Vpc",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源所属子网",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源所属HSM的规格",
+          "example": "SJJ1528",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源类型，17表示EVSM，33表示GVSM，49表示SVSM",
+          "example": "17",
+          "member": "int64",
+          "name": "VsmType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域Id，返回腾讯云地域代码，如广州为1，北京为8",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区域Id，返回腾讯云每个地域的可用区代码",
+          "example": "100001",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期时间",
+          "example": "1612332287",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全组详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsgRuleDetail",
+          "name": "SgList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州三区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Expired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "为正数表示实例距离过期时间剩余秒数，为负数表示实例已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "RemainSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "私有虚拟网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "VPC的IPv4 CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.0.0/16",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子网的CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.0/24",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源所关联的Tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源续费标识，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVsmsRequest": {
+      "document": "DescribeVsms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询关键字",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设备所属的厂商名称，根据厂商来进行筛选",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVsmsResponse": {
+      "document": "DescribeVsms返回参数结构体",
+      "members": [
+        {
+          "document": "获取实例的总个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "VsmList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceInfo": {
+      "document": "设备厂商信息",
+      "members": [
+        {
+          "default": "",
+          "document": "厂商名称",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此厂商旗下的设备信息列表",
+          "example": "无",
+          "member": "HsmInfo",
+          "name": "HsmTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HsmInfo": {
+      "document": "支持的加密机类型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "加密机型号",
+          "example": "SJJ1528",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此类型的加密机所支持的VSM类型列表",
+          "example": "无",
+          "member": "VsmInfo",
+          "name": "VsmTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InquiryPriceBuyVsmRequest": {
+      "document": "InquiryPriceBuyVsm请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需购买实例的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "付费模式：0表示按需计费/后付费，1表示预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商品的时间大小",
+          "example": "1",
+          "member": "string",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品的时间单位，m表示月，y表示年",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "货币类型，默认为CNY",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认为CREATE，可选RENEW",
+          "example": "CREATE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceBuyVsmResponse": {
+      "document": "InquiryPriceBuyVsm返回参数结构体",
+      "members": [
+        {
+          "document": "原始总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000.0",
+          "member": "float",
+          "name": "TotalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "购买的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "商品的时间大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "商品的时间单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应付总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000.0",
+          "member": "float",
+          "name": "OriginalCost",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVsmAttributesRequest": {
+      "document": "ModifyVsmAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源Id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UpdateResourceName-修改资源名称,\nUpdateSgIds-修改安全组名称,\nUpdateNetWork-修改网络,\nDefault-默认不修改",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组Id",
+          "member": "string",
+          "name": "SgIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "虚拟专网Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Id",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVsmAttributesResponse": {
+      "document": "ModifyVsmAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceInfo": {
+      "document": "资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hsm-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "defaultHsmName",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源所属Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源所属HSM规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SJJ1528",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17",
+          "member": "int64",
+          "name": "VsmType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100001",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州一区",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SgUnit",
+          "name": "SgList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前实例是否已经过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Expired",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "为正数表示实例距离过期时间还剩余多少秒，为负数表示已经过期多少秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者Uin账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CreateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费状态标识， 0-手动续费，1-自动续费，2-到期不续\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TASS",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SgUnit": {
+      "document": "安全组基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Subnet": {
+      "document": "Subnet对象",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网实例ID，例如：subnet-bthucmmy。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网的 IPv4 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用IP数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "AvailableIpAddressCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网的 IPv6 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总IP数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalIpAddressCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为默认Subnet\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagFilter": {
+      "document": "标签过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UsgPolicy": {
+      "document": "安全组策略",
+      "members": [
+        {
+          "default": "",
+          "document": "cidr格式地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AddressModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务组id代表的协议和端口集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceModule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配后行为:ACCEPT/DROP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UsgRuleDetail": {
+      "document": "安全组规则详情",
+      "members": [
+        {
+          "default": "",
+          "document": "入站规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UsgPolicy",
+          "name": "InBound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "出站规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "UsgPolicy",
+          "name": "OutBound",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SgRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Vpc": {
+      "document": "VPC对象",
+      "members": [
+        {
+          "default": "",
+          "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为默认VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VsmInfo": {
+      "document": "支持的Vsm类型信息",
+      "members": [
+        {
+          "default": "",
+          "document": "VSM类型名称",
+          "example": "EVSM",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VSM类型值",
+          "example": "17",
+          "member": "int64",
+          "name": "TypeID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

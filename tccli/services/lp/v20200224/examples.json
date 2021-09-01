@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryLoginProtection": [
+      {
+        "document": "",
+        "input": "https://lp.tencentcloudapi.com/?Action=QueryLoginProtection\r\n&AccountType=10004\r\n&Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&LoginIp=101.231.62.66\r\n&LoginTime=1582029456\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Level\": 1,\n        \"LoginIp\": \"101.231.62.66\",\n        \"LoginTime\": \"1582029456\",\n        \"RiskType\": [\n            1,\n            22\n        ],\n        \"CodeDesc\": \"Success\",\n        \"Uid\": \"bfd81ee3ed27ad31c95ca75e21365973\"\n    }\n}",
+        "title": "登录保护接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

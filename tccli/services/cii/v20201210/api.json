@@ -1,0 +1,355 @@
+{
+  "actions": {
+    "CreateStructureTask": {
+      "document": "基于提供的客户及保单信息，启动结构化识别任务。",
+      "input": "CreateStructureTaskRequest",
+      "name": "新建结构化任务",
+      "output": "CreateStructureTaskResponse"
+    },
+    "DescribeStructCompareData": {
+      "document": "结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。",
+      "input": "DescribeStructCompareDataRequest",
+      "name": "结构化对比查询",
+      "output": "DescribeStructCompareDataResponse"
+    },
+    "DescribeStructureTaskResult": {
+      "document": "依据任务ID获取结构化结果接口。",
+      "input": "DescribeStructureTaskResultRequest",
+      "name": "获取结构化结果接口",
+      "output": "DescribeStructureTaskResultResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-10",
+    "api_brief": "智能保险助手可以将各类医疗票据结构化，辅助核保师给出AI建议的核保结论，帮助保险企业长期积累用户数据的同时提高核保效率。\r\n医疗报告结构化，复核，核保等相关接口。",
+    "serviceNameCN": "智能保险助手",
+    "serviceShortName": "cii"
+  },
+  "objects": {
+    "CompareMetricsData": {
+      "document": "结构化对比指标（准确率/召回率）数据",
+      "members": [
+        {
+          "default": "",
+          "document": "短文准确率",
+          "member": "string",
+          "name": "ShortStructAccuracy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短文召回率",
+          "member": "string",
+          "name": "ShortStructRecall",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "长文结构化准确率",
+          "member": "string",
+          "name": "LongStructAccuracy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "长文结构化召回率",
+          "member": "string",
+          "name": "LongStructRecall",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "长文提取准确率",
+          "member": "string",
+          "name": "LongContentAccuracy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "长文提取召回率",
+          "member": "string",
+          "name": "LongContentRecall",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateStructureTaskRequest": {
+      "document": "CreateStructureTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "保单号",
+          "example": "p0001",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户号",
+          "example": "c10321",
+          "member": "string",
+          "name": "CustomerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户姓名",
+          "example": "xx保险",
+          "member": "string",
+          "name": "CustomerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件类型，目前只支持体检报告类型，对应的值为：HealthReport",
+          "example": "HealthReport",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报告年份",
+          "example": "2021",
+          "member": "string",
+          "name": "Year",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可",
+          "example": "[\"original_upload_dir/100000013512_e75d5c6e-7b90-4ff6-b890-483\"]",
+          "member": "string",
+          "name": "FileList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
+          "example": "[\"CriticalDiseaseInsurance\"]",
+          "member": "string",
+          "name": "InsuranceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列",
+          "example": "[\"9xkKYHNKWDxxxxx\"]",
+          "member": "string",
+          "name": "ImageList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStructureTaskResponse": {
+      "document": "CreateStructureTask返回参数结构体",
+      "members": [
+        {
+          "document": "本次结构化任务的ID",
+          "example": "46313288149458944",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructCompareDataRequest": {
+      "document": "DescribeStructCompareData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "结构化任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructCompareDataResponse": {
+      "document": "DescribeStructCompareData返回参数结构体",
+      "members": [
+        {
+          "document": "保单号",
+          "member": "string",
+          "name": "PolicyId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结构化任务ID",
+          "member": "string",
+          "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户号",
+          "member": "string",
+          "name": "CustomerId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户姓名",
+          "member": "string",
+          "name": "CustomerName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "复核时间",
+          "member": "string",
+          "name": "ReviewTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "算法识别结果",
+          "member": "string",
+          "name": "MachineResult",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人工复核结果",
+          "member": "string",
+          "name": "ManualResult",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结构化对比指标数据",
+          "member": "CompareMetricsData",
+          "name": "Metrics",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "新增项",
+          "member": "string",
+          "name": "NewItems",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改项",
+          "member": "string",
+          "name": "ModifyItems",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructureTaskResultRequest": {
+      "document": "DescribeStructureTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "结构化任务ID",
+          "example": "46313288149458944",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStructureTaskResultResponse": {
+      "document": "DescribeStructureTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [{ \t\t\t\"Quality\": 0.9244373, \t\t\t\"StructureResult\": \"\\\"{\\\\\\\"objec",
+          "member": "ResultObject",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResultObject": {
+      "document": "用于返回结构化任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "图片质量分",
+          "member": "float",
+          "name": "Quality",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议",
+          "member": "string",
+          "name": "StructureResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

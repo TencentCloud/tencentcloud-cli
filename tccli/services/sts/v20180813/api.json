@@ -1,0 +1,357 @@
+{
+  "actions": {
+    "AssumeRole": {
+      "document": "申请扮演角色",
+      "input": "AssumeRoleRequest",
+      "name": "申请扮演角色",
+      "output": "AssumeRoleResponse"
+    },
+    "AssumeRoleWithSAML": {
+      "document": "本接口（AssumeRoleWithSAML）用于根据 SAML 断言申请角色临时凭证。",
+      "input": "AssumeRoleWithSAMLRequest",
+      "name": "根据 SAML 断言申请角色临时凭证",
+      "output": "AssumeRoleWithSAMLResponse"
+    },
+    "GetFederationToken": {
+      "document": "获取联合身份临时访问凭证",
+      "input": "GetFederationTokenRequest",
+      "name": "获取联合身份临时访问凭证",
+      "output": "GetFederationTokenResponse"
+    },
+    "QueryApiKey": {
+      "document": "拉取API密钥列表",
+      "input": "QueryApiKeyRequest",
+      "name": "拉取API密钥列表",
+      "output": "QueryApiKeyResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-08-13",
+    "api_brief": null,
+    "serviceNameCN": "安全凭证服务",
+    "serviceShortName": "sts"
+  },
+  "objects": {
+    "ApiKey": {
+      "document": "API密钥数据列表",
+      "members": [
+        {
+          "default": "",
+          "document": "密钥ID",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间(时间戳)",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态(2:有效, 3:禁用, 4:已删除)",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssumeRoleRequest": {
+      "document": "AssumeRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n普通角色：\nqcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName\n服务角色：\nqcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName",
+          "member": "string",
+          "name": "RoleArn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "临时会话名称，由用户自定义名称。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@_-。 正则为：[\\w+=,.@_-]*",
+          "member": "string",
+          "name": "RoleSessionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n3、策略中不能包含 principal 元素。",
+          "member": "string",
+          "name": "Policy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:\\/-]*",
+          "member": "string",
+          "name": "ExternalId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleResponse": {
+      "document": "AssumeRole返回参数结构体",
+      "members": [
+        {
+          "document": "临时安全证书",
+          "member": "Credentials",
+          "name": "Credentials",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，以 iso8601 格式的 UTC 时间表示",
+          "member": "string",
+          "name": "Expiration",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleWithSAMLRequest": {
+      "document": "AssumeRoleWithSAML请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "base64 编码的 SAML 断言信息",
+          "member": "string",
+          "name": "SAMLAssertion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "扮演者访问描述名",
+          "member": "string",
+          "name": "PrincipalArn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色访问描述名",
+          "member": "string",
+          "name": "RoleArn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话名称",
+          "member": "string",
+          "name": "RoleSessionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleWithSAMLResponse": {
+      "document": "AssumeRoleWithSAML返回参数结构体",
+      "members": [
+        {
+          "document": "对象里面包含 Token，TmpSecretId，TmpSecretKey 三元组",
+          "member": "Credentials",
+          "name": "Credentials",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书无效的时间，以 ISO8601 格式的 UTC 时间表示",
+          "member": "string",
+          "name": "Expiration",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Credentials": {
+      "document": "临时证书",
+      "members": [
+        {
+          "default": "",
+          "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时证书密钥ID。最长不超过1024字节。",
+          "member": "string",
+          "name": "TmpSecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时证书密钥Key。最长不超过1024字节。",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetFederationTokenRequest": {
+      "document": "GetFederationToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "您可以自定义调用方英文名称，由字母组成。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授予该临时证书权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定临时证书的有效期，单位：秒，默认1800秒，主账号最长可设定有效期为7200秒，子账号最长可设定有效期为129600秒。",
+          "member": "uint64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFederationTokenResponse": {
+      "document": "GetFederationToken返回参数结构体",
+      "members": [
+        {
+          "document": "临时证书",
+          "member": "Credentials",
+          "name": "Credentials",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时证书有效的时间，返回 Unix 时间戳，精确到秒",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证书有效的时间，以 iso8601 格式的 UTC 时间表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Expiration",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryApiKeyRequest": {
+      "document": "QueryApiKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的账号(不填默认查当前账号)",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryApiKeyResponse": {
+      "document": "QueryApiKey返回参数结构体",
+      "members": [
+        {
+          "document": "密钥ID列表",
+          "member": "ApiKey",
+          "name": "IdKeys",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

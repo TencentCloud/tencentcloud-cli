@@ -1,0 +1,41 @@
+{
+  "actions": {
+    "DescribeSdkAppid": {
+      "document": "获取云通信IM中腾讯云账号对应的SDKAppID",
+      "input": "DescribeSdkAppidRequest",
+      "name": "获取云通信 IM 的 SDKAppid",
+      "output": "DescribeSdkAppidResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-03-18",
+    "serviceShortName": "cim"
+  },
+  "objects": {
+    "DescribeSdkAppidRequest": {
+      "document": "DescribeSdkAppid请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSdkAppidResponse": {
+      "document": "DescribeSdkAppid返回参数结构体",
+      "members": [
+        {
+          "document": "表示 appid 对应的 SdkAppid 的数据",
+          "member": "int64",
+          "name": "SdkAppids",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,109 @@
+{
+  "actions": {
+    "CreateJob": [
+      {
+        "document": "在名为 ap-beijing 的集群上创建一个名为 test-job 的分布式任务。采用一个 master 节点，一个 ps 节点，和两个 worker 节点的计算节点结构，使用预提供的标签为 tia-1.7.0 的运行环境。",
+        "input": "https://tia.tencentcloudapi.com/?Action=CreateJob\r\n&Name=test-job\r\n&Cluster=ap-beijing\r\n&RuntimeVersion=tia-1.7.0\r\n&ScaleTier=CUSTOM\r\n&MasterType=1U1G0P\r\n&WorkerType=1U1G0P\r\n&ParameterServerType=1U1G0P\r\n&WorkerCount=2\r\n&ParameterServerCount=1\r\n&Debug=false\r\n&PackageDir.0=/* nfs or cos address */\r\n&Command.0=python\r\n&Args.0=mnist_saved_model.py\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Job\": {\r\n            \"Name\": \"test-job\",\r\n            \"CreateTime\": \"2018-05-23 10:00:00.000000000 +0800 CST m=+66666.666666666\",\r\n            \"Message\": \"creating\",\r\n            \"ScaleTier\": \"Custom\",\r\n            \"MasterType\": \"1U1G0P\",\r\n            \"WorkerType\": \"1U1G0P\",\r\n            \"ParameterServerType\": \"1U1G0P\",\r\n            \"WorkerCount\": 2,\r\n            \"ParameterServerCount\": 1,\r\n            \"Debug\": false,\r\n            \"PackageDir\": [\r\n                \"/* nfs or cos address */\"\r\n            ],\r\n            \"Command\": [\r\n                \"python\"\r\n            ],\r\n            \"Args\": [\r\n                \"mnist_saved_model.py\"\r\n            ],\r\n            \"Cluster\": \"ap-beijing\",\r\n            \"RuntimeVersion\": \"tia-1.7.0\"\r\n        },\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "创建一个训练任务"
+      }
+    ],
+    "CreateModel": [
+      {
+        "document": "在名为 ap-beijing 的集群上运行一个名为 test-model 的模型，对外提供服务。使用预提供的标签为 tiaserv-1.6.0-cpu 的运行环境，指定机器配置为：4核CPU，8G内存，不使用GPU。",
+        "input": "https://tia.tencentcloudapi.com/?Action=CreateModel\r\n&Name=test-model\r\n&Description=test\r\n&Cluster=ap-beijing\r\n&Model=cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model:/data/model\r\n&RuntimeVersion=tiaserv-1.6.0-cpu\r\n&Replicas=1\r\n&Expose=external\r\n&ServType=4U8G0P\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Model\": {\r\n            \"Name\": \"test-model\",\r\n            \"Description\": \"test\",\r\n            \"Cluster\": \"ap-beijing\",\r\n            \"Model\": \"cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model:/data/model\",\r\n            \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\r\n            \"CreateTime\": \"2018-05-23 10:00:00 +0800 CST\",\r\n             \"State\": \"\",\r\n            \"Message\": \"creating\",\r\n            \"Replicas\": 1,\r\n            \"AppId\": \"xxxxxxxxxx\",\r\n            \"Expose\": \"external\",\r\n            \"ServType\": \"\"\r\n        },\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "选取一个模型部署服务到集群中"
+      },
+      {
+        "document": "读取 cos 上以 *.zip 格式打包好的代码文件，部署为一个无服务器函数。运行环境为 Python2.7，脚本执行入口为 mnist.apigw_interface，请求的运行环境内存大小为 1024Gb，运行设置最大等待时间为 10 秒。",
+        "input": "https://tia.tencentcloudapi.com/?Action=CreateModel\r\n&Name=test-model\r\n&Description=test\r\n&Model=cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model.zip\r\n&RuntimeVersion=Python2.7\r\n&ServType=serverless\r\n&RuntimeConf.0=Handler=mnist.apigw_interface\r\n&RuntimeConf.1=MemorySize=1024\r\n&RuntimeConf.2=Timeout=10\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Model\": {\r\n            \"Name\": \"test-model\",\r\n            \"Description\": \"test\",\r\n            \"Cluster\": \"\",\r\n            \"Model\": \"cos://bucket-xxxxxxxxxx.cos.ap-guangzhou.myqcloud.com/model.zip\",\r\n            \"RuntimeVersion\": \"\",\r\n            \"CreateTime\": \"Wednesday, 19-Sep-18 11:01:29 CST\",\r\n            \"State\": \"Ready\",\r\n            \"ServingUrl\": \"\",\r\n            \"Message\": \"\",\r\n            \"Replicas\": 0,\r\n            \"AppId\": \"xxxxxxxxxx\",\r\n            \"Expose\": \"\",\r\n            \"ServType\": \"serverless\"\r\n        },\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "选取一个模型采用无服务器函数的方式部署"
+      }
+    ],
+    "DeleteJob": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DeleteJob\r\n&Name=test-job\r\n&Cluster=ap-beijing&Signature=g92Zha76wgSrO1oyapmm6ShndeE%3D\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "删除一个任务"
+      }
+    ],
+    "DeleteModel": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DeleteModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "删除一个集群中的模型"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DeleteModel\r\n&Name=test-model\r\n&ServType=serverless\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "删除一个SCF模型"
+      }
+    ],
+    "DescribeJob": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DescribeJob\r\n&Name=test-job\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Job\": {\r\n            \"Name\": \"test-job\",\r\n            \"CreateTime\": \"2018-04-26 15:00:00 +0800 CST\",\r\n            \"EndTime\": \"2018-04-26 16:00:00 +0800 CST\",\r\n            \"State\": \"Succeeded\",\r\n            \"AppId\": 10000000000,\r\n            \"MasterType\": \"16U48G1P\",\r\n            \"WorkerType\": \"16U48G1P\",\r\n            \"WorkerCount\": 45,\r\n            \"PackageDir\": [\r\n                \"\"\r\n            ],\r\n            \"Command\": [\r\n                \"python\",\r\n                \"/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py\",\r\n                \"--num_batches=100\",\r\n                \"--num_warmup_batches=5\",\r\n                \"--summary_verbosity=1\",\r\n                \"--local_parameter_device=gpu\",\r\n                \"--cross_replica_sync=True\",\r\n                \"--batch_size=128\",\r\n                \"--device=gpu\",\r\n                \"--variable_update=tfplus\",\r\n                \"--model=resnet101\"\r\n            ],\r\n            \"Cluster\": \"ap-beijing\",\r\n            \"RuntimeVersion\": \"tfplus-1.6.0-gpu\"\r\n        },\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "描述任务详情"
+      }
+    ],
+    "DescribeModel": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DescribeModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Model\": {\r\n            \"Name\": \"test-model\",\r\n            \"Description\": \"test\",\r\n            \"Cluster\": \"test\",\r\n            \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\r\n            \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\r\n            \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\r\n            \"State\": \"Running\",\r\n            \"ServingUrl\": \"140.143.181.246\",\r\n            \"Message\": \"Deployment has minimum availability.\",\r\n            \"Replicas\": 0,\r\n            \"AppId\": 1254139681,\r\n            \"Expose\": \"\",\r\n            \"ServType\": \"1U2G0P\"\r\n        },\r\n        \"RequestId\": \"daaecaca-46fb-47c7-ad4b-37387ec1ae09\"\r\n    }\r\n}",
+        "title": "描述一个集群内模型的详细信息"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DescribeModel\r\n&Name=scf-test-model-1\r\n&ServType=serverless\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Model\": {\r\n            \"Name\": \"scf-test-model-1\",\r\n            \"Description\": \"SCF model test.\",\r\n            \"Cluster\": \"\",\r\n            \"Model\": \"\",\r\n            \"RuntimeVersion\": \"Python2.7\",\r\n            \"CreateTime\": \"2018-09-12 20:26:02\",\r\n            \"State\": \"Ready\",\r\n            \"ServingUrl\": \"\",\r\n            \"Message\": \"\",\r\n            \"Replicas\": 0,\r\n            \"AppId\": 0,\r\n            \"Expose\": \"\",\r\n            \"ServType\": \"\"\r\n        },\r\n        \"RequestId\": \"4cbcc08a-d490-42c5-8ff6-f4549af710f1\"\r\n    }\r\n}",
+        "title": "描述一个 SCF 模型的详细信息"
+      }
+    ],
+    "InstallAgent": [
+      {
+        "document": "注意：只有未安装过agent或者kubeflow相关组件的集群需要安装。",
+        "input": "https://tia.tencentcloudapi.com/?Action=InstallAgent\r\n&Cluster=cls-xxxxxxxx\r\n&TiaVersion=xxxx-xx-xx\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"TiaVersion\": \"xxxx\",\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n    }\r\n}",
+        "title": "在私有集群安装agent"
+      }
+    ],
+    "ListJobs": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=ListJobs\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Jobs\": [{\r\n\t\t\t\t\"Name\": \"testtfgpu0105\",\r\n\t\t\t\t\"CreateTime\": \"2018-05-23 14:00:00 +0800 CST\",\r\n\t\t\t\t\"EndTime\": \"2018-04-26 15:00:00 +0800 CST\",\r\n\t\t\t\t\"State\": \"Failed\",\r\n\t\t\t\t\"Message\": \"[MASTER/Failed : Failed/1] ;[WORKER/Running : Running/1]\",\r\n\t\t\t\t\"AppId\": 10000000000,\r\n\t\t\t\t\"MasterType\": \"16U48G1P\",\r\n\t\t\t\t\"WorkerType\": \"16U48G1P\",\r\n\t\t\t\t\"WorkerCount\": 1,\r\n\t\t\t\t\"PackageDir\": [\r\n\t\t\t\t\t\"\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Command\": [\r\n\t\t\t\t\t\"python\",\r\n\t\t\t\t\t\"/tf_cnn_benchmarks.py\",\r\n\t\t\t\t\t\"--num_batches=100\",\r\n\t\t\t\t\t\"--num_warmup_batches=5\",\r\n\t\t\t\t\t\"--summary_verbosity=1\",\r\n\t\t\t\t\t\"--local_parameter_device=gpu\",\r\n\t\t\t\t\t\"--cross_replica_sync=True\",\r\n\t\t\t\t\t\"--batch_size=64\",\r\n\t\t\t\t\t\"--device=gpu\",\r\n\t\t\t\t\t\"--variable_update=distributed_all_reduce\",\r\n\t\t\t\t\t\"--all_reduce_spec=xring\",\r\n\t\t\t\t\t\"--model=resnet101\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Cluster\": \"ap-beijing\",\r\n\t\t\t\t\"RuntimeVersion\": \"tia_gpu_1.6.0\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Name\": \"testtfgpu0106\",\r\n\t\t\t\t\"CreateTime\": \"2018-04-26 14:00:00 +0800 CST\",\r\n\t\t\t\t\"EndTime\": \"2018-04-26 15:00:00 +0800 CST\",\r\n\t\t\t\t\"State\": \"Succeed\",\r\n\t\t\t\t\"Message\": \"[MASTER/Succeed : Succeed/1]\",\r\n\t\t\t\t\"AppId\": 1000000000,\r\n\t\t\t\t\"MasterType\": \"16U48G1P\",\r\n\t\t\t\t\"WorkerType\": \"16U48G1P\",\r\n\t\t\t\t\"PackageDir\": [\r\n\t\t\t\t\t\"\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Command\": [\r\n\t\t\t\t\t\"python\",\r\n\t\t\t\t\t\"/tf_cnn_benchmarks.py\",\r\n\t\t\t\t\t\"--num_batches=100\",\r\n\t\t\t\t\t\"--num_warmup_batches=5\",\r\n\t\t\t\t\t\"--summary_verbosity=1\",\r\n\t\t\t\t\t\"--local_parameter_device=gpu\",\r\n\t\t\t\t\t\"--cross_replica_sync=True\",\r\n\t\t\t\t\t\"--batch_size=64\",\r\n\t\t\t\t\t\"--device=gpu\",\r\n\t\t\t\t\t\"--variable_update=distributed_all_reduce\",\r\n\t\t\t\t\t\"--all_reduce_spec=xring\",\r\n\t\t\t\t\t\"--model=resnet101\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Cluster\": \"ap-beijing\",\r\n\t\t\t\t\"RuntimeVersion\": \"tia_gpu_1.6.0\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Name\": \"testtfgpu0107\",\r\n\t\t\t\t\"CreateTime\": \"2018-04-26 14:00:00 +0800 CST\",\r\n\t\t\t\t\"EndTime\": \"2018-04-26 15:00:00 +0800 CST\",\r\n\t\t\t\t\"State\": \"Failed\",\r\n\t\t\t\t\"Message\": \"[MASTER/Failed : Failed/1]\",\r\n\t\t\t\t\"AppId\": 100000000,\r\n\t\t\t\t\"MasterType\": \"16U48G1P\",\r\n\t\t\t\t\"PackageDir\": [\r\n\t\t\t\t\t\"\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Command\": [\r\n\t\t\t\t\t\"python\",\r\n\t\t\t\t\t\"/tf_cnn_benchmarks.py\",\r\n\t\t\t\t\t\"--num_batches=100\",\r\n\t\t\t\t\t\"--num_warmup_batches=5\",\r\n\t\t\t\t\t\"--summary_verbosity=1\",\r\n\t\t\t\t\t\"--local_parameter_device=gpu\",\r\n\t\t\t\t\t\"--cross_replica_sync=True\",\r\n\t\t\t\t\t\"--batch_size=64\",\r\n\t\t\t\t\t\"--device=gpu\",\r\n\t\t\t\t\t\"--variable_update=distributed_all_reduce\",\r\n\t\t\t\t\t\"--all_reduce_spec=xring\",\r\n\t\t\t\t\t\"--model=resnet101\"\r\n\t\t\t\t],\r\n\t\t\t\t\"Cluster\": \"ap-beijing\",\r\n\t\t\t\t\"RuntimeVersion\": \"tia_gpu_1.6.0\"\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\r\n\t}\r\n}",
+        "title": "列出某个集群下所有的任务"
+      }
+    ],
+    "ListModels": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=ListModels\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Models\": [\r\n            {\r\n                \"Name\": \"test-model-2\",\r\n                \"Description\": \"test\",\r\n                \"Cluster\": \"test\",\r\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\r\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\r\n                \"CreateTime\": \"2018-09-19 11:19:58 +0800 CST\",\r\n                \"State\": \"Running\",\r\n                \"ServingUrl\": \"140.143.114.17\",\r\n                \"Message\": \"Deployment has minimum availability.\",\r\n                \"Replicas\": 0,\r\n                \"AppId\": 1254139681,\r\n                \"Expose\": \"\",\r\n                \"ServType\": \"1U2G0P\"\r\n            },\r\n            {\r\n                \"Name\": \"test-model\",\r\n                \"Description\": \"test\",\r\n                \"Cluster\": \"test\",\r\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\r\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\r\n                \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\r\n                \"State\": \"Running\",\r\n                \"ServingUrl\": \"140.143.181.246\",\r\n                \"Message\": \"Deployment has minimum availability.\",\r\n                \"Replicas\": 0,\r\n                \"AppId\": 1254139681,\r\n                \"Expose\": \"\",\r\n                \"ServType\": \"1U2G0P\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"af499c6b-5f40-4e9c-a8eb-7df4e85cbf60\"\r\n    }\r\n}",
+        "title": "列出所有集群内模型"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=ListModels\r\n&Cluster=test\r\n&ServType=serverless\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Models\": [\r\n            {\r\n                \"Name\": \"scf-test-model-0\",\r\n                \"Description\": \"\",\r\n                \"Cluster\": \"\",\r\n                \"Model\": \"\",\r\n                \"RuntimeVersion\": \"Python2.7\",\r\n                \"CreateTime\": \"2018-09-12 20:26:02\",\r\n                \"State\": \"\",\r\n                \"ServingUrl\": \"\",\r\n                \"Message\": \"\",\r\n                \"Replicas\": 0,\r\n                \"AppId\": 0,\r\n                \"Expose\": \"\",\r\n                \"ServType\": \"\"\r\n            },\r\n            {\r\n                \"Name\": \"scf-test-model-2\",\r\n                \"Description\": \"\",\r\n                \"Cluster\": \"\",\r\n                \"Model\": \"\",\r\n                \"RuntimeVersion\": \"Python2.7\",\r\n                \"CreateTime\": \"2018-09-12 20:25:55\",\r\n                \"State\": \"\",\r\n                \"ServingUrl\": \"\",\r\n                \"Message\": \"\",\r\n                \"Replicas\": 0,\r\n                \"AppId\": 0,\r\n                \"Expose\": \"\",\r\n                \"ServType\": \"\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"a03d3814-1ea3-4bfd-8271-8ff717fd0d3e\"\r\n    }\r\n}",
+        "title": "列出所有 SCF 模型"
+      }
+    ],
+    "QueryLogs": [
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=QueryLogs\r\n&JobName=test-job\r\n&Cluster=ap-beijing\r\n&StartTime=2018-04-26+10%3A00%3A00\r\n&EndTime=2018-04-26+11%3A00%3A00\r\n&Limit=2\r\n&<公共请求参数>",
+        "output": "{\r\n    \"Response\": {\r\n        \"Logs\": [\r\n            {\r\n                \"Log\": \"logs...\",\r\n                \"Time\": \"2018-04-26T10:00:00.000000000Z\",\r\n                \"ContainerName\": \"tensorflow\",\r\n                \"PodId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\r\n                \"PodName\": \"xxxxxx\",\r\n                \"Namespace\": \"1000000000\"\r\n            },\r\n            {\r\n                \"Log\": \"logs...\",\r\n                \"Time\": \"2018-04-26T10:00:00.000000000Z\",\r\n                \"ContainerName\": \"tensorflow\",\r\n                \"PodId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\r\n                \"PodName\": \"xxxxxx\",\r\n                \"Namespace\": \"1000000000\"\r\n            }\r\n        ],\r\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\r\n        \"Context\": \"xxxxxxxxxx\",\r\n        \"Listover\": true\r\n    }\r\n}",
+        "title": "显示某个训练任务的日志"
+      }
+    ]
+  },
+  "version": "1.0"
+}

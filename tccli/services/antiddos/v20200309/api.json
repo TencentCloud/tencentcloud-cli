@@ -1,0 +1,5422 @@
+{
+  "actions": {
+    "AssociateDDoSEipAddress": {
+      "document": "本接口 (AssociateDDoSEipAddress) 用于将高防弹性公网IP绑定到实例或弹性网卡的指定内网 IP 上。",
+      "input": "AssociateDDoSEipAddressRequest",
+      "name": "绑定高防弹性公网IP",
+      "output": "AssociateDDoSEipAddressResponse"
+    },
+    "AssociateDDoSEipLoadBalancer": {
+      "document": "本接口 (AssociateDDoSEipLoadBalancer) 用于将高防弹性公网IP绑定到负载均衡指定内网 IP 上。",
+      "input": "AssociateDDoSEipLoadBalancerRequest",
+      "name": "绑定高防弹性公网IP到Clb",
+      "output": "AssociateDDoSEipLoadBalancerResponse"
+    },
+    "CreateBlackWhiteIpList": {
+      "document": "添加DDoS防护的IP黑白名单",
+      "input": "CreateBlackWhiteIpListRequest",
+      "name": "添加DDoS防护的IP黑白名单",
+      "output": "CreateBlackWhiteIpListResponse"
+    },
+    "CreateBoundIP": {
+      "document": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
+      "input": "CreateBoundIPRequest",
+      "name": "绑定IP到高防包实例",
+      "output": "CreateBoundIPResponse"
+    },
+    "CreateDDoSAI": {
+      "document": "设置DDoS防护的AI防护开关",
+      "input": "CreateDDoSAIRequest",
+      "name": "设置DDoS防护的AI防护开关",
+      "output": "CreateDDoSAIResponse"
+    },
+    "CreateDDoSGeoIPBlockConfig": {
+      "document": "添加DDoS防护的区域封禁配置",
+      "input": "CreateDDoSGeoIPBlockConfigRequest",
+      "name": "添加DDoS防护的区域封禁配置",
+      "output": "CreateDDoSGeoIPBlockConfigResponse"
+    },
+    "CreateDDoSSpeedLimitConfig": {
+      "document": "添加DDoS防护的访问限速配置",
+      "input": "CreateDDoSSpeedLimitConfigRequest",
+      "name": "添加DDoS防护的访问限速配置",
+      "output": "CreateDDoSSpeedLimitConfigResponse"
+    },
+    "CreateDefaultAlarmThreshold": {
+      "document": "设置单IP默认告警阈值配置",
+      "input": "CreateDefaultAlarmThresholdRequest",
+      "name": "设置单IP默认告警阈值配置",
+      "output": "CreateDefaultAlarmThresholdResponse"
+    },
+    "CreateIPAlarmThresholdConfig": {
+      "document": "设置单IP告警阈值配置",
+      "input": "CreateIPAlarmThresholdConfigRequest",
+      "name": "设置单IP告警阈值配置",
+      "output": "CreateIPAlarmThresholdConfigResponse"
+    },
+    "CreateL7RuleCerts": {
+      "document": "批量配置L7转发规则的证书供SSL测调用",
+      "input": "CreateL7RuleCertsRequest",
+      "name": "批量配置L7转发规则的证书",
+      "output": "CreateL7RuleCertsResponse"
+    },
+    "CreatePacketFilterConfig": {
+      "document": "添加DDoS防护的特征过滤规则",
+      "input": "CreatePacketFilterConfigRequest",
+      "name": "添加DDoS防护的特征过滤规则",
+      "output": "CreatePacketFilterConfigResponse"
+    },
+    "CreateProtocolBlockConfig": {
+      "document": "设置DDoS防护的协议封禁配置",
+      "input": "CreateProtocolBlockConfigRequest",
+      "name": "设置DDoS防护的协议封禁配置",
+      "output": "CreateProtocolBlockConfigResponse"
+    },
+    "CreateSchedulingDomain": {
+      "document": "创建一个域名，可用于在封堵时调度切换IP",
+      "input": "CreateSchedulingDomainRequest",
+      "name": "创建调度的域名",
+      "output": "CreateSchedulingDomainResponse"
+    },
+    "CreateWaterPrintConfig": {
+      "document": "添加DDoS防护的水印防护配置",
+      "input": "CreateWaterPrintConfigRequest",
+      "name": "添加DDoS防护的水印防护配置",
+      "output": "CreateWaterPrintConfigResponse"
+    },
+    "CreateWaterPrintKey": {
+      "document": "添加DDoS防护的水印防护密钥",
+      "input": "CreateWaterPrintKeyRequest",
+      "name": "添加DDoS防护的水印防护密钥",
+      "output": "CreateWaterPrintKeyResponse"
+    },
+    "DeleteBlackWhiteIpList": {
+      "document": "删除DDoS防护的IP黑白名单",
+      "input": "DeleteBlackWhiteIpListRequest",
+      "name": "删除DDoS防护的IP黑白名单",
+      "output": "DeleteBlackWhiteIpListResponse"
+    },
+    "DeleteDDoSGeoIPBlockConfig": {
+      "document": "删除DDoS防护的区域封禁配置",
+      "input": "DeleteDDoSGeoIPBlockConfigRequest",
+      "name": "删除DDoS防护的区域封禁配置",
+      "output": "DeleteDDoSGeoIPBlockConfigResponse"
+    },
+    "DeleteDDoSSpeedLimitConfig": {
+      "document": "删除DDoS防护的访问限速配置",
+      "input": "DeleteDDoSSpeedLimitConfigRequest",
+      "name": "删除DDoS防护的访问限速配置",
+      "output": "DeleteDDoSSpeedLimitConfigResponse"
+    },
+    "DeletePacketFilterConfig": {
+      "document": "删除DDoS防护的特征过滤规则",
+      "input": "DeletePacketFilterConfigRequest",
+      "name": "删除DDoS防护的特征过滤规则",
+      "output": "DeletePacketFilterConfigResponse"
+    },
+    "DeleteWaterPrintConfig": {
+      "document": "删除DDoS防护的水印防护配置",
+      "input": "DeleteWaterPrintConfigRequest",
+      "name": "删除DDoS防护的水印防护配置",
+      "output": "DeleteWaterPrintConfigResponse"
+    },
+    "DeleteWaterPrintKey": {
+      "document": "删除DDoS防护的水印防护密钥",
+      "input": "DeleteWaterPrintKeyRequest",
+      "name": "删除DDoS防护的水印防护密钥",
+      "output": "DeleteWaterPrintKeyResponse"
+    },
+    "DescribeBasicDeviceStatus": {
+      "document": "获取基础防护攻击状态",
+      "input": "DescribeBasicDeviceStatusRequest",
+      "name": "获取基础防护攻击状态",
+      "output": "DescribeBasicDeviceStatusResponse"
+    },
+    "DescribeBizTrend": {
+      "document": "获取业务流量曲线",
+      "input": "DescribeBizTrendRequest",
+      "name": "获取业务流量曲线",
+      "output": "DescribeBizTrendResponse"
+    },
+    "DescribeBlackWhiteIpList": {
+      "document": "获取DDoS防护的IP黑白名单",
+      "input": "DescribeBlackWhiteIpListRequest",
+      "name": "获取DDoS防护的IP黑白名单",
+      "output": "DescribeBlackWhiteIpListResponse"
+    },
+    "DescribeCCTrend": {
+      "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)",
+      "input": "DescribeCCTrendRequest",
+      "name": "获取CC攻击指标数据",
+      "output": "DescribeCCTrendResponse"
+    },
+    "DescribeDDoSTrend": {
+      "document": "获取DDoS攻击流量带宽和攻击包速率数据",
+      "input": "DescribeDDoSTrendRequest",
+      "name": "获取DDoS攻击指标数据",
+      "output": "DescribeDDoSTrendResponse"
+    },
+    "DescribeDefaultAlarmThreshold": {
+      "document": "获取单IP默认告警阈值配置",
+      "input": "DescribeDefaultAlarmThresholdRequest",
+      "name": "获取单IP默认告警阈值配置",
+      "output": "DescribeDefaultAlarmThresholdResponse"
+    },
+    "DescribeL7RulesBySSLCertId": {
+      "document": "查询与证书ID对于域名匹配的七层规则",
+      "input": "DescribeL7RulesBySSLCertIdRequest",
+      "name": "查询与证书ID匹配的七层规则",
+      "output": "DescribeL7RulesBySSLCertIdResponse"
+    },
+    "DescribeListBGPIPInstances": {
+      "document": "获取高防IP资产实例列表\n",
+      "input": "DescribeListBGPIPInstancesRequest",
+      "name": "获取高防IP资产实例列表",
+      "output": "DescribeListBGPIPInstancesResponse"
+    },
+    "DescribeListBGPInstances": {
+      "document": "获取高防包资产实例列表\n",
+      "input": "DescribeListBGPInstancesRequest",
+      "name": "获取高防包资产实例列表",
+      "output": "DescribeListBGPInstancesResponse"
+    },
+    "DescribeListBlackWhiteIpList": {
+      "document": "获取DDoS防护的IP黑白名单列表",
+      "input": "DescribeListBlackWhiteIpListRequest",
+      "name": "获取DDoS防护的IP黑白名单列表",
+      "output": "DescribeListBlackWhiteIpListResponse"
+    },
+    "DescribeListDDoSAI": {
+      "document": "获取DDoS防护的AI防护开关列表",
+      "input": "DescribeListDDoSAIRequest",
+      "name": "获取DDoS防护的AI防护开关列表",
+      "output": "DescribeListDDoSAIResponse"
+    },
+    "DescribeListDDoSGeoIPBlockConfig": {
+      "document": "获取DDoS防护的区域封禁配置列表",
+      "input": "DescribeListDDoSGeoIPBlockConfigRequest",
+      "name": "获取DDoS防护的区域封禁配置列表",
+      "output": "DescribeListDDoSGeoIPBlockConfigResponse"
+    },
+    "DescribeListDDoSSpeedLimitConfig": {
+      "document": "获取DDoS防护的访问限速配置列表",
+      "input": "DescribeListDDoSSpeedLimitConfigRequest",
+      "name": "获取DDoS防护的访问限速配置列表",
+      "output": "DescribeListDDoSSpeedLimitConfigResponse"
+    },
+    "DescribeListIPAlarmConfig": {
+      "document": "获取单IP告警阈值配置列表",
+      "input": "DescribeListIPAlarmConfigRequest",
+      "name": "获取单IP告警阈值配置列表",
+      "output": "DescribeListIPAlarmConfigResponse"
+    },
+    "DescribeListListener": {
+      "document": "获取转发监听器列表",
+      "input": "DescribeListListenerRequest",
+      "name": "获取转发监听器列表",
+      "output": "DescribeListListenerResponse"
+    },
+    "DescribeListPacketFilterConfig": {
+      "document": "获取DDoS防护的特征过滤规则列表",
+      "input": "DescribeListPacketFilterConfigRequest",
+      "name": "获取DDoS防护的特征过滤规则列表",
+      "output": "DescribeListPacketFilterConfigResponse"
+    },
+    "DescribeListProtectThresholdConfig": {
+      "document": "获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等",
+      "input": "DescribeListProtectThresholdConfigRequest",
+      "name": "获取防护阈值配置列表",
+      "output": "DescribeListProtectThresholdConfigResponse"
+    },
+    "DescribeListProtocolBlockConfig": {
+      "document": "获取DDoS防护的协议封禁配置列表",
+      "input": "DescribeListProtocolBlockConfigRequest",
+      "name": "获取DDoS防护的协议封禁配置列表",
+      "output": "DescribeListProtocolBlockConfigResponse"
+    },
+    "DescribeListSchedulingDomain": {
+      "document": "获取智能调度域名列表",
+      "input": "DescribeListSchedulingDomainRequest",
+      "name": "获取智能调度域名列表",
+      "output": "DescribeListSchedulingDomainResponse"
+    },
+    "DescribeListWaterPrintConfig": {
+      "document": "获取DDoS防护的水印防护配置列表",
+      "input": "DescribeListWaterPrintConfigRequest",
+      "name": "获取DDoS防护的水印防护配置列表",
+      "output": "DescribeListWaterPrintConfigResponse"
+    },
+    "DisassociateDDoSEipAddress": {
+      "document": "本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。",
+      "input": "DisassociateDDoSEipAddressRequest",
+      "name": "解绑高防弹性公网IP",
+      "output": "DisassociateDDoSEipAddressResponse"
+    },
+    "ModifyDDoSGeoIPBlockConfig": {
+      "document": "修改DDoS防护的区域封禁配置",
+      "input": "ModifyDDoSGeoIPBlockConfigRequest",
+      "name": "修改DDoS防护的区域封禁配置",
+      "output": "ModifyDDoSGeoIPBlockConfigResponse"
+    },
+    "ModifyDDoSSpeedLimitConfig": {
+      "document": "修改DDoS防护的访问限速配置",
+      "input": "ModifyDDoSSpeedLimitConfigRequest",
+      "name": "修改DDoS防护的访问限速配置",
+      "output": "ModifyDDoSSpeedLimitConfigResponse"
+    },
+    "ModifyDomainUsrName": {
+      "document": "修改智能解析域名名称",
+      "input": "ModifyDomainUsrNameRequest",
+      "name": "修改智能解析域名名称",
+      "output": "ModifyDomainUsrNameResponse"
+    },
+    "ModifyL7RulesEdge": {
+      "document": "修改边界防护L7转发规则",
+      "input": "ModifyL7RulesEdgeRequest",
+      "name": "修改边界防护L7转发规则",
+      "output": "ModifyL7RulesEdgeResponse"
+    },
+    "ModifyPacketFilterConfig": {
+      "document": "修改DDoS防护的特征过滤规则",
+      "input": "ModifyPacketFilterConfigRequest",
+      "name": "修改DDoS防护的特征过滤规则",
+      "output": "ModifyPacketFilterConfigResponse"
+    },
+    "SwitchWaterPrintConfig": {
+      "document": "开启或关闭DDoS防护的水印防护配置",
+      "input": "SwitchWaterPrintConfigRequest",
+      "name": "开启或关闭DDoS防护的水印防护配置",
+      "output": "SwitchWaterPrintConfigResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-03-09",
+    "api_brief": "DDoS 高防包 API 升级到 3.0 版本。全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，统一的 SDK/CLI 版本与 API 文档严格一致，给您带来简单快捷的使用体验。支持全地域就近接入让您更快连接腾讯云产品。\n\nBGP 高防包是针对业务部署在腾讯云内的用户提升 DDoS 防护能力的付费产品。高防包直接对腾讯云上 IP 生效，无需更换 IP，购买后只需绑定需要防护的 IP 即可使用，具备接入便捷、零变更等特点。高防包支持单 IP 防护，同时提供多 IP 共享防护资源，满足多个 IP 地址都需要提升防护能力的需求",
+    "serviceNameCN": "DDoS 防护",
+    "serviceShortName": "antiddos"
+  },
+  "objects": {
+    "AssociateDDoSEipAddressRequest": {
+      "document": "AssociateDDoSEipAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID对应的高防弹性公网IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的实例 ID。实例 ID 形如：ins-11112222。可通过登录控制台查询，也可通过 DescribeInstances 接口返回值中的InstanceId获取。",
+          "example": "ins-11112222",
+          "member": "string",
+          "name": "CvmInstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cvm实例所在地域，例如：ap-hongkong。",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "CvmRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateDDoSEipAddressResponse": {
+      "document": "AssociateDDoSEipAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateDDoSEipLoadBalancerRequest": {
+      "document": "AssociateDDoSEipLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID对应的高防弹性公网IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要绑定的负载均衡ID。负载均衡 ID 形如：lb-0000002i。可通过登录控制台查询，也可通过 DescribeLoadBalancers 接口返回值中的LoadBalancerId获取。",
+          "example": "lb-0000002i",
+          "member": "string",
+          "name": "LoadBalancerID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Clb所在地域，例如：ap-hongkong。",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "LoadBalancerRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateDDoSEipLoadBalancerResponse": {
+      "document": "AssociateDDoSEipLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BGPIPInstance": {
+      "document": "高防IP资产实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资产实例的详细信息",
+          "example": "无",
+          "member": "InstanceRelation",
+          "name": "InstanceDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的规格信息",
+          "example": "无",
+          "member": "BGPIPInstanceSpecification",
+          "name": "SpecificationLimit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的使用统计信息",
+          "example": "无",
+          "member": "BGPIPInstanceUsages",
+          "name": "Usage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例所在的地域",
+          "example": "无",
+          "member": "RegionInfo",
+          "name": "Region",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的防护状态，状态码如下：\n\"idle\"：正常状态(无攻击)\n\"attacking\"：攻击中\n\"blocking\"：封堵中\n\"creating\"：创建中\n\"deblocking\"：解封中\n\"isolate\"：回收隔离中",
+          "example": "idle",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间",
+          "example": "2020-06-09 23:12:23",
+          "member": "datetime",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2020-05-09 23:12:23",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的名称",
+          "example": "Test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例所属的套餐包信息，\n注意：当资产实例不是套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PackInfo",
+          "name": "PackInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产实例所属的三网套餐包详情，\n注意：当资产实例不是三网套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StaticPackRelation",
+          "name": "StaticPackRelation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区分高防IP境外线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区分集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tgw",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UNBIND",
+          "member": "string",
+          "name": "EipAddressStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否高防弹性公网IP实例，是为1，否为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EipFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产实例所属的高防弹性公网IP套餐包详情，\n注意：当资产实例不是高防弹性公网IP套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EipAddressPackRelation",
+          "name": "EipAddressPackRelation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高防弹性公网IP关联的实例信息。\n注意：当资产实例不是高防弹性公网IP实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EipAddressRelation",
+          "name": "EipAddressInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议客户接入的域名，客户可使用域名接入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.8cname.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BGPIPInstanceSpecification": {
+      "document": "高防IP资产实例的规格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "保底防护峰值，单位Mbps",
+          "example": "2000",
+          "member": "uint64",
+          "name": "ProtectBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC防护峰值，单位qps",
+          "example": "2000",
+          "member": "uint64",
+          "name": "ProtectCCQPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正常业务带宽，单位Mbps",
+          "example": "2000",
+          "member": "uint64",
+          "name": "NormalBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则数，单位条",
+          "example": "50",
+          "member": "uint64",
+          "name": "ForwardRulesLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费状态，取值[\n0：没有开启自动续费\n1：开启了自动续费\n]",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高防IP线路，取值为[\n1：BGP线路\n2：电信\n3：联通\n4：移动\n99：第三方合作线路\n]",
+          "example": "1",
+          "member": "uint64",
+          "name": "Line",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性防护峰值，单位Mbps",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ElasticBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BGPIPInstanceUsages": {
+      "document": "高防IP资产实例的使用信息统计",
+      "members": [
+        {
+          "default": "",
+          "document": "已使用的端口规则数，单位条",
+          "member": "uint64",
+          "name": "PortRulesUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用的域名规则数，单位条",
+          "member": "uint64",
+          "name": "DomainRulesUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近7天的攻击次数，单位次",
+          "member": "uint64",
+          "name": "Last7DayAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BGPInstance": {
+      "document": "高防包资产实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资产实例的详细信息",
+          "example": "{\"EipList\":[\"175.27.164.158\"],\"InstanceId\":\"bgp-0000015a\"}",
+          "member": "InstanceRelation",
+          "name": "InstanceDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的规格信息",
+          "example": "{\"ProtectBandwidth\":30000,\"ProtectCountLimit\":10,\"ProtectIPNumbe",
+          "member": "BGPInstanceSpecification",
+          "name": "SpecificationLimit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的使用统计信息",
+          "example": "{\"ProtectCountUsage\":0,\"ProtectIPNumberUsage\":1,\"Last7DayAttackC",
+          "member": "BGPInstanceUsages",
+          "name": "Usage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例所在的地域",
+          "example": "{\"Region\":\"ap-nanjing\"}",
+          "member": "RegionInfo",
+          "name": "Region",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的防护状态，状态码如下：\n\"idle\"：正常状态(无攻击)\n\"attacking\"：攻击中\n\"blocking\"：封堵中\n\"creating\"：创建中\n\"deblocking\"：解封中\n\"isolate\"：回收隔离中",
+          "example": "idle",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间",
+          "example": "2021-04-25 23:04:10",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2021-07-25 23:04:10",
+          "member": "datetime",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例的名称",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资产实例所属的套餐包信息，\n注意：当资产实例不是套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "PackInfo",
+          "name": "PackInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高防包绑定的EIP属于的云产品信息",
+          "example": "[{\"Ip\":\"175.27.164.158\",\"BizType\":\"public\",\"DeviceType\":\"cvm\",\"I",
+          "member": "EipProductInfo",
+          "name": "EipProductInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高防包绑定状态，取值[\n\"idle\"：绑定已完成\n \"bounding\"：正在绑定中\n\"failed\"：绑定失败\n]",
+          "example": "idle",
+          "member": "string",
+          "name": "BoundStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "四层防护严格级别",
+          "example": "defalut",
+          "member": "string",
+          "name": "DDoSLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC防护开关",
+          "example": "1",
+          "member": "int64",
+          "name": "CCEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BGPInstanceSpecification": {
+      "document": "高防包资产实例的规格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "保底防护峰值，单位Gbps",
+          "member": "uint64",
+          "name": "ProtectBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护次数，单位次",
+          "member": "uint64",
+          "name": "ProtectCountLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护IP数，单位个",
+          "member": "uint64",
+          "name": "ProtectIPNumberLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费状态，取值[\n0：没有开启自动续费\n1：开启了自动续费\n]",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BGPInstanceUsages": {
+      "document": "高防包资产实例的使用信息统计",
+      "members": [
+        {
+          "default": "",
+          "document": "已使用的防护次数，单位次",
+          "member": "uint64",
+          "name": "ProtectCountUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已防护的IP数，单位个",
+          "member": "uint64",
+          "name": "ProtectIPNumberUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近7天的攻击次数，单位次",
+          "member": "uint64",
+          "name": "Last7DayAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BlackWhiteIpRelation": {
+      "document": "黑白名单IP",
+      "members": [
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "1.1.2.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑IP)，white(白IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "黑白IP所属的实例",
+          "example": "无",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip掩码，0表示32位完整ip",
+          "example": "0",
+          "member": "uint64",
+          "name": "Mask",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BoundIpInfo": {
+      "document": "高防包绑定IP对象",
+      "members": [
+        {
+          "default": "",
+          "document": "IP地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的产品分类，取值[public（CVM、CLB产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
+          "example": "public",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*); 如果绑定的是托管IP没有对应的资源实例ID，请填写\"none\";",
+          "example": "none",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品分类下的子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
+          "example": "cvm",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商，0：电信；1：联通；2：移动；5：BGP",
+          "example": "5",
+          "member": "uint64",
+          "name": "IspCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CertIdInsL7Rules": {
+      "document": "使用证书的规则集合",
+      "members": [
+        {
+          "default": "",
+          "document": "使用证书的规则列表",
+          "example": "无",
+          "member": "InsL7Rules",
+          "name": "L7Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBlackWhiteIpListRequest": {
+      "document": "CreateBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "example": "[\"1.1.1.1\\r\\n\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑名单IP), white(白名单IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlackWhiteIpListResponse": {
+      "document": "CreateBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBoundIPRequest": {
+      "document": "CreateBoundIP请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgp-000000xe",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
+          "example": "无",
+          "member": "BoundIpInfo",
+          "name": "BoundDevList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
+          "example": "无",
+          "member": "BoundIpInfo",
+          "name": "UnBoundDevList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "已弃用，不填",
+          "example": "yes",
+          "member": "string",
+          "name": "CopyPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBoundIPResponse": {
+      "document": "CreateBoundIP返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSAIRequest": {
+      "document": "CreateDDoSAI请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID列表",
+          "example": "[\"bgpip-0000011x\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "AI防护开关，取值[\non(开启)\noff(关闭)\n]",
+          "example": "on",
+          "member": "string",
+          "name": "DDoSAI",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSAIResponse": {
+      "document": "CreateDDoSAI返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSGeoIPBlockConfigRequest": {
+      "document": "CreateDDoSGeoIPBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DDoS区域封禁配置，填写参数时配置ID请为空",
+          "example": "无",
+          "member": "DDoSGeoIPBlockConfig",
+          "name": "DDoSGeoIPBlockConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSGeoIPBlockConfigResponse": {
+      "document": "CreateDDoSGeoIPBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSSpeedLimitConfigRequest": {
+      "document": "CreateDDoSSpeedLimitConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问限速配置，填写参数时配置ID请为空",
+          "example": "无",
+          "member": "DDoSSpeedLimitConfig",
+          "name": "DDoSSpeedLimitConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSSpeedLimitConfigResponse": {
+      "document": "CreateDDoSSpeedLimitConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDefaultAlarmThresholdRequest": {
+      "document": "CreateDefaultAlarmThreshold请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认告警阈值配置",
+          "example": "无",
+          "member": "DefaultAlarmThreshold",
+          "name": "DefaultAlarmConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "产品类型，取值[\nbgp(表示高防包产品)\nbgpip(表示高防IP产品)\n]",
+          "example": "bgp",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDefaultAlarmThresholdResponse": {
+      "document": "CreateDefaultAlarmThreshold返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIPAlarmThresholdConfigRequest": {
+      "document": "CreateIPAlarmThresholdConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "IP告警阈值配置列表",
+          "example": "无",
+          "member": "IPAlarmThresholdRelation",
+          "name": "IpAlarmThresholdConfigList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIPAlarmThresholdConfigResponse": {
+      "document": "CreateIPAlarmThresholdConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7RuleCertsRequest": {
+      "document": "CreateL7RuleCerts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SSL证书ID",
+          "example": "cMgC0TpV",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "L7域名转发规则列表",
+          "example": "无",
+          "member": "InsL7Rules",
+          "name": "L7Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7RuleCertsResponse": {
+      "document": "CreateL7RuleCerts返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePacketFilterConfigRequest": {
+      "document": "CreatePacketFilterConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特征过滤规则",
+          "example": "无",
+          "member": "PacketFilterConfig",
+          "name": "PacketFilterConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePacketFilterConfigResponse": {
+      "document": "CreatePacketFilterConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProtocolBlockConfigRequest": {
+      "document": "CreateProtocolBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议封禁配置",
+          "example": "无",
+          "member": "ProtocolBlockConfig",
+          "name": "ProtocolBlockConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProtocolBlockConfigResponse": {
+      "document": "CreateProtocolBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSchedulingDomainRequest": {
+      "document": "CreateSchedulingDomain请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateSchedulingDomainResponse": {
+      "document": "CreateSchedulingDomain返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的域名",
+          "example": "test123.anever.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWaterPrintConfigRequest": {
+      "document": "CreateWaterPrintConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印防护配置",
+          "example": "无",
+          "member": "WaterPrintConfig",
+          "name": "WaterPrintConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWaterPrintConfigResponse": {
+      "document": "CreateWaterPrintConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWaterPrintKeyRequest": {
+      "document": "CreateWaterPrintKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWaterPrintKeyResponse": {
+      "document": "CreateWaterPrintKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DDoSAIRelation": {
+      "document": "DDoS防护的AI防护开关",
+      "members": [
+        {
+          "default": "",
+          "document": "AI防护开关，取值[\non(开启)\noff(关闭)\n]",
+          "member": "string",
+          "name": "DDoSAI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AI防护开关所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDoSGeoIPBlockConfig": {
+      "document": "DDoS防护的区域封禁配置",
+      "members": [
+        {
+          "default": "",
+          "document": "区域类型，取值[\noversea(海外)\nchina(国内)\ncustomized(自定义地区)\n]",
+          "example": "oversea",
+          "member": "string",
+          "name": "RegionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封禁动作，取值[\ndrop(拦截)\ntrans(放行)\n]",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID",
+          "example": "0",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当RegionType为customized时，必须填写AreaList，且最多填写128个；",
+          "example": "100025",
+          "member": "int64",
+          "name": "AreaList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DDoSGeoIPBlockConfigRelation": {
+      "document": "DDoS区域封禁配置相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DDoS区域封禁配置",
+          "member": "DDoSGeoIPBlockConfig",
+          "name": "GeoIPBlockConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDoSSpeedLimitConfig": {
+      "document": "DDoS访问限速配置",
+      "members": [
+        {
+          "default": "",
+          "document": "限速模式，取值[\n1(基于源IP限速)\n2(基于目的端口限速)\n]",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "限速值，每种类型的限速值最多支持1个；该字段数组至少有一种限速值",
+          "member": "SpeedValue",
+          "name": "SpeedValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "此字段已弃用，请填写新字段DstPortList。",
+          "member": "PortSegment",
+          "name": "DstPortScopes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置ID，配置添加成功后生成；添加新限制配置时不用填写此字段，修改或删除限速配置时需要填写配置ID",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP protocol numbers, 取值[\nALL(所有协议)\nTCP(tcp协议)\nUDP(udp协议)\nSMP(smp协议)\n1;2-100(自定义协议号范围,最多8个)\n]\n注意：当自定义协议号范围时，只能填写协议号，多个范围;分隔；当填写ALL时不能再填写其他协议或协议号。",
+          "member": "string",
+          "name": "ProtocolList",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口范围列表，最多8个，多个;分隔，范围表示用-；此端口范围必须填写；填写样式1:0-65535，样式2:80;443;1000-2000",
+          "member": "string",
+          "name": "DstPortList",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DDoSSpeedLimitConfigRelation": {
+      "document": "DDoS访问限速配置相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DDoS访问限速配置",
+          "member": "DDoSSpeedLimitConfig",
+          "name": "SpeedLimitConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DefaultAlarmThreshold": {
+      "document": "单IP默认告警阈值配置",
+      "members": [
+        {
+          "default": "",
+          "document": "告警阈值类型，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
+          "member": "uint64",
+          "name": "AlarmType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；",
+          "member": "uint64",
+          "name": "AlarmThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteBlackWhiteIpListRequest": {
+      "document": "DeleteBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "example": "[\"1.1.1.1\\r\\n\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑名单IP), white(白名单IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlackWhiteIpListResponse": {
+      "document": "DeleteBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDDoSGeoIPBlockConfigRequest": {
+      "document": "DeleteDDoSGeoIPBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DDoS区域封禁配置，填写参数时配置ID不能为空",
+          "example": "无",
+          "member": "DDoSGeoIPBlockConfig",
+          "name": "DDoSGeoIPBlockConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDDoSGeoIPBlockConfigResponse": {
+      "document": "DeleteDDoSGeoIPBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDDoSSpeedLimitConfigRequest": {
+      "document": "DeleteDDoSSpeedLimitConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问限速配置，填写参数时配置ID不能为空",
+          "example": "无",
+          "member": "DDoSSpeedLimitConfig",
+          "name": "DDoSSpeedLimitConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDDoSSpeedLimitConfigResponse": {
+      "document": "DeleteDDoSSpeedLimitConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePacketFilterConfigRequest": {
+      "document": "DeletePacketFilterConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特征过滤配置",
+          "example": "无",
+          "member": "PacketFilterConfig",
+          "name": "PacketFilterConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePacketFilterConfigResponse": {
+      "document": "DeletePacketFilterConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWaterPrintConfigRequest": {
+      "document": "DeleteWaterPrintConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWaterPrintConfigResponse": {
+      "document": "DeleteWaterPrintConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWaterPrintKeyRequest": {
+      "document": "DeleteWaterPrintKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印密钥ID",
+          "example": "000000f8",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWaterPrintKeyResponse": {
+      "document": "DeleteWaterPrintKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBasicDeviceStatusRequest": {
+      "document": "DescribeBasicDeviceStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "IP 资源列表",
+          "example": "[\"\\u20181.1.1.1\\u2019\\r\\n\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBasicDeviceStatusResponse": {
+      "document": "DescribeBasicDeviceStatus返回参数结构体",
+      "members": [
+        {
+          "document": "返回资源及状态，状态码：\n1 - 封堵状态\n2 - 正常状态\n3 - 攻击状态",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizTrendRequest": {
+      "document": "DescribeBizTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
+          "example": "xx",
+          "member": "string",
+          "name": "Statistics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "xx",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计周期，可取值300，1800，3600，21600，86400，单位秒",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
+          "example": "xx",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计纬度为qps时，可选特定域名查询",
+          "example": "xx",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
+          "example": "无",
+          "member": "ProtocolPort",
+          "name": "ProtoInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizTrendResponse": {
+      "document": "DescribeBizTrend返回参数结构体",
+      "members": [
+        {
+          "document": "曲线图各个时间点的值",
+          "example": "无",
+          "member": "float",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计纬度",
+          "example": "intraffic",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlackWhiteIpListRequest": {
+      "document": "DescribeBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlackWhiteIpListResponse": {
+      "document": "DescribeBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "黑名单IP列表",
+          "example": "[\"123.123.123.1\"]",
+          "member": "string",
+          "name": "BlackIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白名单IP列表",
+          "example": "[\"123.123.123.2\"]",
+          "member": "string",
+          "name": "WhiteIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCTrendRequest": {
+      "document": "DescribeCCTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "example": "inqps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，可选",
+          "example": "www.xx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCTrendResponse": {
+      "document": "DescribeCCTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计开始时间",
+          "example": "2018-08-27 15:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计结束时间",
+          "example": "2018-08-27 16:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "example": "inqps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSTrendRequest": {
+      "document": "DescribeDDoSTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
+          "example": "bps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSTrendResponse": {
+      "document": "DescribeDDoSTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源的IP",
+          "example": "3.3.3.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计开始时间",
+          "example": "2018-08-27 15:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "统计结束时间",
+          "example": "2018-08-27 16:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组，攻击流量带宽单位为Mbps，包速率单位为pps",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
+          "example": "bps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultAlarmThresholdRequest": {
+      "document": "DescribeDefaultAlarmThreshold请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品类型，取值[\nbgp(表示高防包产品)\nbgpip(表示高防IP产品)\n]",
+          "example": "bgp",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警阈值类型搜索，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterAlarmType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultAlarmThresholdResponse": {
+      "document": "DescribeDefaultAlarmThreshold返回参数结构体",
+      "members": [
+        {
+          "document": "默认告警阈值配置",
+          "example": "无",
+          "member": "DefaultAlarmThreshold",
+          "name": "DefaultAlarmConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7RulesBySSLCertIdRequest": {
+      "document": "DescribeL7RulesBySSLCertId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名状态，可取bindable, binded, opened, closed, all，all表示全部状态",
+          "example": "bindable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书ID列表",
+          "example": "[\"cMgC0TpV\", \"kmLKvJiD\", \"kmCL9Kv7\",\"kneSCNrZ\"]",
+          "member": "string",
+          "name": "CertIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7RulesBySSLCertIdResponse": {
+      "document": "DescribeL7RulesBySSLCertId返回参数结构体",
+      "members": [
+        {
+          "document": "证书规则集合",
+          "example": "无",
+          "member": "CertIdInsL7Rules",
+          "name": "CertSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBGPIPInstancesRequest": {
+      "document": "DescribeListBGPIPInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为20;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产实例ID搜索，例如，bgpip-00000001",
+          "example": "bgpip-00000001",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高防IP线路搜索，取值为[\n1：BGP线路\n2：电信\n3：联通\n4：移动\n99：第三方合作线路\n]",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterLine",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "地域搜索，例如，ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "FilterRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名称搜索",
+          "example": "test",
+          "member": "string",
+          "name": "FilterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只获取高防弹性公网IP实例。填写时，只能填写1或者0。当填写1时，表示返回高防弹性公网IP实例。当填写0时，表示返回非高防弹性公网IP实例。",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterEipType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "高防弹性公网IP实例的绑定状态搜索条件，取值范围 [BINDING、 BIND、UNBINDING、UNBIND]。该搜索条件只在FilterEipType=1时才有效。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterEipEipAddressStatus",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBGPIPInstancesResponse": {
+      "document": "DescribeListBGPIPInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高防IP资产实例列表",
+          "example": "无",
+          "member": "BGPIPInstance",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBGPInstancesRequest": {
+      "document": "DescribeListBGPInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为20;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资产实例ID搜索，例如，bgp-00000001",
+          "example": "bgp-00000001",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域搜索，例如，ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "FilterRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名称搜索",
+          "example": "test",
+          "member": "string",
+          "name": "FilterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照线路搜索, 1: BGP; 2: 三网",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterLine",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBGPInstancesResponse": {
+      "document": "DescribeListBGPInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高防包资产实例列表",
+          "example": "无",
+          "member": "BGPInstance",
+          "name": "InstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBlackWhiteIpListRequest": {
+      "document": "DescribeListBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListBlackWhiteIpListResponse": {
+      "document": "DescribeListBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "黑白IP列表",
+          "example": "无",
+          "member": "BlackWhiteIpRelation",
+          "name": "IpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSAIRequest": {
+      "document": "DescribeListDDoSAI请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSAIResponse": {
+      "document": "DescribeListDDoSAI返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "AI防护开关列表",
+          "example": "无",
+          "member": "DDoSAIRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSGeoIPBlockConfigRequest": {
+      "document": "DescribeListDDoSGeoIPBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-*",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSGeoIPBlockConfigResponse": {
+      "document": "DescribeListDDoSGeoIPBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DDoS区域封禁配置列表",
+          "example": "无",
+          "member": "DDoSGeoIPBlockConfigRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSSpeedLimitConfigRequest": {
+      "document": "DescribeListDDoSSpeedLimitConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-*",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListDDoSSpeedLimitConfigResponse": {
+      "document": "DescribeListDDoSSpeedLimitConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问限速配置列表",
+          "example": "无",
+          "member": "DDoSSpeedLimitConfigRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListIPAlarmConfigRequest": {
+      "document": "DescribeListIPAlarmConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警阈值类型搜索，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterAlarmType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListIPAlarmConfigResponse": {
+      "document": "DescribeListIPAlarmConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "IP告警阈值配置列表",
+          "example": "无",
+          "member": "IPAlarmThresholdRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListListenerRequest": {
+      "document": "DescribeListListener请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeListListenerResponse": {
+      "document": "DescribeListListener返回参数结构体",
+      "members": [
+        {
+          "document": "4层转发监听器列表",
+          "example": "无",
+          "member": "Layer4Rule",
+          "name": "Layer4Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "7层转发监听器列表",
+          "example": "无",
+          "member": "Layer7Rule",
+          "name": "Layer7Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListPacketFilterConfigRequest": {
+      "document": "DescribeListPacketFilterConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListPacketFilterConfigResponse": {
+      "document": "DescribeListPacketFilterConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "特征过滤配置",
+          "example": "无",
+          "member": "PacketFilterRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListProtectThresholdConfigRequest": {
+      "document": "DescribeListProtectThresholdConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名搜索(查询域名与协议的CC防护阈值时使用）",
+          "example": "无",
+          "member": "string",
+          "name": "FilterDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议搜索(查询域名与协议的CC防护阈值时使用）",
+          "example": "无",
+          "member": "string",
+          "name": "FilterProtocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListProtectThresholdConfigResponse": {
+      "document": "DescribeListProtectThresholdConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "防护阈值配置列表",
+          "example": "无",
+          "member": "ProtectThresholdRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListProtocolBlockConfigRequest": {
+      "document": "DescribeListProtocolBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListProtocolBlockConfigResponse": {
+      "document": "DescribeListProtocolBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "协议封禁配置",
+          "example": "无",
+          "member": "ProtocolBlockRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListSchedulingDomainRequest": {
+      "document": "DescribeListSchedulingDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为20;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "调度域名搜索",
+          "example": "test.com",
+          "member": "string",
+          "name": "FilterDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListSchedulingDomainResponse": {
+      "document": "DescribeListSchedulingDomain返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "调度域名信息列表",
+          "example": "无",
+          "member": "SchedulingDomainInfo",
+          "name": "DomainList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListWaterPrintConfigRequest": {
+      "document": "DescribeListWaterPrintConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListWaterPrintConfigResponse": {
+      "document": "DescribeListWaterPrintConfig返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "水印配置列表",
+          "example": "无",
+          "member": "WaterPrintRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateDDoSEipAddressRequest": {
+      "document": "DisassociateDDoSEipAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID，实例ID形如：bgpip-0000011x。只能填写高防IP实例。",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID对应的高防弹性公网IP。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateDDoSEipAddressResponse": {
+      "document": "DisassociateDDoSEipAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EipAddressPackRelation": {
+      "document": "Anycast高防套餐详情",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐IP数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标记",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前到期时间",
+          "example": "2021-03-17 12:32:12",
+          "member": "datetime",
+          "name": "CurDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EipAddressRelation": {
+      "document": "高防弹性公网IP关联信息",
+      "members": [
+        {
+          "default": "",
+          "document": "高防弹性公网IP绑定的实例地区，例如hk代表香港\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hk",
+          "member": "string",
+          "name": "EipAddressRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的资源实例ID。可能是一个CVM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xx",
+          "member": "string",
+          "name": "EipBoundRscIns",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的弹性网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-xx",
+          "member": "string",
+          "name": "EipBoundRscEni",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定的资源内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x.x.x.x",
+          "member": "string",
+          "name": "EipBoundRscVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EipProductInfo": {
+      "document": "EIP所属的云产品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "IP地址",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云产品类型，取值[\npublic（CVM产品），\nbm（黑石产品），\neni（弹性网卡），\nvpngw（VPN网关），\n natgw（NAT网关），\nwaf（Web应用安全产品），\nfpc（金融产品），\ngaap（GAAP产品）, \nother(托管IP)\n]",
+          "member": "string",
+          "name": "BizType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为\"\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ForwardListener": {
+      "document": "转发监听器",
+      "members": [
+        {
+          "default": "",
+          "document": "转发监听端口下限，取值1~65535",
+          "example": "80",
+          "member": "int64",
+          "name": "FrontendPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议，取值[\nTCP\nUDP\n]",
+          "example": "TCP",
+          "member": "string",
+          "name": "ForwardProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发监听端口上限，取值1~65535",
+          "example": "8080",
+          "member": "int64",
+          "name": "FrontendPortEnd",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IPAlarmThresholdRelation": {
+      "document": "单IP告警阈值配置",
+      "members": [
+        {
+          "default": "",
+          "document": "告警阈值类型，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
+          "member": "uint64",
+          "name": "AlarmType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；",
+          "member": "uint64",
+          "name": "AlarmThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警阈值所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IPLineInfo": {
+      "document": "IP线路信息",
+      "members": [
+        {
+          "default": "",
+          "document": "IP线路类型，取值[\n\"bgp\"：BGP线路IP\n\"ctcc\"：电信线路IP\n\"cucc\"：联通线路IP\n\"cmcc\"：移动线路IP\n\"abroad\"：境外线路IP\n]",
+          "example": "bgp",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线路IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InsL7Rules": {
+      "document": "实例7层规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则状态，0: 正常运行中, 1: 配置规则中(配置生效中), 2: 配置规则失败（配置生效失败）, 3: 删除规则中(删除生效中), 5: 删除规则失败(删除失败), 6: 等待添加规则, 7: 等待删除规则, 8: 等待上传证书, 9: 规则对应的资源不存在，被隔离, 10:等待修改规则, 11:配置修改中",
+          "example": "8",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "bgpip-000001eo",
+          "member": "string",
+          "name": "InsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户AppID",
+          "example": "251008915",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高防端口",
+          "example": "443",
+          "member": "string",
+          "name": "VirtualPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "kneSCNrZ",
+          "member": "string",
+          "name": "SSLId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceRelation": {
+      "document": "资源实例IP信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例的IP",
+          "member": "string",
+          "name": "EipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例的ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyValue": {
+      "document": "字段值，K-V形式",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段取值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "L4RuleSource": {
+      "document": "L4规则回源列表",
+      "members": [
+        {
+          "default": "",
+          "document": "回源IP或域名",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重值，取值[0,100]",
+          "example": "无",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "8000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "L7RuleEntry": {
+      "document": "L7规则",
+      "members": [
+        {
+          "default": "",
+          "document": "会话保持时间，单位秒",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议，取值[http, https]",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "LbType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回源列表",
+          "example": "无",
+          "member": "L4RuleSource",
+          "name": "SourceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护阈值",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HttpsToHttpEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "example": "无",
+          "member": "uint64",
+          "name": "CertType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTPS协议的CC防护等级",
+          "example": "无",
+          "member": "string",
+          "name": "CCLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同ruleId",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Layer4Rule": {
+      "document": "4层转发规则",
+      "members": [
+        {
+          "default": "",
+          "document": "源站端口，取值1~65535",
+          "member": "uint64",
+          "name": "BackendPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发端口，取值1~65535",
+          "member": "uint64",
+          "name": "FrontendPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议，取值[\nTCP(TCP协议)\nUDP(UDP协议)\n]",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站列表",
+          "member": "SourceServer",
+          "name": "RealServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Layer7Rule": {
+      "document": "7层转发规则",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发类型列表",
+          "member": "ProxyTypeInfo",
+          "name": "ProxyTypeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站列表",
+          "member": "SourceServer",
+          "name": "RealServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListenerCcThreholdConfig": {
+      "document": "域名与协议纬度的CC防护阈值",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议（可取值htttps）",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开关状态（0：关闭，1：开启）",
+          "member": "int64",
+          "name": "CCEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cc防护阈值",
+          "member": "int64",
+          "name": "CCThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDDoSGeoIPBlockConfigRequest": {
+      "document": "ModifyDDoSGeoIPBlockConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DDoS区域封禁配置，填写参数时配置ID不能为空",
+          "example": "无",
+          "member": "DDoSGeoIPBlockConfig",
+          "name": "DDoSGeoIPBlockConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDDoSGeoIPBlockConfigResponse": {
+      "document": "ModifyDDoSGeoIPBlockConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDDoSSpeedLimitConfigRequest": {
+      "document": "ModifyDDoSSpeedLimitConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问限速配置，填写参数时配置ID不能为空",
+          "example": "无",
+          "member": "DDoSSpeedLimitConfig",
+          "name": "DDoSSpeedLimitConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDDoSSpeedLimitConfigResponse": {
+      "document": "ModifyDDoSSpeedLimitConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainUsrNameRequest": {
+      "document": "ModifyDomainUsrName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户CNAME",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名名称",
+          "example": "test",
+          "member": "string",
+          "name": "DomainUserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainUsrNameResponse": {
+      "document": "ModifyDomainUsrName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7RulesEdgeRequest": {
+      "document": "ModifyL7RulesEdge请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（edge表示边界防护产品）",
+          "example": "edge",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "edge-000000xe",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则",
+          "example": "无",
+          "member": "L7RuleEntry",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7RulesEdgeResponse": {
+      "document": "ModifyL7RulesEdge返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPacketFilterConfigRequest": {
+      "document": "ModifyPacketFilterConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特征过滤配置",
+          "example": "无",
+          "member": "PacketFilterConfig",
+          "name": "PacketFilterConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPacketFilterConfigResponse": {
+      "document": "ModifyPacketFilterConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PackInfo": {
+      "document": "套餐包信息",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐包的类型，取值[\nstaticpack：高防IP三网套餐包\ninsurance：保险套餐包\n]",
+          "member": "string",
+          "name": "PackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包的ID",
+          "member": "string",
+          "name": "PackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PacketFilterConfig": {
+      "document": "特征过滤配置",
+      "members": [
+        {
+          "default": "",
+          "document": "协议，取值[tcp udp icmp all]",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始源端口，取值0~65535",
+          "example": "1000",
+          "member": "int64",
+          "name": "SportStart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束源端口，取值1~65535，必须大于等于起始源端口",
+          "example": "1001",
+          "member": "int64",
+          "name": "SportEnd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始目的端口，取值0~65535",
+          "example": "1000",
+          "member": "int64",
+          "name": "DportStart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束目的端口，取值1~65535，必须大于等于起始目的端口",
+          "example": "1001",
+          "member": "int64",
+          "name": "DportEnd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小报文长度，取值1-1500",
+          "example": "300",
+          "member": "int64",
+          "name": "PktlenMin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大报文长度，取值1-1500，必须大于等于最小报文长度",
+          "example": "500",
+          "member": "int64",
+          "name": "PktlenMax",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作，取值[\ndrop(丢弃)\ntransmit(放行)\ndrop_black(丢弃并拉黑)\ndrop_rst(拦截)\ndrop_black_rst(拦截并拉黑)\nforward(继续防护)\n]",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测位置，取值[\nbegin_l3(IP头)\nbegin_l4(TCP/UDP头)\nbegin_l5(T载荷)\nno_match(不匹配)\n]",
+          "example": "begin_l5",
+          "member": "string",
+          "name": "MatchBegin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "example": "sunday",
+          "member": "string",
+          "name": "MatchType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "example": "\\x313233",
+          "member": "string",
+          "name": "Str",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从检测位置开始的检测深度，取值[0,1500]",
+          "example": "500",
+          "member": "int64",
+          "name": "Depth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从检测位置开始的偏移量，取值范围[0,Depth]",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "example": "0",
+          "member": "int64",
+          "name": "IsNot",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当有第二个检测条件时，与第一检测条件的且或关系，取值[\nand(且的关系)\nnone(当没有第二个检测条件时填写此值)\n]",
+          "example": "none",
+          "member": "string",
+          "name": "MatchLogic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第二个检测位置，取值[\nbegin_l5(载荷)\nno_match(不匹配)\n]",
+          "example": "begin_l5",
+          "member": "string",
+          "name": "MatchBegin2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第二个检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "example": "sunday",
+          "member": "string",
+          "name": "MatchType2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第二个检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "example": "\\x313233",
+          "member": "string",
+          "name": "Str2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从第二个检测位置开始的第二个检测深度，取值[0,1500]",
+          "example": "500",
+          "member": "int64",
+          "name": "Depth2",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从第二个检测位置开始的偏移量，取值范围[0,Depth2]",
+          "example": "200",
+          "member": "int64",
+          "name": "Offset2",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第二个检测是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "example": "0",
+          "member": "int64",
+          "name": "IsNot2",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PacketFilterRelation": {
+      "document": "特征过滤相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "特征过滤配置",
+          "member": "PacketFilterConfig",
+          "name": "PacketFilterConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特征过滤配置所属的实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PortSegment": {
+      "document": "端口段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "起始端口，取值1~65535",
+          "member": "uint64",
+          "name": "BeginPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束端口，取值1~65535，必须不小于起始端口",
+          "member": "uint64",
+          "name": "EndPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProtectThresholdRelation": {
+      "document": "防护阈值配置相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DDoS防护等级，取值[\nlow(宽松)\nmiddle(适中)\nhigh(严格)\n]",
+          "member": "string",
+          "name": "DDoSLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DDoS清洗阈值，单位Mbps",
+          "member": "uint64",
+          "name": "DDoSThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DDoS的AI防护开关，取值[\non(开启)\noff(关闭)\n]",
+          "member": "string",
+          "name": "DDoSAI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC清洗开关，取值[\n0(关闭)\n1(开启)\n]",
+          "member": "uint64",
+          "name": "CCEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CC清洗阈值，单位QPS",
+          "member": "uint64",
+          "name": "CCThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名与协议纬度的防护阈值",
+          "member": "ListenerCcThreholdConfig",
+          "name": "ListenerCcThresholdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProtocolBlockConfig": {
+      "document": "协议封禁配置",
+      "members": [
+        {
+          "default": "",
+          "document": "TCP封禁，取值[0(封禁关)，1(封禁开)]",
+          "member": "int64",
+          "name": "DropTcp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UDP封禁，取值[0(封禁关)，1(封禁开)]",
+          "member": "int64",
+          "name": "DropUdp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ICMP封禁，取值[0(封禁关)，1(封禁开)]",
+          "member": "int64",
+          "name": "DropIcmp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "其他协议封禁，取值[0(封禁关)，1(封禁开)]",
+          "member": "int64",
+          "name": "DropOther",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常空连接防护，取值[0(防护关)，1(防护开)]",
+          "member": "int64",
+          "name": "CheckExceptNullConnect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProtocolBlockRelation": {
+      "document": "协议封禁相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "协议封禁配置",
+          "member": "ProtocolBlockConfig",
+          "name": "ProtocolBlockConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议封禁配置所属的实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProtocolPort": {
+      "document": "Protocol、Port参数",
+      "members": [
+        {
+          "default": "",
+          "document": "协议（tcp；udp）",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "无",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ProxyTypeInfo": {
+      "document": "转发类型",
+      "members": [
+        {
+          "default": "",
+          "document": "转发监听端口列表，端口取值1~65535",
+          "member": "int64",
+          "name": "ProxyPorts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发协议，取值[\nhttp(HTTP协议)\nhttps(HTTPS协议)\n]",
+          "member": "string",
+          "name": "ProxyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegionInfo": {
+      "document": "地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域名称，例如，ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SchedulingDomainInfo": {
+      "document": "调度域名信息",
+      "members": [
+        {
+          "default": "",
+          "document": "调度域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线路IP列表",
+          "member": "IPLineInfo",
+          "name": "LineIPList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调度方式，当前仅支持优先级的方式，取值[priority]",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调度域名解析记录的TTL值",
+          "member": "uint64",
+          "name": "TTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态，取值[\n0：未运行\n1：运行中\n2：运行异常\n]",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改时间",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UsrDomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SourceServer": {
+      "document": "源站信息",
+      "members": [
+        {
+          "default": "",
+          "document": "源站的地址（IP或者域名）",
+          "member": "string",
+          "name": "RealServer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站的地址类型，取值[\n1(域名地址)\n2(IP地址)\n]",
+          "member": "int64",
+          "name": "RsType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站的回源权重，取值1~100",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpeedValue": {
+      "document": "限速值类型，例如：包速率pps、带宽bps",
+      "members": [
+        {
+          "default": "",
+          "document": "限速值类型，取值[\n1(包速率pps)\n2(带宽bps)\n]",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值大小",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StaticPackRelation": {
+      "document": "三网高防套餐详情",
+      "members": [
+        {
+          "default": "",
+          "document": "保底带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ProtectBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "NormalBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ForwardRulesLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CurDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SuccessCode": {
+      "document": "操作返回码，只用于返回成功的情况",
+      "members": [
+        {
+          "default": "",
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功/错误码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SwitchWaterPrintConfigRequest": {
+      "document": "SwitchWaterPrintConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "水印开启/关闭状态，1表示开启；0表示关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "OpenStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchWaterPrintConfigResponse": {
+      "document": "SwitchWaterPrintConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WaterPrintConfig": {
+      "document": "水印防护配置",
+      "members": [
+        {
+          "default": "",
+          "document": "水印偏移量，取值范围[0, 100)",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启，取值[\n0（手动开启）\n1（立即运行）\n]",
+          "example": "0",
+          "member": "int64",
+          "name": "OpenStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印所属的转发监听器列表",
+          "example": "[{80,TCP}]",
+          "member": "ForwardListener",
+          "name": "Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥",
+          "example": "[]",
+          "member": "WaterPrintKey",
+          "name": "Keys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印检查模式, 取值[\ncheckall（普通模式）\nshortfpcheckall（精简模式）\n]",
+          "example": "checkall",
+          "member": "string",
+          "name": "Verify",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WaterPrintKey": {
+      "document": "生成的水印密钥",
+      "members": [
+        {
+          "default": "",
+          "document": "密钥版本号",
+          "example": "无",
+          "member": "string",
+          "name": "KeyVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥内容",
+          "example": "无",
+          "member": "string",
+          "name": "KeyContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥ID",
+          "example": "无",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥启用状态，只有一个取值1(启用)",
+          "example": "无",
+          "member": "int64",
+          "name": "KeyOpenStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥生成时间",
+          "example": "无",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WaterPrintRelation": {
+      "document": "水印配置相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "水印配置",
+          "member": "WaterPrintConfig",
+          "name": "WaterPrintConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印配置所属的资源实例",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

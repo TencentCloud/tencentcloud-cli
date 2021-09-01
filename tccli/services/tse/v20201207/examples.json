@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeSREInstanceAccessAddress": [
+      {
+        "document": "",
+        "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstanceAccessAddress\n&InstanceId=sre-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"IntranetAddress\": \"10.1.8.15\",\n        \"InternetAddress\": \"10.0.0.1\",\n        \"EnvAddressInfos\": [\n            {\n                \"EnvName\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\",\n                \"EnableConfigInternet\": true\n            }\n        ]\n    }\n}",
+        "title": "查询引擎实例访问地址"
+      }
+    ],
+    "DescribeSREInstances": [
+      {
+        "document": "用于查询引擎实例列表",
+        "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstances\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Status\": \"xx\",\n                \"Paymode\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"SpecId\": \"xx\",\n                \"Name\": \"xx\",\n                \"EnableStorage\": true,\n                \"InstanceId\": \"xx\",\n                \"EKSClusterID\": \"xx\",\n                \"SubnetIds\": [\n                    \"a\"\n                ],\n                \"StorageType\": \"xx\",\n                \"StorageCapacity\": 0,\n                \"Edition\": \"xx\",\n                \"Replica\": 3,\n                \"EngineRegion\": \"xx\",\n                \"EnvInfos\": [\n                    {\n                        \"VpcInfos\": [\n                            {\n                                \"SubnetId\": \"xx\",\n                                \"VpcId\": \"xx\"\n                            }\n                        ],\n                        \"Status\": \"xx\",\n                        \"EnableConfigInternet\": true,\n                        \"ConfigServiceIp\": \"xx\",\n                        \"StorageCapacity\": 0,\n                        \"EnvName\": \"xx\",\n                        \"ConfigInternetServiceIp\": \"xx\",\n                        \"AdminServiceIp\": \"xx\"\n                    }\n                ],\n                \"Type\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询引擎实例列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,510 @@
+{
+  "actions": {
+    "DataManipulation": {
+      "document": "上传云搜数据的API接口。\n",
+      "input": "DataManipulationRequest",
+      "name": "云搜数据上传",
+      "output": "DataManipulationResponse"
+    },
+    "DataSearch": {
+      "document": "用于检索云搜中的数据。\n",
+      "input": "DataSearchRequest",
+      "name": "数据检索接口",
+      "output": "DataSearchResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-11-15",
+    "api_brief": "介绍如何使用API对腾讯云搜进行操作，包括数据检索、云搜数据上传等。",
+    "serviceNameCN": "腾讯云搜",
+    "serviceShortName": "yunsou"
+  },
+  "objects": {
+    "DataManipulationRequest": {
+      "document": "DataManipulation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作类型，add或del",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据编码类型",
+          "member": "string",
+          "name": "Encoding",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据",
+          "member": "string",
+          "name": "Contents",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用Id",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DataManipulationResponse": {
+      "document": "DataManipulation返回参数结构体",
+      "members": [
+        {
+          "document": "数据操作结果",
+          "member": "DataManipulationResult",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataManipulationResult": {
+      "document": "数据操作结果",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "序号",
+          "member": "int64",
+          "name": "Seq",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果",
+          "member": "string",
+          "name": "TotalResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作结果明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DataManipulationResultItem",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ErrorResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataManipulationResultItem": {
+      "document": "数据操作结果明细",
+      "members": [
+        {
+          "default": "",
+          "document": "结果",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文档ID",
+          "member": "string",
+          "name": "DocId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码",
+          "member": "int64",
+          "name": "Errno",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSearchRequest": {
+      "document": "DataSearch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "云搜的业务ID，用以表明当前数据请求的业务",
+          "member": "uint64",
+          "name": "ResourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检索串",
+          "member": "string",
+          "name": "SearchQuery",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前页，从第0页开始计算",
+          "member": "uint64",
+          "name": "PageId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页结果数",
+          "member": "uint64",
+          "name": "NumPerPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前检索号，用于定位问题，建议指定并且全局唯一",
+          "member": "string",
+          "name": "SearchId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求编码，0表示utf8，1表示gbk，建议指定",
+          "member": "uint64",
+          "name": "QueryEncode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序类型",
+          "member": "uint64",
+          "name": "RankType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数值过滤，结果中按属性过滤",
+          "member": "string",
+          "name": "NumFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分类过滤，导航类检索请求",
+          "member": "string",
+          "name": "ClFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检索用户相关字段",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "检索来源",
+          "member": "uint64",
+          "name": "SourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否进行二次检索，0关闭，1打开",
+          "member": "uint64",
+          "name": "SecondSearch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定返回最大篇数，无特殊原因不建议指定",
+          "member": "uint64",
+          "name": "MaxDocReturn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否smartbox检索，0关闭，1打开",
+          "member": "uint64",
+          "name": "IsSmartbox",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否打开高红标亮，0关闭，1打开",
+          "member": "uint64",
+          "name": "EnableAbsHighlight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定访问QC纠错业务ID",
+          "member": "uint64",
+          "name": "QcBid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按指定字段进行group by，只能对数值字段进行操作",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按指定字段进行distinct，只能对数值字段进行操作",
+          "member": "string",
+          "name": "Distinct",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高级排序参数，具体参见高级排序说明",
+          "member": "string",
+          "name": "L4RankExpression",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高级排序参数，具体参见高级排序说明",
+          "member": "string",
+          "name": "MatchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "经度信息",
+          "member": "float",
+          "name": "Longitude",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "纬度信息",
+          "member": "float",
+          "name": "Latitude",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "分类过滤并集",
+          "member": "string",
+          "name": "MultiFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DataSearchResponse": {
+      "document": "DataSearch返回参数结构体",
+      "members": [
+        {
+          "document": "检索结果",
+          "member": "SearchResult",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchResult": {
+      "document": "搜索结果",
+      "members": [
+        {
+          "default": "",
+          "document": "检索耗时，单位ms",
+          "member": "uint64",
+          "name": "CostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "搜索最多可以展示的结果数，多页",
+          "member": "uint64",
+          "name": "DisplayNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "和检索请求中的echo相对应",
+          "member": "string",
+          "name": "Echo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索结果的估算篇数，由索引平台估算",
+          "member": "uint64",
+          "name": "EResultNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索返回的当前页码结果数",
+          "member": "uint64",
+          "name": "ResultNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SearchResultItem",
+          "name": "ResultList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检索的分词结果，array类型，可包含多个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "SearchResultSeg",
+          "name": "SegList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchResultItem": {
+      "document": "搜索结果元素",
+      "members": [
+        {
+          "default": "",
+          "document": "动态摘要信息",
+          "member": "string",
+          "name": "DocAbs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检索文档id",
+          "member": "string",
+          "name": "DocId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始文档信息",
+          "member": "string",
+          "name": "DocMeta",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "精计算得分",
+          "member": "float",
+          "name": "L2Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文档级回传信息",
+          "member": "string",
+          "name": "SearchDebuginfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchResultSeg": {
+      "document": "SearchResultSeg",
+      "members": [
+        {
+          "default": "",
+          "document": "分词",
+          "member": "string",
+          "name": "SegStr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,1394 @@
+{
+  "actions": {
+    "CreateEmailAddress": {
+      "document": "在验证了发信域名之后，您需要一个发信地址来发送邮件。例如发信域名是mail.qcloud.com，那么发信地址可以为 service@mail.qcloud.com。如果您想要收件人在收件箱列表中显示您的别名，例如\"腾讯云邮件通知\"。那么发信地址为： 别名 空格 尖括号 邮箱地址。请注意中间需要有空格",
+      "input": "CreateEmailAddressRequest",
+      "name": "新建发信地址",
+      "output": "CreateEmailAddressResponse"
+    },
+    "CreateEmailIdentity": {
+      "document": "在使用身份发送电子邮件之前，您需要有一个电子邮件域名，该域名可以是您的网站或者移动应用的域名。您首先必须进行验证，证明自己是该域名的所有者，并且授权给腾讯云SES发送许可，才可以从该域名发送电子邮件。",
+      "input": "CreateEmailIdentityRequest",
+      "name": "新建发信域名",
+      "output": "CreateEmailIdentityResponse"
+    },
+    "CreateEmailTemplate": {
+      "document": "创建模板，该模板可以是TXT或者HTML，请注意如果HTML不要包含外部文件的CSS。模板中的变量使用 {{变量名}} 表示。\n注意：模版需要审核通过才可以使用。",
+      "input": "CreateEmailTemplateRequest",
+      "name": "创建邮件模板",
+      "output": "CreateEmailTemplateResponse"
+    },
+    "DeleteBlackList": {
+      "document": "邮箱被拉黑之后，用户如果确认收件邮箱有效或者已经处于激活状态，可以从腾讯云地址库中删除该黑名单之后继续投递。",
+      "input": "DeleteBlackListRequest",
+      "name": "删除收件人黑名单",
+      "output": "DeleteBlackListResponse"
+    },
+    "DeleteEmailAddress": {
+      "document": "删除发信人地址",
+      "input": "DeleteEmailAddressRequest",
+      "name": "删除发信地址",
+      "output": "DeleteEmailAddressResponse"
+    },
+    "DeleteEmailIdentity": {
+      "document": "删除发信域名，删除后，将不可再使用该域名进行发信",
+      "input": "DeleteEmailIdentityRequest",
+      "name": "删除发信域名",
+      "output": "DeleteEmailIdentityResponse"
+    },
+    "DeleteEmailTemplate": {
+      "document": "删除发信模版",
+      "input": "DeleteEmailTemplateRequest",
+      "name": "删除发信模版",
+      "output": "DeleteEmailTemplateResponse"
+    },
+    "GetEmailIdentity": {
+      "document": "获取某个发信域名的配置详情",
+      "input": "GetEmailIdentityRequest",
+      "name": "获取域名配置详情",
+      "output": "GetEmailIdentityResponse"
+    },
+    "GetEmailTemplate": {
+      "document": "根据模板ID获取模板详情",
+      "input": "GetEmailTemplateRequest",
+      "name": "获取模板详情",
+      "output": "GetEmailTemplateResponse"
+    },
+    "GetSendEmailStatus": {
+      "document": "获取邮件发送状态。仅支持查询90天之内的数据",
+      "input": "GetSendEmailStatusRequest",
+      "name": "获取邮件发送的状态",
+      "output": "GetSendEmailStatusResponse"
+    },
+    "GetStatisticsReport": {
+      "document": "获取近期发送的统计情况，包含发送量、送达率、打开率、退信率等一系列数据。",
+      "input": "GetStatisticsReportRequest",
+      "name": "获取发送统计数据",
+      "output": "GetStatisticsReportResponse"
+    },
+    "ListBlackEmailAddress": {
+      "document": "腾讯云发送的邮件一旦被收件方判断为硬退(Hard Bounce)，腾讯云会拉黑该地址，并不允许所有用户向该地址发送邮件。成为邮箱黑名单。如果业务方确认是误判，可以从黑名单中删除。",
+      "input": "ListBlackEmailAddressRequest",
+      "name": "获取黑名单邮箱地址",
+      "output": "ListBlackEmailAddressResponse"
+    },
+    "ListEmailAddress": {
+      "document": "获取发信地址列表",
+      "input": "ListEmailAddressRequest",
+      "name": "获取发信地址列表",
+      "output": "ListEmailAddressResponse"
+    },
+    "ListEmailIdentities": {
+      "document": "获取当前发信域名列表，包含已验证通过与未验证的域名",
+      "input": "ListEmailIdentitiesRequest",
+      "name": "获取当前发信域名列表",
+      "output": "ListEmailIdentitiesResponse"
+    },
+    "ListEmailTemplates": {
+      "document": "获取当前邮件模板列表",
+      "input": "ListEmailTemplatesRequest",
+      "name": "获取当前邮件模板列表",
+      "output": "ListEmailTemplatesResponse"
+    },
+    "SendEmail": {
+      "document": "您可以通过此API发送TEXT或者HTML邮件，默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。",
+      "input": "SendEmailRequest",
+      "name": "发送邮件",
+      "output": "SendEmailResponse"
+    },
+    "UpdateEmailIdentity": {
+      "document": "您已经成功配置好了您的DNS，接下来请求腾讯云验证您的DNS配置是否正确",
+      "input": "UpdateEmailIdentityRequest",
+      "name": "请求验证",
+      "output": "UpdateEmailIdentityResponse"
+    },
+    "UpdateEmailTemplate": {
+      "document": "更新邮件模板，更新后需再次审核",
+      "input": "UpdateEmailTemplateRequest",
+      "name": "更新邮件模板",
+      "output": "UpdateEmailTemplateResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-02",
+    "api_brief": "介绍如何使用API进行邮件发送操作，包括发信域名管理、DNS验证、模板管理、数据统计等。",
+    "serviceNameCN": "邮件推送",
+    "serviceShortName": "ses"
+  },
+  "objects": {
+    "Attachment": {
+      "document": "附件结构，包含附件名和base64之后的附件内容。",
+      "members": [
+        {
+          "default": "",
+          "document": "附件名称，最大支持255个字符长度，不支持部分附件类型，详情请参考[附件类型](https://cloud.tencent.com/document/product/1288/51951)。",
+          "example": "example.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64之后的附件内容，您可以发送的附件大小上限为5 MB。 注意：腾讯云api目前要求请求包大小不得超过10 MB。如果您要发送多个附件，那么这些附件的总大小不能超过10 MB。",
+          "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BlackEmailAddress": {
+      "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间",
+      "members": [
+        {
+          "default": "",
+          "document": "邮箱被拉黑时间",
+          "member": "datetime",
+          "name": "BounceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被拉黑的邮箱地址",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateEmailAddressRequest": {
+      "document": "CreateEmailAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "您的发信地址（发信地址总数上限为10个）",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发件人别名",
+          "member": "string",
+          "name": "EmailSenderName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmailAddressResponse": {
+      "document": "CreateEmailAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmailIdentityRequest": {
+      "document": "CreateEmailIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。",
+          "member": "string",
+          "name": "EmailIdentity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmailIdentityResponse": {
+      "document": "CreateEmailIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "验证类型。固定值：DOMAIN",
+          "member": "string",
+          "name": "IdentityType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否已通过验证",
+          "member": "bool",
+          "name": "VerifiedForSendingStatus",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "需要配置的DNS信息",
+          "member": "DNSAttributes",
+          "name": "Attributes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmailTemplateRequest": {
+      "document": "CreateEmailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板内容",
+          "member": "TemplateContent",
+          "name": "TemplateContent",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmailTemplateResponse": {
+      "document": "CreateEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DNSAttributes": {
+      "document": "用于描述DNS记录的域名、记录类型、期望得到的值、目前配置的值",
+      "members": [
+        {
+          "default": "",
+          "document": "记录类型 CNAME | A | TXT | MX",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "SendDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要配置的值",
+          "member": "string",
+          "name": "ExpectedValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云目前检测到的值",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测是否通过，创建时默认为false",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteBlackListRequest": {
+      "document": "DeleteBlackList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要清除的黑名单邮箱列表，数组长度至少为1",
+          "member": "string",
+          "name": "EmailAddressList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlackListResponse": {
+      "document": "DeleteBlackList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailAddressRequest": {
+      "document": "DeleteEmailAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信地址",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailAddressResponse": {
+      "document": "DeleteEmailAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailIdentityRequest": {
+      "document": "DeleteEmailIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信域名",
+          "member": "string",
+          "name": "EmailIdentity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailIdentityResponse": {
+      "document": "DeleteEmailIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailTemplateRequest": {
+      "document": "DeleteEmailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模版ID",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEmailTemplateResponse": {
+      "document": "DeleteEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EmailIdentity": {
+      "document": "发信域名验证列表结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信域名",
+          "member": "string",
+          "name": "IdentityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "验证类型，固定为DOMAIN",
+          "member": "string",
+          "name": "IdentityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已通过验证",
+          "member": "bool",
+          "name": "SendingEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EmailSender": {
+      "document": "用于描述发件人相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "发信地址",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发信人别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EmailSenderName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CreatedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetEmailIdentityRequest": {
+      "document": "GetEmailIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信域名",
+          "member": "string",
+          "name": "EmailIdentity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEmailIdentityResponse": {
+      "document": "GetEmailIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "验证类型。固定值：DOMAIN",
+          "member": "string",
+          "name": "IdentityType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否已通过验证",
+          "member": "bool",
+          "name": "VerifiedForSendingStatus",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNS配置详情",
+          "member": "DNSAttributes",
+          "name": "Attributes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEmailTemplateRequest": {
+      "document": "GetEmailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEmailTemplateResponse": {
+      "document": "GetEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "模板内容数据",
+          "member": "TemplateContent",
+          "name": "TemplateContent",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSendEmailStatusRequest": {
+      "document": "GetSendEmailStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发送的日期，必填。仅支持查询某个日期，不支持范围查询。",
+          "member": "date",
+          "name": "RequestDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量。默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拉取最大条数，最多 100。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "SendMail接口返回的MessageId字段。",
+          "member": "string",
+          "name": "MessageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收件人邮箱。",
+          "member": "string",
+          "name": "ToEmailAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSendEmailStatusResponse": {
+      "document": "GetSendEmailStatus返回参数结构体",
+      "members": [
+        {
+          "document": "邮件发送状态列表",
+          "member": "SendEmailStatus",
+          "name": "EmailStatusList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticsReportRequest": {
+      "document": "GetStatisticsReport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始日期",
+          "example": "2020-10-01",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期",
+          "example": "2020-10-03",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发信域名",
+          "example": "qcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收件方邮箱类型，例如gmail.com",
+          "example": "gmail.com",
+          "member": "string",
+          "name": "ReceivingMailboxType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetStatisticsReportResponse": {
+      "document": "GetStatisticsReport返回参数结构体",
+      "members": [
+        {
+          "document": "发信统计报告，按天",
+          "example": "无",
+          "member": "Volume",
+          "name": "DailyVolumes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发信统计报告，总览",
+          "example": "无",
+          "member": "Volume",
+          "name": "OverallVolume",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBlackEmailAddressRequest": {
+      "document": "ListBlackEmailAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始日期，格式为YYYY-MM-DD",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，格式为YYYY-MM-DD",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规范，配合Offset使用",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规范，配合Limit使用，Limit最大取值为100",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可以指定邮箱进行查询",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可以指定任务ID进行查询",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBlackEmailAddressResponse": {
+      "document": "ListBlackEmailAddress返回参数结构体",
+      "members": [
+        {
+          "document": "黑名单列表",
+          "member": "BlackEmailAddress",
+          "name": "BlackList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "黑名单总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEmailAddressRequest": {
+      "document": "ListEmailAddress请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListEmailAddressResponse": {
+      "document": "ListEmailAddress返回参数结构体",
+      "members": [
+        {
+          "document": "发信地址列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EmailSender",
+          "name": "EmailSenders",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEmailIdentitiesRequest": {
+      "document": "ListEmailIdentities请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListEmailIdentitiesResponse": {
+      "document": "ListEmailIdentities返回参数结构体",
+      "members": [
+        {
+          "document": "发信域名列表",
+          "member": "EmailIdentity",
+          "name": "EmailIdentities",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEmailTemplatesRequest": {
+      "document": "ListEmailTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取模版数据量，用于分页",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "获取模版偏移值，用于分页",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEmailTemplatesResponse": {
+      "document": "ListEmailTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "邮件模板列表",
+          "member": "TemplatesMetadata",
+          "name": "TemplatesMetadata",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模版总数量",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailRequest": {
+      "document": "SendEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 \n发信人 &lt;邮件地址&gt; 的方式填写，例如：\n腾讯云团队 &lt;noreply@mail.qcloud.com&gt;",
+          "example": "noreply@mail.qcloud.com",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
+          "example": "无",
+          "member": "string",
+          "name": "Destination",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "邮件主题",
+          "example": "YourTestSubject",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。",
+          "example": "noreply@mail.qcloud.com",
+          "member": "string",
+          "name": "ReplyToAddresses",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用模板发送时，填写的模板相关参数",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用API直接发送内容时，填写的邮件内容",
+          "example": "无",
+          "member": "Simple",
+          "name": "Simple",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要发送附件时，填写附件相关参数。",
+          "example": "无",
+          "member": "Attachment",
+          "name": "Attachments",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailResponse": {
+      "document": "SendEmail返回参数结构体",
+      "members": [
+        {
+          "document": "接受消息生成的唯一消息标识符。",
+          "example": "qcloud-ses-messageid",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendEmailStatus": {
+      "document": "描述邮件发送状态",
+      "members": [
+        {
+          "default": "",
+          "document": "SendEmail返回的MessageId",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人邮箱",
+          "member": "string",
+          "name": "ToEmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发件人邮箱",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云处理状态\n0: 处理成功\n1001: 内部系统异常\n1002: 内部系统异常\n1003: 内部系统异常\n1003: 内部系统异常\n1004: 发信超时\n1005: 内部系统异常\n1006: 触发频率控制，短时间内对同一地址发送过多邮件\n1007: 邮件地址在黑名单中\n1009: 内部系统异常\n1010: 超出了每日发送限制\n1011: 无发送自定义内容权限，必须使用模板\n2001: 找不到相关记录\n3007: 模板ID无效或者不可用\n3008: 模板状态异常\n3009: 无权限使用该模板\n3010: TemplateData字段格式不正确 \n3014: 发件域名没有经过认证，无法发送\n3020: 收件方邮箱类型在黑名单\n3024: 邮箱地址格式预检查失败\n3030: 退信率过高，临时限制发送\n3033: 余额不足，账号欠费等",
+          "member": "int64",
+          "name": "SendStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件方处理状态\n0: 请求成功被腾讯云接受，进入发送队列\n1: 邮件递送成功，DeliverTime表示递送成功的时间\n2: 邮件因某种原因被丢弃，DeliverMessage表示丢弃原因\n3: 收件方ESP拒信，一般原因为邮箱地址不存在，或其它原因\n8: 邮件被ESP因某些原因延迟递送，DeliverMessage表示延迟原因",
+          "member": "int64",
+          "name": "DeliverStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件方处理状态描述",
+          "member": "string",
+          "name": "DeliverMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求到达腾讯云时间戳",
+          "member": "int64",
+          "name": "RequestTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云执行递送时间戳",
+          "member": "int64",
+          "name": "DeliverTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否打开该邮件",
+          "member": "bool",
+          "name": "UserOpened",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否点击该邮件中的链接",
+          "member": "bool",
+          "name": "UserClicked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否取消该发送者的订阅",
+          "member": "bool",
+          "name": "UserUnsubscribed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否举报该发送者",
+          "member": "bool",
+          "name": "UserComplainted",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Simple": {
+      "document": "邮件发送的内容，可以是纯文本(TEXT)，也可以是纯代码(HTML)，或者纯文本+HTML的组合(建议方式)",
+      "members": [
+        {
+          "default": "",
+          "document": "base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱",
+          "member": "string",
+          "name": "Html",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Template": {
+      "document": "模板发送相关信息，包含模板ID，模板变量参数等信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID。如果没有模板，请先新建一个",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板中的变量参数，请使用json.dump将json对象格式化为string类型。该对象是一组键值对，每个Key代表模板中的一个变量，模板中的变量使用{{键}}表示，相应的值在发送时会被替换为{{值}}。",
+          "member": "string",
+          "name": "TemplateData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TemplateContent": {
+      "document": "模板内容，TEXT和HTML必须至少存在一项，建议使用TEXT和HTML的组合",
+      "members": [
+        {
+          "default": "",
+          "document": "base64之后的Html代码",
+          "member": "string",
+          "name": "Html",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "base64之后的文本内容",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TemplatesMetadata": {
+      "document": "模板列表结构",
+      "members": [
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "uint64",
+          "name": "CreatedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名称",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板状态。1-审核中|0-已通过|2-拒绝|其它-不可用",
+          "member": "int64",
+          "name": "TemplateStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核原因",
+          "member": "string",
+          "name": "ReviewReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateEmailIdentityRequest": {
+      "document": "UpdateEmailIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求验证的域名",
+          "member": "string",
+          "name": "EmailIdentity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEmailIdentityResponse": {
+      "document": "UpdateEmailIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "验证类型。固定值：DOMAIN",
+          "member": "string",
+          "name": "IdentityType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否已通过验证",
+          "member": "bool",
+          "name": "VerifiedForSendingStatus",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "需要配置的DNS信息",
+          "member": "DNSAttributes",
+          "name": "Attributes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEmailTemplateRequest": {
+      "document": "UpdateEmailTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板内容",
+          "member": "TemplateContent",
+          "name": "TemplateContent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模版名字",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEmailTemplateResponse": {
+      "document": "UpdateEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Volume": {
+      "document": "统计数据的结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "date",
+          "name": "SendDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "邮件请求数量",
+          "member": "uint64",
+          "name": "RequestCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云通过数量",
+          "member": "uint64",
+          "name": "AcceptedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "送达数量",
+          "member": "uint64",
+          "name": "DeliveredCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "打开邮件的用户数量，根据收件人去重",
+          "member": "uint64",
+          "name": "OpenedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "点击了邮件中的链接数量用户数量",
+          "member": "uint64",
+          "name": "ClickedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "退信数量",
+          "member": "uint64",
+          "name": "BounceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取消订阅的用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "UnsubscribeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,1676 @@
+{
+  "actions": {
+    "AssignProject": {
+      "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n\n",
+      "input": "AssignProjectRequest",
+      "name": "指定云数据库实例的所属项目",
+      "output": "AssignProjectResponse"
+    },
+    "CreateDBInstance": {
+      "document": "本接口(CreateDBInstance)用于创建包年包月的MongoDB云数据库实例。",
+      "input": "CreateDBInstanceRequest",
+      "name": "创建云数据库实例（包年包月）",
+      "output": "CreateDBInstanceResponse"
+    },
+    "CreateDBInstanceHour": {
+      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。",
+      "input": "CreateDBInstanceHourRequest",
+      "name": "创建云数据库实例（按量计费）",
+      "output": "CreateDBInstanceHourResponse"
+    },
+    "DescribeClientConnections": {
+      "document": "本接口(DescribeClientConnections)用于查询实例客户端连接信息，包括连接IP和连接数量。目前只支持3.2版本的MongoDB实例。",
+      "input": "DescribeClientConnectionsRequest",
+      "name": "查询实例客户端连接信息",
+      "output": "DescribeClientConnectionsResponse"
+    },
+    "DescribeDBInstances": {
+      "document": "本接口(DescribeDBInstances)用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
+      "input": "DescribeDBInstancesRequest",
+      "name": "查询实例列表",
+      "output": "DescribeDBInstancesResponse"
+    },
+    "DescribeSlowLog": {
+      "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。",
+      "input": "DescribeSlowLogRequest",
+      "name": "查询实例慢日志",
+      "output": "DescribeSlowLogResponse"
+    },
+    "DescribeSpecInfo": {
+      "document": "本接口(DescribeSpecInfo)用于查询实例的售卖规格。",
+      "input": "DescribeSpecInfoRequest",
+      "name": "查询云数据库的售卖规格",
+      "output": "DescribeSpecInfoResponse"
+    },
+    "RenameInstance": {
+      "document": "本接口(RenameInstance)用于修改云数据库实例的名称。",
+      "input": "RenameInstanceRequest",
+      "name": "修改实例名称",
+      "output": "RenameInstanceResponse"
+    },
+    "SetAutoRenew": {
+      "document": "本接口(SetAutoRenew)用于设置包年包月云数据库实例的续费选项。",
+      "input": "SetAutoRenewRequest",
+      "name": "设置云数据库实例的续费选项",
+      "output": "SetAutoRenewResponse"
+    },
+    "SetPassword": {
+      "document": "本接口(SetPassword)用于设置云数据库账户的密码。\n\n",
+      "input": "SetPasswordRequest",
+      "name": "修改云数据库实例的账户密码",
+      "output": "SetPasswordResponse"
+    },
+    "TerminateDBInstance": {
+      "document": "本接口(TerminateDBInstance)用于销毁按量计费的MongoDB云数据库实例",
+      "input": "TerminateDBInstanceRequest",
+      "name": "销毁云数据库实例（按量计费）",
+      "output": "TerminateDBInstanceResponse"
+    },
+    "UpgradeDBInstance": {
+      "document": "本接口(UpgradeDBInstance)用于升级包年包月的MongoDB云数据库实例，可以扩容内存、存储以及Oplog",
+      "input": "UpgradeDBInstanceRequest",
+      "name": "升级云数据库实例（包年包月）",
+      "output": "UpgradeDBInstanceResponse"
+    },
+    "UpgradeDBInstanceHour": {
+      "document": "本接口(UpgradeDBInstanceHour)用于升级按量计费的MongoDB云数据库实例，可以扩容内存、存储以及oplog",
+      "input": "UpgradeDBInstanceHourRequest",
+      "name": "升级云数据库实例（按量计费）",
+      "output": "UpgradeDBInstanceHourResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-08",
+    "api_brief": "介绍如何使用API对云数据库RMongoDB进行操作，包括创建实例询价、创建云数据库实例、续费云数据库实例等。",
+    "serviceNameCN": "云数据库 MongoDB",
+    "serviceShortName": "mongodb"
+  },
+  "objects": {
+    "AssignProjectRequest": {
+      "document": "AssignProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignProjectResponse": {
+      "document": "AssignProject返回参数结构体",
+      "members": [
+        {
+          "document": "返回的异步任务ID列表",
+          "member": "uint64",
+          "name": "FlowIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClientConnection": {
+      "document": "客户端连接信息，包括客户端IP和连接数",
+      "members": [
+        {
+          "default": "",
+          "document": "连接的客户端IP",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应客户端IP的连接数",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDBInstanceHourRequest": {
+      "document": "CreateDBInstanceHour请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例内存大小，单位：GB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例硬盘大小，单位：GB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10",
+          "member": "uint64",
+          "name": "ReplicateSetNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每个副本集内从节点个数，目前只支持从节点数为2",
+          "member": "uint64",
+          "name": "SecondaryNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例类型，GIO：高IO版；TGIO：高IO万兆",
+          "member": "string",
+          "name": "Machine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量，默认值为1, 最小值1，最大值为10",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区信息，格式如：ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例类型，REPLSET-副本集，SHARD-分片集群",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密",
+          "member": "uint64",
+          "name": "Encrypt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，如果不传则默认选择基础网络",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID，不填为默认项目",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组参数",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstanceHourResponse": {
+      "document": "CreateDBInstanceHour返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID",
+          "member": "string",
+          "name": "DealId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建的实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstanceRequest": {
+      "document": "CreateDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每个副本集内从节点个数",
+          "member": "uint64",
+          "name": "SecondaryNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例内存大小，单位：GB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例硬盘大小，单位：GB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT",
+          "member": "string",
+          "name": "MongoVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器类型，GIO：高IO版；TGIO：高IO万兆",
+          "member": "string",
+          "name": "MachineCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量，默认值为1, 最小值1，最大值为10",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例所属区域名称，格式如：ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时长，购买月数",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例密码",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID，不填为默认项目",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组参数",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID，如果不传则默认选择基础网络",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstanceResponse": {
+      "document": "CreateDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID",
+          "member": "string",
+          "name": "DealId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建的实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientConnectionsRequest": {
+      "document": "DescribeClientConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientConnectionsResponse": {
+      "document": "DescribeClientConnections返回参数结构体",
+      "members": [
+        {
+          "document": "客户端连接信息，包括客户端IP和对应IP的连接数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ClientConnection",
+          "name": "Clients",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例类型，取值范围：0-所有实例,1-正式实例，2-临时实例, 3-只读实例，-1-正式实例+只读+灾备实例",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群类型，取值范围：0-副本集实例，1-分片实例，-1-所有实例",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-实例已过期",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络的ID，基础网络则不传该参数",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费类型，取值范围：0-按量计费，1-包年包月，-1-按量计费+包年包月",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单次请求返回的数量，最小值为1，最大值为100，默认值为20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果集排序的字段，目前支持：\"ProjectId\", \"InstanceName\", \"CreateTime\"，默认为升序排序",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的实例总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例详细信息",
+          "member": "MongoDBInstanceDetail",
+          "name": "InstanceDetails",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogRequest": {
+      "document": "DescribeSlowLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。",
+          "member": "uint64",
+          "name": "SlowMS",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，最小值为0，最大值为10000，默认值为0。",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，最小值为1，最大值为100，默认值为20。",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogResponse": {
+      "document": "DescribeSlowLog返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的慢查询日志总数。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合查询条件的慢查询日志详情。",
+          "member": "string",
+          "name": "SlowLogList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecInfoRequest": {
+      "document": "DescribeSpecInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecInfoResponse": {
+      "document": "DescribeSpecInfo返回参数结构体",
+      "members": [
+        {
+          "document": "实例售卖规格信息列表",
+          "member": "SpecificationInfo",
+          "name": "SpecInfoList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MongoDBInstance": {
+      "document": "实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域信息",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MongoDBInstanceDetail": {
+      "document": "实例详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费类型，可能的返回值：1-包年包月；0-按量计费",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型，可能的返回值：0-副本集实例，1-分片实例，",
+          "member": "uint64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域信息",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区信息",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络类型，可能的返回值：0-基础网络，1-私有网络",
+          "member": "uint64",
+          "name": "NetType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络的子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例IP",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口号",
+          "member": "uint64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间",
+          "member": "datetime",
+          "name": "DeadLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例版本信息",
+          "member": "string",
+          "name": "MongoVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存规格，单位为MB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例磁盘规格，单位为MB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例CPU核心数",
+          "member": "uint64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例机器类型",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例从节点数",
+          "member": "uint64",
+          "name": "SecondaryNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例分片数",
+          "member": "uint64",
+          "name": "ReplicationSetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已用容量，单位MB",
+          "member": "uint64",
+          "name": "UsedVolume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维护窗口起始时间",
+          "member": "string",
+          "name": "MaintenanceStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维护窗口结束时间",
+          "member": "string",
+          "name": "MaintenanceEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片信息",
+          "member": "MongodbShardInfo",
+          "name": "ReplicaSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MongoDBInstance",
+          "name": "ReadonlyInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "灾备实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MongoDBInstance",
+          "name": "StandbyInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "临时实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MongoDBInstance",
+          "name": "CloneInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MongoDBInstance",
+          "name": "RelatedInstance",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例标签信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例标记",
+          "member": "uint64",
+          "name": "InstanceVer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例标记",
+          "member": "uint64",
+          "name": "ClusterVer",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议信息，可能的返回值：1-mongodb，2-dynamodb",
+          "member": "uint64",
+          "name": "Protocol",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型，可能的返回值，1-正式实例，2-临时实例，3-只读实例，4-灾备实例",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态描述",
+          "member": "string",
+          "name": "InstanceStatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
+          "member": "string",
+          "name": "RealInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MongodbShardInfo": {
+      "document": "实例分片详情",
+      "members": [
+        {
+          "default": "",
+          "document": "分片已使用容量",
+          "member": "float",
+          "name": "UsedVolume",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片ID",
+          "member": "string",
+          "name": "ReplicaSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片名",
+          "member": "string",
+          "name": "ReplicaSetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片内存规格，单位为MB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片磁盘规格，单位为MB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片Oplog大小，单位为MB",
+          "member": "uint64",
+          "name": "OplogSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片从节点数",
+          "member": "uint64",
+          "name": "SecondaryNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片物理ID",
+          "member": "string",
+          "name": "RealReplicaSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RenameInstanceRequest": {
+      "document": "RenameInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "NewName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenameInstanceResponse": {
+      "document": "RenameInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAutoRenewRequest": {
+      "document": "SetAutoRenew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAutoRenewResponse": {
+      "document": "SetAutoRenew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPasswordRequest": {
+      "document": "SetPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例账户名称",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPasswordResponse": {
+      "document": "SetPassword返回参数结构体",
+      "members": [
+        {
+          "document": "返回的异步任务ID",
+          "member": "uint64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SpecItem": {
+      "document": "mongodb售卖规格",
+      "members": [
+        {
+          "default": "",
+          "document": "规格信息标识",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器类型，取值：0-HIO，4-HIO10G",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu核心数",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存规格，单位为MB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认磁盘规格，单位MB",
+          "member": "uint64",
+          "name": "DefaultStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大磁盘规格，单位MB",
+          "member": "uint64",
+          "name": "MaxStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小磁盘规格，单位MB",
+          "member": "uint64",
+          "name": "MinStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可承载qps信息",
+          "member": "uint64",
+          "name": "Qps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接数限制",
+          "member": "uint64",
+          "name": "Conns",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例mongodb版本信息",
+          "member": "string",
+          "name": "MongoVersionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例mongodb版本号",
+          "member": "uint64",
+          "name": "MongoVersionValue",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例mongodb版本号（短）",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储引擎",
+          "member": "string",
+          "name": "EngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型，取值：1-分片集群，0-副本集集群",
+          "member": "uint64",
+          "name": "ClusterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小副本集从节点数",
+          "member": "uint64",
+          "name": "MinNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大副本集从节点数",
+          "member": "uint64",
+          "name": "MaxNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小分片数",
+          "member": "uint64",
+          "name": "MinReplicateSetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大分片数",
+          "member": "uint64",
+          "name": "MaxReplicateSetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小分片从节点数",
+          "member": "uint64",
+          "name": "MinReplicateSetNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大分片从节点数",
+          "member": "uint64",
+          "name": "MaxReplicateSetNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SpecificationInfo": {
+      "document": "实例规格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域信息",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区信息",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "售卖规格信息",
+          "member": "SpecItem",
+          "name": "SpecItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfo": {
+      "document": "实例标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签Key值",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TerminateDBInstanceRequest": {
+      "document": "TerminateDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateDBInstanceResponse": {
+      "document": "TerminateDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID，表示注销实例成功",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceHourRequest": {
+      "document": "UpgradeDBInstanceHour请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级后的内存大小，单位：GB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后的硬盘大小，单位：GB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
+          "member": "uint64",
+          "name": "OplogSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceHourResponse": {
+      "document": "UpgradeDBInstanceHour返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID",
+          "member": "string",
+          "name": "DealId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceRequest": {
+      "document": "UpgradeDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级后的内存大小，单位：GB",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后的硬盘大小，单位：GB",
+          "member": "uint64",
+          "name": "Volume",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
+          "member": "uint64",
+          "name": "OplogSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceResponse": {
+      "document": "UpgradeDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单ID",
+          "member": "string",
+          "name": "DealId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

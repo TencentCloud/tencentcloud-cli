@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "DeregisterMigrationTask": [
+      {
+        "document": "取消注册迁移任务",
+        "input": "https://msp.tencentcloudapi.com/?Action=DeregisterMigrationTask\r\n&TaskId=msp-1vogaxgk\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1aedbb4-b674-4833-b68f-3c90938252d5\"\n    }\n}",
+        "title": "取消注册迁移任务"
+      }
+    ],
+    "DescribeMigrationTask": [
+      {
+        "document": "获取指定迁移任务详情",
+        "input": "https://msp.tencentcloudapi.com/?Action=DescribeMigrationTask\r\n&TaskId=msp-1vogxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskStatus\": [\n            {\n                \"Status\": \"unstart\",\n                \"Progress\": \"-\",\n                \"UpdateTime\": \"2018-07-16 17:27:45\"\n            },\n            {\n                \"Status\": \"migrating\",\n                \"Progress\": \"-\",\n                \"UpdateTime\": \"2018-07-16 17:27:45\"\n            },\n            {\n                \"Status\": \"finish\",\n                \"Progress\": \"-\",\n                \"UpdateTime\": \"2018-07-16 17:40:51\"\n            }\n        ],\n        \"RequestId\": \"ca59d091-0d07-4516-8375-dd88db394b81\"\n    }\n}",
+        "title": "获取指定迁移任务详情"
+      }
+    ],
+    "ListMigrationProject": [
+      {
+        "document": "获取迁移项目名称列表",
+        "input": "https://msp.tencentcloudapi.com/?Action=ListMigrationProject\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"Projects\": [\n            {\n                \"ProjectId\": 10013,\n                \"ProjectName\": \"test2\"\n            },\n            {\n                \"ProjectId\": 10012,\n                \"ProjectName\": \"test1\"\n            },\n            {\n                \"ProjectId\": 10007,\n                \"ProjectName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"1824f552-3027-458f-82e9-4603846e52c4\"\n    }\n}",
+        "title": "获取迁移项目名称列表"
+      }
+    ],
+    "ListMigrationTask": [
+      {
+        "document": "获取迁移任务列表",
+        "input": "https://msp.tencentcloudapi.com/?Action=ListMigrationTask\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 13,\n        \"Tasks\": [\n            {\n                \"TaskId\": \"msp-81pzxxx\",\n                \"TaskName\": \"xxx\",\n                \"MigrationType\": \"file\",\n                \"Status\": \"migrating\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"\",\n                \"SrcInfo\": {\n                    \"Ip\": \"127.0.0.1\",\n                    \"Port\": \"80\",\n                    \"Region\": \"cos.ap-beijing\",\n                    \"InstanceId\": \"-\"\n                },\n                \"DstInfo\": {\n                    \"Ip\": \"127.0.0.1\",\n                    \"Port\": \"80\",\n                    \"Region\": \"127.0.0.1\",\n                    \"InstanceId\": \"-\"\n                },\n                \"MigrationTimeLine\": {\n                    \"CreateTime\": \"2018-07-13 15:00:00\",\n                    \"EndTime\": \"-\"\n                },\n                \"Updated\": \"2018-07-13 15:00:00\"\n            },\n            {\n                \"TaskId\": \"msp-j33xxx\",\n                \"TaskName\": \"ccc\",\n                \"MigrationType\": \"database\",\n                \"Status\": \"migrating\",\n                \"ProjectId\": 0,\n                \"ProjectName\": \"\",\n                \"SrcInfo\": {\n                    \"Ip\": \"127.0.0.1\",\n                    \"Port\": \"80\",\n                    \"Region\": \"ap-beijing\",\n                    \"InstanceId\": \"-\"\n                },\n                \"DstInfo\": {\n                    \"Ip\": \"127.0.0.1\",\n                    \"Port\": \"80\",\n                    \"Region\": \"ap-beijing\",\n                    \"InstanceId\": \"-\"\n                },\n                \"MigrationTimeLine\": {\n                    \"CreateTime\": \"2018-07-13 15:00:00\",\n                    \"EndTime\": \"-\"\n                },\n                \"Updated\": \"2018-07-13 15:00:00\"\n            }\n        ],\n        \"RequestId\": \"b7534e17-4744-4787-95a9-05f7f0419f4c\"\n    }\n}",
+        "title": "获取迁移任务列表"
+      }
+    ],
+    "ModifyMigrationTaskBelongToProject": [
+      {
+        "document": "更改迁移任务所属项目",
+        "input": "https://msp.tencentcloudapi.com/?Action=ModifyMigrationTaskBelongToProject\r\n&TaskId=msp-1vxxx\r\n&ProjectId=10005\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f06db343-5c00-4a4b-848c-b0340c238118\"\n    }\n}",
+        "title": "更改迁移任务所属项目"
+      }
+    ],
+    "ModifyMigrationTaskStatus": [
+      {
+        "document": "更新迁移任务状态",
+        "input": "https://msp.tencentcloudapi.com/?Action=ModifyMigrationTaskStatus\r\n&TaskId=msp-1vogxxxx\r\n&Status=unstart\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"889dc357-de9b-4edb-a516-ed596e622a94\"\n    }\n}",
+        "title": "更新迁移任务状态"
+      }
+    ],
+    "RegisterMigrationTask": [
+      {
+        "document": "注册迁移任务",
+        "input": "https://msp.tencentcloudapi.com/?Action=RegisterMigrationTask\r\n&TaskType=database\r\n&TaskName=ccc\r\n&ServiceSupplier=TencentCloud\r\n&CreateTime=2018-07-13 15:00:00\r\n&UpdateTime=2018-07-13 15:00:00\r\n&MigrateClass=mysql:mysql\r\n&SrcInfo.Region=ap-beijing\r\n&SrcInfo.Ip=127.0.0.1\r\n&SrcInfo.Port=80\r\n&DstInfo.Region=ap-beijing\r\n&DstInfo.Ip=127.0.0.1\r\n&DstInfo.Port=80\r\n&SrcAccessType=cvm\r\n&SrcDatabaseType=mysql\r\n&DstAccessType=cvm\r\n&DstDatabaseType=mysql\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"msp-jitoh33n\",\n        \"RequestId\": \"be64a8a3-932f-4ea0-91af-843f537c5648\"\n    }\n}",
+        "title": "注册迁移任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

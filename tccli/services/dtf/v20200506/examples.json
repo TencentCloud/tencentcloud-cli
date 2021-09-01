@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeTransactions": [
+      {
+        "document": "",
+        "input": "https://dtf.tencentcloudapi.com/?Action=DescribeTransactions\n&GroupId=group-qy9484ln\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0bc66ed-c2eb-4d49-931e-18dab5c25d8a\",\n        \"Result\": {\n            \"TotalCount\": null,\n            \"Content\": [\n                {\n                    \"TransactionId\": 20052,\n                    \"TransactionBegin\": 1581951071521,\n                    \"TransactionCommit\": 1581951077545,\n                    \"TransactionRollback\": null,\n                    \"TransactionEnd\": null,\n                    \"TransactionError\": 1581951077549,\n                    \"Timeout\": 60000,\n                    \"Status\": 1,\n                    \"TimeoutFlag\": 0,\n                    \"EndFlag\": 1,\n                    \"Comment\": \"Some Branches confirm failed.\",\n                    \"BranchQuantity\": 2,\n                    \"GroupId\": \"group-qy9484ln\",\n                    \"Server\": null,\n                    \"RetryFlag\": true\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询主事务列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

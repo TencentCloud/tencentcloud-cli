@@ -1,0 +1,2737 @@
+{
+  "actions": {
+    "CreateInstance": {
+      "document": "创建指定规格的ES集群实例",
+      "input": "CreateInstanceRequest",
+      "name": "创建ES集群实例",
+      "output": "CreateInstanceResponse"
+    },
+    "DeleteInstance": {
+      "document": "销毁集群实例 ",
+      "input": "DeleteInstanceRequest",
+      "name": "销毁ES集群实例",
+      "output": "DeleteInstanceResponse"
+    },
+    "DescribeInstanceLogs": {
+      "document": "查询用户该地域下符合条件的ES集群的日志",
+      "input": "DescribeInstanceLogsRequest",
+      "name": "查询ES集群日志",
+      "output": "DescribeInstanceLogsResponse"
+    },
+    "DescribeInstanceOperations": {
+      "document": "查询实例指定条件下的操作记录",
+      "input": "DescribeInstanceOperationsRequest",
+      "name": "查询实例操作记录",
+      "output": "DescribeInstanceOperationsResponse"
+    },
+    "DescribeInstances": {
+      "document": "查询用户该地域下符合条件的所有实例",
+      "input": "DescribeInstancesRequest",
+      "name": "查询ES集群实例",
+      "output": "DescribeInstancesResponse"
+    },
+    "DiagnoseInstance": {
+      "document": "智能运维诊断集群",
+      "input": "DiagnoseInstanceRequest",
+      "name": "智能运维诊断集群",
+      "output": "DiagnoseInstanceResponse"
+    },
+    "GetRequestTargetNodeTypes": {
+      "document": "获取接收客户端请求的节点类型",
+      "input": "GetRequestTargetNodeTypesRequest",
+      "name": "获取接收客户端请求的节点类型",
+      "output": "GetRequestTargetNodeTypesResponse"
+    },
+    "RestartInstance": {
+      "document": "重启ES集群实例(用于系统版本更新等操作) ",
+      "input": "RestartInstanceRequest",
+      "name": "重启ES集群实例",
+      "output": "RestartInstanceResponse"
+    },
+    "RestartKibana": {
+      "document": "重启Kibana ",
+      "input": "RestartKibanaRequest",
+      "name": "重启Kibana",
+      "output": "RestartKibanaResponse"
+    },
+    "RestartNodes": {
+      "document": "用于重启集群节点",
+      "input": "RestartNodesRequest",
+      "name": "重启集群节点",
+      "output": "RestartNodesResponse"
+    },
+    "UpdateDiagnoseSettings": {
+      "document": "更新智能运维配置",
+      "input": "UpdateDiagnoseSettingsRequest",
+      "name": "更新智能运维配置",
+      "output": "UpdateDiagnoseSettingsResponse"
+    },
+    "UpdateInstance": {
+      "document": "对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeInfoList: 修改节点配置（节点横向扩缩容，纵向扩缩容，增加主节点，增加冷节点等）\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
+      "input": "UpdateInstanceRequest",
+      "name": "更新ES集群实例",
+      "output": "UpdateInstanceResponse"
+    },
+    "UpdatePlugins": {
+      "document": "变更插件列表",
+      "input": "UpdatePluginsRequest",
+      "name": "变更插件列表",
+      "output": "UpdatePluginsResponse"
+    },
+    "UpdateRequestTargetNodeTypes": {
+      "document": "更新接收客户端请求的节点类型",
+      "input": "UpdateRequestTargetNodeTypesRequest",
+      "name": "更新接收客户端请求的节点类型",
+      "output": "UpdateRequestTargetNodeTypesResponse"
+    },
+    "UpgradeInstance": {
+      "document": "升级ES集群版本",
+      "input": "UpgradeInstanceRequest",
+      "name": "升级ES集群版本",
+      "output": "UpgradeInstanceResponse"
+    },
+    "UpgradeLicense": {
+      "document": "升级ES商业特性",
+      "input": "UpgradeLicenseRequest",
+      "name": "升级ES商业特性",
+      "output": "UpgradeLicenseResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-04-16",
+    "api_brief": "介绍如何使用API对Elasticsearch Service进行操作，包括ES集群实例管理等。",
+    "serviceNameCN": "Elasticsearch Service",
+    "serviceShortName": "es"
+  },
+  "objects": {
+    "CosBackup": {
+      "document": "ES cos自动备份信息",
+      "members": [
+        {
+          "default": "false",
+          "document": "是否开启cos自动备份",
+          "member": "bool",
+          "name": "IsAutoBackup",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动备份执行时间（精确到小时）, e.g. \"22:00\"",
+          "member": "string",
+          "name": "BackupTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例版本（支持\"5.6.4\"、\"6.4.3\"、\"6.8.2\"、\"7.5.1\"、\"7.10.1\"）",
+          "example": "6.4.3",
+          "member": "string",
+          "name": "EsVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问密码（密码需8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "es_test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点数量（2-50个）",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费类型<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li>默认值POSTPAID_BY_HOUR",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "包年包月购买时长（单位由参数TimeUnit决定）",
+          "example": "12",
+          "member": "uint64",
+          "name": "ChargePeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费",
+          "example": "RENEW_FLAG_AUTO",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.4XLARGE64",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点磁盘容量（单位GB）",
+          "example": "500",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费时长单位（ChargeType为PREPAID时需要设置，默认值为“m”，表示月，当前只支持“m”）",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "example": "[]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n是否创建专用主节点<li>true：开启专用主节点</li><li>false：不开启专用主节点</li>默认值false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDedicatedMaster",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个和5个，EnableDedicatedMaster为true时该值必传）",
+          "example": "3",
+          "member": "uint64",
+          "name": "MasterNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点类型（EnableDedicatedMaster为true时必传）<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.4XLARGE64",
+          "member": "string",
+          "name": "MasterNodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义）",
+          "example": "100",
+          "member": "uint64",
+          "name": "MasterNodeDiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义）",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterNameInConf",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署</li>默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeployMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "多可用区部署时可用区的详细信息(DeployMode为1时必传)",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "example": "platinum",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点信息列表， 用于描述集群各类节点的规格信息如节点类型，节点个数，节点规格，磁盘类型，磁盘大小等",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "NodeInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点标签信息列表",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "example": "2",
+          "member": "uint64",
+          "name": "BasicSecurityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "场景化模板类型 0：不启用 1：通用 2：日志 3：搜索",
+          "example": "0",
+          "member": "int64",
+          "name": "SceneType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "es-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceLogsRequest": {
+      "document": "DescribeInstanceLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志类型，默认值为1\n<li>1, 主日志</li>\n<li>2, 搜索慢日志</li>\n<li>3, 索引慢日志</li>\n<li>4, GC日志</li>",
+          "member": "uint64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始值, 默认值为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认值为100，最大值100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间排序方式，默认值为0\n<li>0, 降序</li>\n<li>1, 升序</li>",
+          "member": "uint64",
+          "name": "OrderByType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceLogsResponse": {
+      "document": "DescribeInstanceLogs返回参数结构体",
+      "members": [
+        {
+          "document": "返回的日志条数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志详细信息列表",
+          "member": "InstanceLog",
+          "name": "InstanceLogList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationsRequest": {
+      "document": "DescribeInstanceOperations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间, e.g. \"2019-03-07 16:30:39\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间, e.g. \"2019-03-30 20:18:03\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始值",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationsResponse": {
+      "document": "DescribeInstanceOperations返回参数结构体",
+      "members": [
+        {
+          "document": "操作记录总数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作记录",
+          "member": "Operation",
+          "name": "Operations",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例所属可用区，不传则默认所有可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群实例名称列表",
+          "member": "string",
+          "name": "InstanceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页起始值, 默认值0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认值20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序",
+          "member": "uint64",
+          "name": "OrderByKey",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序",
+          "member": "uint64",
+          "name": "OrderByType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点标签信息列表",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络vip列表",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "返回的实例个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例详细信息列表",
+          "member": "InstanceInfo",
+          "name": "InstanceList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagnoseInstanceRequest": {
+      "document": "DiagnoseInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要触发的诊断项",
+          "example": "[\"cluster_health\"]",
+          "member": "string",
+          "name": "DiagnoseJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要诊断的索引，支持通配符",
+          "example": "\"*\"",
+          "member": "string",
+          "name": "DiagnoseIndices",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagnoseInstanceResponse": {
+      "document": "DiagnoseInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DictInfo": {
+      "document": "ik插件词典信息",
+      "members": [
+        {
+          "default": "",
+          "document": "词典键值",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "词典名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "词典大小，单位B",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EsAcl": {
+      "document": "ES集群配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "kibana访问黑名单",
+          "member": "string",
+          "name": "BlackIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kibana访问白名单",
+          "member": "string",
+          "name": "WhiteIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EsDictionaryInfo": {
+      "document": "ES 词库信息",
+      "members": [
+        {
+          "default": "",
+          "document": "启用词词典列表",
+          "member": "DictInfo",
+          "name": "MainDict",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "停用词词典列表",
+          "member": "DictInfo",
+          "name": "Stopwords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QQ分词词典列表",
+          "member": "DictInfo",
+          "name": "QQDict",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同义词词典列表",
+          "member": "DictInfo",
+          "name": "Synonym",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新词典类型",
+          "member": "string",
+          "name": "UpdateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EsPublicAcl": {
+      "document": "ES公网访问访问控制信息",
+      "members": [
+        {
+          "default": "",
+          "document": "访问黑名单",
+          "member": "string",
+          "name": "BlackIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问白名单",
+          "member": "string",
+          "name": "WhiteIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetRequestTargetNodeTypesRequest": {
+      "document": "GetRequestTargetNodeTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRequestTargetNodeTypesResponse": {
+      "document": "GetRequestTargetNodeTypes返回参数结构体",
+      "members": [
+        {
+          "document": "接收请求的目标节点类型列表",
+          "member": "string",
+          "name": "TargetNodeTypes",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceInfo": {
+      "document": "实例详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户UIN",
+          "example": "123456789",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属VPC的UID",
+          "example": "vpc-xxxxxxx",
+          "member": "string",
+          "name": "VpcUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例所属子网的UID",
+          "example": "subnet-xxxxxxx",
+          "member": "string",
+          "name": "SubnetUid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包年包月购买时长,单位:月",
+          "example": "6",
+          "member": "uint64",
+          "name": "ChargePeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点个数",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点CPU核数",
+          "example": "4",
+          "member": "uint64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内存大小，单位GB",
+          "example": "8",
+          "member": "uint64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘类型",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘大小，单位GB",
+          "example": "100",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES域名",
+          "example": "http://es-xxxxxxxx",
+          "member": "string",
+          "name": "EsDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES VIP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "EsVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES端口",
+          "example": "9200",
+          "member": "uint64",
+          "name": "EsPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana访问url",
+          "example": "http://es-xxxxxxxx",
+          "member": "string",
+          "name": "KibanaUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES版本号",
+          "example": "5.6.4",
+          "member": "string",
+          "name": "EsVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES配置项",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "EsConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana访问控制配置",
+          "example": "无",
+          "member": "EsAcl",
+          "name": "EsAcl",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例最后修改操作时间",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例到期时间",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "Deadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型（实例类型标识，当前只有1,2两种）",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ik分词器配置",
+          "example": "无",
+          "member": "EsDictionaryInfo",
+          "name": "IkConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点配置",
+          "example": "无",
+          "member": "MasterNodeInfo",
+          "name": "MasterNodeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cos自动备份配置",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许cos自动备份",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowCosBackup",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例拥有的标签列表",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "example": "platinum",
+          "member": "string",
+          "name": "LicenseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为冷热集群<li>true: 冷热集群</li><li>false: 非冷热集群</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHotWarmMode",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "WarmNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "WarmNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "WarmCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点内存内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "WarmMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "WarmDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "WarmDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群节点信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "NodeInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Es公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://es-xxxxxxxx",
+          "member": "string",
+          "name": "EsPublicUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "多可用区网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署模式<li>0：单可用区</li><li>1：多可用区</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeployMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "PublicAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ES公网访问控制配置",
+          "example": "无",
+          "member": "EsAcl",
+          "name": "EsPublicAcl",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://es-xxxxxxxx",
+          "member": "string",
+          "name": "KibanaPrivateUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPublicAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPrivateAccess",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SecurityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景化模板类型：0、不开启；1、通用场景；2、日志场景；3、搜索场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SceneType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "KibanaConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Kibana节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KibanaNodeInfo",
+          "name": "KibanaNodeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "JDK类型，oracle或kona\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "oracle",
+          "member": "string",
+          "name": "Jdk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceLog": {
+      "document": "ES集群日志详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志时间",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志级别",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群节点ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志内容",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyValue": {
+      "document": "OperationDetail使用此结构的数组描述新旧配置",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KibanaNodeInfo": {
+      "document": "实例Kibana节点相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Kibana节点规格",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "KibanaNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "KibanaNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点CPU数",
+          "example": "2",
+          "member": "uint64",
+          "name": "KibanaNodeCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点内存GB",
+          "example": "4",
+          "member": "uint64",
+          "name": "KibanaNodeMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点磁盘类型",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "KibanaNodeDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Kibana节点磁盘大小",
+          "example": "50",
+          "member": "uint64",
+          "name": "KibanaNodeDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LocalDiskInfo": {
+      "document": "节点本地盘信息",
+      "members": [
+        {
+          "default": "",
+          "document": "本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>",
+          "member": "string",
+          "name": "LocalDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地盘单盘大小",
+          "member": "uint64",
+          "name": "LocalDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地盘块数",
+          "member": "uint64",
+          "name": "LocalDiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MasterNodeInfo": {
+      "document": "实例专用主节点相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用了专用主节点",
+          "member": "bool",
+          "name": "EnableDedicatedMaster",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "member": "string",
+          "name": "MasterNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点个数",
+          "member": "uint64",
+          "name": "MasterNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点CPU核数",
+          "member": "uint64",
+          "name": "MasterNodeCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点内存大小，单位GB",
+          "member": "uint64",
+          "name": "MasterNodeMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点磁盘大小，单位GB",
+          "member": "uint64",
+          "name": "MasterNodeDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用主节点磁盘类型",
+          "member": "string",
+          "name": "MasterNodeDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeInfo": {
+      "document": "集群中一种节点类型（如热数据节点，冷数据节点，专用主节点等）的规格描述信息，包括节点类型，节点个数，节点规格，磁盘类型，磁盘大小等, Type不指定时默认为热数据节点；如果节点为master节点，则DiskType和DiskSize参数会被忽略（主节点无数据盘）",
+      "members": [
+        {
+          "default": "",
+          "document": "节点数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "ES.S1.4XLARGE64",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型<li>hotData: 热数据节点</li>\n<li>warmData: 冷数据节点</li>\n<li>dedicatedMaster: 专用主节点</li>\n默认值为hotData",
+          "example": "dedicatedMaster",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘容量（单位GB）",
+          "example": "50",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点本地盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalDiskInfo",
+          "name": "LocalDiskInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点磁盘块数",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点磁盘是否加密 0: 不加密，1: 加密；默认不加密",
+          "example": "0",
+          "member": "uint64",
+          "name": "DiskEncrypt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Operation": {
+      "document": "ES集群操作详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "操作唯一id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作开始时间",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作详情",
+          "member": "OperationDetail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作结果",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流程任务信息",
+          "member": "TaskDetail",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作进度",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OperationDetail": {
+      "document": "操作详情",
+      "members": [
+        {
+          "default": "",
+          "document": "实例原始配置信息",
+          "member": "KeyValue",
+          "name": "OldInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例更新后配置信息",
+          "member": "KeyValue",
+          "name": "NewInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RestartInstanceRequest": {
+      "document": "RestartInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "重启模式：0 滚动重启； 1 全量重启",
+          "example": "0",
+          "member": "int64",
+          "name": "RestartMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInstanceResponse": {
+      "document": "RestartInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartKibanaRequest": {
+      "document": "RestartKibana请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartKibanaResponse": {
+      "document": "RestartKibana返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartNodesRequest": {
+      "document": "RestartNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点名称列表",
+          "member": "string",
+          "name": "NodeNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartNodesResponse": {
+      "document": "RestartNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubTaskDetail": {
+      "document": "实例操作记录流程任务中的子任务信息（如升级检查任务中的各个检查项）",
+      "members": [
+        {
+          "default": "",
+          "document": "子任务名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务结果",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务错误信息",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务状态，0处理中 1成功 -1失败",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "升级检查失败的索引名",
+          "member": "string",
+          "name": "FailedIndices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务结束时间",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务等级，1警告 2失败",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfo": {
+      "document": "实例标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskDetail": {
+      "document": "实例操作记录中的流程任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务完成时间",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务",
+          "member": "SubTaskDetail",
+          "name": "SubTasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateDiagnoseSettingsRequest": {
+      "document": "UpdateDiagnoseSettings请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0：开启智能运维；-1：关闭智能运维",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "智能运维每天定时巡检时间",
+          "example": "10:00:00",
+          "member": "string",
+          "name": "CronTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDiagnoseSettingsResponse": {
+      "document": "UpdateDiagnoseSettings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceRequest": {
+      "document": "UpdateInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "es-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）",
+          "example": "newName",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点个数（2-50个）",
+          "example": "3",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ES配置项（JSON格式字符串）",
+          "example": "无",
+          "member": "string",
+          "name": "EsConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制列表",
+          "example": "无",
+          "member": "EsAcl",
+          "name": "EsAcl",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n磁盘大小（单位GB）",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点个数（只支持3个或5个）",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "uint64",
+          "name": "MasterNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "string",
+          "name": "MasterNodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已废弃请使用NodeInfoList\n专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "uint64",
+          "name": "MasterNodeDiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false",
+          "example": "已废弃请使用NodeInfoList",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "COS自动备份信息",
+          "example": "无",
+          "member": "CosBackup",
+          "name": "CosBackup",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "NodeInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "公网访问状态",
+          "example": "OPEN",
+          "member": "string",
+          "name": "PublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公网访问控制列表",
+          "example": "无",
+          "member": "EsPublicAcl",
+          "name": "EsPublicAcl",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Kibana公网访问状态",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kibana内网访问状态",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPrivateAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ES 6.8及以上版本基础版开启或关闭用户认证",
+          "example": "1",
+          "member": "int64",
+          "name": "BasicSecurityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Kibana内网端口",
+          "example": "5601",
+          "member": "uint64",
+          "name": "KibanaPrivatePort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启",
+          "example": "0",
+          "member": "int64",
+          "name": "ScaleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "多可用区部署",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索",
+          "example": "-1",
+          "member": "int64",
+          "name": "SceneType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Kibana配置项（JSON格式字符串）",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可视化节点配置",
+          "example": "无",
+          "member": "WebNodeTypeInfo",
+          "name": "WebNodeTypeInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceResponse": {
+      "document": "UpdateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePluginsRequest": {
+      "document": "UpdatePlugins请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要安装的插件名列表",
+          "member": "string",
+          "name": "InstallPluginList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要卸载的插件名列表",
+          "member": "string",
+          "name": "RemovePluginList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否重新安装",
+          "member": "bool",
+          "name": "ForceUpdate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePluginsResponse": {
+      "document": "UpdatePlugins返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRequestTargetNodeTypesRequest": {
+      "document": "UpdateRequestTargetNodeTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接收请求的目标节点类型列表",
+          "member": "string",
+          "name": "TargetNodeTypes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRequestTargetNodeTypesResponse": {
+      "document": "UpdateRequestTargetNodeTypes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeInstanceRequest": {
+      "document": "UpgradeInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标ES版本，支持：”6.4.3“, \"6.8.2\"，\"7.5.1\"",
+          "member": "string",
+          "name": "EsVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只做升级检查，默认值为false",
+          "member": "bool",
+          "name": "CheckOnly",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "目标商业特性版本：<li>oss 开源版</li><li>basic 基础版</li>当前仅在5.6.4升级6.x版本时使用，默认值为basic",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "member": "uint64",
+          "name": "BasicSecurityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级方式：<li>scale 蓝绿变更</li><li>restart 滚动重启</li>默认值为scale",
+          "member": "string",
+          "name": "UpgradeMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeInstanceResponse": {
+      "document": "UpgradeInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeLicenseRequest": {
+      "document": "UpgradeLicense请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "member": "string",
+          "name": "LicenseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "member": "uint64",
+          "name": "BasicSecurityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeLicenseResponse": {
+      "document": "UpgradeLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WebNodeTypeInfo": {
+      "document": "可视化节点配置",
+      "members": [
+        {
+          "default": "",
+          "document": "可视化节点个数，固定为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可视化节点规格",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ZoneDetail": {
+      "document": "多可用区部署时可用区的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

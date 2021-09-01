@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryAntiFraud": [
+      {
+        "document": "",
+        "input": "https://af.tencentcloudapi.com/?Action=QueryAntiFraud\n&AccountType=1\n&AppIdU=100273020\n&BankCardNumber=12345678\n&BusinessId=0\n&EmailAddress=373909726%40qq.com\n&IdNumber=1234567890\n&Imei=54654654646\n&Imsi=xxxyyzz\n&Name=%E6%9D%A8%E7%BA%A2\n&PhoneNumber=008613246208548\n&Uid=00000000000000000000000033121475\n&UserIp=8.8.8.8\n&Mac=00-01-6C-06-A6-29\n&WifiSSID=test_wifi\n&WifiBSSID=00-04-C3-A1-2B-22\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RiskInfo\": [\n            {\n                \"RiskCode\": 1\n            }\n        ],\n        \"IdFound\": 1,\n        \"RequestId\": \"07c816d7-5bc3-4e95-ba1f-32ce3e5683e5\",\n        \"CodeDesc\": \"Success\",\n        \"Found\": 1,\n        \"RiskScore\": 70\n    }\n}",
+        "title": "借贷反欺诈接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

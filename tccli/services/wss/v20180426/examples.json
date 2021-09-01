@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "DeleteCert": [
+      {
+        "document": "",
+        "input": "https://wss.tencentcloudapi.com/?Action=DeleteCert\r\n&Id=cert_id\r\n&ModuleType=ssl\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"RequestId\": \"378194e2-a873-445f-8902-23d7d4e8693e\"\r\n\t}\r\n}",
+        "title": "删除证书"
+      }
+    ],
+    "DescribeCertList": [
+      {
+        "document": "",
+        "input": "https://wss.tencentcloudapi.com/?Action=DescribeCertList\r\n&Page=1\r\n&Count=1\r\n&SearchKey=as\r\n&ProjectId=1000\r\n&CertType=CA\r\n&Id=sad\r\n&WithCert=1\r\n&AltDomain=asd\r\n&ModuleType=ssl\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"TotalNum\": 12,\r\n\t\t\"List\": [{\r\n\t\t\t\"OwnerUin\": \"664372747\",\r\n\t\t\t\"ProjectId\": \"0\",\r\n\t\t\t\"From\": \"trustasia\",\r\n\t\t\t\"Type\": \"2\",\r\n\t\t\t\"CertType\": \"SVR\",\r\n\t\t\t\"ProductZhName\": \"TrustAsia TLS RSA CA\",\r\n\t\t\t\"Domain\": \"cl.f-xj.cn\",\r\n\t\t\t\"Alias\": \"\",\r\n\t\t\t\"Status\": 1,\r\n\t\t\t\"VulnerabilityStatus\": \"INACTIVE\",\r\n\t\t\t\"StatusMsg\": null,\r\n\t\t\t\"VerifyType\": \"DNS_AUTO\",\r\n\t\t\t\"CertBeginTime\": \"2017-12-20 08:00:00\",\r\n\t\t\t\"CertEndTime\": \"2018-12-20 20:00:00\",\r\n\t\t\t\"ValidityPeriod\": \"12\",\r\n\t\t\t\"InsertTime\": \"2017-12-20 21:25:00\",\r\n\t\t\t\"ProjectInfo\": {\r\n\t\t\t\t\"ProjectId\": \"0\",\r\n\t\t\t\t\"OwnerUin\": 0,\r\n\t\t\t\t\"name\": \"默认项目\",\r\n\t\t\t\t\"CreatorUin\": 0,\r\n\t\t\t\t\"CreateTime\": \"0000-00-00 00:00:00\",\r\n\t\t\t\t\"Info\": \"默认项目\"\r\n\t\t\t},\r\n\t\t\t\"Id\": \"GjTNRoK7\",\r\n\t\t\t\"SubjectAltName\": [\r\n\t\t\t\t\"cl.f-xj.cn\"\r\n\t\t\t],\r\n\t\t\t\"TypeName\": \"TrustAsia TLS RSA CA\",\r\n\t\t\t\"StatusName\": \"已通过\",\r\n\t\t\t\"IsVip\": false,\r\n\t\t\t\"IsDv\": true,\r\n\t\t\t\"IsWildcard\": false,\r\n\t\t\t\"IsVulnerability\": false\r\n\t\t}]\r\n\t}\r\n}",
+        "title": "获取证书列表"
+      }
+    ],
+    "UploadCert": [
+      {
+        "document": "",
+        "input": "https://wss.tencentcloudapi.com/?Action=UploadCert\r\n&Cert=-----BEGIN+CERTIFICATE-----%0D%...(省略)...0%0A-----END+CERTIFICATE-----\r\n&CertType=SVR\r\n&key=-----BEGIN+RSA+PRIVATE+KEY-----%0D%...(省略)...0%0A-----END+RSA+PRIVATE+KEY-----\r\n&ProjectId=1000\r\n&ModuleType=ssl\r\n&<公共请求参数>",
+        "output": "{\r\n\t\"Response\": {\r\n\t\t\"Id\": \"9hyvgrkE\",\r\n\t\t\"RequestId\": \"378194e2-a873-445f-8902-23d7d4e8693e\"\r\n\t}\r\n}",
+        "title": "上传证书"
+      }
+    ]
+  },
+  "version": "1.0"
+}

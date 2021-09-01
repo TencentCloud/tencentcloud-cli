@@ -1,0 +1,213 @@
+{
+  "actions": {
+    "AddInstances": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=AddInstances\n&VpcId=vpc-1ptuei0b\n&SubnetId=subnet-1tmw9t4o\n&Cpu=2\n&Memory=4\n&ClusterId=cynosdbmysql-6gtlgm5l\n&ReadOnlyCount=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"xx\"\n        ],\n        \"ResourceIds\": [\n            \"cynosdbpg-ins-n8497zx8\"\n        ],\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\",\n        \"TranId\": \"xx\",\n        \"DealNames\": [\n            \"xx\"\n        ]\n    }\n}",
+        "title": "新增实例"
+      }
+    ],
+    "CreateClusters": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateClusters\n&Zone=ap-guangzhou-3\n&ProjectId=0\n&VpcId=vpc-1ptuei0b\n&SubnetId=subnet-1tmw9t4o\n&DbType=POSTGRESQL\n&DbVersion=10.0\n&Cpu=2\n&Memory=4\n&Storage=100\n&ClusterName=newInstance\n&AdminPassword=passwd@admin\n&HaCount=1\n&Count=1\n&PayMode=0\n&StoragePayMode=0\n&RollbackStrategy=noneRollback\n&StorageLimit=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbpg-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeAccounts\n&ClusterId=cynosdbpg-on5xw0ni\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"150918\",\n        \"AccountSet\": [\n            {\n                \"UpdateTime\": \"2018-06-28 23:28:52\",\n                \"Host\": \"xx\",\n                \"CreateTime\": \"2018-06-28 23:28:52\",\n                \"Description\": \"默认用户asdf\",\n                \"AccountName\": \"admin\"\n            }\n        ]\n    }\n}",
+        "title": "查询数据库管理账号"
+      }
+    ],
+    "DescribeBackupConfig": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeBackupConfig\n&ClusterId=cynosdbmysql-45knmnra\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BackupFreq\": [\n            \"full\",\n            \"increment\",\n            \"increment\",\n            \"increment\",\n            \"increment\",\n            \"increment\",\n            \"increment\"\n        ],\n        \"BackupType\": \"\",\n        \"BackupTimeEnd\": 21600,\n        \"BackupTimeBeg\": 7200,\n        \"RequestId\": \"180877\",\n        \"ReserveDuration\": 604800\n    }\n}",
+        "title": "查询备份配置信息"
+      }
+    ],
+    "DescribeBackupList": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeBackupList\n&ClusterId=cynosdbpg-ilgo90hu\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"xx\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "查询备份文件列表"
+      }
+    ],
+    "DescribeClusterDetail": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusterDetail\n&ClusterId=cynosdbpg-5804k48e\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"ServerlessStatus\": \"xx\",\n            \"UsedStorage\": 129417216,\n            \"VpcId\": \"vpc-1ptuei0b\",\n            \"SubnetId\": \"subnet-1tmw9t4o\",\n            \"Vport\": 5432,\n            \"ClusterId\": \"cynosdbpg-962bpoek\",\n            \"DbType\": \"POSTGRESQL\",\n            \"SubnetName\": \"cynosdb-test\",\n            \"CreateTime\": \"xx\",\n            \"Charset\": \"UTF8\",\n            \"Vip\": \"10.0.1.5\",\n            \"ResourceTags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"xx\",\n            \"ClusterName\": \"funnyTest\",\n            \"StatusDesc\": \"运行中\",\n            \"DbVersion\": \"10.0\",\n            \"PeriodEndTime\": \"xx\",\n            \"PayMode\": 0,\n            \"ProjectID\": 0,\n            \"Status\": \"running\",\n            \"RoAddr\": [\n                {\n                    \"IP\": \"xx\",\n                    \"Port\": 0\n                }\n            ],\n            \"InstanceSet\": [\n                {\n                    \"InstanceStatus\": \"running\",\n                    \"InstanceCpu\": 2,\n                    \"InstanceId\": \"xx\",\n                    \"InstanceStatusDesc\": \"运行中\",\n                    \"InstanceMemory\": 4,\n                    \"InstanceStorage\": 100,\n                    \"InstanceName\": \"tom-test11111111\",\n                    \"InstanceType\": \"POSTGRESQL\"\n                }\n            ],\n            \"VpcName\": \"cynosdb\"\n        },\n        \"RequestId\": \"101880\"\n    }\n}",
+        "title": "查询集群详情"
+      }
+    ],
+    "DescribeClusterInstanceGrps": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusterInstanceGrps\n&ClusterId=cynosdbpg-oib3wx0i\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceGrpInfoList\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"WanDomain\": \"xx\",\n                \"InstanceSet\": [\n                    {\n                        \"ServerlessStatus\": \"xx\",\n                        \"WanStatus\": \"xx\",\n                        \"RenewFlag\": 0,\n                        \"Zone\": \"xx\",\n                        \"DbVersion\": \"xx\",\n                        \"Storage\": 0,\n                        \"StorageId\": \"xx\",\n                        \"Memory\": 0,\n                        \"ProcessingTask\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"UpdateTime\": \"2020-09-22 00:00:00\",\n                        \"VpcId\": \"xx\",\n                        \"MinCpu\": 0.0,\n                        \"MaxCpu\": 0.0,\n                        \"InstanceId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"NetType\": 0,\n                        \"SubnetId\": \"xx\",\n                        \"InstanceType\": \"xx\",\n                        \"DestroyTime\": \"xx\",\n                        \"IsolateTime\": \"2020-09-22 00:00:00\",\n                        \"DestroyDeadlineText\": \"xx\",\n                        \"ProjectId\": 0,\n                        \"Region\": \"xx\",\n                        \"PayMode\": 0,\n                        \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n                        \"CynosVersion\": \"xx\",\n                        \"StatusDesc\": \"xx\",\n                        \"InstanceName\": \"xx\",\n                        \"Cpu\": 0,\n                        \"StoragePayMode\": 0,\n                        \"WanDomain\": \"xx\",\n                        \"ClusterName\": \"xx\",\n                        \"InstanceRole\": \"xx\",\n                        \"WanPort\": 0,\n                        \"Uin\": \"xx\",\n                        \"DbType\": \"xx\",\n                        \"Vip\": \"xx\",\n                        \"AppId\": 0,\n                        \"WanIP\": \"xx\",\n                        \"Vport\": 0,\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"WanPort\": 0,\n                \"ClusterId\": \"xx\",\n                \"DeletedTime\": \"2020-09-22 00:00:00\",\n                \"WanStatus\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"Vip\": \"xx\",\n                \"InstanceGrpId\": \"xx\",\n                \"AppId\": 0,\n                \"WanIP\": \"xx\",\n                \"Vport\": 0,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
+        "title": "查询实例组"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusters\n&Limit=20\n&Offset=0\n&Filters.0.Names.0=InstanceId\n&Filters.0.Values.0=cynosdbpg-ins-bzkxxrmt\n&Filters.0.ExactMatch=true\n&DbType=MYSQL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"AppId\": 1251006373,\n                \"ClusterId\": \"cynosdbpg-2x6bqwa0\",\n                \"ClusterName\": \"cynosdbpg-2x6bqwa0\",\n                \"CreateTime\": \"2019-02-14 14:23:57\",\n                \"DbType\": \"POSTGRESQL\",\n                \"DbVersion\": \"10.0\",\n                \"InstanceNum\": 1,\n                \"PayMode\": 0,\n                \"PeriodEndTime\": \"2019-03-14 14:26:42\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"running\",\n                \"ProjectID\": 0,\n                \"StatusDesc\": \"运行中\",\n                \"Uin\": \"20548499\",\n                \"UpdateTime\": \"2019-02-15 20:15:59\",\n                \"Vip\": \"172.16.0.36\",\n                \"Vport\": 5432,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"AppId\": 1251006373,\n                \"ClusterId\": \"cynosdbpg-6zd9ynyk\",\n                \"ClusterName\": \"cynosdbpg-6zd9ynyk\",\n                \"CreateTime\": \"2019-02-02 16:43:00\",\n                \"DbType\": \"POSTGRESQL\",\n                \"DbVersion\": \"10.0\",\n                \"InstanceNum\": 1,\n                \"PayMode\": 0,\n                \"ProjectID\": 0,\n                \"PeriodEndTime\": \"2019-03-02 16:43:00\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Uin\": \"20548499\",\n                \"UpdateTime\": \"2019-02-02 16:43:00\",\n                \"Vip\": \"\",\n                \"Vport\": 5432,\n                \"Zone\": \"ap-guangzhou-3\"\n            },\n            {\n                \"AppId\": 1251006373,\n                \"ClusterId\": \"cynosdbpg-g6u0kj8m\",\n                \"ClusterName\": \"cynosdbpg-g6u0kj8m\",\n                \"CreateTime\": \"2019-02-02 16:33:51\",\n                \"DbType\": \"POSTGRESQL\",\n                \"DbVersion\": \"10.0\",\n                \"InstanceNum\": 1,\n                \"PayMode\": 0,\n                \"ProjectID\": 0,\n                \"PeriodEndTime\": \"2019-03-02 16:33:51\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"creating\",\n                \"StatusDesc\": \"创建中\",\n                \"Uin\": \"20548499\",\n                \"UpdateTime\": \"2019-02-02 16:33:51\",\n                \"Vip\": \"\",\n                \"Vport\": 5432,\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ],\n        \"RequestId\": \"a70bd8ff-b758-444c-8369-c6cd84c5239f\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&InstanceId=cynosdbpg-ins-jhi2gdi0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"CynosDB\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "查询实例安全组信息"
+      }
+    ],
+    "DescribeInstanceDetail": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeInstanceDetail\n&InstanceId=cynosdbpg-ins-bzkxxrmt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"175707\",\n        \"Detail\": {\n            \"ServerlessStatus\": \"resume\",\n            \"RenewFlag\": 0,\n            \"Zone\": \"ap-guangzhou-3\",\n            \"DbVersion\": \"10.0\",\n            \"Storage\": 100,\n            \"Memory\": 4,\n            \"MinCpu\": 1.0,\n            \"MaxCpu\": 2.0,\n            \"Charset\": \"utf8\",\n            \"Status\": \"running\",\n            \"UpdateTime\": \"2018-06-20 19:12:54\",\n            \"VpcId\": \"vpc-1ptuei0b\",\n            \"InstanceId\": \"cynosdbpg-ins-bzkxxrmt\",\n            \"ClusterId\": \"cynosdbpg-cluster-5ne6bjyx\",\n            \"CynosVersion\": \"2.0.12\",\n            \"NetType\": 1,\n            \"PeriodEndTime\": \"2018-07-20 19:17:16\",\n            \"InstanceType\": \"rw\",\n            \"ProjectId\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"PayMode\": 0,\n            \"SubnetId\": \"subnet-1tmw9t4o\",\n            \"StatusDesc\": \"运行中\",\n            \"InstanceName\": \"ahhah哈哈呵呵\",\n            \"Cpu\": 2,\n            \"WanDomain\": \"\",\n            \"ClusterName\": \"cynosdbpg-cluster-5ne6bjyx\",\n            \"InstanceRole\": \"master\",\n            \"Uin\": \"3374998458\",\n            \"DbType\": \"POSTGRESQL\",\n            \"Vip\": \"10.0.1.2\",\n            \"AppId\": 1251006243,\n            \"Vport\": 5432,\n            \"CreateTime\": \"2018-06-20 19:12:54\"\n        }\n    }\n}",
+        "title": "查询实例详情"
+      }
+    ],
+    "DescribeInstanceSpecs": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeInstanceSpecs\n&DbType=MYSQL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"114114\",\n        \"InstanceSpecSet\": [\n            {\n                \"MinStorageSize\": 100,\n                \"MaxStorageSize\": 100,\n                \"Cpu\": 2,\n                \"Memory\": 4\n            },\n            {\n                \"MinStorageSize\": 100,\n                \"MaxStorageSize\": 100,\n                \"Cpu\": 4,\n                \"Memory\": 8\n            }\n        ]\n    }\n}",
+        "title": "查询可售卖实例规格信息"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"Status\": \"xx\",\n    \"DbType\": \"xx\",\n    \"OrderByType\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cynosdbpg-ins-bzkxxrmt\"\n            ],\n            \"Names\": [\n                \"xx\"\n            ],\n            \"ExactMatch\": true,\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"ServerlessStatus\": \"\",\n                \"WanStatus\": \"\",\n                \"RenewFlag\": 2,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DbVersion\": \"5.7\",\n                \"Storage\": 100,\n                \"Memory\": 4,\n                \"ProcessingTask\": \"\",\n                \"Status\": \"deleted\",\n                \"UpdateTime\": \"2020-11-13 11:43:04\",\n                \"VpcId\": \"\",\n                \"StorageId\": \"cynosdbmysql-xxxxxxxx\",\n                \"MinCpu\": 0.0,\n                \"MaxCpu\": 0.0,\n                \"InstanceId\": \"cynosdbmysql-ins-pd59rjuk\",\n                \"ClusterId\": \"cynosdbmysql-6bsl6k03\",\n                \"NetType\": 0,\n                \"PeriodEndTime\": \"2020-11-13 11:40:16\",\n                \"InstanceType\": \"ro\",\n                \"StoragePayMode\": 0,\n                \"DestroyTime\": \"\",\n                \"IsolateTime\": \"2020-11-13 11:40:28\",\n                \"DestroyDeadlineText\": \"\",\n                \"ProjectId\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"PayMode\": 1,\n                \"SubnetId\": \"\",\n                \"CynosVersion\": \"2.0.11\",\n                \"StatusDesc\": \"已删除\",\n                \"InstanceName\": \"cynosdbmysql-ins-pd59rjuk\",\n                \"Cpu\": 2,\n                \"WanDomain\": \"\",\n                \"ClusterName\": \"预付费集群\",\n                \"InstanceRole\": \"ro\",\n                \"WanPort\": 0,\n                \"Uin\": \"100000007539\",\n                \"DbType\": \"MYSQL\",\n                \"Vip\": \"\",\n                \"AppId\": 251007582,\n                \"WanIP\": \"\",\n                \"Vport\": 0,\n                \"CreateTime\": \"2020-11-13 11:37:30\"\n            },\n            {\n                \"ServerlessStatus\": \"\",\n                \"WanStatus\": \"\",\n                \"RenewFlag\": 2,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DbVersion\": \"5.7\",\n                \"Storage\": 100,\n                \"Memory\": 8,\n                \"ProcessingTask\": \"\",\n                \"Status\": \"deleted\",\n                \"UpdateTime\": \"2020-11-13 11:43:04\",\n                \"VpcId\": \"\",\n                \"MinCpu\": 0.0,\n                \"MaxCpu\": 0.0,\n                \"InstanceId\": \"cynosdbmysql-ins-dxxbxr1a\",\n                \"ClusterId\": \"cynosdbmysql-6bsl6k03\",\n                \"NetType\": 0,\n                \"PeriodEndTime\": \"2020-11-13 11:40:15\",\n                \"InstanceType\": \"rw\",\n                \"DestroyTime\": \"\",\n                \"StorageId\": \"cynosdbmysql-xxxxxxxx\",\n                \"IsolateTime\": \"2020-11-13 11:40:25\",\n                \"DestroyDeadlineText\": \"\",\n                \"ProjectId\": 0,\n                \"StoragePayMode\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"PayMode\": 1,\n                \"SubnetId\": \"\",\n                \"CynosVersion\": \"2.0.11\",\n                \"StatusDesc\": \"已删除\",\n                \"InstanceName\": \"cynosdbmysql-ins-dxxbxr1a\",\n                \"Cpu\": 4,\n                \"WanDomain\": \"\",\n                \"ClusterName\": \"预付费集群\",\n                \"InstanceRole\": \"master\",\n                \"WanPort\": 0,\n                \"Uin\": \"100000007539\",\n                \"DbType\": \"MYSQL\",\n                \"Vip\": \"\",\n                \"AppId\": 251007582,\n                \"WanIP\": \"\",\n                \"Vport\": 0,\n                \"CreateTime\": \"2020-11-13 11:35:24\"\n            }\n        ],\n        \"TotalCount\": 26,\n        \"RequestId\": \"03ea3f94-297d-11eb-8f30-525400b7dd5a\"\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeMaintainPeriod": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeMaintainPeriod\n&InstanceId=cynosdbpg-ins-n7ocdslw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"165202\",\n        \"MaintainWeekDays\": [\n            \"Mon\",\n            \"Tue\"\n        ],\n        \"MaintainStartTime\": \"3600\",\n        \"MaintainDuration\": \"3600\"\n    }\n}",
+        "title": "查询维护时间窗"
+      }
+    ],
+    "DescribeProjectSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&ProjectId=11954\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"CynosDB\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "查询项目安全组信息"
+      }
+    ],
+    "DescribeResourcesByDealName": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeResourcesByDealName\n&DealName=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BillingResourceInfos\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-r8ewihg4\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-pecl0drs\"\n                ]\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-hjosrxhu\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-7f59pahg\"\n                ]\n            }\n        ],\n        \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\n    }\n}",
+        "title": "查询订单id关联的资源信息"
+      }
+    ],
+    "DescribeRollbackTimeRange": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeRollbackTimeRange\n&ClusterId=cynosdbpg-oib3wx0i\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TimeRangeStart\": \"2019-01-13 02:12:05\",\n        \"TimeRangeEnd\": \"2019-01-20 02:10:12\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "查询有效回归时间范围"
+      }
+    ],
+    "DescribeRollbackTimeValidity": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeRollbackTimeValidity\n&ClusterId=cynosdbpg-gn65y9nk\n&ExpectTime=2019-01-1302:12:05\n&ExpectTimeThresh=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PoolId\": 1050,\n        \"QueryId\": 2008,\n        \"Status\": \"pass\",\n        \"SuggestTime\": \"\"\n    }\n}",
+        "title": "查询指定时间点是否看回档"
+      }
+    ],
+    "IsolateCluster": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=IsolateCluster\n&ClusterId=cynosdbpg-bzxxrmtq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\",\n        \"DealNames\": [\n            \"123\"\n        ]\n    }\n}",
+        "title": "隔离集群"
+      }
+    ],
+    "IsolateInstance": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=IsolateInstance\n&ClusterId=cynosdbpg-ins-bzkxxrmt\n&InstanceIdList.0=cynosdbpg-ixgbd0di\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "隔离实例访问"
+      }
+    ],
+    "ModifyBackupConfig": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&ClusterId=cynosdbpg-45knmnra\n&BackupTimeBeg=7200\n&BackupTimeEnd=21600\n&ReserveDuration=604800\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "修改集群备份配置"
+      }
+    ],
+    "ModifyDBInstanceSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Zone=ap-guangzhou-3\n&InstanceId=cynosdbpg-ins-4senc2fm\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
+        "title": "修改云数据库安全组"
+      }
+    ],
+    "ModifyMaintainPeriodConfig": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyMaintainPeriodConfig\n&InstanceId=cynosdbpg-ins-n7ocdslw\n&MaintainStartTime=3600\n&MaintainDuration=3600\n&MaintainWeekDays.0=Mon\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"165202\"\n    }\n}",
+        "title": "修改实例维护时间窗"
+      }
+    ],
+    "OfflineCluster": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineCluster\n&ClusterId=cynosdbpg-bzxxrmtq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "下线集群"
+      }
+    ],
+    "OfflineInstance": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineInstance\n&ClusterId=cynosdbpg-bzxxrmtq\n&InstanceIdList.0=cynosdbpg-ins-7upukfpw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "隔离实例"
+      }
+    ],
+    "SetRenewFlag": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=SetRenewFlag\n&ResourceIds.0=cynosdbmysql-ins-xxxxxxx\n&AutoRenewFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": 123123123\n    }\n}",
+        "title": "设置自动续费标志"
+      }
+    ],
+    "UpgradeInstance": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeInstance\n&InstanceId=cynosdbpg-ins-n7ocdslw\n&Cpu=2\n&Memory=4\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"165202\",\n        \"TranId\": \"xx\",\n        \"DealNames\": [\n            \"xx\"\n        ]\n    }\n}",
+        "title": "升级实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

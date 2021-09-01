@@ -1,0 +1,2096 @@
+{
+  "actions": {
+    "CancelMatching": {
+      "document": "取消匹配。",
+      "input": "CancelMatchingRequest",
+      "name": "取消匹配",
+      "output": "CancelMatchingResponse"
+    },
+    "CreateMatch": {
+      "document": "创建匹配",
+      "input": "CreateMatchRequest",
+      "name": "创建匹配",
+      "output": "CreateMatchResponse"
+    },
+    "CreateRule": {
+      "document": "创建规则",
+      "input": "CreateRuleRequest",
+      "name": "创建规则",
+      "output": "CreateRuleResponse"
+    },
+    "DeleteMatch": {
+      "document": "删除匹配",
+      "input": "DeleteMatchRequest",
+      "name": "删除匹配",
+      "output": "DeleteMatchResponse"
+    },
+    "DeleteRule": {
+      "document": "删除规则",
+      "input": "DeleteRuleRequest",
+      "name": "删除规则",
+      "output": "DeleteRuleResponse"
+    },
+    "DescribeData": {
+      "document": "统计数据",
+      "input": "DescribeDataRequest",
+      "name": "统计数据",
+      "output": "DescribeDataResponse"
+    },
+    "DescribeMatch": {
+      "document": "查询匹配详情",
+      "input": "DescribeMatchRequest",
+      "name": "查询匹配详情",
+      "output": "DescribeMatchResponse"
+    },
+    "DescribeMatchCodes": {
+      "document": "分页查询匹配Code",
+      "input": "DescribeMatchCodesRequest",
+      "name": "分页查询匹配Code",
+      "output": "DescribeMatchCodesResponse"
+    },
+    "DescribeMatches": {
+      "document": "分页查询匹配列表",
+      "input": "DescribeMatchesRequest",
+      "name": "分页查询匹配列表",
+      "output": "DescribeMatchesResponse"
+    },
+    "DescribeMatchingProgress": {
+      "document": "查询匹配进度。",
+      "input": "DescribeMatchingProgressRequest",
+      "name": "查询匹配进度",
+      "output": "DescribeMatchingProgressResponse"
+    },
+    "DescribeRule": {
+      "document": "查询规则详情",
+      "input": "DescribeRuleRequest",
+      "name": "查询规则详情",
+      "output": "DescribeRuleResponse"
+    },
+    "DescribeRules": {
+      "document": "分页查询规则集列表",
+      "input": "DescribeRulesRequest",
+      "name": "分页查询规则集列表",
+      "output": "DescribeRulesResponse"
+    },
+    "DescribeToken": {
+      "document": "查询匹配Token，Token用于push消息验证。",
+      "input": "DescribeTokenRequest",
+      "name": "查询匹配Token",
+      "output": "DescribeTokenResponse"
+    },
+    "ModifyMatch": {
+      "document": "修改匹配",
+      "input": "ModifyMatchRequest",
+      "name": "修改匹配",
+      "output": "ModifyMatchResponse"
+    },
+    "ModifyRule": {
+      "document": "修改规则（描述、标签）",
+      "input": "ModifyRuleRequest",
+      "name": "修改规则",
+      "output": "ModifyRuleResponse"
+    },
+    "ModifyToken": {
+      "document": "修改匹配Token。",
+      "input": "ModifyTokenRequest",
+      "name": "修改匹配Token",
+      "output": "ModifyTokenResponse"
+    },
+    "StartMatching": {
+      "document": "支持传入一个玩家或多个玩家发起匹配，在同一个请求内的玩家将被分到同一个对局。",
+      "input": "StartMatchingRequest",
+      "name": "发起匹配",
+      "output": "StartMatchingResponse"
+    },
+    "StartMatchingBackfill": {
+      "document": "通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。",
+      "input": "StartMatchingBackfillRequest",
+      "name": "发起回填匹配",
+      "output": "StartMatchingBackfillResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-08-20",
+    "api_brief": "通过云api，可以实现规则增删改查、匹配配置增删改查、发起匹配、取消匹配、查询匹配进度等功能。",
+    "serviceNameCN": "游戏玩家匹配",
+    "serviceShortName": "gpm"
+  },
+  "objects": {
+    "AttributeMap": {
+      "document": "玩家属性字典类型值",
+      "members": [
+        {
+          "default": "",
+          "document": "属性字典 key [a-zA-Z0-9-\\.]*",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性字典 value",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CancelMatchingRequest": {
+      "document": "CancelMatching请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配 Code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要取消的匹配匹配票据 ID",
+          "member": "string",
+          "name": "MatchTicketId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelMatchingResponse": {
+      "document": "CancelMatching返回参数结构体",
+      "members": [
+        {
+          "document": "错误码",
+          "member": "uint64",
+          "name": "ErrCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMatchRequest": {
+      "document": "CreateMatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配名称，[a-zA-Z0-9-\\.]* 长度128",
+          "member": "string",
+          "name": "MatchName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "超时时间，1-600秒",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为匹配结果请求服务器资源，0表示否，1表示请求GSE资源",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配描述，最长1024",
+          "member": "string",
+          "name": "MatchDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只支持https 和 http 协议",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器队列地域",
+          "member": "string",
+          "name": "ServerRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器队列",
+          "member": "string",
+          "name": "ServerQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义推送数据",
+          "member": "string",
+          "name": "CustomPushData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器会话数据",
+          "member": "string",
+          "name": "ServerSessionData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏属性，key-value结构的数组",
+          "member": "StringKV",
+          "name": "GameProperties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志开关，0表示关，1表示开",
+          "member": "int64",
+          "name": "LogSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签，key-value结构的数组",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMatchResponse": {
+      "document": "CreateMatch返回参数结构体",
+      "members": [
+        {
+          "document": "匹配信息",
+          "member": "MatchInfo",
+          "name": "MatchInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleRequest": {
+      "document": "CreateRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称，[a-zA-Z0-9-\\.]* 长度128",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则脚本，长度65535",
+          "member": "string",
+          "name": "RuleScript",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则描述，最长1024",
+          "member": "string",
+          "name": "RuleDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签，key-value结构的数组，最多关联50组标签",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleResponse": {
+      "document": "CreateRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则信息",
+          "member": "RuleInfo",
+          "name": "RuleInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMatchRequest": {
+      "document": "DeleteMatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMatchResponse": {
+      "document": "DeleteMatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleRequest": {
+      "document": "DeleteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleResponse": {
+      "document": "DeleteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRequest": {
+      "document": "DescribeData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间，单位：秒",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "截止时间，单位：秒",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟",
+          "member": "int64",
+          "name": "TimeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataResponse": {
+      "document": "DescribeData返回参数结构体",
+      "members": [
+        {
+          "document": "匹配概况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ReportOverviewData",
+          "name": "OverviewData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "匹配请求次数趋势数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ReportTrendData",
+          "name": "TrendData",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchCodesRequest": {
+      "document": "DescribeMatchCodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，页码",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索的字符串",
+          "member": "string",
+          "name": "MatchCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchCodesResponse": {
+      "document": "DescribeMatchCodes返回参数结构体",
+      "members": [
+        {
+          "document": "匹配Code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MatchCodeAttr",
+          "name": "MatchCodes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchRequest": {
+      "document": "DescribeMatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchResponse": {
+      "document": "DescribeMatch返回参数结构体",
+      "members": [
+        {
+          "document": "匹配信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MatchInfo",
+          "name": "MatchInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchesRequest": {
+      "document": "DescribeMatches请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "当前页号，不传则获取所有有权限的资源。",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页大小，不传则获取所有有权限的资源。",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型（可选）：match表示通过matchCode或者matchName来搜索，rule表示通过ruleCode或者ruleName来搜索，其余类型不做过滤处理。",
+          "member": "string",
+          "name": "SearchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询关键词，针对SearchType进行具体过滤的内容。",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表，用于过滤。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchesResponse": {
+      "document": "DescribeMatches返回参数结构体",
+      "members": [
+        {
+          "document": "匹配信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "MatchInfo",
+          "name": "MatchInfoList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页号，不填默认返回第一页",
+          "member": "int64",
+          "name": "PageNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单页大小，不填默认取 30，最大值不能超过 30",
+          "member": "int64",
+          "name": "PageSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询类型（可选）：matchName表示匹配名称，matchCode表示匹配code，ruleName表示规则名称，tag表示标签Key/Value",
+          "member": "string",
+          "name": "SearchType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询关键词（可选）",
+          "member": "string",
+          "name": "Keyword",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchingProgressRequest": {
+      "document": "DescribeMatchingProgress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配票据 ID列表, 列表长度 12。",
+          "example": "无",
+          "member": "MTicket",
+          "name": "MatchTicketIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMatchingProgressResponse": {
+      "document": "DescribeMatchingProgress返回参数结构体",
+      "members": [
+        {
+          "document": "匹配票据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MatchTicket",
+          "name": "MatchTickets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleRequest": {
+      "document": "DescribeRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleResponse": {
+      "document": "DescribeRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleInfo",
+          "name": "RuleInfo",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRulesRequest": {
+      "document": "DescribeRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "当前页号，不传则返回第一页",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页大小，最大 30，不填默认30",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询类型（可选）：match表示通过matchCode或者matchName来搜索，rule表示通过ruleCode或者ruleName来搜索，其余类型不做过滤处理。",
+          "member": "string",
+          "name": "SearchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询关键词，针对SearchType进行具体过滤的内容。",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表，用于过滤。",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRulesResponse": {
+      "document": "DescribeRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RuleBriefInfo",
+          "name": "RuleInfoList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前页号",
+          "member": "int64",
+          "name": "PageNumber",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单页大小",
+          "member": "int64",
+          "name": "PageSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询类型（可选）matchName表示匹配名称，matchCode表示匹配code，ruleName表示规则名称，tag表示标签Key/Value",
+          "member": "string",
+          "name": "SearchType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询关键词（可选）",
+          "member": "string",
+          "name": "Keyword",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenRequest": {
+      "document": "DescribeToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenResponse": {
+      "document": "DescribeToken返回参数结构体",
+      "members": [
+        {
+          "document": "当前的MatchCode对应的Token。如果当前MatchCode没有Token，该参数可能取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MatchToken",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当Token被替换后，GPM将兼容推送原始Token的时间（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CompatibleSpan",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MTicket": {
+      "document": "matchCode和匹配票据 ID组合结构",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配Code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配票据 ID",
+          "member": "string",
+          "name": "MatchTicketId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MatchAttribute": {
+      "document": "玩家匹配属性",
+      "members": [
+        {
+          "default": "",
+          "document": "属性名 长度 128 [a-zA-Z0-9-\\.]*",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "属性类型: 0 数值; 1 string; 默认 0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字属性值 默认 0.0",
+          "member": "float",
+          "name": "NumberValue",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串属性值 长度 128 默认 \"\"",
+          "member": "string",
+          "name": "StringValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "list 属性值",
+          "member": "string",
+          "name": "ListValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字典属性值",
+          "member": "AttributeMap",
+          "name": "MapValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MatchCodeAttr": {
+      "document": "匹配code",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MatchInfo": {
+      "document": "匹配信息",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配名称",
+          "member": "string",
+          "name": "MatchName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MatchDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时时间",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收通知地址",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为匹配结果请求服务器资源，0否，1请求GSE资源",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器队列所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerQueue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义推送数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CustomPushData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "游戏服务器会话数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServerSessionData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "游戏属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StringKV",
+          "name": "GameProperties",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志开关，0表示关，1表示开",
+          "member": "int64",
+          "name": "LogSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogsetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogTopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户主账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户创建账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志状态，0表示正常，1表示日志集不存在，2表示日志主题不存在，3表示日志集和日志主题都不存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LogStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MatchTicket": {
+      "document": "匹配票据信息",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配票据 ID长度 128 [a-zA-Z0-9-\\.]*",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配 Code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "根据 MatchType 取不同的结构序列化结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MatchResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示不同的匹配类型,NORMAL | GSE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "MatchType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "玩家信息列表",
+          "member": "Player",
+          "name": "Players",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配状态: SEARCHING 匹配中; PLACING 匹配放置中; COMPLETED 匹配完成; CANCELLED 匹配取消; TIMEDOUT 匹配超时; FAILED 匹配失败",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配状态原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收到发起匹配请求的时间 eg: \"2020-08-17T08:14:38.077Z\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配请求因完成、失败、超时、被取消而停止执行的时间 eg: \"2020-08-17T08:14:38.077Z\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyMatchRequest": {
+      "document": "ModifyMatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配名称，[a-zA-Z0-9-\\.]* 长度128",
+          "member": "string",
+          "name": "MatchName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "超时时间，1-600秒",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为匹配结果请求服务器资源，0表示否，1表示请求GSE资源",
+          "member": "int64",
+          "name": "ServerType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "匹配code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "匹配描述，最长1024",
+          "member": "string",
+          "name": "MatchDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只支持 http 和 https 协议",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器队列地域",
+          "member": "string",
+          "name": "ServerRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器队列",
+          "member": "string",
+          "name": "ServerQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义推送数据",
+          "member": "string",
+          "name": "CustomPushData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器会话数据",
+          "member": "string",
+          "name": "ServerSessionData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游戏属性，key-value结构的数组",
+          "member": "StringKV",
+          "name": "GameProperties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "日志开关，0表示关，1表示开",
+          "member": "int64",
+          "name": "LogSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签，key-value结构的数组",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMatchResponse": {
+      "document": "ModifyMatch返回参数结构体",
+      "members": [
+        {
+          "document": "匹配信息",
+          "member": "MatchInfo",
+          "name": "MatchInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleRequest": {
+      "document": "ModifyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则名称，只能包含数字、字母、. 和 -",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则描述，最长1024",
+          "member": "string",
+          "name": "RuleDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签，key-value结构的数组，最多关联50组标签",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRuleResponse": {
+      "document": "ModifyRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则信息",
+          "member": "RuleInfo",
+          "name": "RuleInfo",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTokenRequest": {
+      "document": "ModifyToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配Code。",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。",
+          "member": "uint64",
+          "name": "CompatibleSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。",
+          "member": "string",
+          "name": "MatchToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTokenResponse": {
+      "document": "ModifyToken返回参数结构体",
+      "members": [
+        {
+          "document": "成功设置的Token。",
+          "member": "string",
+          "name": "MatchToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前Token被替换后，GPM将持续推送原Token的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CompatibleSpan",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Player": {
+      "document": "玩家信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "玩家 PlayerId 长度 128 [a-zA-Z\\d-\\._]*",
+          "example": "Id",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "玩家昵称，长度 128",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "玩家匹配属性，最多 10 条",
+          "example": "MatchAttributes",
+          "member": "MatchAttribute",
+          "name": "MatchAttributes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\\.]*",
+          "example": "Team",
+          "member": "string",
+          "name": "Team",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义玩家状态 透传参数 [0, 99999]",
+          "example": "CustomPlayerStatus",
+          "member": "uint64",
+          "name": "CustomPlayerStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义玩家信息 透传参数 长度 1024",
+          "example": "CustomProfile",
+          "member": "string",
+          "name": "CustomProfile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "各区域延迟，最多 20 条",
+          "example": "RegionLatencies",
+          "member": "RegionLatency",
+          "name": "RegionLatencies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RegionLatency": {
+      "document": "玩家到各区域的延迟",
+      "members": [
+        {
+          "default": "",
+          "document": "地域\nap-beijing          华北地区(北京)\nap-chengdu          西南地区(成都)\nap-guangzhou          华南地区(广州)\nap-hongkong          港澳台地区(中国香港)\nap-seoul          亚太地区(首尔)\nap-shanghai          华东地区(上海)\nap-singapore          东南亚地区(新加坡)\neu-frankfurt          欧洲地区(法兰克福)\nna-siliconvalley          美国西部(硅谷)\nna-toronto          北美地区(多伦多)\nap-mumbai          亚太地区(孟买)\nna-ashburn          美国东部(弗吉尼亚)\nap-bangkok          亚太地区(曼谷)\neu-moscow          欧洲地区(莫斯科)\nap-tokyo          亚太地区(东京)",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "毫秒延迟 0～999999",
+          "member": "uint64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportOverviewData": {
+      "document": "匹配概况",
+      "members": [
+        {
+          "default": "",
+          "document": "总次数",
+          "member": "string",
+          "name": "TotalTimes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功率",
+          "member": "float",
+          "name": "SuccessPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时率",
+          "member": "float",
+          "name": "TimeoutPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败率",
+          "member": "float",
+          "name": "FailPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均匹配时间",
+          "member": "float",
+          "name": "AverageSec",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportTrendData": {
+      "document": "统计数据之趋势数据",
+      "members": [
+        {
+          "default": "",
+          "document": "总次数",
+          "member": "string",
+          "name": "TotalList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被取消次数",
+          "member": "string",
+          "name": "CancelList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "成功次数",
+          "member": "string",
+          "name": "SuccessList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败次数",
+          "member": "string",
+          "name": "FailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超时次数",
+          "member": "string",
+          "name": "TimeoutList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间数组，单位：秒",
+          "member": "string",
+          "name": "TimeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleBriefInfo": {
+      "document": "规则简单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称 [a-zA-Z\\d-\\.]*",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联匹配",
+          "member": "StringKV",
+          "name": "MatchCodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleInfo": {
+      "document": "规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称 [a-zA-Z0-9-\\.]*",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则脚本",
+          "member": "string",
+          "name": "RuleScript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StringKV",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StringKV",
+          "name": "MatchCodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则code",
+          "member": "string",
+          "name": "RuleCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户OwnerUin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StartMatchingBackfillRequest": {
+      "document": "StartMatchingBackfill请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配code",
+          "example": "match_code",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家信息",
+          "example": "无",
+          "member": "Player",
+          "name": "Players",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "游戏服务器回话 ID [1-256] 个ASCII 字符",
+          "example": "game_server_session_id",
+          "member": "string",
+          "name": "GameServerSessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "匹配票据 Id 默认 \"\" 为空则由 GPM 自动生成 长度 [1, 128]",
+          "example": "match_ticket_id",
+          "member": "string",
+          "name": "MatchTicketId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMatchingBackfillResponse": {
+      "document": "StartMatchingBackfill返回参数结构体",
+      "members": [
+        {
+          "document": "匹配票据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MatchTicket",
+          "name": "MatchTicket",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMatchingRequest": {
+      "document": "StartMatching请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配 Code。",
+          "member": "string",
+          "name": "MatchCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "玩家信息 最多 200 条。",
+          "member": "Player",
+          "name": "Players",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -",
+          "member": "string",
+          "name": "MatchTicketId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMatchingResponse": {
+      "document": "StartMatching返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。",
+          "member": "uint64",
+          "name": "ErrCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "匹配票据 ID长度 128。",
+          "member": "string",
+          "name": "MatchTicketId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StringKV": {
+      "document": "string keyValue解构",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

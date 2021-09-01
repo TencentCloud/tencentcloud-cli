@@ -1,0 +1,298 @@
+{
+  "actions": {
+    "DescribeTransactions": {
+      "document": "查询主事务列表",
+      "input": "DescribeTransactionsRequest",
+      "name": "查询主事务列表",
+      "output": "DescribeTransactionsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-05-06",
+    "api_brief": null,
+    "serviceNameCN": "分布式事务",
+    "serviceShortName": "dtf"
+  },
+  "objects": {
+    "DescribeTransactionsRequest": {
+      "document": "DescribeTransactions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事务分组ID",
+          "example": "group-qy9484ln",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务开始时间查询起始时间戳，UTC，精确到毫秒",
+          "example": "1618555374569",
+          "member": "int64",
+          "name": "TransactionBeginFrom",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事务开始时间查询截止时间戳，UTC，精确到毫秒",
+          "example": "1618555374569",
+          "member": "int64",
+          "name": "TransactionBeginTo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅查询异常状态的事务，true：仅查询异常，false或不传入：查询所有",
+          "example": "true",
+          "member": "bool",
+          "name": "SearchError",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "主事务ID，不传入时查询全量，高优先级",
+          "example": "1212121",
+          "member": "int64",
+          "name": "TransactionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主事务ID列表，不传入时查询全量，低优先级",
+          "example": "[112121, 121212]",
+          "member": "int64",
+          "name": "TransactionIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始偏移量",
+          "example": "20",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTransactionsResponse": {
+      "document": "DescribeTransactions返回参数结构体",
+      "members": [
+        {
+          "document": "主事务分页列表",
+          "example": "无",
+          "member": "PagedTransaction",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PagedTransaction": {
+      "document": "分页主事务",
+      "members": [
+        {
+          "default": "",
+          "document": "总条数，特定在该接口中总是会返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务分组列表",
+          "member": "Transaction",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Transaction": {
+      "document": "主事务",
+      "members": [
+        {
+          "default": "",
+          "document": "主事务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123123",
+          "member": "int64",
+          "name": "TransactionId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务开始时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618555940814",
+          "member": "int64",
+          "name": "TransactionBegin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务结束时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618555940814",
+          "member": "int64",
+          "name": "TransactionEnd",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务提交时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618555940814",
+          "member": "int64",
+          "name": "TransactionCommit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务回滚时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618555940814",
+          "member": "int64",
+          "name": "TransactionRollback",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务异常停止时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1618555940814",
+          "member": "int64",
+          "name": "TransactionError",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务超时时长，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务结束标识：0:运行中, 1: 已结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EndFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务超时标识：0:运行中, 1: 已超时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TimeoutFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事务分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-x3wsdh94",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主事务来源服务标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spring-boot-account",
+          "member": "string",
+          "name": "Server",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分支事务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "BranchQuantity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重试标识：true：可以重试；false：不可重试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RetryFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

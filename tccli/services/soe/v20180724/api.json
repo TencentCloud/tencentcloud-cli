@@ -1,0 +1,1066 @@
+{
+  "actions": {
+    "InitOralProcess": {
+      "document": "初始化发音评估过程，每一轮评估前进行调用。语音输入模式分为流式模式和非流式模式，流式模式支持数据分片传输，可以加快评估响应速度。评估模式分为词模式和句子模式，词模式会标注每个音节的详细信息；句子模式会有完整度和流利度的评估。",
+      "input": "InitOralProcessRequest",
+      "name": "发音评估初始化",
+      "output": "InitOralProcessResponse"
+    },
+    "KeywordEvaluate": {
+      "document": "指定主题关键词词汇评估，分析语音与关键词的切合程度，可指定多个关键词，支持中文英文同时评测。分片传输时，尽量保证纯异步调用，即不等待上一个分片的传输结果边录边传，这样可以尽可能早的提供音频数据。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。",
+      "input": "KeywordEvaluateRequest",
+      "name": "关键词评测",
+      "output": "KeywordEvaluateResponse"
+    },
+    "TransmitOralProcess": {
+      "document": "本接口可用于中英文发音评测数据传输。在使用本接口时需要注意：传输音频数据，必须在完成发音评估初始化接口之后调用，且SessonId要与初始化接口保持一致。分片传输时，尽量保证SeqId顺序传输（请确认SeqId由1开始）。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。",
+      "input": "TransmitOralProcessRequest",
+      "name": "发音数据传输接口",
+      "output": "TransmitOralProcessResponse"
+    },
+    "TransmitOralProcessWithInit": {
+      "document": "本接口可用于中英文发音评测。在使用本接口时需要注意：初始化并传输音频数据，分片传输时，尽量保证SeqId顺序传输（请确认SeqId由1开始）。音频源目前仅支持16k采样率16bit单声道编码方式，如有不一致可能导致评估不准确或失败。",
+      "input": "TransmitOralProcessWithInitRequest",
+      "name": "发音数据传输接口附带初始化过程（常用实践）",
+      "output": "TransmitOralProcessWithInitResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-07-24",
+    "api_brief": "介绍如何使用API对智聆口语评测进行操作，包括发音数据传输、发音评估初始化等。",
+    "serviceNameCN": "智聆口语评测",
+    "serviceShortName": "soe"
+  },
+  "objects": {
+    "InitOralProcessRequest": {
+      "document": "InitOralProcess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "stress_test_956938",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被评估语音对应的文本，仅支持中文和英文。\n句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。\n关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。\n如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "example": "again",
+          "member": "string",
+          "name": "RefText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音输入模式\n0：流式分片\n1：非流式一次性评估\n推荐使用流式分片传输。",
+          "example": "0",
+          "member": "int64",
+          "name": "WorkMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评测模式\n0：单词/单字模式（中文评测模式下为单字模式）\n1：句子模式\n2：段落模式\n3：自由说模式\n4：单词音素纠错模式\n5：情景评测模式\n6：句子多分支评测模式\n7：单词实时评测模式\n8：拼音评测模式\n关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。",
+          "example": "0",
+          "member": "int64",
+          "name": "EvalMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
+          "example": "3.5",
+          "member": "float",
+          "name": "ScoreCoeff",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "example": "无",
+          "member": "string",
+          "name": "SoeAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度，且TransmitOralProcess必须同时为1才可生效。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsLongLifeSession",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "音频存储模式\n0：不存储\n1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；\n2：永久存储音频，需要提工单申请，会产生一定的存储费用；\n3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。\n注：对可用性要求较高的用户建议自行存储至腾讯云COS。",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出断句中间结果标识\n0：不输出\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "example": "无",
+          "member": "int64",
+          "name": "SentenceInfoEnabled",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评估语言\n0：英文\n1：中文",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识\n0：同步模式\n1：异步模式（一般情况不建议使用异步模式）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "example": "无",
+          "member": "int64",
+          "name": "TextMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InitOralProcessResponse": {
+      "document": "InitOralProcess返回参数结构体",
+      "members": [
+        {
+          "document": "语音段唯一标识，一个完整语音一个SessionId",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Keyword": {
+      "document": "评测关键词",
+      "members": [
+        {
+          "default": "",
+          "document": "被评估语音对应的文本，句子模式下不超过个 20 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。如需要在单词模式和句子模式下使用自定义音素，可以通过设置 TextMode 使用[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "member": "string",
+          "name": "RefText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "评估模式，0：词模式（中文评测模式下为文字模式），1：句子模式，2：段落模式，3：自由说模式，当为词模式评估时，能够提供每个音节的评估信息，当为句子模式时，能够提供完整度和流利度信息。",
+          "member": "uint64",
+          "name": "EvalMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "评价苛刻指数，取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数，1.0为小年龄段，4.0为最高年龄段",
+          "member": "float",
+          "name": "ScoreCoeff",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "评估语言，0：英文，1：中文。",
+          "member": "uint64",
+          "name": "ServerType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "0",
+          "document": "输入文本模式，0: 普通文本，1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本。",
+          "member": "uint64",
+          "name": "TextMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "KeywordEvaluateRequest": {
+      "document": "KeywordEvaluate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SeqId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否传输完毕标志，若为0表示未完毕，若为1则传输完毕开始评估，非流式模式下无意义。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsEnd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "example": "3",
+          "member": "uint64",
+          "name": "VoiceFileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音编码类型\n1:pcm",
+          "example": "1",
+          "member": "uint64",
+          "name": "VoiceEncodeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "example": "SUQzBAAAAAAANFRDT04AAAAHAAADQmx1ZXMAVFNTRQAAAA8AAANMYXZmNTguMjMuMTAyAAAAAAAAAAAAAAD%2F81jAAAAAAAAAAAAASW5mbwAAAA8AAAASAAAITAAiIiIiIi8vLy8vLzw8PDw8SUlJSUlJVlZWVlZjY2NjY2NwcHBwcH19fX19fYqKioqKl5eXl5eXpKSkpKSksbGxsbG%2Bvr6%2Bvr7Ly8vLy9jY2NjY2OXl5eXl8vLy8vLy%2F%2F%2F%2F%2F%2F8AAAAATGF2YzU4LjQxAAAAAAAAAAAAAAAAJAOVAAAAAAAACEyULaIpAAAAAAAAAAAAAAD%2F8zjEABOylnQLRigAETO960QQJ6YQQPAYDTk8mTJ0YQIB9yBwCBwk5CEISd5zvIQjHDgoxzoQihwOEnOdyB8Pnf5CEb%2F%2FJ%2F%2Fkb%2F%2FQnIT%2F%2F%2FU4fOQPh84gcf%2F4fdgZFMFAgSI3tbm442AGGmn%2F8zjEEBkKUvpfi1AAfjskBZcKzUvSVbbkBJDYQQjiAjweEh5oMAAxlFw2k%2Bp54rlpkWD5QfurYURx1YQtGGn7mdM%2FVu3Rmq2QIhX7ZWx7%2F5Eex766IzR8OwyFiH5dn1HFKghCWjAD0l4f9zT%2F8zjEChdqDubXyzgA3lYDYbubfXyPI2D4dmug8D4iJZc9%2BYIwaBEHgPBor9R8YU890ucccaexjHjBqIc6aHHqb%2F%2F%2F%2F%2FsjrS1mImg2cCg1BlukfTFxC7PpC5FCF0fiWcCdCWNpdRAMYCcHqZf%2F8zjECxfpUu7%2BC9JQ7YQQxOR%2FiKEMUe%2F8q1hNE2EaKBQxc4SWEQlDQsCbSBBCTuqSolZZPPt2k1GqT2EbsZFLIkRIWmJpQqDAoCDv%2F%2FXtcHDDGBwHAIXU5FPmGNLVf%2BiOUgqkR5AiDr1Jh7X%2F8zjEChc4tvMWFhJoYfXUNMqB1gdU4pPwIZnrP%2F8mYkJKNHVmM3yXQoSVDEkDMWPMUFXJOsEoLFTr1VAYgA1fSthFzQ28abcksWuOkSyg6C3T2tzJkkKEEk6ov3B9BBMDoBg1EgT8ootC24j%2F8zjEDBb62tI6FgpoO5GE3EBgQmkw%2FnMdCMQQDBEPGNstEOdTnssPdbMz5GHyiIt%2F91KWkPHrVXra7LGO1GOdVOlWHOSHj7%2Fpt3%2F%2FbOrO7pd5%2BQ4xxEh5r%2BoRIDoFhAAZ3YAEH%2F%2FNbiyCRBn%2F8zjEDxWystLcwkSoLYJUnMaxF7LRRVWrMAgQElk6CbkRETWhQsuYrHuoyO9Jiy3naZB9Stfr%2F%2F%2F%2F6p2eh7osy0u5m6Svo1%2F%2F7%2Bj0qavNQdVA7UuiGxAMkt2ZuyUSEUFGaDj8M8WuGo1X4IL%2F8zjEFxMQpupcBowKRR5FI6kt9afbPm38SfPJrAKBHikFpXloKkIsWYM%2FrPf6h7cAAuOGA4tNVeydJCsVHlv%2F%2FedqLkssZVj%2F4yVQtUemsMYhKaZhU2gdEzWb7LfwLDzWJbhnMD46pRpWrnX%2F8zjEKRUKBrh8egSarpKOqT66Fa6S9DbaJ2Qxj%2F%2FZL0VSspQrWVAJ4sLg6Iv7dyyICEv%2F%2BmJBZVUufh4SdxCqFKEJQMJ%2BsEqaXtrbx4WzXlB%2F%2BXX%2FmHNikKupO1hAKmGRGFEaELvR15TSsYz%2F8zjEMxRCimwQeETdreatS1Zyq39ktUtf0cBxymbx%2F%2FO1uX63eKCeBMIFArlLCwIjqBWHSamMJzj5FFxgaNAeKxQqKX0Mn%2F7P2KGxYdzo1IbVIixgYLAyeUaBk5PJUZbson4URTW24h0%2FSgf%2F8zjEQQ%2FoRlwUS8wA%2FglgBwOUTVxujFPq2x72dRxP%2FX0L0t2%2F%2Fb9Le36McQdCK4U7PBlrQGCQ7koxmDjEKZUZWOcimEnIHM7OymihAJljbgm4zUpugWnetpkMhEO7Eb9FucQBM2PECMOt0CX%2F8zjEYBS6PmQVSxAARGA%2BfNEEC0UBchAQ935fc3LjCOC2JEQ0q%2Flw6VyDnDQwFAiEw6iBCb%2F5OGknSuXECJkIToYFAoAN%2FGd%2F5DCIDQIOolycL7idg2UDzwGmEoBFAhEOQELf%2FlMnx3lxjRb%2F8zjEbCb7zowBipAA98NlDbgbiFhIuRcdh9MuE%2BXv%2F%2FoLdO3vcuGZPloyNC8alQvlwumyRS%2F%2F%2F1f%2F%2FzU6B4d3%2B222ku2H%2Fw1qUtolGx5YxBokEwPjG02NhBZBMqZBhqRqmnCqFa1MJiNRAAj%2F8zjELxRwdxL%2FyxACaDh92VacCiWgbq3G71JGf%2BUIpjHUJCJmLNDJNzhAa0tjGk4AhiEN21AFmCjjKLLxjmPBALF5Egr2PkYAFBZqG4%2BCFGqGM9i7X%2F2Xhr%2B2xkcnpdFRR7I0aWhqZ2Q%2FwYD%2F8zjEPBSRwr78AYYwgZQkyJMu7X5XZXcQljwcK%2B%2F%2BSKuABOoCVhWb2EHuNarNrHOLkiSscbiJVXtQ5rEialjXoGiym5fnkCY%2BH5KSOUOr7atkZnV2WhRJGv59X81%2F4bTh%2FxqEFHcWL1qesrb%2F8zjESBXx%2BqpcAYY8VoLRMoNSwUHD%2F6nvVh1QVnUBvHPzELNOiKAIKRYeq%2FKwzFC1rcX%2F%2F%2BzMxQdGx8X8KsNw3xryKmqKyKitNsHQAw61VeVWSRU2v%2BGa59a1FQkHXxEJQaDhENCWR9TxKJb%2F8zjETxdh4nQ0CZCEDR6HKzqwaPYbqeWgrDTaxYeCA4Cwfy3%2FllqGTWX8jVrLZ%2BXZPvyyX%2FlkuZGstQyNQwUMGBhHFRUUFuoka%2F6hf2oHs%2FxYXZLCwr%2F%2BukxBTUUzLjEwMKqqqqqqqqqqqqr%2F8zjEUA8hVcGWCAYAqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqo%3D",
+          "member": "string",
+          "name": "UserVoiceData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "12345",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关键词列表",
+          "example": "无",
+          "member": "Keyword",
+          "name": "Keywords",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "example": "default",
+          "member": "string",
+          "name": "SoeAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询标识，当该参数为1时，该请求为查询请求，请求返回该 Session 评估结果。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsQuery",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "KeywordEvaluateResponse": {
+      "document": "KeywordEvaluate返回参数结构体",
+      "members": [
+        {
+          "document": "关键词得分",
+          "example": "无",
+          "member": "KeywordScore",
+          "name": "KeywordScores",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "12345",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KeywordScore": {
+      "document": "关键词得分",
+      "members": [
+        {
+          "default": "",
+          "document": "关键词",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。当为流式模式且请求中IsEnd未置1时，取值无意义。",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "member": "float",
+          "name": "PronFluency",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "member": "float",
+          "name": "PronCompletion",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细发音评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "WordRsp",
+          "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "member": "float",
+          "name": "SuggestedScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PhoneInfo": {
+      "document": "单音节评价结果",
+      "members": [
+        {
+          "default": "",
+          "document": "当前音节语音起始时间点，单位为ms",
+          "example": "1000",
+          "member": "int64",
+          "name": "MemBeginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前音节语音终止时间点，单位为ms",
+          "example": "2000",
+          "member": "int64",
+          "name": "MemEndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音节发音准确度，取值范围[-1, 100]，当取-1时指完全不匹配",
+          "example": "99.52305",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前音节是否检测为重音",
+          "example": "false",
+          "member": "bool",
+          "name": "DetectedStress",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前音节，当前评测识别的音素",
+          "example": "hh",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前音节是否应为重音",
+          "example": "false",
+          "member": "bool",
+          "name": "Stress",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考音素，在单词诊断模式下，代表标准音素",
+          "example": "hh",
+          "member": "string",
+          "name": "ReferencePhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。",
+          "example": "0",
+          "member": "int64",
+          "name": "MatchTag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考字符，在单词诊断模式下，代表音素对应的原始文本",
+          "example": "wh_0",
+          "member": "string",
+          "name": "ReferenceLetter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SentenceInfo": {
+      "document": "语音过程中断句的中间结果",
+      "members": [
+        {
+          "default": "",
+          "document": "句子序号，在段落、自由说模式下有效，表示断句序号，最后的综合结果的为-1.",
+          "member": "int64",
+          "name": "SentenceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细发音评估结果",
+          "member": "WordRsp",
+          "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "member": "float",
+          "name": "PronFluency",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "member": "float",
+          "name": "PronCompletion",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）* 完整度（PronCompletionfloat）*（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "member": "float",
+          "name": "SuggestedScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TransmitOralProcessRequest": {
+      "document": "TransmitOralProcess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
+          "example": "1",
+          "member": "int64",
+          "name": "SeqId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否传输完毕标志，若为0表示未完毕，若为1则传输完毕开始评估，非流式模式下无意义。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsEnd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "example": "1",
+          "member": "int64",
+          "name": "VoiceFileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音编码类型\n1:pcm",
+          "example": "1",
+          "member": "int64",
+          "name": "VoiceEncodeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络稳定时，分片大小建议设置0.5k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "example": "VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5",
+          "member": "string",
+          "name": "UserVoiceData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "stress_test_956938",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "example": "无",
+          "member": "string",
+          "name": "SoeAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "长效session标识，当该参数为1时，session的持续时间为300s，但会一定程度上影响第一个数据包的返回速度。当InitOralProcess接口调用时此项为1时，此项必填1才可生效。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsLongLifeSession",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询标识，当该参数为1时，该请求为查询请求，请求返回该 Session 的评估结果。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsQuery",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TransmitOralProcessResponse": {
+      "document": "TransmitOralProcess返回参数结构体",
+      "members": [
+        {
+          "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。当为流式模式且请求中IsEnd未置1时，取值无意义。",
+          "example": "65",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "0.3",
+          "member": "float",
+          "name": "PronFluency",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "1",
+          "member": "float",
+          "name": "PronCompletion",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细发音评估结果",
+          "example": "无",
+          "member": "WordRsp",
+          "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语音段唯一标识，一段语音一个SessionId",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保存语音音频文件下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "断句中间结果，中间结果是局部最优而非全局最优的结果，所以中间结果有可能和最终整体结果对应部分不一致；中间结果的输出便于客户端UI更新；待用户发音完全结束后，系统会给出一个综合所有句子的整体结果。",
+          "example": "无",
+          "member": "SentenceInfo",
+          "name": "SentenceInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "评估 session 状态，“Evaluating\"：评估中、\"Failed\"：评估失败、\"Finished\"：评估完成",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "example": "65",
+          "member": "float",
+          "name": "SuggestedScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransmitOralProcessWithInitRequest": {
+      "document": "TransmitOralProcessWithInit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流式数据包的序号，从1开始，当IsEnd字段为1后后续序号无意义，当IsLongLifeSession不为1且为非流式模式时无意义。\n注意：序号上限为3000，不能超过上限。",
+          "example": "1",
+          "member": "int64",
+          "name": "SeqId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否传输完毕标志，若为0表示未完毕，若为1则传输完毕开始评估，非流式模式下无意义。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsEnd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音文件类型\n1: raw\n2: wav\n3: mp3\n4: speex\n语音文件格式目前仅支持 16k 采样率 16bit 编码单声道，如有不一致可能导致评估不准确或失败。",
+          "example": "1",
+          "member": "int64",
+          "name": "VoiceFileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "语音编码类型\n1:pcm",
+          "example": "1",
+          "member": "int64",
+          "name": "VoiceEncodeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前数据包数据, 流式模式下数据包大小可以按需设置，在网络良好的情况下，建议设置为1k，且必须保证分片帧完整（16bit的数据必须保证音频长度为偶数），编码格式要求为BASE64。",
+          "example": "LyoqKioqKiog5pu05paw5pe26Ze077yaMjAxOeW5tDEx5pyIMTjml6UyMzozMjow",
+          "member": "string",
+          "name": "UserVoiceData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音段唯一标识，一段完整语音使用一个SessionId，不同语音段的评测需要使用不同的SessionId。一般使用uuid(通用唯一识别码)来作为它的值，要尽量保证SessionId的唯一性。",
+          "example": "21eae5be-9e8d-11eb-a7c6-e454e8cfe4b4",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被评估语音对应的文本，仅支持中文和英文。\n句子模式下不超过个 30 单词或者中文文字，段落模式不超过 120 单词或者中文文字，中文评估使用 utf-8 编码，自由说模式该值无效。\n关于RefText的文本键入要求，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。\n如需要在评测模式下使用自定义注音（支持中英文），可以通过设置「TextMode」参数实现，设置方式请参考[音素标注](https://cloud.tencent.com/document/product/884/33698)。",
+          "example": "apple",
+          "member": "string",
+          "name": "RefText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语音输入模式\n0：流式分片\n1：非流式一次性评估\n推荐使用流式分片传输。",
+          "example": "0",
+          "member": "int64",
+          "name": "WorkMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评测模式\n0：单词/单字模式（中文评测模式下为单字模式）\n1：句子模式\n2：段落模式\n3：自由说模式\n4：单词音素纠错模式\n5：情景评测模式\n6：句子多分支评测模式\n7：单词实时评测模式\n8：拼音评测模式\n关于每种评测模式的详细介绍，以及适用场景，请参考[评测模式介绍](https://cloud.tencent.com/document/product/884/56131)。",
+          "example": "1",
+          "member": "int64",
+          "name": "EvalMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。\n1.0：适用于最小年龄段用户，一般对应儿童应用场景；\n4.0：适用于最高年龄段用户，一般对应成人严格打分场景。",
+          "example": "1.0",
+          "member": "float",
+          "name": "ScoreCoeff",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。",
+          "example": "无",
+          "member": "string",
+          "name": "SoeAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "音频存储模式\n0：不存储\n1：存储到公共对象存储，不会产生费用，存储时间为一个月。输出结果为该会话最后一个分片TransmitOralProcess 返回结果 AudioUrl 字段；\n2：永久存储音频，需要提工单申请，会产生一定的存储费用；\n3：自定义存储，将音频存储到自定义的腾讯云[对象存储](https://cloud.tencent.com/product/cos)中。\n注：对可用性要求较高的用户建议自行存储至腾讯云COS。",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出断句中间结果标识\n0：不输出\n1：输出，通过设置该参数\n可以在评估过程中的分片传输请求中，返回已经评估断句的中间结果，中间结果可用于客户端 UI 更新，输出结果为TransmitOralProcess请求返回结果 SentenceInfoSet 字段。",
+          "example": "无",
+          "member": "int64",
+          "name": "SentenceInfoEnabled",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "评估语言\n0：英文\n1：中文",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "异步模式标识\n0：同步模式\n1：异步模式（一般情况不建议使用异步模式）\n可选值参考[服务模式](https://cloud.tencent.com/document/product/884/33697)。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsAsync",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询标识，当该参数为1时，该请求为查询请求，请求返回该 Session 评估结果。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsQuery",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输入文本模式\n0: 普通文本\n1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本\n2：音素注册模式（提工单注册需要使用音素的单词）。",
+          "example": "无",
+          "member": "int64",
+          "name": "TextMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TransmitOralProcessWithInitResponse": {
+      "document": "TransmitOralProcessWithInit返回参数结构体",
+      "members": [
+        {
+          "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。当为流式模式且请求中IsEnd未置1时，取值无意义。",
+          "example": "65",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "0.99",
+          "member": "float",
+          "name": "PronFluency",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "1",
+          "member": "float",
+          "name": "PronCompletion",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细发音评估结果",
+          "example": "无",
+          "member": "WordRsp",
+          "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "语音段唯一标识，一段语音一个SessionId",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保存语音音频文件下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "断句中间结果，中间结果是局部最优而非全局最优的结果，所以中间结果有可能和最终整体结果对应部分不一致；中间结果的输出便于客户端UI更新；待用户发音完全结束后，系统会给出一个综合所有句子的整体结果。",
+          "example": "无",
+          "member": "SentenceInfo",
+          "name": "SentenceInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "评估 session 状态，“Evaluating\"：评估中、\"Failed\"：评估失败、\"Finished\"：评估完成",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "example": "65",
+          "member": "float",
+          "name": "SuggestedScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WordRsp": {
+      "document": "单词评分细则",
+      "members": [
+        {
+          "default": "",
+          "document": "当前单词语音起始时间点，单位为ms，该字段段落模式下无意义。",
+          "member": "int64",
+          "name": "MemBeginTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前单词语音终止时间点，单位为ms，该字段段落模式下无意义。",
+          "member": "int64",
+          "name": "MemEndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单词发音准确度，取值范围[-1, 100]，当取-1时指完全不匹配",
+          "member": "float",
+          "name": "PronAccuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单词发音流利度，取值范围[0, 1]",
+          "member": "float",
+          "name": "PronFluency",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前词",
+          "member": "string",
+          "name": "Word",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前词与输入语句的匹配情况，0：匹配单词、1：新增单词、2：缺少单词、3：错读的词、4：未录入单词。",
+          "member": "int64",
+          "name": "MatchTag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音节评估详情",
+          "member": "PhoneInfo",
+          "name": "PhoneInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考词，目前为保留字段。",
+          "member": "string",
+          "name": "ReferenceWord",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

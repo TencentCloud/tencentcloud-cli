@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "QueryAntiFraudVip": [
+      {
+        "document": "",
+        "input": "https://afc.tencentcloudapi.com/?Action=QueryAntiFraudVip\n&AccountType=1%0D%0A\n&AppIdU=100273020%0D%0A\n&BankCardNumber=12345678%0D%0A\n&BusinessId=0%0D%0A\n&EmailAddress=373909726%2540qq.com%0D%0A\n&IdNumber=1234567890%0D%0A\n&Imei=54654654646%0D%0A\n&Imsi=xxxyyzz%0D%0A\n&Name=%25E6%259D%25A8%25E7%25BA%25A2%0D%0A\n&PhoneNumber=008613246208548%0D%0A\n&Uid=00000000000000000000000033121475%0D%0A\n&Mac=00-01-6C-06-A6-29%0D%0A\n&WifiSSID=test%02wifi%0D%0A\n&WifiBSSID=00-04-C3-A1-2B-22\n&Signature=v22CnESj7Mg3tvG3yMkwqwiCdj8%3D\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CodeDesc\": \"Success\",\n        \"Found\": 1,\n        \"IdFound\": -1,\n        \"RequestId\": \"23297af7-a805-4d9d-a9cb-825de5f8ed8c\",\n        \"RiskInfo\": [],\n        \"RiskScore\": 800\n    }\n}",
+        "title": "定制接模接口示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

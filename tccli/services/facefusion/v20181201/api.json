@@ -1,0 +1,737 @@
+{
+  "actions": {
+    "DescribeMaterialList": {
+      "document": "通常通过腾讯云人脸融合的控制台可以查看到素材相关的参数数据，可以满足使用。本接口返回活动的素材数据，包括素材状态等。用于用户通过Api查看素材相关数据，方便使用。",
+      "input": "DescribeMaterialListRequest",
+      "name": "查询素材列表",
+      "output": "DescribeMaterialListResponse"
+    },
+    "FaceFusion": {
+      "document": "本接口用于人脸融合，用户上传人脸图片，获取与模板融合后的人脸图片。未发布的活动请求频率限制为1次/秒，已发布的活动请求频率限制50次/秒。如有需要提高活动的请求频率限制，请在控制台中申请。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "FaceFusionRequest",
+      "name": "人脸融合",
+      "output": "FaceFusionResponse"
+    },
+    "FaceFusionLite": {
+      "document": "人脸融合活动专用版，不推荐使用。人脸融合接口建议使用[人脸融合](https://cloud.tencent.com/document/product/670/31061)或[选脸融合](https://cloud.tencent.com/document/product/670/37736)接口",
+      "input": "FaceFusionLiteRequest",
+      "name": "人脸融合活动专用版",
+      "output": "FaceFusionLiteResponse"
+    },
+    "FuseFace": {
+      "document": "本接口用于单脸、多脸融合，用户上传人脸图片，获取与模板融合后的人脸图片。查看 <a href=\"https://cloud.tencent.com/document/product/670/38247\" target=\"_blank\">选脸融合接入指引</a>。\n\n未发布的活动请求频率限制为1次/秒，已发布的活动请求频率限制50次/秒。如有需要提高活动的请求频率限制，请在控制台中申请。\n>\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "FuseFaceRequest",
+      "name": "选脸融合",
+      "output": "FuseFaceResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-01",
+    "api_brief": "介绍如何使用API对人脸融合进行操作，包括人脸融合、选脸融合等。",
+    "serviceNameCN": "人脸融合",
+    "serviceShortName": "facefusion"
+  },
+  "objects": {
+    "DescribeMaterialListRequest": {
+      "document": "DescribeMaterialList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动Id",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "素材Id",
+          "member": "string",
+          "name": "MaterialId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每次拉取条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaterialListResponse": {
+      "document": "DescribeMaterialList返回参数结构体",
+      "members": [
+        {
+          "document": "素材列表数据",
+          "member": "PublicMaterialInfos",
+          "name": "MaterialInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "素材条数",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceFusionLiteRequest": {
+      "document": "FaceFusionLite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动 ID，请在人脸融合控制台查看。",
+          "example": "100646",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "素材 ID，请在人脸融合控制台查看。",
+          "example": "qc_100646_154021_9",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户人脸图片、素材模板图的人脸位置信息。",
+          "example": "[]",
+          "member": "MergeInfo",
+          "name": "MergeInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（url 或 base64) ，二选一。默认url, url有效期为30天。",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "CelebrityIdentify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "算法引擎参数:  1）选脸版 - youturecreat; 2）优享版 - youtu1vN； 3）畅享版 - ptu； 4）随机 - ALL;  默认为活动选择的算法",
+          "example": "string",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceFusionLiteResponse": {
+      "document": "FaceFusionLite返回参数结构体",
+      "members": [
+        {
+          "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "url",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "鉴政结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "FuseFaceReviewResult",
+          "name": "ReviewResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceFusionRequest": {
+      "document": "FaceFusion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动 ID，请在人脸融合控制台查看。",
+          "example": "100646",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "素材 ID，请在人脸融合控制台查看。",
+          "example": "qc_100646_154021_9",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片 base64 数据。请确保人脸为正脸，无旋转。若某些手机拍摄后人脸被旋转，请使用图片的 EXIF 信息对图片进行旋转处理；请勿在 base64 数据中包含头部，如“data:image/jpeg;base64,”。",
+          "example": "image_base64",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "历史遗留字段，无需填写。因为融合只需提取人脸特征，不需要鉴黄。",
+          "example": "10",
+          "member": "int64",
+          "name": "PornDetect",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
+          "example": "0",
+          "member": "int64",
+          "name": "CelebrityIdentify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图片Url地址",
+          "example": "image_url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceFusionResponse": {
+      "document": "FaceFusion返回参数结构体",
+      "members": [
+        {
+          "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "image_url",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不适宜内容识别结果",
+          "example": "[]",
+          "member": "FuseFaceReviewResult",
+          "name": "ReviewResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceInfo": {
+      "document": "人脸信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸框的横坐标",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框的纵坐标",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框的宽度",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框的高度",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceRect": {
+      "document": "人脸框信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸框左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FuseFaceRequest": {
+      "document": "FuseFace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动 ID，请在人脸融合控制台查看。",
+          "example": "300029",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "素材 ID，请在人脸融合控制台查看。",
+          "example": "qc_300029_453345_1",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户人脸图片、素材模板图的人脸位置信息。",
+          "example": "[]",
+          "member": "MergeInfo",
+          "name": "MergeInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
+          "example": "1",
+          "member": "int64",
+          "name": "FuseProfileDegree",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
+          "example": "1",
+          "member": "int64",
+          "name": "FuseFaceDegree",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0表示不需要不适宜内容识别，1表示需要不适宜内容识别。默认值为0。\n请注意，不适宜内容识别服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
+          "example": "无",
+          "member": "int64",
+          "name": "CelebrityIdentify",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FuseFaceResponse": {
+      "document": "FuseFace返回参数结构体",
+      "members": [
+        {
+          "document": "RspImgType 为 url 时，返回结果的 url， RspImgType 为 base64 时返回 base64 数据。",
+          "example": "/9/tetwtwe",
+          "member": "string",
+          "name": "FusedImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不适宜内容识别结果。该数组的顺序和请求中mergeinfo的顺序一致，一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FuseFaceReviewResult",
+          "name": "ReviewResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FuseFaceReviewDetail": {
+      "document": "人脸融合不适宜内容识别人脸信息",
+      "members": [
+        {
+          "default": "",
+          "document": "保留字段",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人员名称",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应识别label的置信度，分数越高意味涉政可能性越大。 \n0到70，Suggestion建议为PASS； \n70到80，Suggestion建议为REVIEW； \n80到100，Suggestion建议为BLOCK。",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别场景的审核结论：  \nPASS：正常 \nREVIEW：疑似  \nBLOCK：违规",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FuseFaceReviewResult": {
+      "document": "人脸融合不适宜内容识别返回参数item",
+      "members": [
+        {
+          "default": "",
+          "document": "保留字段",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态码， 0为处理成功，其他值为处理失败",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应状态码信息描述",
+          "member": "string",
+          "name": "CodeDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留字段",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保留字段",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "审核详细内容",
+          "member": "FuseFaceReviewDetail",
+          "name": "DetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialFaceList": {
+      "document": "人脸信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸序号",
+          "member": "string",
+          "name": "FaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸框信息",
+          "member": "FaceInfo",
+          "name": "FaceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MergeInfo": {
+      "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "输入图片base64",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输入图片url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上传的图片人脸位置信息（人脸框）",
+          "member": "FaceRect",
+          "name": "InputImageFaceRect",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控制台上传的素材人脸ID",
+          "member": "string",
+          "name": "TemplateFaceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PublicMaterialInfos": {
+      "document": "素材信息",
+      "members": [
+        {
+          "default": "",
+          "document": "素材Id",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材状态",
+          "member": "int64",
+          "name": "MaterialStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脸型参数P图",
+          "member": "int64",
+          "name": "BlendParamPtu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "五官参数P图",
+          "member": "int64",
+          "name": "PositionParamPtu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "脸型参数优图",
+          "member": "int64",
+          "name": "BlendParamYoutu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "五官参数优图",
+          "member": "int64",
+          "name": "PositionParamYoutu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材COS地址",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸信息",
+          "member": "MaterialFaceList",
+          "name": "MaterialFaceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "FlowProductRemind": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlowProductRemind\n<公共请求参数>\n\n{\n    \"LeftFlow\": \"200\",\n    \"ResourceId\": \"market-g9sjptwqi\",\n    \"FlowUnit\": \"Mb\",\n    \"TotalFlow\": \"2000\",\n    \"ProviderUin\": \"12345678\",\n    \"SignId\": \"1054492229\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": \"\",\n        \"FlowId\": \"7c0b5ac4-47a6-448b-b486-18d9774e3264\",\n        \"RequestId\": \"1f219bf9-8037-48ab-ace4-4b14b6a42146\",\n        \"Success\": \"true\"\n    }\n}",
+        "title": "计量商品用量提醒"
+      }
+    ],
+    "GetUsagePlanUsageAmount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: market.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUsagePlanUsageAmount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"123456789\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MaxRequestNum\": 1000,\n        \"InUseRequestNum\": 500,\n        \"RemainingRequestNum\": 500,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询使用计划使用量"
+      }
+    ]
+  },
+  "version": "1.0"
+}

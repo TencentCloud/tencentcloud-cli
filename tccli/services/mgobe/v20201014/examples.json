@@ -1,0 +1,61 @@
+{
+  "actions": {
+    "ChangeRoomPlayerProfile": [
+      {
+        "document": "修改房间玩家自定义属性",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=ChangeRoomPlayerProfile\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&CustomProfile=worker\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Room\": {\n            \"Name\": \"xx\",\n            \"IsForbidJoin\": false,\n            \"StartGameTime\": 0,\n            \"Owner\": \"xx\",\n            \"FrameRate\": 15,\n            \"MaxPlayers\": 2,\n            \"Teams\": [\n                {\n                    \"MinPlayers\": 1,\n                    \"Id\": \"xx\",\n                    \"MaxPlayers\": 1,\n                    \"Name\": \"xx\"\n                },\n                {\n                    \"MinPlayers\": 1,\n                    \"Id\": \"xx\",\n                    \"MaxPlayers\": 1,\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Players\": [\n                {\n                    \"OpenId\": \"joe123455\",\n                    \"Name\": \"xx\",\n                    \"CustomProfile\": \"worker\",\n                    \"IsRobot\": false,\n                    \"PlayerId\": \"joe123455\",\n                    \"CustomPlayerStatus\": 1,\n                    \"TeamId\": \"xx\"\n                },\n                {\n                    \"OpenId\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"CustomProfile\": \"xx\",\n                    \"IsRobot\": false,\n                    \"PlayerId\": \"xx\",\n                    \"CustomPlayerStatus\": 1,\n                    \"TeamId\": \"xx\"\n                }\n            ],\n            \"CreateTime\": 1578494768,\n            \"FrameSyncState\": 0,\n            \"CreateType\": 2,\n            \"CustomProperties\": \"xx\",\n            \"IsPrivate\": true,\n            \"OwnerOpenId\": \"xx\",\n            \"RouteId\": \"xx\",\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改房间玩家自定义属性"
+      }
+    ],
+    "ChangeRoomPlayerStatus": [
+      {
+        "document": "修改房间玩家自定义状态",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=ChangeRoomPlayerStatus\n&GameId=obg-mqsqod93\n&CustomStatus=123\n&PlayerId=1xqwlevd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d56ee17-e6d7-4faf-8643-db4f0adcd39a\",\n        \"Room\": {\n            \"CreateTime\": 1610357327,\n            \"CreateType\": 0,\n            \"CustomProperties\": \"xxxxxxxxx\",\n            \"FrameRate\": 15,\n            \"FrameSyncState\": 0,\n            \"Id\": \"Kefy5lE\",\n            \"IsForbidJoin\": false,\n            \"IsPrivate\": true,\n            \"MaxPlayers\": 10,\n            \"Name\": \"测试\",\n            \"Owner\": \"1nv49l55\",\n            \"OwnerOpenId\": \"\",\n            \"Players\": [\n                {\n                    \"CustomPlayerStatus\": 112233,\n                    \"CustomProfile\": \"测试人员12321\",\n                    \"IsRobot\": false,\n                    \"Name\": \"czh007测试\",\n                    \"OpenId\": \"\",\n                    \"PlayerId\": \"1nv49l55\",\n                    \"TeamId\": \"0\"\n                },\n                {\n                    \"CustomPlayerStatus\": 123,\n                    \"CustomProfile\": \"测试人员xxxxxxxxx\",\n                    \"IsRobot\": false,\n                    \"Name\": \"测试人员1\",\n                    \"OpenId\": \"\",\n                    \"PlayerId\": \"1xqwlevd\",\n                    \"TeamId\": \"0\"\n                }\n            ],\n            \"RouteId\": \"4hrNbSFqepv7dGq/wLw+jN7E2nvfCNep7N5WO01EktcFJtru+173SH5opwUZOxJK\",\n            \"StartGameTime\": 0,\n            \"Teams\": [\n                {\n                    \"Id\": \"0\",\n                    \"MaxPlayers\": 10,\n                    \"MinPlayers\": 1,\n                    \"Name\": \"\"\n                }\n            ],\n            \"Type\": \"A\"\n        }\n    }\n}",
+        "title": "修改房间玩家自定义状态"
+      }
+    ],
+    "DescribePlayer": [
+      {
+        "document": "查询玩家信息",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DescribePlayer\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Player\": {\n            \"OpenId\": \"joe123455\",\n            \"Name\": \"xx\",\n            \"CustomProfile\": \"worker\",\n            \"IsRobot\": false,\n            \"PlayerId\": \"joe123455\",\n            \"CustomPlayerStatus\": 1,\n            \"TeamId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询玩家信息"
+      }
+    ],
+    "DescribeRoom": [
+      {
+        "document": "查询房间信息",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DescribeRoom\n&GameId=obg-fr4vwil4\n&PlayerId=joe123455\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Room\": {\n            \"Name\": \"xx\",\n            \"IsForbidJoin\": false,\n            \"StartGameTime\": 0,\n            \"Owner\": \"xx\",\n            \"FrameRate\": 15,\n            \"MaxPlayers\": 2,\n            \"Teams\": [\n                {\n                    \"MinPlayers\": 1,\n                    \"Id\": \"xx\",\n                    \"MaxPlayers\": 1,\n                    \"Name\": \"xx\"\n                },\n                {\n                    \"MinPlayers\": 1,\n                    \"Id\": \"xx\",\n                    \"MaxPlayers\": 1,\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Players\": [\n                {\n                    \"OpenId\": \"joe123455\",\n                    \"Name\": \"xx\",\n                    \"CustomProfile\": \"worker\",\n                    \"IsRobot\": false,\n                    \"PlayerId\": \"joe123455\",\n                    \"CustomPlayerStatus\": 1,\n                    \"TeamId\": \"xx\"\n                },\n                {\n                    \"OpenId\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"CustomProfile\": \"xx\",\n                    \"IsRobot\": false,\n                    \"PlayerId\": \"xx\",\n                    \"CustomPlayerStatus\": 1,\n                    \"TeamId\": \"xx\"\n                }\n            ],\n            \"CreateTime\": 1578494768,\n            \"FrameSyncState\": 0,\n            \"CreateType\": 2,\n            \"CustomProperties\": \"xx\",\n            \"IsPrivate\": true,\n            \"OwnerOpenId\": \"xx\",\n            \"RouteId\": \"xx\",\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询房间信息"
+      }
+    ],
+    "DismissRoom": [
+      {
+        "document": "通过game_id、room_id解散房间",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=DismissRoom\n&GameId=\"obg-hvhvbs\"\n&RoomId=\"Sfsfdf\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f481b4a1-1efd-48fd-a35a-5d544c40b5b2\"\n    }\n}",
+        "title": "解散房间"
+      }
+    ],
+    "ModifyRoom": [
+      {
+        "document": "修改房间玩家自定义状态",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=ModifyRoom\n&GameId=obg-mqsqod93\n&RoomName=我是一个房间名\n&Owner=1xqwlevd\n&CustomProperties=国王乱杀懂?\n&RoomId=Kefy5lE\n&PlayerId=1xqwlevd\n&ChangeRoomOptionList.0=0\n&ChangeRoomOptionList.1=1\n&ChangeRoomOptionList.2=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"329991b3-edd5-4fe9-b6d6-b5d108f64f81\",\n        \"Room\": {\n            \"CreateTime\": 1610357327,\n            \"CreateType\": 0,\n            \"CustomProperties\": \"国王乱杀懂?\",\n            \"FrameRate\": 15,\n            \"FrameSyncState\": 0,\n            \"Id\": \"Kefy5lE\",\n            \"IsForbidJoin\": false,\n            \"IsPrivate\": true,\n            \"MaxPlayers\": 10,\n            \"Name\": \"我是一个房间名\",\n            \"Owner\": \"1xqwlevd\",\n            \"OwnerOpenId\": \"\",\n            \"Players\": [\n                {\n                    \"CustomPlayerStatus\": 112233,\n                    \"CustomProfile\": \"测试人员12321\",\n                    \"IsRobot\": false,\n                    \"Name\": \"czh007测试\",\n                    \"OpenId\": \"\",\n                    \"PlayerId\": \"1nv49l55\",\n                    \"TeamId\": \"0\"\n                },\n                {\n                    \"CustomPlayerStatus\": 123,\n                    \"CustomProfile\": \"测试人员xxxxxxxxx\",\n                    \"IsRobot\": false,\n                    \"Name\": \"测试人员1\",\n                    \"OpenId\": \"\",\n                    \"PlayerId\": \"1xqwlevd\",\n                    \"TeamId\": \"0\"\n                }\n            ],\n            \"RouteId\": \"4hrNbSFqepv7dGq/wLw+jN7E2nvfCNep7N5WO01EktcFJtru+173SH5opwUZOxJK\",\n            \"StartGameTime\": 0,\n            \"Teams\": [\n                {\n                    \"Id\": \"0\",\n                    \"MaxPlayers\": 10,\n                    \"MinPlayers\": 1,\n                    \"Name\": \"\"\n                }\n            ],\n            \"Type\": \"A\"\n        }\n    }\n}",
+        "title": "修改房间玩家自定义状态"
+      }
+    ],
+    "RemoveRoomPlayer": [
+      {
+        "document": "修改房间玩家自定义状态",
+        "input": "https://mgobe.tencentcloudapi.com/?Action=RemoveRoomPlayer\n&GameId=obg-mqsqod93\n&RemovePlayerId=1xqwlevd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f7dc756-ad45-40c9-911d-8700c6d63a9d\",\n        \"Room\": {\n            \"CreateTime\": 1610357327,\n            \"CreateType\": 0,\n            \"CustomProperties\": \"xxxxxxxxx\",\n            \"FrameRate\": 15,\n            \"FrameSyncState\": 0,\n            \"Id\": \"Kefy5lE\",\n            \"IsForbidJoin\": false,\n            \"IsPrivate\": true,\n            \"MaxPlayers\": 10,\n            \"Name\": \"测试\",\n            \"Owner\": \"1nv49l55\",\n            \"OwnerOpenId\": \"\",\n            \"Players\": [\n                {\n                    \"CustomPlayerStatus\": 112233,\n                    \"CustomProfile\": \"测试人员12321\",\n                    \"IsRobot\": false,\n                    \"Name\": \"czh007测试\",\n                    \"OpenId\": \"\",\n                    \"PlayerId\": \"1nv49l55\",\n                    \"TeamId\": \"0\"\n                }\n            ],\n            \"RouteId\": \"4hrNbSFqepv7dGq/wLw+jN7E2nvfCNep7N5WO01EktcFJtru+173SH5opwUZOxJK\",\n            \"StartGameTime\": 0,\n            \"Teams\": [\n                {\n                    \"Id\": \"0\",\n                    \"MaxPlayers\": 10,\n                    \"MinPlayers\": 1,\n                    \"Name\": \"\"\n                }\n            ],\n            \"Type\": \"A\"\n        }\n    }\n}",
+        "title": "修改房间玩家自定义状态"
+      }
+    ]
+  },
+  "version": "1.0"
+}

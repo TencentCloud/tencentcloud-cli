@@ -1,0 +1,178 @@
+{
+  "actions": {
+    "FlowProductRemind": {
+      "document": "计量商品用量提醒，用于服务商调用云服务，云服务向客户发送提醒信息",
+      "input": "FlowProductRemindRequest",
+      "name": "计量商品用量提醒",
+      "output": "FlowProductRemindResponse"
+    },
+    "GetUsagePlanUsageAmount": {
+      "document": "该接口可以根据InstanceId查询实例的api的使用情况。\n",
+      "input": "GetUsagePlanUsageAmountRequest",
+      "name": "查询使用计划使用量",
+      "output": "GetUsagePlanUsageAmountResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-10-10",
+    "api_brief": "介绍如何使用API对云市场服务进行操作，包括对服务商操作、产品管理等。",
+    "serviceNameCN": "云市场",
+    "serviceShortName": "market"
+  },
+  "objects": {
+    "FlowProductRemindRequest": {
+      "document": "FlowProductRemind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务商uin",
+          "example": "12345678",
+          "member": "string",
+          "name": "ProviderUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务商实例ID",
+          "example": "1054492229",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云市场实例ID",
+          "example": "market-g9sjptwqi",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例总流量",
+          "example": "2000",
+          "member": "string",
+          "name": "TotalFlow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "剩余流量",
+          "example": "200",
+          "member": "string",
+          "name": "LeftFlow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量单位",
+          "example": "Mb",
+          "member": "string",
+          "name": "FlowUnit",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlowProductRemindResponse": {
+      "document": "FlowProductRemind返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功",
+          "example": "true",
+          "member": "string",
+          "name": "Success",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流水号",
+          "example": "7c0b5ac4-47a6-448b-b486-18d9774e3264",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Info",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsagePlanUsageAmountRequest": {
+      "document": "GetUsagePlanUsageAmount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于查询实例的Id",
+          "example": "\"123456789\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsagePlanUsageAmountResponse": {
+      "document": "GetUsagePlanUsageAmount返回参数结构体",
+      "members": [
+        {
+          "document": "最大调用量",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已经调用量",
+          "example": "500",
+          "member": "int64",
+          "name": "InUseRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "剩余调用量",
+          "example": "500",
+          "member": "int64",
+          "name": "RemainingRequestNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

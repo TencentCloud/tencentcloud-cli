@@ -1,0 +1,1760 @@
+{
+  "actions": {
+    "AddCustomRule": {
+      "document": "增加自定义策略",
+      "input": "AddCustomRuleRequest",
+      "name": "增加自定义策略",
+      "output": "AddCustomRuleResponse"
+    },
+    "CreateAccessExport": {
+      "document": "本接口用于创建访问日志导出",
+      "input": "CreateAccessExportRequest",
+      "name": "创建访问日志导出",
+      "output": "CreateAccessExportResponse"
+    },
+    "CreateAttackDownloadTask": {
+      "document": "创建攻击日志下载任务",
+      "input": "CreateAttackDownloadTaskRequest",
+      "name": "创建攻击日志下载任务",
+      "output": "CreateAttackDownloadTaskResponse"
+    },
+    "DeleteAccessExport": {
+      "document": "本接口用于删除访问日志导出",
+      "input": "DeleteAccessExportRequest",
+      "name": "删除访问日志导出",
+      "output": "DeleteAccessExportResponse"
+    },
+    "DeleteAttackDownloadRecord": {
+      "document": "删除攻击日志下载任务记录",
+      "input": "DeleteAttackDownloadRecordRequest",
+      "name": "删除攻击日志下载任务记录",
+      "output": "DeleteAttackDownloadRecordResponse"
+    },
+    "DeleteDownloadRecord": {
+      "document": "删除访问日志下载记录",
+      "input": "DeleteDownloadRecordRequest",
+      "name": "删除访问日志下载记录",
+      "output": "DeleteDownloadRecordResponse"
+    },
+    "DeleteSession": {
+      "document": "删除CC攻击的session设置",
+      "input": "DeleteSessionRequest",
+      "name": "删除CC攻击的session设置",
+      "output": "DeleteSessionResponse"
+    },
+    "DescribeAccessExports": {
+      "document": "本接口用于获取访问日志导出列表",
+      "input": "DescribeAccessExportsRequest",
+      "name": "获取访问日志导出列表",
+      "output": "DescribeAccessExportsResponse"
+    },
+    "DescribeAccessFastAnalysis": {
+      "document": "本接口用于访问日志的快速分析",
+      "input": "DescribeAccessFastAnalysisRequest",
+      "name": "访问日志快速分析统计",
+      "output": "DescribeAccessFastAnalysisResponse"
+    },
+    "DescribeAccessIndex": {
+      "document": "本接口用于获取访问日志索引配置信息",
+      "input": "DescribeAccessIndexRequest",
+      "name": "获取访问日志索引配置信息",
+      "output": "DescribeAccessIndexResponse"
+    },
+    "DescribeCustomRules": {
+      "document": "获取防护配置中的自定义策略列表",
+      "input": "DescribeCustomRulesRequest",
+      "name": "获取防护配置中的自定义策略列表",
+      "output": "DescribeCustomRulesResponse"
+    },
+    "DescribeFlowTrend": {
+      "document": "获取waf流量访问趋势",
+      "input": "DescribeFlowTrendRequest",
+      "name": "获取waf流量访问趋势",
+      "output": "DescribeFlowTrendResponse"
+    },
+    "DescribeUserClbWafRegions": {
+      "document": "在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表",
+      "input": "DescribeUserClbWafRegionsRequest",
+      "name": "获取对客户已经开放的负载均衡型WAF(clb-waf)的地域",
+      "output": "DescribeUserClbWafRegionsResponse"
+    },
+    "ModifyAccessPeriod": {
+      "document": "本接口用于修改访问日志保存期限",
+      "input": "ModifyAccessPeriodRequest",
+      "name": "修改访问日志保存期限",
+      "output": "ModifyAccessPeriodResponse"
+    },
+    "ModifyCustomRuleStatus": {
+      "document": "开启或禁用自定义策略",
+      "input": "ModifyCustomRuleStatusRequest",
+      "name": "开启或禁用自定义策略",
+      "output": "ModifyCustomRuleStatusResponse"
+    },
+    "SearchAccessLog": {
+      "document": "本接口用于搜索WAF访问日志",
+      "input": "SearchAccessLogRequest",
+      "name": "搜索访问日志",
+      "output": "SearchAccessLogResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-01-25",
+    "api_brief": "介绍如果用API对web应用防火墙进行相关操作，比如接入设置，防护设置等",
+    "serviceNameCN": "Web 应用防火墙",
+    "serviceShortName": "waf"
+  },
+  "objects": {
+    "AccessFullTextInfo": {
+      "document": "DescribeAccessIndex",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "全文索引的分词符，字符串中每个字符代表一个分词符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Tokenizer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ContainZH",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessKeyValueInfo": {
+      "document": "用于 DescribeAccessIndex 的出参",
+      "members": [
+        {
+          "default": "",
+          "document": "需要配置键值或者元字段索引的字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"method\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段的索引描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "AccessValueInfo",
+          "name": "Value",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessLogInfo": {
+      "document": "单条日志数据描述",
+      "members": [
+        {
+          "default": "",
+          "document": "日志时间，单位ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1625395948532",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志来源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志上报请求包的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求包内日志的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PkgLogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\",
+          "member": "string",
+          "name": "LogJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessLogItem": {
+      "document": "日志KeyValue对",
+      "members": [
+        {
+          "default": "",
+          "document": "日记Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessLogItems": {
+      "document": "日志KeyValue对数组，用于搜索访问日志",
+      "members": [
+        {
+          "default": "",
+          "document": "分析结果返回的KV数据对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                     {                         \"Key\": \"COUNT(*)",
+          "member": "AccessLogItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessRuleInfo": {
+      "document": "DescribeAccessIndex接口的出参数",
+      "members": [
+        {
+          "default": "",
+          "document": "全文索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "AccessFullTextInfo",
+          "name": "FullText",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "键值索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "AccessRuleKeyValueInfo",
+          "name": "KeyValue",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "元字段索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "AccessRuleTagInfo",
+          "name": "Tag",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessRuleKeyValueInfo": {
+      "document": "DescribeAccessIndex接口的出参",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要建立索引的键值对信息；最大只能配置100个键值对\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AccessKeyValueInfo",
+          "name": "KeyValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessRuleTagInfo": {
+      "document": "DescribeAccessIndex接口的出参",
+      "members": [
+        {
+          "default": "",
+          "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签索引配置中的字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AccessKeyValueInfo",
+          "name": "KeyValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessValueInfo": {
+      "document": "用于DescribeAccessIndex接口的出参",
+      "members": [
+        {
+          "default": "",
+          "document": "字段类型，目前支持的类型有：long、text、double\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"text\"",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Tokenizer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段是否开启分析功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SqlFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ContainZH",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AddCustomRuleRequest": {
+      "document": "AddCustomRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "example": "无",
+          "member": "string",
+          "name": "SortId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略详情",
+          "example": "无",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要添加策略的域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "动作类型",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "如果动作是重定向，则表示重定向的地址；其他情况可以为空",
+          "example": "无",
+          "member": "string",
+          "name": "Redirect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "\"clb-waf\"或者\"sparta-waf\"",
+          "example": "无",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "放行的详情",
+          "example": "无",
+          "member": "string",
+          "name": "Bypass",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomRuleResponse": {
+      "document": "AddCustomRule返回参数结构体",
+      "members": [
+        {
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加成功的规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7025",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BotStatPointItem": {
+      "document": "bot的趋势图对象",
+      "members": [
+        {
+          "default": "",
+          "document": "横坐标",
+          "example": "2021-04-22 20:30:00",
+          "member": "string",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value的所属对象",
+          "example": "/api/cf/v4/user/get-info",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纵列表",
+          "example": "15",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Key对应的页面展示内容",
+          "example": "/api/cf/v4/user/get-info",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAccessExportRequest": {
+      "document": "CreateAccessExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1625395948532",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1626000748532",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出检索语句",
+          "example": "\"schema: http\"",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出数据格式。json，csv，默认为json",
+          "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序。desc，asc，默认为desc",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccessExportResponse": {
+      "document": "CreateAccessExport返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出ID。",
+          "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAttackDownloadTaskRequest": {
+      "document": "CreateAttackDownloadTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名，所有域名填写all",
+          "example": "abc.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "example": "2019-12-30 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "2019-12-30 23:59:59",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载任务名字",
+          "example": "d0wnload",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "风险等级",
+          "example": "0",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拦截状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义策略ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "攻击者IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "AttackIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "攻击类型",
+          "example": "无",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAttackDownloadTaskResponse": {
+      "document": "CreateAttackDownloadTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "XXXX-XXXX-XXXX",
+          "member": "string",
+          "name": "Flow",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessExportRequest": {
+      "document": "DeleteAccessExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志导出ID",
+          "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessExportResponse": {
+      "document": "DeleteAccessExport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAttackDownloadRecordRequest": {
+      "document": "DeleteAttackDownloadRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "下载任务记录唯一标记",
+          "example": "60001",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAttackDownloadRecordResponse": {
+      "document": "DeleteAttackDownloadRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDownloadRecordRequest": {
+      "document": "DeleteDownloadRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "记录id",
+          "example": "xxxxxx-xxxxxx-xxxxxx ",
+          "member": "string",
+          "name": "Flow",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDownloadRecordResponse": {
+      "document": "DeleteDownloadRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSessionRequest": {
+      "document": "DeleteSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "clb-waf 或者 sprta-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSessionResponse": {
+      "document": "DeleteSession返回参数结构体",
+      "members": [
+        {
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessExportsRequest": {
+      "document": "DescribeAccessExports请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessExportsResponse": {
+      "document": "DescribeAccessExports返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出ID。",
+          "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志导出列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "ExportAccessInfo",
+          "name": "Exports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessFastAnalysisRequest": {
+      "document": "DescribeAccessFastAnalysis请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccessFastAnalysisResponse": {
+      "document": "DescribeAccessFastAnalysis返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessIndexRequest": {
+      "document": "DescribeAccessIndex请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccessIndexResponse": {
+      "document": "DescribeAccessIndex返回参数结构体",
+      "members": [
+        {
+          "document": "是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "AccessRuleInfo",
+          "name": "Rule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "索引修改时间，初始值为索引创建时间。",
+          "example": "-",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesPagingInfo": {
+      "document": "DescribeCustomRules接口的翻页参数",
+      "members": [
+        {
+          "default": "",
+          "document": "当前页码",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前页的最大数据条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeCustomRulesRequest": {
+      "document": "DescribeCustomRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "无",
+          "member": "DescribeCustomRulesPagingInfo",
+          "name": "Paging",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "clb-waf或者sparta-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤参数：动作类型：0放行，1阻断，2人机识别，3观察，4重定向",
+          "example": "0",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤参数：规则名称过滤条件",
+          "example": "无",
+          "member": "string",
+          "name": "Search",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesResponse": {
+      "document": "DescribeCustomRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则详情",
+          "example": "无",
+          "member": "DescribeCustomRulesRspRuleListItem",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则条数",
+          "example": "1",
+          "member": "string",
+          "name": "TotalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRulesRspRuleListItem": {
+      "document": "DescribeCustomRules接口回包中的复杂类型",
+      "members": [
+        {
+          "default": "",
+          "document": "动作类型",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跳过的策略",
+          "member": "string",
+          "name": "Bypass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向地址",
+          "member": "string",
+          "name": "Redirect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "member": "string",
+          "name": "SortId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略详情",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeFlowTrendRequest": {
+      "document": "DescribeFlowTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要获取流量趋势的域名, all表示所有域名",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间戳，精度秒",
+          "example": "1620144000",
+          "member": "int64",
+          "name": "StartTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，精度秒",
+          "example": "1620180000",
+          "member": "int64",
+          "name": "EndTs",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowTrendResponse": {
+      "document": "DescribeFlowTrend返回参数结构体",
+      "members": [
+        {
+          "document": "流量趋势数据",
+          "example": "{\"TimeStamp\":\"2021-05-05 09:05:00\",\"Key\":\"all_request\",\"Value\":3",
+          "member": "BotStatPointItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserClbWafRegionsRequest": {
+      "document": "DescribeUserClbWafRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserClbWafRegionsResponse": {
+      "document": "DescribeUserClbWafRegions返回参数结构体",
+      "members": [
+        {
+          "document": "地域（标准的ap-格式）列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportAccessInfo": {
+      "document": "DescribeAccessExports接口",
+      "members": [
+        {
+          "default": "",
+          "document": "日志导出任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志导出查询语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"*\"",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志导出文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志文件大小",
+          "example": "0",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志导出格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"json\"",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志导出数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6221",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志下载状态。Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）",
+          "example": "\"Processing\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出起始时间",
+          "example": "1625395948532",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出结束时间",
+          "example": "1626000748532",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出路径",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CosPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出创建时间",
+          "example": "\"2021-07-13 19:07:15\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAccessPeriodRequest": {
+      "document": "ModifyAccessPeriod请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "访问日志保存期限，范围为[1, 30]",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessPeriodResponse": {
+      "document": "ModifyAccessPeriod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusRequest": {
+      "document": "ModifyCustomRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "baidu.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开关的状态，1是开启、0是关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
+          "example": "无",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleStatusResponse": {
+      "document": "ModifyCustomRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResponseCode": {
+      "document": "响应体的返回码",
+      "members": [
+        {
+          "default": "",
+          "document": "如果成功则返回Success，失败则返回yunapi定义的错误码",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果成功则返回Success，失败则返回WAF定义的二级错误码",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchAccessLogRequest": {
+      "document": "SearchAccessLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1625395948532",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1626000748532",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句，语句长度最大为4096",
+          "example": "\"schema: http\"",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单次查询返回的日志条数，最大值为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAccessLogResponse": {
+      "document": "SearchAccessLog返回参数结构体",
+      "members": [
+        {
+          "document": "加载后续内容的Context",
+          "example": "\"Y29udGV4dC04ZWEyOGZlNi0zOTc1LTRmMGUtYTQzNy02OWU4MWQ5NzJkODkxNj\"",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志查询结果是否全部返回",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的是否为分析结果",
+          "example": "false",
+          "member": "bool",
+          "name": "Analysis",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ColNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AccessLogInfo",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AccessLogItems",
+          "name": "AnalysisResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Strategy": {
+      "document": "自定义规则的匹配条件结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配字段",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑符号",
+          "member": "string",
+          "name": "CompareFunc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配参数",
+          "member": "string",
+          "name": "Arg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

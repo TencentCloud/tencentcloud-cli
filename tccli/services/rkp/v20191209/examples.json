@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "GetOpenId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rkp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOpenId\n<公共请求参数>\n\n{\n    \"Platform\": 0,\n    \"DeviceToken\": \"aaaa\",\n    \"Option\": \"xx\",\n    \"BusinessUserId\": \"xx\",\n    \"BusinessId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"OpenId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"RiskInfo\": []\n    }\n}",
+        "title": "probeTokenQ"
+      }
+    ],
+    "GetToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rkp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetToken\n<公共请求参数>\n\n{\n    \"BusinessId\": 0,\n    \"Scene\": 0,\n    \"ExpireTime\": 0,\n    \"AppClientIp\": \"xx\",\n    \"BusinessUserId\": \"xx\",\n    \"OldToken\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Token\": \"fafdafldsf;jds\"\n    }\n}",
+        "title": "RPGetToken"
+      }
+    ],
+    "QueryDevAndRisk": [
+      {
+        "document": "",
+        "input": "https://rkp.tencentcloudapi.com/?Action=QueryDevAndRisk&DevType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Found\": -1\n    }\n}",
+        "title": "DevQ接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,85 @@
+{
+  "actions": {
+    "CreateDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"cloud.tencent.com\",\n    \"Tags\": \"123\",\n    \"IP\": \"1.1.1.1\",\n    \"ServerType\": 0,\n    \"Notice\": true,\n    \"Port\": \"443\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f50312e-cfd7-47ac-b0a5-383991a24cd6\"\n    }\n}",
+        "title": "通过域名端口添加监控"
+      }
+    ],
+    "DeleteDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"DomainId\": 13076\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88147fbb-9764-4500-aced-06cf47196887\"\n    }\n}",
+        "title": "通过域名ID删除监控的域名"
+      }
+    ],
+    "DescribeDashboard": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboard\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SecurityLevelPie\": [\n                {\n                    \"Name\": \"未知\",\n                    \"Value\": 2\n                }\n            ],\n            \"CertBrandsPie\": [\n                {\n                    \"Name\": \"未知\",\n                    \"Value\": 2\n                }\n            ],\n            \"CertValidTimePie\": [\n                {\n                    \"Name\": \"未知\",\n                    \"Value\": 2\n                }\n            ],\n            \"CertTypePie\": [\n                {\n                    \"Name\": \"未知\",\n                    \"Value\": 2\n                }\n            ],\n            \"SSLBugsLoopholeHistogram\": [\n                {\n                    \"Name\": \"CVE-2016-0800\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2016-2107\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2015-0204\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2015-0204\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2014-0224\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2014-0160\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2014-3566\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"CVE-2012-4929\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"受影响\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        },\n                        {\n                            \"Name\": \"不受影响\",\n                            \"Value\": 0\n                        }\n                    ]\n                }\n            ],\n            \"ComplianceHistogram\": [\n                {\n                    \"Name\": \"ATS\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"合规\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"不合规\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"PCI DSS\",\n                    \"Children\": [\n                        {\n                            \"Name\": \"合规\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"不合规\",\n                            \"Value\": 0\n                        },\n                        {\n                            \"Name\": \"未知\",\n                            \"Value\": 2\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"221d22bf-ff30-4f46-b74d-039f1b28b95f\"\n    }\n}",
+        "title": "获取仪表盘数据"
+      }
+    ],
+    "DescribeDomainCerts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainCerts\n<公共请求参数>\n\n{\n    \"DomainId\": 13076\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Hash\": \"xxxxxx\",\n                \"CN\": \"cloud.tencent.com\",\n                \"KeyAlgo\": \"RSA 2048\",\n                \"Brand\": \"xxxxxx\",\n                \"Days\": 3650,\n                \"CertType\": \"xx\",\n                \"BeginTime\": \"2020-01-01T00:00:00+08:00\",\n                \"TrustStatus\": \"xx\",\n                \"SANs\": \"xx\",\n                \"EndTime\": \"2030-01-01T00:00:00+08:00\",\n                \"Issuer\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取域名关联证书"
+      }
+    ],
+    "DescribeDomainTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainTags\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"123\"\n        ],\n        \"RequestId\": \"412a2dc8-412f-45a2-80c3-5a59163f986c\"\n    }\n}",
+        "title": "获取账号下所有tag"
+      }
+    ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1000,\n    \"SearchType\": \"none\",\n    \"Tag\": \"\",\n    \"Grade\": \"\",\n    \"Brand\": \"\",\n    \"Code\": \"\",\n    \"Hash\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SearchTotal\": 3,\n            \"Total\": 3,\n            \"Result\": [\n                {\n                    \"Id\": 13079,\n                    \"Domain\": \"cloud.tencent.com\",\n                    \"Ip\": \"1.1.1.1\",\n                    \"AutoIP\": true,\n                    \"Port\": \"443\",\n                    \"ServerType\": 0,\n                    \"Brand\": \"xxxxx\",\n                    \"Status\": \"正常\",\n                    \"Grade\": \"\",\n                    \"GradeCode\": 0,\n                    \"Notice\": false,\n                    \"AccountDomainId\": 15072,\n                    \"Tags\": [\n                        \"123\"\n                    ]\n                },\n                {\n                    \"Id\": 13078,\n                    \"Domain\": \"1.qcloud.com\",\n                    \"Ip\": \"2.2.2.2\",\n                    \"AutoIP\": true,\n                    \"Port\": \"80\",\n                    \"ServerType\": 0,\n                    \"Brand\": \"\",\n                    \"Status\": \"连接异常\",\n                    \"Grade\": \"\",\n                    \"GradeCode\": 0,\n                    \"Notice\": false,\n                    \"AccountDomainId\": 15071,\n                    \"Tags\": [\n                        \"123\"\n                    ]\n                },\n                {\n                    \"Id\": 13077,\n                    \"Domain\": \"2.qcloud.com\",\n                    \"Ip\": \"3.3.3.3\",\n                    \"AutoIP\": true,\n                    \"Port\": \"80\",\n                    \"ServerType\": 0,\n                    \"Brand\": \"\",\n                    \"Status\": \"连接异常\",\n                    \"Grade\": \"\",\n                    \"GradeCode\": 0,\n                    \"Notice\": false,\n                    \"AccountDomainId\": 15070,\n                    \"Tags\": [\n                        \"123\"\n                    ]\n                }\n            ],\n            \"AllowMonitoringCount\": 3,\n            \"CurrentMonitoringCount\": 0,\n            \"AllowMaxAddDomain\": 20\n        },\n        \"RequestId\": \"b106abc5-de9e-48ea-b95b-871ac898edd7\"\n    }\n}",
+        "title": "搜索已经添加的域名"
+      }
+    ],
+    "DescribeNoticeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNoticeInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 63692,\n            \"NoticeType\": 4,\n            \"LimitInfos\": [\n                {\n                    \"Type\": \"limit_email\",\n                    \"Total\": 30,\n                    \"Sent\": 0\n                },\n                {\n                    \"Type\": \"limit_wechat\",\n                    \"Total\": 30,\n                    \"Sent\": 0\n                },\n                {\n                    \"Type\": \"limit_phone\",\n                    \"Total\": 0,\n                    \"Sent\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"d69688b9-4e56-467b-a352-b04ba8a13a47\"\n    }\n}",
+        "title": "获取通知额度信息"
+      }
+    ],
+    "ModifyDomainTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainTags\n<公共请求参数>\n\n{\n    \"AccountDomainId\": 15067,\n    \"Tags\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"268059cf-7c29-4cce-a677-7400a1bfe359\"\n    }\n}",
+        "title": "修改域名tag"
+      }
+    ],
+    "RefreshDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDomain\n<公共请求参数>\n\n{\n    \"DomainId\": 13076\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5627f257-443b-4db4-9081-e7d6ec8b6a71\"\n    }\n}",
+        "title": "强制重新检测域名"
+      }
+    ],
+    "ResolveDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sslpod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResolveDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"cloud.tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"1.1.1.1\"\n        ],\n        \"RequestId\": \"a52e2d64-e2c3-44a5-9cc6-4dacd1a484b5\"\n    }\n}",
+        "title": "解析域名获得多个IP地址"
+      }
+    ]
+  },
+  "version": "1.0"
+}
