@@ -27,7 +27,7 @@ def main():
     else:
         vinput = raw_input
     cli_version = __version__.rsplit(".", 1)[0]
-    dep_sdk = "tencentcloud-sdk-python >= %s" % cli_version
+    dep_sdk = "tencentcloud-sdk-python-internal >= %s" % cli_version
     if SDK_VERSION is not None:
         if SDK_VERSION < cli_version:
             answer = None
@@ -38,7 +38,7 @@ def main():
                 print("tccli install failed")
                 return
     setup(
-        name='tccli',
+        name='tccli-internal',
         install_requires=[dep_sdk, "jmespath==0.10.0"],
         version=VERSION,
         description='Universal Command Line Environment for Tencent Cloud',
