@@ -2603,6 +2603,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群ID列表过滤",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

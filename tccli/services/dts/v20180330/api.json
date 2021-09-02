@@ -809,6 +809,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-83i2usk2",
           "member": "string",
           "name": "JobId",
           "required": false,
@@ -817,42 +818,56 @@
         {
           "default": "",
           "document": "数据迁移任务名称",
+          "example": "无",
           "member": "string",
           "name": "JobName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "CreateTime",
+          "default": "",
           "document": "排序字段，可以取值为JobId、Status、JobName、MigrateType、RunMode、CreateTime",
+          "example": "CreateTime",
           "member": "string",
           "name": "Order",
           "required": false,
           "type": "string"
         },
         {
-          "default": "DESC",
+          "default": "",
           "document": "排序方式，升序为ASC，降序为DESC",
+          "example": "DESC",
           "member": "string",
           "name": "OrderSeq",
           "required": false,
           "type": "string"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "返回实例数量，默认20，有效区间[1,100]",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -862,15 +877,21 @@
       "members": [
         {
           "document": "任务数目",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "任务详情数组",
+          "example": "无",
           "member": "MigrateJobInfo",
           "name": "JobList",
-          "type": "list"
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1402,16 +1423,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标实例ID，如cdb-jd92ijd8",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "目标实例地域，如ap-guangzhou",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1420,7 +1433,18 @@
         },
         {
           "default": "",
+          "document": "目标实例ID，如cdb-jd92ijd8",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "目标实例vip。已废弃，无需填写",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -1430,6 +1454,7 @@
         {
           "default": "",
           "document": "目标实例vport。已废弃，无需填写",
+          "example": "无",
           "member": "int64",
           "name": "Port",
           "required": false,
@@ -1439,6 +1464,7 @@
         {
           "default": "",
           "document": "目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。",
+          "example": "无",
           "member": "int64",
           "name": "ReadOnly",
           "required": false,
@@ -1448,6 +1474,7 @@
         {
           "default": "",
           "document": "目标数据库账号",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": false,
@@ -1457,6 +1484,7 @@
         {
           "default": "",
           "document": "目标数据库密码",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1731,6 +1759,15 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TagItem",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -29,6 +29,7 @@ Output:
                 "NamespaceNum": 0,
                 "VpcEndPoint": "xx",
                 "PublicEndPoint": "xx",
+                "UsedStorageBudget": 0,
                 "Version": "xx",
                 "MaxStorageCapacity": 100
             }

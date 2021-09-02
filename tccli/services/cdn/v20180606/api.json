@@ -1709,6 +1709,7 @@
         {
           "default": "",
           "document": "带宽封顶配置开关\non：开启\noff：关闭",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -1718,6 +1719,7 @@
         {
           "default": "",
           "document": "带宽封顶阈值，单位为bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000",
           "member": "int64",
           "name": "BpsThreshold",
           "required": false,
@@ -1727,6 +1729,7 @@
         {
           "default": "",
           "document": "达到阈值后的操作\nRESOLVE_DNS_TO_ORIGIN：直接回源，仅自有源站域名支持\nRETURN_404：全部请求返回 404\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RETURN_404",
           "member": "string",
           "name": "CounterMeasure",
           "required": false,
@@ -1735,9 +1738,40 @@
         },
         {
           "default": "",
-          "document": "上次触发带宽封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "境内区域上次触发带宽封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "LastTriggerTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽封顶提醒开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "AlertSwitch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽封顶阈值提醒百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "AlertPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "海外区域上次触发带宽封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime",
+          "name": "LastTriggerTimeOverseas",
           "required": false,
           "type": "string",
           "value_allowed_null": true
