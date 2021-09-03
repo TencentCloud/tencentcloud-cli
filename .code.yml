@@ -1,0 +1,16 @@
+source:
+  # 文件或目录使用绝对路径，绝对路径按代码库根目录计算，以/开头。
+  # 提供产品代码库中编写的测试代码存放目录或文件名格式,以便后续代码统计环节进行排除等特殊处�代码，会导致部门代码量骤减从而影响部门代码得分，还会导致Coverity扫不到任何代码而失败
+  test_source:
+    #用于匹配文件; 匹配方式为正则表达式
+    filepath_regex: [".*/api.json", ".*/examples.json", ".*/examples/.*"]
+  # 揨代码库中的代码，没有可为空。以便后续代码统计环节进行排除等特殊处理。
+  auto_generate_source:
+  # 自动生成代码文件的正则表达式，若无统一标识格式，可以指定具体目录，样例可参考test_source举例
+    filepath_regex: [".*/api.json", ".*/examples.json", ".*/examples/.*"]
+  # 揨的第三方代码目录或代码文件��需要排除的第三方代码，该项配置标识可为空
+  third_party_source:
+    #第三方代码文件的正则表达式，若无统一标识格式，可以指定具体目录，样例可参考test_source举例
+    filepath_regex: []
+
+ 
