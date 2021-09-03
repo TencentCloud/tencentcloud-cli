@@ -499,7 +499,7 @@
       "output": "RemoveBackupsResponse"
     },
     "RenewDBInstance": {
-      "document": "本接口（RenewDBInstance）用于续费实例。",
+      "document": "本接口（RenewDBInstance）用于续费实例。当被续费实例是按量计费实例时，则按量计费实例转为包年包月计费方式。\n按量计费实例转包年包月询价可通过(InquiryPriceRenewDBInstance)接口获得。",
       "input": "RenewDBInstanceRequest",
       "name": "续费实例",
       "output": "RenewDBInstanceResponse"
@@ -8319,6 +8319,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-j8kv137v",
+          "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8327,6 +8328,7 @@
         {
           "default": "",
           "document": "续费多少个月，取值范围为1-48，默认为1",
+          "example": "2",
           "member": "uint64",
           "name": "Period",
           "required": false,
@@ -8335,6 +8337,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券，0-不使用；1-使用；默认不实用",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -8343,10 +8346,20 @@
         {
           "default": "",
           "document": "代金券ID数组，目前只支持使用1张代金券",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8356,8 +8369,10 @@
       "members": [
         {
           "document": "订单名称",
+          "example": "201806261980",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

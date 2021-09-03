@@ -1177,6 +1177,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1615,6 +1625,15 @@
           "name": "ExcludePaths",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户自定义采集规则，Json格式序列化的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5070,6 +5089,15 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "Output",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义解析字符串，Json格式序列化的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
           "required": false,
           "type": "string"
         }

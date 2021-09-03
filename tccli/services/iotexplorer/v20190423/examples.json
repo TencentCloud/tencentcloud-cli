@@ -218,6 +218,14 @@
         "title": "获取规则信息"
       }
     ],
+    "DirectBindDeviceInFamily": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DirectBindDeviceInFamily\n&IotAppID=ABCDE12345\n&UserID=dev_49\n&FamilyId=0\n&ProductId=1\n&DeviceName=tt\n&RoomId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AppDeviceInfo\": {\n            \"DeviceId\": \"FPEU28BCGP/dev1\",\n            \"ProductId\": \"FPEU28BCGP\",\n            \"DeviceName\": \"dev1\",\n            \"AliasName\": \"t1\",\n            \"IconUrl\": \"\",\n            \"FamilyId\": \"f_cc67fefbcefd43d88a5c0157ee18c975\",\n            \"RoomId\": \"0\",\n            \"DeviceType\": 0,\n            \"CreateTime\": 1630310068,\n            \"UpdateTime\": 1630310068\n        },\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
+        "title": "直接绑定设备"
+      }
+    ],
     "DisableTopicRule": [
       {
         "document": "",

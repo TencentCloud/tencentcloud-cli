@@ -16,8 +16,8 @@ Output:
         "TotalCount": 1,
         "RegionSet": [
             {
-                "Region": "all",
-                "RegionName": "all",
+                "Region": "ap-guangzhou",
+                "RegionName": "华南地区(广州)",
                 "RegionState": "AVAILABLE"
             }
         ],

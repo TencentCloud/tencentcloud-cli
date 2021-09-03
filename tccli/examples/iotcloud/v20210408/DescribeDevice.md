@@ -56,7 +56,8 @@ Output:
             }
         ],
         "CreateTime": 1,
-        "LoraMoteType": 1
+        "LoraMoteType": 1,
+        "CreateUserId": 0
     }
 }
 ```

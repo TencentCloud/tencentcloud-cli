@@ -30,6 +30,12 @@
       "name": "删除产品",
       "output": "DeleteProductResponse"
     },
+    "DeleteProductPrivateCA": {
+      "document": "删除产品的私有CA证书",
+      "input": "DeleteProductPrivateCARequest",
+      "name": "删除产品的私有CA证书",
+      "output": "DeleteProductPrivateCAResponse"
+    },
     "DescribeDevice": {
       "document": "本接口（DescribeDevice）用于查看设备信息",
       "input": "DescribeDeviceRequest",
@@ -72,11 +78,23 @@
       "name": "查询产品绑定的CA证书",
       "output": "DescribeProductCAResponse"
     },
+    "PublishBroadcastMessage": {
+      "document": "发布广播消息",
+      "input": "PublishBroadcastMessageRequest",
+      "name": "发布广播消息",
+      "output": "PublishBroadcastMessageResponse"
+    },
     "UpdateDeviceLogLevel": {
       "document": "设置设备上报的日志级别  ",
       "input": "UpdateDeviceLogLevelRequest",
       "name": "更新设备日志级别",
       "output": "UpdateDeviceLogLevelResponse"
+    },
+    "UpdateDevicePSK": {
+      "document": "本接口（UpdateDevicePSK）用于更新设备的PSK ",
+      "input": "UpdateDevicePSKRequest",
+      "name": "更新设备PSK",
+      "output": "UpdateDevicePSKResponse"
     },
     "UpdateDevicesEnableState": {
       "document": "批量启用或者禁用设备 ",
@@ -89,6 +107,12 @@
       "input": "UpdatePrivateCARequest",
       "name": "更新私有CA证书",
       "output": "UpdatePrivateCAResponse"
+    },
+    "UpdateProductPrivateCA": {
+      "document": "更新产品的私有CA",
+      "input": "UpdateProductPrivateCARequest",
+      "name": "更新产品的私有CA",
+      "output": "UpdateProductPrivateCAResponse"
     }
   },
   "metadata": {
@@ -532,6 +556,33 @@
       ],
       "type": "object"
     },
+    "DeleteProductPrivateCARequest": {
+      "document": "DeleteProductPrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductPrivateCAResponse": {
+      "document": "DeleteProductPrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteProductRequest": {
       "document": "DeleteProduct请求参数结构体",
       "members": [
@@ -807,6 +858,15 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "FirmwareUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建者账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CreateUserId",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1625,6 +1685,69 @@
       ],
       "usage": "both"
     },
+    "PublishBroadcastMessageRequest": {
+      "document": "PublishBroadcastMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ASBHKN121",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "example": "123456",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息质量等级",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishBroadcastMessageResponse": {
+      "document": "PublishBroadcastMessage返回参数结构体",
+      "members": [
+        {
+          "document": "广播消息任务ID",
+          "example": "1000523",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateDeviceLogLevelRequest": {
       "document": "UpdateDeviceLogLevel请求参数结构体",
       "members": [
@@ -1660,6 +1783,51 @@
     },
     "UpdateDeviceLogLevelResponse": {
       "document": "UpdateDeviceLogLevel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicePSKRequest": {
+      "document": "UpdateDevicePSK请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "test_device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备的psk",
+          "example": "VOQmAku7T1haYaiV7LJfmg==",
+          "member": "string",
+          "name": "Psk",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicePSKResponse": {
+      "document": "UpdateDevicePSK返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1750,6 +1918,42 @@
     },
     "UpdatePrivateCAResponse": {
       "document": "UpdatePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductPrivateCARequest": {
+      "document": "UpdateProductPrivateCA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有CA证书名称",
+          "example": "CertName",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductPrivateCAResponse": {
+      "document": "UpdateProductPrivateCA返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

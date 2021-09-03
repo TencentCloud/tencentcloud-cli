@@ -748,6 +748,15 @@
           "name": "Principal",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称列表,Json字符串格式。ResourceName和resourceNameList只能指定其中一个。",
+          "example": "[\\\"Topic1\\\",\\\"Topic2\\\"]",
+          "member": "string",
+          "name": "ResourceNameList",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

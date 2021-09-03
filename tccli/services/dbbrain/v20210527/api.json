@@ -162,6 +162,12 @@
       "name": "获取SQL优化建议",
       "output": "DescribeUserSqlAdviceResponse"
     },
+    "KillMySqlThreads": {
+      "document": "根据会话ID中断当前会话，该接口分为两次提交：第一次为预提交阶段，Stage为\"Prepare\"，得到的返回值包含SqlExecId；第二次为确认提交， Stage为\"Commit\"， 将SqlExecId的值作为参数传入，最终终止会话进程。",
+      "input": "KillMySqlThreadsRequest",
+      "name": "中断MySql会话线程",
+      "output": "KillMySqlThreadsResponse"
+    },
     "ModifyDiagDBInstanceConf": {
       "document": "修改实例巡检开关。",
       "input": "ModifyDiagDBInstanceConfRequest",
@@ -3210,6 +3216,87 @@
         }
       ],
       "usage": "out"
+    },
+    "KillMySqlThreadsRequest": {
+      "document": "KillMySqlThreads请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kill会话任务的阶段，取值包括：\"Prepare\"-准备阶段，\"Commit\"-提交阶段。",
+          "example": "Commit",
+          "member": "string",
+          "name": "Stage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要kill的sql会话ID列表，此参数用于Prepare阶段。",
+          "example": "[\"4714056\"]",
+          "member": "int64",
+          "name": "Threads",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "执行ID，此参数用于Commit阶段。",
+          "example": "ItNrO0i3lvE3",
+          "member": "string",
+          "name": "SqlExecId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KillMySqlThreadsResponse": {
+      "document": "KillMySqlThreads返回参数结构体",
+      "members": [
+        {
+          "document": "kill完成的sql会话ID列表。",
+          "example": "[536284]",
+          "member": "int64",
+          "name": "Threads",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行ID， Prepare阶段的任务输出，用于Commit阶段中指定执行kill操作的会话ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"AEnnKexGijsX\"",
+          "member": "string",
+          "name": "SqlExecId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MailConfiguration": {
       "document": "邮件发送配置",

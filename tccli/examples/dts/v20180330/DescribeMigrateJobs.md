@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "JobList": [
             {
                 "JobId": "dts-1kl0iy0v",
@@ -61,6 +61,12 @@ Output:
                     "Region": "ap-shanghai",
                     "ReadOnly": 0
                 },
+                "Tags": [
+                    {
+                        "TagKey": "负责人",
+                        "TagValue": "alice"
+                    }
+                ],
                 "Detail": {
                     "StepAll": 0,
                     "StepNow": 0,
@@ -71,68 +77,11 @@ Output:
                     "StepInfo": []
                 },
                 "Status": 1,
-                "DatabaseInfo": [],
+                "DatabaseInfo": "[]",
                 "CreateTime": "2018-05-24 15:06:03",
                 "StartTime": "0000-00-00 00:00:00",
-                "EndTime": "0000-00-00 00:00:00"
-            },
-            {
-                "JobId": "dts-dau5czmd",
-                "JobName": "apitest",
-                "MigrateOption": {
-                    "RunMode": 1,
-                    "ExpectTime": "",
-                    "MigrateType": 2,
-                    "MigrateObject": 2,
-                    "ConsistencyType": 5,
-                    "IsOverrideRoot": 0,
-                    "ExternParams": "[]",
-                    "ConsistencyParams": {
-                        "SelectRowsPerTable": 0,
-                        "TablesSelectAll": 0,
-                        "TablesSelectCount": 0
-                    }
-                },
-                "SrcAccessType": "extranet",
-                "SrcDatabaseType": "mysql",
-                "SrcInfo": {
-                    "AccessKey": "",
-                    "Ip": "9.18.81.3",
-                    "Port": 11401,
-                    "User": "root",
-                    "Password": "",
-                    "RdsInstanceId": "",
-                    "CvmInstanceId": "",
-                    "UniqDcgId": "",
-                    "SubnetId": "",
-                    "UniqVpnGwId": "",
-                    "InstanceId": "",
-                    "Region": "ap-guangzhou",
-                    "VpcId": ""
-                },
-                "DstAccessType": "cdb",
-                "DstDatabaseType": "mysql",
-                "DstInfo": {
-                    "InstanceId": "cdb-m78e0nnv",
-                    "Ip": "",
-                    "Port": 0,
-                    "Region": "ap-shanghai",
-                    "ReadOnly": 0
-                },
-                "Detail": {
-                    "StepAll": 0,
-                    "StepNow": 0,
-                    "Progress": "0",
-                    "CurrentStepProgress": "",
-                    "MasterSlaveDistance": 0,
-                    "SecondsBehindMaster": 0,
-                    "StepInfo": []
-                },
-                "Status": 5,
-                "DatabaseInfo": [],
-                "CreateTime": "2018-05-23 11:49:44",
-                "StartTime": "0000-00-00 00:00:00",
-                "EndTime": "0000-00-00 00:00:00"
+                "EndTime": "0000-00-00 00:00:00",
+                "ErrorInfo": []
             }
         ],
         "RequestId": "c032aab5-b56a-428d-9cf7-e5f324ee408b"

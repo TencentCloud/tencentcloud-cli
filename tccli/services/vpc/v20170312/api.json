@@ -235,7 +235,7 @@
       "output": "CreateLocalGatewayResponse"
     },
     "CreateNatGateway": {
-      "document": "本接口(CreateNatGateway)用于创建NAT网关。",
+      "document": "本接口(CreateNatGateway)用于创建NAT网关。\n在对新建的NAT网关做其他操作前，需先确认此网关已被创建完成（DescribeNatGateway接口返回的实例State字段为AVAILABLE）。",
       "input": "CreateNatGatewayRequest",
       "name": "创建NAT网关",
       "output": "CreateNatGatewayResponse"
@@ -4960,6 +4960,7 @@
         {
           "default": "",
           "document": "NAT网关名称",
+          "example": "test_name",
           "member": "string",
           "name": "NatGatewayName",
           "required": true,
@@ -4968,6 +4969,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-abcdefgh",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4976,6 +4978,7 @@
         {
           "default": "",
           "document": "NAT网关最大外网出带宽(单位:Mbps)，支持的参数值：`20, 50, 100, 200, 500, 1000, 2000, 5000`，默认: `100Mbps`。",
+          "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -4984,6 +4987,7 @@
         {
           "default": "",
           "document": "NAT网关并发连接上限，支持参数值：`1000000、3000000、10000000`，默认值为`100000`。",
+          "example": "1000000",
           "member": "uint64",
           "name": "MaxConcurrentConnection",
           "required": false,
@@ -4992,6 +4996,7 @@
         {
           "default": "",
           "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP，其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "1",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
@@ -5000,6 +5005,7 @@
         {
           "default": "",
           "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "[\"139.199.232.119\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
@@ -5008,6 +5014,7 @@
         {
           "default": "",
           "document": "可用区，形如：`ap-guangzhou-1`。",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -5016,6 +5023,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -5024,6 +5032,7 @@
         {
           "default": "",
           "document": "NAT网关所属子网",
+          "example": "1215354",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -5037,15 +5046,19 @@
       "members": [
         {
           "document": "NAT网关对象数组。",
+          "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的 NAT网关对象数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

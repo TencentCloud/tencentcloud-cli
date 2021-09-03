@@ -1250,10 +1250,10 @@
     ],
     "ScanAsset": [
       {
-        "document": "漏洞管理 - 一键检测",
+        "document": "示例",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanAsset\n<公共请求参数>\n\n{\n    \"AssetTypeIds\": [\n        1\n    ],\n    \"Quuids\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TaskId\": 1\n    }\n}",
-        "title": "漏洞管理 - 一键检测"
+        "title": "示例"
       }
     ],
     "ScanVul": [

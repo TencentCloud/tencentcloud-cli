@@ -30,6 +30,7 @@ Output:
                 "NetworkState": "AVAILABLE",
                 "InternetMaxBandwidthOut": 10,
                 "MaxConcurrentConnection": 1000000,
+                "SecurityGroupSet": [],
                 "PublicIpAddressSet": [
                     {
                         "AddressId": "eip-9uw5fwsu",
@@ -43,7 +44,12 @@ Output:
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [],
+                "DirectConnectGatewayIds": [],
                 "Zone": "ap-guangzhou-2",
+                "ExclusiveGatewayBandwidth": 1,
+                "IsExclusive": true,
+                "SourceIpTranslationNatRuleSet": [],
+                "SubnetId": "1215354",
                 "TagSet": [
                     {
                         "Key": "city",

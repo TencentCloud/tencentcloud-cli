@@ -25,7 +25,7 @@
       "members": [
         {
           "default": "",
-          "document": "待查询产品的名称，例如cvm、vpc",
+          "document": "待查询产品的名称，例如cvm",
           "example": "cvm",
           "member": "string",
           "name": "Product",
@@ -70,7 +70,7 @@
       "members": [
         {
           "default": "",
-          "document": "待查询产品的名称，例如cvm、vpc",
+          "document": "待查询产品的名称，例如cvm",
           "example": "cvm",
           "member": "string",
           "name": "Product",

@@ -22,7 +22,8 @@ tccli cls CreateConfig --cli-unfold-argument  \
     --ExtractRule.Backtracking -1 \
     --ExcludePaths.0.Type xx \
     --ExcludePaths.0.Value xx \
-    --Output xxxxxx-xxx-xxxxxx
+    --Output xxxxxx-xxx-xxxxxx \
+    --UserDefineRule xxxxxx
 ```
 
 Output: 

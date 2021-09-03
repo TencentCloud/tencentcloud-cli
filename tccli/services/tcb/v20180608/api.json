@@ -8216,6 +8216,26 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网CLBIP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "PublicClbIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网CLBIP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "InternalClbIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

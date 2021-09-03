@@ -724,7 +724,7 @@
         },
         {
           "default": "",
-          "document": "交易时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易时间，单位是秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Timestamp",
@@ -3544,7 +3544,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "区块时间戳",
+          "document": "区块时间戳，单位是秒",
           "example": "1625572262",
           "member": "int64",
           "name": "BlockTimestamp",

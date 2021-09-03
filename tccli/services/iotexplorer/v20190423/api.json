@@ -150,6 +150,12 @@
       "name": "获取规则信息",
       "output": "DescribeTopicRuleResponse"
     },
+    "DirectBindDeviceInFamily": {
+      "document": "直接绑定设备和家庭",
+      "input": "DirectBindDeviceInFamilyRequest",
+      "name": "直接绑定设备和家庭",
+      "output": "DirectBindDeviceInFamilyResponse"
+    },
     "DisableTopicRule": {
       "document": "禁用规则",
       "input": "DisableTopicRuleRequest",
@@ -296,6 +302,112 @@
     "serviceShortName": "iotexplorer"
   },
   "objects": {
+    "AppDeviceInfo": {
+      "document": "云api直接绑定设备出参",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID/设备名",
+          "example": "fsdf",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "sdf",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "sdf",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备别名",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "icon地址",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "IconUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "家庭ID",
+          "example": "sdffsd",
+          "member": "string",
+          "name": "FamilyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "example": "sdfds",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备类型",
+          "example": "0",
+          "member": "int64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "23423423",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "234234234",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CallDeviceActionAsyncRequest": {
       "document": "CallDeviceActionAsync请求参数结构体",
       "members": [
@@ -1954,6 +2066,87 @@
         }
       ],
       "usage": "in"
+    },
+    "DirectBindDeviceInFamilyRequest": {
+      "document": "DirectBindDeviceInFamily请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "小程序appid",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "IotAppID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "234234234",
+          "member": "string",
+          "name": "UserID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "家庭ID",
+          "example": "dsfsdf",
+          "member": "string",
+          "name": "FamilyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "sdffsdf",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "sdfsd",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "房间ID",
+          "example": "2",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DirectBindDeviceInFamilyResponse": {
+      "document": "DirectBindDeviceInFamily返回参数结构体",
+      "members": [
+        {
+          "document": "返回设备信息",
+          "example": "无",
+          "member": "AppDeviceInfo",
+          "name": "AppDeviceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DisableTopicRuleRequest": {
       "document": "DisableTopicRule请求参数结构体",

@@ -20,7 +20,8 @@ tccli cls ModifyConfig --cli-unfold-argument  \
     --ExtractRule.FilterKeyRegex.0.Regex xxxx \
     --ExtractRule.UnMatchUpLoadSwitch True \
     --ExtractRule.UnMatchLogKey testlog \
-    --ExtractRule.Backtracking 1048576
+    --ExtractRule.Backtracking 1048576 \
+    --UserDefineRule xxxxx
 ```
 
 Output: 

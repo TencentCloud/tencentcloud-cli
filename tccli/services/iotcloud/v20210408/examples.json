@@ -46,11 +46,19 @@
         "title": "删除产品"
       }
     ],
+    "DeleteProductPrivateCA": [
+      {
+        "document": "删除产品的私有CA证书",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteProductPrivateCA\n&ProductId=ABCDE12345\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxx\"\n    }\n}",
+        "title": "删除产品的私有CA证书"
+      }
+    ],
     "DescribeDevice": [
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDevice\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnableState\": 1,\n        \"LastOfflineTime\": 1,\n        \"Version\": \"xx\",\n        \"CertState\": 1,\n        \"Online\": 1,\n        \"FirmwareUpdateTime\": 1,\n        \"DeviceName\": \"xx\",\n        \"Tags\": [\n            {\n                \"Tag\": \"Key\",\n                \"Type\": 1,\n                \"Name\": \"Key\",\n                \"Value\": \"Key\"\n            },\n            {\n                \"Tag\": \"xx\",\n                \"Type\": 1,\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"LogLevel\": 1,\n        \"FirstOnlineTime\": 1,\n        \"DeviceCert\": \"xx\",\n        \"Imei\": \"Imei\",\n        \"ClientIP\": \"127.0.0.1\",\n        \"DevicePsk\": \"DevicePsk\",\n        \"Isp\": 1,\n        \"NbiotDeviceID\": \"123124\",\n        \"LoraDevEui\": \"xx\",\n        \"DeviceType\": 1,\n        \"RequestId\": \"xx\",\n        \"LoginTime\": 1,\n        \"ConnIP\": 1,\n        \"LastUpdateTime\": 1,\n        \"Labels\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"CreateTime\": 1,\n        \"LoraMoteType\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnableState\": 1,\n        \"LastOfflineTime\": 1,\n        \"Version\": \"xx\",\n        \"CertState\": 1,\n        \"Online\": 1,\n        \"FirmwareUpdateTime\": 1,\n        \"DeviceName\": \"xx\",\n        \"Tags\": [\n            {\n                \"Tag\": \"Key\",\n                \"Type\": 1,\n                \"Name\": \"Key\",\n                \"Value\": \"Key\"\n            },\n            {\n                \"Tag\": \"xx\",\n                \"Type\": 1,\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"LogLevel\": 1,\n        \"FirstOnlineTime\": 1,\n        \"DeviceCert\": \"xx\",\n        \"Imei\": \"Imei\",\n        \"ClientIP\": \"127.0.0.1\",\n        \"DevicePsk\": \"DevicePsk\",\n        \"Isp\": 1,\n        \"NbiotDeviceID\": \"123124\",\n        \"LoraDevEui\": \"xx\",\n        \"DeviceType\": 1,\n        \"RequestId\": \"xx\",\n        \"LoginTime\": 1,\n        \"ConnIP\": 1,\n        \"LastUpdateTime\": 1,\n        \"Labels\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"CreateTime\": 1,\n        \"LoraMoteType\": 1,\n        \"CreateUserId\": 0\n    }\n}",
         "title": "查看设备详情示例"
       }
     ],
@@ -102,12 +110,28 @@
         "title": "查询产品的CA证书"
       }
     ],
+    "PublishBroadcastMessage": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishBroadcastMessage\n&ProductId=ASBHKN121\n&Payload=123456\n&Qos=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"TaskId\": 1000523\n    }\n}",
+        "title": "发布广播消息"
+      }
+    ],
     "UpdateDeviceLogLevel": [
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDeviceLogLevel\n&ProductId=ABCDE12345\n&DeviceName=abc\n&LogLevel=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e574269-093f-4a7f-bf90-24ef80b6528a\"\n    }\n}",
         "title": "更新设备日志级别"
+      }
+    ],
+    "UpdateDevicePSK": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDevicePSK\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&Psk=xxxxxxxxxxxxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "更新设备PSK"
       }
     ],
     "UpdateDevicesEnableState": [
@@ -124,6 +148,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdatePrivateCA\n&CertName=cert_dev\n&CertText=-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----\n&VerifyCertText=-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "更新私有CA证书"
+      }
+    ],
+    "UpdateProductPrivateCA": [
+      {
+        "document": "更新产品的私有CA证书",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateProductPrivateCA\n&ProductId=ABCDE12345\n&CertName=CertName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxx\"\n    }\n}",
+        "title": "更新产品的私有CA证书"
       }
     ]
   },

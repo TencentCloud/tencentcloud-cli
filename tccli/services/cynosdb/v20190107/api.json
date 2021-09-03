@@ -1946,16 +1946,6 @@
         },
         {
           "default": "",
-          "document": "存储付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "StoragePayMode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "预付费存储Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
@@ -1963,6 +1953,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储付费类型",
+          "example": "1",
+          "member": "int64",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
