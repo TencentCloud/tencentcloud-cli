@@ -142,6 +142,20 @@
         "title": "调用成功示例"
       }
     ],
+    "GetSummaryInfo": [
+      {
+        "document": "",
+        "input": "https://bda.tencentcloudapi.com/?Action=GetSummaryInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78ec7830-a1c7-42be-bd65-6d0fa25f6fab\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "https://bda.tencentcloudapi.com/?Action=GetSummaryInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GroupCount\": 10,\n        \"PersonCount\": 100,\n        \"TraceCount\": 1000,\n        \"RequestId\": \"9ffccff2-4b52-443f-98f4-eb1f6a30399e\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
     "ModifyGroup": [
       {
         "document": "",

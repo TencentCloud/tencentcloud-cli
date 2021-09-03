@@ -66,6 +66,12 @@
       "name": "获取人员列表",
       "output": "GetPersonListResponse"
     },
+    "GetSummaryInfo": {
+      "document": "获取人体库汇总信息。",
+      "input": "GetSummaryInfoRequest",
+      "name": "获取人体库汇总信息",
+      "output": "GetSummaryInfoResponse"
+    },
     "ModifyGroup": {
       "document": "修改人体库名称、备注。",
       "input": "ModifyGroupRequest",
@@ -1057,6 +1063,50 @@
           "member": "string",
           "name": "BodyModelVersion",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSummaryInfoRequest": {
+      "document": "GetSummaryInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetSummaryInfoResponse": {
+      "document": "GetSummaryInfo返回参数结构体",
+      "members": [
+        {
+          "document": "人体库总数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "GroupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人员总数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "PersonCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人员轨迹总数量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "TraceCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

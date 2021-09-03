@@ -222,6 +222,14 @@
         "title": "获取无需优化SQL的优化建议"
       }
     ],
+    "KillMySqlThreads": [
+      {
+        "document": "Stage为\"commit\"阶段",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillMySqlThreads\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-8jawylhf\",\n    \"SqlExecId\": \"2e2e2\",\n    \"Stage\": \"Commit\",\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SqlExecId\": \"xx\",\n        \"Threads\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据会话ID中断当前会话"
+      }
+    ],
     "ModifyDiagDBInstanceConf": [
       {
         "document": "",

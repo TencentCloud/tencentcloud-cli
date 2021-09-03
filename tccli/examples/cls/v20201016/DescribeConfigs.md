@@ -42,6 +42,7 @@ Output:
                     "UnMatchUpLoadSwitch": true,
                     "Backtracking": -1
                 },
+                "UserDefineRule": "xxxx",
                 "UpdateTime": "2017-08-08 12:12:12",
                 "CreateTime": "2017-08-08 12:12:12"
             }
