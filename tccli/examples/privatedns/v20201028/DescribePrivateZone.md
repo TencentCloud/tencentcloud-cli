@@ -28,6 +28,13 @@ Output:
                     "Region": "ap-guangzhou"
                 }
             ],
+            "AccountVpcSet": [
+                {
+                    "UniqVpcId": "vpc-q1111115",
+                    "Region": "ap-guangzhou",
+                    "Uin": "123456789"
+                }
+            ],
             "Status": "ENABLED",
             "DnsForwardStatus": "DISABLED",
             "Tags": [

@@ -3,14 +3,14 @@
 | aa | [活动防刷](http://document.tencentcloudapi.woa.com/document/product/1189) | 2021-08-27 10:00:38 |
 | af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | 2021-08-27 10:00:11 |
 | afc | [定制建模](http://document.tencentcloudapi.woa.com/document/product/1029) | 2021-08-26 11:27:46 |
-| ame | [正版曲库直通车](http://document.tencentcloudapi.woa.com/document/product/1155) | 2021-09-03 15:06:45 |
+| ame | [正版曲库直通车](http://document.tencentcloudapi.woa.com/document/product/1155) | 2021-09-06 08:12:25 |
 | ams | [音频内容检测](http://document.tencentcloudapi.woa.com/document/product/1219) | 2021-09-03 14:21:32 |
 | antiddos | [DDoS 防护](http://document.tencentcloudapi.woa.com/document/product/1021) | 2021-09-03 14:13:12 |
 | apcas | [汽车精准获客服务](http://document.tencentcloudapi.woa.com/document/product/1244) | 2021-09-03 14:17:36 |
 | ape | [正版图库直通车](http://document.tencentcloudapi.woa.com/document/product/1181) | 2021-09-03 14:19:02 |
 | api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | 2021-08-26 11:25:08 |
 | apigateway | [API网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2021-09-03 15:08:55 |
-| as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2021-09-03 14:28:36 |
+| as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2021-09-06 08:03:51 |
 | asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2021-09-03 14:19:55 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2021-09-03 14:18:52 |
 | ba | [网站备案](http://document.tencentcloudapi.woa.com/document/product/243) | 2021-08-27 10:00:22 |
@@ -104,7 +104,7 @@
 | partners | [渠道合作伙伴](http://document.tencentcloudapi.woa.com/document/product/563) | 2021-09-03 14:52:12 |
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | 2021-09-03 11:49:26 |
 | postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | 2021-09-03 14:52:30 |
-| privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2021-09-03 14:15:46 |
+| privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2021-09-06 08:00:43 |
 | rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2021-09-03 15:14:52 |
 | redis | [云数据库 Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2021-09-03 14:53:06 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2021-09-03 15:11:47 |
@@ -127,7 +127,7 @@
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-03 14:56:00 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2021-09-03 14:56:28 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-09-03 14:56:34 |
-| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-03 14:57:09 |
+| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-06 08:10:15 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2021-08-27 10:00:16 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-09-03 15:07:29 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2021-09-03 11:49:26 |

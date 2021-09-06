@@ -110,6 +110,14 @@
         "title": "获取已购曲库包列表"
       }
     ],
+    "DescribePkgOfflineMusic": [
+      {
+        "document": "根据购买曲库包用户可查询已回退的歌曲信息",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePkgOfflineMusic\n<公共请求参数>\n\n{\n    \"PackageOrderId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OfflineMusicSet\": [\n            {\n                \"ItemId\": \"xx\",\n                \"MusicName\": \"xx\",\n                \"OffRemark\": \"xx\",\n                \"OffTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "曲库包获取已核销歌曲回退数据"
+      }
+    ],
     "DescribeStations": [
       {
         "document": "",

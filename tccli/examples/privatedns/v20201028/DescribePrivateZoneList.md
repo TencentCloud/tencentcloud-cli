@@ -41,6 +41,13 @@ Output:
                         "UniqVpcId": "xx"
                     }
                 ],
+                "AccountVpcSet": [
+                    {
+                        "UniqVpcId": "vpc-q1111115",
+                        "Region": "ap-guangzhou",
+                        "Uin": "123456789"
+                    }
+                ],
                 "Status": "ENABLED",
                 "DnsForwardStatus": "DISABLED",
                 "Tags": []
@@ -54,6 +61,7 @@ Output:
                 "RecordCount": 0,
                 "Remark": null,
                 "VpcSet": [],
+                "AccountVpcSet": [],
                 "Status": "ENABLED",
                 "DnsForwardStatus": "DISABLED",
                 "Tags": [

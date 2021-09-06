@@ -102,6 +102,12 @@
       "name": "删除安全网关路由",
       "output": "DeleteWxGatewayRouteResponse"
     },
+    "DescribeActivityInfo": {
+      "document": "查询活动信息",
+      "input": "DescribeActivityInfoRequest",
+      "name": "查询活动信息",
+      "output": "DescribeActivityInfoResponse"
+    },
     "DescribeActivityRecord": {
       "document": "查询活动记录信息",
       "input": "DescribeActivityRecordRequest",
@@ -294,6 +300,12 @@
       "name": "查询小租户网关套餐信息",
       "output": "DescribeStandaloneGatewayPackageResponse"
     },
+    "DescribeUserActivityInfo": {
+      "document": "查询用户活动信息",
+      "input": "DescribeUserActivityInfoRequest",
+      "name": "查询用户活动信息",
+      "output": "DescribeUserActivityInfoResponse"
+    },
     "DescribeWxCloudBaseRunEnvs": {
       "document": "查询微信云托管环境信息",
       "input": "DescribeWxCloudBaseRunEnvsRequest",
@@ -398,6 +410,72 @@
     "serviceShortName": "tcb"
   },
   "objects": {
+    "ActivityInfoItem": {
+      "document": "活动信息",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "123",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录插入时间",
+          "example": "\"2021-08-15 15:04:43\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录最后一次变更时间",
+          "example": "\"2021-08-15 15:04:43\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动开始时间",
+          "example": "\"2021-08-15 15:04:43\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "活动结束时间",
+          "example": "\"2021-08-15 15:04:43\"",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义备注信息",
+          "example": "\"运营活动\"",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ActivityRecordItem": {
       "document": "活动详情",
       "members": [
@@ -439,6 +517,26 @@
           "name": "SubStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "整型子状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SubStatusInt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否软删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDeleted",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -3400,6 +3498,42 @@
       ],
       "type": "object"
     },
+    "DescribeActivityInfoRequest": {
+      "document": "DescribeActivityInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id列表",
+          "example": "[1,2,4]",
+          "member": "int64",
+          "name": "ActivityIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivityInfoResponse": {
+      "document": "DescribeActivityInfo返回参数结构体",
+      "members": [
+        {
+          "document": "活动详情",
+          "example": "无",
+          "member": "ActivityInfoItem",
+          "name": "ActivityInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeActivityRecordRequest": {
       "document": "DescribeActivityRecord请求参数结构体",
       "members": [
@@ -3445,6 +3579,15 @@
           "example": "[1,2,4]",
           "member": "int64",
           "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据是否软删除进行过滤，[0]未删除, [1] 删除，不传不过滤",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "IsDeletedList",
           "required": false,
           "type": "list"
         }
@@ -5910,6 +6053,105 @@
       ],
       "type": "object"
     },
+    "DescribeUserActivityInfoRequest": {
+      "document": "DescribeUserActivityInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "1",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "渠道加密token",
+          "example": "\"ssss\"",
+          "member": "string",
+          "name": "ChannelToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道来源，每个来源对应不同secretKey",
+          "example": "\"qc_console\"",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "团id, 1元钱裂变中活动团id不为空时根据团id来查询记录，为空时查询uin最新记录",
+          "example": "\"234\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserActivityInfoResponse": {
+      "document": "DescribeUserActivityInfo返回参数结构体",
+      "members": [
+        {
+          "document": "自定义标记，1元钱裂变需求中即代指`团id`",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义备注，1元钱裂变需求中返回`团列表`，uin列表通过\",\"拼接",
+          "example": "\"1,2,3\"",
+          "member": "string",
+          "name": "Notes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "活动剩余时间，单位为s.1元钱裂变需求中即为 time(活动过期时间)-Now()), 过期后为0，即返回必为自然数",
+          "example": "10",
+          "member": "int64",
+          "name": "ActivityTimeLeft",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "拼团剩余时间，单位为s.1元钱裂变需求中即为time(成团时间)+24H-Now()，过期后为0，即返回必为自然数",
+          "example": "10",
+          "member": "int64",
+          "name": "GroupTimeLeft",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "昵称列表,通过\",\"拼接， 1元钱裂变活动中与Notes中uin一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"a,b,c\"",
+          "member": "string",
+          "name": "NickNameList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWxCloudBaseRunEnvsRequest": {
       "document": "DescribeWxCloudBaseRunEnvs请求参数结构体",
       "members": [
@@ -7634,7 +7876,7 @@
           "example": "\"3\"",
           "member": "string",
           "name": "SubStatus",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -7643,7 +7885,7 @@
           "example": "\"123\"",
           "member": "string",
           "name": "ChannelToken",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -7652,7 +7894,7 @@
           "example": "\"qc_console\"",
           "member": "string",
           "name": "Channel",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
