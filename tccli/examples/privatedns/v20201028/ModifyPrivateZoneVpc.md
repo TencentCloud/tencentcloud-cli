@@ -8,7 +8,11 @@ Input:
 tccli privatedns ModifyPrivateZoneVpc --cli-unfold-argument  \
     --ZoneId 1 \
     --VpcSet.0.Region ap-guangzhou \
-    --VpcSet.0.UniqVpcId vpc-xxxxxx
+    --VpcSet.0.UniqVpcId vpc-xxxxxx \
+    --AccountVpcSet.0.Uin 123456789 \
+    --AccountVpcSet.0.Region ap-guangzhou \
+    --AccountVpcSet.0.UniqVpcId vpc-xxxxxx \
+    --AccountVpcSet.0.VpcName vpcName
 ```
 
 Output: 
@@ -19,6 +23,13 @@ Output:
         "ZoneId": "1",
         "VpcSet": [
             {
+                "UniqVpcId": "vpc-xxxxxxx",
+                "Region": "ap-guangzhou"
+            }
+        ],
+        "AccountVpcSet": [
+            {
+                "Uin": "123456789",
                 "UniqVpcId": "vpc-xxxxxxx",
                 "Region": "ap-guangzhou"
             }

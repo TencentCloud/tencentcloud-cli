@@ -136,10 +136,18 @@
         "title": "删除微信网关"
       }
     ],
+    "DescribeActivityInfo": [
+      {
+        "document": "查询活动信息",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityInfo\n&ActivityIdList.0=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ActivityInfoList\": []\n    }\n}",
+        "title": "查询活动信息"
+      }
+    ],
     "DescribeActivityRecord": [
       {
         "document": "查询活动记录信息",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&Statuses.0=1\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&Statuses.0=1\n&IsDeletedList.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ActivityRecords\": []\n    }\n}",
         "title": "查询活动记录信息"
       }
@@ -390,6 +398,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandaloneGatewayPackage\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"PackageVersion\": \"starter\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"StandaloneGatewayPackageList\": [\n            {\n                \"CPU\": 0.25,\n                \"Mem\": 1,\n                \"PackageVersion\": \"starter\"\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "查询小租户网关套餐信息"
+      }
+    ],
+    "DescribeUserActivityInfo": [
+      {
+        "document": "查询用户活动信息",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeUserActivityInfo\n&ActivityId=1\n&ChannelToken=123\n&Channel=qc_console\n&GroupId=234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"123\",\n        \"Notes\": \"1;2;3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
+        "title": "查询用户活动信息"
       }
     ],
     "DescribeWxCloudBaseRunEnvs": [

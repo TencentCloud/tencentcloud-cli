@@ -302,6 +302,7 @@
         {
           "default": "",
           "document": "伸缩组ID。",
+          "example": "无",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -311,6 +312,7 @@
         {
           "default": "",
           "document": "伸缩活动ID。",
+          "example": "无",
           "member": "string",
           "name": "ActivityId",
           "required": true,
@@ -320,6 +322,7 @@
         {
           "default": "",
           "document": "伸缩活动类型。取值如下：<br>\n<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例\n<li>START_INSTANCES：开启实例\n<li>STOP_INSTANCES：关闭实例",
+          "example": "无",
           "member": "string",
           "name": "ActivityType",
           "required": true,
@@ -329,6 +332,7 @@
         {
           "default": "",
           "document": "伸缩活动状态。取值如下：<br>\n<li>INIT：初始化中\n<li>RUNNING：运行中\n<li>SUCCESSFUL：活动成功\n<li>PARTIALLY_SUCCESSFUL：活动部分成功\n<li>FAILED：活动失败\n<li>CANCELLED：活动取消",
+          "example": "无",
           "member": "string",
           "name": "StatusCode",
           "required": true,
@@ -338,6 +342,7 @@
         {
           "default": "",
           "document": "伸缩活动状态描述。",
+          "example": "无",
           "member": "string",
           "name": "StatusMessage",
           "required": true,
@@ -347,6 +352,7 @@
         {
           "default": "",
           "document": "伸缩活动起因。",
+          "example": "无",
           "member": "string",
           "name": "Cause",
           "required": true,
@@ -356,6 +362,7 @@
         {
           "default": "",
           "document": "伸缩活动描述。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -365,6 +372,7 @@
         {
           "default": "",
           "document": "伸缩活动开始时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -374,6 +382,7 @@
         {
           "default": "",
           "document": "伸缩活动结束时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -383,6 +392,7 @@
         {
           "default": "",
           "document": "伸缩活动创建时间。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -392,6 +402,7 @@
         {
           "default": "",
           "document": "伸缩活动相关实例信息集合。",
+          "example": "无",
           "member": "ActivtyRelatedInstance",
           "name": "ActivityRelatedInstanceSet",
           "required": true,
@@ -401,6 +412,7 @@
         {
           "default": "",
           "document": "伸缩活动状态简要描述。",
+          "example": "无",
           "member": "string",
           "name": "StatusMessageSimplified",
           "required": true,
@@ -410,8 +422,19 @@
         {
           "default": "",
           "document": "伸缩活动中生命周期挂钩的执行结果。",
+          "example": "无",
           "member": "LifecycleActionResultInfo",
           "name": "LifecycleActionResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩活动状态详细描述。",
+          "example": "无",
+          "member": "DetailedStatusMessage",
+          "name": "DetailedStatusMessageSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2890,6 +2913,82 @@
         }
       ],
       "type": "object"
+    },
+    "DetailedStatusMessage": {
+      "document": "伸缩活动状态详细描述。",
+      "members": [
+        {
+          "default": "",
+          "document": "错误类型。",
+          "example": "InvalidInstanceType",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区信息。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "ins-yy23daou",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID。",
+          "example": "subnet-gz7j7r3k",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型。",
+          "example": "IT5.8XLARGE128",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DisableAutoScalingGroupRequest": {
       "document": "DisableAutoScalingGroup请求参数结构体",

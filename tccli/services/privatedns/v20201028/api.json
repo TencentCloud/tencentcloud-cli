@@ -98,6 +98,88 @@
     "serviceShortName": "privatedns"
   },
   "objects": {
+    "AccountVpcInfo": {
+      "document": "私有域解析账号Vpc信息",
+      "members": [
+        {
+          "default": "",
+          "document": "VpcId： vpc-xadsafsdasd",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpc资源名称：testname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AccountVpcInfoOutput": {
+      "document": "关联的VPC出参",
+      "members": [
+        {
+          "default": "",
+          "document": "关联账户的uin",
+          "example": "12345678",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vpcid",
+          "example": "vpc-wdskdss1",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AuditLog": {
       "document": "操作日志",
       "members": [
@@ -317,6 +399,15 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "Vpcs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "创建私有域同时绑定关联账号的VPC",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
           "required": false,
           "type": "list"
         }
@@ -1091,6 +1182,15 @@
           "name": "VpcSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有域账号关联的全部VPC列表",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1112,6 +1212,15 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私有域账号关联的全部VPC列表",
+          "example": "无",
+          "member": "AccountVpcInfoOutput",
+          "name": "AccountVpcSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1237,6 +1346,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccountVpcInfoOutput",
+          "name": "AccountVpcSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

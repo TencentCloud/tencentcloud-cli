@@ -10,7 +10,8 @@ tccli tcb DescribeActivityRecord --cli-unfold-argument  \
     --ChannelToken 123 \
     --Channel qc_console \
     --Status 1 \
-    --Statuses 1
+    --Statuses 1 \
+    --IsDeletedList 1
 ```
 
 Output: 
