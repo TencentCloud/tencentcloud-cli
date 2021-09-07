@@ -549,7 +549,7 @@
     "DescribeLiveStreamEventList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamEventList\r\n&DomainName=yourdomain.test.com\r\n&AppName=live\r\n&StreamName=stream\r\n&StartTime=2019-01-04T12:00:00Z\r\n&EndTime=2019-01-04T20:00:00Z\r\n&PageNum=1\r\n&PageSize=10\r\n&IsFilter=1\r\n&IsStrict=0\r\n&IsAsc=0\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamEventList\n&DomainName=yourdomain.test.com\n&AppName=live\n&StreamName=stream\n&StartTime=2019-01-04T12:00:00Z\n&EndTime=2019-01-04T20:00:00Z\n&PageNum=1\n&PageSize=10\n&IsFilter=1\n&IsStrict=0\n&IsAsc=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EventList\": [\n            {\n                \"AppName\": \"live\",\n                \"ClientIp\": \"180.163.8.244\",\n                \"DomainName\": \"yourdomain.test.com\",\n                \"Duration\": 0,\n                \"Resolution\": \"640*352\",\n                \"StopReason\": \"客户端主动断流\",\n                \"StreamEndTime\": \"2019-01-04T11:59:58Z\",\n                \"StreamName\": \"stream\",\n                \"StreamStartTime\": \"2019-01-04T11:59:58Z\"\n            }\n        ],\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
@@ -557,7 +557,7 @@
     "DescribeLiveStreamOnlineList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamOnlineList\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&PageNum=1\r\n&PageSize=10\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveStreamOnlineList\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"OnlineInfo\": [\n            {\n                \"StreamName\": \"5000_abcdefg\",\n                \"AppName\": \"live\",\n                \"DomainName\": \"5000.livepush.myqcloud.com\",\n                \"PublishTimeList\": [\n                    {\n                        \"PublishTime\": \"2017-10-24T12:00:00Z\"\n                    }\n                ]\n            }\n        ],\n        \"TotalNum\": 1,\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }

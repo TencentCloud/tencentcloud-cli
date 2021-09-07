@@ -30,6 +30,10 @@ Output:
             "NetworkInterfaceName": "TestNIC",
             "NetworkInterfaceDescription": "TestDesc",
             "MacAddress": "20:90:6F:62:33:E2",
+            "Business": "TKE",
+            "CdcId": "",
+            "EniType": 1,
+            "AttachType": 1,
             "PrivateIpAddressSet": [
                 {
                     "PrivateIpAddress": "172.16.64.13",

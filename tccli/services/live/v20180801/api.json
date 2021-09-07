@@ -331,7 +331,7 @@
       "output": "DescribeLiveDomainsResponse"
     },
     "DescribeLiveForbidStreamList": {
-      "document": "获取禁推流列表。",
+      "document": "获取禁推流列表。\n\n注意：该接口仅作为直播辅助查询接口，重要业务场景不可强依赖该接口。",
       "input": "DescribeLiveForbidStreamListRequest",
       "name": "获取禁推流列表",
       "output": "DescribeLiveForbidStreamListResponse"
@@ -397,13 +397,13 @@
       "output": "DescribeLiveSnapshotTemplatesResponse"
     },
     "DescribeLiveStreamEventList": {
-      "document": "用于查询推断流事件。<br>\n\n注意：该接口可通过使用IsFilter进行过滤，返回推流历史记录。",
+      "document": "用于查询推断流事件。<br>\n\n注意：\n1. 该接口提供离线推断流记录查询功能，不可作为重要业务场景强依赖接口。\n2. 该接口可通过使用IsFilter进行过滤，返回推流历史记录。",
       "input": "DescribeLiveStreamEventListRequest",
       "name": "查询推断流事件",
       "output": "DescribeLiveStreamEventListResponse"
     },
     "DescribeLiveStreamOnlineList": {
-      "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n注意：该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。",
+      "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n\n注意：\n1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。\n2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。\n",
       "input": "DescribeLiveStreamOnlineListRequest",
       "name": "查询直播中的流",
       "output": "DescribeLiveStreamOnlineListResponse"
@@ -421,7 +421,7 @@
       "output": "DescribeLiveStreamPushInfoListResponse"
     },
     "DescribeLiveStreamState": {
-      "document": "返回直播中、无推流或者禁播等状态",
+      "document": "返回直播中、无推流或者禁播等状态。\n注意：该接口仅提供辅助查询流状态功能，业务重要场景不要强依赖该接口！\n\n使用建议：\n1. 去除将该接口的返回结果作为开播、关播等重要业务场景的依赖。\n2. 如业务需要该状态,可通过[推断流事件通知](/document/product/267/47025)进行存储维护直播间状态。\n3. 自行维护的直播间状态,可通过定时(>1 min)[查询直播中的流接口](/document/product/267/20472),进行状态校准。\n4. 如使用了流状态查询接口查询到流不活跃,可通过上述多种方案综合判定流状态。\n5. 接口查询时,如发生访问异常或解析异常等,可默认为活跃,减少对业务影响。",
       "input": "DescribeLiveStreamStateRequest",
       "name": "查询流状态",
       "output": "DescribeLiveStreamStateResponse"
@@ -4861,7 +4861,7 @@
         },
         {
           "default": "",
-          "document": "搜索的推流 id 名称。",
+          "document": "按流名称查询。",
           "example": "stream_2021",
           "member": "string",
           "name": "StreamName",
@@ -5390,6 +5390,7 @@
         {
           "default": "",
           "document": "起始时间。 \nUTC 格式，例如：2018-12-29T19:00:00Z。\n支持查询60天内的历史记录。",
+          "example": "2019-01-04T12:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5398,6 +5399,7 @@
         {
           "default": "",
           "document": "结束时间。\nUTC 格式，例如：2018-12-29T20:00:00Z。\n不超过当前时间，且和起始时间相差不得超过30天。",
+          "example": "2019-01-04T20:00:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5406,6 +5408,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -5414,6 +5417,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "yourdomain.test.com",
           "member": "string",
           "name": "DomainName",
           "required": false,
@@ -5422,6 +5426,7 @@
         {
           "default": "",
           "document": "流名称，不支持通配符（*）查询，默认模糊匹配。\n可使用IsStrict字段改为精确查询。",
+          "example": "stream",
           "member": "string",
           "name": "StreamName",
           "required": false,
@@ -5430,6 +5435,7 @@
         {
           "default": "",
           "document": "取得第几页。\n默认值：1。\n注： 目前只支持10000条内的查询。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -5438,6 +5444,7 @@
         {
           "default": "",
           "document": "分页大小。\n最大值：100。\n取值范围：1~100 之间的任意整数。\n默认值：10。\n注： 目前只支持10000条内的查询。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -5446,6 +5453,7 @@
         {
           "default": "",
           "document": "是否过滤，默认不过滤。\n0：不进行任何过滤。\n1：过滤掉开播失败的，只返回开播成功的。",
+          "example": "1",
           "member": "int64",
           "name": "IsFilter",
           "required": false,
@@ -5454,6 +5462,7 @@
         {
           "default": "",
           "document": "是否精确查询，默认模糊匹配。\n0：模糊匹配。\n1：精确查询。\n注：使用StreamName时该参数生效。",
+          "example": "0",
           "member": "int64",
           "name": "IsStrict",
           "required": false,
@@ -5462,6 +5471,7 @@
         {
           "default": "",
           "document": "是否按结束时间正序显示，默认逆序。\n0：逆序。\n1：正序。",
+          "example": "0",
           "member": "int64",
           "name": "IsAsc",
           "required": false,
@@ -5475,36 +5485,46 @@
       "members": [
         {
           "document": "推断流事件列表。",
+          "example": "无",
           "member": "StreamEventInfo",
           "name": "EventList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "分页的页码。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页大小。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的总个数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5523,6 +5543,7 @@
         {
           "default": "",
           "document": "推流域名。多域名用户需要填写 DomainName。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": false,
@@ -5531,6 +5552,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的 AppName 保持一致，默认为 live。多路径用户需要填写 AppName。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -5539,6 +5561,7 @@
         {
           "default": "",
           "document": "取得第几页，默认1。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -5547,6 +5570,7 @@
         {
           "default": "",
           "document": "每页大小，最大100。 \n取值：10~100之间的任意整数。\n默认值：10。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -5555,6 +5579,7 @@
         {
           "default": "",
           "document": "流名称，用于精确查询。",
+          "example": "mystream",
           "member": "string",
           "name": "StreamName",
           "required": false,
@@ -5568,36 +5593,46 @@
       "members": [
         {
           "document": "符合条件的总个数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "分页的页码。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页显示的条数。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "正在推送流的信息列表。",
+          "example": "无",
           "member": "StreamOnlineInfo",
           "name": "OnlineInfo",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11852,6 +11887,7 @@
         {
           "default": "",
           "document": "水印 ID。\n在添加水印接口 [AddLiveWatermark](/document/product/267/30154) 调用返回值中获取水印 ID。",
+          "example": "123",
           "member": "int64",
           "name": "WatermarkId",
           "required": true,
@@ -11860,6 +11896,7 @@
         {
           "default": "",
           "document": "水印图片 URL。\nURL中禁止包含的字符：\n ;(){}$>`#\"\\'|",
+          "example": "http://watermark-10005041.cos.myqcloud.com/1251830167/watermark_img_Alogo.png",
           "member": "string",
           "name": "PictureUrl",
           "required": true,
@@ -11868,6 +11905,7 @@
         {
           "default": "",
           "document": "显示位置，X轴偏移，单位是百分比，默认 0。",
+          "example": "80",
           "member": "int64",
           "name": "XPosition",
           "required": true,
@@ -11876,6 +11914,7 @@
         {
           "default": "",
           "document": "显示位置，Y轴偏移，单位是百分比，默认 0。",
+          "example": "10",
           "member": "int64",
           "name": "YPosition",
           "required": true,
@@ -11884,6 +11923,7 @@
         {
           "default": "",
           "document": "水印名称。\n最长16字节。",
+          "example": "logo",
           "member": "string",
           "name": "WatermarkName",
           "required": false,
@@ -11892,6 +11932,7 @@
         {
           "default": "",
           "document": "水印宽度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始宽度。",
+          "example": "100",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -11900,6 +11941,7 @@
         {
           "default": "",
           "document": "水印高度，占直播原始画面宽度百分比，建议高宽只设置一项，另外一项会自适应缩放，避免变形。默认原始高度。",
+          "example": "100",
           "member": "int64",
           "name": "Height",
           "required": false,

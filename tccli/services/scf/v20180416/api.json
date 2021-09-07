@@ -1097,6 +1097,7 @@
         {
           "default": "",
           "document": "新建触发器绑定的函数名称",
+          "example": "FunctionName",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1105,6 +1106,7 @@
         {
           "default": "",
           "document": "新建触发器名称。如果是定时触发器，名称支持英文字母、数字、连接符和下划线，最长100个字符；如果是cos触发器，需要是对应cos存储桶适用于XML API的访问域名(例如:5401-5ff414-12345.cos.ap-shanghai.myqcloud.com);如果是其他触发器，见具体触发器绑定参数的说明",
+          "example": "TriggerName",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -1112,7 +1114,8 @@
         },
         {
           "default": "",
-          "document": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型",
+          "document": "触发器类型，目前支持 cos 、cmq、 timer、 ckafka、apigw类型。创建 cls 触发器请参考[CLS 创建投递 SCF 任务](https://cloud.tencent.com/document/product/614/61096)。",
+          "example": "timer",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1121,6 +1124,7 @@
         {
           "default": "",
           "document": "触发器对应的参数，可见具体[触发器描述说明](https://cloud.tencent.com/document/product/583/39901)",
+          "example": "*/2****",
           "member": "string",
           "name": "TriggerDesc",
           "required": false,
@@ -1129,6 +1133,7 @@
         {
           "default": "",
           "document": "函数的命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1137,6 +1142,7 @@
         {
           "default": "",
           "document": "函数的版本",
+          "example": "$DEFAULT",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -1145,6 +1151,7 @@
         {
           "default": "",
           "document": "触发器的初始是能状态 OPEN表示开启 CLOSE表示关闭",
+          "example": "1",
           "member": "string",
           "name": "Enable",
           "required": false,
@@ -1153,6 +1160,7 @@
         {
           "default": "",
           "document": "用户自定义参数，仅支持timer触发器",
+          "example": "CustomArgument",
           "member": "string",
           "name": "CustomArgument",
           "required": false,
@@ -1166,8 +1174,10 @@
       "members": [
         {
           "document": "触发器信息",
+          "example": "{ \t\"AddTime\": \"2021-06-09 16:07:18\", \t\"AvailableStatus\": \"Availa",
           "member": "Trigger",
           "name": "TriggerInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1744,6 +1754,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "函数异步属性，取值 TRUE 或者 FALSE",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AsyncRunEnable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步函数是否开启调用追踪，取值 TRUE 或者 FALSE",
+          "example": "FALSE",
+          "member": "string",
+          "name": "TraceEnable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3431,6 +3461,7 @@
         {
           "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -3439,6 +3470,7 @@
         {
           "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName",
+          "example": "ModTime",
           "member": "string",
           "name": "Orderby",
           "required": false,
@@ -3447,6 +3479,7 @@
         {
           "default": "",
           "document": "数据偏移量，默认值为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3455,6 +3488,7 @@
         {
           "default": "",
           "document": "返回数据长度，默认值为 20",
+          "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3463,6 +3497,7 @@
         {
           "default": "",
           "document": "支持FunctionName模糊匹配",
+          "example": "hello-world",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -3471,6 +3506,7 @@
         {
           "default": "",
           "document": "命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -3479,6 +3515,7 @@
         {
           "default": "",
           "document": "函数描述，支持模糊搜索",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3487,6 +3524,7 @@
         {
           "default": "",
           "document": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3500,15 +3538,19 @@
       "members": [
         {
           "document": "函数列表",
+          "example": "无",
           "member": "Function",
           "name": "Functions",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

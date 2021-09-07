@@ -16,6 +16,20 @@ Output:
 ```
 {
     "Response": {
+        "TriggerInfo": {
+            "AddTime": "2021-06-09 16:07:18",
+            "AvailableStatus": "Available",
+            "BindStatus": "on",
+            "CustomArgument": "",
+            "Enable": 0,
+            "ModTime": "2021-08-31 21:45:32",
+            "Qualifier": "$DEFAULT",
+            "ResourceId": "XXX",
+            "TriggerAttribute": "single",
+            "TriggerDesc": "{\"cron\":\"0 */2 * * * * *\"}",
+            "TriggerName": "TriggerName",
+            "Type": "timer"
+        },
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }
