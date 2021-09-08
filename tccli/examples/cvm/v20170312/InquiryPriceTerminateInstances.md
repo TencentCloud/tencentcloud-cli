@@ -13,6 +13,12 @@ Output:
 ```
 {
     "Response": {
+        "InstanceRefundsSet": [
+            {
+                "InstanceId": "ins-rfmme2si",
+                "Refunds": 0
+            }
+        ],
         "RequestId": "75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5"
     }
 }

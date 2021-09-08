@@ -301,7 +301,7 @@
       "output": "ModifyImageSharePermissionResponse"
     },
     "ModifyInstancesAttribute": {
-      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse"
@@ -3645,6 +3645,15 @@
       "document": "InquiryPriceTerminateInstances返回参数结构体",
       "members": [
         {
+          "document": "退款详情。",
+          "example": "NA",
+          "member": "InstanceRefund",
+          "name": "InstanceRefundsSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4070,6 +4079,42 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceRefund": {
+      "document": "描述退款详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ins-fxqy3xmq\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退款数额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"7.36元\"",
+          "member": "float",
+          "name": "Refunds",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "退款详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"退款：7.36元，代金券不退（订单号20210406606002706051431：部件cvm:现金支付17.9元-已使用第一",
+          "member": "string",
+          "name": "PriceDetail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstanceStatus": {
       "document": "描述实例的状态。状态类型详见[实例状态表](/document/api/213/15753#InstanceStatus)",
@@ -4996,6 +5041,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "lt-rf6ogz49",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5004,6 +5050,7 @@
         {
           "default": "",
           "document": "实例名称。可任意命名，但不得超过60个字符。",
+          "example": "MyInsName",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -5012,6 +5059,7 @@
         {
           "default": "",
           "document": "指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。",
+          "example": "['sg-rf6ogz49']",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,

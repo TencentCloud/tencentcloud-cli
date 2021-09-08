@@ -185,6 +185,12 @@
       "input": "ModifyRecordStatusRequest",
       "name": "设置记录状态",
       "output": "ModifyRecordStatusResponse"
+    },
+    "ModifySubdomainStatus": {
+      "document": "暂停子域名的解析记录",
+      "input": "ModifySubdomainStatusRequest",
+      "name": "暂停子域名的解析记录",
+      "output": "ModifySubdomainStatusResponse"
     }
   },
   "metadata": {
@@ -3647,6 +3653,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubdomainStatusRequest": {
+      "document": "ModifySubdomainStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录类型。允许的值为A、CNAME、MX、TXT、NS、AAAA、SPF、SRV、CAA、URL、URL1。若要传多个，用英文逗号分隔，例如A,TXT,CNAME。",
+          "example": "A,TXT,URL",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录状态。允许的值为disable。",
+          "example": "disable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "1923",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主机记录，如 www，如果不传，默认为 @。",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubdomainStatusResponse": {
+      "document": "ModifySubdomainStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -285,7 +285,7 @@
     "DeleteLiveWatermarkRule": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveWatermarkRule\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&ConfId=1000\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveWatermarkRule\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

@@ -61,9 +61,9 @@
       "output": "DeleteProvisionedConcurrencyConfigResponse"
     },
     "DeleteReservedConcurrencyConfig": {
-      "document": "删除函数的保留并发配置。",
+      "document": "删除函数的最大独占配额配置。",
       "input": "DeleteReservedConcurrencyConfigRequest",
-      "name": "删除函数保留并发",
+      "name": "删除函数最大独占配额",
       "output": "DeleteReservedConcurrencyConfigResponse"
     },
     "DeleteTrigger": {
@@ -121,9 +121,9 @@
       "output": "GetProvisionedConcurrencyConfigResponse"
     },
     "GetReservedConcurrencyConfig": {
-      "document": "获取函数的保留并发详情。",
+      "document": "获取函数的最大独占配额详情。",
       "input": "GetReservedConcurrencyConfigRequest",
-      "name": "获取函数保留并发详情",
+      "name": "获取函数最大独占配额详情",
       "output": "GetReservedConcurrencyConfigResponse"
     },
     "Invoke": {
@@ -205,9 +205,9 @@
       "output": "PutProvisionedConcurrencyConfigResponse"
     },
     "PutReservedConcurrencyConfig": {
-      "document": "设置函数保留并发",
+      "document": "设置函数最大独占配额",
       "input": "PutReservedConcurrencyConfigRequest",
-      "name": "设置保留并发",
+      "name": "设置最大独占配额",
       "output": "PutReservedConcurrencyConfigResponse"
     },
     "PutTotalConcurrencyConfig": {
@@ -1415,7 +1415,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要删除预置并发的函数的名称",
+          "document": "需要删除最大独占配额的函数的名称",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1424,6 +1425,7 @@
         {
           "default": "",
           "document": "函数所属命名空间，默认为default",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2915,7 +2917,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要获取预置并发详情的函数名称。",
+          "document": "需要获取最大独占配额详情的函数名称。",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -2924,6 +2927,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间，默认为default。",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2936,9 +2940,11 @@
       "document": "GetReservedConcurrencyConfig返回参数结构体",
       "members": [
         {
-          "document": "该函数的保留并发内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该函数的最大独占配额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128",
           "member": "uint64",
           "name": "ReservedMem",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4442,7 +4448,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要设置预置并发的函数的名称",
+          "document": "需要设置最大独占配额的函数的名称",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -4450,7 +4457,8 @@
         },
         {
           "default": "",
-          "document": "函数保留并发内存，注：函数的保留并发内存总和上限：用户总并发内存配额 - 12800",
+          "document": "函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800",
+          "example": "12800",
           "member": "uint64",
           "name": "ReservedConcurrencyMem",
           "required": true,
@@ -4459,6 +4467,7 @@
         {
           "default": "",
           "document": "函数所属命名空间，默认为default",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,

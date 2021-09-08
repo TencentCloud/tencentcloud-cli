@@ -11427,7 +11427,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-name - String - （过滤条件）VPC实例名称。</li>\n<li>is-default - String - （过滤条件）是否默认VPC。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）vpc的cidr。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>",
+          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

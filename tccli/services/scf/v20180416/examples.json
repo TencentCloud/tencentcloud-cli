@@ -85,7 +85,7 @@
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=DeleteReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "删除函数保留并发"
+        "title": "删除函数最大独占配额"
       }
     ],
     "DeleteTrigger": [
@@ -165,7 +165,7 @@
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ReservedMem\": 128\n    }\n}",
-        "title": "获取函数保留并发详情"
+        "title": "获取函数最大独占配额详情"
       }
     ],
     "Invoke": [
@@ -283,7 +283,7 @@
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=PutReservedConcurrencyConfig\n&FunctionName=test\n&ReservedConcurrencyMem=12800\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "设置保留并发"
+        "title": "设置最大独占配额"
       }
     ],
     "PutTotalConcurrencyConfig": [
