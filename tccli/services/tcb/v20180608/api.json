@@ -2189,6 +2189,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "coding项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2477,7 +2487,7 @@
         },
         {
           "default": "",
-          "document": "枚举（package/repository/image)",
+          "document": "枚举（package/repository/image/jar/war)",
           "example": "image",
           "member": "string",
           "name": "UploadType",
@@ -2807,6 +2817,51 @@
           "name": "ServiceVolumeMounts",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not",
+          "example": "0",
+          "member": "int64",
+          "name": "HasDockerfile",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "基础镜像",
+          "example": "JDK7",
+          "member": "string",
+          "name": "BaseImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器启动入口命令",
+          "example": "java -jar app.jar",
+          "member": "string",
+          "name": "EntryPoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仓库语言",
+          "example": "Java",
+          "member": "string",
+          "name": "RepoLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户实际上传文件名（仅UploadType为jar/war时必填）",
+          "example": "demo-1.jar",
+          "member": "string",
+          "name": "UploadFilename",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4443,6 +4498,42 @@
           "name": "MemSize",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "HasDockerfile",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "基础镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JDK7",
+          "member": "string",
+          "name": "BaseImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器启动入口命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "java -jar app.jar",
+          "member": "string",
+          "name": "EntryPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "仓库语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Java",
+          "member": "string",
+          "name": "RepoLanguage",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

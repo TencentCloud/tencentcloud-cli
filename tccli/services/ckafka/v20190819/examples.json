@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BatchCreateAcl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateAcl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ResourceType\": 2,\n    \"RuleList\": [\n        {\n            \"Operation\": \"xx\",\n            \"PermissionType\": \"xx\",\n            \"Host\": \"xx\",\n            \"Principal\": \"xx\"\n        }\n    ],\n    \"ResourceNames\": [\n        \"******\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "批量创建ACL"
+      }
+    ],
     "CreateAcl": [
       {
         "document": "",

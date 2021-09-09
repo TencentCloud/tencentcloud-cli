@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BatchCreateAcl": {
+      "document": "批量添加ACL策略",
+      "input": "BatchCreateAclRequest",
+      "name": "批量添加 ACL 策略",
+      "output": "BatchCreateAclResponse"
+    },
     "CreateAcl": {
       "document": "添加 ACL 策略",
       "input": "CreateAclRequest",
@@ -302,6 +308,52 @@
       ],
       "usage": "out"
     },
+    "AclRuleInfo": {
+      "document": "表示ACL 规则的四元组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Acl操作方式，枚举值(所有操作: All, 读：Read，写：Write)",
+          "example": "Read",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权限类型，(Deny，Allow)",
+          "example": "Allow",
+          "member": "string",
+          "name": "PermissionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认为*，表示任何host都可以访问，当前ckafka不支持host为*和ip网段",
+          "example": "*",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。",
+          "example": "User:*",
+          "member": "string",
+          "name": "Principal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "AppIdResponse": {
       "document": "AppId的查询结果",
       "members": [
@@ -349,6 +401,69 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchCreateAclRequest": {
+      "document": "BatchCreateAcl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ckafka-*****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型，(2:TOPIC）",
+          "example": "2",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源列表数组",
+          "example": "[\"test1\",\"test2\"]",
+          "member": "string",
+          "name": "ResourceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设置的ACL规则列表",
+          "example": "无",
+          "member": "AclRuleInfo",
+          "name": "RuleList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateAclResponse": {
+      "document": "BatchCreateAcl返回参数结构体",
+      "members": [
+        {
+          "document": "状态码",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ClusterInfo": {
       "document": "集群信息实体",
