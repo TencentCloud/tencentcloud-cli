@@ -56,6 +56,14 @@
         "title": "创建包年包月的云数据库实例"
       }
     ],
+    "CreateDedicatedClusterDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDBInstance\n<公共请求参数>\n\n{\n    \"DbVersionId\": \"xx\",\n    \"VpcId\": \"\",\n    \"DcnInstanceId\": \"xx\",\n    \"Zone\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"SecurityGroupIds\": [\n        \"xx\"\n    ],\n    \"Pid\": 0,\n    \"DcnRegion\": \"xx\",\n    \"Machine\": \"xx\",\n    \"Storage\": 0,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"Manual\": 0,\n    \"Memory\": 0,\n    \"SubnetId\": \"\",\n    \"DeviceNo\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"InstanceName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"FlowId\": 1122\n    }\n}",
+        "title": "input demo1"
+      }
+    ],
     "CreateTmpInstances": [
       {
         "document": "",

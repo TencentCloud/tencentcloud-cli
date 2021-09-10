@@ -2941,6 +2941,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -2949,6 +2950,7 @@
         {
           "default": "",
           "document": "页码 最小为1",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -2957,6 +2959,7 @@
         {
           "default": "",
           "document": "分页大小 1～200",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -2965,6 +2968,7 @@
         {
           "default": "",
           "document": "按更新时间排序方式 ASC=正序 DESC=倒序",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": true,
@@ -2973,6 +2977,7 @@
         {
           "default": "",
           "document": "主账号 uid 用于创建预设通知",
+          "example": "1234567",
           "member": "int64",
           "name": "OwnerUid",
           "required": false,
@@ -2981,6 +2986,7 @@
         {
           "default": "",
           "document": "告警通知模板名称 用来模糊搜索",
+          "example": "模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2989,6 +2995,7 @@
         {
           "default": "",
           "document": "根据接收人过滤告警通知模板需要选定通知用户类型 USER=用户 GROUP=用户组 传空=不按接收人过滤",
+          "example": "USER",
           "member": "string",
           "name": "ReceiverType",
           "required": false,
@@ -2997,6 +3004,7 @@
         {
           "default": "",
           "document": "接收对象列表",
+          "example": "[]",
           "member": "int64",
           "name": "UserIds",
           "required": false,
@@ -3005,8 +3013,18 @@
         {
           "default": "",
           "document": "接收组列表",
+          "example": "[]",
           "member": "int64",
           "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据通知模板 id 过滤，空数组/不传则不过滤",
+          "example": "[\"notice-ah28cv9d\"]",
+          "member": "string",
+          "name": "NoticeIds",
           "required": false,
           "type": "list"
         }
@@ -3018,15 +3036,19 @@
       "members": [
         {
           "document": "告警通知模板总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "告警通知模板列表",
+          "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

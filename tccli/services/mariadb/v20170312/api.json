@@ -42,6 +42,12 @@
       "name": "创建实例（包年包月）",
       "output": "CreateDBInstanceResponse"
     },
+    "CreateDedicatedClusterDBInstance": {
+      "document": "创建独享集群Mariadb实例",
+      "input": "CreateDedicatedClusterDBInstanceRequest",
+      "name": "创建独享集群Mariadb实例",
+      "output": "CreateDedicatedClusterDBInstanceResponse"
+    },
     "CreateTmpInstances": {
       "document": "本接口（CreateTmpInstances）用于创建临时实例。",
       "input": "CreateTmpInstancesRequest",
@@ -1003,6 +1009,249 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterDBInstanceRequest": {
+      "document": "CreateDedicatedClusterDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分配实例个数",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "內存大小，单位GB",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "磁盘大小，单位GB",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "独享集群集群uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（废弃）可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "（废弃）Pid，可通过获取独享集群售卖配置接口得到",
+          "example": "0",
+          "member": "int64",
+          "name": "Pid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "（废弃）机型",
+          "example": "xx",
+          "member": "string",
+          "name": "Machine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络Id",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网Id",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "db类型，不传默认0",
+          "example": "xx",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "（废弃）是否手动指定一组服务器分配, 运维使用",
+          "example": "0",
+          "member": "int64",
+          "name": "Manual",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "（废弃）DeviceNo参数",
+          "example": "xx",
+          "member": "string",
+          "name": "DeviceNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID",
+          "example": "[\"sg-xx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "DCN源实例ID",
+          "example": "tdsql-xxxx",
+          "member": "string",
+          "name": "DcnInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DCN源实例地域名",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DcnRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义实例名称",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "支持IPv6标志：1 支持， 0 不支持",
+          "example": "无",
+          "member": "int64",
+          "name": "Ipv6Flag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
+          "example": "无",
+          "member": "DBParamValue",
+          "name": "InitParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例节点数",
+          "example": "2",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定主节点uuid，不填随机分配",
+          "example": "svr-xxxx",
+          "member": "string",
+          "name": "MasterHostId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定从节点uuid，不填随机分配",
+          "example": "[\"svr-xxxx\"]",
+          "member": "string",
+          "name": "SlaveHostIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterDBInstanceResponse": {
+      "document": "CreateDedicatedClusterDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "分配资源ID数组",
+          "example": "[\"tdsql-xxxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程ID",
+          "example": "1122",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

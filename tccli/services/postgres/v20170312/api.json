@@ -91,9 +91,9 @@
       "output": "DescribeDBInstancesResponse"
     },
     "DescribeDBSlowlogs": {
-      "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。",
+      "document": "本接口（DescribeDBSlowlogs）用于获取慢查询日志。已于2021.09.01日正式废弃，后续此接口将不再返回任何数据，新接口为DescribeSlowQueryList，详细请查看：https://cloud.tencent.com/document/product/409/60540",
       "input": "DescribeDBSlowlogsRequest",
-      "name": "获取慢查询日志",
+      "name": "获取慢查询日志 （废弃）",
       "output": "DescribeDBSlowlogsResponse"
     },
     "DescribeDBXlogs": {
@@ -139,13 +139,13 @@
       "output": "DescribeServerlessDBInstancesResponse"
     },
     "DescribeSlowQueryAnalysis": {
-      "document": "慢查询统计分析接口，根据SQL语句抽象参数之后，进行聚合分析，并返回对应结果",
+      "document": "此接口（DescribeSlowQueryAnalysis）用于统计指定时间范围内的所有慢查询，根据SQL语句抽象参数后，进行聚合分析，并返回同类SQL列表。",
       "input": "DescribeSlowQueryAnalysisRequest",
-      "name": "慢查询统计分析接口",
+      "name": "获取慢查询统计分析列表",
       "output": "DescribeSlowQueryAnalysisResponse"
     },
     "DescribeSlowQueryList": {
-      "document": "获取慢查询列表",
+      "document": "此接口（DescribeSlowQueryList）用于查询指定时间范围内的所有慢查询。",
       "input": "DescribeSlowQueryListRequest",
       "name": "获取慢查询列表",
       "output": "DescribeSlowQueryListResponse"
@@ -2212,6 +2212,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-5bq3wfjd",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -2220,6 +2221,7 @@
         {
           "default": "",
           "document": "查询起始时间，形如2018-01-01 00:00:00，起始时间不得小于7天以前",
+          "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -2228,6 +2230,7 @@
         {
           "default": "",
           "document": "查询结束时间，形如2018-01-01 00:00:00",
+          "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -2236,6 +2239,7 @@
         {
           "default": "",
           "document": "数据库名字",
+          "example": "”postgres-xxx“",
           "member": "string",
           "name": "DatabaseName",
           "required": false,
@@ -2244,6 +2248,7 @@
         {
           "default": "",
           "document": "搜索关键字",
+          "example": "test",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
@@ -2252,6 +2257,7 @@
         {
           "default": "",
           "document": "分页返回，每页返回的最大数量。取值为1-100",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2260,6 +2266,7 @@
         {
           "default": "",
           "document": "分页返回，返回第几页的数据，从第0页开始计数",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2273,15 +2280,19 @@
       "members": [
         {
           "document": "本次调用返回了多少条数据",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "错误日志列表",
+          "example": "无",
           "member": "ErrLogDetail",
           "name": "Details",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2414,6 +2425,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-lnp6j617",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -2422,6 +2434,7 @@
         {
           "default": "",
           "document": "查询起始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -2430,6 +2443,7 @@
         {
           "default": "",
           "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -2438,6 +2452,7 @@
         {
           "default": "",
           "document": "数据库名字",
+          "example": "”postgres-xx“",
           "member": "string",
           "name": "DatabaseName",
           "required": false,
@@ -2446,6 +2461,7 @@
         {
           "default": "",
           "document": "按照何种指标排序，取值为sum_calls或者sum_cost_time。sum_calls-总调用次数；sum_cost_time-总的花费时间",
+          "example": "sum_call",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2454,6 +2470,7 @@
         {
           "default": "",
           "document": "排序规则。desc-降序；asc-升序",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -2462,6 +2479,7 @@
         {
           "default": "",
           "document": "分页返回结果，每页最大返回数量，取值为1-100，默认20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2470,6 +2488,7 @@
         {
           "default": "",
           "document": "分页返回结果，返回结果的第几页，从0开始计数",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2483,15 +2502,19 @@
       "members": [
         {
           "document": "本次返回多少条数据",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "慢查询日志详情",
+          "example": "无",
           "member": "SlowlogDetail",
           "name": "Detail",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

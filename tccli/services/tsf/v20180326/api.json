@@ -385,7 +385,7 @@
       "output": "DescribeContainerEventsResponse"
     },
     "DescribeContainerGroupDetail": {
-      "document": " 容器部署组详情",
+      "document": " 容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）",
       "input": "DescribeContainerGroupDetailRequest",
       "name": "查询容器部署组详情",
       "output": "DescribeContainerGroupDetailResponse"
@@ -7780,6 +7780,7 @@
         {
           "default": "",
           "document": "分组ID",
+          "example": "group-xxxxxxx",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -7793,8 +7794,10 @@
       "members": [
         {
           "document": "容器部署组详情",
+          "example": "无",
           "member": "ContainerGroupDetail",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

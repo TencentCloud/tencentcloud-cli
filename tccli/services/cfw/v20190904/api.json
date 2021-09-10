@@ -4724,6 +4724,7 @@
         {
           "default": "",
           "document": "执行顺序",
+          "example": "1",
           "member": "uint64",
           "name": "OrderIndex",
           "required": true,
@@ -4733,6 +4734,7 @@
         {
           "default": "",
           "document": "访问源",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "SourceIp",
           "required": true,
@@ -4742,6 +4744,7 @@
         {
           "default": "",
           "document": "访问目的",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "TargetIp",
           "required": true,
@@ -4751,6 +4754,7 @@
         {
           "default": "",
           "document": "协议",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -4759,7 +4763,8 @@
         },
         {
           "default": "",
-          "document": "策略",
+          "document": "策略, 0：观察，1：阻断，2：放行",
+          "example": "0",
           "member": "string",
           "name": "Strategy",
           "required": true,
@@ -4769,6 +4774,7 @@
         {
           "default": "",
           "document": "访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
           "required": true,
@@ -4778,6 +4784,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -4787,6 +4794,7 @@
         {
           "default": "",
           "document": "描述",
+          "example": "描述",
           "member": "string",
           "name": "Detail",
           "required": true,
@@ -4796,6 +4804,7 @@
         {
           "default": "",
           "document": "访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "example": "1",
           "member": "uint64",
           "name": "TargetType",
           "required": true,
@@ -4805,6 +4814,7 @@
         {
           "default": "",
           "document": "端口",
+          "example": "80",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -4814,6 +4824,7 @@
         {
           "default": "",
           "document": "id值",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -4823,6 +4834,7 @@
         {
           "default": "",
           "document": "日志id，从告警处创建必传，其它为空",
+          "example": "1",
           "member": "string",
           "name": "LogId",
           "required": false,
@@ -4832,6 +4844,7 @@
         {
           "default": "",
           "document": "城市Code",
+          "example": "1",
           "member": "uint64",
           "name": "City",
           "required": false,
@@ -4841,6 +4854,7 @@
         {
           "default": "",
           "document": "国家Code",
+          "example": "1",
           "member": "uint64",
           "name": "Country",
           "required": false,
@@ -4850,6 +4864,7 @@
         {
           "default": "",
           "document": "云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云",
+          "example": "1",
           "member": "string",
           "name": "CloudCode",
           "required": false,
@@ -4859,6 +4874,7 @@
         {
           "default": "",
           "document": "是否为地域",
+          "example": "1",
           "member": "uint64",
           "name": "IsRegion",
           "required": false,
@@ -4868,6 +4884,7 @@
         {
           "default": "",
           "document": "城市名",
+          "example": "广州",
           "member": "string",
           "name": "CityName",
           "required": false,
@@ -4877,6 +4894,7 @@
         {
           "default": "",
           "document": "国家名",
+          "example": "中国",
           "member": "string",
           "name": "CountryName",
           "required": false,

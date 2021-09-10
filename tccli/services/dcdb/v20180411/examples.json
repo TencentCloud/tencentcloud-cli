@@ -56,6 +56,14 @@
         "title": "创建包年包月的分布式数据库实例"
       }
     ],
+    "CreateDedicatedClusterDCDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\",\n    \"ShardNodeMemory\": 0,\n    \"ShardNodeCpu\": 0,\n    \"ShardNodeNum\": 0,\n    \"ShardMachine\": \"xx\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DcnRegion\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"DbVersionId\": \"xx\",\n    \"DcnInstanceId\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"ShardNodeStorage\": 0,\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"Cpu\": 0,\n    \"ShardNum\": 0,\n    \"SecurityGroupId\": \"xx\",\n    \"ShardMemory\": 0,\n    \"ShardStorage\": 0,\n    \"Pid\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
+        "title": "input demo1"
+      }
+    ],
     "DeleteAccount": [
       {
         "document": "",
