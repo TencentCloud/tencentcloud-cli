@@ -122,6 +122,7 @@
         {
           "default": "",
           "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
+          "example": "prepay_purchase",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -131,6 +132,7 @@
         {
           "default": "",
           "document": "交易类型名称",
+          "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
           "required": true,
@@ -140,6 +142,7 @@
         {
           "default": "",
           "document": "实际花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -149,6 +152,7 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数",
+          "example": "100.00",
           "member": "string",
           "name": "RealTotalCostRatio",
           "required": true,
@@ -158,6 +162,7 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -167,6 +172,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -176,6 +182,7 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -185,8 +192,19 @@
         {
           "default": "",
           "document": "账单月份，格式2019-08",
+          "example": "2021-01",
           "member": "string",
           "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1031,6 +1049,7 @@
         {
           "default": "",
           "document": "产品码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -1040,6 +1059,7 @@
         {
           "default": "",
           "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "example": "内容分发网络 CDN",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -1049,6 +1069,7 @@
         {
           "default": "",
           "document": "实际花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -1058,6 +1079,7 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
           "required": true,
@@ -1067,6 +1089,7 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -1076,6 +1099,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -1085,6 +1109,7 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -1094,8 +1119,19 @@
         {
           "default": "",
           "document": "账单月份，格式2019-08",
+          "example": "2021-01",
           "member": "string",
           "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1109,6 +1145,7 @@
         {
           "default": "",
           "document": "总花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -1118,6 +1155,7 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -1127,6 +1165,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -1136,8 +1175,19 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2443,6 +2493,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2451,6 +2502,7 @@
         {
           "default": "",
           "document": "数量，最大值为100",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2459,14 +2511,16 @@
         {
           "default": "",
           "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "example": "byPayTime",
           "member": "string",
           "name": "PeriodType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "default": "",
           "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
+          "example": "2018-07",
           "member": "string",
           "name": "Month",
           "required": false,
@@ -2475,6 +2529,7 @@
         {
           "default": "",
           "document": "周期开始时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。(不支持跨月查询)",
+          "example": "2018-11-0100:00:00",
           "member": "string",
           "name": "BeginTime",
           "required": false,
@@ -2483,6 +2538,7 @@
         {
           "default": "",
           "document": "周期结束时间，格式为Y-m-d H:i:s，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。（不支持跨月查询）",
+          "example": "2018-11-0123:59:59",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -2491,6 +2547,7 @@
         {
           "default": "",
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
+          "example": "1",
           "member": "int64",
           "name": "NeedRecordNum",
           "required": false,
@@ -2499,6 +2556,7 @@
         {
           "default": "",
           "document": "查询指定产品信息（暂时未开放获取）",
+          "example": "0",
           "member": "string",
           "name": "ProductCode",
           "required": false,
@@ -2507,6 +2565,7 @@
         {
           "default": "",
           "document": "付费模式 prePay/postPay",
+          "example": "prePay",
           "member": "string",
           "name": "PayMode",
           "required": false,
@@ -2515,6 +2574,7 @@
         {
           "default": "",
           "document": "查询指定资源信息",
+          "example": "ins-49zhx6z1",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -2523,6 +2583,7 @@
         {
           "default": "",
           "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "example": "按量计费日结",
           "member": "string",
           "name": "ActionType",
           "required": false,
@@ -2531,6 +2592,7 @@
         {
           "default": "",
           "document": "项目ID:资源所属项目ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2544,15 +2606,19 @@
       "members": [
         {
           "document": "详情列表",
+          "example": "无",
           "member": "BillDetail",
           "name": "DetailSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11841",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2777,20 +2843,20 @@
         },
         {
           "default": "",
-          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
-          "example": "byPayTime",
-          "member": "string",
-          "name": "PeriodType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "月份，格式为yyyy-mm。不能早于开通账单2.0的月份，最多可拉取24个月内的数据。",
           "example": "2018-08",
           "member": "string",
           "name": "Month",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期类型，byUsedTime按计费周期/byPayTime按扣费周期。需要与费用中心该月份账单的周期保持一致。您可前往[账单概览](https://console.cloud.tencent.com/expense/bill/overview)页面顶部查看确认您的账单统计周期类型。",
+          "example": "byPayTime",
+          "member": "string",
+          "name": "PeriodType",
+          "required": false,
           "type": "string"
         },
         {
@@ -2868,6 +2934,7 @@
         {
           "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2876,6 +2943,7 @@
         {
           "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2884,6 +2952,7 @@
         {
           "default": "",
           "document": "查询账单数据的用户UIN",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -2897,15 +2966,19 @@
       "members": [
         {
           "document": "数据是否准备好，0未准备好，1准备好",
+          "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2924,6 +2997,7 @@
         {
           "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2932,6 +3006,7 @@
         {
           "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2940,6 +3015,7 @@
         {
           "default": "",
           "document": "查询账单数据的用户UIN",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -2953,22 +3029,28 @@
       "members": [
         {
           "document": "数据是否准备好，0未准备好，1准备好",
+          "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BusinessSummaryTotal",
           "name": "SummaryTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2987,6 +3069,7 @@
         {
           "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -2995,6 +3078,7 @@
         {
           "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3003,6 +3087,7 @@
         {
           "default": "",
           "document": "查询账单数据的用户UIN",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -3016,15 +3101,19 @@
       "members": [
         {
           "document": "数据是否准备好，0未准备好，1准备好",
+          "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各项目花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProjectSummaryOverviewItem",
           "name": "SummaryOverview",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3043,6 +3132,7 @@
         {
           "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3051,6 +3141,7 @@
         {
           "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2018-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3059,6 +3150,7 @@
         {
           "default": "",
           "document": "查询账单数据的用户UIN",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
           "required": false,
@@ -3072,15 +3164,19 @@
       "members": [
         {
           "document": "数据是否准备好，0未准备好，1准备好",
+          "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3099,6 +3195,7 @@
         {
           "default": "",
           "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2019-09",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -3107,6 +3204,7 @@
         {
           "default": "",
           "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
+          "example": "2019-09",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3115,6 +3213,7 @@
         {
           "default": "",
           "document": "分账标签键",
+          "example": "province",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -3123,8 +3222,18 @@
         {
           "default": "",
           "document": "查询账单数据的用户UIN",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账标签值",
+          "example": "0",
+          "member": "string",
+          "name": "TagValue",
           "required": false,
           "type": "string"
         }
@@ -3136,16 +3245,29 @@
       "members": [
         {
           "document": "数据是否准备好，0未准备好，1准备好",
+          "example": "1",
           "member": "uint64",
           "name": "Ready",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagSummaryOverviewItem",
           "name": "SummaryOverview",
+          "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SummaryTotal",
+          "name": "SummaryTotal",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -4017,6 +4139,7 @@
         {
           "default": "",
           "document": "付费模式",
+          "example": "prePay",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -4026,6 +4149,7 @@
         {
           "default": "",
           "document": "付费模式名称",
+          "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
           "required": true,
@@ -4035,6 +4159,7 @@
         {
           "default": "",
           "document": "实际花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -4044,6 +4169,7 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
           "required": true,
@@ -4053,6 +4179,7 @@
         {
           "default": "",
           "document": "按交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型汇总消费详情",
+          "example": "[                     {                         \"ActionType\": \"p",
           "member": "ActionSummaryOverviewItem",
           "name": "Detail",
           "required": true,
@@ -4062,6 +4189,7 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -4071,6 +4199,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -4080,8 +4209,19 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4119,6 +4259,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4128,6 +4269,7 @@
         {
           "default": "",
           "document": "项目名称",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -4137,6 +4279,7 @@
         {
           "default": "",
           "document": "实际花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -4146,6 +4289,7 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
           "required": true,
@@ -4155,6 +4299,7 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -4164,6 +4309,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -4173,6 +4319,7 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -4182,8 +4329,19 @@
         {
           "default": "",
           "document": "账单月份，格式2019-08",
+          "example": "2021-01",
           "member": "string",
           "name": "BillMonth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4197,6 +4355,7 @@
         {
           "default": "",
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "RegionId",
           "required": true,
@@ -4206,6 +4365,7 @@
         {
           "default": "",
           "document": "地域名称",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -4215,6 +4375,7 @@
         {
           "default": "",
           "document": "实际花费",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -4224,6 +4385,7 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
           "required": true,
@@ -4233,6 +4395,7 @@
         {
           "default": "",
           "document": "现金金额",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -4242,6 +4405,7 @@
         {
           "default": "",
           "document": "赠送金金额",
+          "example": "0.00",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -4251,6 +4415,7 @@
         {
           "default": "",
           "document": "代金券金额",
+          "example": "0.00",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -4260,11 +4425,48 @@
         {
           "default": "",
           "document": "账单月份，格式2019-08",
+          "example": "2021-01",
           "member": "string",
           "name": "BillMonth",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SummaryTotal": {
+      "document": "总数",
+      "members": [
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4275,6 +4477,7 @@
         {
           "default": "",
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -4284,6 +4487,7 @@
         {
           "default": "",
           "document": "实际花费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -4293,8 +4497,19 @@
         {
           "default": "",
           "document": "费用所占百分比，两位小数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCostRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原价，单位为元。TotalCost字段自账单3.0（即2021-05）之后开始生效，账单3.0之前返回\"-\"。合同价的情况下，TotalCost字段与官网价格存在差异，也返回“-”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00",
+          "member": "string",
+          "name": "TotalCost",
           "required": true,
           "type": "string",
           "value_allowed_null": true

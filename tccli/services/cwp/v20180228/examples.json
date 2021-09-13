@@ -300,7 +300,7 @@
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBanMode\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Mode\": \"xx\",\n        \"StandardModeConfig\": {\n            \"Ttl\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Mode\": \"STANDARD_MODE\",\n        \"StandardModeConfig\": {\n            \"Ttl\": 1\n        },\n        \"RequestId\": \"132456798\"\n    }\n}",
         "title": "获取爆破阻断模式"
       }
     ],

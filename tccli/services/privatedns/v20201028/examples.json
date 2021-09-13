@@ -72,6 +72,14 @@
         "title": "获取私有域解析概览"
       }
     ],
+    "DescribePrivateDNSAccountList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateDNSAccountList\n<公共请求参数>\n\n{\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"AccountUin\",\n            \"Values\": [\n                \"123456789\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14413609-3e4e-9003-c5df01ee3e4b0df7\",\n        \"TotalCount\": 1,\n        \"AccountSet\": [\n            {\n                \"Uin\": \"1234567898\",\n                \"Account\": \"privatedns***@tencent.com\",\n                \"Nickname\": \"Private DNS体验账号\"\n            }\n        ]\n    }\n}",
+        "title": "获取私有域解析账号列表"
+      }
+    ],
     "DescribePrivateZone": [
       {
         "document": "",

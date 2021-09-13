@@ -1357,7 +1357,7 @@
       "output": "ModifyVpcEndPointAttributeResponse"
     },
     "ModifyVpcEndPointServiceAttribute": {
-      "document": "修改终端节点服务属性。\n\n",
+      "document": "本接口（ModifyVpcEndPointServiceAttribute）用于修改终端节点服务属性。\n\n",
       "input": "ModifyVpcEndPointServiceAttributeRequest",
       "name": "修改终端节点服务属性",
       "output": "ModifyVpcEndPointServiceAttributeResponse"
@@ -16220,7 +16220,7 @@
         },
         {
           "default": "",
-          "document": "是否自动接受。",
+          "document": "是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>",
           "example": "False",
           "member": "bool",
           "name": "AutoAcceptFlag",

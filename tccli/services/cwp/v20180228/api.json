@@ -2089,7 +2089,7 @@
         },
         {
           "default": "",
-          "document": "用户填入的正则表达式",
+          "document": "用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配",
           "example": "rm -rf /tmp/tmp\\\\.ERYbwgd8e9",
           "member": "string",
           "name": "Rule",
@@ -4053,7 +4053,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否显示说明列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否显示说明列：true-是，false-否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ShowRuleRemark",
@@ -5919,7 +5919,7 @@
       "document": "DescribeMalwareRiskWarning返回参数结构体",
       "members": [
         {
-          "document": "是否开启自动扫描",
+          "document": "是否开启自动扫描：true-开启，false-未开启",
           "example": "true",
           "member": "bool",
           "name": "IsCheckRisk",
@@ -7972,7 +7972,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "是否试用",
+          "document": "是否试用：true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "IsFirstCheck",
@@ -8811,7 +8811,7 @@
       "document": "DescribeWebPageServiceInfo返回参数结构体",
       "members": [
         {
-          "document": "是否已购服务",
+          "document": "是否已购服务：true-是，false-否",
           "example": "true",
           "member": "bool",
           "name": "Status",

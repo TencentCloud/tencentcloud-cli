@@ -36,6 +36,12 @@
       "name": "获取私有域解析概览",
       "output": "DescribeDashboardResponse"
     },
+    "DescribePrivateDNSAccountList": {
+      "document": "获取私有域解析账号列表",
+      "input": "DescribePrivateDNSAccountListRequest",
+      "name": "获取私有域解析账号列表",
+      "output": "DescribePrivateDNSAccountListResponse"
+    },
     "DescribePrivateZone": {
       "document": "获取私有域信息",
       "input": "DescribePrivateZoneRequest",
@@ -674,6 +680,69 @@
       ],
       "type": "object"
     },
+    "DescribePrivateDNSAccountListRequest": {
+      "document": "DescribePrivateDNSAccountList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页偏移量，从0开始",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页限制数目， 最大100，默认20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateDNSAccountListResponse": {
+      "document": "DescribePrivateDNSAccountList返回参数结构体",
+      "members": [
+        {
+          "document": "私有域解析账号数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "私有域解析账号列表",
+          "example": "无",
+          "member": "PrivateDNSAccount",
+          "name": "AccountSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrivateZoneListRequest": {
       "document": "DescribePrivateZoneList请求参数结构体",
       "members": [
@@ -1233,6 +1302,42 @@
         }
       ],
       "type": "object"
+    },
+    "PrivateDNSAccount": {
+      "document": "私有域解析账号",
+      "members": [
+        {
+          "default": "",
+          "document": "主账号Uin",
+          "example": "123456789",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号名称",
+          "example": "privatedns@qcloud.com",
+          "member": "string",
+          "name": "Account",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户昵称",
+          "example": "私有域解析用户",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrivateZone": {
       "document": "私有域信息",

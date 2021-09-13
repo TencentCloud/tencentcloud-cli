@@ -11,11 +11,11 @@ Output:
 ```
 {
     "Response": {
-        "Mode": "xx",
+        "Mode": "STANDARD_MODE",
         "StandardModeConfig": {
             "Ttl": 1
         },
-        "RequestId": "xx"
+        "RequestId": "132456798"
     }
 }
 ```

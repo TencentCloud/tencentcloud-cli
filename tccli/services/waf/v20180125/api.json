@@ -632,7 +632,7 @@
         },
         {
           "default": "",
-          "document": "日志导出数量",
+          "document": "日志导出数量，最大值100w",
           "example": "100",
           "member": "int64",
           "name": "Count",
