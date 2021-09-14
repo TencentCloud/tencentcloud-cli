@@ -2872,6 +2872,15 @@
           "name": "UploadFilename",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自动扩缩容策略组",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetail",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4553,6 +4562,15 @@
           "name": "RepoLanguage",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "自动扩缩容策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetail",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -7300,6 +7318,32 @@
       ],
       "usage": "out"
     },
+    "HpaPolicy": {
+      "document": "扩缩容策略",
+      "members": [
+        {
+          "default": "",
+          "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cpu",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KVPair": {
       "document": "键值对",
       "members": [
@@ -8321,6 +8365,15 @@
           "name": "IsUpdateCls",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自动扩缩容策略组",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetail",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

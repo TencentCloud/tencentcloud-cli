@@ -53,7 +53,8 @@ Output:
         "BaseImage": "JDK7",
         "RepoLanguage": "Java",
         "HasDockerfile": 0,
-        "EntryPoint": "java -jar app.jar"
+        "EntryPoint": "java -jar app.jar",
+        "PolicyDetail": "xx"
     }
 }
 ```

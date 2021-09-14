@@ -524,6 +524,7 @@
         {
           "default": "",
           "document": "待关闭外网访问的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -532,6 +533,7 @@
         {
           "default": "",
           "document": "是否IPv6，默认0",
+          "example": "无",
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
@@ -545,8 +547,10 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "3324",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2681,6 +2685,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ow728lmc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2689,6 +2694,7 @@
         {
           "default": "",
           "document": "请求日志类型，取值只能为1、2、3或者4。1-binlog，2-冷备，3-errlog，4-slowlog。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -2702,43 +2708,55 @@
       "members": [
         {
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ow728lmc",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "请求日志类型，取值只能为1、2、3或者4。1-binlog，2-冷备，3-errlog，4-slowlog。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求日志总数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "包含uri、length、mtime（修改时间）等信息",
+          "example": "无",
           "member": "LogFileInfo",
           "name": "Files",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "如果是VPC网络的实例，做用本前缀加上URI为下载地址",
+          "example": "http://169.254.0.27:8083",
           "member": "string",
           "name": "VpcPrefix",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "如果是普通网络的实例，做用本前缀加上URI为下载地址",
+          "example": "http://10.66.255.253:8083",
           "member": "string",
           "name": "NormalPrefix",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

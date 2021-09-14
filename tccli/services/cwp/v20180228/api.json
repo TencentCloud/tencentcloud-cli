@@ -1856,7 +1856,7 @@
         },
         {
           "default": "",
-          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件类型：200-暴力破解事件，300-暴力破解成功事件（页面展示），400-暴力破解不存在的帐号事件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "EventType",
@@ -9489,7 +9489,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件。\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 处理状态1已通过 0未通过</li>\n<li>Level - Uint64[] - 处理状态1已通过 0未通过</li>BaselineName \n<li>BaselineName  - String - 基线名称</li>\n<li>Quuid- String - 主机quuid</li>\n<li>Uuid- String - 主机uuid</li>",
+          "document": "过滤条件：\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 事件状态：0-未通过，1-忽略，3-通过，5-检测中</li>\n<li>BaselineName  - String - 基线名称</li>\n<li>AliasName- String - 服务器名称/服务器ip</li>\n<li>Uuid- String - 主机uuid</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",

@@ -27,7 +27,7 @@
     "CloseDBExtranetAccess": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\r\n&InstanceId=dcdbt-avw0207d\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\n&InstanceId=dcdbt-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d1e21a2-b29a-490a-8be0-b61287d92e28\",\n        \"FlowId\": 3024\n    }\n}",
         "title": "关闭云数据库实例的外网访问"
       }

@@ -252,6 +252,14 @@
         "title": "创建转码模板"
       }
     ],
+    "CreateVodDomain": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateVodDomain\n&Domain=myexample.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "添加点播加速域名"
+      }
+    ],
     "CreateWatermarkTemplate": [
       {
         "document": "",
@@ -418,6 +426,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\r\n&Definition=1008\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转码模板"
+      }
+    ],
+    "DeleteVodDomain": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteVodDomain\n&Domain=myexample.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除点播加速域名"
       }
     ],
     "DeleteWatermarkTemplate": [
@@ -1102,6 +1118,22 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyTranscodeTemplate\n&Definition=1008\n&Container=mp4\n&VideoTemplate.Codec=libx264\n&VideoTemplate.Fps=60\n&VideoTemplate.Bitrate=256\n&AudioTemplate.Codec=libfdk_aac\n&AudioTemplate.Bitrate=200\n&AudioTemplate.SampleRate=200\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转码模板"
+      }
+    ],
+    "ModifyVodDomainAccelerateConfig": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainAccelerateConfig\n&Domain=myexample.com\n&Area=Chinese Mainland\n&Status=Enabled\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "域名开启中国境内加速。"
+      }
+    ],
+    "ModifyVodDomainConfig": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=On\n&UrlSignatureAuthPolicy.EncryptedKey=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "设置域名的 Key 防盗链"
       }
     ],
     "ModifyWatermarkTemplate": [

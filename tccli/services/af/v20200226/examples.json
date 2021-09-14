@@ -1,5 +1,19 @@
 {
   "actions": {
+    "DescribeAntiFraud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: af.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiFraud\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"AppIdU\": \"xx\",\n        \"PhoneCryptoType\": \"xx\",\n        \"WifiSSID\": \"xx\",\n        \"IdCryptoType\": \"xx\",\n        \"Imsi\": \"xx\",\n        \"Mac\": \"xx\",\n        \"Idfa\": \"xx\",\n        \"Address\": \"xx\",\n        \"UserIp\": \"xx\",\n        \"WifiBSSID\": \"xx\",\n        \"BankCardNumber\": \"xx\",\n        \"Name\": \"xx\",\n        \"Imei\": \"xx\",\n        \"PhoneNumber\": \"xx\",\n        \"NameCryptoType\": \"xx\",\n        \"Uid\": \"xx\",\n        \"WifiMac\": \"xx\",\n        \"BusinessId\": \"xx\",\n        \"Scene\": \"xx\",\n        \"IdNumber\": \"xx\",\n        \"EmailAddress\": \"xx\",\n        \"AccountType\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"Found\": \"1\",\n            \"IdFound\": \"1\",\n            \"RiskScore\": \"61\",\n            \"RiskInfo\": [\n                {\n                    \"RiskCode\": \"21001\",\n                    \"RiskValue\": \"2\"\n                }\n            ]\n        },\n        \"RequestId\": \"07c816d7-5bc3-4e95-ba1f-32ce3e5683e5\"\n    }\n}",
+        "title": "金融借贷反欺诈接口示例----明文请求"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: af.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiFraud\n<公共请求参数>\n\n{\n    \"BusinessCryptoData\": {\n        \"CryptoType\": \"1\",\n        \"CryptoContent\": \"mpa4yYHKA0QAky02zcMIawK2P8Irhk9UYn9+/lwMGeGrUVRF7tSJWAw7tYPB5Qx15vJ9ifBnzzvCW4AQCZucI3Uxe7JnP1OJnYy/oPykxIeJzNkE/7lzNyKLiZD954K3FqaQ2AZ0lioXpYUX+r2W7g==\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": \"0\",\n            \"Message\": \"Success\",\n            \"Found\": \"1\",\n            \"IdFound\": \"1\",\n            \"RiskScore\": \"61\",\n            \"RiskInfo\": [\n                {\n                    \"RiskCode\": \"21001\",\n                    \"RiskValue\": \"2\"\n                }\n            ]\n        },\n        \"RequestId\": \"07c816d7-5bc3-4e95-ba1f-32ce3e5683e5\"\n    }\n}",
+        "title": "金融借贷反欺诈接口示例----加密请求"
+      }
+    ],
     "QueryAntiFraud": [
       {
         "document": "",

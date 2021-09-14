@@ -537,6 +537,7 @@
         {
           "default": "",
           "document": "待关闭外网访问的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -545,6 +546,7 @@
         {
           "default": "",
           "document": "是否IPv6，默认0",
+          "example": "无",
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
@@ -558,8 +560,10 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "3024",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

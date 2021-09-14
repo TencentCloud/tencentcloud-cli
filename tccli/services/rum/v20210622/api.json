@@ -29,6 +29,12 @@
       "input": "DescribeLogListRequest",
       "name": "获取日志列表",
       "output": "DescribeLogListResponse"
+    },
+    "DescribeProjects": {
+      "document": "获取项目列表（实例创建的团队下的项目列表）",
+      "input": "DescribeProjectsRequest",
+      "name": "获取项目列表",
+      "output": "DescribeProjectsResponse"
     }
   },
   "metadata": {
@@ -730,6 +736,251 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页每页数目，整型",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页码，整型",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "document": "列表总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目列表",
+          "example": "无",
+          "member": "RumProject",
+          "name": "ProjectSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n· 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n· 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "example": "ap-guangdong,ap-shenzhen",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "example": "Zone",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RumProject": {
+      "document": "Rum 项目信息",
+      "members": [
+        {
+          "default": "",
+          "document": "项目名",
+          "example": "测试项目",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者 id",
+          "example": "123456",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 id",
+          "example": "tam-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目类型",
+          "example": "log",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2020-04-26 00:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://github.com/xxx/yyy",
+          "member": "string",
+          "name": "Repo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目网址地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://cloud.tencent.com/index.html",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目采样频率",
+          "example": "12",
+          "member": "string",
+          "name": "Rate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目唯一key（长度 12 位）",
+          "example": "hjkysfkey12",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启url聚类",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableURLGroup",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "tamIns",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 key",
+          "example": "tam-key",
+          "member": "string",
+          "name": "InstanceKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个项目描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否星标  1:是 0:否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsStar",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

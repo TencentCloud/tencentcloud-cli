@@ -27,7 +27,7 @@
     "CloseDBExtranetAccess": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\r\n&InstanceId=tdsql-avw0207d\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d1e21a2-b29a-490a-8be0-b61287d92e28\",\n        \"FlowId\": 3324\n    }\n}",
         "title": "关闭云数据库实例的外网访问"
       }
@@ -123,8 +123,8 @@
     "DescribeDBLogFiles": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBLogFiles\r\n&InstanceId=tdsql-ow728lmc\r\n&Type=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"InstanceId\": \"tdsql-ow728lmc\",\n        \"Type\": 1,\n        \"Total\": 1,\n        \"Files\": [\n            {\n                \"Uri\": \"/1/noshard_108/set_1468578840_203059/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272\",\n                \"Length\": 5253724,\n                \"Mtime\": 1468822981\n            }\n        ],\n        \"VpcPrefix\": \"http://169.254.0.27:8083\",\n        \"NormalPrefix\": \"http://10.66.255.253:8083\"\n    }\n}",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBLogFiles\n&InstanceId=tdsql-ow728lmc\n&Type=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"InstanceId\": \"tdsql-ow728lmc\",\n        \"Type\": 1,\n        \"Total\": 1,\n        \"Files\": [\n            {\n                \"Uri\": \"/1/noshard_108/set_1468578840_203059/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272\",\n                \"Length\": 5253724,\n                \"Mtime\": 1468822981,\n                \"FileName\": \"slave-log\"\n            }\n        ],\n        \"VpcPrefix\": \"http://169.254.0.27:8083\",\n        \"NormalPrefix\": \"http://10.66.255.253:8083\"\n    }\n}",
         "title": "获取binlog列表"
       }
     ],

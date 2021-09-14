@@ -22,7 +22,8 @@ Output:
             {
                 "Uri": "/1/noshard_108/set_1468578840_203059/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272",
                 "Length": 5253724,
-                "Mtime": 1468822981
+                "Mtime": 1468822981,
+                "FileName": "slave-log"
             }
         ],
         "VpcPrefix": "http://169.254.0.27:8083",
