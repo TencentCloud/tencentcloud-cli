@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateNetworkInterface --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-0akbol5v \
     --SubnetId subnet-76r802pg \
     --NetworkInterfaceName TestNIC \
@@ -30,6 +29,10 @@ Output:
             "NetworkInterfaceName": "TestNIC",
             "NetworkInterfaceDescription": "TestDesc",
             "MacAddress": "20:90:6F:62:33:E2",
+            "Business": "xx",
+            "CdcId": "xx",
+            "EniType": 1,
+            "AttachType": 1,
             "PrivateIpAddressSet": [
                 {
                     "PrivateIpAddress": "172.16.64.13",

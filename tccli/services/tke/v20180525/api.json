@@ -288,6 +288,12 @@
       "name": "查询弹性集群列表",
       "output": "DescribeEKSClustersResponse"
     },
+    "DescribeEKSContainerInstanceRegions": {
+      "document": "查询容器实例支持的地域",
+      "input": "DescribeEKSContainerInstanceRegionsRequest",
+      "name": "查询容器实例支持的地域",
+      "output": "DescribeEKSContainerInstanceRegionsResponse"
+    },
     "DescribeEnableVpcCniProgress": {
       "document": "本接口用于查询开启vpc-cni模式的任务进度",
       "input": "DescribeEnableVpcCniProgressRequest",
@@ -4224,6 +4230,41 @@
       ],
       "type": "object"
     },
+    "DescribeEKSContainerInstanceRegionsRequest": {
+      "document": "DescribeEKSContainerInstanceRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEKSContainerInstanceRegionsResponse": {
+      "document": "DescribeEKSContainerInstanceRegions返回参数结构体",
+      "members": [
+        {
+          "document": "EKS Container Instance支持的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xx1\", \"xx2\"]",
+          "member": "EksCiRegionInfo",
+          "name": "Regions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEnableVpcCniProgressRequest": {
       "document": "DescribeEnableVpcCniProgress请求参数结构体",
       "members": [
@@ -5196,6 +5237,42 @@
         }
       ],
       "usage": "both"
+    },
+    "EksCiRegionInfo": {
+      "document": "EksCi地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "地域别名，形如gz",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名，形如ap-guangzhou",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EksCluster": {
       "document": "弹性集群信息",

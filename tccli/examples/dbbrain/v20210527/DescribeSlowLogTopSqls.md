@@ -47,7 +47,8 @@ Output:
                 "RowsExaminedRatio": 0.0,
                 "QueryTimeAvg": 0.0,
                 "SqlTemplate": "xx",
-                "LockTime": 0.0
+                "LockTime": 0.0,
+                "Md5": "xx"
             }
         ]
     }

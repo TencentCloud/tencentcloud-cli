@@ -400,7 +400,7 @@
       {
         "document": "本示例用于销毁一个实例的询价。",
         "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceTerminateInstances\n&InstanceIds.0=ins-rfmme2si\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceRefundsSet\": [\n            {\n                \"InstanceId\": \"ins-rfmme2si\",\n                \"Refunds\": 0\n            }\n        ],\n        \"RequestId\": \"75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5\"\n    }\n}",
         "title": "销毁指定ID的实例"
       }
     ],
@@ -439,7 +439,7 @@
     "ModifyInstancesAttribute": [
       {
         "document": "本示例用于修改两个实例的名称。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesAttribute\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&InstanceName=Mysql_Server\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesAttribute\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&InstanceName=Mysql_Server\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改实例名称"
       }

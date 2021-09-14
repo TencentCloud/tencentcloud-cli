@@ -27,7 +27,7 @@
     "CloseDBExtranetAccess": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\r\n&InstanceId=dcdbt-avw0207d\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CloseDBExtranetAccess\n&InstanceId=dcdbt-avw0207d\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d1e21a2-b29a-490a-8be0-b61287d92e28\",\n        \"FlowId\": 3024\n    }\n}",
         "title": "关闭云数据库实例的外网访问"
       }
@@ -54,6 +54,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=CreateDCDBInstance\n&ShardMemory=2\n&ShardStorage=10\n&ShardNodeCount=3\n&ShardCount=2\n&DbVersionId=5.7.17\n&Count=1\n&Period=1\n&Zones.0=ap-guangzhou-2\n&Zones.1=ap-guangzhou-2\n&AutoVoucher=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"DealName\": \"20181103110163\",\n        \"InstanceIds\": [\n            \"dcdbt-avw0207d\"\n        ]\n    }\n}",
         "title": "创建包年包月的分布式数据库实例"
+      }
+    ],
+    "CreateDedicatedClusterDCDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterDCDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\",\n    \"ShardNodeMemory\": 0,\n    \"ShardNodeCpu\": 0,\n    \"ShardNodeNum\": 0,\n    \"ShardMachine\": \"xx\",\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"xx\",\n            \"TagValue\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DcnRegion\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"DbVersionId\": \"xx\",\n    \"DcnInstanceId\": \"xx\",\n    \"GoodsNum\": 0,\n    \"ProjectId\": 1,\n    \"ShardNodeStorage\": 0,\n    \"VpcId\": \"xx\",\n    \"InstanceName\": \"xx\",\n    \"Cpu\": 0,\n    \"ShardNum\": 0,\n    \"SecurityGroupId\": \"xx\",\n    \"ShardMemory\": 0,\n    \"ShardStorage\": 0,\n    \"Pid\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
+        "title": "input demo1"
       }
     ],
     "DeleteAccount": [

@@ -16,134 +16,81 @@ Output:
     "Response": {
         "Ready": 1,
         "SummaryTotal": {
-            "RealTotalCost": "1596.49",
-            "VoucherPayAmount": "176.00",
+            "RealTotalCost": "224.81",
+            "TotalCost": "-",
+            "VoucherPayAmount": "18.69",
             "IncentivePayAmount": "0.00",
-            "CashPayAmount": "1420.49"
+            "CashPayAmount": "206.12"
         },
         "SummaryOverview": [
             {
-                "BusinessCode": "p_cvm",
-                "RealTotalCost": "540.00",
-                "CashPayAmount": "540.00",
+                "BusinessCode": "p_cdn",
+                "RealTotalCost": "113.02",
+                "TotalCost": "-",
+                "CashPayAmount": "113.00",
                 "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "33.77",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "云服务器CVM"
-            },
-            {
-                "BusinessCode": "p_cbs",
-                "RealTotalCost": "536.54",
-                "CashPayAmount": "536.54",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "33.57",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "云硬盘CBS"
+                "VoucherPayAmount": "0.02",
+                "RealTotalCostRatio": "50.27",
+                "BillMonth": "2021-01",
+                "BusinessCodeName": "内容分发网络 CDN"
             },
             {
                 "BusinessCode": "p_cos",
-                "RealTotalCost": "219.44",
-                "CashPayAmount": "219.44",
+                "RealTotalCost": "54.22",
+                "TotalCost": "-",
+                "CashPayAmount": "54.22",
                 "IncentivePayAmount": "0.00",
                 "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "13.73",
-                "BillMonth": "2018-11",
+                "RealTotalCostRatio": "24.12",
+                "BillMonth": "2021-01",
                 "BusinessCodeName": "COS 对象存储"
             },
             {
-                "BusinessCode": "p_ai_image_ocr",
-                "RealTotalCost": "169.83",
-                "CashPayAmount": "0.01",
+                "BusinessCode": "p_cvm",
+                "RealTotalCost": "37.71",
+                "TotalCost": "-",
+                "CashPayAmount": "21.32",
                 "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "169.82",
-                "RealTotalCostRatio": "10.62",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "OCR文字识别"
+                "VoucherPayAmount": "16.39",
+                "RealTotalCostRatio": "16.78",
+                "BillMonth": "2021-01",
+                "BusinessCodeName": "云服务器CVM"
             },
             {
-                "BusinessCode": "p_yunjing",
-                "RealTotalCost": "81.00",
-                "CashPayAmount": "81.00",
+                "BusinessCode": "p_cdb",
+                "RealTotalCost": "16.88",
+                "TotalCost": "-",
+                "CashPayAmount": "16.88",
                 "IncentivePayAmount": "0.00",
                 "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "5.07",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "云镜（主机安全）"
-            },
-            {
-                "BusinessCode": "p_blackstone_eip",
-                "RealTotalCost": "45.00",
-                "CashPayAmount": "45.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "2.82",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "黑石弹性公网IP"
-            },
-            {
-                "BusinessCode": "p_ai_image",
-                "RealTotalCost": "4.78",
-                "CashPayAmount": "0.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "4.78",
-                "RealTotalCostRatio": "0.30",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "图像识别"
-            },
-            {
-                "BusinessCode": "p_ai_image_facerecognize",
-                "RealTotalCost": "1.39",
-                "CashPayAmount": "0.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "1.39",
-                "RealTotalCostRatio": "0.09",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "人脸识别"
-            },
-            {
-                "BusinessCode": "p_cdn",
-                "RealTotalCost": "0.46",
-                "CashPayAmount": "0.46",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "0.03",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "内容分发网络CDN"
-            },
-            {
-                "BusinessCode": "p_ci",
-                "RealTotalCost": "0.00",
-                "CashPayAmount": "0.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "0.00",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "数据万象CI"
-            },
-            {
-                "BusinessCode": "p_cmq",
-                "RealTotalCost": "0.00",
-                "CashPayAmount": "0.00",
-                "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.00",
-                "RealTotalCostRatio": "0.00",
-                "BillMonth": "2018-11",
-                "BusinessCodeName": "消息服务CMQ"
+                "RealTotalCostRatio": "7.51",
+                "BillMonth": "2021-01",
+                "BusinessCodeName": "云数据库MySQL"
             },
             {
                 "BusinessCode": "billVirtualId",
-                "RealTotalCost": "-1.95",
-                "CashPayAmount": "-1.96",
+                "RealTotalCost": "2.98",
+                "TotalCost": "-",
+                "CashPayAmount": "0.70",
                 "IncentivePayAmount": "0.00",
-                "VoucherPayAmount": "0.01",
-                "RealTotalCostRatio": "0.00",
-                "BillMonth": "2018-11",
+                "VoucherPayAmount": "2.28",
+                "RealTotalCostRatio": "1.32",
+                "BillMonth": "2021-01",
                 "BusinessCodeName": "月度计费精度差异"
+            },
+            {
+                "BusinessCode": "p_market",
+                "RealTotalCost": "0.00",
+                "TotalCost": "-",
+                "CashPayAmount": "0.00",
+                "IncentivePayAmount": "0.00",
+                "VoucherPayAmount": "0.00",
+                "RealTotalCostRatio": "0.00",
+                "BillMonth": "2021-01",
+                "BusinessCodeName": "云市场"
             }
         ],
-        "RequestId": "8a57841e-ef77-413d-a8ba-4c607173663c"
+        "RequestId": "bae960ff-ee67-49c8-b4a6-d93475e2e696"
     }
 }
 ```

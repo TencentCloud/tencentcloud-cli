@@ -12,6 +12,12 @@
       "name": "创建、选择vpc",
       "output": "CreateChooseVpcsResponse"
     },
+    "CreateDatabaseWhiteListRules": {
+      "document": "创建暴露数据库白名单规则",
+      "input": "CreateDatabaseWhiteListRulesRequest",
+      "name": "创建暴露数据库白名单规则",
+      "output": "CreateDatabaseWhiteListRulesResponse"
+    },
     "CreateNatFwInstance": {
       "document": "创建防火墙实例",
       "input": "CreateNatFwInstanceRequest",
@@ -778,6 +784,42 @@
       ],
       "type": "object"
     },
+    "CreateDatabaseWhiteListRulesRequest": {
+      "document": "CreateDatabaseWhiteListRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建白名单数据",
+          "example": "无",
+          "member": "DatabaseWhiteListRuleData",
+          "name": "DatabaseWhiteListRuleData",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDatabaseWhiteListRulesResponse": {
+      "document": "CreateDatabaseWhiteListRules返回参数结构体",
+      "members": [
+        {
+          "document": "状态值，0:添加成功，非0：添加失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNatFwInstanceRequest": {
       "document": "CreateNatFwInstance请求参数结构体",
       "members": [
@@ -993,6 +1035,142 @@
         }
       ],
       "type": "object"
+    },
+    "DatabaseWhiteListRuleData": {
+      "document": "数据库白名单规则数据",
+      "members": [
+        {
+          "default": "",
+          "document": "访问源",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问源类型，1 ip；6 实例；100 资源分组",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问目的",
+          "example": "cdb-123",
+          "member": "string",
+          "name": "TargetIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问目的类型，1 ip；6 实例；100 资源分组",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否地域规则，0不是 1是",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRegionRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否云厂商规则，0不是 1 时",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCloudRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用，0 不启用，1启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域码1",
+          "example": "0",
+          "member": "int64",
+          "name": "FirstLevelRegionCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域码2",
+          "example": "0",
+          "member": "int64",
+          "name": "SecondLevelRegionCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称1",
+          "example": "中国",
+          "member": "string",
+          "name": "FirstLevelRegionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域名称2",
+          "example": "广东",
+          "member": "string",
+          "name": "SecondLevelRegionName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云厂商码",
+          "example": "0",
+          "member": "string",
+          "name": "CloudCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "DeleteAcRuleRequest": {
       "document": "DeleteAcRule请求参数结构体",
@@ -4552,6 +4730,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "nat公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1,2.2.2.2",
+          "member": "string",
+          "name": "NatIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4724,6 +4912,7 @@
         {
           "default": "",
           "document": "执行顺序",
+          "example": "1",
           "member": "uint64",
           "name": "OrderIndex",
           "required": true,
@@ -4733,6 +4922,7 @@
         {
           "default": "",
           "document": "访问源",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "SourceIp",
           "required": true,
@@ -4742,6 +4932,7 @@
         {
           "default": "",
           "document": "访问目的",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "TargetIp",
           "required": true,
@@ -4751,6 +4942,7 @@
         {
           "default": "",
           "document": "协议",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -4759,7 +4951,8 @@
         },
         {
           "default": "",
-          "document": "策略",
+          "document": "策略, 0：观察，1：阻断，2：放行",
+          "example": "0",
           "member": "string",
           "name": "Strategy",
           "required": true,
@@ -4769,6 +4962,7 @@
         {
           "default": "",
           "document": "访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
           "required": true,
@@ -4778,6 +4972,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": true,
@@ -4787,6 +4982,7 @@
         {
           "default": "",
           "document": "描述",
+          "example": "描述",
           "member": "string",
           "name": "Detail",
           "required": true,
@@ -4796,6 +4992,7 @@
         {
           "default": "",
           "document": "访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "example": "1",
           "member": "uint64",
           "name": "TargetType",
           "required": true,
@@ -4805,6 +5002,7 @@
         {
           "default": "",
           "document": "端口",
+          "example": "80",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -4814,6 +5012,7 @@
         {
           "default": "",
           "document": "id值",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -4823,6 +5022,7 @@
         {
           "default": "",
           "document": "日志id，从告警处创建必传，其它为空",
+          "example": "1",
           "member": "string",
           "name": "LogId",
           "required": false,
@@ -4832,6 +5032,7 @@
         {
           "default": "",
           "document": "城市Code",
+          "example": "1",
           "member": "uint64",
           "name": "City",
           "required": false,
@@ -4841,6 +5042,7 @@
         {
           "default": "",
           "document": "国家Code",
+          "example": "1",
           "member": "uint64",
           "name": "Country",
           "required": false,
@@ -4850,6 +5052,7 @@
         {
           "default": "",
           "document": "云厂商，支持多个，以逗号分隔， 1:腾讯云（仅中国香港及海外）,2:阿里云,3:亚马逊云,4:华为云,5:微软云",
+          "example": "1",
           "member": "string",
           "name": "CloudCode",
           "required": false,
@@ -4859,6 +5062,7 @@
         {
           "default": "",
           "document": "是否为地域",
+          "example": "1",
           "member": "uint64",
           "name": "IsRegion",
           "required": false,
@@ -4868,6 +5072,7 @@
         {
           "default": "",
           "document": "城市名",
+          "example": "广州",
           "member": "string",
           "name": "CityName",
           "required": false,
@@ -4877,6 +5082,7 @@
         {
           "default": "",
           "document": "国家名",
+          "example": "中国",
           "member": "string",
           "name": "CountryName",
           "required": false,

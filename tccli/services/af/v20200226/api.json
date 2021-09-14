@@ -1,5 +1,11 @@
 {
   "actions": {
+    "DescribeAntiFraud": {
+      "document": "天御反欺诈服务，主要应用于银行、证券、保险、消费金融等金融行业客户，通过腾讯的大数据风控能力，\n可以准确识别恶意用户信息，解决客户在支付、活动、理财，风控等业务环节遇到的欺诈威胁，降低企业\n的损失。",
+      "input": "DescribeAntiFraudRequest",
+      "name": "金融借贷反欺诈",
+      "output": "DescribeAntiFraudResponse"
+    },
     "QueryAntiFraud": {
       "document": "天御反欺诈服务，主要应用于银行、证券、保险、消费金融等金融行业客户，通过腾讯的大数据风控能力，\n可以准确识别恶意用户信息，解决客户在支付、活动、理财，风控等业务环节遇到的欺诈威胁，降低企业\n的损失。",
       "input": "QueryAntiFraudRequest",
@@ -14,6 +20,369 @@
     "serviceShortName": "af"
   },
   "objects": {
+    "DescribeAntiFraudRequest": {
+      "document": "DescribeAntiFraud请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "原始业务入参(二选一）",
+          "example": "无",
+          "member": "FinanceAntiFraudFilter",
+          "name": "BusinessSecurityData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "密文业务入参(二选一）",
+          "example": "无",
+          "member": "FinanceAntiFraudCryptoFilter",
+          "name": "BusinessCryptoData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAntiFraudResponse": {
+      "document": "DescribeAntiFraud返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FinanceAntiFraudRecord",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FinanceAntiFraudCryptoFilter": {
+      "document": "借贷反欺诈密文业务入参",
+      "members": [
+        {
+          "default": "",
+          "document": "值1定义：AES加密方式[加密模式ECB；填充格式pkcs7padding；秘钥16字节即128位",
+          "example": "1",
+          "member": "string",
+          "name": "CryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务字段BusinessSecurityData的json数据格式，采用CryptoType相应的加密方式计算后得到的bash64编码内容。比如对{\"PhoneNumber\":\"13430420001\",\"IdNumber\":\"420115199501010001\",\"BankCardNumber\":\"6214000100010001\"}包体做加密。",
+          "example": "vSGAQNoVdqlz2BK8DHxMw7XDMo4hK0uYQ6TM9jLxirMgWTKL/ou49YjfijuC1x/f",
+          "member": "string",
+          "name": "CryptoContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FinanceAntiFraudFilter": {
+      "document": "借贷反欺诈原始业务入参",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码(五选二)",
+          "example": "13430420001",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证Id(五选二) 参数详细定义请加微信：TYXGJ-01",
+          "example": "420115199501010001",
+          "member": "string",
+          "name": "IdNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "银行卡号(五选二)",
+          "example": "6214000100010001",
+          "member": "string",
+          "name": "BankCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户请求来源 IP(五选二)",
+          "example": "113.1.1.1",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国际移动设备识别码(五选二)",
+          "example": "359355041886388",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ios 系统广告标示符(五选二)",
+          "example": "9C287922-EE26-4501-94B5-DDE6F83E1475",
+          "member": "string",
+          "name": "Idfa",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务场景ID，需要找技术对接",
+          "example": "1001",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户邮箱地址",
+          "example": "373909726%40qq.com",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户住址",
+          "example": "373909726%40qq.com",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MAC 地址",
+          "example": "00-01-6C-06-A6-29",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国际移动用户识别码",
+          "example": "xxxyyzz",
+          "member": "string",
+          "name": "Imsi",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1：关联的腾讯帐号QQ；2：开放帐号微信",
+          "example": "1",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可选的 QQ 或微信 openid",
+          "example": "00000000000000000000000033121475",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "qq 或微信分配给网站或应用的 appid，用来唯一标识网站或应用",
+          "example": "100273020",
+          "member": "string",
+          "name": "AppIdU",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WIFI MAC",
+          "example": "00-01-6C-06-A6-28",
+          "member": "string",
+          "name": "WifiMac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WIFI 服务集标识",
+          "example": "test_wifi",
+          "member": "string",
+          "name": "WifiSSID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WIFI-BSSID",
+          "example": "00-04-C3-A1-2B-22",
+          "member": "string",
+          "name": "WifiBSSID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务 ID，在多个业务中使用此服务，通过此ID 区分统计数据",
+          "example": "0",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号加密类型 0：不加密（默认值）；1：md5；2：sha256；3：SM3",
+          "example": "0",
+          "member": "string",
+          "name": "PhoneCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证Id加密类型 0：不加密（默认值）；1：md5；2：sha256；3：SM3",
+          "example": "0",
+          "member": "string",
+          "name": "IdCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名加密类型 0：不加密（默认值）；1：md5；2：sha256；3：SM3",
+          "example": "0",
+          "member": "string",
+          "name": "NameCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FinanceAntiFraudRecord": {
+      "document": "借贷反欺查询返回结果出参",
+      "members": [
+        {
+          "default": "",
+          "document": "表示该条记录能否查到：1为能查到，-1为查不到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Found",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示该条Id能否查到：1为能查到，-1为查不到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IdFound",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "评分0~100;值越高 欺诈可能性越大\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "53",
+          "member": "string",
+          "name": "RiskScore",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩展字段，对风险类型的说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[[{\"RiskCode\":5,\"RiskValue\":2}]",
+          "member": "RiskDetailInfo",
+          "name": "RiskInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务侧错误码。成功时返回0，错误时返回非0值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务侧错误信息。成功时返回Success，错误时返回具体业务错误原因。\n注意：此字段可能返回 null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryAntiFraudRequest": {
       "document": "QueryAntiFraud请求参数结构体",
       "members": [
@@ -254,6 +623,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskDetailInfo": {
+      "document": "金融借贷反欺诈 风险码输出类型",
+      "members": [
+        {
+          "default": "",
+          "document": "风险码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“1101”",
+          "member": "string",
+          "name": "RiskCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险码对应的风险值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“123”",
+          "member": "string",
+          "name": "RiskValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

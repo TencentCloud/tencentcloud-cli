@@ -306,6 +306,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeLBListeners": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLBListeners\n&Backends.0.VpcId=vpc-xxxxx\n&Backends.0.PrivateIp=1.1.1.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancers\": [\n            {\n                \"LoadBalancerId\": \"lb-xxxxx\",\n                \"Vip\": \"10.0.0.1\",\n                \"Region\": \"ap-guangzhou\",\n                \"Listeners\": [\n                    {\n                        \"ListenerId\": \"lbl-xxxxx\",\n                        \"Protocol\": \"TCP\",\n                        \"Port\": 81,\n                        \"EndPort\": 0,\n                        \"Rules\": null,\n                        \"Targets\": [\n                            {\n                                \"Type\": \"eni\",\n                                \"PrivateIp\": \"10.0.0.2\",\n                                \"Port\": 1201,\n                                \"VpcId\": 1111,\n                                \"Weight\": 10\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba22\"\n    }\n}",
+        "title": "查询云主机绑定的负载均衡"
+      }
+    ],
     "DescribeListeners": [
       {
         "document": "",

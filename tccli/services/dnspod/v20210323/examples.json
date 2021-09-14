@@ -259,6 +259,20 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 161\n    }\n}",
         "title": "设置记录状态"
       }
+    ],
+    "ModifySubdomainStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"RecordType\": \"A,TXT\",\n    \"Status\": \"disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "暂停@子域名A和TXT类型的解析记录"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"SubDomain\": \"www\",\n    \"RecordType\": \"A,TXT,CNAME\",\n    \"Status\": \"disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "暂停www子域名A/TXT/CNAME类型的解析记录"
+      }
     ]
   },
   "version": "1.0"

@@ -16,6 +16,14 @@
         "title": "创建、选择vpc"
       }
     ],
+    "CreateDatabaseWhiteListRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabaseWhiteListRules\n<公共请求参数>\n\n{\n    \"DatabaseWhiteListRuleData\": [\n        {\n            \"SourceIp\": \"0.0.0.0/0\",\n            \"SourceType\": 1,\n            \"TargetIp\": \"119.29.186.197\",\n            \"TargetType\": 1,\n            \"Detail\": \"test\",\n            \"Enable\": 1,\n            \"IsRegionRule\": 0,\n            \"IsCloudRule\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建暴露数据库白名单规则"
+      }
+    ],
     "CreateNatFwInstance": [
       {
         "document": "接入模式示例",

@@ -40,7 +40,9 @@ Output:
                 "Type": "xx",
                 "FunctionId": "xx",
                 "ReservedConcurrencyMem": 1,
-                "Description": "xx"
+                "Description": "xx",
+                "TraceEnable": "FALSE",
+                "AsyncRunEnable": "FALSE"
             }
         ],
         "RequestId": "xx"
@@ -92,7 +94,9 @@ Output:
                 "Type": "xx",
                 "FunctionId": "xx",
                 "ReservedConcurrencyMem": 1,
-                "Description": "xx"
+                "Description": "xx",
+                "TraceEnable": "FALSE",
+                "AsyncRunEnable": "FALSE"
             }
         ],
         "RequestId": "xx"

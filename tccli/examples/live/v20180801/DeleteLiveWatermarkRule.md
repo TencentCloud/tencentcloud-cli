@@ -8,8 +8,7 @@ Input:
 tccli live DeleteLiveWatermarkRule --cli-unfold-argument  \
     --DomainName 5000.livepush.myqcloud.com \
     --AppName live \
-    --StreamName stream1 \
-    --ConfId 1000
+    --StreamName stream1
 ```
 
 Output: 

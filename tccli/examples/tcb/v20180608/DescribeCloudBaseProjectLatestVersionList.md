@@ -11,7 +11,8 @@ tccli tcb DescribeCloudBaseProjectLatestVersionList --cli-unfold-argument  \
     --PageSize 0 \
     --Tags xx \
     --ProjectName xx \
-    --Offset 0
+    --Offset 0 \
+    --CiId 12a05f48-3edd-41f4-a8cc-573b500111f3
 ```
 
 Output: 

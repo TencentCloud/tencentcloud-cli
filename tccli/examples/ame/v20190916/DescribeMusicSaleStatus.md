@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame DescribeMusicSaleStatus --cli-unfold-argument  \
-    --PurchaseType 0 \
+    --PurchaseType 1 \
     --MusicIds xx
 ```
 

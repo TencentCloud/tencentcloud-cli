@@ -19,41 +19,14 @@ Output:
         "SummaryOverview": [
             {
                 "TagValue": "",
-                "RealTotalCost": "0.30",
-                "RealTotalCostRatio": "17.08"
-            },
-            {
-                "TagValue": "shanghai",
-                "RealTotalCost": "0.26",
-                "RealTotalCostRatio": "15.21"
-            },
-            {
-                "TagValue": "beijing",
-                "RealTotalCost": "0.26",
-                "RealTotalCostRatio": "15.21"
-            },
-            {
-                "TagValue": "guangdong",
-                "RealTotalCost": "0.26",
-                "RealTotalCostRatio": "15.21"
-            },
-            {
-                "TagValue": "xiamen",
-                "RealTotalCost": "0.22",
-                "RealTotalCostRatio": "12.43"
-            },
-            {
-                "TagValue": "tianjin",
-                "RealTotalCost": "0.22",
-                "RealTotalCostRatio": "12.43"
-            },
-            {
-                "TagValue": "sichuan",
-                "RealTotalCost": "0.22",
-                "RealTotalCostRatio": "12.43"
+                "RealTotalCost": "13001.95",
+                "RealTotalCostRatio": "100.00"
             }
         ],
-        "RequestId": "b7649c63-59e5-49d3-bbde-64292cc4174d"
+        "SummaryTotal": {
+            "RealTotalCost": "13001.95"
+        },
+        "RequestId": "7119a6ed-5023-4682-9ea3-33102af1b19e"
     }
 }
 ```

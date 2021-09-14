@@ -49,7 +49,12 @@ Output:
         "VersionIP": "10.0.192.3",
         "VersionName": "test-010",
         "VersionPort": 80,
-        "VpcId": "vpc-rtyzm94a"
+        "VpcId": "vpc-rtyzm94a",
+        "BaseImage": "JDK7",
+        "RepoLanguage": "Java",
+        "HasDockerfile": 0,
+        "EntryPoint": "java -jar app.jar",
+        "PolicyDetail": "xx"
     }
 }
 ```

@@ -198,6 +198,12 @@
       "name": "查询集群列表",
       "output": "DescribeExclusiveClustersResponse"
     },
+    "DescribeLBListeners": {
+      "document": "查询后端云主机或弹性网卡绑定的负载均衡，支持弹性网卡和cvm查询。",
+      "input": "DescribeLBListenersRequest",
+      "name": "查询后端云主机或弹性网卡绑定的负载均衡",
+      "output": "DescribeLBListenersResponse"
+    },
     "DescribeListeners": {
       "document": "DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。",
       "input": "DescribeListenersRequest",
@@ -2246,6 +2252,15 @@
         },
         {
           "default": "",
+          "document": "创建性能独享型CLB，传SLA。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "23494*****",
           "member": "string",
@@ -3569,6 +3584,42 @@
       ],
       "type": "object"
     },
+    "DescribeLBListenersRequest": {
+      "document": "DescribeLBListeners请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的内网ip列表",
+          "example": "无",
+          "member": "LbRsItem",
+          "name": "Backends",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLBListenersResponse": {
+      "document": "DescribeLBListeners返回参数结构体",
+      "members": [
+        {
+          "document": "绑定的后端规则",
+          "example": "无",
+          "member": "LBItem",
+          "name": "LoadBalancers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeListenersRequest": {
       "document": "DescribeListeners请求参数结构体",
       "members": [
@@ -4724,6 +4775,123 @@
       ],
       "usage": "both"
     },
+    "LBItem": {
+      "document": "反查Lb绑定关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "lb的字符串id",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "lb的vip",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器规则",
+          "member": "ListenerItem",
+          "name": "Listeners",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "LB所在地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LbRsItem": {
+      "document": "查询类型",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc的字符串id，只支持字符串id。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要查询后端的内网ip，可以是cvm和弹性网卡。",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LbRsTargets": {
+      "document": "反查结果数据类型。",
+      "members": [
+        {
+          "default": "",
+          "document": "内网ip类型。“cvm”或“eni”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端实例的内网ip。",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定后端实例的端口。",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "rs的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rs的权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Listener": {
       "document": "监听器的信息",
       "members": [
@@ -5016,6 +5184,66 @@
           "name": "Rules",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListenerItem": {
+      "document": "反查监听器类型",
+      "members": [
+        {
+          "default": "",
+          "document": "监听器ID",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听器端口",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "RulesItems",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "四层绑定对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "LbRsTargets",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口段监听器的结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "EndPort",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7586,6 +7814,48 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RulesItems": {
+      "document": "七层规则对象",
+      "members": [
+        {
+          "default": "",
+          "document": "规则id",
+          "member": "string",
+          "name": "LocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uri",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的后端对象",
+          "member": "LbRsTargets",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
