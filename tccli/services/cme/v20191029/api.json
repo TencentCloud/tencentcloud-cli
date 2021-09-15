@@ -2136,6 +2136,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2144,6 +2145,7 @@
         {
           "default": "",
           "document": "项目 Id。",
+          "example": "无",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -2152,6 +2154,7 @@
         {
           "default": "",
           "document": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>",
+          "example": "无",
           "member": "string",
           "name": "TaskTypeSet",
           "required": false,
@@ -2160,6 +2163,7 @@
         {
           "default": "",
           "document": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "example": "PROCESSING",
           "member": "string",
           "name": "StatusSet",
           "required": false,
@@ -2168,6 +2172,7 @@
         {
           "default": "",
           "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2175,7 +2180,8 @@
         },
         {
           "default": "",
-          "document": "分页返回的记录条数，默认值：10。",
+          "document": "分页返回的记录条数，默认值：10。最大值：20。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2184,6 +2190,7 @@
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "example": "无",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2197,15 +2204,19 @@
       "members": [
         {
           "document": "符合搜索条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务基础信息列表。",
+          "example": "无",
           "member": "TaskBaseInfo",
           "name": "TaskBaseInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4844,6 +4855,7 @@
         {
           "default": "",
           "document": "平台名称。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4853,6 +4865,7 @@
         {
           "default": "",
           "document": "平台描述。",
+          "example": "describetion",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -4862,6 +4875,7 @@
         {
           "default": "",
           "document": "云点播子应用 Id。",
+          "example": "1402233125",
           "member": "uint64",
           "name": "VodSubAppId",
           "required": true,
@@ -4871,6 +4885,7 @@
         {
           "default": "",
           "document": "平台绑定的 license Id。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "LicenseId",
           "required": true,
@@ -4879,7 +4894,18 @@
         },
         {
           "default": "",
+          "document": "平台状态，可取值为：\n<li>Normal：正常，可使用。；</li>\n<li>Stopped：已停用，暂无法使用；</li>\n<li>Expired：已过期，需要重新购买会员包。</li>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "创建时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-09-02T03:13:08Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -4889,6 +4915,7 @@
         {
           "default": "",
           "document": "更新时间，格式按照 ISO 8601 标准表示。",
+          "example": "2021-09-02T03:13:08Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,

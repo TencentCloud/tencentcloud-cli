@@ -2,179 +2,61 @@
 
 ## 借贷反欺诈(af) 版本：2020-02-26
 
-### 第 2 次发布
-
-发布时间：2021-09-14 08:02:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAntiFraud](http://document.tencentcloudapi.woa.com/document/product/668/66662)
-
-新增数据结构：
-
-* [FinanceAntiFraudCryptoFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudCryptoFilter)
-* [FinanceAntiFraudFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudFilter)
-* [FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)
-* [RiskDetailInfo](http://document.tencentcloudapi.woa.com/document/product/668/59616#RiskDetailInfo)
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 2 次发布
-
-发布时间：2021-09-14 08:14:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateDatabaseWhiteListRules](http://document.tencentcloudapi.woa.com/document/product/1132/66668)
-
-新增数据结构：
-
-* [DatabaseWhiteListRuleData](http://document.tencentcloudapi.woa.com/document/product/1132/66365#DatabaseWhiteListRuleData)
-
-修改数据结构：
-
-* [NatFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/66365#NatFwInstance)
-
-	* 新增成员：NatIp
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 2 次发布
-
-发布时间：2021-09-14 08:05:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeLBListeners](http://document.tencentcloudapi.woa.com/document/product/214/66663)
-
-修改接口：
-
-* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/59488)
-
-	* 新增入参：SlaType
-
-
-新增数据结构：
-
-* [LBItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LBItem)
-* [LbRsItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsItem)
-* [LbRsTargets](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsTargets)
-* [ListenerItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#ListenerItem)
-* [RulesItems](http://document.tencentcloudapi.woa.com/document/product/214/59523#RulesItems)
-
-
-
-## 图片内容检测(ims) 版本：2020-12-29
-
-### 第 2 次发布
-
-发布时间：2021-09-14 08:01:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ImageRecognition
-
-
-
-## 图片内容检测(ims) 版本：2020-07-13
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
 ### 第 3 次发布
 
-发布时间：2021-09-14 08:00:06
+发布时间：2021-09-15 08:02:29
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [DescribeProjects](http://document.tencentcloudapi.woa.com/document/product/1464/66660)
 
 新增数据结构：
 
-* [Filter](http://document.tencentcloudapi.woa.com/document/product/1464/66661#Filter)
-* [RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/66661#RumProject)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 5 次发布
-
-发布时间：2021-09-14 08:10:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/64581)
-
-	* 新增入参：PolicyDetail
-
-* [DescribeCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/64571)
-
-	* 新增出参：PolicyDetail
-
-* [RollUpdateCloudBaseRunServerVersion](http://document.tencentcloudapi.woa.com/document/product/876/64590)
-
-	* 新增入参：PolicyDetail
-
-
-新增数据结构：
-
-* [HpaPolicy](http://document.tencentcloudapi.woa.com/document/product/876/64596#HpaPolicy)
-
-
-
-## 云点播(vod) 版本：2018-07-17
-
-### 第 2 次发布
-
-发布时间：2021-09-14 08:11:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66667)
-* [DeleteVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66666)
-* [ModifyVodDomainAccelerateConfig](http://document.tencentcloudapi.woa.com/document/product/266/66665)
-* [ModifyVodDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/66664)
+* [FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores)
 
 修改数据结构：
 
-* [UrlSignatureAuthPolicy](http://document.tencentcloudapi.woa.com/document/product/266/65432#UrlSignatureAuthPolicy)
+* [FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)
 
-	* <font color="#dd0000">**修改成员**：</font>EncryptedKey
+	* 新增成员：OtherModelScores
+
+
+
+
+## 内容分发网络(cdn) 版本：2018-06-06
+
+### 第 2 次发布
+
+发布时间：2021-09-15 08:05:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BandwidthAlert](http://document.tencentcloudapi.woa.com/document/product/228/62314#BandwidthAlert)
+
+	* 新增成员：Metric
+
+
+
+
+## 腾讯云剪(cme) 版本：2019-10-29
+
+### 第 2 次发布
+
+发布时间：2021-09-15 08:04:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PlatformInfo](http://document.tencentcloudapi.woa.com/document/product/1156/61522#PlatformInfo)
+
+	* 新增成员：Status
 
 
 
@@ -219,6 +101,25 @@
 
 ## 借贷反欺诈(af) 版本：2020-02-26
 
+### 第 3 次发布
+
+发布时间：2021-09-15 08:02:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores))
+
+修改数据结构：
+
+* [FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)
+
+	* 新增成员：OtherModelScores
+
+
 ### 第 2 次发布
 
 发布时间：2021-09-14 08:02:13
@@ -229,14 +130,14 @@
 
 新增接口：
 
-* [[DescribeAntiFraud](http://document.tencentcloudapi.woa.com/document/product/668/66662)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAntiFraud](http://document.tencentcloudapi.woa.com/document/product/668/66662)
 
 新增数据结构：
 
-* [[FinanceAntiFraudCryptoFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudCryptoFilter)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[FinanceAntiFraudCryptoFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudCryptoFilter))
-* [[FinanceAntiFraudFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudFilter)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[FinanceAntiFraudFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudFilter))
-* [[FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord))
-* [[RiskDetailInfo](http://document.tencentcloudapi.woa.com/document/product/668/59616#RiskDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[RiskDetailInfo](http://document.tencentcloudapi.woa.com/document/product/668/59616#RiskDetailInfo))
+* [FinanceAntiFraudCryptoFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudCryptoFilter)
+* [FinanceAntiFraudFilter](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudFilter)
+* [FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)
+* [RiskDetailInfo](http://document.tencentcloudapi.woa.com/document/product/668/59616#RiskDetailInfo)
 
 ### 第 1 次发布
 
@@ -2301,6 +2202,21 @@
 
 ## 内容分发网络(cdn) 版本：2018-06-06
 
+### 第 2 次发布
+
+发布时间：2021-09-15 08:05:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BandwidthAlert](http://document.tencentcloudapi.woa.com/document/product/228/62314#BandwidthAlert)
+
+	* 新增成员：Metric
+
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 14:34:53
@@ -2630,11 +2546,11 @@
 
 新增接口：
 
-* [[CreateDatabaseWhiteListRules](http://document.tencentcloudapi.woa.com/document/product/1132/66668)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDatabaseWhiteListRules](http://document.tencentcloudapi.woa.com/document/product/1132/66668)
 
 新增数据结构：
 
-* [[DatabaseWhiteListRuleData](http://document.tencentcloudapi.woa.com/document/product/1132/66365#DatabaseWhiteListRuleData)](http://document.tencentcloudapi.woa.com/document/product/1132/66365#[DatabaseWhiteListRuleData](http://document.tencentcloudapi.woa.com/document/product/1132/66365#DatabaseWhiteListRuleData))
+* [DatabaseWhiteListRuleData](http://document.tencentcloudapi.woa.com/document/product/1132/66365#DatabaseWhiteListRuleData)
 
 修改数据结构：
 
@@ -3049,7 +2965,7 @@
 
 新增接口：
 
-* [[DescribeLBListeners](http://document.tencentcloudapi.woa.com/document/product/214/66663)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeLBListeners](http://document.tencentcloudapi.woa.com/document/product/214/66663)
 
 修改接口：
 
@@ -3060,11 +2976,11 @@
 
 新增数据结构：
 
-* [[LBItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LBItem)](http://document.tencentcloudapi.woa.com/document/product/214/59523#[LBItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LBItem))
-* [[LbRsItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsItem)](http://document.tencentcloudapi.woa.com/document/product/214/59523#[LbRsItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsItem))
-* [[LbRsTargets](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsTargets)](http://document.tencentcloudapi.woa.com/document/product/214/59523#[LbRsTargets](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsTargets))
-* [[ListenerItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#ListenerItem)](http://document.tencentcloudapi.woa.com/document/product/214/59523#[ListenerItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#ListenerItem))
-* [[RulesItems](http://document.tencentcloudapi.woa.com/document/product/214/59523#RulesItems)](http://document.tencentcloudapi.woa.com/document/product/214/59523#[RulesItems](http://document.tencentcloudapi.woa.com/document/product/214/59523#RulesItems))
+* [LBItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LBItem)
+* [LbRsItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsItem)
+* [LbRsTargets](http://document.tencentcloudapi.woa.com/document/product/214/59523#LbRsTargets)
+* [ListenerItem](http://document.tencentcloudapi.woa.com/document/product/214/59523#ListenerItem)
+* [RulesItems](http://document.tencentcloudapi.woa.com/document/product/214/59523#RulesItems)
 
 ### 第 1 次发布
 
@@ -3401,6 +3317,21 @@
 
 
 ## 腾讯云剪(cme) 版本：2019-10-29
+
+### 第 2 次发布
+
+发布时间：2021-09-15 08:04:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PlatformInfo](http://document.tencentcloudapi.woa.com/document/product/1156/61522#PlatformInfo)
+
+	* 新增成员：Status
+
 
 ### 第 1 次发布
 
@@ -9441,12 +9372,12 @@
 
 新增接口：
 
-* [[DescribeProjects](http://document.tencentcloudapi.woa.com/document/product/1464/66660)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeProjects](http://document.tencentcloudapi.woa.com/document/product/1464/66660)
 
 新增数据结构：
 
-* [[Filter](http://document.tencentcloudapi.woa.com/document/product/1464/66661#Filter)](http://document.tencentcloudapi.woa.com/document/product/1464/66661#[Filter](http://document.tencentcloudapi.woa.com/document/product/1464/66661#Filter))
-* [[RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/66661#RumProject)](http://document.tencentcloudapi.woa.com/document/product/1464/66661#[RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/66661#RumProject))
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1464/66661#Filter)
+* [RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/66661#RumProject)
 
 ### 第 2 次发布
 
@@ -10578,7 +10509,7 @@
 
 新增数据结构：
 
-* [[HpaPolicy](http://document.tencentcloudapi.woa.com/document/product/876/64596#HpaPolicy)](http://document.tencentcloudapi.woa.com/document/product/876/64596#[HpaPolicy](http://document.tencentcloudapi.woa.com/document/product/876/64596#HpaPolicy))
+* [HpaPolicy](http://document.tencentcloudapi.woa.com/document/product/876/64596#HpaPolicy)
 
 ### 第 4 次发布
 
@@ -12475,10 +12406,10 @@
 
 新增接口：
 
-* [[CreateVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66667)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66666)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyVodDomainAccelerateConfig](http://document.tencentcloudapi.woa.com/document/product/266/66665)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyVodDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/66664)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66667)
+* [DeleteVodDomain](http://document.tencentcloudapi.woa.com/document/product/266/66666)
+* [ModifyVodDomainAccelerateConfig](http://document.tencentcloudapi.woa.com/document/product/266/66665)
+* [ModifyVodDomainConfig](http://document.tencentcloudapi.woa.com/document/product/266/66664)
 
 修改数据结构：
 

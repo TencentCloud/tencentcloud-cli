@@ -1,7 +1,7 @@
 | 包名 | 产品中文名 | 更新时间 |
 |-|-|-|
 | aa | [活动防刷](http://document.tencentcloudapi.woa.com/document/product/1189) | 2021-09-09 08:02:19 |
-| af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | 2021-09-14 08:02:13 |
+| af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | 2021-09-15 08:02:29 |
 | afc | [定制建模](http://document.tencentcloudapi.woa.com/document/product/1029) | 2021-09-09 08:02:14 |
 | ame | [正版曲库直通车](http://document.tencentcloudapi.woa.com/document/product/1155) | 2021-09-09 08:12:54 |
 | ams | [音频内容检测](http://document.tencentcloudapi.woa.com/document/product/1219) | 2021-09-09 08:02:11 |
@@ -28,7 +28,7 @@
 | cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2021-09-09 08:04:59 |
 | ccc | [云呼叫中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2021-09-09 08:01:58 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | 2021-09-09 08:05:05 |
-| cdn | [内容分发网络](http://document.tencentcloudapi.woa.com/document/product/228) | 2021-09-09 08:05:22 |
+| cdn | [内容分发网络](http://document.tencentcloudapi.woa.com/document/product/228) | 2021-09-15 08:05:45 |
 | cds | [数据安全审计](http://document.tencentcloudapi.woa.com/document/product/856) | 2021-09-09 08:05:35 |
 | cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | 2021-09-14 08:05:28 |
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2021-09-14 08:14:15 |
@@ -38,12 +38,12 @@
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2021-09-14 08:05:39 |
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2021-09-09 08:15:21 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2021-09-09 08:13:36 |
-| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2021-09-09 08:00:20 |
-| cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-09-09 08:03:48 |
+| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2021-09-15 08:00:24 |
+| cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-09-15 08:04:07 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2021-09-09 08:02:54 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2021-09-09 08:14:05 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-09-10 08:05:43 |
-| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2021-09-14 08:13:51 |
+| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2021-09-15 08:14:43 |
 | cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2021-09-09 08:01:53 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2021-09-09 08:06:10 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2021-09-09 08:06:26 |
