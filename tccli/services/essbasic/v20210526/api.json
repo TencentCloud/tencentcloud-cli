@@ -1,0 +1,1370 @@
+{
+  "actions": {
+    "CreateConsoleLoginUrl": {
+      "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
+      "input": "CreateConsoleLoginUrlRequest",
+      "name": "生成控制台链接",
+      "output": "CreateConsoleLoginUrlResponse"
+    },
+    "CreateFlowsByTemplates": {
+      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建流程",
+      "input": "CreateFlowsByTemplatesRequest",
+      "name": "使用多个模板批量创建流程",
+      "output": "CreateFlowsByTemplatesResponse"
+    },
+    "CreateSignUrls": {
+      "document": "根据流程Id批量创建签署参与者签署H5链接",
+      "input": "CreateSignUrlsRequest",
+      "name": "获取跳转小程序签署链接",
+      "output": "CreateSignUrlsResponse"
+    },
+    "DescribeTemplates": {
+      "document": "通过此接口（DescribeTemplates）查询该企业在电子签渠道版中配置的有效模板列表",
+      "input": "DescribeTemplatesRequest",
+      "name": "查询模板信息列表",
+      "output": "DescribeTemplatesResponse"
+    },
+    "DescribeUsage": {
+      "document": "此接口（DescribeUsage）用于获取渠道所有合作企业流量消耗情况。\n 注: 此接口每日限频2次，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
+      "input": "DescribeUsageRequest",
+      "name": "渠道用量查询",
+      "output": "DescribeUsageResponse"
+    },
+    "PrepareFlows": {
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件",
+      "input": "PrepareFlowsRequest",
+      "name": "准备待发起文件",
+      "output": "PrepareFlowsResponse"
+    },
+    "SyncProxyOrganization": {
+      "document": "此接口（SyncProxyOrganization）用于同步渠道侧企业信息",
+      "input": "SyncProxyOrganizationRequest",
+      "name": "同步企业信息",
+      "output": "SyncProxyOrganizationResponse"
+    },
+    "SyncProxyOrganizationOperators": {
+      "document": "此接口（SyncProxyOrganizationOperators）用于同步渠道合作企业经办人列表",
+      "input": "SyncProxyOrganizationOperatorsRequest",
+      "name": "同步企业经办人列表",
+      "output": "SyncProxyOrganizationOperatorsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-05-26",
+    "api_brief": "使用API接口发起电子签名流程, 对流程进行管理, 电子印章管理,数字证书管理, 角色组织架构机构帐号管理,文档管理, 日志及统计等功能",
+    "serviceNameCN": "腾讯电子签（基础版）",
+    "serviceShortName": "essbasic"
+  },
+  "objects": {
+    "Agent": {
+      "document": "应用相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯电子签颁发给渠道的应用ID，32位字符串",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯电子签颁发给渠道侧合作企业的企业ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯电子签颁发给渠道侧合作企业的应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyAppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道/平台合作企业经办人（操作员）",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "ProxyOperator",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道/平台合作企业的企业ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Component": {
+      "document": "此结构体 (Component) 用于描述控件属性。",
+      "members": [
+        {
+          "default": "",
+          "document": "控件编号\n\n注：\n当GenerateMode=3时，通过\"^\"来决定是否使用关键字整词匹配能力。\n例：\n当GenerateMode=3时，如果传入关键字\"^甲方签署^\"，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方进行对应操作。\n如传入的关键字为\"甲方签署\"，则PDF文件中每个出现关键字的位置都会执行相应操作。\n\n创建控件时，此值为空\n查询时返回完整结构",
+          "example": "ComponentId",
+          "member": "string",
+          "name": "ComponentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nDATE - 普通日期控件；跟TEXT相比会有校验逻辑\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件；\n\n表单域的控件不能作为印章和签名控件",
+          "example": "SIGN_SEAL",
+          "member": "string",
+          "name": "ComponentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件名称",
+          "example": "ComponentName",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定义控件是否为必填项，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ComponentRequired",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件所属文件的序号 (文档中文件的排列序号)",
+          "example": "0",
+          "member": "int64",
+          "name": "FileIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件生成的方式：\nNORMAL - 普通控件\nFIELD - 表单域\nKEYWORD - 关键字",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "GenerateMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件宽度，默认100，单位px\n表单域和关键字转换控件不用填",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentWidth",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件高度，默认100，单位px\n表单域和关键字转换控件不用填",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentHeight",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件所在页码",
+          "example": "0",
+          "member": "int64",
+          "name": "ComponentPage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件X位置，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentPosX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件Y位置，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentPosY",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件样式，json格式表述\n不同类型的控件会有部分非通用参数\nTEXT控件可以指定字体\n例如：{\"FontSize\":12}",
+          "example": "ComponentExtra",
+          "member": "string",
+          "name": "ComponentExtra",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章 ID，传参 DEFAULT_COMPANY_SEAL 表示使用默认印章。\n控件填入内容，印章控件里面，如果是手写签名内容为PNG图片格式的base64编码",
+          "example": "ComponentValue",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日期签署控件的字号，默认为 12\n\n签署区日期控件会转换成图片格式并带存证，需要通过字体决定图片大小",
+          "example": "12",
+          "member": "int64",
+          "name": "ComponentDateFontSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件所属文档的Id, 模块相关接口为空值",
+          "example": "c17bdf9c2a7bdcb32611f4d0200fee3d",
+          "member": "string",
+          "name": "DocumentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件描述",
+          "example": "desc",
+          "member": "string",
+          "name": "ComponentDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateConsoleLoginUrlRequest": {
+      "document": "CreateConsoleLoginUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业经办人的姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOperatorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsoleLoginUrlResponse": {
+      "document": "CreateConsoleLoginUrl返回参数结构体",
+      "members": [
+        {
+          "document": "控制台url",
+          "example": "无",
+          "member": "string",
+          "name": "ConsoleUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道合作企业是否认证开通腾讯电子签。\n当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsActivated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowsByTemplatesRequest": {
+      "document": "CreateFlowsByTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "多个合同（流程）信息",
+          "example": "无",
+          "member": "FlowInfo",
+          "name": "FlowInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowsByTemplatesResponse": {
+      "document": "CreateFlowsByTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "多个合同ID",
+          "example": "[\"xx\",\"yy\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道的业务信息，限制1024字符",
+          "example": "[\"\",\"\"]",
+          "member": "string",
+          "name": "CustomerData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建消息，对应多个合同ID，\n成功为“”,创建失败则对应失败消息",
+          "example": "[\"\",\"\"]",
+          "member": "string",
+          "name": "ErrorMessages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignUrlsRequest": {
+      "document": "CreateSignUrls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "所签署合同ID数组",
+          "example": "[\"xxx\", \"yyy\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面",
+          "example": "”WEIXINAPP“",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署完成后H5引导页跳转URL",
+          "example": "“https://qq.com”",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignUrlsResponse": {
+      "document": "CreateSignUrls返回参数结构体",
+      "members": [
+        {
+          "document": "签署参与者签署H5链接信息数组",
+          "example": "无",
+          "member": "SignUrlInfo",
+          "name": "SignUrlInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplatesRequest": {
+      "document": "DescribeTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplatesResponse": {
+      "document": "DescribeTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "模板详情",
+          "example": "无",
+          "member": "TemplateInfo",
+          "name": "Templates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageRequest": {
+      "document": "DescribeUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "开始时间 eg:2021-03-21",
+          "example": "无",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间 eg:2021-06-21 \n开始时间到结束时间的区间长度小于等于90天",
+          "example": "无",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否汇总数据，默认不汇总\n不汇总:返回在统计区间内渠道下所有企业的每日明细，即每个企业N条数据，N为统计天数\n汇总:返回在统计区间内渠道下所有企业的汇总后数据，即每个企业一条数据",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedAggregate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "单次返回的最多条目数量,默认为1000,且不能超过1000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认是0",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageResponse": {
+      "document": "DescribeUsage返回参数结构体",
+      "members": [
+        {
+          "document": "用量明细条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用量明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlowApproverInfo": {
+      "document": "创建流程签署人入参",
+      "members": [
+        {
+          "default": "",
+          "document": "签署人姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号，脱敏显示",
+          "example": "13888888888",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人身份证号",
+          "example": "110101192008317114",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署完前端跳转的url，暂未使用",
+          "example": "https://qq.com",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署截止时间",
+          "example": "1689688460",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署完回调url",
+          "example": "https://qq.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowInfo": {
+      "document": "此结构体 (FlowInfo) 用于描述流程信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "合同名字",
+          "example": "流程名称",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署截止时间戳，超过有效签署时间则该签署流程失败",
+          "example": "截止时间",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "模版Id数组",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同类型：\n1. “劳务”\n2. “销售”\n3. “租赁”\n4. “其他”",
+          "example": "流程类型",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调地址",
+          "example": "回调地址",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "多个签署人信息",
+          "example": "签署人信息",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表单K-V对列表",
+          "example": "表单K-V对列表",
+          "member": "FormField",
+          "name": "FormFields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同描述",
+          "example": "流程详情",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道的业务信息，限制1024字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CustomerData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FormField": {
+      "document": "此结构 (FormField) 用于描述内容控件填充结构。",
+      "members": [
+        {
+          "default": "",
+          "document": "表单域或控件的Value",
+          "example": "name",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表单域或控件的ID，跟ComponentName二选一，不能全为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "391963b9d3cb2de35dedc6eb0a60e535",
+          "member": "string",
+          "name": "ComponentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "控件的名字，跟ComponentId二选一，不能全为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "住房地址",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrepareFlowsRequest": {
+      "document": "PrepareFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "多个合同（流程）信息",
+          "example": "无",
+          "member": "FlowInfo",
+          "name": "FlowInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作完成后的跳转地址",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PrepareFlowsResponse": {
+      "document": "PrepareFlows返回参数结构体",
+      "members": [
+        {
+          "document": "待发起文件确认页",
+          "example": "https://ess.tencent.com",
+          "member": "string",
+          "name": "ConfirmUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProxyOrganizationOperator": {
+      "document": "合作企业经办人列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "经办人ID（渠道颁发）",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人身份证件类型\n用户证件类型：默认ID_CARD\n1. ID_CARD - 居民身份证\n2. HOUSEHOLD_REGISTER - 户口本\n3. TEMP_ID_CARD - 临时居民身份证",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SignUrlInfo": {
+      "document": "签署链接内容",
+      "members": [
+        {
+          "default": "",
+          "document": "签署链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://essurl.cn/xxxx",
+          "member": "string",
+          "name": "SignUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "链接失效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当流程为顺序签署此参数有效时，数字越小优先级越高，暂不支持并行签署 可选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SignOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义用户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署参与者机构名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参与者类型:\nORGANIZATION 企业经办人\nPERSON 自然人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "经办人身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署链接对应流程Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test-flow-id\"",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SyncProxyOrganizationOperatorsRequest": {
+      "document": "SyncProxyOrganizationOperators请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作类型，新增:\"CREATE\"，修改:\"UPDATE\"，离职:\"RESIGN\"",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "经办人信息列表",
+          "example": "无",
+          "member": "ProxyOrganizationOperator",
+          "name": "ProxyOrganizationOperators",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncProxyOrganizationOperatorsResponse": {
+      "document": "SyncProxyOrganizationOperators返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncProxyOrganizationRequest": {
+      "document": "SyncProxyOrganization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessLicense",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncProxyOrganizationResponse": {
+      "document": "SyncProxyOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TemplateInfo": {
+      "document": "此结构体 (TemplateInfo) 用于描述模板的信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名字",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板控件信息结构",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署区模板信息结构",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板的创建者信息",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板创建的时间戳（精确到秒）",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageDetail": {
+      "document": "用量明细",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道侧合作企业唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消耗量",
+          "example": "50",
+          "member": "uint64",
+          "name": "Usage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日期，当需要汇总数据时日期为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-31",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserInfo": {
+      "document": "接口调用者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义用户编号",
+          "example": "无",
+          "member": "string",
+          "name": "CustomUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户的来源渠道",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户在渠道的编号",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户真实IP",
+          "example": "无",
+          "member": "string",
+          "name": "ClientIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户代理IP",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

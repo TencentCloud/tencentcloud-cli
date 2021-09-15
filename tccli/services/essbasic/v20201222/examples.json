@@ -1,0 +1,429 @@
+{
+  "actions": {
+    "ArchiveFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ArchiveFlow\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"FlowId\": \"83c210b73a2cd9e40fb9849283e78788\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "归档流程"
+      }
+    ],
+    "CancelFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"FlowId\": \"83c210b73a2cd9e40fb9849283e78788\",\n    \"CancelMessage\": \"测试撤销\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "撤销流程"
+      }
+    ],
+    "CheckBankCard2EVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBankCard2EVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"BankCard\": \"银行卡\",\n    \"Name\": \"张三\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 102,\n        \"Description\": \"银行卡号码有误\"\n    }\n}",
+        "title": "验证银行卡二要素"
+      }
+    ],
+    "CheckBankCard3EVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBankCard3EVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"BankCard\": \"银行卡\",\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 102,\n        \"Description\": \"银行卡号码有误\"\n    }\n}",
+        "title": "验证银行卡三要素"
+      }
+    ],
+    "CheckBankCard4EVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBankCard4EVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"BankCard\": \"银行卡\",\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\",\n    \"Mobile\": \"14000000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 102,\n        \"Description\": \"银行卡号码有误\"\n    }\n}",
+        "title": "验证银行卡四要素"
+      }
+    ],
+    "CheckBankCardVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBankCardVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"BankCard\": \"银行卡\",\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\",\n    \"Mobile\": \"14000000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 102,\n        \"Description\": \"银行卡号码有误\"\n    }\n}",
+        "title": "验证银行卡四要素"
+      }
+    ],
+    "CheckFaceIdentify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckFaceIdentify\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"参与人脸核身用户的UserId\"\n    },\n    \"VerifyChannel\": \"FACEID\",\n    \"VerifyResult\": \"WbAppIdOrderNumber\",\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 0,\n        \"Description\": \"\",\n        \"ChannelName\": \"腾讯电子签慧眼\",\n        \"VerifiedOn\": 1609901339,\n        \"SerialNumber\": \"流水号\",\n        \"VerifyServerIp\": \"1.2.3.4\",\n        \"PhotoFileName\": \"\",\n        \"PhotoFileData\": \"\"\n    }\n}",
+        "title": "检测人脸核身结果"
+      }
+    ],
+    "CheckIdCardVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIdCardVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 104,\n        \"Description\": \"证件库中无此身份证记录\"\n    }\n}",
+        "title": "CheckIdCardVerification"
+      }
+    ],
+    "CheckMobileAndName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMobileAndName\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"Mobile\": \"14000000000\",\n    \"Name\": \"张三\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 101,\n        \"Description\": \"查无记录\"\n    }\n}",
+        "title": "验证手机号二要素"
+      }
+    ],
+    "CheckMobileVerification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMobileVerification\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"Mobile\": \"14000000000\",\n    \"Name\": \"张三\",\n    \"IdCardNumber\": \"110101190101011030\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Result\": 101,\n        \"Description\": \"查无记录\"\n    }\n}",
+        "title": "验证手机号三要素"
+      }
+    ],
+    "CheckVerifyCodeMatchFlowId": [
+      {
+        "document": "验证码校验",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckVerifyCodeMatchFlowId\n<公共请求参数>\n\n{\n    \"Mobile\": \"1810000****\",\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"VerifyCode\": \"787989\",\n    \"FlowId\": \"12983719\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s161121668852673*****\",\n        \"Success\": false,\n        \"Result\": 0,\n        \"Description\": \"success\"\n    }\n}",
+        "title": "验证码校验"
+      }
+    ],
+    "CreateFaceIdSign": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFaceIdSign\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"Values\": [\n        \"WbAppId\",\n        \"Version\",\n        \"...\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Sign\": \"abcdef1234567890abcdef1234567890\"\n    }\n}",
+        "title": "生成慧眼API签名"
+      }
+    ],
+    "CreateFlowByFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowByFiles\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"FileIds\": [\n        \"d54e3caec25ad0ea6be24406762b7562\",\n        \"88f967a9e51473ce096478564b369831\"\n    ],\n    \"FlowInfo\": {\n        \"Deadline\": \"1609891200\",\n        \"FlowDescription\": \"test-20210102\",\n        \"FlowName\": \"test-20210102-测试发起-2\",\n        \"FlowType\": \"劳务合同\",\n        \"UserData\": \"随便写点什么\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"83c210b73a2cd9e40fb9849283e78788\",\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "使用上传文件创建流程"
+      }
+    ],
+    "CreateH5FaceIdUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateH5FaceIdUrl\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"要人脸核身用户的UserId\"\n    },\n    \"WbAppId\": \"分配的慧眼H5业务ID\",\n    \"Name\": \"姓名\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"110101190101011030\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Url\": \"https://ess.tencent.com/abcd\"\n    }\n}",
+        "title": "获取慧眼H5人脸核身Url"
+      }
+    ],
+    "CreatePreviewSignUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreviewSignUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"94b3f7921f0642940138573ca8361220\",\n    \"Deadline\": 1637063713,\n    \"Caller\": {\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"fb695ea161c7d7c46c7dbd35f4050ef6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1610023745620372661\",\n        \"PreviewSignUrl\": \"https://essurl.cn/SDKU0E\"\n    }\n}",
+        "title": "生成签署链接"
+      }
+    ],
+    "CreateSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"9990ccd83a8cf53376c557c538f9e9d3\"\n    },\n    \"SealName\": \"图片base64创建印章\",\n    \"UserId\": \"\",\n    \"Image\": \"iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFtei99Xv7IFe/R9Cv8txOkVQp9PsAChc0pDoBU5CEJB19qhPWOQSOWbJu51U/x/8Ab3gBfya6P8H7c2hqS5ShIQAAAAASUVORK5CYII=\",\n    \"SealType\": \"OFFICIAL\",\n    \"SourceIp\": \"123.123.123.123\",\n    \"FileId\": \"\",\n    \"IsDefault\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609901021610899889\",\n        \"SealId\": \"4fecde8c3137d320e8a3c8136bdbb7e5\"\n    }\n}",
+        "title": "创建电子印章"
+      }
+    ],
+    "CreateServerFlowSign": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerFlowSign\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\"\n    },\n    \"FlowId\": \"e9796ff652839ecb9c2402798f1dc7f9\",\n    \"SourceIp\": \"172.16.0.1\",\n    \"SignComponents\": [\n        {\n            \"ComponentId\": \"4b07197c2a49d539c490b6fe43d4a3ae\",\n            \"FileIndex\": 0,\n            \"GenerateMode\": 0,\n            \"ComponentValue\": \"85a4d86c307f277ebf6e9ce2c8f7eb2c\"\n        },\n        {\n            \"ComponentId\": \"48b820f51115c76ce0ab19ef708d841c\",\n            \"FileIndex\": 1,\n            \"GenerateMode\": 0\n        },\n        {\n            \"ComponentPosX\": 122.12,\n            \"ComponentType\": \"SIGN_SEAL\",\n            \"ComponentPage\": 1,\n            \"ComponentWidth\": 200,\n            \"FileIndex\": 0,\n            \"GenerateMode\": 0,\n            \"ComponentHeight\": 300,\n            \"ComponentValue\": \"85a4d86c307f277ebf6e9ce2c8f7eb2c\",\n            \"ComponentPosY\": 133.13\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609731093733170024\",\n        \"SignStatus\": 1\n    }\n}",
+        "title": "静默签署"
+      }
+    ],
+    "CreateSignUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSignUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"94b3f7921f0642940138573ca8361220\",\n    \"Deadline\": 1637063713,\n    \"Caller\": {\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"fb695ea161c7d7c46c7dbd35f4050ef6\"\n    },\n    \"UserId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1610023745620372661\",\n        \"SignUrl\": \"https://essurl.cn/SDKU0E\"\n    }\n}",
+        "title": "生成签署链接"
+      }
+    ],
+    "CreateSubOrganization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubOrganization\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"OperatorId\": \"\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"\"\n    },\n    \"Name\": \"机构名称\",\n    \"LegalName\": \"法人或联系人姓名\",\n    \"LegalIdCardType\": \"ID_CARD\",\n    \"LegalMobile\": \"1324567****\",\n    \"LegalIdCardNumber\": \"11010119980101****\",\n    \"OrganizationType\": \"ENTERPRISE\",\n    \"IdCardType\": \"USCC\",\n    \"IdCardNumber\": \"C1505358C72DN*****\",\n    \"UseOpenId\": true,\n    \"OpenId\": \"204aa34f396f503080fe53db7406d75e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubOrganizationId\": \"204aa34f396f503080fe53db7406d75e\",\n        \"RequestId\": \"s1609902133882212851\"\n    }\n}",
+        "title": "创建子企业或机构信息"
+      }
+    ],
+    "CreateSubOrganizationAndSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubOrganizationAndSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"OperatorId\": \"erdsdf9c2a7bdcb32611f4d0200fee3d\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"23dbdf9c2a7bdcb32611f4d0200fee3d\"\n    },\n    \"Name\": \"TestName\",\n    \"LegalName\": \"testName\",\n    \"LegalIdCardType\": \"ID_CARD\",\n    \"LegalMobile\": \"1324567****\",\n    \"LegalIdCardNumber\": \"11010119980101****\",\n    \"OrganizationType\": \"ENTERPRISE\",\n    \"IdCardType\": \"USCC\",\n    \"IdCardNumber\": \"C1505358C72DND****\",\n    \"SealType\": \"CONTRACT\",\n    \"SealHorizontalText\": \"电子签名专用章\",\n    \"VerifyClientIp\": \"1.1.1.1\",\n    \"SealName\": \"机构名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubOrganizationId\": \"204aa34f396f503080fe53db7406d75e\",\n        \"RequestId\": \"s1609902133882212851\",\n        \"SealId\": \"sd4aa34f396f503080fe53db7406d75e\"\n    }\n}",
+        "title": "注册实名子机构并生成印章"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"OpenId\": \"89874***\",\n    \"Mobile\": \"1810099****\",\n    \"Email\": \"test@***.com\",\n    \"Name\": \"testname\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"14560919980928****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611196820113234005\",\n        \"UserId\": \"abcdef1234567890abcdef1234567890\"\n    }\n}",
+        "title": "创建个人帐号"
+      }
+    ],
+    "CreateUserAndSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserAndSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"OpenId\": \"88fb0c591044be771f60aa382cc5****\",\n    \"Mobile\": \"1780095****\",\n    \"Email\": \"test@****.com\",\n    \"Name\": \"TestName\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"16259019870907****\",\n    \"SourceIp\": \"1.1.1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611196820113234005\",\n        \"UserId\": \"abcdef1234567890abcdef1234567890\",\n        \"SealId\": \"dddscf1234567890abcdef1234567890\"\n    }\n}",
+        "title": "创建个人帐号"
+      }
+    ],
+    "DeleteSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb88811f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"UserId\": \"88fb0c591044be771f60aa382cc5ed0e\",\n    \"SealId\": \"3486379737fd34230a247061088dedbd\",\n    \"SourceIp\": \"8.8.8.8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609748005444321663\"\n    }\n}",
+        "title": "删除电子印章"
+      }
+    ],
+    "DescribeCatalogApprovers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogApprovers\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"CatalogId\": \"目录ID\",\n    \"UserId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Approvers\": [\n            {\n                \"FlowId\": \"流程ID\",\n                \"Approvers\": [\n                    {\n                        \"UserId\": \"参与者用户ID\",\n                        \"VerifyChannel\": [\n                            \"认证方式\"\n                        ],\n                        \"ApproveStatus\": 0,\n                        \"ApproveMessage\": \"\",\n                        \"ApproveTime\": 0,\n                        \"SubOrganizationId\": \"参与者所属于机构ID\",\n                        \"JumpUrl\": \"回调URL\",\n                        \"ComponentSeals\": [\n                            {\n                                \"ComponentId\": \"签署区ID\",\n                                \"SealId\": \"印章ID\"\n                            }\n                        ],\n                        \"Mobile\": \"签署人手机号(脱敏)\",\n                        \"Name\": \"签署人姓名\",\n                        \"IdCardNumber\": \"签署人身份证号(脱敏)\",\n                        \"Deadline\": 1610682417,\n                        \"IsLastApprover\": true,\n                        \"SmsTemplate\": {\n                            \"TemplateId\": \"短信模板ID\",\n                            \"Sign\": \"短信签名内容\"\n                        },\n                        \"IsFullText\": true,\n                        \"PreReadTime\": 14\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "拉取目录参与者的列表"
+      }
+    ],
+    "DescribeCatalogSignComponents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogSignComponents\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"操作人用户ID\"\n    },\n    \"CatalogId\": \"目录ID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"SignComponents\": [\n            {\n                \"FlowId\": \"流程ID\",\n                \"SignId\": \"a08c79b56afcd3b64317b33bee00ce12\",\n                \"SignComponents\": [\n                    {\n                        \"ComponentValue\": \"xx\",\n                        \"GenerateMode\": 0,\n                        \"ComponentWidth\": 0.0,\n                        \"FileIndex\": 0,\n                        \"ComponentName\": \"xx\",\n                        \"ComponentExtra\": \"xx\",\n                        \"ComponentType\": \"xx\",\n                        \"ComponentPage\": 0,\n                        \"ComponentRequired\": true,\n                        \"ComponentPosX\": 0.0,\n                        \"ComponentPosY\": 0.0,\n                        \"ComponentId\": \"xx\",\n                        \"ComponentHeight\": 0.0\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "拉取目录签署区"
+      }
+    ],
+    "DescribeCustomFlowIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomFlowIds\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"CustomIds\": [\n        \"my-custom-id\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomIdList\": [\n            {\n                \"CustomId\": \"my-custom-id\",\n                \"FlowId\": \"d54e3caec25ad0ea6be24406762b7562\"\n            }\n        ],\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "使用上传文件创建流程"
+      }
+    ],
+    "DescribeCustomFlowIdsByFlowId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomFlowIdsByFlowId\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"FlowIds\": [\n        \"d54e3caec25ad0ea6be24406762b7562\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomIdList\": [\n            {\n                \"CustomId\": \"my-custom-id\",\n                \"FlowId\": \"d54e3caec25ad0ea6be24406762b7562\"\n            }\n        ],\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "使用上传文件创建流程"
+      }
+    ],
+    "DescribeFaceIdPhotos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFaceIdPhotos\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"WbAppId\": \"分配的慧眼业务ID\",\n    \"OrderNumbers\": [\n        \"订单号\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Photos\": [\n            {\n                \"Result\": 0,\n                \"Description\": \"\",\n                \"OrderNumber\": \"订单号\",\n                \"Photo\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取慧眼人脸核身照片"
+      }
+    ],
+    "DescribeFaceIdResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFaceIdResults\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"WbAppId\": \"分配的慧眼业务ID\",\n    \"OrderNumbers\": [\n        \"订单号\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Results\": [\n            {\n                \"Result\": 0,\n                \"Description\": \"\",\n                \"OrderNumber\": \"订单号\",\n                \"Name\": \"姓名\",\n                \"IdCardType\": \"ID_CARD\",\n                \"IdCardNumber\": \"110101190101011030\",\n                \"LiveRate\": 99,\n                \"Similarity\": 99.99,\n                \"OccurredTime\": 1234567890,\n                \"Photo\": \"\",\n                \"Video\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取慧眼人脸核身结果"
+      }
+    ],
+    "DescribeFileIdsByCustomIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileIdsByCustomIds\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"CustomIds\": [\n        \"my-custom-id\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomIdList\": [\n            {\n                \"CustomId\": \"my-custom-id\",\n                \"FileId\": \"d54e3caec25ad0ea6be24406762b7562\"\n            }\n        ],\n        \"RequestId\": \"s1609646162664722594\"\n    }\n}",
+        "title": "根据用户自定义ID查询文件id"
+      }
+    ],
+    "DescribeFileUrls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUrls\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"BusinessIds\": [\n        \"ac5ff24286c29c9bdca5962003b182d8\",\n        \"ac5ff24286c29c9bdca5962003b182d9\"\n    ],\n    \"FileType\": \"PDF\",\n    \"BusinessType\": \"DOCUMENT\",\n    \"FileName\": \"西安合同\",\n    \"ResourceLimit\": 0,\n    \"ResourceOffset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrls\": [\n            {\n                \"Url\": \"https://file.ess.myqcloud.com/files/DOCUMENT/11114444***,12315215515,12415251512/0/0.ZIP?key=1a153dbfb56f46c8653b901a60009589\",\n                \"Index\": 1,\n                \"FlowId\": \"xxx\",\n                \"Option\": \"{\\\"width\\\":595,\\\"height\\\":842}\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"s1609900397586332188\"\n    }\n}",
+        "title": "预览流程文档"
+      }
+    ],
+    "DescribeFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlow\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"FlowId\": \"93e2a19ee44a3f93cadeadaae739f1d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CallbackUrl\": \"\",\n        \"CreatedOn\": 1609579241,\n        \"Creator\": {\n            \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n            \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\",\n            \"SubOrganizationId\": \"\"\n        },\n        \"Deadline\": 1609891200,\n        \"FlowDescription\": \"test-20210102\",\n        \"FlowId\": \"93e2a19ee44a3f93cadeadaae739f1d4\",\n        \"FlowMessage\": \"\",\n        \"FlowName\": \"test-20210102-测试发起\",\n        \"FlowStatus\": 1,\n        \"FlowType\": \"劳务合同\",\n        \"RequestId\": \"s1609581145205347374\",\n        \"UpdatedOn\": 0\n    }\n}",
+        "title": "查询个人帐号"
+      }
+    ],
+    "DescribeFlowApprovers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowApprovers\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"FlowId\": \"\",\n    \"UserId\": \"\",\n    \"SignId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FlowId\": \"\",\n        \"Approvers\": [\n            {\n                \"UserId\": \"\",\n                \"VerifyChannel\": [\n                    \"WEIXINAPP\",\n                    \"FACEID\"\n                ],\n                \"ApproveStatus\": 0,\n                \"ApproveMessage\": \"\",\n                \"ApproveTime\": 0,\n                \"SubOrganizationId\": \"\",\n                \"JumpUrl\": \"\",\n                \"ComponentSeals\": [\n                    {\n                        \"ComponentId\": \"\",\n                        \"SealId\": \"\"\n                    }\n                ],\n                \"IsFullText\": true,\n                \"PreReadTime\": 30,\n                \"Mobile\": \"\",\n                \"Deadline\": 0,\n                \"Name\": \"\",\n                \"IdCardType\": \"ID_CARD\",\n                \"IdCardNumber\": \"\",\n                \"CallbackUrl\": \"\",\n                \"CanOffLine\": false,\n                \"IsLastApprover\": false,\n                \"SignId\": \"\",\n                \"SmsTemplate\": {\n                    \"TemplateId\": \"\",\n                    \"Sign\": \"\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询个人帐号"
+      }
+    ],
+    "DescribeFlowFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowFiles\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"FlowId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FlowId\": \"\",\n        \"FlowFileInfos\": [\n            {\n                \"FileIndex\": 1,\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"FileMd5\": \"\",\n                \"FileSize\": 10,\n                \"CreatedOn\": 12345678,\n                \"Url\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询个人帐号"
+      }
+    ],
+    "DescribeSeals": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSeals\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"SealIds\": [\n        \"4fecde8c3137d320e8a3c8136bdbb7e5\"\n    ],\n    \"UserId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609901021649919245\",\n        \"Seals\": [\n            {\n                \"CreatedOn\": 1609901021,\n                \"Creator\": {\n                    \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n                    \"OperatorId\": \"9990ccd83a8cf53376c557c538f9e9d3\",\n                    \"SubOrganizationId\": \"\"\n                },\n                \"FileUrl\": {\n                    \"Index\": 0,\n                    \"Option\": \"{}\",\n                    \"FlowId\": \"xxx\",\n                    \"Url\": \"https://dev.file.ess.myqcloud.com/bfile/SEAL/4fecde8c3137d320e8a3c8136bdbb7e5/0/0.PNG?key=B%1A%87%1B%24%F7%D2j%FBw%B0K%3A%BE%B3%06L%CDQ%26S%1BHF%C5%98v%B1%BFf%E3qDp%8AU%BA%04E%CB%F0%DC%CC%11Wd%E0%A8c%AE%24%9F%C2%C3%8F%F18%22%EE%AE%93%A7R%8E%96%94C%AA%5Bs%C1%F6%F7%8F%B0%99Y%AA%06%0A%1F%9DRU%E7%0C%0C%DC%25R%8F%E32u%0F%CD\"\n                },\n                \"SealId\": \"4fecde8c3137d320e8a3c8136bdbb7e5\",\n                \"SealName\": \"图片base64创建印章\",\n                \"SealSource\": \"CREATE\",\n                \"SealType\": \"OFFICIAL\",\n                \"UserId\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询电子印章"
+      }
+    ],
+    "DescribeSubOrganizations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubOrganizations\n<公共请求参数>\n\n{\n    \"SubOrganizationIds\": [\n        \"3768438f76ea49b43b8c819b13438ae3\"\n    ],\n    \"Caller\": {\n        \"OperatorId\": \"dolore\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1610021101589519007\",\n        \"SubOrganizationInfos\": [\n            {\n                \"BizLicenseFile\": \"\",\n                \"BizLicenseFileName\": \"quis sed\",\n                \"ContactAddress\": {\n                    \"City\": \"\",\n                    \"Country\": \"\",\n                    \"County\": \"\",\n                    \"Details\": \"\",\n                    \"Province\": \"\"\n                },\n                \"ContactName\": \"\",\n                \"CreatedOn\": 1610021071,\n                \"Email\": \"\",\n                \"Id\": \"3768438f76ea49b43b8c819b13438ae3\",\n                \"IdCardFileType\": \"\",\n                \"IdCardNumber\": \"567898765678\",\n                \"IdCardType\": \"USCC\",\n                \"LegalIdCardNumber\": \"7LDRplp3PmNCJ75vMjbzsuCy2qOi7RAf2YCIZk6v8Ck=\",\n                \"LegalIdCardType\": \"ID_CARD\",\n                \"LegalMobile\": \"13245678986\",\n                \"LegalName\": \"测试机构那\",\n                \"Name\": \"in minim\",\n                \"OrganizationType\": \"ENTERPRISE\",\n                \"UpdatedOn\": 0,\n                \"VerifiedOn\": 0,\n                \"VerifyClientIp\": \"\",\n                \"VerifyServerIp\": \"\",\n                \"VerifyStatus\": \"NotVerified\"\n            }\n        ]\n    }\n}",
+        "title": "查询子机构信息"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"UserIds\": [\n        \"89dsua9d9sa90dsa****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"Users\": [\n            {\n                \"UserId\": \"同CreateUser生成的UserId\",\n                \"Mobile\": \"用户手机号(脱敏)\",\n                \"CreatedOn\": 1609901339,\n                \"VerifyStatus\": 1,\n                \"Name\": \"姓名\",\n                \"VerifiedOn\": 1609901339,\n                \"IdCardType\": \"ID_CARD\",\n                \"IdCardNumber\": \"1****************0\"\n            }\n        ]\n    }\n}",
+        "title": "查询个人帐号"
+      }
+    ],
+    "DestroyFlowFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyFlowFile\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"FlowId\": \"111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "销毁流程文件"
+      }
+    ],
+    "GenerateOrganizationSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateOrganizationSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"asbbdf9c2a7bdcb88811f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"SealName\": \"印章名称\",\n    \"SealType\": \"OFFICIAL\",\n    \"SealHorizontalText\": \"腾讯电子印章\",\n    \"SourceIp\": \"10.8.10.10\",\n    \"IsDefault\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609748005444321663\",\n        \"SealId\": \"627caedfb394e410befc101bf0c161f2\"\n    }\n}",
+        "title": "生成企业电子印章"
+      }
+    ],
+    "GenerateUserSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateUserSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb88811f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"UserId\": \"88fb0c591044be771f60aa382cc5ed0e\",\n    \"SealName\": \"TestName\",\n    \"SourceIp\": \"10.8.10.10\",\n    \"IsDefault\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609748005444321663\",\n        \"SealId\": \"627caedfb394e410befc101bf0c161f2\"\n    }\n}",
+        "title": "生成个人用户电子印章"
+      }
+    ],
+    "ModifyOrganizationDefaultSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationDefaultSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb88811f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"SealId\": \"3486379737fd34230a247061088dedbd\",\n    \"SourceIp\": \"8.8.8.8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609748005444321663\"\n    }\n}",
+        "title": "修改企业默认印章"
+      }
+    ],
+    "ModifySeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"9990ccd83a8cf53376c557c538f9e9d3\"\n    },\n    \"SealId\": \"4fecde8c3137d320e8a3c8136bdbb7e5\",\n    \"SealName\": \"更新后的图片base64创建印章\",\n    \"Image\": \"iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFtei99Xv7IFe/R9Cv8txOkVQp9PsAChc0pDoBU5CEJB19qhPWOQSOWbJu51U/x/8Ab3gBfya6P8H7c2hqS5ShIQAAAAASUVORK5CYII=\",\n    \"SourceIp\": \"123.123.123.123\",\n    \"FileId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609901021610899889\"\n    }\n}",
+        "title": "更新电子印章"
+      }
+    ],
+    "ModifySubOrganizationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubOrganizationInfo\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"OperatorId\": \"\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"3768438f76ea49b43b8c819b13438ae3\"\n    },\n    \"LegalMobile\": \"1324567****\",\n    \"LegalIdCardNumber\": \"1101011998010*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubOrganizationId\": \"3768438f76ea49b43b8c819b13438ae3\",\n        \"RequestId\": \"s1610021071192729274\"\n    }\n}",
+        "title": "修改子机构信息"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"OpenId\": \"\",\n    \"UserId\": \"abcdef1234567890abcdef1234567890\",\n    \"Mobile\": \"1810099****\",\n    \"Email\": \"test@***.com\",\n    \"Name\": \"testname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611196820113234005\",\n        \"UserId\": \"1234567890abcdef1234567890abcdef\"\n    }\n}",
+        "title": "修改个人帐号信息"
+      }
+    ],
+    "ModifyUserDefaultSeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserDefaultSeal\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb88811f4d0200fee3d\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"UserId\": \"88fb0c591044be771f60aa382cc5ed0e\",\n    \"SealId\": \"3486379737fd34230a247061088dedbd\",\n    \"SourceIp\": \"8.8.8.8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609748005444321663\"\n    }\n}",
+        "title": "修改个人默认印章"
+      }
+    ],
+    "RejectFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectFlow\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号\",\n        \"SubOrganizationId\": \"子机构账号\",\n        \"OperatorId\": \"\"\n    },\n    \"FlowId\": \"bfe97ea80ae05bb5912aa43b87c6cc5f\",\n    \"RejectMessage\": \"合同内容有误\",\n    \"VerifyResult\": \"人脸核身票据\",\n    \"VerifyChannel\": \"FACEID\",\n    \"SourceIp\": \"8.8.8.8\",\n    \"SignId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1611216688526730856\"\n    }\n}",
+        "title": "拒签流程文档"
+      }
+    ],
+    "SendFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendFlow\n<公共请求参数>\n\n{\n    \"Mobile\": \"15219815739\",\n    \"IsLastApprover\": false,\n    \"UserId\": \"e3e303228df9327c3e1661e1ebff7e1b\",\n    \"VerifyChannel\": [\n        \"FACEID\"\n    ],\n    \"PreReadTime\": 20,\n    \"JumpUrl\": \"https://www.qq.com\",\n    \"Caller\": {\n        \"OperatorId\": \"e3e303228df9327c3e1661e1ebff7e1b\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\"\n    },\n    \"SignComponents\": [\n        {\n            \"ComponentPosY\": 100,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 0,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 100,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 0,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 300,\n            \"ComponentType\": \"SIGN_DATE\",\n            \"FileIndex\": 1,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 300,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 2,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 2\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 3,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 3\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 4,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 4\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 5,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 5\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 6,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 6\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 7,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 7\n        }\n    ],\n    \"FlowId\": \"b334e0cbdf76eb21b7c4cd75e02198e0\",\n    \"Deadline\": 1609927200,\n    \"SubOrganizationId\": \"732aaefa78c439d726f541b89c49e022\",\n    \"IsFullText\": true,\n    \"CanOffLine\": false,\n    \"CallbackUrl\": \"https://www.qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609919003607383165\",\n        \"SignId\": \"361d2e5b411f3c7c16d082169d49a747\"\n    }\n}",
+        "title": "发送流程"
+      }
+    ],
+    "SendFlowUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendFlowUrl\n<公共请求参数>\n\n{\n    \"Mobile\": \"1521981****\",\n    \"IsLastApprover\": false,\n    \"UserId\": \"e3e303228df9327c3e1661e1ebff7****\",\n    \"VerifyChannel\": [\n        \"FACEID\"\n    ],\n    \"PreReadTime\": 20,\n    \"JumpUrl\": \"https://www.qq.com\",\n    \"Caller\": {\n        \"OperatorId\": \"e3e303228df9327c3e1661e1ebff7e1b\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\"\n    },\n    \"SignComponents\": [\n        {\n            \"ComponentPosY\": 100,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 0,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 100,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 0,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 300,\n            \"ComponentType\": \"SIGN_DATE\",\n            \"FileIndex\": 1,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 300,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 1\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 2,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 2\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 3,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 3\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 4,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 4\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 5,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 5\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 6,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 6\n        },\n        {\n            \"ComponentPosY\": 200,\n            \"ComponentType\": \"SIGN_SIGNATURE\",\n            \"FileIndex\": 7,\n            \"ComponentWidth\": 100,\n            \"ComponentPosX\": 200,\n            \"ComponentRequired\": true,\n            \"ComponentHeight\": 100,\n            \"ComponentPage\": 7\n        }\n    ],\n    \"FlowId\": \"b334e0cbdf76eb21b7c4cd75e0219****\",\n    \"Deadline\": 1609927200,\n    \"SubOrganizationId\": \"732aaefa78c439d726f541b89c49e****\",\n    \"IsFullText\": true,\n    \"CanOffLine\": true,\n    \"CallbackUrl\": \"https://www.qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1609919003607383165\",\n        \"SignUrl\": \"https://essurl.cn/CN6eomUBge\",\n        \"SignId\": \"361d2e5b411f3c7c16d082169d49a747\"\n    }\n}",
+        "title": "发送流程"
+      }
+    ],
+    "SendSignInnerVerifyCode": [
+      {
+        "document": "发送签署验证码",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSignInnerVerifyCode\n<公共请求参数>\n\n{\n    \"Mobile\": \"1810000****\",\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"VerifyType\": \"SIGN\",\n    \"UserId\": \"sadasd\",\n    \"VerifyTemplateId\": \"\",\n    \"VerifySign\": \"\",\n    \"FlowId\": \"12983719\",\n    \"CheckThreeElementResult\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s161121668852673*****\",\n        \"Result\": false\n    }\n}",
+        "title": "发送签署验证码"
+      }
+    ],
+    "SignFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SignFlow\n<公共请求参数>\n\n{\n    \"ApproveMessage\": \"同意\",\n    \"VerifyChannel\": \"FACEID\",\n    \"Caller\": {\n        \"SubOrganizationId\": \"子机构账号\",\n        \"ApplicationId\": \"应用号\",\n        \"OperatorId\": \"\"\n    },\n    \"FlowId\": \"bfe97ea80ae05bb5912aa43b87c6cc5f\",\n    \"SignSeals\": [\n        {\n            \"SealContent\": \"bass64格式图片内容\",\n            \"SealId\": \"\",\n            \"SignType\": \"SIGN_SIGNATURE\",\n            \"ComponentId\": \"ae25dfda347710493e8b27e68b286f17\",\n            \"FileIndex\": 0\n        }\n    ],\n    \"VerifyResult\": \"核身票据\",\n    \"SourceIp\": \"8.8.8.8\",\n    \"SignId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"RequestId\": \"s1611211923633441897\"\n    }\n}",
+        "title": "签署流程文档"
+      }
+    ],
+    "UploadFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFiles\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"OperatorId\": \"a08c79b56afcd3b64317b33bee00ce12\"\n    },\n    \"BusinessType\": \"SEAL\",\n    \"CoverRect\": true,\n    \"FileInfos\": [\n        {\n            \"FileBody\": \"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\",\n            \"FileName\": \"test.png\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileIds\": [\n            \"d54e3caec25ad0ea6be24406762b7562\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4fecde8c3137d320e8a3c8136bdbb7e5\"\n    }\n}",
+        "title": "多文件上传接口"
+      }
+    ],
+    "VerifySubOrganization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifySubOrganization\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"OperatorId\": \"dolore\",\n        \"ApplicationId\": \"c17bdf9c2a7bdcb32611f4d0200fee3d\",\n        \"SubOrganizationId\": \"3768438f76ea49b43b8c819b13438ae3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1610021120434576212\",\n        \"SubOrganizationId\": \"3768438f76ea49b43b8c819b13438ae3\"\n    }\n}",
+        "title": "子机构已完成实名"
+      }
+    ],
+    "VerifyUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyUser\n<公共请求参数>\n\n{\n    \"Caller\": {\n        \"ApplicationId\": \"应用号ID\",\n        \"SubOrganizationId\": \"\",\n        \"OperatorId\": \"\"\n    },\n    \"UserId\": \"CreateUser生成的UserId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID,有异常时提供给电子签团队排查问题\",\n        \"UserId\": \"abcdef1234567890abcdef1234567890\"\n    }\n}",
+        "title": "创建个人帐号"
+      }
+    ]
+  },
+  "version": "1.0"
+}

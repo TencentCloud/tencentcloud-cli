@@ -1,0 +1,5942 @@
+{
+  "actions": {
+    "ArchiveFlow": {
+      "document": "此接口（ArchiveFlow）用于流程的归档。\n\n注意：归档后的流程不可再进行发送、签署、拒签、撤回等一系列操作。",
+      "input": "ArchiveFlowRequest",
+      "name": "归档流程",
+      "output": "ArchiveFlowResponse"
+    },
+    "CancelFlow": {
+      "document": "此接口（CancelFlow）用于撤销正在进行中的流程。\n\n注：已归档流程不可完成撤销动作。",
+      "input": "CancelFlowRequest",
+      "name": "撤销流程",
+      "output": "CancelFlowResponse"
+    },
+    "CheckBankCard2EVerification": {
+      "document": "该接口为第三方平台向电子签平台验证银行卡二要素",
+      "input": "CheckBankCard2EVerificationRequest",
+      "name": "银行卡二要素检测",
+      "output": "CheckBankCard2EVerificationResponse"
+    },
+    "CheckBankCard3EVerification": {
+      "document": "该接口为第三方平台向电子签平台验证银行卡三要素",
+      "input": "CheckBankCard3EVerificationRequest",
+      "name": "银行卡三要素检测",
+      "output": "CheckBankCard3EVerificationResponse"
+    },
+    "CheckBankCard4EVerification": {
+      "document": "该接口为第三方平台向电子签平台验证银行卡四要素",
+      "input": "CheckBankCard4EVerificationRequest",
+      "name": "银行卡四要素检测",
+      "output": "CheckBankCard4EVerificationResponse"
+    },
+    "CheckBankCardVerification": {
+      "document": "该接口为第三方平台向电子签平台验证银行卡二/三/四要素\n银行卡二要素(同CheckBankCard2EVerification): bank_card + name\n银行卡三要素(同CheckBankCard3EVerification): bank_card + name + id_card_number\n银行卡四要素(同CheckBankCard4EVerification): bank_card + name + id_card_number + mobile",
+      "input": "CheckBankCardVerificationRequest",
+      "name": "银行卡二三四要素检测",
+      "output": "CheckBankCardVerificationResponse"
+    },
+    "CheckFaceIdentify": {
+      "document": "该接口为第三方平台向电子签平台检测慧眼或腾讯电子签小程序人脸核身结果",
+      "input": "CheckFaceIdentifyRequest",
+      "name": "检测人脸核身结果",
+      "output": "CheckFaceIdentifyResponse"
+    },
+    "CheckIdCardVerification": {
+      "document": "该接口为第三方平台向电子签平台验证姓名和身份证信息",
+      "input": "CheckIdCardVerificationRequest",
+      "name": "身份证核验",
+      "output": "CheckIdCardVerificationResponse"
+    },
+    "CheckMobileAndName": {
+      "document": "该接口为第三方平台向电子签平台验证手机号二要素",
+      "input": "CheckMobileAndNameRequest",
+      "name": "手机号二要素核验",
+      "output": "CheckMobileAndNameResponse"
+    },
+    "CheckMobileVerification": {
+      "document": "该接口为第三方平台向电子签平台验证手机号三要素",
+      "input": "CheckMobileVerificationRequest",
+      "name": "手机号三要素核验",
+      "output": "CheckMobileVerificationResponse"
+    },
+    "CheckVerifyCodeMatchFlowId": {
+      "document": "此接口用于确认验证码是否正确",
+      "input": "CheckVerifyCodeMatchFlowIdRequest",
+      "name": "确认验证码",
+      "output": "CheckVerifyCodeMatchFlowIdResponse"
+    },
+    "CreateFaceIdSign": {
+      "document": "该接口为第三方平台向电子签平台获取慧眼慧眼API签名",
+      "input": "CreateFaceIdSignRequest",
+      "name": "生成慧眼API签名",
+      "output": "CreateFaceIdSignResponse"
+    },
+    "CreateFlowByFiles": {
+      "document": "此接口（CreateFlowByFiles）用于通过PDF文件创建签署流程。\n\n注意：调用此接口前，请先调用多文件上传接口 (UploadFiles)，提前上传合同文件。",
+      "input": "CreateFlowByFilesRequest",
+      "name": "用PDF文件创建流程",
+      "output": "CreateFlowByFilesResponse"
+    },
+    "CreateH5FaceIdUrl": {
+      "document": "该接口为第三方平台向电子签平台获取慧眼H5人脸核身Url",
+      "input": "CreateH5FaceIdUrlRequest",
+      "name": "获取慧眼H5人脸核身Url",
+      "output": "CreateH5FaceIdUrlResponse"
+    },
+    "CreatePreviewSignUrl": {
+      "document": "此接口（CreatePreviewSignUrl）用于生成生成预览签署URL。\n\n注：调用此接口前，请确保您已提前调用了发送流程接口（SendFlow）指定相关签署方。",
+      "input": "CreatePreviewSignUrlRequest",
+      "name": "生成预览签署URL",
+      "output": "CreatePreviewSignUrlResponse"
+    },
+    "CreateSeal": {
+      "document": "此接口（CreateSeal）用于创建个人/企业印章。\n\n注意：使用FileId参数指定印章，需先调用多文件上传 (UploadFiles) 上传印章图片。",
+      "input": "CreateSealRequest",
+      "name": "创建印章",
+      "output": "CreateSealResponse"
+    },
+    "CreateServerFlowSign": {
+      "document": "此接口（CreateServerFlowSign）用于静默签署文件。\n\n注：\n1、此接口为白名单接口，调用前请提前与客服经理或邮件至e-contract@tencent.com进行联系。\n2、仅合同发起者可使用流程静默签署能力。",
+      "input": "CreateServerFlowSignRequest",
+      "name": "流程静默签署",
+      "output": "CreateServerFlowSignResponse"
+    },
+    "CreateSignUrl": {
+      "document": "此接口（CreateSignUrl）用于生成指定用户的签署URL。\n\n注：调用此接口前，请确保您已提前调用了发送流程接口（SendFlow）指定相关签署方。",
+      "input": "CreateSignUrlRequest",
+      "name": "生成签署URL",
+      "output": "CreateSignUrlResponse"
+    },
+    "CreateSubOrganization": {
+      "document": "此接口（CreateSubOrganization）用于在腾讯电子签内注册子机构。",
+      "input": "CreateSubOrganizationRequest",
+      "name": "注册子机构",
+      "output": "CreateSubOrganizationResponse"
+    },
+    "CreateSubOrganizationAndSeal": {
+      "document": "此接口（CreateSubOrganizationAndSeal）用于注册子机构，同时系统将为该子企业自动生成一个默认电子印章图片。\n\n注意：\n1. 在后续的签署流程中，若未指定签署使用的印章ID，则默认调用自动生成的印章图片进行签署。\n2. 此接口为白名单接口，如您需要使用此能力，请提前与客户经理沟通或邮件至e-contract@tencent.com与我们联系。",
+      "input": "CreateSubOrganizationAndSealRequest",
+      "name": "注册实名子机构并生成印章",
+      "output": "CreateSubOrganizationAndSealResponse"
+    },
+    "CreateUser": {
+      "document": "此接口（CreateUser）用于注册腾讯电子签个人用户。",
+      "input": "CreateUserRequest",
+      "name": "注册个人用户",
+      "output": "CreateUserResponse"
+    },
+    "CreateUserAndSeal": {
+      "document": "第三方应用可通过此接口（CreateUserAndSeal）注册腾讯电子签实名个人用户，同时系统将为该用户自动生成一个默认电子签名图片。\n\n注意：\n1. 在后续的签署流程中，若未指定签署使用的印章ID，则默认调用自动生成的签名图片进行签署。\n2. 此接口为白名单接口，如您需要使用此能力，请提前与客户经理沟通或邮件至e-contract@tencent.com与我们联系。",
+      "input": "CreateUserAndSealRequest",
+      "name": "注册实名个人用户并生成签名",
+      "output": "CreateUserAndSealResponse"
+    },
+    "DeleteSeal": {
+      "document": "此接口 (DeleteSeal) 用于删除指定ID的印章。\n\n注意：默认印章不支持删除",
+      "input": "DeleteSealRequest",
+      "name": "删除印章",
+      "output": "DeleteSealResponse"
+    },
+    "DescribeCatalogApprovers": {
+      "document": "第三方应用可通过此接口（DescribeCatalogApprovers）查询指定目录的参与者列表",
+      "input": "DescribeCatalogApproversRequest",
+      "name": "拉取流程目录参与者的信息",
+      "output": "DescribeCatalogApproversResponse"
+    },
+    "DescribeCatalogSignComponents": {
+      "document": "第三方应用可通过此接口（DescribeCatalogSignComponents）拉取目录签署区",
+      "input": "DescribeCatalogSignComponentsRequest",
+      "name": "拉取目录签署区",
+      "output": "DescribeCatalogSignComponentsResponse"
+    },
+    "DescribeCustomFlowIds": {
+      "document": "此接口（DescribeCustomFlowIds）用于通过自定义流程id来查询对应的电子签流程id",
+      "input": "DescribeCustomFlowIdsRequest",
+      "name": "根据用户自定义id查询流程id",
+      "output": "DescribeCustomFlowIdsResponse"
+    },
+    "DescribeCustomFlowIdsByFlowId": {
+      "document": "此接口（DescribeCustomFlowIdsByFlowId）用于根据流程id反查自定义流程id",
+      "input": "DescribeCustomFlowIdsByFlowIdRequest",
+      "name": "根据流程id反查自定义流程id",
+      "output": "DescribeCustomFlowIdsByFlowIdResponse"
+    },
+    "DescribeFaceIdPhotos": {
+      "document": "该接口为第三方平台向电子签平台获取慧眼人脸核身照片",
+      "input": "DescribeFaceIdPhotosRequest",
+      "name": "查询慧眼人脸核身照片",
+      "output": "DescribeFaceIdPhotosResponse"
+    },
+    "DescribeFaceIdResults": {
+      "document": "该接口为第三方平台向电子签平台获取慧眼人脸核身结果",
+      "input": "DescribeFaceIdResultsRequest",
+      "name": "获取慧眼人脸核身结果",
+      "output": "DescribeFaceIdResultsResponse"
+    },
+    "DescribeFileIdsByCustomIds": {
+      "document": "根据用户自定义id查询文件id",
+      "input": "DescribeFileIdsByCustomIdsRequest",
+      "name": "根据用户自定义id查询文件id",
+      "output": "DescribeFileIdsByCustomIdsResponse"
+    },
+    "DescribeFileUrls": {
+      "document": "此接口（DescribeFileUrls）用于获取签署文件下载的URL。",
+      "input": "DescribeFileUrlsRequest",
+      "name": "查询文件下载链接",
+      "output": "DescribeFileUrlsResponse"
+    },
+    "DescribeFlow": {
+      "document": "通过此接口（DescribeFlow）可查询签署流程的详细信息。",
+      "input": "DescribeFlowRequest",
+      "name": "查询流程信息",
+      "output": "DescribeFlowResponse"
+    },
+    "DescribeFlowApprovers": {
+      "document": "第三方应用可通过此接口（DescribeFlowApprovers）查询流程参与者信息。",
+      "input": "DescribeFlowApproversRequest",
+      "name": "查询流程参与者信息",
+      "output": "DescribeFlowApproversResponse"
+    },
+    "DescribeFlowFiles": {
+      "document": "查询流程文件",
+      "input": "DescribeFlowFilesRequest",
+      "name": "查询流程文件",
+      "output": "DescribeFlowFilesResponse"
+    },
+    "DescribeSeals": {
+      "document": "此接口（DescribeSeals）用于查询指定ID的印章信息。",
+      "input": "DescribeSealsRequest",
+      "name": "查询电子印章",
+      "output": "DescribeSealsResponse"
+    },
+    "DescribeSubOrganizations": {
+      "document": "此接口（DescribeSubOrganizations）用于查询子机构信息。\n\n注：此接口仅可查询您所属机构应用号创建的子机构信息，不可跨应用/跨机构查询。",
+      "input": "DescribeSubOrganizationsRequest",
+      "name": "查询子机构信息",
+      "output": "DescribeSubOrganizationsResponse"
+    },
+    "DescribeUsers": {
+      "document": "此接口（DescribeUsers）用于查询应用号下的个人用户信息。\n\n注：此接口仅可查询您所属机构应用号创建的个人用户信息，不可跨应用/跨机构查询。",
+      "input": "DescribeUsersRequest",
+      "name": "查询个人用户信息",
+      "output": "DescribeUsersResponse"
+    },
+    "DestroyFlowFile": {
+      "document": "通过此接口（DestroyFlowFile）可删除指定流程中的合同文件。\n\n注：调用此接口前，请确保此流程已属于归档状态。您可通过查询流程信息接口（DescribeFlow）进行查询。",
+      "input": "DestroyFlowFileRequest",
+      "name": "销毁流程文件",
+      "output": "DestroyFlowFileResponse"
+    },
+    "GenerateOrganizationSeal": {
+      "document": "生成企业电子印章",
+      "input": "GenerateOrganizationSealRequest",
+      "name": "生成企业电子印章",
+      "output": "GenerateOrganizationSealResponse"
+    },
+    "GenerateUserSeal": {
+      "document": "此接口（GenerateUserSeal）用于生成个人签名图片。\n\n注意：\n1. 个人签名由用户注册时预留的姓名信息生成，不支持自定义签名内容。\n2. 个人用户仅支持拥有一个系统生成的电子签名。",
+      "input": "GenerateUserSealRequest",
+      "name": "生成个人电子签名",
+      "output": "GenerateUserSealResponse"
+    },
+    "ModifyOrganizationDefaultSeal": {
+      "document": "此接口 (ModifyOrganizationDefaultSeal) 用于重新指定企业默认印章。",
+      "input": "ModifyOrganizationDefaultSealRequest",
+      "name": "修改企业默认印章",
+      "output": "ModifyOrganizationDefaultSealResponse"
+    },
+    "ModifySeal": {
+      "document": "此接口（ModifySeal）用于修改指定印章ID的印章图片和名称。\n\n注：印章类型暂不支持修改，如需调整，请联系客服经理或通过创建印章接口（CreateSeal）进行创建新印章。",
+      "input": "ModifySealRequest",
+      "name": "更新电子印章",
+      "output": "ModifySealResponse"
+    },
+    "ModifySubOrganizationInfo": {
+      "document": "此接口（ModifySubOrganizationInfo）用于更新子机构信息。\n\n注：若修改子机构名称或更新机构证件照片，需要重新通过子机构实名接口（VerifySubOrganization）进行重新实名。",
+      "input": "ModifySubOrganizationInfoRequest",
+      "name": "更新子机构信息",
+      "output": "ModifySubOrganizationInfoResponse"
+    },
+    "ModifyUser": {
+      "document": "此接口（ModifyUser）用于更新个人用户信息。\n\n注：若修改用户姓名，需要重新通过个人用户实名接口（VerifyUser）进行重新实名。",
+      "input": "ModifyUserRequest",
+      "name": "更新个人用户信息",
+      "output": "ModifyUserResponse"
+    },
+    "ModifyUserDefaultSeal": {
+      "document": "此接口 (ModifyUserDefaultSeal) 用于重新指定个人默认印章。",
+      "input": "ModifyUserDefaultSealRequest",
+      "name": "修改个人默认印章",
+      "output": "ModifyUserDefaultSealResponse"
+    },
+    "RejectFlow": {
+      "document": "此接口（RejectFlow）用于用户拒绝签署合同流程。",
+      "input": "RejectFlowRequest",
+      "name": "拒签流程",
+      "output": "RejectFlowResponse"
+    },
+    "SendFlow": {
+      "document": "此接口（SendFlow）用于指定签署者及签署内容，后续可通过生成签署接口（CreateSignUrl）获取签署url。",
+      "input": "SendFlowRequest",
+      "name": "发送流程",
+      "output": "SendFlowResponse"
+    },
+    "SendFlowUrl": {
+      "document": "发送流程并获取签署URL",
+      "input": "SendFlowUrlRequest",
+      "name": "发送流程并生成签署URL",
+      "output": "SendFlowUrlResponse"
+    },
+    "SendSignInnerVerifyCode": {
+      "document": "此接口用于发送签署验证码",
+      "input": "SendSignInnerVerifyCodeRequest",
+      "name": "发送签署验证码",
+      "output": "SendSignInnerVerifyCodeResponse"
+    },
+    "SignFlow": {
+      "document": "此接口（SignFlow）可用于对流程文件进行签署。",
+      "input": "SignFlowRequest",
+      "name": "签署流程",
+      "output": "SignFlowResponse"
+    },
+    "UploadFiles": {
+      "document": "此接口（UploadFiles）用于文件上传。",
+      "input": "UploadFilesRequest",
+      "name": "文件上传",
+      "output": "UploadFilesResponse"
+    },
+    "VerifySubOrganization": {
+      "document": "此接口（VerifySubOrganization）用于通过子机构的实名认证。\n\n注：此接口为白名单接口，如您需要使用此能力，请提前与客户经理沟通或邮件至e-contract@tencent.com与我们联系。",
+      "input": "VerifySubOrganizationRequest",
+      "name": "子机构通过实名认证",
+      "output": "VerifySubOrganizationResponse"
+    },
+    "VerifyUser": {
+      "document": "第三方应用可通过此接口（VerifyUser）将腾讯电子签个人用户的实名认证状态设为通过。\n\n注：此接口为白名单接口，如您需要使用此能力，请提前与客户经理沟通或邮件至e-contract@tencent.com与我们联系。",
+      "input": "VerifyUserRequest",
+      "name": "个人用户通过实名认证",
+      "output": "VerifyUserResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-22",
+    "api_brief": "使用API接口发起电子签名流程, 对流程进行管理, 电子印章管理,数字证书管理, 角色组织架构机构帐号管理,文档管理, 日志及统计等功能",
+    "serviceNameCN": "腾讯电子签（基础版）",
+    "serviceShortName": "essbasic"
+  },
+  "objects": {
+    "Address": {
+      "document": "此结构体 (Address) 用于描述住址或通讯地址。",
+      "members": [
+        {
+          "default": "",
+          "document": "省份",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区县",
+          "member": "string",
+          "name": "County",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细地址",
+          "member": "string",
+          "name": "Details",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家，默认中国",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ArchiveFlowRequest": {
+      "document": "ArchiveFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程ID",
+          "example": "83c210b73a2cd9e40fb9849283e78788",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ArchiveFlowResponse": {
+      "document": "ArchiveFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Caller": {
+      "document": "此结构体 (Caller) 用于描述调用方属性。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用号",
+          "example": "c17bdf9c2a7bdcb88811f4d0200fee3d",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下属机构ID",
+          "example": "dasdasdhjksdjk2938hein",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人的用户ID",
+          "example": "88fb0c591044be771f60aa382cc5ed0e",
+          "member": "string",
+          "name": "OperatorId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CancelFlowRequest": {
+      "document": "CancelFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程ID",
+          "example": "83c210b73a2cd9e40fb9849283e78788",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "撤销原因",
+          "example": "TestMessage",
+          "member": "string",
+          "name": "CancelMessage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelFlowResponse": {
+      "document": "CancelFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CatalogApprovers": {
+      "document": "目录流程参与者",
+      "members": [
+        {
+          "default": "",
+          "document": "流程ID",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与者列表",
+          "member": "FlowApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CatalogComponents": {
+      "document": "目录流程签署区",
+      "members": [
+        {
+          "default": "",
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署区列表",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckBankCard2EVerificationRequest": {
+      "document": "CheckBankCard2EVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "银行卡号",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCard2EVerificationResponse": {
+      "document": "CheckBankCard2EVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  认证通过\n  1:  认证未通过\n  2:  持卡人信息有误\n  3:  未开通无卡支付\n  4:  此卡被没收\n  5:  无效卡号\n  6:  此卡无对应发卡行\n  7:  该卡未初始化或睡眠卡\n  8:  作弊卡、吞卡\n  9:  此卡已挂失\n  10: 该卡已过期\n  11: 受限制的卡\n  12: 密码错误次数超限\n  13: 发卡行不支持此交易\n不收费结果码:\n  101: 姓名校验不通过\n  102: 银行卡号码有误\n  103: 验证中心服务繁忙\n  104: 身份证号码有误\n  105: 手机号码不合法",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCard3EVerificationRequest": {
+      "document": "CheckBankCard3EVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "银行卡号",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCard3EVerificationResponse": {
+      "document": "CheckBankCard3EVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  认证通过\n  1:  认证未通过\n  2:  持卡人信息有误\n  3:  未开通无卡支付\n  4:  此卡被没收\n  5:  无效卡号\n  6:  此卡无对应发卡行\n  7:  该卡未初始化或睡眠卡\n  8:  作弊卡、吞卡\n  9:  此卡已挂失\n  10: 该卡已过期\n  11: 受限制的卡\n  12: 密码错误次数超限\n  13: 发卡行不支持此交易\n不收费结果码:\n  101: 姓名校验不通过\n  102: 银行卡号码有误\n  103: 验证中心服务繁忙\n  104: 身份证号码有误\n  105: 手机号码不合法",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCard4EVerificationRequest": {
+      "document": "CheckBankCard4EVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "银行卡号",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCard4EVerificationResponse": {
+      "document": "CheckBankCard4EVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  认证通过\n  1:  认证未通过\n  2:  持卡人信息有误\n  3:  未开通无卡支付\n  4:  此卡被没收\n  5:  无效卡号\n  6:  此卡无对应发卡行\n  7:  该卡未初始化或睡眠卡\n  8:  作弊卡、吞卡\n  9:  此卡已挂失\n  10: 该卡已过期\n  11: 受限制的卡\n  12: 密码错误次数超限\n  13: 发卡行不支持此交易\n不收费结果码:\n  101: 姓名校验不通过\n  102: 银行卡号码有误\n  103: 验证中心服务繁忙\n  104: 身份证号码有误\n  105: 手机号码不合法",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCardVerificationRequest": {
+      "document": "CheckBankCardVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "银行卡号",
+          "member": "string",
+          "name": "BankCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckBankCardVerificationResponse": {
+      "document": "CheckBankCardVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  认证通过\n  1:  认证未通过\n  2:  持卡人信息有误\n  3:  未开通无卡支付\n  4:  此卡被没收\n  5:  无效卡号\n  6:  此卡无对应发卡行\n  7:  该卡未初始化或睡眠卡\n  8:  作弊卡、吞卡\n  9:  此卡已挂失\n  10: 该卡已过期\n  11: 受限制的卡\n  12: 密码错误次数超限\n  13: 发卡行不支持此交易\n不收费结果码:\n  101: 姓名校验不通过\n  102: 银行卡号码有误\n  103: 验证中心服务繁忙\n  104: 身份证号码有误\n  105: 手机号码不合法",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFaceIdentifyRequest": {
+      "document": "CheckFaceIdentify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "人脸核身渠道; 必选; WEIXINAPP:腾讯电子签小程序,FACEID:腾讯电子签慧眼,None:白名单中的客户直接通过",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "核身订单号; 必选; 对于WEIXINAPP,直接取响应的{VerifyResult};对于FACEID,使用{WbAppId}:{OrderNo}拼接",
+          "member": "string",
+          "name": "VerifyResult",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要对比的姓名; 可选; 未填写时对比caller.OperatorId的实名信息",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要对比的身份证号码; 可选; 未填写时对比caller.OperatorId的实名信息",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否取认证时的照片",
+          "member": "bool",
+          "name": "GetPhoto",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFaceIdentifyResponse": {
+      "document": "CheckFaceIdentify返回参数结构体",
+      "members": [
+        {
+          "document": "核身结果; 0:通过,1:不通过",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核身结果描述",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道名",
+          "member": "string",
+          "name": "ChannelName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "认证通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VerifiedOn",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "核身流水号",
+          "member": "string",
+          "name": "SerialNumber",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道核身服务器IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyServerIp",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "核身照片文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhotoFileName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "核身照片内容base64(文件格式见文件名后缀,一般为jpg)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhotoFileData",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdCardVerificationRequest": {
+      "document": "CheckIdCardVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIdCardVerificationResponse": {
+      "document": "CheckIdCardVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果; \n收费错误码:\n  0: 通过,\n  1: 姓名和身份证号不一致,\n免费错误码:\n  101: 非法身份证号(长度,格式等不正确),\n  102: 非法姓名(长度,格式等不正确),\n  103: 验证平台异常,\n  104: 证件库中无此身份证记录",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMobileAndNameRequest": {
+      "document": "CheckMobileAndName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMobileAndNameResponse": {
+      "document": "CheckMobileAndName返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  验证结果一致\n  1:  手机号未实名\n  2:  姓名和手机号不一致\n  3:  信息不一致(手机号已实名,但姓名和身份证号与实名信息不一致)\n不收费结果码:\n  101: 查无记录\n  102: 非法姓名(长度,格式等不正确)\n  103: 非法手机号(长度,格式等不正确)\n  104: 非法身份证号(长度,校验位等不正确)\n  105: 认证未通过\n  106: 验证平台异常",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMobileVerificationRequest": {
+      "document": "CheckMobileVerification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMobileVerificationResponse": {
+      "document": "CheckMobileVerification返回参数结构体",
+      "members": [
+        {
+          "document": "检测结果\n计费结果码：\n  0:  验证结果一致\n  1:  手机号未实名\n  2:  姓名和手机号不一致\n  3:  信息不一致(手机号已实名,但姓名和身份证号与实名信息不一致)\n不收费结果码:\n  101: 查无记录\n  102: 非法姓名(长度,格式等不正确)\n  103: 非法手机号(长度,格式等不正确)\n  104: 非法身份证号(长度,校验位等不正确)\n  105: 认证未通过\n  106: 验证平台异常",
+          "member": "int64",
+          "name": "Result",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述; 未通过时必选",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckVerifyCodeMatchFlowIdRequest": {
+      "document": "CheckVerifyCodeMatchFlowId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "1810000****",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码",
+          "example": "46278342",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程(目录) id",
+          "example": "21387192",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckVerifyCodeMatchFlowIdResponse": {
+      "document": "CheckVerifyCodeMatchFlowId返回参数结构体",
+      "members": [
+        {
+          "document": "true: 验证码正确，false: 验证码错误",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0: 验证码正确 1:验证码错误或过期 2:验证码错误 3:验证码和流程不匹配 4:验证码输入错误超过次数 5:内部错误\n6:参数错误",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结果描述",
+          "example": "success",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Component": {
+      "document": "此结构体 (Component) 用于描述控件属性。",
+      "members": [
+        {
+          "default": "",
+          "document": "控件编号\n\n注：\n当GenerateMode=3时，通过\"^\"来决定是否使用关键字整词匹配能力。\n例：\n当GenerateMode=3时，如果传入关键字\"^甲方签署^\"，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方进行对应操作。\n如传入的关键字为\"甲方签署\"，则PDF文件中每个出现关键字的位置都会执行相应操作。",
+          "example": "ComponentId",
+          "member": "string",
+          "name": "ComponentId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是Component控件类型，则可选的字段为：\nTEXT - 普通文本控件；\nDATE - 普通日期控件；\nSELECT- 勾选框控件；\n如果是SignComponent控件类型，则可选的字段为\nSIGN_SEAL- 签署印章控件；\nSIGN_DATE- 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；",
+          "example": "SIGN_SEAL",
+          "member": "string",
+          "name": "ComponentType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件名称",
+          "example": "ComponentName",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定义控件是否为必填项，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ComponentRequired",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件所属文件的序号 (模板中的resourceId排列序号)",
+          "example": "0",
+          "member": "int64",
+          "name": "FileIndex",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控件生成的方式：\n0 - 普通控件\n1 - 表单域\n2 - html 控件\n3 - 关键字",
+          "example": "3",
+          "member": "int64",
+          "name": "GenerateMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件宽度，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentWidth",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件高度，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentHeight",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件所在页码",
+          "example": "0",
+          "member": "int64",
+          "name": "ComponentPage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件X位置，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentPosX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件Y位置，单位px",
+          "example": "10",
+          "member": "float",
+          "name": "ComponentPosY",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数控件样式",
+          "example": "ComponentExtra",
+          "member": "string",
+          "name": "ComponentExtra",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章ID，如果是手写签名则为jpg或png格式的base64图片\n\nSIGN_SEAL控件,可以用ORG_DEFAULT_SEAL表示主企业的默认印章\nSIGN_SEAL控件,可以用SUBORG_DEFAULT_SEAL表示子企业的默认印章\nSIGN_SEAL控件,可以用USER_DEFAULT_SEAL表示个人默认印章",
+          "example": "ComponentValue",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果是SIGN_SEAL类型的签署控件, 参数标识H5签署界面是否在该签署区上进行放置展示, 1为放置,其他为不放置",
+          "example": "1",
+          "member": "int64",
+          "name": "SealOperate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不同GenerateMode对应的额外信息",
+          "example": "GenerateExtra",
+          "member": "string",
+          "name": "GenerateExtra",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ComponentSeal": {
+      "document": "此结构体 (ComponentSeal) 用于描述“签署区ID”到“印章ID”的映射。",
+      "members": [
+        {
+          "default": "",
+          "document": "签署区ID",
+          "member": "string",
+          "name": "ComponentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章ID",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateFaceIdSignRequest": {
+      "document": "CreateFaceIdSign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "除api_ticket之外的其它要参与签名的参数值,包括UserId",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFaceIdSignResponse": {
+      "document": "CreateFaceIdSign返回参数结构体",
+      "members": [
+        {
+          "document": "慧眼API签名",
+          "member": "string",
+          "name": "Sign",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowByFilesRequest": {
+      "document": "CreateFlowByFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程创建信息",
+          "example": "FlowInfo",
+          "member": "FlowInfo",
+          "name": "FlowInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件资源列表 (支持多文件)",
+          "example": "d54e3caec25ad0ea6be24406762b7562",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自定义流程id",
+          "example": "无",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowByFilesResponse": {
+      "document": "CreateFlowByFiles返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID",
+          "example": "83c210b73a2cd9e40fb9849283e78788",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateH5FaceIdUrlRequest": {
+      "document": "CreateH5FaceIdUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "慧眼业务ID; 不填写时后台使用Caller反查",
+          "member": "string",
+          "name": "WbAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名; 可选(未通过实名认证的用户必选)",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件类型; 可选; 默认ID_CARD:中国居民身份证",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件号; 可选(未通过实名认证的用户必选)",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "H5人脸核身完成后回调的第三方Url; 可选; 不需要做Encode, 跳转的参数: ?code=XX&orderNo=XX&liveRate=xx, code=0表示成功,orderNo为订单号,liveRate为百分制活体检测得分",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数值为\"1\":直接跳转到url回调地址; 可选; 其他值:跳转提供的结果页面",
+          "member": "string",
+          "name": "JumpType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "browser:表示在浏览器启动刷脸, app:表示在App里启动刷脸,默认值为browser; 可选",
+          "member": "string",
+          "name": "OpenFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跳转类型; 可选; 参数值为\"1\"时,刷脸页面使用replace方式跳转,不在浏览器history中留下记录;不传或其他值则正常跳转",
+          "member": "string",
+          "name": "RedirectType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateH5FaceIdUrlResponse": {
+      "document": "CreateH5FaceIdUrl返回参数结构体",
+      "members": [
+        {
+          "document": "跳转到人脸核身页面的链接",
+          "member": "string",
+          "name": "Url",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePreviewSignUrlRequest": {
+      "document": "CreatePreviewSignUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "URL过期时间戳",
+          "example": "1637063713",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "目录ID。当 SignUrlType 为 CATALOG 时必填",
+          "example": "78sh2783h2ds009823hj",
+          "member": "string",
+          "name": "CatalogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程ID。当 SignUrlType 为 FLOW 时必填",
+          "example": "94b3f7921f0642940138573ca8361220",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署链接类型：\n1. FLOW - 单流程签署 (默认) \n2. CATALOG - 目录签署",
+          "example": "FLOW ",
+          "member": "string",
+          "name": "SignUrlType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePreviewSignUrlResponse": {
+      "document": "CreatePreviewSignUrl返回参数结构体",
+      "members": [
+        {
+          "document": "合同预览URL",
+          "example": "https://essurl.cn/SDKU0E",
+          "member": "string",
+          "name": "PreviewSignUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealRequest": {
+      "document": "CreateSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "印章类型：\n1. PERSONAL - 个人私章\n2. OFFICIAL - 公章\n3. SPECIAL_FINANCIAL - 财务专用章\n4. CONTRACT - 合同专用章\n5. LEGAL_REPRESENTATIVE - 法定代表人章\n6. SPECIAL_NATIONWIDE_INVOICE - 发票专用章\n7. OTHER-其他",
+          "example": "PERSONAL",
+          "member": "string",
+          "name": "SealType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章名称",
+          "example": "TestName",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求创建印章的客户端IP",
+          "example": "123.123.123.123",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）",
+          "example": "Base64Image",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章文件图片ID（与Image参数二选一，同时传入参数时优先使用Image参数）",
+          "example": "609901fdsfdsf3e3rvb",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要创建印章的用户ID",
+          "example": "89e389dd320e8a3c8136bdbb7e5",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是默认印章 true：是，false：否",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealResponse": {
+      "document": "CreateSeal返回参数结构体",
+      "members": [
+        {
+          "document": "电子印章Id",
+          "example": "4fecde8c3137d320e8a3c8136bdbb7e5",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerFlowSignRequest": {
+      "document": "CreateServerFlowSign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程ID",
+          "example": "732aaefa78c439d726f999b89c49e022",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署区域信息",
+          "example": "Component",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "example": "10.0.0.9",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerFlowSignResponse": {
+      "document": "CreateServerFlowSign返回参数结构体",
+      "members": [
+        {
+          "document": "任务状态：\n0：失败\n1：成功",
+          "example": "0",
+          "member": "int64",
+          "name": "SignStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignUrlRequest": {
+      "document": "CreateSignUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署人ID",
+          "example": "a08c79b56afcd3b64317b33bee00ce12",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件签署截止时间戳",
+          "example": "1637063713",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "目录ID。当 SignUrlType 为 CATALOG 时必填",
+          "example": "78sh2783h2ds009823hj",
+          "member": "string",
+          "name": "CatalogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程ID。当 SignUrlType 为 FLOW 时必填",
+          "example": "94b3f7921f0642940138573ca8361220",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署链接类型：\n1. FLOW - 单流程签署 (默认) \n2. CATALOG - 目录签署",
+          "example": "FLOW ",
+          "member": "string",
+          "name": "SignUrlType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送流程或目录时生成的签署任务ID",
+          "example": "94b3f7921f0642940138573ca8361220",
+          "member": "string",
+          "name": "SignId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSignUrlResponse": {
+      "document": "CreateSignUrl返回参数结构体",
+      "members": [
+        {
+          "document": "合同签署链接",
+          "example": "https://essurl.cn/SDKU0E",
+          "member": "string",
+          "name": "SignUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubOrganizationAndSealRequest": {
+      "document": "CreateSubOrganizationAndSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构名称全称",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件号码类型可选值：\n1. USCC - 统一社会信用代码\n2. BIZREGISTNO - 营业执照注册号",
+          "example": "USCC",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件号码",
+          "example": "统一社会信用代码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构类型可选值：\n1. ENTERPRISE - 企业\n2. INDIVIDUALBIZ - 个体工商户\n3. PUBLICINSTITUTION - 政府/事业单位\n4. OTHERS - 其他组织",
+          "example": "ENTERPRISE",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件类型可选值：\n1. ID_CARD - 居民身份证\n2. PASSPORT - 护照\n3. MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证\n4. MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证\n5. HOUSEHOLD_REGISTER - 户口本\n6. TEMP_ID_CARD - 临时居民身份证",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件号码；\nOrganizationType 为 ENTERPRISE时，INDIVIDUALBIZ 时必填，其他情况选填",
+          "example": "14267019980908****",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实名认证的客户端IP/请求生成企业印章的客户端Ip",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "VerifyClientIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构电子邮箱",
+          "example": "test@***.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件文件类型可选值：\n1. USCCFILE - 统一社会信用代码证书\n2. LICENSEFILE - 营业执照",
+          "example": "MULTIBIZLICENSEFILE",
+          "member": "string",
+          "name": "IdCardFileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件，base64编码，支持jpg、jpeg、png格式",
+          "example": "Base64Image",
+          "member": "string",
+          "name": "BizLicenseFile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件名",
+          "example": "license.jpg",
+          "member": "string",
+          "name": "BizLicenseFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者/联系人手机号码",
+          "example": "1910000****",
+          "member": "string",
+          "name": "LegalMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织联系人姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "ContactName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实名认证的服务器IP",
+          "example": "198.20.8.7",
+          "member": "string",
+          "name": "VerifyServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业联系地址",
+          "example": "Shenzhen Nanshan",
+          "member": "Address",
+          "name": "ContactAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "财务专用章",
+          "member": "string",
+          "name": "SealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章类型：默认: CONTRACT\n1. OFFICIAL-公章\n2. SPECIAL_FINANCIAL-财务专用章\n3. CONTRACT-合同专用章\n4. LEGAL_REPRESENTATIVE-法定代表人章\n5. SPECIAL_NATIONWIDE_INVOICE-发票专用章\n6. OTHER-其他",
+          "example": "OFFICIAL",
+          "member": "string",
+          "name": "SealType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业印章横向文字，最多可填8个汉字（可为空，默认为\"电子签名专用章\"）",
+          "example": "电子签名专用章",
+          "member": "string",
+          "name": "SealHorizontalText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构在第三方的唯一标识，32位以内标识符",
+          "example": "204aa34f396f503080fe53db7406d75e",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否使用OpenId作为数据主键，如果为true，请确保OpenId在当前应用号唯一",
+          "example": "true",
+          "member": "bool",
+          "name": "UseOpenId",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubOrganizationAndSealResponse": {
+      "document": "CreateSubOrganizationAndSeal返回参数结构体",
+      "members": [
+        {
+          "document": "子机构在电子文件签署平台唯一标识",
+          "example": "efa7f9c2a7bdcb32611f4d0200fee3d",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "电子印章ID",
+          "example": "e3e303228df9327c3e1661e1ebff7e1b",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubOrganizationRequest": {
+      "document": "CreateSubOrganization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构证件号码类型可选值：\n1. USCC - 统一社会信用代码\n2. BIZREGISTNO - 营业执照注册号",
+          "example": "USCC",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件号码",
+          "example": "7873****",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构类型可选值：\n1. ENTERPRISE - 企业\n2. INDIVIDUALBIZ - 个体工商户\n3. PUBLICINSTITUTION - 政府/事业单位\n4. OTHERS - 其他组织",
+          "example": "ENTERPRISE",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件类型可选值：\n1. ID_CARD - 居民身份证\n2. PASSPORT - 护照\n3. MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证\n4. MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证\n5. HOUSEHOLD_REGISTER - 户口本\n6. TEMP_ID_CARD - 临时居民身份证",
+          "example": "PASSPORT",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件号码；\nOrganizationType 为 ENTERPRISE时，INDIVIDUALBIZ 时必填，其他情况选填",
+          "example": "U82*****",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构名称全称",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构在第三方的唯一标识，32位以内标识符",
+          "example": "204aa34f396f503080fe53db7406d75e",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否使用OpenId作为数据主键，如果为true，请确保OpenId在当前应用号唯一",
+          "example": "true",
+          "member": "bool",
+          "name": "UseOpenId",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "机构证件文件类型可选值：\n1. USCCFILE - 统一社会信用代码证书\n2. LICENSEFILE - 营业执照",
+          "example": "MULTIBIZLICENSEFILE",
+          "member": "string",
+          "name": "IdCardFileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件，base64编码，支持jpg、jpeg、png格式",
+          "example": "Base64Image",
+          "member": "string",
+          "name": "BizLicenseFile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件名",
+          "example": "TestImage",
+          "member": "string",
+          "name": "BizLicenseFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者/联系人手机号码",
+          "example": "1810099****",
+          "member": "string",
+          "name": "LegalMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织联系人姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "ContactName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实名认证的客户端IP",
+          "example": "192.16.0.9",
+          "member": "string",
+          "name": "VerifyClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实名认证的服务器IP",
+          "example": "192.16.0.10",
+          "member": "string",
+          "name": "VerifyServerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业联系地址",
+          "example": "Shenzhen Shennan Road",
+          "member": "Address",
+          "name": "ContactAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构电子邮箱",
+          "example": "test@***.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubOrganizationResponse": {
+      "document": "CreateSubOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "子机构ID",
+          "example": "204aa34f396f503080fe53db7406d75e",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserAndSealRequest": {
+      "document": "CreateUserAndSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "第三方平台唯一标识，要求应用内OpenId唯一",
+          "example": "88fb0c591044be771f60aa382cc5****",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件类型：\n1. ID_CARD - 居民身份证\n5. HOUSEHOLD_REGISTER - 户口本\n6. TEMP_ID_CARD - 临时居民身份证",
+          "example": "ID_CARD ",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件号",
+          "example": "16259019870907****",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求生成个人印章的客户端IP",
+          "example": "10.0.12.89",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户手机号码，不要求唯一",
+          "example": "1780095****",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱，不要求唯一",
+          "example": "test@****.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认印章名称",
+          "example": "TestName",
+          "member": "string",
+          "name": "SealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)",
+          "example": "true",
+          "member": "bool",
+          "name": "UseOpenId",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserAndSealResponse": {
+      "document": "CreateUserAndSeal返回参数结构体",
+      "members": [
+        {
+          "document": "用户唯一标识，按应用号隔离",
+          "example": "3768438f76ea49b43b8c819b13438ae3",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "默认印章ID",
+          "example": "76u6f2y239h2b3t62eg1gs",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "第三方平台唯一标识；要求应用内OpenId唯一; len<=32",
+          "example": "89874***",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件类型：\n1. ID_CARD - 居民身份证\n2. PASSPORT - 护照\n3. MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证\n4. MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证\n5. HOUSEHOLD_REGISTER - 户口本\n6. TEMP_ID_CARD - 临时居民身份证",
+          "example": "PASSPORT",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件号",
+          "example": "9R29****",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否以OpenId作为UserId (为true时将直接以OpenId生成腾讯电子签平台的UserId)",
+          "example": "true",
+          "member": "bool",
+          "name": "UseOpenId",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱，不要求唯一",
+          "example": "test@****.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户手机号码，不要求唯一",
+          "example": "1810099****",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "用户ID，按应用号隔离",
+          "example": "89dsahd98asyr798qheu2",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomFileIdMap": {
+      "document": "<自定义Id,文件id>映射对象",
+      "members": [
+        {
+          "default": "",
+          "document": "用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件id",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomFlowIdMap": {
+      "document": "自定义流程id映射关系",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义id",
+          "example": "无",
+          "member": "string",
+          "name": "CustomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流程id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteSealRequest": {
+      "document": "DeleteSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "印章ID",
+          "example": "3486379737fd34230a247061088dedbd",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求删除印章的客户端IP",
+          "example": "198.8.90.2",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户唯一标识，默认为空时删除企业印章，如非空则删除个人印章",
+          "example": "88fb0c591044be771f60aa382cc5ed0e",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSealResponse": {
+      "document": "DeleteSeal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogApproversRequest": {
+      "document": "DescribeCatalogApprovers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目录ID",
+          "example": "\"目录ID\"",
+          "member": "string",
+          "name": "CatalogId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定用户是否为参与者,为空表示查询所有参与者",
+          "example": "\"UserId\"",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogApproversResponse": {
+      "document": "DescribeCatalogApprovers返回参数结构体",
+      "members": [
+        {
+          "document": "参与者列表",
+          "example": "Approvers",
+          "member": "CatalogApprovers",
+          "name": "Approvers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogSignComponentsRequest": {
+      "document": "DescribeCatalogSignComponents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "无",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "目录ID",
+          "example": "目录ID",
+          "member": "string",
+          "name": "CatalogId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogSignComponentsResponse": {
+      "document": "DescribeCatalogSignComponents返回参数结构体",
+      "members": [
+        {
+          "document": "签署区列表",
+          "example": "无",
+          "member": "CatalogComponents",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomFlowIdsByFlowIdRequest": {
+      "document": "DescribeCustomFlowIdsByFlowId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程 id 列表，最多同时查询 10 个流程 id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomFlowIdsByFlowIdResponse": {
+      "document": "DescribeCustomFlowIdsByFlowId返回参数结构体",
+      "members": [
+        {
+          "document": "自定义流程 id 映射列表",
+          "example": "无",
+          "member": "CustomFlowIdMap",
+          "name": "CustomIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomFlowIdsRequest": {
+      "document": "DescribeCustomFlowIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义 id 列表，最多同时查询 10 个自定义 id",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomFlowIdsResponse": {
+      "document": "DescribeCustomFlowIds返回参数结构体",
+      "members": [
+        {
+          "document": "自定义流程 id 映射列表",
+          "example": "无",
+          "member": "CustomFlowIdMap",
+          "name": "CustomIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFaceIdPhotosRequest": {
+      "document": "DescribeFaceIdPhotos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "慧眼业务ID",
+          "member": "string",
+          "name": "WbAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单号(orderNo); 限制在3个或以内",
+          "member": "string",
+          "name": "OrderNumbers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFaceIdPhotosResponse": {
+      "document": "DescribeFaceIdPhotos返回参数结构体",
+      "members": [
+        {
+          "document": "照片信息列表",
+          "member": "FaceIdPhoto",
+          "name": "Photos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFaceIdResultsRequest": {
+      "document": "DescribeFaceIdResults请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "慧眼业务ID",
+          "member": "string",
+          "name": "WbAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单号(orderNo); 限制在3个或以内",
+          "member": "string",
+          "name": "OrderNumbers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "1:视频+照片,2:照片,3:视频,0（或其他数字）:无; 可选",
+          "member": "int64",
+          "name": "FileType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFaceIdResultsResponse": {
+      "document": "DescribeFaceIdResults返回参数结构体",
+      "members": [
+        {
+          "document": "核身结果列表",
+          "member": "FaceIdResult",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileIdsByCustomIdsRequest": {
+      "document": "DescribeFileIdsByCustomIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息, OrganizationId必填",
+          "example": "无",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileIdsByCustomIdsResponse": {
+      "document": "DescribeFileIdsByCustomIds返回参数结构体",
+      "members": [
+        {
+          "document": "<自定义Id,文件id>数组",
+          "example": "无",
+          "member": "CustomFileIdMap",
+          "name": "CustomIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileUrlsRequest": {
+      "document": "DescribeFileUrls请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "业务编号数组，如模板编号、文档编号、印章编号、流程编号、目录编号",
+          "example": "ac5ff24286c29c9bdca5962003b182d9",
+          "member": "string",
+          "name": "BusinessIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "业务类型：\n1. TEMPLATE - 模板\n2. SEAL - 印章\n3. FLOW - 流程\n4.CATALOG - 目录",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "下载后的文件命名，只有FileType为“ZIP”时生效",
+          "example": "TestName",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单个业务ID多个资源情况下，指定资源起始偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单个业务ID多个资源情况下，指定资源数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ResourceLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件类型，支持\"JPG\", \"PDF\",\"ZIP\"等，默认为上传的文件类型",
+          "example": "ZIP",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileUrlsResponse": {
+      "document": "DescribeFileUrls返回参数结构体",
+      "members": [
+        {
+          "document": "文件下载URL数组",
+          "example": "FileUrls",
+          "member": "FileUrl",
+          "name": "FileUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "URL数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowApproversRequest": {
+      "document": "DescribeFlowApprovers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "无",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要查询的流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的用户ID，为空则默认查询所有用户信息",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的签署ID，为空则不按签署ID过滤",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowApproversResponse": {
+      "document": "DescribeFlowApprovers返回参数结构体",
+      "members": [
+        {
+          "document": "流程编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程参与者信息",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowFilesRequest": {
+      "document": "DescribeFlowFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息; 必选",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要查询的流程ID",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowFilesResponse": {
+      "document": "DescribeFlowFiles返回参数结构体",
+      "members": [
+        {
+          "document": "流程编号",
+          "member": "string",
+          "name": "FlowId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程文件列表",
+          "member": "FlowFileInfo",
+          "name": "FlowFileInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowRequest": {
+      "document": "DescribeFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要查询的流程ID",
+          "example": "93e2a19ee44a3f93cadeadaae739f1d4****",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowResponse": {
+      "document": "DescribeFlow返回参数结构体",
+      "members": [
+        {
+          "document": "流程创建者信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Creator",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程编号",
+          "example": "93e2a19ee44a3f93cadeadaae739f1d4",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程名称",
+          "example": "TestName",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程描述",
+          "example": "Some contents",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程的类型: ”劳务合同“,”租赁合同“,”销售合同“,”其他“",
+          "example": "劳务合同",
+          "member": "string",
+          "name": "FlowType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程状态：\n0-创建；\n1-签署中；\n2-拒签；\n3-撤回；\n4-签完存档完成；\n5-已过期；\n6-已销毁\n7-签署完成未归档",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程创建时间",
+          "example": "1609579241",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程完成时间",
+          "example": "1609579260",
+          "member": "int64",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程截止日期",
+          "example": "1609891200",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "回调地址",
+          "example": "www.***.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程中止原因",
+          "example": "some reasons",
+          "member": "string",
+          "name": "FlowMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSealsRequest": {
+      "document": "DescribeSeals请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "印章ID列表",
+          "example": "4fecde8c3137d320e8a3c8136bdbb7e5",
+          "member": "string",
+          "name": "SealIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户唯一标识",
+          "example": "c17bdf9c2a7bdcb32611f4d0200fee3d",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSealsResponse": {
+      "document": "DescribeSeals返回参数结构体",
+      "members": [
+        {
+          "document": "印章信息",
+          "example": "SealInfo",
+          "member": "Seal",
+          "name": "Seals",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubOrganizationsRequest": {
+      "document": "DescribeSubOrganizations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "子机构ID数组",
+          "example": "3768438f76ea49b43b8c819b13438ae3",
+          "member": "string",
+          "name": "SubOrganizationIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubOrganizationsResponse": {
+      "document": "DescribeSubOrganizations返回参数结构体",
+      "members": [
+        {
+          "document": "子机构信息列表",
+          "example": "SubOrganizationInfos",
+          "member": "SubOrganizationDetail",
+          "name": "SubOrganizationInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersRequest": {
+      "document": "DescribeUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "UserId列表，最多支持100个UserId",
+          "example": "Users",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersResponse": {
+      "document": "DescribeUsers返回参数结构体",
+      "members": [
+        {
+          "document": "用户信息查询结果",
+          "example": "User",
+          "member": "UserDescribe",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyFlowFileRequest": {
+      "document": "DestroyFlowFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程ID",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyFlowFileResponse": {
+      "document": "DestroyFlowFile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceIdPhoto": {
+      "document": "此结构体 (FaceIdPhoto) 用于描述慧眼人脸核身照片信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "核身结果：\n0 - 通过；\n1 - 未通过",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身失败描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "照片数据 (base64编码, 一般为JPG或PNG)",
+          "member": "string",
+          "name": "Photo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号 (orderNo)",
+          "member": "string",
+          "name": "OrderNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceIdResult": {
+      "document": "此结构体 (FaceIdResult) 用于描述慧眼人脸核身结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "核身结果：\n0 - 通过；\n1 - 未通过",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身失败描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号 (orderNo)",
+          "member": "string",
+          "name": "OrderNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份证件类型： \nID_CARD - 居民身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "活体检测得分 (百分制)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LiveRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人脸检测得分 (百分制)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "Similarity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "刷脸时间 (UNIX时间戳)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "OccurredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "照片数据 (base64编码, 一般为JPG或PNG)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Photo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频数据 (base64编码, 一般为MP4)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Video",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FileUrl": {
+      "document": "此结构体 (FileUrl) 用于描述下载文件的URL信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "下载文件的URL",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载文件的附加信息",
+          "member": "string",
+          "name": "Option",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载文件所属的资源序号",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目录业务下，文件对应的流程",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowApproverInfo": {
+      "document": "此结构体 (FlowApproverInfo) 用于描述流程参与者信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "1c67dc0672a9b08dfee1bc75cb2c6aa4",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式：\nWEIXINAPP - 微信小程序；\nFACEID - 慧眼 (默认)；\nVERIFYCODE - 验证码；\nTHIRD - 第三方 (暂不支持)",
+          "example": "[\"FACEID\"]",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署状态：\n0 - 待签署；\n1- 已签署；\n2 - 拒绝；\n3 - 过期未处理；\n4 - 流程已撤回,\n12-审核中,\n13-审核驳回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ApproveStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拒签/签署/审核驳回原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "ApproveMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签约时间的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611654153",
+          "member": "int64",
+          "name": "ApproveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署完成后跳转的URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户签署区ID到印章ID的映射集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ComponentSeal",
+          "name": "ComponentSeals",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：是否强制用户全文阅读，即阅读到待签署文档的最后一页。默认FALSE",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFullText",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：强制阅读时长，页面停留时长不足则不允许签署。默认不限制",
+          "example": "20",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号，脱敏显示",
+          "example": "150****0702",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署链接截止时间，默认签署流程发起后7天失效",
+          "example": "1611654653",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为最后一个签署人, 若为最后一人，则其签署完成后自动归档",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLastApprover",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "SmsTemplate",
+          "name": "SmsTemplate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份证号，脱敏显示",
+          "example": "4****************0",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持线下核身",
+          "example": "false",
+          "member": "bool",
+          "name": "CanOffLine",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证件号码类型：ID_CARD - 身份证，PASSPORT - 护照，MAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证; 暂不支持用于电子签自有平台实名认证，MAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证; 暂不支持用于电子签自有平台实名认证，HOUSEHOLD_REGISTER - 户口本; 暂不支持用于电子签自有平台实名认证，TEMP_ID_CARD - 临时居民身份证; 暂不支持用于电子签自有平台实名认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.callback.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署任务ID，标识每一次的流程发送\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "361d2e5b411f3c7c16d082169d49a747",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowFileInfo": {
+      "document": "此结构体 (FlowFileInfo) 用于描述流程文档信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文件序号",
+          "member": "int64",
+          "name": "FileIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件类型",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件的MD5码",
+          "member": "string",
+          "name": "FileMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小，单位为Byte",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件创建时间戳",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件的下载地址",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowInfo": {
+      "document": "此结构体 (FlowInfo) 用于描述流程信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "合同名字",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署截止时间戳，超过有效签署时间则该签署流程失败",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同描述",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同类型：\n1. “劳务”\n2. “销售”\n3. “租赁”\n4. “其他”",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回调地址",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义数据",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GenerateOrganizationSealRequest": {
+      "document": "GenerateOrganizationSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "印章类型：\nOFFICIAL-公章\nSPECIAL_FINANCIAL-财务专用章\nCONTRACT-合同专用章\nLEGAL_REPRESENTATIVE-法定代表人章\nSPECIAL_NATIONWIDE_INVOICE-发票专用章\nOTHER-其他",
+          "example": "OFFICIAL",
+          "member": "string",
+          "name": "SealType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求生成企业印章的客户端Ip",
+          "example": "10.8.10.10",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "印章名称",
+          "member": "string",
+          "name": "SealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业印章横向文字，最多可填8个汉字（可不填，默认为\"电子签名专用章\"）",
+          "example": "印章横向文字",
+          "member": "string",
+          "name": "SealHorizontalText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是默认印章 true：是，false：否",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateOrganizationSealResponse": {
+      "document": "GenerateOrganizationSeal返回参数结构体",
+      "members": [
+        {
+          "document": "电子印章Id",
+          "example": "627caedfb394e410befc101bf0c*****",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateUserSealRequest": {
+      "document": "GenerateUserSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "88fb0c591044be771f60aa382cc5ed0e",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求生成个人印章的客户端IP",
+          "example": "10.10.2.2",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "TestName",
+          "member": "string",
+          "name": "SealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是默认印章 true：是，false：否",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateUserSealResponse": {
+      "document": "GenerateUserSeal返回参数结构体",
+      "members": [
+        {
+          "document": "电子印章Id",
+          "example": "627caedfb394e410befc101bf0c161f2",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrganizationDefaultSealRequest": {
+      "document": "ModifyOrganizationDefaultSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "重新指定的默认印章ID",
+          "example": "3486379737fd34230a247061088dedbd",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求重新指定企业默认印章的客户端IP",
+          "example": "198.8.90.2",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrganizationDefaultSealResponse": {
+      "document": "ModifyOrganizationDefaultSeal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySealRequest": {
+      "document": "ModifySeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "请求更新印章的客户端IP",
+          "example": "192.168.1.10",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电子印章ID。若为空，则修改个人/机构的默认印章。",
+          "example": "5d854d4be9e44359ee75fd9570ac70b5",
+          "member": "string",
+          "name": "SealId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "NewName",
+          "member": "string",
+          "name": "SealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章图片，base64编码（与FileId参数二选一，同时传入参数时优先使用Image参数）",
+          "example": "Base64Image",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章图片文件ID（与Image参数二选一，同时传入参数时优先使用Image参数）",
+          "example": "d0491d4b781ae43640496d93326630e2",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要更新印章的用户ID",
+          "example": "01234567890123456789012345678901",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySealResponse": {
+      "document": "ModifySeal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubOrganizationInfoRequest": {
+      "document": "ModifySubOrganizationInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息，该接口 SubOrganizationId 字段与 OpenId 字段二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息",
+          "example": "204aa34f396f503080fe53db7406d75e",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构名称全称，修改后机构状态将变为未实名，需要调用实名接口重新实名。",
+          "example": "TestOrg",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构类型可选值：\n1. ENTERPRISE - 企业；\n2. INDIVIDUALBIZ - 个体工商户；\n3. PUBLICINSTITUTION - 政府/事业单位\n4. OTHERS - 其他组织",
+          "example": "ENTERPRISE",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件，base64编码。支持jpg，jpeg，png格式；如果传值，则重新上传文件后，机构状态将变为未实名，需要调用实名接口重新实名。",
+          "example": "Base64Image",
+          "member": "string",
+          "name": "BizLicenseFile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件名",
+          "example": "TestImage",
+          "member": "string",
+          "name": "BizLicenseFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者姓名",
+          "example": "TestPeople",
+          "member": "string",
+          "name": "LegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件类型，可选值：ID_CARD - 居民身份证。OrganizationType 为 ENTERPRISE、INDIVIDUALBIZ 时，此项必填，其他情况选填。",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件号码。OrganizationType 为 ENTERPRISE、INDIVIDUALBIZ 时，此项必填，其他情况选填",
+          "example": "12450119870902***",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者/联系人手机号码",
+          "example": "1890000****",
+          "member": "string",
+          "name": "LegalMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织联系人姓名",
+          "example": "TestPeople",
+          "member": "string",
+          "name": "ContactName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业联系地址",
+          "example": "Guangdong, Shenzhen, Shennan Road",
+          "member": "Address",
+          "name": "ContactAddress",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构电子邮箱",
+          "example": "test@****.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubOrganizationInfoResponse": {
+      "document": "ModifySubOrganizationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "子机构ID",
+          "example": "3768438f76ea49b43b8c819b13*****",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserDefaultSealRequest": {
+      "document": "ModifyUserDefaultSeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户唯一标识，需要重新指定默认印章的用户ID",
+          "example": "88fb0c591044be771f60aa382cc5ed0e",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重新指定的默认印章ID",
+          "example": "3486379737fd34230a247061088dedbd",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求重新指定个人默认印章的客户端IP",
+          "example": "198.8.90.2",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserDefaultSealResponse": {
+      "document": "ModifyUserDefaultSeal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserRequest": {
+      "document": "ModifyUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "第三方平台用户唯一标识; OpenId 和 UserId 二选一填写, 两个都不为空则优先使用UserId",
+          "example": "89874***",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯电子签平台用户唯一标识; OpenId 和 UserId 二选一填写, 两个都不为空则优先使用UserId",
+          "example": "323dsa2321****",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户手机号码，不要求唯一",
+          "example": "181****1009",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户邮箱，不要求唯一",
+          "example": "Test@***.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户姓名",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserResponse": {
+      "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯电子签平台用户唯一标识",
+          "example": "UserId",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectFlowRequest": {
+      "document": "RejectFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程编号",
+          "example": "b334e0cbdf76eb21b7c4cd75e02198e0",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "意愿确认票据。\n1. VerifyChannel 为 WEIXINAPP，使用响应的VerifyResult；\n2. VerifyChannel 为 FACEID时，使用OrderNo；\n3. VerifyChannel 为 VERIFYCODE，使用短信验证码\n4. VerifyChannel 为 NONE，传空值\n（注：普通情况下，VerifyResult不能为None，如您不希望腾讯电子签对用户签署意愿做校验，请提前与客户经理或邮件至e-contract@tencent.com与我们联系）",
+          "example": "354908",
+          "member": "string",
+          "name": "VerifyResult",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "意愿确认渠道：\n1. WEIXINAPP - 微信小程序\n2. FACEID - 慧眼 (默认) \n3. VERIFYCODE - 验证码\n4. THIRD - 第三方 (暂不支持)\n5. NONE - 无需电子签系统验证\n（注：普通情况下，VerifyChannel不能为None，如您不希望腾讯电子签对用户签署意愿做校验，请提前与客户经理或邮件至e-contract@tencent.com与我们联系）",
+          "example": "VERIFYCODE",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端来源IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拒签原因",
+          "example": "Some Reasons",
+          "member": "string",
+          "name": "RejectMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署参与者编号",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectFlowResponse": {
+      "document": "RejectFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Seal": {
+      "document": "此结构体 (Seal) 用于描述电子印章的信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "电子印章ID",
+          "example": "66a266e6d66de5f22a9647ba5f2b7954",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章名称",
+          "example": "测试个人印章生成",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章类型",
+          "example": "PERSONAL",
+          "member": "string",
+          "name": "SealType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章来源：\nCREATE - 通过图片上传\nGENERATE - 通过文字生成",
+          "example": "GENERATE",
+          "member": "string",
+          "name": "SealSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章创建者",
+          "example": "无",
+          "member": "Caller",
+          "name": "Creator",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章创建时间戳",
+          "example": "1609685592",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章所有人",
+          "example": "3f529cd682036af89afa855bff9f1a5f",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电子印章URL",
+          "example": "无",
+          "member": "FileUrl",
+          "name": "FileUrl",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认印章，false-非默认，true-默认",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultSeal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SendFlowRequest": {
+      "document": "SendFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要推送合同的流程ID",
+          "example": "b334e0cbdf76eb21b7c4cd75e02198e0",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署人用户ID",
+          "example": "e3e303228df9327c3e1661e1ebff7e1b",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署控件信息 (支持添加多个控件)",
+          "example": "SignComponents",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "签署人手机号 (如果选择短信验证码签署，则此字段必填)",
+          "example": "1521981****",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署人对应的子机构ID，个人签署者此字段不填",
+          "example": "732aaefa78c439d726f541b89c49e022",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名后校验方式：\n1. WEIXINAPP - 微信小程序；\n2. FACEID - 慧眼 (默认) ；\n3. VERIFYCODE - 验证码；\n4. NONE - 无。此选项为白名单参数，暂不支持公开调用。如需开通权限，请通过客户经理或邮件至e-contract@tencent.com与我们联系；\n5. THIRD - 第三方 (暂不支持)",
+          "example": "FACEID",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "签署链接失效截止时间，默认为7天",
+          "example": "1609927200",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为最后一个签署人。若为最后一人，本次签署完成以后自动归档。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLastApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署完成后，前端跳转的URL",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信模板。默认使用腾讯电子签官方短信模板，如有自定义需求，请通过客户经理或邮件至e-contract@tencent.com与我们联系。",
+          "example": "SmsTemplate",
+          "member": "SmsTemplate",
+          "name": "SmsTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：是否要全文阅读，默认否",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFullText",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：强制用户阅读待签署文件时长，默认不限制",
+          "example": "20",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前参与者是否支持线下核身,默认为不支持",
+          "example": "false",
+          "member": "bool",
+          "name": "CanOffLine",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署任务的回调地址",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendFlowResponse": {
+      "document": "SendFlow返回参数结构体",
+      "members": [
+        {
+          "document": "签署任务ID，标识每一次的流程发送",
+          "example": "361d2e5b411f3c7c16d082169d49a747",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendFlowUrlRequest": {
+      "document": "SendFlowUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要推送合同的流程ID",
+          "example": "需要推送合同的流程ID",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署人ID",
+          "example": "8dyas78d78e218782****",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署控件信息 (支持添加多个控件)",
+          "example": "SignComponents",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "签署人手机号 (如果选择短信验证码签署，则此字段必填)",
+          "example": "1521981****",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署人对应的子机构ID，个人签署者此字段不填",
+          "example": "787982173****",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名后校验方式：\n1. WEIXINAPP - 微信小程序；\n2. FACEID - 慧眼 (默认) ；\n3. VERIFYCODE - 验证码；\n4. NONE - 无。此选项为白名单参数，暂不支持公开调用。如需开通权限，请通过客户经理或邮件至e-contract@tencent.com与我们联系；\n5. THIRD - 第三方 (暂不支持)\n6. OFFLINE - 线下人工审核",
+          "example": "FACEID",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "签署链接失效截止时间，默认为7天",
+          "example": "1611219358",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为最后一个签署人。若为最后一人，本次签署完成以后自动归档",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLastApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署完成后，前端跳转的url",
+          "example": "http://www.xxx.com",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信模板\n默认使用腾讯电子签官方短信模板，如有自定义需求，请通过客户经理或邮件至e-contract@tencent.com与我们联系。",
+          "example": "短信模板",
+          "member": "SmsTemplate",
+          "name": "SmsTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：是否要全文阅读，默认否",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFullText",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署前置条件：强制用户阅读待签署文件时长，默认不限制",
+          "example": "30",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前参与者是否支持线下核身,默认为不支持",
+          "example": "true",
+          "member": "bool",
+          "name": "CanOffLine",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署任务的回调地址",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendFlowUrlResponse": {
+      "document": "SendFlowUrl返回参数结构体",
+      "members": [
+        {
+          "document": "签署任务ID，标识每一次的流程发送",
+          "example": "361d2e5b411f3c7c16d082169d49a747",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签署链接",
+          "example": "https://essurl.cn/CN6eomUBge",
+          "member": "string",
+          "name": "SignUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSignInnerVerifyCodeRequest": {
+      "document": "SendSignInnerVerifyCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "1810000****",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证码类型，取值(SIGN)",
+          "example": "SIGN",
+          "member": "string",
+          "name": "VerifyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 id",
+          "example": "1287332987423984",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模板 id",
+          "example": "26387284",
+          "member": "string",
+          "name": "VerifyTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名",
+          "example": "46278342",
+          "member": "string",
+          "name": "VerifySign",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程(目录) id",
+          "example": "21387192",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "三要素检测结果",
+          "example": "0",
+          "member": "int64",
+          "name": "CheckThreeElementResult",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSignInnerVerifyCodeResponse": {
+      "document": "SendSignInnerVerifyCode返回参数结构体",
+      "members": [
+        {
+          "document": "true: 验证码正确，false: 验证码错误",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignFlowRequest": {
+      "document": "SignFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "流程编号",
+          "example": "b334e0cbdf76eb21b7c4cd75e02198e0",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "意愿确认票据。\n1. VerifyChannel 为 WEIXINAPP，使用响应的VerifyResult；\n2. VerifyChannel 为 FACEID时，使用OrderNo；\n3. VerifyChannel 为 VERIFYCODE，使用短信验证码\n4. VerifyChannel 为 NONE，传空值\n（注：普通情况下，VerifyResult不能为None，如您不希望腾讯电子签对用户签署意愿做校验，请提前与客户经理或邮件至e-contract@tencent.com与我们联系）",
+          "example": "354908",
+          "member": "string",
+          "name": "VerifyResult",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "意愿确认渠道：\n1. WEIXINAPP - 微信小程序\n2. FACEID - 慧眼 (默认) \n3. VERIFYCODE - 验证码\n4. THIRD - 第三方 (暂不支持)\n5. NONE - 无需电子签系统验证\n（注：普通情况下，VerifyChannel不能为None，如您不希望腾讯电子签对用户签署意愿做校验，请提前与客户经理或邮件至e-contract@tencent.com与我们联系）",
+          "example": "VERIFYCODE",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端来源IP",
+          "example": "127.0.0.2",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署内容",
+          "example": "SignSeal",
+          "member": "SignSeal",
+          "name": "SignSeals",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "签署备注",
+          "example": "Some Reasons",
+          "member": "string",
+          "name": "ApproveMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署参与者编号",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignFlowResponse": {
+      "document": "SignFlow返回参数结构体",
+      "members": [
+        {
+          "document": "签署任务状态。签署成功 - SUCCESS、提交审核 - REVIEW",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SignSeal": {
+      "document": "此结构体 (SignSeal) 用于描述签名/印章信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "签署控件ID",
+          "example": "ComponentId",
+          "member": "string",
+          "name": "ComponentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署印章类型:\nSIGN_SIGNATURE - 签名\nSIGN_SEAL - 印章\nSIGN_DATE - 日期\nSIGN_IMAGE - 图片",
+          "example": "SIGN_SIGNATURE",
+          "member": "string",
+          "name": "SignType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同文件ID",
+          "example": "0",
+          "member": "int64",
+          "name": "FileIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章ID，仅当 SignType 为 SIGN_SEAL 时必填",
+          "example": "SealId",
+          "member": "string",
+          "name": "SealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签名内容，仅当 SignType 为SIGN_SIGNATURE或SIGN_IMAGE 时必填，base64编码",
+          "example": "图片的base64",
+          "member": "string",
+          "name": "SealContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SmsTemplate": {
+      "document": "此结构体 (SmsTemplate) 用于描述短信模板。",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID，必须填写已审核通过的模板ID。模板ID可登录短信控制台查看。",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "短信签名内容，使用UTF-8编码，必须填写已审核通过的签名，签名信息可登录短信控制台查看。",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SubOrganizationDetail": {
+      "document": "此结构体 (SubOrganizationDetail) 用于描述子机构或子企业的详情信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "组织ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构名称全称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构电子邮箱",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构证件号码类型",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构证件号码",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构类型",
+          "member": "string",
+          "name": "OrganizationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构证件文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdCardFileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件，base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "BizLicenseFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构证件照片文件名",
+          "member": "string",
+          "name": "BizLicenseFileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者姓名",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件类型",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者证件号码",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构法人/经营者/联系人手机号码",
+          "member": "string",
+          "name": "LegalMobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组织联系人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContactName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构实名状态",
+          "member": "string",
+          "name": "VerifyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构通过实名时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "VerifiedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构创建时间",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UpdatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实名认证的客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实名认证的服务器IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VerifyServerIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业联系地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Address",
+          "name": "ContactAddress",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadFile": {
+      "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64编码后的文件内容",
+          "member": "string",
+          "name": "FileBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadFilesRequest": {
+      "document": "UploadFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模版； 文件类型：.pdf/.html\n2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html\n3. FLOW - 签署过程 文件类型：.pdf/.html\n4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png\n5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png\n6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传文件内容数组，最多支持20个文件",
+          "example": "FileInfos",
+          "member": "UploadFile",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "上传文件链接数组，最多支持20个URL",
+          "example": "FileUrls",
+          "member": "string",
+          "name": "FileUrls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否将pdf灰色矩阵置白\ntrue--是，处理置白\nfalse--否，不处理",
+          "example": "true",
+          "member": "bool",
+          "name": "CoverRect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "特殊文件类型需要指定文件类型：\nHTML-- .html文件",
+          "example": "HTML",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义ID数组，与上传文件一一对应",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesResponse": {
+      "document": "UploadFiles返回参数结构体",
+      "members": [
+        {
+          "document": "文件id数组",
+          "example": "d54e3caec25ad0ea6be24406762b7562",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传成功文件数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserDescribe": {
+      "document": "此结构体 (UserDescribe) 用于描述个人帐号查询结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号，隐藏中间4位数字，用*代替",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册时间点 (UNIX时间戳)",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实名认证状态：\n0 - 未实名；\n1 - 通过实名",
+          "member": "int64",
+          "name": "VerifyStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "真实姓名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实名认证通过时间 (UNIX时间戳)",
+          "member": "int64",
+          "name": "VerifiedOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证件类型; \nID_CARD - 居民身份证；\nPASSPORT - 护照；\nMAINLAND_TRAVEL_PERMIT_FOR_HONGKONG_AND_MACAO_RESIDENTS - 港澳居民来往内地通行证；\nMAINLAND_TRAVEL_PERMIT_FOR_TAIWAN_RESIDENTS - 台湾居民来往大陆通行证；\nHOUSEHOLD_REGISTER - 户口本；\nTEMP_ID_CARD - 临时居民身份证",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证件号码 (脱敏)",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifySubOrganizationRequest": {
+      "document": "VerifySubOrganization请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息，该接口SubOrganizationId必填",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "机构在第三方的唯一标识，32位定长字符串，与 Caller 中 SubOrgnizationId 二者至少需要传入一个，全部传入时则使用 SubOrganizationId 信息",
+          "example": "OpenId",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifySubOrganizationResponse": {
+      "document": "VerifySubOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "子机构ID",
+          "example": "3768438f76ea49b43b8c819b13438ae3",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyUserRequest": {
+      "document": "VerifyUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "电子签平台用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要下发个人长效证书，默认为false\n注：如您有下发个人长效证书需求，请提前邮件至e-contract@oa.com进行申请。",
+          "member": "bool",
+          "name": "CertificateRequired",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyUserResponse": {
+      "document": "VerifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "电子签平台用户ID",
+          "member": "string",
+          "name": "UserId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}
