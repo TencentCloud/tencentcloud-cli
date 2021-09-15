@@ -2089,7 +2089,7 @@
         },
         {
           "default": "",
-          "document": "用户填入的正则表达式：“正则表达式“需与“提交EventId对应的命令内容”相匹配",
+          "document": "用户填入的正则表达式：\"正则表达式\" 需与 \"提交EventId对应的命令内容\" 相匹配",
           "example": "rm -rf /tmp/tmp\\\\.ERYbwgd8e9",
           "member": "string",
           "name": "Rule",

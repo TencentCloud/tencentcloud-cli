@@ -45,6 +45,16 @@ Output:
                     "RiskCode": "21001",
                     "RiskValue": "2"
                 }
+            ],
+            "OtherModelScores": [
+                {
+                    "ModelId": "0",
+                    "ModelScore": "61"
+                },
+                {
+                    "ModelId": "1",
+                    "ModelScore": "36"
+                }
             ]
         },
         "RequestId": "07c816d7-5bc3-4e95-ba1f-32ce3e5683e5"
@@ -78,6 +88,16 @@ Output:
                 {
                     "RiskCode": "21001",
                     "RiskValue": "2"
+                }
+            ],
+            "OtherModelScores": [
+                {
+                    "ModelId": "0",
+                    "ModelScore": "61"
+                },
+                {
+                    "ModelId": "1",
+                    "ModelScore": "36"
                 }
             ]
         },

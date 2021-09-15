@@ -1708,7 +1708,7 @@
       "members": [
         {
           "default": "",
-          "document": "带宽封顶配置开关\non：开启\noff：关闭",
+          "document": "用量封顶配置开关\non：开启\noff：关闭",
           "example": "off",
           "member": "string",
           "name": "Switch",
@@ -1718,7 +1718,7 @@
         },
         {
           "default": "",
-          "document": "带宽封顶阈值，单位为bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量封顶阈值，带宽单位为bps，流量单位byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000",
           "member": "int64",
           "name": "BpsThreshold",
@@ -1738,7 +1738,7 @@
         },
         {
           "default": "",
-          "document": "境内区域上次触发带宽封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "境内区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime",
           "name": "LastTriggerTime",
@@ -1748,7 +1748,7 @@
         },
         {
           "default": "",
-          "document": "带宽封顶提醒开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量封顶提醒开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "AlertSwitch",
@@ -1758,7 +1758,7 @@
         },
         {
           "default": "",
-          "document": "带宽封顶阈值提醒百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用量封顶阈值提醒百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "int64",
           "name": "AlertPercentage",
@@ -1768,10 +1768,20 @@
         },
         {
           "default": "",
-          "document": "海外区域上次触发带宽封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "海外区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime",
           "name": "LastTriggerTimeOverseas",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用量阈值触发的维度\n带宽：bandwidth\n流量：flux\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bandwith",
+          "member": "string",
+          "name": "Metric",
           "required": false,
           "type": "string",
           "value_allowed_null": true
