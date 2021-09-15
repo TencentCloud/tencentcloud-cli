@@ -7,6 +7,13 @@
 ```bash
 pip install tccli
 ```
+如果是MacOS用户，您还可以使用homebrew来安装tccli：
+
+> 执行如下命令之前您需要先安装homebrew，安装的方法可以参考[homebrew官网](https://brew.sh/index_zh-cn)
+```bash
+brew tap tencentcloud/tccli
+brew install tccli
+```
 注意：如果是从3.0.252.3以下版本升级的需要执行
 ```bash
 sudo pip uninstall tccli jmespath
@@ -111,7 +118,7 @@ tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --InstanceChargePre
 --InternetAccessible '{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":10,"PublicIpAssigned":true}' --InstanceCount 1
 --InstanceName TCCLI-TEST --LoginSettings '{"Password":"isd@cloud"}' --SecurityGroupIds '["sg-0rszg2vb"]' --HostName TCCLI-HOST-NAME1
 ```
-更多功能，您可以通过tccli help查看支持的产品，通过tccli cvm help（以cvm举例）查看产品支持的接口。通过tccli cbs DescribeDisks help(以cbs产品的DescribeDisks接口为例) 查看接口支持的参数。
+更多功能，您可以通过tccli help查看支持的产品，通过tccli cvm help（以cvm举例）查看产品支持的接口。通过tccli cbs DescribeDisks help(以cbs产品的DescribeDisks接口为例) 查看接口支持的参数。如果想看详细信息，可以在help的后面增加字段'--detail'查看。例如：分别使用tccli help --detail，tccli cvm help --detail和tccli cbs DescribeDisks help --detail查看对应的详细信息。
 
 # 高级功能
 ## 多版本接口访问
