@@ -29,7 +29,8 @@ Output:
         "Size": 1356532,
         "StartTime": "2020-07-31 14:28:51",
         "Status": 1,
-        "Strategy": 0
+        "Strategy": 0,
+        "GroupId": "558800"
     }
 }
 ```
@@ -65,7 +66,8 @@ Output:
         "Size": 0,
         "StartTime": "2020-07-31 14:27:33",
         "Status": 0,
-        "Strategy": 0
+        "Strategy": 0,
+        "GroupId": "558800"
     }
 }
 ```

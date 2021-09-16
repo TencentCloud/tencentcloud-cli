@@ -928,6 +928,7 @@
         {
           "default": "",
           "document": "业务返回码",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "required": true,
@@ -937,6 +938,7 @@
         {
           "default": "",
           "document": "数据唯一 ID",
+          "example": "1234",
           "member": "string",
           "name": "DataId",
           "required": true,
@@ -946,6 +948,7 @@
         {
           "default": "",
           "document": "检测完成的时间戳",
+          "example": "1234",
           "member": "uint64",
           "name": "ScanFinishTime",
           "required": true,
@@ -955,6 +958,7 @@
         {
           "default": "",
           "document": "是否违规",
+          "example": "false",
           "member": "bool",
           "name": "HitFlag",
           "required": true,
@@ -964,6 +968,7 @@
         {
           "default": "",
           "document": "是否为流",
+          "example": "false",
           "member": "bool",
           "name": "Live",
           "required": true,
@@ -973,6 +978,7 @@
         {
           "default": "",
           "document": "业务返回描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
           "member": "string",
           "name": "Msg",
           "required": true,
@@ -982,6 +988,7 @@
         {
           "default": "",
           "document": "检测结果，Code 为 0 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "ScanPiece",
           "name": "ScanPiece",
           "required": true,
@@ -991,6 +998,7 @@
         {
           "default": "",
           "document": "提交检测的时间戳",
+          "example": "1234",
           "member": "uint64",
           "name": "ScanStartTime",
           "required": true,
@@ -1000,6 +1008,7 @@
         {
           "default": "",
           "document": "语音检测场景，对应请求时的 Scene",
+          "example": "[\"default\"]",
           "member": "string",
           "name": "Scenes",
           "required": true,
@@ -1009,6 +1018,7 @@
         {
           "default": "",
           "document": "语音检测任务 ID，由后台分配",
+          "example": "abcdefgh",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1018,6 +1028,7 @@
         {
           "default": "",
           "document": "文件或接流地址",
+          "example": "http://xx.mp3",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -1027,10 +1038,21 @@
         {
           "default": "",
           "document": "检测任务执行结果状态，分别为：\n<li>Start: 任务开始</li>\n<li>Success: 成功结束</li>\n<li>Error: 异常</li>",
+          "example": "Success",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提交检测的应用 ID",
+          "example": "140011111",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

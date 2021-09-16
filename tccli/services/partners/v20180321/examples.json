@@ -134,20 +134,6 @@
         "title": "查询客户余额"
       }
     ],
-    "DescribeClientBaseInfo": [
-      {
-        "document": "请求参数不正确导致返回错误",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeClientBaseInfo\n&ClientUin=10000001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "失败示例"
-      },
-      {
-        "document": "成功获取到一个代客基础信息",
-        "input": "https://partners.tencentcloudapi.com/?Action=DescribeClientBaseInfo\n&ClientUin=1000001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ClientBaseSet\": [\n            {\n                \"AgentUin\": 200000097917,\n                \"ClientUin\": 200000098075,\n                \"ClientRelateType\": 1,\n                \"AgentCooperationMode\": 1,\n                \"AgentCountry\": \"US\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "成功示例"
-      }
-    ],
     "DescribeRebateInfos": [
       {
         "document": "查询某代理商在2018年2月份的返佣信息",

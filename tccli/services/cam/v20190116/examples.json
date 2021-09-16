@@ -154,8 +154,8 @@
     ],
     "DeleteUser": [
       {
-        "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\r\n&Name=test124\r\n&<公共请求参数>",
+        "document": "删除子用户",
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteUser\n&Name=test124\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "删除子用户"
       }

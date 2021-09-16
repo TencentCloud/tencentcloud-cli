@@ -1,33 +1,39 @@
 # 本版本更新包含以下内容：
 
-## 借贷反欺诈(af) 版本：2020-02-26
+## 边缘计算机器(ecm) 版本：2019-07-19
 
-### 第 3 次发布
+### 第 2 次发布
 
-发布时间：2021-09-15 08:02:29
+发布时间：2021-09-16 08:02:50
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [AttachDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66677)
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66676)
+* [DeleteSnapshots](http://document.tencentcloudapi.woa.com/document/product/1108/66671)
+* [DescribeDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66675)
+* [DescribeSnapshots](http://document.tencentcloudapi.woa.com/document/product/1108/66670)
+* [DetachDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66674)
+* [TerminateDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66673)
 
 新增数据结构：
 
-* [FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores)
-
-修改数据结构：
-
-* [FinanceAntiFraudRecord](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceAntiFraudRecord)
-
-	* 新增成员：OtherModelScores
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Disk)
+* [DiskChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DiskChargePrepaid)
+* [Placement](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Placement)
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Snapshot)
 
 
 
-
-## 内容分发网络(cdn) 版本：2018-06-06
+## 游戏多媒体引擎(gme) 版本：2018-07-11
 
 ### 第 2 次发布
 
-发布时间：2021-09-15 08:05:45
+发布时间：2021-09-16 08:08:05
 
 本次发布包含了以下内容：
 
@@ -35,28 +41,91 @@
 
 修改数据结构：
 
-* [BandwidthAlert](http://document.tencentcloudapi.woa.com/document/product/228/62314#BandwidthAlert)
+* [DescribeScanResult](http://document.tencentcloudapi.woa.com/document/product/607/63090#DescribeScanResult)
 
-	* 新增成员：Metric
-
-
+	* 新增成员：BizId
 
 
-## 腾讯云剪(cme) 版本：2019-10-29
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
 
 ### 第 2 次发布
 
-发布时间：2021-09-15 08:04:07
+发布时间：2021-09-16 08:10:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeClientBaseInfo
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClientBaseElem
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 2 次发布
+
+发布时间：2021-09-16 08:10:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/238/66678)
+
+修改接口：
+
+* [DescribeBackupByFlowId](http://document.tencentcloudapi.woa.com/document/product/238/64330)
+
+	* 新增出参：GroupId
+
+* [DescribeBackups](http://document.tencentcloudapi.woa.com/document/product/238/64326)
+
+	* 新增入参：Group
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/64290)
+
+	* 新增入参：UidSet
+
+* [ModifyBackupName](http://document.tencentcloudapi.woa.com/document/product/238/64318)
+
+	* 新增入参：GroupId
+
+	* <font color="#dd0000">**修改入参**：</font>BackupId
+
+* [ModifyBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/64317)
+
+	* 新增入参：BackupModel
+
+	* <font color="#dd0000">**修改入参**：</font>BackupType, BackupTime, BackupDay
+
+* [RestoreInstance](http://document.tencentcloudapi.woa.com/document/product/238/64254)
+
+	* 新增入参：GroupId
+
+
+新增数据结构：
+
+* [BackupFile](http://document.tencentcloudapi.woa.com/document/product/238/64349#BackupFile)
+
 修改数据结构：
 
-* [PlatformInfo](http://document.tencentcloudapi.woa.com/document/product/1156/61522#PlatformInfo)
+* [Backup](http://document.tencentcloudapi.woa.com/document/product/238/64349#Backup)
 
-	* 新增成员：Status
+	* 新增成员：GroupId
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/238/64349#DBInstance)
+
+	* 新增成员：BackupModel
 
 
 
@@ -111,7 +180,7 @@
 
 新增数据结构：
 
-* [[FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores)](http://document.tencentcloudapi.woa.com/document/product/668/59616#[FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores))
+* [FinanceOtherModelScores](http://document.tencentcloudapi.woa.com/document/product/668/59616#FinanceOtherModelScores)
 
 修改数据结构：
 
@@ -5157,6 +5226,31 @@
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
 
+### 第 2 次发布
+
+发布时间：2021-09-16 08:02:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AttachDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66677)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66676)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteSnapshots](http://document.tencentcloudapi.woa.com/document/product/1108/66671)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66675)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeSnapshots](http://document.tencentcloudapi.woa.com/document/product/1108/66670)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DetachDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66674)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TerminateDisks](http://document.tencentcloudapi.woa.com/document/product/1108/66673)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Disk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Disk)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[Disk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Disk))
+* [[DiskChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DiskChargePrepaid)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[DiskChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DiskChargePrepaid))
+* [[Placement](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Placement)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[Placement](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Placement))
+* [[Snapshot](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Snapshot)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[Snapshot](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Snapshot))
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 14:22:25
@@ -5928,6 +6022,21 @@
 
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 2 次发布
+
+发布时间：2021-09-16 08:08:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeScanResult](http://document.tencentcloudapi.woa.com/document/product/607/63090#DescribeScanResult)
+
+	* 新增成员：BizId
+
 
 ### 第 1 次发布
 
@@ -8894,6 +9003,22 @@
 
 ## 渠道合作伙伴(partners) 版本：2018-03-21
 
+### 第 2 次发布
+
+发布时间：2021-09-16 08:10:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeClientBaseInfo
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClientBaseElem
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 14:52:12
@@ -9735,6 +9860,64 @@
 
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 2 次发布
+
+发布时间：2021-09-16 08:10:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/238/66678)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeBackupByFlowId](http://document.tencentcloudapi.woa.com/document/product/238/64330)
+
+	* 新增出参：GroupId
+
+* [DescribeBackups](http://document.tencentcloudapi.woa.com/document/product/238/64326)
+
+	* 新增入参：Group
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/64290)
+
+	* 新增入参：UidSet
+
+* [ModifyBackupName](http://document.tencentcloudapi.woa.com/document/product/238/64318)
+
+	* 新增入参：GroupId
+
+	* <font color="#dd0000">**修改入参**：</font>BackupId
+
+* [ModifyBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/64317)
+
+	* 新增入参：BackupModel
+
+	* <font color="#dd0000">**修改入参**：</font>BackupType, BackupTime, BackupDay
+
+* [RestoreInstance](http://document.tencentcloudapi.woa.com/document/product/238/64254)
+
+	* 新增入参：GroupId
+
+
+新增数据结构：
+
+* [[BackupFile](http://document.tencentcloudapi.woa.com/document/product/238/64349#BackupFile)](http://document.tencentcloudapi.woa.com/document/product/238/64349#[BackupFile](http://document.tencentcloudapi.woa.com/document/product/238/64349#BackupFile))
+
+修改数据结构：
+
+* [Backup](http://document.tencentcloudapi.woa.com/document/product/238/64349#Backup)
+
+	* 新增成员：GroupId
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/238/64349#DBInstance)
+
+	* 新增成员：BackupModel
+
 
 ### 第 1 次发布
 
