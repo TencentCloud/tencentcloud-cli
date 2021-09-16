@@ -28,6 +28,7 @@ Output:
                 "EndTime": "2018-07-02 16:09:20",
                 "Size": 192,
                 "Strategy": 0,
+                "GroupId": 0,
                 "Status": 1,
                 "BackupWay": 0,
                 "DBs": [
@@ -44,6 +45,7 @@ Output:
                 "EndTime": "2018-07-02 01:04:30",
                 "Size": 192,
                 "Strategy": 0,
+                "GroupId": 0,
                 "Status": 1,
                 "BackupWay": 0,
                 "DBs": [

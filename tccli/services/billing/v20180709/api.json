@@ -617,6 +617,7 @@
         {
           "default": "",
           "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "example": "实时音视频",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -626,6 +627,7 @@
         {
           "default": "",
           "document": "子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回\"-\"",
+          "example": "实时音视频-音视频通话",
           "member": "string",
           "name": "ProductCodeName",
           "required": true,
@@ -635,6 +637,7 @@
         {
           "default": "",
           "document": "计费模式：包年包月和按量计费",
+          "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
           "required": true,
@@ -644,6 +647,7 @@
         {
           "default": "",
           "document": "项目",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -653,6 +657,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -662,6 +667,7 @@
         {
           "default": "",
           "document": "可用区",
+          "example": "其他",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -671,6 +677,7 @@
         {
           "default": "",
           "document": "资源实例ID",
+          "example": "1000068815",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -680,6 +687,7 @@
         {
           "default": "",
           "document": "资源实例名称",
+          "example": " 1",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -689,6 +697,7 @@
         {
           "default": "",
           "document": "交易类型：包年包月新购/续费/升降配/退款、按量计费扣费、调账补偿/扣费等类型",
+          "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
           "required": true,
@@ -698,6 +707,7 @@
         {
           "default": "",
           "document": "订单ID",
+          "example": "20210818400005559878881",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -707,6 +717,7 @@
         {
           "default": "",
           "document": "扣费时间",
+          "example": "2021-08-18 15:35:01",
           "member": "datetime",
           "name": "PayTime",
           "required": true,
@@ -716,6 +727,7 @@
         {
           "default": "",
           "document": "开始使用时间",
+          "example": "2021-08-18 15:35:00",
           "member": "datetime",
           "name": "FeeBeginTime",
           "required": true,
@@ -725,6 +737,7 @@
         {
           "default": "",
           "document": "结束使用时间",
+          "example": "2022-08-31 23:59:59",
           "member": "datetime",
           "name": "FeeEndTime",
           "required": true,
@@ -734,6 +747,7 @@
         {
           "default": "",
           "document": "配置描述",
+          "example": "音视频通话-自定义套餐包: 1000分钟; ",
           "member": "string",
           "name": "ConfigDesc",
           "required": true,
@@ -743,6 +757,7 @@
         {
           "default": "",
           "document": "扩展字段1",
+          "example": "-",
           "member": "string",
           "name": "ExtendField1",
           "required": true,
@@ -752,6 +767,7 @@
         {
           "default": "",
           "document": "扩展字段2",
+          "example": "-",
           "member": "string",
           "name": "ExtendField2",
           "required": true,
@@ -761,6 +777,7 @@
         {
           "default": "",
           "document": "原价，单位为元",
+          "example": "7",
           "member": "string",
           "name": "TotalCost",
           "required": true,
@@ -769,7 +786,8 @@
         },
         {
           "default": "",
-          "document": "折扣率",
+          "document": "折扣率\n当聚合之后折扣不唯一或者合同价的情况下，返回“-”",
+          "example": "1",
           "member": "string",
           "name": "Discount",
           "required": true,
@@ -779,6 +797,7 @@
         {
           "default": "",
           "document": "优惠类型",
+          "example": "折扣",
           "member": "string",
           "name": "ReduceType",
           "required": true,
@@ -788,6 +807,7 @@
         {
           "default": "",
           "document": "优惠后总价，单位为元",
+          "example": "7.00000000",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -797,6 +817,7 @@
         {
           "default": "",
           "document": "代金券支付金额，单位为元",
+          "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -806,6 +827,7 @@
         {
           "default": "",
           "document": "现金账户支付金额，单位为元",
+          "example": "7.00000000",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -815,6 +837,7 @@
         {
           "default": "",
           "document": "赠送账户支付金额，单位为元",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -824,6 +847,7 @@
         {
           "default": "",
           "document": "扩展字段3",
+          "example": "-",
           "member": "string",
           "name": "ExtendField3",
           "required": true,
@@ -833,6 +857,7 @@
         {
           "default": "",
           "document": "扩展字段4",
+          "example": "-",
           "member": "string",
           "name": "ExtendField4",
           "required": true,
@@ -842,6 +867,7 @@
         {
           "default": "",
           "document": "扩展字段5",
+          "example": "-",
           "member": "string",
           "name": "ExtendField5",
           "required": true,
@@ -851,6 +877,7 @@
         {
           "default": "",
           "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "BillTagInfo",
           "name": "Tags",
           "required": true,
@@ -860,6 +887,7 @@
         {
           "default": "",
           "document": "付款方uin",
+          "example": "xxx",
           "member": "string",
           "name": "PayerUin",
           "required": true,
@@ -869,6 +897,7 @@
         {
           "default": "",
           "document": "资源所有者uin,无值则返回\"-\"",
+          "example": "xxx",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -878,6 +907,7 @@
         {
           "default": "",
           "document": "操作者uin,无值则返回\"-\"",
+          "example": "xxx",
           "member": "string",
           "name": "OperateUin",
           "required": true,
@@ -887,6 +917,7 @@
         {
           "default": "",
           "document": "商品名称代码",
+          "example": "p_rav",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -896,6 +927,7 @@
         {
           "default": "",
           "document": "子商品名称代码",
+          "example": "sp_rav_audio_video",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -905,6 +937,7 @@
         {
           "default": "",
           "document": "区域ID",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -2870,7 +2903,7 @@
         },
         {
           "default": "",
-          "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",

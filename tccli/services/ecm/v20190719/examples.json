@@ -40,6 +40,14 @@
         "title": "指定多个实例绑定一个安全组"
       }
     ],
+    "AttachDisks": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AttachDisks\n&DiskIds.0=disk-lzrg2pwi\n&InstanceId=ins-dyzmimrw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0f140e5-14d6-c4a1-91e0-5a1f7f05a68a\"\n    }\n}",
+        "title": "挂载云硬盘"
+      }
+    ],
     "AttachNetworkInterface": [
       {
         "document": "",
@@ -70,6 +78,26 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=BatchRegisterTargets\n&LoadBalancerId=lb-xxxx\n&Targets.0.ListenerId=lbl-xxxx\n&Targets.0.InstanceId=ein-xxx\n&Targets.0.Port=80\n&Targets.0.Weight=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FailListenerIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"a2764f3c-f173-421c-8e42-7b1e7a608a33\"\n    }\n}",
         "title": "批量绑定后端目标"
+      }
+    ],
+    "CreateDisks": [
+      {
+        "document": "新购云盘具体配置如下：云盘所在位置为广州二区，云盘大小50GB，云盘类型为普通云盘，所属项目ID为0，付费模式为预付费，购买时长1个月，通知过期且自动续费。",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateDisks\n&DiskType=CLOUD_HSSD\n&DiskCount=1\n&DiskSize=500\n&Placement.Zone=ap-guangzhou-2\n&Placement.ProjectId=0\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=1\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&ThroughputPerformance=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"disk-lzrg2pwi\"\n        ],\n        \"RequestId\": \"6a57da9a-2049-7182-2de3-5a1f8014ccfd\"\n    }\n}",
+        "title": "使用基本参数购买"
+      },
+      {
+        "document": "在广州三区创建一块云硬盘，云盘类型为高性能云硬盘，大小100GB，付费类型为按小时后付费。",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateDisks\n&DiskType=CLOUD_PREMIUM\n&DiskCount=1\n&Placement.Zone=ap-guangzhou-3\n&Placement.ProjectId=0\n&DiskChargeType=POSTPAID_BY_HOUR\n&DiskName=postPayDisk\n&DiskSize=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"disk-ecjc4cpw\"\n        ],\n        \"RequestId\": \"fe2274fa-eaec-4009-807b-6ffc00963fec\"\n    }\n}",
+        "title": "创建按小时后付费云盘"
+      },
+      {
+        "document": "传入快照创建云硬盘，未传DiskSize参数，此时新购云盘的大小为快照大小，新购云盘复制了快照数据。",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateDisks\n&DiskType=CLOUD_BASIC\n&DiskCount=1\n&SnapshotId=snap-iepc4w3h\n&Placement.Zone=ap-guangzhou-2\n&Placement.ProjectId=0\n&DiskChargeType=PREPAID\n&DiskChargePrepaid.Period=1\n&DiskChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DiskIdSet\": [\n            \"disk-6rz0ilvu\"\n        ],\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\"\n    }\n}",
+        "title": "根据快照新建云硬盘"
       }
     ],
     "CreateHaVip": [
@@ -280,6 +308,14 @@
         "title": "使用索引匹配删除安全组出站规则"
       }
     ],
+    "DeleteSnapshots": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DeleteSnapshots\n&SnapshotIds.0=snap-gybrif0z\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4770576-d9eb-4689-0866-5a1f8200a722\"\n    }\n}",
+        "title": "删除快照"
+      }
+    ],
     "DeleteSubnet": [
       {
         "document": "",
@@ -342,6 +378,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeDefaultSubnet\n&EcmRegion=ap-hangzhou-ecm\n&Zone=ap-hangzhou-ecm-1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Subnet\": {\n            \"NetworkAclId\": \"\",\n            \"RouteTableId\": \"rtb-8dq69epw\",\n            \"VpcId\": \"vpc-07kqm4uj\",\n            \"EnableBroadcast\": false,\n            \"Zone\": \"ap-hangzhou-ecm-1\",\n            \"Ipv6CidrBlock\": \"\",\n            \"Region\": \"ap-hangzhou-ecm\",\n            \"SubnetName\": \"Default-Subnet\",\n            \"AvailableIpAddressCount\": 4090,\n            \"IsRemoteVpcSnat\": false,\n            \"SubnetId\": \"subnet-68hie5i6\",\n            \"InstanceCount\": 2,\n            \"VpcCidrBlock\": \"172.16.0.0/16\",\n            \"TagSet\": null,\n            \"CreatedTime\": \"2020-08-12 10:44:56\",\n            \"ZoneName\": \"杭州一区\",\n            \"CidrBlock\": \"172.16.0.0/20\",\n            \"IsDefault\": true,\n            \"VpcIpv6CidrBlock\": \"\"\n        },\n        \"RequestId\": \"7d67dea3-c6ff-45ca-aa5a-477cfae6697f\"\n    }\n}",
         "title": "查询杭州一区的默认子网"
+      }
+    ],
+    "DescribeDisks": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeDisks\n&Filters.0.Name=disk-usage\n&Filters.0.Values.0=DATA_DISK\n&Filters.1.Name=disk-state\n&Filters.1.Values.0=ATTACHED\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"e2386a23-48c1-4c18-9a36-4e7354f333b2\",\n        \"DiskSet\": [\n            {\n                \"DeleteWithInstance\": false,\n                \"Encrypt\": false,\n                \"DiskType\": \"CLOUD_BASIC\",\n                \"AutoRenewFlagError\": false,\n                \"Rollbacking\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"DiskName\": \"test\",\n                \"Tags\": [],\n                \"InstanceId\": \"\",\n                \"DifferDaysOfDeadline\": 1,\n                \"DiskId\": \"disk-b94t5dzt\",\n                \"DiskState\": \"ATTACHED\",\n                \"Placement\": {\n                    \"ProjectId\": 0,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"IsReturnable\": false,\n                \"DeadlineTime\": \"2018-10-26 10:55:43\",\n                \"Attached\": true,\n                \"DiskSize\": 10,\n                \"DiskUsage\": \"DATA_DISK\",\n                \"Portable\": true,\n                \"DiskChargeType\": \"PREPAID\",\n                \"SnapshotAbility\": true,\n                \"DeadlineError\": false,\n                \"RollbackPercent\": 100,\n                \"AutoSnapshotPolicyIds\": null,\n                \"ReturnFailCode\": 3,\n                \"AttachMode\": \"xx\",\n                \"CreateTime\": \"2018-09-26 17:36:07\",\n                \"ThroughputPerformance\": 1,\n                \"Migrating\": true,\n                \"InstanceIdList\": [\n                    \"xx\"\n                ],\n                \"Shareable\": true,\n                \"MigratePercent\": 100,\n                \"SnapshotSize\": 100,\n                \"SnapshotCount\": 0,\n                \"BackupDisk\": true\n            }\n        ]\n    }\n}",
+        "title": "查询所有已挂载的数据盘"
       }
     ],
     "DescribeHaVips": [
@@ -540,6 +584,14 @@
         "title": "查看安全组"
       }
     ],
+    "DescribeSnapshots": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeSnapshots\n&Filters.0.Name=snapshot-state\n&Filters.0.Values.0=NORMAL\n&Filters.1.Name=zone\n&Filters.1.Values.0=ap-guangzhou-2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"4ab150b9-538d-48fb-8821-7fa185f1d07c\",\n        \"SnapshotSet\": [\n            {\n                \"Placement\": {\n                    \"ProjectId\": 0,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"TimeStartShare\": \"2020-09-22\",\n                \"CopyFromRemote\": false,\n                \"IsPermanent\": false,\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DeadlineTime\": \"2019-07-15 00:00:00\",\n                \"Percent\": 100,\n                \"SnapshotId\": \"snap-lfo7xxxx\",\n                \"ShareReference\": 0,\n                \"SnapshotType\": \"PRIVATE_SNAPSHOT\",\n                \"DiskSize\": 10,\n                \"DiskId\": \"disk-aq3k1jn0\",\n                \"SnapshotName\": \"auto_disk-aq3k1jn0_20190708_00\",\n                \"Images\": [],\n                \"CopyingToRegions\": [],\n                \"Encrypt\": false,\n                \"CreateTime\": \"2019-07-08 00:03:13\",\n                \"ImageCount\": 0,\n                \"SnapshotState\": \"NORMAL\"\n            },\n            {\n                \"Placement\": {\n                    \"ProjectId\": 0,\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"TimeStartShare\": \"2020-09-22\",\n                \"CopyFromRemote\": false,\n                \"IsPermanent\": false,\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DeadlineTime\": \"2019-07-15 00:00:00\",\n                \"Percent\": 100,\n                \"SnapshotId\": \"snap-jt5nxxxx\",\n                \"ShareReference\": 0,\n                \"SnapshotType\": \"PRIVATE_SNAPSHOT\",\n                \"DiskSize\": 10,\n                \"DiskId\": \"disk-38hlz2p0\",\n                \"SnapshotName\": \"auto_disk-38hlz2p0_20190708_00\",\n                \"Images\": [],\n                \"CopyingToRegions\": [],\n                \"Encrypt\": false,\n                \"CreateTime\": \"2019-07-08 00:03:10\",\n                \"ImageCount\": 0,\n                \"SnapshotState\": \"NORMAL\"\n            }\n        ]\n    }\n}",
+        "title": "查询广州二区状态为NORMAL的快照"
+      }
+    ],
     "DescribeSubnets": [
       {
         "document": "",
@@ -586,6 +638,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeVpcs\n&VpcIds.0=vpc-07kqm4uj\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"d15a17b7-703b-4757-ae1a-745af315abc4\",\n        \"VpcSet\": [\n            {\n                \"EnableDhcp\": true,\n                \"VpcId\": \"vpc-07kqm4uj\",\n                \"Description\": \"\",\n                \"DomainName\": \"\",\n                \"Ipv6CidrBlock\": \"\",\n                \"Region\": \"ap-hangzhou-ecm\",\n                \"DhcpOptionsId\": \"\",\n                \"InstanceCount\": 2,\n                \"DnsServerSet\": [],\n                \"EnableMulticast\": false,\n                \"VpcName\": \"Default-VPC\",\n                \"AssistantCidrSet\": [],\n                \"TagSet\": null,\n                \"SubnetCount\": 1,\n                \"CreatedTime\": \"2020-06-17 12:09:46\",\n                \"CidrBlock\": \"172.16.0.0/16\",\n                \"IsDefault\": true,\n                \"RegionName\": \"杭州一区\"\n            }\n        ]\n    }\n}",
         "title": "查询VPC列表"
+      }
+    ],
+    "DetachDisks": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DetachDisks\n&DiskIds.0=disk-lzrg2pwi\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\n    }\n}",
+        "title": "卸载单块云硬盘"
       }
     ],
     "DetachNetworkInterface": [
@@ -984,6 +1044,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=StopInstances\n&InstanceIdSet.0=ein-496721al\n&InstanceIdSet.1=ein-438242bp\n&ForceStop=false\n&StopType=SOFT_FIRST\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d40cdb72-7bc0-4b48-b3aa-25e8401f6999\"\n    }\n}",
         "title": "实例关机"
+      }
+    ],
+    "TerminateDisks": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=TerminateDisks\n&DiskIds.0=disk-lzrg2pwi\n&DiskIds.1=disk-g27hqeo2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\n    }\n}",
+        "title": "批量退还云硬盘"
       }
     ],
     "TerminateInstances": [
