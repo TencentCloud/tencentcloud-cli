@@ -2627,6 +2627,7 @@
         {
           "default": "",
           "document": "专线网关ID。",
+          "example": "vpc-8xpno8ee",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2635,6 +2636,7 @@
         {
           "default": "",
           "document": "NAT网关ID。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -2643,6 +2645,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "dcg-fxa6gh5t",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -12379,6 +12382,7 @@
         {
           "default": "",
           "document": "专线网关ID。",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -12387,6 +12391,7 @@
         {
           "default": "",
           "document": "NAT网关ID。",
+          "example": "nat-xxx",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -12395,6 +12400,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "dcg-xxx",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,

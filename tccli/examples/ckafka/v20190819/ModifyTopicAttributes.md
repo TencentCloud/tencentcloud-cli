@@ -16,10 +16,13 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "0",
-            "ReturnMessage": "ok[apply success]"
+            "ReturnMessage": "xx",
+            "ReturnCode": "xx",
+            "Data": {
+                "FlowId": 0
+            }
         },
-        "RequestId": "83d1142c-2754-46fb-99ca-46d9d87f5e3e"
+        "RequestId": "xx"
     }
 }
 ```

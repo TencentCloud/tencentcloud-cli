@@ -308,6 +308,142 @@
       ],
       "usage": "out"
     },
+    "AclRule": {
+      "document": "AclRule列表接口出参",
+      "members": [
+        {
+          "default": "",
+          "document": "Acl规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testRule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配类型，目前只支持前缀匹配，枚举值列表：PREFIXED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREFIXED",
+          "member": "string",
+          "name": "PatternType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示前缀匹配的前缀的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Pattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Acl资源类型,目前只支持Topic,枚举值列表：Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Topic",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该规则所包含的ACL信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "AclList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则所创建的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Sat Apr 03 20:13:03 CST 2021",
+          "member": "string",
+          "name": "CreateTimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则是否应用到新增的topic中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsApplied",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Sat Apr 03 20:13:03 CST 2021",
+          "member": "string",
+          "name": "UpdateTimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则的备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其中一个显示的对应的TopicName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用该ACL规则的Topic数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TopicCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "patternType的中文显示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "PatternTypeTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AclRuleInfo": {
       "document": "表示ACL 规则的四元组信息",
       "members": [
@@ -1324,6 +1460,24 @@
           "name": "SegmentMs",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则, 1:打开  0:关闭，默认不打开",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableAclRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则的名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "AclRuleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2380,6 +2534,7 @@
         {
           "default": "",
           "document": "实例 ID",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2388,6 +2543,7 @@
         {
           "default": "",
           "document": "主题名称",
+          "example": "xxx",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -2401,8 +2557,10 @@
       "members": [
         {
           "document": "返回的结果对象",
+          "example": "无",
           "member": "TopicAttributesResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2421,6 +2579,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "ckafka-xxooa0",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2429,6 +2588,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照topicName过滤，支持模糊查询",
+          "example": "xxx",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -2437,6 +2597,7 @@
         {
           "default": "",
           "document": "偏移量，不填默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2445,10 +2606,20 @@
         {
           "default": "",
           "document": "返回数量，不填则默认 10，最大值20，取值要大于0",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Acl预设策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "AclRuleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2458,8 +2629,10 @@
       "members": [
         {
           "document": "返回的主题详情实体",
+          "example": "无",
           "member": "TopicDetailResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2510,6 +2683,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Acl预设策略名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "AclRuleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4165,6 +4347,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4173,6 +4356,7 @@
         {
           "default": "",
           "document": "主题名称。",
+          "example": "xxx",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -4181,6 +4365,7 @@
         {
           "default": "",
           "document": "主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。",
+          "example": "xxx",
           "member": "string",
           "name": "Note",
           "required": false,
@@ -4189,6 +4374,7 @@
         {
           "default": "",
           "document": "IP 白名单开关，1：打开；0：关闭。",
+          "example": "0",
           "member": "int64",
           "name": "EnableWhiteList",
           "required": false,
@@ -4197,6 +4383,7 @@
         {
           "default": "",
           "document": "默认为1。",
+          "example": "1",
           "member": "int64",
           "name": "MinInsyncReplicas",
           "required": false,
@@ -4205,6 +4392,7 @@
         {
           "default": "",
           "document": "默认为 0，0：false；1：true。",
+          "example": "0",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
           "required": false,
@@ -4213,6 +4401,7 @@
         {
           "default": "",
           "document": "消息保留时间，单位：ms，当前最小值为60000ms。",
+          "example": "1000",
           "member": "int64",
           "name": "RetentionMs",
           "required": false,
@@ -4221,6 +4410,7 @@
         {
           "default": "",
           "document": "Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。",
+          "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
           "required": false,
@@ -4229,6 +4419,7 @@
         {
           "default": "",
           "document": "主题消息最大值，单位为 Byte，最大值为8388608Byte（即8MB）。",
+          "example": "1",
           "member": "int64",
           "name": "MaxMessageBytes",
           "required": false,
@@ -4237,8 +4428,36 @@
         {
           "default": "",
           "document": "消息删除策略，可以选择delete 或者compact",
+          "example": "delete",
           "member": "string",
           "name": "CleanUpPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Ip白名单列表，配额限制，enableWhileList=1时必选",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "member": "string",
+          "name": "IpWhiteList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则, 1:打开  0:关闭，默认不打开",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableAclRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预设ACL规则的名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "AclRuleName",
           "required": false,
           "type": "string"
         }
@@ -4250,8 +4469,10 @@
       "members": [
         {
           "document": "返回结果集",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4625,6 +4846,7 @@
         {
           "default": "",
           "document": "主题 ID",
+          "example": "xxx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4634,6 +4856,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2021-7-26  4:16:58",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
@@ -4643,6 +4866,7 @@
         {
           "default": "",
           "document": "主题备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Note",
           "required": true,
@@ -4652,6 +4876,7 @@
         {
           "default": "",
           "document": "分区个数",
+          "example": "1",
           "member": "int64",
           "name": "PartitionNum",
           "required": true,
@@ -4661,6 +4886,7 @@
         {
           "default": "",
           "document": "IP 白名单开关，1：打开； 0：关闭",
+          "example": "1",
           "member": "int64",
           "name": "EnableWhiteList",
           "required": true,
@@ -4670,6 +4896,7 @@
         {
           "default": "",
           "document": "IP 白名单列表",
+          "example": "xxx",
           "member": "string",
           "name": "IpWhiteList",
           "required": true,
@@ -4679,6 +4906,7 @@
         {
           "default": "",
           "document": "topic 配置数组",
+          "example": "xxx",
           "member": "Config",
           "name": "Config",
           "required": true,
@@ -4688,11 +4916,32 @@
         {
           "default": "",
           "document": "分区详情",
+          "example": "xxx",
           "member": "TopicPartitionDO",
           "name": "Partitions",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ACL预设策略开关，1：打开； 0：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableAclRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预设策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "AclRule",
+          "name": "AclRuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4703,6 +4952,7 @@
         {
           "default": "",
           "document": "主题名称",
+          "example": "lobo5",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -4712,6 +4962,7 @@
         {
           "default": "",
           "document": "主题ID",
+          "example": "topic-k3pn5gfm",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4721,6 +4972,7 @@
         {
           "default": "",
           "document": "分区数",
+          "example": "6",
           "member": "int64",
           "name": "PartitionNum",
           "required": true,
@@ -4730,6 +4982,7 @@
         {
           "default": "",
           "document": "副本数",
+          "example": "2",
           "member": "int64",
           "name": "ReplicaNum",
           "required": true,
@@ -4739,6 +4992,7 @@
         {
           "default": "",
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Note",
           "required": true,
@@ -4748,6 +5002,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "1627540967",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
@@ -4757,6 +5012,7 @@
         {
           "default": "",
           "document": "是否开启ip鉴权白名单，true表示开启，false表示不开启",
+          "example": "false",
           "member": "bool",
           "name": "EnableWhiteList",
           "required": true,
@@ -4766,6 +5022,7 @@
         {
           "default": "",
           "document": "ip白名单中ip个数",
+          "example": "0",
           "member": "int64",
           "name": "IpWhiteListCount",
           "required": true,
@@ -4775,6 +5032,7 @@
         {
           "default": "",
           "document": "数据备份cos bucket: 转存到cos 的bucket地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "ForwardCosBucket",
           "required": true,
@@ -4784,6 +5042,7 @@
         {
           "default": "",
           "document": "数据备份cos 状态： 1 不开启数据备份，0 开启数据备份",
+          "example": "1",
           "member": "int64",
           "name": "ForwardStatus",
           "required": true,
@@ -4793,6 +5052,7 @@
         {
           "default": "",
           "document": "数据备份到cos的周期频率",
+          "example": "0",
           "member": "int64",
           "name": "ForwardInterval",
           "required": true,
@@ -4802,6 +5062,7 @@
         {
           "default": "",
           "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Config: {Retention: 86400000, MinInsyncReplicas: 1, CleanUpPolic",
           "member": "Config",
           "name": "Config",
           "required": true,
@@ -4811,10 +5072,21 @@
         {
           "default": "",
           "document": "消息保留时间配置(用于动态配置变更记录)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RetentionTimeConfig: {Expect: 1440, Current: 1440, ModTimeStamp:",
           "member": "TopicRetentionTimeConfigRsp",
           "name": "RetentionTimeConfig",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0:正常，1：已删除，2：删除中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5004,6 +5276,7 @@
         {
           "default": "",
           "document": "返回的主题信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "Topic",
           "name": "TopicList",
           "required": true,
@@ -5013,6 +5286,7 @@
         {
           "default": "",
           "document": "符合条件的 topic 数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "required": true,

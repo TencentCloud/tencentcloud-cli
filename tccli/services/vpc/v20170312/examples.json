@@ -109,7 +109,7 @@
     "AssociateDirectConnectGatewayNatGateway": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateDirectConnectGatewayNatGateway\r\n&VpcId=vpc-8xpno8ee\r\n&DirectConnectGatewayId=dcg-fxa6gh5t\r\n&NatGatewayId=nat-ig8xpno8\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateDirectConnectGatewayNatGateway\n&VpcId=vpc-8xpno8ee\n&DirectConnectGatewayId=dcg-fxa6gh5t\n&NatGatewayId=nat-ig8xpno8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "专线网关绑定NAT网关"
       }
@@ -1559,7 +1559,7 @@
     "DisassociateDirectConnectGatewayNatGateway": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisassociateDirectConnectGatewayNatGateway\r\n&VpcId=\"vpc-8xpno8ee\"\r\n&DirectConnectGatewayId=\"dcg-fxa6gh5t\"\r\n&NatGatewayId=\"nat-ig8xpno8\"\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisassociateDirectConnectGatewayNatGateway\n&VpcId=\"vpc-8xpno8ee\"\n&DirectConnectGatewayId=\"dcg-fxa6gh5t\"\n&NatGatewayId=\"nat-ig8xpno8\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "专线网关解绑NAT网关"
       }

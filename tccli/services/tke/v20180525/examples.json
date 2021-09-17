@@ -140,6 +140,14 @@
         "title": "创建弹性集群示例"
       }
     ],
+    "CreateEKSContainerInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEKSContainerInstances\n<公共请求参数>\n\n{\n    \"AutoCreateEipAttribute\": {\n        \"InternetMaxBandwidthOut\": 1,\n        \"DeletePolicy\": \"Immediate\",\n        \"InternetServiceProvider\": \"BGP\"\n    },\n    \"CamRoleName\": \"xx\",\n    \"VpcId\": \"vpc-12345678\",\n    \"DnsConfig\": {\n        \"Nameservers\": [\n            \"xx\"\n        ],\n        \"Searches\": [\n            \"xx\"\n        ],\n        \"Options\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ]\n    },\n    \"Replicas\": 1,\n    \"ImageRegistryCredentials\": [\n        {\n            \"Username\": \"xx\",\n            \"Password\": \"xx\",\n            \"Name\": \"xx\",\n            \"Server\": \"xx\"\n        }\n    ],\n    \"EksCiVolume\": {\n        \"CbsVolumes\": [\n            {\n                \"CbsDiskId\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"NfsVolumes\": [\n            {\n                \"Path\": \"xx\",\n                \"ReadOnly\": true,\n                \"Name\": \"xx\",\n                \"Server\": \"xx\"\n            }\n        ]\n    },\n    \"GpuCount\": 1,\n    \"ExistedEipIds\": [\n        \"eip-12345678\"\n    ],\n    \"AutoCreateEip\": true,\n    \"RestartPolicy\": \"Always\",\n    \"Cpu\": 1.0,\n    \"Memory\": 2.0,\n    \"SubnetId\": \"subnet-12345678\",\n    \"CpuType\": \"amd,intel\",\n    \"SecurityGroupIds\": [\n        \"sg-12345678\"\n    ],\n    \"Containers\": [\n        {\n            \"Commands\": [\n                \"sleep\"\n            ],\n            \"Name\": \"xx\",\n            \"GpuLimit\": 1,\n            \"WorkingDir\": \"xx\",\n            \"Image\": \"xx\",\n            \"Args\": [\n                \"10000\"\n            ],\n            \"VolumeMounts\": [\n                {\n                    \"MountPropagation\": \"xx\",\n                    \"ReadOnly\": true,\n                    \"MountPath\": \"xx\",\n                    \"SubPath\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"RestartCount\": 1,\n            \"EnvironmentVars\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Memory\": 0.0,\n            \"Cpu\": 0.0\n        }\n    ],\n    \"EksCiName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e212220\",\n        \"EksCiIds\": [\n            \"eksci-bd80pz8s\"\n        ]\n    }\n}",
+        "title": "创建容器实例"
+      }
+    ],
     "CreatePrometheusAlertRule": [
       {
         "document": "",
@@ -234,6 +242,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DeleteEKSCluster\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除弹性集群"
+      }
+    ],
+    "DeleteEKSContainerInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-6mr3o7eu\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34d9ea5a-6e9e-4384-88da-84229e133457\"\n    }\n}",
+        "title": "删除容器实例"
       }
     ],
     "DeletePrometheusAlertRule": [
@@ -396,12 +412,36 @@
         "title": "集群信息列表"
       }
     ],
+    "DescribeEKSContainerInstanceEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSContainerInstanceEvent\n<公共请求参数>\n\n{\n    \"EksCiId\": \"eksci-iu09upos\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e133123\",\n        \"EksCiId\": \"eksci-iu09upos\",\n        \"Events\": [\n            {\n                \"PodName\": \"eksci-iu09upos\",\n                \"Reason\": \"Started\",\n                \"Type\": \"Normal\",\n                \"Count\": 1,\n                \"FirstTimestamp\": \"2021-06-24 03:32:43.424977053 +0000 UTC\",\n                \"LastTimestamp\": \"2021-06-24 03:32:43.424977053 +0000 UTC\",\n                \"Message\": \"Started container simple-cputest\"\n            },\n            {\n                \"PodName\": \"eksci-iu09upos\",\n                \"Reason\": \"Created\",\n                \"Type\": \"Normal\",\n                \"Count\": 1,\n                \"FirstTimestamp\": \"2021-06-24 03:32:43.362703322 +0000 UTC\",\n                \"LastTimestamp\": \"2021-06-24 03:32:43.362703322 +0000 UTC\",\n                \"Message\": \"Created container simple-cputest\"\n            },\n            {\n                \"PodName\": \"eksci-iu09upos\",\n                \"Reason\": \"Pulled\",\n                \"Type\": \"Normal\",\n                \"Count\": 1,\n                \"FirstTimestamp\": \"2021-06-24 03:32:40.841296385 +0000 UTC\",\n                \"LastTimestamp\": \"2021-06-24 03:32:40.841296385 +0000 UTC\",\n                \"Message\": \"Successfully pulled image \\\"ccr.ccs.tencentyun.com/ploto/cputest:1.4\\\" in 11.508506091s\"\n            },\n            {\n                \"PodName\": \"eksci-iu09upos\",\n                \"Reason\": \"Pulling\",\n                \"Type\": \"Normal\",\n                \"Count\": 1,\n                \"FirstTimestamp\": \"2021-06-24 03:32:29.332774654 +0000 UTC\",\n                \"LastTimestamp\": \"2021-06-24 03:32:29.332774654 +0000 UTC\",\n                \"Message\": \"Pulling image \\\"ccr.ccs.tencentyun.com/ploto/cputest:1.4\\\"\"\n            },\n            {\n                \"PodName\": \"eksci-iu09upos\",\n                \"Reason\": \"NodeAllocatableEnforced\",\n                \"Type\": \"Normal\",\n                \"Count\": 1,\n                \"FirstTimestamp\": \"2021-06-24 03:32:28.751352741 +0000 UTC\",\n                \"LastTimestamp\": \"2021-06-24 03:32:28.751352741 +0000 UTC\",\n                \"Message\": \"Updated Node Allocatable limit across pods\"\n            }\n        ]\n    }\n}",
+        "title": "查询容器实例的事件"
+      }
+    ],
     "DescribeEKSContainerInstanceRegions": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSContainerInstanceRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10d9ea5a-6e9e-4384-88da-84229e133555\",\n        \"Regions\": [\n            {\n                \"Alias\": \"cq\",\n                \"RegionName\": \"ap-chongqing\",\n                \"RegionId\": 19\n            },\n            {\n                \"Alias\": \"gz\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegionId\": 1\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询容器实例支持的地域"
+      }
+    ],
+    "DescribeEKSContainerInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-6mr3o7eu\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34d9ea5a-6e9e-4384-88da-84229e133412\",\n        \"TotalCount\": 1,\n        \"EksCis\": [\n            {\n                \"EksCiId\": \"eksci-iu09upos\",\n                \"EksCiName\": \"未命名\",\n                \"Memory\": 2,\n                \"Cpu\": 1,\n                \"SecurityGroupIds\": [\n                    \"sg-12345678\"\n                ],\n                \"RestartPolicy\": \"Always\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"Status\": \"Running\",\n                \"CreationTime\": \"2021-06-24 03:32:02 +0000 UTC\",\n                \"SucceededTime\": \"2021-06-24 11:32:21 +0000 UTC\",\n                \"Containers\": [\n                    {\n                        \"Image\": \"ccr.ccs.tencentyun.com/ploto/cputest:1.4\",\n                        \"Name\": \"simple-cputest\",\n                        \"Cpu\": 0,\n                        \"Memory\": 0,\n                        \"Commands\": [\n                            \"sleep\"\n                        ],\n                        \"Args\": [\n                            \"100000\"\n                        ],\n                        \"EnvironmentVars\": [],\n                        \"CurrentState\": {\n                            \"StartTime\": \"2021-06-24 03:32:43.420750215 +0000 UTC\",\n                            \"State\": \"running\",\n                            \"FinishTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                            \"ExitCode\": 0,\n                            \"Reason\": \"\",\n                            \"Message\": \"\",\n                            \"RestartCount\": 0\n                        },\n                        \"RestartCount\": 0,\n                        \"WorkingDir\": \"\"\n                    }\n                ],\n                \"InitContainers\": null,\n                \"EksCiVolume\": {\n                    \"CbsVolumes\": null,\n                    \"NfsVolumes\": null\n                },\n                \"SecurityContext\": null,\n                \"PrivateIp\": \"10.1.0.1\",\n                \"EipAddress\": \"\",\n                \"CpuType\": \"amd,intel\",\n                \"GpuType\": \"\",\n                \"GpuCount\": 0,\n                \"CamRoleName\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询容器实例"
+      }
+    ],
+    "DescribeEksContainerInstanceLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEksContainerInstanceLog\n<公共请求参数>\n\n{\n    \"EksCiId\": \"eksci-123456\",\n    \"Tail\": 500,\n    \"Previous\": false,\n    \"ContainerName\": \"simple-cputest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"simple-cputest\",\n        \"LogContent\": \"hello world\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询容器实例中容器日志"
       }
     ],
     "DescribeEnableVpcCniProgress": [
@@ -636,6 +676,14 @@
         "title": "移出节点池节点"
       }
     ],
+    "RestartEKSContainerInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-iu09upos\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e133246\"\n    }\n}",
+        "title": "重启容器实例"
+      }
+    ],
     "SetNodePoolNodeProtection": [
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
@@ -666,6 +714,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=UpdateEKSCluster\n&ClusterId=cls-xxxxxx\n&ClusterName=test_cluster1\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster888\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改弹性集群"
+      }
+    ],
+    "UpdateEKSContainerInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEKSContainerInstance\n<公共请求参数>\n\n{\n    \"Name\": \"helloworld\",\n    \"RestartPolicy\": \"Always\",\n    \"EksCiId\": \"eksci-123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51d9ea5a-6e9e-4384-88da-84229e133246\",\n        \"EksCiId\": \"eksci-rkkrzy4o\"\n    }\n}",
+        "title": "更新容器实例"
       }
     ],
     "UpgradeClusterInstances": [

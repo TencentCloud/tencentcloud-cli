@@ -34,6 +34,8 @@ Output:
                 "ModuleId": 0,
                 "CreateTime": 1560341975,
                 "CategoryId": 3,
+                "CreateUserId": 0,
+                "CreatorNickName": "xx",
                 "ProductId": "BJQM4UXMKN"
             }
         ],
