@@ -2783,6 +2783,24 @@
           "name": "QueueName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMQ 队列名称列表过滤",
+          "example": "test",
+          "member": "string",
+          "name": "QueueNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤查找时，需要设置为 true",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTagFilter",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2954,6 +2972,24 @@
           "name": "TopicName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMQ 主题名称列表过滤",
+          "example": "test",
+          "member": "string",
+          "name": "TopicNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤查找时，需要设置为 true",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTagFilter",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

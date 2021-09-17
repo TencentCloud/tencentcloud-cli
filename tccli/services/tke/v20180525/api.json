@@ -96,6 +96,12 @@
       "name": "创建弹性集群",
       "output": "CreateEKSClusterResponse"
     },
+    "CreateEKSContainerInstances": {
+      "document": "创建容器实例",
+      "input": "CreateEKSContainerInstancesRequest",
+      "name": "创建容器实例",
+      "output": "CreateEKSContainerInstancesResponse"
+    },
     "CreatePrometheusAlertRule": {
       "document": "创建告警规则",
       "input": "CreatePrometheusAlertRuleRequest",
@@ -167,6 +173,12 @@
       "input": "DeleteEKSClusterRequest",
       "name": "删除弹性集群",
       "output": "DeleteEKSClusterResponse"
+    },
+    "DeleteEKSContainerInstances": {
+      "document": "删除容器实例，可批量删除",
+      "input": "DeleteEKSContainerInstancesRequest",
+      "name": "删除容器实例",
+      "output": "DeleteEKSContainerInstancesResponse"
     },
     "DeletePrometheusAlertRule": {
       "document": "删除告警规则",
@@ -288,11 +300,29 @@
       "name": "查询弹性集群列表",
       "output": "DescribeEKSClustersResponse"
     },
+    "DescribeEKSContainerInstanceEvent": {
+      "document": "查询容器实例的事件",
+      "input": "DescribeEKSContainerInstanceEventRequest",
+      "name": "查询容器实例的事件",
+      "output": "DescribeEKSContainerInstanceEventResponse"
+    },
     "DescribeEKSContainerInstanceRegions": {
       "document": "查询容器实例支持的地域",
       "input": "DescribeEKSContainerInstanceRegionsRequest",
       "name": "查询容器实例支持的地域",
       "output": "DescribeEKSContainerInstanceRegionsResponse"
+    },
+    "DescribeEKSContainerInstances": {
+      "document": "查询容器实例",
+      "input": "DescribeEKSContainerInstancesRequest",
+      "name": "查询容器实例",
+      "output": "DescribeEKSContainerInstancesResponse"
+    },
+    "DescribeEksContainerInstanceLog": {
+      "document": "查询容器实例中容器日志",
+      "input": "DescribeEksContainerInstanceLogRequest",
+      "name": "查询容器实例日志",
+      "output": "DescribeEksContainerInstanceLogResponse"
     },
     "DescribeEnableVpcCniProgress": {
       "document": "本接口用于查询开启vpc-cni模式的任务进度",
@@ -468,6 +498,12 @@
       "name": "移出节点池节点",
       "output": "RemoveNodeFromNodePoolResponse"
     },
+    "RestartEKSContainerInstances": {
+      "document": "重启弹性容器实例，支持批量操作",
+      "input": "RestartEKSContainerInstancesRequest",
+      "name": "重启容器实例",
+      "output": "RestartEKSContainerInstancesResponse"
+    },
     "SetNodePoolNodeProtection": {
       "document": "仅能设置节点池中处于伸缩组的节点",
       "input": "SetNodePoolNodeProtectionRequest",
@@ -491,6 +527,12 @@
       "input": "UpdateEKSClusterRequest",
       "name": "修改弹性集群",
       "output": "UpdateEKSClusterResponse"
+    },
+    "UpdateEKSContainerInstance": {
+      "document": "更新容器实例",
+      "input": "UpdateEKSContainerInstanceRequest",
+      "name": "更新容器实例",
+      "output": "UpdateEKSContainerInstanceResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -873,6 +915,58 @@
         }
       ],
       "usage": "out"
+    },
+    "Capabilities": {
+      "document": "cloudrun安全特性能力",
+      "members": [
+        {
+          "default": "",
+          "document": "启用安全能力项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"NET_ADMIN\", \"SYS_TIME\"]",
+          "member": "string",
+          "name": "Add",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "禁用安全能力向列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"NET_ADMIN\"]",
+          "member": "string",
+          "name": "Drop",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CbsVolume": {
+      "document": "EKS Instnace CBS volume",
+      "members": [
+        {
+          "default": "",
+          "document": "cbs volume 数据卷名称",
+          "example": "[]",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云cbs盘Id",
+          "example": "[]",
+          "member": "string",
+          "name": "CbsDiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CheckInstancesUpgradeAbleRequest": {
       "document": "CheckInstancesUpgradeAble请求参数结构体",
@@ -2004,6 +2098,228 @@
       ],
       "usage": "out"
     },
+    "Container": {
+      "document": "EKS Instance Container容器",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像",
+          "example": "...",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器名",
+          "example": "...",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器启动命令",
+          "example": "[\"sleep\"]",
+          "member": "string",
+          "name": "Commands",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器启动参数",
+          "example": "[\"36000\"]",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器内操作系统的环境变量",
+          "example": "[]",
+          "member": "EnvironmentVariable",
+          "name": "EnvironmentVars",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU，制改容器最多可使用的核数，该值不可超过容器实例的总核数。单位：核。",
+          "example": "...",
+          "member": "float",
+          "name": "Cpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存，限制该容器最多可使用的内存值，该值不可超过容器实例的总内存值。单位：GiB",
+          "example": "...",
+          "member": "float",
+          "name": "Memory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "ContainerState",
+          "name": "CurrentState",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "uint64",
+          "name": "RestartCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器工作目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "string",
+          "name": "WorkingDir",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存活探针\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "LivenessOrReadinessProbe",
+          "name": "LivenessProbe",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "就绪探针\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "LivenessOrReadinessProbe",
+          "name": "ReadinessProbe",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Gpu限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "...",
+          "member": "uint64",
+          "name": "GpuLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerState": {
+      "document": "容器状态",
+      "members": [
+        {
+          "default": "",
+          "document": "容器运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-22T06:56:09Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态：created, running, exited, unknown",
+          "example": "running",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-22T06:56:09Z",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器运行退出码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态 Reason\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "todo ",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " todo",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " 1",
+          "member": "int64",
+          "name": "RestartCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ControllerStatus": {
       "document": "集群中控制器的状态描述",
       "members": [
@@ -2711,6 +3027,213 @@
       ],
       "type": "object"
     },
+    "CreateEKSContainerInstancesRequest": {
+      "document": "CreateEKSContainerInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器组",
+          "example": "[]",
+          "member": "Container",
+          "name": "Containers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EKS Container Instance容器实例名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定新创建实例所属于的安全组Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所属子网Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所属VPC的Id",
+          "example": "[]",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内存，单位：GiB。可参考[资源规格](https://cloud.tencent.com/document/product/457/39808)文档",
+          "example": "[]",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "CPU，单位：核。可参考[资源规格](https://cloud.tencent.com/document/product/457/39808)文档",
+          "example": "[]",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "实例重启策略： Always(总是重启)、Never(从不重启)、OnFailure(失败时重启)，默认：Always。",
+          "example": "Always",
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库凭证数组",
+          "example": "[]",
+          "member": "ImageRegistryCredential",
+          "name": "ImageRegistryCredentials",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据卷，包含NfsVolume数组和CbsVolume数组",
+          "example": "[]",
+          "member": "EksCiVolume",
+          "name": "EksCiVolume",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例副本数，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Init 容器",
+          "example": "[]",
+          "member": "Container",
+          "name": "InitContainers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自定义DNS配置",
+          "example": "[]",
+          "member": "DNSConfig",
+          "name": "DnsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用来绑定容器实例的已有EIP的列表。如传值，需要保证数值和Replicas相等。\n另外此参数和AutoCreateEipAttribute互斥。",
+          "example": "[]",
+          "member": "string",
+          "name": "ExistedEipIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "自动创建EIP的可选参数。若传此参数，则会自动创建EIP。\n另外此参数和ExistedEipIds互斥",
+          "example": "[]",
+          "member": "EipAttribute",
+          "name": "AutoCreateEipAttribute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否为容器实例自动创建EIP，默认为false。若传true，则此参数和ExistedEipIds互斥",
+          "example": "[]",
+          "member": "bool",
+          "name": "AutoCreateEip",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "Pod 所需的 CPU 资源型号，如果不填写则默认不强制指定 CPU 类型。目前支持型号如下：\nintel\namd\n- 支持优先级顺序写法，如 “amd,intel” 表示优先创建 amd 资源 Pod，如果所选地域可用区 amd 资源不足，则会创建 intel 资源 Pod。",
+          "example": "[]",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器实例所需的 GPU 资源型号，目前支持型号如下：\n1/4\\*V100\n1/2\\*V100\nV100\n1/4\\*T4\n1/2\\*T4\nT4",
+          "example": "[]",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pod 所需的 GPU 数量，如填写，请确保为支持的规格。默认单位为卡，无需再次注明。",
+          "example": "[]",
+          "member": "uint64",
+          "name": "GpuCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "为容器实例关联 CAM 角色，value 填写 CAM 角色名称，容器实例可获取该 CAM 角色包含的权限策略，方便 容器实例 内的程序进行如购买资源、读写存储等云资源操作。",
+          "example": "[]",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEKSContainerInstancesResponse": {
+      "document": "CreateEKSContainerInstances返回参数结构体",
+      "members": [
+        {
+          "document": "EKS Container Instance Id集合，格式为eksci-xxx，是容器实例的唯一标识。",
+          "example": "tci-xxx",
+          "member": "string",
+          "name": "EksCiIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertRuleRequest": {
       "document": "CreatePrometheusAlertRule请求参数结构体",
       "members": [
@@ -2830,6 +3353,66 @@
         }
       ],
       "type": "object"
+    },
+    "DNSConfig": {
+      "document": "自定义DNS配置",
+      "members": [
+        {
+          "default": "",
+          "document": "DNS 服务器IP地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Nameservers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DNS搜索域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Searches",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对象选项列表，每个对象由name和value（可选）构成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DNSConfigOption",
+          "name": "Options",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DNSConfigOption": {
+      "document": "DNS配置选项",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DataDisk": {
       "document": "描述了k8s节点数据盘相关配置与信息。",
@@ -3239,6 +3822,42 @@
     },
     "DeleteEKSClusterResponse": {
       "document": "DeleteEKSCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKSContainerInstancesRequest": {
+      "document": "DeleteEKSContainerInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的EksCi的Id。 最大数量不超过20",
+          "example": "[\"eksci-xxx\"]",
+          "member": "string",
+          "name": "EksCiIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否释放为EksCi自动创建的Eip",
+          "example": "\"\"",
+          "member": "bool",
+          "name": "ReleaseAutoCreatedEip",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKSContainerInstancesResponse": {
+      "document": "DeleteEKSContainerInstances返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4230,6 +4849,60 @@
       ],
       "type": "object"
     },
+    "DescribeEKSContainerInstanceEventRequest": {
+      "document": "DescribeEKSContainerInstanceEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例id",
+          "example": "无",
+          "member": "string",
+          "name": "EksCiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大事件数量。默认为50，最大取值100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSContainerInstanceEventResponse": {
+      "document": "DescribeEKSContainerInstanceEvent返回参数结构体",
+      "members": [
+        {
+          "document": "事件集合",
+          "example": "无",
+          "member": "Event",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "容器实例id",
+          "example": "无",
+          "member": "string",
+          "name": "EksCiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEKSContainerInstanceRegionsRequest": {
       "document": "DescribeEKSContainerInstanceRegions请求参数结构体",
       "members": [],
@@ -4254,6 +4927,177 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSContainerInstancesRequest": {
+      "document": "DescribeEKSContainerInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，可条件：\n(1)实例名称\nKeyName: eks-ci-name\n类型：String\n\n(2)实例状态\nKeyName: status\n类型：String\n可选值：\"Pending\", \"Running\", \"Succeeded\", \"Failed\"\n\n(3)内网ip\nKeyName: private-ip\n类型：String\n\n(4)EIP地址\nKeyName: eip-address\n类型：String\n\n(5)VpcId\nKeyName: vpc-id\n类型：String",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "容器实例 ID 数组",
+          "example": "[]",
+          "member": "string",
+          "name": "EksCiIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEKSContainerInstancesResponse": {
+      "document": "DescribeEKSContainerInstances返回参数结构体",
+      "members": [
+        {
+          "document": "容器组总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "容器组列表",
+          "example": "[]",
+          "member": "EksCi",
+          "name": "EksCis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEksContainerInstanceLogRequest": {
+      "document": "DescribeEksContainerInstanceLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Eks Container Instance Id，即容器实例Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器名称，单容器的实例可选填。如果为多容器实例，请指定容器名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回最新日志行数，默认500，最大2000。日志内容最大返回 1M 数据。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "Tail",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "UTC时间，RFC3339标准",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是查上一个容器（如果容器退出重启了）",
+          "example": "\"\"",
+          "member": "bool",
+          "name": "Previous",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "查询最近多少秒内的日志",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "SinceSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志总大小限制",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "LimitBytes",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEksContainerInstanceLogResponse": {
+      "document": "DescribeEksContainerInstanceLog返回参数结构体",
+      "members": [
+        {
+          "document": "容器名称",
+          "example": "“”",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LogContent",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5238,6 +6082,268 @@
       ],
       "usage": "both"
     },
+    "EipAttribute": {
+      "document": "用以帮助用户自动创建EIP的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例删除后，EIP是否释放。\nNever表示不释放，其他任意值（包括空字符串）表示释放。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DeletePolicy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIP线路类型。默认值：BGP。\n已开通静态单线IP白名单的用户，可选值：\nCMCC：中国移动\nCTCC：中国电信\nCUCC：中国联通\n注意：仅部分地域支持静态单线IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "InternetServiceProvider",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "EIP出带宽上限，单位：Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EksCi": {
+      "document": "EksContainerInstance实例类型",
+      "members": [
+        {
+          "default": "",
+          "document": "EKS Cotainer Instance Id",
+          "example": "eksci-xxx",
+          "member": "string",
+          "name": "EksCiId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EKS Cotainer Instance Name",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存大小",
+          "example": "\"\"",
+          "member": "float",
+          "name": "Memory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU大小",
+          "example": "\"\"",
+          "member": "float",
+          "name": "Cpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器组的重启策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "返回容器组创建状态：Pending，Running，Succeeded，Failed。其中：\nFailed （运行失败）指的容器组退出，RestartPolilcy为Never， 有容器exitCode非0；\nSucceeded（运行成功）指的是容器组退出了，RestartPolicy为Never或onFailure，所有容器exitCode都为0；\nFailed和Succeeded这两种状态都会停止运行，停止计费。\nPending是创建中，Running是 运行中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接到请求后的系统创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CreationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器全部成功退出后的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SucceededTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Container",
+          "name": "Containers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据卷信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "EksCiVolume",
+          "name": "EksCiVolume",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器组运行的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SecurityContext",
+          "name": "SecurityContext",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器实例绑定的Eip地址，注意可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EipAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU类型。如无使用GPU则不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU卡数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "GpuCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属VPC的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "初始化容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "Container",
+          "name": "InitContainers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "为容器实例关联 CAM 角色，value 填写 CAM 角色名称，容器实例可获取该 CAM 角色包含的权限策略，方便 容器实例 内的程序进行如购买资源、读写存储等云资源操作。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动为用户创建的EipId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AutoCreatedEipId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EksCiRegionInfo": {
       "document": "EksCi地域信息",
       "members": [
@@ -5273,6 +6379,32 @@
         }
       ],
       "usage": "out"
+    },
+    "EksCiVolume": {
+      "document": "EKS Instance Volume,  可选包括CbsVolume和NfsVolume",
+      "members": [
+        {
+          "default": "",
+          "document": "Cbs Volume\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CbsVolume",
+          "name": "CbsVolumes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Nfs Volume\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "NfsVolume",
+          "name": "NfsVolumes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "EksCluster": {
       "document": "弹性集群信息",
@@ -5505,6 +6637,115 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentVariable": {
+      "document": "EnvironmentVariable",
+      "members": [
+        {
+          "default": "",
+          "document": "key",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "val",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Event": {
+      "document": "服务事件",
+      "members": [
+        {
+          "default": "",
+          "document": "pod名称",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件原因内容",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件出现次数",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件第一次出现时间",
+          "member": "string",
+          "name": "FirstTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次出现时间",
+          "member": "string",
+          "name": "LastTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件内容",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Exec": {
+      "document": "探针在容器内执行检测命令参数类型",
+      "members": [
+        {
+          "default": "",
+          "document": "容器内检测的命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ls\"]",
+          "member": "string",
+          "name": "Commands",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5872,6 +7113,42 @@
       ],
       "type": "object"
     },
+    "HttpGet": {
+      "document": "Probe中的HttpGet",
+      "members": [
+        {
+          "default": "",
+          "document": "HttpGet检测的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HttpGet检测的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HTTP or HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IPAddress": {
       "document": "IP 地址",
       "members": [
@@ -5946,6 +7223,52 @@
         }
       ],
       "usage": "out"
+    },
+    "ImageRegistryCredential": {
+      "document": "从镜像仓库拉取镜像的凭据",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像仓库地址",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Server",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ImageRegistryCredential的名字",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Instance": {
       "document": "集群的实例信息",
@@ -6394,6 +7717,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LivenessOrReadinessProbe": {
+      "document": "健康探针",
+      "members": [
+        {
+          "default": "",
+          "document": "探针参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Probe",
+          "name": "Probe",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HttpGet检测参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HttpGet",
+          "name": "HttpGet",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器内检测命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Exec",
+          "name": "Exec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TcpSocket检测的端口参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TcpSocket",
+          "name": "TcpSocket",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6915,6 +8284,52 @@
       ],
       "type": "object"
     },
+    "NfsVolume": {
+      "document": "EKS Instance Nfs Volume",
+      "members": [
+        {
+          "default": "",
+          "document": "nfs volume 数据卷名称",
+          "example": "[]",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NFS 服务器地址",
+          "example": "[]",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NFS 数据卷路径",
+          "example": "[]",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认为 False",
+          "example": "[]",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NodeCountSummary": {
       "document": "节点统计列表",
       "members": [
@@ -7232,6 +8647,57 @@
         }
       ],
       "usage": "out"
+    },
+    "Probe": {
+      "document": "健康检查探测参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Number of seconds after the container has started before liveness probes are initiated.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Number of seconds after which the probe times out.\nDefaults to 1 second. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Minimum consecutive successes for the probe to be considered successful after having failed.Defaults to 1. Must be 1 for liveness. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PrometheusAgentOverview": {
       "document": "托管prometheus agent概览",
@@ -8327,6 +9793,33 @@
       ],
       "usage": "in"
     },
+    "RestartEKSContainerInstancesRequest": {
+      "document": "RestartEKSContainerInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "EKS instance ids",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartEKSContainerInstancesResponse": {
+      "document": "RestartEKSContainerInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RouteInfo": {
       "document": "集群路由对象",
       "members": [
@@ -8509,6 +10002,22 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SecurityContext": {
+      "document": "cloudrun安全特性",
+      "members": [
+        {
+          "default": "",
+          "document": "安全能力清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"NET_ADMIN\", \"SYS_TIME\"]",
+          "member": "Capabilities",
+          "name": "Capabilities",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8751,6 +10260,22 @@
       ],
       "usage": "out"
     },
+    "TcpSocket": {
+      "document": "探针使用TcpSocket检测容器",
+      "members": [
+        {
+          "default": "",
+          "document": "TcpSocket检测的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateClusterVersionRequest": {
       "document": "UpdateClusterVersion请求参数结构体",
       "members": [
@@ -8913,6 +10438,96 @@
     "UpdateEKSClusterResponse": {
       "document": "UpdateEKSCluster返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKSContainerInstanceRequest": {
+      "document": "UpdateEKSContainerInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器实例 ID",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例重启策略： Always(总是重启)、Never(从不重启)、OnFailure(失败时重启)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据卷，包含NfsVolume数组和CbsVolume数组",
+          "example": "\"\"",
+          "member": "EksCiVolume",
+          "name": "EksCiVolume",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器组",
+          "example": "\"\"",
+          "member": "Container",
+          "name": "Containers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Init 容器组",
+          "example": "\"\"",
+          "member": "Container",
+          "name": "InitContainers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "容器实例名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库凭证数组",
+          "example": "\"\"",
+          "member": "ImageRegistryCredential",
+          "name": "ImageRegistryCredentials",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKSContainerInstanceResponse": {
+      "document": "UpdateEKSContainerInstance返回参数结构体",
+      "members": [
+        {
+          "document": "容器实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EksCiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9103,6 +10718,72 @@
         }
       ],
       "usage": "out"
+    },
+    "VolumeMount": {
+      "document": "数据卷挂载路径信息",
+      "members": [
+        {
+          "default": "",
+          "document": "volume名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MountPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否只读\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "传播挂载方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MountPropagation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子路径表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubPathExpr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

@@ -6732,7 +6732,7 @@
         },
         {
           "default": "",
-          "document": "域名解析状态。True 表示正常解析，False 表示解析失败。",
+          "document": "域名解析状态。1 表示正常解析，0 表示解析失败。",
           "example": "1",
           "member": "int64",
           "name": "Status",

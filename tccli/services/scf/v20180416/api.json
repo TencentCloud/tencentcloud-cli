@@ -678,6 +678,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像部署时配置TCR镜像信息",
+          "example": "TCR镜像配置",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1006,7 +1016,7 @@
         },
         {
           "default": "",
-          "document": "函数初始化超时时间",
+          "document": "函数初始化超时时间，默认 65s，镜像部署函数默认 90s。",
           "example": "3",
           "member": "int64",
           "name": "InitTimeout",
@@ -2957,6 +2967,72 @@
       ],
       "type": "object"
     },
+    "ImageConfig": {
+      "document": "TCR镜像信息描述",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像仓库类型，个人版或者企业版：personal/enterprise",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "{domain}/{namespace}/{imageName}:{tag}@{digest}",
+          "example": "tcr.tencentcloudcr.com/namespace/test:latest",
+          "member": "string",
+          "name": "ImageUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于企业版TCR获取镜像拉取临时凭证，ImageType为\"enterprise\"时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用的ENTRYPOINT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"entrypoint.sh\"",
+          "member": "string",
+          "name": "EntryPoint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "entrypoint执行命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"'",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InvokeFunctionRequest": {
       "document": "InvokeFunction请求参数结构体",
       "members": [
@@ -4052,6 +4128,7 @@
         {
           "default": "",
           "document": "函数总数",
+          "example": "0",
           "member": "int64",
           "name": "FunctionsCount",
           "required": true,
@@ -4061,6 +4138,7 @@
         {
           "default": "",
           "document": "Trigger信息",
+          "example": "无",
           "member": "TriggerCount",
           "name": "Trigger",
           "required": true,
@@ -4070,6 +4148,7 @@
         {
           "default": "",
           "document": "Namespace名称",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -4079,6 +4158,7 @@
         {
           "default": "",
           "document": "并发量",
+          "example": "0",
           "member": "int64",
           "name": "ConcurrentExecutions",
           "required": true,
@@ -4088,6 +4168,7 @@
         {
           "default": "",
           "document": "Timeout限制",
+          "example": "0",
           "member": "int64",
           "name": "TimeoutLimit",
           "required": true,
@@ -4097,6 +4178,7 @@
         {
           "default": "",
           "document": "测试事件限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "TestModelLimit",
           "required": true,
@@ -4106,6 +4188,7 @@
         {
           "default": "",
           "document": "初始化超时限制",
+          "example": "0",
           "member": "int64",
           "name": "InitTimeoutLimit",
           "required": true,
@@ -4115,6 +4198,7 @@
         {
           "default": "",
           "document": "异步重试次数限制",
+          "example": "0",
           "member": "int64",
           "name": "RetryNumLimit",
           "required": true,
@@ -4124,6 +4208,7 @@
         {
           "default": "",
           "document": "异步重试消息保留时间下限",
+          "example": "0",
           "member": "int64",
           "name": "MinMsgTTL",
           "required": true,
@@ -4133,6 +4218,7 @@
         {
           "default": "",
           "document": "异步重试消息保留时间上限",
+          "example": "0",
           "member": "int64",
           "name": "MaxMsgTTL",
           "required": true,
@@ -5454,7 +5540,7 @@
         },
         {
           "default": "",
-          "document": "函数初始化执行超时时间，默认15秒",
+          "document": "函数初始化执行超时时间",
           "example": "15",
           "member": "int64",
           "name": "InitTimeout",

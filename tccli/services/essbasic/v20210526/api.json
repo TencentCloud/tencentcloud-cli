@@ -325,6 +325,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "控制台指定模块，文件/合同管理:\"DOCUMENT\"，模版管理:\"TEMPLATE\"，印章管理:\"SEAL\"，组织架构/人员:\"OPERATOR\"，空字符串：\"账号信息\"",
+          "example": "无",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "控制台指定模块Id",
+          "example": "无",
+          "member": "string",
+          "name": "ModuleId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -463,7 +481,7 @@
         },
         {
           "default": "",
-          "document": "签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面",
+          "document": "签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -523,6 +541,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模版唯一标识,可以通过模版列表处获取",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -706,6 +733,26 @@
           "example": "https://qq.com",
           "member": "string",
           "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人类型，PERSON和ORGANIZATION",
+          "example": "PERSON",
+          "member": "string",
+          "name": "ApproverType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户侧第三方id",
+          "example": "open_test_id",
+          "member": "string",
+          "name": "OpenId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -964,6 +1011,92 @@
       ],
       "usage": "in"
     },
+    "Recipient": {
+      "document": "签署参与者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署人唯一标识",
+          "example": "ed68bc6904fbd4795b4658c480214e4e",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人",
+          "example": "ORGANIZATION",
+          "member": "string",
+          "name": "RecipientType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署方备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要校验",
+          "example": "true",
+          "member": "bool",
+          "name": "RequireValidation",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否必须填写",
+          "example": "true",
+          "member": "bool",
+          "name": "RequireSign",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署类型",
+          "example": "0",
+          "member": "int64",
+          "name": "SignType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署顺序：数字越小优先级越高",
+          "example": "0",
+          "member": "int64",
+          "name": "RoutingOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SignUrlInfo": {
       "document": "签署链接内容",
       "members": [
@@ -1080,6 +1213,32 @@
       ],
       "usage": "out"
     },
+    "SyncFailReason": {
+      "document": "同步经办人失败原因",
+      "members": [
+        {
+          "default": "",
+          "document": "经办人Id",
+          "example": "operator_id1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因\n例如：Id不符合规范、证件号码不合法等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Id不符合规范",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SyncProxyOrganizationOperatorsRequest": {
       "document": "SyncProxyOrganizationOperators请求参数结构体",
       "members": [
@@ -1125,6 +1284,24 @@
     "SyncProxyOrganizationOperatorsResponse": {
       "document": "SyncProxyOrganizationOperators返回参数结构体",
       "members": [
+        {
+          "document": "Status 同步状态,全部同步失败接口会直接报错\n1-成功 \n2-部分成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "同步失败经办人及其失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SyncFailReason",
+          "name": "FailedList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1268,6 +1445,26 @@
           "name": "CreatedOn",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型：1-静默签；2-静默签授权；3-普通模版",
+          "example": "3",
+          "member": "int64",
+          "name": "TemplateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板中的流程参与人信息",
+          "example": "无",
+          "member": "Recipient",
+          "name": "Recipients",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
