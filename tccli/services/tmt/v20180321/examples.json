@@ -3,7 +3,7 @@
     "ImageTranslate": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=ImageTranslate\r\n&SessionUuid=session-00001\r\n&Scene=doc\r\n&Source=zh\r\n&Target=en\r\n&ProjectId=0\r\n&Data=iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\r\n......\r\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\r\n&<公共请求参数>",
+        "input": "https://tmt.tencentcloudapi.com/?Action=ImageTranslate\n&SessionUuid=session-00001\n&Scene=doc\n&Source=zh\n&Target=en\n&ProjectId=0\n&Data=iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ\n......\nCCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ImageRecord\": {\n            \"Value\": [\n                {\n                    \"H\": 21,\n                    \"SourceText\": \" 我们可以比较容易的将字典(ict)类型转为字符串(string)类型。\",\n                    \"TargetText\": \"We can easily convert the dictionary icttype to the string) type.\",\n                    \"W\": 373,\n                    \"X\": 12,\n                    \"Y\": 53\n                }\n            ]\n        },\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"SessionUuid\": \"session-00001\",\n        \"RequestId\": \"6e698139-615a-4d42-8dea-6bfada24e83c\"\n    }\n}",
         "title": "API调用"
       }
@@ -27,7 +27,7 @@
     "TextTranslate": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslate\r\n&ProjectId=0\r\n&Source=en\r\n&SourceText=hello\r\n&Target=zh\r\n&<公共请求参数>",
+        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslate\n&ProjectId=0\n&Source=en\n&SourceText=hello\n&Target=zh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TargetText\": \"你好\",\n        \"Source\": \"en\",\n        \"Target\": \"zh\",\n        \"RequestId\": \"000ee211-f19e-4a34-a214-e2bb1122d248\"\n    }\n}",
         "title": "API调用"
       }

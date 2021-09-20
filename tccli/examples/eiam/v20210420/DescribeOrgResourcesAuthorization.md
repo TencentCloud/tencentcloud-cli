@@ -18,6 +18,7 @@ Output:
         "ApplicationId": "f6f29e24-ffc2-456c-b815-532291bc96af",
         "OrgNodeId": "46165edc-4fc0-46d7-8973-453fb58fe24f",
         "OrgNodeName": "csg",
+        "TotalCount": 1,
         "OrgNodePath": "tencent/csg",
         "AuthorizationOrgResourceList": [
             {

@@ -36,7 +36,13 @@ Output:
                 "CreatedTime": "2020-10-20T08:19:31Z",
                 "InternetChargeType": "BANDWIDTH_PACKAGE",
                 "Bandwidth": 65535,
-                "InternetServiceProvider": "BGP"
+                "InternetServiceProvider": "BGP",
+                "TagSet": [
+                    {
+                        "Key": "tag1",
+                        "Value": "value1"
+                    }
+                ]
             },
             {
                 "AddressId": "eip-lshmvwlc",
@@ -59,7 +65,13 @@ Output:
                 "CreatedTime": "2020-10-20T08:19:29Z",
                 "InternetChargeType": "BANDWIDTH_PACKAGE",
                 "Bandwidth": 65535,
-                "InternetServiceProvider": "BGP"
+                "InternetServiceProvider": "BGP",
+                "TagSet": [
+                    {
+                        "Key": "tag2",
+                        "Value": "value2"
+                    }
+                ]
             }
         ],
         "RequestId": "42bc5893-70ff-4f13-bcc3-1308dedab8f6"
