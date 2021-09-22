@@ -21,67 +21,67 @@ Output:
     "Response": {
         "Templates": [
             {
-                "Description": "xx",
+                "Description": "测试模版",
                 "Recipients": [
                     {
-                        "RecipientType": "xx",
-                        "Description": "xx",
+                        "RecipientType": "INDIVIDUAL",
+                        "Description": "签署人信息",
                         "RoutingOrder": 0,
                         "SignType": 0,
-                        "RecipientId": "xx",
+                        "RecipientId": "yDxlTUyKQWX7hrUupHcb7Cfz0LrHa7uB",
                         "RequireSign": true,
                         "RequireValidation": true,
-                        "RoleName": "xx"
+                        "RoleName": "个人签署方"
                     }
                 ],
-                "Creator": "xx",
+                "Creator": "鹅鹅子",
                 "CreatedOn": 1234567890,
-                "TemplateName": "xx",
+                "TemplateName": "测试模版",
                 "SignComponents": [
                     {
-                        "ComponentValue": "xx",
+                        "ComponentValue": "",
                         "GenerateMode": "xx",
                         "ComponentWidth": 1.1,
                         "FileIndex": 0,
-                        "ComponentName": "xx",
+                        "ComponentName": "文本",
                         "ComponentDateFontSize": 0,
-                        "ComponentExtra": "xx",
-                        "ComponentType": "xx",
+                        "ComponentExtra": "",
+                        "ComponentType": "SIGN_SIGNATURE",
                         "ComponentPage": 1,
                         "ComponentDescription": "xx",
                         "ComponentRequired": true,
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "ComponentId": "xx",
-                        "DocumentId": "xx",
+                        "ComponentId": "componentId_1",
+                        "DocumentId": "",
                         "ComponentHeight": 12.142
                     }
                 ],
                 "TemplateType": 0,
                 "Components": [
                     {
-                        "ComponentValue": "xx",
-                        "GenerateMode": "xx",
+                        "ComponentValue": "yDxlTUyKQWX76SUupHcb7uS5xe8mbiVR",
+                        "GenerateMode": "",
                         "ComponentWidth": 1.1,
                         "FileIndex": 0,
-                        "ComponentName": "xx",
+                        "ComponentName": "盖章",
                         "ComponentDateFontSize": 0,
-                        "ComponentExtra": "xx",
-                        "ComponentType": "xx",
+                        "ComponentExtra": "",
+                        "ComponentType": "SIGN_SEAL",
                         "ComponentPage": 1,
                         "ComponentDescription": "xx",
                         "ComponentRequired": true,
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
-                        "ComponentId": "xx",
-                        "DocumentId": "xx",
+                        "ComponentId": "componentId_2",
+                        "DocumentId": "",
                         "ComponentHeight": 12.142
                     }
                 ],
-                "TemplateId": "xx"
+                "TemplateId": "yDxlTUyKQWX7hOUupHcb78bbdrxhT5th"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "s1631799397530469887"
     }
 }
 ```

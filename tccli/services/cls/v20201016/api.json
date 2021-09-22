@@ -3025,7 +3025,7 @@
       "members": [
         {
           "default": "",
-          "document": "<br><li> name\n\n按照【采集配置名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> configId\n\n按照【采集配置ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<br><li> configName\n\n按照【采集配置名称】进行模糊匹配过滤。\n类型：String\n\n必选：否\n\n<br><li> configId\n\n按照【采集配置ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5802,7 +5802,7 @@
         },
         {
           "default": "",
-          "document": "单次查询返回的日志条数，最大值为100",
+          "document": "单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -5852,7 +5852,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "日志查询结果是否全部返回",
+          "document": "原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义",
           "example": "1",
           "member": "bool",
           "name": "ListOver",

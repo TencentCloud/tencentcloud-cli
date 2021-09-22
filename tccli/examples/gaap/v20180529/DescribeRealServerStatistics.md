@@ -15,11 +15,41 @@ Output:
 ```
 {
     "Response": {
-        "StatisticsData": [
-            {},
-            {}
+        "RsStatisticsData": [
+            {
+                "MetricData": [
+                    {
+                        "Data": 0.0,
+                        "Time": 1
+                    },
+                    {
+                        "Data": 0.0,
+                        "Time": 1
+                    }
+                ],
+                "MetricName": "xx"
+            },
+            {
+                "MetricData": [
+                    {
+                        "Data": 0.0,
+                        "Time": 1
+                    },
+                    {
+                        "Data": 0.0,
+                        "Time": 1
+                    }
+                ],
+                "MetricName": "xx"
+            }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd"
+        "RequestId": "xx",
+        "StatisticsData": [
+            {
+                "Data": 0.0,
+                "Time": 1
+            }
+        ]
     }
 }
 ```

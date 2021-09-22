@@ -222,6 +222,12 @@
       "name": "获取网络攻击威胁类型列表",
       "output": "DescribeAttackVulTypeListResponse"
     },
+    "DescribeAvailableExpertServiceDetail": {
+      "document": "专家服务-可用订单详情",
+      "input": "DescribeAvailableExpertServiceDetailRequest",
+      "name": "可用订单详情",
+      "output": "DescribeAvailableExpertServiceDetailResponse"
+    },
     "DescribeBanMode": {
       "document": "获取爆破阻断模式",
       "input": "DescribeBanModeRequest",
@@ -240,6 +246,18 @@
       "name": "获取阻断按钮状态",
       "output": "DescribeBanStatusResponse"
     },
+    "DescribeBanWhiteList": {
+      "document": "获取阻断白名单列表",
+      "input": "DescribeBanWhiteListRequest",
+      "name": "获取阻断白名单列表",
+      "output": "DescribeBanWhiteListResponse"
+    },
+    "DescribeBaselineAnalysisData": {
+      "document": "根据基线策略id查询基线策略数据概览统计",
+      "input": "DescribeBaselineAnalysisDataRequest",
+      "name": "基线策略概览统计数据查询",
+      "output": "DescribeBaselineAnalysisDataResponse"
+    },
     "DescribeBaselineBasicInfo": {
       "document": "查询基线基础信息列表",
       "input": "DescribeBaselineBasicInfoRequest",
@@ -252,6 +270,24 @@
       "name": "查询基线详情",
       "output": "DescribeBaselineDetailResponse"
     },
+    "DescribeBaselineEffectHostList": {
+      "document": "根据基线id查询基线影响主机列表",
+      "input": "DescribeBaselineEffectHostListRequest",
+      "name": "基线影响主机列表",
+      "output": "DescribeBaselineEffectHostListResponse"
+    },
+    "DescribeBaselineHostTop": {
+      "document": "接口返回TopN的风险服务器",
+      "input": "DescribeBaselineHostTopRequest",
+      "name": "服务器风险top接口",
+      "output": "DescribeBaselineHostTopResponse"
+    },
+    "DescribeBaselineList": {
+      "document": "查询基线列表信息",
+      "input": "DescribeBaselineListRequest",
+      "name": "查询基线列表",
+      "output": "DescribeBaselineListResponse"
+    },
     "DescribeBaselineRule": {
       "document": "根据基线id查询下属检测项信息",
       "input": "DescribeBaselineRuleRequest",
@@ -263,6 +299,24 @@
       "input": "DescribeBaselineScanScheduleRequest",
       "name": "基线检测进度查询",
       "output": "DescribeBaselineScanScheduleResponse"
+    },
+    "DescribeBaselineStrategyDetail": {
+      "document": "根据基线策略id查询策略详情",
+      "input": "DescribeBaselineStrategyDetailRequest",
+      "name": "查询基线策略详情",
+      "output": "DescribeBaselineStrategyDetailResponse"
+    },
+    "DescribeBaselineStrategyList": {
+      "document": "查询一个用户下的基线策略信息",
+      "input": "DescribeBaselineStrategyListRequest",
+      "name": "用户基线策略列表查询",
+      "output": "DescribeBaselineStrategyListResponse"
+    },
+    "DescribeBaselineTop": {
+      "document": "根据策略id查询基线检测项TOP",
+      "input": "DescribeBaselineTopRequest",
+      "name": "基线检测项TOP",
+      "output": "DescribeBaselineTopResponse"
     },
     "DescribeBashEvents": {
       "document": "获取高危命令列表",
@@ -282,6 +336,12 @@
       "name": "获取密码破解列表",
       "output": "DescribeBruteAttackListResponse"
     },
+    "DescribeBruteAttackRules": {
+      "document": "获取爆破破解规则",
+      "input": "DescribeBruteAttackRulesRequest",
+      "name": "获取爆破破解规则",
+      "output": "DescribeBruteAttackRulesResponse"
+    },
     "DescribeComponentStatistics": {
       "document": "本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。",
       "input": "DescribeComponentStatisticsRequest",
@@ -300,11 +360,29 @@
       "name": "获取ES查询文档列表",
       "output": "DescribeESHitsResponse"
     },
+    "DescribeEmergencyResponseList": {
+      "document": "专家服务-应急响应列表",
+      "input": "DescribeEmergencyResponseListRequest",
+      "name": "应急响应列表",
+      "output": "DescribeEmergencyResponseListResponse"
+    },
     "DescribeEmergencyVulList": {
       "document": "获取应急漏洞列表",
       "input": "DescribeEmergencyVulListRequest",
       "name": "应急漏洞列表",
       "output": "DescribeEmergencyVulListResponse"
+    },
+    "DescribeExpertServiceList": {
+      "document": "专家服务-安全管家列表",
+      "input": "DescribeExpertServiceListRequest",
+      "name": "安全管家列表",
+      "output": "DescribeExpertServiceListResponse"
+    },
+    "DescribeExpertServiceOrderList": {
+      "document": "专家服务-专家服务订单列表",
+      "input": "DescribeExpertServiceOrderListRequest",
+      "name": "专家服务订单列表",
+      "output": "DescribeExpertServiceOrderListResponse"
     },
     "DescribeExportMachines": {
       "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
@@ -341,6 +419,12 @@
       "input": "DescribeIgnoreBaselineRuleRequest",
       "name": "查询忽略检测项信息",
       "output": "DescribeIgnoreBaselineRuleResponse"
+    },
+    "DescribeIgnoreRuleEffectHostList": {
+      "document": "根据检测项id与筛选条件查询忽略检测项影响主机列表信息",
+      "input": "DescribeIgnoreRuleEffectHostListRequest",
+      "name": "查询忽略检测项影响主机列表",
+      "output": "DescribeIgnoreRuleEffectHostListResponse"
     },
     "DescribeImportMachineInfo": {
       "document": "查询批量导入机器信息",
@@ -407,6 +491,12 @@
       "input": "DescribeMalWareListRequest",
       "name": "获取木马列表",
       "output": "DescribeMalWareListResponse"
+    },
+    "DescribeMaliciousRequestWhiteList": {
+      "document": "查询恶意请求白名单列表",
+      "input": "DescribeMaliciousRequestWhiteListRequest",
+      "name": "查询恶意请求白名单列表",
+      "output": "DescribeMaliciousRequestWhiteListResponse"
     },
     "DescribeMalwareFile": {
       "document": "获取木马文件下载地址",
@@ -492,6 +582,12 @@
       "name": "查询防护目录关联服务器",
       "output": "DescribeProtectDirRelatedServerResponse"
     },
+    "DescribeProtectNetList": {
+      "document": "专家服务-旗舰护网列表",
+      "input": "DescribeProtectNetListRequest",
+      "name": "旗舰护网列表",
+      "output": "DescribeProtectNetListResponse"
+    },
     "DescribeReverseShellEvents": {
       "document": "获取反弹Shell列表",
       "input": "DescribeReverseShellEventsRequest",
@@ -539,6 +635,12 @@
       "input": "DescribeScanTaskDetailsRequest",
       "name": "查询扫描任务详情",
       "output": "DescribeScanTaskDetailsResponse"
+    },
+    "DescribeScanTaskStatus": {
+      "document": "DescribeScanTaskStatus 查询机器扫描状态列表用于过滤筛选",
+      "input": "DescribeScanTaskStatusRequest",
+      "name": "查询机器扫描状态列表",
+      "output": "DescribeScanTaskStatusResponse"
     },
     "DescribeScanVulSetting": {
       "document": "查询定期检测的配置",
@@ -641,6 +743,12 @@
       "input": "DescribeVulHostCountScanTimeRequest",
       "name": "获取待处理漏洞数+影响主机数",
       "output": "DescribeVulHostCountScanTimeResponse"
+    },
+    "DescribeVulHostTop": {
+      "document": "获取服务器风险top列表",
+      "input": "DescribeVulHostTopRequest",
+      "name": "获取服务器风险top列表",
+      "output": "DescribeVulHostTopResponse"
     },
     "DescribeVulInfoCvss": {
       "document": "漏洞详情，带CVSS版本",
@@ -797,6 +905,12 @@
       "input": "ExportScanTaskDetailsRequest",
       "name": "导出扫描任务详情",
       "output": "ExportScanTaskDetailsResponse"
+    },
+    "ExportSecurityTrends": {
+      "document": "导出风险趋势",
+      "input": "ExportSecurityTrendsRequest",
+      "name": "导出风险趋势",
+      "output": "ExportSecurityTrendsResponse"
     },
     "ExportTasks": {
       "document": "用于异步导出数据量大的日志文件",
@@ -1199,6 +1313,102 @@
       ],
       "usage": "out"
     },
+    "BanWhiteListDetail": {
+      "document": "阻断白名单展示列表，包含了机器的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "白名单ID",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单别名",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "阻断来源IP",
+          "member": "string",
+          "name": "SrcIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改白名单时间",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建白名单时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单是否全局",
+          "member": "bool",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器的UUID",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机安全程序的UUID",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器IP",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机器名称",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BaselineBasicInfo": {
       "document": "基线基础信息",
       "members": [
@@ -1278,6 +1488,255 @@
           "name": "Name",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineEffectHost": {
+      "document": "基线影响主机信息",
+      "members": [
+        {
+          "default": "",
+          "document": "通过项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PassCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "FailCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次检测事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FirstScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测中状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineEventLevelInfo": {
+      "document": "服务器风险Top的主机信息",
+      "members": [
+        {
+          "default": "",
+          "document": "危害等级：1-低危；2-中危；3-高危；4-严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "EventLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineHostTopList": {
+      "document": "基线影响服务器列表数据",
+      "members": [
+        {
+          "default": "",
+          "document": "事件等级与次数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BaselineEventLevelInfo",
+          "name": "EventLevelList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算权重的分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineInfo": {
+      "document": "基线信息",
+      "members": [
+        {
+          "default": "",
+          "document": "基线名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "危害等级：1-低危；2-中危；3-高危；4-严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测项数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "影响服务器数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通过状态:0:未通过,1:已通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基线id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测中状态: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "MaxStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基线风险项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "BaselineFailCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1375,6 +1834,48 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineRuleTopInfo": {
+      "document": "基线检测项TOP信息",
+      "members": [
+        {
+          "default": "",
+          "document": "基线检测项名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测项危害等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测项id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1960,6 +2461,57 @@
         }
       ],
       "usage": "in"
+    },
+    "BruteAttackRuleList": {
+      "document": "暴力破解判定规则列表",
+      "members": [
+        {
+          "default": "",
+          "document": "爆破事件发生的时间范围，单位：秒",
+          "member": "uint64",
+          "name": "TimeRange",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "爆破事件失败次数",
+          "member": "uint64",
+          "name": "LoginFailTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否为空，为空则填充默认规则",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "爆破事件发生的时间范围，单位：秒（默认规则）",
+          "member": "uint64",
+          "name": "TimeRangeDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "爆破事件失败次数（默认规则）",
+          "member": "uint64",
+          "name": "LoginFailTimesDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CancelIgnoreVulRequest": {
       "document": "CancelIgnoreVul请求参数结构体",
@@ -3784,6 +4336,77 @@
       ],
       "type": "object"
     },
+    "DescribeAvailableExpertServiceDetailRequest": {
+      "document": "DescribeAvailableExpertServiceDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAvailableExpertServiceDetailResponse": {
+      "document": "DescribeAvailableExpertServiceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "安全管家订单",
+          "example": "{}",
+          "member": "ExpertServiceOrderInfo",
+          "name": "ExpertService",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应急响应可用次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "EmergencyResponse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "旗舰护网可用次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectNet",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否购买过安全管家",
+          "example": "true",
+          "member": "bool",
+          "name": "ExpertServiceBuy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否购买过应急响应",
+          "example": "true",
+          "member": "bool",
+          "name": "EmergencyResponseBuy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否哦购买过旗舰护网",
+          "example": "true",
+          "member": "bool",
+          "name": "ProtectNetBuy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBanModeRequest": {
       "document": "DescribeBanMode请求参数结构体",
       "members": [],
@@ -3890,6 +4513,141 @@
       ],
       "type": "object"
     },
+    "DescribeBanWhiteListRequest": {
+      "document": "DescribeBanWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBanWhiteListResponse": {
+      "document": "DescribeBanWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白名单列表",
+          "example": "[]",
+          "member": "BanWhiteListDetail",
+          "name": "WhiteList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineAnalysisDataRequest": {
+      "document": "DescribeBaselineAnalysisData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "基线策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineAnalysisDataResponse": {
+      "document": "DescribeBaselineAnalysisData返回参数结构体",
+      "members": [
+        {
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LatestScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否全部服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务器总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScanHostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "检测项总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScanRuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否是第一次检测  1是 0不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IfFirstScan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBaselineBasicInfoRequest": {
       "document": "DescribeBaselineBasicInfo请求参数结构体",
       "members": [
@@ -3951,6 +4709,204 @@
           "name": "BaselineDetail",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineEffectHostListRequest": {
+      "document": "DescribeBaselineEffectHostList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数 最大100条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "基线id",
+          "example": "1",
+          "member": "uint64",
+          "name": "BaselineId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>AliasName- String- 主机别名</li>\n<li>Status- Uint- 1已通过  0未通过 5检测中</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主机uuid数组",
+          "example": "[]",
+          "member": "string",
+          "name": "UuidList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineEffectHostListResponse": {
+      "document": "DescribeBaselineEffectHostList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "影响服务器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "BaselineEffectHost",
+          "name": "EffectHostList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineHostTopRequest": {
+      "document": "DescribeBaselineHostTop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "动态top值",
+          "example": "1",
+          "member": "uint64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineHostTopResponse": {
+      "document": "DescribeBaselineHostTop返回参数结构体",
+      "members": [
+        {
+          "document": "主机基线策略事件Top\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "BaselineHostTopList",
+          "name": "BaselineHostTopList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineListRequest": {
+      "document": "DescribeBaselineList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数 最大100条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 处理状态1已通过 0未通过</li>\n<li>Level - Uint64[] - 处理状态1已通过 0未通过</li>BaselineName \n<li>BaselineName  - String - 基线名称</li>\n<li>Quuid- String - 主机quuid</li>\n<li>Uuid- String - 主机uuid</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineListResponse": {
+      "document": "DescribeBaselineList返回参数结构体",
+      "members": [
+        {
+          "document": "基线信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "BaselineInfo",
+          "name": "BaselineList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页查询记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -4095,6 +5051,231 @@
           "name": "Schedule",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineStrategyDetailRequest": {
+      "document": "DescribeBaselineStrategyDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户基线策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineStrategyDetailResponse": {
+      "document": "DescribeBaselineStrategyDetail返回参数结构体",
+      "members": [
+        {
+          "document": "策略扫描通过率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PassRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略扫描周期(天)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ScanCycle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "定期检测时间, 该时间下发扫描\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ScanAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsGlobal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "云主机类型：\ncvm：腾讯云服务器\nbm：裸金属\necm：边缘计算主机\nlh: 轻量应用服务器\nohter: 混合云机器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主机地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户该策略下的所有主机id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Quuids",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户该策略下所有的基线id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "CategoryIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "1 表示扫描过, 0没扫描过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IfScanned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineStrategyListRequest": {
+      "document": "DescribeBaselineStrategyList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数 最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则开关，1：打开 0：关闭  2:全部",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enabled",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineStrategyListResponse": {
+      "document": "DescribeBaselineStrategyList返回参数结构体",
+      "members": [
+        {
+          "document": "分页查询记录的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户策略信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Strategy",
+          "name": "StrategyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineTopRequest": {
+      "document": "DescribeBaselineTop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "动态top值",
+          "example": "5",
+          "member": "uint64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineTopResponse": {
+      "document": "DescribeBaselineTop返回参数结构体",
+      "members": [
+        {
+          "document": "检测项Top列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "BaselineRuleTopInfo",
+          "name": "RuleTopList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4304,6 +5485,32 @@
       ],
       "type": "object"
     },
+    "DescribeBruteAttackRulesRequest": {
+      "document": "DescribeBruteAttackRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBruteAttackRulesResponse": {
+      "document": "DescribeBruteAttackRules返回参数结构体",
+      "members": [
+        {
+          "document": "爆破阻断规则列表",
+          "example": "xxx",
+          "member": "BruteAttackRuleList",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeComponentStatisticsRequest": {
       "document": "DescribeComponentStatistics请求参数结构体",
       "members": [
@@ -4457,6 +5664,87 @@
       ],
       "type": "object"
     },
+    "DescribeEmergencyResponseListRequest": {
+      "document": "DescribeEmergencyResponseList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序步长",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方法",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段 StartTime，EndTime",
+          "example": "StartTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEmergencyResponseListResponse": {
+      "document": "DescribeEmergencyResponseList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应急响应列表",
+          "example": "无",
+          "member": "EmergencyResponseInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEmergencyVulListRequest": {
       "document": "DescribeEmergencyVulList请求参数结构体",
       "members": [
@@ -4537,6 +5825,150 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertServiceListRequest": {
+      "document": "DescribeExpertServiceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序步长",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方法",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段 StartTime，EndTime",
+          "example": "StartTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertServiceListResponse": {
+      "document": "DescribeExpertServiceList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全管家数据",
+          "example": "无",
+          "member": "SecurityButlerInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertServiceOrderListRequest": {
+      "document": "DescribeExpertServiceOrderList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>InquireType- String - 是否必填：否 - 订单类型过滤，</li>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页条数 最大100条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页步长",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertServiceOrderListResponse": {
+      "document": "DescribeExpertServiceOrderList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单列表",
+          "example": "无",
+          "member": "ExpertServiceOrderInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5022,6 +6454,87 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIgnoreRuleEffectHostListRequest": {
+      "document": "DescribeIgnoreRuleEffectHostList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数 最大100条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "检测项id",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>AliasName- String- 主机别名</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主机标签名",
+          "example": "xxx",
+          "member": "string",
+          "name": "TagNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIgnoreRuleEffectHostListResponse": {
+      "document": "DescribeIgnoreRuleEffectHostList返回参数结构体",
+      "members": [
+        {
+          "document": "忽略检测项影响主机列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IgnoreRuleEffectHostInfo",
+          "name": "IgnoreRuleEffectHostList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页查询记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5828,6 +7341,69 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousRequestWhiteListRequest": {
+      "document": "DescribeMaliciousRequestWhiteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n\n<li>Domain  - String - 基线名称</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMaliciousRequestWhiteListResponse": {
+      "document": "DescribeMaliciousRequestWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "白名单信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MaliciousRequestWhiteListInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页查询记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6716,6 +8292,87 @@
       ],
       "type": "object"
     },
+    "DescribeProtectNetListRequest": {
+      "document": "DescribeProtectNetList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序步长",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方法",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段 StartTime，EndTime",
+          "example": "StartTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectNetListResponse": {
+      "document": "DescribeProtectNetList返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全管家数据",
+          "example": "无",
+          "member": "ProtectNetInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReverseShellEventsRequest": {
       "document": "DescribeReverseShellEvents请求参数结构体",
       "members": [
@@ -7299,6 +8956,42 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanTaskStatusRequest": {
+      "document": "DescribeScanTaskStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模块类型 当前提供 Malware 木马 , Vul 漏洞 , Baseline 基线",
+          "example": "Malware",
+          "member": "string",
+          "name": "ModuleType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanTaskStatusResponse": {
+      "document": "DescribeScanTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "任务扫描状态列表",
+          "example": "[]",
+          "member": "TaskStatus",
+          "name": "State",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8365,6 +10058,51 @@
       ],
       "type": "object"
     },
+    "DescribeVulHostTopRequest": {
+      "document": "DescribeVulHostTop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取top值，1-100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞",
+          "example": "2",
+          "member": "uint64",
+          "name": "VulCategory",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulHostTopResponse": {
+      "document": "DescribeVulHostTop返回参数结构体",
+      "members": [
+        {
+          "document": "服务器风险top列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VulHostTopInfo",
+          "name": "VulHostTopList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVulInfoCvssRequest": {
       "document": "DescribeVulInfoCvss请求参数结构体",
       "members": [
@@ -9119,6 +10857,72 @@
       ],
       "usage": "out"
     },
+    "EmergencyResponseInfo": {
+      "document": "专家服务-应急响应信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "cve2021-4451451",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机个数",
+          "example": "12",
+          "member": "uint64",
+          "name": "HostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务状态 0未启动，·响应中，2响应完成",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务开始时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务结束时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报告下载地址",
+          "example": "http://1.pdf",
+          "member": "string",
+          "name": "ReportPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EmergencyVul": {
       "document": "应急漏洞信息",
       "members": [
@@ -9198,6 +11002,82 @@
           "example": "无",
           "member": "uint64",
           "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExpertServiceOrderInfo": {
+      "document": "专家服务订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单id",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单类型 1应急 2 旗舰护网 3 安全管家",
+          "example": "1",
+          "member": "uint64",
+          "name": "InquireType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "InquireNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务开始时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务结束时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务时长几个月",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态 0 未启动 1 服务中 2已过期 3完成，4退费销毁",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -10096,6 +11976,51 @@
       ],
       "type": "object"
     },
+    "ExportSecurityTrendsRequest": {
+      "document": "ExportSecurityTrends请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间。",
+          "example": "xxx",
+          "member": "date",
+          "name": "BeginDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间。",
+          "example": "xxx",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportSecurityTrendsResponse": {
+      "document": "ExportSecurityTrends返回参数结构体",
+      "members": [
+        {
+          "document": "导出文件下载链接地址。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExportTasksRequest": {
       "document": "ExportTasks请求参数结构体",
       "members": [
@@ -10822,6 +12747,75 @@
       ],
       "type": "object"
     },
+    "IgnoreRuleEffectHostInfo": {
+      "document": "忽略检测项影响主机信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "危害等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后检测事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InquiryPriceOpenProVersionPrepaidRequest": {
       "document": "InquiryPriceOpenProVersionPrepaid请求参数结构体",
       "members": [
@@ -11514,6 +13508,62 @@
           "example": "xxx",
           "member": "string",
           "name": "LatestScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaliciousRequestWhiteListInfo": {
+      "document": "恶意请求白名单列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "白名单id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.tapd.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注1",
+          "member": "string",
+          "name": "Mark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-02-08 14:46:25",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-02-08 14:46:25",
+          "member": "string",
+          "name": "ModifyTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13179,6 +15229,72 @@
       ],
       "usage": "out"
     },
+    "ProtectNetInfo": {
+      "document": "专家服务-旗舰护网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "cve2021-41651531",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护网天数",
+          "example": "10",
+          "member": "uint64",
+          "name": "ProtectDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护网状态 0未启动，1护网中，2已完成",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护网启动时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护网完成时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报告下载地址",
+          "example": "http://1.pdf",
+          "member": "string",
+          "name": "ReportPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ProtectStat": {
       "document": "防护信息统计",
       "members": [
@@ -14372,6 +16488,112 @@
       ],
       "usage": "both"
     },
+    "SecurityButlerInfo": {
+      "document": "安全管家列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单id",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cvm id",
+          "example": "wfsfsfsfs",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务状态 0-服务中,1-已到期 2已销毁",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务开始时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务结束时间",
+          "example": "2021-02-01 17:12:28",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "cmv",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Ip",
+          "example": "116.24.64.210",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机 uuid",
+          "example": "wfsfsfsfs",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机风险数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SecurityDynamic": {
       "document": "安全事件消息数据。",
       "members": [
@@ -14589,6 +16811,102 @@
       ],
       "type": "object"
     },
+    "Strategy": {
+      "document": "基线安全用户策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基线检测项总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "RuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扫描周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "ScanCycle",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ScanAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Enabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通过率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "PassRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "基线id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CategoryIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否默认策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SwitchBashRulesRequest": {
       "document": "SwitchBashRules请求参数结构体",
       "members": [
@@ -14786,6 +17104,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskStatus": {
+      "document": "任务扫描状态列表",
+      "members": [
+        {
+          "default": "",
+          "document": "扫描中（包含初始化）",
+          "example": "0",
+          "member": "string",
+          "name": "Scanning",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描终止（包含终止中）",
+          "example": "0",
+          "member": "string",
+          "name": "Ok",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描失败",
+          "example": "0",
+          "member": "string",
+          "name": "Fail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描失败（提示具体原因：扫描超时、客户端版本低、客户端离线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Stop",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15159,6 +17523,72 @@
           "name": "PublishTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulHostTopInfo": {
+      "document": "服务器风险top5实体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞等级与数量统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VulLevelCountInfo",
+          "name": "VulLevelList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "top评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VulLevelCountInfo": {
+      "document": "漏洞等级数量实体",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞等级",
+          "member": "uint64",
+          "name": "VulLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞数量",
+          "member": "uint64",
+          "name": "VulCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

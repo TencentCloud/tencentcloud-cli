@@ -840,6 +840,7 @@
         {
           "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x x",
           "member": "string",
           "name": "ApiAppName",
           "required": true,
@@ -849,6 +850,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "x x",
           "member": "string",
           "name": "ApiAppId",
           "required": true,
@@ -858,6 +860,7 @@
         {
           "default": "",
           "document": "应用SECRET\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sajsnda",
           "member": "string",
           "name": "ApiAppSecret",
           "required": true,
@@ -867,6 +870,7 @@
         {
           "default": "",
           "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x x",
           "member": "string",
           "name": "ApiAppDesc",
           "required": true,
@@ -876,6 +880,7 @@
         {
           "default": "",
           "document": "创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-01",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -885,6 +890,7 @@
         {
           "default": "",
           "document": "修改时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-01",
           "member": "datetime_iso",
           "name": "ModifiedTime",
           "required": true,
@@ -894,6 +900,7 @@
         {
           "default": "",
           "document": "应用KEY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sajsnda",
           "member": "string",
           "name": "ApiAppKey",
           "required": true,

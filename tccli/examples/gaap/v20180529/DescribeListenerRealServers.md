@@ -13,35 +13,35 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RealServerSet": [
             {
-                "RealServerId": "rs-2k5qnys5",
-                "RealServerIP": "123.123.123.123",
-                "RealServerName": "rs_test",
-                "ProjectId": 0
+                "ProjectId": 1,
+                "RealServerId": "xx",
+                "RealServerName": "xx",
+                "RealServerIP": "xx"
             },
             {
-                "RealServerId": "rs-d5y6ei2u",
-                "RealServerIP": "118.89.46.86",
-                "RealServerName": "rs_test-2",
-                "ProjectId": 0
+                "ProjectId": 1,
+                "RealServerId": "xx",
+                "RealServerName": "xx",
+                "RealServerIP": "xx"
             }
         ],
         "BindRealServerTotalCount": 1,
+        "RequestId": "xx",
         "BindRealServerSet": [
             {
-                "RealServerId": "rs-d5y6ei2u",
-                "RealServerIP": "118.89.46.86",
-                "RealServerWeight": 0,
+                "RealServerStatus": 1,
                 "RealServerPort": 80,
+                "RealServerId": "xx",
                 "DownIPList": [
                     "1.1.1.1"
                 ],
-                "RealServerStatus": 1
+                "RealServerWeight": 0,
+                "RealServerIP": "xx"
             }
-        ],
-        "RequestId": "38fab584-8d14-4e2c-988c-4acdabbf2dff"
+        ]
     }
 }
 ```

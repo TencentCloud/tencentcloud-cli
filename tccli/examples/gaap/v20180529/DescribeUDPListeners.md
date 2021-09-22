@@ -14,34 +14,35 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "ListenerSet": [
             {
-                "Protocol": "UDP",
-                "ListenerId": "listener-pbsgn7ej",
-                "Port": 111,
-                "RealServerType": "IP",
-                "RealServerPort": 123,
-                "Scheduler": "rr",
-                "ListenerStatus": 0,
-                "ListenerName": "111",
-                "BindStatus": 0,
-                "CreateTime": 123441243,
+                "BindStatus": 1,
+                "SessionPersist": 1,
+                "RealServerType": "xx",
+                "Protocol": "xx",
+                "RealServerPort": 1,
+                "ListenerId": "xx",
+                "CreateTime": 1,
+                "ListenerStatus": 1,
+                "ListenerName": "xx",
+                "Scheduler": "xx",
                 "RealServerSet": [
                     {
-                        "RealServerWeight": 1,
-                        "RealServerId": "rs-d2rwammv",
+                        "RealServerStatus": 0,
                         "RealServerPort": 111,
-                        "RealServerIP": "a.a.com",
-                        "RealServerStatus": -1,
+                        "RealServerId": "xx",
                         "DownIPList": [
                             "11.11.11.11:111"
-                        ]
+                        ],
+                        "RealServerWeight": 1,
+                        "RealServerIP": "xx"
                     }
-                ]
+                ],
+                "Port": 1
             }
         ],
-        "RequestId": "38fab584-8d14-4e2c-988c-4acdabbf2dff"
+        "RequestId": "xx"
     }
 }
 ```

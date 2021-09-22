@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrgResourcesAuthorization\n<公共请求参数>\n\n{\n    \"OrgNodeId\": \"xx\",\n    \"ApplicationId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10df84ec-33d8-4fe1-a180-960aaa5c746a\",\n        \"ApplicationId\": \"f6f29e24-ffc2-456c-b815-532291bc96af\",\n        \"OrgNodeId\": \"46165edc-4fc0-46d7-8973-453fb58fe24f\",\n        \"OrgNodeName\": \"csg\",\n        \"OrgNodePath\": \"tencent/csg\",\n        \"AuthorizationOrgResourceList\": [\n            {\n                \"ResourceId\": \"fe211d3a-6a08-435a-a4b4-5537176acd2e\",\n                \"ResourceType\": \"resource\",\n                \"Resource\": \"service-ovwon6kp：service-ovwonooo\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10df84ec-33d8-4fe1-a180-960aaa5c746a\",\n        \"ApplicationId\": \"f6f29e24-ffc2-456c-b815-532291bc96af\",\n        \"OrgNodeId\": \"46165edc-4fc0-46d7-8973-453fb58fe24f\",\n        \"OrgNodeName\": \"csg\",\n        \"TotalCount\": 1,\n        \"OrgNodePath\": \"tencent/csg\",\n        \"AuthorizationOrgResourceList\": [\n            {\n                \"ResourceId\": \"fe211d3a-6a08-435a-a4b4-5537176acd2e\",\n                \"ResourceType\": \"resource\",\n                \"Resource\": \"service-ovwon6kp：service-ovwonooo\"\n            }\n        ]\n    }\n}",
         "title": "示例"
       }
     ],

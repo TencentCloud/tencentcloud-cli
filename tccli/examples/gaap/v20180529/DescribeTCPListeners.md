@@ -14,39 +14,42 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "ListenerSet": [
             {
+                "HealthyThreshold": 1,
+                "BindStatus": 1,
+                "SessionPersist": 1,
+                "RealServerType": "xx",
+                "Protocol": "xx",
+                "ConnectTimeout": 1,
+                "RealServerPort": 1,
                 "HealthCheck": 1,
-                "Protocol": "TCP",
-                "ListenerId": "listener-gkzl9e7t",
-                "Port": 111,
-                "RealServerType": "IP",
-                "RealServerPort": null,
-                "DelayLoop": 30,
-                "BindStatus": 0,
-                "Scheduler": "rr",
-                "ListenerStatus": 0,
-                "ListenerName": "111",
-                "ConnectTimeout": 2,
-                "FailoverSwitch": 0,
+                "ListenerId": "xx",
+                "UnhealthyThreshold": 1,
+                "ListenerStatus": 1,
+                "ListenerName": "xx",
+                "Scheduler": "xx",
                 "ClientIPMethod": 1,
-                "CreateTime": 1607071157,
+                "FailoverSwitch": 1,
                 "RealServerSet": [
                     {
-                        "RealServerWeight": 1,
-                        "RealServerId": "rs-d2rwammv",
+                        "RealServerStatus": 0,
                         "RealServerPort": 111,
-                        "RealServerIP": "a.a.com",
-                        "RealServerStatus": -1,
+                        "RealServerId": "xx",
                         "DownIPList": [
                             "11.11.11.11:111"
-                        ]
+                        ],
+                        "RealServerWeight": 1,
+                        "RealServerIP": "xx"
                     }
-                ]
+                ],
+                "CreateTime": 1,
+                "Port": 1,
+                "DelayLoop": 1
             }
         ],
-        "RequestId": "38fab584-8d14-4e2c-988c-4acdabbf2dff"
+        "RequestId": "xx"
     }
 }
 ```
