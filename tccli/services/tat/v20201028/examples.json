@@ -8,12 +8,34 @@
         "title": "创建命令"
       }
     ],
+    "CreateInvoker": [
+      {
+        "document": "北京时间 2021-09-01 00:00:00 在实例 ins-yx05ky8j 执行命令 cmd-m7uma92n",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInvoker\n<公共请求参数>\n\n{\n    \"Name\": \"test-invoker\",\n    \"CommandId\": \"cmd-m7uma92n\",\n    \"InstanceIds\": [\n        \"ins-yx05ky8j\"\n    ],\n    \"Type\": \"SCHEDULE\",\n    \"ScheduleSettings\": {\n        \"Policy\": \"ONCE\",\n        \"InvokeTime\": \"2021-09-01T00:00:00+08:00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97268137-e0f7-477d-833b-766273d0ea47\",\n        \"InvokerId\": \"ivk-le1g3x2h\"\n    }\n}",
+        "title": "创建单次执行器"
+      },
+      {
+        "document": "在北京时间每月1日零点，在实例 ins-yx05ky8j 执行命令 cmd-m7uma92n",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInvoker\n<公共请求参数>\n\n{\n    \"Name\": \"cron-invoker\",\n    \"CommandId\": \"cmd-m7uma92n\",\n    \"InstanceIds\": [\n        \"ins-yx05ky8j\"\n    ],\n    \"Type\": \"SCHEDULE\",\n    \"ScheduleSettings\": {\n        \"Policy\": \"RECURRENCE\",\n        \"Recurrence\": \"0 0 1 * *\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d7ce29-b6ac-436d-93e0-b454f096cc50\",\n        \"InvokerId\": \"ivk-n0t6rxtv\"\n    }\n}",
+        "title": "创建周期执行命令"
+      }
+    ],
     "DeleteCommand": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCommand\n<公共请求参数>\n\n{\n    \"CommandId\": \"cmd-7efujjs6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f79b764-bc0f-471b-89c1-ca1b93cf7e8d\"\n    }\n}",
         "title": "删除命令"
+      }
+    ],
+    "DeleteInvoker": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc16e010-7b50-4661-88e8-4d2c77d15558\"\n    }\n}",
+        "title": "删除执行器"
       }
     ],
     "DescribeAutomationAgentStatus": [
@@ -66,12 +88,44 @@
         "title": "查询执行活动"
       }
     ],
+    "DescribeInvokerRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvokerRecords\n<公共请求参数>\n\n{\n    \"InvokerIds\": [\n        \"ivk-b7s3qa5l\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0398dcea-b3de-4ec9-8e78-976191e0a94f\",\n        \"TotalCount\": 1443,\n        \"InvokerRecordSet\": [\n            {\n                \"InvokerId\": \"ivk-b7s3qa5l\",\n                \"Reason\": \"start an invocation at scheduled time.\",\n                \"InvocationId\": \"inv-l9l4orf1\",\n                \"Result\": \"SUCCESS\",\n                \"InvokeTime\": \"2021-09-06T09:33:05Z\"\n            },\n            {\n                \"InvokerId\": \"ivk-b7s3qa5l\",\n                \"Reason\": \"start an invocation at scheduled time.\",\n                \"InvocationId\": \"inv-7ojgezbd\",\n                \"Result\": \"SUCCESS\",\n                \"InvokeTime\": \"2021-09-06T09:30:05Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询执行器执行记录"
+      }
+    ],
+    "DescribeInvokers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvokers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"invoker-id\",\n            \"Values\": [\n                \"ivk-b7s3qa5l\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4c828cf-31c9-42d2-a558-2ad340a76ef0\",\n        \"TotalCount\": 1,\n        \"InvokerSet\": [\n            {\n                \"InvokerId\": \"ivk-b7s3qa5l\",\n                \"Name\": \"test-invoker\",\n                \"Type\": \"SCHEDULE\",\n                \"CommandId\": \"cmd-m7uma92n\",\n                \"Username\": \"root\",\n                \"Parameters\": \"{\\\"var\\\": \\\"1\\\"}\",\n                \"InstanceIds\": [\n                    \"ins-yx05ky8j\"\n                ],\n                \"Enable\": false,\n                \"ScheduleSettings\": {\n                    \"Policy\": \"ONCE\",\n                    \"Recurrence\": \"\",\n                    \"InvokeTime\": \"\"\n                },\n                \"CreatedTime\": \"2021-08-30T06:42:02Z\",\n                \"UpdatedTime\": \"2021-09-09T12:07:00Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询执行器"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 13,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-nanjing\",\n                \"RegionName\": \"南京\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"上海\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"RegionName\": \"中国香港\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-beijing\",\n                \"RegionName\": \"北京\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-singapore\",\n                \"RegionName\": \"新加坡\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"na-siliconvalley\",\n                \"RegionName\": \"硅谷\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-chengdu\",\n                \"RegionName\": \"成都\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"eu-frankfurt\",\n                \"RegionName\": \"法兰克福\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-seoul\",\n                \"RegionName\": \"首尔\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-chongqing\",\n                \"RegionName\": \"重庆\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-mumbai\",\n                \"RegionName\": \"孟买\",\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"eu-moscow\",\n                \"RegionName\": \"莫斯科\",\n                \"RegionState\": \"AVAILABLE\"\n            }\n        ],\n        \"RequestId\": \"6fb7f9db-b7da-4cb8-a912-3a3b1690f3a6\"\n    }\n}",
         "title": "查询地域列表"
+      }
+    ],
+    "DisableInvoker": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6c5b0bd-4273-47c0-8d34-c32822f3ccb0\"\n    }\n}",
+        "title": "停止执行器"
+      }
+    ],
+    "EnableInvoker": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64119f65-18f5-47f3-a8d2-60d9fee593bf\"\n    }\n}",
+        "title": "启用执行器"
       }
     ],
     "InvokeCommand": [
@@ -88,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCommand\n<公共请求参数>\n\n{\n    \"CommandName\": \"second-command\",\n    \"Description\": \"hello world!\",\n    \"Content\": \"cHM=\",\n    \"CommandType\": \"SHELL\",\n    \"WorkingDirectory\": \"/\",\n    \"Timeout\": 600,\n    \"CommandId\": \"cmd-63usjhmq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bea970a-0bab-495f-b0dd-de5eedfdf611\"\n    }\n}",
         "title": "修改命令"
+      }
+    ],
+    "ModifyInvoker": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\",\n    \"Parameters\": \"{\\\"var\\\": \\\"1\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f3acde8-196d-4be4-9fa7-359f79b026bc\"\n    }\n}",
+        "title": "修改执行器"
       }
     ],
     "PreviewReplacedCommandContent": [

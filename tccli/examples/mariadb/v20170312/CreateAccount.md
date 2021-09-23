@@ -10,7 +10,8 @@ tccli mariadb CreateAccount --cli-unfold-argument  \
     --UserName testuser1 \
     --Host 172.17.% \
     --Password 1234qweri# \
-    --Description 测试帐号
+    --Description 测试帐号 \
+    --ReadOnly 0
 ```
 
 Output: 
@@ -20,7 +21,8 @@ Output:
         "RequestId": "2cc4e4dc-c3e9-4858-ab80-03e3526cf24d",
         "InstanceId": "tdsql-fdpjf5zh",
         "UserName": "testuser1",
-        "Host": "172.17.%"
+        "Host": "172.17.%",
+        "ReadOnly": 0
     }
 }
 ```

@@ -259,9 +259,9 @@
       "output": "ScaleOutInstancesResponse"
     },
     "SetInstancesProtection": {
-      "document": "本接口（SetInstancesProtection）用于设置实例移除保护。\n子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。",
+      "document": "本接口（SetInstancesProtection）用于设置实例保护。\n实例设置保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此实例缩容操作。",
       "input": "SetInstancesProtectionRequest",
-      "name": "设置实例移出保护",
+      "name": "设置实例保护",
       "output": "SetInstancesProtectionResponse"
     },
     "StartAutoScalingInstances": {
@@ -5176,6 +5176,7 @@
         {
           "default": "",
           "document": "伸缩组ID。",
+          "example": "asg-2umy3jbd",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -5184,6 +5185,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "[\"ins-b2d33ywt\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5191,7 +5193,8 @@
         },
         {
           "default": "",
-          "document": "实例是否需要移出保护。",
+          "document": "实例是否需要设置保护。",
+          "example": "true",
           "member": "bool",
           "name": "ProtectedFromScaleIn",
           "required": true,

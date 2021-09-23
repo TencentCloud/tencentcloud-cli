@@ -43,8 +43,8 @@
     "CreateAccount": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateAccount\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Password=1234qweri#\r\n&Description=测试帐号\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc4e4dc-c3e9-4858-ab80-03e3526cf24d\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\"\n    }\n}",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateAccount\n&InstanceId=dcdbt-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&Password=1234qweri#\n&Description=测试帐号\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc4e4dc-c3e9-4858-ab80-03e3526cf24d\",\n        \"InstanceId\": \"dcdbt-fdpjf5zh\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\",\n        \"ReadOnly\": 0\n    }\n}",
         "title": "为云数据库实例创建访问账号"
       }
     ],

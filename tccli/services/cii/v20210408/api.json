@@ -44,6 +44,72 @@
     "serviceShortName": "cii"
   },
   "objects": {
+    "ClassifyInfo": {
+      "document": "报告分类信息",
+      "members": [
+        {
+          "default": "",
+          "document": "一级分类",
+          "example": "检查报告",
+          "member": "string",
+          "name": "FirstClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级分类",
+          "example": "超声检查",
+          "member": "string",
+          "name": "SecondClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "三级分类",
+          "example": "超声检查",
+          "member": "string",
+          "name": "ThirdClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级分类序号",
+          "example": "12",
+          "member": "uint64",
+          "name": "FirstClassId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级分类序号",
+          "example": "345",
+          "member": "uint64",
+          "name": "SecondClassId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "三级分类序号",
+          "example": "345",
+          "member": "uint64",
+          "name": "ThirdClassId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CompareMetricsData": {
       "document": "结构化对比指标（准确率/召回率）数据",
       "members": [
@@ -648,6 +714,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报告分类信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassifyInfo",
+          "name": "ReportType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

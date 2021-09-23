@@ -199,7 +199,7 @@
       "output": "DeleteImageSpriteTemplateResponse"
     },
     "DeleteMedia": {
-      "document": "* 删除媒体及其对应的视频处理文件（如转码视频、雪碧图、截图、微信发布视频等）；\n* 可单独删除指定 ID 的视频文件下的转码，或者微信发布文件；",
+      "document": "* 删除媒体及其对应的视频处理文件（原始文件、如转码视频、雪碧图、截图、微信发布视频等）；\n* 可单独删除指定 ID 的视频文件下的原文件、转码视频、微信发布视频等；\n* 注意：原文件删除后，无法发起转码、微信发布等任何视频处理操作。",
       "input": "DeleteMediaRequest",
       "name": "删除媒体",
       "output": "DeleteMediaResponse"
@@ -4846,6 +4846,7 @@
         {
           "default": "",
           "document": "媒体类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。",
+          "example": "mp4",
           "member": "string",
           "name": "MediaType",
           "required": true,
@@ -4854,6 +4855,7 @@
         {
           "default": "",
           "document": "媒体名称。",
+          "example": "vod.mp4",
           "member": "string",
           "name": "MediaName",
           "required": false,
@@ -4862,6 +4864,7 @@
         {
           "default": "",
           "document": "封面类型，可选值请参考 [上传能力综述](/document/product/266/9760#.E6.96.87.E4.BB.B6.E7.B1.BB.E5.9E.8B)。",
+          "example": "jpg",
           "member": "string",
           "name": "CoverType",
           "required": false,
@@ -4870,6 +4873,7 @@
         {
           "default": "",
           "document": "媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](/document/product/266/33819) 并为模板命名。",
+          "example": "无",
           "member": "string",
           "name": "Procedure",
           "required": false,
@@ -4878,6 +4882,7 @@
         {
           "default": "",
           "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ExpireTime",
           "required": false,
@@ -4886,6 +4891,7 @@
         {
           "default": "",
           "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户。",
+          "example": "无",
           "member": "string",
           "name": "StorageRegion",
           "required": false,
@@ -4894,6 +4900,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "无",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -4902,6 +4909,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SourceContext",
           "required": false,
@@ -4910,6 +4918,7 @@
         {
           "default": "",
           "document": "会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -4918,6 +4927,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -4926,6 +4936,7 @@
         {
           "default": "",
           "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -4939,43 +4950,55 @@
       "members": [
         {
           "document": "存储桶，用于上传接口 URL 的 bucket_name。",
+          "example": "xadagzp111211-100922",
           "member": "string",
           "name": "StorageBucket",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "存储园区，用于上传接口 Host 的 Region。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "StorageRegion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "点播会话，用于确认上传接口的参数 VodSessionKey。",
+          "example": "VodSessionKey",
           "member": "string",
           "name": "VodSessionKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "媒体存储路径，用于上传接口存储媒体的对象键（Key）。",
+          "example": "/dir/name.xx",
           "member": "string",
           "name": "MediaStoragePath",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "封面存储路径，用于上传接口存储封面的对象键（Key）。",
+          "example": "无",
           "member": "string",
           "name": "CoverStoragePath",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时凭证，用于上传接口的权限验证。",
+          "example": "无",
           "member": "TempCertificate",
           "name": "TempCertificate",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8323,6 +8346,7 @@
         {
           "default": "",
           "document": "媒体文件的唯一标识。",
+          "example": "7447398156998994860",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -8331,6 +8355,7 @@
         {
           "default": "",
           "document": "指定本次需要删除的部分。默认值为 \"[]\", 表示删除媒体及其对应的全部视频处理文件。",
+          "example": "无",
           "member": "MediaDeleteItem",
           "name": "DeleteParts",
           "required": false,
@@ -8339,6 +8364,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,

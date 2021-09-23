@@ -1834,7 +1834,8 @@
       "members": [
         {
           "default": "",
-          "document": "混流会话（申请混流开始到取消混流结束）标识 ID。",
+          "document": "混流会话（申请混流开始到取消混流结束）标识 ID。80字节以内，仅含字母、数字以及下划线的字符串。",
+          "example": "test_room",
           "member": "string",
           "name": "MixStreamSessionId",
           "required": true,
@@ -1843,6 +1844,7 @@
         {
           "default": "",
           "document": "混流输入流列表。",
+          "example": "无",
           "member": "CommonMixInputParam",
           "name": "InputStreamList",
           "required": true,
@@ -1851,6 +1853,7 @@
         {
           "default": "",
           "document": "混流输出流参数。",
+          "example": "无",
           "member": "CommonMixOutputParams",
           "name": "OutputParams",
           "required": true,
@@ -1859,6 +1862,7 @@
         {
           "default": "",
           "document": "输入模板 ID，若设置该参数，将按默认模板布局输出，无需填入自定义位置参数。\n不填默认为0。\n两输入源支持10，20，30，40，50。\n三输入源支持310，390，391。\n四输入源支持410。\n五输入源支持510，590。\n六输入源支持610。",
+          "example": "40",
           "member": "int64",
           "name": "MixStreamTemplateId",
           "required": false,
@@ -1867,6 +1871,7 @@
         {
           "default": "",
           "document": "混流的特殊控制参数。如无特殊需求，无需填写。",
+          "example": "无",
           "member": "CommonMixControlParams",
           "name": "ControlParams",
           "required": false,

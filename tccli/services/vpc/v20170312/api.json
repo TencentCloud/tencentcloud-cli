@@ -14730,6 +14730,7 @@
         {
           "default": "",
           "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
+          "example": "[\"eip-alfxy9c8\\n\"]",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -14738,6 +14739,7 @@
         {
           "default": "",
           "document": "调整带宽目标值",
+          "example": "2",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -14746,6 +14748,7 @@
         {
           "default": "",
           "document": "包月带宽起始时间(已废弃，输入无效)",
+          "example": "2021-07-20 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -14754,6 +14757,7 @@
         {
           "default": "",
           "document": "包月带宽结束时间(已废弃，输入无效)",
+          "example": "2021-07-20 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -14767,8 +14771,10 @@
       "members": [
         {
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "11531422",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19894,6 +19900,7 @@
         {
           "default": "",
           "document": "待操作有普通公网 IP 的实例 ID。实例 ID 形如：`ins-11112222`。可通过登录[控制台](https://console.cloud.tencent.com/cvm)查询，也可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/9389) 接口返回值中的`InstanceId`获取。",
+          "example": "ins-3ea0qeu6",
           "member": "string",
           "name": "InstanceId",
           "required": true,

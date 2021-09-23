@@ -30,6 +30,12 @@
       "name": "删除短信模板",
       "output": "DeleteSmsTemplateResponse"
     },
+    "DescribePhoneNumberInfo": {
+      "document": "提供 E.164 格式号码国家或地区码识别，以及解析后规范的E.164号码。",
+      "input": "DescribePhoneNumberInfoRequest",
+      "name": "号码信息查询",
+      "output": "DescribePhoneNumberInfoResponse"
+    },
     "DescribeSmsSignList": {
       "document": "⚠️注意：个人认证用户不支持使用 API 查询短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629),如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 查询短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
       "input": "DescribeSmsSignListRequest",
@@ -586,6 +592,42 @@
       ],
       "usage": "out"
     },
+    "DescribePhoneNumberInfoRequest": {
+      "document": "DescribePhoneNumberInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
+          "example": "[\"+8618843210001\"]",
+          "member": "string",
+          "name": "PhoneNumberSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePhoneNumberInfoResponse": {
+      "document": "DescribePhoneNumberInfo返回参数结构体",
+      "members": [
+        {
+          "document": "获取号码信息。",
+          "example": "无",
+          "member": "PhoneNumberInfo",
+          "name": "PhoneNumberInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSignListStatus": {
       "document": "获取短信签名信息响应",
       "members": [
@@ -1034,6 +1076,82 @@
           "name": "TemplateId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PhoneNumberInfo": {
+      "document": "号码信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "号码信息查询错误码，查询成功返回 \"Ok\"。",
+          "example": "Ok",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "号码信息查询错误码描述。",
+          "example": "Describe success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家（或地区）码。",
+          "example": "86",
+          "member": "string",
+          "name": "NationCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户号码，去除国家或地区码前缀的普通格式，示例如：13711112222。",
+          "example": "13711112222",
+          "member": "string",
+          "name": "SubscriberNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析后的规范的 E.164 号码，与下发短信的号码解析结果一致。解析失败时会原样返回。",
+          "example": "+8613711112222",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家码或地区码，例如 CN、US 等，对于未识别出国家码或者地区码，默认返回 DEF。",
+          "example": "CN",
+          "member": "string",
+          "name": "IsoCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家码或地区名，例如 China，可参考 [国际/港澳台短信价格总览](https://cloud.tencent.com/document/product/382/18051#.E6.97.A5.E7.BB.93.E5.90.8E.E4.BB.98.E8.B4.B9.3Ca-id.3D.22post-payment.22.3E.3C.2Fa.3E)",
+          "example": "China",
+          "member": "string",
+          "name": "IsoName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
