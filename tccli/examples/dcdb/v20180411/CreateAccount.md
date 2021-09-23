@@ -18,8 +18,10 @@ Output:
 {
     "Response": {
         "RequestId": "2cc4e4dc-c3e9-4858-ab80-03e3526cf24d",
+        "InstanceId": "dcdbt-fdpjf5zh",
         "UserName": "testuser1",
-        "Host": "172.17.%"
+        "Host": "172.17.%",
+        "ReadOnly": 0
     }
 }
 ```

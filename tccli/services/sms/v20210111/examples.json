@@ -40,6 +40,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribePhoneNumberInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneNumberInfo\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618511122266\",\n        \"+8618511122233\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneNumberInfoSet\": [\n            {\n                \"SubscriberNumber\": \"18511122266\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618511122266\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            },\n            {\n                \"SubscriberNumber\": \"18511122233\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618511122233\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeSmsSignList": [
       {
         "document": "",

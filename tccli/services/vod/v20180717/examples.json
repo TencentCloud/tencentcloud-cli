@@ -3,7 +3,7 @@
     "ApplyUpload": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ApplyUpload\r\n&MediaType=mp4\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ApplyUpload\n&MediaType=mp4\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CoverStoragePath\": null,\n        \"RequestId\": \"880f3005-a8c9-4bba-8c87-74e216a17a0b\",\n        \"StorageBucket\": \"xadagzp111211-100922\",\n        \"StorageRegion\": \"ap-guangzhou-2\",\n        \"MediaStoragePath\": \"/dir/name.xx\",\n        \"VodSessionKey\": \"VodSessionKey\",\n        \"TempCertificate\": {\n            \"SecretId\": \"xxxxxxx\",\n            \"SecretKey\": \"xxxxxxxx\",\n            \"Token\": \"xxxxxxxx\",\n            \"ExpiredTime\": 182823331\n        }\n    }\n}",
         "title": "申请上传成功例子"
       }
@@ -363,19 +363,19 @@
     "DeleteMedia": [
       {
         "document": "视频文件不需要保存，删除该FileId下全部文件和信息。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\r\n&FileId=7447398156998994860\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\n&FileId=7447398156998994860\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "删除媒体文件"
       },
       {
         "document": "删除指定FileId下的全部转码文件及微信发布文件。\n保留源文件，保留转码和截图等其他任务流生成的文件和信息。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\r\n&FileId=7447398156998994860\r\n&SubAppId=1\r\n&DeleteParts.0.Type=TranscodeFiles\r\n&DeleteParts.1.Type=WechatPublishFiles\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\n&FileId=7447398156998994860\n&SubAppId=1\n&DeleteParts.0.Type=TranscodeFiles\n&DeleteParts.1.Type=WechatPublishFiles\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "删除转码视频和微信发布视频"
       },
       {
         "document": "只想删除部分defination的转码视频，保留其他格式的转码视频。\n例如删除转码defination为230的HLS文件，并且同时删除HLS Master Playlist",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\r\n&FileId=7447398156998994860\r\n&SubAppId=1\r\n&DeleteParts.0.Type=TranscodeFiles\r\n&DeleteParts.0.Definition=230\r\n&DeleteParts.1.Type=TranscodeFiles\r\n&DeleteParts.1.Definition=10000\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteMedia\n&FileId=7447398156998994860\n&SubAppId=1\n&DeleteParts.0.Type=TranscodeFiles\n&DeleteParts.0.Definition=230\n&DeleteParts.1.Type=TranscodeFiles\n&DeleteParts.1.Definition=10000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "删除部分转码视频"
       }

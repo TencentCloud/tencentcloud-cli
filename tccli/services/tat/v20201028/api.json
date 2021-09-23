@@ -6,11 +6,23 @@
       "name": "创建命令",
       "output": "CreateCommandResponse"
     },
+    "CreateInvoker": {
+      "document": "此接口用于创建执行器。",
+      "input": "CreateInvokerRequest",
+      "name": "创建执行器",
+      "output": "CreateInvokerResponse"
+    },
     "DeleteCommand": {
-      "document": "此接口用于删除命令。",
+      "document": "此接口用于删除命令。\n如果命令与执行器关联，则无法被删除。",
       "input": "DeleteCommandRequest",
       "name": "删除命令",
       "output": "DeleteCommandResponse"
+    },
+    "DeleteInvoker": {
+      "document": "此接口用于删除执行器。",
+      "input": "DeleteInvokerRequest",
+      "name": "删除执行器",
+      "output": "DeleteInvokerResponse"
     },
     "DescribeAutomationAgentStatus": {
       "document": "此接口用于查询自动化助手客户端的状态。",
@@ -36,11 +48,35 @@
       "name": "查询执行活动",
       "output": "DescribeInvocationsResponse"
     },
+    "DescribeInvokerRecords": {
+      "document": "此接口用于查询执行器的执行记录。",
+      "input": "DescribeInvokerRecordsRequest",
+      "name": "查询执行器执行记录",
+      "output": "DescribeInvokerRecordsResponse"
+    },
+    "DescribeInvokers": {
+      "document": "此接口用于查询执行器信息。",
+      "input": "DescribeInvokersRequest",
+      "name": "查询执行器",
+      "output": "DescribeInvokersResponse"
+    },
     "DescribeRegions": {
       "document": "此接口用于查询 TAT 产品后台地域列表。\nRegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；未返回，代表该地域的 TAT 后台服务尚不可用。",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
+    },
+    "DisableInvoker": {
+      "document": "此接口用于停止执行器。",
+      "input": "DisableInvokerRequest",
+      "name": "停用执行器",
+      "output": "DisableInvokerResponse"
+    },
+    "EnableInvoker": {
+      "document": "此接口用于启用执行器。",
+      "input": "EnableInvokerRequest",
+      "name": "启用执行器",
+      "output": "EnableInvokerResponse"
     },
     "InvokeCommand": {
       "document": "在指定的实例上触发命令，调用成功返回执行活动ID（inv-xxxxxxxx），每个执行活动内部有一个或多个执行任务（invt-xxxxxxxx），每个执行任务代表命令在一台 CVM 或一台 Lighthouse 上的执行记录。\n\n* 如果指定实例未安装 agent，或 agent 不在线，返回失败\n* 如果命令类型与 agent 运行环境不符，返回失败\n* 指定的实例需要处于 VPC 网络\n* 指定的实例需要处于 RUNNING 状态\n* 不可同时指定 CVM 和 Lighthouse",
@@ -53,6 +89,12 @@
       "input": "ModifyCommandRequest",
       "name": "修改命令",
       "output": "ModifyCommandResponse"
+    },
+    "ModifyInvoker": {
+      "document": "此接口用于修改执行器。",
+      "input": "ModifyInvokerRequest",
+      "name": "修改执行器",
+      "output": "ModifyInvokerResponse"
     },
     "PreviewReplacedCommandContent": {
       "document": "此接口用于预览自定义参数替换后的命令内容。不会触发真实执行。",
@@ -454,6 +496,96 @@
       ],
       "type": "object"
     },
+    "CreateInvokerRequest": {
+      "document": "CreateInvoker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行器名称。",
+          "example": "invoker-test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
+          "example": "SCHEDULE",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "远程命令ID。",
+          "example": "cmd-k4ypdij0",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "触发器关联的实例ID。列表上限 100。",
+          "example": "[\"ins-yx05ky8j\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "命令执行用户。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命令自定义参数。",
+          "example": "{\"var\": \"A\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期执行器设置，当创建周期执行器时，必须指定此参数。",
+          "example": "无",
+          "member": "ScheduleSettings",
+          "name": "ScheduleSettings",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInvokerResponse": {
+      "document": "CreateInvoker返回参数结构体",
+      "members": [
+        {
+          "document": "执行器ID。",
+          "example": "ivk-b7s3qa5l",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCommandRequest": {
       "document": "DeleteCommand请求参数结构体",
       "members": [
@@ -471,6 +603,33 @@
     },
     "DeleteCommandResponse": {
       "document": "DeleteCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInvokerRequest": {
+      "document": "DeleteInvoker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的执行器ID。",
+          "example": "ivk-b7s3qa5l",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInvokerResponse": {
+      "document": "DeleteInvoker返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -778,6 +937,141 @@
       ],
       "type": "object"
     },
+    "DescribeInvokerRecordsRequest": {
+      "document": "DescribeInvokerRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行器ID列表。列表上限 100。",
+          "example": "[\"ivk-b7s3qa5l\"]",
+          "member": "string",
+          "name": "InvokerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvokerRecordsResponse": {
+      "document": "DescribeInvokerRecords返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的历史记录数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行器执行历史记录。",
+          "example": "无",
+          "member": "InvokerRecord",
+          "name": "InvokerRecordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvokersRequest": {
+      "document": "DescribeInvokers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行器ID列表。",
+          "example": "[\"ivk-b7s3qa5l\"]",
+          "member": "string",
+          "name": "InvokerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件：\n\n<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。\n<li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。\n<li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvokersResponse": {
+      "document": "DescribeInvokers返回参数结构体",
+      "members": [
+        {
+          "document": "满足条件的执行器数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行器信息。",
+          "example": "无",
+          "member": "Invoker",
+          "name": "InvokerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
       "members": [],
@@ -804,6 +1098,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableInvokerRequest": {
+      "document": "DisableInvoker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待停止的执行器ID。",
+          "example": "ivk-b7s3qa5l",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableInvokerResponse": {
+      "document": "DisableInvoker返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInvokerRequest": {
+      "document": "EnableInvoker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待启用的执行器ID。",
+          "example": "ivk-b7s3qa5l",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableInvokerResponse": {
+      "document": "EnableInvoker返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1273,6 +1621,178 @@
       ],
       "type": "object"
     },
+    "Invoker": {
+      "document": "执行器信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行器ID。",
+          "example": "ivk-27yagap9",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行器名称。",
+          "example": "invoker-test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行器类型。",
+          "example": "SCHEDULE",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令ID。",
+          "example": "cmd-m7uma92n",
+          "member": "string",
+          "name": "CommandId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数。",
+          "example": "{\"var\": 1}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID列表。",
+          "example": "[\"ins-yx05ky8j\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行器是否启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行器周期计划。周期执行器会返回此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleSettings",
+          "name": "ScheduleSettings",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "example": "2021-08-30T06:42:02Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间。",
+          "example": "2021-08-30T06:42:02Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvokerRecord": {
+      "document": "执行器执行记录。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行器ID。",
+          "example": "ivk-b7s3qa5l",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行时间。",
+          "example": "2021-10-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "InvokeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行原因。",
+          "example": "start an invocation at scheduled time.",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令执行ID。",
+          "example": "inv-4ybg8gmj",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发结果。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyCommandRequest": {
       "document": "ModifyCommand请求参数结构体",
       "members": [
@@ -1362,6 +1882,96 @@
     },
     "ModifyCommandResponse": {
       "document": "ModifyCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInvokerRequest": {
+      "document": "ModifyInvoker请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改的执行器ID。",
+          "example": "ivk-n0t6rxtv",
+          "member": "string",
+          "name": "InvokerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改的执行器名称。",
+          "example": "invoker-test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
+          "example": "SCHEDULE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改的命令ID。",
+          "example": "cmd-m7uma92n",
+          "member": "string",
+          "name": "CommandId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改的用户名。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改的自定义参数。",
+          "example": "{\"var\": \"A\"}",
+          "member": "string",
+          "name": "Parameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改的实例ID列表。列表长度上限100。",
+          "example": "[\"ins-yx05ky8j\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "待修改的周期执行器设置。",
+          "example": "无",
+          "member": "ScheduleSettings",
+          "name": "ScheduleSettings",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInvokerResponse": {
+      "document": "ModifyInvoker返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1614,6 +2224,42 @@
         }
       ],
       "type": "object"
+    },
+    "ScheduleSettings": {
+      "document": "周期执行器设置。",
+      "members": [
+        {
+          "default": "",
+          "document": "执行策略：\n<br><li>ONCE：单次执行\n<br><li>RECURRENCE：周期执行",
+          "example": "ONCE",
+          "member": "string",
+          "name": "Policy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "触发 Crontab 表达式。Policy 为 RECURRENCE 时，需要指定此字段。Crontab 按北京时间解析。",
+          "example": "0 0 1 * *",
+          "member": "string",
+          "name": "Recurrence",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行器下次执行时间。Policy 为 ONCE 时，需要指定此字段。",
+          "example": "2021-09-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "InvokeTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签",

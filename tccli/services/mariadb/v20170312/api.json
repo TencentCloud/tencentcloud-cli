@@ -711,6 +711,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -719,6 +720,7 @@
         {
           "default": "",
           "document": "登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -727,6 +729,7 @@
         {
           "default": "",
           "document": "可以登录的主机，与mysql 账号的 host 格式一致，可以支持通配符，例如 %，10.%，10.20.%。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -734,7 +737,8 @@
         },
         {
           "default": "",
-          "document": "账号密码，由字母、数字或常见符号组成，不能包含分号、单引号和双引号，长度为6~32位。",
+          "document": "账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。",
+          "example": "1234qweri#",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -743,6 +747,7 @@
         {
           "default": "",
           "document": "是否创建为只读账号，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
+          "example": "0",
           "member": "int64",
           "name": "ReadOnly",
           "required": false,
@@ -751,6 +756,7 @@
         {
           "default": "",
           "document": "账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符",
+          "example": "测试帐号",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -759,6 +765,7 @@
         {
           "default": "",
           "document": "根据传入时间判断备机不可用",
+          "example": "15",
           "member": "int64",
           "name": "DelayThresh",
           "required": false,
@@ -772,29 +779,37 @@
       "members": [
         {
           "document": "实例ID，透传入参。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用户名，透传入参。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "允许访问的 host，透传入参。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "透传入参。",
+          "example": "0",
           "member": "int64",
           "name": "ReadOnly",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

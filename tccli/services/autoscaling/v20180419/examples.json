@@ -451,7 +451,7 @@
         "document": "",
         "input": "https://as.tencentcloudapi.com/?Action=SetInstancesProtection\n&AutoScalingGroupId=asg-2umy3jbd\n&InstanceIds.0=ins-b2d33ywt\n&ProtectedFromScaleIn=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b7168d9-5709-4d69-bd32-880a2f565e33\"\n    }\n}",
-        "title": "为子机设置移出保护"
+        "title": "为实例设置保护"
       }
     ],
     "StartAutoScalingInstances": [
