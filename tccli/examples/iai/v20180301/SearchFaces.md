@@ -10,8 +10,7 @@ tccli iai SearchFaces --cli-unfold-argument  \
     --MaxFaceNum 1 \
     --MinFaceSize 40 \
     --MaxPersonNum 5 \
-    --GroupIds TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupIds TencentShenZhenEmployee
 ```
 
 Output: 
@@ -20,6 +19,7 @@ Output:
     "Response": {
         "Results": [
             {
+                "RetCode": 0,
                 "Candidates": [
                     {
                         "PersonId": "1001",
@@ -47,6 +47,7 @@ Output:
             }
         ],
         "FaceNum": 1,
+        "FaceModelVersion": "3.0",
         "RequestId": "57b42b73-b978-45b9-8095-8f50e9642d35"
     }
 }
@@ -62,8 +63,7 @@ Input:
 tccli iai SearchFaces --cli-unfold-argument  \
     --Url http://test.image.myqcloud.com/testA.jpg \
     --MaxFaceNum 11 \
-    --GroupIds TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupIds TencentShenZhenEmployee
 ```
 
 Output: 
@@ -84,8 +84,7 @@ Input:
 ```
 tccli iai SearchFaces --cli-unfold-argument  \
     --Url http://test.image.myqcloud.com/testA \
-    --GroupIds TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupIds TencentShenZhenEmployee
 ```
 
 Output: 

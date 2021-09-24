@@ -47,28 +47,7 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
-
-起始序号不能小于0
-
-Input: 
-
-```
-tccli iai GetGroupList --cli-unfold-argument  \
-    --Offset -1 \
-    --Limit 100
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "9c987f11-f5d0-4aa7-aa13-3d8c1b4b3042"
-    }
-}
-```
-
-**Example 3: 错误示例-2**
+**Example 2: 错误示例-2**
 
 返回数量不能大于1000
 

@@ -594,6 +594,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "主任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -803,6 +812,16 @@
           "example": "无",
           "member": "string",
           "name": "StructureResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "SubTaskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false

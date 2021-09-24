@@ -80,6 +80,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -88,6 +89,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -101,50 +103,64 @@
       "members": [
         {
           "document": "取值为TRUE或FALSE，TRUE为长图，FALSE为正常图，长图定义为长宽比大于等于3或小于等于1/3的图片。",
+          "example": "无",
           "member": "bool",
           "name": "LongImage",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "取值为TRUE或FALSE，TRUE为黑白图，FALSE为否。黑白图即灰度图，指红绿蓝三个通道都是以灰度色阶显示的图片，并非视觉上的“黑白图片”。",
+          "example": "无",
           "member": "bool",
           "name": "BlackAndWhite",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "取值为TRUE或FALSE，TRUE为小图，FALSE为否, 小图定义为最长边小于179像素的图片。当一张图片被判断为小图时，不建议做推荐和展示，其他字段统一输出为0或FALSE。",
+          "example": "无",
           "member": "bool",
           "name": "SmallImage",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "取值为TRUE或FALSE，TRUE为大图，FALSE为否，定义为最短边大于1000像素的图片",
+          "example": "1",
           "member": "bool",
           "name": "BigImage",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "取值为TRUE或FALSE，TRUE为纯色图或纯文字图，即没有内容或只有简单内容的图片，FALSE为正常图片。",
+          "example": "无",
           "member": "bool",
           "name": "PureImage",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "综合评分。图像清晰度的得分，对图片的噪声、曝光、模糊、压缩等因素进行综合评估，取值为[0, 100]，值越大，越清晰。一般大于50为较清晰图片，标准可以自行把握。",
+          "example": "93",
           "member": "int64",
           "name": "ClarityScore",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "综合评分。图像美观度得分， 从构图、色彩等多个艺术性维度评价图片，取值为[0, 100]，值越大，越美观。一般大于50为较美观图片，标准可以自行把握。",
+          "example": "92",
           "member": "int64",
           "name": "AestheticScore",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -157,12 +173,59 @@
       ],
       "type": "object"
     },
+    "CarPlateContent": {
+      "document": "车牌信息",
+      "members": [
+        {
+          "default": "",
+          "document": "车牌信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Plate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌颜色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Color",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌类型；渣土车车牌遮挡时,该值为枚举值“异常”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "车牌在图片中的坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Coord",
+          "name": "PlateLocation",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CarTagItem": {
       "document": "车辆属性识别的结果",
       "members": [
         {
           "default": "",
           "document": "车系",
+          "example": "无",
           "member": "string",
           "name": "Serial",
           "required": true,
@@ -172,6 +235,7 @@
         {
           "default": "",
           "document": "车辆品牌",
+          "example": "无",
           "member": "string",
           "name": "Brand",
           "required": true,
@@ -181,6 +245,7 @@
         {
           "default": "",
           "document": "车辆类型",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -190,6 +255,7 @@
         {
           "default": "",
           "document": "车辆颜色",
+          "example": "无",
           "member": "string",
           "name": "Color",
           "required": true,
@@ -199,6 +265,7 @@
         {
           "default": "",
           "document": "置信度，0-100",
+          "example": "无",
           "member": "int64",
           "name": "Confidence",
           "required": true,
@@ -208,6 +275,7 @@
         {
           "default": "",
           "document": "年份，没识别出年份的时候返回0",
+          "example": "无",
           "member": "int64",
           "name": "Year",
           "required": true,
@@ -217,11 +285,22 @@
         {
           "default": "",
           "document": "车辆在图片中的坐标信息",
+          "example": "无",
           "member": "Coord",
           "name": "CarLocation",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车牌信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CarPlateContent",
+          "name": "PlateContent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -592,6 +671,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -600,6 +680,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -608,6 +689,7 @@
         {
           "default": "",
           "document": "本次调用支持的识别场景，可选值如下：\nWEB，针对网络图片优化;\nCAMERA，针对手机摄像头拍摄图片优化;\nALBUM，针对手机相册、网盘产品优化;\nNEWS，针对新闻、资讯、广电等行业优化；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
+          "example": "[\"WEB\",\"CAMERA\",\"ALBUM\"]",
           "member": "string",
           "name": "Scenes",
           "required": false,
@@ -621,29 +703,37 @@
       "members": [
         {
           "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectLabelItem",
           "name": "Labels",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectLabelItem",
           "name": "CameraLabels",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectLabelItem",
           "name": "AlbumLabels",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DetectLabelItem",
           "name": "NewsLabels",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -662,6 +752,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -670,6 +761,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -683,15 +775,19 @@
       "members": [
         {
           "document": "对于图片中包含不良行为的置信度，取值[0,1]，一般超过0.5则表明可能包含不良行为内容；",
+          "example": "0.5",
           "member": "float",
           "name": "Confidence",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "图像中最可能包含的不良行为类别，包括赌博、打架斗殴、吸毒等。",
+          "example": "赌博",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

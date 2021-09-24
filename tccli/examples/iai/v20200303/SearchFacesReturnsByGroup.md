@@ -17,41 +17,43 @@ Output:
 ```
 {
     "Response": {
+        "FaceNum": 1,
         "ResultsReturnsByGroup": [
             {
-                "RetCode": 0,
-                "FaceRect": {
-                    "X": 370,
-                    "Y": 46,
-                    "Width": 75,
-                    "Height": 80
-                },
                 "GroupCandidates": [
                     {
-                        "GroupId": "Group1",
-                        "Candidates": {
-                            "PersonId": "1001",
-                            "FaceId": "2875093635484912302",
-                            "Score": 100,
-                            "PersonName": "张三",
-                            "Gender": 0,
-                            "PersonGroupInfos": [
-                                {
-                                    "GroupId": "abc",
-                                    "PersonExDescriptions": [
-                                        "description1",
-                                        "description2"
-                                    ]
-                                }
-                            ]
-                        }
+                        "Candidates": [
+                            {
+                                "PersonGroupInfos": [
+                                    {
+                                        "GroupId": "abc",
+                                        "PersonExDescriptions": [
+                                            "description1",
+                                            "description2"
+                                        ]
+                                    }
+                                ],
+                                "PersonId": "1001",
+                                "Gender": 0,
+                                "PersonName": "张三",
+                                "Score": 100,
+                                "FaceId": "2875093635484912302"
+                            }
+                        ],
+                        "GroupId": "Group1"
                     }
-                ]
+                ],
+                "FaceRect": {
+                    "Y": 46,
+                    "X": 370,
+                    "Height": 1,
+                    "Width": 1
+                },
+                "RetCode": 0
             }
         ],
-        "FaceNum": 1,
-        "FaceModelVersion": "3.0",
-        "RequestId": "57b42b73-b978-45b9-8095-8f50e9642d35"
+        "RequestId": "57b42b73-b978-45b9-8095-8f50e9642d35",
+        "FaceModelVersion": "3.0"
     }
 }
 ```

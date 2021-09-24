@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeCallbackRecordsList --cli-unfold-argument  \
-    --StreamName 57ac8fa12d1c165827d56ecba292673 \
+    --StreamName test \
     --StartTime 2020-10-12 00:00:00 \
     --EndTime 2020-10-12 00:10:00 \
     --PageNum 1 \
@@ -30,16 +30,7 @@ Output:
                 "Response": "status+code%3A200%2C+content%3DSuccess",
                 "ResponseTime": "2020-10-12 00:32:11",
                 "ResultCode": 0,
-                "StreamId": "57ac8fa12d1c165827d56ecba292673"
-            },
-            {
-                "EventTime": "2020-10-12 00:30:35",
-                "EventType": 0,
-                "Request": "opensso++server%3D10.12.6.7%3A",
-                "Response": "status+code%3A200%2C+content%3DSuccess",
-                "ResponseTime": "2020-10-12 00:30:36",
-                "ResultCode": 0,
-                "StreamId": "57ac8fa12d1c165827d56ecba292673"
+                "StreamId": "test"
             }
         ]
     }

@@ -336,6 +336,12 @@
       "name": "查询已经存在的节点",
       "output": "DescribeExistedInstancesResponse"
     },
+    "DescribeExternalClusterSpec": {
+      "document": "获取导入第三方集群YAML定义",
+      "input": "DescribeExternalClusterSpecRequest",
+      "name": "获取导入第三方集群YAML定义",
+      "output": "DescribeExternalClusterSpecResponse"
+    },
     "DescribeImages": {
       "document": "获取镜像信息",
       "input": "DescribeImagesRequest",
@@ -4662,6 +4668,7 @@
         {
           "default": "",
           "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "example": "无",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -4670,6 +4677,7 @@
         {
           "default": "",
           "document": "偏移量,默认0",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4678,6 +4686,7 @@
         {
           "default": "",
           "document": "最大输出条数，默认20，最大为100",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4685,11 +4694,21 @@
         },
         {
           "default": "",
-          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤",
+          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群类型，例如：MANAGED_CLUSTER",
+          "example": "MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4699,15 +4718,19 @@
       "members": [
         {
           "document": "集群总个数",
+          "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "集群信息列表",
+          "example": "无",
           "member": "Cluster",
           "name": "Clusters",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5251,6 +5274,69 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalClusterSpecRequest": {
+      "document": "DescribeExternalClusterSpec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "注册集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认false 获取内网，是否获取外网版注册命令",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "默认false 不刷新有效时间 ，true刷新有效时间",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRefreshExpirationTime",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalClusterSpecResponse": {
+      "document": "DescribeExternalClusterSpec返回参数结构体",
+      "members": [
+        {
+          "document": "导入第三方集群YAML定义",
+          "example": "xxx",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "agent.yaml文件过期时间字符串，时区UTC",
+          "example": "2021-09-08T07:04:51Z",
+          "member": "string",
+          "name": "Expiration",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -10,8 +10,7 @@ tccli iai SearchPersons --cli-unfold-argument  \
     --MaxFaceNum 1 \
     --MinFaceSize 40 \
     --MaxPersonNum 3 \
-    --GroupIds TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupIds TencentShenZhenEmployee
 ```
 
 Output: 
@@ -106,8 +105,7 @@ Input:
 ```
 tccli iai SearchPersons --cli-unfold-argument  \
     --Url http://test.image.myqcloud.com/testA \
-    --GroupIds TencentShenZhenEmployee \
-    --Version 2018-03-01
+    --GroupIds TencentShenZhenEmployee
 ```
 
 Output: 

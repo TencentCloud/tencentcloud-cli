@@ -117,12 +117,6 @@
     "GetGroupList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"Offset\": -1,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78ec7830-a1c7-42be-bd65-6d0fa25f6fab\"\n    }\n}",
-        "title": "调用失败示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"GroupNum\": 1,\n        \"GroupInfos\": [\n            {\n                \"GroupName\": \"testG2\",\n                \"GroupId\": \"testG2\",\n                \"Tag\": \"testG2Tag\",\n                \"BodyModelVersion\": \"1.0\",\n                \"CreationTimestamp\": 1581673977535\n            }\n        ],\n        \"RequestId\": \"9ffccff2-4b52-443f-98f4-eb1f6a30399e\"\n    }\n}",
         "title": "调用成功示例"

@@ -14,6 +14,14 @@ Output:
 ```
 {
     "Response": {
+        "NewsLabels": [
+            {
+                "Confidence": 80,
+                "Name": "塔楼",
+                "SecondCategory": "建筑",
+                "FirstCategory": "场景"
+            }
+        ],
         "Labels": [
             {
                 "Name": "塔楼",

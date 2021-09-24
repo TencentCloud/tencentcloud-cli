@@ -17,6 +17,7 @@ Output:
     "Response": {
         "DataInfoList": [
             {
+                "StreamParam": "xx",
                 "ACodec": "AAC",
                 "AppName": "live",
                 "AudioFps": 43,
