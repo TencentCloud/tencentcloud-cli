@@ -1,6 +1,6 @@
 **Example 1: 查询集群列表**
 
-查询集群列表，用于获取集群列表
+
 
 Input: 
 
@@ -12,26 +12,53 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
+        "RequestId": "xx",
         "Clusters": [
             {
-                "ClusterId": "cls-xxxxxxx",
-                "ClusterName": "集群",
-                "ClusterDescription": "",
-                "ClusterVersion": "1.10.5",
-                "ClusterOs": "ubuntu16.04.1 LTSx86_64",
-                "ClusterType": "INDEPENDENT_CLUSTER",
+                "DeletionProtection": true,
+                "ClusterVersion": "xx",
+                "TagSpecification": [
+                    {
+                        "ResourceType": "xx",
+                        "Tags": [
+                            {
+                                "Value": "xx",
+                                "Key": "xx"
+                            }
+                        ]
+                    }
+                ],
+                "ClusterName": "xx",
+                "ClusterId": "xx",
+                "ClusterNodeNum": 1,
+                "ClusterType": "xx",
+                "ClusterDescription": "xx",
+                "ImageId": "xx",
+                "CreatedTime": "xx",
+                "EnableExternalNode": true,
+                "ContainerRuntime": "xx",
+                "ClusterMaterNodeNum": 1,
+                "ProjectId": 1,
+                "OsCustomizeType": "xx",
                 "ClusterNetworkSettings": {
-                    "ClusterCIDR": "10.211.0.0/16",
-                    "IgnoreClusterCIDRConflict": false,
-                    "MaxNodePodNum": 256,
-                    "MaxClusterServiceNum": 256,
-                    "Ipvs": false,
-                    "VpcId": "vpc-xxxxxx"
+                    "Subnets": [
+                        "xx"
+                    ],
+                    "VpcId": "xx",
+                    "ServiceCIDR": "xx",
+                    "MaxClusterServiceNum": 1,
+                    "KubeProxyMode": "xx",
+                    "MaxNodePodNum": 1,
+                    "Ipvs": true,
+                    "ClusterCIDR": "xx",
+                    "IgnoreClusterCIDRConflict": true,
+                    "Cni": true
                 },
-                "ClusterNodeNum": 3
+                "Property": "xx",
+                "ClusterOs": "xx",
+                "ClusterStatus": "xx"
             }
-        ],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+        ]
     }
 }
 ```

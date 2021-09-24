@@ -122,6 +122,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -131,6 +132,7 @@
         {
           "default": "",
           "document": "Agent 版本号。",
+          "example": "无",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -140,6 +142,7 @@
         {
           "default": "",
           "document": "上次心跳时间",
+          "example": "无",
           "member": "datetime_iso",
           "name": "LastHeartbeatTime",
           "required": true,
@@ -149,6 +152,7 @@
         {
           "default": "",
           "document": "Agent状态，取值范围：\n<li> Online：在线\n<li> Offline：离线",
+          "example": "无",
           "member": "string",
           "name": "AgentStatus",
           "required": true,
@@ -157,7 +161,8 @@
         },
         {
           "default": "",
-          "document": "Agent运行环境",
+          "document": "Agent运行环境，取值范围：\n<li> Linux：Linux实例\n<li> Windows：Windows实例",
+          "example": "无",
           "member": "string",
           "name": "Environment",
           "required": true,

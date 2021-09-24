@@ -298,6 +298,15 @@
           "name": "FolderId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业运行的Flink版本",
+          "example": "Flink-1.11",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1007,6 +1016,15 @@
           "example": "cluster-xxxx",
           "member": "string",
           "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询对应Flink版本的内置connector",
+          "example": "Flink-1.11",
+          "member": "string",
+          "name": "FlinkVersion",
           "required": false,
           "type": "string"
         }

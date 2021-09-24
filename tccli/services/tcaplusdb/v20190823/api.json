@@ -60,6 +60,12 @@
       "name": "删除表格快照",
       "output": "DeleteSnapshotsResponse"
     },
+    "DeleteTableDataFlow": {
+      "document": "删除表格的数据订阅",
+      "input": "DeleteTableDataFlowRequest",
+      "name": "删除表格的数据订阅",
+      "output": "DeleteTableDataFlowResponse"
+    },
     "DeleteTableGroup": {
       "document": "删除表格组",
       "input": "DeleteTableGroupRequest",
@@ -269,6 +275,12 @@
       "input": "RollbackTablesRequest",
       "name": "表格数据回档",
       "output": "RollbackTablesResponse"
+    },
+    "SetTableDataFlow": {
+      "document": "新增、修改表格数据订阅",
+      "input": "SetTableDataFlowRequest",
+      "name": "新增、修改表格数据订阅",
+      "output": "SetTableDataFlowResponse"
     },
     "SetTableIndex": {
       "document": "设置表格分布式索引",
@@ -863,6 +875,26 @@
           "name": "DbaUins",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启了数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DataFlowStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据订阅的kafka信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KafkaInfo",
+          "name": "KafkaInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -1481,6 +1513,60 @@
           "document": "批量删除的快照结果",
           "example": "无",
           "member": "SnapshotResult",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableDataFlowRequest": {
+      "document": "DeleteTableDataFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表格所属集群实例ID",
+          "example": "5674209986",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除分布式索引的表格列表",
+          "example": "无",
+          "member": "SelectedTableInfoNew",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTableDataFlowResponse": {
+      "document": "DeleteTableDataFlow返回参数结构体",
+      "members": [
+        {
+          "document": "删除表格分布式索引结果数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "删除表格分布式索引结果列表",
+          "example": "无",
+          "member": "TableResultNew",
           "name": "TableResults",
           "required": true,
           "type": "list",
@@ -2877,6 +2963,72 @@
       ],
       "type": "object"
     },
+    "KafkaInfo": {
+      "document": "ckafka地址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "kafaka address",
+          "example": "ckafka-3azrwxvw.ap-shanghai.ckafka.tencentcloudmq.com:6006",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kafaka topic",
+          "example": "tcapstream",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kafka username",
+          "example": "ckafka-3azrwxvw#tcaplusDev",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kafka password",
+          "example": "tcaplusDev123321",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ckafka实例",
+          "example": "ckafka-l4xpzgpz",
+          "member": "string",
+          "name": "Instance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否走VPC",
+          "example": "0",
+          "member": "int64",
+          "name": "IsVpc",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "KeyFile": {
       "document": "部分key导入快照数据时所需要的key文件",
       "members": [
@@ -3973,6 +4125,7 @@
         {
           "default": "",
           "document": "唯一id",
+          "example": "tcaproxy-123",
           "member": "string",
           "name": "ProxyUid",
           "required": true,
@@ -3982,10 +4135,21 @@
         {
           "default": "",
           "document": "机器类型",
+          "example": "T1",
           "member": "string",
           "name": "MachineType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可分配proxy资源数",
+          "example": "1",
+          "member": "int64",
+          "name": "AvailableCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4283,6 +4447,7 @@
         {
           "default": "",
           "document": "表所属表格组ID",
+          "example": "101",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -4292,6 +4457,7 @@
         {
           "default": "",
           "document": "表格名称",
+          "example": "tb_example",
           "member": "string",
           "name": "TableName",
           "required": true,
@@ -4301,6 +4467,7 @@
         {
           "default": "",
           "document": "表实例ID",
+          "example": "tcaplus-1f224454",
           "member": "string",
           "name": "TableInstanceId",
           "required": false,
@@ -4310,6 +4477,7 @@
         {
           "default": "",
           "document": "表格描述语言类型：`PROTO`或`TDR`",
+          "example": "PROTO",
           "member": "string",
           "name": "TableIdlType",
           "required": false,
@@ -4319,6 +4487,7 @@
         {
           "default": "",
           "document": "表格数据结构类型：`GENERIC`或`LIST`",
+          "example": "GENERIC",
           "member": "string",
           "name": "TableType",
           "required": false,
@@ -4327,7 +4496,8 @@
         },
         {
           "default": "",
-          "document": "待创建索引的字段列表",
+          "document": "待创建索引、缓写、数据订阅的字段列表",
+          "example": "无",
           "member": "FieldInfo",
           "name": "SelectedFields",
           "required": false,
@@ -4337,10 +4507,21 @@
         {
           "default": "",
           "document": "索引分片数",
+          "example": "3",
           "member": "uint64",
           "name": "ShardNum",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ckafka实例信息",
+          "example": "无",
+          "member": "KafkaInfo",
+          "name": "KafkaInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -4429,6 +4610,60 @@
         }
       ],
       "usage": "out"
+    },
+    "SetTableDataFlowRequest": {
+      "document": "SetTableDataFlow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "表所属集群实例ID",
+          "example": "5674209986",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待创建分布式索引表格列表",
+          "example": "无",
+          "member": "SelectedTableWithField",
+          "name": "SelectedTables",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTableDataFlowResponse": {
+      "document": "SetTableDataFlow返回参数结构体",
+      "members": [
+        {
+          "document": "表格数据订阅创建结果数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表格数据订阅创建结果列表",
+          "example": "无",
+          "member": "TableResultNew",
+          "name": "TableResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetTableIndexRequest": {
       "document": "SetTableIndex请求参数结构体",
@@ -4734,6 +4969,7 @@
         {
           "default": "",
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableName",
           "required": true,
@@ -4743,6 +4979,7 @@
         {
           "default": "",
           "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableInstanceId",
           "required": true,
@@ -4752,6 +4989,7 @@
         {
           "default": "",
           "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableType",
           "required": true,
@@ -4761,6 +4999,7 @@
         {
           "default": "",
           "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableIdlType",
           "required": true,
@@ -4770,6 +5009,7 @@
         {
           "default": "",
           "document": "表格所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4779,6 +5019,7 @@
         {
           "default": "",
           "document": "表格所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -4788,6 +5029,7 @@
         {
           "default": "",
           "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -4797,6 +5039,7 @@
         {
           "default": "",
           "document": "表格所属表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "TableGroupName",
           "required": true,
@@ -4806,6 +5049,7 @@
         {
           "default": "",
           "document": "表格主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "KeyStruct",
           "required": true,
@@ -4815,6 +5059,7 @@
         {
           "default": "",
           "document": "表格非主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ValueStruct",
           "required": true,
@@ -4824,6 +5069,7 @@
         {
           "default": "",
           "document": "表格分表因子集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ShardingKeySet",
           "required": true,
@@ -4833,6 +5079,7 @@
         {
           "default": "",
           "document": "表格索引键字段集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "IndexStruct",
           "required": true,
@@ -4842,6 +5089,7 @@
         {
           "default": "",
           "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "ListElementNum",
           "required": true,
@@ -4851,6 +5099,7 @@
         {
           "default": "",
           "document": "表格所关联IDL文件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
@@ -4860,6 +5109,7 @@
         {
           "default": "",
           "document": "表格预留容量（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ReservedVolume",
           "required": true,
@@ -4869,6 +5119,7 @@
         {
           "default": "",
           "document": "表格预留读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ReservedReadQps",
           "required": true,
@@ -4878,6 +5129,7 @@
         {
           "default": "",
           "document": "表格预留写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ReservedWriteQps",
           "required": true,
@@ -4887,6 +5139,7 @@
         {
           "default": "",
           "document": "表格实际数据量大小（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TableSize",
           "required": true,
@@ -4896,6 +5149,7 @@
         {
           "default": "",
           "document": "表格状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4905,6 +5159,7 @@
         {
           "default": "",
           "document": "表格创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -4914,6 +5169,7 @@
         {
           "default": "",
           "document": "表格最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "UpdatedTime",
           "required": true,
@@ -4923,6 +5179,7 @@
         {
           "default": "",
           "document": "表格备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Memo",
           "required": true,
@@ -4932,6 +5189,7 @@
         {
           "default": "",
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "ErrorInfo",
           "name": "Error",
           "required": true,
@@ -4941,6 +5199,7 @@
         {
           "default": "",
           "document": "TcaplusDB SDK数据访问接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "ApiAccessId",
           "required": true,
@@ -4950,6 +5209,7 @@
         {
           "default": "",
           "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SortFieldNum",
           "required": true,
@@ -4959,6 +5219,7 @@
         {
           "default": "",
           "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SortRule",
           "required": true,
@@ -4967,7 +5228,8 @@
         },
         {
           "default": "",
-          "document": "表格分布式索引信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格分布式索引/缓写、kafka数据订阅信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "DbClusterInfoStruct",
           "required": true,

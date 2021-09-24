@@ -235,7 +235,7 @@
       "output": "DescribeBillBandwidthAndFluxListResponse"
     },
     "DescribeCallbackRecordsList": {
-      "document": "回调事件查询",
+      "document": "用于查询回调事件。",
       "input": "DescribeCallbackRecordsListRequest",
       "name": "回调事件查询",
       "output": "DescribeCallbackRecordsListResponse"
@@ -3927,6 +3927,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-0100:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -3935,6 +3936,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过1天。",
+          "example": "2019-02-0100:10:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3943,6 +3945,7 @@
         {
           "default": "",
           "document": "直播播放域名，若不填，表示总体数据。",
+          "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -3956,8 +3959,10 @@
       "members": [
         {
           "document": "明细数据信息。",
+          "example": "无",
           "member": "BillAreaInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3976,6 +3981,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-0100:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -3984,6 +3990,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。支持最近3年的数据查询",
+          "example": "2019-02-0100:10:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3992,6 +3999,7 @@
         {
           "default": "",
           "document": "直播播放域名，若不填，表示总体数据。",
+          "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -4000,6 +4008,7 @@
         {
           "default": "",
           "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。\n注：LEB（快直播）只支持国内+国外数据查询。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -4008,6 +4017,7 @@
         {
           "default": "",
           "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n60：1小时粒度（跨度不支持超过一个月），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
+          "example": "5",
           "member": "uint64",
           "name": "Granularity",
           "required": false,
@@ -4016,6 +4026,7 @@
         {
           "default": "",
           "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "example": "LEB",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -4029,43 +4040,55 @@
       "members": [
         {
           "document": "峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-01 00:00:00",
           "member": "string",
           "name": "PeakBandwidthTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "峰值带宽，单位是Mbps。",
+          "example": "117042.495",
           "member": "float",
           "name": "PeakBandwidth",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "95峰值带宽所在时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-02-01 00:00:00",
           "member": "string",
           "name": "P95PeakBandwidthTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "95峰值带宽，单位是Mbps。",
+          "example": "117042.495",
           "member": "float",
           "name": "P95PeakBandwidth",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "总流量，单位是MB。",
+          "example": "12254567.55",
           "member": "float",
           "name": "SumFlux",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "明细数据信息。",
+          "example": "无",
           "member": "BillDataInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4084,6 +4107,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2020-10-12 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4092,6 +4116,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过1天。",
+          "example": "2020-10-12 00:10:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4100,6 +4125,7 @@
         {
           "default": "",
           "document": "流名称，精确匹配。",
+          "example": "test",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -4107,7 +4133,8 @@
         },
         {
           "default": "",
-          "document": "页码",
+          "document": "页码。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": true,
@@ -4115,7 +4142,8 @@
         },
         {
           "default": "",
-          "document": "每页条数",
+          "document": "每页条数。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -4123,7 +4151,8 @@
         },
         {
           "default": "",
-          "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"",
+          "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"。",
+          "example": "1",
           "member": "uint64",
           "name": "EventType",
           "required": false,
@@ -4131,7 +4160,8 @@
         },
         {
           "default": "",
-          "document": "回调结果。0为成功，其他为失败",
+          "document": "回调结果。\n0为成功，其他为失败。",
+          "example": "0",
           "member": "uint64",
           "name": "ResultCode",
           "required": false,
@@ -4144,37 +4174,47 @@
       "document": "DescribeCallbackRecordsList返回参数结构体",
       "members": [
         {
-          "document": "回调事件列表",
+          "document": "回调事件列表。",
+          "example": "无",
           "member": "CallbackEventInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "页码",
+          "document": "页码。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "每页条数",
+          "document": "每页条数。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "总条数",
+          "document": "总条数。",
+          "example": "11",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "总页数",
+          "document": "总页数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4193,6 +4233,7 @@
         {
           "default": "",
           "document": "直播类型，SlowLive：慢直播。\nNormalLive：普通直播。",
+          "example": "NormalLive",
           "member": "string",
           "name": "LiveType",
           "required": true,
@@ -4201,6 +4242,7 @@
         {
           "default": "",
           "document": "起始时间，格式：yyyy-mm-dd HH:MM:SS。\n可以查询最近180天的数据。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4209,6 +4251,7 @@
         {
           "default": "",
           "document": "结束时间，格式：yyyy-mm-dd HH:MM:SS。\n时间跨度最大支持31天。",
+          "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4217,6 +4260,7 @@
         {
           "default": "",
           "document": "如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -4225,6 +4269,7 @@
         {
           "default": "",
           "document": "推流域名列表，不填表示总体数据。",
+          "example": "[\"5000.livepush.com\\r\\n\"]",
           "member": "string",
           "name": "PushDomains",
           "required": false,
@@ -4238,8 +4283,10 @@
       "members": [
         {
           "document": "统计信息列表。",
+          "example": "无",
           "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4258,6 +4305,7 @@
         {
           "default": "",
           "document": "起始时间，格式为%Y-%m-%d %H:%M:%S。",
+          "example": "2020-01-07 21:10:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4266,6 +4314,7 @@
         {
           "default": "",
           "document": "结束时间，格式为%Y-%m-%d %H:%M:%S，支持最近三个月的数据查询，时间跨度最大是1个月。",
+          "example": "2020-01-07 21:15:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4279,8 +4328,10 @@
       "members": [
         {
           "document": "转推计费带宽数据",
+          "example": "无",
           "member": "BandwidthInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4299,6 +4350,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-29 09:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4307,6 +4359,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在（0,3小时]，支持最近1个月数据查询。",
+          "example": "2019-03-29 09:10:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4315,6 +4368,7 @@
         {
           "default": "",
           "document": "播放域名，默认为不填，表示求总体数据。",
+          "example": "[\"live.com\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -4323,6 +4377,7 @@
         {
           "default": "",
           "document": "省份列表，默认不填，则返回各省份的数据。",
+          "example": "[\"Beijing\"]",
           "member": "string",
           "name": "ProvinceNames",
           "required": false,
@@ -4331,6 +4386,7 @@
         {
           "default": "",
           "document": "运营商列表，默认不填，则返回整个运营商的数据。",
+          "example": "[\"China Mobile\"]",
           "member": "string",
           "name": "IspNames",
           "required": false,
@@ -4339,6 +4395,7 @@
         {
           "default": "",
           "document": "国内还是国外，如果为空，查询所有地区数据；如果为“Mainland”，查询国内数据；如果为“Oversea”，则查询国外数据。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -4352,8 +4409,10 @@
       "members": [
         {
           "document": "数据内容。",
+          "example": "无",
           "member": "GroupProIspDataInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4372,6 +4431,7 @@
         {
           "default": "",
           "document": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4380,6 +4440,7 @@
         {
           "default": "",
           "document": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：最大时间跨度支持1天，支持最近3个月的数据查询。",
+          "example": "2019-03-01 00:01:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4388,6 +4449,7 @@
         {
           "default": "",
           "document": "播放域名列表。",
+          "example": "[\"5000.liveplay.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -4401,8 +4463,10 @@
       "members": [
         {
           "document": "播放状态码列表。",
+          "example": "无",
           "member": "HttpStatusData",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4621,6 +4685,7 @@
         {
           "default": "",
           "document": "播放域名列表。",
+          "example": "[\"live.com\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -4634,43 +4699,55 @@
       "members": [
         {
           "document": "数据时间，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-04-07 21:55:00",
           "member": "string",
           "name": "Time",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实时总带宽。",
+          "example": "2909181.92",
           "member": "float",
           "name": "TotalBandwidth",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "实时总流量。",
+          "example": "174550915.2",
           "member": "float",
           "name": "TotalFlux",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "总请求数。",
+          "example": "2446274",
           "member": "uint64",
           "name": "TotalRequest",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实时总连接数。",
+          "example": "2800396",
           "member": "uint64",
           "name": "TotalOnline",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "分域名的数据情况。",
+          "example": "无",
           "member": "DomainInfoList",
           "name": "DomainInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6380,6 +6457,7 @@
         {
           "default": "",
           "document": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6388,6 +6466,7 @@
         {
           "default": "",
           "document": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "example": "2019-03-01 00:01:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -6396,6 +6475,7 @@
         {
           "default": "",
           "document": "查询粒度：\n1-1分钟粒度。",
+          "example": "1",
           "member": "uint64",
           "name": "Granularity",
           "required": true,
@@ -6404,6 +6484,7 @@
         {
           "default": "",
           "document": "是，可选值包括”4xx”,”5xx”，支持”4xx,5xx”等这种混合模式。",
+          "example": "4xx",
           "member": "string",
           "name": "StatType",
           "required": true,
@@ -6412,6 +6493,7 @@
         {
           "default": "",
           "document": "播放域名列表。",
+          "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -6420,6 +6502,7 @@
         {
           "default": "",
           "document": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -6433,15 +6516,19 @@
       "members": [
         {
           "document": "统计信息列表。",
+          "example": "无",
           "member": "HttpCodeInfo",
           "name": "HttpCodeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "统计类型。",
+          "example": "4xx",
           "member": "string",
           "name": "StatType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6460,6 +6547,7 @@
         {
           "default": "",
           "document": "起始时间点，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6468,6 +6556,7 @@
         {
           "default": "",
           "document": "结束时间点，北京时间。\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -6476,6 +6565,7 @@
         {
           "default": "",
           "document": "播放域名列表，不填表示总体数据。",
+          "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -6484,6 +6574,7 @@
         {
           "default": "",
           "document": "页数，范围[1,1000]，默认值是1。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -6492,6 +6583,7 @@
         {
           "default": "",
           "document": "每页个数，范围：[1,1000]，默认值是20。",
+          "example": "100",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -6500,6 +6592,7 @@
         {
           "default": "",
           "document": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -6508,6 +6601,7 @@
         {
           "default": "",
           "document": "分组参数，可选值：CountryProIsp（默认值），Country（国家），默认是按照国家+省份+运营商来进行分组；目前国外的省份和运营商暂时无法识别。",
+          "example": "CountryProIsp",
           "member": "string",
           "name": "GroupType",
           "required": false,
@@ -6516,6 +6610,7 @@
         {
           "default": "",
           "document": "输出字段使用的语言，可选值：Chinese（默认值），English，目前国家，省份和运营商支持多语言。",
+          "example": "Chinese",
           "member": "string",
           "name": "OutLanguage",
           "required": false,
@@ -6529,78 +6624,100 @@
       "members": [
         {
           "document": "分省份分运营商错误码为2或3或4或5开头的状态码数据信息。",
+          "example": "无",
           "member": "ProIspPlayCodeDataInfo",
           "name": "ProIspInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "所有状态码的加和的次数。",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCodeAll",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "状态码为4开头的总次数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCode4xx",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "状态码为5开头的总次数。",
+          "example": "29",
           "member": "uint64",
           "name": "TotalCode5xx",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各状态码的总次数。",
+          "example": "无",
           "member": "PlayCodeTotalInfo",
           "name": "TotalCodeList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "页号。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页大小。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总记录数。",
+          "example": "100",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "状态码为2开头的总次数。",
+          "example": "11",
           "member": "uint64",
           "name": "TotalCode2xx",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "状态码为3开头的总次数。",
+          "example": "12",
           "member": "uint64",
           "name": "TotalCode3xx",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6619,6 +6736,7 @@
         {
           "default": "",
           "document": "起始时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6627,6 +6745,7 @@
         {
           "default": "",
           "document": "结束时间，北京时间，\n格式：yyyy-mm-dd HH:MM:SS。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -6635,6 +6754,7 @@
         {
           "default": "",
           "document": "统计的类型，可选值：”Province”(省份)，”Isp”(运营商)，“CountryOrArea”(国家或地区)。",
+          "example": "Province",
           "member": "string",
           "name": "StatType",
           "required": true,
@@ -6643,6 +6763,7 @@
         {
           "default": "",
           "document": "播放域名列表，不填则为全部。",
+          "example": "[\"5000.playdomain.com\\r\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -6651,6 +6772,7 @@
         {
           "default": "",
           "document": "页号，范围是[1,1000]，默认值是1。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -6659,6 +6781,7 @@
         {
           "default": "",
           "document": "每页个数，范围是[1,1000]，默认值是20。",
+          "example": "100",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -6667,6 +6790,7 @@
         {
           "default": "",
           "document": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -6675,6 +6799,7 @@
         {
           "default": "",
           "document": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。",
+          "example": "Chinese",
           "member": "string",
           "name": "OutLanguage",
           "required": false,
@@ -6688,64 +6813,82 @@
       "members": [
         {
           "document": "总流量。",
+          "example": "100",
           "member": "float",
           "name": "TotalFlux",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "总请求数。",
+          "example": "100",
           "member": "uint64",
           "name": "TotalRequest",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "统计的类型。",
+          "example": "Province",
           "member": "string",
           "name": "StatType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "每页的记录数。",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "页号。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总记录数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "省份，运营商，国家或地区汇总数据列表。",
+          "example": "无",
           "member": "ProIspPlaySumInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "下载速度，单位：MB/s，计算方式：总流量/总时长。",
+          "example": "100",
           "member": "float",
           "name": "AvgFluxPerSecond",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6764,6 +6907,7 @@
         {
           "default": "",
           "document": "起始时间点，当前使用北京时间，\n例：2019-02-21 10:00:00。",
+          "example": "2019-02-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6772,6 +6916,7 @@
         {
           "default": "",
           "document": "结束时间点，当前使用北京时间，\n例：2019-02-21 12:00:00。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "example": "2019-02-02 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -6780,6 +6925,7 @@
         {
           "default": "",
           "document": "支持如下粒度：\n1：1分钟粒度（跨度不支持超过1天）",
+          "example": "1",
           "member": "uint64",
           "name": "Granularity",
           "required": true,
@@ -6788,6 +6934,7 @@
         {
           "default": "",
           "document": "统计指标类型：\n“Bandwidth”：带宽\n“FluxPerSecond”：平均流量\n“Flux”：流量\n“Request”：请求数\n“Online”：并发连接数",
+          "example": "Bandwidth",
           "member": "string",
           "name": "StatType",
           "required": true,
@@ -6796,6 +6943,7 @@
         {
           "default": "",
           "document": "播放域名列表。",
+          "example": "[\"5000.playdomain.com\\n\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -6804,6 +6952,7 @@
         {
           "default": "",
           "document": "要查询的省份（地区）英文名称列表，如 Beijing。",
+          "example": "[\"Beijing\"]",
           "member": "string",
           "name": "ProvinceNames",
           "required": false,
@@ -6812,6 +6961,7 @@
         {
           "default": "",
           "document": "要查询的运营商英文名称列表，如 China Mobile ，如果为空，查询所有运营商的数据。",
+          "example": "[\"China Mobile\"]",
           "member": "string",
           "name": "IspNames",
           "required": false,
@@ -6820,6 +6970,7 @@
         {
           "default": "",
           "document": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -6828,6 +6979,7 @@
         {
           "default": "",
           "document": "ip类型：\n“Ipv6”：Ipv6数据\n如果为空，查询总的数据；",
+          "example": "Ipv6",
           "member": "string",
           "name": "IpType",
           "required": false,
@@ -6841,15 +6993,19 @@
       "members": [
         {
           "document": "播放信息列表。",
+          "example": "无",
           "member": "PlayStatInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "统计的类型，和输入参数保持一致。",
+          "example": "Bandwidth",
           "member": "string",
           "name": "StatType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7108,6 +7264,7 @@
         {
           "default": "",
           "document": "utc起始时间，格式为yyyy-mm-ddTHH:MM:SSZ",
+          "example": "2019-11-07T16:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7116,6 +7273,7 @@
         {
           "default": "",
           "document": "utc结束时间，格式为yyyy-mm-ddTHH:MM:SSZ，支持查询最近1年数据。",
+          "example": "2019-11-09T15:59:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7124,6 +7282,7 @@
         {
           "default": "",
           "document": "地域信息，可选值包括Mainland，Oversea，前者是查询中国大陆范围内的数据，后者是除中国大陆范围之外的数据，若不传该参数，则查询所有地区的数据。",
+          "example": "Mainland",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -7132,6 +7291,7 @@
         {
           "default": "",
           "document": "推流域名（支持查询2019年11 月1日之后的域名维度数据）。",
+          "example": "[\"push.live.com\"]",
           "member": "string",
           "name": "PushDomains",
           "required": false,
@@ -7139,7 +7299,8 @@
         },
         {
           "default": "",
-          "document": "数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，最大支持查询时间范围是186天当天）。",
+          "document": "数据维度，数据延迟1个半小时，可选值包括：1、Minute（5分钟粒度，最大支持查询时间范围是31天），2、Day（天粒度，默认值，按照北京时间做跨天处理，最大支持查询时间范围是186天当天）。",
+          "example": "Minute",
           "member": "string",
           "name": "Granularity",
           "required": false,
@@ -7153,8 +7314,10 @@
       "members": [
         {
           "document": "数据信息列表。",
+          "example": "无",
           "member": "TimeValue",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7173,6 +7336,7 @@
         {
           "default": "",
           "document": "日期，格式：YYYY-mm-dd。\n第二天凌晨3点出昨天的数据，建议在这个时间点之后查询最新数据。支持最近3个月的数据查询。",
+          "example": "2019-02-21",
           "member": "string",
           "name": "DayTime",
           "required": true,
@@ -7181,6 +7345,7 @@
         {
           "default": "",
           "document": "播放域名。",
+          "example": "5000.livepush.com",
           "member": "string",
           "name": "PlayDomain",
           "required": false,
@@ -7189,6 +7354,7 @@
         {
           "default": "",
           "document": "页号，范围[1,1000]，默认值是1。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -7197,6 +7363,7 @@
         {
           "default": "",
           "document": "每页个数，范围[100,1000]，默认值是1000。",
+          "example": "1000",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -7205,6 +7372,7 @@
         {
           "default": "",
           "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -7213,6 +7381,7 @@
         {
           "default": "",
           "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "example": "LVB",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -7226,36 +7395,46 @@
       "members": [
         {
           "document": "播放数据信息列表。",
+          "example": "无",
           "member": "PlayDataInfoByStream",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总数量。",
+          "example": "100",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总页数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前数据所处页码。",
+          "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页个数。",
+          "example": "1000",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7274,6 +7453,7 @@
         {
           "default": "",
           "document": "开始时间，北京时间，格式为yyyy-mm-dd HH:MM:SS",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7282,6 +7462,7 @@
         {
           "default": "",
           "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间30天内的数据查询。",
+          "example": "2019-03-01 00:03:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7290,6 +7471,7 @@
         {
           "default": "",
           "document": "播放域名，\n若不填，则为查询所有播放域名的在线流数据。",
+          "example": "5000.playdomain.com",
           "member": "string",
           "name": "PlayDomain",
           "required": false,
@@ -7298,6 +7480,7 @@
         {
           "default": "",
           "document": "流名称，精确匹配。\n若不填，则为查询总体播放数据。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": false,
@@ -7306,6 +7489,7 @@
         {
           "default": "",
           "document": "推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。\n若不填，则为查询总体播放数据。\n注意：按AppName查询请先联系工单申请，开通后配置生效预计需要5个工作日左右，具体时间以最终回复为准。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -7314,6 +7498,7 @@
         {
           "default": "",
           "document": "服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。",
+          "example": "LVB",
           "member": "string",
           "name": "ServiceName",
           "required": false,
@@ -7327,8 +7512,10 @@
       "members": [
         {
           "document": "统计信息列表，时间粒度是1分钟。",
+          "example": "无",
           "member": "DayStreamPlayInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7347,6 +7534,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "abcd",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -7355,6 +7543,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-06-21 12:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7362,7 +7551,8 @@
         },
         {
           "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，最大时间跨度支持6小时，支持最近6天数据查询。",
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。",
+          "example": "2019-06-21 12:01:02",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7371,6 +7561,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "abc",
           "member": "string",
           "name": "PushDomain",
           "required": false,
@@ -7379,6 +7570,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "abc",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -7392,8 +7584,10 @@
       "members": [
         {
           "document": "返回的数据列表。",
+          "example": "无",
           "member": "PushQualityData",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7412,6 +7606,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7420,6 +7615,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在[0,4小时]，支持最近1天数据查询。",
+          "example": "2019-03-01 04:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7428,6 +7624,7 @@
         {
           "default": "",
           "document": "播放域名，默认为不填，表示求总体数据。",
+          "example": "[\"live.com\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -7436,6 +7633,7 @@
         {
           "default": "",
           "document": "页号，范围是[1,1000]，默认值是1。",
+          "example": "2",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -7444,6 +7642,7 @@
         {
           "default": "",
           "document": "每页个数，范围是[1,1000]，默认值是20。",
+          "example": "2",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -7452,6 +7651,7 @@
         {
           "default": "",
           "document": "排序指标，可选值包括TotalRequest（默认值），FailedRequest,TotalFlux。",
+          "example": "TotalFlux",
           "member": "string",
           "name": "OrderParam",
           "required": false,
@@ -7460,6 +7660,7 @@
         {
           "default": "",
           "document": "地域，可选值：Mainland，Oversea，China，Foreign，Global（默认值）；如果为空，查询总的数据；如果为“Mainland”，查询中国大陆的数据；如果为“Oversea”，则查询中国大陆以外的数据；如果为China，查询中国的数据（包括港澳台）；如果为Foreign，查询国外的数据（不包括港澳台）。",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
@@ -7468,6 +7669,7 @@
         {
           "default": "",
           "document": "输出字段使用的语言，可选值：Chinese（默认值），English；目前国家，省份和运营商支持多语言。",
+          "example": "Chinese",
           "member": "string",
           "name": "OutLanguage",
           "required": false,
@@ -7481,43 +7683,55 @@
       "members": [
         {
           "document": "页号，范围是[1,1000]，默认值是1。",
+          "example": "2",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页个数，范围是[1,1000]，默认值是20。",
+          "example": "2",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "排序指标，可选值包括”TotalRequest”，”FailedRequest”,“TotalFlux”。",
+          "example": "TotalFlux",
           "member": "string",
           "name": "OrderParam",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "1000",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "记录总页数。",
+          "example": "500",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "数据内容。",
+          "example": "无",
           "member": "ClientIpPlaySumInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7536,6 +7750,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2020-10-12 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7544,6 +7759,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，起始和结束时间跨度不支持超过31天。支持最近31天的数据查询",
+          "example": "2020-10-12 01:01:05",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7552,6 +7768,7 @@
         {
           "default": "",
           "document": "直播域名，若不填，表示总体数据。",
+          "example": "[\"test.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -7560,6 +7777,7 @@
         {
           "default": "",
           "document": "数据粒度，支持如下粒度：\n5：5分钟粒度，（跨度不支持超过1天），\n1440：天粒度（跨度不支持超过一个月）。\n默认值：5。",
+          "example": "5",
           "member": "uint64",
           "name": "Granularity",
           "required": false,
@@ -7573,8 +7791,10 @@
       "members": [
         {
           "document": "明细数据信息",
+          "example": "无",
           "member": "ConcurrentRecordStreamNum",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7593,6 +7813,7 @@
         {
           "default": "",
           "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7601,6 +7822,7 @@
         {
           "default": "",
           "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS\n时间跨度在(0,4小时]，支持最近1天数据查询。",
+          "example": "2019-03-01 04:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -7609,6 +7831,7 @@
         {
           "default": "",
           "document": "峰值指标，可选值包括”Domain”，”StreamId”。",
+          "example": "StreamId",
           "member": "string",
           "name": "TopIndex",
           "required": true,
@@ -7617,6 +7840,7 @@
         {
           "default": "",
           "document": "播放域名，默认为不填，表示求总体数据。",
+          "example": "[\"live.com\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,
@@ -7625,6 +7849,7 @@
         {
           "default": "",
           "document": "页号，\n范围是[1,1000]，\n默认值是1。",
+          "example": "2",
           "member": "uint64",
           "name": "PageNum",
           "required": false,
@@ -7633,6 +7858,7 @@
         {
           "default": "",
           "document": "每页个数，范围是[1,1000]，\n默认值是20。",
+          "example": "2",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -7641,6 +7867,7 @@
         {
           "default": "",
           "document": "排序指标，可选值包括” AvgFluxPerSecond”，”TotalRequest”（默认）,“TotalFlux”。",
+          "example": "TotalFlux",
           "member": "string",
           "name": "OrderParam",
           "required": false,
@@ -7654,50 +7881,64 @@
       "members": [
         {
           "document": "页号，\n范围是[1,1000]，\n默认值是1。",
+          "example": "2",
           "member": "uint64",
           "name": "PageNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "每页个数，范围是[1,1000]，\n默认值是20。",
+          "example": "2",
           "member": "uint64",
           "name": "PageSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "峰值指标，可选值包括”Domain”，”StreamId”。",
+          "example": "StreamId",
           "member": "string",
           "name": "TopIndex",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "排序指标，可选值包括” AvgFluxPerSecond”(按每秒平均流量排序)，”TotalRequest”（默认，按总请求数排序）,“TotalFlux”（按总流量排序）。",
+          "example": "TotalFlux",
           "member": "string",
           "name": "OrderParam",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "记录总数。",
+          "example": "1000",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "记录总页数。",
+          "example": "500",
           "member": "uint64",
           "name": "TotalPage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "数据内容。",
+          "example": "无",
           "member": "PlaySumStatInfo",
           "name": "DataInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -318,7 +318,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeAreaBillBandwidthAndFluxList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-02-0100:00:00\n&EndTime=2019-02-0100:10:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Name\": \"中东/非洲\",\n                \"Countrys\": [\n                    {\n                        \"Name\": \"阿联酋\",\n                        \"BandInfoList\": [\n                            {\n                                \"Bandwidth\": 6.95,\n                                \"Flux\": 260.7,\n                                \"PeakTime\": \"2020-09-09 00:00:00\",\n                                \"Time\": \"2020-09-09 00:05:00\"\n                            },\n                            {\n                                \"Bandwidth\": 5.84,\n                                \"Flux\": 219.09,\n                                \"PeakTime\": \"2020-09-09 00:05:00\",\n                                \"Time\": \"2020-09-09 00:10:00\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Name\": \"中东/非洲\",\n                \"Countrys\": [\n                    {\n                        \"Name\": \"阿联酋\",\n                        \"BandInfoList\": [\n                            {\n                                \"Bandwidth\": 6.95,\n                                \"Flux\": 260.7,\n                                \"PeakTime\": \"2020-09-09 00:00:00\",\n                                \"Time\": \"2020-09-09 00:05:00\"\n                            },\n                            {\n                                \"Bandwidth\": 5.84,\n                                \"Flux\": 219.09,\n                                \"PeakTime\": \"2020-09-09 00:05:00\",\n                                \"Time\": \"2020-09-09 00:10:00\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -333,15 +333,15 @@
     "DescribeCallbackRecordsList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallbackRecordsList\n<公共请求参数>\n\n{\n    \"StreamName\": \"57ac8fa12d1c165827d56ecba292673\",\n    \"StartTime\": \"2020-10-12 00:00:00\",\n    \"EndTime\": \"2020-10-12 00:10:00\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 11,\n        \"TotalPage\": 2,\n        \"RequestId\": \"xx\",\n        \"DataInfoList\": [\n            {\n                \"EventTime\": \"2020-10-12 00:32:10\",\n                \"EventType\": 0,\n                \"Request\": \"opensso++server%3D10.12.1.1%3A\",\n                \"Response\": \"status+code%3A200%2C+content%3DSuccess\",\n                \"ResponseTime\": \"2020-10-12 00:32:11\",\n                \"ResultCode\": 0,\n                \"StreamId\": \"57ac8fa12d1c165827d56ecba292673\"\n            },\n            {\n                \"EventTime\": \"2020-10-12 00:30:35\",\n                \"EventType\": 0,\n                \"Request\": \"opensso++server%3D10.12.6.7%3A\",\n                \"Response\": \"status+code%3A200%2C+content%3DSuccess\",\n                \"ResponseTime\": \"2020-10-12 00:30:36\",\n                \"ResultCode\": 0,\n                \"StreamId\": \"57ac8fa12d1c165827d56ecba292673\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallbackRecordsList\n<公共请求参数>\n\n{\n    \"StreamName\": \"test\",\n    \"StartTime\": \"2020-10-12 00:00:00\",\n    \"EndTime\": \"2020-10-12 00:10:00\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"TotalNum\": 11,\n        \"TotalPage\": 2,\n        \"RequestId\": \"xx\",\n        \"DataInfoList\": [\n            {\n                \"EventTime\": \"2020-10-12 00:32:10\",\n                \"EventType\": 0,\n                \"Request\": \"opensso++server%3D10.12.1.1%3A\",\n                \"Response\": \"status+code%3A200%2C+content%3DSuccess\",\n                \"ResponseTime\": \"2020-10-12 00:32:11\",\n                \"ResultCode\": 0,\n                \"StreamId\": \"test\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeConcurrentRecordStreamNum": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeConcurrentRecordStreamNum\r\n&LiveType=NormalLive\r\n&MainlandOrOversea=Mainland\r\n&PushDomains.0=5000.livepush.com\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 12:00:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeConcurrentRecordStreamNum\n&LiveType=NormalLive\n&MainlandOrOversea=Mainland\n&PushDomains.0=5000.livepush.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01 01:00\",\n                \"Num\": 100\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
@@ -349,7 +349,7 @@
     "DescribeDeliverBandwidthList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeDeliverBandwidthList\r\n&StartTime=2020-01-07 21:10:00\r\n&EndTime=2020-01-07 21:15:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeDeliverBandwidthList\n&StartTime=2020-01-07 21:10:00\n&EndTime=2020-01-07 21:15:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Bandwidth\": 45927.6,\n                \"Time\": \"2020-05-01 00:00:00\"\n            },\n            {\n                \"Bandwidth\": 44494.84,\n                \"Time\": \"2020-05-01 00:05:00\"\n            },\n            {\n                \"Bandwidth\": 43061.09,\n                \"Time\": \"2020-05-01 00:10:00\"\n            }\n        ],\n        \"RequestId\": \"f54e3deb-f318-4148-8a68-3c959642f9ec\"\n    }\n}",
         "title": "请求示例"
       }
@@ -357,7 +357,7 @@
     "DescribeGroupProIspPlayInfoList": [
       {
         "document": "省份和运营商参考： [映射表](/document/api/267/34019)",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeGroupProIspPlayInfoList\r\n&StartTime=2019-03-29 09:00:00\r\n&EndTime=2019-03-29 09:10:00\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeGroupProIspPlayInfoList\n&StartTime=2019-03-29 09:00:00\n&EndTime=2019-03-29 09:10:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"DetailInfoList\": [\n                    {\n                        \"Bandwidth\": 863.073,\n                        \"Flux\": 6473.05,\n                        \"Online\": 540,\n                        \"Request\": 449,\n                        \"Time\": \"2019-03-29 09:00:00\"\n                    },\n                    {\n                        \"Bandwidth\": 891.49,\n                        \"Flux\": 6686.173,\n                        \"Online\": 524,\n                        \"Request\": 455,\n                        \"Time\": \"2019-03-29 09:05:00\"\n                    },\n                    {\n                        \"Bandwidth\": 847.715,\n                        \"Flux\": 6357.859,\n                        \"Online\": 612,\n                        \"Request\": 578,\n                        \"Time\": \"2019-03-29 09:10:00\"\n                    }\n                ],\n                \"IspName\": \"电信\",\n                \"ProvinceName\": \"广东省\"\n            },\n            {\n                \"DetailInfoList\": [\n                    {\n                        \"Bandwidth\": 213.405,\n                        \"Flux\": 1600.537,\n                        \"Online\": 132,\n                        \"Request\": 184,\n                        \"Time\": \"2019-03-29 09:00:00\"\n                    },\n                    {\n                        \"Bandwidth\": 215.738,\n                        \"Flux\": 1618.032,\n                        \"Online\": 125,\n                        \"Request\": 122,\n                        \"Time\": \"2019-03-29 09:05:00\"\n                    },\n                    {\n                        \"Bandwidth\": 226.96,\n                        \"Flux\": 1702.203,\n                        \"Online\": 131,\n                        \"Request\": 131,\n                        \"Time\": \"2019-03-29 09:10:00\"\n                    }\n                ],\n                \"IspName\": \"联通\",\n                \"ProvinceName\": \"广东省\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -437,7 +437,7 @@
     "DescribeLiveDomainPlayInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomainPlayInfoList\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomainPlayInfoList\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DomainInfoList\": [\n            {\n                \"DetailInfoList\": [\n                    {\n                        \"Bandwidth\": 309.998,\n                        \"Flux\": 18599.88,\n                        \"MainlandOrOversea\": \"Mainland\",\n                        \"Online\": 374,\n                        \"Request\": 175\n                    },\n                    {\n                        \"Bandwidth\": 0,\n                        \"Flux\": 0,\n                        \"MainlandOrOversea\": \"Oversea\",\n                        \"Online\": 0,\n                        \"Request\": 0\n                    }\n                ],\n                \"Domain\": \"345.tencent.com\"\n            },\n            {\n                \"DetailInfoList\": [\n                    {\n                        \"Bandwidth\": 134351.765,\n                        \"Flux\": 8061105.9,\n                        \"MainlandOrOversea\": \"Mainland\",\n                        \"Online\": 130171,\n                        \"Request\": 102524\n                    },\n                    {\n                        \"Bandwidth\": 0,\n                        \"Flux\": 0,\n                        \"MainlandOrOversea\": \"Oversea\",\n                        \"Online\": 0,\n                        \"Request\": 0\n                    }\n                ],\n                \"Domain\": \"123.tencent.com\"\n            }\n        ],\n        \"RequestId\": \"04b76ebd-487d-4a7a-aca8-82060359feee\",\n        \"Time\": \"2019-04-07 21:55:00\",\n        \"TotalBandwidth\": 2909181.92,\n        \"TotalFlux\": 174550915.2,\n        \"TotalOnline\": 2800396,\n        \"TotalRequest\": 2446274\n    }\n}",
         "title": "请求示例"
       }
@@ -677,7 +677,7 @@
     "DescribeProIspPlaySumInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeProIspPlaySumInfoList\r\n&PlayDomains.0=5000.playdomain.com\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 12:00:00\r\n&StatType=Province\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeProIspPlaySumInfoList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 12:00:00\n&StatType=Province\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Name\": \"山东省\",\n                \"TotalFlux\": 50.0,\n                \"TotalRequest\": 50,\n                \"AvgFluxPerSecond\": 10.1\n            }\n        ],\n        \"TotalFlux\": 100.0,\n        \"TotalRequest\": 100,\n        \"AvgFluxPerSecond\": 100,\n        \"PageSize\": 10,\n        \"PageNum\": 1,\n        \"TotalNum\": 10,\n        \"TotalPage\": 2,\n        \"StatType\": \"Province\",\n        \"RequestId\": \"e6628973-db6a-48f1-9fcd-fe0b3ba54bc9\"\n    }\n}",
         "title": "请求示例"
       }
@@ -717,7 +717,7 @@
     "DescribeScreenShotSheetNumList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeScreenShotSheetNumList\r\n&StartTime=2019-11-07T16:00:00Z\r\n&EndTime=2019-11-09T15:59:00Z\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeScreenShotSheetNumList\n&StartTime=2019-11-07T16:00:00Z\n&EndTime=2019-11-09T15:59:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Num\": 39623970,\n                \"Time\": \"2019-11-07T16:00:00Z\"\n            },\n            {\n                \"Num\": 41876427,\n                \"Time\": \"2019-11-08T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\"\n    }\n}",
         "title": "请求示例"
       }
@@ -741,15 +741,15 @@
     "DescribeStreamPushInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPushInfoList\r\n&StartTime=2019-06-21 12:00:00\r\n&EndTime=2019-06-21 12:01:02\r\n&StreamName=abcd\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"ACodec\": \"AAC\",\n                \"AppName\": \"live\",\n                \"AudioFps\": 43,\n                \"AudioRate\": 131580,\n                \"AudioTs\": 5004,\n                \"BeginPushTime\": \"2019-06-21 00:29:12.252\",\n                \"ClientIp\": \"125.39.132.102\",\n                \"LocalTs\": 5000,\n                \"PushDomain\": \"123.livepush.myqcloud.com\",\n                \"Resolution\": \"368*640\",\n                \"Sequence\": \"10151483429474411508\",\n                \"Time\": \"2019-06-21 01:10:39.87\",\n                \"VCodec\": \"H264\",\n                \"VideoFps\": 24,\n                \"VideoRate\": 701528,\n                \"VideoTs\": 5032,\n                \"MateFps\": 30,\n                \"MetaAudioRate\": 22,\n                \"MetaVideoRate\": 4885\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPushInfoList\n&StartTime=2019-06-21 12:00:00\n&EndTime=2019-06-21 12:01:02\n&StreamName=abcd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"StreamParam\": \"xx\",\n                \"ACodec\": \"AAC\",\n                \"AppName\": \"live\",\n                \"AudioFps\": 43,\n                \"AudioRate\": 131580,\n                \"AudioTs\": 5004,\n                \"BeginPushTime\": \"2019-06-21 00:29:12.252\",\n                \"ClientIp\": \"125.39.132.102\",\n                \"LocalTs\": 5000,\n                \"PushDomain\": \"123.livepush.myqcloud.com\",\n                \"Resolution\": \"368*640\",\n                \"Sequence\": \"10151483429474411508\",\n                \"Time\": \"2019-06-21 01:10:39.87\",\n                \"VCodec\": \"H264\",\n                \"VideoFps\": 24,\n                \"VideoRate\": 701528,\n                \"VideoTs\": 5032,\n                \"MateFps\": 30,\n                \"MetaAudioRate\": 22,\n                \"MetaVideoRate\": 4885\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeTopClientIpSumInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeTopClientIpSumInfoList\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 04:00:00\r\n&PageSize=2\r\n&PageNum=2\r\n&OrderParam=TotalFlux\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeTopClientIpSumInfoList\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 04:00:00\n&PageSize=2\n&PageNum=2\n&OrderParam=TotalFlux\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"ClientIp\": \"119.44.7.168\",\n                \"CountryArea\": \"中国\",\n                \"Province\": \"湖南省\",\n                \"TotalFailedRequest\": 4,\n                \"TotalFlux\": 13321.099,\n                \"TotalRequest\": 740\n            },\n            {\n                \"ClientIp\": \"119.44.7.175\",\n                \"CountryArea\": \"中国\",\n                \"Province\": \"湖南省\",\n                \"TotalFailedRequest\": 3,\n                \"TotalFlux\": 12566.334,\n                \"TotalRequest\": 2318\n            }\n        ],\n        \"OrderParam\": \"TotalFlux\",\n        \"PageNum\": 2,\n        \"PageSize\": 2,\n        \"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\",\n        \"TotalNum\": 1000,\n        \"TotalPage\": 500\n    }\n}",
         "title": "请求示例"
       }
@@ -765,7 +765,7 @@
     "DescribeVisitTopSumInfoList": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DescribeVisitTopSumInfoList\r\n&StartTime=2019-03-01 00:00:00\r\n&EndTime=2019-03-01 04:00:00\r\n&PageSize=2\r\n&PageNum=2\r\n&TopIndex=StreamId\r\n&OrderParam=TotalFlux\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeVisitTopSumInfoList\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 04:00:00\n&PageSize=2\n&PageNum=2\n&TopIndex=StreamId\n&OrderParam=TotalFlux\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"AvgFluxPerSecond\": 4.773,\n                \"Name\": \"CSZFMPP360\",\n                \"TotalRequest\": 36590,\n                \"TotalFlux\": 69023.772\n            },\n            {\n                \"AvgFluxPerSecond\": 4.634,\n                \"Name\": \"CSNXMPP360\",\n                \"TotalRequest\": 88629,\n                \"TotalFlux\": 67009.417\n            }\n        ],\n        \"OrderParam\": \"TotalFlux\",\n        \"PageNum\": 2,\n        \"PageSize\": 2,\n        \"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\",\n        \"TopIndex\": \"StreamId\",\n        \"TotalNum\": 1000,\n        \"TotalPage\": 500\n    }\n}",
         "title": "请求示例"
       }

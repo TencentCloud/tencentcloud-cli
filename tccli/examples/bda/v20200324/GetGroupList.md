@@ -1,25 +1,4 @@
-**Example 1: 调用失败示例**
-
-
-
-Input: 
-
-```
-tccli bda GetGroupList --cli-unfold-argument  \
-    --Offset -1 \
-    --Limit 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "78ec7830-a1c7-42be-bd65-6d0fa25f6fab"
-    }
-}
-```
-
-**Example 2: 调用成功示例**
+**Example 1: 调用成功示例**
 
 
 
