@@ -137,7 +137,7 @@
         },
         {
           "default": "",
-          "document": "控件名称",
+          "document": "控件简称",
           "example": "ComponentName",
           "member": "string",
           "name": "ComponentName",

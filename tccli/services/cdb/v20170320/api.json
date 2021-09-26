@@ -2753,6 +2753,15 @@
           "name": "AutoSyncFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "金融围拢 ID 。",
+          "example": "cage-test",
+          "member": "string",
+          "name": "CageId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3077,6 +3086,15 @@
           "name": "AutoSyncFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "金融围拢 ID。",
+          "example": "cage-test",
+          "member": "string",
+          "name": "CageId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5362,6 +5380,15 @@
           "example": "[\"\"]",
           "member": "string",
           "name": "TagKeysForSearch",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "金融围拢 ID 。",
+          "example": "[\"cage-test\"]",
+          "member": "string",
+          "name": "CageIds",
           "required": false,
           "type": "list"
         }
