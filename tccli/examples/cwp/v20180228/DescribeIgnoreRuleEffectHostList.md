@@ -9,7 +9,7 @@ tccli cwp DescribeIgnoreRuleEffectHostList --cli-unfold-argument  \
     --Limit 10 \
     --Offset 0 \
     --RuleId 1 \
-    --TagNames "tag"
+    --TagNames tag
 ```
 
 Output: 
@@ -40,7 +40,7 @@ Output:
                 "Quuid": "23220"
             }
         ],
-        "RequestId": "req-566234234",
+        "RequestId": "f1dd9f5e-4ac0-48a7-9410-c86d24656d9a",
         "TotalCount": 2
     }
 }

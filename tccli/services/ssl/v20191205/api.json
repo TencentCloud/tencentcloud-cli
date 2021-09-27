@@ -2104,6 +2104,15 @@
           "name": "Status",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理人姓名/邮箱/部门精准匹配",
+          "example": "腾讯/tencent@tencent.com/开发一部",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2440,8 +2449,23 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "具体审核状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagerStatusInfo",
+          "name": "StatusInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
+      "usage": "out"
+    },
+    "ManagerStatusInfo": {
+      "document": "管理人的四种审核状态",
+      "members": [],
       "usage": "out"
     },
     "ModifyCertificateAliasRequest": {

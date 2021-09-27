@@ -2215,7 +2215,7 @@
     "ResetNatGatewayConnection": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ResetNatGatewayConnection\r\n&NatGatewayId=nat-ig8xpno8\r\n&MaxConcurrentConnection=3000000\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetNatGatewayConnection\n&NatGatewayId=nat-ig8xpno8\n&MaxConcurrentConnection=3000000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "升级NAT网关并发连接上限"
       }

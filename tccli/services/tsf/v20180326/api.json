@@ -4112,6 +4112,15 @@
           "name": "ServiceConfigList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "忽略创建镜像仓库",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreCreateImageRepository",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

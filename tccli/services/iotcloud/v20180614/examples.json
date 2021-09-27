@@ -446,6 +446,14 @@
         "title": "查询固件升级任务详情"
       }
     ],
+    "SetProductsForbiddenStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetProductsForbiddenStatus\n<公共请求参数>\n\n{\n    \"ProductID\": [\n        \"productID1\",\n        \"productID2\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "批量设置产品禁用状态"
+      }
+    ],
     "UnbindDevices": [
       {
         "document": "",
@@ -468,6 +476,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&State={\"desired\":{\"color\":\"red\"}}\n&ShadowVersion=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"desired\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"desired\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"update\\\"}\",\n        \"RequestId\": \"9e574269-093f-4a7f-bf90-24ef80b6528a\"\n    }\n}",
         "title": "更新设备影子"
+      }
+    ],
+    "UpdateDevicesEnableState": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDevicesEnableState\n&ProductID=SB9OJFCJ1C\n&DeviceNames.0=test123\n&Status=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
+        "title": "UpdateDevicesEnableState"
       }
     ],
     "UpdateTopicPolicy": [

@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        },\n        \"TaskId\": \"1632627566746100176\"\n    }\n}",
         "title": "解封示例"
       }
     ],

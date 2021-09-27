@@ -19,7 +19,8 @@ Output:
             "SuccessUrls": [
                 "http://example.com/path/to.jpg"
             ]
-        }
+        },
+        "TaskId": "1632627566746100176"
     }
 }
 ```

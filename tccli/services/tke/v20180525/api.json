@@ -4386,10 +4386,20 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-65r1c5nu",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认false 获取内网，是否获取外网访问的kubeconfig",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4399,8 +4409,10 @@
       "members": [
         {
           "document": "子账户kubeconfig文件，可用于直接访问集群kube-apiserver",
+          "example": "xxx",
           "member": "string",
           "name": "Kubeconfig",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

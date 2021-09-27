@@ -192,17 +192,167 @@
       "name": "获取帐号列表",
       "output": "DescribeAccountsResponse"
     },
+    "DescribeAssetAppList": {
+      "document": "查询应用列表",
+      "input": "DescribeAssetAppListRequest",
+      "name": "查询应用列表",
+      "output": "DescribeAssetAppListResponse"
+    },
+    "DescribeAssetAppProcessList": {
+      "document": "获取软件关联进程列表",
+      "input": "DescribeAssetAppProcessListRequest",
+      "name": "获取软件关联进程列表",
+      "output": "DescribeAssetAppProcessListResponse"
+    },
+    "DescribeAssetCoreModuleInfo": {
+      "document": "获取内核模块详情",
+      "input": "DescribeAssetCoreModuleInfoRequest",
+      "name": "获取内核模块详情",
+      "output": "DescribeAssetCoreModuleInfoResponse"
+    },
+    "DescribeAssetCoreModuleList": {
+      "document": "查询资产管理内核模块列表",
+      "input": "DescribeAssetCoreModuleListRequest",
+      "name": "查询资产管理内核模块列表",
+      "output": "DescribeAssetCoreModuleListResponse"
+    },
+    "DescribeAssetDatabaseInfo": {
+      "document": "获取资产管理数据库详情",
+      "input": "DescribeAssetDatabaseInfoRequest",
+      "name": "获取资产管理数据库详情",
+      "output": "DescribeAssetDatabaseInfoResponse"
+    },
+    "DescribeAssetDatabaseList": {
+      "document": "查询资产管理数据库列表",
+      "input": "DescribeAssetDatabaseListRequest",
+      "name": "查询资产管理数据库列表",
+      "output": "DescribeAssetDatabaseListResponse"
+    },
+    "DescribeAssetEnvList": {
+      "document": "查询资产管理环境变量列表",
+      "input": "DescribeAssetEnvListRequest",
+      "name": "查询资产管理环境变量列表",
+      "output": "DescribeAssetEnvListResponse"
+    },
     "DescribeAssetInfo": {
       "document": "获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数",
       "input": "DescribeAssetInfoRequest",
       "name": "获取资产数量概况",
       "output": "DescribeAssetInfoResponse"
     },
+    "DescribeAssetInitServiceList": {
+      "document": "查询资产管理启动服务列表",
+      "input": "DescribeAssetInitServiceListRequest",
+      "name": "查询资产管理启动服务列表",
+      "output": "DescribeAssetInitServiceListResponse"
+    },
+    "DescribeAssetJarInfo": {
+      "document": "获取Jar包详情",
+      "input": "DescribeAssetJarInfoRequest",
+      "name": "获取Jar包详情",
+      "output": "DescribeAssetJarInfoResponse"
+    },
+    "DescribeAssetJarList": {
+      "document": "查询Jar包列表",
+      "input": "DescribeAssetJarListRequest",
+      "name": "查询Jar包列表",
+      "output": "DescribeAssetJarListResponse"
+    },
+    "DescribeAssetMachineDetail": {
+      "document": "获取资产管理主机资源详细信息",
+      "input": "DescribeAssetMachineDetailRequest",
+      "name": "获取资产管理主机资源详细信息",
+      "output": "DescribeAssetMachineDetailResponse"
+    },
+    "DescribeAssetMachineList": {
+      "document": "获取资产指纹页面的资源监控列表",
+      "input": "DescribeAssetMachineListRequest",
+      "name": "获取资源监控列表",
+      "output": "DescribeAssetMachineListResponse"
+    },
+    "DescribeAssetPlanTaskList": {
+      "document": "查询资产管理计划任务列表",
+      "input": "DescribeAssetPlanTaskListRequest",
+      "name": "查询资产管理计划任务列表",
+      "output": "DescribeAssetPlanTaskListResponse"
+    },
+    "DescribeAssetPortInfoList": {
+      "document": "获取资产管理端口列表",
+      "input": "DescribeAssetPortInfoListRequest",
+      "name": "获取资产管理端口列表",
+      "output": "DescribeAssetPortInfoListResponse"
+    },
+    "DescribeAssetProcessInfoList": {
+      "document": "获取资产管理进程列表",
+      "input": "DescribeAssetProcessInfoListRequest",
+      "name": "获取资产管理进程列表",
+      "output": "DescribeAssetProcessInfoListResponse"
+    },
     "DescribeAssetRecentMachineInfo": {
       "document": "获取主机最近趋势情况",
       "input": "DescribeAssetRecentMachineInfoRequest",
       "name": "获取主机概况趋势",
       "output": "DescribeAssetRecentMachineInfoResponse"
+    },
+    "DescribeAssetSystemPackageList": {
+      "document": "获取资产管理系统安装包列表",
+      "input": "DescribeAssetSystemPackageListRequest",
+      "name": "获取资产管理系统安装包列表",
+      "output": "DescribeAssetSystemPackageListResponse"
+    },
+    "DescribeAssetUserInfo": {
+      "document": "获取主机账号详情",
+      "input": "DescribeAssetUserInfoRequest",
+      "name": "获取主机账号详情",
+      "output": "DescribeAssetUserInfoResponse"
+    },
+    "DescribeAssetUserList": {
+      "document": "获取账号列表",
+      "input": "DescribeAssetUserListRequest",
+      "name": "获取账号列表",
+      "output": "DescribeAssetUserListResponse"
+    },
+    "DescribeAssetWebAppList": {
+      "document": "获取资产管理Web应用列表",
+      "input": "DescribeAssetWebAppListRequest",
+      "name": "获取资产管理Web应用列表",
+      "output": "DescribeAssetWebAppListResponse"
+    },
+    "DescribeAssetWebAppPluginList": {
+      "document": "获取资产管理Web应用插件列表",
+      "input": "DescribeAssetWebAppPluginListRequest",
+      "name": "获取资产管理Web应用插件列表",
+      "output": "DescribeAssetWebAppPluginListResponse"
+    },
+    "DescribeAssetWebFrameList": {
+      "document": "获取资产管理Web框架列表",
+      "input": "DescribeAssetWebFrameListRequest",
+      "name": "获取资产管理Web框架列表",
+      "output": "DescribeAssetWebFrameListResponse"
+    },
+    "DescribeAssetWebLocationInfo": {
+      "document": "获取Web站点详情",
+      "input": "DescribeAssetWebLocationInfoRequest",
+      "name": "获取Web站点详情",
+      "output": "DescribeAssetWebLocationInfoResponse"
+    },
+    "DescribeAssetWebLocationList": {
+      "document": "获取Web站点列表",
+      "input": "DescribeAssetWebLocationListRequest",
+      "name": "获取Web站点列表",
+      "output": "DescribeAssetWebLocationListResponse"
+    },
+    "DescribeAssetWebServiceInfoList": {
+      "document": "查询资产管理Web服务列表",
+      "input": "DescribeAssetWebServiceInfoListRequest",
+      "name": "查询资产管理Web服务列表",
+      "output": "DescribeAssetWebServiceInfoListResponse"
+    },
+    "DescribeAssetWebServiceProcessList": {
+      "document": "获取Web服务关联进程列表",
+      "input": "DescribeAssetWebServiceProcessListRequest",
+      "name": "获取Web服务关联进程列表",
+      "output": "DescribeAssetWebServiceProcessListResponse"
     },
     "DescribeAttackLogInfo": {
       "document": "网络攻击日志详情",
@@ -1247,6 +1397,1104 @@
       ],
       "usage": "out"
     },
+    "AssetAppBaseInfo": {
+      "document": "资源管理进程基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用类型\t\n1: 运维\n2 : 数据库\n3 : 安全\n4 : 可疑应用\n5 : 系统架构\n6 : 系统应用\n7 : WEB服务\n99: 其他",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二进制路径",
+          "example": "1",
+          "member": "string",
+          "name": "BinPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联进程数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProcessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用描述",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本号",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetAppProcessInfo": {
+      "document": "软件应用关联进程信息",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动时间",
+          "example": "1",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetCoreModuleBaseInfo": {
+      "document": "资产管理内核模块列表",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模块大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "依赖进程数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProcessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "依赖模块数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModuleCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模块ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetCoreModuleDetail": {
+      "document": "资产管理内核模块详情",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "依赖进程",
+          "example": "1",
+          "member": "string",
+          "name": "Processes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被依赖模块",
+          "example": "1",
+          "member": "string",
+          "name": "Modules",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetCoreModuleParam",
+          "name": "Params",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetCoreModuleParam": {
+      "document": "资产管理内核模块参数",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据",
+          "example": "xx",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetDatabaseBaseInfo": {
+      "document": "资源管理数据库列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听端口",
+          "example": "1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "1",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定IP",
+          "example": "1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据路径",
+          "example": "1",
+          "member": "string",
+          "name": "DataPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行权限",
+          "example": "1",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误日志路径",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorLogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件路径",
+          "example": "1",
+          "member": "string",
+          "name": "PlugInPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二进制路径",
+          "example": "1",
+          "member": "string",
+          "name": "BinPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetDatabaseDetail": {
+      "document": "资源管理数据库列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监听端口",
+          "example": "1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "1",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定IP",
+          "example": "1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据路径",
+          "example": "1",
+          "member": "string",
+          "name": "DataPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行权限",
+          "example": "1",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误日志路径",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorLogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件路径",
+          "example": "1",
+          "member": "string",
+          "name": "PlugInPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二进制路径",
+          "example": "1",
+          "member": "string",
+          "name": "BinPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetDiskPartitionInfo": {
+      "document": "资产管理磁盘分区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分区名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区大小：单位G",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区使用率",
+          "member": "float",
+          "name": "Percent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载目录",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用空间：单位G",
+          "member": "uint64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetEnvBaseInfo": {
+      "document": "资产管理环境变量列表",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：\n0:用户变量\n1:系统变量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境变量值",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AssetFilters": {
       "document": "容器安全\n描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n",
       "members": [
@@ -1280,6 +2528,374 @@
       ],
       "usage": "in"
     },
+    "AssetInitServiceBaseInfo": {
+      "document": "资产管理启动服务列表",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认启用状态：0未启用，1启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetJarBaseInfo": {
+      "document": "资产管理jar包列表",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：1应用程序，2系统类库，3Web服务自带库，8:其他，",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可执行：0未知，1是，2否",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Jar包ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Jar包Md5",
+          "example": "1",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetJarDetail": {
+      "document": "资产管理jar包详情",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：1应用程序，2系统类库，3Web服务自带库，8:其他，",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可执行：0未知，1是，2否",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引用进程列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetAppProcessInfo",
+          "name": "Process",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Jar包Md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AssetKeyVal": {
       "document": "key-val类型的通用数据结构",
       "members": [
@@ -1306,6 +2922,2778 @@
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetMachineBaseInfo": {
+      "document": "资产指纹中服务器列表的基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "x x",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器内网IP",
+          "example": "xx",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "xx",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统名称",
+          "example": "xx",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Cpu",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存容量：单位G",
+          "example": "1",
+          "member": "uint64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存使用率百分比",
+          "example": "xx",
+          "member": "string",
+          "name": "MemLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘容量：单位G",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘使用率百分比",
+          "example": "xx",
+          "member": "string",
+          "name": "DiskLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PartitionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "xx",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "CpuSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu使用率百分比",
+          "example": "xx",
+          "member": "string",
+          "name": "CpuLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetMachineDetail": {
+      "document": "资产指纹中服务器列表的基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器内网IP",
+          "example": "11.22.33.44",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "xx",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统名称",
+          "example": "centos",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Cpu",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存容量：单位G",
+          "example": "11",
+          "member": "uint64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存使用率百分比",
+          "example": "11",
+          "member": "string",
+          "name": "MemLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘容量：单位G",
+          "example": "11",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘使用率百分比",
+          "example": "11",
+          "member": "string",
+          "name": "DiskLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PartitionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "CpuSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Cpu使用率百分比",
+          "example": "11",
+          "member": "string",
+          "name": "CpuLoad",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护级别：0基础版，1专业版",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险状态：UNKNOW-未知，RISK-风险，SAFT-安全",
+          "example": "RISK",
+          "member": "string",
+          "name": "RiskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已防护天数",
+          "example": "11",
+          "member": "uint64",
+          "name": "ProtectDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专业版开通时间",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "BuyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专业版到期时间",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内核版本",
+          "example": "xx",
+          "member": "string",
+          "name": "CoreVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "linux/windows",
+          "example": "linux",
+          "member": "string",
+          "name": "OsType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "agent版本",
+          "example": "1.2.3.1",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安装时间",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "InstallTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统启动时间",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "BootTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后上线时间",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "LastLiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生产商",
+          "example": "xx",
+          "member": "string",
+          "name": "Producer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "序列号",
+          "example": "xx",
+          "member": "string",
+          "name": "SerialNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡",
+          "example": "xx",
+          "member": "AssetNetworkCardInfo",
+          "name": "NetCards",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区",
+          "example": "xx",
+          "member": "AssetDiskPartitionInfo",
+          "name": "Disks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0在线，1已离线",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务组ID",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备型号",
+          "example": "xx",
+          "member": "string",
+          "name": "DeviceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "离线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-21",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm-112234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetNetworkCardInfo": {
+      "document": "资产管理网卡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "网卡名称",
+          "example": "x",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ipv4对应IP",
+          "example": "x",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网关",
+          "example": "x",
+          "member": "string",
+          "name": "GateWay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MAC地址",
+          "example": "x",
+          "member": "string",
+          "name": "Mac",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ipv6对应IP",
+          "example": "x",
+          "member": "string",
+          "name": "Ipv6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DNS服务器",
+          "example": "x",
+          "member": "string",
+          "name": "DnsServer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetPlanTask": {
+      "document": "资产管理计划任务列表",
+      "members": [
+        {
+          "default": "",
+          "document": "默认启用状态：1启用，2未启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行周期",
+          "example": "1",
+          "member": "string",
+          "name": "Cycle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行命令或脚本",
+          "example": "1",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置文件路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机uuid",
+          "example": "12341234-1234123-13241234",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetPortBaseInfo": {
+      "document": "资源管理账号基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程名称",
+          "example": "1",
+          "member": "string",
+          "name": "ProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程版本",
+          "example": "1",
+          "member": "string",
+          "name": "ProcessVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程路径",
+          "example": "1",
+          "member": "string",
+          "name": "ProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程ID",
+          "example": "1",
+          "member": "string",
+          "name": "Pid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动时间",
+          "example": "1",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程TTY",
+          "example": "1",
+          "member": "string",
+          "name": "Teletype",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属用户组",
+          "example": "1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程MD5",
+          "example": "1",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程ID",
+          "example": "1",
+          "member": "string",
+          "name": "Ppid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程名称",
+          "example": "1",
+          "member": "string",
+          "name": "ParentProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口协议",
+          "example": "1",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定IP",
+          "example": "1",
+          "member": "string",
+          "name": "BindIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetProcessBaseInfo": {
+      "document": "资源管理进程基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程说明",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程路径",
+          "example": "1",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程ID",
+          "example": "1",
+          "member": "string",
+          "name": "Pid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动时间",
+          "example": "1",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动参数",
+          "example": "1",
+          "member": "string",
+          "name": "Param",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程TTY",
+          "example": "1",
+          "member": "string",
+          "name": "Tty",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程用户组",
+          "example": "1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程MD5",
+          "example": "1",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程ID",
+          "example": "1",
+          "member": "string",
+          "name": "Ppid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父进程名称",
+          "example": "1",
+          "member": "string",
+          "name": "ParentProcessName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进程状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数字签名:0无，1有， 999 空，仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasSign",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否通过安装包安装：:0否，1是， 999 空，仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstallByPackage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软件包名",
+          "example": "1",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetSystemPackageInfo": {
+      "document": "资源管理系统安装包列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xx",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "xx",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安装时间",
+          "example": "xx",
+          "member": "string",
+          "name": "InstallTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "xx",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "Centos",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetUserBaseInfo": {
+      "document": "资源管理账号基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号UID",
+          "example": "1",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号GID",
+          "example": "1",
+          "member": "string",
+          "name": "Gid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号状态：0-禁用；1-启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有root权限：0-否；1是，999为空: 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsRoot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录方式：0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码，999为空，仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "LoginType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上次登录时间",
+          "example": "1",
+          "member": "string",
+          "name": "LastLoginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否域账号：0否， 1是，2否, 999为空  仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有sudo权限，1是，0否, 999为空, 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSudo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许ssh登录，1是，0否, 999为空, 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSshLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Home目录",
+          "example": "1",
+          "member": "string",
+          "name": "HomePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Shell路径  仅linux",
+          "example": "1",
+          "member": "string",
+          "name": "Shell",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否shell登录性，0不是；1是 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShellLoginStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码修改时间",
+          "example": "1",
+          "member": "string",
+          "name": "PasswordChangeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码过期时间  仅linux",
+          "example": "1",
+          "member": "string",
+          "name": "PasswordDueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码锁定时间：单位天, -1为永不锁定 999为空，仅linux",
+          "example": "1",
+          "member": "int64",
+          "name": "PasswordLockDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码状态：1正常 2即将过期 3已过期 4已锁定 999为空 仅linux",
+          "example": "1",
+          "member": "int64",
+          "name": "PasswordStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetUserDetail": {
+      "document": "资源管理账号基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号UID",
+          "example": "1",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号GID",
+          "example": "1",
+          "member": "string",
+          "name": "Gid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号状态：0-禁用；1-启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有root权限：0-否；1是，999为空: 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsRoot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上次登录时间",
+          "example": "1",
+          "member": "string",
+          "name": "LastLoginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号类型：0访客用户，1标准用户，2管理员用户 ,999为空,仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否域账号：0否， 1是, 999为空  仅windows",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许ssh登录，1是，0否, 999为空, 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSshLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Home目录",
+          "example": "1",
+          "member": "string",
+          "name": "HomePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Shell路径  仅linux",
+          "example": "1",
+          "member": "string",
+          "name": "Shell",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否shell登录性，0不是；1是 仅linux",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShellLoginStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码修改时间",
+          "example": "1",
+          "member": "string",
+          "name": "PasswordChangeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码过期时间  仅linux",
+          "example": "1",
+          "member": "string",
+          "name": "PasswordDueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码锁定时间：单位天, -1为永不锁定 999为空，仅linux",
+          "example": "1",
+          "member": "int64",
+          "name": "PasswordLockDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "1",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组名",
+          "example": "1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号到期时间",
+          "example": "1",
+          "member": "string",
+          "name": "DisableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近登录终端",
+          "example": "1",
+          "member": "string",
+          "name": "LastLoginTerminal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近登录位置",
+          "example": "1",
+          "member": "string",
+          "name": "LastLoginLoc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近登录IP",
+          "example": "1",
+          "member": "string",
+          "name": "LastLoginIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码过期提醒：单位天",
+          "example": "1",
+          "member": "uint64",
+          "name": "PasswordWarnDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码修改设置：0-不可修改，1-可修改",
+          "example": "1",
+          "member": "uint64",
+          "name": "PasswordChangeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户公钥列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetUserKeyInfo",
+          "name": "Keys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetUserKeyInfo": {
+      "document": "资产管理账号key详情",
+      "members": [
+        {
+          "default": "",
+          "document": "公钥值",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公钥备注",
+          "example": "1",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密方式",
+          "example": "1",
+          "member": "string",
+          "name": "EncryptType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebAppBaseInfo": {
+      "document": "资源管理Web应用列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "根路径",
+          "example": "1",
+          "member": "string",
+          "name": "RootPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟路径",
+          "example": "1",
+          "member": "string",
+          "name": "VirtualPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "插件数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PluginCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用描述",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebAppPluginInfo": {
+      "document": "资产管理Web应用插件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "链接",
+          "member": "string",
+          "name": "Link",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebFrameBaseInfo": {
+      "document": "资源管理Web应用列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "语言",
+          "example": "1",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebLocationBaseInfo": {
+      "document": "资产管理Web站点列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点端口",
+          "example": "1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点协议",
+          "example": "1",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点路经数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PathCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主目录",
+          "example": "1",
+          "member": "string",
+          "name": "MainPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主目录所有者",
+          "example": "1",
+          "member": "string",
+          "name": "MainPathOwner",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拥有者权限",
+          "example": "1",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签",
+          "example": "[]",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Web站点Id",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebLocationInfo": {
+      "document": "资产管理Web站点列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点端口",
+          "example": "1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点协议",
+          "example": "1",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务类型",
+          "example": "1",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全模块状态：0未启用，1启用，999空，仅nginx",
+          "example": "1",
+          "member": "uint64",
+          "name": "SafeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主目录",
+          "example": "1",
+          "member": "string",
+          "name": "MainPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动命令",
+          "example": "1",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定IP",
+          "example": "1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetWebServiceBaseInfo": {
+      "document": "资源管理Web服务列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主机内网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机外网IP",
+          "example": "1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统信息",
+          "example": "1",
+          "member": "string",
+          "name": "OsInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机业务组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MachineTag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二进制路径",
+          "example": "1",
+          "member": "string",
+          "name": "BinPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动用户",
+          "example": "1",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安装路径",
+          "example": "1",
+          "member": "string",
+          "name": "InstallPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置路径",
+          "example": "1",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联进程数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProcessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Web服务ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "1",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2011-11-11 12:12:12",
+          "member": "string",
+          "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3879,6 +8267,546 @@
       ],
       "type": "object"
     },
+    "DescribeAssetAppListRequest": {
+      "document": "DescribeAssetAppList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>AppName- string - 是否必填：否 - 应用名搜索</li>\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Type - int - 是否必填：否 - 类型\t: 仅linux\n0: 全部\n1: 运维\n2 : 数据库\n3 : 安全\n4 : 可疑应用\n5 : 系统架构\n6 : 系统应用\n7 : WEB服务\n99:其他</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：ProcessCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetAppListResponse": {
+      "document": "DescribeAssetAppList返回参数结构体",
+      "members": [
+        {
+          "document": "应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetAppBaseInfo",
+          "name": "Apps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetAppProcessListRequest": {
+      "document": "DescribeAssetAppProcessList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "App名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetAppProcessListResponse": {
+      "document": "DescribeAssetAppProcessList返回参数结构体",
+      "members": [
+        {
+          "document": "进程列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetAppProcessInfo",
+          "name": "Process",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分区总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetCoreModuleInfoRequest": {
+      "document": "DescribeAssetCoreModuleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "内核模块ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetCoreModuleInfoResponse": {
+      "document": "DescribeAssetCoreModuleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "内核模块详情",
+          "example": "无",
+          "member": "AssetCoreModuleDetail",
+          "name": "Module",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetCoreModuleListRequest": {
+      "document": "DescribeAssetCoreModuleList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序依据:Size,ProcessCount,ModuleCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetCoreModuleListResponse": {
+      "document": "DescribeAssetCoreModuleList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetCoreModuleBaseInfo",
+          "name": "Modules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetDatabaseInfoRequest": {
+      "document": "DescribeAssetDatabaseInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetDatabaseInfoResponse": {
+      "document": "DescribeAssetDatabaseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "数据库详情",
+          "example": "1",
+          "member": "AssetDatabaseDetail",
+          "name": "Database",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetDatabaseListRequest": {
+      "document": "DescribeAssetDatabaseList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>User- string - 是否必填：否 - 运行用户</li>\n<li>Ip - String - 是否必填：否 - 绑定IP</li>\n<li>Port - Int - 是否必填：否 - 端口</li>\n<li>Name - Int - 是否必填：否 - 数据库名称\n0:全部\n1:MySQL\n2:Redis\n3:Oracle\n4:MongoDB\n5:MemCache\n6:PostgreSQL\n7:HBase\n8:DB2\n9:Sybase\n10:TiDB</li>\n<li>Proto - String - 是否必填：否 - 协议：1:TCP, 2:UDP, 3:未知</li>\n<li>OsType - String - 是否必填：否 - 操作系统: linux/windows</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetDatabaseListResponse": {
+      "document": "DescribeAssetDatabaseList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetDatabaseBaseInfo",
+          "name": "Databases",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetEnvListRequest": {
+      "document": "DescribeAssetEnvList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型：\n0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 环境变量名</li>\n<li>Type- int - 是否必填：否 - 类型：0用户变量，1系统变量</li>",
+          "example": "{}",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetEnvListResponse": {
+      "document": "DescribeAssetEnvList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetEnvBaseInfo",
+          "name": "Envs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetInfoRequest": {
       "document": "DescribeAssetInfo请求参数结构体",
       "members": [],
@@ -3986,6 +8914,609 @@
       ],
       "type": "object"
     },
+    "DescribeAssetInitServiceListRequest": {
+      "document": "DescribeAssetInitServiceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "11",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- string - 是否必填：否 - 默认启用状态：0未启用， 1启用 仅linux</li>\n<li>Type- string - 是否必填：否 - 类型：类型 仅windows：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetInitServiceListResponse": {
+      "document": "DescribeAssetInitServiceList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetInitServiceBaseInfo",
+          "name": "Services",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetJarInfoRequest": {
+      "document": "DescribeAssetJarInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Jar包ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetJarInfoResponse": {
+      "document": "DescribeAssetJarInfo返回参数结构体",
+      "members": [
+        {
+          "document": "Jar包详情",
+          "example": "无",
+          "member": "AssetJarDetail",
+          "name": "Jar",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetJarListRequest": {
+      "document": "DescribeAssetJarList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>Type- uint - 是否必填：否 - 类型\t\n1: 应用程序\n2 : 系统类库\n3 : Web服务自带库\n4 : 其他依赖包</li>\n<li>Status- string - 是否必填：否 - 是否可执行：0否，1是</li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetJarListResponse": {
+      "document": "DescribeAssetJarList返回参数结构体",
+      "members": [
+        {
+          "document": "应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetJarBaseInfo",
+          "name": "Jars",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetMachineDetailRequest": {
+      "document": "DescribeAssetMachineDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetMachineDetailResponse": {
+      "document": "DescribeAssetMachineDetail返回参数结构体",
+      "members": [
+        {
+          "document": "主机详情",
+          "example": "无",
+          "member": "AssetMachineDetail",
+          "name": "MachineDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetMachineListRequest": {
+      "document": "DescribeAssetMachineList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选排序：PartitionCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetMachineListResponse": {
+      "document": "DescribeAssetMachineList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetMachineBaseInfo",
+          "name": "Machines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetPlanTaskListRequest": {
+      "document": "DescribeAssetPlanTaskList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- int - 是否必填：否 - 默认启用状态：0未启用， 1启用 </li>",
+          "example": "1",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetPlanTaskListResponse": {
+      "document": "DescribeAssetPlanTaskList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetPlanTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetPortInfoListRequest": {
+      "document": "DescribeAssetPortInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Port - uint64 - 是否必填：否 - 端口</li>\n<li>Ip - String - 是否必填：否 - 绑定IP</li>\n<li>ProcessName - String - 是否必填：否 - 监听进程</li>\n<li>Pid - uint64 - 是否必填：否 - PID</li>\n<li>User - String - 是否必填：否 - 运行用户</li>\n<li>Group - String - 是否必填：否 - 所属用户组</li>\n<li>Ppid - uint64 - 是否必填：否 - PPID</li>\n<li>Proto - string - 是否必填：否 - tcp/udp或“”(空字符串筛选未知状态)</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：StartTime",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetPortInfoListResponse": {
+      "document": "DescribeAssetPortInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetPortBaseInfo",
+          "name": "Ports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetProcessInfoListRequest": {
+      "document": "DescribeAssetProcessInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 进程名</li>\n<li>User - String - 是否必填：否 - 进程用户</li>\n<li>Group - String - 是否必填：否 - 进程用户组</li>\n<li>Pid - uint64 - 是否必填：否 - 进程ID</li>\n<li>Ppid - uint64 - 是否必填：否 - 父进程ID</li>\n<li>OsType - uint64 - 是否必填：否 - windows/linux</li>\n<li>Status - string - 是否必填：否 - 进程状态：\n1:R 可执行\n2:S 可中断\n3:D 不可中断\n4:T 暂停状态或跟踪状态\n5:Z 僵尸状态\n6:X 将被销毁</li>\n<li>RunTimeStart - String - 是否必填：否 - 运行开始时间</li>\n<li>RunTimeEnd - String - 是否必填：否 - 运行结束时间</li>\n<li>InstallByPackage - uint64 - 是否必填：否 - 是否包安装：0否，1是</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式：StartTime",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetProcessInfoListResponse": {
+      "document": "DescribeAssetProcessInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetProcessBaseInfo",
+          "name": "Process",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetRecentMachineInfoRequest": {
       "document": "DescribeAssetRecentMachineInfo请求参数结构体",
       "members": [
@@ -4048,6 +9579,825 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetSystemPackageListRequest": {
+      "document": "DescribeAssetSystemPackageList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "11",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rmp\n2:dpkg\n3:java\n4:system</li>",
+          "example": "1",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式可选：InstallTime 安装时间",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetSystemPackageListResponse": {
+      "document": "DescribeAssetSystemPackageList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetSystemPackageInfo",
+          "name": "Packages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetUserInfoRequest": {
+      "document": "DescribeAssetUserInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetUserInfoResponse": {
+      "document": "DescribeAssetUserInfo返回参数结构体",
+      "members": [
+        {
+          "document": "用户详细信息",
+          "example": "无",
+          "member": "AssetUserDetail",
+          "name": "User",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetUserListRequest": {
+      "document": "DescribeAssetUserList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 账户名（模糊匹配）</li>\n<li>NameStrict - String - 是否必填：否 - 账户名（严格匹配）</li>\n<li>Uid - uint64 - 是否必填：否 - Uid</li>\n<li>Guid - uint64 - 是否必填：否 - Guid</li>\n<li>LoginTimeStart - String - 是否必填：否 - 开始时间，如：2021-01-11</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 结束时间，如：2021-01-11</li>\n<li>LoginType - uint64 - 是否必填：否 - 0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码 仅linux</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>Status - uint64 - 是否必填：否 - 账号状态：0-禁用；1-启用</li>\n<li>UserType - uint64 - 是否必填：否 - 账号类型：0访客用户，1标准用户，2管理员用户 仅windows</li>\n<li>IsDomain - uint64 - 是否必填：否 - 是否域账号：0 不是，1是 仅windows\n<li>IsRoot - uint64 - 是否必填：否 - 是否Root权限：0 不是，1是 仅linux\n<li>IsSudo - uint64 - 是否必填：否 - 是否Sudo权限：0 不是，1是 仅linux</li>\n<li>IsSshLogin - uint64 - 是否必填：否 - 是否ssh登录：0 不是，1是 仅linux</li>\n<li>ShellLoginStatus - uint64 - 是否必填：否 - 是否shell登录性，0不是；1是 仅linux</li>\n<li>PasswordStatus - uint64 - 是否必填：否 - 密码状态：1正常 2即将过期 3已过期 4已锁定 仅linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "1",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序：\nLoginTime\nPasswordChangeTime\nPasswordDuaTime\nPasswordLockDays",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetUserListResponse": {
+      "document": "DescribeAssetUserList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetUserBaseInfo",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebAppListRequest": {
+      "document": "DescribeAssetWebAppList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 应用名</li>\n<li>Domain - String - 是否必填：否 - 站点域名</li>\n<li>Type - int - 是否必填：否 - 服务类型：\n0：全部\n1:Tomcat\n2:Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:Jetty\n8:IHS\n9:Tengine</li>\n<li>OsType - String - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序：PluginCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebAppListResponse": {
+      "document": "DescribeAssetWebAppList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetWebAppBaseInfo",
+          "name": "WebApps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebAppPluginListRequest": {
+      "document": "DescribeAssetWebAppPluginList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Web应用ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebAppPluginListResponse": {
+      "document": "DescribeAssetWebAppPluginList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetWebAppPluginInfo",
+          "name": "Plugins",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分区总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebFrameListRequest": {
+      "document": "DescribeAssetWebFrameList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 框架名</li>\n<li>NameStrict - String - 是否必填：否 - 框架名（严格匹配）</li>\n<li>Lang - String - 是否必填：否 - 框架语言:java/python</li>\n<li>Type - String - 是否必填：否 - 服务类型：\n0：全部\n1:Tomcat\n2:Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:WildFly\n8:Jetty\n9:IHS\n10:Tengine</li>\n<li>OsType - String - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "1",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序：JarCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebFrameListResponse": {
+      "document": "DescribeAssetWebFrameList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "AssetWebFrameBaseInfo",
+          "name": "WebFrames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebLocationInfoRequest": {
+      "document": "DescribeAssetWebLocationInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器Quuid",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务器Uuid",
+          "example": "1",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点Id",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebLocationInfoResponse": {
+      "document": "DescribeAssetWebLocationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "站点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "AssetWebLocationInfo",
+          "name": "WebLocation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebLocationListRequest": {
+      "document": "DescribeAssetWebLocationList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name - String - 是否必填：否 - 域名</li>\n<li>User - String - 是否必填：否 - 运行用户</li>\n<li>Port - uint64 - 是否必填：否 - 站点端口</li>\n<li>Proto - uint64 - 是否必填：否 - 站点协议：1:HTTP,2:HTTPS</li>\n<li>ServiceType - uint64 - 是否必填：否 - 服务类型：\n1:Tomcat\n2：Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:WildFly\n8:Jetty\n9:IHS\n10:Tengine</li>\n<li>OsType - String - 是否必填：否 - windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序：PathCount",
+          "example": "PathCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebLocationListResponse": {
+      "document": "DescribeAssetWebLocationList返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetWebLocationBaseInfo",
+          "name": "Locations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebServiceInfoListRequest": {
+      "document": "DescribeAssetWebServiceInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>User- string - 是否必填：否 - 运行用户</li>\n<li>Name- string - 是否必填：否 - Web服务名：\n1:Tomcat\n2:Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:WildFly\n8:Jetty\n9:IHS\n10:Tengine</li>\n<li>OsType- string - 是否必填：否 - Windows/linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )",
+          "example": "[]",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc升序 或 desc降序",
+          "example": "1",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选排序：ProcessCount",
+          "example": "1",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定Quuid主机的信息",
+          "example": "1",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebServiceInfoListResponse": {
+      "document": "DescribeAssetWebServiceInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "AssetWebServiceBaseInfo",
+          "name": "WebServices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebServiceProcessListRequest": {
+      "document": "DescribeAssetWebServiceProcessList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Quuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机Uuid",
+          "example": "xx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Web服务ID",
+          "example": "xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetWebServiceProcessListResponse": {
+      "document": "DescribeAssetWebServiceProcessList返回参数结构体",
+      "members": [
+        {
+          "document": "进程列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetAppProcessInfo",
+          "name": "Process",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5126,7 +11476,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "云主机类型：\ncvm：腾讯云服务器\nbm：裸金属\necm：边缘计算主机\nlh: 轻量应用服务器\nohter: 混合云机器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器类型：\ncvm：腾讯云服务器\nbm：裸金属\necm：边缘计算主机\nlh: 轻量应用服务器\nohter: 混合云机器\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -9924,6 +16274,24 @@
     "DescribeVersionStatisticsResponse": {
       "document": "DescribeVersionStatistics返回参数结构体",
       "members": [
+        {
+          "document": "基础版数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "BasicVersionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "专业版数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProVersionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -1164,7 +1164,7 @@
         },
         {
           "default": "",
-          "document": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "document": "应用型负载均衡器列表，目前长度上限为50，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
           "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
@@ -4445,7 +4445,7 @@
         },
         {
           "default": "",
-          "document": "应用型负载均衡器列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "document": "应用型负载均衡器列表，目前长度上限为50，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
           "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",

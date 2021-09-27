@@ -69,7 +69,7 @@
         },
         {
           "default": "",
-          "document": "加速套餐\nT100K：上/下行保障 100kbps\nT200K：上/下行保障 200kbps\nT400K：上/下行保障 400kbps\nBD1M：下行带宽保障1Mbps\nBD2M：下行带宽保障2Mbps\nBD4M：下行带宽保障4Mbps\nBU1M：上行带宽保障1Mbps\nBU2M：上行带宽保障2Mbps\nBU4M：上行带宽保障4Mbps",
+          "document": "加速套餐\nT100K：时延性保障 + 带宽保障上下行保障 100kbps\nT200K：时延性保障 + 带宽保障上下行保障 200kbps\nT400K：时延性保障 + 带宽保障上下行保障  400kbps\nBD1M：带宽型保障 + 下行带宽保障1Mbps\nBD2M：带宽型保障 + 下行带宽保障2Mbps\nBD4M：带宽型保障 + 下行带宽保障4Mbps\nBU1M：带宽型保障 + 上行带宽保障1Mbps\nBU2M：带宽型保障 + 上行带宽保障2Mbps\nBU4M：带宽型保障 + 上行带宽保障4Mbps",
           "example": "T100K",
           "member": "string",
           "name": "QosMenu",
@@ -111,6 +111,15 @@
           "name": "TemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "针对特殊协议进行加速\n1. IP （默认值）\n2. UDP\n3. TCP",
+          "example": "1",
+          "member": "uint64",
+          "name": "Protocol",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
