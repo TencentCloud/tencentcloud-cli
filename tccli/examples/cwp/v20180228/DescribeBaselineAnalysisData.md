@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "req-566234234",
+        "RequestId": "f1dd9f5e-4ac0-48a7-9410-c86d24656d9a",
         "LatestScanTime": "最近基线检测时间",
         "IsGlobal": "扫描范围是否全部服务器",
         "ScanHostCount": 170,

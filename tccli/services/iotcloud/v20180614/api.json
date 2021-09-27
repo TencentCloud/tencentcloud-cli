@@ -330,6 +330,12 @@
       "name": "重试设备升级任务",
       "output": "RetryDeviceFirmwareTaskResponse"
     },
+    "SetProductsForbiddenStatus": {
+      "document": "批量设置产品禁用状态",
+      "input": "SetProductsForbiddenStatusRequest",
+      "name": "批量设置产品禁用状态",
+      "output": "SetProductsForbiddenStatusResponse"
+    },
     "UnbindDevices": {
       "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备 ",
       "input": "UnbindDevicesRequest",
@@ -347,6 +353,12 @@
       "input": "UpdateDeviceShadowRequest",
       "name": "更新设备影子",
       "output": "UpdateDeviceShadowResponse"
+    },
+    "UpdateDevicesEnableState": {
+      "document": "批量启用或者禁用设备 ",
+      "input": "UpdateDevicesEnableStateRequest",
+      "name": "批量切换设备可用状态",
+      "output": "UpdateDevicesEnableStateResponse"
     },
     "UpdateTopicPolicy": {
       "document": "本接口（UpdateTopicPolicy）用于更新Topic信息",
@@ -4905,6 +4917,42 @@
       ],
       "usage": "in"
     },
+    "SetProductsForbiddenStatusRequest": {
+      "document": "SetProductsForbiddenStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要设置禁用状态的产品列表",
+          "example": "[\"productID1\",\"productID2\"]",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0启用，1禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetProductsForbiddenStatusResponse": {
+      "document": "SetProductsForbiddenStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StatusStatistic": {
       "document": "状态统计信息",
       "members": [
@@ -5229,6 +5277,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicesEnableStateRequest": {
+      "document": "UpdateDevicesEnableState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属产品id",
+          "example": "SB9OJFCJ1C",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称集合",
+          "example": "[\"test123\\n\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要设置的设备状态，1为启用，0为禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDevicesEnableStateResponse": {
+      "document": "UpdateDevicesEnableState返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

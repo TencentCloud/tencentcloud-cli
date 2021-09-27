@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"PageData\": [\n            {\n                \"SalesName\": \"杨过\",\n                \"UserId\": \"YangGuo\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"PageData\": [\n            {\n                \"SalesName\": \"杨过\",\n                \"UserId\": \"YangGuo\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"DepartmentIdList\": [\n                    0,\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "客户列表"
       }
     ],

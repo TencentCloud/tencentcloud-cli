@@ -928,6 +928,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加了此外部联系人的企业成员的归属部门id列表",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "DepartmentIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

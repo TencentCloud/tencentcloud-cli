@@ -256,6 +256,62 @@
         "title": "获取帐号列表"
       }
     ],
+    "DescribeAssetAppList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetAppList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Apps\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Version\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"ProjectId\": 1,\n                \"ConfigPath\": \"xx\",\n                \"BinPath\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Quuid\": \"xx\",\n                \"ProcessCount\": 1,\n                \"Desc\": \"xx\",\n                \"Type\": 1,\n                \"MachineIp\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询应用列表"
+      }
+    ],
+    "DescribeAssetAppProcessList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetAppProcessList\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Uuid\": \"xx\",\n    \"Quuid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Process\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Version\": \"xx\",\n                \"User\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Path\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取软件关联进程列表"
+      }
+    ],
+    "DescribeAssetCoreModuleInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetCoreModuleInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Module\": {\n            \"Processes\": \"xx\",\n            \"Name\": \"xx\",\n            \"Modules\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Version\": \"xx\",\n            \"Params\": [\n                {\n                    \"Data\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Path\": \"xx\",\n            \"Desc\": \"xx\",\n            \"Size\": 1\n        }\n    }\n}",
+        "title": "获取内核模块详情"
+      }
+    ],
+    "DescribeAssetCoreModuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetCoreModuleList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Order\": 1,\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Modules\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"ModuleCount\": 1,\n                \"ProcessCount\": 1,\n                \"Path\": \"xx\",\n                \"Size\": 1,\n                \"MachineIp\": \"xx\",\n                \"Desc\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产管理内核模块列表"
+      }
+    ],
+    "DescribeAssetDatabaseInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetDatabaseInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Database\": {\n            \"OsInfo\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"MachineWanIp\": \"xx\",\n            \"Uuid\": \"xx\",\n            \"Proto\": \"xx\",\n            \"ErrorLogPath\": \"xx\",\n            \"Ip\": \"xx\",\n            \"Permission\": \"xx\",\n            \"LogPath\": \"xx\",\n            \"DataPath\": \"xx\",\n            \"Param\": \"xx\",\n            \"ConfigPath\": \"xx\",\n            \"BinPath\": \"xx\",\n            \"Version\": \"xx\",\n            \"Quuid\": \"xx\",\n            \"PlugInPath\": \"xx\",\n            \"Name\": \"xx\",\n            \"Port\": \"xx\",\n            \"MachineIp\": \"xx\",\n            \"User\": \"xx\"\n        }\n    }\n}",
+        "title": "获取资产管理数据库详情"
+      }
+    ],
+    "DescribeAssetDatabaseList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetDatabaseList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"Databases\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Version\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"ErrorLogPath\": \"xx\",\n                \"Proto\": \"xx\",\n                \"ProjectId\": 1,\n                \"Permission\": \"xx\",\n                \"LogPath\": \"xx\",\n                \"DataPath\": \"xx\",\n                \"Param\": \"xx\",\n                \"ConfigPath\": \"xx\",\n                \"BinPath\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Quuid\": \"xx\",\n                \"PlugInPath\": \"xx\",\n                \"Ip\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"Name\": \"xx\",\n                \"Port\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"User\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询资产管理数据库列表"
+      }
+    ],
+    "DescribeAssetEnvList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetEnvList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Envs\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Value\": \"xx\",\n                \"User\": \"xx\",\n                \"Type\": 1,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产管理环境变量列表"
+      }
+    ],
     "DescribeAssetInfo": [
       {
         "document": "",
@@ -264,12 +320,156 @@
         "title": "示例"
       }
     ],
+    "DescribeAssetInitServiceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetInitServiceList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Services\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"User\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 1,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产管理启动服务列表"
+      }
+    ],
+    "DescribeAssetJarInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetJarInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Jar\": {\n            \"Status\": 1,\n            \"OsInfo\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"Process\": [\n                {\n                    \"Status\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Version\": \"xx\",\n                    \"User\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"Path\": \"xx\"\n                }\n            ],\n            \"MachineName\": \"xx\",\n            \"Version\": \"xx\",\n            \"Path\": \"xx\",\n            \"Type\": 0,\n            \"MachineIp\": \"xx\",\n            \"Md5\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Jar包详情"
+      }
+    ],
+    "DescribeAssetJarList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetJarList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Jars\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 0,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询Jar包列表"
+      }
+    ],
+    "DescribeAssetMachineDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetMachineDetail\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MachineDetail\": {\n            \"Uuid\": \"xx\",\n            \"PartitionCount\": 1,\n            \"SerialNumber\": \"xx\",\n            \"DiskLoad\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"MachineIp\": \"xx\",\n            \"InstallTime\": \"xx\",\n            \"Status\": 1,\n            \"UpdateTime\": \"xx\",\n            \"MachineWanIp\": \"xx\",\n            \"InstanceId\": \"xx\",\n            \"MachineName\": \"xx\",\n            \"LastLiveTime\": \"xx\",\n            \"Cpu\": \"xx\",\n            \"BootTime\": \"xx\",\n            \"BuyTime\": \"xx\",\n            \"AgentVersion\": \"xx\",\n            \"OfflineTime\": \"xx\",\n            \"OsType\": \"xx\",\n            \"DeviceVersion\": \"xx\",\n            \"OsInfo\": \"xx\",\n            \"MemLoad\": \"xx\",\n            \"ProjectId\": 1,\n            \"Disks\": [\n                {\n                    \"Used\": 1,\n                    \"Name\": \"xx\",\n                    \"Percent\": 0.0,\n                    \"Path\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Size\": 1\n                }\n            ],\n            \"CoreVersion\": \"xx\",\n            \"CpuLoad\": \"xx\",\n            \"DiskSize\": 1,\n            \"MemSize\": 1,\n            \"RiskStatus\": \"xx\",\n            \"Producer\": \"xx\",\n            \"CpuSize\": 1,\n            \"ProtectDays\": 1,\n            \"Quuid\": \"xx\",\n            \"NetCards\": [\n                {\n                    \"DnsServer\": \"xx\",\n                    \"Ip\": \"xx\",\n                    \"Mac\": \"xx\",\n                    \"Ipv6\": \"xx\",\n                    \"GateWay\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"ProtectLevel\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取资产管理主机资源详细信息"
+      }
+    ],
+    "DescribeAssetMachineList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetMachineList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"Machines\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"MemLoad\": 0.0,\n                \"MachineName\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"DiskLoad\": 0.0,\n                \"DiskSize\": 1,\n                \"Quuid\": \"xx\",\n                \"MemSize\": 1,\n                \"PartitionCount\": 1,\n                \"Cpu\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取资源监控列表"
+      }
+    ],
+    "DescribeAssetPlanTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetPlanTaskList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"ConfigPath\": \"xx\",\n                \"Command\": \"xx\",\n                \"User\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Cycle\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询资产管理计划任务列表"
+      }
+    ],
+    "DescribeAssetPortInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetPortInfoList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Ports\": [\n            {\n                \"Uuid\": \"xx\",\n                \"Proto\": \"xx\",\n                \"Param\": \"xx\",\n                \"ProcessVersion\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Teletype\": \"xx\",\n                \"Ppid\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"User\": \"xx\",\n                \"BindIp\": \"xx\",\n                \"Md5\": \"xx\",\n                \"OsInfo\": \"xx\",\n                \"ProjectId\": 1,\n                \"GroupName\": \"xx\",\n                \"ProcessPath\": \"xx\",\n                \"ProcessName\": \"xx\",\n                \"ParentProcessName\": \"xx\",\n                \"Pid\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Quuid\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Port\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取资产管理端口列表"
+      }
+    ],
+    "DescribeAssetProcessInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetProcessInfoList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Process\": [\n            {\n                \"HasSign\": 1,\n                \"Uuid\": \"xx\",\n                \"PackageName\": \"xx\",\n                \"Param\": \"xx\",\n                \"Version\": \"xx\",\n                \"Ppid\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Status\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"User\": \"xx\",\n                \"Path\": \"xx\",\n                \"Md5\": \"xx\",\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"ProjectId\": 1,\n                \"GroupName\": \"xx\",\n                \"Tty\": \"xx\",\n                \"InstallByPackage\": 1,\n                \"ParentProcessName\": \"xx\",\n                \"Pid\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Quuid\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取资产管理进程列表"
+      }
+    ],
     "DescribeAssetRecentMachineInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetRecentMachineInfo\n<公共请求参数>\n\n{\n    \"BeginDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\"\n}",
         "output": "{\n    \"Response\": {\n        \"RiskList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"LiveList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"TotalList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"a8658ae6-0cd1-47f0-99b0-f144f01e9066\",\n        \"OfflineList\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "获取主机概况趋势"
+      }
+    ],
+    "DescribeAssetSystemPackageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSystemPackageList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Packages\": [\n            {\n                \"Name\": \"xx\",\n                \"Version\": \"xx\",\n                \"Type\": 1,\n                \"InstallTime\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取资产管理系统安装包列表"
+      }
+    ],
+    "DescribeAssetUserInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetUserInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"User\": {\n            \"Uuid\": \"xx\",\n            \"LastLoginIp\": \"xx\",\n            \"Gid\": \"xx\",\n            \"PasswordChangeType\": 1,\n            \"LastLoginTime\": \"xx\",\n            \"MachineIp\": \"xx\",\n            \"IsSshLogin\": 1,\n            \"Status\": 1,\n            \"UpdateTime\": \"xx\",\n            \"Shell\": \"xx\",\n            \"IsDomain\": 1,\n            \"Keys\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"EncryptType\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"MachineName\": \"xx\",\n            \"PasswordDueTime\": \"xx\",\n            \"UserType\": 1,\n            \"PasswordChangeTime\": \"xx\",\n            \"HomePath\": \"xx\",\n            \"Remark\": \"xx\",\n            \"Name\": \"xx\",\n            \"GroupName\": \"xx\",\n            \"DisableTime\": \"xx\",\n            \"LastLoginLoc\": \"xx\",\n            \"Uid\": \"xx\",\n            \"IsRoot\": 1,\n            \"LastLoginTerminal\": \"xx\",\n            \"Quuid\": \"xx\",\n            \"PasswordLockDays\": 0,\n            \"ShellLoginStatus\": 1,\n            \"PasswordWarnDays\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取主机账号详情"
+      }
+    ],
+    "DescribeAssetUserList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetUserList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"Uuid\": \"xx\",\n                \"Gid\": \"xx\",\n                \"LastLoginTime\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"IsSshLogin\": 1,\n                \"Status\": 1,\n                \"Shell\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"LoginType\": 1,\n                \"PasswordDueTime\": \"xx\",\n                \"UserType\": 1,\n                \"PasswordChangeTime\": \"xx\",\n                \"HomePath\": \"xx\",\n                \"OsInfo\": \"xx\",\n                \"IsSudo\": 1,\n                \"Name\": \"xx\",\n                \"ProjectId\": 1,\n                \"IsDomain\": 1,\n                \"Uid\": \"xx\",\n                \"IsRoot\": 1,\n                \"Quuid\": \"xx\",\n                \"PasswordLockDays\": 1,\n                \"ShellLoginStatus\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取账号列表"
+      }
+    ],
+    "DescribeAssetWebAppList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebAppList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"WebApps\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Domain\": \"xx\",\n                \"Id\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"ProjectId\": 1,\n                \"RootPath\": \"xx\",\n                \"PluginCount\": 1,\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Version\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"Desc\": \"xx\",\n                \"VirtualPath\": \"xx\",\n                \"ServiceType\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取资产管理Web应用列表"
+      }
+    ],
+    "DescribeAssetWebAppPluginList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebAppPluginList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Id\": \"xx\",\n    \"Limit\": 1,\n    \"Uuid\": \"xx\",\n    \"Quuid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"Plugins\": [\n            {\n                \"Version\": \"xx\",\n                \"Link\": \"xx\",\n                \"Name\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取资产管理Web应用插件列表"
+      }
+    ],
+    "DescribeAssetWebFrameList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebFrameList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WebFrames\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Lang\": \"xx\",\n                \"ServiceType\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"ProjectId\": 1,\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Version\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取资产管理Web框架列表"
+      }
+    ],
+    "DescribeAssetWebLocationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebLocationInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WebLocation\": {\n            \"ServiceType\": \"xx\",\n            \"Name\": \"xx\",\n            \"SafeStatus\": 1,\n            \"Ip\": \"xx\",\n            \"Proto\": \"xx\",\n            \"MainPath\": \"xx\",\n            \"Command\": \"xx\",\n            \"User\": \"xx\",\n            \"Port\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Web站点详情"
+      }
+    ],
+    "DescribeAssetWebLocationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebLocationList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Locations\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"ServiceType\": \"xx\",\n                \"PathCount\": 1,\n                \"MachineWanIp\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"MainPathOwner\": \"xx\",\n                \"Proto\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Permission\": \"xx\",\n                \"Port\": 1,\n                \"MainPath\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Quuid\": \"xx\",\n                \"ProjectId\": 1,\n                \"User\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Web站点列表"
+      }
+    ],
+    "DescribeAssetWebServiceInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebServiceInfoList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WebServices\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Version\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"MachineWanIp\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"InstallPath\": \"xx\",\n                \"ProjectId\": 1,\n                \"ConfigPath\": \"xx\",\n                \"Id\": \"xx\",\n                \"BinPath\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"User\": \"xx\",\n                \"ProcessCount\": 1,\n                \"MachineIp\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产管理Web服务列表"
+      }
+    ],
+    "DescribeAssetWebServiceProcessList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebServiceProcessList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Id\": \"xx\",\n    \"Limit\": 1,\n    \"Uuid\": \"xx\",\n    \"Quuid\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Process\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Version\": \"xx\",\n                \"User\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Path\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Web服务关联进程列表"
       }
     ],
     "DescribeAttackLogInfo": [
@@ -332,7 +532,7 @@
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBanWhiteList\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"WhiteList\": [\n            {\n                \"Id\": \"33\",\n                \"SrcIp\": \"45.24.22.123\",\n                \"ModifyTime\": \"2020-02-18 18:28:29\",\n                \"CreateTime\": \"2020-02-18 18:28:29\",\n                \"Remark\": \"532\",\n                \"Uuid\": null,\n                \"IsGlobal\": false,\n                \"Quuid\": \"\",\n                \"MachineIp\": \"\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"34\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:27:09\",\n                \"CreateTime\": \"2020-03-08 23:27:09\",\n                \"Remark\": \"xxx\",\n                \"Uuid\": null,\n                \"IsGlobal\": true,\n                \"Quuid\": \"\",\n                \"MachineIp\": \"\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"35\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:34:20\",\n                \"CreateTime\": \"2020-03-08 23:34:20\",\n                \"Remark\": \"whitelist_rule\",\n                \"Uuid\": null,\n                \"IsGlobal\": false,\n                \"Quuid\": \"d42129e4-54d3-41af-944c-ec5cfa0ce942\",\n                \"MachineIp\": \"10.104.135.28\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"36\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:34:20\",\n                \"CreateTime\": \"2020-03-08 23:34:20\",\n                \"Remark\": \"whitelist_rule\",\n                \"Uuid\": null,\n                \"IsGlobal\": false,\n                \"Quuid\": \"b86925b4-cc36-420e-80d4-5094cb2f094b\",\n                \"MachineIp\": \"10.104.14.165\",\n                \"MachineName\": \"\"\n            }\n        ],\n        \"RequestId\": \"aad8005f-2bf2-8b79-cfde-b030576f886e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"WhiteList\": [\n            {\n                \"Id\": \"33\",\n                \"SrcIp\": \"45.24.22.123\",\n                \"ModifyTime\": \"2020-02-18 18:28:29\",\n                \"CreateTime\": \"2020-02-18 18:28:29\",\n                \"Remark\": \"532\",\n                \"Uuid\": \"\",\n                \"IsGlobal\": false,\n                \"Quuid\": \"\",\n                \"MachineIp\": \"\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"34\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:27:09\",\n                \"CreateTime\": \"2020-03-08 23:27:09\",\n                \"Remark\": \"xxx\",\n                \"Uuid\": \"\",\n                \"IsGlobal\": true,\n                \"Quuid\": \"\",\n                \"MachineIp\": \"\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"35\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:34:20\",\n                \"CreateTime\": \"2020-03-08 23:34:20\",\n                \"Remark\": \"whitelist_rule\",\n                \"Uuid\": \"\",\n                \"IsGlobal\": false,\n                \"Quuid\": \"d42129e4-54d3-41af-944c-ec5cfa0ce942\",\n                \"MachineIp\": \"10.104.135.28\",\n                \"MachineName\": \"\"\n            },\n            {\n                \"Id\": \"36\",\n                \"SrcIp\": \"1.1.1.1\",\n                \"ModifyTime\": \"2020-03-08 23:34:20\",\n                \"CreateTime\": \"2020-03-08 23:34:20\",\n                \"Remark\": \"whitelist_rule\",\n                \"Uuid\": \"\",\n                \"IsGlobal\": false,\n                \"Quuid\": \"b86925b4-cc36-420e-80d4-5094cb2f094b\",\n                \"MachineIp\": \"10.104.14.165\",\n                \"MachineName\": \"\"\n            }\n        ],\n        \"RequestId\": \"aad8005f-2bf2-8b79-cfde-b030576f886e\"\n    }\n}",
         "title": "获取阻断白名单列表"
       }
     ],
@@ -340,7 +540,7 @@
       {
         "document": "根据基线策略id查询基线策略数据概览统计",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineAnalysisData\n&StrategyId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"LatestScanTime\": \"最近基线检测时间\",\n        \"IsGlobal\": \"扫描范围是否全部服务器\",\n        \"ScanHostCount\": 170,\n        \"ScanRuleCount\": 25,\n        \"IfFirstScan\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"LatestScanTime\": \"最近基线检测时间\",\n        \"IsGlobal\": \"扫描范围是否全部服务器\",\n        \"ScanHostCount\": 170,\n        \"ScanRuleCount\": 25,\n        \"IfFirstScan\": 1\n    }\n}",
         "title": "安全基线策略概览统计数据查询接口"
       }
     ],
@@ -372,7 +572,7 @@
       {
         "document": "查询服务器风险top接口",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineHostTop\n&Top=5\n&StrategyId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"BaselineHostTopList\": [\n            {\n                \"HostName\": \"1号主机\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"BaselineHostTopList\": [\n            {\n                \"HostName\": \"1号主机\"\n            }\n        ]\n    }\n}",
         "title": "服务器风险top接口"
       }
     ],
@@ -380,7 +580,7 @@
       {
         "document": "根据过滤参数查询基线列表信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"TotalCount\": 100,\n        \"BaselineList\": [\n            {\n                \"Name\": \"基线名1\",\n                \"Level\": 1,\n                \"RuleCount\": 11,\n                \"HostCount\": 12,\n                \"Status\": 0\n            },\n            {\n                \"Name\": \"基线名2\",\n                \"Level\": 1,\n                \"RuleCount\": 11,\n                \"HostCount\": 12,\n                \"Status\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 100,\n        \"BaselineList\": [\n            {\n                \"Name\": \"基线名1\",\n                \"Level\": 1,\n                \"RuleCount\": 11,\n                \"HostCount\": 12,\n                \"Status\": 0\n            },\n            {\n                \"Name\": \"基线名2\",\n                \"Level\": 1,\n                \"RuleCount\": 11,\n                \"HostCount\": 12,\n                \"Status\": 0\n            }\n        ]\n    }\n}",
         "title": "查询基线列表接口"
       }
     ],
@@ -412,7 +612,7 @@
       {
         "document": "根据appid查询用户下全部的策略信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineStrategyList\n&Enabled=1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"TotalCount\": 50,\n        \"StrategyList\": [\n            {\n                \"StrategyName\": \"策略名\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 50,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"00,00,00\",\n                \"Enabled\": 1\n            },\n            {\n                \"StrategyName\": \"策略名2\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 60,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"12,00,00\",\n                \"Enabled\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 50,\n        \"StrategyList\": [\n            {\n                \"StrategyName\": \"策略名\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 50,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"00,00,00\",\n                \"Enabled\": 1\n            },\n            {\n                \"StrategyName\": \"策略名2\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 60,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"12,00,00\",\n                \"Enabled\": 1\n            }\n        ]\n    }\n}",
         "title": "用户基线策略列表查询"
       }
     ],
@@ -420,7 +620,7 @@
       {
         "document": "根据策略id基线检测项TOP查询基线检测项top",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineTop\n&StrategyId=1\n&Top=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"RuleTopList\": [\n            {\n                \"RuleName\": \"检测项名1\",\n                \"Level\": 1,\n                \"EventCount\": 4000\n            },\n            {\n                \"RuleName\": \"检测项名2\",\n                \"Level\": 2,\n                \"EventCount\": 4000\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"RuleTopList\": [\n            {\n                \"RuleName\": \"检测项名1\",\n                \"Level\": 1,\n                \"EventCount\": 4000\n            },\n            {\n                \"RuleName\": \"检测项名2\",\n                \"Level\": 2,\n                \"EventCount\": 4000\n            }\n        ]\n    }\n}",
         "title": "基线检测项TOP接口"
       }
     ],
@@ -508,7 +708,7 @@
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeExpertServiceOrderList\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 0,\n        \"List\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 0,\n        \"List\": []\n    }\n}",
         "title": "专家服务-专家服务订单列表"
       }
     ],
@@ -563,8 +763,8 @@
     "DescribeIgnoreRuleEffectHostList": [
       {
         "document": "根据检测项id查询忽略检测项影响主机列表数据",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeIgnoreRuleEffectHostList\n&Limit=10\n&Offset=0\n&RuleId=1\n&TagNames.0=\"tag\"\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IgnoreRuleEffectHostList\": [\n            {\n                \"HostName\": \"测试主机3\",\n                \"Level\": \"1\",\n                \"TagList\": [\n                    \"展会\"\n                ],\n                \"Status\": 1,\n                \"LastScanTime\": \"2020-06-16 09:13:54\",\n                \"EventId\": 666,\n                \"Quuid\": \"23220\"\n            },\n            {\n                \"HostName\": \"测试主机3\",\n                \"Level\": \"3\",\n                \"TagList\": [\n                    \"展会\"\n                ],\n                \"Status\": 1,\n                \"LastScanTime\": \"2020-06-16 09:13:54\",\n                \"EventId\": 666,\n                \"Quuid\": \"23220\"\n            }\n        ],\n        \"RequestId\": \"req-566234234\",\n        \"TotalCount\": 2\n    }\n}",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeIgnoreRuleEffectHostList\n&Limit=10\n&Offset=0\n&RuleId=1\n&TagNames.0=tag\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IgnoreRuleEffectHostList\": [\n            {\n                \"HostName\": \"测试主机3\",\n                \"Level\": \"1\",\n                \"TagList\": [\n                    \"展会\"\n                ],\n                \"Status\": 1,\n                \"LastScanTime\": \"2020-06-16 09:13:54\",\n                \"EventId\": 666,\n                \"Quuid\": \"23220\"\n            },\n            {\n                \"HostName\": \"测试主机3\",\n                \"Level\": \"3\",\n                \"TagList\": [\n                    \"展会\"\n                ],\n                \"Status\": 1,\n                \"LastScanTime\": \"2020-06-16 09:13:54\",\n                \"EventId\": 666,\n                \"Quuid\": \"23220\"\n            }\n        ],\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "忽略检测项影响主机列表接口"
       }
     ],
@@ -660,7 +860,7 @@
       {
         "document": "查询恶意请求白名单列表",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMaliciousRequestWhiteList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-566234234\",\n        \"TotalCount\": 100,\n        \"List\": [\n            {\n                \"Mark\": \"备注1\",\n                \"Id\": 1,\n                \"Domain\": \"dnakdnak\",\n                \"CreateTime\": \"2021-02-08 14:46:25\",\n                \"ModifyTime\": \"2021-02-08 14:46:25\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 100,\n        \"List\": [\n            {\n                \"Mark\": \"备注1\",\n                \"Id\": 1,\n                \"Domain\": \"dnakdnak\",\n                \"CreateTime\": \"2021-02-08 14:46:25\",\n                \"ModifyTime\": \"2021-02-08 14:46:25\"\n            }\n        ]\n    }\n}",
         "title": "查询恶意请求白名单列表"
       }
     ],
@@ -852,7 +1052,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskStatus\n<公共请求参数>\n\n{\n    \"ModuleType\": \"Malware\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"State\": {\n            \"Scanning\": \"\",\n            \"Ok\": \"\",\n            \"Stop\": \"\",\n            \"Fail\": \"\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"State\": {\n            \"Scanning\": \"\",\n            \"Ok\": \"\",\n            \"Stop\": \"\",\n            \"Fail\": \"\"\n        }\n    }\n}",
         "title": "示例"
       }
     ],
@@ -972,7 +1172,7 @@
       {
         "document": "统计专业版和基础版机器数",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVersionStatistics\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"BasicVersionNum\": 12,\n        \"ProVersionNum\": 22\n    }\n}",
         "title": "统计专业版和基础版机器数"
       }
     ],

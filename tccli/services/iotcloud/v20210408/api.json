@@ -84,6 +84,12 @@
       "name": "发布广播消息",
       "output": "PublishBroadcastMessageResponse"
     },
+    "SetProductsForbiddenStatus": {
+      "document": "批量设置产品禁用状态",
+      "input": "SetProductsForbiddenStatusRequest",
+      "name": "批量设置产品禁用状态",
+      "output": "SetProductsForbiddenStatusResponse"
+    },
     "UpdateDeviceLogLevel": {
       "document": "设置设备上报的日志级别  ",
       "input": "UpdateDeviceLogLevelRequest",
@@ -1739,6 +1745,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetProductsForbiddenStatusRequest": {
+      "document": "SetProductsForbiddenStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要设置禁用状态的产品列表",
+          "example": "[\"productID1\",\"productID2\"]",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0启用，1禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetProductsForbiddenStatusResponse": {
+      "document": "SetProductsForbiddenStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

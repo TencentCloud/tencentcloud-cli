@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddAcRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAcRule\n<公共请求参数>\n\n{\n    \"OrderIndex\": \"-1\",\n    \"Description\": \"api test1\",\n    \"SourceType\": \"location\",\n    \"SourceContent\": \"cq50,sh31,tj12,bj11\",\n    \"DestType\": \"net\",\n    \"DestContent\": \"0.0.0.0/0\",\n    \"Enable\": \"true\",\n    \"Direction\": \"in\",\n    \"RuleAction\": \"accept\",\n    \"Port\": \"-1/-1\",\n    \"Protocol\": \"tcp\",\n    \"ApplicationName\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
+        "title": "添加互联网边界规则"
+      }
+    ],
     "CreateAcRules": [
       {
         "document": "",
@@ -36,6 +44,20 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-q98tz7hs\"\n        ],\n        \"Eips\": [\n            \"11.2.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建防火墙实例--新增模式"
+      }
+    ],
+    "CreateNatFwInstanceWithDomain": [
+      {
+        "document": "接入模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-14yv5rzx\",\n        \"nat-14yv5rzk\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建防火墙实例和接入域名"
+      },
+      {
+        "document": "新增模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-q98tz7hs\"\n        ],\n        \"Eips\": [\n            \"11.2.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "CreateNatFwInstanceWithDomain"
       }
     ],
     "CreateSecurityGroupApiRules": [
@@ -488,6 +510,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVPCSwitchStatus\n<公共请求参数>\n\n{\n    \"FirewallVpcId\": \"1.2.3.4\",\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改防火墙开关"
+      }
+    ],
+    "RemoveAcRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAcRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": 8888\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
+        "title": "删除互联网边界规则"
       }
     ],
     "RunSyncAsset": [

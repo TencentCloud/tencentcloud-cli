@@ -613,7 +613,7 @@
     "SyncImages": [
       {
         "document": "同步镜像img-o3ycss2p到广州",
-        "input": "https://cvm.tencentcloudapi.com/?Action=SyncImages\r\n&ImageIds.0=img-o3ycss2p\r\n&DestinationRegions.0=ap-guangzhou\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=SyncImages\n&ImageIds.0=img-o3ycss2p\n&DestinationRegions.0=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "同步镜像"
       }

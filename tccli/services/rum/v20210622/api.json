@@ -35,6 +35,12 @@
       "input": "DescribeProjectsRequest",
       "name": "获取项目列表",
       "output": "DescribeProjectsResponse"
+    },
+    "DescribeScores": {
+      "document": "获取首页分数列表",
+      "input": "DescribeScoresRequest",
+      "name": "获取首页分数列表",
+      "output": "DescribeScoresResponse"
     }
   },
   "metadata": {
@@ -800,6 +806,60 @@
       ],
       "type": "object"
     },
+    "DescribeScoresRequest": {
+      "document": "DescribeScores请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2022051914",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020011920",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScoresResponse": {
+      "document": "DescribeScores返回参数结构体",
+      "members": [
+        {
+          "document": "数组",
+          "example": "无",
+          "member": "ScoreInfo",
+          "name": "ScoreSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n· 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n· 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -978,6 +1038,142 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScoreInfo": {
+      "document": "project Score分数实体",
+      "members": [
+        {
+          "default": "",
+          "document": "duration",
+          "example": "1",
+          "member": "string",
+          "name": "StaticDuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pv",
+          "example": "111",
+          "member": "string",
+          "name": "PagePv",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败",
+          "example": "1",
+          "member": "string",
+          "name": "ApiFail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求",
+          "example": "12",
+          "member": "string",
+          "name": "ApiNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "fail",
+          "example": "12",
+          "member": "string",
+          "name": "StaticFail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uv",
+          "example": "12",
+          "member": "string",
+          "name": "PageUv",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求次数",
+          "example": "12",
+          "member": "string",
+          "name": "ApiDuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分数",
+          "example": "90",
+          "member": "string",
+          "name": "Score",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "error",
+          "example": "111",
+          "member": "string",
+          "name": "PageError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "num",
+          "example": "12",
+          "member": "string",
+          "name": "StaticNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "num",
+          "example": "1",
+          "member": "int64",
+          "name": "RecordNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Duration",
+          "example": "111",
+          "member": "string",
+          "name": "PageDuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -30,6 +30,9 @@ Output:
                 "ManagerId": 22,
                 "ExpireTime": "xx",
                 "ManagerMail": "xx",
+                "StatusInfo": [
+                    {}
+                ],
                 "DomainCount": 2,
                 "ManagerDepartment": "xx",
                 "CreateTime": "xx"

@@ -745,7 +745,7 @@
       "output": "DescribeIpGeolocationDatabaseUrlResponse"
     },
     "DescribeIpGeolocationInfos": {
-      "document": "该接口用于查询IP地址信息，包括地理位置信息和网络信息。",
+      "document": "本接口（DescribeIpGeolocationInfos）用于查询IP地址信息，包括地理位置信息和网络信息。\n本接口目前处于内测中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=660&source=0&data_title=%E5%BC%B9%E6%80%A7%E5%85%AC%E7%BD%91%20EIP&level3_id=662&queue=96&scene_code=16400&step=2)。",
       "input": "DescribeIpGeolocationInfosRequest",
       "name": "查询IP地理位置信息",
       "output": "DescribeIpGeolocationInfosResponse"
@@ -7649,6 +7649,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-3ptx9s8b",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -9707,7 +9708,8 @@
       "members": [
         {
           "default": "",
-          "document": "查询IP地址列表，支持IPv4和IPv6。",
+          "document": "需查询的IP地址列表，支持IPv4和IPv6。批量查询的IP地址上限为100个。",
+          "example": "[\"8.8.8.8\"]",
           "member": "string",
           "name": "AddressIps",
           "required": true,
@@ -9715,7 +9717,8 @@
         },
         {
           "default": "",
-          "document": "查询IP地址的字段信息，包括\"Country\",\"Province\",\"City\",\"Region\",\"Isp\",\"AsName\",\"AsId\"",
+          "document": "需查询的IP地址的字段信息。",
+          "example": "无",
           "member": "IpField",
           "name": "Fields",
           "required": false,
@@ -9728,16 +9731,20 @@
       "document": "DescribeIpGeolocationInfos返回参数结构体",
       "members": [
         {
-          "document": "IP地址信息列表",
+          "document": "IP地址信息列表。",
+          "example": "无",
           "member": "IpGeolocationInfo",
           "name": "AddressInfo",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "IP地址信息个数",
+          "document": "IP地址信息个数。",
+          "example": "2",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18124,6 +18131,7 @@
         {
           "default": "",
           "document": "NAT网关ID。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -18132,6 +18140,7 @@
         {
           "default": "",
           "document": "NAT网关并发连接上限，形如：1000000、3000000、10000000。",
+          "example": "3000000",
           "member": "uint64",
           "name": "MaxConcurrentConnection",
           "required": true,

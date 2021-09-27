@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddAcRule": {
+      "document": "添加互联网边界规则",
+      "input": "AddAcRuleRequest",
+      "name": "添加互联网边界规则",
+      "output": "AddAcRuleResponse"
+    },
     "CreateAcRules": {
       "document": "创建规则",
       "input": "CreateAcRulesRequest",
@@ -23,6 +29,12 @@
       "input": "CreateNatFwInstanceRequest",
       "name": "创建防火墙实例",
       "output": "CreateNatFwInstanceResponse"
+    },
+    "CreateNatFwInstanceWithDomain": {
+      "document": "创建防火墙实例和接入域名",
+      "input": "CreateNatFwInstanceWithDomainRequest",
+      "name": "创建防火墙实例和接入域名",
+      "output": "CreateNatFwInstanceWithDomainResponse"
     },
     "CreateSecurityGroupApiRules": {
       "document": "创建安全组API规则",
@@ -354,6 +366,12 @@
       "name": "单个修改VPC防火墙开关",
       "output": "ModifyVPCSwitchStatusResponse"
     },
+    "RemoveAcRule": {
+      "document": "删除互联网边界规则",
+      "input": "RemoveAcRuleRequest",
+      "name": "删除互联网边界规则",
+      "output": "RemoveAcRuleResponse"
+    },
     "RunSyncAsset": {
       "document": "同步资产-互联网&VPC",
       "input": "RunSyncAssetRequest",
@@ -481,6 +499,159 @@
         }
       ],
       "usage": "out"
+    },
+    "AddAcRuleRequest": {
+      "document": "AddAcRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "-1表示优先级最低，1表示优先级最高",
+          "example": "-1",
+          "member": "string",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值：\naccept：放行\ndrop：拒绝\nlog：观察",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略的流量方向。取值：\nin：外对内流量访问控制\nout：内对外流量访问控制",
+          "example": "in",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略的描述信息",
+          "example": "默认拒绝所有流量",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中的源地址类型。取值：\nnet：源IP或网段（IP或者CIDR）\nlocation：源区域\ntemplate：云防火墙地址模板\ninstance：实例id\nvendor：云厂商",
+          "example": "net",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中的源地址。取值：\n当SourceType为net时，SourceContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当SourceType为template时，SourceContent为源地址模板名称。\n\n当SourceType为location时，SourceContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当SourceType为instance时，SourceContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当SourceType为vendor时，SourceContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中的目的地址类型。取值：\nnet：目的IP或者网段（IP或者CIDR）\nlocation：源区域\ntemplate：云防火墙地址模板\ninstance：实例id\nvendor：云厂商\ndomain: 域名或者ip",
+          "example": "domain",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中的目的地址。取值：\n当DestType为net时，DestContent为源IP地址或者CIDR地址。\n例如：1.1.1.0/24\n\n当DestType为template时，DestContent为源地址模板名称。\n\n当DestType为location时，DestContent为源区域。\n例如[\"BJ11\", \"ZB\"]\n\n当DestType为instance时，DestContent为该实例id对应的公网ip。\n例如ins-xxxxx\n\n当DestType为domain时，DestContent为该实例id对应的域名规则。\n例如*.qq.com\n\n当DestType为vendor时，DestContent为所选择厂商的公网ip列表。\n例如：aws,huawei,tencent,aliyun,azure,all代表以上五个",
+          "example": "*.qq.com",
+          "member": "string",
+          "name": "DestContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略的端口。取值：\n-1/-1：全部端口\n80,443：80或者443",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中流量访问的协议类型。取值：TCP，目前互联网边界规则只能支持TCP，不传参数默认就是TCP",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "七层协议，取值：\nHTTP/HTTPS\nTLS/SSL",
+          "example": "HTTP",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用规则，默认为启用，取值：\ntrue为启用，false为不启用",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAcRuleResponse": {
+      "document": "AddAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功后返回新策略的uuid",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0代表成功，-1代表失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "success代表成功，failed代表失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AssetZone": {
       "document": "AssetZone ",
@@ -900,6 +1071,114 @@
     },
     "CreateNatFwInstanceResponse": {
       "document": "CreateNatFwInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatFwInstanceWithDomainRequest": {
+      "document": "CreateNatFwInstanceWithDomain请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "防火墙实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "带宽",
+          "example": "100",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模式 1：接入模式；0：新增模式",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新增模式传递参数，其中NewModeItems和NatgwList至少传递一种。",
+          "example": "{\"VpcList\":[\"vpc-q98tz7hs\"],\"Eips\":[\"11.2.1.1\"],\"AddCount\":1}",
+          "member": "NewModeItems",
+          "name": "NewModeItems",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "接入模式接入的nat网关列表，其中NewModeItems和NatgwList至少传递一种。",
+          "example": "[\"nat-14yv5rzx\",\"nat-14yv5rzk\"]",
+          "member": "string",
+          "name": "NatGwList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主可用区，为空则选择默认可用区",
+          "example": "ap-shanghai-4",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备可用区，为空则选择默认可用区",
+          "example": "ap-shanghai-3",
+          "member": "string",
+          "name": "ZoneBak",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "异地灾备 1：使用异地灾备；0：不使用异地灾备",
+          "example": "1",
+          "member": "int64",
+          "name": "CrossAZone",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0不创建域名,1创建域名",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCreateDomain",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "如果要创建域名则必填",
+          "example": "domain.gz.tencentcs.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNatFwInstanceWithDomainResponse": {
+      "document": "CreateNatFwInstanceWithDomain返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4905,6 +5184,60 @@
         }
       ],
       "usage": "in"
+    },
+    "RemoveAcRuleRequest": {
+      "document": "RemoveAcRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则的uuid，可通过查询规则列表获取",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveAcRuleResponse": {
+      "document": "RemoveAcRule返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功后返回被删除策略的uuid",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0代表成功，-1代表失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "success代表成功，failed代表失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RuleInfoData": {
       "document": "规则输入对象",

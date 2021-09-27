@@ -31,7 +31,7 @@
       "output": "DeleteSmsTemplateResponse"
     },
     "DescribePhoneNumberInfo": {
-      "document": "提供 E.164 格式号码国家或地区码识别，以及解析后规范的E.164号码。",
+      "document": "提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n>- 例如：查询号码 +86018845720123，可以得到国家码 86、规范的 E.164 号码 +8618845720123 等信息。",
       "input": "DescribePhoneNumberInfoRequest",
       "name": "号码信息查询",
       "output": "DescribePhoneNumberInfoResponse"
@@ -73,7 +73,7 @@
       "output": "PullSmsReplyStatusByPhoneNumberResponse"
     },
     "PullSmsSendStatus": {
-      "document": "拉取短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：此接口需要联系 [sms helper](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
       "input": "PullSmsSendStatusRequest",
       "name": "拉取短信下发状态",
       "output": "PullSmsSendStatusResponse"
@@ -1593,7 +1593,7 @@
         },
         {
           "default": "",
-          "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名，例如：腾讯云，签名信息可登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看。\n<dx-alert infotype=\"notice\" title=\"注意\">国内短信为必填参数。</dx-alert>",
+          "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名，例如：腾讯云，签名信息可登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看。\n<dx-alert infotype=\"notice\" title=\"注意\">发送国内短信该参数必填。</dx-alert>",
           "example": "腾讯云",
           "member": "string",
           "name": "SignName",
@@ -1611,7 +1611,7 @@
         },
         {
           "default": "",
-          "document": "短信码号扩展号，默认未开通，如需开通请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
+          "document": "短信码号扩展号，默认未开通，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
           "example": "1400006666",
           "member": "string",
           "name": "ExtendCode",
@@ -1629,7 +1629,7 @@
         },
         {
           "default": "",
-          "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [sms helper](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
+          "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
           "example": "test",
           "member": "string",
           "name": "SenderId",

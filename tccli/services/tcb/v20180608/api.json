@@ -138,11 +138,23 @@
       "name": "云项目部署版本列表",
       "output": "DescribeCloudBaseProjectVersionListResponse"
     },
+    "DescribeCloudBaseRunAllVpcs": {
+      "document": "查询环境下所有的vpc列表",
+      "input": "DescribeCloudBaseRunAllVpcsRequest",
+      "name": "查看环境下的所有vpc",
+      "output": "DescribeCloudBaseRunAllVpcsResponse"
+    },
     "DescribeCloudBaseRunConfForGateWay": {
       "document": "独立网关中拉取云托管服务对应的配置信息",
       "input": "DescribeCloudBaseRunConfForGateWayRequest",
       "name": "独立网关云托管服务配置",
       "output": "DescribeCloudBaseRunConfForGateWayResponse"
+    },
+    "DescribeCloudBaseRunOperationTypes": {
+      "document": "查询服务、版本和操作类型",
+      "input": "DescribeCloudBaseRunOperationTypesRequest",
+      "name": "查询操作类型接口",
+      "output": "DescribeCloudBaseRunOperationTypesResponse"
     },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
@@ -167,6 +179,12 @@
       "input": "DescribeCloudBaseRunVersionRequest",
       "name": "查询服务版本详情",
       "output": "DescribeCloudBaseRunVersionResponse"
+    },
+    "DescribeCloudBaseRunVersionRsByCondition": {
+      "document": "DescribeCloudBaseRunVersionRsByCondition 获取云托管详情",
+      "input": "DescribeCloudBaseRunVersionRsByConditionRequest",
+      "name": "获取云托管详情",
+      "output": "DescribeCloudBaseRunVersionRsByConditionResponse"
     },
     "DescribeCloudBaseRunVersionSnapshot": {
       "document": "查询版本历史",
@@ -4028,6 +4046,42 @@
       ],
       "type": "object"
     },
+    "DescribeCloudBaseRunAllVpcsRequest": {
+      "document": "DescribeCloudBaseRunAllVpcs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "lotestapi100004",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunAllVpcsResponse": {
+      "document": "DescribeCloudBaseRunAllVpcs返回参数结构体",
+      "members": [
+        {
+          "document": "所有vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"vpcid-aa\",\"vpcid=bb\"]",
+          "member": "string",
+          "name": "Vpcs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudBaseRunConfForGateWayRequest": {
       "document": "DescribeCloudBaseRunConfForGateWay请求参数结构体",
       "members": [
@@ -4069,6 +4123,60 @@
           "example": "无",
           "member": "CloudBaseRunForGatewayConf",
           "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunOperationTypesRequest": {
+      "document": "DescribeCloudBaseRunOperationTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "lotestapi100004",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称，精确匹配",
+          "example": "dockerservicename",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunOperationTypesResponse": {
+      "document": "DescribeCloudBaseRunOperationTypes返回参数结构体",
+      "members": [
+        {
+          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "ServerName",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -4888,6 +4996,23 @@
           "type": "float",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunVersionRsByConditionRequest": {
+      "document": "DescribeCloudBaseRunVersionRsByCondition请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunVersionRsByConditionResponse": {
+      "document": "DescribeCloudBaseRunVersionRsByCondition返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

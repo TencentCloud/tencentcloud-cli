@@ -1349,6 +1349,92 @@
       ],
       "usage": "both"
     },
+    "AdvancedCCRules": {
+      "document": "scdn 的自定义 cc 规则",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DetectionTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "限频阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FrequencyLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP 惩罚开关，可选on|off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PunishmentSwitch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP 惩罚时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PunishmentTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行动作，intercept|redirect\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作为 redirect 时，重定向的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RedirectUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七层限频具体配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScdnSevenLayerRules",
+          "name": "Configure",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AdvancedCache": {
       "document": "缓存过期配置高级版，注意：此字段已经弃用，请使用RuleCache",
       "members": [
@@ -6593,6 +6679,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1632627566746100176",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -10330,6 +10425,7 @@
         {
           "default": "",
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页",
+          "example": "无",
           "member": "string",
           "name": "RuleType",
           "required": true,
@@ -10339,6 +10435,7 @@
         {
           "default": "",
           "document": "规则值",
+          "example": "无",
           "member": "string",
           "name": "RuleValue",
           "required": true,
@@ -10348,6 +10445,7 @@
         {
           "default": "",
           "document": "规则限频",
+          "example": "无",
           "member": "uint64",
           "name": "Qps",
           "required": false,
@@ -10357,6 +10455,7 @@
         {
           "default": "",
           "document": "探测时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "DetectionTime",
           "required": false,
@@ -10366,6 +10465,7 @@
         {
           "default": "",
           "document": "限频阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "FrequencyLimit",
           "required": false,
@@ -10375,6 +10475,7 @@
         {
           "default": "",
           "document": "IP 惩罚开关，可选on|off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "PunishmentSwitch",
           "required": false,
@@ -10384,6 +10485,7 @@
         {
           "default": "",
           "document": "IP 惩罚时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "PunishmentTime",
           "required": false,
@@ -10393,6 +10495,7 @@
         {
           "default": "",
           "document": "执行动作，intercept|redirect\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Action",
           "required": false,
@@ -10402,6 +10505,7 @@
         {
           "default": "",
           "document": "动作为 redirect 时，重定向的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
@@ -10417,6 +10521,7 @@
         {
           "default": "",
           "document": "on | off",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -10426,8 +10531,19 @@
         {
           "default": "",
           "document": "自定义 cc 防护规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "ScdnCCRules",
           "name": "Rules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "增强自定义 cc 防护规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "AdvancedCCRules",
+          "name": "AdvancedRules",
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -10750,6 +10866,62 @@
         }
       ],
       "usage": "out"
+    },
+    "ScdnSevenLayerRules": {
+      "document": "Scdn的七层限频配置",
+      "members": [
+        {
+          "default": "",
+          "document": "区分大小写",
+          "example": "true",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型：\nprotocol：协议，填写 HTTP/HTTPS\nmethod：请求方法，支持 HEAD、GET、POST、PUT、OPTIONS、TRACE、DELETE、PATCH、CONNECT\nall：域名 匹配内容固定为\"*\",不可编辑修改\nip：IP 填写 CIDR 表达式\ndirectory：路径，以/开头，支持目录和具体路径，128字符以内\nindex：首页 默认固定值：/;/index.html,不可编辑修改\npath：文件全路径，资源地址，如/acb/test.png，支持通配符，如/abc/*.jpg\nfile：文件扩展名，填写具体扩展名，如 jpg;png;css\nparam：请求参数，填写具体 value 值，512字符以内\nreferer：Referer，填写具体 value 值，512字符以内\ncookie：Cookie，填写具体 value 值，512字符以内\nuser-agent：User-Agent，填写具体 value 值，512字符以内\nhead：自定义请求头，填写具体value值，512字符以内；内容为空或者不存在时，无匹配内容输入框，填写匹配参数即可",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑操作符，取值 ：\n不包含：exclude, \n包含：include, \n不等于：notequal, \n等于：equal, \n前缀匹配：matching\n内容为空或不存在：null",
+          "example": "exclude",
+          "member": "string",
+          "name": "LogicOperator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RuleValue",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配参数，只有请求参数、Cookie、自定义请求头 有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Accept",
+          "member": "string",
+          "name": "RuleParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ScdnTopData": {
       "document": "SCDN攻击数据Top展示",

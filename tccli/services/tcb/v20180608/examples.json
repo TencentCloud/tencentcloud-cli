@@ -184,11 +184,27 @@
         "title": "查询云项目部署版本列表"
       }
     ],
+    "DescribeCloudBaseRunAllVpcs": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunAllVpcs\n&EnvId=lotestapi100004\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Vpcs\": [\n            \"vpcid-aa\",\n            \"vpcid=bb\"\n        ],\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "查看容器托管的所有服务"
+      }
+    ],
     "DescribeCloudBaseRunConfForGateWay": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunConfForGateWay\n<公共请求参数>\n\n{\n    \"EnvID\": \"xx\",\n    \"VpcID\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"EnvId\": \"xx\",\n                \"GrayKey\": \"xx\",\n                \"Weight\": 100,\n                \"ServerName\": \"xx\",\n                \"AccessType\": 2,\n                \"LbAddr\": \"xx\",\n                \"IsZero\": false,\n                \"GrayType\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"URLs\": [\n                    \"xx\"\n                ],\n                \"IsDefault\": false,\n                \"GrayValue\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"LastUpTime\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCloudBaseRunOperationTypes": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunOperationTypes\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Action\": [\n            \"xx\"\n        ],\n        \"ServerName\": [\n            \"xx\"\n        ]\n    }\n}",
         "title": "示例"
       }
     ],
@@ -222,6 +238,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=adb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Branch\": \"\",\n        \"BuildDir\": \"\",\n        \"ContainerPort\": 80,\n        \"CpuSize\": 1,\n        \"CreatedTime\": \"2020-11-04 16:44:54\",\n        \"CustomLogs\": \"/var/logs/data.log\",\n        \"DockerfilePath\": \"\",\n        \"EnvParams\": \"{}\",\n        \"ImageUrl\": \"ccr.ccs.tencentyun.com/cloudbase-apolo-env-test-146d5/hello-world:v2\",\n        \"InitialDelaySeconds\": 2,\n        \"IsPublic\": true,\n        \"MaxNum\": 50,\n        \"MemSize\": 1,\n        \"MinNum\": 0,\n        \"PackageName\": \"\",\n        \"PackageVersion\": \"\",\n        \"PolicyThreshold\": 60,\n        \"PolicyType\": \"cpu\",\n        \"Remark\": \"\",\n        \"Repo\": \"\",\n        \"RepoType\": \"\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\",\n        \"ServerName\": \"test\",\n        \"Status\": \"normal\",\n        \"SubnetIds\": [\n            \"subnet-6yny6j0d\"\n        ],\n        \"UpdatedTime\": \"2020-11-04 19:55:22\",\n        \"UploadType\": \"image\",\n        \"VersionIP\": \"10.0.192.3\",\n        \"VersionName\": \"test-010\",\n        \"VersionPort\": 80,\n        \"VpcId\": \"vpc-rtyzm94a\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeCloudBaseRunVersionRsByCondition": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunVersionRsByCondition\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2e992b19-7906-44a4-a8bb-5a71672b0ec9\"\n    }\n}",
+        "title": "实例"
       }
     ],
     "DescribeCloudBaseRunVersionSnapshot": [
