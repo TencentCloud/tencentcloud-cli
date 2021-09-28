@@ -8,36 +8,46 @@ Input:
 tccli dlc DescribeViews --cli-unfold-argument  \
     --Limit 1 \
     --Offset 0 \
-    --DatabaseName database-test
+    --DatabaseName testdb
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "c1d840f1-2df8-4ef4-9e44-02db58f24475",
         "TotalCount": 1,
-        "RequestId": "xx",
         "ViewList": [
             {
-                "ModifiedTime": "xx",
                 "ViewBaseInfo": {
-                    "ViewName": "xx",
-                    "DatabaseName": "xx"
+                    "DatabaseName": "testdb",
+                    "ViewName": "v1"
                 },
+                "Columns": [],
                 "Properties": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "Columns": [
+                        "Key": "presto_view",
+                        "Value": "true"
+                    },
                     {
-                        "Comment": "xx",
-                        "Type": "xx",
-                        "Name": "xx"
+                        "Key": "presto_query_id",
+                        "Value": "20210901_123510_00000_9jg5j"
+                    },
+                    {
+                        "Key": "transient_lastDdlTime",
+                        "Value": "1630499714051"
+                    },
+                    {
+                        "Key": "comment",
+                        "Value": "Presto View"
+                    },
+                    {
+                        "Key": "presto_version",
+                        "Value": "0.242.1-DLC-rc11-6fe2f42"
                     }
                 ],
-                "CreateTime": "xx"
+                "CreateTime": "1630499714000",
+                "ModifiedTime": "1630499714000"
             }
         ]
     }

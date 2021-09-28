@@ -6,27 +6,30 @@ Input:
 
 ```
 tccli dlc CreateTable --cli-unfold-argument  \
-    --TableInfo.Columns.0.Comment xx \
-    --TableInfo.Columns.0.Type xx \
-    --TableInfo.Columns.0.Name xx \
-    --TableInfo.DataFormat.CSV.HeadLines 0 \
-    --TableInfo.DataFormat.CSV.CodeCompress xx \
-    --TableInfo.DataFormat.CSV.Format xx \
-    --TableInfo.DataFormat.CSV.CSVSerde.Quote xx \
-    --TableInfo.DataFormat.CSV.CSVSerde.Separator xx \
-    --TableInfo.DataFormat.CSV.CSVSerde.Escape xx \
-    --TableInfo.DataFormat.AVRO.Format xx \
-    --TableInfo.DataFormat.Json.Format xx \
-    --TableInfo.DataFormat.Parquet.Format xx \
-    --TableInfo.DataFormat.TextFile.Regex xx \
-    --TableInfo.DataFormat.TextFile.Format xx \
-    --TableInfo.DataFormat.ORC.Format xx \
-    --TableInfo.Location xx \
-    --TableInfo.TableBaseInfo.TableName xx \
-    --TableInfo.TableBaseInfo.DatabaseName xx \
-    --TableInfo.Partitions.0.Comment xx \
-    --TableInfo.Partitions.0.Type xx \
-    --TableInfo.Partitions.0.Name xx
+    --TableInfo.TableBaseInfo.DatabaseName testhyw \
+    --TableInfo.TableBaseInfo.TableName Table1 \
+    --TableInfo.TableBaseInfo.DatasourceConnectionName COSDataCatalog \
+    --TableInfo.Columns.0.Name user_id \
+    --TableInfo.Columns.0.Type int \
+    --TableInfo.Columns.1.Name birthday \
+    --TableInfo.Columns.1.Type int \
+    --TableInfo.Columns.2.Name gender \
+    --TableInfo.Columns.2.Type int \
+    --TableInfo.Partitions.0.Comment part \
+    --TableInfo.Partitions.0.Name gender \
+    --TableInfo.Partitions.0.Type string \
+    --TableInfo.Location cosn://rickyhu-1301312708/test1/ \
+    --TableInfo.DataFormat.CSV.Format CSV \
+    --TableInfo.DataFormat.CSV.CodeCompress None \
+    --TableInfo.DataFormat.CSV.HeadLines 1 \
+    --TableInfo.DataFormat.CSV.CSVSerde.Quote " \
+    --TableInfo.DataFormat.CSV.CSVSerde.Separator , \
+    --TableInfo.DataFormat.AVRO.Format  \
+    --TableInfo.DataFormat.Json.Format  \
+    --TableInfo.DataFormat.Parquet.Format  \
+    --TableInfo.DataFormat.TextFile.Regex  \
+    --TableInfo.DataFormat.TextFile.Format  \
+    --TableInfo.DataFormat.ORC.Format 
 ```
 
 Output: 
@@ -34,9 +37,9 @@ Output:
 {
     "Response": {
         "Execution": {
-            "SQL": "xx"
+            "SQL": "CREATE EXTERNAL TABLE IF NOT EXISTS `COSDataCatalog`.`testhyw`.`Table1` (`user_id` int,`birthday` int,`gender` int) PARTITIONED BY (`gender` string)  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTIES ('separatorChar'=',','quoteChar'='\"') STORED AS TEXTFILE LOCATION 'cosn://rickyhu-1301312708/test1/'  TBLPROPERTIES ('skip.header.line.count'='1')"
         },
-        "RequestId": "xx"
+        "RequestId": "b076c1df-26f0-45b7-84f1-fa4eeca7c83f"
     }
 }
 ```

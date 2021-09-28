@@ -42,14 +42,14 @@
 | cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-09-17 08:03:50 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2021-09-16 08:03:18 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2021-09-20 08:13:39 |
-| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-09-27 08:06:15 |
-| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2021-09-27 08:14:34 |
+| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-09-28 08:05:51 |
+| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2021-09-28 08:13:48 |
 | cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2021-09-16 08:02:07 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2021-09-16 08:06:42 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | 2021-09-16 08:06:59 |
 | dc | [专线接入](http://document.tencentcloudapi.woa.com/document/product/216) | 2021-09-16 08:07:07 |
 | dcdb | [分布式数据库 TDSQL](http://document.tencentcloudapi.woa.com/document/product/557) | 2021-09-23 08:06:28 |
-| dlc | [数据湖计算](http://document.tencentcloudapi.woa.com/document/product/1342) | 2021-09-16 08:01:09 |
+| dlc | [数据湖计算](http://document.tencentcloudapi.woa.com/document/product/1342) | 2021-09-28 08:01:00 |
 | dnspod | [DNSPod](http://document.tencentcloudapi.woa.com/document/product/1427) | 2021-09-16 08:00:39 |
 | domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | 2021-09-16 08:07:19 |
 | drm | [数字版权管理](http://document.tencentcloudapi.woa.com/document/product/1000) | 2021-09-16 08:07:23 |
@@ -99,7 +99,7 @@
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | 2021-09-16 08:09:55 |
 | nlp | [自然语言处理](http://document.tencentcloudapi.woa.com/document/product/271) | 2021-09-16 08:15:54 |
 | oceanus | [流计算 Oceanus](http://document.tencentcloudapi.woa.com/document/product/849) | 2021-09-24 08:01:13 |
-| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2021-09-16 08:09:57 |
+| ocr | [文字识别](http://document.tencentcloudapi.woa.com/document/product/866) | 2021-09-28 08:09:02 |
 | organization | [企业组织](http://document.tencentcloudapi.woa.com/document/product/850) | 2021-09-16 08:10:09 |
 | partners | [渠道合作伙伴](http://document.tencentcloudapi.woa.com/document/product/563) | 2021-09-16 08:10:12 |
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | 2021-09-16 08:00:03 |
@@ -126,7 +126,7 @@
 | tat | [腾讯云自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | 2021-09-24 08:14:58 |
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-16 08:11:08 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2021-09-16 08:11:14 |
-| tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-09-24 08:10:26 |
+| tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-09-28 08:10:11 |
 | tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-27 08:10:54 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2021-09-16 08:02:01 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-09-23 08:12:52 |
@@ -144,7 +144,7 @@
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2021-09-20 08:11:11 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2021-09-17 08:12:48 |
 | tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2021-09-27 08:01:12 |
-| tsf | [腾讯微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2021-09-27 08:11:34 |
+| tsf | [腾讯微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2021-09-28 08:10:56 |
 | tsw | [腾讯微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2021-09-16 08:15:45 |
 | tts | [语音合成](http://document.tencentcloudapi.woa.com/document/product/1073) | 2021-09-16 08:12:26 |
 | ump | [客流数字化平台](http://document.tencentcloudapi.woa.com/document/product/1320) | 2021-09-16 08:01:39 |

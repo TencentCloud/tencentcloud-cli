@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli dlc CreateTasksInOrder --cli-unfold-argument  \
-    --Tasks.SQL xx \
-    --Tasks.TaskType xx \
-    --Tasks.Config.0.Value xx \
-    --Tasks.Config.0.Key xx \
-    --Tasks.FailureTolerance xx \
-    --DatabaseName xx \
-    --DatasourceConnectionName xx
+    --Tasks.TaskType SQLTask \
+    --Tasks.SQL U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs= \
+    --Tasks.Config.0.Key  \
+    --Tasks.Config.0.Value  \
+    --Tasks.FailureTolerance Proceed \
+    --DatabaseName testdb \
+    --DatasourceConnectionName COSDataCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BatchId": "xx",
+        "BatchId": "batch-8n7l3qny",
+        "RequestId": "6a61ed18-e2ee-496b-8c04-f65b4edd9721",
         "TaskIdSet": [
-            "xx"
-        ],
-        "RequestId": "xx"
+            "640ae8ea-5189-4603-9c57-abad74fba93c"
+        ]
     }
 }
 ```

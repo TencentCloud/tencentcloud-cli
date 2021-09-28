@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dlc CreateScript --cli-unfold-argument  \
-    --ScriptDesc xx \
-    --ScriptName xx \
-    --DatabaseName xx \
-    --SQLStatement xx
+    --ScriptDesc create by nick \
+    --ScriptName Script1 \
+    --DatabaseName testdb \
+    --SQLStatement U0VMRUNUICogRlJPTSBgdGVzdGRiYC5gdGFibGUxYCBMSU1JVCAxMA==
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "eca11298-845d-4f20-af28-b3e7afd9b033"
     }
 }
 ```

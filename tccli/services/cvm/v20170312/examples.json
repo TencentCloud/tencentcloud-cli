@@ -307,7 +307,7 @@
     "ImportImage": [
       {
         "document": "用户导入镜像。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ImportImage\r\n&OsType=CentOS\r\n&OsVersion=6\r\n&ImageName=sample\r\n&ImageDescription=sampleimage\r\n&ImageUrl=http://111-1251233127.cosd.myqcloud.com/Windows%20Server%202008%20R2%20x64a.vmdk\r\n&Architecture=x86_64\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ImportImage\n&OsType=CentOS\n&OsVersion=6\n&ImageName=sample\n&ImageDescription=sampleimage\n&ImageUrl=http://111-1251233127.cosd.myqcloud.com/Windows%20Server%202008%20R2%20x64a.vmdk\n&Architecture=x86_64\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "导入镜像"
       }
