@@ -35,64 +35,64 @@
     "CancelTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48d09166-9ddc-4734-8cea-0cdf69c7d685\"\n    }\n}",
         "title": "取消任务执行"
       }
     ],
     "CreateDatabase": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DatabaseInfo\": {\n        \"Comment\": \"xx\",\n        \"Properties\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"DatabaseName\": \"xx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"DatabaseInfo\": {\n        \"Comment\": \"create by nick\",\n        \"Properties\": [\n            {\n                \"Value\": \"env\",\n                \"Key\": \"dev\"\n            }\n        ],\n        \"DatabaseName\": \"testDB\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"CREATE DATABASE IF NOT EXISTS `COSDataCatalog`.`testDB` COMMENT 'create by nick' WITH DBPROPERTIES ('env'='dev')\"\n        },\n        \"RequestId\": \"2f67771a-a384-4b4e-86a5-146d8829ae2d\"\n    }\n}",
         "title": "生成建库SQL语句"
       }
     ],
     "CreateScript": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScript\n<公共请求参数>\n\n{\n    \"ScriptDesc\": \"xx\",\n    \"ScriptName\": \"xx\",\n    \"DatabaseName\": \"xx\",\n    \"SQLStatement\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScript\n<公共请求参数>\n\n{\n    \"ScriptDesc\": \"create by nick\",\n    \"ScriptName\": \"Script1\",\n    \"DatabaseName\": \"testdb\",\n    \"SQLStatement\": \"U0VMRUNUICogRlJPTSBgdGVzdGRiYC5gdGFibGUxYCBMSU1JVCAxMA==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eca11298-845d-4f20-af28-b3e7afd9b033\"\n    }\n}",
         "title": "创建sql查询"
       }
     ],
     "CreateStoreLocation": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStoreLocation\n<公共请求参数>\n\n{\n    \"StoreLocation\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStoreLocation\n<公共请求参数>\n\n{\n    \"StoreLocation\": \"cosn://rickyhu-1301312708/test2/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4aa0c835-d58e-4faa-b7d9-be9b34a9e931\"\n    }\n}",
         "title": "创建或修改计算结果存储路径"
       }
     ],
     "CreateTable": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"TableInfo\": {\n        \"Columns\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"DataFormat\": {\n            \"CSV\": {\n                \"HeadLines\": 0,\n                \"CodeCompress\": \"xx\",\n                \"Format\": \"xx\",\n                \"CSVSerde\": {\n                    \"Quote\": \"xx\",\n                    \"Separator\": \"xx\",\n                    \"Escape\": \"xx\"\n                }\n            },\n            \"AVRO\": {\n                \"Format\": \"xx\"\n            },\n            \"Json\": {\n                \"Format\": \"xx\"\n            },\n            \"Parquet\": {\n                \"Format\": \"xx\"\n            },\n            \"TextFile\": {\n                \"Regex\": \"xx\",\n                \"Format\": \"xx\"\n            },\n            \"ORC\": {\n                \"Format\": \"xx\"\n            }\n        },\n        \"Location\": \"xx\",\n        \"TableBaseInfo\": {\n            \"TableName\": \"xx\",\n            \"DatabaseName\": \"xx\"\n        },\n        \"Partitions\": [\n            {\n                \"Comment\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTable\n<公共请求参数>\n\n{\n    \"TableInfo\": {\n        \"TableBaseInfo\": {\n            \"DatabaseName\": \"testhyw\",\n            \"TableName\": \"Table1\",\n            \"DatasourceConnectionName\": \"COSDataCatalog\"\n        },\n        \"Columns\": [\n            {\n                \"Name\": \"user_id\",\n                \"Type\": \"int\"\n            },\n            {\n                \"Name\": \"birthday\",\n                \"Type\": \"int\"\n            },\n            {\n                \"Name\": \"gender\",\n                \"Type\": \"int\"\n            }\n        ],\n        \"Partitions\": [\n            {\n                \"Comment\": \"part\",\n                \"Name\": \"gender\",\n                \"Type\": \"string\"\n            }\n        ],\n        \"Location\": \"cosn://rickyhu-1301312708/test1/\",\n        \"DataFormat\": {\n            \"CSV\": {\n                \"Format\": \"CSV\",\n                \"CodeCompress\": \"None\",\n                \"HeadLines\": 1,\n                \"CSVSerde\": {\n                    \"Quote\": \"\\\"\",\n                    \"Separator\": \",\"\n                }\n            },\n            \"AVRO\": {\n                \"Format\": \"\"\n            },\n            \"Json\": {\n                \"Format\": \"\"\n            },\n            \"Parquet\": {\n                \"Format\": \"\"\n            },\n            \"TextFile\": {\n                \"Regex\": \"\",\n                \"Format\": \"\"\n            },\n            \"ORC\": {\n                \"Format\": \"\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Execution\": {\n            \"SQL\": \"CREATE EXTERNAL TABLE IF NOT EXISTS `COSDataCatalog`.`testhyw`.`Table1` (`user_id` int,`birthday` int,`gender` int) PARTITIONED BY (`gender` string)  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTIES ('separatorChar'=',','quoteChar'='\\\"') STORED AS TEXTFILE LOCATION 'cosn://rickyhu-1301312708/test1/'  TBLPROPERTIES ('skip.header.line.count'='1')\"\n        },\n        \"RequestId\": \"b076c1df-26f0-45b7-84f1-fa4eeca7c83f\"\n    }\n}",
         "title": "建表"
       }
     ],
     "CreateTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        },\n        \"SparkSQLTask\": {\n            \"SQL\": \"xx\",\n            \"Config\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"DatabaseName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"Task\": {\n        \"SQLTask\": {\n            \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs=\",\n            \"Config\": [\n                {\n                    \"Key\": \"\",\n                    \"Value\": \"\"\n                }\n            ]\n        },\n        \"SparkSQLTask\": {\n            \"SQL\": \"\",\n            \"Config\": [\n                {\n                    \"Key\": \"\",\n                    \"Value\": \"\"\n                }\n            ]\n        }\n    },\n    \"DatabaseName\": \"testdb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13bfd2b2-b92e-4c49-9c7e-3662b5f32165\",\n        \"TaskId\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n    }\n}",
         "title": "创建sql任务"
       }
     ],
     "CreateTasks": [
       {
         "document": "批量创建任务",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasks\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasks\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"TaskType\": \"SQLTask\",\n        \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs=\",\n        \"Config\": [\n            {\n                \"Key\": \"\",\n                \"Value\": \"\"\n            }\n        ],\n        \"FailureTolerance\": \"Proceed\"\n    },\n    \"DatabaseName\": \"testdb\",\n    \"DatasourceConnectionName\": \"COSDataCatalog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"batch-45nyt3ee\",\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\",\n        \"TaskIdSet\": [\n            \"e9663251-3a14-423a-b003-13c77c3fae11\"\n        ]\n    }\n}",
         "title": "批量创建任务"
       }
     ],
     "CreateTasksInOrder": [
       {
         "document": "按顺序创建任务",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasksInOrder\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"SQL\": \"xx\",\n        \"TaskType\": \"xx\",\n        \"Config\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"FailureTolerance\": \"xx\"\n    },\n    \"DatabaseName\": \"xx\",\n    \"DatasourceConnectionName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"TaskIdSet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTasksInOrder\n<公共请求参数>\n\n{\n    \"Tasks\": {\n        \"TaskType\": \"SQLTask\",\n        \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGh5d2AuYHRlc3QxMDBtYCBMSU1JVCAxMDs=\",\n        \"Config\": [\n            {\n                \"Key\": \"\",\n                \"Value\": \"\"\n            }\n        ],\n        \"FailureTolerance\": \"Proceed\"\n    },\n    \"DatabaseName\": \"testdb\",\n    \"DatasourceConnectionName\": \"COSDataCatalog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"batch-8n7l3qny\",\n        \"RequestId\": \"6a61ed18-e2ee-496b-8c04-f65b4edd9721\",\n        \"TaskIdSet\": [\n            \"640ae8ea-5189-4603-9c57-abad74fba93c\"\n        ]\n    }\n}",
         "title": "按顺序创建任务"
       }
     ],
@@ -115,16 +115,16 @@
     "DeleteScript": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScript\n<公共请求参数>\n\n{\n    \"ScriptIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ScriptsAffected\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScript\n<公共请求参数>\n\n{\n    \"ScriptIds\": [\n        \"644980fb-09f3-467a-847f-b9d628c9663d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1a3de42-c6a6-4510-bd5c-0694d763dd86\",\n        \"ScriptsAffected\": 1\n    }\n}",
         "title": "删除sql查询"
       }
     ],
     "DeleteUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"10003237654\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1081f6e9-2687-4426-a4fc-8ea3c6d285eb\"\n    }\n}",
         "title": "删除用户"
       }
     ],
@@ -148,15 +148,15 @@
       {
         "document": "查询数据库列表",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DatabaseList\": [\n            {\n                \"Comment\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"DatabaseName\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1068a137-ed80-4cbd-a7e6-1cd0341db332\",\n        \"TotalCount\": 1,\n        \"DatabaseList\": [\n            {\n                \"DatabaseName\": \"testdb\",\n                \"Comment\": \"create by nick\",\n                \"Properties\": null,\n                \"CreateTime\": \"1630486408000\",\n                \"ModifiedTime\": \"1630486408000\"\n            }\n        ]\n    }\n}",
         "title": "示例1"
       }
     ],
     "DescribeScripts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"xx\",\n    \"Limit\": 0,\n    \"SortBy\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Scripts\": [\n            {\n                \"UpdateTime\": 0,\n                \"DatabaseName\": \"xx\",\n                \"ScriptName\": \"xx\",\n                \"ScriptDesc\": \"xx\",\n                \"SQLStatement\": \"xx\",\n                \"ScriptId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"update-time\",\n    \"Limit\": 1,\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebcba6f-38bf-4023-80d0-2023d51e9b1e\",\n        \"Scripts\": [\n            {\n                \"ScriptId\": \"644980fb-09f3-467a-847f-b9d628c9663d\",\n                \"UpdateTime\": 1630498019026,\n                \"ScriptName\": \"Script1\",\n                \"ScriptDesc\": \"create by nick\",\n                \"SQLStatement\": \"SELECT * FROM `testdb`.`table1` LIMIT 10\",\n                \"DatabaseName\": \"\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
         "title": "获取所有sql查询"
       }
     ],
@@ -164,32 +164,38 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStoreLocation\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"StoreLocation\": \"cosn://buckname/\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e54c6a1d-c56c-4412-b327-299732cfcd1c\",\n        \"StoreLocation\": \"cosn://rickyhu-1301312708/test1/\"\n    }\n}",
         "title": "查询计算结果存储路径"
       }
     ],
     "DescribeTable": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"database-test\",\n    \"TableName\": \"table-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Table\": {\n            \"InputFormat\": \"xx\",\n            \"ModifiedTime\": \"xx\",\n            \"TableBaseInfo\": {\n                \"TableName\": \"xx\",\n                \"DatabaseName\": \"xx\"\n            },\n            \"CreateTime\": \"xx\",\n            \"Location\": \"xx\",\n            \"Properties\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ],\n            \"Columns\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"Partitions\": [\n                {\n                    \"Comment\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTable\n<公共请求参数>\n\n{\n    \"DatabaseName\": \"testdb\",\n    \"TableName\": \"table1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8317085-a8a7-46ea-b7db-ca7b72c2a6bf\",\n        \"Table\": {\n            \"TableBaseInfo\": {\n                \"DatasourceConnectionName\": \"\",\n                \"DatabaseName\": \"testdb\",\n                \"TableName\": \"table1\"\n            },\n            \"Columns\": [\n                {\n                    \"Name\": \"user_id\",\n                    \"Type\": \"int\",\n                    \"Comment\": \"\"\n                },\n                {\n                    \"Name\": \"birthday\",\n                    \"Type\": \"int\",\n                    \"Comment\": \"\"\n                }\n            ],\n            \"Partitions\": [\n                {\n                    \"Name\": \"gender\",\n                    \"Type\": \"string\",\n                    \"Comment\": \"\"\n                }\n            ],\n            \"Properties\": [\n                {\n                    \"Key\": \"skip.header.line.count\",\n                    \"Value\": \"1\"\n                },\n                {\n                    \"Key\": \"EXTERNAL\",\n                    \"Value\": \"TRUE\"\n                },\n                {\n                    \"Key\": \"transient_lastDdlTime\",\n                    \"Value\": \"1630495521302\"\n                }\n            ],\n            \"Location\": \"cosn://rickyhu-1301312708/test1\",\n            \"CreateTime\": \"1630495521000\",\n            \"ModifiedTime\": \"1630495521000\",\n            \"InputFormat\": \"org.apache.hadoop.mapred.TextInputFormat\"\n        }\n    }\n}",
         "title": "示例1"
       }
     ],
     "DescribeTables": [
       {
         "document": "查询数据表列表。",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TableList\": [\n            {\n                \"InputFormat\": \"xx\",\n                \"ModifiedTime\": \"xx\",\n                \"TableBaseInfo\": {\n                    \"TableName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"CreateTime\": \"xx\",\n                \"Location\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Partitions\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTables\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"testdb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d02ec1a-1562-4780-98a2-15822f4cb517\",\n        \"TableList\": [\n            {\n                \"TableBaseInfo\": {\n                    \"DatasourceConnectionName\": \"\",\n                    \"DatabaseName\": \"testdb\",\n                    \"TableName\": \"table1\"\n                },\n                \"Columns\": [],\n                \"Partitions\": [],\n                \"Properties\": [\n                    {\n                        \"Key\": \"EXTERNAL\",\n                        \"Value\": \"TRUE\"\n                    },\n                    {\n                        \"Key\": \"transient_lastDdlTime\",\n                        \"Value\": \"1630495521302\"\n                    },\n                    {\n                        \"Key\": \"skip.header.line.count\",\n                        \"Value\": \"1\"\n                    }\n                ],\n                \"Location\": \"\",\n                \"CreateTime\": \"1630495521000\",\n                \"ModifiedTime\": \"1630495521000\",\n                \"InputFormat\": \"\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "示例1"
       }
     ],
     "DescribeTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskList\": [\n            {\n                \"DataSet\": \"xx\",\n                \"SQLType\": \"xx\",\n                \"DatabaseName\": \"xx\",\n                \"OutputMessage\": \"xx\",\n                \"SQL\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"ResultExpired\": true,\n                \"OutputPath\": \"xx\",\n                \"State\": 0,\n                \"UsedTime\": 0,\n                \"DataAmount\": 0,\n                \"Error\": \"xx\",\n                \"Percentage\": 0,\n                \"CreateTime\": \"xx\",\n                \"Id\": \"xx\",\n                \"RowAffectInfo\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"task-id\",\n            \"Values\": [\n                \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b1b3bb1-6174-49ea-a97e-bb141d32c1b0\",\n        \"TaskList\": [\n            {\n                \"Id\": \"4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564\",\n                \"DatabaseName\": \"testdb\",\n                \"SQLType\": \"DQL\",\n                \"SQL\": \"SELECT * FROM `test`.`table1` LIMIT 10\",\n                \"DataAmount\": 0,\n                \"UsedTime\": 0,\n                \"OutputPath\": \"cosn://rickyhu-1301312708/test2/DLCQueryResults/2021/09/01/4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564/\",\n                \"RowAffectInfo\": \"\",\n                \"ResultExpired\": false,\n                \"State\": 1,\n                \"CreateTime\": \"1630496032942\",\n                \"DataSet\": \"\",\n                \"Error\": \"\",\n                \"OutputMessage\": \"\",\n                \"Percentage\": 0,\n                \"TaskType\": \"SQLTask\",\n                \"ProgressDetail\": \"\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询任务列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b68c82f-d946-4ea9-8336-2f56ff5dd199\",\n        \"TaskList\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "任务列表展示"
       }
     ],
     "DescribeUsers": [
@@ -203,8 +209,8 @@
     "DescribeViews": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"database-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ViewList\": [\n            {\n                \"ModifiedTime\": \"xx\",\n                \"ViewBaseInfo\": {\n                    \"ViewName\": \"xx\",\n                    \"DatabaseName\": \"xx\"\n                },\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Columns\": [\n                    {\n                        \"Comment\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"testdb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1d840f1-2df8-4ef4-9e44-02db58f24475\",\n        \"TotalCount\": 1,\n        \"ViewList\": [\n            {\n                \"ViewBaseInfo\": {\n                    \"DatabaseName\": \"testdb\",\n                    \"ViewName\": \"v1\"\n                },\n                \"Columns\": [],\n                \"Properties\": [\n                    {\n                        \"Key\": \"presto_view\",\n                        \"Value\": \"true\"\n                    },\n                    {\n                        \"Key\": \"presto_query_id\",\n                        \"Value\": \"20210901_123510_00000_9jg5j\"\n                    },\n                    {\n                        \"Key\": \"transient_lastDdlTime\",\n                        \"Value\": \"1630499714051\"\n                    },\n                    {\n                        \"Key\": \"comment\",\n                        \"Value\": \"Presto View\"\n                    },\n                    {\n                        \"Key\": \"presto_version\",\n                        \"Value\": \"0.242.1-DLC-rc11-6fe2f42\"\n                    }\n                ],\n                \"CreateTime\": \"1630499714000\",\n                \"ModifiedTime\": \"1630499714000\"\n            }\n        ]\n    }\n}",
         "title": "查询视图列表"
       }
     ],
@@ -219,8 +225,8 @@
     "DetachUserPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"xx\",\n            \"Catalog\": \"xx\",\n            \"Operation\": \"xx\",\n            \"Database\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79a91d1b-c00d-4b4f-b1da-0fbf339efa9a\"\n    }\n}",
         "title": "解绑用户鉴权策略"
       }
     ],
@@ -235,8 +241,8 @@
     "ModifyUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"xx\",\n    \"UserId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"my-test-user\",\n    \"UserId\": \"10003237654\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d31413-a210-4553-8fdc-d2d17a1e2138\"\n    }\n}",
         "title": "修改用户信息"
       }
     ],

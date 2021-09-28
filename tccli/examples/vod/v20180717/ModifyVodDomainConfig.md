@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ModifyVodDomainConfig --cli-unfold-argument  \
     --Domain myexample.com \
-    --UrlSignatureAuthPolicy.Status On \
+    --UrlSignatureAuthPolicy.Status Enabled \
     --UrlSignatureAuthPolicy.EncryptedKey xxxx
 ```
 

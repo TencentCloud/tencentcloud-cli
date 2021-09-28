@@ -1131,7 +1131,7 @@
     "ModifyVodDomainConfig": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=On\n&UrlSignatureAuthPolicy.EncryptedKey=xxxx\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=Enabled\n&UrlSignatureAuthPolicy.EncryptedKey=xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
         "title": "设置域名的 Key 防盗链"
       }

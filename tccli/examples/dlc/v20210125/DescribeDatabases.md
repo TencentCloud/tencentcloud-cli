@@ -14,20 +14,15 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "1068a137-ed80-4cbd-a7e6-1cd0341db332",
         "TotalCount": 1,
-        "RequestId": "xx",
         "DatabaseList": [
             {
-                "Comment": "xx",
-                "ModifiedTime": "xx",
-                "Properties": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "DatabaseName": "xx",
-                "CreateTime": "xx"
+                "DatabaseName": "testdb",
+                "Comment": "create by nick",
+                "Properties": null,
+                "CreateTime": "1630486408000",
+                "ModifiedTime": "1630486408000"
             }
         ]
     }

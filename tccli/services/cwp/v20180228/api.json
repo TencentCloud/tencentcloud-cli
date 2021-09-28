@@ -13997,6 +13997,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "是否杀掉进程 1杀掉 0不杀掉 只有开启自动隔离才生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "KillProcess",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -20396,6 +20405,15 @@
           "name": "AutoIsolation",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否杀掉进程 1杀掉 0不杀掉",
+          "example": "1",
+          "member": "uint64",
+          "name": "KillProcess",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -23077,6 +23095,15 @@
           "name": "Ids",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否杀掉进程",
+          "example": "true",
+          "member": "bool",
+          "name": "KillProcess",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

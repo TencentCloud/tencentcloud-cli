@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dlc DeleteUser --cli-unfold-argument  \
-    --UserIds xx
+    --UserIds 10003237654
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "1081f6e9-2687-4426-a4fc-8ea3c6d285eb"
     }
 }
 ```

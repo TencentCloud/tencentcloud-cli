@@ -1118,6 +1118,7 @@
         {
           "default": "",
           "document": "集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`",
+          "example": "TDR",
           "member": "string",
           "name": "IdlType",
           "required": true,
@@ -1126,6 +1127,7 @@
         {
           "default": "",
           "document": "集群名称，可使用中文或英文字符，最大长度32个字符",
+          "example": "gz测试TDR",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -1134,6 +1136,7 @@
         {
           "default": "",
           "document": "集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z",
+          "example": "vpc-kppg4pm1",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1142,6 +1145,7 @@
         {
           "default": "",
           "document": "集群所绑定的子网实例ID，形如：subnet-pxir56ns",
+          "example": "subnet-3sww53pa",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1150,6 +1154,7 @@
         {
           "default": "",
           "document": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
+          "example": "84ea4cbf06573ED",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1158,6 +1163,7 @@
         {
           "default": "",
           "document": "集群标签列表",
+          "example": "无",
           "member": "TagInfoUnit",
           "name": "ResourceTags",
           "required": false,
@@ -1166,6 +1172,7 @@
         {
           "default": "",
           "document": "集群是否开启IPv6功能",
+          "example": "0",
           "member": "int64",
           "name": "Ipv6Enable",
           "required": false,
@@ -1174,6 +1181,7 @@
         {
           "default": "",
           "document": "独占集群占用的svr机器",
+          "example": "无",
           "member": "MachineInfo",
           "name": "ServerList",
           "required": false,
@@ -1182,6 +1190,7 @@
         {
           "default": "",
           "document": "独占集群占用的proxy机器",
+          "example": "无",
           "member": "MachineInfo",
           "name": "ProxyList",
           "required": false,
@@ -1190,8 +1199,18 @@
         {
           "default": "",
           "document": "集群类型1共享2独占",
+          "example": "1",
           "member": "int64",
           "name": "ClusterType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "密码认证类型，0 静态认证， 1 签名认证",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthType",
           "required": false,
           "type": "int"
         }
@@ -1203,8 +1222,10 @@
       "members": [
         {
           "document": "集群ID",
+          "example": "6179109757",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1881,7 +1902,7 @@
         {
           "default": "",
           "document": "查询过滤条件",
-          "example": "0",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1922,7 +1943,7 @@
       "members": [
         {
           "document": "集群实例数",
-          "example": "0",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -1931,7 +1952,7 @@
         },
         {
           "document": "集群实例列表",
-          "example": "0",
+          "example": "无",
           "member": "ClusterInfo",
           "name": "Clusters",
           "required": true,
@@ -2401,6 +2422,7 @@
         {
           "default": "",
           "document": "待查询表格所属集群ID",
+          "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2409,6 +2431,7 @@
         {
           "default": "",
           "document": "待查询表格所属表格组ID列表",
+          "example": "1",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
@@ -2417,6 +2440,7 @@
         {
           "default": "",
           "document": "待查询表格信息列表",
+          "example": "无",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": false,
@@ -2425,6 +2449,7 @@
         {
           "default": "",
           "document": "过滤条件，本接口支持：TableName，TableInstanceId",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2433,6 +2458,7 @@
         {
           "default": "",
           "document": "查询结果偏移量",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2441,6 +2467,7 @@
         {
           "default": "",
           "document": "查询结果返回记录数量",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2454,15 +2481,19 @@
       "members": [
         {
           "document": "表格数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "表格详情结果列表",
+          "example": "无",
           "member": "TableInfoNew",
           "name": "TableInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3379,6 +3410,7 @@
         {
           "default": "",
           "document": "需要修改密码的集群ID",
+          "example": "23311894780",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3387,6 +3419,7 @@
         {
           "default": "",
           "document": "集群旧密码",
+          "example": "canmkdmk1215LM",
           "member": "string",
           "name": "OldPassword",
           "required": true,
@@ -3395,6 +3428,7 @@
         {
           "default": "",
           "document": "集群旧密码预期失效时间",
+          "example": "2019-08-26%2017%3A25%3A00",
           "member": "datetime",
           "name": "OldPasswordExpireTime",
           "required": true,
@@ -3403,6 +3437,7 @@
         {
           "default": "",
           "document": "集群新密码，密码必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
+          "example": "99c59cb345c61063db",
           "member": "string",
           "name": "NewPassword",
           "required": true,
@@ -3411,6 +3446,7 @@
         {
           "default": "",
           "document": "更新模式： `1` 更新密码；`2` 更新旧密码失效时间，默认为`1` 模式",
+          "example": "1",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -3508,7 +3544,7 @@
       "document": "ModifySnapshots返回参数结构体",
       "members": [
         {
-          "document": "批量创建的快照数量",
+          "document": "批量修改的快照数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -3517,7 +3553,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "批量创建的快照结果列表",
+          "document": "批量修改的快照结果列表",
           "example": "无",
           "member": "SnapshotResult",
           "name": "TableResults",
@@ -4671,6 +4707,7 @@
         {
           "default": "",
           "document": "表所属集群实例ID",
+          "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4679,6 +4716,7 @@
         {
           "default": "",
           "document": "待创建分布式索引表格列表",
+          "example": "无",
           "member": "SelectedTableWithField",
           "name": "SelectedTables",
           "required": true,
@@ -4692,15 +4730,19 @@
       "members": [
         {
           "document": "表格分布式索引创建结果数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "表格分布式索引创建结果列表",
+          "example": "无",
           "member": "TableResultNew",
           "name": "TableResults",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

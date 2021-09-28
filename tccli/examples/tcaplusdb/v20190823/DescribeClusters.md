@@ -11,52 +11,120 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 2,
+        "RequestId": "xx",
         "Clusters": [
             {
-                "ApiAccessId": "8",
-                "ApiAccessIp": "10.18.7.15",
-                "ApiAccessIpv6": "",
-                "ApiAccessPort": 9999,
-                "ClusterId": "5462425805",
-                "ClusterName": "gz测试应用",
-                "CreatedTime": "2019-12-04 11:28:16",
-                "IdlType": "PROTO",
-                "NetworkType": "vpc-normal",
-                "OldPasswordExpireTime": "",
-                "Password": "gz123AppTest56",
-                "PasswordStatus": "modifiable",
-                "Region": "ap-guangzhou",
-                "SubnetId": "subnet-jq2cqev2",
-                "VpcId": "vpc-oezt2hwl",
+                "ApiAccessIpv6": "xx",
+                "DbaUins": [
+                    "xx"
+                ],
+                "KafkaInfo": {
+                    "IsVpc": true,
+                    "Topic": "xx",
+                    "Password": "xx",
+                    "User": "xx",
+                    "Address": "xx",
+                    "Instance": "ckafka-l4xpzgpz"
+                },
+                "PasswordStatus": "xx",
+                "CreatedTime": "2020-09-22 00:00:00",
+                "WriteCapacityUnit": 0,
+                "IdlType": "xx",
+                "VpcId": "xx",
+                "ApiAccessIp": "xx",
+                "ClusterId": "xx",
+                "ProxyList": [
+                    {
+                        "ProcessSpeed": 0,
+                        "AverageProcessDelay": 0,
+                        "MachineType": "xx",
+                        "ProxyUid": "xx",
+                        "SlowProcessSpeed": 0
+                    }
+                ],
                 "Censorship": 0,
-                "DbaUins": []
+                "SubnetId": "xx",
+                "Password": "xx",
+                "ApiAccessId": "xx",
+                "DiskVolume": 0,
+                "DataFlowStatus": 0,
+                "Region": "xx",
+                "ClusterType": 0,
+                "NetworkType": "xx",
+                "OldPasswordExpireTime": "xx",
+                "ServerList": [
+                    {
+                        "MachineType": "xx",
+                        "ServerUid": "xx",
+                        "ReadNum": 0,
+                        "WriteNum": 0,
+                        "MemoryRate": 0,
+                        "DiskRate": 0
+                    }
+                ],
+                "ApiAccessPort": 9999,
+                "ClusterName": "xx",
+                "ClusterStatus": 0,
+                "ReadCapacityUnit": 0
             },
             {
-                "ApiAccessId": "2",
-                "ApiAccessIp": "10.18.7.9",
-                "ApiAccessIpv6": "2001:3CA1:010F:001A:121B:0000:0000:0010",
-                "ApiAccessPort": 9999,
-                "ClusterId": "6032569361",
-                "ClusterName": "雷霆战机Test",
-                "CreatedTime": "2019-12-25 11:54:02",
-                "IdlType": "PROTO",
-                "NetworkType": "vpc-normal",
-                "OldPasswordExpireTime": "",
-                "Password": "ltzj123123X",
-                "PasswordStatus": "modifiable",
-                "Region": "ap-guangzhou",
-                "SubnetId": "subnet-jq2cqev2",
-                "VpcId": "vpc-oezt2hwl",
-                "Censorship": 1,
+                "ApiAccessIpv6": "xx",
                 "DbaUins": [
                     "342",
                     "432432",
                     "342342"
-                ]
+                ],
+                "PasswordStatus": "xx",
+                "KafkaInfo": {
+                    "IsVpc": true,
+                    "Topic": "xx",
+                    "Password": "xx",
+                    "User": "xx",
+                    "Address": "xx",
+                    "Instance": "ckafka-l4xpzgpz"
+                },
+                "CreatedTime": "2020-09-22 00:00:00",
+                "WriteCapacityUnit": 0,
+                "IdlType": "xx",
+                "VpcId": "xx",
+                "ApiAccessIp": "xx",
+                "ClusterId": "xx",
+                "ClusterStatus": 0,
+                "ProxyList": [
+                    {
+                        "MachineType": "xx",
+                        "AverageProcessDelay": 0,
+                        "ProcessSpeed": 0,
+                        "ProxyUid": "xx",
+                        "SlowProcessSpeed": 0
+                    }
+                ],
+                "Censorship": 1,
+                "SubnetId": "xx",
+                "Password": "xx",
+                "ApiAccessId": "xx",
+                "DiskVolume": 0,
+                "DataFlowStatus": 0,
+                "Region": "xx",
+                "ClusterType": 0,
+                "OldPasswordExpireTime": "xx",
+                "ServerList": [
+                    {
+                        "ServerUid": "xx",
+                        "ReadNum": 0,
+                        "DiskRate": 0,
+                        "WriteNum": 0,
+                        "MemoryRate": 0,
+                        "MachineType": "xx"
+                    }
+                ],
+                "ApiAccessPort": 9999,
+                "ClusterName": "xx",
+                "NetworkType": "xx",
+                "ReadCapacityUnit": 0
             }
-        ],
-        "RequestId": "34680b61-9836-44d9-bae9-e231f4b61a48",
-        "TotalCount": 2
+        ]
     }
 }
 ```

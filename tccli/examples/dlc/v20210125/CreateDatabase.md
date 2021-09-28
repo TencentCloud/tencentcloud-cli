@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dlc CreateDatabase --cli-unfold-argument  \
-    --DatabaseInfo.Comment xx \
-    --DatabaseInfo.Properties.0.Value xx \
-    --DatabaseInfo.Properties.0.Key xx \
-    --DatabaseInfo.DatabaseName xx
+    --DatabaseInfo.Comment create by nick \
+    --DatabaseInfo.Properties.0.Value env \
+    --DatabaseInfo.Properties.0.Key dev \
+    --DatabaseInfo.DatabaseName testDB
 ```
 
 Output: 
@@ -17,9 +17,9 @@ Output:
 {
     "Response": {
         "Execution": {
-            "SQL": "xx"
+            "SQL": "CREATE DATABASE IF NOT EXISTS `COSDataCatalog`.`testDB` COMMENT 'create by nick' WITH DBPROPERTIES ('env'='dev')"
         },
-        "RequestId": "xx"
+        "RequestId": "2f67771a-a384-4b4e-86a5-146d8829ae2d"
     }
 }
 ```

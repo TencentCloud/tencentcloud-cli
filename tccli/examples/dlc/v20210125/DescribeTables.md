@@ -8,47 +8,44 @@ Input:
 tccli dlc DescribeTables --cli-unfold-argument  \
     --Limit 1 \
     --Offset 0 \
-    --DatabaseName database-test
+    --DatabaseName testdb
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "8d02ec1a-1562-4780-98a2-15822f4cb517",
         "TableList": [
             {
-                "InputFormat": "xx",
-                "ModifiedTime": "xx",
                 "TableBaseInfo": {
-                    "TableName": "xx",
-                    "DatabaseName": "xx"
+                    "DatasourceConnectionName": "",
+                    "DatabaseName": "testdb",
+                    "TableName": "table1"
                 },
-                "CreateTime": "xx",
-                "Location": "xx",
+                "Columns": [],
+                "Partitions": [],
                 "Properties": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "EXTERNAL",
+                        "Value": "TRUE"
+                    },
+                    {
+                        "Key": "transient_lastDdlTime",
+                        "Value": "1630495521302"
+                    },
+                    {
+                        "Key": "skip.header.line.count",
+                        "Value": "1"
                     }
                 ],
-                "Columns": [
-                    {
-                        "Comment": "xx",
-                        "Type": "xx",
-                        "Name": "xx"
-                    }
-                ],
-                "Partitions": [
-                    {
-                        "Comment": "xx",
-                        "Type": "xx",
-                        "Name": "xx"
-                    }
-                ]
+                "Location": "",
+                "CreateTime": "1630495521000",
+                "ModifiedTime": "1630495521000",
+                "InputFormat": ""
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 2
     }
 }
 ```
