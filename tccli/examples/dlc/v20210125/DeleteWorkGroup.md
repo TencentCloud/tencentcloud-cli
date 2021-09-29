@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dlc DeleteWorkGroup --cli-unfold-argument  \
-    --WorkGroupIds 0
+    --WorkGroupIds 112
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "ba481e7d-e3cc-437c-b2dc-94f431a3d106"
     }
 }
 ```

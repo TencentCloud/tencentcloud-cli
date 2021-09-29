@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\",\n        \"Duration\": 300,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "移动网络停止加速"
       }
+    ],
+    "DescribeQos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQos\n<公共请求参数>\n\n{\n    \"SessionId\": \"abcdefg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"SrcPublicIpv4\": \"114.114.114.114\",\n        \"DestIpv4\": [\n            \"8.8.8.8\",\n            \"8.8.8.9\"\n        ],\n        \"Duration\": 1790,\n        \"QosMenu\": \"T100K\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取Qos加速状态"
+      }
     ]
   },
   "version": "1.0"
