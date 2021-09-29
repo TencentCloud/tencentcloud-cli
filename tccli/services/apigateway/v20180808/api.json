@@ -3436,7 +3436,7 @@
         },
         {
           "default": "",
-          "document": "插件类型。目前支持IPControl。",
+          "document": "插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。",
           "example": "IPControl",
           "member": "string",
           "name": "PluginType",

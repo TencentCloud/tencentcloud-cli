@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli dlc UnbindWorkGroupsFromUser --cli-unfold-argument  \
-    --AddInfo.UserId xx \
-    --AddInfo.WorkGroupIds 0
+    --AddInfo.UserId 1000323 \
+    --AddInfo.WorkGroupIds 112
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "edb8ceac-68c9-4acf-9a38-ea26abc61dfc"
     }
 }
 ```

@@ -11,6 +11,12 @@
       "input": "DeleteQosRequest",
       "name": "停止Qos加速过程",
       "output": "DeleteQosResponse"
+    },
+    "DescribeQos": {
+      "document": "获取Qos加速状态",
+      "input": "DescribeQosRequest",
+      "name": "获取Qos加速状态",
+      "output": "DescribeQosResponse"
     }
   },
   "metadata": {
@@ -189,6 +195,78 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQosRequest": {
+      "document": "DescribeQos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单次加速唯一 Id",
+          "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQosResponse": {
+      "document": "DescribeQos返回参数结构体",
+      "members": [
+        {
+          "document": "0：无匹配的加速中会话\n1：存在匹配的加速中会话",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "手机公网出口IP，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "114.114.114.114",
+          "member": "string",
+          "name": "SrcPublicIpv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务访问目的IP，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"8.8.8.8\",\"8.8.8.9\"]",
+          "member": "string",
+          "name": "DestIpv4",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前加速剩余时长（单位秒）有，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1790",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加速套餐类型，仅匹配时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T100K",
+          "member": "string",
+          "name": "QosMenu",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

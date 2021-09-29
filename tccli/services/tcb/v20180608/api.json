@@ -3778,6 +3778,15 @@
           "name": "ServiceVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件后缀",
+          "example": ".zip",
+          "member": "string",
+          "name": "Suffix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

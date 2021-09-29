@@ -9,7 +9,7 @@
 | apcas | [汽车精准获客服务](http://document.tencentcloudapi.woa.com/document/product/1244) | 2021-09-16 08:01:22 |
 | ape | [正版图库直通车](http://document.tencentcloudapi.woa.com/document/product/1181) | 2021-09-16 08:01:47 |
 | api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | 2021-08-26 11:25:08 |
-| apigateway | [API网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2021-09-27 08:13:53 |
+| apigateway | [API网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2021-09-29 08:13:03 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2021-09-27 08:04:12 |
 | asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2021-09-16 08:02:03 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2021-09-16 08:01:45 |
@@ -91,7 +91,7 @@
 | mariadb | [云数据库 MariaDB](http://document.tencentcloudapi.woa.com/document/product/237) | 2021-09-23 08:08:24 |
 | market | [云市场](http://document.tencentcloudapi.woa.com/document/product/306) | 2021-09-16 08:00:19 |
 | mgobe | [游戏联机对战引擎](http://document.tencentcloudapi.woa.com/document/product/1038) | 2021-09-16 08:01:59 |
-| mna | [移动网络加速](http://document.tencentcloudapi.woa.com/document/product/1385) | 2021-09-27 08:00:59 |
+| mna | [移动网络加速](http://document.tencentcloudapi.woa.com/document/product/1385) | 2021-09-29 08:00:47 |
 | mongodb | [云数据库 MongoDB](http://document.tencentcloudapi.woa.com/document/product/240) | 2021-09-27 08:08:59 |
 | monitor | [云监控](http://document.tencentcloudapi.woa.com/document/product/248) | 2021-09-23 08:08:39 |
 | mps | [视频处理](http://document.tencentcloudapi.woa.com/document/product/862) | 2021-09-16 08:09:41 |
@@ -127,11 +127,11 @@
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-16 08:11:08 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2021-09-16 08:11:14 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-09-28 08:10:11 |
-| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-27 08:10:54 |
+| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-29 08:10:16 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2021-09-16 08:02:01 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-09-23 08:12:52 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2021-09-16 08:00:05 |
-| tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2021-09-24 08:13:54 |
+| tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2021-09-29 08:13:33 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2021-09-16 08:00:58 |
 | tic | [腾讯云IaC平台](http://document.tencentcloudapi.woa.com/document/product/1213) | 2021-09-16 08:01:36 |
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2021-09-16 08:11:38 |
@@ -139,7 +139,7 @@
 | tiia | [图像分析](http://document.tencentcloudapi.woa.com/document/product/865) | 2021-09-27 08:11:07 |
 | tione | [智能钛机器学习平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2021-09-16 08:03:13 |
 | tiw | [互动白板](http://document.tencentcloudapi.woa.com/document/product/1137) | 2021-09-16 08:13:34 |
-| tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2021-09-27 08:11:16 |
+| tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2021-09-29 08:10:36 |
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2021-09-27 08:02:21 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2021-09-20 08:11:11 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2021-09-17 08:12:48 |

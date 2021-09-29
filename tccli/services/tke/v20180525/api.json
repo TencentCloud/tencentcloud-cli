@@ -8209,6 +8209,15 @@
           "name": "OsCustomizeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点自定义参数",
+          "example": "无",
+          "member": "InstanceExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
