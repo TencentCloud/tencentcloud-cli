@@ -72,6 +72,12 @@
       "name": "查询云盘操作日志列表",
       "output": "DescribeDiskOperationLogsResponse"
     },
+    "DescribeDiskStoragePool": {
+      "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、集群区域名(zone)类型等信息来查询和过滤云硬盘独享集群详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
+      "input": "DescribeDiskStoragePoolRequest",
+      "name": "查询云硬盘独享集群列表",
+      "output": "DescribeDiskStoragePoolResponse"
+    },
     "DescribeDisks": {
       "document": "本接口（DescribeDisks）用于查询云硬盘列表。\n\n* 可以根据云硬盘ID、云硬盘类型或者云硬盘状态等信息来查询云硬盘的详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘列表。",
       "input": "DescribeDisksRequest",
@@ -469,6 +475,118 @@
         }
       ],
       "type": "object"
+    },
+    "Cdc": {
+      "document": "描述独享集群的详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群围笼ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cage-xxxxxxxx",
+          "member": "string",
+          "name": "CageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "CdcState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群所属的[可用区](/document/api/213/9452#zone)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shenzhen-fsi-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享集群实例名称。",
+          "example": "test",
+          "member": "string",
+          "name": "CdcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群的资源大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdcSize",
+          "name": "CdcResource",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享集群实例id。",
+          "example": "cdc-xxxxxxxx",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘集群<br><li>CLOUD_PREMIUM：表示高性能云硬盘集群<br><li>CLOUD_SSD：SSD表示SSD云硬盘集群。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群过期时间。",
+          "example": "2029-01-01 00:00:00",
+          "member": "datetime",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CdcSize": {
+      "document": "显示独享集群的大小",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群的可用容量大小，单位GiB",
+          "example": "100000",
+          "member": "uint64",
+          "name": "DiskAavilable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群的总容量大小，单位GiB",
+          "example": "200",
+          "member": "uint64",
+          "name": "DiskTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAutoSnapshotPolicyRequest": {
       "document": "CreateAutoSnapshotPolicy请求参数结构体",
@@ -1069,6 +1187,78 @@
           "example": "无",
           "member": "DiskOperationLog",
           "name": "DiskOperationLogSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskStoragePoolRequest": {
+      "document": "DescribeDiskStoragePool请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](/document/product/362/15633)中的相关小节。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定需要查询的独享集群ID列表，该入参不能与Filters一起使用。",
+          "example": "cdc-asdasd",
+          "member": "string",
+          "name": "CdcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/api/213/9452#zone)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考API[简介](/document/product/362/15633)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskStoragePoolResponse": {
+      "document": "DescribeDiskStoragePool返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的独享集群的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群的详细信息列表",
+          "example": "无",
+          "member": "Cdc",
+          "name": "DiskStoragePoolSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false

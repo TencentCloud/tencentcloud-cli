@@ -42,6 +42,12 @@
       "name": "查询会话存档列表接口",
       "output": "QueryChatArchivingListResponse"
     },
+    "QueryClueInfoList": {
+      "document": "企业可通过此接口获取线索列表。",
+      "input": "QueryClueInfoListRequest",
+      "name": "查询线索列表接口",
+      "output": "QueryClueInfoListResponse"
+    },
     "QueryExternalContactDetail": {
       "document": "企业可通过此接口，根据外部联系人的userid，拉取客户详情",
       "input": "QueryExternalContactDetailRequest",
@@ -645,6 +651,152 @@
           "name": "CosKey",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClueInfoDetail": {
+      "document": "线索信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "线索id，线索唯一识别编码",
+          "example": "1348080105398452226",
+          "member": "string",
+          "name": "ClueId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接待客户经销商顾问所属组织id,多个组织使用逗号分割",
+          "example": "1,5,9",
+          "member": "string",
+          "name": "DealerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "线索获取时间，用户添加企业微信时间，单位是秒",
+          "example": "1618556502",
+          "member": "uint64",
+          "name": "EnquireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户在微信生态中唯一识别码",
+          "example": "ozynqsulJFCZ2z1aYeS8h",
+          "member": "string",
+          "name": "UnionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信昵称",
+          "example": "文",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联系方式",
+          "example": "134xxxx3232",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车系编号",
+          "example": "无",
+          "member": "string",
+          "name": "SeriesCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车型编号",
+          "example": "无",
+          "member": "string",
+          "name": "ModelCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省份编号",
+          "example": "无",
+          "member": "string",
+          "name": "ProvinceCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市编号",
+          "example": "无",
+          "member": "string",
+          "name": "CityCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "顾问名称",
+          "example": "张三",
+          "member": "string",
+          "name": "SalesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "顾问电话",
+          "example": "134xxxx4321",
+          "member": "string",
+          "name": "SalesPhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "[\"标签1\",\"标签2\"]",
+          "member": "string",
+          "name": "TagList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1626,6 +1778,69 @@
           "name": "PageData",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClueInfoListRequest": {
+      "document": "QueryClueInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryClueInfoListResponse": {
+      "document": "QueryClueInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "线索信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClueInfoDetail",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasMore",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

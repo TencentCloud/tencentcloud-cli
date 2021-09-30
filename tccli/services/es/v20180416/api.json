@@ -72,6 +72,12 @@
       "name": "更新ES集群实例",
       "output": "UpdateInstanceResponse"
     },
+    "UpdateJdk": {
+      "document": "更新实例Jdk配置",
+      "input": "UpdateJdkRequest",
+      "name": "更新实例Jdk配置",
+      "output": "UpdateJdkResponse"
+    },
     "UpdatePlugins": {
       "document": "变更插件列表",
       "input": "UpdatePluginsRequest",
@@ -2448,6 +2454,60 @@
     },
     "UpdateInstanceResponse": {
       "document": "UpdateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateJdkRequest": {
+      "document": "UpdateJdk请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Jdk类型，支持kona和oracle",
+          "example": "oracle",
+          "member": "string",
+          "name": "Jdk",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Gc类型，支持g1和cms",
+          "example": "g1",
+          "member": "string",
+          "name": "Gc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateJdkResponse": {
+      "document": "UpdateJdk返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

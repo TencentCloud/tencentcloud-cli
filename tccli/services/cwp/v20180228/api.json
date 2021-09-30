@@ -17020,24 +17020,6 @@
       "members": [
         {
           "default": "",
-          "document": "规则名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "正则表达式",
-          "example": "xxx",
-          "member": "string",
-          "name": "Rule",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "规则ID（新增时不填）",
           "example": "1",
           "member": "uint64",
@@ -17065,12 +17047,30 @@
         },
         {
           "default": "",
+          "document": "规则名称，编辑时不可修改规则名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "危险等级(0:无，1: 高危 2:中危 3: 低危)",
           "example": "1",
           "member": "uint64",
           "name": "Level",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "正则表达式 ，编辑时不可修改正则表达式，需要对内容QueryEscape后再base64",
+          "example": "xxx",
+          "member": "string",
+          "name": "Rule",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -20150,6 +20150,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15.2.3.442",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程树 json  pid:进程id，exe:文件路径 ，account:进程所属用组和用户 ,cmdline:执行命令，ssh_service: SSH服务ip, ssh_soure:登录源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"pid\":\"123\"}]",
+          "member": "string",
+          "name": "PsTree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机在线状态 OFFLINE  ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "MachineStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态；4-:待处理，5-已信任，6-已隔离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -22405,6 +22445,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.22.3.1",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机在线状态 OFFLINE  ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "MachineStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
