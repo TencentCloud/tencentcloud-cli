@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 移动网络加速(mna) 版本：2021-01-19
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 3 次发布
+### 第 2 次发布
 
-发布时间：2021-09-29 08:00:47
+发布时间：2021-09-30 08:04:49
 
 本次发布包含了以下内容：
 
@@ -12,15 +12,57 @@
 
 新增接口：
 
-* [DescribeQos](http://document.tencentcloudapi.woa.com/document/product/1385/66772)
+* [DescribeDiskStoragePool](http://document.tencentcloudapi.woa.com/document/product/362/66774)
+
+新增数据结构：
+
+* [Cdc](http://document.tencentcloudapi.woa.com/document/product/362/62088#Cdc)
+* [CdcSize](http://document.tencentcloudapi.woa.com/document/product/362/62088#CdcSize)
 
 
 
-## 云开发 CloudBase(tcb) 版本：2018-06-08
+## 智能保险助手(cii) 版本：2021-04-08
 
-### 第 7 次发布
+### 第 4 次发布
 
-发布时间：2021-09-29 08:10:16
+发布时间：2021-09-30 08:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateUnderwriteTaskById](http://document.tencentcloudapi.woa.com/document/product/1368/66779)
+* [DescribeMachineUnderwrite](http://document.tencentcloudapi.woa.com/document/product/1368/66778)
+* [DescribeStructureDifference](http://document.tencentcloudapi.woa.com/document/product/1368/66776)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateStructureTaskTest
+* DescribeStructureTaskResultTest
+
+新增数据结构：
+
+* [InsuranceResult](http://document.tencentcloudapi.woa.com/document/product/1368/66459#InsuranceResult)
+* [MachinePredict](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachinePredict)
+* [MachineUnderwriteOutput](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachineUnderwriteOutput)
+* [PerStructDifference](http://document.tencentcloudapi.woa.com/document/product/1368/66459#PerStructDifference)
+* [StructureModifyItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureModifyItem)
+* [StructureOneItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureOneItem)
+* [UnderwriteItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#UnderwriteItem)
+
+
+
+## 智能保险助手(cii) 版本：2020-12-10
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 5 次发布
+
+发布时间：2021-09-30 08:13:42
 
 本次发布包含了以下内容：
 
@@ -28,29 +70,57 @@
 
 修改接口：
 
-* [DescribeCloudBaseBuildService](http://document.tencentcloudapi.woa.com/document/product/876/64543)
+* [EditBashRules](http://document.tencentcloudapi.woa.com/document/product/296/66226)
 
-	* 新增入参：Suffix
-
-
+	* <font color="#dd0000">**修改入参**：</font>Name, Rule
 
 
-## 容器服务(tke) 版本：2018-05-25
+修改数据结构：
 
-### 第 6 次发布
+* [MalwareInfo](http://document.tencentcloudapi.woa.com/document/product/296/66286#MalwareInfo)
 
-发布时间：2021-09-29 08:10:36
+	* 新增成员：MachineWanIp, PsTree, MachineStatus, Status
+
+* [RiskDnsList](http://document.tencentcloudapi.woa.com/document/product/296/66286#RiskDnsList)
+
+	* 新增成员：MachineWanIp, MachineStatus
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 2 次发布
+
+发布时间：2021-09-30 08:06:52
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/64723)
+* [UpdateJdk](http://document.tencentcloudapi.woa.com/document/product/845/66775)
 
-	* 新增入参：ExtraArgs
 
+
+## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 3 次发布
+
+发布时间：2021-09-30 08:00:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryClueInfoList](http://document.tencentcloudapi.woa.com/document/product/1318/66773)
+
+新增数据结构：
+
+* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/59855#ClueInfoDetail)
 
 
 
@@ -1866,6 +1936,23 @@
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
+### 第 2 次发布
+
+发布时间：2021-09-30 08:04:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDiskStoragePool](http://document.tencentcloudapi.woa.com/document/product/362/66774)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Cdc](http://document.tencentcloudapi.woa.com/document/product/362/62088#Cdc)](http://document.tencentcloudapi.woa.com/document/product/362/62088#[Cdc](http://document.tencentcloudapi.woa.com/document/product/362/62088#Cdc))
+* [[CdcSize](http://document.tencentcloudapi.woa.com/document/product/362/62088#CdcSize)](http://document.tencentcloudapi.woa.com/document/product/362/62088#[CdcSize](http://document.tencentcloudapi.woa.com/document/product/362/62088#CdcSize))
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 14:33:06
@@ -2871,6 +2958,35 @@
 
 
 ## 智能保险助手(cii) 版本：2021-04-08
+
+### 第 4 次发布
+
+发布时间：2021-09-30 08:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateUnderwriteTaskById](http://document.tencentcloudapi.woa.com/document/product/1368/66779)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeMachineUnderwrite](http://document.tencentcloudapi.woa.com/document/product/1368/66778)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeStructureDifference](http://document.tencentcloudapi.woa.com/document/product/1368/66776)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateStructureTaskTest
+* DescribeStructureTaskResultTest
+
+新增数据结构：
+
+* [[InsuranceResult](http://document.tencentcloudapi.woa.com/document/product/1368/66459#InsuranceResult)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[InsuranceResult](http://document.tencentcloudapi.woa.com/document/product/1368/66459#InsuranceResult))
+* [[MachinePredict](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachinePredict)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[MachinePredict](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachinePredict))
+* [[MachineUnderwriteOutput](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachineUnderwriteOutput)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[MachineUnderwriteOutput](http://document.tencentcloudapi.woa.com/document/product/1368/66459#MachineUnderwriteOutput))
+* [[PerStructDifference](http://document.tencentcloudapi.woa.com/document/product/1368/66459#PerStructDifference)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[PerStructDifference](http://document.tencentcloudapi.woa.com/document/product/1368/66459#PerStructDifference))
+* [[StructureModifyItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureModifyItem)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[StructureModifyItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureModifyItem))
+* [[StructureOneItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureOneItem)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[StructureOneItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#StructureOneItem))
+* [[UnderwriteItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#UnderwriteItem)](http://document.tencentcloudapi.woa.com/document/product/1368/66459#[UnderwriteItem](http://document.tencentcloudapi.woa.com/document/product/1368/66459#UnderwriteItem))
 
 ### 第 3 次发布
 
@@ -4056,6 +4172,32 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 5 次发布
+
+发布时间：2021-09-30 08:13:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [EditBashRules](http://document.tencentcloudapi.woa.com/document/product/296/66226)
+
+	* <font color="#dd0000">**修改入参**：</font>Name, Rule
+
+
+修改数据结构：
+
+* [MalwareInfo](http://document.tencentcloudapi.woa.com/document/product/296/66286#MalwareInfo)
+
+	* 新增成员：MachineWanIp, PsTree, MachineStatus, Status
+
+* [RiskDnsList](http://document.tencentcloudapi.woa.com/document/product/296/66286#RiskDnsList)
+
+	* 新增成员：MachineWanIp, MachineStatus
+
 
 ### 第 4 次发布
 
@@ -5962,6 +6104,18 @@
 
 
 ## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 2 次发布
+
+发布时间：2021-09-30 08:06:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpdateJdk](http://document.tencentcloudapi.woa.com/document/product/845/66775)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 1 次发布
 
@@ -8341,7 +8495,7 @@
 
 新增接口：
 
-* [[DescribeQos](http://document.tencentcloudapi.woa.com/document/product/1385/66772)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeQos](http://document.tencentcloudapi.woa.com/document/product/1385/66772)
 
 ### 第 2 次发布
 
@@ -14328,6 +14482,22 @@
 
 
 ## 企业微信汽车行业版(wav) 版本：2021-01-29
+
+### 第 3 次发布
+
+发布时间：2021-09-30 08:00:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryClueInfoList](http://document.tencentcloudapi.woa.com/document/product/1318/66773)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/59855#ClueInfoDetail)](http://document.tencentcloudapi.woa.com/document/product/1318/59855#[ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/59855#ClueInfoDetail))
 
 ### 第 2 次发布
 

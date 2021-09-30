@@ -120,6 +120,14 @@
         "title": "ES集群纵向扩缩容"
       }
     ],
+    "UpdateJdk": [
+      {
+        "document": "更新实例Jdk类型",
+        "input": "https://es.tencentcloudapi.com/?Action=UpdateJdk\n&InstanceId=es-xxxxxx\n&Jdk=kona\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "UpdateJdk"
+      }
+    ],
     "UpdatePlugins": [
       {
         "document": "",

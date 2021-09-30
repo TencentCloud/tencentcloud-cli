@@ -114,6 +114,14 @@
         "title": "查询云盘操作日志"
       }
     ],
+    "DescribeDiskStoragePool": [
+      {
+        "document": "部分用户(金融)对cbs集群有独享需求，该接口用来查询用户所拥有的独享集群。",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskStoragePool\n&Filters.0.Name=cdc-id\n&Filters.0.Values.0=cdc-6brr1cvj\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DiskStoragePoolSet\": [\n            {\n                \"CageId\": \"xx\",\n                \"CdcState\": \"xx\",\n                \"Zone\": \"xx\",\n                \"CdcName\": \"xx\",\n                \"CdcResource\": {\n                    \"DiskAavilable\": 1,\n                    \"DiskTotal\": 1\n                },\n                \"CdcId\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"ExpiredTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "指定独享集群ID查询集群详情。"
+      }
+    ],
     "DescribeDisks": [
       {
         "document": "",
