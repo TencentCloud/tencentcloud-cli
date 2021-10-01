@@ -51,7 +51,7 @@
 | dcdb | [分布式数据库 TDSQL](http://document.tencentcloudapi.woa.com/document/product/557) | 2021-09-23 08:06:28 |
 | dlc | [数据湖计算](http://document.tencentcloudapi.woa.com/document/product/1342) | 2021-09-28 08:01:00 |
 | dnspod | [DNSPod](http://document.tencentcloudapi.woa.com/document/product/1427) | 2021-09-16 08:00:39 |
-| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | 2021-09-16 08:07:19 |
+| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | 2021-10-01 08:06:32 |
 | drm | [数字版权管理](http://document.tencentcloudapi.woa.com/document/product/1000) | 2021-09-16 08:07:23 |
 | ds | [电子合同服务](http://document.tencentcloudapi.woa.com/document/product/869) | 2021-09-16 08:07:26 |
 | dtf | [分布式事务](http://document.tencentcloudapi.woa.com/document/product/1224) | 2021-09-16 08:00:09 |
@@ -80,13 +80,13 @@
 | ims | [图片内容检测](http://document.tencentcloudapi.woa.com/document/product/1125) | 2021-09-16 08:01:50 |
 | iot | [加速物联网套件](http://document.tencentcloudapi.woa.com/document/product/568) | 2021-09-16 08:08:21 |
 | iotcloud | [物联网通信](http://document.tencentcloudapi.woa.com/document/product/634) | 2021-09-27 08:08:06 |
-| iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2021-09-17 08:08:00 |
+| iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2021-10-01 08:07:43 |
 | iottid | [物联网设备身份认证](http://document.tencentcloudapi.woa.com/document/product/1086) | 2021-09-16 08:08:45 |
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2021-09-16 08:03:26 |
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2021-09-16 08:01:15 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2021-09-16 08:08:47 |
 | lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2021-09-16 08:02:16 |
-| live | [云直播](http://document.tencentcloudapi.woa.com/document/product/267) | 2021-09-24 08:08:13 |
+| live | [云直播](http://document.tencentcloudapi.woa.com/document/product/267) | 2021-10-01 08:08:01 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2021-09-16 08:02:33 |
 | mariadb | [云数据库 MariaDB](http://document.tencentcloudapi.woa.com/document/product/237) | 2021-09-23 08:08:24 |
 | market | [云市场](http://document.tencentcloudapi.woa.com/document/product/306) | 2021-09-16 08:00:19 |

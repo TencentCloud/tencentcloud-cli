@@ -5032,7 +5032,7 @@
       "members": [
         {
           "default": "",
-          "document": "包类型，可选值：\n0：流量包；\n1：转码包。\n2: 连麦包。",
+          "document": "包类型，可选值：\n0：流量包\n1：转码包\n2: 连麦包。",
           "example": "1",
           "member": "int64",
           "name": "PackageType",
@@ -5041,7 +5041,7 @@
         },
         {
           "default": "",
-          "document": "排序规则:\n1. BuyTimeDesc： 最新购买的排在最前面\n2. BuyTimeAsc： 最老购买的排在最前面\n3. ExpireTimeDesc： 最后过期的排在最前面\n4. ExpireTimeAsc：最先过期的排在最前面\n\n注意：\n1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序",
+          "document": "排序规则:\n1. BuyTimeDesc： 最新购买的排在最前面\n2. BuyTimeAsc： 最老购买的排在最前面\n3. ExpireTimeDesc： 最后过期的排在最前面\n4. ExpireTimeAsc：最先过期的排在最前面。\n\n注意：\n1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。",
           "example": "BuyTime desc",
           "member": "string",
           "name": "OrderBy",
@@ -5059,7 +5059,7 @@
         },
         {
           "default": "",
-          "document": "分页大小，和 PageNum 同时传递才会生效。\n取值：10 ～ 100 之间的任意整数",
+          "document": "分页大小，和 PageNum 同时传递才会生效。\n取值：10 ～ 100 之间的任意整数。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -5082,7 +5082,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "套餐包当前计费方式:\n-1: 无计费方式或获取失败\n0: 无计费方式\n201: 月结带宽\n202: 月结流量\n203: 日结带宽\n204: 日结流量\n205: 日结时长\n206: 月结时长\n304: 日结流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐包当前计费方式:\n-1: 无计费方式或获取失败\n0: 无计费方式\n201: 月结带宽\n202: 月结流量\n203: 日结带宽\n204: 日结流量\n205: 日结时长\n206: 月结时长\n304: 日结流量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "201",
           "member": "int64",
           "name": "PackageBillMode",
@@ -5091,7 +5091,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总页数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TotalPage",
@@ -5100,7 +5100,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "数据总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据总条数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "95",
           "member": "int64",
           "name": "TotalNum",
@@ -5109,7 +5109,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "当前页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前页数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "PageNum",
@@ -5118,7 +5118,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "当前每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前每页数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
