@@ -82,6 +82,14 @@
         "title": "新建产品"
       }
     ],
+    "CreateTopicPolicy": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateTopicPolicy\r\n&ProductId=ABCDE12345\r\n&TopicName=abc\r\n&Privilege=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "创建Topic示例"
+      }
+    ],
     "CreateTopicRule": [
       {
         "document": "",

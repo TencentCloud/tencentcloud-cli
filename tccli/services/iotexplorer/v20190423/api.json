@@ -48,6 +48,12 @@
       "name": "新建产品",
       "output": "CreateStudioProductResponse"
     },
+    "CreateTopicPolicy": {
+      "document": "本接口（CreateTopicPolicy）用于创建一个Topic ",
+      "input": "CreateTopicPolicyRequest",
+      "name": "创建Topic",
+      "output": "CreateTopicPolicyResponse"
+    },
     "CreateTopicRule": {
       "document": "创建规则",
       "input": "CreateTopicRuleRequest",
@@ -1039,6 +1045,48 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicPolicyRequest": {
+      "document": "CreateTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic权限，1发布，2订阅，3订阅和发布",
+          "member": "uint64",
+          "name": "Privilege",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicPolicyResponse": {
+      "document": "CreateTopicPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
