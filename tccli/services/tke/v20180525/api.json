@@ -216,6 +216,12 @@
       "name": "集群关联的伸缩组列表",
       "output": "DescribeClusterAsGroupsResponse"
     },
+    "DescribeClusterAuthenticationOptions": {
+      "document": "查看集群认证配置",
+      "input": "DescribeClusterAuthenticationOptionsRequest",
+      "name": "查看集群认证配置",
+      "output": "DescribeClusterAuthenticationOptionsResponse"
+    },
     "DescribeClusterCommonNames": {
       "document": "获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50",
       "input": "DescribeClusterCommonNamesRequest",
@@ -461,6 +467,12 @@
       "input": "ModifyClusterAttributeRequest",
       "name": "修改集群属性",
       "output": "ModifyClusterAttributeResponse"
+    },
+    "ModifyClusterAuthenticationOptions": {
+      "document": "修改集群认证配置",
+      "input": "ModifyClusterAuthenticationOptionsRequest",
+      "name": "修改集群认证配置",
+      "output": "ModifyClusterAuthenticationOptionsResponse"
     },
     "ModifyClusterEndpointSP": {
       "document": "修改托管集群外网端口的安全策略（老的方式，仅支持托管集群外网端口）",
@@ -4106,6 +4118,51 @@
           "name": "ClusterAsGroupSet",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAuthenticationOptionsRequest": {
+      "document": "DescribeClusterAuthenticationOptions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAuthenticationOptionsResponse": {
+      "document": "DescribeClusterAuthenticationOptions返回参数结构体",
+      "members": [
+        {
+          "document": "ServiceAccount认证配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceAccountAuthenticationOptions",
+          "name": "ServiceAccounts",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Updating",
+          "member": "string",
+          "name": "LatestOperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8083,6 +8140,42 @@
       ],
       "type": "object"
     },
+    "ModifyClusterAuthenticationOptionsRequest": {
+      "document": "ModifyClusterAuthenticationOptions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ServiceAccount认证配置",
+          "example": "无",
+          "member": "ServiceAccountAuthenticationOptions",
+          "name": "ServiceAccounts",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAuthenticationOptionsResponse": {
+      "document": "ModifyClusterAuthenticationOptions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterEndpointSPRequest": {
       "document": "ModifyClusterEndpointSP请求参数结构体",
       "members": [
@@ -10124,6 +10217,42 @@
           "name": "Capabilities",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceAccountAuthenticationOptions": {
+      "document": "ServiceAccount认证相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "service-account-issuer\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cls-xxxxxxxx.ccs.tencent-cloud.com",
+          "member": "string",
+          "name": "Issuer",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "service-account-jwks-uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cls-xxxxxxxx.ccs.tencent-cloud.com:60002/openid/v1/jwks",
+          "member": "string",
+          "name": "JWKSURI",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果为true，则会自动创建允许匿名用户访问'/.well-known/openid-configuration'和/openid/v1/jwks的rbac规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoCreateDiscoveryAnonymousAuth",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
