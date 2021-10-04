@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+## 容器服务(tke) 版本：2018-05-25
 
-### 第 2 次发布
+### 第 7 次发布
 
-发布时间：2021-10-01 08:07:43
+发布时间：2021-10-04 08:10:31
 
 本次发布包含了以下内容：
 
@@ -12,7 +12,12 @@
 
 新增接口：
 
-* [CreateTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66780)
+* [DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/66782)
+* [ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/66781)
+
+新增数据结构：
+
+* [ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/64780#ServiceAccountAuthenticationOptions)
 
 
 
@@ -7387,7 +7392,7 @@
 
 新增接口：
 
-* [[CreateTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66780)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66780)
 
 ### 第 1 次发布
 
@@ -12366,6 +12371,23 @@
 
 
 ## 容器服务(tke) 版本：2018-05-25
+
+### 第 7 次发布
+
+发布时间：2021-10-04 08:10:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/66782)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyClusterAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/66781)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/64780#ServiceAccountAuthenticationOptions)](http://document.tencentcloudapi.woa.com/document/product/457/64780#[ServiceAccountAuthenticationOptions](http://document.tencentcloudapi.woa.com/document/product/457/64780#ServiceAccountAuthenticationOptions))
 
 ### 第 6 次发布
 

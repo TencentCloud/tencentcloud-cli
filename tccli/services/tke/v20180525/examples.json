@@ -300,6 +300,14 @@
         "title": "集群关联的伸缩组列表"
       }
     ],
+    "DescribeClusterAuthenticationOptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ServiceAccounts\": {\n            \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n            \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\"\n        },\n        \"LatestOperationState\": \"Updating\"\n    }\n}",
+        "title": "查看集群认证配置"
+      }
+    ],
     "DescribeClusterCommonNames": [
       {
         "document": "",
@@ -626,6 +634,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterAttribute\r\n&ClusterId=cls-xxxxxxx\r\n&ClusterName=aaa\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClusterName\": \"xxxxx\",\n        \"ClusterDesc\": \"xxxxx\",\n        \"ProjectId\": 0,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
         "title": "修改集群属性"
+      }
+    ],
+    "ModifyClusterAuthenticationOptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAuthenticationOptions\n<公共请求参数>\n\n{\n    \"ServiceAccounts\": {\n        \"JWKSURI\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com/openid/v1/jwks\",\n        \"Issuer\": \"https://cls-xxxxxxxx.ccs.tencent-cloud.com\",\n        \"AutoCreateDiscoveryAnonymousAuth\": true\n    },\n    \"ClusterId\": \"cls-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改集群认证配置"
       }
     ],
     "ModifyClusterEndpointSP": [
