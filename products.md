@@ -129,7 +129,7 @@
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-09-28 08:10:11 |
 | tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-09-29 08:10:16 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2021-09-16 08:02:01 |
-| tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-09-23 08:12:52 |
+| tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-10-08 08:12:33 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2021-09-16 08:00:05 |
 | tdmq | [分布式消息队列](http://document.tencentcloudapi.woa.com/document/product/1179) | 2021-09-29 08:13:33 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2021-09-16 08:00:58 |
