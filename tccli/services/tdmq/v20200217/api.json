@@ -48,6 +48,18 @@
       "name": "创建命名空间",
       "output": "CreateEnvironmentResponse"
     },
+    "CreateEnvironmentRole": {
+      "document": "创建环境角色授权",
+      "input": "CreateEnvironmentRoleRequest",
+      "name": "创建环境角色授权",
+      "output": "CreateEnvironmentRoleResponse"
+    },
+    "CreateRole": {
+      "document": "创建角色",
+      "input": "CreateRoleRequest",
+      "name": "创建角色",
+      "output": "CreateRoleResponse"
+    },
     "CreateSubscription": {
       "document": "创建一个主题的订阅关系",
       "input": "CreateSubscriptionRequest",
@@ -84,11 +96,23 @@
       "name": "删除cmq主题",
       "output": "DeleteCmqTopicResponse"
     },
+    "DeleteEnvironmentRoles": {
+      "document": "删除环境角色授权。",
+      "input": "DeleteEnvironmentRolesRequest",
+      "name": "删除环境角色授权",
+      "output": "DeleteEnvironmentRolesResponse"
+    },
     "DeleteEnvironments": {
       "document": "批量删除租户下的命名空间",
       "input": "DeleteEnvironmentsRequest",
       "name": "删除命名空间",
       "output": "DeleteEnvironmentsResponse"
+    },
+    "DeleteRoles": {
+      "document": "删除角色，支持批量。",
+      "input": "DeleteRolesRequest",
+      "name": "删除角色",
+      "output": "DeleteRolesResponse"
     },
     "DeleteSubscriptions": {
       "document": "删除订阅关系",
@@ -198,6 +222,12 @@
       "name": "生产者列表",
       "output": "DescribeProducersResponse"
     },
+    "DescribeRoles": {
+      "document": "获取角色列表",
+      "input": "DescribeRolesRequest",
+      "name": "获取角色列表",
+      "output": "DescribeRolesResponse"
+    },
     "DescribeSubscriptions": {
       "document": "查询指定环境和主题下的订阅者列表",
       "input": "DescribeSubscriptionsRequest",
@@ -239,6 +269,18 @@
       "input": "ModifyEnvironmentAttributesRequest",
       "name": "修改命名空间属性",
       "output": "ModifyEnvironmentAttributesResponse"
+    },
+    "ModifyEnvironmentRole": {
+      "document": "修改环境角色授权。",
+      "input": "ModifyEnvironmentRoleRequest",
+      "name": "修改环境角色授权",
+      "output": "ModifyEnvironmentRoleResponse"
+    },
+    "ModifyRole": {
+      "document": "角色修改",
+      "input": "ModifyRoleRequest",
+      "name": "角色修改",
+      "output": "ModifyRoleResponse"
     },
     "ModifyTopic": {
       "document": "修改主题备注和分区数",
@@ -1943,6 +1985,132 @@
       ],
       "type": "object"
     },
+    "CreateEnvironmentRoleRequest": {
+      "document": "CreateEnvironmentRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称。",
+          "example": "test_role_1",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
+          "example": "无",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群的ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentRoleResponse": {
+      "document": "CreateEnvironmentRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleRequest": {
+      "document": "CreateRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。",
+          "example": "test_role_123",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注说明，长度必须大等于0且小等于128。",
+          "example": "创建角色",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群Id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleResponse": {
+      "document": "CreateRole返回参数结构体",
+      "members": [
+        {
+          "document": "角色名称",
+          "example": "test_role_123",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色token",
+          "example": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "创建角色",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSubscriptionRequest": {
       "document": "CreateSubscription请求参数结构体",
       "members": [
@@ -2285,6 +2453,51 @@
       ],
       "type": "object"
     },
+    "DeleteEnvironmentRolesRequest": {
+      "document": "DeleteEnvironmentRoles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称数组。",
+          "example": "[\"test_role\\n\"]",
+          "member": "string",
+          "name": "RoleNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群的ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentRolesResponse": {
+      "document": "DeleteEnvironmentRoles返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEnvironmentsRequest": {
       "document": "DeleteEnvironments请求参数结构体",
       "members": [
@@ -2317,6 +2530,51 @@
           "example": "[test1,test2]",
           "member": "string",
           "name": "EnvironmentIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRolesRequest": {
+      "document": "DeleteRoles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称数组。",
+          "example": "[\"test_role_1\\n\",\"test_role_2\\n\"]",
+          "member": "string",
+          "name": "RoleNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群Id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRolesResponse": {
+      "document": "DeleteRoles返回参数结构体",
+      "members": [
+        {
+          "document": "成功删除的角色名称数组。",
+          "example": "[\"test_role_1\",\"test_role_2\"]",
+          "member": "string",
+          "name": "RoleNames",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3137,7 +3395,7 @@
       "members": [
         {
           "default": "",
-          "document": "环境（命名空间）名称。",
+          "document": "必填字段，环境（命名空间）名称。",
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
@@ -3164,7 +3422,7 @@
         },
         {
           "default": "",
-          "document": "Pulsar 集群的ID",
+          "document": "必填字段，Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
@@ -3517,6 +3775,87 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRolesRequest": {
+      "document": "DescribeRoles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称，模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始下标，不填默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群Id",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "* RoleName\n按照角色名进行过滤，精确查询。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRolesResponse": {
+      "document": "DescribeRoles返回参数结构体",
+      "members": [
+        {
+          "document": "记录数。",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "角色数组。",
+          "example": "无",
+          "member": "Role",
+          "name": "RoleSets",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4376,6 +4715,123 @@
       ],
       "type": "object"
     },
+    "ModifyEnvironmentRoleRequest": {
+      "document": "ModifyEnvironmentRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境（命名空间）名称。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色名称。",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
+          "example": "无",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群的ID",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEnvironmentRoleResponse": {
+      "document": "ModifyEnvironmentRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleRequest": {
+      "document": "ModifyRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注说明，长度必须大等于0且小等于128。",
+          "example": "更新角色",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "必填字段，集群Id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleResponse": {
+      "document": "ModifyRole返回参数结构体",
+      "members": [
+        {
+          "document": "角色名称",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "备注说明",
+          "example": "Remark1",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicRequest": {
       "document": "ModifyTopic请求参数结构体",
       "members": [
@@ -4917,6 +5373,57 @@
         }
       ],
       "type": "object"
+    },
+    "Role": {
+      "document": "角色实例",
+      "members": [
+        {
+          "default": "",
+          "document": "角色名称。",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色token值。",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注说明。",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间。",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SendBatchMessagesRequest": {
       "document": "SendBatchMessages请求参数结构体",

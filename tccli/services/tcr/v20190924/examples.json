@@ -609,7 +609,7 @@
     "ManageInternalEndpoint": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ManageInternalEndpoint\n&RegistryId=tcr-xxx\n&RegionId=5\n&Operation=Create\n&VpcId=xxx\n&SubnetId=xxx\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageInternalEndpoint\n&RegistryId=tcr-xxx\n&RegionName=ap-beijing\n&Operation=Create\n&VpcId=xxx\n&SubnetId=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"XXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "管理内网接入"
       }
