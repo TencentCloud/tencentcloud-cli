@@ -566,6 +566,14 @@
         "title": "消费订单查询正常示例"
       }
     ],
+    "QueryMerchantPayWayList": [
+      {
+        "document": "查询商户支付方式成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMerchantPayWayList\n<公共请求参数>\n\n{\n    \"OpenId\": \"5fb33938bb819024b8ed719edf221840\",\n    \"OpenKey\": \"e95bffc38504f0ac408c27d61eb52d1a\",\n    \"PayType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6a4c45b-d30f-49c8-a724-ecc37d0f0c42\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"ok\",\n        \"Result\": [\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"http://f.tlinx.cn//Public/icons/pay/Weixin.png\",\n                \"PayInternalName\": \"微信测试\",\n                \"PayName\": \"微信测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"WeixinTEST\",\n                \"PayTicketIcon\": \"http://f.tlinx.cn//Public/icons/ticket/Weixin.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            },\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"http://f.tlinx.cn//Public/icons/pay/Alipay.png\",\n                \"PayInternalName\": \"支付宝测试\",\n                \"PayName\": \"支付宝测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"AlipayTEST\",\n                \"PayTicketIcon\": \"http://f.tlinx.cn//Public/icons/ticket/Alipay.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            }\n        ]\n    }\n}",
+        "title": "查询商户支付方式结果成功示例"
+      }
+    ],
     "QueryOrder": [
       {
         "document": "适用于单个订单查询状态的场景",

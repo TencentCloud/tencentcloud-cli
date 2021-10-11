@@ -420,6 +420,12 @@
       "name": "云鉴-消费订单查询接口",
       "output": "QueryMerchantOrderResponse"
     },
+    "QueryMerchantPayWayList": {
+      "document": "商户查询已开通的支付方式列表",
+      "input": "QueryMerchantPayWayListRequest",
+      "name": "云支付-查询商户支付方式列表",
+      "output": "QueryMerchantPayWayListResponse"
+    },
     "QueryOrder": {
       "document": "根据订单号，或者用户Id，查询支付订单状态 ",
       "input": "QueryOrderRequest",
@@ -8128,6 +8134,102 @@
       ],
       "usage": "out"
     },
+    "MerchantPayWayData": {
+      "document": "商户支付方式数据",
+      "members": [
+        {
+          "default": "",
+          "document": "支付币种\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CNY",
+          "member": "string",
+          "name": "PayCurrency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://f.tlinx.cn//Public/icons/pay/Weixin.png",
+          "member": "string",
+          "name": "PayIcon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信测试",
+          "member": "string",
+          "name": "PayInternalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信测试",
+          "member": "string",
+          "name": "PayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持退款\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PaySplitRefund",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WeixinTEST",
+          "member": "string",
+          "name": "PayTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付凭证图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://f.tlinx.cn//Public/icons/ticket/Weixin.png",
+          "member": "string",
+          "name": "PayTicketIcon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付类型，逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2,3,4",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "凭证名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "哈哈",
+          "member": "string",
+          "name": "TicketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MigrateOrderRefundQueryRequest": {
       "document": "MigrateOrderRefundQuery请求参数结构体",
       "members": [
@@ -12093,6 +12195,87 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantPayWayListRequest": {
+      "document": "QueryMerchantPayWayList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "5fb33938bb819024b8ed719edf221840",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e95bffc38504f0ac408c27d61eb52d1a",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付类型，逗号分隔",
+          "example": "2",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantPayWayListResponse": {
+      "document": "QueryMerchantPayWayList返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询商户支付方式列表结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MerchantPayWayData",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

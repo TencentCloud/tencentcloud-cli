@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcr ManageInternalEndpoint --cli-unfold-argument  \
     --RegistryId tcr-xxx \
-    --RegionId 5 \
+    --RegionName ap-beijing \
     --Operation Create \
     --VpcId xxx \
     --SubnetId xxx
