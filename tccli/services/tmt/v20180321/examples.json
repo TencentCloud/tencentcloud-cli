@@ -35,7 +35,7 @@
     "TextTranslateBatch": [
       {
         "document": "",
-        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslateBatch\r\n&Source=zh\r\n&Target=en\r\n&ProjectId=0\r\n&SourceTextList.0=你好\r\n&SourceTextList.1=今天天气怎么样\r\n&<公共请求参数>",
+        "input": "https://tmt.tencentcloudapi.com/?Action=TextTranslateBatch\n&Source=zh\n&Target=en\n&ProjectId=0\n&SourceTextList.0=你好\n&SourceTextList.1=今天天气怎么样\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"Hello.\",\n            \"What's the weather like today?\"\n        ]\n    }\n}",
         "title": "批量文本翻译"
       }

@@ -24,6 +24,12 @@
       "name": "创建设备",
       "output": "CreateDeviceResponse"
     },
+    "CreateFenceBind": {
+      "document": "创建围栏绑定信息",
+      "input": "CreateFenceBindRequest",
+      "name": "创建围栏绑定信息",
+      "output": "CreateFenceBindResponse"
+    },
     "CreateLoRaFrequency": {
       "document": "创建 LoRa 自定义频点",
       "input": "CreateLoRaFrequencyRequest",
@@ -35,6 +41,18 @@
       "input": "CreateLoRaGatewayRequest",
       "name": "新建 LoRa 网关设备",
       "output": "CreateLoRaGatewayResponse"
+    },
+    "CreatePositionFence": {
+      "document": "创建围栏",
+      "input": "CreatePositionFenceRequest",
+      "name": "创建围栏",
+      "output": "CreatePositionFenceResponse"
+    },
+    "CreatePositionSpace": {
+      "document": "创建位置空间",
+      "input": "CreatePositionSpaceRequest",
+      "name": "创建位置空间",
+      "output": "CreatePositionSpaceResponse"
     },
     "CreateProject": {
       "document": "为用户提供新建项目的能力，用于集中管理产品和应用。",
@@ -72,6 +90,12 @@
       "name": "批量删除设备",
       "output": "DeleteDevicesResponse"
     },
+    "DeleteFenceBind": {
+      "document": "删除围栏绑定信息",
+      "input": "DeleteFenceBindRequest",
+      "name": "删除围栏绑定信息",
+      "output": "DeleteFenceBindResponse"
+    },
     "DeleteLoRaFrequency": {
       "document": "提供删除LoRa自定义频点的能力",
       "input": "DeleteLoRaFrequencyRequest",
@@ -83,6 +107,18 @@
       "input": "DeleteLoRaGatewayRequest",
       "name": "删除 LoRa 网关",
       "output": "DeleteLoRaGatewayResponse"
+    },
+    "DeletePositionFence": {
+      "document": "删除围栏",
+      "input": "DeletePositionFenceRequest",
+      "name": "删除围栏",
+      "output": "DeletePositionFenceResponse"
+    },
+    "DeletePositionSpace": {
+      "document": "删除位置空间",
+      "input": "DeletePositionSpaceRequest",
+      "name": "删除位置空间",
+      "output": "DeletePositionSpaceResponse"
     },
     "DeleteProject": {
       "document": "提供删除某个项目的能力",
@@ -120,6 +156,24 @@
       "name": "获取设备历史数据",
       "output": "DescribeDeviceDataHistoryResponse"
     },
+    "DescribeDevicePositionList": {
+      "document": "获取设备位置列表",
+      "input": "DescribeDevicePositionListRequest",
+      "name": "获取设备位置列表",
+      "output": "DescribeDevicePositionListResponse"
+    },
+    "DescribeFenceBindList": {
+      "document": "获取围栏绑定信息列表",
+      "input": "DescribeFenceBindListRequest",
+      "name": "获取围栏绑定信息列表",
+      "output": "DescribeFenceBindListResponse"
+    },
+    "DescribeFenceEventList": {
+      "document": "获取围栏告警事件列表",
+      "input": "DescribeFenceEventListRequest",
+      "name": "获取围栏告警事件列表",
+      "output": "DescribeFenceEventListResponse"
+    },
     "DescribeFirmwareTask": {
       "document": "查询固件升级任务列表",
       "input": "DescribeFirmwareTaskRequest",
@@ -138,11 +192,23 @@
       "name": "查询产品数据模板",
       "output": "DescribeModelDefinitionResponse"
     },
+    "DescribePositionFenceList": {
+      "document": "获取围栏列表",
+      "input": "DescribePositionFenceListRequest",
+      "name": "获取围栏列表",
+      "output": "DescribePositionFenceListResponse"
+    },
     "DescribeProject": {
       "document": "查询项目详情",
       "input": "DescribeProjectRequest",
       "name": "查询项目详情",
       "output": "DescribeProjectResponse"
+    },
+    "DescribeSpaceFenceEventList": {
+      "document": "获取位置空间中围栏告警事件列表",
+      "input": "DescribeSpaceFenceEventListRequest",
+      "name": "获取位置空间中围栏告警事件列表",
+      "output": "DescribeSpaceFenceEventListResponse"
     },
     "DescribeStudioProduct": {
       "document": "提供查看产品详细信息的能力，包括产品的ID、数据协议、认证类型等重要参数",
@@ -186,11 +252,23 @@
       "name": "获取设备列表",
       "output": "GetDeviceListResponse"
     },
+    "GetDeviceLocationHistory": {
+      "document": "获取设备历史位置",
+      "input": "GetDeviceLocationHistoryRequest",
+      "name": "获取设备历史位置",
+      "output": "GetDeviceLocationHistoryResponse"
+    },
     "GetLoRaGatewayList": {
       "document": "获取 LoRa 网关列表接口",
       "input": "GetLoRaGatewayListRequest",
       "name": "获取 LoRa 网关列表",
       "output": "GetLoRaGatewayListResponse"
+    },
+    "GetPositionSpaceList": {
+      "document": "获取位置空间列表",
+      "input": "GetPositionSpaceListRequest",
+      "name": "获取位置空间列表",
+      "output": "GetPositionSpaceListResponse"
     },
     "GetProjectList": {
       "document": "提供查询用户所创建的项目列表查询功能。",
@@ -222,6 +300,12 @@
       "name": "获取固件列表",
       "output": "ListFirmwaresResponse"
     },
+    "ModifyFenceBind": {
+      "document": "更新围栏绑定信息",
+      "input": "ModifyFenceBindRequest",
+      "name": "更新围栏绑定信息",
+      "output": "ModifyFenceBindResponse"
+    },
     "ModifyLoRaFrequency": {
       "document": "修改LoRa自定义频点",
       "input": "ModifyLoRaFrequencyRequest",
@@ -240,11 +324,29 @@
       "name": "修改产品数据模板",
       "output": "ModifyModelDefinitionResponse"
     },
+    "ModifyPositionFence": {
+      "document": "更新围栏",
+      "input": "ModifyPositionFenceRequest",
+      "name": "更新围栏",
+      "output": "ModifyPositionFenceResponse"
+    },
+    "ModifyPositionSpace": {
+      "document": "更新位置空间",
+      "input": "ModifyPositionSpaceRequest",
+      "name": "更新位置空间",
+      "output": "ModifyPositionSpaceResponse"
+    },
     "ModifyProject": {
       "document": "修改项目",
       "input": "ModifyProjectRequest",
       "name": "修改项目",
       "output": "ModifyProjectResponse"
+    },
+    "ModifySpaceProperty": {
+      "document": "更新位置空间产品属性",
+      "input": "ModifySpacePropertyRequest",
+      "name": "更新位置空间产品属性",
+      "output": "ModifySpacePropertyResponse"
     },
     "ModifyStudioProduct": {
       "document": "提供修改产品的名称和描述等信息的能力，对于已发布产品不允许进行修改。",
@@ -269,6 +371,12 @@
       "input": "ReleaseStudioProductRequest",
       "name": "发布产品",
       "output": "ReleaseStudioProductResponse"
+    },
+    "SearchPositionSpace": {
+      "document": "搜索位置空间",
+      "input": "SearchPositionSpaceRequest",
+      "name": "搜索位置空间",
+      "output": "SearchPositionSpaceResponse"
     },
     "SearchStudioProduct": {
       "document": "提供根据产品名称查找产品的能力",
@@ -728,6 +836,42 @@
       ],
       "type": "object"
     },
+    "CreateFenceBindRequest": {
+      "document": "CreateFenceBind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "6",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏绑定的产品列表",
+          "example": "无",
+          "member": "FenceBindProductItem",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFenceBindResponse": {
+      "document": "CreateFenceBind返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLoRaFrequencyRequest": {
       "document": "CreateLoRaFrequency请求参数结构体",
       "members": [
@@ -906,6 +1050,141 @@
           "name": "Gateway",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePositionFenceRequest": {
+      "document": "CreatePositionFence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "5bf5407370cc40848f39a2896a2ab052",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "围栏名称",
+          "example": "TestFence",
+          "member": "string",
+          "name": "FenceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "围栏区域信息，采用 GeoJSON 格式",
+          "example": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[113.9498,22.5319],[113.9709,22.5319],[113.9709,22.5723],[113.9498,22.5723],[113.9498,22.5319]]]},\"properties\":null}]}",
+          "member": "string",
+          "name": "FenceArea",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "围栏描述",
+          "example": "TT",
+          "member": "string",
+          "name": "FenceDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePositionFenceResponse": {
+      "document": "CreatePositionFence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePositionSpaceRequest": {
+      "document": "CreatePositionSpace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "ProjectId",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "空间名称",
+          "example": "space",
+          "member": "string",
+          "name": "SpaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权类型，0：只读 1：读写",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthorizeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品列表",
+          "example": "[\"ProductId\"]",
+          "member": "string",
+          "name": "ProductIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "service",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缩略图",
+          "example": "http://www.example.com",
+          "member": "string",
+          "name": "Icon",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePositionSpaceResponse": {
+      "document": "CreatePositionSpace返回参数结构体",
+      "members": [
+        {
+          "document": "空间Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SpaceId",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1238,6 +1517,42 @@
       ],
       "type": "object"
     },
+    "DeleteFenceBindRequest": {
+      "document": "DeleteFenceBind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "1",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏绑定的产品信息",
+          "example": "无",
+          "member": "FenceBindProductItem",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFenceBindResponse": {
+      "document": "DeleteFenceBind返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLoRaFrequencyRequest": {
       "document": "DeleteLoRaFrequency请求参数结构体",
       "members": [
@@ -1281,6 +1596,69 @@
     },
     "DeleteLoRaGatewayResponse": {
       "document": "DeleteLoRaGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePositionFenceRequest": {
+      "document": "DeletePositionFence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "5bf5407370cc40848f39a2896a2ab052",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "1",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePositionFenceResponse": {
+      "document": "DeletePositionFence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePositionSpaceRequest": {
+      "document": "DeletePositionSpace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "Id",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePositionSpaceResponse": {
+      "document": "DeletePositionSpace返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1520,6 +1898,23 @@
       ],
       "type": "object"
     },
+    "DescribeDevicePositionListRequest": {
+      "document": "DescribeDevicePositionList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDevicePositionListResponse": {
+      "document": "DescribeDevicePositionList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceRequest": {
       "document": "DescribeDevice请求参数结构体",
       "members": [
@@ -1558,6 +1953,168 @@
           "member": "DeviceInfo",
           "name": "Device",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFenceBindListRequest": {
+      "document": "DescribeFenceBindList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "1",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，0起始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回结果数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFenceBindListResponse": {
+      "document": "DescribeFenceBindList返回参数结构体",
+      "members": [
+        {
+          "document": "围栏绑定的产品设备列表",
+          "example": "无",
+          "member": "FenceBindProductItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "围栏绑定的设备总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFenceEventListRequest": {
+      "document": "DescribeFenceEventList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏告警信息的查询起始时间，Unix时间，单位为毫秒",
+          "example": "1604030050000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏告警信息的查询结束时间，Unix时间，单位为毫秒",
+          "example": "1604039050000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "146",
+          "member": "int64",
+          "name": "FenceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，0起始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回结果数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警对应的产品Id",
+          "example": "X4912BAIVR",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警对应的设备名称",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFenceEventListResponse": {
+      "document": "DescribeFenceEventList返回参数结构体",
+      "members": [
+        {
+          "document": "围栏告警事件列表",
+          "example": "[{             \"ProductId\":\"X4912BAIVR\",             \"DeviceName",
+          "member": "FenceEventItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "围栏告警事件总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1758,6 +2315,69 @@
       ],
       "type": "object"
     },
+    "DescribePositionFenceListRequest": {
+      "document": "DescribePositionFenceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "5bf5407370cc40848f39a2896a2ab052",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，0起始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回结果数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePositionFenceListResponse": {
+      "document": "DescribePositionFenceList返回参数结构体",
+      "members": [
+        {
+          "document": "围栏列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PositionFenceInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "围栏数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProjectRequest": {
       "document": "DescribeProject请求参数结构体",
       "members": [
@@ -1780,6 +2400,87 @@
           "member": "ProjectEntryEx",
           "name": "Project",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceFenceEventListRequest": {
+      "document": "DescribeSpaceFenceEventList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "fccea82eb28b4943b654a35ce9dd5952",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "围栏告警信息的查询起始时间，Unix时间，单位为毫秒",
+          "example": "1579572927008",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏告警信息的查询结束时间，Unix时间，单位为毫秒",
+          "example": "1611108927008",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，0起始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回结果数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceFenceEventListResponse": {
+      "document": "DescribeSpaceFenceEventList返回参数结构体",
+      "members": [
+        {
+          "document": "围栏告警事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{ \t\"ProductId\": \"X4912BAIVR\", \t\"DeviceName\": \"dev1\", \t\"FenceId\"",
+          "member": "FenceEventItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "围栏告警事件总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2308,6 +3009,156 @@
       ],
       "usage": "out"
     },
+    "FenceAlarmPoint": {
+      "document": "围栏告警位置点",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏告警时间",
+          "member": "int64",
+          "name": "AlarmTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏告警位置的经度",
+          "member": "float",
+          "name": "Longitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏告警位置的纬度",
+          "member": "float",
+          "name": "Latitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FenceBindDeviceItem": {
+      "document": "围栏绑定的设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名称",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)",
+          "member": "string",
+          "name": "AlertCondition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使能围栏(true，使能；false，禁用)",
+          "member": "bool",
+          "name": "FenceEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警处理方法",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FenceBindProductItem": {
+      "document": "围栏绑定的产品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏绑定的设备信息",
+          "member": "FenceBindDeviceItem",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏绑定的产品Id",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FenceEventItem": {
+      "document": "围栏事件详情",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏事件的产品Id",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏事件的设备名称",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏Id",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）",
+          "member": "string",
+          "name": "AlertType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏事件的设备位置信息",
+          "member": "FenceAlarmPoint",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FirmwareInfo": {
       "document": "设备固件详细信息",
       "members": [
@@ -2558,6 +3409,78 @@
       ],
       "type": "object"
     },
+    "GetDeviceLocationHistoryRequest": {
+      "document": "GetDeviceLocationHistory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "X4912BAIVR",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间，Unix时间，单位为毫秒",
+          "example": "1604890314000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，Unix时间，单位为毫秒",
+          "example": "1609890353000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "坐标类型",
+          "example": "3",
+          "member": "int64",
+          "name": "CoordinateType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceLocationHistoryResponse": {
+      "document": "GetDeviceLocationHistory返回参数结构体",
+      "members": [
+        {
+          "document": "历史位置列表",
+          "example": "[{\"CreateTime\":1608882530000,\"Longitude\":113.9709,\"Latitude\":22.",
+          "member": "PositionItem",
+          "name": "Positions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetLoRaGatewayListRequest": {
       "document": "GetLoRaGatewayList请求参数结构体",
       "members": [
@@ -2603,6 +3526,69 @@
           "member": "LoRaGatewayItem",
           "name": "Gateways",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPositionSpaceListRequest": {
+      "document": "GetPositionSpaceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目Id",
+          "example": "prj-projectid",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量，0起始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大返回结果数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPositionSpaceListResponse": {
+      "document": "GetPositionSpaceList返回参数结构体",
+      "members": [
+        {
+          "document": "位置空间列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PositionSpaceInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "位置空间数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -3250,6 +4236,42 @@
       ],
       "usage": "both"
     },
+    "ModifyFenceBindRequest": {
+      "document": "ModifyFenceBind请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏Id",
+          "example": "1",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "围栏绑定的产品列表",
+          "example": "无",
+          "member": "FenceBindProductItem",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFenceBindResponse": {
+      "document": "ModifyFenceBind返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLoRaFrequencyRequest": {
       "document": "ModifyLoRaFrequency请求参数结构体",
       "members": [
@@ -3481,6 +4503,95 @@
       ],
       "type": "object"
     },
+    "ModifyPositionFenceRequest": {
+      "document": "ModifyPositionFence请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyPositionFenceResponse": {
+      "document": "ModifyPositionFence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPositionSpaceRequest": {
+      "document": "ModifyPositionSpace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "Id",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "位置空间名称",
+          "example": "space",
+          "member": "string",
+          "name": "SpaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthorizeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品列表",
+          "example": "[\"ProductId\"]",
+          "member": "string",
+          "name": "ProductIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "位置空间描述",
+          "example": "service",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缩略图",
+          "example": "http://www.example.com",
+          "member": "string",
+          "name": "Icon",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPositionSpaceResponse": {
+      "document": "ModifyPositionSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProjectRequest": {
       "document": "ModifyProject请求参数结构体",
       "members": [
@@ -3521,6 +4632,51 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySpacePropertyRequest": {
+      "document": "ModifySpaceProperty请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "spaceId",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "productId",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品属性",
+          "example": "[\"ProductId\"]",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySpacePropertyResponse": {
+      "document": "ModifySpaceProperty返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3628,6 +4784,229 @@
         }
       ],
       "type": "object"
+    },
+    "PositionFenceInfo": {
+      "document": "围栏详细信息(包含创建时间及更新时间)",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏信息",
+          "member": "PositionFenceItem",
+          "name": "GeoFence",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏创建时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏更新时间",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PositionFenceItem": {
+      "document": "围栏信息",
+      "members": [
+        {
+          "default": "",
+          "document": "围栏Id",
+          "member": "int64",
+          "name": "FenceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏名称",
+          "member": "string",
+          "name": "FenceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏描述",
+          "member": "string",
+          "name": "FenceDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围栏区域信息，采用 GeoJSON 格式",
+          "member": "string",
+          "name": "FenceArea",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PositionItem": {
+      "document": "位置点",
+      "members": [
+        {
+          "default": "",
+          "document": "位置点的时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置点的经度",
+          "member": "float",
+          "name": "Longitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置点的纬度",
+          "member": "float",
+          "name": "Latitude",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PositionSpaceInfo": {
+      "document": "位置空间详情",
+      "members": [
+        {
+          "default": "",
+          "document": "项目Id",
+          "example": "prj",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置空间Id",
+          "example": "a877xxxa1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置空间名称",
+          "example": "name",
+          "member": "string",
+          "name": "SpaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "0",
+          "member": "int64",
+          "name": "AuthorizeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品列表",
+          "example": "[\"TOIDHQ3AO1\",\"TOIDHQ3AO2\"]]",
+          "member": "string",
+          "name": "ProductIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缩略图",
+          "example": "icon",
+          "member": "string",
+          "name": "Icon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1598863974",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "1598863974",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义地图缩放",
+          "example": "3",
+          "member": "uint64",
+          "name": "Zoom",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProductEntry": {
       "document": "产品详情",
@@ -4155,6 +5534,78 @@
         }
       ],
       "usage": "in"
+    },
+    "SearchPositionSpaceRequest": {
+      "document": "SearchPositionSpace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目Id",
+          "example": "prj-projectid",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "位置空间名字",
+          "example": "name",
+          "member": "string",
+          "name": "SpaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，从0开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大获取数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchPositionSpaceResponse": {
+      "document": "SearchPositionSpace返回参数结构体",
+      "members": [
+        {
+          "document": "位置空间列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PositionSpaceInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合条件的位置空间个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchStudioProductRequest": {
       "document": "SearchStudioProduct请求参数结构体",
