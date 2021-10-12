@@ -8331,6 +8331,7 @@
         {
           "default": "",
           "document": "CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。",
+          "example": "Queue",
           "member": "string",
           "name": "CmqModel",
           "required": true,
@@ -8340,6 +8341,7 @@
         {
           "default": "",
           "document": "CMQ 的园区，如 sh，bj 等。",
+          "example": "sh",
           "member": "string",
           "name": "CmqRegion",
           "required": true,
@@ -8349,6 +8351,7 @@
         {
           "default": "",
           "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。",
+          "example": "test",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -8358,8 +8361,29 @@
         {
           "default": "",
           "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。",
+          "example": "URL",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTP回调地址，NotifyType为URL时必填。",
+          "example": "http://www.qq.com/callback",
+          "member": "string",
+          "name": "NotifyUrl",
           "required": false,
           "type": "string",
           "value_allowed_null": false

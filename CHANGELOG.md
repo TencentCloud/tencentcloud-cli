@@ -1,74 +1,45 @@
 # 本版本更新包含以下内容：
 
-## 企业收付平台(cpdp) 版本：2019-08-20
+## 内容分发网络(cdn) 版本：2018-06-06
 
-### 第 3 次发布
+### 第 5 次发布
 
-发布时间：2021-10-11 08:15:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [QueryMerchantPayWayList](http://document.tencentcloudapi.woa.com/document/product/1122/66803)
-
-新增数据结构：
-
-* [MerchantPayWayData](http://document.tencentcloudapi.woa.com/document/product/1122/65989#MerchantPayWayData)
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 3 次发布
-
-发布时间：2021-10-11 08:09:26
+发布时间：2021-10-12 08:06:33
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [CreateFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66801)
-* [CreatePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66800)
-* [CreatePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66799)
-* [DeleteFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66798)
-* [DeletePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66797)
-* [DeletePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66796)
-* [DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)
-* [DescribeFenceBindList](http://document.tencentcloudapi.woa.com/document/product/1081/66794)
-* [DescribeFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66793)
-* [DescribePositionFenceList](http://document.tencentcloudapi.woa.com/document/product/1081/66792)
-* [DescribeSpaceFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66791)
-* [GetDeviceLocationHistory](http://document.tencentcloudapi.woa.com/document/product/1081/66790)
-* [GetPositionSpaceList](http://document.tencentcloudapi.woa.com/document/product/1081/66789)
-* [ModifyFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66788)
-* [ModifyPositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66787)
-* [ModifyPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66786)
-* [ModifySpaceProperty](http://document.tencentcloudapi.woa.com/document/product/1081/66785)
-* [SearchPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66784)
-
 新增数据结构：
 
-* [FenceAlarmPoint](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceAlarmPoint)
-* [FenceBindDeviceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindDeviceItem)
-* [FenceBindProductItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindProductItem)
-* [FenceEventItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceEventItem)
-* [PositionFenceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceInfo)
-* [PositionFenceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceItem)
-* [PositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionItem)
-* [PositionSpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionSpaceInfo)
+* [AdvancedScdnAclGroup](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclGroup)
+* [AdvancedScdnAclRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclRule)
+* [RangeOriginPullRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#RangeOriginPullRule)
+
+修改数据结构：
+
+* [CompressionRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#CompressionRule)
+
+	* 新增成员：RuleType, RulePaths
+
+	* <font color="#dd0000">**修改成员**：</font>FileExtensions
+
+* [RangeOriginPull](http://document.tencentcloudapi.woa.com/document/product/228/62314#RangeOriginPull)
+
+	* 新增成员：RangeRules
+
+* [ScdnAclConfig](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnAclConfig)
+
+	* 新增成员：AdvancedScriptData
 
 
 
-## 容器镜像服务(tcr) 版本：2019-09-24
+
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
 
 ### 第 2 次发布
 
-发布时间：2021-10-11 08:15:06
+发布时间：2021-10-12 08:02:12
 
 本次发布包含了以下内容：
 
@@ -76,42 +47,68 @@
 
 修改接口：
 
-* [CreateReplicationInstance](http://document.tencentcloudapi.woa.com/document/product/1141/65683)
+* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/60607)
 
-	* 新增入参：ReplicationRegionName
+	* 新增入参：DealMode
 
-	* <font color="#dd0000">**修改入参**：</font>ReplicationRegionId
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/60606)
 
-* [ManageInternalEndpoint](http://document.tencentcloudapi.woa.com/document/product/1141/65639)
+	* 新增入参：SecurityGroupIds, AlarmPolicyIds, ClusterParams, DealMode, ParamTemplateId
 
-	* 新增入参：RegionName
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/1003/60592)
+
+	* 新增入参：DealMode
+
+
+新增数据结构：
+
+* [ParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/60619#ParamItem)
 
 
 
+## 视频处理(mps) 版本：2019-06-12
 
-## 分布式消息队列(tdmq) 版本：2020-02-17
+### 第 2 次发布
 
-### 第 3 次发布
-
-发布时间：2021-10-11 08:16:09
+发布时间：2021-10-12 08:12:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [CreateEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66810)
-* [CreateRole](http://document.tencentcloudapi.woa.com/document/product/1179/66809)
-* [DeleteEnvironmentRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66808)
-* [DeleteRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66811)
-* [DescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66807)
-* [ModifyEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66806)
-* [ModifyRole](http://document.tencentcloudapi.woa.com/document/product/1179/66805)
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/63854#LiveStreamTaskNotifyConfig)
+
+	* 新增成员：NotifyType, NotifyUrl
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 3 次发布
+
+发布时间：2021-10-12 08:20:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReplicationInstanceSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1141/65681)
+
+	* 新增入参：ShowReplicationLog, Offset, Limit
+
+	* <font color="#dd0000">**修改入参**：</font>ReplicationRegionId
+
+	* 新增出参：ReplicationLog
+
 
 新增数据结构：
 
-* [Role](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Role)
+* [ReplicationLog](http://document.tencentcloudapi.woa.com/document/product/1141/65730#ReplicationLog)
 
 
 
@@ -2296,6 +2293,37 @@
 
 ## 内容分发网络(cdn) 版本：2018-06-06
 
+### 第 5 次发布
+
+发布时间：2021-10-12 08:06:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AdvancedScdnAclGroup](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclGroup)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[AdvancedScdnAclGroup](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclGroup))
+* [[AdvancedScdnAclRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclRule)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[AdvancedScdnAclRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#AdvancedScdnAclRule))
+* [[RangeOriginPullRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#RangeOriginPullRule)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[RangeOriginPullRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#RangeOriginPullRule))
+
+修改数据结构：
+
+* [CompressionRule](http://document.tencentcloudapi.woa.com/document/product/228/62314#CompressionRule)
+
+	* 新增成员：RuleType, RulePaths
+
+	* <font color="#dd0000">**修改成员**：</font>FileExtensions
+
+* [RangeOriginPull](http://document.tencentcloudapi.woa.com/document/product/228/62314#RangeOriginPull)
+
+	* 新增成员：RangeRules
+
+* [ScdnAclConfig](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnAclConfig)
+
+	* 新增成员：AdvancedScriptData
+
+
 ### 第 4 次发布
 
 发布时间：2021-09-27 08:05:38
@@ -3785,11 +3813,11 @@
 
 新增接口：
 
-* [[QueryMerchantPayWayList](http://document.tencentcloudapi.woa.com/document/product/1122/66803)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [QueryMerchantPayWayList](http://document.tencentcloudapi.woa.com/document/product/1122/66803)
 
 新增数据结构：
 
-* [[MerchantPayWayData](http://document.tencentcloudapi.woa.com/document/product/1122/65989#MerchantPayWayData)](http://document.tencentcloudapi.woa.com/document/product/1122/65989#[MerchantPayWayData](http://document.tencentcloudapi.woa.com/document/product/1122/65989#MerchantPayWayData))
+* [MerchantPayWayData](http://document.tencentcloudapi.woa.com/document/product/1122/65989#MerchantPayWayData)
 
 ### 第 2 次发布
 
@@ -4603,6 +4631,33 @@
 
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 2 次发布
+
+发布时间：2021-10-12 08:02:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/60607)
+
+	* 新增入参：DealMode
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/60606)
+
+	* 新增入参：SecurityGroupIds, AlarmPolicyIds, ClusterParams, DealMode, ParamTemplateId
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/1003/60592)
+
+	* 新增入参：DealMode
+
+
+新增数据结构：
+
+* [[ParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/60619#ParamItem)](http://document.tencentcloudapi.woa.com/document/product/1003/60619#[ParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/60619#ParamItem))
 
 ### 第 1 次发布
 
@@ -7502,35 +7557,35 @@
 
 新增接口：
 
-* [[CreateFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66801)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreatePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66800)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreatePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66799)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66798)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeletePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66797)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeletePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66796)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFenceBindList](http://document.tencentcloudapi.woa.com/document/product/1081/66794)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66793)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePositionFenceList](http://document.tencentcloudapi.woa.com/document/product/1081/66792)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSpaceFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66791)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetDeviceLocationHistory](http://document.tencentcloudapi.woa.com/document/product/1081/66790)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetPositionSpaceList](http://document.tencentcloudapi.woa.com/document/product/1081/66789)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66788)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyPositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66787)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66786)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifySpaceProperty](http://document.tencentcloudapi.woa.com/document/product/1081/66785)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66784)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66801)
+* [CreatePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66800)
+* [CreatePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66799)
+* [DeleteFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66798)
+* [DeletePositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66797)
+* [DeletePositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66796)
+* [DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)
+* [DescribeFenceBindList](http://document.tencentcloudapi.woa.com/document/product/1081/66794)
+* [DescribeFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66793)
+* [DescribePositionFenceList](http://document.tencentcloudapi.woa.com/document/product/1081/66792)
+* [DescribeSpaceFenceEventList](http://document.tencentcloudapi.woa.com/document/product/1081/66791)
+* [GetDeviceLocationHistory](http://document.tencentcloudapi.woa.com/document/product/1081/66790)
+* [GetPositionSpaceList](http://document.tencentcloudapi.woa.com/document/product/1081/66789)
+* [ModifyFenceBind](http://document.tencentcloudapi.woa.com/document/product/1081/66788)
+* [ModifyPositionFence](http://document.tencentcloudapi.woa.com/document/product/1081/66787)
+* [ModifyPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66786)
+* [ModifySpaceProperty](http://document.tencentcloudapi.woa.com/document/product/1081/66785)
+* [SearchPositionSpace](http://document.tencentcloudapi.woa.com/document/product/1081/66784)
 
 新增数据结构：
 
-* [[FenceAlarmPoint](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceAlarmPoint)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[FenceAlarmPoint](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceAlarmPoint))
-* [[FenceBindDeviceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindDeviceItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[FenceBindDeviceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindDeviceItem))
-* [[FenceBindProductItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindProductItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[FenceBindProductItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindProductItem))
-* [[FenceEventItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceEventItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[FenceEventItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceEventItem))
-* [[PositionFenceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceInfo)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[PositionFenceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceInfo))
-* [[PositionFenceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[PositionFenceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceItem))
-* [[PositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[PositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionItem))
-* [[PositionSpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionSpaceInfo)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[PositionSpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionSpaceInfo))
+* [FenceAlarmPoint](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceAlarmPoint)
+* [FenceBindDeviceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindDeviceItem)
+* [FenceBindProductItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceBindProductItem)
+* [FenceEventItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#FenceEventItem)
+* [PositionFenceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceInfo)
+* [PositionFenceItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionFenceItem)
+* [PositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionItem)
+* [PositionSpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#PositionSpaceInfo)
 
 ### 第 2 次发布
 
@@ -8886,6 +8941,21 @@
 
 
 ## 视频处理(mps) 版本：2019-06-12
+
+### 第 2 次发布
+
+发布时间：2021-10-12 08:12:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/63854#LiveStreamTaskNotifyConfig)
+
+	* 新增成员：NotifyType, NotifyUrl
+
 
 ### 第 1 次发布
 
@@ -11771,6 +11841,29 @@
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
 
+### 第 3 次发布
+
+发布时间：2021-10-12 08:20:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReplicationInstanceSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1141/65681)
+
+	* 新增入参：ShowReplicationLog, Offset, Limit
+
+	* <font color="#dd0000">**修改入参**：</font>ReplicationRegionId
+
+	* 新增出参：ReplicationLog
+
+
+新增数据结构：
+
+* [[ReplicationLog](http://document.tencentcloudapi.woa.com/document/product/1141/65730#ReplicationLog)](http://document.tencentcloudapi.woa.com/document/product/1141/65730#[ReplicationLog](http://document.tencentcloudapi.woa.com/document/product/1141/65730#ReplicationLog))
+
 ### 第 2 次发布
 
 发布时间：2021-10-11 08:15:06
@@ -11994,17 +12087,17 @@
 
 新增接口：
 
-* [[CreateEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66810)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateRole](http://document.tencentcloudapi.woa.com/document/product/1179/66809)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteEnvironmentRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66808)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66811)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66807)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66806)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyRole](http://document.tencentcloudapi.woa.com/document/product/1179/66805)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66810)
+* [CreateRole](http://document.tencentcloudapi.woa.com/document/product/1179/66809)
+* [DeleteEnvironmentRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66808)
+* [DeleteRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66811)
+* [DescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1179/66807)
+* [ModifyEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/66806)
+* [ModifyRole](http://document.tencentcloudapi.woa.com/document/product/1179/66805)
 
 新增数据结构：
 
-* [[Role](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Role)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[Role](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Role))
+* [Role](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Role)
 
 ### 第 2 次发布
 
