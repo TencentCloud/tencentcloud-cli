@@ -3487,7 +3487,34 @@
           "example": "5",
           "member": "uint64",
           "name": "ReplicationRegionId",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否显示同步日志",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowReplicationLog",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "日志页号, 默认0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认5，最大为20",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
           "type": "int"
         }
       ],
@@ -3513,6 +3540,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "同步日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicationLog",
+          "name": "ReplicationLog",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5997,6 +6033,72 @@
         }
       ],
       "usage": "in"
+    },
+    "ReplicationLog": {
+      "document": "同步日志",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/test:[1]",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/test:[1]",
+          "member": "string",
+          "name": "Destination",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "同步状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Succeed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-28T08:00:08.186015Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-28T08:00:15Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ReplicationRegistry": {
       "document": "企业版复制实例",

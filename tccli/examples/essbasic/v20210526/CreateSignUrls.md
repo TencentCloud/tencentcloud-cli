@@ -18,6 +18,9 @@ Output:
 ```
 {
     "Response": {
+        "ErrorMessages": [
+            "xx"
+        ],
         "SignUrlInfos": [
             {
                 "SignUrl": "xx",
@@ -30,6 +33,7 @@ Output:
                 "SignOrder": 0,
                 "SignId": "xx",
                 "IdCardNumber": "xxxxxxx",
+                "OpenId": "xx",
                 "FlowId": "test-flow-id"
             }
         ],

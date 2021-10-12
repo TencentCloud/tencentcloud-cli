@@ -325,6 +325,15 @@
           "name": "OrderSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易模式 0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -898,6 +907,51 @@
           "name": "StoragePayMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "安全组id数组",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警策略Id数组",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "参数数组",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ClusterParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "交易模式，0-下单且支付，1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "参数模版ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -924,7 +978,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "资源ID列表（异步发货可能无法返回该字段, 强烈建议使用dealNames字段查询接口DescribeResourcesByDealName获取异步发货的资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"cynosdbpg-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -933,7 +987,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "集群ID列表（异步发货可能不返回该字段, 强烈建议使用dealNames查询接口DescribeResourcesByDealName获取异步发货的集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -3708,6 +3762,39 @@
       ],
       "type": "object"
     },
+    "ParamItem": {
+      "document": "修改参数时，传入参数描述",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前值",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原有值",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "PolicyRule": {
       "document": "安全组规则",
       "members": [
@@ -4031,6 +4118,15 @@
           "name": "DbType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易模式 0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

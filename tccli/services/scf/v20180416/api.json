@@ -551,7 +551,7 @@
         },
         {
           "default": "",
-          "document": "对象存储对象路径",
+          "document": "对象存储中代码包文件路径，以/开头",
           "example": "ObjectName",
           "member": "string",
           "name": "CosObjectName",

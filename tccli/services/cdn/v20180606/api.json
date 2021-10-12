@@ -1471,6 +1471,118 @@
       ],
       "usage": "both"
     },
+    "AdvancedScdnAclGroup": {
+      "document": "SCDN精准访问控制配置",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "具体配置",
+          "example": "无",
+          "member": "AdvancedScdnAclRule",
+          "name": "Configure",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行动作，intercept|redirect",
+          "example": "intercept",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则是否生效，active|inactive",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误页面配置",
+          "example": "无",
+          "member": "ScdnErrorPage",
+          "name": "ErrorPage",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AdvancedScdnAclRule": {
+      "document": "精准访问控制匹配规则",
+      "members": [
+        {
+          "default": "",
+          "document": "匹配关键字：\nprotocol：HTTP协议\nhttpVersion：HTTP版本\nmethod：请求方法\nip：请求源IP\nipAsn：请求源IP自治域号\nipCountry：请求源IP所在国家\nipArea：请求源IP所在大区\nxForwardFor：请求头X-Forward-For\ndirectory：路径\nindex：首页\npath：文件全路径\nfile：文件扩展名\nparam：请求参数\nreferer：请求头Referer\ncookie：请求头Cookie\nuserAgent：请求头User-Agent\nhead：自定义请求头",
+          "example": "无",
+          "member": "string",
+          "name": "MatchKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑操作符，取值如下：\n不包含：exclude\n包含：include\n不等于：notequal\n等于：equal\n前缀匹配：matching\n内容为空或不存在：null",
+          "example": "无",
+          "member": "string",
+          "name": "LogicOperator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配值。\n当MatchKey为protocol时\n取值：HTTP、HTTPS\n\n当MatchKey为httpVersion时\n取值：HTTP/1.0、HTTP/1.1、HTTP/1.2、HTTP/2、HTTP/3\n\n当MatchKey为method时\n取值：HEAD、GET、POST、PUT、OPTIONS、TRACE、DELETE、PATCH、CONNECT\n\n当MatchKey为ipCountry时，取值为：\n其他：OTHER\n委内瑞拉：VE\n乌拉圭：UY\n苏里南：SR\n巴拉圭：PY\n秘鲁：PE\n圭亚那：GY\n厄瓜多尔：EC\n哥伦比亚：CO\n智利：CL\n巴西：BR\n玻利维亚：BO\n阿根廷：AR\n新西兰：NZ\n萨摩亚：WS\n瓦努阿图：VU\n图瓦卢：TV\n汤加：TO\n托克劳：TK\n帕劳：PW\n纽埃：NU\n瑙鲁：NR\n基里巴斯：KI\n关岛：GU\n密克罗尼西亚：FM\n澳大利亚：AU\n美国：US\n波多黎各：PR\n多米尼加共和国：DO\n哥斯达黎加：CR\n东萨摩亚：AS\n安提瓜和巴布达：AG\n巴拿马：PA\n尼加拉瓜：NI\n墨西哥：MX\n牙买加：JM\n海地：HT\n洪都拉斯：HN\n危地马拉：GT\n瓜德罗普岛：GP\n格陵兰：GL\n格林纳达：GD\n古巴：CU\n加拿大：CA\n伯利兹：BZ\n巴哈马：BS\n百慕大：BM\n巴巴多斯：BB\n阿鲁巴：AW\n安圭拉：AI\n梵蒂冈：VA\n斯洛伐克：SK\n俄罗斯：RU\n英国：GB\n捷克共和国：CZ\n乌克兰：UA\n土耳其：TR\n斯洛文尼亚：SI\n瑞典：SE\n塞尔维亚：RS\n罗马尼亚：RO\n葡萄牙：PT\n波兰：PL\n挪威：NO\n荷兰：NL\n马耳他：MT\n马其顿：MK\n黑山：ME\n摩尔多瓦：MD\n摩纳哥：MC\n拉脱维亚：LV\n卢森堡：LU\n立陶宛：LT\n列支敦士登：LI\n哈萨克斯坦：KZ\n意大利：IT\n冰岛：IS\n爱尔兰：IE\n匈牙利：HU\n克罗地亚：HR\n希腊：GR\n直布罗陀：GI\n根西岛：GG\n格鲁吉亚：GE\n法国：FR\n芬兰：FI\n西班牙：ES\n爱沙尼亚：EE\n丹麦：DK\n德国：DE\n塞浦路斯：CY\n瑞士：CH\n白俄罗斯：BY\n保加利亚：BG\n比利时：BE\n阿塞拜疆：AZ\n奥地利：AT\n亚美尼亚：AM\n阿尔巴尼亚：AL\n安道尔：AD\n东帝汶：TL\n叙利亚：SY\n沙特阿拉伯：SA\n巴勒斯坦：PS\n斯里兰卡：LK\n斯里兰卡：LK\n朝鲜：KP\n吉尔吉斯斯坦：KG\n中国香港：HK\n文莱：BN\n孟加拉：BD\n阿联酋：AE\n也门：YE\n越南：VN\n乌兹别克斯坦：UZ\n中国台湾：TW\n土库曼斯坦：TM\n塔吉克斯坦：TJ\n泰国：TH\n新加坡：SG\n卡塔尔：QA\n巴基斯坦：PK\n菲律宾：PH\n阿曼：OM\n尼泊尔：NP\n马来西亚：MY\n马尔代夫：MV\n中国澳门：MO\n蒙古：MN\n缅甸：MM\n黎巴嫩：LB\n科威特：KW\n韩国：KR\n柬埔寨：KH\n日本：JP\n约旦：JO\n伊朗：IR\n伊拉克：IQ\n印度：IN\n以色列：IL\n印度尼西亚：ID\n中国：CN\n不丹：BT\n巴林：BH\n阿富汗：AF\n利比亚：LY\n刚果金：CG\n留尼汪岛：RE\n斯威士兰：SZ\n津巴布韦：ZW\n赞比亚：ZM\n马约特：YT\n乌干达：UG\n坦桑尼亚：TZ\n突尼斯：TN\n多哥：TG\n乍得：TD\n索马里：SO\n塞内加尔：SN\n苏丹：SD\n塞舌尔：SC\n卢旺达：RW\n尼日利亚：NG\n尼日尔：NE\n纳米比亚：NA\n莫桑比克：MZ\n马拉维：MW\n毛里求斯：MU\n毛里塔尼亚：MR\n马里：ML\n马达加斯加：MG\n摩洛哥：MA\n莱索托：LS\n利比里亚：LR\n科摩罗：KM\n肯尼亚：KE\n几内亚：GN\n冈比亚：GM\n加纳：GH\n加蓬：GA\n埃塞俄比亚：ET\n厄立特里亚：ER\n埃及：EG\n阿尔及利亚：DZ\n吉布提：DJ\n喀麦隆：CM\n刚果：CG\n博茨瓦纳：BW\n贝宁：BJ\n布隆迪：BI\n安哥拉：AO\n\n当MatchKey为ipArea时，取值为：\n其他：OTHER\n亚洲：AS\n欧洲：EU\n南极洲：AN\n非洲：AF\n大洋洲：OC\n北美洲：NA\n南美洲：SA\n\n当MatchKey为index时\n取值为：/;/index.html",
+          "example": "无",
+          "member": "string",
+          "name": "MatchValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否区分大小写 true：区分 false：不区分",
+          "example": "无",
+          "member": "bool",
+          "name": "CaseSensitive",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当MatchKey为param时必填：表示请求参数Key 当MatchKey为cookie时必填：表示请求头Cookie中参数的",
+          "example": "无",
+          "member": "string",
+          "name": "MatchKeyParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Authentication": {
       "document": "时间戳防盗链配置",
       "members": [
@@ -2824,11 +2936,12 @@
       "usage": "both"
     },
     "CompressionRule": {
-      "document": "压缩规则配置，最多可设置 100 条",
+      "document": "智能压缩规则配置",
       "members": [
         {
           "default": "",
           "document": "true：需要设置为 ture，启用压缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Compress",
           "required": true,
@@ -2837,16 +2950,8 @@
         },
         {
           "default": "",
-          "document": "根据文件后缀类型压缩\n例如 jpg、txt\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "FileExtensions",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "触发压缩的文件长度最小值，单位为字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "256",
           "member": "int64",
           "name": "MinLength",
           "required": true,
@@ -2856,6 +2961,7 @@
         {
           "default": "",
           "document": "触发压缩的文件长度最大值，单位为字节数\n最大可设置为 30MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
           "member": "int64",
           "name": "MaxLength",
           "required": true,
@@ -2865,9 +2971,40 @@
         {
           "default": "",
           "document": "文件压缩算法\ngzip：指定 GZIP 压缩\nbrotli：指定Brotli压缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gzIp",
           "member": "string",
           "name": "Algorithms",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "根据文件后缀类型压缩\n例如 jpg、txt\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jpg",
+          "member": "string",
+          "name": "FileExtensions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\ncontentType：指定Content-Type头为特定值时生效\n当指定了此字段时，FileExtensions字段不生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\ncontentType 时填充 text/html\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "RulePaths",
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -9833,11 +9970,58 @@
         {
           "default": "",
           "document": "分片回源配置开关\non：开启\noff：关闭",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分路径分片回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Switch\":\"on\",\"RuleType\":\"file\",\"RulePaths\":[\"jpg\"]}]",
+          "member": "RangeOriginPullRule",
+          "name": "RangeRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RangeOriginPullRule": {
+      "document": "分路径分片回源配置",
+      "members": [
+        {
+          "default": "",
+          "document": "分片回源配置开关",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型：\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "file",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RuleType 对应类型下的匹配内容：\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jpg",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10270,6 +10454,7 @@
         {
           "default": "",
           "document": "是否开启，on | off",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -10278,7 +10463,8 @@
         },
         {
           "default": "",
-          "document": "Acl规则组，switch为on时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新版本请使用AdvancedScriptData\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ScdnAclGroup",
           "name": "ScriptData",
           "required": false,
@@ -10288,10 +10474,21 @@
         {
           "default": "",
           "document": "错误页面配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ScdnErrorPage",
           "name": "ErrorPage",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Acl规则组，switch为on时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedScdnAclGroup",
+          "name": "AdvancedScriptData",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -10322,8 +10519,8 @@
         },
         {
           "default": "",
-          "document": "规则行为，一般为refuse，重定向redirect",
-          "example": "refuse",
+          "document": "执行动作，intercept|redirect",
+          "example": "intercept",
           "member": "string",
           "name": "Result",
           "required": true,
@@ -10332,7 +10529,7 @@
         },
         {
           "default": "",
-          "document": "规则是否生效中active|inactive",
+          "document": "规则是否生效，active|inactive",
           "example": "active",
           "member": "string",
           "name": "Status",
@@ -10358,7 +10555,8 @@
       "members": [
         {
           "default": "",
-          "document": "匹配关键字, params | url | ip | referer | user-agent",
+          "document": "匹配关键字",
+          "example": "protocol",
           "member": "string",
           "name": "MatchKey",
           "required": true,
@@ -10367,7 +10565,8 @@
         },
         {
           "default": "",
-          "document": "逻辑操作符，取值 exclude, include, notequal, equal, len-less, len-equal, len-more",
+          "document": "逻辑操作符，取值如下",
+          "example": "exclude",
           "member": "string",
           "name": "LogiOperator",
           "required": true,
@@ -10376,7 +10575,8 @@
         },
         {
           "default": "",
-          "document": "匹配值",
+          "document": "匹配值。",
+          "example": "无",
           "member": "string",
           "name": "MatchValue",
           "required": true,
@@ -10687,7 +10887,7 @@
       "members": [
         {
           "default": "",
-          "document": "状态码",
+          "document": "状态码\n执行动作为：intercept 默认传值 403\n执行动作为：redirect 默认传值 301",
           "example": "301",
           "member": "int64",
           "name": "RedirectCode",
