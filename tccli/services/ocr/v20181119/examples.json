@@ -393,9 +393,17 @@
     "QuotaInvoiceOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=QuotaInvoiceOCR\r\n&ImageUrl=https://xx/a.jpg\r\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=QuotaInvoiceOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InvoiceNum\": \"04947858\",\n        \"InvoiceCode\": \"131001864304\",\n        \"Rate\": \"伍元\",\n        \"RateNum\": \"5.00\",\n        \"InvoiceType\": \"交通\",\n        \"Province\": \"上海市\",\n        \"City\": \"\",\n        \"HasStamp\": \"1\",\n        \"RequestId\": \"c0abae2d-10d6-42ae-af0f-a5cc2c9b1fc5\"\n    }\n}",
         "title": "定额发票识别示例代码"
+      }
+    ],
+    "RecognizeOnlineTaxiItineraryOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeOnlineTaxiItineraryOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"OnlineTaxiItineraryInfos\": [\n            {\n                \"Name\": \"行程单分类\",\n                \"Value\": \"滴滴出行-行程单\"\n            },\n            {\n                \"Name\": \"行程开始日期\",\n                \"Value\": \"2021年04月09日\"\n            },\n            {\n                \"Name\": \"申请日期\",\n                \"Value\": \"2021年04月16日\"\n            },\n            {\n                \"Name\": \"行程结束日期\",\n                \"Value\": \"2021年04月09日\"\n            },\n            {\n                \"Name\": \"手机号\",\n                \"Value\": \"18600208392\"\n            },\n            {\n                \"Name\": \"合计金额\",\n                \"Value\": \"154.08元\"\n            },\n            {\n                \"Name\": \"车型\",\n                \"Value\": \"滴滴礼橙专车\"\n            },\n            {\n                \"Name\": \"上车时间\",\n                \"Value\": \"04-0922:44周五\"\n            },\n            {\n                \"Name\": \"城市\",\n                \"Value\": \"北京市\"\n            },\n            {\n                \"Name\": \"起点\",\n                \"Value\": \"富华大厦C座-正门\"\n            },\n            {\n                \"Name\": \"终点\",\n                \"Value\": \"旧宫润枫锦尚-东门\"\n            },\n            {\n                \"Name\": \"里程\",\n                \"Value\": \"19.4\"\n            },\n            {\n                \"Name\": \"金额\",\n                \"Value\": \"154.08\"\n            }\n        ],\n        \"RequestId\": \"533f9062-9ef3-47c6-b235-fcc1975c94c9\"\n    }\n}",
+        "title": "网约车行程单识别示例代码"
       }
     ],
     "RecognizeTableOCR": [

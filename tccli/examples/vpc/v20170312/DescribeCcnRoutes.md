@@ -27,34 +27,34 @@ Output:
         "RequestId": "xx",
         "RouteSet": [
             {
-                "DestinationCidrBlock": "10.0.0.1/16",
+                "DestinationCidrBlock": "10.33.0.0/16",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "RoutePriority": 1,
-                "InstanceId": "xx",
-                "InstanceUin": "xx",
+                "InstanceId": "vpc-r1ckkpid",
+                "InstanceUin": "234532345",
                 "Enabled": true,
-                "InstanceExtraName": "xx",
+                "InstanceExtraName": "test",
                 "IsBgp": true,
-                "InstanceRegion": "xx",
-                "ExtraState": "xx",
-                "RouteId": "xx",
-                "InstanceName": "xx",
-                "InstanceType": "xx"
+                "InstanceRegion": "ap-guangzhou",
+                "ExtraState": "Running",
+                "RouteId": "ccnr-bvipc87w",
+                "InstanceName": "test",
+                "InstanceType": "VPC"
             },
             {
-                "DestinationCidrBlock": "xx",
+                "DestinationCidrBlock": "192.168.0.0/24",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "RoutePriority": 1,
-                "InstanceId": "xx",
-                "InstanceName": "xx",
+                "InstanceId": "vpc-r1ckkpid",
+                "InstanceName": "test",
                 "Enabled": true,
-                "InstanceExtraName": "xx",
+                "InstanceExtraName": "test",
                 "IsBgp": true,
-                "InstanceRegion": "xx",
-                "ExtraState": "xx",
-                "RouteId": "xx",
-                "InstanceUin": "xx",
-                "InstanceType": "xx"
+                "InstanceRegion": "ap-guangzhou",
+                "ExtraState": "Running",
+                "RouteId": "ccnr-oc61so0o",
+                "InstanceUin": "234532345",
+                "InstanceType": "VPC"
             }
         ]
     }

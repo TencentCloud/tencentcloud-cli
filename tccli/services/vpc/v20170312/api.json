@@ -762,6 +762,12 @@
       "name": "查询NAT网关端口转发规则",
       "output": "DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse"
     },
+    "DescribeNatGatewayDirectConnectGatewayRoute": {
+      "document": "查询专线绑定NAT的路由",
+      "input": "DescribeNatGatewayDirectConnectGatewayRouteRequest",
+      "name": "查询专线绑定NAT路由",
+      "output": "DescribeNatGatewayDirectConnectGatewayRouteResponse"
+    },
     "DescribeNatGatewaySourceIpTranslationNatRules": {
       "document": "本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。",
       "input": "DescribeNatGatewaySourceIpTranslationNatRulesRequest",
@@ -1398,6 +1404,12 @@
       "name": "发布路由至云联网",
       "output": "NotifyRoutesResponse"
     },
+    "RefreshDirectConnectGatewayRouteToNatGateway": {
+      "document": "刷新专线直连nat路由，更新nat到专线的路由表",
+      "input": "RefreshDirectConnectGatewayRouteToNatGatewayRequest",
+      "name": "刷新专线直连NAT路由",
+      "output": "RefreshDirectConnectGatewayRouteToNatGatewayResponse"
+    },
     "RejectAttachCcnInstances": {
       "document": "本接口（RejectAttachCcnInstances）用于跨账号关联实例时，云联网所有者拒绝关联操作。\n",
       "input": "RejectAttachCcnInstancesRequest",
@@ -1610,6 +1622,7 @@
         {
           "default": "",
           "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'",
+          "example": "[\"eip-pez0oibs\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -1618,6 +1631,7 @@
         {
           "default": "",
           "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
@@ -1626,6 +1640,7 @@
         {
           "default": "",
           "document": "带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。",
+          "example": "BGP",
           "member": "string",
           "name": "NetworkType",
           "required": false,
@@ -1634,6 +1649,7 @@
         {
           "default": "",
           "document": "资源类型，包括'Address', 'LoadBalance'",
+          "example": "Address",
           "member": "string",
           "name": "ResourceType",
           "required": false,
@@ -1642,6 +1658,7 @@
         {
           "default": "",
           "document": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。",
+          "example": "ipv4",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -4300,6 +4317,7 @@
         {
           "default": "",
           "document": "CCN名称，最大长度不能超过60个字节。",
+          "example": "test+name",
           "member": "string",
           "name": "CcnName",
           "required": true,
@@ -4308,6 +4326,7 @@
         {
           "default": "",
           "document": "CCN描述信息，最大长度不能超过100个字节。",
+          "example": "test+description",
           "member": "string",
           "name": "CcnDescription",
           "required": false,
@@ -4316,6 +4335,7 @@
         {
           "default": "",
           "document": "CCN服务质量，'PT'：白金，'AU'：金，'AG'：银，默认为‘AU’。",
+          "example": "PT",
           "member": "string",
           "name": "QosLevel",
           "required": false,
@@ -4324,6 +4344,7 @@
         {
           "default": "",
           "document": "计费模式，PREPAID：表示预付费，即包年包月，POSTPAID：表示后付费，即按量计费。默认：POSTPAID。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -4332,6 +4353,7 @@
         {
           "default": "",
           "document": "限速类型，OUTER_REGION_LIMIT表示地域出口限速，INTER_REGION_LIMIT为地域间限速，默认为OUTER_REGION_LIMIT。预付费模式仅支持地域间限速，后付费模式支持地域间限速和地域出口限速。",
+          "example": "OUTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
           "required": false,
@@ -4340,6 +4362,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -4353,8 +4376,10 @@
       "members": [
         {
           "document": "云联网（CCN）对象。",
+          "example": "无",
           "member": "CCN",
           "name": "Ccn",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6882,6 +6907,7 @@
         {
           "default": "",
           "document": "待删除带宽包唯一ID",
+          "example": "bwp-cs7j6pd0",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": true,
@@ -8284,6 +8310,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8292,6 +8319,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8300,6 +8328,7 @@
         {
           "default": "",
           "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例实例ID。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8308,6 +8337,7 @@
         {
           "default": "",
           "document": "云联网实例ID",
+          "example": "ccn-245ecr35",
           "member": "string",
           "name": "CcnId",
           "required": false,
@@ -8316,6 +8346,7 @@
         {
           "default": "",
           "document": "排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。",
+          "example": "CcnId",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -8324,6 +8355,7 @@
         {
           "default": "",
           "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -8337,15 +8369,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "5",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "关联实例列表。",
+          "example": "无",
           "member": "CcnAttachedInstance",
           "name": "InstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8478,6 +8514,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定CcnIds和Filters。",
+          "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnIds",
           "required": false,
@@ -8486,6 +8523,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：vpc-f49l6u0z。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例：查询绑定了标签的CCN列表。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8494,6 +8532,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8502,6 +8541,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8510,6 +8550,7 @@
         {
           "default": "",
           "document": "排序字段。支持：`CcnId` `CcnName` `CreateTime` `State` `QosLevel`",
+          "example": "CcnName",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -8518,6 +8559,7 @@
         {
           "default": "",
           "document": "排序方法。顺序：`ASC`，倒序：`DESC`。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -8531,15 +8573,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "CCN对象。",
+          "example": "无",
           "member": "CCN",
           "name": "CcnSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9872,6 +9918,78 @@
           "document": "符合条件的NAT网关端口转发规则对象数目。",
           "member": "uint64",
           "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewayDirectConnectGatewayRouteRequest": {
+      "document": "DescribeNatGatewayDirectConnectGatewayRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "nat的唯一标识",
+          "example": "nat-2jd1e1rm",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc的唯一标识",
+          "example": "vpc-ofos1s33",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0到200之间",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "大于0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewayDirectConnectGatewayRouteResponse": {
+      "document": "DescribeNatGatewayDirectConnectGatewayRoute返回参数结构体",
+      "members": [
+        {
+          "document": "路由数据",
+          "example": "无",
+          "member": "NatDirectConnectGatewayRoute",
+          "name": "NatDirectConnectGatewayRouteSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12208,6 +12326,32 @@
           "name": "ASPath",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DirectConnectSubnet": {
+      "document": "IDC子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "专线网关ID",
+          "example": "dcg-71awizmv",
+          "member": "string",
+          "name": "DirectConnectGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IDC子网网段",
+          "example": "99.99.99.77/32",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14603,6 +14747,7 @@
         {
           "default": "",
           "document": "弹性公网IP的唯一ID，形如eip-xxx",
+          "example": "eip-fo00aojo",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -14611,6 +14756,7 @@
         {
           "default": "",
           "document": "弹性公网IP调整目标计费模式，只支持\"BANDWIDTH_PREPAID_BY_MONTH\"和\"TRAFFIC_POSTPAID_BY_HOUR\"",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
           "required": true,
@@ -14619,6 +14765,7 @@
         {
           "default": "",
           "document": "弹性公网IP调整目标带宽值",
+          "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -14627,6 +14774,7 @@
         {
           "default": "",
           "document": "包月带宽网络计费模式参数。弹性公网IP的调整目标计费模式是\"BANDWIDTH_PREPAID_BY_MONTH\"时，必传该参数。",
+          "example": "无",
           "member": "AddressChargePrepaid",
           "name": "AddressChargePrepaid",
           "required": false,
@@ -14849,6 +14997,7 @@
         {
           "default": "",
           "document": "带宽包唯一标识ID",
+          "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": true,
@@ -14857,6 +15006,7 @@
         {
           "default": "",
           "document": "带宽包名称",
+          "example": "test",
           "member": "string",
           "name": "BandwidthPackageName",
           "required": true,
@@ -14865,10 +15015,20 @@
         {
           "default": "",
           "document": "带宽包计费模式",
+          "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款时迁移为后付费带宽包。默认值：否",
+          "example": "True",
+          "member": "bool",
+          "name": "MigrateOnRefund",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14927,6 +15087,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gjug0kul",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -14934,7 +15095,8 @@
         },
         {
           "default": "",
-          "document": "CCN名称，最大长度不能超过60个字节。",
+          "document": "CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。",
+          "example": "new+name",
           "member": "string",
           "name": "CcnName",
           "required": false,
@@ -14942,7 +15104,8 @@
         },
         {
           "default": "",
-          "document": "CCN描述信息，最大长度不能超过100个字节。",
+          "document": "CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。",
+          "example": "test",
           "member": "string",
           "name": "CcnDescription",
           "required": false,
@@ -16526,6 +16689,62 @@
       ],
       "type": "object"
     },
+    "NatDirectConnectGatewayRoute": {
+      "document": "查询nat路由的返回路由对象",
+      "members": [
+        {
+          "default": "",
+          "document": "子网的 `IPv4` `CIDR`",
+          "example": "99.99.99.77/32",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳网关的类型，目前此接口支持的类型有：\nDIRECTCONNECT：专线网关",
+          "example": "DIRECTCONNECT",
+          "member": "string",
+          "name": "GatewayType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下一跳网关ID",
+          "example": "dcg-71awizmv",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由的创建时间",
+          "example": "2021-08-23 19:38:31",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "路由的更新时间",
+          "example": "021-08-23 19:38:31",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NatGateway": {
       "document": "NAT网关对象。",
       "members": [
@@ -17667,6 +17886,60 @@
       ],
       "usage": "out"
     },
+    "RefreshDirectConnectGatewayRouteToNatGatewayRequest": {
+      "document": "RefreshDirectConnectGatewayRouteToNatGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc的ID",
+          "example": "vpc-3m6kvgrx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NAT网关ID",
+          "example": "nat-2jd1e1rm",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否是预刷新；True:是， False:否",
+          "example": "True",
+          "member": "bool",
+          "name": "DryRun",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshDirectConnectGatewayRouteToNatGatewayResponse": {
+      "document": "RefreshDirectConnectGatewayRouteToNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "IDC子网信息",
+          "example": "无",
+          "member": "DirectConnectSubnet",
+          "name": "DirectConnectSubnetSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RejectAttachCcnInstancesRequest": {
       "document": "RejectAttachCcnInstances请求参数结构体",
       "members": [
@@ -17707,6 +17980,7 @@
         {
           "default": "",
           "document": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。",
+          "example": "[\"eip-gzc5rgr2\\r\\n\"]",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -17720,8 +17994,10 @@
       "members": [
         {
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "12331420",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17781,6 +18057,7 @@
         {
           "default": "",
           "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "example": "bwp-pr0xbnvw",
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
@@ -17789,6 +18066,7 @@
         {
           "default": "",
           "document": "资源类型，包括‘Address’, ‘LoadBalance’",
+          "example": "Address",
           "member": "string",
           "name": "ResourceType",
           "required": false,
@@ -17797,6 +18075,7 @@
         {
           "default": "",
           "document": "资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'",
+          "example": "[\"eip-alfxy9c8\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -19082,6 +19361,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全组更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017-04-18 21:02:30",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -19221,6 +19510,7 @@
         {
           "default": "",
           "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
+          "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
           "required": false,
@@ -19230,6 +19520,7 @@
         {
           "default": "",
           "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -19239,6 +19530,7 @@
         {
           "default": "",
           "document": "端口(all, 离散port,  range)。",
+          "example": "22",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -19248,6 +19540,7 @@
         {
           "default": "",
           "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
+          "example": "无",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "required": false,
@@ -19257,6 +19550,7 @@
         {
           "default": "",
           "document": "网段或IP(互斥)。",
+          "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": false,
@@ -19266,6 +19560,7 @@
         {
           "default": "",
           "document": "网段或IPv6(互斥)。",
+          "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "required": false,
@@ -19275,6 +19570,7 @@
         {
           "default": "",
           "document": "安全组实例ID，例如：sg-ohuuioma。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
@@ -19284,6 +19580,7 @@
         {
           "default": "",
           "document": "IP地址ID或者ID地址组ID。",
+          "example": "无",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "required": false,
@@ -19293,6 +19590,7 @@
         {
           "default": "",
           "document": "ACCEPT 或 DROP。",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "required": false,
@@ -19302,6 +19600,7 @@
         {
           "default": "",
           "document": "安全组规则描述。",
+          "example": "desc",
           "member": "string",
           "name": "PolicyDescription",
           "required": false,
@@ -19311,6 +19610,7 @@
         {
           "default": "",
           "document": "安全组最近修改时间。",
+          "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
           "required": false,
@@ -20054,6 +20354,15 @@
           "name": "PrivateIpAddresses",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。",
+          "example": "ins-3456tghy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

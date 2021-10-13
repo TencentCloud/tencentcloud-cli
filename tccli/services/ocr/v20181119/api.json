@@ -258,6 +258,12 @@
       "name": "定额发票识别",
       "output": "QuotaInvoiceOCRResponse"
     },
+    "RecognizeOnlineTaxiItineraryOCR": {
+      "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。",
+      "input": "RecognizeOnlineTaxiItineraryOCRRequest",
+      "name": "网约车行程单识别",
+      "output": "RecognizeOnlineTaxiItineraryOCRResponse"
+    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
       "input": "RecognizeTableOCRRequest",
@@ -4076,6 +4082,32 @@
       ],
       "type": "object"
     },
+    "OnlineTaxiItineraryInfo": {
+      "document": "网约车行程单识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、 机打代码、 发票号码、 发动机号码、 合格证号、 机打号码、 价税合计(小写)、 销货单位名称、 身份证号码/组织机构代码、 购买方名称、 销售方纳税人识别号、 购买方纳税人识别号、主管税务机关、 主管税务机关代码、 开票日期、 不含税价(小写)、 吨位、增值税税率或征收率、 车辆识别代号/车架号码、 增值税税额、 厂牌型号、 省、 市、 发票消费类型、 销售方电话、 销售方账号、 产地、 进口证明书号、 车辆类型、 机器编号、备注、开票人、限乘人数、商检单号、销售方地址、销售方开户银行、价税合计、发票类型。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OrgCodeCertOCRRequest": {
       "document": "OrgCodeCertOCR请求参数结构体",
       "members": [
@@ -4967,6 +4999,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -4975,6 +5008,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -4988,59 +5022,138 @@
       "members": [
         {
           "document": "发票号码",
+          "example": "04947858",
           "member": "string",
           "name": "InvoiceNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票代码",
+          "example": "131001864304",
           "member": "string",
           "name": "InvoiceCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "大写金额",
+          "example": "伍元",
           "member": "string",
           "name": "Rate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "小写金额",
+          "example": "5.00",
           "member": "string",
           "name": "RateNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "发票消费类型",
+          "example": "交通",
           "member": "string",
           "name": "InvoiceType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "上海市",
           "member": "string",
           "name": "Province",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "City",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "是否有公司印章（1有 0无 空为识别不出）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "HasStamp",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeOnlineTaxiItineraryOCRRequest": {
+      "document": "RecognizeOnlineTaxiItineraryOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeOnlineTaxiItineraryOCRResponse": {
+      "document": "RecognizeOnlineTaxiItineraryOCR返回参数结构体",
+      "members": [
+        {
+          "document": "网约车行程单识别结果，具体内容请点击左侧链接。",
+          "example": "无",
+          "member": "OnlineTaxiItineraryInfo",
+          "name": "OnlineTaxiItineraryInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

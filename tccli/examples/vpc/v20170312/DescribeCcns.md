@@ -6,33 +6,37 @@ Input:
 
 ```
 tccli vpc DescribeCcns --cli-unfold-argument  \
-    --CcnIds ccn-8j0phqix ccn-gree226l
+    --CcnIds ccn-8j0phqix
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "73159790-39b3-48e8-9d61-29e11eed1acd",
         "CcnSet": [
             {
-                "CcnId": "ccn-8j0phqix",
-                "CcnName": "test",
-                "CcnDescription": "",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-10 16:21:35",
-                "State": "AVAILABLE"
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "CcnName": "test",
-                "CcnDescription": "",
                 "InstanceCount": 1,
-                "CreateTime": "2018-06-10 22:04:56",
-                "State": "ISOLATED"
+                "TagSet": [
+                    {
+                        "Value": "env",
+                        "Key": "test"
+                    }
+                ],
+                "RoutePriorityFlag": true,
+                "CcnId": "ccn-8j0phqix",
+                "CcnDescription": "test",
+                "State": "AVAILABLE",
+                "InstanceChargeType": "POSTPAID",
+                "CcnName": "test",
+                "QosLevel": "AU",
+                "BandwidthLimitType": "INTER_REGION_LIMIT",
+                "CreateTime": "2020-09-22 00:00:00",
+                "RouteTableFlag": null,
+                "RouteTableCount": null
             }
-        ],
-        "TotalCount": 2,
-        "RequestId": "73159790-39b3-48e8-9d61-29e11eed1acd"
+        ]
     }
 }
 ```
@@ -53,42 +57,30 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "73159790-39b3-48e8-9d61-29e11eed1acd",
         "CcnSet": [
             {
-                "CcnId": "ccn-8j0phqix",
-                "CcnName": "test",
-                "CcnDescription": "",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-10 16:21:35",
-                "State": "AVAILABLE"
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "CcnName": "test",
-                "CcnDescription": "",
                 "InstanceCount": 1,
-                "CreateTime": "2018-06-10 22:04:56",
-                "State": "ISOLATED"
-            },
-            {
-                "CcnId": "ccn-nzwnkrgt",
-                "CcnName": "test name",
-                "CcnDescription": "test description",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-18 11:18:30",
-                "State": "AVAILABLE"
-            },
-            {
-                "CcnId": "ccn-nrych3fn",
-                "CcnName": "test name",
-                "CcnDescription": "test description",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-18 11:20:58",
-                "State": "AVAILABLE"
+                "TagSet": [
+                    {
+                        "Value": "env",
+                        "Key": "test"
+                    }
+                ],
+                "RoutePriorityFlag": true,
+                "CcnId": "ccn-8j0phqix",
+                "CcnDescription": "test",
+                "State": "AVAILABLE",
+                "InstanceChargeType": "POSTPAID",
+                "CcnName": "test",
+                "QosLevel": "AU",
+                "BandwidthLimitType": "INTER_REGION_LIMIT",
+                "CreateTime": "2020-09-22 00:00:00",
+                "RouteTableFlag": null,
+                "RouteTableCount": null
             }
-        ],
-        "TotalCount": 4,
-        "RequestId": "d1f17eef-c7c9-4abe-b9ea-843fa5c8db16"
+        ]
     }
 }
 ```
@@ -109,46 +101,30 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "73159790-39b3-48e8-9d61-29e11eed1acd",
         "CcnSet": [
             {
-                "CcnId": "ccn-nzwnkrgt",
-                "CcnName": "test name",
-                "CcnDescription": "test description",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-18 11:18:30",
-                "State": "AVAILABLE",
+                "InstanceCount": 1,
                 "TagSet": [
                     {
-                        "Key": "env",
-                        "Value": "test"
-                    },
-                    {
-                        "Key": "TAG_TEST",
-                        "Value": "1111"
+                        "Value": "env",
+                        "Key": "test"
                     }
-                ]
-            },
-            {
-                "CcnId": "ccn-nrych3fn",
-                "CcnName": "test name",
-                "CcnDescription": "test description",
-                "InstanceCount": 0,
-                "CreateTime": "2018-06-18 11:20:58",
+                ],
+                "RoutePriorityFlag": true,
+                "CcnId": "ccn-8j0phqix",
+                "CcnDescription": "test",
                 "State": "AVAILABLE",
-                "TagSet": [
-                    {
-                        "Key": "TAG_TEST1",
-                        "Value": "tag1"
-                    },
-                    {
-                        "Key": "env",
-                        "Value": "test"
-                    }
-                ]
+                "InstanceChargeType": "POSTPAID",
+                "CcnName": "test",
+                "QosLevel": "AU",
+                "BandwidthLimitType": "INTER_REGION_LIMIT",
+                "CreateTime": "2020-09-22 00:00:00",
+                "RouteTableFlag": null,
+                "RouteTableCount": null
             }
-        ],
-        "TotalCount": 2,
-        "RequestId": "d1f17eef-c7c9-4abe-b9ea-843fa5c8db16"
+        ]
     }
 }
 ```

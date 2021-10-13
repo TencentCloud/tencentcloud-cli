@@ -28,6 +28,8 @@ Output:
             "InstanceChargeType": "POSTPAID",
             "BandwidthLimitType": "OUTER_REGION_LIMIT",
             "CreateTime": "2020-09-22 00:00:00",
+            "RouteTableFlag": null,
+            "RouteTableCount": null,
             "TagSet": [
                 {
                     "Key": "city",

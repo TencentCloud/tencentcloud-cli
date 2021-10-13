@@ -33,6 +33,13 @@ Output:
                 "流行"
             ]
         },
+        "DefinitionInfoSet": [
+            {
+                "Definition": "audio/mi",
+                "Bitrate": 64000,
+                "Size": 3298220
+            }
+        ],
         "RequestId": "xx"
     }
 }
