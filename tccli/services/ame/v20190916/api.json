@@ -654,6 +654,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "歌曲规格信息列表",
+          "example": "\"\"",
+          "member": "KTVMusicDefinitionInfo",
+          "name": "DefinitionInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1298,6 +1307,42 @@
           "example": "0",
           "member": "uint64",
           "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicDefinitionInfo": {
+      "document": "直播互动歌曲规格信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "规格，取值有：\n<li>audio/mi：低规格；</li>\n<li>audio/lo：中规格；</li>\n<li>audio/hi：高规格。</li>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Definition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "码率，单位为 bps。",
+          "example": "0",
+          "member": "int64",
+          "name": "Bitrate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小，单位为字节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Size",
           "required": true,
           "type": "int",
           "value_allowed_null": false

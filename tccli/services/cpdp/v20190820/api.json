@@ -432,6 +432,12 @@
       "name": "聚鑫-查询订单接口",
       "output": "QueryOrderResponse"
     },
+    "QueryOrderStatus": {
+      "document": "云支付-查询订单付款状态",
+      "input": "QueryOrderStatusRequest",
+      "name": "云支付-查询订单付款状态",
+      "output": "QueryOrderStatusResponse"
+    },
     "QueryOutwardOrder": {
       "document": "跨境-查询汇出结果",
       "input": "QueryOutwardOrderRequest",
@@ -534,6 +540,12 @@
       "name": "云鉴-消费订单退款接口",
       "output": "RefundOrderResponse"
     },
+    "RefundTlinxOrder": {
+      "document": "云支付Tlinx退款接口",
+      "input": "RefundTlinxOrderRequest",
+      "name": "云支付-Tlinx退款接口",
+      "output": "RefundTlinxOrderResponse"
+    },
     "RegisterBehavior": {
       "document": "商户查询是否签约和签约行为上报",
       "input": "RegisterBehaviorRequest",
@@ -611,6 +623,12 @@
       "input": "UnifiedOrderRequest",
       "name": "聚鑫-统一下单接口",
       "output": "UnifiedOrderResponse"
+    },
+    "UnifiedTlinxOrder": {
+      "document": "云支付Tlinx统一下单接口",
+      "input": "UnifiedTlinxOrderRequest",
+      "name": "云支付-Tlinx统一下单接口",
+      "output": "UnifiedTlinxOrderResponse"
     },
     "UploadExternalAnchorInfo": {
       "document": "灵云-上传主播信息",
@@ -8982,6 +9000,152 @@
       ],
       "usage": "in"
     },
+    "PayOrderResult": {
+      "document": "订单支付响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "付款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9156318394674725677462349",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开发者流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEST00000111",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易优惠金额（免充值券）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TradeDiscountAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信测试",
+          "member": "string",
+          "name": "PayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "OrderMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易帐号（银行卡号、支付宝帐号、微信帐号等，某些收单机构没有此数据）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CFT",
+          "member": "string",
+          "name": "TradeAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实际交易金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TradeAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "¥",
+          "member": "string",
+          "name": "CurrencySign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款完成时间（以收单机构为准）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019/9/16  10:43:26",
+          "member": "string",
+          "name": "TradePayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "ShopOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WeixinTEST",
+          "member": "string",
+          "name": "PayTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单状态（1交易成功，2待支付，4已取消，9等待用户输入密码确认\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CNY",
+          "member": "string",
+          "name": "OrderCurrency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二维码字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "TradeQrcode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryAcctBindingRequest": {
       "document": "QueryAcctBinding请求参数结构体",
       "members": [
@@ -12768,6 +12932,422 @@
       ],
       "type": "object"
     },
+    "QueryOrderStatusRequest": {
+      "document": "QueryOrderStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "5fb33938bb819024b8ed719edf221840",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e95bffc38504f0ac408c27d61eb52d1a",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者流水号",
+          "example": "TEST00000111",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付款订单号",
+          "example": "9163238193244046880658645",
+          "member": "string",
+          "name": "OrderNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOrderStatusResponse": {
+      "document": "QueryOrderStatus返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询订单付款状态结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryOrderStatusResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOrderStatusResult": {
+      "document": "查询订单付款状态响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "付款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9156318394674725677462349",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开发者流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEST00000111",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易优惠金额（免充值券）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TradeDiscountAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信测试",
+          "member": "string",
+          "name": "PayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "OrderMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易帐号（银行卡号、支付宝帐号、微信帐号等，某些收单机构没有此数据）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CFT",
+          "member": "string",
+          "name": "TradeAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实际交易金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TradeAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "¥",
+          "member": "string",
+          "name": "CurrencySign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款完成时间（以收单机构为准）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019/9/16  10:43:26",
+          "member": "string",
+          "name": "TradePayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "ShopOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WeixinTEST",
+          "member": "string",
+          "name": "PayTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单状态（1交易成功，2待支付，4已取消，9等待用户输入密码确认\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CNY",
+          "member": "string",
+          "name": "OrderCurrency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二维码字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "TradeQrcode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始交易时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019/9/16  10:43:26",
+          "member": "string",
+          "name": "TradeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "折扣金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "M001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "订单备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "订单标题",
+          "member": "string",
+          "name": "OrderName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OriginalAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20269345",
+          "member": "string",
+          "name": "ShopNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收单机构原始交易数据，如果返回非标准json数据，请自行转换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"return_code\\\":\\\"SUCCESS\\\",\\\"return_msg\\\":\\\"OK\\\",\\\"appid\\\":\\\"1",
+          "member": "string",
+          "name": "TradeResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32425323",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单类型（1消费，2辙单）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OrderType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收单机构交易号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "83285498065296614040121575879177",
+          "member": "string",
+          "name": "TradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "OriginalOrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单标记，订单附加数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "附加数据",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019/7/15  17:45:46",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收银员编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CashierId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收银员名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "CashierRealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "店铺全称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳市XX门店",
+          "member": "string",
+          "name": "ShopFullName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "店铺名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX门店",
+          "member": "string",
+          "name": "ShopName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryOutwardOrderData": {
       "document": "查询汇出数据",
       "members": [
@@ -15305,6 +15885,162 @@
       ],
       "type": "object"
     },
+    "RefundOrderResult": {
+      "document": "订单退款响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "付款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9156318394674725677462349",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开发者流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TEST00000111",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易优惠金额（免充值券）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TradeDiscountAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信测试",
+          "member": "string",
+          "name": "PayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "OrderMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实际交易金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TradeAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "¥",
+          "member": "string",
+          "name": "CurrencySign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款完成时间（以收单机构为准）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019/9/16  10:43:26",
+          "member": "string",
+          "name": "TradePayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200010",
+          "member": "string",
+          "name": "ShopOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WeixinTEST",
+          "member": "string",
+          "name": "PayTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单状态（1交易成功，2待支付，4已取消，9等待用户输入密码确认\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "币种代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CNY",
+          "member": "string",
+          "name": "OrderCurrency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始交易时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021/9/23  15:24:53",
+          "member": "string",
+          "name": "TradeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "折扣金额（以分为单位，没有小数点）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DiscountAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9163238179308914020221775",
+          "member": "string",
+          "name": "OriginalOrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RefundOutSubOrderRefundList": {
       "document": "退款子订单列表",
       "members": [
@@ -15461,6 +16197,132 @@
     "RefundResponse": {
       "document": "Refund返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundTlinxOrderRequest": {
+      "document": "RefundTlinxOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始订单的开发者交易流水号",
+          "example": "TEST00000456",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新退款订单的开发者流水号，同一门店内唯一",
+          "example": "TEST00000457",
+          "member": "string",
+          "name": "RefundOutNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款订单名称，可以为空",
+          "example": "退款测试",
+          "member": "string",
+          "name": "RefundOrderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "RefundAmount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主管密码，对密码进行sha1加密，默认为123456",
+          "example": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+          "member": "string",
+          "name": "ShopPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundTlinxOrderResponse": {
+      "document": "RefundTlinxOrder返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "退款响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RefundOrderResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -18170,6 +19032,222 @@
           "name": "TransactionId",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnifiedTlinxOrderRequest": {
+      "document": "UnifiedTlinxOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者流水号",
+          "example": "TEST00000458",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付标签",
+          "example": "WeixinLS",
+          "member": "string",
+          "name": "PayTag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实际交易金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "TradeAmount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单标记，订单附加数据",
+          "example": "附加数据",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易结果异步通知url地址",
+          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付款方式名称(当PayTag为Diy时，PayName不能为空)",
+          "example": "1",
+          "member": "string",
+          "name": "PayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单名称（描述）",
+          "example": "自定义订单名称",
+          "member": "string",
+          "name": "OrderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始交易金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "OriginalAmount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "折扣金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "DiscountAmount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "抹零金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "IgnoreAmount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易帐号（银行卡号）",
+          "example": "622522",
+          "member": "string",
+          "name": "TradeAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交易号（收单机构交易号）",
+          "example": "T001",
+          "member": "string",
+          "name": "TradeNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单机构原始交易报文，请转换为json",
+          "example": "null",
+          "member": "string",
+          "name": "TradeResult",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条码支付的授权码（条码抢扫手机扫到的一串数字）",
+          "example": "33523",
+          "member": "string",
+          "name": "AuthCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公众号支付时，支付成功后跳转url地址",
+          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnifiedTlinxOrderResponse": {
+      "document": "UnifiedTlinxOrder返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "统一下单响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayOrderResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

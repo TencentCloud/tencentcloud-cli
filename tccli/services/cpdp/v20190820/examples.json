@@ -582,6 +582,14 @@
         "title": "订单查询请求示例"
       }
     ],
+    "QueryOrderStatus": [
+      {
+        "document": "查询订单付款状态成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOrderStatus\n<公共请求参数>\n\n{\n    \"OpenId\": \"5fb33938bb819024b8ed719edf221840\",\n    \"OpenKey\": \"e95bffc38504f0ac408c27d61eb52d1a\",\n    \"DeveloperNo\": \"TEST00000111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"ok\",\n        \"Result\": [\n            {\n                \"OrderNo\": \"9156318394674725677462349\",\n                \"DeveloperNo\": \"TEST00000111\",\n                \"TradeTime\": \"2019-09-16 10:43:26\",\n                \"DiscountAmount\": \"0\",\n                \"MerchantNo\": null,\n                \"Remark\": null,\n                \"OrderName\": \"自定义订单名称\",\n                \"OriginalAmount\": \"1\",\n                \"PayName\": \"微信测试\",\n                \"OrderMerchantId\": \"200010\",\n                \"Tag\": \"附加数据\",\n                \"ShopNo\": \"20269345\",\n                \"TradeResult\": \"{\\\"return_code\\\":\\\"SUCCESS\\\",\\\"return_msg\\\":\\\"OK\\\",\\\"appid\\\":\\\"1234567890123456\\\",\\\"mch_id\\\":\\\"1234567890\\\",\\\"sub_mch_id\\\":\\\"1514168081\\\",\\\"nonce_str\\\":\\\"Fm2FJMiEDc9N7MG0\\\",\\\"sign\\\":\\\"FEE7E09F5F5A85DBE576FDF2AE4EC3A8\\\",\\\"result_code\\\":\\\"SUCCESS\\\",\\\"trade_type\\\":\\\"NATIVE\\\",\\\"bank_type\\\":\\\"CFT\\\",\\\"total_fee\\\":\\\"1\\\",\\\"fee_type\\\":\\\"CNY\\\",\\\"transaction_id\\\":\\\"83285498065296614040121575879177\\\",\\\"out_trade_no\\\":\\\"9156318394674725677462349\\\",\\\"time_end\\\":\\\"20190916104326\\\",\\\"trade_state\\\":\\\"SUCCESS\\\"}\",\n                \"OrderType\": \"1\",\n                \"TradeAccount\": \"CFT\",\n                \"TradeAmount\": \"1\",\n                \"CurrencySign\": \"¥\",\n                \"TradePayTime\": \"2019-09-16 10:43:26\",\n                \"TradeNo\": \"83285498065296614040121575879177\",\n                \"OriginalOrderNo\": null,\n                \"PayTag\": \"WeixinTEST\",\n                \"TradeQrcode\": \"https://www.tlinx.com\",\n                \"AddTime\": \"2019-07-15 17:45:46\",\n                \"CashierId\": \"0\",\n                \"Status\": \"1\"\n            }\n        ]\n    }\n}",
+        "title": "查询订单付款状态成功示例"
+      }
+    ],
     "QueryOutwardOrder": [
       {
         "document": "",
@@ -724,6 +732,14 @@
         "title": "消费订单退款接口正常示例"
       }
     ],
+    "RefundTlinxOrder": [
+      {
+        "document": "订单退款成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundTlinxOrder\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d \",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"DeveloperNo\": \"TEST00000456\",\n    \"RefundOutNo\": \"TEST00000457\",\n    \"RefundOrderName\": \"退款测试\",\n    \"RefundAmount\": \"1\",\n    \"Remark\": \"\",\n    \"ShopPassword\": \"7c4a8d09ca3762af61e59520943dc26494f8941b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"订单退款成功\",\n        \"Result\": {\n            \"DeveloperNo\": \"TEST00000457\",\n            \"OrderMerchantId\": \"860000119428417\",\n            \"TradePayTime\": \"2021-09-23 15:24:53\",\n            \"OrderCurrency\": \"CNY\",\n            \"CurrencySign\": \"¥\",\n            \"Status\": \"1\",\n            \"ShopOrderId\": \"860000119428417\",\n            \"TradeDiscountAmount\": \"0\",\n            \"PayName\": \"微信支付\",\n            \"TradeTime\": \"2021-09-23 15:24:53\",\n            \"OrderNo\": \"9163238189197235119773773\",\n            \"DiscountAmount\": \"0\",\n            \"PayTag\": \"WeixinLS\",\n            \"OriginalOrderNo\": \"9163238179308914020221775\",\n            \"TradeAmount\": \"1\"\n        }\n    }\n}",
+        "title": "订单退款接口成功示例"
+      }
+    ],
     "RegisterBehavior": [
       {
         "document": "用于平台签约行为上报场景。",
@@ -826,6 +842,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=UnifiedOrder\n&CurrencyType=CNY\n&MidasAppId=your_midas_app_id\n&OutTradeNo=your_order_no\n&ProductDetail=商品详情\n&ProductId=your_product_id\n&ProductName=商品名称\n&TotalAmt=1\n&UserId=your_user_id\n&Channel=wechat\n&Quantity=1\n&RealChannel=bank_pingan\n&SubAppId=your_sub_app_id\n&TotalMchIncome=1\n&TotalPlatformIncome=0\n&WxSubOpenId=your_wx_sub_open_id\n&OriginalAmt=1\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&WxAppId=your_wx_app_id\n&WxSubAppId=your_wx_sub_app_id\n&SubOrderList.0.SubMchIncome=1\n&SubOrderList.0.PlatformIncome=0\n&SubOrderList.0.ProductDetail=商品详情\n&SubOrderList.0.ProductName=商品名称\n&SubOrderList.0.SubAppId=your_sub_app_id\n&SubOrderList.0.SubOutTradeNo=your_sub_order_no\n&SubOrderList.0.Amt=1\n&SubOrderList.0.OriginalAmt=1\n&SubOrderList.0.Metadata=xxx\n&PaymentNotifyUrl=http://cloud.tencent.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalAmt\": 1,\n        \"OutTradeNo\": \"your_order_no\",\n        \"TransactionId\": \"E-191018160200005000\",\n        \"PayInfo\": \"data=%7B%22appid%22%3A%22unibank10001%22%2C%22user_id%22%3A%22user123%22%2C%22out_trade_no%22%3A%22mikeuf1910181230%22%2C%22product_id%22%3A%22product_111%22%7D&sign=sign\",\n        \"RequestId\": \"6a895298-cd08-4170-b8e2-eeda98794a16\"\n    }\n}",
         "title": "统一下单请求示例"
+      }
+    ],
+    "UnifiedTlinxOrder": [
+      {
+        "document": "统一下单接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnifiedTlinxOrder\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"DeveloperNo\": \"TEST00000458\",\n    \"PayTag\": \"WeixinLS\",\n    \"PayName\": \"\",\n    \"OrderName\": \"自定义订单名称\",\n    \"OriginalAmount\": 1,\n    \"DiscountAmount\": \"\",\n    \"IgnoreAmount\": \"\",\n    \"TradeAmount\": 1,\n    \"TradeAccount\": \"\",\n    \"TradeNo\": \"\",\n    \"TradeResult\": \"\",\n    \"Remark\": \"\",\n    \"AuthCode\": \"\",\n    \"Tag\": \"附加数据\",\n    \"JumpUrl\": \"\",\n    \"NotifyUrl\": \"http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/payResult\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"订单提交成功\",\n        \"Result\": {\n            \"DeveloperNo\": \"TEST00000458\",\n            \"OrderMerchantId\": \"860000119428429\",\n            \"TradePayTime\": \"2021-09-29 09:00:00\",\n            \"OrderCurrency\": \"CNY\",\n            \"CurrencySign\": \"¥\",\n            \"Status\": \"2\",\n            \"ShopOrderId\": \"860000119428429\",\n            \"TradeDiscountAmount\": \"0\",\n            \"TradeAccount\": \"6224\",\n            \"PayName\": \"微信支付\",\n            \"OrderNo\": \"9163238193244046880658645\",\n            \"PayTag\": \"WeixinLS\",\n            \"TradeAmount\": \"1\",\n            \"TradeQrcode\": \"https://q3.tlinx.com?f=9163238193244046880658645&O=f2cc268b9c95fbbb230a19397fe35f8d\"\n        }\n    }\n}",
+        "title": "统一下单接口成功示例"
       }
     ],
     "UploadExternalAnchorInfo": [

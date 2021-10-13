@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicDetail\n<公共请求参数>\n\n{\n    \"MusicId\": \"ame-78d2xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PlayToken\": \"DUE3344xxxxxx\",\n        \"LyricsUrl\": \"http://xxx.qcloud.com/subtitle.vtt\",\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"MusicId\": \"ame-78d2xxx\",\n            \"Duration\": 120,\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"Name\": \"七里香\",\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PlayToken\": \"DUE3344xxxxxx\",\n        \"LyricsUrl\": \"http://xxx.qcloud.com/subtitle.vtt\",\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"MusicId\": \"ame-78d2xxx\",\n            \"Duration\": 120,\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"Name\": \"七里香\",\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ]\n        },\n        \"DefinitionInfoSet\": [\n            {\n                \"Definition\": \"audio/mi\",\n                \"Bitrate\": 64000,\n                \"Size\": 3298220\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询 KTV 曲目详情"
       }
     ],

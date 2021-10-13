@@ -1673,6 +1673,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n图片的宽高比请接近 3:4，手机拍摄比例最佳。\n人脸尺寸大于100X100像素。\n图片格式支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "base64",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1681,6 +1682,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片的宽高比请接近 3:4，手机拍摄比例最佳。\n人脸尺寸大于100X100像素。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。\n图片格式支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1689,6 +1691,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。目前入参支持“3.0“。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -1702,15 +1705,19 @@
       "members": [
         {
           "document": "活体打分，取值范围 [0,100]，根据活体分数对应的阈值区间来判断是否为翻拍。目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。",
+          "example": "99",
           "member": "float",
           "name": "Score",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

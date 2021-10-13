@@ -27,7 +27,13 @@ Output:
                 "CidrBlock": [
                     "10.0.0.0/16"
                 ],
-                "State": "PENDING"
+                "State": "PENDING",
+                "CcnUin": "100000072292",
+                "InstanceArea": "CHINA_MAINLAND",
+                "AttachedTime": "2021-03-03 16:19:44",
+                "RouteTableId": null,
+                "RouteTableName": null,
+                "Description": null
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -39,7 +45,13 @@ Output:
                 "CidrBlock": [
                     "10.33.0.0/16"
                 ],
-                "State": "REJECTED"
+                "State": "REJECTED",
+                "CcnUin": "100000072292",
+                "InstanceArea": "CHINA_MAINLAND",
+                "AttachedTime": "2021-03-03 16:19:44",
+                "RouteTableId": null,
+                "RouteTableName": null,
+                "Description": null
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -51,7 +63,13 @@ Output:
                 "CidrBlock": [
                     "10.100.0.0/16"
                 ],
-                "State": "ACTIVE"
+                "State": "ACTIVE",
+                "CcnUin": "100000072292",
+                "InstanceArea": "CHINA_MAINLAND",
+                "AttachedTime": "2021-03-03 16:19:44",
+                "RouteTableId": null,
+                "RouteTableName": null,
+                "Description": null
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -63,7 +81,13 @@ Output:
                 "CidrBlock": [
                     "192.168.0.0/24"
                 ],
-                "State": "ACTIVE"
+                "State": "ACTIVE",
+                "CcnUin": "100000072292",
+                "InstanceArea": "CHINA_MAINLAND",
+                "AttachedTime": "2021-03-03 16:19:44",
+                "RouteTableId": null,
+                "RouteTableName": null,
+                "Description": null
             },
             {
                 "CcnId": "ccn-gree226l",
@@ -75,7 +99,13 @@ Output:
                 "CidrBlock": [
                     "192.168.1.0/24"
                 ],
-                "State": "ACTIVE"
+                "State": "ACTIVE",
+                "CcnUin": "100000072292",
+                "InstanceArea": "CHINA_MAINLAND",
+                "AttachedTime": "2021-03-03 16:19:44",
+                "RouteTableId": null,
+                "RouteTableName": null,
+                "Description": null
             }
         ],
         "TotalCount": 5,
