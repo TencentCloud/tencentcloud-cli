@@ -32,12 +32,28 @@
         "title": "批量域名注册"
       }
     ],
+    "CreatePhoneEmail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePhoneEmail\n<公共请求参数>\n\n{\n    \"Code\": \"15643257896\",\n    \"Type\": 1,\n    \"VerifyCode\": \"754933\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "验证手机邮箱"
+      }
+    ],
     "CreateTemplate": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTemplate\n<公共请求参数>\n\n{\n    \"ContactInfo\": {\n        \"Province\": \"xx\",\n        \"OrganizationNameCN\": \"xx\",\n        \"OrganizationName\": \"xx\",\n        \"City\": \"xx\",\n        \"CityCN\": \"xx\",\n        \"RegistrantName\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"ZipCode\": \"xx\",\n        \"RegistrantNameCN\": \"xx\",\n        \"StreetCN\": \"xx\",\n        \"Street\": \"xx\",\n        \"ProvinceCN\": \"xx\",\n        \"Country\": \"xx\",\n        \"RegistrantType\": \"xx\",\n        \"CountryCN\": \"xx\",\n        \"Email\": \"xx\"\n    },\n    \"CertificateInfo\": {\n        \"CertificateType\": \"xx\",\n        \"CertificateCode\": \"xx\",\n        \"ImgUrl\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"IsValidTemplate\": 0,\n            \"UpdatedOn\": \"2020-10-16 00:00:00\",\n            \"AuditStatus\": \"Approve\",\n            \"CreatedOn\": \"2020-10-16 00:00:00\",\n            \"InvalidReason\": \"\",\n            \"CertificateInfo\": {\n                \"CertificateType\": \"xx\",\n                \"CertificateCode\": \"xx\",\n                \"ImgUrl\": \"xx\"\n            },\n            \"TemplateId\": \"xx\",\n            \"UserUin\": \"xx\",\n            \"ContactInfo\": {\n                \"Province\": \"xx\",\n                \"OrganizationNameCN\": \"xx\",\n                \"OrganizationName\": \"xx\",\n                \"City\": \"xx\",\n                \"CityCN\": \"xx\",\n                \"RegistrantName\": \"xx\",\n                \"Telephone\": \"xx\",\n                \"ZipCode\": \"xx\",\n                \"RegistrantNameCN\": \"xx\",\n                \"StreetCN\": \"xx\",\n                \"Street\": \"xx\",\n                \"ProvinceCN\": \"xx\",\n                \"Country\": \"xx\",\n                \"RegistrantType\": \"xx\",\n                \"CountryCN\": \"xx\",\n                \"Email\": \"xx\"\n            },\n            \"IsDefault\": \"xx\"\n        }\n    }\n}",
         "title": "创建模板"
+      }
+    ],
+    "DeletePhoneEmail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePhoneEmail\n<公共请求参数>\n\n{\n    \"Code\": \"12367542367\",\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
+        "title": "删除手机邮箱"
       }
     ],
     "DeleteTemplate": [
@@ -88,6 +104,14 @@
         "title": "获取域名价格列表"
       }
     ],
+    "DescribePhoneEmailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneEmailList\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"12376542345\",\n                \"Type\": 1,\n                \"CreatedOn\": \"2021-09-12 12:12:34\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取已验证的手机邮箱列表"
+      }
+    ],
     "DescribeTemplate": [
       {
         "document": "",
@@ -126,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDomainBatch\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"Domains\": [\n        \"h101.dlgslb.cn\",\n        \"h103.dlgslb.cn\"\n    ],\n    \"PayMode\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
         "title": "批量域名续费"
+      }
+    ],
+    "SendPhoneEmailCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendPhoneEmailCode\n<公共请求参数>\n\n{\n    \"Code\": \"12365437890\",\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "发送手机邮箱验证码"
       }
     ],
     "SetDomainAutoRenew": [

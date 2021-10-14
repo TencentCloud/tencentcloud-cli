@@ -72,6 +72,12 @@
       "name": "创建服务相关角色",
       "output": "CreateServiceLinkedRoleResponse"
     },
+    "CreateUserSAMLConfig": {
+      "document": "创建用户SAML配置",
+      "input": "CreateUserSAMLConfigRequest",
+      "name": "创建用户SAML配置",
+      "output": "CreateUserSAMLConfigResponse"
+    },
     "DeleteGroup": {
       "document": "删除用户组",
       "input": "DeleteGroupRequest",
@@ -155,6 +161,12 @@
       "input": "DescribeSubAccountsRequest",
       "name": "通过子用户UIN列表查询子用户",
       "output": "DescribeSubAccountsResponse"
+    },
+    "DescribeUserSAMLConfig": {
+      "document": "查询用户SAML配置",
+      "input": "DescribeUserSAMLConfigRequest",
+      "name": "查询用户SAML配置",
+      "output": "DescribeUserSAMLConfigResponse"
     },
     "DetachGroupPolicy": {
       "document": "本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。",
@@ -395,6 +407,12 @@
       "input": "UpdateUserRequest",
       "name": "更新子用户",
       "output": "UpdateUserResponse"
+    },
+    "UpdateUserSAMLConfig": {
+      "document": "修改用户SAML配置",
+      "input": "UpdateUserSAMLConfigRequest",
+      "name": "修改用户SAML配置",
+      "output": "UpdateUserSAMLConfigResponse"
     }
   },
   "metadata": {
@@ -1296,6 +1314,33 @@
       ],
       "type": "object"
     },
+    "CreateUserSAMLConfigRequest": {
+      "document": "CreateUserSAMLConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SAML元数据文档，需要base64 encode",
+          "example": "metadataDocumentDemo",
+          "member": "string",
+          "name": "SAMLMetadataDocument",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserSAMLConfigResponse": {
+      "document": "CreateUserSAMLConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteGroupRequest": {
       "document": "DeleteGroup请求参数结构体",
       "members": [
@@ -1779,6 +1824,41 @@
           "name": "SubAccounts",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSAMLConfigRequest": {
+      "document": "DescribeUserSAMLConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserSAMLConfigResponse": {
+      "document": "DescribeUserSAMLConfig返回参数结构体",
+      "members": [
+        {
+          "document": "SAML元数据文档",
+          "example": "metadataDocumentDemo",
+          "member": "string",
+          "name": "SAMLMetadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态：0:未设置，11:已开启，2:已禁用",
+          "example": "11",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4895,6 +4975,42 @@
     },
     "UpdateUserResponse": {
       "document": "UpdateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserSAMLConfigRequest": {
+      "document": "UpdateUserSAMLConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "修改的操作类型:enable:启用,disable:禁用,updateSAML:修改元数据文档",
+          "example": "enable",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "元数据文档，需要base64 encode，仅当Operate为updateSAML时需要此参数",
+          "example": "metadataDocumentDemo",
+          "member": "string",
+          "name": "SAMLMetadataDocument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserSAMLConfigResponse": {
+      "document": "UpdateUserSAMLConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

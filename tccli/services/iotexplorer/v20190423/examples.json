@@ -194,6 +194,14 @@
         "title": "删除产品"
       }
     ],
+    "DeleteTopicPolicy": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteTopicPolicy\r\n&ProductId=ABCDE12345\r\n&TopicName=abc\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {}\n}",
+        "title": "删除Topic示例"
+      }
+    ],
     "DeleteTopicRule": [
       {
         "document": "",
@@ -304,6 +312,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeStudioProduct\n&ProductId=M5AWDSEUYO\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"M5AWDSEUYO\",\n            \"ProductName\": \"testtproduct\",\n            \"CategoryId\": 3,\n            \"ProductType\": 0,\n            \"EncryptionType\": \"2\",\n            \"NetType\": \"else\",\n            \"DataProtocol\": 1,\n            \"ProductDesc\": \"desc\",\n            \"ProjectId\": \"prj-zunfat46\",\n            \"DevStatus\": \"dev\",\n            \"CreateTime\": 1560341975,\n            \"UpdateTime\": 1560341975,\n            \"Region\": \"gz\",\n            \"ModuleId\": 0\n        },\n        \"RequestId\": \"1c469fbf-d80c-4299-9b54-31340898b839\"\n    }\n}",
         "title": "获取产品详情"
+      }
+    ],
+    "DescribeTopicPolicy": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeTopicPolicy\r\n&ProductId=ABCDE12345\r\n&TopicName=abc\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TopicName\": \"abc\",\n        \"Privilege\": 2\n    }\n}",
+        "title": "查看Topic详情示例"
       }
     ],
     "DescribeTopicRule": [
@@ -424,6 +440,14 @@
         "title": "示例"
       }
     ],
+    "ListTopicPolicy": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ListTopicPolicy\r\n&ProductId=ABCDE12345\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Topics\": [\n            {\n                \"TopicName\": \"abc\",\n                \"Privilege\": 1\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "获取Topic列表示例"
+      }
+    ],
     "ModifyFenceBind": [
       {
         "document": "更新围栏绑定信息",
@@ -494,6 +518,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyStudioProduct\r\n&ProductId=4GDIU5HTEN\r\n&ProductName=testProduct\r\n&ProductDesc=Pdesc\r\n&ModuleId=0\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"4GDIU5HTEN\",\n            \"ProductName\": \"testProduct\",\n            \"CategoryId\": 3,\n            \"ProductType\": 0,\n            \"EncryptionType\": \"2\",\n            \"NetType\": \"else\",\n            \"DataProtocol\": 1,\n            \"ProductDesc\": \"Pdesc\",\n            \"ProjectId\": \"prj-zunfat46\",\n            \"DevStatus\": \"dev\",\n            \"CreateTime\": 1560341825,\n            \"UpdateTime\": 1560414507,\n            \"Region\": \"gz\",\n            \"ModuleId\": 0\n        },\n        \"RequestId\": \"6b6e765c-1625-49e6-9743-452e6ce15caa\"\n    }\n}",
         "title": "修改产品"
+      }
+    ],
+    "ModifyTopicPolicy": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyTopicPolicy\r\n&ProductId=ABCDE12345\r\n&TopicName=abc\r\n&NewTopicName=ABC\r\n&Privilege=2\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {}\n}",
+        "title": "更新Topic示例"
       }
     ],
     "ModifyTopicRule": [

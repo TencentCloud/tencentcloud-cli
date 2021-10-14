@@ -132,6 +132,12 @@
       "name": "删除产品",
       "output": "DeleteStudioProductResponse"
     },
+    "DeleteTopicPolicy": {
+      "document": "本接口（DeleteTopicPolicy）用于删除Topic ",
+      "input": "DeleteTopicPolicyRequest",
+      "name": "删除Topic",
+      "output": "DeleteTopicPolicyResponse"
+    },
     "DeleteTopicRule": {
       "document": "删除规则",
       "input": "DeleteTopicRuleRequest",
@@ -215,6 +221,12 @@
       "input": "DescribeStudioProductRequest",
       "name": "获取产品详情",
       "output": "DescribeStudioProductResponse"
+    },
+    "DescribeTopicPolicy": {
+      "document": "本接口（DescribeTopicPolicy）用于查看Topic详细信息 ",
+      "input": "DescribeTopicPolicyRequest",
+      "name": "查看Topic详情",
+      "output": "DescribeTopicPolicyResponse"
     },
     "DescribeTopicRule": {
       "document": "获取规则信息",
@@ -300,6 +312,12 @@
       "name": "获取固件列表",
       "output": "ListFirmwaresResponse"
     },
+    "ListTopicPolicy": {
+      "document": "本接口（ListTopicPolicy）用于获取Topic列表",
+      "input": "ListTopicPolicyRequest",
+      "name": "获取Topic列表",
+      "output": "ListTopicPolicyResponse"
+    },
     "ModifyFenceBind": {
       "document": "更新围栏绑定信息",
       "input": "ModifyFenceBindRequest",
@@ -353,6 +371,12 @@
       "input": "ModifyStudioProductRequest",
       "name": "修改产品",
       "output": "ModifyStudioProductResponse"
+    },
+    "ModifyTopicPolicy": {
+      "document": "本接口（UpdateTopicPolicy）用于更新Topic信息 ",
+      "input": "ModifyTopicPolicyRequest",
+      "name": "更新Topic",
+      "output": "ModifyTopicPolicyResponse"
     },
     "ModifyTopicRule": {
       "document": "修改规则",
@@ -1721,6 +1745,40 @@
       ],
       "type": "object"
     },
+    "DeleteTopicPolicyRequest": {
+      "document": "DeleteTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicPolicyResponse": {
+      "document": "DeleteTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTopicRuleRequest": {
       "document": "DeleteTopicRule请求参数结构体",
       "members": [
@@ -2514,6 +2572,61 @@
           "member": "ProductEntry",
           "name": "Product",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicPolicyRequest": {
+      "document": "DescribeTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic名字",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicPolicyResponse": {
+      "document": "DescribeTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Topic名称",
+          "member": "string",
+          "name": "TopicName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Topic权限",
+          "member": "uint64",
+          "name": "Privilege",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3993,6 +4106,39 @@
       ],
       "type": "object"
     },
+    "ListTopicPolicyRequest": {
+      "document": "ListTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopicPolicyResponse": {
+      "document": "ListTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "Topic列表",
+          "member": "TopicItem",
+          "name": "Topics",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoRaFrequencyEntry": {
       "document": "LoRa自定义频点信息",
       "members": [
@@ -4742,6 +4888,56 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicPolicyRequest": {
+      "document": "ModifyTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新前Topic名",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后Topic名",
+          "member": "string",
+          "name": "NewTopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic权限",
+          "member": "uint64",
+          "name": "Privilege",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTopicPolicyResponse": {
+      "document": "ModifyTopicPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5736,6 +5932,30 @@
         }
       ],
       "type": "object"
+    },
+    "TopicItem": {
+      "document": "Topic信息, 包括Topic名字和权限",
+      "members": [
+        {
+          "default": "",
+          "document": "Topic名称",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Topic权限 , 1上报  2下发",
+          "member": "uint64",
+          "name": "Privilege",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TopicRule": {
       "document": "TopicRule结构",

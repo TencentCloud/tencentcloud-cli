@@ -198,6 +198,12 @@
       "name": "SCDN域名配置",
       "output": "DescribeScdnConfigResponse"
     },
+    "DescribeScdnIpStrategy": {
+      "document": "查询在SCDN IP安全策略",
+      "input": "DescribeScdnIpStrategyRequest",
+      "name": "查询SCDN安全防护IP白名单",
+      "output": "DescribeScdnIpStrategyResponse"
+    },
     "DescribeScdnTopData": {
       "document": "获取SCDN的Top数据",
       "input": "DescribeScdnTopDataRequest",
@@ -5341,6 +5347,78 @@
       ],
       "type": "object"
     },
+    "DescribeScdnIpStrategyRequest": {
+      "document": "DescribeScdnIpStrategy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页起始地址",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列表分页记录条数，最大1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "member": "ScdnIpStrategyFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定查询返回结果的排序字段，支持domain，update_time",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，支持asc，desc",
+          "member": "string",
+          "name": "Sequence",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScdnIpStrategyResponse": {
+      "document": "DescribeScdnIpStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "IP策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ScdnIpStrategy",
+          "name": "IpStrategyList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置的策略条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScdnTopDataRequest": {
       "document": "DescribeScdnTopData请求参数结构体",
       "members": [
@@ -7386,6 +7464,7 @@
         {
           "default": "",
           "document": "IP 黑白名单配置开关\non：开启\noff：关闭",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -7395,6 +7474,7 @@
         {
           "default": "",
           "document": "IP 黑白名单类型\nwhitelist：白名单\nblacklist：黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "blacklist",
           "member": "string",
           "name": "FilterType",
           "required": false,
@@ -7404,6 +7484,7 @@
         {
           "default": "",
           "document": "IP 黑白名单列表\n支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段\n最多可填充 50 个白名单或 50 个黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Filters",
           "required": false,
@@ -7413,10 +7494,21 @@
         {
           "default": "",
           "document": "IP 黑白名单分路径配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP 黑白名单验证失败时返回的 HTTP Code\n合法值: 400~499\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "403",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -10940,6 +11032,111 @@
         }
       ],
       "usage": "both"
+    },
+    "ScdnIpStrategy": {
+      "document": "scdn的IP白名单策略",
+      "members": [
+        {
+          "default": "",
+          "document": "域名|global表示全部域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP白名单列表",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "datetime",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RuleValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScdnIpStrategyFilter": {
+      "document": "IP策略查询过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名，支持domain, ip",
+          "example": "domain",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用模糊查询，仅支持过滤字段名为domain。\n模糊查询时，Value长度最大为1",
+          "example": "false",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ScdnLogTaskDetail": {
       "document": "SCDN日志事件详细信息",
