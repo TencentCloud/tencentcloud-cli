@@ -72,6 +72,12 @@
       "name": "获取证书列表",
       "output": "DescribeCertificatesResponse"
     },
+    "DescribeDeployedResources": {
+      "document": "证书查询关联资源",
+      "input": "DescribeDeployedResourcesRequest",
+      "name": "证书查询关联资源",
+      "output": "DescribeDeployedResourcesResponse"
+    },
     "DescribeManagerDetail": {
       "document": "查询管理人详情",
       "input": "DescribeManagerDetailRequest",
@@ -996,6 +1002,42 @@
       ],
       "type": "object"
     },
+    "DeployedResources": {
+      "document": "资源详情",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "nz9ICcbp",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源标识:clb,cdn,live,waf,antiddos",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeCertificateDetailRequest": {
       "document": "DescribeCertificateDetail请求参数结构体",
       "members": [
@@ -1831,6 +1873,51 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployedResourcesRequest": {
+      "document": "DescribeDeployedResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源类型:clb,cdn,live,waf,antiddos",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployedResourcesResponse": {
+      "document": "DescribeDeployedResources返回参数结构体",
+      "members": [
+        {
+          "document": "资源详情",
+          "example": "无",
+          "member": "DeployedResources",
+          "name": "DeployedResources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

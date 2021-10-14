@@ -264,6 +264,14 @@
         "title": "查询SCDN域名配置"
       }
     ],
+    "DescribeScdnIpStrategy": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnIpStrategy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\",\n        \"IpStrategyList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"StrategyId\": 1,\n                \"IpList\": [\n                    \"1.1.1.1\",\n                    \"2.2.2.2\"\n                ],\n                \"UpdateTime\": \"2020-09-22 15:00:00\",\n                \"Remark\": \"test\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询SCDN的IP白名单列表"
+      }
+    ],
     "DescribeScdnTopData": [
       {
         "document": "",

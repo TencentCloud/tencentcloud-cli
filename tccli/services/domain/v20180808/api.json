@@ -24,11 +24,23 @@
       "name": "批量域名注册",
       "output": "CreateDomainBatchResponse"
     },
+    "CreatePhoneEmail": {
+      "document": "此接口用于创建有效的手机、邮箱",
+      "input": "CreatePhoneEmailRequest",
+      "name": "验证手机邮箱",
+      "output": "CreatePhoneEmailResponse"
+    },
     "CreateTemplate": {
       "document": "本接口 ( CreateTemplate ) 用于添加域名信息模板 。",
       "input": "CreateTemplateRequest",
       "name": "添加域名信息模板",
       "output": "CreateTemplateResponse"
+    },
+    "DeletePhoneEmail": {
+      "document": "此接口用于删除已验证的手机邮箱",
+      "input": "DeletePhoneEmailRequest",
+      "name": "删除手机邮箱",
+      "output": "DeletePhoneEmailResponse"
     },
     "DeleteTemplate": {
       "document": "本接口 ( DeleteTemplate ) 用于删除信息模板。",
@@ -66,6 +78,12 @@
       "name": "域名价格列表",
       "output": "DescribeDomainPriceListResponse"
     },
+    "DescribePhoneEmailList": {
+      "document": "本接口用于获取已验证的手机邮箱列表",
+      "input": "DescribePhoneEmailListRequest",
+      "name": "已验证手机邮箱列表",
+      "output": "DescribePhoneEmailListResponse"
+    },
     "DescribeTemplate": {
       "document": "本接口 (DescribeTemplate) 用于获取模板信息。",
       "input": "DescribeTemplateRequest",
@@ -95,6 +113,12 @@
       "input": "RenewDomainBatchRequest",
       "name": "批量域名续费",
       "output": "RenewDomainBatchResponse"
+    },
+    "SendPhoneEmailCode": {
+      "document": "此接口用于发送手机邮箱验证码。",
+      "input": "SendPhoneEmailCodeRequest",
+      "name": "发送手机邮箱验证码",
+      "output": "SendPhoneEmailCodeResponse"
     },
     "SetDomainAutoRenew": {
       "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。",
@@ -674,6 +698,51 @@
       ],
       "type": "object"
     },
+    "CreatePhoneEmailRequest": {
+      "document": "CreatePhoneEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号或者邮箱",
+          "example": "12365432367",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1：手机   2：邮箱",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "验证码",
+          "example": "234567",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePhoneEmailResponse": {
+      "document": "CreatePhoneEmail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTemplateRequest": {
       "document": "CreateTemplate请求参数结构体",
       "members": [
@@ -710,6 +779,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePhoneEmailRequest": {
+      "document": "DeletePhoneEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机或者邮箱",
+          "example": "12365432345",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1：手机  2：邮箱",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePhoneEmailResponse": {
+      "document": "DeletePhoneEmail返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1005,6 +1110,78 @@
           "name": "PriceList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePhoneEmailListRequest": {
+      "document": "DescribePhoneEmailList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0：所有类型  1：手机  2：邮箱，默认0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，取值范围[1,200]",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "手机或者邮箱精确搜索",
+          "example": "12345678977",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePhoneEmailListResponse": {
+      "document": "DescribePhoneEmailList返回参数结构体",
+      "members": [
+        {
+          "document": "手机或者邮箱列表",
+          "example": "无",
+          "member": "PhoneEmailData",
+          "name": "PhoneEmailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1564,6 +1741,42 @@
       ],
       "type": "object"
     },
+    "PhoneEmailData": {
+      "document": "手机号邮箱列表",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号或者邮箱",
+          "example": "12356742345",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1：手机  2：邮箱",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-09-28 12:10:10",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PriceInfo": {
       "document": "域名价格信息",
       "members": [
@@ -1669,6 +1882,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendPhoneEmailCodeRequest": {
+      "document": "SendPhoneEmailCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机或者邮箱号。",
+          "example": "12365432345",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1：手机  2：邮箱。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SendPhoneEmailCodeResponse": {
+      "document": "SendPhoneEmailCode返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -96,6 +96,14 @@
         "title": "创建服务相关角色"
       }
     ],
+    "CreateUserSAMLConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserSAMLConfig\n<公共请求参数>\n\n{\n    \"SAMLMetadataDocument\": \"metadataDocumentDemo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建用户SAML配置"
+      }
+    ],
     "DeleteGroup": [
       {
         "document": "",
@@ -206,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubAccounts\n<公共请求参数>\n\n{\n    \"FilterSubAccountUin\": [\n        \"200000548558\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SubAccounts\": [\n            {\n                \"Remark\": \"xx\",\n                \"Uid\": 1,\n                \"Uin\": 1,\n                \"UserType\": 1,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"Name\": \"xx\",\n                \"LastLoginIp\": \"\",\n                \"LastLoginTime\": null\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "通过子用户UIN列表查询子用户"
+      }
+    ],
+    "DescribeUserSAMLConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSAMLConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SAMLMetadata\": \"\",\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询用户SAML配置"
       }
     ],
     "DetachGroupPolicy": [
@@ -538,6 +554,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateUser\r\n&Name=test124\r\n&Remark=test\r\n&ConsoleLogin=1\r\n&Password=test123456\r\n&NeedResetPassword=0\r\n&PhoneNum=10086\r\n&CountryCode=86\r\n&Email=123%40qq.com\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新子用户"
+      }
+    ],
+    "UpdateUserSAMLConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserSAMLConfig\n<公共请求参数>\n\n{\n    \"Operate\": \"updateSAML\",\n    \"SAMLMetadataDocument\": \"metadataDocumentDemo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改用户SAML配置"
       }
     ]
   },
