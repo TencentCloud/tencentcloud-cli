@@ -3104,9 +3104,19 @@
         {
           "default": "",
           "document": "需诊断的url，形如：http://www.test.com/test.txt。",
+          "example": "http://www.test.com/test.txt",
           "member": "string",
           "name": "Url",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "Origin",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3117,8 +3127,10 @@
       "members": [
         {
           "document": "系统生成的诊断链接，一个诊断链接最多可访问10次，有效期为24h。",
+          "example": "http://cdn.cloud.tencent.com/self_diagnose/a49ecccd",
           "member": "string",
           "name": "DiagnoseLink",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7864,6 +7876,7 @@
         {
           "default": "",
           "document": "用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。",
+          "example": "test.com/",
           "member": "string",
           "name": "KeyWords",
           "required": false,
@@ -7872,8 +7885,18 @@
         {
           "default": "",
           "document": "用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
+          "example": "http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
           "member": "string",
           "name": "DiagnoseLink",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "Origin",
           "required": false,
           "type": "string"
         }
@@ -7885,8 +7908,10 @@
       "members": [
         {
           "document": "诊断信息。",
+          "example": "无",
           "member": "DiagnoseInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9021,6 +9046,7 @@
         {
           "default": "",
           "document": "主源站列表\n修改源站时，需要同时填充对应的 OriginType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Origins",
           "required": false,
@@ -9029,7 +9055,8 @@
         },
         {
           "default": "",
-          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和一个 IPv6 地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
           "member": "string",
           "name": "OriginType",
           "required": false,
@@ -9039,6 +9066,7 @@
         {
           "default": "",
           "document": "回主源站时 Host 头部，不填充则默认为加速域名\n若接入的是泛域名，则回源 Host 默认为访问时的子域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.test.com",
           "member": "string",
           "name": "ServerName",
           "required": false,
@@ -9048,6 +9076,7 @@
         {
           "default": "",
           "document": "OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket\n注意：需要先授权 CDN 访问该私有 Bucket 的权限后，才可开启此配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
           "member": "string",
           "name": "CosPrivateAccess",
           "required": false,
@@ -9057,6 +9086,7 @@
         {
           "default": "",
           "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源，https 回源时仅支持源站 443 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
           "member": "string",
           "name": "OriginPullProtocol",
           "required": false,
@@ -9066,6 +9096,7 @@
         {
           "default": "",
           "document": "备源站列表\n修改备源站时，需要同时填充对应的 BackupOriginType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2.2.2.2\"]",
           "member": "string",
           "name": "BackupOrigins",
           "required": false,
@@ -9074,7 +9105,8 @@
         },
         {
           "default": "",
-          "document": "备源站类型，支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n修改 BackupOrigins 时需要同时填充对应的 BackupOriginType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备源站类型，支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n修改 BackupOrigins 时需要同时填充对应的 BackupOriginType\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
           "member": "string",
           "name": "BackupOriginType",
           "required": false,
@@ -9084,6 +9116,7 @@
         {
           "default": "",
           "document": "回备源站时 Host 头部，不填充则默认为主源站的 ServerName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.test2.com",
           "member": "string",
           "name": "BackupServerName",
           "required": false,
@@ -9093,6 +9126,7 @@
         {
           "default": "",
           "document": "回源路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -9102,6 +9136,7 @@
         {
           "default": "",
           "document": "回源路径重写规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "PathRule",
           "name": "PathRules",
           "required": false,
@@ -9111,6 +9146,7 @@
         {
           "default": "",
           "document": "分路径回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "PathBasedOriginRule",
           "name": "PathBasedOrigin",
           "required": false,

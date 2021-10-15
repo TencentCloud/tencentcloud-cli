@@ -20,6 +20,7 @@ Output:
                 "DiagnoseLink": "http://cdn.cloud.tencent.com/self_diagnose/xx2",
                 "CreateTime": "2020-09-21 12:00:08",
                 "ExpireDate": "2020-09-22 12:00:08",
+                "Area": "manland",
                 "VisitCount": 9,
                 "ClientList": [
                     {

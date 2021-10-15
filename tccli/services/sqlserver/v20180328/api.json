@@ -1191,6 +1191,7 @@
         {
           "default": "",
           "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1199,6 +1200,7 @@
         {
           "default": "",
           "document": "数据库实例账户信息",
+          "example": "无",
           "member": "AccountCreateInfo",
           "name": "Accounts",
           "required": true,
@@ -1212,8 +1214,10 @@
       "members": [
         {
           "document": "任务流ID",
+          "example": "30321",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

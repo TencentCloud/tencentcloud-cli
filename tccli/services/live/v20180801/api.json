@@ -2648,7 +2648,7 @@
         },
         {
           "default": "",
-          "document": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。",
+          "document": "截图间隔，单位s，默认10s。\n范围： 2s ~ 300s。",
           "example": "10",
           "member": "int64",
           "name": "SnapshotInterval",
@@ -10514,6 +10514,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "test1",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -10523,6 +10524,7 @@
         {
           "default": "",
           "document": "推流路径。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -10532,6 +10534,7 @@
         {
           "default": "",
           "document": "推流客户端 IP。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ClientIp",
           "required": true,
@@ -10541,6 +10544,7 @@
         {
           "default": "",
           "document": "接流服务器 IP。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ServerIp",
           "required": true,
@@ -10550,6 +10554,7 @@
         {
           "default": "",
           "document": "推流视频帧率，单位: Hz。",
+          "example": "100",
           "member": "uint64",
           "name": "VideoFps",
           "required": true,
@@ -10558,7 +10563,8 @@
         },
         {
           "default": "",
-          "document": "推流视频码率，单位: bps。",
+          "document": "推流视频码率，单位: Kbps。",
+          "example": "100",
           "member": "uint64",
           "name": "VideoSpeed",
           "required": true,
@@ -10568,6 +10574,7 @@
         {
           "default": "",
           "document": "推流音频帧率，单位: Hz。",
+          "example": "40",
           "member": "uint64",
           "name": "AudioFps",
           "required": true,
@@ -10576,7 +10583,8 @@
         },
         {
           "default": "",
-          "document": "推流音频码率，单位: bps。",
+          "document": "推流音频码率，单位: Kbps。",
+          "example": "40",
           "member": "uint64",
           "name": "AudioSpeed",
           "required": true,
@@ -10586,6 +10594,7 @@
         {
           "default": "",
           "document": "推流域名。",
+          "example": "5000.pushdomain.com",
           "member": "string",
           "name": "PushDomain",
           "required": true,
@@ -10595,6 +10604,7 @@
         {
           "default": "",
           "document": "推流开始时间。",
+          "example": "2019-02-01 00:00:00",
           "member": "string",
           "name": "BeginPushTime",
           "required": true,
@@ -10604,6 +10614,7 @@
         {
           "default": "",
           "document": "音频编码格式，\n例：\"AAC\"。",
+          "example": "AAC",
           "member": "string",
           "name": "Acodec",
           "required": true,
@@ -10613,6 +10624,7 @@
         {
           "default": "",
           "document": "视频编码格式，\n例：\"H264\"。",
+          "example": "H264",
           "member": "string",
           "name": "Vcodec",
           "required": true,
@@ -10622,6 +10634,7 @@
         {
           "default": "",
           "document": "分辨率。",
+          "example": "350*350",
           "member": "string",
           "name": "Resolution",
           "required": true,
@@ -10631,6 +10644,7 @@
         {
           "default": "",
           "document": "采样率。",
+          "example": "48000",
           "member": "uint64",
           "name": "AsampleRate",
           "required": true,
@@ -10640,6 +10654,7 @@
         {
           "default": "",
           "document": "metadata 中的音频码率，单位: Kbps。",
+          "example": "22",
           "member": "uint64",
           "name": "MetaAudioSpeed",
           "required": true,
@@ -10649,6 +10664,7 @@
         {
           "default": "",
           "document": "metadata 中的视频码率，单位: Kbps。",
+          "example": "4885",
           "member": "uint64",
           "name": "MetaVideoSpeed",
           "required": true,
@@ -10658,6 +10674,7 @@
         {
           "default": "",
           "document": "metadata 中的帧率。",
+          "example": "30",
           "member": "uint64",
           "name": "MetaFps",
           "required": true,

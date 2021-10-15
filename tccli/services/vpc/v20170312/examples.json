@@ -24,6 +24,32 @@
         "title": "添加IPV6转换规则"
       }
     ],
+    "AddTemplateMember": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AddTemplateMember\n&TemplateId=ipm-test1234\n&TemplateMember.0.Member=10.0.0.1\n&TemplateMember.0.Description=test\n&TemplateMember.1.Member=172.20.0.1/24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加IP地址模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AddTemplateMember\n&TemplateId=ipmg-test1234\n&TemplateMember.0.Member=ipm-test1234\n&TemplateMember.0.Description=test\n&TemplateMember.1.Member=ipm-demo1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加IP地址组模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AddTemplateMember\n&TemplateId=ppm-test1234\n&TemplateMember.0.Member=TCP:80\n&TemplateMember.0.Description=test\n&TemplateMember.1.Member=TCP:443\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加协议端口模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AddTemplateMember\n&TemplateId=ppmg-test1234\n&TemplateMember.0.Member=ppm-test1234\n&TemplateMember.0.Description=test\n&TemplateMember.1.Member=ppm-demo1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加协议端口组模板成员"
+      }
+    ],
     "AllocateAddresses": [
       {
         "document": "需开通Anycast公网加速白名单",
@@ -784,6 +810,32 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteSubnet\r\n&Version=2017-03-12\r\n&SubnetId=subnet-pxir56ns\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除子网"
+      }
+    ],
+    "DeleteTemplateMember": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ipm-test1234\n&TemplateMember.0.Member=10.0.0.1\n&TemplateMember.1.Member=172.20.0.1/24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "删除IP地址模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ipmg-test1234\n&TemplateMember.0.Member=ipm-test1234\n&TemplateMember.1.Member=ipm-demo1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "删除IP地址组模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppm-test1234\n&TemplateMember.0.Member=TCP:80\n&TemplateMember.1.Member=TCP:443\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加协议端口模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppmg-test1234\n&TemplateMember.0.Member=ppm-test1234\n&TemplateMember.1.Member=ppm-demo1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "添加协议端口组模板成员"
       }
     ],
     "DeleteVpc": [
@@ -2044,6 +2096,32 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifySubnetAttribute\r\n&Version=2017-03-12\r\n&SubnetId=subnet-test1234\r\n&SubnetName=NewSubnetName\r\n&EnableBroadcast=true\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "修改子网属性"
+      }
+    ],
+    "ModifyTemplateMember": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTemplateMember\n&TemplateId=ipm-test1234\n&OriginalTemplateMember.0.Member=10.0.0.1\n&OriginalTemplateMember.0.Description=test\n&OriginalTemplateMember.1.Member=172.20.0.1/24\n&TemplateMember.0.Member=10.0.0.2\n&TemplateMember.0.Description=test modify\n&TemplateMember.1.Member=192.168.0.1/24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "修改IP地址模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTemplateMember\n&TemplateId=ipmg-test1234\n&OriginalTemplateMember.0.Member=ipm-test1234\n&OriginalTemplateMember.0.Description=test\n&OriginalTemplateMember.1.Member=ipm-demo1234\n&TemplateMember.0.Member=ipm-test5678\n&TemplateMember.0.Description=test modify\n&TemplateMember.1.Member=ipm-demo5678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "修改IP地址组模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTemplateMember\n&TemplateId=ppm-test1234\n&OriginalTemplateMember.0.Member=TCP:80\n&OriginalTemplateMember.0.Description=test\n&OriginalTemplateMember.1.Member=TCP:443\n&TemplateMember.0.Member=TCP:8080\n&TemplateMember.0.Description=test modify\n&TemplateMember.1.Member=TCP:6278\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "修改协议端口模板成员"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTemplateMember\n&TemplateId=ppmg-test1234\n&OriginalTemplateMember.0.Member=ppm-test1234\n&OriginalTemplateMember.0.Description=test\n&OriginalTemplateMember.1.Member=ppm-demo1234\n&TemplateMember.0.Member=ppm-test5678\n&TemplateMember.0.Description=test modify\n&TemplateMember.1.Member=ppm-demo5678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "修改协议端口组模板成员"
       }
     ],
     "ModifyVpcAttribute": [

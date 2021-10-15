@@ -20,7 +20,10 @@ Output:
             {
                 "AccessRegionInfo": {
                     "RegionId": "EastChina",
-                    "RegionName": "中国大陆-华东"
+                    "RegionName": "中国大陆-华东",
+                    "RegionArea": "EastChina",
+                    "RegionAreaName": "EastChina",
+                    "IDCType": "ec"
                 },
                 "RelatedGlobalDomains": [
                     "xx"
@@ -39,6 +42,7 @@ Output:
                     "RegionName": "中国大陆-华北"
                 },
                 "IP": "1.1.1.2",
+                "IPList": [],
                 "AccessRegion": "EastChina",
                 "ProjectId": 0,
                 "BillingType": 0,
@@ -51,6 +55,7 @@ Output:
                 "PackageType": "Thunder",
                 "Domain": "link-12345678.gaapqcloud.com",
                 "IPAddressVersion": "IPv4",
+                "BanStatus": "RECOVER",
                 "CreateTime": 1,
                 "InstanceId": "link-12345678",
                 "Bandwidth": 10,
@@ -75,7 +80,10 @@ Output:
             {
                 "AccessRegionInfo": {
                     "RegionId": "EastChina",
-                    "RegionName": "中国大陆-华东"
+                    "RegionName": "中国大陆-华东",
+                    "RegionArea": "EastChina",
+                    "RegionAreaName": "EastChina",
+                    "IDCType": "ec"
                 },
                 "RelatedGlobalDomains": [
                     "xx"
@@ -94,6 +102,7 @@ Output:
                     "RegionName": "中国大陆-华北"
                 },
                 "IP": "1.1.1.2",
+                "IPList": [],
                 "AccessRegion": "EastChina",
                 "ProjectId": 0,
                 "BillingType": 0,
@@ -106,6 +115,7 @@ Output:
                 "PackageType": "Thunder",
                 "Domain": "link-12345678.gaapqcloud.com",
                 "IPAddressVersion": "IPv4",
+                "BanStatus": "RECOVER",
                 "CreateTime": 1,
                 "InstanceId": "link-12345678",
                 "Bandwidth": 10,

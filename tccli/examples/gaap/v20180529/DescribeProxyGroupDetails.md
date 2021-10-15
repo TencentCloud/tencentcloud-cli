@@ -30,7 +30,10 @@ Output:
             "PolicyId": "vdsw",
             "RealServerRegionInfo": {
                 "RegionId": "EastChina",
-                "RegionName": "EastChina"
+                "RegionName": "EastChina",
+                "RegionArea": "EastChina",
+                "RegionAreaName": "EastChina",
+                "IDCType": "ec"
             },
             "TagSet": [
                 {

@@ -18,6 +18,12 @@
       "name": "添加IPV6转换规则",
       "output": "AddIp6RulesResponse"
     },
+    "AddTemplateMember": {
+      "document": "增加模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "input": "AddTemplateMemberRequest",
+      "name": "增加模版对象成员",
+      "output": "AddTemplateMemberResponse"
+    },
     "AllocateAddresses": {
       "document": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过24小时之前，它会一直与您的腾讯云账户保持关联。\n* 一个腾讯云账户在每个地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。",
       "input": "AllocateAddressesRequest",
@@ -521,6 +527,12 @@
       "input": "DeleteSubnetRequest",
       "name": "删除子网",
       "output": "DeleteSubnetResponse"
+    },
+    "DeleteTemplateMember": {
+      "document": "删除模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "input": "DeleteTemplateMemberRequest",
+      "name": "删除模版对象成员",
+      "output": "DeleteTemplateMemberResponse"
     },
     "DeleteVpc": {
       "document": "本接口（DeleteVpc）用于删除私有网络。\n* 删除前请确保 VPC 内已经没有相关资源，例如云服务器、云数据库、NoSQL、VPN网关、专线网关、负载均衡、对等连接、与之互通的基础网络设备等。\n* 删除私有网络是不可逆的操作，请谨慎处理。",
@@ -1350,6 +1362,12 @@
       "name": "修改子网属性",
       "output": "ModifySubnetAttributeResponse"
     },
+    "ModifyTemplateMember": {
+      "document": "修改模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "input": "ModifyTemplateMemberRequest",
+      "name": "修改模版对象成员",
+      "output": "ModifyTemplateMemberResponse"
+    },
     "ModifyVpcAttribute": {
       "document": "本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。",
       "input": "ModifyVpcAttributeRequest",
@@ -1719,6 +1737,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddTemplateMemberRequest": {
+      "document": "AddTemplateMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
+          "example": "ipm-test1234",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "TemplateMember",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddTemplateMemberResponse": {
+      "document": "AddTemplateMember返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7569,6 +7623,42 @@
     },
     "DeleteSubnetResponse": {
       "document": "DeleteSubnet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTemplateMemberRequest": {
+      "document": "DeleteTemplateMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
+          "example": "ipm-test1234",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "TemplateMember",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTemplateMemberResponse": {
+      "document": "DeleteTemplateMember返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14600,6 +14690,32 @@
       ],
       "usage": "out"
     },
+    "MemberInfo": {
+      "document": "模板对象成员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "模板对象成员",
+          "example": "ipm-test1234",
+          "member": "string",
+          "name": "Member",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板对象成员描述信息",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MigrateNetworkInterfaceRequest": {
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
@@ -16257,6 +16373,51 @@
     },
     "ModifySubnetAttributeResponse": {
       "document": "ModifySubnetAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTemplateMemberRequest": {
+      "document": "ModifyTemplateMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
+          "example": "ipm-test1234",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要修改的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与TemplateMember参数顺序一一对应，入参长度需要与TemplateMember参数保持一致。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "OriginalTemplateMember",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "新的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与OriginalTemplateMember参数顺序一一对应，入参长度需要与OriginalTemplateMember参数保持一致。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "TemplateMember",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTemplateMemberResponse": {
+      "document": "ModifyTemplateMember返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
