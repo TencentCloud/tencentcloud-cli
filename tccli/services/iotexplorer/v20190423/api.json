@@ -4953,6 +4953,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4961,6 +4962,7 @@
         {
           "default": "",
           "document": "替换的规则包体",
+          "example": "无",
           "member": "TopicRulePayload",
           "name": "TopicRulePayload",
           "required": true,

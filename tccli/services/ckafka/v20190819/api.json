@@ -4741,6 +4741,52 @@
       ],
       "usage": "out"
     },
+    "SaleInfo": {
+      "document": "标准版销售信息",
+      "members": [
+        {
+          "default": "",
+          "document": "手动设置的flag标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Flag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ckakfa版本号(1.1.1/2.4.2/0.10.2)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专业版、标准版标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "standard",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "售罄标志：true售罄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SoldOut",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SubscribedInfo": {
       "document": "订阅信息实体",
       "members": [
@@ -5543,6 +5589,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标准版售罄信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SaleInfo",
+          "name": "SalesInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -35,7 +35,7 @@
     "CreateAccount": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateAccount\r\n&InstanceId=mssql-njj2mtpl\r\n&Accounts.0.UserName=testuser\r\n&Accounts.0.Password=testpassword\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateAccount\n&InstanceId=mssql-njj2mtpl\n&Accounts.0.UserName=testuser\n&Accounts.0.Password=testpassword\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": \"30321\"\n    }\n}",
         "title": "创建实例账号"
       }

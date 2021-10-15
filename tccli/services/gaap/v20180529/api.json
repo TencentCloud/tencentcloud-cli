@@ -618,6 +618,36 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房所属大区",
+          "example": "NorthChina",
+          "member": "string",
+          "name": "RegionArea",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房所属大区名",
+          "example": "中国大陆-华北",
+          "member": "string",
+          "name": "RegionAreaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房类型, dc表示DataCenter数据中心, ec表示EdgeComputing边缘节点",
+          "example": "dc",
+          "member": "string",
+          "name": "IDCType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3841,6 +3871,24 @@
           "name": "Independent",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "输出通道列表的排列顺序。取值范围：\nasc：升序排列\ndesc：降序排列。\n默认为降序。",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道列表排序的依据字段。取值范围：\ncreate_time：依据通道的创建时间排序\nproxy_id：依据通道的ID排序\nbandwidth：依据通道带宽上限排序\nconcurrent_connections：依据通道并发排序\n默认按通道创建时间排序。",
+          "example": "create_time",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5833,6 +5881,42 @@
       ],
       "usage": "both"
     },
+    "IPDetail": {
+      "document": "ip信息详情",
+      "members": [
+        {
+          "default": "",
+          "document": "IP字符串",
+          "example": "\"1.1.1.1\"",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "供应商，BGP表示默认，CMCC表示中国移动，CUCC表示中国联通，CTCC表示中国电信",
+          "example": "\"CMCC\"",
+          "member": "string",
+          "name": "Provider",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽",
+          "example": "3",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InquiryPriceCreateProxyRequest": {
       "document": "InquiryPriceCreateProxy请求参数结构体",
       "members": [
@@ -7626,7 +7710,7 @@
         },
         {
           "default": "",
-          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nUNKNOWN表示未知状态。",
+          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中。",
           "example": "\"RUNNING\"",
           "member": "string",
           "name": "Status",
@@ -7826,7 +7910,7 @@
         },
         {
           "default": "",
-          "document": "网络类型：normal、cn2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"normal\"",
           "member": "string",
           "name": "NetworkType",
@@ -7852,6 +7936,16 @@
           "name": "BanStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IPDetail",
+          "name": "IPList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -7896,6 +7990,7 @@
         {
           "default": "",
           "document": "通道实例ID。",
+          "example": "link-4ftf12sb",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7904,7 +7999,8 @@
         },
         {
           "default": "",
-          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nUNKNOWN表示未知状态。",
+          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离。",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8018,6 +8114,7 @@
         {
           "default": "",
           "document": "源站ID。",
+          "example": "“”",
           "member": "string",
           "name": "RealServerId",
           "required": true,
@@ -8027,6 +8124,7 @@
         {
           "default": "",
           "document": "0表示未被绑定 1表示被规则或者监听器绑定。",
+          "example": "“”",
           "member": "int64",
           "name": "BindStatus",
           "required": true,
@@ -8036,11 +8134,22 @@
         {
           "default": "",
           "document": "绑定此源站的通道ID，没有绑定时为空字符串。",
+          "example": "“”",
           "member": "string",
           "name": "ProxyId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定此源站的通道组ID，没有绑定时为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8064,6 +8173,36 @@
           "example": "中国大陆-华北",
           "member": "string",
           "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房所属大区",
+          "example": "NorthChina",
+          "member": "string",
+          "name": "RegionArea",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房所属大区名",
+          "example": "中国大陆-华北",
+          "member": "string",
+          "name": "RegionAreaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机房类型, dc表示DataCenter数据中心, ec表示EdgeComputing边缘节点",
+          "example": "dc",
+          "member": "string",
+          "name": "IDCType",
           "required": true,
           "type": "string",
           "value_allowed_null": false

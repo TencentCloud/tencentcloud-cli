@@ -419,7 +419,7 @@
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=TerminateInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abecf549-b609-4210-8e48-0ff76bbcd1fe\"\n    }\n}",
-        "title": "退还实例"
+        "title": "销毁实例"
       }
     ]
   },

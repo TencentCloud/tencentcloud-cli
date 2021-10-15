@@ -1,102 +1,121 @@
 # 本版本更新包含以下内容：
 
-## 访问管理(cam) 版本：2019-01-16
-
-### 第 2 次发布
-
-发布时间：2021-10-14 08:04:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66821)
-* [DescribeUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66820)
-* [UpdateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66819)
-
-
-
 ## 内容分发网络(cdn) 版本：2018-06-06
 
-### 第 6 次发布
+### 第 7 次发布
 
-发布时间：2021-10-14 08:05:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/66822)
-
-新增数据结构：
-
-* [ScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategy)
-* [ScdnIpStrategyFilter](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategyFilter)
-
-修改数据结构：
-
-* [IpFilter](http://document.tencentcloudapi.woa.com/document/product/228/62314#IpFilter)
-
-	* 新增成员：ReturnCode
-
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 2 次发布
-
-发布时间：2021-10-14 08:06:39
+发布时间：2021-10-15 08:05:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreatePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66826)
-* [DeletePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66825)
-* [DescribePhoneEmailList](http://document.tencentcloudapi.woa.com/document/product/242/66824)
-* [SendPhoneEmailCode](http://document.tencentcloudapi.woa.com/document/product/242/66823)
+* [CreateDiagnoseUrl](http://document.tencentcloudapi.woa.com/document/product/228/62309)
 
-新增数据结构：
+	* 新增入参：Origin
 
-* [PhoneEmailData](http://document.tencentcloudapi.woa.com/document/product/242/62741#PhoneEmailData)
+* [ListDiagnoseReport](http://document.tencentcloudapi.woa.com/document/product/228/62245)
 
+	* 新增入参：Origin
 
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+
+## 消息队列 Ckafka(ckafka) 版本：2019-08-19
 
 ### 第 4 次发布
 
-发布时间：2021-10-14 08:07:55
+发布时间：2021-10-15 08:12:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [DeleteTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66830)
-* [DescribeTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66829)
-* [ListTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66828)
-* [ModifyTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66827)
-
 新增数据结构：
 
-* [TopicItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#TopicItem)
+* [SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo)
+
+修改数据结构：
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#ZoneInfo)
+
+	* 新增成员：SalesInfo
 
 
 
-## 证书(ssl) 版本：2019-12-05
+
+## 全球应用加速(gaap) 版本：2018-05-29
 
 ### 第 3 次发布
 
-发布时间：2021-10-14 08:03:27
+发布时间：2021-10-15 08:07:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/608/62992)
+
+	* 新增入参：Order, OrderField
+
+
+新增数据结构：
+
+* [IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail)
+
+修改数据结构：
+
+* [AccessRegionDetial](http://document.tencentcloudapi.woa.com/document/product/608/63060#AccessRegionDetial)
+
+	* 新增成员：RegionArea, RegionAreaName, IDCType
+
+* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/63060#ProxyInfo)
+
+	* 新增成员：IPList
+
+* [RealServerStatus](http://document.tencentcloudapi.woa.com/document/product/608/63060#RealServerStatus)
+
+	* 新增成员：GroupId
+
+* [RegionDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#RegionDetail)
+
+	* 新增成员：RegionArea, RegionAreaName, IDCType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 2 次发布
+
+发布时间：2021-10-15 08:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#EncodeParams)
+
+	* 新增成员：BackgroundImageUrl
+
+* [WaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#WaterMarkParams)
+
+	* 新增成员：WaterMarkUrl
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 4 次发布
+
+发布时间：2021-10-15 08:11:26
 
 本次发布包含了以下内容：
 
@@ -104,11 +123,13 @@
 
 新增接口：
 
-* [DescribeDeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/66818)
+* [AddTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66833)
+* [DeleteTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66832)
+* [ModifyTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66831)
 
 新增数据结构：
 
-* [DeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/61356#DeployedResources)
+* [MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo)
 
 
 
@@ -1754,9 +1775,9 @@
 
 新增接口：
 
-* [[CreateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66820)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66821)
+* [DescribeUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66820)
+* [UpdateUserSAMLConfig](http://document.tencentcloudapi.woa.com/document/product/598/66819)
 
 ### 第 1 次发布
 
@@ -2341,6 +2362,25 @@
 
 ## 内容分发网络(cdn) 版本：2018-06-06
 
+### 第 7 次发布
+
+发布时间：2021-10-15 08:05:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDiagnoseUrl](http://document.tencentcloudapi.woa.com/document/product/228/62309)
+
+	* 新增入参：Origin
+
+* [ListDiagnoseReport](http://document.tencentcloudapi.woa.com/document/product/228/62245)
+
+	* 新增入参：Origin
+
+
 ### 第 6 次发布
 
 发布时间：2021-10-14 08:05:16
@@ -2351,12 +2391,12 @@
 
 新增接口：
 
-* [[DescribeScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/66822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/66822)
 
 新增数据结构：
 
-* [[ScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategy)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[ScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategy))
-* [[ScdnIpStrategyFilter](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategyFilter)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[ScdnIpStrategyFilter](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategyFilter))
+* [ScdnIpStrategy](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategy)
+* [ScdnIpStrategyFilter](http://document.tencentcloudapi.woa.com/document/product/228/62314#ScdnIpStrategyFilter)
 
 修改数据结构：
 
@@ -3149,6 +3189,25 @@
 
 
 ## 消息队列 Ckafka(ckafka) 版本：2019-08-19
+
+### 第 4 次发布
+
+发布时间：2021-10-15 08:12:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo)](http://document.tencentcloudapi.woa.com/document/product/597/65618#[SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo))
+
+修改数据结构：
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#ZoneInfo)
+
+	* 新增成员：SalesInfo
+
 
 ### 第 3 次发布
 
@@ -5496,14 +5555,14 @@
 
 新增接口：
 
-* [[CreatePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeletePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePhoneEmailList](http://document.tencentcloudapi.woa.com/document/product/242/66824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SendPhoneEmailCode](http://document.tencentcloudapi.woa.com/document/product/242/66823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreatePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66826)
+* [DeletePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/66825)
+* [DescribePhoneEmailList](http://document.tencentcloudapi.woa.com/document/product/242/66824)
+* [SendPhoneEmailCode](http://document.tencentcloudapi.woa.com/document/product/242/66823)
 
 新增数据结构：
 
-* [[PhoneEmailData](http://document.tencentcloudapi.woa.com/document/product/242/62741#PhoneEmailData)](http://document.tencentcloudapi.woa.com/document/product/242/62741#[PhoneEmailData](http://document.tencentcloudapi.woa.com/document/product/242/62741#PhoneEmailData))
+* [PhoneEmailData](http://document.tencentcloudapi.woa.com/document/product/242/62741#PhoneEmailData)
 
 ### 第 1 次发布
 
@@ -6495,6 +6554,44 @@
 
 
 ## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 3 次发布
+
+发布时间：2021-10-15 08:07:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/608/62992)
+
+	* 新增入参：Order, OrderField
+
+
+新增数据结构：
+
+* [[IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail)](http://document.tencentcloudapi.woa.com/document/product/608/63060#[IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail))
+
+修改数据结构：
+
+* [AccessRegionDetial](http://document.tencentcloudapi.woa.com/document/product/608/63060#AccessRegionDetial)
+
+	* 新增成员：RegionArea, RegionAreaName, IDCType
+
+* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/63060#ProxyInfo)
+
+	* 新增成员：IPList
+
+* [RealServerStatus](http://document.tencentcloudapi.woa.com/document/product/608/63060#RealServerStatus)
+
+	* 新增成员：GroupId
+
+* [RegionDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#RegionDetail)
+
+	* 新增成员：RegionArea, RegionAreaName, IDCType
+
 
 ### 第 2 次发布
 
@@ -7668,14 +7765,14 @@
 
 新增接口：
 
-* [[DeleteTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66830)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66829)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ListTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66828)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66827)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66830)
+* [DescribeTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66829)
+* [ListTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66828)
+* [ModifyTopicPolicy](http://document.tencentcloudapi.woa.com/document/product/1081/66827)
 
 新增数据结构：
 
-* [[TopicItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#TopicItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[TopicItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#TopicItem))
+* [TopicItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#TopicItem)
 
 ### 第 3 次发布
 
@@ -11092,11 +11189,11 @@
 
 新增接口：
 
-* [[DescribeDeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/66818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/66818)
 
 新增数据结构：
 
-* [[DeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/61356#DeployedResources)](http://document.tencentcloudapi.woa.com/document/product/400/61356#[DeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/61356#DeployedResources))
+* [DeployedResources](http://document.tencentcloudapi.woa.com/document/product/400/61356#DeployedResources)
 
 ### 第 2 次发布
 
@@ -13229,6 +13326,25 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 2 次发布
+
+发布时间：2021-10-15 08:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#EncodeParams)
+
+	* 新增成员：BackgroundImageUrl
+
+* [WaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#WaterMarkParams)
+
+	* 新增成员：WaterMarkUrl
+
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 15:06:02
@@ -14446,6 +14562,24 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 4 次发布
+
+发布时间：2021-10-15 08:11:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66833)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo)](http://document.tencentcloudapi.woa.com/document/product/215/65295#[MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo))
 
 ### 第 3 次发布
 

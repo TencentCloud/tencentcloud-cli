@@ -16,7 +16,10 @@ Output:
         "ProxyDetail": {
             "AccessRegionInfo": {
                 "RegionId": "SoutheastAsia",
-                "RegionName": "新加坡"
+                "RegionName": "新加坡",
+                "RegionArea": "NorthChina",
+                "RegionAreaName": "中国大陆-华北",
+                "IDCType": "dc"
             },
             "RelatedGlobalDomains": [],
             "Version": "3.0",
@@ -30,9 +33,13 @@ Output:
             "Concurrent": 2,
             "RealServerRegionInfo": {
                 "RegionId": "NorthChina",
-                "RegionName": "中国大陆-华北大区"
+                "RegionName": "中国大陆-华北大区",
+                "RegionArea": "NorthChina",
+                "RegionAreaName": "中国大陆-华北",
+                "IDCType": "dc"
             },
             "IP": "129.226.3.36",
+            "IPList": [],
             "AccessRegion": "SoutheastAsia",
             "ProjectId": 0,
             "BillingType": 0,
@@ -47,6 +54,7 @@ Output:
             "Bandwidth": 10,
             "SupportSecurity": 1,
             "TagSet": [],
+            "BanStatus": "xx",
             "ProxyName": "p_weidzhao_test",
             "NetworkType": "",
             "ModifyConfigTime": 1598417633,
