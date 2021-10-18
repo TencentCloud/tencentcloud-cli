@@ -3683,6 +3683,7 @@
         {
           "default": "",
           "document": "视频 URL。\n注意：编辑理解仅支持mp4、flv等格式的点播文件，不支持hls；",
+          "example": "“”",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -3692,6 +3693,7 @@
         {
           "default": "",
           "document": "视频地址格式，可选值： \n0：音视频 ;\n1：直播流。 \n默认为0。其他非0非1值默认为0。画质重生任务只支持0。",
+          "example": "0",
           "member": "int64",
           "name": "Format",
           "required": false,
@@ -3700,7 +3702,8 @@
         },
         {
           "default": "",
-          "document": "指定请求资源时，HTTP头部host的值。",
+          "document": "【不再支持】指定请求资源时，HTTP头部host的值。",
+          "example": "“”",
           "member": "string",
           "name": "Host",
           "required": false,

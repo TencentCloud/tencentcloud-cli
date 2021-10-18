@@ -1,138 +1,5 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络(cdn) 版本：2018-06-06
-
-### 第 7 次发布
-
-发布时间：2021-10-15 08:05:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDiagnoseUrl](http://document.tencentcloudapi.woa.com/document/product/228/62309)
-
-	* 新增入参：Origin
-
-* [ListDiagnoseReport](http://document.tencentcloudapi.woa.com/document/product/228/62245)
-
-	* 新增入参：Origin
-
-
-
-
-## 消息队列 Ckafka(ckafka) 版本：2019-08-19
-
-### 第 4 次发布
-
-发布时间：2021-10-15 08:12:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo)
-
-修改数据结构：
-
-* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#ZoneInfo)
-
-	* 新增成员：SalesInfo
-
-
-
-
-## 全球应用加速(gaap) 版本：2018-05-29
-
-### 第 3 次发布
-
-发布时间：2021-10-15 08:07:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeProxies](http://document.tencentcloudapi.woa.com/document/product/608/62992)
-
-	* 新增入参：Order, OrderField
-
-
-新增数据结构：
-
-* [IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail)
-
-修改数据结构：
-
-* [AccessRegionDetial](http://document.tencentcloudapi.woa.com/document/product/608/63060#AccessRegionDetial)
-
-	* 新增成员：RegionArea, RegionAreaName, IDCType
-
-* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/63060#ProxyInfo)
-
-	* 新增成员：IPList
-
-* [RealServerStatus](http://document.tencentcloudapi.woa.com/document/product/608/63060#RealServerStatus)
-
-	* 新增成员：GroupId
-
-* [RegionDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#RegionDetail)
-
-	* 新增成员：RegionArea, RegionAreaName, IDCType
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 2 次发布
-
-发布时间：2021-10-15 08:12:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [EncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#EncodeParams)
-
-	* 新增成员：BackgroundImageUrl
-
-* [WaterMarkParams](http://document.tencentcloudapi.woa.com/document/product/647/65486#WaterMarkParams)
-
-	* 新增成员：WaterMarkUrl
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 4 次发布
-
-发布时间：2021-10-15 08:11:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66833)
-* [DeleteTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66832)
-* [ModifyTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66831)
-
-新增数据结构：
-
-* [MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo)
-
-
-
 # 历次版本更新如下：
 
 ## 活动防刷(aa) 版本：2020-02-24
@@ -3200,7 +3067,7 @@
 
 新增数据结构：
 
-* [[SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo)](http://document.tencentcloudapi.woa.com/document/product/597/65618#[SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo))
+* [SaleInfo](http://document.tencentcloudapi.woa.com/document/product/597/65618#SaleInfo)
 
 修改数据结构：
 
@@ -6572,7 +6439,7 @@
 
 新增数据结构：
 
-* [[IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail)](http://document.tencentcloudapi.woa.com/document/product/608/63060#[IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail))
+* [IPDetail](http://document.tencentcloudapi.woa.com/document/product/608/63060#IPDetail)
 
 修改数据结构：
 
@@ -14573,13 +14440,13 @@
 
 新增接口：
 
-* [[AddTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66833)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66833)
+* [DeleteTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66832)
+* [ModifyTemplateMember](http://document.tencentcloudapi.woa.com/document/product/215/66831)
 
 新增数据结构：
 
-* [[MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo)](http://document.tencentcloudapi.woa.com/document/product/215/65295#[MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo))
+* [MemberInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#MemberInfo)
 
 ### 第 3 次发布
 

@@ -39,7 +39,7 @@
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2021-09-16 08:15:51 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2021-09-16 08:14:04 |
 | cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2021-10-14 08:00:20 |
-| cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-09-17 08:03:50 |
+| cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-10-18 08:03:49 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2021-09-16 08:03:18 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2021-10-13 08:13:30 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-10-11 08:07:09 |
@@ -67,7 +67,7 @@
 | faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2021-10-14 08:07:05 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | 2021-09-24 08:03:33 |
 | ft | [人像变换](http://document.tencentcloudapi.woa.com/document/product/1202) | 2021-09-24 08:03:30 |
-| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2021-10-15 08:07:03 |
+| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2021-10-18 08:07:17 |
 | gme | [游戏多媒体引擎](http://document.tencentcloudapi.woa.com/document/product/607) | 2021-09-16 08:08:05 |
 | gpm | [游戏玩家匹配](http://document.tencentcloudapi.woa.com/document/product/1294) | 2021-09-16 08:01:52 |
 | gs | [云游戏解决方案](http://document.tencentcloudapi.woa.com/document/product/1162) | 2021-09-16 08:04:08 |
@@ -75,7 +75,7 @@
 | hcm | [数学作业批改](http://document.tencentcloudapi.woa.com/document/product/1004) | 2021-09-16 08:08:09 |
 | iai | [人脸识别](http://document.tencentcloudapi.woa.com/document/product/867) | 2021-10-13 08:07:18 |
 | ic | [物联卡](http://document.tencentcloudapi.woa.com/document/product/636) | 2021-09-16 08:00:55 |
-| ie | [智能编辑](http://document.tencentcloudapi.woa.com/document/product/1186) | 2021-09-16 08:02:46 |
+| ie | [智能编辑](http://document.tencentcloudapi.woa.com/document/product/1186) | 2021-10-18 08:02:27 |
 | iir | [智能识图](http://document.tencentcloudapi.woa.com/document/product/1217) | 2021-09-16 08:02:38 |
 | ims | [图片内容检测](http://document.tencentcloudapi.woa.com/document/product/1125) | 2021-09-16 08:01:50 |
 | iot | [加速物联网套件](http://document.tencentcloudapi.woa.com/document/product/568) | 2021-09-16 08:08:21 |
