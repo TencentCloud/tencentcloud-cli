@@ -3874,7 +3874,7 @@
         },
         {
           "default": "",
-          "document": "输出通道列表的排列顺序。取值范围：\nasc：升序排列\ndesc：降序排列。\n默认为降序。",
+          "document": "输出通道列表的排列顺序。取值范围：\nasc：升序排列；\ndesc：降序排列。\n默认为降序。",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -3883,7 +3883,7 @@
         },
         {
           "default": "",
-          "document": "通道列表排序的依据字段。取值范围：\ncreate_time：依据通道的创建时间排序\nproxy_id：依据通道的ID排序\nbandwidth：依据通道带宽上限排序\nconcurrent_connections：依据通道并发排序\n默认按通道创建时间排序。",
+          "document": "通道列表排序的依据字段。取值范围：\ncreate_time：依据通道的创建时间排序；\nproxy_id：依据通道的ID排序；\nbandwidth：依据通道带宽上限排序；\nconcurrent_connections：依据通道并发排序；\n默认按通道创建时间排序。",
           "example": "create_time",
           "member": "string",
           "name": "OrderField",

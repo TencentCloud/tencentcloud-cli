@@ -5811,7 +5811,7 @@
         },
         {
           "default": "",
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
           "example": "context",
           "member": "string",
           "name": "Context",
@@ -5843,7 +5843,7 @@
       "document": "SearchLog返回参数结构体",
       "members": [
         {
-          "document": "加载后续内容的Context",
+          "document": "加载后续内容的Context，过期时间1小时",
           "example": "context",
           "member": "string",
           "name": "Context",
