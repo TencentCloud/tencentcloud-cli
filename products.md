@@ -42,7 +42,7 @@
 | cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-10-18 08:03:49 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2021-09-16 08:03:18 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2021-10-13 08:13:30 |
-| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-10-11 08:07:09 |
+| cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2021-10-19 08:05:59 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2021-10-11 08:16:27 |
 | cynosdb | [云原生数据库 TDSQL-C](http://document.tencentcloudapi.woa.com/document/product/1003) | 2021-10-12 08:02:12 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | 2021-09-16 08:06:42 |
@@ -80,7 +80,7 @@
 | ims | [图片内容检测](http://document.tencentcloudapi.woa.com/document/product/1125) | 2021-09-16 08:01:50 |
 | iot | [加速物联网套件](http://document.tencentcloudapi.woa.com/document/product/568) | 2021-09-16 08:08:21 |
 | iotcloud | [物联网通信](http://document.tencentcloudapi.woa.com/document/product/634) | 2021-09-27 08:08:06 |
-| iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2021-10-15 08:07:47 |
+| iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2021-10-19 08:07:59 |
 | iottid | [物联网设备身份认证](http://document.tencentcloudapi.woa.com/document/product/1086) | 2021-09-16 08:08:45 |
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2021-09-16 08:03:26 |
 | iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2021-09-16 08:01:15 |

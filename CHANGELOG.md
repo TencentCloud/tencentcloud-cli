@@ -1,5 +1,31 @@
 # 本版本更新包含以下内容：
 
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 5 次发布
+
+发布时间：2021-10-19 08:07:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)
+
+	* 新增入参：ProductIdList, CoordinateType, Offset, Limit
+
+	* 新增出参：Positions, Total
+
+
+新增数据结构：
+
+* [DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem)
+* [ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem)
+
+
+
 # 历次版本更新如下：
 
 ## 活动防刷(aa) 版本：2020-02-24
@@ -7621,6 +7647,28 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 5 次发布
+
+发布时间：2021-10-19 08:07:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)
+
+	* 新增入参：ProductIdList, CoordinateType, Offset, Limit
+
+	* 新增出参：Positions, Total
+
+
+新增数据结构：
+
+* [[DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem))
+* [[ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem))
 
 ### 第 4 次发布
 

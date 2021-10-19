@@ -237,8 +237,8 @@
     "DescribeDevicePositionList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePositionList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f58e6eab-ffcb-425d-94ac-f14047d93609\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePositionList\n<公共请求参数>\n\n{\n    \"ProductIdList\": [\n        \"X4912BAIVR\"\n    ],\n    \"CoordinateType\": 3,\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Positions\": [\n            {\n                \"ProductId\": \"X4912BAIVR\",\n                \"Items\": [\n                    {\n                        \"DeviceName\": \"dev1\",\n                        \"CreateTime\": 1600260759000,\n                        \"Longitude\": 113.9709,\n                        \"Latitude\": 22.562782\n                    }\n                ],\n                \"Total\": 1\n            }\n        ],\n        \"RequestId\": \"f58e6eab-ffcb-425d-94ac-f14047d93609\",\n        \"Total\": 1\n    }\n}",
         "title": "获取设备位置列表"
       }
     ],
