@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+## 内容分发网络(cdn) 版本：2018-06-06
 
-### 第 5 次发布
+### 第 8 次发布
 
-发布时间：2021-10-19 08:07:59
+发布时间：2021-10-20 12:55:26
 
 本次发布包含了以下内容：
 
@@ -12,17 +12,126 @@
 
 修改接口：
 
-* [DescribeDevicePositionList](http://document.tencentcloudapi.woa.com/document/product/1081/66795)
+* [ListTopDDoSData](http://document.tencentcloudapi.woa.com/document/product/228/62277)
 
-	* 新增入参：ProductIdList, CoordinateType, Offset, Limit
+	* 新增入参：Metric
 
-	* 新增出参：Positions, Total
+	* 新增出参：IPData
 
 
 新增数据结构：
 
-* [DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem)
-* [ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem)
+* [DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 3 次发布
+
+发布时间：2021-10-20 12:56:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyListener](http://document.tencentcloudapi.woa.com/document/product/214/59475)
+
+	* 新增入参：SessionType
+
+
+修改数据结构：
+
+* [HealthCheck](http://document.tencentcloudapi.woa.com/document/product/214/59523#HealthCheck)
+
+	* 新增成员：SourceIpType
+
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 3 次发布
+
+发布时间：2021-10-20 12:47:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1108/60937)
+
+	* 新增入参：SystemDisk, DataDisks
+
+
+新增数据结构：
+
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk)
+
+修改数据结构：
+
+* [Module](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Module)
+
+	* 新增成员：SystemDisk, DataDisks
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 2 次发布
+
+发布时间：2021-10-20 12:46:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice)
+
+修改数据结构：
+
+* [Price](http://document.tencentcloudapi.woa.com/document/product/1207/60723#Price)
+
+	* 新增成员：DataDiskPrices
+
+
+
+
+## 医疗报告结构化(mrs) 版本：2020-09-10
+
+### 第 2 次发布
+
+发布时间：2021-10-20 12:43:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription)
+* [EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis)
+* [EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem)
+* [Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram)
+
+修改数据结构：
+
+* [PatientInfo](http://document.tencentcloudapi.woa.com/document/product/1314/59948#PatientInfo)
+
+	* 新增成员：AgeNorm, Nation, MarriedCode, ProfessionCode, MedicalInsuranceTypeCode
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Template)
+
+	* 新增成员：Electrocardiogram
+
 
 
 
@@ -2255,6 +2364,27 @@
 
 ## 内容分发网络(cdn) 版本：2018-06-06
 
+### 第 8 次发布
+
+发布时间：2021-10-20 12:55:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListTopDDoSData](http://document.tencentcloudapi.woa.com/document/product/228/62277)
+
+	* 新增入参：Metric
+
+	* 新增出参：IPData
+
+
+新增数据结构：
+
+* [[DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData))
+
 ### 第 7 次发布
 
 发布时间：2021-10-15 08:05:12
@@ -3268,6 +3398,28 @@
 
 
 ## 负载均衡(clb) 版本：2018-03-17
+
+### 第 3 次发布
+
+发布时间：2021-10-20 12:56:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyListener](http://document.tencentcloudapi.woa.com/document/product/214/59475)
+
+	* 新增入参：SessionType
+
+
+修改数据结构：
+
+* [HealthCheck](http://document.tencentcloudapi.woa.com/document/product/214/59523#HealthCheck)
+
+	* 新增成员：SourceIpType
+
 
 ### 第 2 次发布
 
@@ -5760,6 +5912,33 @@
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
 
+### 第 3 次发布
+
+发布时间：2021-10-20 12:47:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1108/60937)
+
+	* 新增入参：SystemDisk, DataDisks
+
+
+新增数据结构：
+
+* [[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk))
+* [[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk))
+
+修改数据结构：
+
+* [Module](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Module)
+
+	* 新增成员：SystemDisk, DataDisks
+
+
 ### 第 2 次发布
 
 发布时间：2021-09-16 08:02:50
@@ -7667,8 +7846,8 @@
 
 新增数据结构：
 
-* [[DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem))
-* [[ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem)](http://document.tencentcloudapi.woa.com/document/product/1081/63313#[ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem))
+* [DevicePositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DevicePositionItem)
+* [ProductDevicesPositionItem](http://document.tencentcloudapi.woa.com/document/product/1081/63313#ProductDevicesPositionItem)
 
 ### 第 4 次发布
 
@@ -8228,6 +8407,25 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 2 次发布
+
+发布时间：2021-10-20 12:46:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice)](http://document.tencentcloudapi.woa.com/document/product/1207/60723#[DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice))
+
+修改数据结构：
+
+* [Price](http://document.tencentcloudapi.woa.com/document/product/1207/60723#Price)
+
+	* 新增成员：DataDiskPrices
+
 
 ### 第 1 次发布
 
@@ -9429,6 +9627,32 @@
 
 
 ## 医疗报告结构化(mrs) 版本：2020-09-10
+
+### 第 2 次发布
+
+发布时间：2021-10-20 12:43:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription))
+* [[EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis))
+* [[EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem))
+* [[Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram))
+
+修改数据结构：
+
+* [PatientInfo](http://document.tencentcloudapi.woa.com/document/product/1314/59948#PatientInfo)
+
+	* 新增成员：AgeNorm, Nation, MarriedCode, ProfessionCode, MedicalInsuranceTypeCode
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Template)
+
+	* 新增成员：Electrocardiogram
+
 
 ### 第 1 次发布
 

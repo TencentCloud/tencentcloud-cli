@@ -406,6 +406,284 @@
       ],
       "usage": "out"
     },
+    "EcgDescription": {
+      "document": "心电图详情",
+      "members": [
+        {
+          "default": "",
+          "document": "心率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "HeartRate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "心房率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "AuricularRate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "心室率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "VentricularRate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节律\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "Rhythm",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "P波时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "QRS时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "QrsDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "QRS电轴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "QrsAxis",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "P-R间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PRInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "P-P间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PPInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "R-R间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "RRInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "P-J间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PJInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Q-T间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "QTInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "qt/qtc间期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "QTCInterval",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RV5/SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "Rv5SV1Amplitude",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RV5+SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "Rv5AddSV1Amplitude",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PRT电轴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PRTAxis",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RV5振幅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "Rv5Amplitude",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "SV1Amplitude",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RV6/SV2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "RV6SV2",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "P/QRS/T电轴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgItem",
+          "name": "PQRSTAxis",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EcgDiagnosis": {
+      "document": "心电图诊断",
+      "members": [
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "心电图诊断",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"窦性心律\"]",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EcgItem": {
+      "document": "心电图指标项",
+      "members": [
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "心率",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "62",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bpm",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "心率:62bpm",
+          "member": "string",
+          "name": "Src",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Elastic": {
       "document": "弹性质地",
       "members": [
@@ -457,6 +735,32 @@
           "name": "Name",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Electrocardiogram": {
+      "document": "心电图",
+      "members": [
+        {
+          "default": "",
+          "document": "心电图详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgDescription",
+          "name": "EcgDescription",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "心电图诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EcgDiagnosis",
+          "name": "EcgDiagnosis",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -947,7 +1251,7 @@
         },
         {
           "default": "",
-          "document": "报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
+          "document": "报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -2213,6 +2517,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标准化年龄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600个小时",
+          "member": "string",
+          "name": "AgeNorm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
+          "member": "string",
+          "name": "Nation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "婚姻代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "string",
+          "name": "MarriedCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "职业代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "string",
+          "name": "ProfessionCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "居民医保代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06",
+          "member": "string",
+          "name": "MedicalInsuranceTypeCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2827,6 +3181,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "心电图报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Electrocardiogram",
+          "name": "Electrocardiogram",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2881,7 +3245,7 @@
         },
         {
           "default": "",
-          "document": "报告类型，目前支持12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
+          "document": "报告类型，目前支持12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",

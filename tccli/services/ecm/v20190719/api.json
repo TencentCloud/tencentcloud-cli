@@ -2802,6 +2802,11 @@
       ],
       "type": "object"
     },
+    "DataDisk": {
+      "document": "描述了数据盘的信息",
+      "members": [],
+      "usage": "both"
+    },
     "DeleteHaVipRequest": {
       "document": "DeleteHaVip请求参数结构体",
       "members": [
@@ -9100,6 +9105,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "系统盘信息。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据盘信息。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11233,6 +11258,24 @@
           "name": "KeepImageLogin",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统盘信息。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据盘信息。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12313,6 +12356,42 @@
         }
       ],
       "usage": "out"
+    },
+    "SystemDisk": {
+      "document": "用于描述系统盘。",
+      "members": [
+        {
+          "default": "",
+          "document": "硬盘类型。取值范围：\n- LOCAL_BASIC：本地硬盘；\n- CLOUD_PREMIUM：高性能云硬盘；\n默认取值：CLOUD_BASIC。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘ID。此参数暂不可用。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "硬盘容量大小。单位GB。",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签信息。",

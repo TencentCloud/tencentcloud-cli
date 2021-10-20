@@ -404,7 +404,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopDDoSData\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"AttackType\": \"UDP Flood\",\n                \"Value\": 10\n            },\n            {\n                \"AttackType\": \"TCP Flood\",\n                \"Value\": 2\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Value\": 1,\n                \"AttackType\": \"xx\"\n            }\n        ],\n        \"IPData\": [\n            {\n                \"Province\": \"广东省\",\n                \"Country\": \"中国\",\n                \"Isp\": \"中国电信\",\n                \"AttackIP\": \"10.32.1.3\"\n            }\n        ]\n    }\n}",
         "title": "获取DDoS攻击Top数据"
       }
     ],

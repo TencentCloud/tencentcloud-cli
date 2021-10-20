@@ -1454,7 +1454,8 @@ Output:
             "ReportType": "check",
             "MedicalRecordInfo": null,
             "Hospitalization": null,
-            "Surgery": null
+            "Surgery": null,
+            "Electrocardiogram": null
         }
     }
 }
