@@ -17,12 +17,16 @@ Output:
         "RequestId": "123456",
         "Data": [
             {
-                "AttackType": "UDP Flood",
-                "Value": 10
-            },
+                "Value": 1,
+                "AttackType": "xx"
+            }
+        ],
+        "IPData": [
             {
-                "AttackType": "TCP Flood",
-                "Value": 2
+                "Province": "广东省",
+                "Country": "中国",
+                "Isp": "中国电信",
+                "AttackIP": "10.32.1.3"
             }
         ]
     }

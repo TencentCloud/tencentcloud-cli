@@ -272,6 +272,14 @@
         "title": "删除泳道"
       }
     ],
+    "DeleteLaneRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteLaneRule\n&RuleId=lane-r-fdjsgjkgfvd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除泳道规则"
+      }
+    ],
     "DeleteMicroservice": [
       {
         "document": "",
@@ -574,6 +582,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGatewayAllGroupApis\n&GatewayDeployGroupId=group-zbyxk4aa\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a1c8ed2-7a69-4a12-87f0-a6ca4b6419f8\",\n        \"Result\": {\n            \"GatewayDeployGroupId\": \"group-zbyxk4aa\",\n            \"GatewayDeployGroupName\": \"sean-test\",\n            \"GroupNum\": 1,\n            \"Groups\": [\n                {\n                    \"GroupId\": \"grp-aocm2u1n\",\n                    \"GroupName\": \"test\",\n                    \"GroupApiCount\": 3,\n                    \"GroupApis\": [\n                        {\n                            \"ApiId\": \"api-3bpjclfs\",\n                            \"Path\": \"/v1/user/{userId}\",\n                            \"Method\": \"POST\",\n                            \"MicroserviceName\": \"provider-demo\",\n                            \"NamespaceName\": \"test-ns2\"\n                        },\n                        {\n                            \"ApiId\": \"api-5lf5r4i3\",\n                            \"Path\": \"/v1/user/create/user\",\n                            \"Method\": \"POST\",\n                            \"MicroserviceName\": \"provider-demo\",\n                            \"NamespaceName\": \"test-ns\"\n                        },\n                        {\n                            \"ApiId\": \"api-3e1583de\",\n                            \"Path\": \"/echo/{param}\",\n                            \"Method\": \"GET\",\n                            \"MicroserviceName\": \"provider-demo\",\n                            \"NamespaceName\": \"test-ns\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
         "title": "查询网关下分组和API"
+      }
+    ],
+    "DescribeGatewayApis": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGatewayApis\n&GroupId=grp-5yk7oor1\n&GatewayDeployGroupId=group-e42d597\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": {\n            \"TotalCount\": 30,\n            \"Content\": [\n                {\n                    \"UpdatedTime\": \"2021-03-17 10:44:27\",\n                    \"PathMapping\": \"/pd/v1/echo\",\n                    \"MicroserviceName\": \"服务名称\",\n                    \"Description\": \"描述\",\n                    \"MicroserviceId\": \"服务ID\",\n                    \"NamespaceName\": \"命名空间名称\",\n                    \"ApiId\": \"api-d5970cd2\",\n                    \"UsableStatus\": \"enabled\",\n                    \"ApiType\": \"ms\",\n                    \"ReleaseStatus\": \"released\",\n                    \"GroupName\": \"分组名称\",\n                    \"Host\": \"xx\",\n                    \"Method\": \"POST\",\n                    \"RateLimitStatus\": \"disabled\",\n                    \"Timeout\": 0,\n                    \"NamespaceId\": \"命名空间ID\",\n                    \"CreatedTime\": \"2021-03-17 10:44:27\",\n                    \"Path\": \"/provider-demo/v1/echo\",\n                    \"ReleasedTime\": \"2021-03-17 10:44:27\",\n                    \"MockStatus\": \"disabled\",\n                    \"GroupId\": \"grp-ib3xchsw\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询API分组下的Api列表信息"
       }
     ],
     "DescribeGatewayMonitorOverview": [

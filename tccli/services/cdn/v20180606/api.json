@@ -72,6 +72,12 @@
       "name": "计费数据查询",
       "output": "DescribeBillingDataResponse"
     },
+    "DescribeCcData": {
+      "document": "CC统计数据查询",
+      "input": "DescribeCcDataRequest",
+      "name": "CC统计数据查询",
+      "output": "DescribeCcDataResponse"
+    },
     "DescribeCdnData": {
       "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 命中请求数（单位为 次）\n+ 请求命中率（单位为 %）\n+ 命中流量（单位为 byte）\n+ 流量命中率（单位为 %）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
       "input": "DescribeCdnDataRequest",
@@ -102,6 +108,12 @@
       "name": "获取SSL证书中的可用域名",
       "output": "DescribeCertDomainsResponse"
     },
+    "DescribeDDoSData": {
+      "document": "DDoS统计数据查询",
+      "input": "DescribeDDoSDataRequest",
+      "name": "DDoS统计数据查询",
+      "output": "DescribeDDoSDataResponse"
+    },
     "DescribeDiagnoseReport": {
       "document": "DescribeDiagnoseReport 用于获取指定报告id的内容",
       "input": "DescribeDiagnoseReportRequest",
@@ -125,6 +137,12 @@
       "input": "DescribeDomainsConfigRequest",
       "name": "查询域名详细配置",
       "output": "DescribeDomainsConfigResponse"
+    },
+    "DescribeEventLogData": {
+      "document": "DescribeEventLogData 用于查询事件日志统计曲线",
+      "input": "DescribeEventLogDataRequest",
+      "name": "查询事件日志统计曲线",
+      "output": "DescribeEventLogDataResponse"
     },
     "DescribeImageConfig": {
       "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 ",
@@ -222,6 +240,12 @@
       "name": "违规历史查询",
       "output": "DescribeUrlViolationsResponse"
     },
+    "DescribeWafData": {
+      "document": "Waf统计数据查询",
+      "input": "DescribeWafDataRequest",
+      "name": "Waf统计数据查询",
+      "output": "DescribeWafDataResponse"
+    },
     "DisableCaches": {
       "document": "DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。（注：接口尚在内测中，暂未全量开放；封禁URL并非无限期永久封禁）",
       "input": "DisableCachesRequest",
@@ -299,6 +323,12 @@
       "input": "ListTopCcDataRequest",
       "name": "获取CC攻击Top数据",
       "output": "ListTopCcDataResponse"
+    },
+    "ListTopClsLogData": {
+      "document": "通过CLS日志计算Top信息。支持近7天的日志数据。",
+      "input": "ListTopClsLogDataRequest",
+      "name": "通过CLS日志计算Top信息",
+      "output": "ListTopClsLogDataResponse"
     },
     "ListTopDDoSData": {
       "document": "获取DDoS攻击Top数据",
@@ -2809,6 +2839,52 @@
       ],
       "usage": "out"
     },
+    "ClsLogIpData": {
+      "document": "通过Cls日志，计算出来的IP每秒访问数量",
+      "members": [
+        {
+          "default": "",
+          "document": "IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在给定的时间段中，1秒内的最大请求量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Request",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在获取的Top信息中，IP出现的次数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在给定的时间段中，1秒内的最大请求量对应的时间",
+          "example": "2021-10-01 00:00:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClsLogObject": {
       "document": "CLS日志搜索对象",
       "members": [
@@ -3505,6 +3581,122 @@
       ],
       "type": "object"
     },
+    "DDoSAttackBandwidthData": {
+      "document": "ddos攻击带宽峰值数据",
+      "members": [
+        {
+          "default": "",
+          "document": "ddos攻击类型，当值为all的时候表示所有的攻击类型的总带宽峰值",
+          "example": "TCP FLOOD",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ddos攻击带宽大小",
+          "example": "0",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击时间点",
+          "example": "2020-01-01 00:01:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDoSAttackIPTopData": {
+      "document": "攻击ip数据详细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击ip",
+          "example": "101.62.31.34",
+          "member": "string",
+          "name": "AttackIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击ip所在省份",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击ip所在国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "红果电信",
+          "example": "isp产商",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击次数",
+          "example": "0",
+          "member": "float",
+          "name": "AttackCount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDoSStatsData": {
+      "document": "DDoS统计数据",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽数值，单位bps",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DDoSTopData": {
       "document": "DDoS攻击Top数据",
       "members": [
@@ -3740,6 +3932,141 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcDataRequest": {
+      "document": "DescribeCcData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间",
+          "example": "2020-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间",
+          "example": "2020-01-01 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间粒度，支持以下几种模式：\nmin：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据\nhour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据\nday：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名查询，为空时，表示查询账号级别数据",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行动作，取值为：intercept/redirect/observe\n分别表示：拦截/重定向/观察\n为空时，表示所有执行动作",
+          "example": "observe",
+          "member": "string",
+          "name": "ActionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名列表查询，为空时，表示查询账号级别数据",
+          "example": "[www.test.com]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "cdn表示CDN数据，默认值\necdn表示ECDN数据",
+          "example": "cdn",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland或overseas，表示国内或海外，不填写默认表示国内",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcDataResponse": {
+      "document": "DescribeCcData返回参数结构体",
+      "members": [
+        {
+          "document": "指定执行动作的请求数数据，如果指定类型为空，表示所有类型的请求总数",
+          "example": "无",
+          "member": "TimestampData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "粒度",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "执行动作为拦截类型QPS统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimestampData",
+          "name": "InterceptQpsData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行动作为重定向类型QPS统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimestampData",
+          "name": "RedirectQpsData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "执行动作为观察类型QPS统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimestampData",
+          "name": "ObserveQpsData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4151,6 +4478,78 @@
       ],
       "type": "object"
     },
+    "DescribeDDoSDataRequest": {
+      "document": "DescribeDDoSData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间粒度，支持以下几种模式：\nmin：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据\nhour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据\nday：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据",
+          "example": "5min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSDataResponse": {
+      "document": "DescribeDDoSData返回参数结构体",
+      "members": [
+        {
+          "document": "DDoS统计数据数组",
+          "example": "无",
+          "member": "DDoSStatsData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间粒度：\nmin：1 分钟粒度\n5min：5 分钟粒度\nhour：1 小时粒度\nday：天粒度",
+          "example": "5min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DDoS统计攻击带宽峰值数组",
+          "example": "无",
+          "member": "DDoSAttackBandwidthData",
+          "name": "AttackBandwidthData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDiagnoseReportRequest": {
       "document": "DescribeDiagnoseReport请求参数结构体",
       "members": [
@@ -4465,6 +4864,105 @@
           "name": "TotalNumber",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventLogDataRequest": {
+      "document": "DescribeEventLogData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "防护类型，映射如下：\n  waf = \"Web攻击\"\n  cc = \"CC攻击\"",
+          "example": "waf",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，最长跨度为30分钟",
+          "example": "2021-01-01 00:10:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行动作，取值为：intercept/redirect/observe\n分别表示：拦截/重定向/观察\n参数放空，表示查询全部动作数据",
+          "example": "intercept",
+          "member": "string",
+          "name": "ActionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求URL，支持URL开头和结尾使用\\*表示通配\n如：\n/files/* 表示所有以/files/开头的请求\n*.jpg 表示所有以.jpg结尾的请求",
+          "example": "/",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域 mainland 或者 overseas，为空时默认 mainland",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源产品，cdn 或者 ecdn，为空时默认 cdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventLogDataResponse": {
+      "document": "DescribeEventLogData返回参数结构体",
+      "members": [
+        {
+          "document": "统计曲线结果",
+          "example": "[]",
+          "member": "EventLogStatsData",
+          "name": "Results",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5648,6 +6146,123 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafDataRequest": {
+      "document": "DescribeWafData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始时间，如：2018-09-04 10:40:00，返回结果大于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，如：2018-09-04 10:40:00，返回结果小于等于指定时间",
+          "example": "2018-09-04 10:40:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间粒度，支持以下几种模式：\nmin：1 分钟粒度，指定查询区间 24 小时内（含 24 小时），可返回 1 分钟粒度明细数据\n5min：5 分钟粒度，指定查询区间 31 天内（含 31 天），可返回 5 分钟粒度明细数据\nhour：1 小时粒度，指定查询区间 31 天内（含 31 天），可返回 1 小时粒度明细数据\nday：天粒度，指定查询区间大于 31 天，可返回天粒度明细数据\n\n仅支持30天内数据查询，且查询时间范围在 7 到 30 天最小粒度是 hour。",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名查询",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定攻击类型\n不填则查询所有攻击类型的数据分布\nAttackType 映射如下:\n\"webshell\" : Webshell检测防护\n\"oa\" : 常见OA漏洞防护\n\"xss\" : XSS跨站脚本攻击防护\n\"xxe\" : XXE攻击防护\n\"webscan\" : 扫描器攻击漏洞防护\n\"cms\" : 常见CMS漏洞防护\n\"upload\" : 恶意文件上传攻击防护\n\"sql\" : SQL注入攻击防护\n\"cmd_inject\": 命令/代码注入攻击防护\n\"osc\" : 开源组件漏洞防护\n\"file_read\" : 任意文件读取\n\"ldap\" : LDAP注入攻击防护\n\"other\" : 其它漏洞防护",
+          "example": "other",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定防御模式\n不填则查询所有防御模式的数据总和\nDefenceMode映射如下：\n  observe = '观察模式'\n  intercept = '拦截模式'",
+          "example": "intercept",
+          "member": "string",
+          "name": "DefenceMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地域：mainland 或 overseas",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定多个攻击类型，取值参考AttackType",
+          "example": "[other]",
+          "member": "string",
+          "name": "AttackTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定域名列表查询",
+          "example": "[www.test.com]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafDataResponse": {
+      "document": "DescribeWafData返回参数结构体",
+      "members": [
+        {
+          "document": "粒度数据",
+          "example": "[]",
+          "member": "TimestampData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "粒度",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7024,6 +7639,32 @@
       ],
       "usage": "both"
     },
+    "EventLogStatsData": {
+      "document": "事件日志统计数据结果",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "Datetime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Request",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FollowRedirect": {
       "document": "回源 301/302 状态码自动跟随配置，默认为关闭状态",
       "members": [
@@ -8214,6 +8855,132 @@
       ],
       "type": "object"
     },
+    "ListTopClsLogDataRequest": {
+      "document": "ListTopClsLogData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的日志集ID",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的日志主题ID组合，多个以逗号分隔",
+          "example": "无",
+          "member": "string",
+          "name": "TopicIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的日志的起始时间，格式 YYYY-mm-dd HH:MM:SS",
+          "example": "2021-10-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询的日志的结束时间，格式 YYYY-mm-dd HH:MM:SS，时间跨度应小于10分钟",
+          "example": "2021-10-01 00:00:01",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定域名查询",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定访问的URL查询，支持URL开头和结尾使用\\*表示通配\n如：\n/files/* 表示所有以/files/开头的请求\n*.jpg 表示所有以.jpg结尾的请求",
+          "example": "/test/abc.jpg",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入渠道，默认值为cdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的Top条数，最大值为100，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按请求量排序， asc（升序）或者 desc（降序），默认为 desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopClsLogDataResponse": {
+      "document": "ListTopClsLogData返回参数结构体",
+      "members": [
+        {
+          "document": "数据列表",
+          "example": "无",
+          "member": "ClsLogIpData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "获取到Top总记录数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "获取到的不重复IP条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "IpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTopDDoSDataRequest": {
       "document": "ListTopDDoSData请求参数结构体",
       "members": [
@@ -8243,6 +9010,15 @@
           "name": "TopCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "AttackIP表示查询攻击ip的top排行，AttackType表示攻击类型的top排行，为空默认为AttackType",
+          "example": "AttackIP",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8251,10 +9027,19 @@
       "document": "ListTopDDoSData返回参数结构体",
       "members": [
         {
-          "document": "DDoS Top数据",
+          "document": "DDoS 攻击类型的top数据，当Metric=AttackType的时候返回攻击类型的统计数据，IPData为空",
           "example": "无",
           "member": "DDoSTopData",
           "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ddos攻击ip的top数据，Metric=AttackIP的时候返回IPData，Data为空",
+          "example": "无",
+          "member": "DDoSAttackIPTopData",
+          "name": "IPData",
           "required": true,
           "type": "list",
           "value_allowed_null": false

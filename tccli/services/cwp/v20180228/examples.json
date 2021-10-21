@@ -248,14 +248,6 @@
         "title": "获取帐号统计列表数据"
       }
     ],
-    "DescribeAccounts": [
-      {
-        "document": "获取帐号列表",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeAccounts\n&Username=nginx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Accounts\": [\n            {\n                \"Id\": 1,\n                \"Uuid\": \"6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1\",\n                \"MachineIp\": \"10.12.12.14\",\n                \"MachineName\": \"machine-name\",\n                \"Username\": \"nginx\",\n                \"Groups\": \"users\",\n                \"Privilege\": \"ORDINARY\",\n                \"AccountCreateTime\": \"2018-01-01 12:12:12\",\n                \"LastLoginTime\": \"2018-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100\n    }\n}",
-        "title": "获取帐号列表"
-      }
-    ],
     "DescribeAssetAppList": [
       {
         "document": "",

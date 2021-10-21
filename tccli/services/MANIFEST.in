@@ -3,6 +3,8 @@ include tccli/services/aa/v20200224/api.json
 include tccli/services/aa/v20200224/examples.json
 include tccli/services/aai/v20180522/api.json
 include tccli/services/aai/v20180522/examples.json
+include tccli/services/advisor/v20200721/api.json
+include tccli/services/advisor/v20200721/examples.json
 include tccli/services/af/v20200226/api.json
 include tccli/services/af/v20200226/examples.json
 include tccli/services/afc/v20200226/api.json

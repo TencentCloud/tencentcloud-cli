@@ -17876,6 +17876,7 @@
         {
           "default": "",
           "document": "内网IP地址。",
+          "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": true,
@@ -17885,6 +17886,7 @@
         {
           "default": "",
           "document": "是否是主IP。",
+          "example": "无",
           "member": "bool",
           "name": "Primary",
           "required": false,
@@ -17894,6 +17896,7 @@
         {
           "default": "",
           "document": "公网IP地址。",
+          "example": "无",
           "member": "string",
           "name": "PublicIpAddress",
           "required": false,
@@ -17903,6 +17906,7 @@
         {
           "default": "",
           "document": "EIP实例ID，例如：eip-11112222。",
+          "example": "无",
           "member": "string",
           "name": "AddressId",
           "required": false,
@@ -17912,6 +17916,7 @@
         {
           "default": "",
           "document": "内网IP描述信息。",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -17921,6 +17926,7 @@
         {
           "default": "",
           "document": "公网IP是否被封堵。",
+          "example": "无",
           "member": "bool",
           "name": "IsWanIpBlocked",
           "required": false,
@@ -17930,6 +17936,7 @@
         {
           "default": "",
           "document": "IP状态：\nPENDING：生产中\nMIGRATING：迁移中\nDELETING：删除中\nAVAILABLE：可用的",
+          "example": "无",
           "member": "string",
           "name": "State",
           "required": false,

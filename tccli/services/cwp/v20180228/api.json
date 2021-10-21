@@ -186,12 +186,6 @@
       "name": "获取帐号统计列表数据",
       "output": "DescribeAccountStatisticsResponse"
     },
-    "DescribeAccounts": {
-      "document": "该接口已废弃\n\n本接口 (DescribeAccounts) 用于获取帐号列表数据。",
-      "input": "DescribeAccountsRequest",
-      "name": "获取帐号列表",
-      "output": "DescribeAccountsResponse"
-    },
     "DescribeAssetAppList": {
       "document": "查询应用列表",
       "input": "DescribeAssetAppListRequest",
@@ -1286,93 +1280,6 @@
     "serviceShortName": "cwp"
   },
   "objects": {
-    "Account": {
-      "document": "帐号列表信息数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "唯一ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid",
-          "member": "string",
-          "name": "Uuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机内网IP。",
-          "member": "string",
-          "name": "MachineIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机名称。",
-          "member": "string",
-          "name": "MachineName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "帐号名。",
-          "member": "string",
-          "name": "Username",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "帐号所属组。",
-          "member": "string",
-          "name": "Groups",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "帐号类型。\n<li>ORDINARY：普通帐号</li>\n<li>SUPPER：超级管理员帐号</li>",
-          "member": "string",
-          "name": "Privilege",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "帐号创建时间。",
-          "member": "datetime",
-          "name": "AccountCreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "帐号最后登录时间。",
-          "member": "datetime",
-          "name": "LastLoginTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "AccountStatistics": {
       "document": "帐号统计数据。",
       "members": [
@@ -8183,78 +8090,6 @@
           "member": "AccountStatistics",
           "name": "AccountStatistics",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAccountsRequest": {
-      "document": "DescribeAccounts请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Uuid表示，查询该主机下列表信息。",
-          "member": "string",
-          "name": "Uuid",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Username表示，查询该用户名下列表信息。",
-          "member": "string",
-          "name": "Username",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为10，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>\n<li>Privilege - String - 是否必填：否 - 帐号类型（ORDINARY: 普通帐号 | SUPPER: 超级管理员帐号）</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAccountsResponse": {
-      "document": "DescribeAccounts返回参数结构体",
-      "members": [
-        {
-          "document": "帐号列表记录总数。",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "帐号数据列表。",
-          "member": "Account",
-          "name": "Accounts",
           "type": "list",
           "value_allowed_null": false
         },

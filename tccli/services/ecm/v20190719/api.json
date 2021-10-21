@@ -2804,7 +2804,28 @@
     },
     "DataDisk": {
       "document": "描述了数据盘的信息",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "数据盘大小。单位GB。",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据盘类型，取值范围：\n- LOCAL_BASIC：本地硬盘\n- CLOUD_PREMIUM：高性能云硬盘\n\n默认取值： LOCAL_BASIC。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "DeleteHaVipRequest": {

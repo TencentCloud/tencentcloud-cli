@@ -43,7 +43,7 @@
       "output": "CreateLifecycleHookResponse"
     },
     "CreateNotificationConfiguration": {
-      "document": "本接口（CreateNotificationConfiguration）用于创建通知。",
+      "document": "本接口（CreateNotificationConfiguration）用于创建通知。\n通知到 CMQ 主题或队列时，消息内容如下：\n```\n{\n    \"Service\": \"Tencent Cloud Auto Scaling\",\n    \"CreatedTime\": \"2021-10-11T10:15:11Z\", // 活动创建时间\n    \"AppId\": \"100000000\",\n    \"ActivityId\": \"asa-fznnvrja\", // 伸缩活动ID\n    \"AutoScalingGroupId\": \"asg-pc2oqu2z\", // 伸缩组ID\n    \"ActivityType\": \"SCALE_OUT\",  // 伸缩活动类型\n    \"StatusCode\": \"SUCCESSFUL\",   // 伸缩活动结果\n    \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity,\n    scale out 1 instance(s).\", // 伸缩活动描述\n    \"StartTime\": \"2021-10-11T10:15:11Z\",  // 活动开始时间\n    \"EndTime\": \"2021-10-11T10:15:32Z\",    // 活动结束时间\n    \"DetailedStatusMessageSet\": [ // 活动内部错误集合（非空不代表活动失败）\n        {\n            \"Code\": \"InvalidInstanceType\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"InstanceId\": \"\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"SubnetId\": \"subnet-4t5mgeuu\",\n            \"Message\": \"The specified instance type `S5.LARGE8` is invalid in `subnet-4t5mgeuu`, `ap-guangzhou-2`.\",\n            \"InstanceType\": \"S5.LARGE8\"\n        }\n    ]\n}\n```",
       "input": "CreateNotificationConfigurationRequest",
       "name": "创建通知",
       "output": "CreateNotificationConfigurationResponse"
@@ -217,7 +217,7 @@
       "output": "ModifyLoadBalancersResponse"
     },
     "ModifyNotificationConfiguration": {
-      "document": "本接口（ModifyNotificationConfiguration）用于修改通知。",
+      "document": "本接口（ModifyNotificationConfiguration）用于修改通知。\n* 通知的接收端类型不支持修改。",
       "input": "ModifyNotificationConfigurationRequest",
       "name": "修改通知",
       "output": "ModifyNotificationConfigurationResponse"
@@ -857,6 +857,7 @@
         {
           "default": "",
           "document": "伸缩组ID。",
+          "example": "asg-19kw47wk",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -866,6 +867,7 @@
         {
           "default": "",
           "document": "用户组ID列表。",
+          "example": "[\"12529\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": true,
@@ -875,6 +877,7 @@
         {
           "default": "",
           "document": "通知事件列表。",
+          "example": "[\"SCALE_OUT_SUCCESSFUL\"]",
           "member": "string",
           "name": "NotificationTypes",
           "required": true,
@@ -884,8 +887,39 @@
         {
           "default": "",
           "document": "事件通知ID。",
+          "example": "asn-6r4waxc4",
           "member": "string",
           "name": "AutoScalingNotificationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通知接收端类型。",
+          "example": "USER_GROUP",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CMQ 队列名。",
+          "example": "test-queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CMQ 主题名。",
+          "example": "test-topic",
+          "member": "string",
+          "name": "TopicName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1663,8 +1697,35 @@
           "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。",
+          "example": "USER_GROUP",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。",
+          "example": "queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4514,6 +4575,24 @@
           "name": "NotificationUserGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "CMQ 队列名。",
+          "example": "queue",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CMQ 主题名。",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

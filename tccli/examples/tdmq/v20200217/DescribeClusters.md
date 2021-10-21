@@ -14,27 +14,40 @@ Output:
         "TotalCount": 1,
         "ClusterSet": [
             {
-                "ClusterId": "pulsar-p37angkrqd",
-                "ClusterName": "default",
-                "Remark": "default",
-                "EndPointNum": 0,
-                "CreateTime": "2020-11-30 20:45:36",
-                "Healthy": 1,
-                "HealthyInfo": "",
-                "Status": 1,
-                "MaxNamespaceNum": 10,
-                "MaxTopicNum": 1000,
                 "MaxQps": 10000,
-                "MessageRetentionTime": 86400,
-                "NamespaceNum": 0,
-                "VpcEndPoint": "xx",
-                "PublicEndPoint": "xx",
-                "UsedStorageBudget": 0,
+                "HealthyInfo": "xx",
+                "MaxTopicNum": 1000,
+                "MaxStorageCapacity": 100,
+                "MaxMessageDelayInSeconds": 0,
                 "Version": "xx",
-                "MaxStorageCapacity": 100
+                "Status": 1,
+                "Tags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "ClusterId": "xx",
+                "EndPointNum": 0,
+                "Healthy": 1,
+                "TopicNum": 0,
+                "Remark": "xx",
+                "NamespaceNum": 0,
+                "PublicEndPoint": "xx",
+                "MaxPublishRateInBytes": 0,
+                "VpcEndPoint": "xx",
+                "MaxDispatchRateInBytes": 0,
+                "PublicAccessEnabled": true,
+                "ClusterName": "xx",
+                "MaxPublishRateInMessages": 0,
+                "UsedStorageBudget": 0,
+                "MessageRetentionTime": 86400,
+                "MaxNamespaceNum": 10,
+                "CreateTime": "xx",
+                "MaxDispatchRateInMessages": 0
             }
         ],
-        "RequestId": "137c3d2c-eae6-4545-95dd-0d332074fd0e"
+        "RequestId": "xx"
     }
 }
 ```

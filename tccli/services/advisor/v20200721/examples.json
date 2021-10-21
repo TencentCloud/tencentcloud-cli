@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeStrategies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategies\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111\",\n        \"Strategies\": [\n            {\n                \"StrategyId\": 131,\n                \"Name\": \"云数据库（Redis）跨可用区部署\",\n                \"Desc\": \"检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险\",\n                \"Product\": \"redis\",\n                \"ProductDesc\": \"云数据库（Redis）\",\n                \"Repair\": \"如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tencent.com/document/product/239/51113)\",\n                \"GroupId\": 2,\n                \"GroupName\": \"可靠\",\n                \"Conditions\": [\n                    {\n                        \"ConditionId\": 178,\n                        \"Level\": 2,\n                        \"LevelDesc\": \"中风险\",\n                        \"Desc\": \"Redis 实例未跨可用区部署\"\n                    }\n                ]\n            },\n            {\n                \"StrategyId\": 235,\n                \"Name\": \"云数据库（Redis）使用基础网络\",\n                \"Desc\": \"检查 Redis 是否使用基础网络\",\n                \"Product\": \"redis\",\n                \"ProductDesc\": \"云数据库（Redis）\",\n                \"Repair\": \"建议更换为私有网络，私有网络是一块逻辑隔离的网络空间，基础网络是腾讯云上所有用户的公共网络资源池\",\n                \"GroupId\": 2,\n                \"GroupName\": \"可靠\",\n                \"Conditions\": [\n                    {\n                        \"ConditionId\": 307,\n                        \"Level\": 2,\n                        \"LevelDesc\": \"中风险\",\n                        \"Desc\": \"实例使用基础网络\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询评估项信息"
+      }
+    ],
+    "DescribeTaskStrategyRisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStrategyRisks\n<公共请求参数>\n\n{\n    \"StrategyId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskTotalCount\": 1,\n        \"StrategyId\": 1,\n        \"RequestId\": \"xx\",\n        \"RiskFieldsDesc\": [\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            },\n            {\n                \"Field\": \"xx\",\n                \"FieldName\": \"xx\",\n                \"FieldType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询评估项风险实例列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

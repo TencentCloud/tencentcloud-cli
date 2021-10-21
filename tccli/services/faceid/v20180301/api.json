@@ -1892,6 +1892,15 @@
           "name": "RedirectUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
