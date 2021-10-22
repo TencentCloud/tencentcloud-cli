@@ -18,6 +18,12 @@
       "name": "获取跳转小程序签署链接",
       "output": "CreateSignUrlsResponse"
     },
+    "DescribeResourceUrlsByFlows": {
+      "document": "根据流程信息批量获取资源下载链接",
+      "input": "DescribeResourceUrlsByFlowsRequest",
+      "name": "根据流程信息批量获取资源下载链接",
+      "output": "DescribeResourceUrlsByFlowsResponse"
+    },
     "DescribeTemplates": {
       "document": "通过此接口（DescribeTemplates）查询该企业在电子签渠道版中配置的有效模板列表",
       "input": "DescribeTemplatesRequest",
@@ -530,6 +536,69 @@
       ],
       "type": "object"
     },
+    "DescribeResourceUrlsByFlowsRequest": {
+      "document": "DescribeResourceUrlsByFlows请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "查询资源所对应的流程Id",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUrlsByFlowsResponse": {
+      "document": "DescribeResourceUrlsByFlows返回参数结构体",
+      "members": [
+        {
+          "document": "流程资源对应链接信息",
+          "example": "无",
+          "member": "FlowResourceUrlInfo",
+          "name": "FlowResourceUrlInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建消息，对应多个合同ID，\n成功为“”,创建失败则对应失败消息",
+          "example": "[\"\",\"\"]",
+          "member": "string",
+          "name": "ErrorMessages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTemplatesRequest": {
       "document": "DescribeTemplates请求参数结构体",
       "members": [
@@ -865,6 +934,32 @@
       ],
       "usage": "in"
     },
+    "FlowResourceUrlInfo": {
+      "document": "流程对应资源链接信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流程对应Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流程对应资源链接信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceUrlInfo",
+          "name": "ResourceUrlInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FormField": {
       "document": "此结构 (FormField) 用于描述内容控件填充结构。",
       "members": [
@@ -1105,6 +1200,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourceUrlInfo": {
+      "document": "资源链接信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源链接地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.pdf",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PDF",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SignUrlInfo": {
       "document": "签署链接内容",

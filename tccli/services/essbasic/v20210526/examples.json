@@ -24,6 +24,14 @@
         "title": "批量创建签署参与者签署H5链接"
       }
     ],
+    "DescribeResourceUrlsByFlows": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUrlsByFlows\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"CustomUserId\": \"xx\",\n        \"ProxyIp\": \"xx\",\n        \"Channel\": \"xx\"\n    },\n    \"FlowIds\": [\n        \"xx\"\n    ],\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowResourceUrlInfos\": [\n            {\n                \"FlowId\": \"xx\",\n                \"ResourceUrlInfos\": [\n                    {\n                        \"Url\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"ErrorMessages\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据流程信息批量获取资源下载链接"
+      }
+    ],
     "DescribeTemplates": [
       {
         "document": "",
