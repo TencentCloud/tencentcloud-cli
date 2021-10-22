@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 内容分发网络(cdn) 版本：2018-06-06
+## 弹性伸缩(as) 版本：2018-04-19
 
-### 第 8 次发布
+### 第 3 次发布
 
-发布时间：2021-10-20 12:55:26
+发布时间：2021-10-22 11:35:55
 
 本次发布包含了以下内容：
 
@@ -12,24 +12,50 @@
 
 修改接口：
 
-* [ListTopDDoSData](http://document.tencentcloudapi.woa.com/document/product/228/62277)
+* [CreateNotificationConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/61558)
 
-	* 新增入参：Metric
+	* 新增入参：TargetType, QueueName, TopicName
 
-	* 新增出参：IPData
+	* <font color="#dd0000">**修改入参**：</font>NotificationUserGroupIds
+
+* [ModifyNotificationConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/61555)
+
+	* 新增入参：QueueName, TopicName
 
 
-新增数据结构：
+修改数据结构：
 
-* [DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData)
+* [AutoScalingNotification](http://document.tencentcloudapi.woa.com/document/product/377/61610#AutoScalingNotification)
+
+	* 新增成员：TargetType, QueueName, TopicName
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 3 次发布
+
+发布时间：2021-10-22 11:37:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/62213)
+
+	* 新增入参：DeployGroupId
+
 
 
 
 ## 负载均衡(clb) 版本：2018-03-17
 
-### 第 3 次发布
+### 第 4 次发布
 
-发布时间：2021-10-20 12:56:26
+发布时间：2021-10-22 11:37:33
 
 本次发布包含了以下内容：
 
@@ -37,25 +63,57 @@
 
 修改接口：
 
-* [ModifyListener](http://document.tencentcloudapi.woa.com/document/product/214/59475)
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/59488)
 
-	* 新增入参：SessionType
+	* 新增入参：LoadBalancerPassToTarget
 
 
-修改数据结构：
 
-* [HealthCheck](http://document.tencentcloudapi.woa.com/document/product/214/59523#HealthCheck)
 
-	* 新增成员：SourceIpType
+## 主机安全(cwp) 版本：2018-02-28
 
+### 第 6 次发布
+
+发布时间：2021-10-22 11:46:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAccounts
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Account
 
 
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
 
-### 第 3 次发布
+### 第 4 次发布
 
-发布时间：2021-10-20 12:47:59
+发布时间：2021-10-22 11:34:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)
+
+	* 新增成员：DiskSize, DiskType
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 2 次发布
+
+发布时间：2021-10-22 11:38:54
 
 本次发布包含了以下内容：
 
@@ -63,75 +121,153 @@
 
 修改接口：
 
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1108/60937)
+* [GetEidToken](http://document.tencentcloudapi.woa.com/document/product/1007/62942)
 
-	* 新增入参：SystemDisk, DataDisks
-
-
-新增数据结构：
-
-* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)
-* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk)
-
-修改数据结构：
-
-* [Module](http://document.tencentcloudapi.woa.com/document/product/1108/60977#Module)
-
-	* 新增成员：SystemDisk, DataDisks
+	* 新增入参：Encryption
 
 
 
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+## 企业组织(organization) 版本：2021-03-31
 
 ### 第 2 次发布
 
-发布时间：2021-10-20 12:46:59
+发布时间：2021-10-22 11:41:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+新增接口：
 
-* [DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice)
-
-修改数据结构：
-
-* [Price](http://document.tencentcloudapi.woa.com/document/product/1207/60723#Price)
-
-	* 新增成员：DataDiskPrices
+* [CreateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/66836)
 
 
 
+## 企业组织(organization) 版本：2018-12-25
 
-## 医疗报告结构化(mrs) 版本：2020-09-10
 
-### 第 2 次发布
 
-发布时间：2021-10-20 12:43:42
+## 云函数(scf) 版本：2018-04-16
+
+### 第 4 次发布
+
+发布时间：2021-10-22 11:41:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [PutProvisionedConcurrencyConfig](http://document.tencentcloudapi.woa.com/document/product/583/64199)
+
+	* 新增入参：TriggerActions
+
+
 新增数据结构：
 
-* [EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription)
-* [EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis)
-* [EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem)
-* [Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram)
+* [TriggerAction](http://document.tencentcloudapi.woa.com/document/product/583/64222#TriggerAction)
 
 修改数据结构：
 
-* [PatientInfo](http://document.tencentcloudapi.woa.com/document/product/1314/59948#PatientInfo)
+* [VersionProvisionedConcurrencyInfo](http://document.tencentcloudapi.woa.com/document/product/583/64222#VersionProvisionedConcurrencyInfo)
 
-	* 新增成员：AgeNorm, Nation, MarriedCode, ProfessionCode, MedicalInsuranceTypeCode
+	* 新增成员：TriggerActions
 
-* [Template](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Template)
 
-	* 新增成员：Electrocardiogram
 
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 4 次发布
+
+发布时间：2021-10-22 11:44:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/65650)
+
+	* 新增入参：RegionName
+
+* [DeleteInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/65647)
+
+	* 新增入参：RegionName
+
+
+修改数据结构：
+
+* [VpcAndDomainInfo](http://document.tencentcloudapi.woa.com/document/product/1141/65730#VpcAndDomainInfo)
+
+	* 新增成员：RegionName
+
+
+
+
+## 分布式消息队列(tdmq) 版本：2020-02-17
+
+### 第 5 次发布
+
+发布时间：2021-10-22 11:45:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66006)
+
+	* 新增入参：PublicAccessEnabled
+
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/1179/66002)
+
+	* 新增入参：IsTagFilter, Filters
+
+* [DescribeCmqQueues](http://document.tencentcloudapi.woa.com/document/product/1179/66044)
+
+	* 新增入参：Filters
+
+* [DescribeCmqTopics](http://document.tencentcloudapi.woa.com/document/product/1179/66041)
+
+	* 新增入参：Filters
+
+* [ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66001)
+
+	* 新增入参：PublicAccessEnabled
+
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Cluster)
+
+	* 新增成员：MaxPublishRateInMessages, MaxDispatchRateInMessages, MaxPublishRateInBytes, MaxDispatchRateInBytes, TopicNum, MaxMessageDelayInSeconds, PublicAccessEnabled, Tags
+
+
+
+
+## 腾讯微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 4 次发布
+
+发布时间：2021-10-22 11:43:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/66837)
+* [DescribeGatewayApis](http://document.tencentcloudapi.woa.com/document/product/649/66838)
+
+新增数据结构：
+
+* [TsfPageApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/64989#TsfPageApiDetailInfo)
 
 
 
@@ -819,6 +955,34 @@
 
 
 ## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 3 次发布
+
+发布时间：2021-10-22 11:35:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNotificationConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/61558)
+
+	* 新增入参：TargetType, QueueName, TopicName
+
+	* <font color="#dd0000">**修改入参**：</font>NotificationUserGroupIds
+
+* [ModifyNotificationConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/61555)
+
+	* 新增入参：QueueName, TopicName
+
+
+修改数据结构：
+
+* [AutoScalingNotification](http://document.tencentcloudapi.woa.com/document/product/377/61610#AutoScalingNotification)
+
+	* 新增成员：TargetType, QueueName, TopicName
+
 
 ### 第 2 次发布
 
@@ -2135,6 +2299,21 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 3 次发布
+
+发布时间：2021-10-22 11:37:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/62213)
+
+	* 新增入参：DeployGroupId
+
+
 ### 第 2 次发布
 
 发布时间：2021-09-27 08:05:19
@@ -2383,7 +2562,7 @@
 
 新增数据结构：
 
-* [[DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData)](http://document.tencentcloudapi.woa.com/document/product/228/62314#[DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData))
+* [DDoSAttackIPTopData](http://document.tencentcloudapi.woa.com/document/product/228/62314#DDoSAttackIPTopData)
 
 ### 第 7 次发布
 
@@ -3399,6 +3578,21 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
+### 第 4 次发布
+
+发布时间：2021-10-22 11:37:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/59488)
+
+	* 新增入参：LoadBalancerPassToTarget
+
+
 ### 第 3 次发布
 
 发布时间：2021-10-20 12:56:26
@@ -4403,6 +4597,22 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 6 次发布
+
+发布时间：2021-10-22 11:46:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAccounts
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Account
 
 ### 第 5 次发布
 
@@ -5912,6 +6122,21 @@
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
 
+### 第 4 次发布
+
+发布时间：2021-10-22 11:34:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)
+
+	* 新增成员：DiskSize, DiskType
+
+
 ### 第 3 次发布
 
 发布时间：2021-10-20 12:47:59
@@ -5929,8 +6154,8 @@
 
 新增数据结构：
 
-* [[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk))
-* [[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk))
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#DataDisk)
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1108/60977#SystemDisk)
 
 修改数据结构：
 
@@ -6504,6 +6729,21 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 2 次发布
+
+发布时间：2021-10-22 11:38:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetEidToken](http://document.tencentcloudapi.woa.com/document/product/1007/62942)
+
+	* 新增入参：Encryption
+
 
 ### 第 1 次发布
 
@@ -8418,7 +8658,7 @@
 
 新增数据结构：
 
-* [[DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice)](http://document.tencentcloudapi.woa.com/document/product/1207/60723#[DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice))
+* [DataDiskPrice](http://document.tencentcloudapi.woa.com/document/product/1207/60723#DataDiskPrice)
 
 修改数据结构：
 
@@ -9638,10 +9878,10 @@
 
 新增数据结构：
 
-* [[EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription))
-* [[EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis))
-* [[EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem))
-* [[Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram)](http://document.tencentcloudapi.woa.com/document/product/1314/59948#[Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram))
+* [EcgDescription](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDescription)
+* [EcgDiagnosis](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgDiagnosis)
+* [EcgItem](http://document.tencentcloudapi.woa.com/document/product/1314/59948#EcgItem)
+* [Electrocardiogram](http://document.tencentcloudapi.woa.com/document/product/1314/59948#Electrocardiogram)
 
 修改数据结构：
 
@@ -10097,6 +10337,18 @@
 
 
 ## 企业组织(organization) 版本：2021-03-31
+
+### 第 2 次发布
+
+发布时间：2021-10-22 11:41:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/66836)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 1 次发布
 
@@ -10681,6 +10933,32 @@
 
 
 ## 云函数(scf) 版本：2018-04-16
+
+### 第 4 次发布
+
+发布时间：2021-10-22 11:41:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PutProvisionedConcurrencyConfig](http://document.tencentcloudapi.woa.com/document/product/583/64199)
+
+	* 新增入参：TriggerActions
+
+
+新增数据结构：
+
+* [[TriggerAction](http://document.tencentcloudapi.woa.com/document/product/583/64222#TriggerAction)](http://document.tencentcloudapi.woa.com/document/product/583/64222#[TriggerAction](http://document.tencentcloudapi.woa.com/document/product/583/64222#TriggerAction))
+
+修改数据结构：
+
+* [VersionProvisionedConcurrencyInfo](http://document.tencentcloudapi.woa.com/document/product/583/64222#VersionProvisionedConcurrencyInfo)
+
+	* 新增成员：TriggerActions
+
 
 ### 第 3 次发布
 
@@ -12254,6 +12532,32 @@
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
 
+### 第 4 次发布
+
+发布时间：2021-10-22 11:44:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/65650)
+
+	* 新增入参：RegionName
+
+* [DeleteInternalEndpointDns](http://document.tencentcloudapi.woa.com/document/product/1141/65647)
+
+	* 新增入参：RegionName
+
+
+修改数据结构：
+
+* [VpcAndDomainInfo](http://document.tencentcloudapi.woa.com/document/product/1141/65730#VpcAndDomainInfo)
+
+	* 新增成员：RegionName
+
+
 ### 第 3 次发布
 
 发布时间：2021-10-12 08:20:22
@@ -12489,6 +12793,44 @@
 
 
 ## 分布式消息队列(tdmq) 版本：2020-02-17
+
+### 第 5 次发布
+
+发布时间：2021-10-22 11:45:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66006)
+
+	* 新增入参：PublicAccessEnabled
+
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/1179/66002)
+
+	* 新增入参：IsTagFilter, Filters
+
+* [DescribeCmqQueues](http://document.tencentcloudapi.woa.com/document/product/1179/66044)
+
+	* 新增入参：Filters
+
+* [DescribeCmqTopics](http://document.tencentcloudapi.woa.com/document/product/1179/66041)
+
+	* 新增入参：Filters
+
+* [ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66001)
+
+	* 新增入参：PublicAccessEnabled
+
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/1179/66058#Cluster)
+
+	* 新增成员：MaxPublishRateInMessages, MaxDispatchRateInMessages, MaxPublishRateInBytes, MaxDispatchRateInBytes, TopicNum, MaxMessageDelayInSeconds, PublicAccessEnabled, Tags
+
 
 ### 第 4 次发布
 
@@ -13597,6 +13939,23 @@
 
 
 ## 腾讯微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 4 次发布
+
+发布时间：2021-10-22 11:43:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/66837)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeGatewayApis](http://document.tencentcloudapi.woa.com/document/product/649/66838)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TsfPageApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/64989#TsfPageApiDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/649/64989#[TsfPageApiDetailInfo](http://document.tencentcloudapi.woa.com/document/product/649/64989#TsfPageApiDetailInfo))
 
 ### 第 3 次发布
 

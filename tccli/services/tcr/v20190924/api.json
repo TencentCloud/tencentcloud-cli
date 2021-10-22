@@ -1204,6 +1204,15 @@
           "name": "UsePublicDomain",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2033,6 +2042,15 @@
           "name": "UsePublicDomain",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7640,6 +7658,7 @@
         {
           "default": "",
           "document": "tcr实例id",
+          "example": "tcr-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7649,6 +7668,7 @@
         {
           "default": "",
           "document": "私有网络id",
+          "example": "vpc-xxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -7658,6 +7678,7 @@
         {
           "default": "",
           "document": "tcr内网访问链路ip",
+          "example": "10.x.x.x",
           "member": "string",
           "name": "EniLBIp",
           "required": true,
@@ -7667,10 +7688,21 @@
         {
           "default": "",
           "document": "true：use instance name as subdomain\nfalse: use instancename+\"-vpc\" as subdomain",
+          "example": "true",
           "member": "bool",
           "name": "UsePublicDomain",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

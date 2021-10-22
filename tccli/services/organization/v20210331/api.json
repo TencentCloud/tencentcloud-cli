@@ -5,6 +5,12 @@
       "input": "BindOrganizationMemberAuthAccountRequest",
       "name": "绑定组织成员和子账号的授权关系",
       "output": "BindOrganizationMemberAuthAccountResponse"
+    },
+    "CreateOrganizationMember": {
+      "document": "创建组织成员",
+      "input": "CreateOrganizationMemberRequest",
+      "name": "创建组织成员",
+      "output": "CreateOrganizationMemberResponse"
     }
   },
   "metadata": {
@@ -49,6 +55,87 @@
     },
     "BindOrganizationMemberAuthAccountResponse": {
       "document": "BindOrganizationMemberAuthAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMemberRequest": {
+      "document": "CreateOrganizationMember请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "testAccount",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关系策略",
+          "example": "Finical",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关系权限",
+          "example": "无",
+          "member": "uint64",
+          "name": "PermissionIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要调节的节点",
+          "example": "1001",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "账号名",
+          "example": "test",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重试创建传记录ID",
+          "example": "12344",
+          "member": "int64",
+          "name": "RecordId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMemberResponse": {
+      "document": "CreateOrganizationMember返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

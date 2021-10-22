@@ -204,6 +204,12 @@
       "name": "删除泳道",
       "output": "DeleteLaneResponse"
     },
+    "DeleteLaneRule": {
+      "document": "删除泳道规则",
+      "input": "DeleteLaneRuleRequest",
+      "name": "删除泳道规则",
+      "output": "DeleteLaneRuleResponse"
+    },
     "DeleteMicroservice": {
       "document": "删除微服务",
       "input": "DeleteMicroserviceRequest",
@@ -431,6 +437,12 @@
       "input": "DescribeGatewayAllGroupApisRequest",
       "name": "查询网关所有分组下Api列表",
       "output": "DescribeGatewayAllGroupApisResponse"
+    },
+    "DescribeGatewayApis": {
+      "document": "查询API分组下的Api列表信息",
+      "input": "DescribeGatewayApisRequest",
+      "name": "查询API分组下的Api列表信息",
+      "output": "DescribeGatewayApisResponse"
     },
     "DescribeGatewayMonitorOverview": {
       "document": "查询网关监控概览",
@@ -5844,6 +5856,42 @@
       ],
       "type": "object"
     },
+    "DeleteLaneRuleRequest": {
+      "document": "DeleteLaneRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "泳道规则Id",
+          "example": "lane-r-fdjsgjkgfvd",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLaneRuleResponse": {
+      "document": "DeleteLaneRule返回参数结构体",
+      "members": [
+        {
+          "document": "操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteMicroserviceRequest": {
       "document": "DeleteMicroservice请求参数结构体",
       "members": [
@@ -8209,6 +8257,78 @@
           "document": "网关分组和API列表信息",
           "member": "GatewayVo",
           "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayApisRequest": {
+      "document": "DescribeGatewayApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID",
+          "example": "grp-5yk7oor1",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页的记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字，支持 API path",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组ID",
+          "example": "group-e42d597",
+          "member": "string",
+          "name": "GatewayDeployGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayApisResponse": {
+      "document": "DescribeGatewayApis返回参数结构体",
+      "members": [
+        {
+          "document": "翻页结构",
+          "example": "无",
+          "member": "TsfPageApiDetailInfo",
+          "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18204,6 +18324,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageApiDetailInfo": {
+      "document": "ApiDetailInfo 翻页对象",
+      "members": [
+        {
+          "default": "",
+          "document": "总记录数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API 信息列表",
+          "member": "ApiDetailInfo",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

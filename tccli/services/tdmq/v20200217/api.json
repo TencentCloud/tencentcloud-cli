@@ -602,7 +602,7 @@
         },
         {
           "default": "",
-          "document": "消息保留时间",
+          "document": "最大消息保留时间，分钟为单位",
           "example": "100000000",
           "member": "int64",
           "name": "MessageRetentionTime",
@@ -668,6 +668,86 @@
           "name": "UsedStorageBudget",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大生产消息速率，以条数为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxPublishRateInMessages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大推送消息速率，以条数为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxDispatchRateInMessages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大生产消息速率，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxPublishRateInBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大推送消息速率，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxDispatchRateInBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已创建主题数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TopicNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最长消息延时，以秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxMessageDelayInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启公网访问，不填时默认开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1528,6 +1608,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启公网访问，不填时默认开启",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2870,6 +2959,24 @@
           "name": "ClusterIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否标签过滤",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTagFilter",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤器。目前支持按标签过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3059,6 +3166,15 @@
           "name": "IsTagFilter",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤器。目前支持按标签过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3248,6 +3364,15 @@
           "name": "IsTagFilter",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤器。目前支持按标签过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4322,6 +4447,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开启公网访问，只能为true",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

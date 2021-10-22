@@ -2382,6 +2382,15 @@
           "name": "InstanceNodes",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "置放群组 ID。",
+          "example": "ps-7t11vrwf",
+          "member": "string",
+          "name": "DeployGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

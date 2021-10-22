@@ -104,6 +104,12 @@
         "input": "https://as.tencentcloudapi.com/?Action=CreateNotificationConfiguration\n&AutoScalingGroupId=asg-12wjuh0s\n&NotificationTypes.0=SCALE_OUT_SUCCESSFUL\n&NotificationTypes.1=SCALE_OUT_FAILED\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AutoScalingNotificationId\": \"asn-2sestqbr\",\n        \"RequestId\": \"fb02c8bd-5f38-4786-91b6-0c6e06a88832\"\n    }\n}",
         "title": "创建扩容成功、扩容失败事件通知"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotificationConfiguration\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-pc2oqu2z\",\n    \"NotificationTypes\": [\n        \"SCALE_OUT_FAILED\"\n    ],\n    \"TargetType\": \"CMQ_QUEUE\",\n    \"QueueName\": \"test-queue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoScalingNotificationId\": \"asn-03kyokwk\",\n        \"RequestId\": \"8565bcc0-7b02-4e9c-ae9f-27e3d3d73e12\"\n    }\n}",
+        "title": "创建扩容失败事件通知，接收端为 CMQ 队列"
       }
     ],
     "CreatePaiInstance": [

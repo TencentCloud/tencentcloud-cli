@@ -73,7 +73,7 @@
       "output": "CreateLiveRecordRuleResponse"
     },
     "CreateLiveRecordTemplate": {
-      "document": "创建录制模板，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
+      "document": "创建录制模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
       "input": "CreateLiveRecordTemplateRequest",
       "name": "创建录制模板",
       "output": "CreateLiveRecordTemplateResponse"
@@ -2864,7 +2864,7 @@
         },
         {
           "default": "",
-          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。",
+          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。\n极速高清模板（AiTransCode = 1 的时候）必须传。",
           "example": "无",
           "member": "int64",
           "name": "Height",
