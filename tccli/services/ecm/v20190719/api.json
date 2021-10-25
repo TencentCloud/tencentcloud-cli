@@ -354,6 +354,12 @@
       "name": "获取节点列表",
       "output": "DescribeNodeResponse"
     },
+    "DescribePackingQuotaGroup": {
+      "document": "使用本接口获取某种机型在某些区域的装箱配额（当使用虚拟机型时，返回的是一组相互关联的装箱配额）。",
+      "input": "DescribePackingQuotaGroupRequest",
+      "name": "获取装箱配额组",
+      "output": "DescribePackingQuotaGroupResponse"
+    },
     "DescribePeakBaseOverview": {
       "document": "CPU 内存 硬盘等基础信息峰值数据",
       "input": "DescribePeakBaseOverviewRequest",
@@ -2314,6 +2320,24 @@
           "name": "DisableWanIp",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "系统盘信息。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据盘信息。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4536,6 +4560,39 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackingQuotaGroupRequest": {
+      "document": "DescribePackingQuotaGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，name取值为：Zone-可用区， InstanceType-实例类型，DataDiskSize - 数据盘大小",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackingQuotaGroupResponse": {
+      "document": "DescribePackingQuotaGroup返回参数结构体",
+      "members": [
+        {
+          "document": "装箱配额组",
+          "member": "PackingQuotaGroup",
+          "name": "PackingQuotaSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8376,6 +8433,33 @@
           "name": "DefaultDataDiskSize",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认系统盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。",
+          "example": "20",
+          "member": "int64",
+          "name": "DefaultSystemDiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "系统盘",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据盘",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9723,7 +9807,7 @@
       "members": [
         {
           "default": "",
-          "document": "zone信息",
+          "document": "zone信息。",
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfo",
@@ -9733,7 +9817,7 @@
         },
         {
           "default": "",
-          "document": "国家信息",
+          "document": "国家信息。",
           "example": "无",
           "member": "Country",
           "name": "Country",
@@ -9743,7 +9827,7 @@
         },
         {
           "default": "",
-          "document": "区域信息",
+          "document": "区域信息。",
           "example": "无",
           "member": "Area",
           "name": "Area",
@@ -9753,7 +9837,7 @@
         },
         {
           "default": "",
-          "document": "省份信息",
+          "document": "省份信息。",
           "example": "无",
           "member": "Province",
           "name": "Province",
@@ -9763,7 +9847,7 @@
         },
         {
           "default": "",
-          "document": "城市信息",
+          "document": "城市信息。",
           "example": "无",
           "member": "City",
           "name": "City",
@@ -9773,7 +9857,7 @@
         },
         {
           "default": "",
-          "document": "Region信息",
+          "document": "Region信息。",
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
@@ -9783,7 +9867,7 @@
         },
         {
           "default": "",
-          "document": "运营商列表",
+          "document": "运营商列表。",
           "example": "无",
           "member": "ISP",
           "name": "ISPSet",
@@ -9793,7 +9877,7 @@
         },
         {
           "default": "",
-          "document": "运营商数量",
+          "document": "运营商数量。",
           "example": "无",
           "member": "int64",
           "name": "ISPNum",
@@ -9890,6 +9974,72 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PackingQuotaGroup": {
+      "document": "一组相互关联的装箱配额，以实例类型的优先级排序，优先级高的在前",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区id",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ISP id",
+          "member": "string",
+          "name": "ISPId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一组相互关联的装箱配额",
+          "member": "PackingQuotaInfo",
+          "name": "PackingQuotaInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PackingQuotaInfo": {
+      "document": "一组相关联的装箱配额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例类型",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "装箱配额",
+          "member": "int64",
+          "name": "PackingQuota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

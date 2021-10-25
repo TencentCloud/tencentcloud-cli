@@ -4485,6 +4485,7 @@
         {
           "default": "",
           "document": "需要设置预置并发的函数的名称",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -4493,6 +4494,7 @@
         {
           "default": "",
           "document": "函数的版本号，注：$LATEST版本不支持预置并发",
+          "example": "1",
           "member": "string",
           "name": "Qualifier",
           "required": true,
@@ -4501,6 +4503,7 @@
         {
           "default": "",
           "document": "预置并发数量，注：所有版本的预置并发数总和存在上限限制，当前的上限是：函数最大并发配额 - 100",
+          "example": "10",
           "member": "uint64",
           "name": "VersionProvisionedConcurrencyNum",
           "required": true,
@@ -4509,10 +4512,20 @@
         {
           "default": "",
           "document": "函数所属命名空间，默认为default",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时预置任务",
+          "example": "无",
+          "member": "TriggerAction",
+          "name": "TriggerActions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4979,6 +4992,42 @@
         }
       ],
       "usage": "out"
+    },
+    "TriggerAction": {
+      "document": "预置定时任务动作",
+      "members": [
+        {
+          "default": "",
+          "document": "定时预置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时预置并发数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TriggerProvisionedConcurrencyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TriggerCronConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TriggerCount": {
       "document": "TriggerCount描述不同类型触发器的数量",
@@ -5764,6 +5813,7 @@
         {
           "default": "",
           "document": "设置的预置并发数。",
+          "example": "0",
           "member": "uint64",
           "name": "AllocatedProvisionedConcurrencyNum",
           "required": true,
@@ -5773,6 +5823,7 @@
         {
           "default": "",
           "document": "当前已完成预置的并发数。",
+          "example": "0",
           "member": "uint64",
           "name": "AvailableProvisionedConcurrencyNum",
           "required": true,
@@ -5782,6 +5833,7 @@
         {
           "default": "",
           "document": "预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。",
+          "example": "\"\"",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -5791,6 +5843,7 @@
         {
           "default": "",
           "document": "对预置任务状态Status的说明。",
+          "example": "\"\"",
           "member": "string",
           "name": "StatusReason",
           "required": true,
@@ -5800,11 +5853,22 @@
         {
           "default": "",
           "document": "函数版本号",
+          "example": "\"\"",
           "member": "string",
           "name": "Qualifier",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预置并发定时任务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerAction",
+          "name": "TriggerActions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
