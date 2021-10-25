@@ -92,6 +92,34 @@
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
 
+### 第 5 次发布
+
+发布时间：2021-10-25 08:02:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePackingQuotaGroup](http://document.tencentcloudapi.woa.com/document/product/1108/66839)
+
+修改接口：
+
+* [CreateModule](http://document.tencentcloudapi.woa.com/document/product/1108/60908)
+
+	* 新增入参：SystemDisk, DataDisks
+
+* [ModifyModuleConfig](http://document.tencentcloudapi.woa.com/document/product/1108/60904)
+
+	* 新增入参：DefaultSystemDiskSize, SystemDisk, DataDisks
+
+
+新增数据结构：
+
+* [PackingQuotaGroup](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaGroup)
+* [PackingQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaInfo)
+
 ### 第 4 次发布
 
 发布时间：2021-10-22 11:34:29
@@ -174,6 +202,25 @@
 * [VersionProvisionedConcurrencyInfo](http://document.tencentcloudapi.woa.com/document/product/583/64222#VersionProvisionedConcurrencyInfo)
 
 	* 新增成员：TriggerActions
+
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 8 次发布
+
+发布时间：2021-10-25 08:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OrderInfo](http://document.tencentcloudapi.woa.com/document/product/876/64596#OrderInfo)
+
+	* 新增成员：Flag, ReqBody
 
 
 
@@ -6121,6 +6168,34 @@
 
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 5 次发布
+
+发布时间：2021-10-25 08:02:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribePackingQuotaGroup](http://document.tencentcloudapi.woa.com/document/product/1108/66839)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateModule](http://document.tencentcloudapi.woa.com/document/product/1108/60908)
+
+	* 新增入参：SystemDisk, DataDisks
+
+* [ModifyModuleConfig](http://document.tencentcloudapi.woa.com/document/product/1108/60904)
+
+	* 新增入参：DefaultSystemDiskSize, SystemDisk, DataDisks
+
+
+新增数据结构：
+
+* [[PackingQuotaGroup](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaGroup)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[PackingQuotaGroup](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaGroup))
+* [[PackingQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaInfo)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[PackingQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1108/60977#PackingQuotaInfo))
 
 ### 第 4 次发布
 
@@ -12238,6 +12313,21 @@
 
 
 ## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 8 次发布
+
+发布时间：2021-10-25 08:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OrderInfo](http://document.tencentcloudapi.woa.com/document/product/876/64596#OrderInfo)
+
+	* 新增成员：Flag, ReqBody
+
 
 ### 第 7 次发布
 

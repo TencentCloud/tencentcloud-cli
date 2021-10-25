@@ -7820,6 +7820,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "无",
           "member": "string",
           "name": "TranId",
           "required": true,
@@ -7829,6 +7830,7 @@
         {
           "default": "",
           "document": "订单要切换的套餐ID",
+          "example": "无",
           "member": "string",
           "name": "PackageId",
           "required": true,
@@ -7838,6 +7840,7 @@
         {
           "default": "",
           "document": "订单类型\n<li>1 购买</li>\n<li>2 续费</li>\n<li>3 变配</li>",
+          "example": "无",
           "member": "string",
           "name": "TranType",
           "required": true,
@@ -7847,6 +7850,7 @@
         {
           "default": "",
           "document": "订单状态。\n<li>1未支付</li>\n<li>2 支付中</li>\n<li>3 发货中</li>\n<li>4 发货成功</li>\n<li>5 发货失败</li>\n<li>6 已退款</li>\n<li>7 已取消</li>\n<li>100 已删除</li>",
+          "example": "无",
           "member": "string",
           "name": "TranStatus",
           "required": true,
@@ -7856,6 +7860,7 @@
         {
           "default": "",
           "document": "订单更新时间",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -7865,6 +7870,7 @@
         {
           "default": "",
           "document": "订单创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7874,6 +7880,7 @@
         {
           "default": "",
           "document": "付费模式.\n<li>prepayment 预付费</li>\n<li>postpaid 后付费</li>",
+          "example": "无",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -7883,6 +7890,7 @@
         {
           "default": "",
           "document": "订单绑定的扩展ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ExtensionId",
           "required": true,
@@ -7892,11 +7900,32 @@
         {
           "default": "",
           "document": "资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ResourceReady",
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安装标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Flag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下单时的参数",
+          "example": "ReqBody",
+          "member": "string",
+          "name": "ReqBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

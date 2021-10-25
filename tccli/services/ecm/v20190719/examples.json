@@ -520,6 +520,14 @@
         "title": "查看地域列表"
       }
     ],
+    "DescribePackingQuotaGroup": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribePackingQuotaGroup\n&Filters.0.Name=Zone\n&Filters.0.Values.0=ap-beijing-ecm-ct\n&Filters.1.Name=InstanceType\n&Filters.1.Values.0=SN3ne.2XLARGE16\n&Filters.2.Name=DataDiskSize\n&Filters.2.Values.0=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PackingQuotaSet\": [\n            {\n                \"ZoneId\": 10580001,\n                \"Zone\": \"ap-beijing-ecm-cm3-1\",\n                \"ISPId\": \"CMCC\",\n                \"PackingQuotaInfos\": [\n                    {\n                        \"InstanceType\": \"S4.LARGE8\",\n                        \"PackingQuota\": 49\n                    }\n                ]\n            },\n            {\n                \"ZoneId\": 10650001,\n                \"Zone\": \"ap-beijing-ecm-cu3-1\",\n                \"ISPId\": \"CUCC\",\n                \"PackingQuotaInfos\": [\n                    {\n                        \"InstanceType\": \"S4.LARGE8\",\n                        \"PackingQuota\": 100\n                    },\n                    {\n                        \"InstanceType\": \"SN3ne.LARGE8\",\n                        \"PackingQuota\": 5\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f32d1e05-a8cb-4848-a16c-2d6b4ce47420\"\n    }\n}",
+        "title": "获取边缘节点实例配额"
+      }
+    ],
     "DescribePeakBaseOverview": [
       {
         "document": "查询概览页基础数据",

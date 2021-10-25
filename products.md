@@ -10,7 +10,7 @@
 | ape | [正版图库直通车](http://document.tencentcloudapi.woa.com/document/product/1181) | 2021-09-16 08:01:47 |
 | api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | 2021-08-26 11:25:08 |
 | apigateway | [API网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2021-10-20 13:15:59 |
-| as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2021-10-22 11:35:55 |
+| as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2021-10-25 08:03:55 |
 | asr | [语音识别](http://document.tencentcloudapi.woa.com/document/product/1093) | 2021-09-16 08:02:03 |
 | asw | [应用与服务编排工作流](http://document.tencentcloudapi.woa.com/document/product/1272) | 2021-09-16 08:01:45 |
 | ba | [网站备案](http://document.tencentcloudapi.woa.com/document/product/243) | 2021-09-16 08:01:43 |
@@ -58,7 +58,7 @@
 | dts | [数据传输服务](http://document.tencentcloudapi.woa.com/document/product/571) | 2021-09-16 08:07:29 |
 | ecc | [英文作文批改](http://document.tencentcloudapi.woa.com/document/product/1076) | 2021-09-16 08:07:34 |
 | ecdn | [全站加速网络](http://document.tencentcloudapi.woa.com/document/product/570) | 2021-10-20 12:49:12 |
-| ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | 2021-10-22 11:34:29 |
+| ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | 2021-10-25 08:02:28 |
 | eiam | [数字身份管控平台（员工版）](http://document.tencentcloudapi.woa.com/document/product/1442) | 2021-10-22 11:47:13 |
 | eis | [企业集成服务](http://document.tencentcloudapi.woa.com/document/product/1270) | 2021-09-16 08:00:37 |
 | emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2021-09-16 08:07:37 |
@@ -127,7 +127,7 @@
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-16 08:11:08 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | 2021-09-16 08:11:14 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | 2021-10-20 13:08:22 |
-| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-10-20 13:08:44 |
+| tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | 2021-10-25 08:10:14 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | 2021-09-16 08:02:01 |
 | tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2021-10-22 11:44:51 |
 | tdid | [分布式身份](http://document.tencentcloudapi.woa.com/document/product/1439) | 2021-09-16 08:00:05 |
