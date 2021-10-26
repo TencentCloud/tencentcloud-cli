@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DescribeServiceTemplates --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name service-template-name \
     --Filters.0.Values TestName \
     --Limit 2

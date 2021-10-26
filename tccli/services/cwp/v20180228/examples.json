@@ -1176,6 +1176,14 @@
         "title": "批量获取近日指定类型的漏洞数量和主机数量"
       }
     ],
+    "DescribeVulEffectHostList": [
+      {
+        "document": "漏洞影响主机列表",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulEffectHostList\n&VulId=100435\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 2,\n        \"VulEffectHostList\": [\n            {\n                \"EventId\": 15,\n                \"Status\": 0,\n                \"LastTime\": \"2020-04-22 03:29:52\",\n                \"Level\": 1,\n                \"Quuid\": \"b86925b4-cc36-420e-80d4-5094cb2f094b\",\n                \"Uuid\": \"ed629672-165e-11ea-8bcf-40f2e9f3d932\",\n                \"HostIp\": \"10.104.14.165\",\n                \"AliasName\": \"poc测试(129.204.36.227)\",\n                \"Tags\": null\n            },\n            {\n                \"EventId\": 16,\n                \"Status\": 1,\n                \"LastTime\": \"2020-02-09 03:02:17\",\n                \"Level\": 2,\n                \"Quuid\": \"b86925b4-cc36-420e-80d4-5094cb2f094b\",\n                \"Uuid\": \"ed629672-165e-11ea-8bcf-40f2e9f3d932\",\n                \"HostIp\": \"10.104.14.165\",\n                \"AliasName\": \"poc测试(129.204.36.227)\",\n                \"Tags\": null\n            }\n        ]\n    }\n}",
+        "title": "漏洞影响主机列表"
+      }
+    ],
     "DescribeVulHostCountScanTime": [
       {
         "document": "获取待处理漏洞数+影响主机数",
@@ -1206,6 +1214,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulLevelCount\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"VulLevelList\": [\n            {\n                \"VulLevel\": 3,\n                \"Count\": 16\n            },\n            {\n                \"VulLevel\": 2,\n                \"Count\": 16\n            },\n            {\n                \"VulLevel\": 1,\n                \"Count\": 4\n            },\n            {\n                \"VulLevel\": 0,\n                \"Count\": 2\n            }\n        ]\n    }\n}",
         "title": "查询漏洞数量按等级分布统计"
+      }
+    ],
+    "DescribeVulList": [
+      {
+        "document": "获取指定分类和状态的漏洞列表数据",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 2,\n        \"FollowVulCount\": 0,\n        \"VulInfoList\": [\n            {\n                \"Ids\": \"1748\",\n                \"Name\": \"Linux帐户口令生存期策略\",\n                \"Status\": 0,\n                \"VulId\": 100392,\n                \"PublishTime\": \"2019-09-02 00:00:00\",\n                \"LastTime\": \"2020-06-29 03:04:15\",\n                \"HostCount\": 1,\n                \"Level\": 2,\n                \"From\": 0,\n                \"Descript\": \"口令老化（Password aging）是一种增强的系统口令生命期认证机制，能够确保用户的口令定期更换，提高系统安全性。\",\n                \"PublishTimeWisteria\": \"\",\n                \"NameWisteria\": \"\",\n                \"DescriptWisteria\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "获取指定分类和状态的漏洞列表"
       }
     ],
     "DescribeVulTop": [

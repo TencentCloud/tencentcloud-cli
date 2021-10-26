@@ -882,6 +882,12 @@
       "name": "获取近日指定类型的漏洞数量和主机数量",
       "output": "DescribeVulCountByDatesResponse"
     },
+    "DescribeVulEffectHostList": {
+      "document": "漏洞影响主机列表",
+      "input": "DescribeVulEffectHostListRequest",
+      "name": "漏洞影响主机列表",
+      "output": "DescribeVulEffectHostListResponse"
+    },
     "DescribeVulHostCountScanTime": {
       "document": "获取待处理漏洞数+影响主机数",
       "input": "DescribeVulHostCountScanTimeRequest",
@@ -905,6 +911,12 @@
       "input": "DescribeVulLevelCountRequest",
       "name": "查询漏洞数量等级分布统计",
       "output": "DescribeVulLevelCountResponse"
+    },
+    "DescribeVulList": {
+      "document": "获取漏洞列表数据",
+      "input": "DescribeVulListRequest",
+      "name": "漏洞列表",
+      "output": "DescribeVulListResponse"
     },
     "DescribeVulTop": {
       "document": "漏洞top统计",
@@ -16208,6 +16220,78 @@
       ],
       "type": "object"
     },
+    "DescribeVulEffectHostListRequest": {
+      "document": "DescribeVulEffectHostList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页limit 最大100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "漏洞id",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>AliasName - String - 主机名筛选</li>\n<li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>\n<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>\n<li>Uuid - String数组 - Uuid串数组</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulEffectHostListResponse": {
+      "document": "DescribeVulEffectHostList返回参数结构体",
+      "members": [
+        {
+          "document": "列表总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "影响主机列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VulEffectHostList",
+          "name": "VulEffectHostList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVulHostCountScanTimeRequest": {
       "document": "DescribeVulHostCountScanTime请求参数结构体",
       "members": [],
@@ -16474,6 +16558,78 @@
           "name": "VulLevelList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulListRequest": {
+      "document": "DescribeVulList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>\n<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>\n<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>\n<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>\n<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>\n<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>\n<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>\n<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulListResponse": {
+      "document": "DescribeVulList返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VulInfoList",
+          "name": "VulInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "重点关注漏洞总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "uint64",
+          "name": "FollowVulCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -23818,6 +23974,112 @@
       ],
       "usage": "out"
     },
+    "VulEffectHostList": {
+      "document": "漏洞影响主机列表",
+      "members": [
+        {
+          "default": "",
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-24 16:37:57",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "危害等级：1-低危；2-中危；3-高危；4-严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cssfsfsf",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shjkdhsjkc",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机HostIp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.12.78.56",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "主机",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "说明",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "VulHostTopInfo": {
       "document": "服务器风险top5实体",
       "members": [
@@ -23855,6 +24117,152 @@
           "name": "Score",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VulInfoList": {
+      "document": "主机安全-漏洞管理-漏洞列表",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞包含的事件id串，多个用“,”分割",
+          "example": "1",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞名",
+          "example": "git注入",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞id",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞披露事件",
+          "example": "2021-03-16 16:21:51",
+          "member": "string",
+          "name": "PublishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后检测时间",
+          "example": "2021-03-16 16:21:51",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "影响主机数",
+          "example": "2",
+          "member": "uint64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞等级 1:低 2:中 3:高 4:提示",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "From",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "漏洞描述",
+          "member": "string",
+          "name": "Descript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "废弃字段",
+          "member": "string",
+          "name": "PublishTimeWisteria",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "废弃字段",
+          "member": "string",
+          "name": "NameWisteria",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "废弃字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "废弃字段",
+          "member": "string",
+          "name": "DescriptWisteria",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "聚合后事件状态串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2",
+          "member": "string",
+          "name": "StatusStr",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

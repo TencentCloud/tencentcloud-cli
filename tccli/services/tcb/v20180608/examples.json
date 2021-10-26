@@ -208,6 +208,14 @@
         "title": "示例"
       }
     ],
+    "DescribeCloudBaseRunPodList": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunPodList\n&EnvId=\"test\"\n&ServerName=\"test\"\n&VersionName=\"test-001\"\n&PodName=\"test-001-111\"\n&Status=\"running\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8971182b-32a0-4d9b-b0e2-2190524a1cfb\"\n    }\n}",
+        "title": "实例一"
+      }
+    ],
     "DescribeCloudBaseRunResource": [
       {
         "document": "",
@@ -222,6 +230,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunResourceForExtend\n&EnvId=lotestapi100004\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClusterStatus\": \"succ\",\n        \"VirtualClusterId\": \"cjd123\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\",\n        \"VpcId\": \"xx\",\n        \"SubnetIds\": [\n            {\n                \"Target\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Region\": \"xx\",\n                \"Cidr\": \"xx\",\n                \"Type\": \"xx\",\n                \"Id\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"Region\": \"xx\"\n    }\n}",
         "title": "查看容器托管的资源状态"
+      }
+    ],
+    "DescribeCloudBaseRunServer": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunServer\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ServerName\": \"xx\",\n        \"IsPublic\": true,\n        \"ImageRepo\": \"xx\",\n        \"TrafficType\": \"xx\",\n        \"SourceType\": \"xx\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"VersionItems\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"xx\",\n                \"Remark\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"BuildId\": 0,\n                \"UploadType\": \"xx\",\n                \"Priority\": 0,\n                \"UrlParam\": {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                },\n                \"FlowRatio\": 0,\n                \"MinReplicas\": 0,\n                \"IsDefaultPriority\": true,\n                \"FlowParams\": [\n                    {\n                        \"Priority\": 0,\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreatedTime\": \"xx\",\n                \"MaxReplicas\": 0\n            }\n        ]\n    }\n}",
+        "title": "查看某个服务的装填"
       }
     ],
     "DescribeCloudBaseRunServerVersion": [
