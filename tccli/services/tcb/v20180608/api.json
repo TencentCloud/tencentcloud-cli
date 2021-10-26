@@ -156,6 +156,12 @@
       "name": "查询操作类型接口",
       "output": "DescribeCloudBaseRunOperationTypesResponse"
     },
+    "DescribeCloudBaseRunPodList": {
+      "document": "查询云应用服务版本容器列表",
+      "input": "DescribeCloudBaseRunPodListRequest",
+      "name": "查询云应用服务版本容器列表",
+      "output": "DescribeCloudBaseRunPodListResponse"
+    },
     "DescribeCloudBaseRunResource": {
       "document": "查看容器托管的集群状态",
       "input": "DescribeCloudBaseRunResourceRequest",
@@ -167,6 +173,12 @@
       "input": "DescribeCloudBaseRunResourceForExtendRequest",
       "name": "查看容器托管的资源状态扩展使用",
       "output": "DescribeCloudBaseRunResourceForExtendResponse"
+    },
+    "DescribeCloudBaseRunServer": {
+      "document": "查询单个服务的详情，版本以及详情",
+      "input": "DescribeCloudBaseRunServerRequest",
+      "name": "查询单个服务的详情",
+      "output": "DescribeCloudBaseRunServerResponse"
     },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
@@ -1333,6 +1345,39 @@
       ],
       "usage": "in"
     },
+    "CloudBaseRunKVPriority": {
+      "document": "KV参数的优先级",
+      "members": [
+        {
+          "default": "",
+          "document": "参数的Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数的Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CloudBaseRunNfsVolumeSource": {
       "document": "nfs挂载资源",
       "members": [
@@ -1388,6 +1433,182 @@
         }
       ],
       "usage": "in"
+    },
+    "CloudBaseRunServerVersionItem": {
+      "document": "版本的列表",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名称",
+          "example": "test-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量占比",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 12:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "构建ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "BuildId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "构建方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Image",
+          "member": "string",
+          "name": "UploadType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "url中的参数路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "ObjectKV",
+          "name": "UrlParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "优先级（数值越小，优先级越高）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是默认兜底版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsDefaultPriority",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KV Params\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CloudBaseRunKVPriority",
+          "name": "FlowParams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa123",
+          "member": "string",
+          "name": "RunId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentReplicas",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloudBaseRunServiceVolumeMount": {
       "document": "对标 EKS VolumeMount",
@@ -4199,6 +4420,80 @@
       ],
       "type": "object"
     },
+    "DescribeCloudBaseRunPodListRequest": {
+      "document": "DescribeCloudBaseRunPodList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境id",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "容器状态",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "容器名",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunPodListResponse": {
+      "document": "DescribeCloudBaseRunPodList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudBaseRunResourceForExtendRequest": {
       "document": "DescribeCloudBaseRunResourceForExtend请求参数结构体",
       "members": [
@@ -4310,6 +4605,132 @@
           "member": "CloudBaseRunVpcSubnet",
           "name": "SubnetIds",
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerRequest": {
+      "document": "DescribeCloudBaseRunServer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "lotestapi100004",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "example": "dockerservicename",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "版本名字（精确匹配）",
+          "example": "无",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerResponse": {
+      "document": "DescribeCloudBaseRunServer返回参数结构体",
+      "members": [
+        {
+          "document": "个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudBaseRunServerVersionItem",
+          "name": "VersionItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsPublic",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ImageRepo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "流量配置的类型（FLOW,URL_PARAMS)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TrafficType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "服务创建类型，默认为空，一键部署为oneclick\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"oneclick\"",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

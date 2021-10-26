@@ -118,6 +118,14 @@
         "title": "查询实例的详细信息"
       }
     ],
+    "DescribeDBInstanceParameters": [
+      {
+        "document": "查看实例当前可修改该参数列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceParameters\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"xx\",\n    \"ParamName\": \"default_transaction_read_only\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": [\n            {\n                \"Advanced\": true,\n                \"ClassificationCN\": \"Client Connection Defaults\",\n                \"ClassificationEN\": \"Sets the default read-only status of new transactions.\",\n                \"CurrentValue\": \"\",\n                \"DefaultValue\": \"off\",\n                \"EnumValue\": [\n                    \"on\",\n                    \"off\"\n                ],\n                \"ID\": 59,\n                \"LastModifyTime\": \"\",\n                \"Max\": 0,\n                \"Min\": 0,\n                \"Name\": \"default_transaction_read_only\",\n                \"NeedReboot\": false,\n                \"ParamDescriptionCH\": \"此参数控制每个新事务的是否为默认只读状态 。默认是off（读/写）\",\n                \"ParamDescriptionEN\": \"Sets the default read-only status of new transactions.\",\n                \"ParamValueType\": \"bool\",\n                \"SpecRelated\": false,\n                \"Unit\": \"\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取实例参数列表"
+      }
+    ],
     "DescribeDBInstances": [
       {
         "document": "",
@@ -162,6 +170,14 @@
         "input": "https://postgres.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20180615110033\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Deals\": [\n            {\n                \"Count\": 1,\n                \"OwnerUin\": \"909619400\",\n                \"DBInstanceIdSet\": [\n                    \"postgres-2uepfuz1\"\n                ],\n                \"PayMode\": 1,\n                \"FlowId\": 36,\n                \"DealName\": \"20180615110033\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "获取订单信息"
+      }
+    ],
+    "DescribeParamsEvent": [
+      {
+        "document": "获取参数修改状态、记录",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamsEvent\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nbvqjlhf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventItems\": [\n            {\n                \"EventCount\": 1,\n                \"EventDetail\": [\n                    {\n                        \"EffectiveTime\": \"0001-01-01 00:00:00\",\n                        \"EventLog\": \"\",\n                        \"ModifyTime\": \"2021-08-11 21:51:12\",\n                        \"NewValue\": \"off\",\n                        \"OldValue\": \"on\",\n                        \"Operator\": \"100130115276\",\n                        \"ParamName\": \"array_nulls\",\n                        \"State\": \"success\"\n                    }\n                ],\n                \"ParamName\": \"array_nulls\"\n            },\n            {\n                \"EventCount\": 1,\n                \"EventDetail\": [\n                    {\n                        \"EffectiveTime\": \"2021-08-16 15:33:41\",\n                        \"EventLog\": \"Pause: Paused. Internal error, in manual processing\",\n                        \"ModifyTime\": \"2021-08-16 15:28:13\",\n                        \"NewValue\": \"7\",\n                        \"OldValue\": \"8\",\n                        \"Operator\": \"100000115276\",\n                        \"ParamName\": \"max_worker_processes\",\n                        \"State\": \"paused\"\n                    }\n                ],\n                \"ParamName\": \"max_worker_processes\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 46\n    }\n}",
+        "title": "获取实例参数修改事件列表"
       }
     ],
     "DescribeProductConfig": [
@@ -302,6 +318,14 @@
         "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceName\n&DBInstanceId=postgres-6ougo465\n&InstanceName=testModifyInstanceName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61f510-aa33-454c-9ec2-dq2a368c39ab\"\n    }\n}",
         "title": "修改实例postgres-6ougo465名字，修改失败"
+      }
+    ],
+    "ModifyDBInstanceParameters": [
+      {
+        "document": "批量修改数据库实例参数",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceParameters\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-nbvqjlhf\",\n    \"ParamList\": [\n        {\n            \"Name\": \"vacuum_freeze_table_age\",\n            \"ExpectedValue\": \"1500000\"\n        },\n        {\n            \"Name\": \"autovacuum_multixact_freeze_max_age\",\n            \"ExpectedValue\": \"40000000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13123123123123\"\n    }\n}",
+        "title": "批量修改数据库实例参数"
       }
     ],
     "ModifyDBInstanceReadOnlyGroup": [

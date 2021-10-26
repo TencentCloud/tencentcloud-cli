@@ -84,6 +84,12 @@
       "name": "查询实例详情",
       "output": "DescribeDBInstanceAttributeResponse"
     },
+    "DescribeDBInstanceParameters": {
+      "document": "获取实例可修改参数列表",
+      "input": "DescribeDBInstanceParametersRequest",
+      "name": "获取实例可修改参数列表",
+      "output": "DescribeDBInstanceParametersResponse"
+    },
     "DescribeDBInstances": {
       "document": "本接口 (DescribeDBInstances) 用于查询一个或多个实例的详细信息。",
       "input": "DescribeDBInstancesRequest",
@@ -113,6 +119,12 @@
       "input": "DescribeOrdersRequest",
       "name": "获取订单信息",
       "output": "DescribeOrdersResponse"
+    },
+    "DescribeParamsEvent": {
+      "document": "获取参数修改事件详情",
+      "input": "DescribeParamsEventRequest",
+      "name": "获取参数修改事件详情",
+      "output": "DescribeParamsEventResponse"
     },
     "DescribeProductConfig": {
       "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
@@ -210,6 +222,12 @@
       "name": "修改实例名字",
       "output": "ModifyDBInstanceNameResponse"
     },
+    "ModifyDBInstanceParameters": {
+      "document": "批量修改参数",
+      "input": "ModifyDBInstanceParametersRequest",
+      "name": "批量修改参数",
+      "output": "ModifyDBInstanceParametersResponse"
+    },
     "ModifyDBInstanceReadOnlyGroup": {
       "document": "本接口（ModifyDBInstanceReadOnlyGroup）用于修改实例所属的只读组",
       "input": "ModifyDBInstanceReadOnlyGroupRequest",
@@ -285,7 +303,7 @@
     "UpgradeDBInstance": {
       "document": "本接口（UpgradeDBInstance）用于升级实例配置。",
       "input": "UpgradeDBInstanceRequest",
-      "name": "升级实例配置",
+      "name": "升级实例配置（废弃）",
       "output": "UpgradeDBInstanceResponse"
     }
   },
@@ -2338,6 +2356,60 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceParametersRequest": {
+      "document": "DescribeDBInstanceParameters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-xxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指定参数详情。ParamName为空或不传，默认返回全部参数列表",
+          "example": "wal_level",
+          "member": "string",
+          "name": "ParamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceParametersResponse": {
+      "document": "DescribeDBInstanceParameters返回参数结构体",
+      "members": [
+        {
+          "document": "参数列表总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "参数列表返回详情",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstancesRequest": {
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
@@ -2660,6 +2732,51 @@
           "document": "订单数组",
           "member": "PgDeal",
           "name": "Deals",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamsEventRequest": {
+      "document": "DescribeParamsEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例DB ID",
+          "example": "”postgres-xxx\"",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeParamsEventResponse": {
+      "document": "DescribeParamsEvent返回参数结构体",
+      "members": [
+        {
+          "document": "参数修改事件总数，以参数为统计粒度",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例参数修改事件详情",
+          "example": "无",
+          "member": "EventItem",
+          "name": "EventItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3321,6 +3438,128 @@
       ],
       "usage": "out"
     },
+    "EventInfo": {
+      "document": "参数修改事件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wal_level",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "replica",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本次修改期望参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "logical",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后台参数修改开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 02:03:04",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后台参数生效开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 02:03:34",
+          "member": "string",
+          "name": "EffectiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作者（一般为用户sub UIN）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123344",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间日志。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EventLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EventItem": {
+      "document": "修改参数条目，以参数为维度",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wal_level",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改事件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "EventInfo",
+          "name": "EventDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称等\n* 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n* 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -3693,6 +3932,42 @@
     },
     "ModifyDBInstanceNameResponse": {
       "document": "ModifyDBInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceParametersRequest": {
+      "document": "ModifyDBInstanceParameters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-xx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改参数及期望值",
+          "example": "无",
+          "member": "ParamEntry",
+          "name": "ParamList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceParametersResponse": {
+      "document": "ModifyDBInstanceParameters返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4139,6 +4414,208 @@
         }
       ],
       "type": "object"
+    },
+    "ParamEntry": {
+      "document": "批量修改参数",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名",
+          "example": "wal_level",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改参数值。入参均以字符串形式传递，例如：小数”0.1“、整数”1000“、枚举”replica“",
+          "example": "replica",
+          "member": "string",
+          "name": "ExpectedValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ParamInfo": {
+      "document": "参数详情",
+      "members": [
+        {
+          "default": "",
+          "document": "参数ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wal_level",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数值类型：integer（整型）、real（浮点型）、bool（布尔型）、enum（枚举类型）、mutil_enum（枚举类型、支持多选）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "integer",
+          "member": "string",
+          "name": "ParamValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数值 单位。参数没有单位是，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数默认值。以字符串形式返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "replica",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数当前运行值。以字符串形式返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "replica",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "枚举类型参数，取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[replica,logical]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Max",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "float",
+          "name": "Min",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "此参数决定记录到日志的信息，不允许设置为minimal",
+          "member": "string",
+          "name": "ParamDescriptionCH",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数英文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Set the level of information written to the WAL.",
+          "member": "string",
+          "name": "ParamDescriptionEN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数修改，是否重启生效。（true为需要，false为不需要）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedReboot",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数中文分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WAL",
+          "member": "string",
+          "name": "ClassificationCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数英文分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Write-Ahead Log",
+          "member": "string",
+          "name": "ClassificationEN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否和规格相关。（true为相关，false为不想关）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SpecRelated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为重点参数。（true为重点参数，修改是需要重点关注，可能会影响实例性能）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Advanced",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-01 02:03:04",
+          "member": "string",
+          "name": "LastModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PgDeal": {
       "document": "订单详情",
