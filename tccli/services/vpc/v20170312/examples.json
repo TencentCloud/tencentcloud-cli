@@ -1789,7 +1789,7 @@
     "ModifyAddressAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressAttribute\r\n&AddressId=eip-p2x6wxc0\r\n&AddressName=test_eip\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressAttribute\n&AddressId=eip-p2x6wxc0\n&AddressName=test_eip\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改EIP名称"
       }

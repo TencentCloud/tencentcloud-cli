@@ -18220,7 +18220,7 @@
       "members": [
         {
           "default": "",
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域（填数字）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Region",

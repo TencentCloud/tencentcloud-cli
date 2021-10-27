@@ -211,7 +211,7 @@
       "output": "ModifyLaunchConfigurationAttributesResponse"
     },
     "ModifyLoadBalancers": {
-      "document": "本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。\n\n* 本接口用于为伸缩组指定新的负载均衡器配置，采用“完全覆盖”风格，无论之前配置如何，统一按照接口参数配置为新的负载均衡器。\n* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。\n* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。",
+      "document": "本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。\n\n* 本接口用于为伸缩组指定新的负载均衡器配置，采用`完全覆盖`风格，无论之前配置如何，`统一按照接口参数配置为新的负载均衡器`。\n* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。\n* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。",
       "input": "ModifyLoadBalancersRequest",
       "name": "修改伸缩组的负载均衡器",
       "output": "ModifyLoadBalancersResponse"
@@ -4465,6 +4465,15 @@
           "example": "无",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。",
+          "example": "无",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
           "required": false,
           "type": "object"
         }

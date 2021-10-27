@@ -60,7 +60,7 @@ Output:
                 ]
             }
         ],
-        "Total": 10,
+        "Total": 1,
         "RequestId": "50e39f16-3b3a-4c66-b76e-1705449ba828"
     }
 }

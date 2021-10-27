@@ -1,102 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 主机安全(cwp) 版本：2018-02-28
+## 弹性伸缩(as) 版本：2018-04-19
 
-### 第 7 次发布
+### 第 4 次发布
 
-发布时间：2021-10-26 08:13:51
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeVulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66846)
-* [DescribeVulList](http://document.tencentcloudapi.woa.com/document/product/296/66845)
-
-新增数据结构：
-
-* [VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulEffectHostList)
-* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulInfoList)
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 3 次发布
-
-发布时间：2021-10-26 08:02:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* DataDiskPrice
-
-修改数据结构：
-
-* [Price](http://document.tencentcloudapi.woa.com/document/product/1207/60723#Price)
-
-	* <font color="#dd0000">**删除成员**：</font>DataDiskPrices
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 2 次发布
-
-发布时间：2021-10-26 08:09:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66842)
-* [DescribeParamsEvent](http://document.tencentcloudapi.woa.com/document/product/409/66841)
-* [ModifyDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66840)
-
-新增数据结构：
-
-* [EventInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventInfo)
-* [EventItem](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventItem)
-* [ParamEntry](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamEntry)
-* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamInfo)
-
-
-
-## 云开发 CloudBase(tcb) 版本：2018-06-08
-
-### 第 9 次发布
-
-发布时间：2021-10-26 08:10:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCloudBaseRunPodList](http://document.tencentcloudapi.woa.com/document/product/876/66843)
-* [DescribeCloudBaseRunServer](http://document.tencentcloudapi.woa.com/document/product/876/66844)
-
-新增数据结构：
-
-* [CloudBaseRunKVPriority](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunKVPriority)
-* [CloudBaseRunServerVersionItem](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunServerVersionItem)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 5 次发布
-
-发布时间：2021-10-26 08:11:21
+发布时间：2021-10-27 08:04:02
 
 本次发布包含了以下内容：
 
@@ -104,41 +12,222 @@
 
 修改接口：
 
-* [CreateAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/65062)
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/61578)
 
-	* 新增入参：AddressesExtra
+	* 新增入参：EnhancedService
 
-	* <font color="#dd0000">**修改入参**：</font>Addresses
 
-* [CreateServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/65060)
 
-	* 新增入参：ServicesExtra
 
-	* <font color="#dd0000">**修改入参**：</font>Services
+## 云硬盘(cbs) 版本：2017-03-12
 
-* [ModifyAddressTemplateAttribute](http://document.tencentcloudapi.woa.com/document/product/215/65049)
+### 第 3 次发布
 
-	* 新增入参：AddressesExtra
+发布时间：2021-10-27 08:05:02
 
-* [ModifyServiceTemplateAttribute](http://document.tencentcloudapi.woa.com/document/product/215/65047)
+本次发布包含了以下内容：
 
-	* 新增入参：ServicesExtra
+改善已有的文档。
+
+修改数据结构：
+
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/362/62088#Snapshot)
+
+	* <font color="#dd0000">**修改成员**：</font>SnapshotId
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 2 次发布
+
+发布时间：2021-10-27 08:00:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetAlarmLog](http://document.tencentcloudapi.woa.com/document/product/614/59921)
+
+	* 新增入参：UseNewAnalysis
+
+	* 新增出参：AnalysisRecords, Columns
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 8 次发布
+
+发布时间：2021-10-27 08:14:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* RescanImpactedHost
+
+
+
+## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:01:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClusterParam](http://document.tencentcloudapi.woa.com/document/product/1003/66848)
+
+新增数据结构：
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/60619#NetAddr)
+
+修改数据结构：
+
+* [CynosdbCluster](http://document.tencentcloudapi.woa.com/document/product/1003/60619#CynosdbCluster)
+
+	* 新增成员：NetAddrs
+
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:02:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateKeyPair](http://document.tencentcloudapi.woa.com/document/product/1108/66851)
+* [DisassociateInstancesKeyPairs](http://document.tencentcloudapi.woa.com/document/product/1108/66850)
+
+新增数据结构：
+
+* [KeyPair](http://document.tencentcloudapi.woa.com/document/product/1108/60977#KeyPair)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:07:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DeviceInfo)
+
+	* 新增成员：EnableState, ProductId, ProductName, DeviceType
+
+
+
+
+## 全栈式风控引擎(rce) 版本：2020-11-03
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:14:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ManageMarketingRisk](http://document.tencentcloudapi.woa.com/document/product/1343/66415)
+
+	* 新增入参：BusinessCryptoData
+
+	* <font color="#dd0000">**修改入参**：</font>BusinessSecurityData
 
 
 新增数据结构：
 
-* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#AddressInfo)
-* [ServicesInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#ServicesInfo)
+* [InputCryptoManageMarketingRisk](http://document.tencentcloudapi.woa.com/document/product/1343/66416#InputCryptoManageMarketingRisk)
+
+
+
+## 分布式消息队列(tdmq) 版本：2020-02-17
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:13:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66869)
+* [CreateRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66868)
+* [CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66867)
+* [CreateRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66866)
+* [DeleteRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66865)
+* [DeleteRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66864)
+* [DeleteRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66852)
+* [DeleteRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66863)
+* [DescribeRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66862)
+* [DescribeRocketMQClusters](http://document.tencentcloudapi.woa.com/document/product/1179/66861)
+* [DescribeRocketMQGroups](http://document.tencentcloudapi.woa.com/document/product/1179/66860)
+* [DescribeRocketMQNamespaces](http://document.tencentcloudapi.woa.com/document/product/1179/66859)
+* [DescribeRocketMQTopics](http://document.tencentcloudapi.woa.com/document/product/1179/66858)
+* [ModifyRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66857)
+* [ModifyRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66856)
+* [ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66855)
+* [ModifyRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66854)
+
+新增数据结构：
+
+* [RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterConfig)
+* [RocketMQClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterDetail)
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterInfo)
+* [RocketMQClusterRecentStats](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterRecentStats)
+* [RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQGroup)
+* [RocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQNamespace)
+* [RocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQTopic)
+
+
+
+## 腾讯云微服务引擎(tse) 版本：2020-12-07
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:01:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [KVPair](http://document.tencentcloudapi.woa.com/document/product/1364/59716#KVPair)
 
 修改数据结构：
 
-* [AddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/65295#AddressTemplate)
+* [SREInstance](http://document.tencentcloudapi.woa.com/document/product/1364/59716#SREInstance)
 
-	* 新增成员：AddressExtraSet
-
-* [ServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/65295#ServiceTemplate)
-
-	* 新增成员：ServiceExtraSet
+	* 新增成员：Tags
 
 
 
@@ -827,6 +916,21 @@
 
 
 ## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 4 次发布
+
+发布时间：2021-10-27 08:04:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/61578)
+
+	* 新增入参：EnhancedService
+
 
 ### 第 3 次发布
 
@@ -2030,6 +2134,21 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:05:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Snapshot](http://document.tencentcloudapi.woa.com/document/product/362/62088#Snapshot)
+
+	* <font color="#dd0000">**修改成员**：</font>SnapshotId
+
 
 ### 第 2 次发布
 
@@ -3732,6 +3851,23 @@
 
 ## 日志服务(cls) 版本：2020-10-16
 
+### 第 2 次发布
+
+发布时间：2021-10-27 08:00:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetAlarmLog](http://document.tencentcloudapi.woa.com/document/product/614/59921)
+
+	* 新增入参：UseNewAnalysis
+
+	* 新增出参：AnalysisRecords, Columns
+
+
 ### 第 1 次发布
 
 发布时间：2021-09-03 14:14:05
@@ -4470,6 +4606,18 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 8 次发布
+
+发布时间：2021-10-27 08:14:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* RescanImpactedHost
+
 ### 第 7 次发布
 
 发布时间：2021-10-26 08:13:51
@@ -4480,13 +4628,13 @@
 
 新增接口：
 
-* [[DescribeVulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66846)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVulList](http://document.tencentcloudapi.woa.com/document/product/296/66845)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeVulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66846)
+* [DescribeVulList](http://document.tencentcloudapi.woa.com/document/product/296/66845)
 
 新增数据结构：
 
-* [[VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulEffectHostList)](http://document.tencentcloudapi.woa.com/document/product/296/66286#[VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulEffectHostList))
-* [[VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulInfoList)](http://document.tencentcloudapi.woa.com/document/product/296/66286#[VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulInfoList))
+* [VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulEffectHostList)
+* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/66286#VulInfoList)
 
 ### 第 6 次发布
 
@@ -4927,6 +5075,29 @@
 
 
 ## 云原生数据库 TDSQL-C(cynosdb) 版本：2019-01-07
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:01:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyClusterParam](http://document.tencentcloudapi.woa.com/document/product/1003/66848)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/60619#NetAddr)](http://document.tencentcloudapi.woa.com/document/product/1003/60619#[NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/60619#NetAddr))
+
+修改数据结构：
+
+* [CynosdbCluster](http://document.tencentcloudapi.woa.com/document/product/1003/60619#CynosdbCluster)
+
+	* 新增成员：NetAddrs
+
 
 ### 第 2 次发布
 
@@ -6011,6 +6182,23 @@
 
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:02:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateKeyPair](http://document.tencentcloudapi.woa.com/document/product/1108/66851)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DisassociateInstancesKeyPairs](http://document.tencentcloudapi.woa.com/document/product/1108/66850)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[KeyPair](http://document.tencentcloudapi.woa.com/document/product/1108/60977#KeyPair)](http://document.tencentcloudapi.woa.com/document/product/1108/60977#[KeyPair](http://document.tencentcloudapi.woa.com/document/product/1108/60977#KeyPair))
 
 ### 第 5 次发布
 
@@ -7984,6 +8172,21 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:07:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/63313#DeviceInfo)
+
+	* 新增成员：EnableState, ProductId, ProductName, DeviceType
+
 
 ### 第 5 次发布
 
@@ -10406,16 +10609,16 @@
 
 新增接口：
 
-* [[DescribeDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66842)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeParamsEvent](http://document.tencentcloudapi.woa.com/document/product/409/66841)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66840)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66842)
+* [DescribeParamsEvent](http://document.tencentcloudapi.woa.com/document/product/409/66841)
+* [ModifyDBInstanceParameters](http://document.tencentcloudapi.woa.com/document/product/409/66840)
 
 新增数据结构：
 
-* [[EventInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventInfo)](http://document.tencentcloudapi.woa.com/document/product/409/64074#[EventInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventInfo))
-* [[EventItem](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventItem)](http://document.tencentcloudapi.woa.com/document/product/409/64074#[EventItem](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventItem))
-* [[ParamEntry](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamEntry)](http://document.tencentcloudapi.woa.com/document/product/409/64074#[ParamEntry](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamEntry))
-* [[ParamInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamInfo)](http://document.tencentcloudapi.woa.com/document/product/409/64074#[ParamInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamInfo))
+* [EventInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventInfo)
+* [EventItem](http://document.tencentcloudapi.woa.com/document/product/409/64074#EventItem)
+* [ParamEntry](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamEntry)
+* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/409/64074#ParamInfo)
 
 ### 第 1 次发布
 
@@ -10599,6 +10802,27 @@
 
 
 ## 全栈式风控引擎(rce) 版本：2020-11-03
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:14:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ManageMarketingRisk](http://document.tencentcloudapi.woa.com/document/product/1343/66415)
+
+	* 新增入参：BusinessCryptoData
+
+	* <font color="#dd0000">**修改入参**：</font>BusinessSecurityData
+
+
+新增数据结构：
+
+* [[InputCryptoManageMarketingRisk](http://document.tencentcloudapi.woa.com/document/product/1343/66416#InputCryptoManageMarketingRisk)](http://document.tencentcloudapi.woa.com/document/product/1343/66416#[InputCryptoManageMarketingRisk](http://document.tencentcloudapi.woa.com/document/product/1343/66416#InputCryptoManageMarketingRisk))
 
 ### 第 2 次发布
 
@@ -12207,13 +12431,13 @@
 
 新增接口：
 
-* [[DescribeCloudBaseRunPodList](http://document.tencentcloudapi.woa.com/document/product/876/66843)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCloudBaseRunServer](http://document.tencentcloudapi.woa.com/document/product/876/66844)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCloudBaseRunPodList](http://document.tencentcloudapi.woa.com/document/product/876/66843)
+* [DescribeCloudBaseRunServer](http://document.tencentcloudapi.woa.com/document/product/876/66844)
 
 新增数据结构：
 
-* [[CloudBaseRunKVPriority](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunKVPriority)](http://document.tencentcloudapi.woa.com/document/product/876/64596#[CloudBaseRunKVPriority](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunKVPriority))
-* [[CloudBaseRunServerVersionItem](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunServerVersionItem)](http://document.tencentcloudapi.woa.com/document/product/876/64596#[CloudBaseRunServerVersionItem](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunServerVersionItem))
+* [CloudBaseRunKVPriority](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunKVPriority)
+* [CloudBaseRunServerVersionItem](http://document.tencentcloudapi.woa.com/document/product/876/64596#CloudBaseRunServerVersionItem)
 
 ### 第 8 次发布
 
@@ -12784,6 +13008,44 @@
 
 
 ## 分布式消息队列(tdmq) 版本：2020-02-17
+
+### 第 6 次发布
+
+发布时间：2021-10-27 08:13:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66869)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66868)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66867)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66866)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66865)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66864)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66852)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66863)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66862)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRocketMQClusters](http://document.tencentcloudapi.woa.com/document/product/1179/66861)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRocketMQGroups](http://document.tencentcloudapi.woa.com/document/product/1179/66860)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRocketMQNamespaces](http://document.tencentcloudapi.woa.com/document/product/1179/66859)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRocketMQTopics](http://document.tencentcloudapi.woa.com/document/product/1179/66858)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRocketMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/66857)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66856)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66855)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66854)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterConfig)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterConfig))
+* [[RocketMQClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterDetail)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterDetail))
+* [[RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterInfo)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterInfo))
+* [[RocketMQClusterRecentStats](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterRecentStats)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQClusterRecentStats](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQClusterRecentStats))
+* [[RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQGroup)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQGroup))
+* [[RocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQNamespace)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQNamespace](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQNamespace))
+* [[RocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQTopic)](http://document.tencentcloudapi.woa.com/document/product/1179/66058#[RocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/66058#RocketMQTopic))
 
 ### 第 5 次发布
 
@@ -13884,6 +14146,25 @@
 
 
 ## 腾讯云微服务引擎(tse) 版本：2020-12-07
+
+### 第 3 次发布
+
+发布时间：2021-10-27 08:01:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[KVPair](http://document.tencentcloudapi.woa.com/document/product/1364/59716#KVPair)](http://document.tencentcloudapi.woa.com/document/product/1364/59716#[KVPair](http://document.tencentcloudapi.woa.com/document/product/1364/59716#KVPair))
+
+修改数据结构：
+
+* [SREInstance](http://document.tencentcloudapi.woa.com/document/product/1364/59716#SREInstance)
+
+	* 新增成员：Tags
+
 
 ### 第 2 次发布
 
@@ -15085,8 +15366,8 @@
 
 新增数据结构：
 
-* [[AddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#AddressInfo)](http://document.tencentcloudapi.woa.com/document/product/215/65295#[AddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#AddressInfo))
-* [[ServicesInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#ServicesInfo)](http://document.tencentcloudapi.woa.com/document/product/215/65295#[ServicesInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#ServicesInfo))
+* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#AddressInfo)
+* [ServicesInfo](http://document.tencentcloudapi.woa.com/document/product/215/65295#ServicesInfo)
 
 修改数据结构：
 

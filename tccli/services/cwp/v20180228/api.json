@@ -1200,12 +1200,6 @@
       "name": "续费专业版",
       "output": "RenewProVersionResponse"
     },
-    "RescanImpactedHost": {
-      "document": "该接口已废弃\n\n本接口 (RescanImpactedHost) 用于漏洞重新检测。",
-      "input": "RescanImpactedHostRequest",
-      "name": "漏洞重新检测",
-      "output": "RescanImpactedHostResponse"
-    },
     "ScanAsset": {
       "document": "资产指纹启动扫描",
       "input": "ScanAssetRequest",
@@ -21887,32 +21881,6 @@
     },
     "RenewProVersionResponse": {
       "document": "RenewProVersion返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RescanImpactedHostRequest": {
-      "document": "RescanImpactedHost请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "漏洞ID。",
-          "member": "uint64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "RescanImpactedHostResponse": {
-      "document": "RescanImpactedHost返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

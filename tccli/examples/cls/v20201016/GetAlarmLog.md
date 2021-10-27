@@ -16,13 +16,17 @@ Output:
 ```
 {
     "Response": {
+        "AnalysisRecords": [
+            "xx"
+        ],
         "Results": [
             {
                 "PkgId": "xx",
                 "TopicId": "xx",
                 "FileName": "xx",
                 "Source": "xx",
-                "Time": "xx",
+                "LogJson": "xx",
+                "Time": 0,
                 "TopicName": "xx",
                 "PkgLogId": "xx"
             },
@@ -31,7 +35,8 @@ Output:
                 "TopicId": "xx",
                 "FileName": "xx",
                 "Source": "xx",
-                "Time": "xx",
+                "LogJson": "xx",
+                "Time": 0,
                 "TopicName": "xx",
                 "PkgLogId": "xx"
             }
@@ -69,6 +74,12 @@ Output:
             "time",
             "pv",
             "uv"
+        ],
+        "Columns": [
+            {
+                "Type": "xx",
+                "Name": "xx"
+            }
         ],
         "RequestId": "xx"
     }

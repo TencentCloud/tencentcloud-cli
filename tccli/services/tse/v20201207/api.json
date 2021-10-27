@@ -336,6 +336,32 @@
       ],
       "usage": "in"
     },
+    "KVPair": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "example": "type",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "dev",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SREInstance": {
       "document": "微服务注册引擎实例",
       "members": [
@@ -535,6 +561,16 @@
           "example": "无",
           "member": "ServiceGovernanceInfo",
           "name": "ServiceGovernanceInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"type\",\"Value\":\"nacos\"}]",
+          "member": "KVPair",
+          "name": "Tags",
           "required": true,
           "type": "list",
           "value_allowed_null": true

@@ -160,6 +160,14 @@
         "title": "修改集群备份配置"
       }
     ],
+    "ModifyClusterParam": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterParam\n&ClusterId=cynosdbpg-ins-jhi2gdi0\n&ParamList.0.ParamName=authentication_timeout\n&ParamList.0.OldValue=60\n&ParamList.0.CurrentValue=59\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"164063\",\n        \"AsyncRequestId\": \"56317d06-8078-4e5c-b675-9e048995c820\"\n    }\n}",
+        "title": "修改集群参数"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",
