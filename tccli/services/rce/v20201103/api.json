@@ -102,6 +102,42 @@
       ],
       "type": "object"
     },
+    "InputCryptoManageMarketingRisk": {
+      "document": "全栈式风控引擎入参",
+      "members": [
+        {
+          "default": "",
+          "document": "是否授权",
+          "example": "无",
+          "member": "string",
+          "name": "IsAuthorized",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密类型",
+          "example": "无",
+          "member": "string",
+          "name": "CryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密内容",
+          "example": "无",
+          "member": "string",
+          "name": "CryptoContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "InputDescribeRiskModelData": {
       "document": "客户请求入参",
       "members": [
@@ -387,7 +423,16 @@
           "example": "无",
           "member": "InputManageMarketingRisk",
           "name": "BusinessSecurityData",
-          "required": true,
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "业务入参",
+          "example": "无",
+          "member": "InputCryptoManageMarketingRisk",
+          "name": "BusinessCryptoData",
+          "required": false,
           "type": "object"
         }
       ],

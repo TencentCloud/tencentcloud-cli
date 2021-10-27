@@ -2376,8 +2376,8 @@
           "value_allowed_null": true
         },
         {
-          "document": "总共多少条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "document": "nat 防火墙个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "required": true,

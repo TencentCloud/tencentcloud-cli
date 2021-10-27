@@ -8,7 +8,7 @@ Input:
 tccli tsf OperateApplicationTcrBinding --cli-unfold-argument  \
     --TcrRepoInfo.RegistryName xx \
     --TcrRepoInfo.Namespace xx \
-    --TcrRepoInfo.Region xx \
+    --TcrRepoInfo.Region 1 \
     --TcrRepoInfo.RegistryId xx \
     --TcrRepoInfo.RepoName xx \
     --Command xx \

@@ -4185,6 +4185,15 @@
           "name": "Sort",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4242,6 +4251,24 @@
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "新的日志分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxx\",\"yy\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志分析的列属性; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
           "required": true,
           "type": "list",
           "value_allowed_null": true

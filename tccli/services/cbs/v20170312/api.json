@@ -2226,18 +2226,20 @@
       "members": [
         {
           "default": "",
-          "document": "镜像实例ID。",
+          "document": "镜像名称。",
+          "example": "test",
           "member": "string",
-          "name": "ImageId",
+          "name": "ImageName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "镜像名称。",
+          "document": "镜像实例ID。",
+          "example": "img-xxxxxxxx",
           "member": "string",
-          "name": "ImageName",
+          "name": "ImageId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3194,16 +3196,8 @@
       "members": [
         {
           "default": "",
-          "document": "快照ID。",
-          "member": "string",
-          "name": "SnapshotId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "快照所在的位置。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": false,
@@ -3212,106 +3206,8 @@
         },
         {
           "default": "",
-          "document": "创建此快照的云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
-          "member": "string",
-          "name": "DiskUsage",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建此快照的云硬盘ID。",
-          "member": "string",
-          "name": "DiskId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建此快照的云硬盘大小，单位GB。",
-          "member": "uint64",
-          "name": "DiskSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照的状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中<br><li>COPYING_FROM_REMOTE：跨地域复制中<br><li>CHECKING_COPIED：复制校验中<br><li>TORECYCLE：待回收。",
-          "member": "string",
-          "name": "SnapshotState",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
-          "member": "string",
-          "name": "SnapshotName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照创建进度百分比，快照创建成功后此字段恒为100。",
-          "member": "uint64",
-          "name": "Percent",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照的创建时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照到期时间。如果快照为永久保留，此字段为空。",
-          "member": "datetime",
-          "name": "DeadlineTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否为加密盘创建的快照。取值范围：<br><li>true：该快照为加密盘创建的<br><li>false:非加密盘创建的快照。",
-          "member": "bool",
-          "name": "Encrypt",
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否为永久快照。取值范围：<br><li>true：永久快照<br><li>false：非永久快照。",
-          "member": "bool",
-          "name": "IsPermanent",
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
-          "member": "string",
-          "name": "CopyingToRegions",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "是否为跨地域复制的快照。取值范围：<br><li>true：表示为跨地域复制的快照。<br><li>false:本地域的快照。",
+          "example": "false",
           "member": "bool",
           "name": "CopyFromRemote",
           "required": true,
@@ -3320,7 +3216,58 @@
         },
         {
           "default": "",
+          "document": "快照的状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中<br><li>COPYING_FROM_REMOTE：跨地域复制中<br><li>CHECKING_COPIED：复制校验中<br><li>TORECYCLE：待回收。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "SnapshotState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为永久快照。取值范围：<br><li>true：永久快照<br><li>false：非永久快照。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照名称，用户自定义的快照别名。调用[ModifySnapshotAttribute](/document/product/362/15650)可修改此字段。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照到期时间。如果快照为永久保留，此字段为空。",
+          "example": "2021-11-24 16:00:00",
+          "member": "datetime",
+          "name": "DeadlineTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照创建进度百分比，快照创建成功后此字段恒为100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Percent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "快照关联的镜像列表。",
+          "example": "无",
           "member": "Image",
           "name": "Images",
           "required": true,
@@ -3329,25 +3276,8 @@
         },
         {
           "default": "",
-          "document": "快照关联的镜像个数。",
-          "member": "uint64",
-          "name": "ImageCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT",
-          "member": "string",
-          "name": "SnapshotType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "快照当前被共享数。",
+          "example": "0",
           "member": "uint64",
           "name": "ShareReference",
           "required": true,
@@ -3356,7 +3286,98 @@
         },
         {
           "default": "",
+          "document": "快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT",
+          "example": "PRIVATE_SNAPSHOT",
+          "member": "string",
+          "name": "SnapshotType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘大小，单位GB。",
+          "example": "10",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘ID。",
+          "example": "disk-xxxxxxxx",
+          "member": "string",
+          "name": "DiskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
+          "example": "[]",
+          "member": "string",
+          "name": "CopyingToRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为加密盘创建的快照。取值范围：<br><li>true：该快照为加密盘创建的<br><li>false:非加密盘创建的快照。",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照的创建时间。",
+          "example": "2019-07-15 00:00:00",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照关联的镜像个数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ImageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建此快照的云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
+          "example": "SYSTEM_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照ID。",
+          "example": "snap-xxxxxxx",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "快照开始共享的时间。",
+          "example": "2021-07-15",
           "member": "date",
           "name": "TimeStartShare",
           "required": true,

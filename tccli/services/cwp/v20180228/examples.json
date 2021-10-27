@@ -1600,14 +1600,6 @@
         "title": "续费专业版"
       }
     ],
-    "RescanImpactedHost": [
-      {
-        "document": "重新检测一个漏洞",
-        "input": "https://cwp.tencentcloudapi.com/?Action=RescanImpactedHost\n&Id=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "重新检测一个漏洞"
-      }
-    ],
     "ScanAsset": [
       {
         "document": "示例",

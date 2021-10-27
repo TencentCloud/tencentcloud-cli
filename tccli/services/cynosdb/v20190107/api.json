@@ -120,6 +120,12 @@
       "name": "修改备份配置",
       "output": "ModifyBackupConfigResponse"
     },
+    "ModifyClusterParam": {
+      "document": "修改集群参数",
+      "input": "ModifyClusterParamRequest",
+      "name": "修改集群参数",
+      "output": "ModifyClusterParamResponse"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -3532,6 +3538,51 @@
     "ModifyBackupConfigResponse": {
       "document": "ModifyBackupConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterParamRequest": {
+      "document": "ModifyClusterParam请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-ins-jhi2gdi0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改参数列表",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ParamList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterParamResponse": {
+      "document": "ModifyClusterParam返回参数结构体",
+      "members": [
+        {
+          "document": "异步请求Id，用于查询结果",
+          "example": "56317d06-8078-4e5c-b675-9e048995c820",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -2007,7 +2007,7 @@
       "members": [
         {
           "default": "",
-          "document": "ip地址",
+          "document": "ip地址。",
           "example": "2.2.2.2",
           "member": "string",
           "name": "Address",
@@ -2017,7 +2017,7 @@
         },
         {
           "default": "",
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
           "member": "string",
           "name": "Description",
@@ -12639,6 +12639,7 @@
         {
           "default": "",
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
+          "example": "eip-ek0cdz1g",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -12647,6 +12648,7 @@
         {
           "default": "",
           "document": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。",
+          "example": "True",
           "member": "bool",
           "name": "ReallocateNormalPublicIp",
           "required": false,
@@ -12660,8 +12662,10 @@
       "members": [
         {
           "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "61531411",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14905,6 +14909,7 @@
         {
           "default": "",
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
+          "example": "eip-p2x6wxc0",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -14913,6 +14918,7 @@
         {
           "default": "",
           "document": "修改后的 EIP 名称。长度上限为20个字符。",
+          "example": "test_eip",
           "member": "string",
           "name": "AddressName",
           "required": false,
@@ -14921,6 +14927,7 @@
         {
           "default": "",
           "document": "设定EIP是否直通，\"TRUE\"表示直通，\"FALSE\"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。",
+          "example": "FALSE",
           "member": "string",
           "name": "EipDirectConnection",
           "required": false,
@@ -20084,7 +20091,7 @@
       "members": [
         {
           "default": "",
-          "document": "协议端口",
+          "document": "协议端口。",
           "example": "tcp:80",
           "member": "string",
           "name": "Service",
@@ -20094,7 +20101,7 @@
         },
         {
           "default": "",
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
           "member": "string",
           "name": "Description",
