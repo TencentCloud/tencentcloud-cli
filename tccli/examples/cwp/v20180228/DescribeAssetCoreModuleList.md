@@ -7,7 +7,7 @@ Input:
 ```
 tccli cwp DescribeAssetCoreModuleList --cli-unfold-argument  \
     --Uuid xx \
-    --Order 1 \
+    --Order asc \
     --Limit 1 \
     --Quuid xx \
     --Filters.0.Values xx \

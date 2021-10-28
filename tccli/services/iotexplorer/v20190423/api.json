@@ -552,6 +552,7 @@
         {
           "default": "",
           "document": "产品Id",
+          "example": "TOIDHQ3AOQ",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -560,6 +561,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "light1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -568,6 +570,7 @@
         {
           "default": "",
           "document": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义",
+          "example": "openlight",
           "member": "string",
           "name": "ActionId",
           "required": true,
@@ -576,6 +579,7 @@
         {
           "default": "",
           "document": "输入参数",
+          "example": "{\"vol\":4}",
           "member": "string",
           "name": "InputParams",
           "required": false,
@@ -589,15 +593,19 @@
       "members": [
         {
           "document": "调用Id",
+          "example": "45016a4535374abcb05e25790b916dc3",
           "member": "string",
           "name": "ClientToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "异步调用状态",
+          "example": "xx",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -616,6 +624,7 @@
         {
           "default": "",
           "document": "产品Id",
+          "example": "TOIDHQ3AOQ",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -624,6 +633,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "light1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -632,6 +642,7 @@
         {
           "default": "",
           "document": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义",
+          "example": "openlight",
           "member": "string",
           "name": "ActionId",
           "required": true,
@@ -640,6 +651,7 @@
         {
           "default": "",
           "document": "输入参数",
+          "example": "{\"vol\":4}",
           "member": "string",
           "name": "InputParams",
           "required": false,
@@ -653,22 +665,28 @@
       "members": [
         {
           "document": "调用Id",
+          "example": "0fe1260b7a724b67ba873ca7df703e0d",
           "member": "string",
           "name": "ClientToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"brightness\":1,\"color\":1,\"light_switch\":1}",
           "member": "string",
           "name": "OutputParams",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "返回状态",
+          "document": "返回状态，当设备不在线等部分情况，会通过该 Status 返回。",
+          "example": "succ",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

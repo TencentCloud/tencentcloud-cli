@@ -862,7 +862,8 @@
       "members": [
         {
           "default": "",
-          "document": "用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）：\n1：QQ 开放帐号。\n2：微信开放账号。\n4：手机号。\n0：其他。\n10004：手机号 MD5。",
+          "document": "账号类型",
+          "example": "10004",
           "member": "string",
           "name": "AccountType",
           "required": true,
@@ -870,7 +871,8 @@
         },
         {
           "default": "",
-          "document": "用户 ID 不同的 accountType 对应不同的用户 ID。如果是 QQ，则填入对应的 openid，微信用户则填入对应的 openid/unionid，手机号则填入对应真实用户手机号（如13123456789）。",
+          "document": "uid值",
+          "example": "bfd81ee3ed27ad31c95ca75e21365973",
           "member": "string",
           "name": "Uid",
           "required": true,
@@ -879,6 +881,7 @@
         {
           "default": "",
           "document": "用户的真实外网 IP。若填入非外网有效ip，会返回level=0的风控结果，risktype中会有205的风险码返回作为标识",
+          "example": "101.231.62.66",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -887,6 +890,7 @@
         {
           "default": "",
           "document": "用户操作时间戳。",
+          "example": "1582029456",
           "member": "string",
           "name": "PostTime",
           "required": true,
@@ -895,6 +899,7 @@
         {
           "default": "",
           "document": "accountType 是QQ开放账号时，该参数必填，表示 QQ 开放平台分配给网站或应用的 AppID，用来唯一标识网站或应用。",
+          "example": "无",
           "member": "string",
           "name": "AppIdU",
           "required": false,
@@ -903,6 +908,7 @@
         {
           "default": "",
           "document": "昵称，UTF-8 编码。",
+          "example": "无",
           "member": "string",
           "name": "NickName",
           "required": false,
@@ -910,7 +916,8 @@
         },
         {
           "default": "",
-          "document": "手机号。若 accountType 选4（手机号）、或10004（手机号 MD5），则无需重复填写。否则填入对应的手机号（如15912345687）。accountType为1或2时，该字段支持MD5值；",
+          "document": "手机号",
+          "example": "无",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -919,6 +926,7 @@
         {
           "default": "",
           "document": "用户邮箱地址。",
+          "example": "无",
           "member": "string",
           "name": "EmailAddress",
           "required": false,
@@ -927,6 +935,7 @@
         {
           "default": "",
           "document": "注册时间戳。",
+          "example": "无",
           "member": "string",
           "name": "RegisterTime",
           "required": false,
@@ -935,6 +944,7 @@
         {
           "default": "",
           "document": "注册来源的外网 IP。",
+          "example": "无",
           "member": "string",
           "name": "RegisterIp",
           "required": false,
@@ -943,6 +953,7 @@
         {
           "default": "",
           "document": "用户 HTTP 请求中的 cookie 进行2次 hash 的值，只要保证相同 cookie 的 hash 值一致即可。",
+          "example": "无",
           "member": "string",
           "name": "CookieHash",
           "required": false,
@@ -951,6 +962,7 @@
         {
           "default": "",
           "document": "地址。",
+          "example": "无",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -959,6 +971,7 @@
         {
           "default": "",
           "document": "登录来源：\n0：其他。\n1：PC 网页。\n2：移动页面。\n3：App。\n4：微信公众号。",
+          "example": "无",
           "member": "string",
           "name": "LoginSource",
           "required": false,
@@ -967,6 +980,7 @@
         {
           "default": "",
           "document": "登录方式：\n0：其他。\n1：手动账号密码输入。\n2：动态短信密码登录。\n3：二维码扫描登录。",
+          "example": "无",
           "member": "string",
           "name": "LoginType",
           "required": false,
@@ -975,6 +989,7 @@
         {
           "default": "",
           "document": "登录耗时，单位：秒。",
+          "example": "无",
           "member": "string",
           "name": "LoginSpend",
           "required": false,
@@ -983,6 +998,7 @@
         {
           "default": "",
           "document": "用户操作的目的 ID，如点赞等，该字段就是被点赞的消息 ID，如果是投票，则为被投号码的 ID。",
+          "example": "无",
           "member": "string",
           "name": "RootId",
           "required": false,
@@ -991,6 +1007,7 @@
         {
           "default": "",
           "document": "用户 HTTP 请求的 referer 值。",
+          "example": "无",
           "member": "string",
           "name": "Referer",
           "required": false,
@@ -999,6 +1016,7 @@
         {
           "default": "",
           "document": "登录成功后跳转页面。",
+          "example": "无",
           "member": "string",
           "name": "JumpUrl",
           "required": false,
@@ -1007,6 +1025,7 @@
         {
           "default": "",
           "document": "用户 HTTP 请求的 userAgent。",
+          "example": "无",
           "member": "string",
           "name": "UserAgent",
           "required": false,
@@ -1015,6 +1034,7 @@
         {
           "default": "",
           "document": "用户 HTTP 请求中的 x_forward_for。",
+          "example": "无",
           "member": "string",
           "name": "XForwardedFor",
           "required": false,
@@ -1023,6 +1043,7 @@
         {
           "default": "",
           "document": "用户操作过程中鼠标单击次数。",
+          "example": "无",
           "member": "string",
           "name": "MouseClickCount",
           "required": false,
@@ -1031,6 +1052,7 @@
         {
           "default": "",
           "document": "用户操作过程中键盘单击次数。",
+          "example": "无",
           "member": "string",
           "name": "KeyboardClickCount",
           "required": false,
@@ -1039,6 +1061,7 @@
         {
           "default": "",
           "document": "MAC 地址或设备唯一标识。",
+          "example": "无",
           "member": "string",
           "name": "MacAddress",
           "required": false,
@@ -1047,6 +1070,7 @@
         {
           "default": "",
           "document": "手机制造商 ID，如果手机注册，请带上此信息。",
+          "example": "无",
           "member": "string",
           "name": "VendorId",
           "required": false,
@@ -1055,6 +1079,7 @@
         {
           "default": "",
           "document": "手机设备号。支持以下格式：\n1.imei明文\n2.idfa明文,\n3.imei小写后MD5值小写\n4.idfa大写后MD5值小写",
+          "example": "无",
           "member": "string",
           "name": "Imei",
           "required": false,
@@ -1063,6 +1088,7 @@
         {
           "default": "",
           "document": "App 客户端版本。",
+          "example": "无",
           "member": "string",
           "name": "AppVersion",
           "required": false,
@@ -1071,6 +1097,7 @@
         {
           "default": "",
           "document": "业务 ID 网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据。",
+          "example": "无",
           "member": "string",
           "name": "BusinessId",
           "required": false,
@@ -1079,6 +1106,7 @@
         {
           "default": "",
           "document": "1：微信公众号。\n2：微信小程序。",
+          "example": "无",
           "member": "string",
           "name": "WxSubType",
           "required": false,
@@ -1087,6 +1115,7 @@
         {
           "default": "",
           "document": "Token 签名随机数，WxSubType为微信小程序时必填，建议16个字符。",
+          "example": "无",
           "member": "string",
           "name": "RandNum",
           "required": false,
@@ -1094,7 +1123,8 @@
         },
         {
           "default": "",
-          "document": "如果 accountType为2而且wxSubType有填，该字段必选，否则不需要填写；\n如果是微信小程序（WxSubType=2），该字段为以ssesion_key为key去签名随机数radnNum得到的值（ hmac_sha256签名算法）；如果是微信公众号或第三方登录，则为授权的access_token（网页版本的access_Token,而且获取token的scope字段必需填写snsapi_userinfo；）",
+          "document": "token",
+          "example": "无",
           "member": "string",
           "name": "WxToken",
           "required": false,
@@ -1103,6 +1133,7 @@
         {
           "default": "",
           "document": "是否识别设备异常：\n0：不识别。\n1：识别。",
+          "example": "无",
           "member": "string",
           "name": "CheckDevice",
           "required": false,
@@ -1116,57 +1147,73 @@
       "members": [
         {
           "document": "操作时间戳，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1582029456",
           "member": "string",
           "name": "PostTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "用户操作的真实外网 IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101.231.62.66",
           "member": "string",
           "name": "UserIp",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "0：表示无恶意。\n1 - 4：恶意等级由低到高。",
+          "example": "1",
           "member": "int64",
           "name": "Level",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "风险类型。\n\n账号风险：\n\n1，账号信用低，账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素；\n2，垃圾账号，疑似批量注册小号，近期存在严重违规或大量举报；\n3，无效账号，送检账号参数无法成功解析，请检查微信openid是否有误 ，QQopenid是否与appidU对应，手机号是否有误。\n4，黑名单，该账号在业务侧有过拉黑记录\n5，白名单，该账号在业务侧有过加白名单记录\n\n行为风险：\n101，批量操作，存在ip/设备/环境等因素的聚集性异常；\n102，自动机，疑似自动机批量请求；\n104，微信登录态无效，检查wxToken参数，是否已经失效；\n\n环境风险：\n201，环境异常，操作ip/设备/环境存在异常。当前ip为非常用ip或恶意ip段；\n205，非公网有效ip，传进来的IP地址为内网ip地址或者ip保留地址；\n206，设备异常，该设备存在异常的使用行为",
+          "example": "[1,2]",
           "member": "int64",
           "name": "RiskType",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "accountType是QQ或微信开放账号时，用于标识QQ或微信用户登录后关联业务自身的账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
           "member": "string",
           "name": "AssociateAccount",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "document": "用户ID \naccountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "uid值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bfd81ee3ed27ad31c95ca75e21365973",
           "member": "string",
           "name": "Uid",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "用户操作的目的ID \n比如：点赞，该字段就是被点 赞的消息 id，如果是投票，就是被投号码的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
           "member": "string",
           "name": "RootId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "业务侧错误码。成功时返回Success，错误时返回具体业务错误原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
           "member": "string",
           "name": "CodeDesc",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

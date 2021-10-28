@@ -54,6 +54,30 @@
       "name": "创建环境角色授权",
       "output": "CreateEnvironmentRoleResponse"
     },
+    "CreateRocketMQCluster": {
+      "document": "此接口用于创建一个RocketMQ集群",
+      "input": "CreateRocketMQClusterRequest",
+      "name": "创建RocketMQ集群",
+      "output": "CreateRocketMQClusterResponse"
+    },
+    "CreateRocketMQGroup": {
+      "document": "创建RocketMQ消费组",
+      "input": "CreateRocketMQGroupRequest",
+      "name": "创建RocketMQ消费组",
+      "output": "CreateRocketMQGroupResponse"
+    },
+    "CreateRocketMQNamespace": {
+      "document": "创建RocketMQ命名空间",
+      "input": "CreateRocketMQNamespaceRequest",
+      "name": "创建RocketMQ命名空间",
+      "output": "CreateRocketMQNamespaceResponse"
+    },
+    "CreateRocketMQTopic": {
+      "document": "创建RocketMQ主题",
+      "input": "CreateRocketMQTopicRequest",
+      "name": "创建RocketMQ主题",
+      "output": "CreateRocketMQTopicResponse"
+    },
     "CreateRole": {
       "document": "创建角色",
       "input": "CreateRoleRequest",
@@ -107,6 +131,30 @@
       "input": "DeleteEnvironmentsRequest",
       "name": "删除命名空间",
       "output": "DeleteEnvironmentsResponse"
+    },
+    "DeleteRocketMQCluster": {
+      "document": "删除RocketMQ集群",
+      "input": "DeleteRocketMQClusterRequest",
+      "name": "删除RocketMQ集群",
+      "output": "DeleteRocketMQClusterResponse"
+    },
+    "DeleteRocketMQGroup": {
+      "document": "删除RocketMQ消费组",
+      "input": "DeleteRocketMQGroupRequest",
+      "name": "删除RocketMQ消费组",
+      "output": "DeleteRocketMQGroupResponse"
+    },
+    "DeleteRocketMQNamespace": {
+      "document": "删除RocketMQ命名空间",
+      "input": "DeleteRocketMQNamespaceRequest",
+      "name": "删除RocketMQ命名空间",
+      "output": "DeleteRocketMQNamespaceResponse"
+    },
+    "DeleteRocketMQTopic": {
+      "document": "删除RocketMQ主题",
+      "input": "DeleteRocketMQTopicRequest",
+      "name": "删除RocketMQ主题",
+      "output": "DeleteRocketMQTopicResponse"
     },
     "DeleteRoles": {
       "document": "删除角色，支持批量。",
@@ -222,6 +270,36 @@
       "name": "生产者列表",
       "output": "DescribeProducersResponse"
     },
+    "DescribeRocketMQCluster": {
+      "document": "获取单个RocketMQ集群信息",
+      "input": "DescribeRocketMQClusterRequest",
+      "name": "获取单个RocketMQ集群信息",
+      "output": "DescribeRocketMQClusterResponse"
+    },
+    "DescribeRocketMQClusters": {
+      "document": "获取RocketMQ集群列表",
+      "input": "DescribeRocketMQClustersRequest",
+      "name": "获取RocketMQ集群列表",
+      "output": "DescribeRocketMQClustersResponse"
+    },
+    "DescribeRocketMQGroups": {
+      "document": "获取RocketMQ消费组列表",
+      "input": "DescribeRocketMQGroupsRequest",
+      "name": "获取RocketMQ消费组列表",
+      "output": "DescribeRocketMQGroupsResponse"
+    },
+    "DescribeRocketMQNamespaces": {
+      "document": "获取RocketMQ命名空间列表",
+      "input": "DescribeRocketMQNamespacesRequest",
+      "name": "获取RocketMQ命名空间列表",
+      "output": "DescribeRocketMQNamespacesResponse"
+    },
+    "DescribeRocketMQTopics": {
+      "document": "获取RocketMQ主题列表",
+      "input": "DescribeRocketMQTopicsRequest",
+      "name": "获取RocketMQ主题列表",
+      "output": "DescribeRocketMQTopicsResponse"
+    },
     "DescribeRoles": {
       "document": "获取角色列表",
       "input": "DescribeRolesRequest",
@@ -275,6 +353,30 @@
       "input": "ModifyEnvironmentRoleRequest",
       "name": "修改环境角色授权",
       "output": "ModifyEnvironmentRoleResponse"
+    },
+    "ModifyRocketMQCluster": {
+      "document": "更新RocketMQ集群信息",
+      "input": "ModifyRocketMQClusterRequest",
+      "name": "更新RocketMQ集群信息",
+      "output": "ModifyRocketMQClusterResponse"
+    },
+    "ModifyRocketMQGroup": {
+      "document": "更新RocketMQ消费组信息",
+      "input": "ModifyRocketMQGroupRequest",
+      "name": "更新RocketMQ消费组信息",
+      "output": "ModifyRocketMQGroupResponse"
+    },
+    "ModifyRocketMQNamespace": {
+      "document": "更新RocketMQ命名空间",
+      "input": "ModifyRocketMQNamespaceRequest",
+      "name": "更新RocketMQ命名空间",
+      "output": "ModifyRocketMQNamespaceResponse"
+    },
+    "ModifyRocketMQTopic": {
+      "document": "更新RocketMQ主题信息",
+      "input": "ModifyRocketMQTopicRequest",
+      "name": "更新RocketMQ主题信息",
+      "output": "ModifyRocketMQTopicResponse"
     },
     "ModifyRole": {
       "document": "角色修改",
@@ -602,7 +704,7 @@
         },
         {
           "default": "",
-          "document": "最大消息保留时间，分钟为单位",
+          "document": "最大消息保留时间，秒为单位",
           "example": "100000000",
           "member": "int64",
           "name": "MessageRetentionTime",
@@ -2128,6 +2230,249 @@
       ],
       "type": "object"
     },
+    "CreateRocketMQClusterRequest": {
+      "document": "CreateRocketMQCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群描述，128个字符以内",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQClusterResponse": {
+      "document": "CreateRocketMQCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQGroupRequest": {
+      "document": "CreateRocketMQGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Group名称，8~64个字符",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间，目前只支持单个命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespaces",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启消费",
+          "example": "true",
+          "member": "bool",
+          "name": "ReadEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启广播消费",
+          "example": "true",
+          "member": "bool",
+          "name": "BroadcastEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，最长128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQGroupResponse": {
+      "document": "CreateRocketMQGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQNamespaceRequest": {
+      "document": "CreateRocketMQNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "example": "100000",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息持久化后保留的时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "RetentionTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQNamespaceResponse": {
+      "document": "CreateRocketMQNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQTopicRequest": {
+      "document": "CreateRocketMQTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题所在的命名空间，目前支持在单个命名空间下创建主题",
+          "example": "无",
+          "member": "string",
+          "name": "Namespaces",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQTopicResponse": {
+      "document": "CreateRocketMQTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRoleRequest": {
       "document": "CreateRole请求参数结构体",
       "members": [
@@ -2623,6 +2968,159 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQClusterRequest": {
+      "document": "DeleteRocketMQCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的集群Id。",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQClusterResponse": {
+      "document": "DeleteRocketMQCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQGroupRequest": {
+      "document": "DeleteRocketMQGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQGroupResponse": {
+      "document": "DeleteRocketMQGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQNamespaceRequest": {
+      "document": "DeleteRocketMQNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQNamespaceResponse": {
+      "document": "DeleteRocketMQNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQTopicRequest": {
+      "document": "DeleteRocketMQTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRocketMQTopicResponse": {
+      "document": "DeleteRocketMQTopic返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3911,6 +4409,438 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQClusterRequest": {
+      "document": "DescribeRocketMQCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQClusterResponse": {
+      "document": "DescribeRocketMQCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息",
+          "example": "无",
+          "member": "RocketMQClusterInfo",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群配置",
+          "example": "无",
+          "member": "RocketMQClusterConfig",
+          "name": "ClusterConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群最近使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQClusterRecentStats",
+          "name": "ClusterStats",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQClustersRequest": {
+      "document": "DescribeRocketMQClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照集群ID关键字搜索",
+          "example": "xxxx",
+          "member": "string",
+          "name": "IdKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照集群名称关键字搜索",
+          "example": "xxxx",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID列表过滤",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤查找时，需要设置为true",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTagFilter",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤器。目前支持标签过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQClustersResponse": {
+      "document": "DescribeRocketMQClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQClusterDetail",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQGroupsRequest": {
+      "document": "DescribeRocketMQGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主题名称，输入此参数可查询该主题下所有的订阅组",
+          "example": "test",
+          "member": "string",
+          "name": "FilterTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按消费组名称查询消费组，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "FilterGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照指定字段排序，可选值为tps，accumulative",
+          "example": "tps",
+          "member": "string",
+          "name": "SortedBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按升序或降序排列，可选值为asc，desc",
+          "example": "asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅组名称，指定此参数后将只返回该订阅组信息",
+          "example": "test",
+          "member": "string",
+          "name": "FilterOneGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQGroupsResponse": {
+      "document": "DescribeRocketMQGroups返回参数结构体",
+      "members": [
+        {
+          "document": "总数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订阅组列表",
+          "example": "无",
+          "member": "RocketMQGroup",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQNamespacesRequest": {
+      "document": "DescribeRocketMQNamespaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按名称搜索",
+          "example": "xxxx",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQNamespacesResponse": {
+      "document": "DescribeRocketMQNamespaces返回参数结构体",
+      "members": [
+        {
+          "document": "命名空间列表",
+          "example": "无",
+          "member": "RocketMQNamespace",
+          "name": "Namespaces",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicsRequest": {
+      "document": "DescribeRocketMQTopics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询限制数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按主题类型过滤查询结果，可选择Normal, GlobalOrder, PartitionedOrder, Transaction",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按主题名称搜索，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "FilterName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicsResponse": {
+      "document": "DescribeRocketMQTopics返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题信息列表",
+          "example": "无",
+          "member": "RocketMQTopic",
+          "name": "Topics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRolesRequest": {
       "document": "DescribeRoles请求参数结构体",
       "members": [
@@ -4913,6 +5843,240 @@
       ],
       "type": "object"
     },
+    "ModifyRocketMQClusterRequest": {
+      "document": "ModifyRocketMQCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RocketMQ集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，不超过128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQClusterResponse": {
+      "document": "ModifyRocketMQCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQGroupRequest": {
+      "document": "ModifyRocketMQGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，最长128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启消费",
+          "example": "true",
+          "member": "bool",
+          "name": "ReadEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启广播消费",
+          "example": "true",
+          "member": "bool",
+          "name": "BroadcastEnable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQGroupResponse": {
+      "document": "ModifyRocketMQGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQNamespaceRequest": {
+      "document": "ModifyRocketMQNamespace请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "example": "100000",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消息持久化后保留的时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "RetentionTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQNamespaceResponse": {
+      "document": "ModifyRocketMQNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQTopicRequest": {
+      "document": "ModifyRocketMQTopic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRocketMQTopicResponse": {
+      "document": "ModifyRocketMQTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRoleRequest": {
       "document": "ModifyRole请求参数结构体",
       "members": [
@@ -5517,6 +6681,41 @@
         }
       ],
       "type": "object"
+    },
+    "RocketMQClusterConfig": {
+      "document": "RocketMQ集群配置",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQClusterDetail": {
+      "document": "租户RocketMQ集群详细信息",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQClusterInfo": {
+      "document": "RocketMQ集群基本信息",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQClusterRecentStats": {
+      "document": "RocketMQ近期使用量",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQGroup": {
+      "document": "RocketMQ消费组信息",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQNamespace": {
+      "document": "RocketMQ命名空间信息",
+      "members": [],
+      "usage": "out"
+    },
+    "RocketMQTopic": {
+      "document": "RocketMQ主题信息",
+      "members": [],
+      "usage": "out"
     },
     "Role": {
       "document": "角色实例",

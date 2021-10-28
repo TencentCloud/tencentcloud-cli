@@ -25,7 +25,9 @@ Output:
         ],
         "UserIp": "101.231.62.66",
         "CodeDesc": "Success",
-        "Uid": "bfd81ee3ed27ad31c95ca75e21365973"
+        "Uid": "bfd81ee3ed27ad31c95ca75e21365973",
+        "RootId": "xx",
+        "AssociateAccount": "xx"
     }
 }
 ```
