@@ -210,6 +210,12 @@
       "name": "查询报表数据",
       "output": "DescribeReportDataResponse"
     },
+    "DescribeScdnBotRecords": {
+      "document": "查询BOT会话记录列表",
+      "input": "DescribeScdnBotRecordsRequest",
+      "name": "查询BOT会话记录列表",
+      "output": "DescribeScdnBotRecordsResponse"
+    },
     "DescribeScdnConfig": {
       "document": "DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
       "input": "DescribeScdnConfigRequest",
@@ -227,6 +233,12 @@
       "input": "DescribeScdnTopDataRequest",
       "name": "获取SCDN的Top数据",
       "output": "DescribeScdnTopDataResponse"
+    },
+    "DescribeTopData": {
+      "document": "DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP\n+ 依据总流量、总请求数对访问 Refer 排序，从大至小返回 TOP 100 Refer\n+ 依据总流量、总请求数对访问 设备 排序，从大至小返回 设备类型\n+ 依据总流量、总请求数对访问 操作系统 排序，从大至小返回 操作系统\n+ 依据总流量、总请求数对访问 浏览器 排序，从大至小返回 浏览器\n\n注意：\n+ 仅支持 90 天内数据查询，且从2021年09月20日开始有数据\n+ 本接口为beta版，尚未正式全量发布\n",
+      "input": "DescribeTopDataRequest",
+      "name": "TOP 新版数据查询（beta版）",
+      "output": "DescribeTopDataResponse"
     },
     "DescribeTrafficPackages": {
       "document": "DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。",
@@ -311,6 +323,12 @@
       "input": "ListScdnLogTasksRequest",
       "name": "查询SCDN日志下载任务列表",
       "output": "ListScdnLogTasksResponse"
+    },
+    "ListScdnTopBotData": {
+      "document": "获取Bot攻击的Top数据列表",
+      "input": "ListScdnTopBotDataRequest",
+      "name": "获取Bot攻击的Top数据列表",
+      "output": "ListScdnTopBotDataResponse"
     },
     "ListTopBotData": {
       "document": "获取Bot攻击的Top信息",
@@ -2142,6 +2160,191 @@
         }
       ],
       "usage": "both"
+    },
+    "BotRecord": {
+      "document": "BOT记录详细内容",
+      "members": [
+        {
+          "default": "",
+          "document": "动作，取值为以为3个类型中的一个：\"intercept\",\"permit\",\"monitor\"，分别表示： 拦截， 放行，监控",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话总次数",
+          "member": "int64",
+          "name": "Nums",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BotType=UB时，表示预测标签，取值如下：\n                \"crawler_unregular\",\n                \"crawler_regular\",\n                \"request_repeat\",\n                \"credential_miss_user\",\n                \"credential_without_user\",\n                \"credential_only_action\",\n                \"credential_user_password\",\n                \"credential_cracking\",\n                \"credential_stuffing\",\n                \"brush_sms\",\n                \"brush_captcha\",\n                \"reg_malicious\"\nBotType=TCB时，表示Bot分类，取值如下：\n                \"Uncategorised\",\n                \"Search engine bot\",\n                \"Site monitor\",\n                \"Screenshot creator\",\n                \"Link checker\",\n                \"Web scraper\",\n                \"Vulnerability scanner\",\n                \"Virus scanner\",\n                \"Speed tester\",\n                \"Feed Fetcher\",\n                \"Tool\",\n                \"Marketing\"\nBotType=UCB时，为二期接口，暂时未定义内容",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话持续时间",
+          "member": "float",
+          "name": "SessionDuration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问源IP",
+          "member": "string",
+          "name": "SrcIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常特征",
+          "member": "string",
+          "name": "BotFeature",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新检测时间",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BOT得分",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均速率",
+          "member": "float",
+          "name": "AvgSpeed",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "BotType=TCB，表示TCB名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TcbDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "BOT记录唯一ID，用于查询访问详情",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotSortBy": {
+      "document": "Bot记录的排序选项",
+      "members": [
+        {
+          "default": "",
+          "document": "排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "asc/desc",
+          "member": "string",
+          "name": "Sequence",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BotStatisticsCount": {
+      "document": "session/ip维度的bot统计复杂对象",
+      "members": [
+        {
+          "default": "",
+          "document": "BOT次数",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Top指标值,如果是ip维度就是ip如果是session维度就是域名",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip所在国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip所在省份",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip归属的idc",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BriefDomain": {
       "document": "域名基础配置信息，含 CNAME、状态、业务类型、加速区域、创建时间、更新时间、源站配置等。",
@@ -5789,6 +5992,141 @@
       ],
       "type": "object"
     },
+    "DescribeScdnBotRecordsRequest": {
+      "document": "DescribeScdnBotRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "BOT类型，取值为\"UB\",\"UCB\",\"TCB\"，分别表示：未知类型，自定义类型，公开类型",
+          "example": "UB",
+          "member": "string",
+          "name": "BotType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-02-01 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-02-02 00:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "mainland 大陆地区 overseas境外地区",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序参数",
+          "example": "无",
+          "member": "BotSortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "BotType=UB时，表示需要过滤的预测标签，取值如下：\n                \"crawler_unregular\",\n                \"crawler_regular\",\n                \"request_repeat\",\n                \"credential_miss_user\",\n                \"credential_without_user\",\n                \"credential_only_action\",\n                \"credential_user_password\",\n                \"credential_cracking\",\n                \"credential_stuffing\",\n                \"brush_sms\",\n                \"brush_captcha\",\n                \"reg_malicious\"\nBotType=TCB时，表示需要过滤的Bot分类，取值如下：\n                \"Uncategorised\",\n                \"Search engine bot\",\n                \"Site monitor\",\n                \"Screenshot creator\",\n                \"Link checker\",\n                \"Web scraper\",\n                \"Vulnerability scanner\",\n                \"Virus scanner\",\n                \"Speed tester\",\n                \"Feed Fetcher\",\n                \"Tool\",\n                \"Marketing\"\nBotType=UCB时，取值如下：\nUser-Agent为空或不存在\nUser-Agent类型为BOT\nUser-Agent类型为HTTP Library\nUser-Agent类型为Framework\nUser-Agent类型为Tools\nUser-Agent类型为Unkonwn BOT\nUser-Agent类型为Scanner\nReferer空或不存在\nReferer滥用(多个UA使用相同Referer)\nCookie滥用(多个UA使用相同Cookie)\nCookie空或不存在\nConnection空或不存在\nAccept空或不存在\nAccept-Language空或不存在\nAccept-Enconding空或不存在\n使用HTTP HEAD方法\nHTTP协议为1.0或者更低\nIDC-IP 腾讯云\nIDC-IP 阿里云\nIDC-IP 华为云\nIDC-IP 金山云\nIDC-IP UCloud\nIDC-IP 百度云\nIDC-IP 京东云\nIDC-IP 青云\nIDC-IP Aws\nIDC-IP Azure\nIDC-IP Google\n\n以上所有类型，FilterName为空时，表示不过滤，获取所有内容",
+          "example": "crawler_unregular",
+          "member": "string",
+          "name": "FilterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目前支持的Action\n\"intercept\" 拦截\n\"monitor\"，监控\n\"permit\" 放行\n\"redirect\" 重定向\n\n尚未支持的Action\n\"captcha\" 验证码",
+          "example": "intercept",
+          "member": "string",
+          "name": "FilterAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤的IP",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScdnBotRecordsResponse": {
+      "document": "DescribeScdnBotRecords返回参数结构体",
+      "members": [
+        {
+          "document": "BOT拦截结果数组",
+          "example": "无",
+          "member": "BotRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScdnConfigRequest": {
       "document": "DescribeScdnConfig请求参数结构体",
       "members": [
@@ -6029,6 +6367,114 @@
           "name": "TopUrlData",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopDataRequest": {
+      "document": "DescribeTopData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的起点时刻",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的结束时刻",
+          "example": "2021-01-01 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序对象，支持以下几种形式：\nip、ua_device、ua_browser、ua_os、referer",
+          "example": "ip",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序使用的指标名称：\nflux：Metric 为 host 时指代访问流量\nrequest：Metric 为 host 时指代访问请求数",
+          "example": "flux",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主",
+          "example": "0",
+          "member": "int64",
+          "name": "Project",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否详细显示每个域名的的具体数值",
+          "example": "false",
+          "member": "bool",
+          "name": "Detail",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "地域，目前可不填，默认是大陆",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品名，目前仅可使用cdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopDataResponse": {
+      "document": "DescribeTopData返回参数结构体",
+      "members": [
+        {
+          "document": "各个资源的Top 访问数据详情。",
+          "example": "[]",
+          "member": "TopDataMore",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6449,7 +6895,7 @@
         },
         {
           "default": "",
-          "document": "自定义错误页面配置（功能灰度中，敬请期待）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义错误页面配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
@@ -6789,7 +7235,7 @@
         },
         {
           "default": "",
-          "document": "高级配置集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级配置集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvanceConfig",
           "name": "AdvanceSet",
@@ -6799,7 +7245,7 @@
         },
         {
           "default": "",
-          "document": "离线缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "离线缓存（功能灰度中，尚未全量，请等待后续全量发布）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OfflineCache",
           "name": "OfflineCache",
@@ -6809,7 +7255,7 @@
         },
         {
           "default": "",
-          "document": "合并回源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合并回源（白名单功能）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OriginCombine",
           "name": "OriginCombine",
@@ -6853,6 +7299,16 @@
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "远程鉴权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemoteAuthentication",
+          "name": "RemoteAuthentication",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -8675,6 +9131,87 @@
       ],
       "type": "object"
     },
+    "ListScdnTopBotDataRequest": {
+      "document": "ListScdnTopBotData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取Top量，取值范围[1-10]",
+          "example": "10",
+          "member": "int64",
+          "name": "TopCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-02-01 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-02-01 23:59:59",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "mainland 大陆地区 overseas境外地区",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "session表示查询BOT会话的Top信息\nip表示查询BOT客户端IP的Top信息\n\n不填代表获取会话信息",
+          "example": "ip",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名，仅当Metric=ip，并且Domain为空时有效，不填写表示获取AppID信息",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListScdnTopBotDataResponse": {
+      "document": "ListScdnTopBotData返回参数结构体",
+      "members": [
+        {
+          "document": "域名BOT次数列表",
+          "example": "无",
+          "member": "BotStatisticsCount",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTopBotDataRequest": {
       "document": "ListTopBotData请求参数结构体",
       "members": [
@@ -9154,6 +9691,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只返回前N条数据，默认为最大值100，metric=url时默认为最大值1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11037,6 +11583,108 @@
         }
       ],
       "usage": "out"
+    },
+    "RemoteAuthentication": {
+      "document": "远程鉴权规则配置，可以包含多种规则配置。\nRemoteAuthenticationRule 和Server 互斥，配置其中一个。\n若只配置Server ，规则参数将采用默认参数；",
+      "members": [
+        {
+          "default": "",
+          "document": "远程鉴权开关；\non : 开启;\noff: 关闭；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "远程鉴权规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"RemoteAuthentication\":{\"RemoteAuthenticationRule\":[{\"Server\":\"h",
+          "member": "RemoteAuthenticationRule",
+          "name": "RemoteAuthenticationRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "远程鉴权Server\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://auth.com/a.php",
+          "member": "string",
+          "name": "Server",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RemoteAuthenticationRule": {
+      "document": "远程鉴权规则。",
+      "members": [
+        {
+          "default": "",
+          "document": "远程鉴权服务http url",
+          "example": "http://auth.com/a.php",
+          "member": "string",
+          "name": "Server",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求远程鉴权服务器的http方法；取值范围[get,post,head,all]; all 表示不限制请求方法；\nall: 不指定访问访问方法；",
+          "example": "get",
+          "member": "string",
+          "name": "AuthMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /",
+          "example": "*",
+          "member": "string",
+          "name": "RulePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求远程鉴权服务器超时时间，单位毫秒；\n取值范围：[1,30 000]",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求远程鉴权服务器超时后执行拦截或者放行；\nRETURN_200: 超时后放行；\nRETURN_403:超时返回403；",
+          "example": "RETURN_200",
+          "member": "string",
+          "name": "AuthTimeoutAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ReportData": {
       "document": "CDN报表数据",
@@ -13020,6 +13668,32 @@
       ],
       "usage": "out"
     },
+    "TopDataMore": {
+      "document": "排序类型数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "资源名称，根据查询条件不同分为以下几类：",
+          "example": "a.com",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序结果详情",
+          "example": "无",
+          "member": "TopDetailDataMore",
+          "name": "DetailData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TopDetailData": {
       "document": "排序类型的数据结构",
       "members": [
@@ -13040,6 +13714,42 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopDetailDataMore": {
+      "document": "排序类型的数据结构，同时附带上该项的在总值的占比",
+      "members": [
+        {
+          "default": "",
+          "document": "数据类型的名称",
+          "example": "a.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据值",
+          "example": "11",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据值在总值中的百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "float",
+          "name": "Percent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13121,6 +13831,7 @@
         {
           "default": "",
           "document": "流量包 Id",
+          "example": "123",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -13130,6 +13841,7 @@
         {
           "default": "",
           "document": "流量包类型",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -13139,6 +13851,7 @@
         {
           "default": "",
           "document": "流量包大小（单位为 Byte）",
+          "example": "1000000000",
           "member": "int64",
           "name": "Bytes",
           "required": true,
@@ -13148,6 +13861,7 @@
         {
           "default": "",
           "document": "已消耗流量（单位为 Byte）",
+          "example": "100",
           "member": "int64",
           "name": "BytesUsed",
           "required": true,
@@ -13157,6 +13871,7 @@
         {
           "default": "",
           "document": "流量包状态\nenabled：已启用\nexpired：已过期\ndisabled：未启用",
+          "example": "enabled",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -13166,6 +13881,7 @@
         {
           "default": "",
           "document": "流量包发放时间",
+          "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -13175,6 +13891,7 @@
         {
           "default": "",
           "document": "流量包生效时间",
+          "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "EnableTime",
           "required": true,
@@ -13184,6 +13901,7 @@
         {
           "default": "",
           "document": "流量包过期时间",
+          "example": "2021-09-01 00:00:00",
           "member": "datetime",
           "name": "ExpireTime",
           "required": true,
@@ -13193,6 +13911,7 @@
         {
           "default": "",
           "document": "流量包是否续订",
+          "example": "false",
           "member": "bool",
           "name": "ContractExtension",
           "required": true,
@@ -13202,6 +13921,7 @@
         {
           "default": "",
           "document": "流量包是否自动续订",
+          "example": "false",
           "member": "bool",
           "name": "AutoExtension",
           "required": true,
@@ -13211,6 +13931,7 @@
         {
           "default": "",
           "document": "流量包来源",
+          "example": "CDN_GIFT",
           "member": "string",
           "name": "Channel",
           "required": true,
@@ -13219,7 +13940,8 @@
         },
         {
           "default": "",
-          "document": "流量包生效区域，目前仅支持mainland",
+          "document": "流量包生效区域，mainland或overseas",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -13229,6 +13951,7 @@
         {
           "default": "",
           "document": "流量包生命周期月数",
+          "example": "1",
           "member": "int64",
           "name": "LifeTimeMonth",
           "required": true,
@@ -13238,6 +13961,7 @@
         {
           "default": "",
           "document": "流量包是否支持续订",
+          "example": "false",
           "member": "bool",
           "name": "ExtensionAvailable",
           "required": true,
@@ -13247,11 +13971,22 @@
         {
           "default": "",
           "document": "流量包是否支持退费",
+          "example": "false",
           "member": "bool",
           "name": "RefundAvailable",
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量包生效区域\n0：中国大陆\n1：亚太一区\n2：亚太二区\n3：亚太三区\n4：中东\n5：北美\n6：欧洲\n7：南美\n8：非洲\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13504,7 +14239,7 @@
         },
         {
           "default": "",
-          "document": "域名加速区域\nmainland：中国境内加速\noverseas：中国境外加速\nglobal：全球加速",
+          "document": "域名加速区域\nmainland：中国境内加速\noverseas：中国境外加速\nglobal：全球加速\n从mainland/overseas修改至global时，域名的配置将被同步至overseas/mainland。若域名含有后端特殊配置，此类配置的同步过程有一定延时，请耐心等待",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -13549,7 +14284,7 @@
         },
         {
           "default": "",
-          "document": "URL重定向配置",
+          "document": "访问URL重写配置",
           "example": "无",
           "member": "UrlRedirect",
           "name": "UrlRedirect",
@@ -13634,6 +14369,15 @@
           "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "远程鉴权配置",
+          "example": "无",
+          "member": "RemoteAuthentication",
+          "name": "RemoteAuthentication",
           "required": false,
           "type": "object"
         }
@@ -13889,6 +14633,7 @@
         {
           "default": "",
           "document": "重定向状态码，301 | 302",
+          "example": "no",
           "member": "int64",
           "name": "RedirectStatusCode",
           "required": true,
@@ -13898,6 +14643,7 @@
         {
           "default": "",
           "document": "待匹配的Url，仅支持Url路径，不支持参数。默认完全匹配，支持通配符 *，最多支持5个通配符，最大长度1024字符。",
+          "example": "no",
           "member": "string",
           "name": "Pattern",
           "required": true,
@@ -13907,6 +14653,7 @@
         {
           "default": "",
           "document": "目标URL，必须以“/”开头，不包含参数部分。最大长度1024字符。可使用$1, $2, $3, $4, $5分别捕获匹配路径中的通配符号，最多支持10个捕获值。",
+          "example": "no",
           "member": "string",
           "name": "RedirectUrl",
           "required": true,
@@ -13916,6 +14663,7 @@
         {
           "default": "",
           "document": "目标host，必须以http://或https://开头，并填写标准格式域名，如果不填写，默认为http:// + 当前域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
           "member": "string",
           "name": "RedirectHost",
           "required": false,

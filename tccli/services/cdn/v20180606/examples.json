@@ -280,6 +280,14 @@
         "title": "查询报表数据"
       }
     ],
+    "DescribeScdnBotRecords": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotRecords\n&BotType=TCB\n&Domain=zc-test-a.qcloudwaf.com\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:59\n&Offset=0\n&Limit=20\n&SortBy.0.Key=timestamp\n&SortBy.0.Sequence=desc\n&Area=overseas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [],\n        \"RequestId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\"\n    }\n}",
+        "title": "获取指定类型的BOT记录"
+      }
+    ],
     "DescribeScdnConfig": [
       {
         "document": "",
@@ -302,6 +310,14 @@
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnTopData\n&Domain=www.test.com\n&Mode=waf\n&Filter=request\n&Metric=url\n&StartTime=2019-06-2600:00:00\n&EndTime=2019-06-2603:00:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\n        \"TopTypeData\": [\n            {\n                \"AttackType\": \"xss\",\n                \"Value\": 20\n            },\n            {\n                \"AttackType\": \"sql\",\n                \"Value\": 831\n            }\n        ],\n        \"TopIpData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:56\",\n                \"Value\": 18,\n                \"Isp\": \"中国电信\",\n                \"Ip\": \"222.186.20.85\"\n            }\n        ],\n        \"Mode\": \"waf\"\n    }\n}",
         "title": "获取SCDN的Top数据"
+      }
+    ],
+    "DescribeTopData": [
+      {
+        "document": "查询ua_device指标的数据",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=ua_device\n&Filter=request\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37aabaa8-c4c1-45ea-a4aa-8bafea1a496d\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"桌面\",\n                        \"Value\": 635,\n                        \"Percent\": 0.6642\n                    },\n                    {\n                        \"Name\": \"其他/未知\",\n                        \"Value\": 260,\n                        \"Percent\": 0.272\n                    },\n                    {\n                        \"Name\": \"移动\",\n                        \"Value\": 61,\n                        \"Percent\": 0.0638\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "设备数据返回"
       }
     ],
     "DescribeTrafficPackages": [
@@ -414,6 +430,14 @@
         "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnLogTasks\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": []\n    }\n}",
         "title": "查询SCDN事件日志下载任务列表"
+      }
+    ],
+    "ListScdnTopBotData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnTopBotData\n&TopCount=10\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:00\n&Area=overseas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"Value\": \"110.242.68.66\",\n                \"Province\": \"广东\",\n                \"Country\": \"中国\",\n                \"Isp\": \"电信\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
+        "title": "查询bot的topN域名"
       }
     ],
     "ListTopBotData": [
