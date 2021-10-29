@@ -8,12 +8,64 @@
         "title": "图像质量评估请求成功"
       }
     ],
+    "CreateGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"Brief\": \"brief_test\",\n    \"GroupName\": \"name_test\",\n    \"MaxQps\": \"123\",\n    \"MaxCapacity\": \"123\",\n    \"GroupId\": \"test_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ba53193-90af-4440-b706-b3d3a0657982\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "CreateImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"1\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"CustomContent\": \"test\",\n    \"Tags\": \"{\\\"k\\\": \\\"123\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "title": "调用成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"CustomContent\": \"custom\",\n    \"ImageUrl\": \"https://img1.gtimg.com/chinanba/pics/hv1/86/220/2312/150393986.jpg\",\n    \"EntityId\": \"456\",\n    \"GroupId\": \"hello\",\n    \"PicName\": \"456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
+        "title": "调用成功"
+      }
+    ],
     "CropImage": [
       {
         "document": "输入一张图片，输出裁剪坐标结果",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CropImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Width\": 1100,\n    \"Height\": 880\n}",
         "output": "{\n    \"Response\": {\n        \"X\": 0,\n        \"Y\": 110,\n        \"Width\": 1100,\n        \"Height\": 880,\n        \"OriginalWidth\": 1100,\n        \"OriginalHeight\": 1390,\n        \"CropResult\": 0,\n        \"RequestId\": \"bfd478e1-5c94-4e37-ad22-4a5224a09492\"\n    }\n}",
         "title": "图像智能裁剪成功"
+      }
+    ],
+    "DeleteImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "title": "调用成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "title": "调用失败示例"
+      }
+    ],
+    "DescribeGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroups\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Groups\": [\n            {\n                \"GroupType\": 1,\n                \"MaxQps\": 1,\n                \"UpdateTime\": 1,\n                \"Brief\": \"xx\",\n                \"GroupName\": \"xx\",\n                \"PicCount\": 1,\n                \"GroupId\": \"xx\",\n                \"CreateTime\": 1,\n                \"MaxCapacity\": 1\n            }\n        ]\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DescribeImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{\n    \"EntityId\": \"test3\",\n    \"GroupId\": \"work\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EntityId\": \"test3\",\n        \"GroupId\": \"work\",\n        \"ImageInfos\": [\n            {\n                \"CustomContent\": \"custom\",\n                \"EntityId\": \"test3\",\n                \"PicName\": \"4000\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            },\n            {\n                \"CustomContent\": \"custom\",\n                \"EntityId\": \"test3\",\n                \"PicName\": \"4001\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            },\n            {\n                \"CustomContent\": \"custom\",\n                \"EntityId\": \"test3\",\n                \"PicName\": \"4002\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            }\n        ],\n        \"RequestId\": \"65996842-8bb5-430f-bb40-460b3c73db76\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "DetectCelebrity": [
@@ -122,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCar\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"CarCoords\": [\n            {\n                \"X\": 513,\n                \"Y\": 651\n            },\n            {\n                \"X\": 513,\n                \"Y\": 441\n            },\n            {\n                \"X\": 780,\n                \"Y\": 441\n            },\n            {\n                \"X\": 780,\n                \"Y\": 651\n            }\n        ],\n        \"CarTags\": [\n            {\n                \"Serial\": \"途安\",\n                \"Brand\": \"大众\",\n                \"Type\": \"MPV\",\n                \"Color\": \"白\",\n                \"Confidence\": 93,\n                \"Year\": 2008,\n                \"CarLocation\": [\n                    {\n                        \"X\": 513,\n                        \"Y\": 651\n                    },\n                    {\n                        \"X\": 513,\n                        \"Y\": 441\n                    },\n                    {\n                        \"X\": 780,\n                        \"Y\": 441\n                    },\n                    {\n                        \"X\": 780,\n                        \"Y\": 651\n                    }\n                ]\n            },\n            {\n                \"Serial\": \"君越\",\n                \"Brand\": \"别克\",\n                \"Type\": \"中型车\",\n                \"Color\": \"银灰\",\n                \"Confidence\": 47,\n                \"Year\": 2009,\n                \"CarLocation\": [\n                    {\n                        \"X\": 45,\n                        \"Y\": 658\n                    },\n                    {\n                        \"X\": 45,\n                        \"Y\": 459\n                    },\n                    {\n                        \"X\": 313,\n                        \"Y\": 459\n                    },\n                    {\n                        \"X\": 313,\n                        \"Y\": 658\n                    }\n                ]\n            },\n            {\n                \"Serial\": \"神行者2\",\n                \"Brand\": \"路虎\",\n                \"Type\": \"中型SUV\",\n                \"Color\": \"黑\",\n                \"Confidence\": 13,\n                \"Year\": 2010,\n                \"CarLocation\": [\n                    {\n                        \"X\": 1013,\n                        \"Y\": 580\n                    },\n                    {\n                        \"X\": 1013,\n                        \"Y\": 433\n                    },\n                    {\n                        \"X\": 1202,\n                        \"Y\": 433\n                    },\n                    {\n                        \"X\": 1202,\n                        \"Y\": 580\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"81235fb9-d91e-4a40-91ac-9ef5675954a2\"\n    }\n}",
         "title": "车辆识别示例代码"
+      }
+    ],
+    "SearchImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://crawl.ws.126.net/img/999674ed516ef903e486cd2ff83e1d2f.jpg\",\n    \"Filter\": \"value > 10\",\n    \"MatchThreshold\": \"1\",\n    \"Limit\": \"30\",\n    \"Offset\": \"0\",\n    \"GroupId\": \"work\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 2,\n        \"ImageInfos\": [\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3001\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 15}\"\n            },\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3002\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            }\n        ],\n        \"RequestId\": \"2d658a05-62d5-4f82-913c-50832146f6f3\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ]
   },

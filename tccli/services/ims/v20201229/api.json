@@ -650,6 +650,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该参数用于返回命中的实体二级标签。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -887,6 +897,16 @@
           "name": "Rate",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回检测结果所对应的恶意二级标签。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

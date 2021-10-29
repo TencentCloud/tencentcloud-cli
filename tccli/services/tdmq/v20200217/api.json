@@ -704,7 +704,7 @@
         },
         {
           "default": "",
-          "document": "最大消息保留时间，分钟为单位",
+          "document": "最大消息保留时间，秒为单位",
           "example": "100000000",
           "member": "int64",
           "name": "MessageRetentionTime",

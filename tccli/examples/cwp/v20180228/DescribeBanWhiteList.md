@@ -18,7 +18,7 @@ Output:
         "WhiteList": [
             {
                 "Id": "33",
-                "SrcIp": "45.24.22.123",
+                "SrcIp": "xx.xx.xx.xx",
                 "ModifyTime": "2020-02-18 18:28:29",
                 "CreateTime": "2020-02-18 18:28:29",
                 "Remark": "532",
@@ -30,7 +30,7 @@ Output:
             },
             {
                 "Id": "34",
-                "SrcIp": "1.1.1.1",
+                "SrcIp": "xx.xx.xx.xx",
                 "ModifyTime": "2020-03-08 23:27:09",
                 "CreateTime": "2020-03-08 23:27:09",
                 "Remark": "xxx",
@@ -42,7 +42,7 @@ Output:
             },
             {
                 "Id": "35",
-                "SrcIp": "1.1.1.1",
+                "SrcIp": "xx.xx.xx.xx",
                 "ModifyTime": "2020-03-08 23:34:20",
                 "CreateTime": "2020-03-08 23:34:20",
                 "Remark": "whitelist_rule",
@@ -54,7 +54,7 @@ Output:
             },
             {
                 "Id": "36",
-                "SrcIp": "1.1.1.1",
+                "SrcIp": "xx.xx.xx.xx",
                 "ModifyTime": "2020-03-08 23:34:20",
                 "CreateTime": "2020-03-08 23:34:20",
                 "Remark": "whitelist_rule",

@@ -842,6 +842,7 @@
         {
           "default": "",
           "document": "序号",
+          "example": "0",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -851,6 +852,7 @@
         {
           "default": "",
           "document": "标签名称",
+          "example": "aaa",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -860,6 +862,7 @@
         {
           "default": "",
           "document": "标签值，\n当标签为二维码时，表示URL地址，如Name为QrCode时，Value为\"http//abc.com/aaa\"",
+          "example": "http//abc.com/aaa",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -869,6 +872,7 @@
         {
           "default": "",
           "document": "分数",
+          "example": "100",
           "member": "uint64",
           "name": "Score",
           "required": true,
@@ -878,10 +882,21 @@
         {
           "default": "",
           "document": "检测框坐标",
+          "example": "无",
           "member": "Location",
           "name": "Location",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级标签名称",
+          "example": "bbb",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1031,6 +1046,7 @@
         {
           "default": "",
           "document": "OCR文本内容",
+          "example": "无",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -1040,6 +1056,7 @@
         {
           "default": "",
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
+          "example": "无",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -1049,6 +1066,7 @@
         {
           "default": "",
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id",
+          "example": "无",
           "member": "string",
           "name": "LibId",
           "required": true,
@@ -1058,6 +1076,7 @@
         {
           "default": "",
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库名称",
+          "example": "无",
           "member": "string",
           "name": "LibName",
           "required": true,
@@ -1067,6 +1086,7 @@
         {
           "default": "",
           "document": "该标签下命中的关键词",
+          "example": "无",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -1076,6 +1096,7 @@
         {
           "default": "",
           "document": "该标签模型命中的分值",
+          "example": "无",
           "member": "uint64",
           "name": "Score",
           "required": true,
@@ -1085,6 +1106,7 @@
         {
           "default": "",
           "document": "OCR位置",
+          "example": "无",
           "member": "Location",
           "name": "Location",
           "required": true,
@@ -1094,10 +1116,21 @@
         {
           "default": "",
           "document": "OCR文本识别置信度",
+          "example": "无",
           "member": "uint64",
           "name": "Rate",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OCR文本命中的二级标签",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

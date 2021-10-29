@@ -68,6 +68,14 @@
         "title": "获取任务信息"
       }
     ],
+    "DescribeTIWDailyUsage": [
+      {
+        "document": "查询2021-09-01到2021-09-07的互动白板时长用量",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTIWDailyUsage\n&SdkAppId=1400000001\n&SubProduct=sp_tiw_board\n&StartTime=2021-09-01\n&EndTime=2021-09-07\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdfb2097-75d1-4159-ad37-62d9eca65d6a\",\n        \"Usages\": [\n            {\n                \"Time\": \"2021-09-01\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 779552\n            },\n            {\n                \"Time\": \"2021-09-02\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 78118\n            },\n            {\n                \"Time\": \"2021-09-03\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 768385\n            },\n            {\n                \"Time\": \"2021-09-04\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 94257\n            },\n            {\n                \"Time\": \"2021-09-05\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 26717\n            },\n            {\n                \"Time\": \"2021-09-06\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 95296\n            },\n            {\n                \"Time\": \"2021-09-07\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 70592\n            }\n        ]\n    }\n}",
+        "title": "查询互动白板时长用量"
+      }
+    ],
     "DescribeTranscode": [
       {
         "document": "查询文档动态转码任务结果",
