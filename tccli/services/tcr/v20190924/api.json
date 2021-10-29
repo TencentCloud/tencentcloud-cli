@@ -330,6 +330,12 @@
       "name": "查询实例内网访问VPC链接",
       "output": "DescribeInternalEndpointsResponse"
     },
+    "DescribeMetaClusterId": {
+      "document": "查询指定实例所属metacluster",
+      "input": "DescribeMetaClusterIdRequest",
+      "name": "查询指定实例所属metacluster",
+      "output": "DescribeMetaClusterIdResponse"
+    },
     "DescribeNamespacePersonal": {
       "document": "查询个人版命名空间信息",
       "input": "DescribeNamespacePersonalRequest",
@@ -3301,6 +3307,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaClusterIdRequest": {
+      "document": "DescribeMetaClusterId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tcr实例ID",
+          "example": "tcr-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetaClusterIdResponse": {
+      "document": "DescribeMetaClusterId返回参数结构体",
+      "members": [
+        {
+          "document": "metacluster ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "MetaClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

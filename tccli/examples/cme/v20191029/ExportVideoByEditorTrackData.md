@@ -24,3 +24,32 @@ Output:
 }
 ```
 
+**Example 2: 指定轨道数据和宽高比导出视频**
+
+当使用指定短边长度的视频编码配置以后，需要配合指定宽高比导出视频
+
+Input: 
+
+```
+tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
+    --Platform test \
+    --AspectRatio 16:9 \
+    --TrackData [{"id":"84eaf25e-a515-4914-91d7-74accb6976b7","type":"video","order":0,"items":[{"id":"3285515a-3743-495d-87ba-f68f67a84f5f","start_time":0,"duration":16320,"type":"video","section":{"from":0,"to":16320},"asset_id":"6152cb87b5671f000135c7a1","filter_asset_id":"","width":960,"height":540,"position":{"x":540,"y":270},"operations":[{"type":"image_rotate","params":{"angle":0}},{"type":"audio_volumes","params":{"all":100}}],"is_new":true}]}] \
+    --Definition 11 \
+    --ExportDestination CME \
+    --CMEExportInfo.Owner.Type PERSON \
+    --CMEExportInfo.Owner.Id ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0 \
+    --CMEExportInfo.Name 新建项目 \
+    --CMEExportInfo.ClassPath /成片
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e86c730b-97c8-4e7d-b4a1-f5b28291e2b3",
+        "TaskId": "1810000001-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb5t"
+    }
+}
+```
+

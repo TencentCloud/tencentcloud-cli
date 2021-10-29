@@ -446,6 +446,14 @@
         "title": "获取内网接入信息的列表"
       }
     ],
+    "DescribeMetaClusterId": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeMetaClusterId\n&InstanceId=tcr-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MetaClusterId\": \"cls-xxxxxxxx\",\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "查询指定实例所属metacluster"
+      }
+    ],
     "DescribeNamespacePersonal": [
       {
         "document": "",

@@ -374,6 +374,14 @@
         "title": "客户端上报指标"
       }
     ],
+    "RegisterTable": [
+      {
+        "document": "预注册表结构",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterTable\n<公共请求参数>\n\n{\n    \"Namespace\": \"nandy_ns\",\n    \"Measurement\": \"Measurement\",\n    \"Fields\": [\n        {\n            \"Values\": [\n                \"tag\"\n            ],\n            \"Name\": \"tag1\"\n        },\n        {\n            \"Values\": [\n                \"sum\"\n            ],\n            \"Name\": \"field1\"\n        },\n        {\n            \"Values\": [\n                \"histogram@count\",\n                \"histogram@+Inf\",\n                \"histogram@1000_0000\"\n            ],\n            \"Name\": \"field2\"\n        }\n    ],\n    \"Type\": \"mc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"Success.\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "预注册表结构"
+      }
+    ],
     "SendCustomAlarmMsg": [
       {
         "document": "发送自定义消息告警",

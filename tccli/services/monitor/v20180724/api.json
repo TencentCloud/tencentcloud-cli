@@ -258,6 +258,12 @@
       "name": "自定义监控上报数据",
       "output": "PutMonitorDataResponse"
     },
+    "RegisterTable": {
+      "document": "预注册表结构",
+      "input": "RegisterTableRequest",
+      "name": "预注册表结构",
+      "output": "RegisterTableResponse"
+    },
     "SendCustomAlarmMsg": {
       "document": "发送自定义消息告警",
       "input": "SendCustomAlarmMsgRequest",
@@ -6419,6 +6425,32 @@
       ],
       "usage": "out"
     },
+    "Fields": {
+      "document": "表结构字段集合",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段类型，子类型由@符与主类型分隔，维度类型为tag",
+          "example": "[\"histogram@count\",\"histogram@+Inf\",\"histogram@1000_0000\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "GetMonitorDataRequest": {
       "document": "GetMonitorData请求参数结构体",
       "members": [
@@ -7967,6 +7999,78 @@
         }
       ],
       "usage": "in"
+    },
+    "RegisterTableRequest": {
+      "document": "RegisterTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视图",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Measurement",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注册字段。Name为字段名，值为字段类型，子类型由@符与主类型分隔，维度类型为tag",
+          "example": "无",
+          "member": "Fields",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "默认为mc，当trace业务注册时，填trace",
+          "example": "\"mc\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序键,clickhouse表索引",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "OrderKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterTableResponse": {
+      "document": "RegisterTable返回参数结构体",
+      "members": [
+        {
+          "document": "消息返回体",
+          "example": "\"Success.\"",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SendCustomAlarmMsgRequest": {
       "document": "SendCustomAlarmMsg请求参数结构体",

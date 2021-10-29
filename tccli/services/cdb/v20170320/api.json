@@ -582,12 +582,6 @@
       "name": "修改延迟只读实例的延迟复制时间",
       "output": "ModifyRoReplicationDelayResponse"
     },
-    "ModifyRoType": {
-      "document": "修改只读实例类型，可以将普通只读实例变为延迟只读实例，或者将延迟只读实例变为普通只读实例。",
-      "input": "ModifyRoTypeRequest",
-      "name": "修改只读实例类型",
-      "output": "ModifyRoTypeResponse"
-    },
     "ModifyTimeWindow": {
       "document": "本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。",
       "input": "ModifyTimeWindowRequest",
@@ -9589,60 +9583,6 @@
     },
     "ModifyRoReplicationDelayResponse": {
       "document": "ModifyRoReplicationDelay返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoTypeRequest": {
-      "document": "ModifyRoType请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例 ID。",
-          "example": "cdbro-test",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "只读实例源类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
-          "example": "NORMAL",
-          "member": "string",
-          "name": "SrcRoInstType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "只读实例目标类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
-          "example": "DELAY_REPLICATION",
-          "member": "string",
-          "name": "DstRoInstType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "延迟时间（s），将实例修改为延迟只读实例时必传。最小值1，最大值259200。",
-          "example": "259200",
-          "member": "int64",
-          "name": "ReplicationDelay",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoTypeResponse": {
-      "document": "ModifyRoType返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -800,14 +800,6 @@
         "title": "修改延迟只读实例的延迟复制时间"
       }
     ],
-    "ModifyRoType": [
-      {
-        "document": "修改只读实例类型",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-test\",\n    \"SrcRoInstType\": \"NORMAL\",\n    \"DstRoInstType\": \"DELAY_REPLICATION\",\n    \"ReplicationDelay\": 259200\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28a67cf3-4589-8534-2be0-17475fa5c892\"\n    }\n}",
-        "title": "修改只读实例类型"
-      }
-    ],
     "ModifyTimeWindow": [
       {
         "document": "",
