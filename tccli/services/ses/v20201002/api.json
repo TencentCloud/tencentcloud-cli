@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BatchSendEmail": {
+      "document": "您可以通过此API批量发送TEXT或者HTML邮件，适用于营销类、通知类邮件。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。批量发送之前，需先创建收件人列表，和收件人地址，并通过收件人列表id来进行发送。批量发送任务支持定时发送和周期重复发送，定时发送需传TimedParam，周期重复发送需传CycleParam",
+      "input": "BatchSendEmailRequest",
+      "name": "批量发送邮件",
+      "output": "BatchSendEmailResponse"
+    },
     "CreateEmailAddress": {
       "document": "在验证了发信域名之后，您需要一个发信地址来发送邮件。例如发信域名是mail.qcloud.com，那么发信地址可以为 service@mail.qcloud.com。如果您想要收件人在收件箱列表中显示您的别名，例如\"腾讯云邮件通知\"。那么发信地址为： 别名 空格 尖括号 邮箱地址。请注意中间需要有空格",
       "input": "CreateEmailAddressRequest",
@@ -91,7 +97,7 @@
       "output": "ListEmailTemplatesResponse"
     },
     "SendEmail": {
-      "document": "您可以通过此API发送TEXT或者HTML邮件，默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。",
+      "document": "您可以通过此API发送TEXT或者HTML邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。",
       "input": "SendEmailRequest",
       "name": "发送邮件",
       "output": "SendEmailResponse"
@@ -141,6 +147,123 @@
         }
       ],
       "usage": "in"
+    },
+    "BatchSendEmailRequest": {
+      "document": "BatchSendEmail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照\n发信人 <邮件地址> 的方式填写，例如：\n腾讯云团队 <noreply@mail.qcloud.com>",
+          "example": "abc@ef.com",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "邮件主题",
+          "example": "邮件主题",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型 1即时 2 定时 3 周期",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。",
+          "example": "abc@ef.com",
+          "member": "string",
+          "name": "ReplyToAddresses",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用模板发送时，填写的模板相关参数",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "使用API直接发送内容时，填写的邮件内容",
+          "example": "无",
+          "member": "Simple",
+          "name": "Simple",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "需要发送附件时，填写附件相关参数。",
+          "example": "无",
+          "member": "Attachment",
+          "name": "Attachments",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "周期发送任务的必要参数",
+          "example": "无",
+          "member": "CycleEmailParam",
+          "name": "CycleParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "定时发送任务的必要参数",
+          "example": "无",
+          "member": "TimedEmailParam",
+          "name": "TimedParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchSendEmailResponse": {
+      "document": "BatchSendEmail返回参数结构体",
+      "members": [
+        {
+          "document": "发送任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BlackEmailAddress": {
       "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间",
@@ -280,6 +403,32 @@
         }
       ],
       "type": "object"
+    },
+    "CycleEmailParam": {
+      "document": "创建重复周期发送邮件任务的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "任务开始时间",
+          "example": "2021-09-11 09:10:11",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务周期 小时维度",
+          "example": "1",
+          "member": "uint64",
+          "name": "IntervalTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "DNSAttributes": {
       "document": "用于描述DNS记录的域名、记录类型、期望得到的值、目前配置的值",
@@ -900,7 +1049,7 @@
       "members": [
         {
           "default": "",
-          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 \n发信人 &lt;邮件地址&gt; 的方式填写，例如：\n腾讯云团队 &lt;noreply@mail.qcloud.com&gt;",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 \n发信人 <邮件地址> 的方式填写，例如：\n腾讯云团队 <noreply@mail.qcloud.com>",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
           "name": "FromEmailAddress",
@@ -1221,6 +1370,22 @@
         }
       ],
       "usage": "out"
+    },
+    "TimedEmailParam": {
+      "document": "创建定时发送邮件任务时，设置的定时参数，比如开始时间之类",
+      "members": [
+        {
+          "default": "",
+          "document": "定时发送邮件的开始时间",
+          "example": "2021-09-11 09:10:11",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "UpdateEmailIdentityRequest": {
       "document": "UpdateEmailIdentity请求参数结构体",

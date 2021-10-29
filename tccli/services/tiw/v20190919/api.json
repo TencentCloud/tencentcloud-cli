@@ -42,6 +42,12 @@
       "name": "获取白板板书生成任务信息",
       "output": "DescribeSnapshotTaskResponse"
     },
+    "DescribeTIWDailyUsage": {
+      "document": "查询互动白板天维度计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
+      "input": "DescribeTIWDailyUsageRequest",
+      "name": "查询天维度计费用量",
+      "output": "DescribeTIWDailyUsageResponse"
+    },
     "DescribeTranscode": {
       "document": "查询文档转码任务的执行进度与转码结果",
       "input": "DescribeTranscodeRequest",
@@ -857,6 +863,69 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTIWDailyUsageRequest": {
+      "document": "DescribeTIWDailyUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "互动白板应用SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要查询的子产品用量，支持传入以下值\n- sp_tiw_board: 互动白板时长，单位为分钟\n- sp_tiw_dt: 动态转码页数，单位页\n- sp_tiw_st: 静态转码页数，单位页\n- sp_tiw_ric: 实时录制时长，单位分钟\n\n注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数",
+          "example": "sp_tiw_board",
+          "member": "string",
+          "name": "SubProduct",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，格式YYYY-MM-DD，查询结果里包括该天数据",
+          "example": "2021-10-01",
+          "member": "date",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。",
+          "example": "2021-10-31",
+          "member": "date",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTIWDailyUsageResponse": {
+      "document": "DescribeTIWDailyUsage返回参数结构体",
+      "members": [
+        {
+          "document": "指定区间指定产品的用量汇总",
+          "example": "无",
+          "member": "UsageDataItem",
+          "name": "Usages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2513,6 +2582,52 @@
           "default": "",
           "document": "查询指标对应当前时间的值",
           "example": "100",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageDataItem": {
+      "document": "互动白板用量信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日期，格式为YYYY-MM-DD",
+          "example": "2021-10-01",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白板应用SDKAppID",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "互动白板子产品，请求参数传入的一致\n- sp_tiw_board: 互动白板时长\n- sp_tiw_dt: 动态转码页数\n- sp_tiw_st: 静态转码页数\n- sp_tiw_ric: 实时录制时长",
+          "example": "sp_tiw_board",
+          "member": "string",
+          "name": "SubProduct",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用量值\n- 静态转码、动态转码单位为页\n- 白板时长、实时录制时长单位为分钟",
+          "example": "100000",
           "member": "float",
           "name": "Value",
           "required": true,

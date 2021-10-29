@@ -16,27 +16,57 @@ Output:
     "Response": {
         "Result": {
             "Status": "xx",
+            "NewVersionPackageInfo": "xx",
+            "NextBatchStartTime": 0,
+            "OldDeployVersion": "xx",
             "BetaBatchDetail": {
+                "NewPods": [
+                    {
+                        "Webshell": "xx",
+                        "PodStatus": [
+                            "xx"
+                        ],
+                        "Zone": "xx",
+                        "PodId": "xx",
+                        "CreateTime": "xx",
+                        "PodVersion": "xx"
+                    }
+                ],
                 "NewPodList": {
-                    "PodVersion": "xx",
-                    "Zone": "xx",
-                    "CreateTime": "xx",
+                    "Webshell": "xx",
                     "PodStatus": [
                         "xx"
                     ],
-                    "PodId": "xx"
+                    "Zone": "xx",
+                    "PodId": "xx",
+                    "CreateTime": "xx",
+                    "PodVersion": "xx"
                 },
                 "BatchIndex": 0,
-                "BatchStatus": "xx",
                 "OldPodList": {
-                    "PodVersion": "xx",
-                    "Zone": "xx",
-                    "CreateTime": "xx",
+                    "Webshell": "xx",
                     "PodStatus": [
                         "xx"
                     ],
-                    "PodId": "xx"
+                    "Zone": "xx",
+                    "PodId": "xx",
+                    "CreateTime": "xx",
+                    "PodVersion": "xx"
                 },
+                "NextBatchStartTime": 0,
+                "OldPods": [
+                    {
+                        "Webshell": "xx",
+                        "PodStatus": [
+                            "xx"
+                        ],
+                        "Zone": "xx",
+                        "PodId": "xx",
+                        "CreateTime": "xx",
+                        "PodVersion": "xx"
+                    }
+                ],
+                "BatchStatus": "xx",
                 "PodNum": 0
             },
             "ErrorMessage": "xx",
@@ -46,32 +76,60 @@ Output:
                 "BatchInterval": 0,
                 "BetaBatchNum": 0
             },
+            "NewDeployVersion": "xx",
+            "StartTime": "xx",
             "OtherBatchDetail": [
                 {
+                    "NewPods": [
+                        {
+                            "Webshell": "xx",
+                            "PodStatus": [
+                                "xx"
+                            ],
+                            "Zone": "xx",
+                            "PodId": "xx",
+                            "CreateTime": "xx",
+                            "PodVersion": "xx"
+                        }
+                    ],
                     "NewPodList": {
-                        "PodVersion": "xx",
-                        "Zone": "xx",
-                        "CreateTime": "xx",
+                        "Webshell": "xx",
                         "PodStatus": [
                             "xx"
                         ],
-                        "PodId": "xx"
+                        "Zone": "xx",
+                        "PodId": "xx",
+                        "CreateTime": "xx",
+                        "PodVersion": "xx"
                     },
                     "BatchIndex": 0,
-                    "BatchStatus": "xx",
                     "OldPodList": {
-                        "PodVersion": "xx",
-                        "Zone": "xx",
-                        "CreateTime": "xx",
+                        "Webshell": "xx",
                         "PodStatus": [
                             "xx"
                         ],
-                        "PodId": "xx"
+                        "Zone": "xx",
+                        "PodId": "xx",
+                        "CreateTime": "xx",
+                        "PodVersion": "xx"
                     },
+                    "NextBatchStartTime": 0,
+                    "OldPods": [
+                        {
+                            "Webshell": "xx",
+                            "PodStatus": [
+                                "xx"
+                            ],
+                            "Zone": "xx",
+                            "PodId": "xx",
+                            "CreateTime": "xx",
+                            "PodVersion": "xx"
+                        }
+                    ],
+                    "BatchStatus": "xx",
                     "PodNum": 0
                 }
             ],
-            "StartTime": "xx",
             "CurrentBatchIndex": 0,
             "EndTime": "xx",
             "CurrentBatchStatus": "xx",
@@ -88,6 +146,8 @@ Output:
                         "PodId": "xx",
                         "DeployVersion": "xx",
                         "PodIp": "xx",
+                        "ContainerState": "xx",
+                        "Ready": true,
                         "CreateTime": "xx"
                     }
                 ],

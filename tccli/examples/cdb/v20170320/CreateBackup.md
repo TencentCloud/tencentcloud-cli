@@ -8,7 +8,8 @@ Input:
 tccli cdb CreateBackup --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
     --BackupMethod logical \
-    --BackupDBTableList '[{"Db": "db1", "Table": "tb1"}, {"Db": "db1", "Table": "tb2"}, {"Db": "db2"} ]'
+    --BackupDBTableList.0.Db db1 \
+    --BackupDBTableList.0.Table tb1
 ```
 
 Output: 

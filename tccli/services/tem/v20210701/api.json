@@ -1373,6 +1373,15 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本部署id",
+          "example": "version-123",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

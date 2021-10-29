@@ -51,7 +51,7 @@
     "SendTrafficSecuritySmsMessage": [
       {
         "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=SendTrafficSecuritySmsMessage\r\n&BspData.TaskId=4128\r\n&BspData.Mobiles.0=1382350****\r\n&BspData.Mobiles.1=1382351****\r\n&<公共请求参数>",
+        "input": "https://taf.tencentcloudapi.com/?Action=SendTrafficSecuritySmsMessage\n&BspData.TaskId=4128\n&BspData.Mobiles.0=1382350****\n&BspData.Mobiles.1=1382351****\n&BspData.IsAuthorized=1\n&BspData.EncryptMethod=0\n&BspData.EncryptMode=1\n&BspData.PaddingType=1\n&BspData.EncryptData=1823a58bf494a3db\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": []\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "SendTrafficSecuritySmsMessage"
       }

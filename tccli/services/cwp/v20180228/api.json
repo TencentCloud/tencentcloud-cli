@@ -5800,6 +5800,7 @@
         {
           "default": "",
           "document": "通过项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "PassCount",
           "required": true,
@@ -5809,6 +5810,7 @@
         {
           "default": "",
           "document": "风险项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "FailCount",
           "required": true,
@@ -5818,6 +5820,7 @@
         {
           "default": "",
           "document": "首次检测事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-27 00:09:38",
           "member": "string",
           "name": "FirstScanTime",
           "required": true,
@@ -5827,6 +5830,7 @@
         {
           "default": "",
           "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-27 00:09:38",
           "member": "string",
           "name": "LastScanTime",
           "required": true,
@@ -5835,7 +5839,8 @@
         },
         {
           "default": "",
-          "document": "处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险项处理状态状态：0-未通过，1-通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -5845,6 +5850,7 @@
         {
           "default": "",
           "document": "主机Quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx-xxxx-xxxx-xxxx",
           "member": "string",
           "name": "Quuid",
           "required": true,
@@ -5854,6 +5860,7 @@
         {
           "default": "",
           "document": "主机IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx.xx.xx.xx",
           "member": "string",
           "name": "HostIp",
           "required": true,
@@ -5863,6 +5870,7 @@
         {
           "default": "",
           "document": "主机别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "AliasName",
           "required": true,
@@ -5872,6 +5880,7 @@
         {
           "default": "",
           "document": "主机Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx-xxxx-xxxx-xxxx",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -5881,6 +5890,7 @@
         {
           "default": "",
           "document": "检测中状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "MaxStatus",
           "required": true,
@@ -8581,7 +8591,7 @@
         },
         {
           "default": "",
-          "document": "类型：\n0",
+          "document": "该字段已废弃，由Filters代替",
           "example": "1",
           "member": "uint64",
           "name": "Type",

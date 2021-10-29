@@ -1459,6 +1459,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手动备份别名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ManualBackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2184,6 +2194,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2192,6 +2203,7 @@
         {
           "default": "",
           "document": "目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。",
+          "example": "\"\"",
           "member": "string",
           "name": "BackupMethod",
           "required": true,
@@ -2200,10 +2212,20 @@
         {
           "default": "",
           "document": "需要备份的库表信息，如果不设置该参数，则默认整实例备份。在 BackupMethod=logical 逻辑备份中才可设置该参数。指定的库表必须存在，否则可能导致备份失败。\n例：如果需要备份 db1 库的 tb1、tb2 表 和 db2 库。则该参数设置为 [{\"Db\": \"db1\", \"Table\": \"tb1\"}, {\"Db\": \"db1\", \"Table\": \"tb2\"}, {\"Db\": \"db2\"} ]。",
+          "example": "无",
           "member": "BackupItem",
           "name": "BackupDBTableList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "手动备份别名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ManualBackupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2213,8 +2235,10 @@
       "members": [
         {
           "document": "备份任务 ID。",
+          "example": "102996666",
           "member": "uint64",
           "name": "BackupId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2391,6 +2415,15 @@
           "name": "DeployGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2771,6 +2804,24 @@
           "name": "CageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略名数组，例如:[\"policy-uyoee9wg\"]，AlarmPolicyList不为空时该参数无效。",
+          "example": "[]",
+          "member": "string",
+          "name": "AlarmPolicyIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3104,6 +3155,24 @@
           "name": "CageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警策略名数组，例如:[\"policy-uyoee9wg\"]，AlarmPolicyList不为空时该参数无效。",
+          "example": "[]",
+          "member": "string",
+          "name": "AlarmPolicyIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制等。如果检查不通过，则返回对应错误码；如果检查通过，则返回RequestId.默认为false：发送正常请求，通过检查后直接创建实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9536,6 +9605,7 @@
         {
           "default": "",
           "document": "实例 ID。",
+          "example": "cdbro-test",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9544,6 +9614,7 @@
         {
           "default": "",
           "document": "只读实例源类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
+          "example": "NORMAL",
           "member": "string",
           "name": "SrcRoInstType",
           "required": true,
@@ -9552,6 +9623,7 @@
         {
           "default": "",
           "document": "只读实例目标类型，取值 NORMAL（普通只读实例）、DELAY_REPLICATION（延迟只读实例）。",
+          "example": "DELAY_REPLICATION",
           "member": "string",
           "name": "DstRoInstType",
           "required": true,
@@ -9560,6 +9632,7 @@
         {
           "default": "",
           "document": "延迟时间（s），将实例修改为延迟只读实例时必传。最小值1，最大值259200。",
+          "example": "259200",
           "member": "int64",
           "name": "ReplicationDelay",
           "required": false,

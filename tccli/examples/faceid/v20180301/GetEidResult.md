@@ -69,7 +69,9 @@ Output:
         },
         "EidInfo": {
             "EidCode": "xx",
-            "EidSign": "xx"
+            "EidSign": "xx",
+            "DesKey": "xxxxxx",
+            "UserInfo": "xxxxxx"
         },
         "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
     }

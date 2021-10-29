@@ -6,53 +6,59 @@ Input:
 
 ```
 tccli advisor DescribeTaskStrategyRisks --cli-unfold-argument  \
-    --StrategyId 1
+    --StrategyId 9
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RiskTotalCount": 1,
-        "StrategyId": 1,
-        "RequestId": "xx",
+        "RequestId": "111",
         "RiskFieldsDesc": [
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "InstanceId",
+                "FieldName": "ID",
+                "FieldType": "string"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "InstanceName",
+                "FieldName": "名称",
+                "FieldType": "string"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "InstanceState",
+                "FieldName": "状态",
+                "FieldType": "string"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "Zone",
+                "FieldName": "可用区",
+                "FieldType": "string"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "PrivateIPAddresses",
+                "FieldName": "IP地址(内)",
+                "FieldType": "stringSlice"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "PublicIPAddresses",
+                "FieldName": "IP地址(公)",
+                "FieldType": "stringSlice"
             },
             {
-                "Field": "xx",
-                "FieldName": "xx",
-                "FieldType": "xx"
+                "Field": "Region",
+                "FieldName": "地域",
+                "FieldType": "string"
+            },
+            {
+                "Field": "Tags",
+                "FieldName": "标签",
+                "FieldType": "tags"
             }
-        ]
+        ],
+        "RiskTotalCount": 3,
+        "Risks": "[{\"InstanceId\":\"ins-xxx1\",\"InstanceName\":\"xxx1\",\"InstanceState\":\"RUNNING\",\"PrivateIPAddresses\":[\"1.17.64.2\"],\"PublicIPAddresses\":null,\"Region\":\"ap-shanghai\",\"Tags\":null,\"Zone\":\"ap-shanghai-2\"},{\"InstanceId\":\"ins-xxx2\",\"InstanceName\":\"xxx2\",\"InstanceState\":\"RUNNING\",\"PrivateIPAddresses\":[\"1.17.64.11\"],\"PublicIPAddresses\":null,\"Region\":\"ap-shanghai\",\"Tags\":null,\"Zone\":\"ap-shanghai-2\"}]",
+        "StrategyId": 9
     }
 }
 ```

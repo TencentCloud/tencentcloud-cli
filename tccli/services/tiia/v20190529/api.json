@@ -6,11 +6,41 @@
       "name": "图像质量评估",
       "output": "AssessQualityResponse"
     },
+    "CreateGroup": {
+      "document": "用于创建一个空的图片库，如果图片库已存在则返回错误。\n",
+      "input": "CreateGroupRequest",
+      "name": "创建图片库",
+      "output": "CreateGroupResponse"
+    },
+    "CreateImage": {
+      "document": "创建图片，并添加对应图片的自定义信息。",
+      "input": "CreateImageRequest",
+      "name": "创建图片",
+      "output": "CreateImageResponse"
+    },
     "CropImage": {
       "document": "根据输入的裁剪比例，智能判断一张图片的最佳裁剪区域，确保原图的主体区域不受影响。\n\n可以自动裁剪图片，适应不同平台、设备的展示要求，避免简单拉伸带来的变形。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "CropImageRequest",
       "name": "图片智能裁剪",
       "output": "CropImageResponse"
+    },
+    "DeleteImages": {
+      "document": "删除图片。",
+      "input": "DeleteImagesRequest",
+      "name": "删除图片",
+      "output": "DeleteImagesResponse"
+    },
+    "DescribeGroups": {
+      "document": "查询所有的图库信息。",
+      "input": "DescribeGroupsRequest",
+      "name": "查询图片库",
+      "output": "DescribeGroupsResponse"
+    },
+    "DescribeImages": {
+      "document": "获取指定图片库中的图片列表。",
+      "input": "DescribeImagesRequest",
+      "name": "查询图片信息",
+      "output": "DescribeImagesResponse"
     },
     "DetectCelebrity": {
       "document": "传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。\n\n支持识别一张图片中存在的多个人脸，针对每个人脸，会给出与之最相似的公众人物。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
@@ -65,6 +95,12 @@
       "input": "RecognizeCarRequest",
       "name": "车辆识别",
       "output": "RecognizeCarResponse"
+    },
+    "SearchImage": {
+      "document": "本接口用于对一张待识别的商品图片，在指定图片库中检索出最相似的图片列表。",
+      "input": "SearchImageRequest",
+      "name": "检索图片",
+      "output": "SearchImageResponse"
     }
   },
   "metadata": {
@@ -329,6 +365,159 @@
       ],
       "usage": "out"
     },
+    "CreateGroupRequest": {
+      "document": "CreateGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库ID，不可重复，仅支持字母、数字和下划线。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图库名称描述。",
+          "example": "test_name",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该库的容量限制。",
+          "example": "123",
+          "member": "uint64",
+          "name": "MaxCapacity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "简介。",
+          "example": "test_brief",
+          "member": "string",
+          "name": "Brief",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该库的访问限频 ，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxQps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图库类型， 默认为通用。\n类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupResponse": {
+      "document": "CreateGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageRequest": {
+      "document": "CreateImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库ID。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物品ID，最多支持64个字符。 \n若EntityId已存在，则对其追加图片。",
+          "example": "test_entity",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片名称，最多支持64个字符， \n同一个EntityId，最大支持5张图。如果图片名称已存在，则会更新库中的图片。",
+          "example": "name",
+          "member": "string",
+          "name": "PicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过2M。  \nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片分辨率不超过1920*1080。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "test.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过2M。 \n图片分辨率不超过1920*1080。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "base64",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义的内容，最多支持4096个字符，查询时原样带回。",
+          "example": "content",
+          "member": "string",
+          "name": "CustomContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片自定义标签，最多不超过10个，格式为JSON。",
+          "example": "{}",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageResponse": {
+      "document": "CreateImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CropImageRequest": {
       "document": "CropImage请求参数结构体",
       "members": [
@@ -417,6 +606,177 @@
           "member": "int64",
           "name": "CropResult",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagesRequest": {
+      "document": "DeleteImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库名称。",
+          "example": "GroupId",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物品ID。",
+          "example": "EntityId",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片名称，如果不指定本参数，则删除EntityId下所有的图片；否则删除指定的图。",
+          "example": "PicName",
+          "member": "string",
+          "name": "PicName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagesResponse": {
+      "document": "DeleteImages返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupsRequest": {
+      "document": "DescribeGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始序号，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认值为10，最大值为100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "图库ID，如果不为空，则返回指定库信息。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupsResponse": {
+      "document": "DescribeGroups返回参数结构体",
+      "members": [
+        {
+          "document": "图库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库名称。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "物品ID。",
+          "example": "test_entity",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片名称。",
+          "example": "pic_name",
+          "member": "string",
+          "name": "PicName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "document": "图库名称。",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "物品ID。",
+          "example": "test",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片信息。",
+          "example": "test",
+          "member": "ImageInfo",
+          "name": "ImageInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1032,6 +1392,158 @@
       ],
       "usage": "out"
     },
+    "GroupInfo": {
+      "document": "图库信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "图库Id。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库名称。",
+          "example": "name",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库简介。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Brief",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库容量。",
+          "example": "xxxxx",
+          "member": "uint64",
+          "name": "MaxCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该库的访问限频 。",
+          "example": "xxxxx",
+          "member": "uint64",
+          "name": "MaxQps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。",
+          "example": "xxxxx",
+          "member": "uint64",
+          "name": "GroupType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库图片数量。",
+          "example": "123",
+          "member": "uint64",
+          "name": "PicCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库创建时间。",
+          "example": "123",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图库更新时间。",
+          "example": "123",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageInfo": {
+      "document": "图片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "图片名称。",
+          "example": "entityId",
+          "member": "string",
+          "name": "EntityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义的内容。",
+          "example": "content",
+          "member": "string",
+          "name": "CustomContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片自定义标签，JSON格式。",
+          "example": "{}",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片名称。",
+          "example": "name",
+          "member": "string",
+          "name": "PicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "相似度。",
+          "example": "10",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Labels": {
       "document": "名人识别的标签",
       "members": [
@@ -1325,6 +1837,105 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchImageRequest": {
+      "document": "SearchImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图库名称。",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过2M。 \n图片分辨率不超过1920*1080。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "test.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过2M。 \n图片分辨率不超过1920*1080。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "base64",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "出参Score中，只有超过MatchThreshold值的结果才会返回。默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "MatchThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始序号，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认值为10，最大值为100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "针对入库时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。",
+          "example": "value > 1",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchImageResponse": {
+      "document": "SearchImage返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "图片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ImageInfo",
+          "name": "ImageInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Threshold": {
       "document": "本服务在不同误识率水平下（将图片中的人物识别错误的比例）的推荐阈值，可以用于控制识别结果的精度。\n{FalseRate1Percent, FalseRate5Permil, FalseRate1Permil}分别代表误识率在百分之一、千分之五、千分之一情况下的推荐阈值。\n因为阈值会存在变动，请勿将此处输出的固定值处理，而是每次取值与confidence对比，来判断本次的识别结果是否可信。\n例如，如果您业务中可以接受的误识率是1%，则可以将所有confidence>=FalseRate1Percent的结论认为是正确的。",
