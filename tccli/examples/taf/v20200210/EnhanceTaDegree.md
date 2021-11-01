@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli taf EnhanceTaDegree --cli-unfold-argument  \
-    --BspData.Seq 13169423425 \
+    --BspData.Seq 1235467 \
     --BspData.OsType 1 \
-    --BspData.ImeiMd5 bfd81ee3ed27ad31c95ca75e21365973 \
-    --BspData.AgeFloor 23 \
+    --BspData.AgeFloor 20 \
     --BspData.AgeCeil 30 \
-    --BspData.Gender 1
+    --BspData.Gender 2 \
+    --BspData.Imei 86xxxxxxxxxxxx
 ```
 
 Output: 
