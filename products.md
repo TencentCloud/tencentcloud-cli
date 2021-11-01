@@ -26,7 +26,7 @@
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2021-09-16 08:05:25 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2021-09-16 08:04:03 |
 | cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | 2021-10-27 08:05:02 |
-| ccc | [云呼叫中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2021-09-16 08:02:12 |
+| ccc | [云呼叫中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2021-11-01 08:01:56 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | 2021-10-29 17:31:49 |
 | cdn | [内容分发网络](http://document.tencentcloudapi.woa.com/document/product/228) | 2021-10-29 08:05:21 |
 | cds | [数据安全审计](http://document.tencentcloudapi.woa.com/document/product/856) | 2021-09-16 08:06:05 |
@@ -38,7 +38,7 @@
 | clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2021-10-26 08:05:28 |
 | cloudaudit | [云审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2021-09-16 08:15:51 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2021-09-16 08:14:04 |
-| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2021-10-27 08:00:21 |
+| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | 2021-11-01 08:00:20 |
 | cme | [腾讯云剪](http://document.tencentcloudapi.woa.com/document/product/1156) | 2021-10-29 17:30:31 |
 | cmq | [消息队列 CMQ](http://document.tencentcloudapi.woa.com/document/product/406) | 2021-09-16 08:03:18 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | 2021-10-20 13:16:36 |
@@ -121,7 +121,7 @@
 | sslpod | [SSL 证书监控](http://document.tencentcloudapi.woa.com/document/product/1084) | 2021-09-16 08:01:56 |
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | 2021-09-16 08:04:10 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | 2021-09-16 08:14:58 |
-| taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2021-10-29 08:02:20 |
+| taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2021-11-01 08:02:21 |
 | tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2021-09-16 08:11:04 |
 | tat | [腾讯云自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | 2021-10-20 13:19:57 |
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-16 08:11:08 |

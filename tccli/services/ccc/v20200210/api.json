@@ -637,15 +637,8 @@
       "members": [
         {
           "default": "",
-          "document": "服务记录ID",
-          "member": "string",
-          "name": "CdrId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "实例ID",
+          "example": "0",
           "member": "int64",
           "name": "InstanceId",
           "required": false,
@@ -654,6 +647,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "0",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
@@ -661,7 +655,17 @@
         },
         {
           "default": "",
+          "document": "服务记录ID",
+          "example": "13503",
+          "member": "string",
+          "name": "CdrId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "返回记录条数 最大为100默认20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -670,6 +674,7 @@
         {
           "default": "",
           "document": "返回记录偏移 默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -678,10 +683,20 @@
         {
           "default": "",
           "document": "1为从早到晚，2为从晚到早，默认为2",
+          "example": "1",
           "member": "int64",
           "name": "Order",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务记录SessionID",
+          "example": "d6253538-7c28-477b-998a-919059801899",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -691,15 +706,19 @@
       "members": [
         {
           "document": "总记录数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息列表",
+          "example": "无",
           "member": "MessageBody",
           "name": "Messages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1279,6 +1298,15 @@
           "name": "Phones",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按SessionId筛选",
+          "example": "[\"7cb26a84-83b2-42d8-a19b-7dae78e9b78e\"]",
+          "member": "string",
+          "name": "SessionIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1678,6 +1706,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCaller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCallee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1688,6 +1736,7 @@
         {
           "default": "",
           "document": "会话 ID",
+          "example": "1",
           "member": "string",
           "name": "SessionID",
           "required": true,
@@ -1697,6 +1746,7 @@
         {
           "default": "",
           "document": "会话临时房间 ID",
+          "example": "1",
           "member": "string",
           "name": "RoomID",
           "required": true,
@@ -1706,6 +1756,7 @@
         {
           "default": "",
           "document": "主叫",
+          "example": "13712345678",
           "member": "string",
           "name": "Caller",
           "required": true,
@@ -1715,6 +1766,7 @@
         {
           "default": "",
           "document": "被叫",
+          "example": "13712345678",
           "member": "string",
           "name": "Callee",
           "required": true,
@@ -1724,6 +1776,7 @@
         {
           "default": "",
           "document": "开始时间，Unix 时间戳",
+          "example": "1617184839",
           "member": "string",
           "name": "StartTimestamp",
           "required": true,
@@ -1733,6 +1786,7 @@
         {
           "default": "",
           "document": "接听时间，Unix 时间戳",
+          "example": "1617184839",
           "member": "string",
           "name": "AcceptTimestamp",
           "required": true,
@@ -1742,6 +1796,7 @@
         {
           "default": "",
           "document": "坐席邮箱",
+          "example": "xxx@xxx.com",
           "member": "string",
           "name": "StaffEmail",
           "required": true,
@@ -1751,6 +1806,7 @@
         {
           "default": "",
           "document": "坐席工号",
+          "example": "1",
           "member": "string",
           "name": "StaffNumber",
           "required": true,
@@ -1760,6 +1816,7 @@
         {
           "default": "",
           "document": "坐席状态 inProgress 进行中",
+          "example": "inProgress",
           "member": "string",
           "name": "SessionStatus",
           "required": true,
@@ -1769,6 +1826,7 @@
         {
           "default": "",
           "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
+          "example": "0",
           "member": "int64",
           "name": "Direction",
           "required": true,
@@ -1778,10 +1836,31 @@
         {
           "default": "",
           "document": "振铃时间，Unix 时间戳",
+          "example": "1617184839",
           "member": "int64",
           "name": "RingTimestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCaller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCallee",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2618,6 +2697,26 @@
           "example": "c2b303a5-7814-42f4-ab7d-573b7f195d30",
           "member": "string",
           "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCaller",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "008613XXXX5678",
+          "member": "string",
+          "name": "ProtectedCallee",
           "required": true,
           "type": "string",
           "value_allowed_null": true

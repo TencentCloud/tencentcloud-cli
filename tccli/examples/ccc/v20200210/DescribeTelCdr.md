@@ -19,98 +19,138 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
         "TotalCount": 2,
         "TelCdrs": [
             {
-                "SessionId": "xx",
-                "Caller": "12345678901",
-                "Callee": "23456789011",
-                "Time": 1590547606,
-                "Direction": 0,
-                "Duration": 60,
-                "RecordURL": "http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863356.mp3",
+                "ProtectedCaller": "xx",
                 "EndStatus": 1,
-                "SkillGroup": "test",
-                "SeatUser": {
-                    "Name": "zhangsan",
-                    "Phone": "12321233455"
-                },
-                "CallerLocation": "广东深圳",
+                "SessionId": "xx",
+                "ProtectedCallee": "xx",
+                "Direction": 0,
                 "StartTimestamp": 1590547606,
+                "HungUpSide": "xx",
+                "ServeParticipants": [
+                    {
+                        "TransferTo": "xx",
+                        "EndStatusString": "xx",
+                        "RecordURL": "xx",
+                        "TransferToType": "xx",
+                        "AcceptTimestamp": 0,
+                        "RecordId": "xx",
+                        "TransferFrom": "xx",
+                        "EndedTimestamp": 0,
+                        "Sequence": 0,
+                        "Phone": "xx",
+                        "SkillGroupName": "xx",
+                        "Mail": "xx",
+                        "RingTimestamp": 0,
+                        "Type": "xx",
+                        "StartTimestamp": 0,
+                        "SkillGroupId": 0
+                    }
+                ],
+                "PostIVRKeyPressed": [
+                    {
+                        "Key": "xx",
+                        "Label": "xx"
+                    }
+                ],
+                "EndStatusString": "xx",
+                "QueuedSkillGroupId": 100,
+                "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
                 "EndedTimestamp": 1590547606,
-                "RingTimestamp": 1590547606,
-                "HungUpSide": "user",
-                "ServeParticipants": {
-                    "Mail": "foo@tencent.com",
-                    "Phone": "008615793909390",
-                    "RingTimestamp": 1610627284,
-                    "AcceptTimestamp": 1610627284,
-                    "EndedTimestamp": 1610627284,
-                    "RecordId": "1610622284",
-                    "Type": "staffPhoneSeat"
+                "Caller": "xx",
+                "CallerLocation": "xx",
+                "Time": 1590547606,
+                "Callee": "xx",
+                "SeatUser": {
+                    "Name": "xx",
+                    "Phone": "xx",
+                    "UserId": "xx",
+                    "Nick": "xx",
+                    "StaffNumber": "xx",
+                    "Mail": "xx",
+                    "SkillGroupNameList": [
+                        "xx"
+                    ]
                 },
+                "RecordURL": "xx",
+                "QueuedTimestamp": 1610627284,
                 "IVRDuration": 5,
+                "SkillGroup": "xx",
+                "Duration": 60,
                 "IVRKeyPressed": [
                     "5"
                 ],
-                "SkillGroupId": 100,
-                "EndStatusString": "ok",
-                "QueuedSkillGroupId": 100,
-                "QueuedTimestamp": 1610627284,
-                "PostIVRKeyPressed": [
-                    {
-                        "Key": "1",
-                        "Label": "非常满意"
-                    }
-                ]
+                "SkillGroupId": 100
             },
             {
-                "SessionId": "xx",
-                "Caller": "12345678902",
-                "Callee": "23456789011",
-                "Time": 1590547630,
-                "Direction": 0,
-                "Duration": 62,
-                "RecordURL": "http://recorder-10018504.cos.ap-shanghai.myqcloud.com/def/month12/000-890990948-12364-58b657a6c5dd4c28b4f033b56716f686-000-157863357.mp3",
+                "ProtectedCaller": "xx",
                 "EndStatus": 1,
-                "SkillGroup": "test",
-                "SeatUser": {
-                    "Name": "wangwu",
-                    "Phone": "12321233456"
-                },
-                "CallerLocation": "广东深圳",
+                "SessionId": "xx",
+                "ProtectedCallee": "xx",
+                "Direction": 0,
                 "StartTimestamp": 1590547630,
+                "HungUpSide": "xx",
+                "ServeParticipants": [
+                    {
+                        "TransferTo": "xx",
+                        "RecordURL": "xx",
+                        "TransferToType": "xx",
+                        "AcceptTimestamp": 0,
+                        "RecordId": "xx",
+                        "TransferFrom": "xx",
+                        "EndedTimestamp": 0,
+                        "Sequence": 0,
+                        "Phone": "xx",
+                        "EndStatusString": "xx",
+                        "SkillGroupName": "xx",
+                        "Mail": "xx",
+                        "RingTimestamp": 0,
+                        "Type": "xx",
+                        "StartTimestamp": 0,
+                        "SkillGroupId": 0
+                    }
+                ],
+                "PostIVRKeyPressed": [
+                    {
+                        "Key": "xx",
+                        "Label": "xx"
+                    }
+                ],
+                "EndStatusString": "xx",
+                "QueuedSkillGroupId": 100,
+                "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
                 "EndedTimestamp": 1590547606,
-                "RingTimestamp": 1590547606,
-                "HungUpSide": "user",
-                "ServeParticipants": {
-                    "Mail": "foo@tencent.com",
-                    "Phone": "008615793909390",
-                    "RingTimestamp": 1610627284,
-                    "AcceptTimestamp": 1610627284,
-                    "EndedTimestamp": 1610627284,
-                    "RecordId": "1610622284",
-                    "Type": "staffSeat"
+                "Caller": "xx",
+                "CallerLocation": "xx",
+                "Time": 1590547630,
+                "Callee": "xx",
+                "SeatUser": {
+                    "Name": "xx",
+                    "Nick": "xx",
+                    "UserId": "xx",
+                    "Phone": "xx",
+                    "StaffNumber": "xx",
+                    "Mail": "xx",
+                    "SkillGroupNameList": [
+                        "xx"
+                    ]
                 },
+                "RecordURL": "xx",
+                "QueuedTimestamp": 1610627284,
                 "IVRDuration": 5,
+                "SkillGroup": "xx",
+                "Duration": 62,
                 "IVRKeyPressed": [
                     "5"
                 ],
-                "SkillGroupId": 100,
-                "EndStatusString": "ok",
-                "QueuedSkillGroupId": 100,
-                "QueuedTimestamp": 1610627284,
-                "PostIVRKeyPressed": [
-                    {
-                        "Key": "1",
-                        "Label": "非常满意"
-                    }
-                ]
+                "SkillGroupId": 100
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```
