@@ -210,6 +210,7 @@
         {
           "default": "",
           "document": "设备ID，AccountType指定的类型",
+          "example": "\"86********\"",
           "member": "string",
           "name": "Uid",
           "required": true,
@@ -219,6 +220,7 @@
         {
           "default": "",
           "document": "设备号类型，1.imei 2.imeiMd5（小写后转MD5转小写）3.idfa， 4.idfaMd5（大写后转MD5转小写），5.手机号,256.其它",
+          "example": "1",
           "member": "int64",
           "name": "AccountType",
           "required": true,
@@ -228,6 +230,7 @@
         {
           "default": "",
           "document": "模型ID列表",
+          "example": "[1,2]",
           "member": "int64",
           "name": "ModelIdList",
           "required": true,
@@ -237,6 +240,7 @@
         {
           "default": "",
           "document": "用户IP",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -246,6 +250,7 @@
         {
           "default": "",
           "document": "操作系统类型(unknown，android，ios，windows)",
+          "example": "android",
           "member": "string",
           "name": "Os",
           "required": false,
@@ -255,6 +260,7 @@
         {
           "default": "",
           "document": "操作系统版本",
+          "example": "\"V10.1\"",
           "member": "string",
           "name": "Osv",
           "required": false,
@@ -264,6 +270,7 @@
         {
           "default": "",
           "document": "纬度",
+          "example": "22.3333",
           "member": "string",
           "name": "Lat",
           "required": false,
@@ -273,6 +280,7 @@
         {
           "default": "",
           "document": "经度",
+          "example": "23.2222",
           "member": "string",
           "name": "Lon",
           "required": false,
@@ -282,6 +290,7 @@
         {
           "default": "",
           "document": "设备型号(MI 6)",
+          "example": "V10",
           "member": "string",
           "name": "DeviceModel",
           "required": false,
@@ -291,6 +300,7 @@
         {
           "default": "",
           "document": "竞价底价",
+          "example": "20",
           "member": "int64",
           "name": "BidFloor",
           "required": false,
@@ -300,6 +310,7 @@
         {
           "default": "",
           "document": "年龄",
+          "example": "10",
           "member": "int64",
           "name": "Age",
           "required": false,
@@ -309,6 +320,7 @@
         {
           "default": "",
           "document": "性别(1.MALE 2.FEMALE)",
+          "example": "1",
           "member": "int64",
           "name": "Gender",
           "required": false,
@@ -318,6 +330,7 @@
         {
           "default": "",
           "document": "用户地址",
+          "example": "“XXX省XXX市XXX街道XXX路”",
           "member": "string",
           "name": "Location",
           "required": false,
@@ -327,6 +340,7 @@
         {
           "default": "",
           "document": "投放模式（0=PDB，1=PD，2=RTB，10=其他）",
+          "example": "0",
           "member": "int64",
           "name": "DeliveryMode",
           "required": false,
@@ -336,6 +350,7 @@
         {
           "default": "",
           "document": "广告位类型<br />（0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）",
+          "example": "1",
           "member": "int64",
           "name": "AdvertisingType",
           "required": false,
@@ -345,6 +360,7 @@
         {
           "default": "",
           "document": "mac地址，建议提供",
+          "example": "ADSASDAS-DASDASDASD-DASDASAS",
           "member": "string",
           "name": "Mac",
           "required": false,
@@ -354,6 +370,7 @@
         {
           "default": "",
           "document": "电话号码",
+          "example": "131",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -363,6 +380,7 @@
         {
           "default": "",
           "document": "浏览器类型",
+          "example": "\"xxxl浏览器\"",
           "member": "string",
           "name": "Ua",
           "required": false,
@@ -372,6 +390,7 @@
         {
           "default": "",
           "document": "客户端应用",
+          "example": "“XXXapp”",
           "member": "string",
           "name": "App",
           "required": false,
@@ -381,6 +400,7 @@
         {
           "default": "",
           "document": "应用包名",
+          "example": "\"xxxpackage\"",
           "member": "string",
           "name": "Package",
           "required": false,
@@ -390,6 +410,7 @@
         {
           "default": "",
           "document": "设备制造商",
+          "example": "\"xxx品牌\"",
           "member": "string",
           "name": "Maker",
           "required": false,
@@ -399,6 +420,7 @@
         {
           "default": "",
           "document": "设备类型（PHONE,TABLET）",
+          "example": "“Phone”",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -408,6 +430,7 @@
         {
           "default": "",
           "document": "入网方式(wifi,4g,3g,2g)",
+          "example": "\"wifi\"",
           "member": "string",
           "name": "AccessMode",
           "required": false,
@@ -417,6 +440,7 @@
         {
           "default": "",
           "document": "运营商(1.移动 2.联通 3.电信等)",
+          "example": "1",
           "member": "int64",
           "name": "Sp",
           "required": false,
@@ -426,6 +450,7 @@
         {
           "default": "",
           "document": "设备屏幕分辨率宽度像素数",
+          "example": "1256",
           "member": "int64",
           "name": "DeviceW",
           "required": false,
@@ -435,6 +460,7 @@
         {
           "default": "",
           "document": "设备屏幕分辨率高度像素数",
+          "example": "768",
           "member": "int64",
           "name": "DeviceH",
           "required": false,
@@ -444,6 +470,7 @@
         {
           "default": "",
           "document": "是否全屏插广告(0-否，1-是)",
+          "example": "1",
           "member": "int64",
           "name": "FullScreen",
           "required": false,
@@ -453,6 +480,7 @@
         {
           "default": "",
           "document": "广告位宽度",
+          "example": "320",
           "member": "int64",
           "name": "ImpBannerW",
           "required": false,
@@ -462,6 +490,7 @@
         {
           "default": "",
           "document": "广告位高度",
+          "example": "240",
           "member": "int64",
           "name": "ImpBannerH",
           "required": false,
@@ -471,6 +500,7 @@
         {
           "default": "",
           "document": "网址",
+          "example": "\"http:XXXX\"",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -480,6 +510,7 @@
         {
           "default": "",
           "document": "上下文信息",
+          "example": "“业务1组投放”",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -489,6 +520,7 @@
         {
           "default": "",
           "document": "渠道",
+          "example": "“渠道1 ”",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -498,6 +530,7 @@
         {
           "default": "",
           "document": "请求ID",
+          "example": "“13123123”",
           "member": "string",
           "name": "ReqId",
           "required": false,
@@ -507,6 +540,7 @@
         {
           "default": "",
           "document": "请求ID的md5值",
+          "example": "“adskasdkajsdhjkasdhjkash”",
           "member": "string",
           "name": "ReqMd5",
           "required": false,
@@ -516,6 +550,7 @@
         {
           "default": "",
           "document": "ad_type",
+          "example": "1",
           "member": "int64",
           "name": "AdType",
           "required": false,
@@ -524,7 +559,8 @@
         },
         {
           "default": "",
-          "document": "app name",
+          "document": "app名称",
+          "example": "\"appname\"",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -533,7 +569,8 @@
         },
         {
           "default": "",
-          "document": "appVer",
+          "document": "app版本描述",
+          "example": "\"V10.11\"",
           "member": "string",
           "name": "AppVer",
           "required": false,
@@ -543,8 +580,19 @@
         {
           "default": "",
           "document": "竞价模式1：rtb 2:pd",
+          "example": "1",
           "member": "int64",
           "name": "ReqType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户是否授权,1为授权，0为未授权",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAuthorized",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1291,6 +1339,15 @@
           "member": "InputRecognizeTargetAudience",
           "name": "BspData",
           "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "业务加密数据",
+          "example": "{     \"BusinessEncryptData\":{         \"EncryptMethod\":0,        ",
+          "member": "InputBusinessEncryptData",
+          "name": "BusinessEncryptData",
+          "required": false,
           "type": "object"
         }
       ],

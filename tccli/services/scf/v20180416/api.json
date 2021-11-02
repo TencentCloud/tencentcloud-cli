@@ -4839,6 +4839,15 @@
           "name": "Namespace",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "优雅关停",
+          "example": "false",
+          "member": "bool",
+          "name": "GraceShutdown",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

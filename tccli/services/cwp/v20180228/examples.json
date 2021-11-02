@@ -1164,7 +1164,7 @@
       {
         "document": "统计专业版和基础版机器数",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVersionStatistics\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"BasicVersionNum\": 12,\n        \"ProVersionNum\": 22\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BasicVersionNum\": 1,\n        \"ProVersionNum\": 1,\n        \"RequestId\": \"xx\",\n        \"UltimateVersionNum\": 1\n    }\n}",
         "title": "统计专业版和基础版机器数"
       }
     ],

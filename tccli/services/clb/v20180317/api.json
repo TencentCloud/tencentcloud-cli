@@ -2366,6 +2366,15 @@
           "name": "SnatIps",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "添加SnatIp个数，与SnatIps一起使用，当指定Ip时，不能指定创建SnatIp个数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Number",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
