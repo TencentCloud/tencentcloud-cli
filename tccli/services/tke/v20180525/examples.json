@@ -73,7 +73,7 @@
     "CreateClusterEndpoint": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpoint\r\n&ClusterId=cls-xxxxxxxx\r\n&SubnetId=subnet-xxxxxx\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpoint\n&ClusterId=cls-xxxxxxxx\n&SubnetId=subnet-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建集群访问端口"
       }
@@ -81,7 +81,7 @@
     "CreateClusterEndpointVip": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpointVip\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterEndpointVip\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestFlowId\": \"100000\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建托管集群外网访问端口"
       }
@@ -647,7 +647,7 @@
     "ModifyClusterEndpointSP": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterEndpointSP\r\n&ClusterId=cls-xxxxxxxx\r\n&SecurityPolicies.0=192.168.1.0/24\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyClusterEndpointSP\n&ClusterId=cls-xxxxxxxx\n&SecurityPolicies.0=192.168.1.0/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改托管集群外网端口的安全策略"
       }

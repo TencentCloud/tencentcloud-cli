@@ -5807,6 +5807,16 @@
         },
         {
           "default": "",
+          "document": "制作媒体文件任务进度，取值范围 [0-100] 。",
+          "example": "0",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "制作媒体文件任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComposeMediaTaskInput",
@@ -5837,20 +5847,20 @@
         },
         {
           "default": "",
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
           "example": "example",
           "member": "string",
-          "name": "SessionContext",
+          "name": "SessionId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
           "example": "example",
           "member": "string",
-          "name": "SessionId",
+          "name": "SessionContext",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11693,6 +11703,16 @@
         },
         {
           "default": "",
+          "document": "编辑视频任务进度，取值范围 [0-100] 。",
+          "example": "0",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "视频编辑任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EditMediaTaskInput",
@@ -11713,20 +11733,20 @@
         },
         {
           "default": "",
-          "document": "若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。",
-          "example": "12530xxx-procedurev2-xxx",
-          "member": "string",
-          "name": "ProcedureTaskId",
+          "document": "原始视频的元信息。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
           "required": true,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "example",
+          "document": "若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。",
+          "example": "12530xxx-procedurev2-xxx",
           "member": "string",
-          "name": "SessionContext",
+          "name": "ProcedureTaskId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11743,12 +11763,12 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。",
-          "example": "无",
-          "member": "MediaMetaData",
-          "name": "MetaData",
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "example",
+          "member": "string",
+          "name": "SessionContext",
           "required": true,
-          "type": "object",
+          "type": "string",
           "value_allowed_null": false
         }
       ],

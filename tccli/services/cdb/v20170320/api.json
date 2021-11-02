@@ -2449,6 +2449,7 @@
         {
           "default": "",
           "document": "实例的 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-ids6j1b3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2456,7 +2457,8 @@
         },
         {
           "default": "",
-          "document": "文件名称。该文件是指用户已上传到腾讯云的文件。",
+          "document": "文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。",
+          "example": "test.sql",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -2465,6 +2467,7 @@
         {
           "default": "",
           "document": "云数据库的用户名。",
+          "example": "xxxxx",
           "member": "string",
           "name": "User",
           "required": true,
@@ -2473,6 +2476,7 @@
         {
           "default": "",
           "document": "云数据库实例 User 账号的密码。",
+          "example": "xxxxxxxxxx",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2481,6 +2485,7 @@
         {
           "default": "",
           "document": "导入的目标数据库名，不传表示不指定数据库。",
+          "example": "\"\"",
           "member": "string",
           "name": "DbName",
           "required": false,
@@ -2494,8 +2499,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "be9f64a6-fa652dc6-f5c878b6-a6a50746",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

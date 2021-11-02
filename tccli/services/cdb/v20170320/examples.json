@@ -89,7 +89,7 @@
     "CreateDBImportJob": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBImportJob\r\n&InstanceId=cdb-ids6j1b3\r\n&User=xxxxx\r\n&Password=xxxxxxxxxx\r\n&FileName=test.sql\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=CreateDBImportJob\n&InstanceId=cdb-ids6j1b3\n&User=xxxxx\n&Password=xxxxxxxxxx\n&FileName=test.sql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"be9f64a6-fa652dc6-f5c878b6-a6a50746\"\n    }\n}",
         "title": "创建数据导入任务"
       }

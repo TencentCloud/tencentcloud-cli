@@ -2442,6 +2442,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2450,6 +2451,7 @@
         {
           "default": "",
           "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)",
+          "example": "subnet-xxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2458,6 +2460,7 @@
         {
           "default": "",
           "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "example": "true",
           "member": "bool",
           "name": "IsExtranet",
           "required": false,
@@ -2484,6 +2487,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2492,6 +2496,7 @@
         {
           "default": "",
           "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "SecurityPolicies",
           "required": false,
@@ -2505,8 +2510,10 @@
       "members": [
         {
           "document": "请求任务的FlowId",
+          "example": "100000",
           "member": "int64",
           "name": "RequestFlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8182,6 +8189,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8190,9 +8198,10 @@
         {
           "default": "",
           "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "example": "[\"192.168.1.0\\/24\\r\\n\"]",
           "member": "string",
           "name": "SecurityPolicies",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],

@@ -16153,6 +16153,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "旗舰版数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "UltimateVersionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -17222,6 +17231,26 @@
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内核版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.5",
+          "member": "string",
+          "name": "KernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "在线状态 OFFLINE，ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "MachineStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -18759,6 +18788,7 @@
         {
           "default": "",
           "document": "过滤键的名称。",
+          "example": "Name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -18768,6 +18798,7 @@
         {
           "default": "",
           "document": "一个或者多个过滤值。",
+          "example": "[\"value\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -18777,6 +18808,7 @@
         {
           "default": "",
           "document": "是否模糊匹配，前端框架会带上，可以不管",
+          "example": "false",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -19721,6 +19753,16 @@
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内核版本",
+          "example": "3.10.0-1127.19.1.el7.x86_64",
+          "member": "string",
+          "name": "KernelVersion",
           "required": true,
           "type": "string",
           "value_allowed_null": false

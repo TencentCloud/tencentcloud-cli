@@ -28,6 +28,7 @@ Output:
                 "SegmentMs": 0,
                 "CleanUpPolicy": "xx",
                 "SegmentBytes": 0,
+                "RetentionBytes": 0,
                 "MaxMessageBytes": 0,
                 "Retention": 300000000
             },

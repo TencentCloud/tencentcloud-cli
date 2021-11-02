@@ -685,6 +685,7 @@
         {
           "default": "",
           "document": "消息保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Retention",
           "required": true,
@@ -694,6 +695,7 @@
         {
           "default": "",
           "document": "最小同步复制数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "MinInsyncReplicas",
           "required": true,
@@ -703,6 +705,7 @@
         {
           "default": "",
           "document": "日志清理模式，默认 delete。\ndelete：日志按保存时间删除；compact：日志按 key 压缩；compact, delete：日志按 key 压缩且会保存时间删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "delete",
           "member": "string",
           "name": "CleanUpPolicy",
           "required": true,
@@ -712,6 +715,7 @@
         {
           "default": "",
           "document": "Segment 分片滚动的时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SegmentMs",
           "required": true,
@@ -721,6 +725,7 @@
         {
           "default": "",
           "document": "0表示 false。 1表示 true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
           "required": true,
@@ -730,6 +735,7 @@
         {
           "default": "",
           "document": "Segment 分片滚动的字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SegmentBytes",
           "required": true,
@@ -739,8 +745,19 @@
         {
           "default": "",
           "document": "最大消息字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "MaxMessageBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息保留文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "RetentionBytes",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1364,7 +1381,7 @@
         },
         {
           "default": "",
-          "document": "主题名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
           "example": "xxx",
           "member": "string",
           "name": "TopicName",
@@ -1478,6 +1495,15 @@
           "name": "AclRuleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B",
+          "example": "-1",
+          "member": "int64",
+          "name": "RetentionBytes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4460,6 +4486,15 @@
           "name": "AclRuleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B",
+          "example": "-1",
+          "member": "int64",
+          "name": "RetentionBytes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5144,6 +5179,7 @@
         {
           "default": "",
           "document": "返回的主题详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "TopicDetail",
           "name": "TopicList",
           "required": true,
@@ -5153,6 +5189,7 @@
         {
           "default": "",
           "document": "符合条件的所有主题详情数量",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "required": true,

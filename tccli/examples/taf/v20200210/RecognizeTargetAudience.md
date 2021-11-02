@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli taf RecognizeTargetAudience --cli-unfold-argument  \
-    --BspData.Uid bfd81ee3ed27ad31c95ca75e21365973 \
-    --BspData.AccountType 2 \
-    --BspData.ModelIdList 5128 5129
+    --BspData.Uid XXXXXXXXXXXXXXX \
+    --BspData.AccountType 256 \
+    --BspData.ModelIdList 5260 \
+    --BspData.IsAuthorized 1
 ```
 
 Output: 

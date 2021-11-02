@@ -11,9 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-        "BasicVersionNum": 12,
-        "ProVersionNum": 22
+        "BasicVersionNum": 1,
+        "ProVersionNum": 1,
+        "RequestId": "xx",
+        "UltimateVersionNum": 1
     }
 }
 ```
