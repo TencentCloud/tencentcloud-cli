@@ -1,7 +1,7 @@
 {
   "actions": {
     "DetectFraudKOL": {
-      "document": "DetectFraudKOL",
+      "document": "流量反欺诈-KOL欺诈识别",
       "input": "DetectFraudKOLRequest",
       "name": "流量反欺诈-KOL欺诈识别",
       "output": "DetectFraudKOLResponse"
@@ -56,9 +56,19 @@
         {
           "default": "",
           "document": "业务数据",
+          "example": "无",
           "member": "InputKolBspData",
           "name": "BspData",
           "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "业务加密数据",
+          "example": "{     \"BusinessEncryptData\":{         \"EncryptMethod\":0,        ",
+          "member": "InputBusinessEncryptData",
+          "name": "BusinessEncryptData",
+          "required": false,
           "type": "object"
         }
       ],
@@ -69,8 +79,10 @@
       "members": [
         {
           "document": "回包数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OutputKolData",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -149,11 +161,12 @@
       "usage": "in"
     },
     "InputKolDataList": {
-      "document": "CheckKol",
+      "document": "CheckKOL",
       "members": [
         {
           "default": "",
           "document": "账号类型[1：微信；2：qq；3：微博]",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -163,6 +176,7 @@
         {
           "default": "",
           "document": "KOL账号ID[比如微信公众号ID]",
+          "example": "\"xxxxID\"",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -172,6 +186,7 @@
         {
           "default": "",
           "document": "KOL名称",
+          "example": "\"moumou\"",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -181,6 +196,7 @@
         {
           "default": "",
           "document": "手机号",
+          "example": "“131XXXX1234”",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -190,10 +206,21 @@
         {
           "default": "",
           "document": "代理商名称",
+          "example": "\"XXX代理商\"",
           "member": "string",
           "name": "AgentInfo",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否授权",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAuthorized",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
