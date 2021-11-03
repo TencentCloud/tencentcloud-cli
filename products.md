@@ -83,7 +83,7 @@
 | iotexplorer | [物联网开发平台](http://document.tencentcloudapi.woa.com/document/product/1081) | 2021-10-28 08:08:00 |
 | iottid | [物联网设备身份认证](http://document.tencentcloudapi.woa.com/document/product/1086) | 2021-09-16 08:08:45 |
 | iotvideo | [物联网智能视频服务](http://document.tencentcloudapi.woa.com/document/product/1131) | 2021-09-16 08:03:26 |
-| iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2021-10-20 12:44:58 |
+| iotvideoindustry | [物联网智能视频服务（行业版）](http://document.tencentcloudapi.woa.com/document/product/1361) | 2021-11-03 08:01:07 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2021-09-16 08:08:47 |
 | lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2021-10-26 08:02:00 |
 | live | [云直播](http://document.tencentcloudapi.woa.com/document/product/267) | 2021-10-22 11:40:03 |
@@ -121,7 +121,7 @@
 | sslpod | [SSL 证书监控](http://document.tencentcloudapi.woa.com/document/product/1084) | 2021-09-16 08:01:56 |
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | 2021-09-16 08:04:10 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | 2021-09-16 08:14:58 |
-| taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2021-11-02 08:02:20 |
+| taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2021-11-03 08:02:20 |
 | tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2021-09-16 08:11:04 |
 | tat | [腾讯云自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | 2021-10-20 13:19:57 |
 | tbaas | [TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | 2021-09-16 08:11:08 |
@@ -143,7 +143,7 @@
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2021-10-20 12:47:22 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2021-10-20 13:10:14 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2021-10-29 08:12:43 |
-| tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2021-10-27 08:01:01 |
+| tse | [腾讯云微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2021-11-03 08:00:59 |
 | tsf | [腾讯微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2021-10-27 08:11:00 |
 | tsw | [腾讯微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2021-09-16 08:15:45 |
 | tts | [语音合成](http://document.tencentcloudapi.woa.com/document/product/1073) | 2021-09-16 08:12:26 |

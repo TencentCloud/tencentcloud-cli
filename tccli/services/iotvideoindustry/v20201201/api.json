@@ -1139,7 +1139,7 @@
         },
         {
           "default": "",
-          "document": "通道唯一标识",
+          "document": "通道唯一标识（接口升级字段为必填）",
           "example": "99933020581320000064_99933020581320000064",
           "member": "string",
           "name": "ChannelId",

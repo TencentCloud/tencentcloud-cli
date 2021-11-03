@@ -1,4 +1,4 @@
-**Example 1: DetectFraudKOL**
+**Example 1: DetectFraudKOL-识别假量**
 
 
 
@@ -7,10 +7,8 @@ Input:
 ```
 tccli taf DetectFraudKOL --cli-unfold-argument  \
     --BspData.DataList.0.Type 1 \
-    --BspData.DataList.0.Id dgxyx0769 \
-    --BspData.DataList.0.Name testname \
-    --BspData.DataList.0.Phone 15718322162 \
-    --BspData.DataList.0.AgentInfo kol_agent
+    --BspData.DataList.0.Id xxxx \
+    --BspData.DataList.0.Name xxxx
 ```
 
 Output: 
