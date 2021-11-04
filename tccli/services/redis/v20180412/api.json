@@ -3825,11 +3825,18 @@
       "document": "EnableReplicaReadonly返回参数结构体",
       "members": [
         {
-          "document": "错误：ERROR，正确OK。",
+          "document": "错误：ERROR，正确OK（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

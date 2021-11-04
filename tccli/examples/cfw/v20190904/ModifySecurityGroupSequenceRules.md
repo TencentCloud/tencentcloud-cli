@@ -8,8 +8,8 @@ Input:
 tccli cfw ModifySecurityGroupSequenceRules --cli-unfold-argument  \
     --Direction 1 \
     --Data.0.NewOrderIndex 1 \
-    --Data.0.OrderIndex 1 \
-    --Data.1.NewOrderIndex 1 \
+    --Data.0.OrderIndex 2 \
+    --Data.1.NewOrderIndex 2 \
     --Data.1.OrderIndex 1
 ```
 

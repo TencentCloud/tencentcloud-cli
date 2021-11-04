@@ -628,7 +628,7 @@
       "members": [
         {
           "default": "",
-          "document": "昵称，长度限制：64个字符。 DisplayName是唯一的。",
+          "document": "用户组昵称，长度限制：64个字符。 DisplayName是唯一的。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -637,7 +637,7 @@
         },
         {
           "default": "",
-          "document": "用户备注，长度限制：512个字符。",
+          "document": "用户组备注，长度限制：512个字符。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -1389,7 +1389,7 @@
       "document": "DescribeUserGroup返回参数结构体",
       "members": [
         {
-          "document": "昵称，长度限制：64个字符。 DisplayName不唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组昵称，长度限制：64个字符。 DisplayName不唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -1398,7 +1398,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "用户备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Description",
