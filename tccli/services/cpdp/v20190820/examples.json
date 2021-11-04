@@ -518,6 +518,14 @@
         "title": "QueryInvoiceV2"
       }
     ],
+    "QueryMaliciousRegistration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMaliciousRegistration\n<公共请求参数>\n\n{\n    \"MerchantId\": \"1927856182\",\n    \"MerchantName\": \"鹅厂公仔\",\n    \"CompanyName\": \"深圳市南山有限公司\",\n    \"USCI\": \"123456789\",\n    \"RegNumber\": \"123456789\",\n    \"RegAddress\": \"深圳市南山区粤海街道\",\n    \"RegTime\": 1632277247,\n    \"EncryptedPhoneNumber\": \"4C011539DDEAEBA5A7CF8EDFC18A9\",\n    \"EncryptedEmailAddress\": \"2ff15aa732dd618090b2c78e0bb0e5\",\n    \"EncryptedPersonId\": \"202cb92ac5907964b07152d234b70\",\n    \"Ip\": \"127.0.0.1\",\n    \"Channel\": \"CH001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"Result\": {\n            \"RiskLevel\": 0,\n            \"RiskTypes\": \"G001|T002\"\n        },\n        \"ErrMsg\": \"成功\",\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "QueryMaliciousRegistration"
+      }
+    ],
     "QueryMemberBind": [
       {
         "document": "",
@@ -570,7 +578,7 @@
       {
         "document": "查询商户支付方式成功",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMerchantPayWayList\n<公共请求参数>\n\n{\n    \"OpenId\": \"5fb33938bb819024b8ed719edf221840\",\n    \"OpenKey\": \"e95bffc38504f0ac408c27d61eb52d1a\",\n    \"PayType\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6a4c45b-d30f-49c8-a724-ecc37d0f0c42\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"ok\",\n        \"Result\": [\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"http://f.tlinx.cn//Public/icons/pay/Weixin.png\",\n                \"PayInternalName\": \"微信测试\",\n                \"PayName\": \"微信测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"WeixinTEST\",\n                \"PayTicketIcon\": \"http://f.tlinx.cn//Public/icons/ticket/Weixin.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            },\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"http://f.tlinx.cn//Public/icons/pay/Alipay.png\",\n                \"PayInternalName\": \"支付宝测试\",\n                \"PayName\": \"支付宝测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"AlipayTEST\",\n                \"PayTicketIcon\": \"http://f.tlinx.cn//Public/icons/ticket/Alipay.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6a4c45b-d30f-49c8-a724-ecc37d0f0c42\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"ok\",\n        \"Result\": [\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"xxx.png\",\n                \"PayInternalName\": \"微信测试\",\n                \"PayName\": \"微信测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"WeixinTEST\",\n                \"PayTicketIcon\": \"xxx.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            },\n            {\n                \"PayCurrency\": \"CNY\",\n                \"PayIcon\": \"xxx.png\",\n                \"PayInternalName\": \"支付宝测试\",\n                \"PayName\": \"支付宝测试\",\n                \"PaySplitRefund\": \"1\",\n                \"PayTag\": \"AlipayTEST\",\n                \"PayTicketIcon\": \"xxx.png\",\n                \"PayType\": \"2,3,4\",\n                \"TicketName\": \"哈哈\"\n            }\n        ]\n    }\n}",
         "title": "查询商户支付方式结果成功示例"
       }
     ],

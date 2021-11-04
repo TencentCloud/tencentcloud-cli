@@ -234,6 +234,12 @@
       "name": "修改实例所属的只读组",
       "output": "ModifyDBInstanceReadOnlyGroupResponse"
     },
+    "ModifyDBInstanceSpec": {
+      "document": "本接口（ModifyDBInstanceSpec）用于调整实例规格，包括内存、磁盘。",
+      "input": "ModifyDBInstanceSpecRequest",
+      "name": "调整实例规格（新）",
+      "output": "ModifyDBInstanceSpecResponse"
+    },
     "ModifyDBInstancesProject": {
       "document": "本接口（ModifyDBInstancesProject）用于将实例转至其他项目。",
       "input": "ModifyDBInstancesProjectRequest",
@@ -4021,6 +4027,123 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSpecRequest": {
+      "document": "ModifyDBInstanceSpec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如：postgres-6bwgamo3。",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级后的实例内存大小，单位GiB。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "升级后的实例磁盘大小，单位GiB。",
+          "example": "16",
+          "member": "uint64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券,1是,0否，默认不使用。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "活动ID。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间。",
+          "example": "12:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换截止时间。",
+          "example": "12:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSpecResponse": {
+      "document": "ModifyDBInstanceSpec返回参数结构体",
+      "members": [
+        {
+          "document": "订单号。",
+          "example": "201806127634",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "冻结流水号。",
+          "example": "123",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

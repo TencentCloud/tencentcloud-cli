@@ -10,7 +10,7 @@ tccli cfw CreateNatFwInstanceWithDomain --cli-unfold-argument  \
     --Width 20 \
     --Mode 0 \
     --CrossAZone 1 \
-    --NatGwList nat-14yv5rzx nat-14yv5rzk \
+    --NatGwList nat-xxx nat-xxx \
     --Zone ap-shanghai-4 \
     --ZoneBak ap-shanghai-3
 ```
@@ -36,8 +36,8 @@ tccli cfw CreateNatFwInstanceWithDomain --cli-unfold-argument  \
     --Width 20 \
     --Mode 1 \
     --CrossAZone 1 \
-    --NewModeItems.VpcList vpc-q98tz7hs \
-    --NewModeItems.Eips 11.2.1.1 \
+    --NewModeItems.VpcList vpc-xxx \
+    --NewModeItems.Eips xx.xx.xx.xx \
     --NewModeItems.AddCount 1 \
     --Zone ap-shanghai-4 \
     --ZoneBak ap-shanghai-3

@@ -27,7 +27,7 @@
     "CreateDatabaseWhiteListRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabaseWhiteListRules\n<公共请求参数>\n\n{\n    \"DatabaseWhiteListRuleData\": [\n        {\n            \"SourceIp\": \"0.0.0.0/0\",\n            \"SourceType\": 1,\n            \"TargetIp\": \"119.29.186.197\",\n            \"TargetType\": 1,\n            \"Detail\": \"test\",\n            \"Enable\": 1,\n            \"IsRegionRule\": 0,\n            \"IsCloudRule\": 0\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabaseWhiteListRules\n<公共请求参数>\n\n{\n    \"DatabaseWhiteListRuleData\": [\n        {\n            \"SourceIp\": \"xx.xx.xx.xx\",\n            \"SourceType\": 1,\n            \"TargetIp\": \"xx.xx.xx.xx\",\n            \"TargetType\": 1,\n            \"Detail\": \"test\",\n            \"Enable\": 1,\n            \"IsRegionRule\": 0,\n            \"IsCloudRule\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建暴露数据库白名单规则"
       }
@@ -35,13 +35,13 @@
     "CreateNatFwInstance": [
       {
         "document": "接入模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-14yv5rzx\",\n        \"nat-14yv5rzk\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-xxx\",\n        \"nat-xxx\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建防火墙实例--接入模式"
       },
       {
         "document": "新增模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-q98tz7hs\"\n        ],\n        \"Eips\": [\n            \"11.2.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstance\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-xxx\"\n        ],\n        \"Eips\": [\n            \"xx.xx.xx.xx\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建防火墙实例--新增模式"
       }
@@ -49,13 +49,13 @@
     "CreateNatFwInstanceWithDomain": [
       {
         "document": "接入模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-14yv5rzx\",\n        \"nat-14yv5rzk\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-xxx\",\n        \"nat-xxx\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建防火墙实例和接入域名"
       },
       {
         "document": "新增模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-q98tz7hs\"\n        ],\n        \"Eips\": [\n            \"11.2.1.1\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-xxx\"\n        ],\n        \"Eips\": [\n            \"xx.xx.xx.xx\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "CreateNatFwInstanceWithDomain"
       }
@@ -264,7 +264,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceAsset\n<公共请求参数>\n\n{\n    \"InsType\": \"xx\",\n    \"ChooseType\": \"xx\",\n    \"FuzzySearch\": \"xx\",\n    \"Zone\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Data\": [\n            {\n                \"LeakNum\": \"xx\",\n                \"InsSource\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"PortNum\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"ResourcePath\": [\n                    \"xx\"\n                ],\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"VPCName\": \"xx\",\n                \"AppId\": \"xx\",\n                \"InsType\": 0,\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"ZoneList\": [\n            {\n                \"ZoneEng\": \"xx\",\n                \"Zone\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"Data\": [\n            {\n                \"LeakNum\": \"xx\",\n                \"InsSource\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"PortNum\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"ResourcePath\": [\n                    \"xx\"\n                ],\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"VPCName\": \"xx\",\n                \"AppId\": \"xx\",\n                \"InsType\": 0,\n                \"InstanceName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"ZoneList\": [\n            {\n                \"ZoneEng\": \"xx\",\n                \"Zone\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询资产组全部资产信息"
       }
     ],
@@ -483,7 +483,7 @@
     "ModifySecurityGroupSequenceRules": [
       {
         "document": "企业安全组规则快速排序",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupSequenceRules\n<公共请求参数>\n\n{\n    \"Direction\": 1,\n    \"Data\": [\n        {\n            \"NewOrderIndex\": 1,\n            \"OrderIndex\": 1\n        },\n        {\n            \"NewOrderIndex\": 1,\n            \"OrderIndex\": 1\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroupSequenceRules\n<公共请求参数>\n\n{\n    \"Direction\": 1,\n    \"Data\": [\n        {\n            \"NewOrderIndex\": 1,\n            \"OrderIndex\": 2\n        },\n        {\n            \"NewOrderIndex\": 2,\n            \"OrderIndex\": 1\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
         "title": "企业安全组规则快速排序"
       }

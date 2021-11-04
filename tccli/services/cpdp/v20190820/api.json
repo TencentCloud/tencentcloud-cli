@@ -384,6 +384,12 @@
       "name": "智慧零售-发票查询V2",
       "output": "QueryInvoiceV2Response"
     },
+    "QueryMaliciousRegistration": {
+      "document": "商户恶意注册接口",
+      "input": "QueryMaliciousRegistrationRequest",
+      "name": "商户恶意注册接口",
+      "output": "QueryMaliciousRegistrationResponse"
+    },
     "QueryMemberBind": {
       "document": "会员绑定信息查询。查询标志为“单个会员”的情况下，返回该会员的有效的绑定账户信息。\n查询标志为“全部会员”的情况下，返回市场下的全部的有效的绑定账户信息。查询标志为“单个会员的证件信息”的情况下，返回市场下的指定的会员的留存在电商见证宝系统的证件信息。",
       "input": "QueryMemberBindRequest",
@@ -625,9 +631,9 @@
       "output": "UnifiedOrderResponse"
     },
     "UnifiedTlinxOrder": {
-      "document": "云支付Tlinx统一下单接口",
+      "document": "云支付-统一下单接口",
       "input": "UnifiedTlinxOrderRequest",
-      "name": "云支付-Tlinx统一下单接口",
+      "name": "云支付-统一下单接口",
       "output": "UnifiedTlinxOrderResponse"
     },
     "UploadExternalAnchorInfo": {
@@ -8248,6 +8254,32 @@
       ],
       "usage": "out"
     },
+    "MerchantRiskInfo": {
+      "document": "商户风险信息",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意注册等级，0-9级，9级最高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "恶意注册代码，代码以|分割，如\"G001|T002\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskTypes",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MigrateOrderRefundQueryRequest": {
       "document": "MigrateOrderRefundQuery请求参数结构体",
       "members": [
@@ -9056,7 +9088,7 @@
         {
           "default": "",
           "document": "交易帐号（银行卡号、支付宝帐号、微信帐号等，某些收单机构没有此数据）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "CFT",
+          "example": "6335",
           "member": "string",
           "name": "TradeAccount",
           "required": true,
@@ -9096,7 +9128,7 @@
         {
           "default": "",
           "document": "门店流水号（从1开始自增长不重复）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "200010",
+          "example": "T0001",
           "member": "string",
           "name": "ShopOrderId",
           "required": true,
@@ -11814,6 +11846,159 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryMaliciousRegistrationRequest": {
+      "document": "QueryMaliciousRegistration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户ID，调用方使用的商户号信息，与商户主体一一对应",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户名称",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "企业工商注册标准名称",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注册地址",
+          "example": "无",
+          "member": "string",
+          "name": "RegAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户进件Unix时间，单位秒（非企业注册工商时间)",
+          "example": "无",
+          "member": "uint64",
+          "name": "RegTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "USCI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工商注册码，匹配优先级为Usci>RegNumber>CompanyName",
+          "example": "无",
+          "member": "string",
+          "name": "RegNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码32位MD5加密结果，全大写，格式为0086-13812345678",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedPhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱32位MD5加密结果，全大写",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedEmailAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份证MD5加密结果，最后一位x大写",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedPersonId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "填写信息设备的IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进件渠道号，客户自行编码即可",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMaliciousRegistrationResponse": {
+      "document": "QueryMaliciousRegistration返回参数结构体",
+      "members": [
+        {
+          "document": "错误码",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户风险信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MerchantRiskInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryMemberBindRequest": {
       "document": "QueryMemberBind请求参数结构体",
@@ -19047,6 +19232,15 @@
       "members": [
         {
           "default": "",
+          "document": "开发者流水号",
+          "example": "TEST00000458",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "收单系统分配的开放ID",
           "example": "f2cc268b9c95fbbb230a19397fe35f8d",
           "member": "string",
@@ -19056,19 +19250,19 @@
         },
         {
           "default": "",
-          "document": "收单系统分配的密钥",
-          "example": "e30051d527bd4e621e7090c9392739ec",
+          "document": "交易结果异步通知url地址",
+          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
           "member": "string",
-          "name": "OpenKey",
+          "name": "NotifyUrl",
           "required": true,
           "type": "string"
         },
         {
           "default": "",
-          "document": "开发者流水号",
-          "example": "TEST00000458",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
           "member": "string",
-          "name": "DeveloperNo",
+          "name": "OpenKey",
           "required": true,
           "type": "string"
         },
@@ -19092,37 +19286,37 @@
         },
         {
           "default": "",
-          "document": "订单标记，订单附加数据",
-          "example": "附加数据",
+          "document": "订单备注",
+          "example": "备注",
           "member": "string",
-          "name": "Tag",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "交易结果异步通知url地址",
-          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
-          "member": "string",
-          "name": "NotifyUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "付款方式名称(当PayTag为Diy时，PayName不能为空)",
-          "example": "1",
-          "member": "string",
-          "name": "PayName",
+          "name": "Remark",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "订单名称（描述）",
-          "example": "自定义订单名称",
+          "document": "订单标记，订单附加数据。",
+          "example": "附加数据",
           "member": "string",
-          "name": "OrderName",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "抹零金额（以分为单位，没有小数点）",
+          "example": "1",
+          "member": "string",
+          "name": "IgnoreAmount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条码支付的授权码（条码抢扫手机扫到的一串数字）",
+          "example": "33523",
+          "member": "string",
+          "name": "AuthCode",
           "required": false,
           "type": "string"
         },
@@ -19137,19 +19331,37 @@
         },
         {
           "default": "",
-          "document": "折扣金额（以分为单位，没有小数点）",
-          "example": "1",
+          "document": "订单名称（描述）",
+          "example": "自定义订单名称",
           "member": "string",
-          "name": "DiscountAmount",
+          "name": "OrderName",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "抹零金额（以分为单位，没有小数点）",
-          "example": "1",
+          "document": "公众号支付时，支付成功后跳转url地址",
+          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
           "member": "string",
-          "name": "IgnoreAmount",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单机构原始交易报文，请转换为json",
+          "example": "null",
+          "member": "string",
+          "name": "TradeResult",
           "required": false,
           "type": "string"
         },
@@ -19173,46 +19385,28 @@
         },
         {
           "default": "",
-          "document": "收单机构原始交易报文，请转换为json",
-          "example": "null",
+          "document": "折扣金额（以分为单位，没有小数点）",
+          "example": "1",
           "member": "string",
-          "name": "TradeResult",
+          "name": "DiscountAmount",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "订单备注",
-          "example": "备注",
+          "document": "付款方式名称(当PayTag为Diy时，PayName不能为空)",
+          "example": "1",
           "member": "string",
-          "name": "Remark",
+          "name": "PayName",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "条码支付的授权码（条码抢扫手机扫到的一串数字）",
-          "example": "33523",
+          "document": "0-不分账，1-需分账。为1时标记为待分账订单，待分账订单不会进行清算。不传默认为不分账。",
+          "example": "1",
           "member": "string",
-          "name": "AuthCode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "公众号支付时，支付成功后跳转url地址",
-          "example": "http://www.baidu.com/tlinx2apidemo1/callback/scanpay_cashier/pay",
-          "member": "string",
-          "name": "JumpUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "沙箱环境填sandbox，正式环境不填",
-          "example": "sandbox",
-          "member": "string",
-          "name": "Profile",
+          "name": "Royalty",
           "required": false,
           "type": "string"
         }
@@ -19223,15 +19417,6 @@
       "document": "UnifiedTlinxOrder返回参数结构体",
       "members": [
         {
-          "document": "业务系统返回码",
-          "example": "SUCCESS",
-          "member": "string",
-          "name": "ErrCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
           "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成功",
           "member": "string",
@@ -19239,6 +19424,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "统一下单响应对象\n注意：此字段可能返回 null，表示取不到有效值。",

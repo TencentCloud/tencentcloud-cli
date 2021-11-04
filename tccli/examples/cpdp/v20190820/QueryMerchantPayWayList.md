@@ -21,23 +21,23 @@ Output:
         "Result": [
             {
                 "PayCurrency": "CNY",
-                "PayIcon": "http://f.tlinx.cn//Public/icons/pay/Weixin.png",
+                "PayIcon": "xxx.png",
                 "PayInternalName": "微信测试",
                 "PayName": "微信测试",
                 "PaySplitRefund": "1",
                 "PayTag": "WeixinTEST",
-                "PayTicketIcon": "http://f.tlinx.cn//Public/icons/ticket/Weixin.png",
+                "PayTicketIcon": "xxx.png",
                 "PayType": "2,3,4",
                 "TicketName": "哈哈"
             },
             {
                 "PayCurrency": "CNY",
-                "PayIcon": "http://f.tlinx.cn//Public/icons/pay/Alipay.png",
+                "PayIcon": "xxx.png",
                 "PayInternalName": "支付宝测试",
                 "PayName": "支付宝测试",
                 "PaySplitRefund": "1",
                 "PayTag": "AlipayTEST",
-                "PayTicketIcon": "http://f.tlinx.cn//Public/icons/ticket/Alipay.png",
+                "PayTicketIcon": "xxx.png",
                 "PayType": "2,3,4",
                 "TicketName": "哈哈"
             }

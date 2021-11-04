@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "Total": 0,
+        "Total": 2,
         "Data": [
             {
                 "LeakNum": "xx",
