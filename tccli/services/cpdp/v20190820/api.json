@@ -547,9 +547,9 @@
       "output": "RefundOrderResponse"
     },
     "RefundTlinxOrder": {
-      "document": "云支付Tlinx退款接口",
+      "document": "云支付订单退款接口",
       "input": "RefundTlinxOrderRequest",
-      "name": "云支付-Tlinx退款接口",
+      "name": "云支付-订单退款接口",
       "output": "RefundTlinxOrderResponse"
     },
     "RegisterBehavior": {
