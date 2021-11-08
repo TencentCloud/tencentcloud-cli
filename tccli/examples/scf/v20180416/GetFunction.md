@@ -136,6 +136,12 @@ Output:
             "PublicNetStatus": "xx"
         },
         "InitTimeout": 0,
+        "ProtocolType": "WS",
+        "ProtocolParams": {
+            "WSParams": {
+                "IdleTimeOut": 15
+            }
+        },
         "RequestId": "xx"
     }
 }

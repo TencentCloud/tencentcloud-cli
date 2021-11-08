@@ -1049,6 +1049,24 @@
           "name": "TraceEnable",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS",
+          "example": "WS",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTP函数配置ProtocolType访问协议，当前协议可配置的参数",
+          "example": "无",
+          "member": "ProtocolParams",
+          "name": "ProtocolParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2761,6 +2779,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "HTTP函数支持的访问协议。当前支持WebSockets协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "HTTP函数配置ProtocolType访问协议，当前协议配置的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProtocolParams",
+          "name": "ProtocolParams",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4261,6 +4297,22 @@
       ],
       "usage": "out"
     },
+    "ProtocolParams": {
+      "document": "HTTP函数支持其他访问协议的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "WebSockets协议支持的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             IdleTimeOut: 15     }",
+          "member": "WSParams",
+          "name": "WSParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PublicNetConfigIn": {
       "document": "公网访问配置",
       "members": [
@@ -5604,6 +5656,15 @@
           "name": "InitTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "HTTP函数配置ProtocolType访问协议，当前协议可配置的参数",
+          "example": "无",
+          "member": "ProtocolParams",
+          "name": "ProtocolParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5929,6 +5990,22 @@
         }
       ],
       "usage": "in"
+    },
+    "WSParams": {
+      "document": "HTTP函数通过WebSockets协议访问时的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "uint64",
+          "name": "IdleTimeOut",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
