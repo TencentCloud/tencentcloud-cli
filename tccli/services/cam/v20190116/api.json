@@ -2562,19 +2562,31 @@
       "members": [
         {
           "default": "",
-          "document": "子用户 UID",
+          "document": "用户组 ID",
+          "example": "123456",
           "member": "uint64",
-          "name": "Uid",
+          "name": "GroupId",
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "用户组 ID",
+          "document": "子用户 UID",
+          "example": "123456",
           "member": "uint64",
-          "name": "GroupId",
-          "required": true,
+          "name": "Uid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子用户 Uin，Uid和Uin至少有一个必填",
+          "example": "100003435",
+          "member": "uint64",
+          "name": "Uin",
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }

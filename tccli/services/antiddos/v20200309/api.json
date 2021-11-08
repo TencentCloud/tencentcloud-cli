@@ -145,7 +145,7 @@
       "output": "DescribeBlackWhiteIpListResponse"
     },
     "DescribeCCTrend": {
-      "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)",
+      "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
       "input": "DescribeCCTrendRequest",
       "name": "获取CC攻击指标数据",
       "output": "DescribeCCTrendResponse"
@@ -2188,7 +2188,7 @@
         },
         {
           "default": "",
-          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
           "example": "inqps",
           "member": "string",
           "name": "MetricName",
@@ -2292,7 +2292,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
           "example": "inqps",
           "member": "string",
           "name": "MetricName",

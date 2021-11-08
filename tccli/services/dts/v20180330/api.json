@@ -30,29 +30,11 @@
       "name": "创建订阅对象",
       "output": "CreateSubscribeResponse"
     },
-    "CreateSyncCheckJob": {
-      "document": "在调用 StartSyncJob 接口启动灾备同步前, 必须调用本接口创建校验, 且校验成功后才能开始同步数据. 校验的结果可以通过 DescribeSyncCheckJob 查看.\n校验成功后才能启动同步.",
-      "input": "CreateSyncCheckJobRequest",
-      "name": "校验灾备同步任务",
-      "output": "CreateSyncCheckJobResponse"
-    },
-    "CreateSyncJob": {
-      "document": "本接口(CreateSyncJob)用于创建灾备同步任务。\n创建同步任务后，可以通过 CreateSyncCheckJob 接口发起校验任务。校验成功后才可以通过 StartSyncJob 接口启动同步任务。",
-      "input": "CreateSyncJobRequest",
-      "name": "创建灾备同步任务",
-      "output": "CreateSyncJobResponse"
-    },
     "DeleteMigrateJob": {
       "document": "本接口（DeleteMigrationJob）用于删除数据迁移任务。当通过DescribeMigrateJobs接口查询到任务的状态为：检验中（status=3）、运行中（status=7）、准备完成（status=8）、撤销中（status=11）或者完成中（status=12）时，不允许删除任务。",
       "input": "DeleteMigrateJobRequest",
       "name": "删除数据迁移任务",
       "output": "DeleteMigrateJobResponse"
-    },
-    "DeleteSyncJob": {
-      "document": "删除灾备同步任务 （运行中的同步任务不能删除）。",
-      "input": "DeleteSyncJobRequest",
-      "name": "删除灾备同步任务",
-      "output": "DeleteSyncJobResponse"
     },
     "DescribeAsyncRequestInfo": {
       "document": "本接口（DescribeAsyncRequestInfo）用于查询任务执行结果",
@@ -95,12 +77,6 @@
       "input": "DescribeSyncCheckJobRequest",
       "name": "查询灾备同步任务校验结果",
       "output": "DescribeSyncCheckJobResponse"
-    },
-    "DescribeSyncJobs": {
-      "document": "查询在迁移平台发起的灾备同步任务",
-      "input": "DescribeSyncJobsRequest",
-      "name": "查询在迁移平台发起的灾备同步任务",
-      "output": "DescribeSyncJobsResponse"
     },
     "IsolateSubscribe": {
       "document": "本接口（IsolateSubscribe）用于隔离小时计费的订阅实例。调用后，订阅实例将不能使用，同时停止计费。",
@@ -168,23 +144,11 @@
       "name": "启动数据迁移任务",
       "output": "StartMigrateJobResponse"
     },
-    "StartSyncJob": {
-      "document": "创建的灾备同步任务在通过 CreateSyncCheckJob 和 DescribeSyncCheckJob 确定校验成功后，可以调用该接口启动同步",
-      "input": "StartSyncJobRequest",
-      "name": "开始灾备同步任务",
-      "output": "StartSyncJobResponse"
-    },
     "StopMigrateJob": {
       "document": "本接口（StopMigrateJob）用于撤销数据迁移任务。\n在迁移过程中允许调用该接口撤销迁移, 撤销迁移的任务会失败。通过DescribeMigrateJobs接口查询到任务状态为运行中（status=7）或准备完成（status=8）时，才能撤销数据迁移任务。",
       "input": "StopMigrateJobRequest",
       "name": "撤销数据迁移任务",
       "output": "StopMigrateJobResponse"
-    },
-    "SwitchDrToMaster": {
-      "document": "将灾备升级为主实例，停止从原来所属主实例的同步，断开主备关系。",
-      "input": "SwitchDrToMasterRequest",
-      "name": "灾备升级为主实例",
-      "output": "SwitchDrToMasterResponse"
     }
   },
   "metadata": {
@@ -532,129 +496,6 @@
       ],
       "type": "object"
     },
-    "CreateSyncCheckJobRequest": {
-      "document": "CreateSyncCheckJob请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备同步任务ID",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateSyncCheckJobResponse": {
-      "document": "CreateSyncCheckJob返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateSyncJobRequest": {
-      "document": "CreateSyncJob请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备同步任务名",
-          "member": "string",
-          "name": "JobName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "灾备同步任务配置选项",
-          "member": "SyncOption",
-          "name": "SyncOption",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "源实例数据库类型，目前仅包括：mysql",
-          "member": "string",
-          "name": "SrcDatabaseType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "源实例接入类型，目前仅包括：cdb(云上cdb实例)",
-          "member": "string",
-          "name": "SrcAccessType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "源实例信息",
-          "member": "SyncInstanceInfo",
-          "name": "SrcInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "目标实例数据库类型，目前仅包括：mysql",
-          "member": "string",
-          "name": "DstDatabaseType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目标实例接入类型，目前仅包括：cdb(云上cdb实例)",
-          "member": "string",
-          "name": "DstAccessType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "目标实例信息",
-          "member": "SyncInstanceInfo",
-          "name": "DstInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "需要同步的源数据库表信息，用json格式的字符串描述。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]",
-          "member": "string",
-          "name": "DatabaseInfo",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateSyncJobResponse": {
-      "document": "CreateSyncJob返回参数结构体",
-      "members": [
-        {
-          "document": "灾备同步任务ID",
-          "member": "string",
-          "name": "JobId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteMigrateJobRequest": {
       "document": "DeleteMigrateJob请求参数结构体",
       "members": [
@@ -671,32 +512,6 @@
     },
     "DeleteMigrateJobResponse": {
       "document": "DeleteMigrateJob返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteSyncJobRequest": {
-      "document": "DeleteSyncJob请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "待删除的灾备同步任务ID",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteSyncJobResponse": {
-      "document": "DeleteSyncJob返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1327,86 +1142,6 @@
           "member": "int64",
           "name": "CheckFlag",
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSyncJobsRequest": {
-      "document": "DescribeSyncJobs请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备同步任务ID",
-          "member": "string",
-          "name": "JobId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "灾备同步任务名",
-          "member": "string",
-          "name": "JobName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "排序字段，可以取值为JobId、Status、JobName、CreateTime",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "排序方式，升序为ASC，降序为DESC",
-          "member": "string",
-          "name": "OrderSeq",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "0",
-          "document": "偏移量，默认为0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "20",
-          "document": "返回实例数量，默认20，有效区间[1,100]",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSyncJobsResponse": {
-      "document": "DescribeSyncJobs返回参数结构体",
-      "members": [
-        {
-          "document": "任务数目",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "任务详情数组",
-          "member": "SyncJobInfo",
-          "name": "JobList",
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2462,32 +2197,6 @@
       ],
       "type": "object"
     },
-    "StartSyncJobRequest": {
-      "document": "StartSyncJob请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备同步任务ID",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StartSyncJobResponse": {
-      "document": "StartSyncJob返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "StopMigrateJobRequest": {
       "document": "StopMigrateJob请求参数结构体",
       "members": [
@@ -2820,47 +2529,6 @@
       ],
       "usage": "out"
     },
-    "SwitchDrToMasterRequest": {
-      "document": "SwitchDrToMaster请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备实例的信息",
-          "member": "SyncInstanceInfo",
-          "name": "DstInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "数据库的类型  （如 mysql）",
-          "member": "string",
-          "name": "DatabaseType",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SwitchDrToMasterResponse": {
-      "document": "SwitchDrToMaster返回参数结构体",
-      "members": [
-        {
-          "document": "后台异步任务请求id",
-          "member": "string",
-          "name": "AsyncRequestId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "SyncCheckStepInfo": {
       "document": "灾备任务校验步骤",
       "members": [
@@ -2896,240 +2564,6 @@
           "document": "步骤执行结果提示",
           "member": "string",
           "name": "StepMessage",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SyncDetailInfo": {
-      "document": "描述详细同步任务过程",
-      "members": [
-        {
-          "default": "",
-          "document": "总步骤数",
-          "member": "int64",
-          "name": "StepAll",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当前步骤",
-          "member": "int64",
-          "name": "StepNow",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "总进度",
-          "member": "string",
-          "name": "Progress",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当前步骤进度",
-          "member": "string",
-          "name": "CurrentStepProgress",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主从差距，MB",
-          "member": "int64",
-          "name": "MasterSlaveDistance",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主从差距，秒",
-          "member": "int64",
-          "name": "SecondsBehindMaster",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "步骤信息",
-          "member": "SyncStepDetailInfo",
-          "name": "StepInfo",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SyncInstanceInfo": {
-      "document": "灾备同步的实例信息，记录主实例或灾备实例的信息",
-      "members": [
-        {
-          "default": "",
-          "document": "地域英文名，如：ap-guangzhou",
-          "member": "string",
-          "name": "Region",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "实例短ID",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "SyncJobInfo": {
-      "document": "灾备同步任务信息",
-      "members": [
-        {
-          "default": "",
-          "document": "灾备任务id",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "灾备任务名",
-          "member": "string",
-          "name": "JobName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "任务同步",
-          "member": "SyncOption",
-          "name": "SyncOption",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "源接入类型",
-          "member": "string",
-          "name": "SrcAccessType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "源数据类型",
-          "member": "string",
-          "name": "SrcDatabaseType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "源实例信息",
-          "member": "SyncInstanceInfo",
-          "name": "SrcInfo",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "灾备接入类型",
-          "member": "string",
-          "name": "DstAccessType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "灾备数据类型",
-          "member": "string",
-          "name": "DstDatabaseType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "灾备实例信息",
-          "member": "SyncInstanceInfo",
-          "name": "DstInfo",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "任务信息",
-          "member": "SyncDetailInfo",
-          "name": "Detail",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "任务状态",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "迁移库表",
-          "member": "string",
-          "name": "DatabaseInfo",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建时间",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "开始时间",
-          "member": "datetime",
-          "name": "StartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "结束时间",
-          "member": "datetime",
-          "name": "EndTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3178,48 +2612,6 @@
         }
       ],
       "usage": "both"
-    },
-    "SyncStepDetailInfo": {
-      "document": "同步任务进度",
-      "members": [
-        {
-          "default": "",
-          "document": "步骤编号",
-          "member": "uint64",
-          "name": "StepNo",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "步骤名",
-          "member": "string",
-          "name": "StepName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "能否中止",
-          "member": "int64",
-          "name": "CanStop",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "步骤号",
-          "member": "int64",
-          "name": "StepId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "TagFilter": {
       "document": "标签过滤",
