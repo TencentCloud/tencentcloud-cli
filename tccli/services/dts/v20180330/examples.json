@@ -120,14 +120,6 @@
         "title": "查询数据订阅实例列表"
       }
     ],
-    "DescribeSyncCheckJob": [
-      {
-        "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSyncCheckJob\r\n&JobId=sync-blj8wnt1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"ErrorCode\": 0,\n        \"ErrorMessage\": \"灾备检查成功\",\n        \"StepInfo\": [\n            {\n                \"StepNo\": 1,\n                \"StepName\": \"检查参数\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 2,\n                \"StepName\": \"检查源实例\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 3,\n                \"StepName\": \"检查目标实例\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 4,\n                \"StepName\": \"检查实例状态\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 5,\n                \"StepName\": \"检查实例规格\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 6,\n                \"StepName\": \"检查实例版本\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 7,\n                \"StepName\": \"检查目标实例是否为空\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 8,\n                \"StepName\": \"检查是否开启加密\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 9,\n                \"StepName\": \"检查实例同步的库表信息\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            },\n            {\n                \"StepNo\": 10,\n                \"StepName\": \"检查实例冷备数据\",\n                \"StepCode\": 0,\n                \"StepMessage\": \"校验成功\"\n            }\n        ],\n        \"CheckFlag\": 1,\n        \"RequestId\": \"b3951c71-1da4-4b8f-9de5-ad71ab1e2917\"\n    }\n}",
-        "title": "查询灾备同步任务校验结果"
-      }
-    ],
     "IsolateSubscribe": [
       {
         "document": "",
@@ -182,14 +174,6 @@
         "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeVipVport\r\n&SubscribeId=subs-ieuwi83j2e\r\n&DstVip=192.168.0.1\r\n&DstPort=7575\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "修改数据订阅实例的IP和端口号"
-      }
-    ],
-    "ModifySyncJob": [
-      {
-        "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action==ModifySyncJob\r\n&JobId=sync-blj8wnt1\r\n&JobName=testname3\r\n&DatabaseInfo=[{\"Database\": \"db1\"}, {\"Database\": \"db2\"}]\r\n&SyncOption.SyncObject=2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3ebe70b-e294-4c15-9377-9e82ef73f342\"\n    }\n}",
-        "title": "修改灾备同步任务"
       }
     ],
     "OfflineIsolatedSubscribe": [

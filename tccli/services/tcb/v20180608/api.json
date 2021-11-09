@@ -150,6 +150,12 @@
       "name": "独立网关云托管服务配置",
       "output": "DescribeCloudBaseRunConfForGateWayResponse"
     },
+    "DescribeCloudBaseRunOneClickTaskExternal": {
+      "document": "查询一键部署任务 （特定接口：外部查询使用）",
+      "input": "DescribeCloudBaseRunOneClickTaskExternalRequest",
+      "name": "查询一键部署任务",
+      "output": "DescribeCloudBaseRunOneClickTaskExternalResponse"
+    },
     "DescribeCloudBaseRunOperationTypes": {
       "document": "查询服务、版本和操作类型",
       "input": "DescribeCloudBaseRunOperationTypesRequest",
@@ -179,6 +185,12 @@
       "input": "DescribeCloudBaseRunServerRequest",
       "name": "查询单个服务的详情",
       "output": "DescribeCloudBaseRunServerResponse"
+    },
+    "DescribeCloudBaseRunServerDomainName": {
+      "document": "查询微信云托管服务域名",
+      "input": "DescribeCloudBaseRunServerDomainNameRequest",
+      "name": "查询微信云托管服务域名",
+      "output": "DescribeCloudBaseRunServerDomainNameResponse"
     },
     "DescribeCloudBaseRunServerVersion": {
       "document": "查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize",
@@ -4366,6 +4378,114 @@
       ],
       "type": "object"
     },
+    "DescribeCloudBaseRunOneClickTaskExternalRequest": {
+      "document": "DescribeCloudBaseRunOneClickTaskExternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "外部任务Id 最长64字节",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunOneClickTaskExternalResponse": {
+      "document": "DescribeCloudBaseRunOneClickTaskExternal返回参数结构体",
+      "members": [
+        {
+          "document": "外部任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "环境Id",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户uin",
+          "example": "无",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务名",
+          "example": "无",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本名",
+          "example": "无",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前阶段\n微信云托管环境创建阶段：envStage\n存储资源创建阶段：storageStage\n服务创建阶段：serverStage",
+          "example": "无",
+          "member": "string",
+          "name": "Stage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态\nrunning\nstopped\nfailed\nfinished",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudBaseRunOperationTypesRequest": {
       "document": "DescribeCloudBaseRunOperationTypes请求参数结构体",
       "members": [
@@ -4606,6 +4726,87 @@
           "name": "SubnetIds",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerDomainNameRequest": {
+      "document": "DescribeCloudBaseRunServerDomainName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "无",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境Id",
+          "example": "无",
+          "member": "string",
+          "name": "UserEnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Uin",
+          "example": "无",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部Id",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudBaseRunServerDomainNameResponse": {
+      "document": "DescribeCloudBaseRunServerDomainName返回参数结构体",
+      "members": [
+        {
+          "document": "公网服务域名",
+          "example": "无",
+          "member": "string",
+          "name": "PublicDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内部服务域名",
+          "example": "无",
+          "member": "string",
+          "name": "InternalDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "弃用",
+          "example": "无",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

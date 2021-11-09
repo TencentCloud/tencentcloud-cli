@@ -33,7 +33,7 @@ Output:
             "MachineName": "xx",
             "Version": "xx",
             "Path": "xx",
-            "Type": 0,
+            "Type": 1,
             "MachineIp": "xx",
             "Md5": "xx"
         },

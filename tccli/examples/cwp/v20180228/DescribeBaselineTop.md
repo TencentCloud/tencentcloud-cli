@@ -19,12 +19,14 @@ Output:
             {
                 "RuleName": "检测项名1",
                 "Level": 1,
-                "EventCount": 4000
+                "EventCount": 4000,
+                "RuleId": 1
             },
             {
                 "RuleName": "检测项名2",
                 "Level": 2,
-                "EventCount": 4000
+                "EventCount": 4000,
+                "RuleId": 2
             }
         ]
     }

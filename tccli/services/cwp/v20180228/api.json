@@ -9490,7 +9490,7 @@
         },
         {
           "default": "",
-          "document": "排序方式，asc升序 或 desc降序",
+          "document": "排序方式，asc-升序 或 desc-降序",
           "example": "1",
           "member": "string",
           "name": "Order",
@@ -10805,7 +10805,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否全部服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否全部服务器：1-是 0-否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
@@ -13557,7 +13557,7 @@
       "members": [
         {
           "default": "",
-          "document": "分页参数",
+          "document": "返回数量，默认为10，最大值为100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13566,7 +13566,7 @@
         },
         {
           "default": "",
-          "document": "分页参数",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -19157,6 +19157,7 @@
         {
           "default": "",
           "document": "主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "HostName",
           "required": true,
@@ -19165,7 +19166,8 @@
         },
         {
           "default": "",
-          "document": "危害等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "危害等级：1-低位，2-中危，3-高危，4-严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Level",
           "required": true,
@@ -19175,6 +19177,7 @@
         {
           "default": "",
           "document": "主机标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "string",
           "name": "TagList",
           "required": true,
@@ -19183,7 +19186,8 @@
         },
         {
           "default": "",
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态：0-未通过，1-忽略，3-已通过，5-检测中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -19192,7 +19196,8 @@
         },
         {
           "default": "",
-          "document": "最后检测事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-10 00:00:00",
           "member": "string",
           "name": "LastScanTime",
           "required": true,
@@ -19202,6 +19207,7 @@
         {
           "default": "",
           "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "EventId",
           "required": true,
@@ -19211,6 +19217,7 @@
         {
           "default": "",
           "document": "主机quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
           "member": "string",
           "name": "Quuid",
           "required": true,

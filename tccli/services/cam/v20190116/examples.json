@@ -11,7 +11,7 @@
     "AddUserToGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=AddUserToGroup\n&Info.0.Uid=1001408\n&Info.0.GroupId=2020\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"47c4a570-17fa-44a3-8ff6-fe006170c104\"\n    }\n}",
         "title": "用户加入到用户组"
       }
@@ -479,7 +479,7 @@
     "RemoveUserFromGroup": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\r\n&Info.0.Uid=1001408\r\n&Info.0.GroupId=2020\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=RemoveUserFromGroup\n&Info.0.Uid=1001408\n&Info.0.GroupId=2020\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "从用户组删除用户"
       }
