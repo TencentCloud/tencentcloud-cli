@@ -210,6 +210,12 @@
       "name": "查询报表数据",
       "output": "DescribeReportDataResponse"
     },
+    "DescribeScdnBotData": {
+      "document": "获取BOT统计数据列表",
+      "input": "DescribeScdnBotDataRequest",
+      "name": "获取BOT统计数据列表",
+      "output": "DescribeScdnBotDataResponse"
+    },
     "DescribeScdnBotRecords": {
       "document": "查询BOT会话记录列表",
       "input": "DescribeScdnBotRecordsRequest",
@@ -2341,6 +2347,54 @@
           "name": "Isp",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotStats": {
+      "document": "BOT统计结果数据",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标详细数据",
+          "member": "BotStatsDetailData",
+          "name": "DetailData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotStatsDetailData": {
+      "document": "BOT统计结果数据详细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据值",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5981,6 +6035,87 @@
           "name": "ProjectReport",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScdnBotDataRequest": {
+      "document": "DescribeScdnBotData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-02-01 00:00:00",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-02-01 01:00:00",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "mainland 大陆地区 overseas境外地区",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取值：\"2min\"或者\"hour\"，表示查询2分钟或者1小时粒度的数据，如果查询时间范围>1天，则强制返回1小时粒度数据",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名数组，多选域名时，使用此参数,不填写表示查询所有域名的数据（AppID维度数据）",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScdnBotDataResponse": {
+      "document": "DescribeScdnBotData返回参数结构体",
+      "members": [
+        {
+          "document": "统计信息详细数据",
+          "example": "无",
+          "member": "BotStats",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前返回数据的粒度，取值：\"2min\"或者\"hour\"，分别表示2分钟或者1小时粒度",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -13984,6 +14119,16 @@
           "example": "1",
           "member": "int64",
           "name": "Region",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量包类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "int64",
+          "name": "ConfigId",
           "required": true,
           "type": "int",
           "value_allowed_null": true

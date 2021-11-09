@@ -613,7 +613,8 @@
       "members": [
         {
           "default": "",
-          "document": "添加的子用户 UID 和用户组 ID 关联关系",
+          "document": "添加的子用户 UIN/UID 和用户组 ID 关联关系",
+          "example": "无",
           "member": "GroupIdOfUidInfo",
           "name": "Info",
           "required": true,
@@ -4040,7 +4041,8 @@
       "members": [
         {
           "default": "",
-          "document": "要删除的用户 UID和用户组 ID对应数组",
+          "document": "要删除的用户 UIN/UID和用户组 ID对应数组",
+          "example": "无",
           "member": "GroupIdOfUidInfo",
           "name": "Info",
           "required": true,

@@ -269,6 +269,32 @@
       ],
       "type": "object"
     },
+    "KeyValue": {
+      "document": "键值对",
+      "members": [
+        {
+          "default": "",
+          "document": "键名",
+          "example": "aaa",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "键名对应值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RiskFieldsDesc": {
       "document": "风险实例字段描述",
       "members": [
@@ -301,6 +327,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段值对应字典\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "FieldDict",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

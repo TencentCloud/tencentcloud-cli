@@ -2483,6 +2483,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2491,6 +2492,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "test_device",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -2504,43 +2506,55 @@
       "members": [
         {
           "document": "设备名称",
+          "example": "test_device",
           "member": "string",
           "name": "DeviceName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "LoRa应用UUID",
+          "example": "0000000000000001",
           "member": "string",
           "name": "AppEui",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "LoRa设备UUID",
+          "example": "ffffff100000a680",
           "member": "string",
           "name": "DeviceEui",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "LoRa应用密钥",
+          "example": "98929b92f09e2daf676d646d0f61d258",
           "member": "string",
           "name": "AppKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备类型,目前支持A、B、C三种",
+          "example": "A",
           "member": "string",
           "name": "ClassType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "设备所属产品id",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

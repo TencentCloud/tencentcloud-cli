@@ -280,6 +280,14 @@
         "title": "查询报表数据"
       }
     ],
+    "DescribeScdnBotData": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotData\n&Domains.0=zc-test-a.qcloudwaf.com\n&StartTime=2020-04-20 00:00:00\n&EndTime=2020-04-20 23:59:59\n&Interval=2min\n&Area=overseas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Metric\": \"bot\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            },\n            {\n                \"Metric\": \"total\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            },\n            {\n                \"Metric\": \"qps\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"2min\",\n        \"RequestId\": \"8d492352-67f4-4fac-a752-331b973b3dcc\"\n    }\n}",
+        "title": "获取bot统计曲线图( Bot流量统计)"
+      }
+    ],
     "DescribeScdnBotRecords": [
       {
         "document": "",

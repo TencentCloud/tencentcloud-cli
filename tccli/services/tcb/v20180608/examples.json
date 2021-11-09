@@ -200,6 +200,14 @@
         "title": "示例"
       }
     ],
+    "DescribeCloudBaseRunOneClickTaskExternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunOneClickTaskExternal\n<公共请求参数>\n\n{\n    \"ExternalId\": \"xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EnvId\": \"xx\",\n        \"ServerName\": \"xx\",\n        \"FailReason\": \"xx\",\n        \"ExternalId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"VersionName\": \"xx\",\n        \"UserUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Stage\": \"xx\"\n    }\n}",
+        "title": "DescribeCloudBaseRunOneClickTaskExternal"
+      }
+    ],
     "DescribeCloudBaseRunOperationTypes": [
       {
         "document": "",
@@ -238,6 +246,14 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunServer\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ServerName\": \"xx\",\n        \"IsPublic\": true,\n        \"ImageRepo\": \"xx\",\n        \"TrafficType\": \"xx\",\n        \"SourceType\": \"xx\",\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"VersionItems\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"xx\",\n                \"Remark\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"BuildId\": 0,\n                \"UploadType\": \"xx\",\n                \"Priority\": 0,\n                \"UrlParam\": {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                },\n                \"FlowRatio\": 0,\n                \"MinReplicas\": 0,\n                \"IsDefaultPriority\": true,\n                \"FlowParams\": [\n                    {\n                        \"Priority\": 0,\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreatedTime\": \"xx\",\n                \"MaxReplicas\": 0\n            }\n        ]\n    }\n}",
         "title": "查看某个服务的装填"
+      }
+    ],
+    "DescribeCloudBaseRunServerDomainName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunServerDomainName\n<公共请求参数>\n\n{\n    \"ServerName\": \"xxxxxxx\",\n    \"UserEnvId\": \"xxxxx\",\n    \"UserUin\": \"xxxxxx\",\n    \"ExternalId\": \"xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DomainName\": \"xxxxxx\",\n        \"InternalDomain\": \"xxxxxx\",\n        \"PublicDomain\": \"xxxxxx\"\n    }\n}",
+        "title": "DescribeCloudBaseRunServerDomainName"
       }
     ],
     "DescribeCloudBaseRunServerVersion": [

@@ -324,7 +324,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetJarInfo\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\",\n    \"Id\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Jar\": {\n            \"Status\": 1,\n            \"OsInfo\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"Process\": [\n                {\n                    \"Status\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Version\": \"xx\",\n                    \"User\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"Path\": \"xx\"\n                }\n            ],\n            \"MachineName\": \"xx\",\n            \"Version\": \"xx\",\n            \"Path\": \"xx\",\n            \"Type\": 0,\n            \"MachineIp\": \"xx\",\n            \"Md5\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Jar\": {\n            \"Status\": 1,\n            \"OsInfo\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"Process\": [\n                {\n                    \"Status\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Version\": \"xx\",\n                    \"User\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"Path\": \"xx\"\n                }\n            ],\n            \"MachineName\": \"xx\",\n            \"Version\": \"xx\",\n            \"Path\": \"xx\",\n            \"Type\": 1,\n            \"MachineIp\": \"xx\",\n            \"Md5\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取Jar包详情"
       }
     ],
@@ -356,7 +356,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetPlanTaskList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"ConfigPath\": \"xx\",\n                \"Command\": \"xx\",\n                \"User\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Cycle\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"ConfigPath\": \"xx\",\n                \"Command\": \"xx\",\n                \"User\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"Cycle\": \"xx\",\n                \"Quuid\": \"xxxx-xxxx-xxxx-xxxx\",\n                \"Uuid\": \"xxxx-xxxx-xxxx-xxxx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
         "title": "查询资产管理计划任务列表"
       }
     ],
@@ -604,7 +604,7 @@
       {
         "document": "根据appid查询用户下全部的策略信息",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineStrategyList\n&Enabled=1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 50,\n        \"StrategyList\": [\n            {\n                \"StrategyName\": \"策略名\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 50,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"00,00,00\",\n                \"Enabled\": 1\n            },\n            {\n                \"StrategyName\": \"策略名2\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 60,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"12,00,00\",\n                \"Enabled\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"TotalCount\": 2,\n        \"StrategyList\": [\n            {\n                \"StrategyName\": \"策略名\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 50,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"00,00,00\",\n                \"Enabled\": 1\n            },\n            {\n                \"StrategyName\": \"策略名2\",\n                \"StrategyId\": \"策略id\",\n                \"HostCount\": 60,\n                \"ScanCycle\": 3,\n                \"ScanAt\": \"12,00,00\",\n                \"Enabled\": 1\n            }\n        ]\n    }\n}",
         "title": "用户基线策略列表查询"
       }
     ],
@@ -612,7 +612,7 @@
       {
         "document": "根据策略id基线检测项TOP查询基线检测项top",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeBaselineTop\n&StrategyId=1\n&Top=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"RuleTopList\": [\n            {\n                \"RuleName\": \"检测项名1\",\n                \"Level\": 1,\n                \"EventCount\": 4000\n            },\n            {\n                \"RuleName\": \"检测项名2\",\n                \"Level\": 2,\n                \"EventCount\": 4000\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1dd9f5e-4ac0-48a7-9410-c86d24656d9a\",\n        \"RuleTopList\": [\n            {\n                \"RuleName\": \"检测项名1\",\n                \"Level\": 1,\n                \"EventCount\": 4000,\n                \"RuleId\": 1\n            },\n            {\n                \"RuleName\": \"检测项名2\",\n                \"Level\": 2,\n                \"EventCount\": 4000,\n                \"RuleId\": 2\n            }\n        ]\n    }\n}",
         "title": "基线检测项TOP接口"
       }
     ],
@@ -676,7 +676,7 @@
       {
         "document": "专家服务-安全管家列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEmergencyResponseList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 7,\n        \"List\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TaskId\": \"cve2021-1616989795566545881\",\n                \"HostNum\": 1,\n                \"Status\": 1,\n                \"StartTime\": \"2021-03-29 12:49:55\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            },\n            {\n                \"TaskId\": \"cve2021-1617009909259811227\",\n                \"HostNum\": 1,\n                \"Status\": 0,\n                \"StartTime\": \"--\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            }\n        ],\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "专家服务-安全管家列表"
       }
     ],
@@ -692,7 +692,7 @@
       {
         "document": "专家服务-安全管家列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExpertServiceList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 7,\n        \"List\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 1,\n                \"OrderId\": 93,\n                \"Quuid\": \"0bd8d80d-b8e9-4096-afa1-f381f6c08ebb\",\n                \"Uuid\": \"0bd8d80d-b8e9-4096-afa1-f381f6c08ebb\",\n                \"Status\": 1,\n                \"StartTime\": \"2021-03-17 15:47:15\",\n                \"EndTime\": \"2021-04-17 15:47:15\",\n                \"HostName\": \"功能测试v_tximtan\",\n                \"HostIp\": \"10.0.0.135\",\n                \"RiskCount\": 6\n            },\n            {\n                \"Id\": 10,\n                \"OrderId\": 3,\n                \"Quuid\": \"d3f439cb-ab47-4834-8fd8-74eb16c83c58\",\n                \"Uuid\": \"d3f439cb-ab47-4834-8fd8-74eb16c83c58\",\n                \"Status\": 1,\n                \"StartTime\": \"2020-08-28 15:40:23\",\n                \"EndTime\": \"2021-08-28 15:40:23\",\n                \"HostName\": \"\",\n                \"HostIp\": \"\",\n                \"RiskCount\": 0\n            }\n        ],\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "专家服务-安全管家列表"
       }
     ],
@@ -972,7 +972,7 @@
       {
         "document": "专家服务-旗舰护网列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectNetList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 7,\n        \"List\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TaskId\": \"cve2021-1616989795566547835\",\n                \"ProtectDays\": 1,\n                \"Status\": 1,\n                \"StartTime\": \"2021-03-29 12:49:55\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            },\n            {\n                \"TaskId\": \"cve2021-1617009909259812569\",\n                \"ProtectDays\": 1,\n                \"Status\": 0,\n                \"StartTime\": \"--\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            }\n        ],\n        \"RequestId\": \"123456\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "专家服务-旗舰护网列表"
       }
     ],

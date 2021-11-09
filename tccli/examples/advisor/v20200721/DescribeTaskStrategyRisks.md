@@ -18,42 +18,50 @@ Output:
             {
                 "Field": "InstanceId",
                 "FieldName": "ID",
-                "FieldType": "string"
+                "FieldType": "string",
+                "FieldDict": {}
             },
             {
                 "Field": "InstanceName",
                 "FieldName": "名称",
-                "FieldType": "string"
+                "FieldType": "string",
+                "FieldDict": {}
             },
             {
                 "Field": "InstanceState",
                 "FieldName": "状态",
-                "FieldType": "string"
+                "FieldType": "string",
+                "FieldDict": {}
             },
             {
                 "Field": "Zone",
                 "FieldName": "可用区",
-                "FieldType": "string"
+                "FieldType": "string",
+                "FieldDict": {}
             },
             {
                 "Field": "PrivateIPAddresses",
                 "FieldName": "IP地址(内)",
-                "FieldType": "stringSlice"
+                "FieldType": "stringSlice",
+                "FieldDict": {}
             },
             {
                 "Field": "PublicIPAddresses",
                 "FieldName": "IP地址(公)",
-                "FieldType": "stringSlice"
+                "FieldType": "stringSlice",
+                "FieldDict": {}
             },
             {
                 "Field": "Region",
                 "FieldName": "地域",
-                "FieldType": "string"
+                "FieldType": "string",
+                "FieldDict": {}
             },
             {
                 "Field": "Tags",
                 "FieldName": "标签",
-                "FieldType": "tags"
+                "FieldType": "tags",
+                "FieldDict": {}
             }
         ],
         "RiskTotalCount": 3,

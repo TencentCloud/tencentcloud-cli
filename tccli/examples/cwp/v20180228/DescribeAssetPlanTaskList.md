@@ -28,7 +28,9 @@ Output:
                 "Command": "xx",
                 "User": "xx",
                 "MachineIp": "xx",
-                "Cycle": "xx"
+                "Cycle": "xx",
+                "Quuid": "xxxx-xxxx-xxxx-xxxx",
+                "Uuid": "xxxx-xxxx-xxxx-xxxx"
             }
         ],
         "RequestId": "xx",

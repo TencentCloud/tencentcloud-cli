@@ -1180,6 +1180,15 @@
           "name": "ImageBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要百科信息 1：是，0: 否，默认是0",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedLemma",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

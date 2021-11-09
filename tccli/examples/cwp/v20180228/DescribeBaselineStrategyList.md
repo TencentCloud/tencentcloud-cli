@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "f1dd9f5e-4ac0-48a7-9410-c86d24656d9a",
-        "TotalCount": 50,
+        "TotalCount": 2,
         "StrategyList": [
             {
                 "StrategyName": "策略名",
