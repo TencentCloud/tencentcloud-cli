@@ -7688,6 +7688,7 @@
         {
           "default": "",
           "document": "负载均衡监听器 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lbl-odt45qxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -7697,6 +7698,7 @@
         {
           "default": "",
           "document": "监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -7706,6 +7708,7 @@
         {
           "default": "",
           "document": "监听器端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -7715,6 +7718,7 @@
         {
           "default": "",
           "document": "监听器的健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": true,
@@ -7724,6 +7728,7 @@
         {
           "default": "",
           "document": "请求的调度方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": true,
@@ -7733,6 +7738,7 @@
         {
           "default": "",
           "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": true,
@@ -7742,6 +7748,7 @@
         {
           "default": "",
           "document": "监听器的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
           "member": "string",
           "name": "ListenerName",
           "required": true,
@@ -7751,6 +7758,7 @@
         {
           "default": "",
           "document": "监听器的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-01 15:27:04",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -7760,10 +7768,21 @@
         {
           "default": "",
           "document": "监听器的会话类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口段结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EndPort",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

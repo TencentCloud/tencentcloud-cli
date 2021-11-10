@@ -14,7 +14,8 @@ Output:
 {
     "Response": {
         "Status": "xx",
-        "EnvId": "xx",
+        "UserEnvId": "xx",
+        "EnvId": "xxxx",
         "ServerName": "xx",
         "FailReason": "xx",
         "ExternalId": "xx",

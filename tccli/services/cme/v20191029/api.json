@@ -4863,7 +4863,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称。",
+          "document": "平台标识。",
           "example": "test",
           "member": "string",
           "name": "Platform",

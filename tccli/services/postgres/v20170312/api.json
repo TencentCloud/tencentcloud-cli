@@ -4052,7 +4052,7 @@
         },
         {
           "default": "",
-          "document": "升级后的实例内存大小，单位GiB。",
+          "document": "修改后的实例内存大小，单位GiB。",
           "example": "1000",
           "member": "uint64",
           "name": "Memory",
@@ -4061,7 +4061,7 @@
         },
         {
           "default": "",
-          "document": "升级后的实例磁盘大小，单位GiB。",
+          "document": "修改后的实例磁盘大小，单位GiB。",
           "example": "16",
           "member": "uint64",
           "name": "Storage",

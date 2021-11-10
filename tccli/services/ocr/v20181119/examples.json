@@ -398,6 +398,14 @@
         "title": "定额发票识别示例代码"
       }
     ],
+    "RecognizeContainerOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeContainerOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ContainerId\": \"APHU7042391\",\n        \"ContainerType\": \"45G1\",\n        \"GrossKG\": \"32500KG\",\n        \"GrossLB\": \"71650LB\",\n        \"PayloadKG\": \"28630KG\",\n        \"PayloadLB\": \"63120LB\",\n        \"TareKG\": \"3870KG\",\n        \"TareLB\": \"8530LB\",\n        \"CapacityM3\": \"76.4CUM\",\n        \"CapacityFT3\": \"2700CUFT\",\n        \"Warn\": [\n            -9926,\n            -9927\n        ],\n        \"RequestId\": \"45afaba3-5fb8-480e-83f9-2681f1373783\"\n    }\n}",
+        "title": "集装箱识别示例代码"
+      }
+    ],
     "RecognizeOnlineTaxiItineraryOCR": [
       {
         "document": "",
@@ -426,7 +434,7 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=ResidenceBookletOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HouseholdNumber\": \"000006498\",\n        \"Name\": \"喻玺\",\n        \"Sex\": \"男\",\n        \"BirthPlace\": \"四川省合江县\",\n        \"Nation\": \"汉族\",\n        \"NativePlace\": \"四川省合江县\",\n        \"BirthDate\": \"1980年1月11日\",\n        \"IdCardNumber\": \"510522198001110255\",\n        \"EducationDegree\": \"高中毕业\",\n        \"ServicePlace\": \"合江镇\",\n        \"Household\": \"家庭户\",\n        \"Address\": \"上海市徐汇区田林路397号腾云大厦\",\n        \"RequestId\": \"973edeb4-d0a1-4e6c-aa9c-fdfc7b24b357\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServicePlace\": \"xx\",\n        \"FormerName\": \"xx\",\n        \"HouseholderName\": \"xx\",\n        \"Sex\": \"xx\",\n        \"BloodType\": \"xx\",\n        \"HouseholdNumber\": \"xx\",\n        \"Relationship\": \"xx\",\n        \"MoveToSiteInformation\": \"xx\",\n        \"BirthDate\": \"xx\",\n        \"Nation\": \"xx\",\n        \"Address\": \"xx\",\n        \"EducationDegree\": \"xx\",\n        \"Name\": \"xx\",\n        \"HomePageNumber\": \"xx\",\n        \"MaritalStatus\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Signature\": \"xx\",\n        \"IssueDate\": \"xx\",\n        \"RegistrationDate\": \"xx\",\n        \"OtherAddresses\": \"xx\",\n        \"BirthPlace\": \"xx\",\n        \"VeteranStatus\": \"xx\",\n        \"MoveToCityInformation\": \"xx\",\n        \"Household\": \"xx\",\n        \"Profession\": \"xx\",\n        \"NativePlace\": \"xx\",\n        \"Height\": \"xx\",\n        \"ReligiousBelief\": \"xx\",\n        \"IdCardNumber\": \"xx\"\n    }\n}",
         "title": "户口本识别示例代码"
       }
     ],

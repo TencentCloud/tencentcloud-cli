@@ -2947,6 +2947,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2982,7 +2991,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "拉取结果数量",
+          "document": "内部结果数量，并不等同于事件总数。",
           "example": "10",
           "member": "uint64",
           "name": "Total",

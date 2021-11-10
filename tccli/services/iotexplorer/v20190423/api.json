@@ -18,6 +18,12 @@
       "name": "设备远程控制",
       "output": "ControlDeviceDataResponse"
     },
+    "CreateBatchProduction": {
+      "document": "用于新建批量生产设备",
+      "input": "CreateBatchProductionRequest",
+      "name": "创建量产任务",
+      "output": "CreateBatchProductionResponse"
+    },
     "CreateDevice": {
       "document": "创建设备",
       "input": "CreateDeviceRequest",
@@ -144,6 +150,12 @@
       "name": "删除规则",
       "output": "DeleteTopicRuleResponse"
     },
+    "DescribeBatchProduction": {
+      "document": "获取量产详情信息。",
+      "input": "DescribeBatchProductionRequest",
+      "name": "获取量产详情",
+      "output": "DescribeBatchProductionResponse"
+    },
     "DescribeDevice": {
       "document": "用于查看某个设备的详细信息",
       "input": "DescribeDeviceRequest",
@@ -251,6 +263,12 @@
       "input": "EnableTopicRuleRequest",
       "name": "启用规则",
       "output": "EnableTopicRuleResponse"
+    },
+    "GetBatchProductionsList": {
+      "document": "列出量产数据列表信息。",
+      "input": "GetBatchProductionsListRequest",
+      "name": "列出量产数据列表",
+      "output": "GetBatchProductionsListResponse"
     },
     "GetCOSURL": {
       "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
@@ -546,6 +564,57 @@
       ],
       "usage": "out"
     },
+    "BatchProductionInfo": {
+      "document": "获取返回列表的详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "量产ID",
+          "member": "string",
+          "name": "BatchProductionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "烧录方式",
+          "member": "int64",
+          "name": "BurnMethod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CallDeviceActionAsyncRequest": {
       "document": "CallDeviceActionAsync请求参数结构体",
       "members": [
@@ -769,6 +838,114 @@
           "name": "Result",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchProductionRequest": {
+      "document": "CreateBatchProduction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "prj-pq00mstg",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "R32ONVL0EU",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "烧录方式，0为直接烧录，1为动态注册。",
+          "example": "0",
+          "member": "int64",
+          "name": "BurnMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "生成方式，0为系统生成，1为文件上传。",
+          "example": "0",
+          "member": "int64",
+          "name": "GenerationMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件上传URL，用于文件上传时填写。",
+          "example": "http://tencent.com",
+          "member": "string",
+          "name": "UploadUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "量产数量，用于系统生成时填写。",
+          "example": "5",
+          "member": "int64",
+          "name": "BatchCnt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否生成二维码,0为不生成，1为生成。",
+          "example": "0",
+          "member": "int64",
+          "name": "GenerationQRCode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchProductionResponse": {
+      "document": "CreateBatchProduction返回参数结构体",
+      "members": [
+        {
+          "document": "项目Id",
+          "example": "prj-pq00mstg",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品Id",
+          "example": "R32ONVL0EU",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "量产id",
+          "example": "LC-74ais6a3",
+          "member": "string",
+          "name": "BatchProductionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1814,6 +1991,82 @@
     "DeleteTopicRuleResponse": {
       "document": "DeleteTopicRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchProductionRequest": {
+      "document": "DescribeBatchProduction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "量产ID",
+          "member": "string",
+          "name": "BatchProductionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchProductionResponse": {
+      "document": "DescribeBatchProduction返回参数结构体",
+      "members": [
+        {
+          "document": "量产数量。",
+          "member": "int64",
+          "name": "BatchCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "烧录方式。",
+          "member": "int64",
+          "name": "BurnMethod",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间。",
+          "member": "int64",
+          "name": "CreateTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载URL。",
+          "member": "string",
+          "name": "DownloadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生成方式。",
+          "member": "int64",
+          "name": "GenerationMethod",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传URL。",
+          "member": "string",
+          "name": "UploadUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3532,6 +3785,62 @@
         }
       ],
       "usage": "out"
+    },
+    "GetBatchProductionsListRequest": {
+      "document": "GetBatchProductionsList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量限制",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBatchProductionsListResponse": {
+      "document": "GetBatchProductionsList返回参数结构体",
+      "members": [
+        {
+          "document": "返回详情信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BatchProductionInfo",
+          "name": "BatchProductions",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回数量。",
+          "member": "int64",
+          "name": "TotalCnt",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetCOSURLRequest": {
       "document": "GetCOSURL请求参数结构体",

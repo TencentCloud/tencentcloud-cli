@@ -312,6 +312,22 @@
         "title": "查询API状态"
       }
     ],
+    "DescribeExclusiveInstanceDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExclusiveInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"InstanceId\": \"instance-0c96l2bo\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Zones\": [\n                \"ap-guangzhou-1\"\n            ],\n            \"InstanceName\": \"test_instance\",\n            \"InstanceDescription\": \"\",\n            \"InstanceChargeType\": \"PREPAID\",\n            \"InstanceState\": \"RUNNING\",\n            \"InstanceChargePrepaid\": {\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"ExpiredTime\": \"2018-10-30T04:24:19\"\n            },\n            \"InstanceType\": \"BASIC\",\n            \"NetworkConfig\": {\n                \"InternetMaxBandwidthOut\": 10,\n                \"EnableInternetInbound\": true,\n                \"EnableInternetOutbound\": true,\n                \"InboundIpAddresses\": [\n                    \"10.10.10.10\"\n                ],\n                \"OutboundIpAddresses\": [\n                    \"10.10.10.11\"\n                ]\n            },\n            \"VpcConfig\": {\n                \"UniqVpcId\": \"vpc-12345\",\n                \"UniqSubnetId\": \"subnet-12345\"\n            },\n            \"Parameters\": [\n                {\n                    \"Name\": \"ServiceRequestNumPreSec\",\n                    \"Value\": 500,\n                    \"Default\": 500,\n                    \"Unit\": \"次/秒\",\n                    \"Type\": \"integer\",\n                    \"Minimum\": 0,\n                    \"Maximum\": 500,\n                    \"ModifedTime\": \"2018-10-30T04:24:19\"\n                }\n            ],\n            \"IsolationStartedTime\": \"2018-10-30T04:24:19Z\",\n            \"CreatedTime\": \"2018-10-30T04:24:19Z\"\n        },\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
+        "title": "DescribeExclusiveInstanceDetail"
+      }
+    ],
+    "DescribeExclusiveInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExclusiveInstances\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"InstanceId\": \"instance-0c96l2bo\",\n            \"InstanceName\": \"test_instance\",\n            \"InstanceDescription\": \"\",\n            \"InstanceChargeType\": \"PREPAID\",\n            \"InstanceState\": \"RUNNING\",\n            \"InstanceType\": \"BASIC\",\n            \"DealName\": \"xx\",\n            \"ResourceId\": \"xx\",\n            \"CreatedTime\": \"2018-10-30T04:24:19Z\"\n        },\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
+        "title": "DescribeExclusiveInstances"
+      }
+    ],
     "DescribeIPStrategy": [
       {
         "document": "",
@@ -556,6 +572,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyApiIncrement\r\n&ServiceId=\"service-123\"\r\n&ApiId=\"api-123\"\r\n&BusinessType=\"OAUTH\"\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c570c877-3c23-4d84-9589-68914dab1507\"\n    }\n}",
         "title": "ModifyApiIncrement"
+      }
+    ],
+    "ModifyExclusiveInstance": [
+      {
+        "document": "",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=ModifyExclusiveInstance\n&InstanceId=instance-crbytkvwas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"InstanceId\": \"instance-0c96l2bo\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Zones\": [\n                \"ap-guangzhou-1\"\n            ],\n            \"InstanceName\": \"test_instance\",\n            \"InstanceDescription\": \"\",\n            \"InstanceChargeType\": \"PREPAID\",\n            \"InstanceState\": \"RUNNING\",\n            \"InstanceChargePrepaid\": {\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"ExpiredTime\": \"2018-10-30T04:24:19\"\n            },\n            \"InstanceType\": \"BASIC\",\n            \"NetworkConfig\": {\n                \"InternetMaxBandwidthOut\": 10,\n                \"EnableInternetInbound\": true,\n                \"EnableInternetOutbound\": true,\n                \"InboundIpAddresses\": [\n                    \"10.10.10.10\"\n                ],\n                \"OutboundIpAddresses\": [\n                    \"10.10.10.11\"\n                ]\n            },\n            \"VpcConfig\": {\n                \"UniqVpcId\": \"vpc-12345\",\n                \"UniqSubnetId\": \"subnet-12345\"\n            },\n            \"Parameters\": [\n                {}\n            ],\n            \"IsolationStartedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"CreatedTime\": \"2018-10-30T04:24:19Z\"\n        },\n        \"RequestId\": \"e3705d00-bfe0-4fde-942c-cebd6b12431b\"\n    }\n}",
+        "title": "ModifyExclusiveInstance"
       }
     ],
     "ModifyIPStrategy": [

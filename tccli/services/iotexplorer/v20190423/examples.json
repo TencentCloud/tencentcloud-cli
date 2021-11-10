@@ -42,6 +42,20 @@
         "title": "设置设备数据"
       }
     ],
+    "CreateBatchProduction": [
+      {
+        "document": "使用系统生成的方式进行量产",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateBatchProduction\n&ProjectId=prj-pq00mstg\n&ProductId=R32ONVL0EU\n&BurnMethod=0\n&GenerationMethod=0\n&BatchCnt=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client2213121026\"\n    }\n}",
+        "title": "新建量产-2"
+      },
+      {
+        "document": "使用上传文件 url 的方式进行量产",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateBatchProduction\n&ProjectId=prj-pq00mstg\n&ProductId=R32ONVL0EU\n&BurnMethod=0\n&GenerationMethod=1\n&UploadUrl=www.xxxxxxxx.com/xxxxxx.csv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client3331231026\"\n    }\n}",
+        "title": "新建量产"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "创建设备",
@@ -222,6 +236,14 @@
         "title": "删除规则"
       }
     ],
+    "DescribeBatchProduction": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeBatchProduction\r\n&ProductId=R32ONVL0EU\r\n&BatchProductionId=LC-ya6zinv9\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BatchCnt\": 3,\n        \"BurnMethod\": 0,\n        \"CreateTime\": 1572233486,\n        \"DownloadUrl\": \"https://batch-productions-test-1256872341.cos.ap-guangzhou.myqcloud.com/100000546882%2FR32ONVL0EU_LC-6mgj9akp.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDMUM9hdmn35rHZe72Y6UfliNo1PYQFZln%26q-sign-time%3D1572233867%3B1572234767%26q-key-time%3D1572233867%3B1572234767%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da31f6ed1e25d3dc753516b74ee33559d37cbc7f2\",\n        \"GenerationMethod\": 0,\n        \"RequestId\": \"rest-clieet20111026\",\n        \"UploadUrl\": \"\"\n    }\n}",
+        "title": "获取量产详情"
+      }
+    ],
     "DescribeDevice": [
       {
         "document": "用于查看设备信息",
@@ -364,6 +386,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "启用规则"
+      }
+    ],
+    "GetBatchProductionsList": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetBatchProductionsList\r\n&ProjectId=prj-pq00mstg\r\n&Offset=0\r\n&Limit=3\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BatchProductions\": [\n            {\n                \"BatchProductionId\": \"LC-7n72wlih\",\n                \"ProductId\": \"R32ONVL0EU\",\n                \"ProductName\": \"test1\",\n                \"BurnMethod\": 0,\n                \"CreateTime\": 1574758357\n            }\n        ],\n        \"RequestId\": \"rest-client230191026\",\n        \"TotalCnt\": 1\n    }\n}",
+        "title": "列出量产数据列表"
       }
     ],
     "GetCOSURL": [

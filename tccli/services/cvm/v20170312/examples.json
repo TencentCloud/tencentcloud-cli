@@ -447,9 +447,15 @@
     "ModifyInstancesChargeType": [
       {
         "document": "本示例用于切换一个实例的计费模式。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesChargeType\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceChargeType=PREPAID\r\n&InstanceChargePrepaid.Period=1\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "本示例将实例计费模式切换为预付费模式，且时长为1个月。"
+      },
+      {
+        "document": "本示例用于切换一个实例的计费模式。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=POSTPAID_BY_HOUR\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "本示例将实例计费模式切换为按小时后付费模式。"
       }
     ],
     "ModifyInstancesProject": [
@@ -517,7 +523,7 @@
     "RenewInstances": [
       {
         "document": "本示例用于续费一个实例，指定续费实例Id是ins-r8hr2upy，续费一个月，到期时通知过期但不自动续费。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=RenewInstances\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceChargePrepaid.Period=1\r\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_MANUAL_RENEW\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=RenewInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargePrepaid.Period=1\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_MANUAL_RENEW\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "续费实例"
       }
