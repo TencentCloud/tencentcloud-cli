@@ -324,6 +324,12 @@
       "name": "修改负载均衡实例的属性",
       "output": "ModifyLoadBalancerAttributesResponse"
     },
+    "ModifyLoadBalancerSla": {
+      "document": "升、降配接口。支持共享型clb升级到性能保障型clb。支持性能保障型提升等级。支持性能保障降低规格。（不支持性能保障降级到共享型）。",
+      "input": "ModifyLoadBalancerSlaRequest",
+      "name": "性能保障变配",
+      "output": "ModifyLoadBalancerSlaResponse"
+    },
     "ModifyRule": {
       "document": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
       "input": "ModifyRuleRequest",
@@ -6702,6 +6708,32 @@
       ],
       "type": "object"
     },
+    "ModifyLoadBalancerSlaRequest": {
+      "document": "ModifyLoadBalancerSla请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡性能保障实例ID和变配的目标规格",
+          "member": "SlaUpdateParam",
+          "name": "LoadBalancerSla",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerSlaResponse": {
+      "document": "ModifyLoadBalancerSla返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRuleRequest": {
       "document": "ModifyRule请求参数结构体",
       "members": [
@@ -8113,6 +8145,30 @@
         }
       ],
       "type": "object"
+    },
+    "SlaUpdateParam": {
+      "document": "性能保障变配参数",
+      "members": [
+        {
+          "default": "",
+          "document": "lb的字符串ID",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "需要变更的性能保障级别",
+          "member": "string",
+          "name": "SlaType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SnatIp": {
       "document": "SnatIp的信息结构",

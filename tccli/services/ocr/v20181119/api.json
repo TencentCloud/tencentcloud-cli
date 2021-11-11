@@ -1030,7 +1030,8 @@
       "members": [
         {
           "default": "",
-          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市。",
+          "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1040,6 +1041,7 @@
         {
           "default": "",
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
+          "example": "无",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -1049,6 +1051,7 @@
         {
           "default": "",
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
+          "example": "无",
           "member": "Rect",
           "name": "Rect",
           "required": true,

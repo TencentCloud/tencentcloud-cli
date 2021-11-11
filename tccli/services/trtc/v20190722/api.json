@@ -25,7 +25,7 @@
       "output": "DescribeAbnormalEventResponse"
     },
     "DescribeCallDetail": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询实时数据时，查询起止时间不超过1个小时，每次查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType，UserIds为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。\n**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。",
       "input": "DescribeCallDetailRequest",
       "name": "查询历史用户列表与通话指标",
       "output": "DescribeCallDetailResponse"
@@ -545,7 +545,7 @@
         },
         {
           "default": "",
-          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；\naBlock：音频卡顿时长；\nbigvBit：上/下行视频码率；\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；\naLoss：上/下行音频丢包；\nbigvLoss：上/下行视频丢包；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
+          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
           "example": "[\"bigvCapFps\\n\"]",
           "member": "string",
           "name": "DataType",

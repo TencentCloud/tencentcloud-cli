@@ -2087,6 +2087,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID",
+          "example": "lb-f9zyj3kb",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -2095,6 +2096,7 @@
         {
           "default": "",
           "document": "要将监听器创建到哪些端口，每个端口对应一个新的监听器",
+          "example": "[\"13001\\n\",\"13002\\n\",\"13003\\n\"]",
           "member": "int64",
           "name": "Ports",
           "required": true,
@@ -2103,6 +2105,7 @@
         {
           "default": "",
           "document": "监听器协议： TCP | UDP",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -2111,6 +2114,7 @@
         {
           "default": "",
           "document": "要创建的监听器名称列表，名称与Ports数组按序一一对应，如不需立即命名，则无需提供此参数",
+          "example": "[\"lis0\\n\",\"lis1\\n\"]",
           "member": "string",
           "name": "ListenerNames",
           "required": false,
@@ -2119,6 +2123,7 @@
         {
           "default": "",
           "document": "健康检查相关参数",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -2127,6 +2132,7 @@
         {
           "default": "",
           "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。此参数仅适用于TCP/UDP监听器。",
+          "example": "60",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -2135,6 +2141,7 @@
         {
           "default": "",
           "document": "监听器转发的方式。可选值：WRR、LEAST_CONN\n分别表示按权重轮询、最小连接数， 默认为 WRR。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -2143,10 +2150,20 @@
         {
           "default": "",
           "document": "会话保持类型。不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。",
+          "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "批量端口段的结束端口，必须和Ports长度一样。",
+          "example": "[80,81]",
+          "member": "int64",
+          "name": "EndPorts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2156,8 +2173,10 @@
       "members": [
         {
           "document": "创建的监听器的唯一标识数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lbl-knd4jr8m\",\"lbl-2fcyclbg\",\"lbl-m5f7z60y\"]",
           "member": "string",
           "name": "ListenerIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

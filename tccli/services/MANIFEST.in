@@ -327,6 +327,8 @@ include tccli/services/tcex/v20200727/api.json
 include tccli/services/tcex/v20200727/examples.json
 include tccli/services/tci/v20190318/api.json
 include tccli/services/tci/v20190318/examples.json
+include tccli/services/tcm/v20210413/api.json
+include tccli/services/tcm/v20210413/examples.json
 include tccli/services/tcr/v20190924/api.json
 include tccli/services/tcr/v20190924/examples.json
 include tccli/services/tdid/v20210519/api.json

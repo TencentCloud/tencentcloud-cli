@@ -198,6 +198,12 @@
       "name": "查询备份数据库列表",
       "output": "DescribeBackupDatabasesResponse"
     },
+    "DescribeBackupDownloadRestriction": {
+      "document": "该接口用户查询当前地域用户设置的默认备份下载来源限制。",
+      "input": "DescribeBackupDownloadRestrictionRequest",
+      "name": "查询备份文件下载源限制",
+      "output": "DescribeBackupDownloadRestrictionResponse"
+    },
     "DescribeBackupOverview": {
       "document": "本接口(DescribeBackupOverview)用于查询用户的备份概览。返回用户当前备份总个数、备份总的占用容量、赠送的免费容量、计费容量（容量单位为字节）。",
       "input": "DescribeBackupOverviewRequest",
@@ -521,6 +527,12 @@
       "input": "ModifyBackupConfigRequest",
       "name": "修改数据库备份配置",
       "output": "ModifyBackupConfigResponse"
+    },
+    "ModifyBackupDownloadRestriction": {
+      "document": "该接口用于修改用户当前地域的备份文件限制下载来源，可以设置内外网均可下载、仅内网可下载，或内网指定的vpc、ip可以下载。",
+      "input": "ModifyBackupDownloadRestrictionRequest",
+      "name": "修改备份文件的限制下载来源",
+      "output": "ModifyBackupDownloadRestrictionResponse"
     },
     "ModifyDBInstanceName": {
       "document": "本接口(ModifyDBInstanceName)用于修改云数据库实例的名称。",
@@ -1490,6 +1502,32 @@
         }
       ],
       "usage": "in"
+    },
+    "BackupLimitVpcItem": {
+      "document": "备份文件限制下载来源VPC设置项",
+      "members": [
+        {
+          "default": "",
+          "document": "限制下载来源的地域。目前仅支持当前地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "限制下载的vpc列表。",
+          "example": "[\"vpc-XX1\", \"vpc-XX2\"]",
+          "member": "string",
+          "name": "VpcList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BackupSummaryItem": {
       "document": "实例备份统计项",
@@ -4434,6 +4472,68 @@
           "document": "符合查询条件的数据库数组。",
           "member": "DatabaseName",
           "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDownloadRestrictionRequest": {
+      "document": "DescribeBackupDownloadRestriction请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBackupDownloadRestrictionResponse": {
+      "document": "DescribeBackupDownloadRestriction返回参数结构体",
+      "members": [
+        {
+          "document": "NoLimit 不限制,内外网都可以下载； LimitOnlyIntranet 仅内网可下载； Customize 用户自定义vpc:ip可下载。 只有该值为 Customize 时， LimitVpc 和 LimitIp 才有意义。",
+          "example": "LimitOnlyIntranet",
+          "member": "string",
+          "name": "LimitType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该参数仅支持 In， 表示 LimitVpc 指定的vpc可以下载。",
+          "example": "In",
+          "member": "string",
+          "name": "VpcComparisonSymbol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "In: 指定的ip可以下载； NotIn: 指定的ip不可以下载。",
+          "example": "NotIn",
+          "member": "string",
+          "name": "IpComparisonSymbol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "限制下载的vpc设置。",
+          "example": "无",
+          "member": "BackupLimitVpcItem",
+          "name": "LimitVpc",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "限制下载的ip设置。",
+          "example": "[\"1.2.3.4\",\"4.3.2.1\"]",
+          "member": "string",
+          "name": "LimitIp",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9118,6 +9218,69 @@
     },
     "ModifyBackupConfigResponse": {
       "document": "ModifyBackupConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupDownloadRestrictionRequest": {
+      "document": "ModifyBackupDownloadRestriction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "NoLimit 不限制,内外网都可以下载； LimitOnlyIntranet 仅内网可下载； Customize 用户自定义vpc:ip可下载。 只有该值为 Customize 时，才可以设置 LimitVpc 和 LimitIp 。",
+          "example": "NoLimit",
+          "member": "string",
+          "name": "LimitType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该参数仅支持 In， 表示 LimitVpc 指定的vpc可以下载。默认为In。",
+          "example": "In",
+          "member": "string",
+          "name": "VpcComparisonSymbol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "In: 指定的ip可以下载； NotIn: 指定的ip不可以下载。 默认为In。",
+          "example": "In",
+          "member": "string",
+          "name": "IpComparisonSymbol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限制下载的vpc设置。",
+          "example": "[{\"Region\": \"ap-guangzhou\", \"VpcList\": [\"vpc-XX1\"] } ]",
+          "member": "BackupLimitVpcItem",
+          "name": "LimitVpc",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限制下载的ip设置",
+          "example": "[\"1.2.3.4\",\"4.3.2.1\"]",
+          "member": "string",
+          "name": "LimitIp",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupDownloadRestrictionResponse": {
+      "document": "ModifyBackupDownloadRestriction返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
