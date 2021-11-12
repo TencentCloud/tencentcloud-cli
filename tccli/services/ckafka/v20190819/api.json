@@ -168,6 +168,12 @@
       "name": "获取主题列表详情",
       "output": "DescribeTopicDetailResponse"
     },
+    "DescribeTopicDiskUsage": {
+      "document": "获取Topic 的磁盘占用量",
+      "input": "DescribeTopicDiskUsageRequest",
+      "name": "获取主题的磁盘占用量",
+      "output": "DescribeTopicDiskUsageResponse"
+    },
     "DescribeTopicSubscribeGroup": {
       "document": "查询订阅某主题消息分组信息",
       "input": "DescribeTopicSubscribeGroupRequest",
@@ -2671,6 +2677,51 @@
       ],
       "type": "object"
     },
+    "DescribeTopicDiskUsageRequest": {
+      "document": "DescribeTopicDiskUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ckafka-goik23",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic名称",
+          "example": "NamedTopic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicDiskUsageResponse": {
+      "document": "DescribeTopicDiskUsage返回参数结构体",
+      "members": [
+        {
+          "document": "topic占用磁盘量",
+          "example": "无",
+          "member": "KafkaTopicDiskUsage",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicRequest": {
       "document": "DescribeTopic请求参数结构体",
       "members": [
@@ -4093,6 +4144,42 @@
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KafkaTopicDiskUsage": {
+      "document": "描述主题磁盘占用量",
+      "members": [
+        {
+          "default": "",
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nameTopic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-iyu846",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘占用量(单位：MBytes)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1454366",
+          "member": "uint64",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

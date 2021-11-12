@@ -4406,7 +4406,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "环境Id",
+          "document": "弃用",
           "example": "无",
           "member": "string",
           "name": "EnvId",
@@ -4473,6 +4473,15 @@
           "example": "无",
           "member": "string",
           "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户envId",
+          "example": "无",
+          "member": "string",
+          "name": "UserEnvId",
           "required": true,
           "type": "string",
           "value_allowed_null": false

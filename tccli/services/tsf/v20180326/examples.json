@@ -91,7 +91,7 @@
     "CreateConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateConfig\r\n&ApplicationId=application-gyq2xry5\r\n&ConfigName=test_openapi_config\r\n&ConfigVersion=v1.0\r\n&ConfigValue=api.invok.limit: 5000\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateConfig\n&ApplicationId=application-gyq2xry5\n&ConfigName=test_openapi_config\n&ConfigVersion=v1.0\n&ConfigValue=api.invok.limit: 5000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8007ea57-6d26-43db-aa75-ad72cb3669ca\",\n        \"Result\": true\n    }\n}",
         "title": "创建配置项"
       }
@@ -131,16 +131,16 @@
     "CreateLane": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateLane\r\n&LaneName=test\r\n&Remark=test\r\n&LaneGroupList.0.GroupId=group-9yn758ad\r\n&LaneGroupList.0.Entrance=true\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"08238fd3-3691-4f8a-958d-241dd1d8c3a2\",\"Result\":\"lane-5yrdkb8v\"}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateLane\n&LaneName=test\n&Remark=test\n&LaneGroupList.0.GroupId=group-9yn758ad\n&LaneGroupList.0.Entrance=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建泳道"
       }
     ],
     "CreateLaneRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateLaneRule\r\n&RuleName=111\r\n&Remark=111\r\n&RuleTagList.0.TagName=11\r\n&RuleTagList.0.TagOperator=EQUAL\r\n&RuleTagList.0.TagValue=111\r\n&RuleTagRelationship=RELEATION_AND\r\n&LaneId=lane-6ymrl42a\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"643dda99-d5ca-4b6e-a394-a049e7478ae9\",\"Result\":\"lane-r-jy92q54a\"}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaneRule\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"RuleTagList\": [\n        {\n            \"UpdateTime\": 0,\n            \"TagId\": \"xx\",\n            \"TagOperator\": \"xx\",\n            \"TagValue\": \"xx\",\n            \"TagName\": \"xx\",\n            \"LaneRuleId\": \"xx\",\n            \"CreateTime\": 0\n        }\n    ],\n    \"RuleName\": \"xx\",\n    \"ProgramIdList\": [\n        \"xx\"\n    ],\n    \"LaneId\": \"xx\",\n    \"RuleTagRelationship\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建泳道规则"
       }
     ],
@@ -171,8 +171,8 @@
     "CreatePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreatePublicConfig\r\n&ConfigName=testconfig\r\n&ConfigVersion=1.3\r\n&ConfigValue=tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d600e1f-87c3-4aa6-afa5-a4f8330fa180\",\n        \"Result\": true\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreatePublicConfig\n&ConfigName=testconfig\n&ConfigVersion=1.3\n&ConfigValue=tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d600e1f-87c3-4aa6-afa5-a4f8330fa181\",\n        \"Result\": true\n    }\n}",
         "title": "创建公共配置项"
       }
     ],
@@ -683,16 +683,16 @@
     "DescribeLaneRules": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLaneRules\r\n&Limit=0\r\n&Offset=10\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"2fc1e275-7cb3-41a7-a730-2f8576af3df2\",\"Result\":{\"TotalCount\":5,\"Content\":[{\"RuleId\":\"lane-r-6a7gkd5a\",\"RuleName\":\"testlea\",\"Priority\":1,\"Remark\":\"\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_OR\",\"LaneId\":\"lane-gyqkq9dy\",\"Enable\":true,\"CreateTime\":1586353671000,\"UpdateTime\":1586353671000},{\"RuleId\":\"lane-r-6ym2jmkv\",\"RuleName\":\"测试网关\",\"Priority\":2,\"Remark\":\"\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"LaneId\":\"lane-jy9lp7zy\",\"Enable\":true,\"CreateTime\":1586353671000,\"UpdateTime\":1586353671000},{\"RuleId\":\"lane-r-ba2xk9jy\",\"RuleName\":\"sdfasf\",\"Priority\":3,\"Remark\":\"\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"LaneId\":\"lane-5yrdkb8v\",\"Enable\":false,\"CreateTime\":1586353671000,\"UpdateTime\":1586353671000},{\"RuleId\":\"lane-r-byxnlxra\",\"RuleName\":\"1213123\",\"Priority\":4,\"Remark\":\"23131212312\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"LaneId\":\"lane-5yrdkb8v\",\"Enable\":false,\"CreateTime\":1586353671000,\"UpdateTime\":1586353671000},{\"RuleId\":\"lane-r-nygd5xwy\",\"RuleName\":\"dsasd\",\"Priority\":5,\"Remark\":\"\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_OR\",\"LaneId\":\"lane-5yrdkb8v\",\"Enable\":true,\"CreateTime\":1586353671000,\"UpdateTime\":1586353671000}]}}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLaneRules\n&Limit=0\n&Offset=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Remark\": \"xx\",\n                    \"Enable\": true,\n                    \"RuleTagList\": [\n                        {\n                            \"UpdateTime\": 0,\n                            \"TagId\": \"xx\",\n                            \"TagOperator\": \"xx\",\n                            \"TagValue\": \"xx\",\n                            \"TagName\": \"xx\",\n                            \"LaneRuleId\": \"xx\",\n                            \"CreateTime\": 0\n                        }\n                    ],\n                    \"RuleId\": \"xx\",\n                    \"RuleTagRelationship\": \"xx\",\n                    \"UpdateTime\": 0,\n                    \"Priority\": 0,\n                    \"LaneId\": \"xx\",\n                    \"RuleName\": \"xx\",\n                    \"CreateTime\": 0\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询泳道规则列表"
       }
     ],
     "DescribeLanes": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLanes\r\n&Limit=0\r\n&Offset=10\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"fd8664ea-458d-41b6-b22e-a1e1194e6246\",\"Result\":{\"TotalCount\":2,\"Content\":[{\"LaneId\":\"lane-6ymrl35a\",\"LaneName\":\"11\",\"Remark\":\"11\",\"CreateTime\":1586848711000,\"UpdateTime\":1586848711000,\"LaneGroupList\":null,\"Entrance\":null,\"NamespaceIdList\":null},{\"LaneId\":\"lane-6ymrl42a\",\"LaneName\":\"111\",\"Remark\":\"111\",\"CreateTime\":1586340248000,\"UpdateTime\":1586340248000,\"LaneGroupList\":null,\"Entrance\":null,\"NamespaceIdList\":null}]}}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLanes\n&Limit=0\n&Offset=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Remark\": \"xx\",\n                    \"Entrance\": true,\n                    \"UpdateTime\": 0,\n                    \"LaneId\": \"xx\",\n                    \"NamespaceIdList\": [\n                        \"xx\"\n                    ],\n                    \"LaneGroupList\": [\n                        {\n                            \"ApplicationName\": \"xx\",\n                            \"Entrance\": true,\n                            \"NamespaceName\": \"xx\",\n                            \"LaneGroupId\": \"xx\",\n                            \"UpdateTime\": 0,\n                            \"ClusterType\": \"xx\",\n                            \"GroupName\": \"xx\",\n                            \"LaneId\": \"xx\",\n                            \"NamespaceId\": \"xx\",\n                            \"GroupId\": \"xx\",\n                            \"ApplicationId\": \"xx\",\n                            \"CreateTime\": 0\n                        }\n                    ],\n                    \"LaneName\": \"xx\",\n                    \"CreateTime\": 0\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询泳道列表"
       }
     ],
@@ -835,7 +835,7 @@
     "DescribeServerlessGroups": [
       {
         "document": "查询Serverless部署组列表",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeServerlessGroups\r\n&ApplicationId=application-6ym9kjba\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeServerlessGroups\n&ApplicationId=application-6ym9kjba\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63871c25-31d0-40dd-b65e-5a95a57ed461\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"GroupId\": \"group-nalmm3wy\",\n                    \"GroupName\": \"group12345\",\n                    \"ApplicationId\": \"application-6ym9kjba\",\n                    \"ApplicationName\": \"wzz-node-8\",\n                    \"ClusterId\": \"cluster-6ymj295y\",\n                    \"ClusterName\": \"serverless_cluster\",\n                    \"NamespaceId\": \"namespace-evj92lly\",\n                    \"NamespaceName\": \"serverless_cluster_default\",\n                    \"PkgId\": \"pkg-a7d4f954\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询Serverless部署组列表"
       }
@@ -843,7 +843,7 @@
     "DescribeSimpleApplications": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleApplications\r\n&Offset=50\r\n&Limit=50\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleApplications\n&Offset=50\n&Limit=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f39fc04-9a07-4b70-bb56-47ff8eb051df\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"ApplicationId\": \"application-xxxxxxx\",\n                    \"ApplicationName\": \"test\",\n                    \"ApplicationDesc\": null,\n                    \"ApplicationType\": \"V\",\n                    \"MicroserviceType\": \"N\",\n                    \"ProgLang\": null,\n                    \"CreateTime\": null,\n                    \"UpdateTime\": null\n                }\n            ]\n        }\n    }\n}",
         "title": "查询简单应用列表"
       }
@@ -851,7 +851,7 @@
     "DescribeSimpleClusters": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleClusters\r\n&Offset=0\r\n&Limit=50\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleClusters\n&Offset=0\n&Limit=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73d633f3-1d91-443a-a5bb-b4d419a56721\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": [\n                {\n                    \"ClusterId\": \"cls-xxxxxxx\",\n                    \"ClusterName\": \"示例\",\n                    \"ClusterDesc\": null,\n                    \"ClusterType\": \"C\",\n                    \"VpcId\": \"vpc-xxxxxxx\",\n                    \"CreateTime\": null,\n                    \"UpdateTime\": null,\n                    \"ClusterStatus\": null,\n                    \"ClusterCIDR\": null,\n                    \"ClusterTotalCpu\": null,\n                    \"ClusterTotalMem\": null,\n                    \"ClusterUsedCpu\": null,\n                    \"ClusterUsedMem\": null,\n                    \"ClusterLimitCpu\": null,\n                    \"ClusterLimitMem\": null,\n                    \"InstanceCount\": null,\n                    \"RunInstanceCount\": null,\n                    \"RunServiceInstanceCount\": null,\n                    \"NormalInstanceCount\": null,\n                    \"DeleteFlag\": null,\n                    \"DeleteFlagReason\": null,\n                    \"OperationInfo\": null,\n                    \"TsfRegionId\": null,\n                    \"TsfRegionName\": null,\n                    \"TsfZoneId\": null,\n                    \"TsfZoneName\": null\n                },\n                {\n                    \"ClusterId\": \"cls-xxxxxxx\",\n                    \"ClusterName\": \"示例\",\n                    \"ClusterDesc\": null,\n                    \"ClusterType\": \"C\",\n                    \"VpcId\": \"vpc-xxxxxxx\",\n                    \"CreateTime\": null,\n                    \"UpdateTime\": null,\n                    \"ClusterStatus\": null,\n                    \"ClusterCIDR\": null,\n                    \"ClusterTotalCpu\": null,\n                    \"ClusterTotalMem\": null,\n                    \"ClusterUsedCpu\": null,\n                    \"ClusterUsedMem\": null,\n                    \"ClusterLimitCpu\": null,\n                    \"ClusterLimitMem\": null,\n                    \"InstanceCount\": null,\n                    \"RunInstanceCount\": null,\n                    \"RunServiceInstanceCount\": null,\n                    \"NormalInstanceCount\": null,\n                    \"DeleteFlag\": null,\n                    \"DeleteFlagReason\": null,\n                    \"OperationInfo\": null,\n                    \"TsfRegionId\": null,\n                    \"TsfRegionName\": null,\n                    \"TsfZoneId\": null,\n                    \"TsfZoneName\": null\n                }\n            ]\n        }\n    }\n}",
         "title": "查询简单集群列表"
       }
@@ -867,7 +867,7 @@
     "DescribeSimpleNamespaces": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleNamespaces\r\n&Offset=0\r\n&Limit=50\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleNamespaces\n&Offset=0\n&Limit=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44c883b4-9500-43f1-bd42-5bdbfcd5d3f5\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
         "title": "查询简单命名空间列表"
       }

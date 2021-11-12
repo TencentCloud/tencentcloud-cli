@@ -15,8 +15,10 @@ tccli tsf CreateLane --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "08238fd3-3691-4f8a-958d-241dd1d8c3a2",
-    "Result": "lane-5yrdkb8v"
+    "Response": {
+        "Result": "xx",
+        "RequestId": "xx"
+    }
 }
 ```
 

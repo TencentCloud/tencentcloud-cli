@@ -48,7 +48,7 @@ Output:
             }
         ],
         "RequestId": "",
-        "TotalCount": 46
+        "TotalCount": 2
     }
 }
 ```

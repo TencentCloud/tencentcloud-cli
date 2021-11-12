@@ -4133,6 +4133,15 @@
           "name": "IgnoreCreateImageRepository",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4164,6 +4173,7 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "DEMO-DOCKER",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -4172,6 +4182,7 @@
         {
           "default": "",
           "document": "集群类型",
+          "example": "C",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -4180,6 +4191,7 @@
         {
           "default": "",
           "document": "私有网络ID",
+          "example": "vpc-xxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4188,6 +4200,7 @@
         {
           "default": "",
           "document": "分配给集群容器和服务IP的CIDR",
+          "example": "172.16.0.0/16",
           "member": "string",
           "name": "ClusterCIDR",
           "required": false,
@@ -4196,6 +4209,7 @@
         {
           "default": "",
           "document": "集群备注",
+          "example": "desc",
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
@@ -4204,6 +4218,7 @@
         {
           "default": "",
           "document": "集群所属TSF地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "TsfRegionId",
           "required": false,
@@ -4212,6 +4227,7 @@
         {
           "default": "",
           "document": "集群所属TSF可用区",
+          "example": "100004",
           "member": "string",
           "name": "TsfZoneId",
           "required": false,
@@ -4220,6 +4236,7 @@
         {
           "default": "",
           "document": "私有网络子网ID",
+          "example": "id",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -4228,6 +4245,7 @@
         {
           "default": "",
           "document": "集群版本",
+          "example": "1",
           "member": "string",
           "name": "ClusterVersion",
           "required": false,
@@ -4236,6 +4254,7 @@
         {
           "default": "",
           "document": "集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxNodePodNum",
           "required": false,
@@ -4244,6 +4263,7 @@
         {
           "default": "",
           "document": "集群最大的service数量。取值范围32～32768，不为2的幂值时会向上取最接近的2的幂值。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxClusterServiceNum",
           "required": false,
@@ -4252,10 +4272,47 @@
         {
           "default": "",
           "document": "需要绑定的数据集ID",
+          "example": "1",
           "member": "string",
           "name": "ProgramId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "api地址",
+          "example": "1",
+          "member": "string",
+          "name": "KuberneteApiServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "K : kubeconfig, S : service account",
+          "example": "K",
+          "member": "string",
+          "name": "KuberneteNativeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "native secret",
+          "example": "1",
+          "member": "string",
+          "name": "KuberneteNativeSecret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4265,8 +4322,10 @@
       "members": [
         {
           "document": "集群ID",
+          "example": "1",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4285,6 +4344,7 @@
         {
           "default": "",
           "document": "配置项名称",
+          "example": "test_openapi_config",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -4293,6 +4353,7 @@
         {
           "default": "",
           "document": "配置项版本",
+          "example": "v1.0",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -4301,6 +4362,7 @@
         {
           "default": "",
           "document": "配置项值",
+          "example": "api.invok.limit: 5000",
           "member": "string",
           "name": "ConfigValue",
           "required": true,
@@ -4309,6 +4371,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "application-gyq2xry5",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -4317,6 +4380,7 @@
         {
           "default": "",
           "document": "配置项版本描述",
+          "example": "无",
           "member": "string",
           "name": "ConfigVersionDesc",
           "required": false,
@@ -4325,6 +4389,7 @@
         {
           "default": "",
           "document": "配置项值类型",
+          "example": "无",
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -4333,10 +4398,20 @@
         {
           "default": "",
           "document": "Base64编码的配置项",
+          "example": "无",
           "member": "bool",
           "name": "EncodeWithBase64",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4346,8 +4421,10 @@
       "members": [
         {
           "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4669,6 +4746,15 @@
           "name": "EncodeWithBase64",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4700,6 +4786,7 @@
         {
           "default": "",
           "document": "API 分组ID",
+          "example": "grp-5yk7oor1",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -4708,9 +4795,19 @@
         {
           "default": "",
           "document": "Api信息",
+          "example": "无",
           "member": "ApiInfo",
           "name": "ApiList",
           "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -4721,8 +4818,10 @@
       "members": [
         {
           "document": "是否成功",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4831,6 +4930,7 @@
         {
           "default": "",
           "document": "泳道名称",
+          "example": "test",
           "member": "string",
           "name": "LaneName",
           "required": true,
@@ -4839,6 +4939,7 @@
         {
           "default": "",
           "document": "泳道备注",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -4847,9 +4948,19 @@
         {
           "default": "",
           "document": "泳道部署组信息",
+          "example": "无",
           "member": "LaneGroup",
           "name": "LaneGroupList",
           "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -4860,8 +4971,10 @@
       "members": [
         {
           "document": "泳道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4880,6 +4993,7 @@
         {
           "default": "",
           "document": "泳道规则名称",
+          "example": "111",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4888,6 +5002,7 @@
         {
           "default": "",
           "document": "泳道规则备注",
+          "example": "111",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -4896,6 +5011,7 @@
         {
           "default": "",
           "document": "泳道规则标签列表",
+          "example": "无",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
           "required": true,
@@ -4904,6 +5020,7 @@
         {
           "default": "",
           "document": "泳道规则标签关系",
+          "example": "RELEATION_AND",
           "member": "string",
           "name": "RuleTagRelationship",
           "required": true,
@@ -4912,10 +5029,20 @@
         {
           "default": "",
           "document": "泳道Id",
+          "example": "lane-6ymrl42a",
           "member": "string",
           "name": "LaneId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4925,8 +5052,10 @@
       "members": [
         {
           "document": "泳道规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4994,6 +5123,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "tsf",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -5002,6 +5132,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cluster-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -5010,6 +5141,7 @@
         {
           "default": "",
           "document": "命名空间描述",
+          "example": "无",
           "member": "string",
           "name": "NamespaceDesc",
           "required": false,
@@ -5018,6 +5150,7 @@
         {
           "default": "",
           "document": "命名空间资源类型(默认值为DEF)",
+          "example": "无",
           "member": "string",
           "name": "NamespaceResourceType",
           "required": false,
@@ -5026,6 +5159,7 @@
         {
           "default": "",
           "document": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)",
+          "example": "无",
           "member": "string",
           "name": "NamespaceType",
           "required": false,
@@ -5034,6 +5168,7 @@
         {
           "default": "",
           "document": "命名空间ID",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -5042,6 +5177,7 @@
         {
           "default": "",
           "document": "是否开启高可用",
+          "example": "无",
           "member": "string",
           "name": "IsHaEnable",
           "required": false,
@@ -5050,10 +5186,20 @@
         {
           "default": "",
           "document": "需要绑定的数据集ID",
+          "example": "无",
           "member": "string",
           "name": "ProgramId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5063,8 +5209,10 @@
       "members": [
         {
           "document": "成功时为命名空间ID，失败为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5116,6 +5264,7 @@
         {
           "default": "",
           "document": "配置项名称",
+          "example": "testconfig",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -5124,6 +5273,7 @@
         {
           "default": "",
           "document": "配置项版本",
+          "example": "1.3",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -5132,6 +5282,7 @@
         {
           "default": "",
           "document": "配置项值，总是接收yaml格式的内容",
+          "example": "无",
           "member": "string",
           "name": "ConfigValue",
           "required": true,
@@ -5140,6 +5291,7 @@
         {
           "default": "",
           "document": "配置项版本描述",
+          "example": "无",
           "member": "string",
           "name": "ConfigVersionDesc",
           "required": false,
@@ -5148,6 +5300,7 @@
         {
           "default": "",
           "document": "配置项类型",
+          "example": "无",
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -5156,10 +5309,20 @@
         {
           "default": "",
           "document": "Base64编码的配置项",
+          "example": "无",
           "member": "bool",
           "name": "EncodeWithBase64",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5169,8 +5332,10 @@
       "members": [
         {
           "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7662,6 +7827,33 @@
           "name": "OrderType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigTagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8707,6 +8899,7 @@
         {
           "default": "",
           "document": "搜索字段",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8715,6 +8908,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "application-xxxxxxx",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -8723,6 +8917,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -8731,6 +8926,7 @@
         {
           "default": "",
           "document": "排序方式",
+          "example": "无",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -8739,6 +8935,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8747,6 +8944,7 @@
         {
           "default": "",
           "document": "分页个数",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8755,6 +8953,7 @@
         {
           "default": "",
           "document": "命名空间ID",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -8763,6 +8962,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -8771,6 +8971,7 @@
         {
           "default": "",
           "document": "部署组资源类型列表",
+          "example": "无",
           "member": "string",
           "name": "GroupResourceTypeList",
           "required": false,
@@ -8779,10 +8980,20 @@
         {
           "default": "",
           "document": "部署组状态过滤字段",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8792,8 +9003,10 @@
       "members": [
         {
           "document": "虚拟机部署组分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageVmGroup",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9064,6 +9277,7 @@
         {
           "default": "",
           "document": "每页展示的条数",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -9072,6 +9286,7 @@
         {
           "default": "",
           "document": "翻页偏移量",
+          "example": "10",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -9080,6 +9295,7 @@
         {
           "default": "",
           "document": "搜索关键词",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -9088,10 +9304,20 @@
         {
           "default": "",
           "document": "泳道规则ID（用于精确搜索）",
+          "example": "无",
           "member": "string",
           "name": "RuleId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "RuleIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9101,8 +9327,10 @@
       "members": [
         {
           "document": "泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LaneRules",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9121,26 +9349,47 @@
         {
           "default": "",
           "document": "每页展示的条数",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "default": "",
           "document": "翻页偏移量",
+          "example": "10",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "default": "",
           "document": "搜索关键字",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "LaneIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9150,8 +9399,10 @@
       "members": [
         {
           "document": "泳道列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LaneInfos",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9909,6 +10160,33 @@
           "name": "OrderType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigTagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10177,6 +10455,7 @@
         {
           "default": "",
           "document": "搜索字段，模糊搜索groupName字段",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -10185,6 +10464,7 @@
         {
           "default": "",
           "document": "分组所属应用ID",
+          "example": "application-6ym9kjba",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -10193,6 +10473,7 @@
         {
           "default": "",
           "document": "排序字段，默认为 createTime字段，支持id， name， createTime",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -10201,6 +10482,7 @@
         {
           "default": "",
           "document": "排序方式，默认为1：倒序排序，0：正序，1：倒序",
+          "example": "无",
           "member": "string",
           "name": "OrderType",
           "required": false,
@@ -10209,6 +10491,7 @@
         {
           "default": "",
           "document": "偏移量，取值从0开始",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10217,6 +10500,7 @@
         {
           "default": "",
           "document": "分页个数，默认为20， 取值应为1~50",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10225,6 +10509,7 @@
         {
           "default": "",
           "document": "分组所属名字空间ID",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -10233,10 +10518,20 @@
         {
           "default": "",
           "document": "分组所属集群ID",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10246,8 +10541,10 @@
       "members": [
         {
           "document": "数据列表对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServerlessGroupPage",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10266,6 +10563,7 @@
         {
           "default": "",
           "document": "应用ID列表",
+          "example": "无",
           "member": "string",
           "name": "ApplicationIdList",
           "required": false,
@@ -10274,6 +10572,7 @@
         {
           "default": "",
           "document": "应用类型",
+          "example": "无",
           "member": "string",
           "name": "ApplicationType",
           "required": false,
@@ -10282,6 +10581,7 @@
         {
           "default": "",
           "document": "每页条数",
+          "example": "50",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10290,6 +10590,7 @@
         {
           "default": "",
           "document": "起始偏移量",
+          "example": "50",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10298,6 +10599,7 @@
         {
           "default": "",
           "document": "微服务类型",
+          "example": "无",
           "member": "string",
           "name": "MicroserviceType",
           "required": false,
@@ -10306,6 +10608,7 @@
         {
           "default": "",
           "document": "资源类型数组",
+          "example": "无",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -10314,10 +10617,20 @@
         {
           "default": "",
           "document": "通过id和name进行关键词过滤",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10327,8 +10640,10 @@
       "members": [
         {
           "document": "简单应用分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageSimpleApplication",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10347,6 +10662,7 @@
         {
           "default": "",
           "document": "需要查询的集群ID列表，不填或不传入时查询所有内容",
+          "example": "无",
           "member": "string",
           "name": "ClusterIdList",
           "required": false,
@@ -10355,6 +10671,7 @@
         {
           "default": "",
           "document": "需要查询的集群类型，不填或不传入时查询所有内容",
+          "example": "无",
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -10363,6 +10680,7 @@
         {
           "default": "",
           "document": "查询偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10371,6 +10689,7 @@
         {
           "default": "",
           "document": "分页个数，默认为20， 取值应为1~50",
+          "example": "50",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10379,10 +10698,20 @@
         {
           "default": "",
           "document": "对id和name进行关键词过滤",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10392,8 +10721,10 @@
       "members": [
         {
           "document": "TSF集群分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageCluster",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10509,6 +10840,7 @@
         {
           "default": "",
           "document": "命名空间ID列表，不传入时查询全量",
+          "example": "无",
           "member": "string",
           "name": "NamespaceIdList",
           "required": false,
@@ -10517,6 +10849,7 @@
         {
           "default": "",
           "document": "集群ID，不传入时查询全量",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -10525,6 +10858,7 @@
         {
           "default": "",
           "document": "每页条数",
+          "example": "50",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10533,6 +10867,7 @@
         {
           "default": "",
           "document": "起始偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10541,6 +10876,7 @@
         {
           "default": "",
           "document": "命名空间ID，不传入时查询全量",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -10549,6 +10885,7 @@
         {
           "default": "",
           "document": "查询资源类型列表",
+          "example": "无",
           "member": "string",
           "name": "NamespaceResourceTypeList",
           "required": false,
@@ -10557,6 +10894,7 @@
         {
           "default": "",
           "document": "通过id和name进行过滤",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -10565,6 +10903,7 @@
         {
           "default": "",
           "document": "查询的命名空间类型列表",
+          "example": "无",
           "member": "string",
           "name": "NamespaceTypeList",
           "required": false,
@@ -10573,6 +10912,7 @@
         {
           "default": "",
           "document": "通过命名空间名精确过滤",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
@@ -10581,10 +10921,20 @@
         {
           "default": "",
           "document": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间",
+          "example": "无",
           "member": "string",
           "name": "IsDefault",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10594,8 +10944,10 @@
       "members": [
         {
           "document": "命名空间分页列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageNamespace",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

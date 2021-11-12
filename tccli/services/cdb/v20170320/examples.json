@@ -276,6 +276,14 @@
         "title": "查询备份数据库列表"
       }
     ],
+    "DescribeBackupDownloadRestriction": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupDownloadRestriction\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IpComparisonSymbol\": \"NotIn\",\n        \"LimitIp\": [\n            \"1.2.3.4\",\n            \"192.168.10.0/24\"\n        ],\n        \"LimitType\": \"Customize\",\n        \"LimitVpc\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"VpcList\": [\n                    \"vpc-aa3ximox\",\n                    \"vpc-64elqxc9\"\n                ]\n            }\n        ],\n        \"RequestId\": \"b0439fbf-f835-4327-bed8-184d48ef43db\",\n        \"VpcComparisonSymbol\": \"In\"\n    }\n}",
+        "title": "查询备份下载来源限制"
+      }
+    ],
     "DescribeBackupOverview": [
       {
         "document": "",
@@ -712,6 +720,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupConfig\r\n&InstanceId=cdb-c1nl9rpv\r\n&ExpireDays=10\r\n&BinlogExpireDays=8\r\n&StartTime=02:00-06:00\r\n&BackupMethod=logical\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改数据库备份配置"
+      }
+    ],
+    "ModifyBackupDownloadRestriction": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupDownloadRestriction\n&LimitType=Customize\n&VpcComparisonSymbol=In\n&IpComparisonSymbol=NotIn\n&LimitIp.0=1.2.3.4\n&LimitIp.1=192.168.10.0/24\n&LimitVpc.0.Region=ap-guangzhou\n&LimitVpc.0.VpcList.0=vpc-aa3ximox\n&LimitVpc.0.VpcList.1=vpc-64elqxc9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7fd6ee14-ad09-4c58-9612-65d4d1691d50\"\n    }\n}",
+        "title": "修改备份下载来源限制"
       }
     ],
     "ModifyDBInstanceName": [

@@ -398,6 +398,14 @@
         "title": "定额发票识别示例代码"
       }
     ],
+    "RecognizeContainerOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeContainerOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ContainerId\": \"APHU7042391\",\n        \"ContainerType\": \"45G1\",\n        \"GrossKG\": \"32500KG\",\n        \"GrossLB\": \"71650LB\",\n        \"PayloadKG\": \"28630KG\",\n        \"PayloadLB\": \"63120LB\",\n        \"TareKG\": \"3870KG\",\n        \"TareLB\": \"8530LB\",\n        \"CapacityM3\": \"76.4CUM\",\n        \"CapacityFT3\": \"2700CUFT\",\n        \"Warn\": [\n            -9926,\n            -9927\n        ],\n        \"RequestId\": \"45afaba3-5fb8-480e-83f9-2681f1373783\"\n    }\n}",
+        "title": "集装箱识别示例代码"
+      }
+    ],
     "RecognizeOnlineTaxiItineraryOCR": [
       {
         "document": "",
@@ -426,7 +434,7 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=ResidenceBookletOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HouseholdNumber\": \"000006498\",\n        \"Name\": \"喻玺\",\n        \"Sex\": \"男\",\n        \"BirthPlace\": \"四川省合江县\",\n        \"Nation\": \"汉族\",\n        \"NativePlace\": \"四川省合江县\",\n        \"BirthDate\": \"1980年1月11日\",\n        \"IdCardNumber\": \"510522198001110255\",\n        \"EducationDegree\": \"高中毕业\",\n        \"ServicePlace\": \"合江镇\",\n        \"Household\": \"家庭户\",\n        \"Address\": \"上海市徐汇区田林路397号腾云大厦\",\n        \"RequestId\": \"973edeb4-d0a1-4e6c-aa9c-fdfc7b24b357\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"\",\n        \"BirthDate\": \"1999年09月19日\",\n        \"BirthPlace\": \"上海市\",\n        \"BloodType\": \"\",\n        \"EducationDegree\": \"小学\",\n        \"FormerName\": \"xxx\",\n        \"Height\": \"\",\n        \"HomePageNumber\": \"\",\n        \"Household\": \"\",\n        \"HouseholdNumber\": \"\",\n        \"HouseholderName\": \"\",\n        \"IdCardNumber\": \"xxxx\",\n        \"IssueDate\": \"\",\n        \"MaritalStatus\": \"未婚\",\n        \"MoveToCityInformation\": \"\",\n        \"MoveToSiteInformation\": \"\",\n        \"Name\": \"xxx\",\n        \"Nation\": \"汉\",\n        \"NativePlace\": \"江苏省江阴市\",\n        \"OtherAddresses\": \"\",\n        \"Profession\": \"\",\n        \"RegistrationDate\": \"2010年07月13日\",\n        \"Relationship\": \"子\",\n        \"ReligiousBelief\": \"\",\n        \"RequestId\": \"9df0f3a9-e624-4924-ae6b-49d5d0258e0b\",\n        \"ServicePlace\": \"丰镇小学\",\n        \"Sex\": \"男\",\n        \"Signature\": \"\",\n        \"VeteranStatus\": \"\"\n    }\n}",
         "title": "户口本识别示例代码"
       }
     ],

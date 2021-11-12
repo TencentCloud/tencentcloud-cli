@@ -234,6 +234,18 @@
       "name": "查询 API 接口列表",
       "output": "DescribeApisStatusResponse"
     },
+    "DescribeExclusiveInstanceDetail": {
+      "document": "本接口（DescribeExclusiveInstanceDetail）用于查询独享实例详情信息。​",
+      "input": "DescribeExclusiveInstanceDetailRequest",
+      "name": "查询独享实例详情",
+      "output": "DescribeExclusiveInstanceDetailResponse"
+    },
+    "DescribeExclusiveInstances": {
+      "document": "本接口（DescribeExclusiveInstances）用于查询独享实例列表信息。​",
+      "input": "DescribeExclusiveInstancesRequest",
+      "name": "查询独享实例列表",
+      "output": "DescribeExclusiveInstancesResponse"
+    },
     "DescribeIPStrategy": {
       "document": "本接口（DescribeIPStrategy）用于查询IP策略详情。",
       "input": "DescribeIPStrategyRequest",
@@ -413,6 +425,12 @@
       "input": "ModifyApiIncrementRequest",
       "name": "增量更新API接口",
       "output": "ModifyApiIncrementResponse"
+    },
+    "ModifyExclusiveInstance": {
+      "document": "本接口（ModifyExclusiveInstance）用于修改独享实例信息。​",
+      "input": "ModifyExclusiveInstanceRequest",
+      "name": "修改独享实例",
+      "output": "ModifyExclusiveInstanceResponse"
     },
     "ModifyIPStrategy": {
       "document": "本接口（ModifyIPStrategy）用于修改服务IP策略。",
@@ -5055,6 +5073,96 @@
       ],
       "type": "object"
     },
+    "DescribeExclusiveInstanceDetailRequest": {
+      "document": "DescribeExclusiveInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享实例唯一id",
+          "example": "instance-0c96l2bo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExclusiveInstanceDetailResponse": {
+      "document": "DescribeExclusiveInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "独享实例详情",
+          "example": "无",
+          "member": "InstanceDetail",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExclusiveInstancesRequest": {
+      "document": "DescribeExclusiveInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页查询，limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询，offset",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExclusiveInstancesResponse": {
+      "document": "DescribeExclusiveInstances返回参数结构体",
+      "members": [
+        {
+          "document": "独享实例列表查询结果",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIPStrategyApisStatusRequest": {
       "document": "DescribeIPStrategyApisStatus请求参数结构体",
       "members": [
@@ -7333,6 +7441,300 @@
       ],
       "usage": "out"
     },
+    "InstanceChargePrepaid": {
+      "document": "独享实例预付费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "自动续费标示",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "预付费到期时间",
+          "example": "2018-10-30 04:24:19",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDetail": {
+      "document": "独享实例详情",
+      "members": [
+        {
+          "default": "",
+          "document": "独享实例唯一id",
+          "example": "instance-0c96l2bo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例名字",
+          "example": "test_instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例描述",
+          "example": "test_instance",
+          "member": "string",
+          "name": "InstanceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例预付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享实例类型",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkConfig",
+          "name": "NetworkConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享实例vpc配置",
+          "example": "无",
+          "member": "VpcConfig",
+          "name": "VpcConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParameterInfo",
+          "name": "Parameters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享实例隔离时间",
+          "example": "0000-0000-00 00-00-00",
+          "member": "datetime_iso",
+          "name": "IsolationStartedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2018-10-30 04:24:19Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['ap-guangzhou-1','ap-guangzhou-1']",
+          "member": "string",
+          "name": "Zones",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceInfo": {
+      "document": "独享实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "独享实例唯一id",
+          "example": "instance-0c96l2bo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例name",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例描述",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例类型",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享实例创建时间",
+          "example": "2021-01-25T10:15:21Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20210321891210021",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源ID同唯一id",
+          "example": "instance-9459tdbs",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceParameterInput": {
+      "document": "独享实例参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ServiceRequestNumPreSec，ApiRequestNumPreSec",
+          "example": "ServiceRequestNumPreSec",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值",
+          "example": "10",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "LogQuery": {
       "document": "检索条件入参",
       "members": [
@@ -8123,6 +8525,69 @@
       ],
       "type": "object"
     },
+    "ModifyExclusiveInstanceRequest": {
+      "document": "ModifyExclusiveInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享实例唯一id",
+          "example": "instance-0c96l2bo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享实例name",
+          "example": "test_instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享实例描述",
+          "example": "test_instance",
+          "member": "string",
+          "name": "InstanceDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享实例参数配置",
+          "example": "无",
+          "member": "InstanceParameterInput",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExclusiveInstanceResponse": {
+      "document": "ModifyExclusiveInstance返回参数结构体",
+      "members": [
+        {
+          "document": "独享实例详情信息",
+          "example": "无",
+          "member": "InstanceDetail",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyIPStrategyRequest": {
       "document": "ModifyIPStrategy请求参数结构体",
       "members": [
@@ -8511,6 +8976,62 @@
       ],
       "type": "object"
     },
+    "NetworkConfig": {
+      "document": "独享实例网络配置",
+      "members": [
+        {
+          "default": "",
+          "document": "最大出带宽",
+          "example": "10",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EnableInternetInbound信息",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetInbound",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EnableInternetOutbound信息",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetOutbound",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "InboundIpAddresses信息",
+          "example": "[\"10.10.10.10\"]",
+          "member": "string",
+          "name": "InboundIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OutboundIpAddresses信息",
+          "example": "[\"10.10.10.10\"]",
+          "member": "string",
+          "name": "OutboundIpAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OauthConfig": {
       "document": "Oauth授权配置信息",
       "members": [
@@ -8543,6 +9064,92 @@
         }
       ],
       "usage": "both"
+    },
+    "ParameterInfo": {
+      "document": "独享实例配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "服务QPS上限",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前值",
+          "example": "10",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "10",
+          "member": "int64",
+          "name": "Default",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位",
+          "example": "次/秒",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "integer",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小",
+          "example": "0",
+          "member": "int64",
+          "name": "Minimum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大",
+          "example": "10",
+          "member": "int64",
+          "name": "Maximum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2018-10-30 04:24:19",
+          "member": "datetime_iso",
+          "name": "ModifedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PathMapping": {
       "document": "自定义域名的路径映射。",
@@ -10694,6 +11301,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcConfig": {
+      "document": "独享实例vpc配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "vpcid",
+          "example": "vpc-12345",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "subnetid",
+          "example": "subnet-12345",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

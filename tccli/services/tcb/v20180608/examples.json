@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunOneClickTaskExternal\n<公共请求参数>\n\n{\n    \"ExternalId\": \"xxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"EnvId\": \"xx\",\n        \"ServerName\": \"xx\",\n        \"FailReason\": \"xx\",\n        \"ExternalId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"VersionName\": \"xx\",\n        \"UserUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Stage\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"UserEnvId\": \"xx\",\n        \"EnvId\": \"xxxx\",\n        \"ServerName\": \"xx\",\n        \"FailReason\": \"xx\",\n        \"ExternalId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"VersionName\": \"xx\",\n        \"UserUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Stage\": \"xx\"\n    }\n}",
         "title": "DescribeCloudBaseRunOneClickTaskExternal"
       }
     ],
