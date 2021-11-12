@@ -625,7 +625,7 @@
       "output": "ModifyLivePlayDomainResponse"
     },
     "ModifyLivePullStreamTask": {
-      "document": "更新直播拉流任务。 \n1. 不支持修改目标地址，如需推到新地址，请创建新任务。\n2. 不支持修改任务类型，如需更换，请创建新任务。",
+      "document": "更新直播拉流任务。 \n1. 不支持修改目标地址，如需推到新地址，请创建新任务。\n2. 不支持修改拉流源类型，如需更换，请创建新任务。",
       "input": "ModifyLivePullStreamTaskRequest",
       "name": "更新直播拉流任务",
       "output": "ModifyLivePullStreamTaskResponse"

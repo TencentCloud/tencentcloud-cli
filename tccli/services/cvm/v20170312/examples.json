@@ -547,7 +547,7 @@
     "ResetInstancesPassword": [
       {
         "document": "重置一个Linux/Windows实例的密码，之后您可利用此密码登录实例",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesPassword\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&Password=abc123ABC!@#\r\n&ForceStop=TRUE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesPassword\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&Password=abc123ABC!@#\n&ForceStop=TRUE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "重置一个Linux/Windows实例的密码"
       }
