@@ -8,6 +8,7 @@ Input:
 tccli oceanus CreateResource --cli-unfold-argument  \
     --Name testjar \
     --ResourceType 1 \
+    --FolderId folder-xxxxx \
     --ResourceLoc.StorageType 1 \
     --ResourceLoc.Param.Bucket oceanus-online-resource-xxxxx \
     --ResourceLoc.Param.Path 123456/10000534/testjar/xxx

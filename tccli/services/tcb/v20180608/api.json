@@ -396,6 +396,12 @@
       "name": "修改容器内的版本流量配置",
       "output": "ModifyCloudBaseRunServerFlowConfResponse"
     },
+    "ModifyCloudBaseRunServerVersion": {
+      "document": "修改服务版本的副本数，环境变量",
+      "input": "ModifyCloudBaseRunServerVersionRequest",
+      "name": "修改服务版本",
+      "output": "ModifyCloudBaseRunServerVersionResponse"
+    },
     "ModifyDatabaseACL": {
       "document": "修改数据库权限",
       "input": "ModifyDatabaseACLRequest",
@@ -1617,6 +1623,16 @@
           "name": "CurrentReplicas",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Monolithic，Microservice\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Architecture",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8286,6 +8302,127 @@
           "member": "string",
           "name": "Result",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudBaseRunServerVersionRequest": {
+      "document": "ModifyCloudBaseRunServerVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本名称",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量",
+          "member": "string",
+          "name": "EnvParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最小副本数",
+          "member": "string",
+          "name": "MinNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大副本数",
+          "member": "string",
+          "name": "MaxNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "member": "string",
+          "name": "ContainerPort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志采集路径",
+          "member": "string",
+          "name": "CustomLogs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否重设备注",
+          "member": "bool",
+          "name": "IsResetRemark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "修改基础信息",
+          "member": "bool",
+          "name": "BasicModify",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作备注",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudBaseRunServerVersionResponse": {
+      "document": "ModifyCloudBaseRunServerVersion返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果（succ为成功）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Result",
           "type": "string",
           "value_allowed_null": true
         },

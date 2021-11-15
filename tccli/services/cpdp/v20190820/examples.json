@@ -144,6 +144,14 @@
         "title": "CreateAgentTaxPaymentInfos"
       }
     ],
+    "CreateAnchor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAnchor\n<公共请求参数>\n\n{\n    \"AnchorUid\": \"wxc1300001\",\n    \"AnchorName\": \"陈小丽\",\n    \"AnchorPhone\": \"htPFytIjJDPXW9sOmgtwTQ==\",\n    \"AnchorAddress\": \"URvSZjJQPG0k+SRxVDLX2w==\",\n    \"AnchorEmail\": \"WqN/MJI/n4AbNkUSfR5QbA==\",\n    \"AnchorIdNo\": \"K1csRrg5tfardu/SfR5QbA==\",\n    \"AnchorType\": \"WeChat\",\n    \"AnchorExtendInfo\": [\n        {\n            \"Type\": \"id_card_front\",\n            \"Value\": \"file.png\"\n        },\n        {\n            \"Type\": \"id_card_back\",\n            \"Value\": \"file.png\"\n        },\n        {\n            \"Type\": \"tax_type\",\n            \"Value\": \"0\"\n        },\n        {\n            \"Type\": \"channel_account\",\n            \"Value\": \"3aWipNLSO4jtXus1P3mHMA==\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AnchorId\": \"16267614198\",\n        \"RequestId\": \"f64267a7-6a7d-4b0f-86de-b0e5fbae6847\"\n    }\n}",
+        "title": "微信视频号主播入驻"
+      }
+    ],
     "CreateBatchPayment": [
       {
         "document": "",
@@ -866,6 +874,20 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadExternalAnchorInfo\n<公共请求参数>\n\n{\n    \"IdCardFront\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"IdCardReverse\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "UploadExternalAnchorInfo"
+      }
+    ],
+    "UploadFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"FileName\": \"demo.png\",\n    \"FileType\": \"IdCard\",\n    \"FileContent\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5QmCC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileId\": \"file.png\",\n        \"RequestId\": \"f64267a7-6a7d-4b0f-86de-b0e5fbae6847\"\n    }\n}",
+        "title": "身份证图片上传"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"FileName\": \"demo.png\",\n    \"FileType\": \"IdCardCheck\",\n    \"FileExtendInfo\": [\n        {\n            \"Type\": \"id_card_no\",\n            \"Value\": \"110108200001011234\"\n        },\n        {\n            \"Type\": \"id_card_name\",\n            \"Value\": \"陈小小\"\n        }\n    ],\n    \"FileContent\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5QmCC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileId\": \"file.png\",\n        \"RequestId\": \"f64267a7-6a7d-4b0f-86de-b0e5fbae6847\"\n    }\n}",
+        "title": "身份证图片上传加验证"
       }
     ],
     "UploadTaxList": [

@@ -16,7 +16,7 @@ tccli mrs ImageToObject --cli-unfold-argument  \
     --HandleParam.ScaleTargetSize 300000 \
     --HandleParam.AutoOptimizeCoordinate True \
     --HandleParam.RotateTheAngle 0.0 \
-    --ImageInfoList.0.Url https://medres-1254237151.cos.ap-shanghai.myqcloud.com/upload/tNurJ6BitYm6bUk1DnVZw7dF.jpg \
+    --ImageInfoList.0.Url  \
     --ImageInfoList.0.Base64  \
     --ImageInfoList.0.Id 1
 ```

@@ -9,7 +9,8 @@ tccli oceanus DescribeResourceRelatedJobs --cli-unfold-argument  \
     --ResourceId xx \
     --Offset 0 \
     --Limit 0 \
-    --DESCByJobConfigCreateTime 0
+    --DESCByJobConfigCreateTime 0 \
+    --ResourceConfigVersion 1
 ```
 
 Output: 

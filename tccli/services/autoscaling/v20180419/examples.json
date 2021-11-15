@@ -112,14 +112,6 @@
         "title": "创建扩容失败事件通知，接收端为 CMQ 队列"
       }
     ],
-    "CreatePaiInstance": [
-      {
-        "document": "通过指定的域名等参数，创建单个PAI实例",
-        "input": "https://as.tencentcloudapi.com/?Action=CreatePaiInstance\n&DomainName=apple-gz012345.pai.tcloudbase.com\n&InitScript=IyEvYmluL2Jhc2gKZWNobyAiaGVsbG8iCg==\n&Zones.0=ap-guangzhou-2\n&InstanceChargeType=POSTPAID_BY_HOUR\n&InstanceTypes.0=S4.SMALL2\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=10\n&InstanceName=PAI-TEST\n&LoginSettings.Password=PAI@Test123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"ins-bmmk7d75\"\n        ],\n        \"RequestId\": \"843518b0-43bb-4066-a00b-d95b338b3142\"\n    }\n}",
-        "title": "创建单个PAI实例"
-      }
-    ],
     "CreateScalingPolicy": [
       {
         "document": "",

@@ -108,6 +108,12 @@
       "name": "直播平台-代理商完税信息录入",
       "output": "CreateAgentTaxPaymentInfosResponse"
     },
+    "CreateAnchor": {
+      "document": "直播平台-主播入驻",
+      "input": "CreateAnchorRequest",
+      "name": "直播平台-主播入驻",
+      "output": "CreateAnchorResponse"
+    },
     "CreateBatchPayment": {
       "document": "灵云-批量主播转账接口",
       "input": "CreateBatchPaymentRequest",
@@ -642,6 +648,12 @@
       "name": "灵云-上传主播信息",
       "output": "UploadExternalAnchorInfoResponse"
     },
+    "UploadFile": {
+      "document": "直播平台-文件上传",
+      "input": "UploadFileRequest",
+      "name": "直播平台-文件上传",
+      "output": "UploadFileResponse"
+    },
     "UploadTaxList": {
       "document": "直播平台-上传代理商完税列表",
       "input": "UploadTaxListRequest",
@@ -989,6 +1001,32 @@
         }
       ],
       "usage": "out"
+    },
+    "AnchorExtendInfo": {
+      "document": "主播扩展信息",
+      "members": [
+        {
+          "default": "",
+          "document": "扩展信息类型\n__id_card_no__:身份证号码\n__id_card_name__:身份证姓名\n__id_card_front__:身份证图片正面\n__id_card_back__:身份证图片反面\n__tax_type__:完税类型:0-自然人,1-个体工商户\n__channel_account__:渠道账号(_敏感信息_ 使用 __AES128-CBC-PKCS#7__ 加密)",
+          "example": "id_card_front",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扩展信息",
+          "example": "file.png",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ApplyApplicationMaterialRequest": {
       "document": "ApplyApplicationMaterial请求参数结构体",
@@ -4293,6 +4331,105 @@
           "name": "AgentTaxPaymentBatch",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnchorRequest": {
+      "document": "CreateAnchor请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播业务ID，唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorUid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播姓名",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播电话\n_敏感信息_ 使用 __AES128-CBC-PKCS#7__ 加密",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播邮箱\n_敏感信息_ 使用 __AES128-CBC-PKCS#7__ 加密",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorEmail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播地址\n_敏感信息_ 使用 __AES128-CBC-PKCS#7__ 加密",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorAddress",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播身份证号\n_敏感信息_ 使用 __AES128-CBC-PKCS#7__ 加密",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorIdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播类型\n__KMusic__:全民K歌\n__QMusic__:QQ音乐\n__WeChat__:微信视频号",
+          "example": "WeChat",
+          "member": "string",
+          "name": "AnchorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主播扩展信息",
+          "example": "无",
+          "member": "AnchorExtendInfo",
+          "name": "AnchorExtendInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnchorResponse": {
+      "document": "CreateAnchor返回参数结构体",
+      "members": [
+        {
+          "document": "主播ID",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -19514,6 +19651,78 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFileRequest": {
+      "document": "UploadFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件名",
+          "example": "demo.png",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件类型\n__IdCard__:身份证\n__IdCardCheck__:身份证加验证(只支持人像面)",
+          "example": "IdCard",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件链接\n__FileUrl和FileContent二选一__",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件内容，Base64编码\n__FileUrl和FileContent二选一__",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件扩展信息",
+          "example": "无",
+          "member": "AnchorExtendInfo",
+          "name": "FileExtendInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFileResponse": {
+      "document": "UploadFile返回参数结构体",
+      "members": [
+        {
+          "document": "文件ID",
+          "example": "file.png",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

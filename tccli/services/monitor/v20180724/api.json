@@ -8119,6 +8119,7 @@
         {
           "default": "",
           "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -8128,6 +8129,7 @@
         {
           "default": "",
           "document": "标签Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -8137,6 +8139,7 @@
         {
           "default": "",
           "document": "实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "InstanceSum",
           "required": true,
@@ -8146,6 +8149,7 @@
         {
           "default": "",
           "document": "产品类型，如：cvm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -8155,15 +8159,17 @@
         {
           "default": "",
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
+          "example": "1",
+          "member": "int64",
           "name": "RegionId",
           "required": true,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "绑定状态，2：绑定成功，1：绑定中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "BindingStatus",
           "required": true,
@@ -8173,6 +8179,7 @@
         {
           "default": "",
           "document": "标签状态，2：标签存在，1：标签不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "TagStatus",
           "required": true,
