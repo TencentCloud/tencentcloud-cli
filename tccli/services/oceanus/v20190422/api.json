@@ -403,15 +403,6 @@
         },
         {
           "default": "",
-          "document": "资源名称",
-          "example": "1",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "资源类型。目前只支持 JAR，取值为 1",
           "example": "1",
           "member": "int64",
@@ -430,10 +421,28 @@
         },
         {
           "default": "",
+          "document": "资源名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "资源版本描述",
           "example": "1",
           "member": "string",
           "name": "ResourceConfigRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目录ID",
+          "example": "folder-xxxx",
+          "member": "string",
+          "name": "FolderId",
           "required": false,
           "type": "string"
         }
@@ -863,6 +872,15 @@
           "example": "20",
           "member": "int64",
           "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源版本号",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceConfigVersion",
           "required": false,
           "type": "int"
         }

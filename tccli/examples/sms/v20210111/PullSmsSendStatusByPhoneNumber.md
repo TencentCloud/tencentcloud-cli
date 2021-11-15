@@ -8,10 +8,10 @@ Input:
 tccli sms PullSmsSendStatusByPhoneNumber --cli-unfold-argument  \
     --SmsSdkAppId 1400006666 \
     --PhoneNumber +8615291996666 \
-    --BeginTime 1464624000 \
+    --BeginTime 1620734100 \
     --Offset 0 \
     --Limit 2 \
-    --EndTime 1464624000
+    --EndTime 1620734200
 ```
 
 Output: 
@@ -22,18 +22,18 @@ Output:
             {
                 "Description": "DELIVRD",
                 "CountryCode": "86",
-                "SubscriberNumber": "15291990000",
+                "SubscriberNumber": "15291996666",
                 "ReportStatus": "SUCCESS",
-                "PhoneNumber": "+8615291990000",
+                "PhoneNumber": "+8615291996666",
                 "SerialNo": "14:19325917feb3914eb78b50d6182d7e452e",
                 "UserReceiveTime": 1620734188
             },
             {
                 "Description": "DELIVRD",
                 "CountryCode": "86",
-                "SubscriberNumber": "15291990001",
+                "SubscriberNumber": "15291996666",
                 "ReportStatus": "SUCCESS",
-                "PhoneNumber": "+8615291990001",
+                "PhoneNumber": "+8615291996666",
                 "SerialNo": "14:19325917feb3914eb78b50d6182d7e456f",
                 "UserReceiveTime": 1620734188
             }

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sms PullSmsReplyStatusByPhoneNumber --cli-unfold-argument  \
-    --SendDateTime 1464624000 \
-    --EndDateTime 1464624123 \
+    --SendDateTime 1620734100 \
+    --EndDateTime 1620734200 \
     --Offset 0 \
     --Limit 2 \
     --PhoneNumber +8615291996666 \
@@ -26,7 +26,7 @@ Output:
                 "ExtendCode": "11",
                 "ReplyTime": "2021-05-11 19:56:28",
                 "Sign": "腾讯云",
-                "PhoneNumber": "+8615291990000",
+                "PhoneNumber": "+8615291996666",
                 "NationCode": "86"
             },
             {
@@ -35,7 +35,7 @@ Output:
                 "ExtendCode": "11",
                 "ReplyTime": "2021-05-11 19:56:29",
                 "Sign": "腾讯云",
-                "PhoneNumber": "+8615291990000",
+                "PhoneNumber": "+8615291996666",
                 "NationCode": "86"
             }
         ]

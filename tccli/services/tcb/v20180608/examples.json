@@ -528,6 +528,14 @@
         "title": "示例"
       }
     ],
+    "ModifyCloudBaseRunServerVersion": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=ModifyCloudBaseRunServerVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=dbde\n&EnvParams=dnide\n&ContainerPort=8080\n&Remark=test\n&CustomLogs=stdout\n&IsResetRemark=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyDatabaseACL": [
       {
         "document": "",

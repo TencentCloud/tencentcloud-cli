@@ -19,7 +19,7 @@
     "CreateResource": [
       {
         "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateResource\n&Name=testjar\n&ResourceType=1\n&ResourceLoc.StorageType=1\n&ResourceLoc.Param.Bucket=oceanus-online-resource-xxxxx\n&ResourceLoc.Param.Path=123456/10000534/testjar/xxx\n&<公共请求参数>",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateResource\n&Name=testjar\n&ResourceType=1\n&FolderId=folder-xxxxx\n&ResourceLoc.StorageType=1\n&ResourceLoc.Param.Bucket=oceanus-online-resource-xxxxx\n&ResourceLoc.Param.Path=123456/10000534/testjar/xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\",\n        \"ResourceId\": \"resource-jj4fx50r\",\n        \"Version\": 1\n    }\n}",
         "title": "创建资源示例"
       }
@@ -83,7 +83,7 @@
     "DescribeResourceRelatedJobs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DESCByJobConfigCreateTime\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DESCByJobConfigCreateTime\": 0,\n    \"ResourceConfigVersion\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RefJobInfos\": [\n            {\n                \"JobConfigVersion\": 0,\n                \"ResourceVersion\": 0,\n                \"JobId\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取资源关联作业信息"
       }
