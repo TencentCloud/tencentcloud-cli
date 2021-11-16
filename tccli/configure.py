@@ -275,19 +275,6 @@ class ConfigureRemoveCommand(BasicConfigure):
     USEAGE = 'tccli configure remove [--profile profile-name]'
     EXAMPLES = "$ tccli configure remove\n" \
                "$ tccli configure remove --profile test\n"
-    # 批量设置
-    ARG_TABLE = [
-        {'name': 'varname',
-         'help_text': 'The name of the config value to set.',
-         'action': 'store',
-         'nargs': '+',
-         'cli_type_name': 'string', 'positional_arg': True},
-        # {'name': 'value',
-        #  'help_text': 'The value to set.',
-        #  'action': 'store',
-        #  'no_paramfile': True,
-        #  'cli_type_name': 'string', 'positional_arg': True},
-    ]
 
     def __init__(self):
         super(ConfigureRemoveCommand, self).__init__()
