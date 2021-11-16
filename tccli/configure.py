@@ -271,13 +271,14 @@ class ConfigureGetCommand(BasicConfigure):
 
 class ConfigureRemoveCommand(BasicConfigure):
     NAME = 'remove'
-    DESCRIPTION = 'remove your profile.'
+    DESCRIPTION = 'remove your profile: if you don\'t specify the file name, default file will be removed.'
     USEAGE = 'tccli configure remove [--profile profile-name]'
     EXAMPLES = "$ tccli configure remove\n" \
                "$ tccli configure remove --profile test\n"
 
-    def __init__(self):
+    def __init__(self, error_stream=sys.stderr):
         super(ConfigureRemoveCommand, self).__init__()
+        self._error_stream = error_stream
 
     def _run_main(self, args, parsed_globals):
         profile_name = parsed_globals.profile \
@@ -288,8 +289,12 @@ class ConfigureRemoveCommand(BasicConfigure):
 
         if os.path.exists(configure_file):
             os.remove(configure_file)
+        else:
+            self._error_stream.write("profile %s is not exist" % configure_file)
         if os.path.exists(credential_file):
             os.remove(credential_file)
+        else:
+            self._error_stream.write("profile %s is not exist" % credential_file)
 
 
 class ConfigureCommand(BasicConfigure):
