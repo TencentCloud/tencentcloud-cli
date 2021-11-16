@@ -269,11 +269,47 @@ class ConfigureGetCommand(BasicConfigure):
             self._stream.write('\n')
 
 
+class ConfigureRemoveCommand(BasicConfigure):
+    NAME = 'remove'
+    DESCRIPTION = 'remove your profile.'
+    USEAGE = 'tccli configure remove [--profile profile-name]'
+    EXAMPLES = "$ tccli configure remove\n" \
+               "$ tccli configure remove --profile test\n"
+    # 批量设置
+    ARG_TABLE = [
+        {'name': 'varname',
+         'help_text': 'The name of the config value to set.',
+         'action': 'store',
+         'nargs': '+',
+         'cli_type_name': 'string', 'positional_arg': True},
+        # {'name': 'value',
+        #  'help_text': 'The value to set.',
+        #  'action': 'store',
+        #  'no_paramfile': True,
+        #  'cli_type_name': 'string', 'positional_arg': True},
+    ]
+
+    def __init__(self):
+        super(ConfigureRemoveCommand, self).__init__()
+
+    def _run_main(self, args, parsed_globals):
+        profile_name = parsed_globals.profile \
+            if parsed_globals.profile else "default"
+
+        configure_file = os.path.join(self.cli_path, profile_name + '.configure')
+        credential_file = os.path.join(self.cli_path, profile_name + '.credential')
+
+        if os.path.exists(configure_file):
+            os.remove(configure_file)
+        if os.path.exists(credential_file):
+            os.remove(credential_file)
+
+
 class ConfigureCommand(BasicConfigure):
     NAME = "configure"
     DESCRIPTION = "configure your profile(eg:secretId, secretKey, region, output)."
     USEAGE = "tccli configure [--profile profile-name]"
-    AVAILABLESUBCOMMAND = ["set", 'get', 'list']
+    AVAILABLESUBCOMMAND = ["set", 'get', 'list', 'remove']
     EXAMPLES = "To create a new configuration::\n" \
                "    $ tccli configure\n" \
                "    TencentCloud API secretId [None]: secretId\n" \
@@ -290,7 +326,8 @@ class ConfigureCommand(BasicConfigure):
     SUBCOMMANDS = [
         {'name': 'list', 'command_class': ConfigureListCommand},
         {'name': 'get', 'command_class': ConfigureGetCommand},
-        {'name': 'set', 'command_class': ConfigureSetCommand}
+        {'name': 'set', 'command_class': ConfigureSetCommand},
+        {'name': 'remove', 'command_class': ConfigureRemoveCommand}
     ]
 
     VALUES_TO_PROMPT = [
