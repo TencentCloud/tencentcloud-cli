@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstanceAccessAddress\n&InstanceId=sre-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"IntranetAddress\": \"10.1.8.15\",\n        \"InternetAddress\": \"10.0.0.1\",\n        \"EnvAddressInfos\": [\n            {\n                \"EnvName\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\",\n                \"EnableConfigInternet\": true\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvAddressInfos\": [\n            {\n                \"EnableConfigInternet\": true,\n                \"EnvName\": \"xx\",\n                \"ConfigInternetServiceIp\": \"xx\"\n            }\n        ],\n        \"IntranetAddress\": \"xx\",\n        \"InternetAddress\": \"xx\",\n        \"ConsoleIntranetAddress\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"ConsoleInternetAddress\": \"xx\"\n    }\n}",
         "title": "查询引擎实例访问地址"
       }
     ],

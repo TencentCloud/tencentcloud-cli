@@ -110,6 +110,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConsoleInternetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "ConsoleIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -573,6 +591,26 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎实例是否开启控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConsoleInternet",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎实例是否开启控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableConsoleIntranet",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

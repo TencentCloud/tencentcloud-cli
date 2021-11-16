@@ -1,4 +1,4 @@
-**Example 1: 获取资源授权列表**
+**Example 1: 获取媒资授权信息**
 
 
 
@@ -10,8 +10,8 @@ tccli cme DescribeResourceAuthorization --cli-unfold-argument  \
     --Operator 123 \
     --Owner.Type TEAM \
     --Owner.Id teamA \
-    --Resources.0.Type MATERIAL \
-    --Resources.0.Id mid_abc
+    --Resource.Type MATERIAL \
+    --Resource.Id mid_abc
 ```
 
 Output: 
