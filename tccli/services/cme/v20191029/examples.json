@@ -215,9 +215,9 @@
     "DescribeResourceAuthorization": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeResourceAuthorization\r\n&Platform=test\r\n&Operator=123\r\n&Owner.Type=TEAM\r\n&Owner.Id=teamA\r\n&Resources.0.Type=MATERIAL\r\n&Resources.0.Id=mid_abc\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeResourceAuthorization\n&Platform=test\n&Operator=123\n&Owner.Type=TEAM\n&Owner.Id=teamA\n&Resource.Type=MATERIAL\n&Resource.Id=mid_abc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizationInfoSet\": [\n            {\n                \"Authorizee\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"234\"\n                },\n                \"PermissionSet\": [\n                    \"R\",\n                    \"W\"\n                ]\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "获取资源授权列表"
+        "title": "获取媒资授权信息"
       }
     ],
     "DescribeSharedSpace": [

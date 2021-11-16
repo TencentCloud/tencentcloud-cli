@@ -2720,6 +2720,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "whatever",
+          "member": "string",
+          "name": "Uui",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

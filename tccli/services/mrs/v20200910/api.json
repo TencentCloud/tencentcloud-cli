@@ -104,6 +104,32 @@
       ],
       "usage": "out"
     },
+    "BiopsyPart": {
+      "document": "活检部位",
+      "members": [
+        {
+          "default": "",
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Src",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BlockInfo": {
       "document": "块信息",
       "members": [
@@ -761,6 +787,124 @@
           "name": "EcgDiagnosis",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Endoscopy": {
+      "document": "内窥镜报告",
+      "members": [
+        {
+          "default": "",
+          "document": "活检部位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "BiopsyPart",
+          "name": "BiopsyPart",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可见描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "EndoscopyDesc",
+          "name": "Desc",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Summary",
+          "name": "Summary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EndoscopyDesc": {
+      "document": "内窥镜描述",
+      "members": [
+        {
+          "default": "",
+          "document": "描述内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "器官\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[object]",
+          "member": "EndoscopyOrgan",
+          "name": "Organ",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EndoscopyOrgan": {
+      "document": "内窥部位",
+      "members": [
+        {
+          "default": "",
+          "document": "部位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Part",
+          "name": "Part",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Src",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部位别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PartAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "症状描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[object]",
+          "member": "BlockInfo",
+          "name": "SymDescList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1680,6 +1824,92 @@
           "example": "裂隙灯检查ST;普通视力检查ST",
           "member": "string",
           "name": "TreatmentOpinion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Medicine": {
+      "document": "药品",
+      "members": [
+        {
+          "default": "",
+          "document": "药品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TradeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Firm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "医保类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小包装数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MinQuantity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小制剂单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DosageUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小包装单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackingUnit",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2627,6 +2857,22 @@
       ],
       "usage": "out"
     },
+    "Prescription": {
+      "document": "处方单",
+      "members": [
+        {
+          "default": "",
+          "document": "药品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[object]",
+          "member": "Medicine",
+          "name": "MedicineList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReportInfo": {
       "document": "报告基本信息",
       "members": [
@@ -3188,6 +3434,26 @@
           "example": "object",
           "member": "Electrocardiogram",
           "name": "Electrocardiogram",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内窥镜报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Endoscopy",
+          "name": "Endoscopy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处方单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Prescription",
+          "name": "Prescription",
           "required": true,
           "type": "object",
           "value_allowed_null": true

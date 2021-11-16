@@ -13,16 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
-        "IntranetAddress": "10.1.8.15",
-        "InternetAddress": "10.0.0.1",
         "EnvAddressInfos": [
             {
+                "EnableConfigInternet": true,
                 "EnvName": "xx",
-                "ConfigInternetServiceIp": "xx",
-                "EnableConfigInternet": true
+                "ConfigInternetServiceIp": "xx"
             }
-        ]
+        ],
+        "IntranetAddress": "xx",
+        "InternetAddress": "xx",
+        "ConsoleIntranetAddress": "xx",
+        "RequestId": "xx",
+        "ConsoleInternetAddress": "xx"
     }
 }
 ```

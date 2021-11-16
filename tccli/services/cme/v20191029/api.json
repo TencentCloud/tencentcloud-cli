@@ -1908,6 +1908,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "1000000001",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1916,22 +1917,25 @@
         {
           "default": "",
           "document": "归属者。",
+          "example": "{\"Type\":\"PERSON\",\"Id\":\"e7abc68e-6908-0000-2222-3221728e1111\"}",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "default": "",
           "document": "资源。",
+          "example": "{\"Type\":\"CLASS\",\"Id\":\"1\"}",
           "member": "Resource",
           "name": "Resource",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "default": "",
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "example": "1234c68e-1111-2222-3333-3221728e4444",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1945,15 +1949,19 @@
       "members": [
         {
           "document": "符合条件的资源授权记录总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "授权信息列表。",
+          "example": "[{\"Authorizee\":{\"Type\":\"PERSON\",\"Id\":\"234\"},\"PermissionSet\":[\"R\"",
           "member": "AuthorizationInfo",
           "name": "AuthorizationInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
