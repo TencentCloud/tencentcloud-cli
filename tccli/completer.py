@@ -31,7 +31,7 @@ def comp_two_arg(arg):
         pre_print(services, arg)
         return
     if arg == "configure":
-        pre_print(["get", "list", "set"], None)
+        pre_print(["get", "list", "set", "remove"], None)
     else:
         actions = loader.get_service_all_action_param(arg)
         pre_print(actions.keys(), None)
@@ -41,9 +41,9 @@ def comp_three_arg(arg_service, arg_cur):
     if arg_service not in services:
         return
     if arg_service == "configure":
-        if arg_cur in ["get", "list", "set"]:
+        if arg_cur in ["get", "list", "set", "remove"]:
             return
-        pre_print(["get", "list", "set"], arg_cur)
+        pre_print(["get", "list", "set", "remove"], arg_cur)
     else:
         action_list = []
         actions = loader.get_service_all_action_param(arg_service)

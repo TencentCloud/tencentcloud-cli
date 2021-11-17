@@ -63,8 +63,11 @@ secretKey =  OxXj7khcV1234dQSSYNABcdCc1LiArFd
 configure:
 region =  ap-guangzhou
 output =  json
+
+# remove子命令删除配置文件
+tccli configure remove
 ```
-更多信息请执行tccli configure [list get set] help查看。
+更多信息请执行tccli configure [list get set remove] help查看。
 
 3. 多账户支持，TCCLI支持多账户，方便您多种配置同时使用。
 ```bash
@@ -75,10 +78,11 @@ TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
 region: ap-guangzhou
 output[json]:
 
-# set/get/list子命令指定账户名test。
+# set/get/list/remove子命令指定账户名test。
 tccli configure set region ap-guangzhou  output json  --profile test
 tccli configure get secretKey      --profile test
 tccli configure list      --profile test
+tccli configure remove      --profile test
 
 
 在调用接口时指定账户(以cvm DescribeZones接口为例)。
