@@ -944,6 +944,15 @@
         },
         {
           "default": "",
+          "document": "[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。",
+          "example": "FALSE",
+          "member": "string",
+          "name": "InstallDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "函数日志投递到的CLS LogsetID",
           "example": "xxxxx",
           "member": "string",
@@ -5573,6 +5582,15 @@
           "example": "SCF_ExecuteRole",
           "member": "string",
           "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "[在线依赖安装](https://cloud.tencent.com/document/product/583/37920)，TRUE 表示安装，默认值为 FALSE。仅支持 Node.js 函数。",
+          "example": "FALSE",
+          "member": "string",
+          "name": "InstallDependency",
           "required": false,
           "type": "string"
         },

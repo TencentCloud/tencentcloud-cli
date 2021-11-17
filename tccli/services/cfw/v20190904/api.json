@@ -6363,7 +6363,17 @@
     },
     "StopSecurityGroupRuleDispatchRequest": {
       "document": "StopSecurityGroupRuleDispatch请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "值为1，中止全部",
+          "example": "1",
+          "member": "int64",
+          "name": "StopType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "StopSecurityGroupRuleDispatchResponse": {

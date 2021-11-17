@@ -6444,7 +6444,7 @@
         },
         {
           "default": "",
-          "document": "VPN网关类型。值“CCN”云联网类型VPN网关",
+          "document": "VPN网关类型。值“CCN”云联网类型VPN网关，值SSL为SSL-VPN",
           "example": "CCN",
           "member": "string",
           "name": "Type",
@@ -6459,6 +6459,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "CDC实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SSL-VPN 最大CLIENT 连接数。可选 [5, 10, 20, 50, 100]。仅SSL-VPN 需要选这个参数。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxConnection",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15635,6 +15653,7 @@
         {
           "default": "",
           "document": "修改的目标带宽，单位Mbps",
+          "example": "50",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -15643,6 +15662,7 @@
         {
           "default": "",
           "document": "IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个",
+          "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\\r\\n\"]",
           "member": "string",
           "name": "Ip6Addresses",
           "required": false,
@@ -15651,6 +15671,7 @@
         {
           "default": "",
           "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个",
+          "example": "[\"eip-6kr6f42w\"]",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,
@@ -15662,6 +15683,15 @@
     "ModifyIp6AddressesBandwidthResponse": {
       "document": "ModifyIp6AddressesBandwidth返回参数结构体",
       "members": [
+        {
+          "document": "任务ID",
+          "example": "53734868",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21189,6 +21219,7 @@
         {
           "default": "",
           "document": "网关实例ID。",
+          "example": "vpngw-az2xuzp5",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -21198,6 +21229,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "vpc-qqa5rnd5",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -21207,6 +21239,7 @@
         {
           "default": "",
           "document": "网关实例名称。",
+          "example": "test-gateway",
           "member": "string",
           "name": "VpnGatewayName",
           "required": true,
@@ -21216,6 +21249,7 @@
         {
           "default": "",
           "document": "网关实例类型：'IPSEC', 'SSL','CCN'。",
+          "example": "IPSEC",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -21225,6 +21259,7 @@
         {
           "default": "",
           "document": "网关实例状态， 'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中。",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
           "required": true,
@@ -21234,6 +21269,7 @@
         {
           "default": "",
           "document": "网关公网IP。",
+          "example": "139.124.3.2",
           "member": "string",
           "name": "PublicIpAddress",
           "required": true,
@@ -21243,6 +21279,7 @@
         {
           "default": "",
           "document": "网关续费类型：'NOTIFY_AND_MANUAL_RENEW'：手动续费，'NOTIFY_AND_AUTO_RENEW'：自动续费，'NOT_NOTIFY_AND_NOT_RENEW'：到期不续费。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -21252,6 +21289,7 @@
         {
           "default": "",
           "document": "网关付费类型：POSTPAID_BY_HOUR：按小时后付费，PREPAID：包年包月预付费，",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -21261,6 +21299,7 @@
         {
           "default": "",
           "document": "网关出带宽。",
+          "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -21270,6 +21309,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2021-04-25 17:14:34",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -21279,6 +21319,7 @@
         {
           "default": "",
           "document": "预付费网关过期时间。",
+          "example": "2021-04-25 17:14:34",
           "member": "datetime",
           "name": "ExpiredTime",
           "required": true,
@@ -21288,6 +21329,7 @@
         {
           "default": "",
           "document": "公网IP是否被封堵。",
+          "example": "false",
           "member": "bool",
           "name": "IsAddressBlocked",
           "required": true,
@@ -21297,6 +21339,7 @@
         {
           "default": "",
           "document": "计费模式变更，PREPAID_TO_POSTPAID：包年包月预付费到期转按小时后付费。",
+          "example": "PREPAID_TO_POSTPAID",
           "member": "string",
           "name": "NewPurchasePlan",
           "required": true,
@@ -21306,6 +21349,7 @@
         {
           "default": "",
           "document": "网关计费装，PROTECTIVELY_ISOLATED：被安全隔离的实例，NORMAL：正常。",
+          "example": "PROTECTIVELY_ISOLATED",
           "member": "string",
           "name": "RestrictState",
           "required": true,
@@ -21315,6 +21359,7 @@
         {
           "default": "",
           "document": "可用区，如：ap-guangzhou-2",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -21324,6 +21369,7 @@
         {
           "default": "",
           "document": "网关带宽配额信息",
+          "example": "null",
           "member": "VpnGatewayQuota",
           "name": "VpnGatewayQuotaSet",
           "required": true,
@@ -21333,6 +21379,7 @@
         {
           "default": "",
           "document": "网关实例版本信息",
+          "example": "1.0",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -21342,10 +21389,31 @@
         {
           "default": "",
           "document": "Type值为CCN时，该值表示云联网实例ID",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "NetworkInstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CDC 实例ID",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "CdcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SSL-VPN 客户端连接数。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxConnection",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

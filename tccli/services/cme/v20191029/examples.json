@@ -79,9 +79,23 @@
     "CreateTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateTeam\r\n&Platform=test\r\n&Name=测试团队名称\r\n&OwnerId=997988688\r\n&OwnerRemark=管理员李四\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateTeam\n&Platform=test\n&Name=测试团队名称\n&OwnerId=997988688\n&OwnerRemark=管理员李四\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TeamId\": \"cmetid_19882998399iieii87neu78\",\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "创建一个团队"
+      }
+    ],
+    "CreateVideoEncodingPreset": [
+      {
+        "document": "创建360p的视频编码配置\n详细功能：去除音频流，设置码率为500k bps",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoEncodingPreset\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Name\": \"自定义360p编码配置\",\n    \"RemoveAudio\": \"1\",\n    \"VideoSetting\": {\n        \"ShortEdge\": \"360\",\n        \"Bitrate\": \"512000\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 100050,\n        \"RequestId\": \"e33fffc2-02c9-4074-9355-88443869e88b\"\n    }\n}",
+        "title": "创建360p的视频编码配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoEncodingPreset\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Name\": \"自定义单声道音频编码配置\",\n    \"AudioSetting\": {\n        \"Channels\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 100049,\n        \"RequestId\": \"22392574-2d1d-4418-94bb-a71ee67fbc56\"\n    }\n}",
+        "title": "创建单声道音频编码配置"
       }
     ],
     "DeleteClass": [
@@ -132,6 +146,14 @@
         "title": "删除一个团队成员"
       }
     ],
+    "DeleteVideoEncodingPreset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVideoEncodingPreset\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Id\": 100050\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"117ff5e6-df9e-4a56-b48a-ecc1ddae02f0\"\n    }\n}",
+        "title": "删除视频编码配置"
+      }
+    ],
     "DescribeAccounts": [
       {
         "document": "",
@@ -151,7 +173,7 @@
     "DescribeJoinTeams": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeJoinTeams\r\n&Platform=test\r\n&TeamId=1kdk882ddd88338ddd3k3\r\n&MemberId=1993939392iidkei8ei\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeJoinTeams\n&Platform=test\n&MemberId=1993939392iidkei8ei\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"Role\": \"Admin\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"Role\": \"Member\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "获取加入的团队列表"
       }
@@ -266,6 +288,20 @@
         "title": "获取团队信息"
       }
     ],
+    "DescribeVideoEncodingPresets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoEncodingPresets\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Ids\": [\n        100047\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ada659-495d-43b3-88c8-64dad423007d\",\n        \"TotalCount\": 1,\n        \"VideoEncodingPresetSet\": [\n            {\n                \"AudioSetting\": {\n                    \"Bitrate\": 64000,\n                    \"Channels\": 2,\n                    \"Codec\": \"AAC\",\n                    \"SampleRate\": 16000\n                },\n                \"Container\": \"mp4\",\n                \"Id\": 100047,\n                \"Name\": \"\",\n                \"RemoveAudio\": 0,\n                \"RemoveVideo\": 0,\n                \"VideoSetting\": {\n                    \"Bitrate\": 0,\n                    \"Codec\": \"H264\",\n                    \"ShortEdge\": 1080\n                }\n            }\n        ]\n    }\n}",
+        "title": "指定 ID 查询配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoEncodingPresets\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f16e0eea-20d0-4716-8195-599df164d8b4\",\n        \"TotalCount\": 32,\n        \"VideoEncodingPresetSet\": [\n            {\n                \"AudioSetting\": {\n                    \"Bitrate\": 64000,\n                    \"Channels\": 2,\n                    \"Codec\": \"AAC\",\n                    \"SampleRate\": 16000\n                },\n                \"Container\": \"mp4\",\n                \"Id\": 100047,\n                \"Name\": \"\",\n                \"RemoveAudio\": 0,\n                \"RemoveVideo\": 0,\n                \"VideoSetting\": {\n                    \"Bitrate\": 0,\n                    \"Codec\": \"H264\",\n                    \"ShortEdge\": 1080\n                }\n            },\n            {\n                \"AudioSetting\": {\n                    \"Bitrate\": 64000,\n                    \"Channels\": 1,\n                    \"Codec\": \"AAC\",\n                    \"SampleRate\": 32000\n                },\n                \"Container\": \"mp4\",\n                \"Id\": 100048,\n                \"Name\": \"test1\",\n                \"RemoveAudio\": 0,\n                \"RemoveVideo\": 0,\n                \"VideoSetting\": {\n                    \"Bitrate\": 131072,\n                    \"Codec\": \"H264\",\n                    \"ShortEdge\": 1024\n                }\n            }\n        ]\n    }\n}",
+        "title": "按照分页查询配置"
+      }
+    ],
     "ExportVideoByEditorTrackData": [
       {
         "document": "",
@@ -311,9 +347,15 @@
     "ExportVideoEditProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoEditProject\n&Platform=test\n&ProjectId=1111\n&Definition=10\n&ExportDestination=CME\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoEditProject\n&Platform=test\n&ProjectId=cmepid_1111\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=testid\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"24820810452266399\",\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "导出项目"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoEditProject\n&Platform=test\n&ProjectId=cmepid_1111\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=testid\n&ExportExtensionArgs.VideoBitrate=3145728\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000001-TFUSIONCME-24820810452266399\",\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "导出视频指定码率为 3M bps"
       }
     ],
     "FlattenListMedia": [
@@ -480,6 +522,20 @@
         "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeamMember\r\n&Platform=test\r\n&TeamId=1kdk882ddd88338ddd3k3\r\n&MemberId=1kd3ej3okjdije3lejjdjk99\r\n&Remark=主编辑李四\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "修改一个团队成员的备注"
+      }
+    ],
+    "ModifyVideoEncodingPreset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVideoEncodingPreset\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Name\": \"test1\",\n    \"Id\": 100048\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e6ab84c-47c5-45af-8f47-ec39eaf0606d\"\n    }\n}",
+        "title": "修改编码配置名称"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVideoEncodingPreset\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Id\": 100048,\n    \"VideoSetting\": {\n        \"ShortEdge\": \"1024\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7164f965-2923-4640-9010-05c51b282433\"\n    }\n}",
+        "title": "修改编码配置中的视频尺寸"
       }
     ],
     "MoveClass": [

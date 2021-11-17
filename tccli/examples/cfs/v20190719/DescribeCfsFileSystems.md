@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
+        "TotalCount": 1,
         "FileSystems": [
             {
                 "Protocol": "NFS",
@@ -28,13 +29,16 @@ Output:
                 "FileSystemId": "cfs-12345",
                 "KmsKeyId": "",
                 "LifeCycleState": "mounting",
+                "Capacity": 1000,
                 "PGroup": {
                     "PGroupId": "pgroupbasic",
                     "Name": "默认权限组"
                 },
                 "SizeLimit": 0,
                 "BandwidthResourcePkg": "",
-                "FsName": "test_fs"
+                "FsName": "test_fs",
+                "AppId": 12700000,
+                "BandwidthLimit": 200
             }
         ]
     }

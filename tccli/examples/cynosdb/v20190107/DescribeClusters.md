@@ -18,70 +18,61 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "b81444b5-e558-4246-85be-d037937f93e0",
         "ClusterSet": [
             {
-                "AppId": 1251006373,
-                "ClusterId": "cynosdbpg-2x6bqwa0",
-                "ClusterName": "cynosdbpg-2x6bqwa0",
-                "CreateTime": "2019-02-14 14:23:57",
-                "DbType": "POSTGRESQL",
-                "DbVersion": "10.0",
-                "InstanceNum": 1,
-                "PayMode": 0,
-                "PeriodEndTime": "2019-03-14 14:26:42",
-                "Region": "ap-guangzhou",
+                "MaxStorageSize": 30000,
                 "Status": "running",
-                "ProjectID": 0,
+                "VpcId": "vpc-mnkc86gd",
+                "UpdateTime": "2021-11-15 21:48:37",
+                "Region": "ap-guangzhou",
+                "AppId": 251007582,
+                "Tasks": [],
+                "RenewFlag": 0,
+                "PeriodEndTime": "2021-12-15 21:48:37",
+                "ClusterId": "cynosdbmysql-49sxfmct",
+                "CreateTime": "2021-11-15 21:47:50",
+                "MinStorageSize": 10,
+                "SubnetId": "subnet-kdqq63yu",
+                "ClusterName": "预付费集群",
+                "DbMode": "NORMAL",
                 "StatusDesc": "运行中",
-                "Uin": "20548499",
-                "UpdateTime": "2019-02-15 20:15:59",
-                "Vip": "172.16.0.36",
-                "Vport": 5432,
-                "Zone": "ap-guangzhou-3"
-            },
-            {
-                "AppId": 1251006373,
-                "ClusterId": "cynosdbpg-6zd9ynyk",
-                "ClusterName": "cynosdbpg-6zd9ynyk",
-                "CreateTime": "2019-02-02 16:43:00",
-                "DbType": "POSTGRESQL",
-                "DbVersion": "10.0",
-                "InstanceNum": 1,
-                "PayMode": 0,
+                "CynosVersion": "2.0.15",
+                "ProcessingTask": "",
+                "DbType": "MYSQL",
                 "ProjectID": 0,
-                "PeriodEndTime": "2019-03-02 16:43:00",
-                "Region": "ap-guangzhou",
-                "Status": "creating",
-                "StatusDesc": "创建中",
-                "Uin": "20548499",
-                "UpdateTime": "2019-02-02 16:43:00",
-                "Vip": "",
-                "Vport": 5432,
-                "Zone": "ap-guangzhou-3"
-            },
-            {
-                "AppId": 1251006373,
-                "ClusterId": "cynosdbpg-g6u0kj8m",
-                "ClusterName": "cynosdbpg-g6u0kj8m",
-                "CreateTime": "2019-02-02 16:33:51",
-                "DbType": "POSTGRESQL",
-                "DbVersion": "10.0",
+                "Uin": "100000007539",
+                "ResourceTags": [],
+                "DbVersion": "5.7",
+                "StorageId": "",
+                "StorageLimit": 30000,
+                "NetAddrs": [
+                    {
+                        "WanDomain": "",
+                        "NetType": "ha",
+                        "Vport": 3306,
+                        "WanPort": 0,
+                        "Vip": "172.16.62.137"
+                    },
+                    {
+                        "WanDomain": "",
+                        "NetType": "ro",
+                        "Vport": 3306,
+                        "WanPort": 0,
+                        "Vip": "172.16.62.176"
+                    }
+                ],
+                "ServerlessStatus": "",
+                "Zone": "ap-guangzhou-3",
+                "StoragePayMode": 0,
                 "InstanceNum": 1,
-                "PayMode": 0,
-                "ProjectID": 0,
-                "PeriodEndTime": "2019-03-02 16:33:51",
-                "Region": "ap-guangzhou",
-                "Status": "creating",
-                "StatusDesc": "创建中",
-                "Uin": "20548499",
-                "UpdateTime": "2019-02-02 16:33:51",
-                "Vip": "",
-                "Vport": 5432,
-                "Zone": "ap-guangzhou-3"
+                "PayMode": 1,
+                "Storage": 0,
+                "Vport": 3306,
+                "Vip": "172.16.62.137"
             }
         ],
-        "RequestId": "a70bd8ff-b758-444c-8369-c6cd84c5239f",
-        "TotalCount": 3
+        "TotalCount": 597
     }
 }
 ```

@@ -664,7 +664,7 @@
         },
         {
           "default": "",
-          "document": "普通实例Cpu核数",
+          "document": "当DbMode为NORMAL或不填时必选\n普通实例Cpu核数",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -673,7 +673,7 @@
         },
         {
           "default": "",
-          "document": "普通实例内存,单位G",
+          "document": "当DbMode为NORMAL或不填时必选\n普通实例内存,单位G",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -682,7 +682,7 @@
         },
         {
           "default": "",
-          "document": "存储大小，单位G",
+          "document": "该参数无实际意义，已废弃。\n存储大小，单位G。",
           "example": "100",
           "member": "int64",
           "name": "Storage",
@@ -772,7 +772,7 @@
         },
         {
           "default": "",
-          "document": "时间点回档，指定时间允许范围",
+          "document": "该参数无实际意义，已废弃。\n时间点回档，指定时间允许范围",
           "example": "0",
           "member": "uint64",
           "name": "ExpectTimeThresh",
@@ -3026,7 +3026,7 @@
         },
         {
           "default": "",
-          "document": "实例状态",
+          "document": "实例状态, 可选值:\ncreating 创建中\nrunning 运行中\nisolating 隔离中\nisolated 已隔离\nactivating 恢复中\nofflining 下线中\nofflined 已下线",
           "example": "xx",
           "member": "string",
           "name": "Status",
@@ -3498,7 +3498,7 @@
         },
         {
           "default": "",
-          "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
+          "document": "表示全备结束时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
           "example": "21600",
           "member": "uint64",
           "name": "BackupTimeEnd",

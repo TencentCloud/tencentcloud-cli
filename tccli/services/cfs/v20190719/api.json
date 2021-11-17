@@ -883,6 +883,7 @@
         {
           "default": "",
           "document": "文件系统 ID",
+          "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
           "required": false,
@@ -891,6 +892,7 @@
         {
           "default": "",
           "document": "私有网络（VPC） ID",
+          "example": "vpc-12345",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -899,6 +901,7 @@
         {
           "default": "",
           "document": "子网 ID",
+          "example": "subnet-12345",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -912,15 +915,19 @@
       "members": [
         {
           "document": "文件系统信息",
+          "example": "无",
           "member": "FileSystemInfo",
           "name": "FileSystems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "文件系统总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

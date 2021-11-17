@@ -103,9 +103,15 @@
     "CreateLoadBalancerSnatIps": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancerSnatIps\n&LoadBalancerId=lb-cuxw2rm0\n&SnatIps.0.SubnetId=subnet-12345678\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancerSnatIps\n&LoadBalancerId=lb-cuxw****\n&SnatIps.0.SubnetId=subnet-1234****\n&Number=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"898b431c-2745-4b27-80f6-e6e8038a0683\"\n    }\n}",
-        "title": "添加snatip"
+        "title": "添加SnatIp"
+      },
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancerSnatIps\n&LoadBalancerId=lb-cuxw****\n&SnatIps.0.SubnetId=subnet-1234****\n&SnatIps.0.Ip=192.168.1.2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"898b431c-80f6-80f6-80f6-e6e8038a0683\"\n    }\n}",
+        "title": "指定snat ip添加SnatIp"
       }
     ],
     "CreateRule": [
