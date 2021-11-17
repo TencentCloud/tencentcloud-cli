@@ -390,6 +390,14 @@
         "title": "修改数据库参数"
       }
     ],
+    "ModifyDBSyncMode": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyDBSyncMode\r\n&InstanceId=tdsql-avw0207d\r\n&SyncMode=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901bd41c-08a2-4001-8364-5a63f32056ae\",\n        \"FlowId\": 3521\n    }\n}",
+        "title": "修改云数据库实例的同步模式"
+      }
+    ],
     "ModifyLogFileRetentionPeriod": [
       {
         "document": "",
@@ -404,6 +412,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyRealServerAccessStrategy\n&InstanceId=tdsql-f35wr6wj\n&RsAccessStrategy=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "请求示例DEMO"
+      }
+    ],
+    "ModifySyncTaskAttribute": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifySyncTaskAttribute\n&TaskIds.0=1001\n&TaskName=数据分析同步任务\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f642839-f40d-4faf-8d84-be7894ce048a\"\n    }\n}",
+        "title": "示例1 修改任务名称"
       }
     ],
     "OpenDBExtranetAccess": [

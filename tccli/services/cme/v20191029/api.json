@@ -36,6 +36,12 @@
       "name": "创建团队",
       "output": "CreateTeamResponse"
     },
+    "CreateVideoEncodingPreset": {
+      "document": "指定导出的参数，创建一个视频编码配置",
+      "input": "CreateVideoEncodingPresetRequest",
+      "name": "创建视频编码配置",
+      "output": "CreateVideoEncodingPresetResponse"
+    },
     "DeleteClass": {
       "document": "删除分类信息，删除时检验下述限制：\n<li>分类路径必须存在；</li>\n<li>分类下没有绑定素材。</li>",
       "input": "DeleteClassRequest",
@@ -71,6 +77,12 @@
       "input": "DeleteTeamMembersRequest",
       "name": "删除团队成员",
       "output": "DeleteTeamMembersResponse"
+    },
+    "DeleteVideoEncodingPreset": {
+      "document": "删除指定 ID 的视频编码配置",
+      "input": "DeleteVideoEncodingPresetRequest",
+      "name": "删除视频编码配置",
+      "output": "DeleteVideoEncodingPresetResponse"
     },
     "DescribeAccounts": {
       "document": "获取用户账号信息。",
@@ -149,6 +161,12 @@
       "input": "DescribeTeamsRequest",
       "name": "获取团队信息",
       "output": "DescribeTeamsResponse"
+    },
+    "DescribeVideoEncodingPresets": {
+      "document": "查询视频编码配置信息。",
+      "input": "DescribeVideoEncodingPresetsRequest",
+      "name": "查询视频编码配置",
+      "output": "DescribeVideoEncodingPresetsResponse"
     },
     "ExportVideoByEditorTrackData": {
       "document": "使用视频合成协议导出视频，支持导出到CME云媒资和VOD云媒资。",
@@ -239,6 +257,12 @@
       "input": "ModifyTeamMemberRequest",
       "name": "修改团队成员",
       "output": "ModifyTeamMemberResponse"
+    },
+    "ModifyVideoEncodingPreset": {
+      "document": "修改视频编码配置信息。",
+      "input": "ModifyVideoEncodingPresetRequest",
+      "name": "修改视频编码配置",
+      "output": "ModifyVideoEncodingPresetResponse"
     },
     "MoveClass": {
       "document": "移动某一个分类到另外一个分类下，也可用于分类重命名。\n如果 SourceClassPath = /素材/视频/NBA，DestinationClassPath = /素材/视频/篮球\n<li>当 DestinationClassPath 不存在时候，操作结果为重命名 ClassPath；</li>\n<li>当 DestinationClassPath 存在时候，操作结果为产生新目录 /素材/视频/篮球/NBA</li>",
@@ -1163,6 +1187,96 @@
       ],
       "type": "object"
     },
+    "CreateVideoEncodingPresetRequest": {
+      "document": "CreateVideoEncodingPreset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "test",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置名，可用来简单描述该配置的作用。",
+          "example": "测试模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "封装格式，可选值：\n<li>mp4 ；</li>\n<li>mov 。</li>\n默认值：mp4。",
+          "example": "mp4",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "1",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "编码配置的视频设置。默认值参考VideoEncodingPresetVideoSetting 定义。",
+          "example": "无",
+          "member": "VideoEncodingPresetVideoSetting",
+          "name": "VideoSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "编码配置的音频设置。默认值参考VideoEncodingPresetAudioSetting 定义。",
+          "example": "无",
+          "member": "VideoEncodingPresetAudioSetting",
+          "name": "AudioSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoEncodingPresetResponse": {
+      "document": "CreateVideoEncodingPreset返回参数结构体",
+      "members": [
+        {
+          "document": "模板 ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClassRequest": {
       "document": "DeleteClass请求参数结构体",
       "members": [
@@ -1429,6 +1543,42 @@
       ],
       "type": "object"
     },
+    "DeleteVideoEncodingPresetRequest": {
+      "document": "DeleteVideoEncodingPreset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的视频编码配置 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoEncodingPresetResponse": {
+      "document": "DeleteVideoEncodingPreset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAccountsRequest": {
       "document": "DescribeAccounts请求参数结构体",
       "members": [
@@ -1556,6 +1706,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1564,6 +1715,7 @@
         {
           "default": "",
           "document": "团队成员　ID。",
+          "example": "1993939392iidkei8ei",
           "member": "string",
           "name": "MemberId",
           "required": true,
@@ -1571,7 +1723,8 @@
         },
         {
           "default": "",
-          "document": "分页偏移量，默认值：0",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1580,6 +1733,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：30，最大值：30。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1593,15 +1747,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "团队列表",
+          "document": "团队列表。",
+          "example": "无",
           "member": "JoinTeamInfo",
           "name": "TeamSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2381,6 +2539,78 @@
       ],
       "type": "object"
     },
+    "DescribeVideoEncodingPresetsRequest": {
+      "document": "DescribeVideoEncodingPresets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页大小，默认20。最大值50。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页起始，默认0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoEncodingPresetsResponse": {
+      "document": "DescribeVideoEncodingPresets返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的编码配置总个数。",
+          "example": "32",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视频编码配置信息。",
+          "example": "无",
+          "member": "VideoEncodingPreset",
+          "name": "VideoEncodingPresetSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EmptyTrackItem": {
       "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
       "members": [
@@ -2470,7 +2700,7 @@
         },
         {
           "default": "",
-          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "document": "导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
@@ -2497,7 +2727,7 @@
         },
         {
           "default": "",
-          "document": "轨道数据对应的画布宽高比。",
+          "document": "轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：\n<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>\n<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -2794,7 +3024,7 @@
         },
         {
           "default": "",
-          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "document": "视频编码配置 ID，支持自定义创建，推荐优先使用系统预置的导出配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
@@ -2834,6 +3064,15 @@
           "example": "无",
           "member": "VODExportInfo",
           "name": "VODExportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。",
+          "example": "无",
+          "member": "VideoExportExtensionArgs",
+          "name": "ExportExtensionArgs",
           "required": false,
           "type": "object"
         },
@@ -4641,6 +4880,87 @@
       ],
       "type": "object"
     },
+    "ModifyVideoEncodingPresetRequest": {
+      "document": "ModifyVideoEncodingPreset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "平台名称，指定访问的平台。",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "更改后的视频编码配置名，不填则不修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "更改后的编码配置的视频设置。",
+          "example": "无",
+          "member": "VideoEncodingPresetVideoSettingForUpdate",
+          "name": "VideoSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "更改后的编码配置的音频设置。",
+          "example": "无",
+          "member": "VideoEncodingPresetAudioSettingForUpdate",
+          "name": "AudioSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVideoEncodingPresetResponse": {
+      "document": "ModifyVideoEncodingPreset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MoveClassRequest": {
       "document": "MoveClass请求参数结构体",
       "members": [
@@ -6349,6 +6669,312 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoEncodingPreset": {
+      "document": "视频编码配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封装格式，可选值：\n<li>mp4 ；</li>\n<li>mov 。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频编码配置中的视频设置。",
+          "example": "无",
+          "member": "VideoEncodingPresetVideoSetting",
+          "name": "VideoSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频编码配置中的音频设置。",
+          "example": "无",
+          "member": "VideoEncodingPresetAudioSetting",
+          "name": "AudioSetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoEncodingPresetAudioSetting": {
+      "document": "视频编码配置中的音频设置",
+      "members": [
+        {
+          "default": "",
+          "document": "音频流的编码格式，可选值：\nAAC：AAC 编码。\n\n默认值：AAC。",
+          "example": "AAC",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频码率，单位：bps。\n默认值：64K。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频声道数，可选值： \n<li>1：单声道；</li>\n<li>2：双声道。</li> \n默认值：2。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Channels",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 \n默认值：16000。",
+          "example": "16000",
+          "member": "uint64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoEncodingPresetAudioSettingForUpdate": {
+      "document": "视频编码配置中的音频设置更新信息",
+      "members": [
+        {
+          "default": "",
+          "document": "音频码率，单位：bps。\n不填则不修改。",
+          "example": "0",
+          "member": "string",
+          "name": "Bitrate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频声道数，可选值： \n<li>1：单声道；</li>\n<li>2：双声道。</li> \n不填则不修改。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Channels",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。\n不填则不修改。",
+          "example": "16000",
+          "member": "uint64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoEncodingPresetVideoSetting": {
+      "document": "视频编码配置中的视频设置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频流的编码格式，可选值：\n<li>H264：H.264 编码。</li>",
+          "example": "H264",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例：如果项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720。</li>\n如果项目的宽高比是 9：16 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>\n默认值：1080。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "ShortEdge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定码率，单位 bps。当该参数为'0'时则不强制限定码率。\n默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoEncodingPresetVideoSettingForUpdate": {
+      "document": "视频编码配置的视频设置更新信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例：如果项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720。</li>\n如果项目的宽高比是 9：16 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>\n不填则不修改。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "ShortEdge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。\n不填则不修改。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定帧率。单位 Hz。\n不填则不修改。",
+          "example": "25",
+          "member": "float",
+          "name": "FrameRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoExportExtensionArgs": {
+      "document": "视频导出扩展参数",
+      "members": [
+        {
+          "default": "",
+          "document": "封装格式，可选值：\n<li>mp4 </li>\n<li>mov </li>\n不填则默认使用导出模板中的值。",
+          "example": "mp4",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例如：项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>\n不填则默认使用导出模板中对的值。",
+          "example": "1080",
+          "member": "uint64",
+          "name": "ShortEdge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定码率，单位 bps。当该参数为 0 时则不强制限定码率。\n不填则默认使用导出模板中的值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoBitrate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则默认使用导出模板中对的值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则默认使用导出模板中对的值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片段起始时间，单位：毫秒。",
+          "example": "0",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片段结束时间，单位：毫秒。",
+          "example": "0",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "VideoMaterial": {
       "document": "视频素材信息",

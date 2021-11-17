@@ -15455,7 +15455,8 @@
       "members": [
         {
           "default": "",
-          "document": "媒体文件的来源类别：\n<li>Record：来自录制。如直播录制、直播时移录制等。</li>\n<li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>\n<li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>\n<li>Unknown：未知来源。</li>",
+          "document": "媒体文件的来源类别：\n<li>Record：来自录制。如直播录制、直播时移录制等。</li>\n<li>Upload：来自上传。如拉取上传、服务端上传、客户端 UGC 上传等。</li>\n<li>VideoProcessing：来自视频处理。如视频拼接、视频剪辑等。</li>\n<li>WebPageRecord：来自全景录制。</li>\n<li>Unknown：未知来源。</li>",
+          "example": "Record",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -15465,6 +15466,7 @@
         {
           "default": "",
           "document": "用户创建文件时透传的字段",
+          "example": "无",
           "member": "string",
           "name": "SourceContext",
           "required": true,

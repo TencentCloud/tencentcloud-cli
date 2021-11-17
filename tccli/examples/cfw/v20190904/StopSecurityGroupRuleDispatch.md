@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cfw StopSecurityGroupRuleDispatch --cli-unfold-argument ```
+tccli cfw StopSecurityGroupRuleDispatch --cli-unfold-argument  \
+    --StopType 0
+```
 
 Output: 
 ```

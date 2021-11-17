@@ -1,5 +1,29 @@
 {
   "actions": {
+    "AddContract": [
+      {
+        "document": "添加合同接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddContract\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OutContractId\": \"C0001\",\n    \"MerchantNo\": \"M0001\",\n    \"Code\": \"11111\",\n    \"SignName\": \"北极星\",\n    \"SignDate\": \"2019-9-9\",\n    \"SignMan\": \"张三\",\n    \"StartDate\": \"2019-9-9\",\n    \"EndDate\": \"2029-9-9\",\n    \"Contact\": \"张三\",\n    \"ContactTelephone\": \"13800138000\",\n    \"AutoSign\": \"0\",\n    \"PictureOne\": \"201901/123456.jpg\",\n    \"PaymentId\": \"0\",\n    \"PaymentClassificationId\": \"03-1\",\n    \"Fee\": \"0.32\",\n    \"PaymentClassificationLimit\": \"0\",\n    \"PictureTwo\": \"201901/123456.jpg\",\n    \"PaymentOptionOne\": \"open_id\",\n    \"PaymentOptionTwo\": \"open_key\",\n    \"PaymentOptionThree\": \"九江银行商户号\",\n    \"PaymentOptionFour\": \"微信子商户号\",\n    \"PaymentOptionFive\": \"微信子商户号\",\n    \"PaymentOptionSix\": \"微信子商户号\",\n    \"PaymentOptionSeven\": \"微信子商户号\",\n    \"PaymentOptionOther\": \"微信子商户号\",\n    \"PaymentOptionNine\": \"微信子商户号\",\n    \"PaymentOptionTen\": \"微信子商户号\",\n    \"ChannelExtJson\": \"{\\\"__category_id\\\":\\\"120102\\\",\\\"__category_id_select\\\":[\\\"天津\\\",\\\"天津市\\\",\\\"河东区\\\"],\\\"__mcc\\\":\\\"5811\\\",\\\"__mcc_select\\\":[\\\"餐娱类\\\",\\\"包办伙食、宴会承包商\\\"],\\\"__mcht_type\\\":\\\"00\\\",\\\"__mcht_type_select\\\":[\\\"总店\\\"],\\\"__merchant_type\\\":\\\"00\\\",\\\"__merchant_type_select\\\":[\\\"否\\\"]}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ContractId\": \"C0001\"\n        }\n    }\n}",
+        "title": "添加合同接口成功示例"
+      }
+    ],
+    "AddMerchant": [
+      {
+        "document": "添加商户接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddMerchant\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OutMerchantId\": \"10\",\n    \"MerchantName\": \"北极星\",\n    \"BrandName\": \"北国风光\",\n    \"CityId\": \"111000\",\n    \"Address\": \"东湖路\",\n    \"Telephone\": \"11111111111\",\n    \"OpenHours\": \"9:00-12:00,13:00-18:00\",\n    \"ClassificationIds\": [\n        \"100\",\n        \"100200\"\n    ],\n    \"BossName\": \"张三\",\n    \"BossSex\": \"1\",\n    \"BossIdCountry\": \"中国CHN\",\n    \"BossIdType\": \"1\",\n    \"BossStartDate\": \"2019-9-9\",\n    \"BossEndDate\": \"2029-9-9\",\n    \"BossIdNo\": \"00000000000000000\",\n    \"BossTelephone\": \"11111111111\",\n    \"BossEmail\": \"11111111111@163.com\",\n    \"BossJob\": \"学生\",\n    \"BossAddress\": \"北京朝阳区\",\n    \"BossPositive\": \"picture1\",\n    \"BossBack\": \"picture2\",\n    \"BusinessLicenseType\": \"1\",\n    \"BusinessLicenseStartDate\": \"2019-9-9\",\n    \"BusinessLicenseEndDate\": \"2029-9-9\",\n    \"BusinessLicenseNo\": \"100\",\n    \"BusinessLicensePicture\": \"picture3\",\n    \"BankName\": \"中国银行\",\n    \"AccountName\": \"100\",\n    \"AccountNo\": \"10000\",\n    \"AccountType\": \"1\",\n    \"BankNo\": \"1\",\n    \"AccountBoss\": \"1\",\n    \"AccountIdType\": \"1\",\n    \"AccountIdNo\": \"11111111111111112\",\n    \"Intro\": \"互联网商户\",\n    \"AccountManagerName\": \"李四\",\n    \"OrganizationNo\": \"00000\",\n    \"OrganizationStartDate\": \"2019-9-9\",\n    \"OrganizationEndDate\": \"2029-9-9\",\n    \"OrganizationPicture\": \"picture4\",\n    \"TaxRegistrationNo\": \"00100\",\n    \"TaxRegistrationStartDate\": \"2019-9-9\",\n    \"TaxRegistrationEndDate\": \"2029-9-9\",\n    \"TaxRegistrationPicture\": \"picture5\",\n    \"Tag\": \"10\",\n    \"FinancialContact\": \"张三\",\n    \"FinancialTelephone\": \"11111111111\",\n    \"Logo\": \"北极星\",\n    \"LicencePicture\": \"picture5\",\n    \"LicencePictureTwo\": \"picture6\",\n    \"OtherPictureOne\": \"资料1\",\n    \"OtherPictureTwo\": \"资料2\",\n    \"OtherPictureThree\": \"资料3\",\n    \"OtherPictureFour\": \"资料4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"MerchantNo\": \"M0001\"\n        }\n    }\n}",
+        "title": "添加商户接口成功示例"
+      }
+    ],
+    "AddShop": [
+      {
+        "document": "添加门店接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddShop\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OutShopId\": \"S0001\",\n    \"MerchantNo\": \"M0001\",\n    \"ShopName\": \"南山店\",\n    \"ShopFullName\": \"江山小厨（南山店）\",\n    \"CityId\": \"440300\",\n    \"Address\": \"大学城\",\n    \"Telephone\": \"11111111111\",\n    \"PictureOne\": \"picture1\",\n    \"PictureTwo\": \"picture2\",\n    \"PictureThree\": \"picture3\",\n    \"Longitude\": \"N22°32′\",\n    \"Latitude\": \"E114°03′\",\n    \"LongitudeTwo\": \"N22°32′\",\n    \"LatitudeTwo\": \"E114°03′\",\n    \"OpenHours\": \"9:00-12:00,13:00-18:00\",\n    \"Contact\": \"张三\",\n    \"FinancialTelephone\": \"11111111111\",\n    \"OtherPicture\": \"picture4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ShopNo\": \"S0001\"\n        }\n    }\n}",
+        "title": "添加门店接口成功示例"
+      }
+    ],
     "ApplyApplicationMaterial": [
       {
         "document": "",
@@ -294,12 +318,84 @@
         "title": "查询订单状态"
       }
     ],
+    "DistributeAccreditQuery": [
+      {
+        "document": "分账授权申请查询接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeAccreditQuery\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": {\n            \"Status\": \"1\",\n            \"Remark\": \"已开通\",\n            \"ContractUrl\": \"https://www.tencent.com\"\n        }\n    }\n}",
+        "title": "分账授权申请查询接口成功示例"
+      }
+    ],
+    "DistributeAccreditTlinx": [
+      {
+        "document": "分账授权申请接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeAccreditTlinx\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"AuthType\": \"1\",\n    \"FullName\": \"营业执照商户全称测试\",\n    \"Percent\": \"200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": {\n            \"MerchantNo\": \"M0001\",\n            \"ContractUrl\": \"https://www.tencent.com\"\n        }\n    }\n}",
+        "title": "分账授权申请接口成功示例"
+      }
+    ],
+    "DistributeAddReceiver": [
+      {
+        "document": "分账添加分账接收方接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeAddReceiver\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"MerchantNo\": \"M0001\",\n    \"Remark\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": {\n            \"MerchantNo\": \"M0001\"\n        }\n    }\n}",
+        "title": "分账添加分账接收方接口成功示例"
+      }
+    ],
+    "DistributeApply": [
+      {
+        "document": "分账请求接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeApply\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OutDistributeNo\": \"D20211001001\",\n    \"DeveloperNo\": \"T20211001232100\",\n    \"Details\": [\n        {\n            \"MerchantNo\": \"M0001\",\n            \"Amount\": \"100\",\n            \"Remark\": \"备注\"\n        }\n    ],\n    \"Remark\": \"说明\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"OutDistributeNo\": \"D20211001001\",\n            \"DistributeNo\": \"sz202110909\",\n            \"OrderNo\": \"sz2021101244\",\n            \"Status\": \"1\",\n            \"Amount\": \"100\",\n            \"InDate\": \"2021-10-08\"\n        }\n    }\n}",
+        "title": "分账请求接口成功示例"
+      }
+    ],
+    "DistributeCancel": [
+      {
+        "document": "分账撤销接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeCancel\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OutDistributeNo\": \"123\",\n    \"OrderNo\": \"sz2021101244\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {}\n    }\n}",
+        "title": "分账撤销接口成功示例"
+      }
+    ],
+    "DistributeQuery": [
+      {
+        "document": "分账结果查询接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeQuery\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"OrderNo\": \"sz2021101244\",\n    \"Type\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"Orders\": [\n                {\n                    \"OutDistributeNo\": \"123\",\n                    \"DistributeNo\": \"456\",\n                    \"OrderNo\": \"789\",\n                    \"Status\": \"1\",\n                    \"InDate\": \"2021-10-01\",\n                    \"Remark\": \"备注\",\n                    \"Details\": [\n                        {\n                            \"MerchantNo\": \"M0001\",\n                            \"Amount\": \"100\",\n                            \"Remark\": \"备注\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "分账结果查询接口成功示例"
+      }
+    ],
+    "DistributeQueryReceiver": [
+      {
+        "document": "查询已添加分账接收方接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeQueryReceiver\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": {\n            \"MerchantNo\": \"M0001\"\n        }\n    }\n}",
+        "title": "查询已添加分账接收方接口成功示例"
+      }
+    ],
+    "DistributeRemoveReceiver": [
+      {
+        "document": "分账解除分账接收方接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeRemoveReceiver\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"MerchantNo\": \"M0001\",\n    \"Remark\": \"备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": {\n            \"MerchantNo\": \"M0001\"\n        }\n    }\n}",
+        "title": "分账解除分账接收方接口成功示例"
+      }
+    ],
     "DownloadBill": [
       {
         "document": "本接口提供对账单下载功能。调用者根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。",
         "input": "https://cpdp.tencentcloudapi.com/?Action=DownloadBill\r\n&<公共请求参数>\r\n&StateDate=20191202\r\n&MidasAppId=test_midas_app_id\r\n&MidasSecretId=your_midas_secret_id\r\n&MidasSignature=your_midas_signature",
         "output": "{\n    \"Response\": {\n        \"FileName\": \"appid_20191202.csv\",\n        \"FileMD5\": \"bef046b73c9e543f7773692ce56def68\",\n        \"DownloadUrl\": \"download_url\",\n        \"RequestId\": \"0c929116-67b6-4396-9d55-ba4a9113822d\"\n    }\n}",
         "title": "下载对账单请求示例"
+      }
+    ],
+    "DownloadOrgFile": [
+      {
+        "document": "下载文件接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadOrgFile\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"FilePath\": \"201912/eabc9ba6b7a5d577011def3a9f4c5302.png\",\n    \"Storage\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"Storage\": \"1\",\n            \"Content\": \"iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL\"\n        }\n    }\n}",
+        "title": "下载文件接口成功示例"
       }
     ],
     "DownloadReconciliationUrl": [
@@ -470,6 +566,14 @@
         "title": "QueryBillDownloadURL"
       }
     ],
+    "QueryCityCode": [
+      {
+        "document": "查询城市编码接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCityCode\n<公共请求参数>\n\n{\n    \"OpenId\": \"abc\",\n    \"OpenKey\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"查询成功\",\n        \"Result\": [\n            {\n                \"CityId\": \"110100\",\n                \"Province\": \"北京\",\n                \"City\": \"北京\",\n                \"District\": \"东城区\"\n            }\n        ]\n    }\n}",
+        "title": "查询城市编码接口成功示例"
+      }
+    ],
     "QueryCommonTransferRecharge": [
       {
         "document": "",
@@ -484,6 +588,30 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryContract\n&MidasAppId=SAM001\n&SubAppId=xxx\n&UserId=taddeng111\n&Channel=wechat\n&ContractQueryMode=CONTRACT_QUERY_MODE_BY_OUT_CONTRACT_CODE\n&OutContractCode=miketest_contract_0511001\n&ContractSceneId=APP-GENERAL\n&ChannelContractCode=xxx\n&ExternalContractData=xxx\n&MidasEnvironment=dev\n&MidasSignature=xxx\n&MidasSecretId=xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"\",\n        \"RequestId\": \"b9469088-bd71-4ccf-99fe-6fd51e6a29c6\",\n        \"ContractData\": {\n            \"ChannelSubMerchantId\": \"\",\n            \"ChannelAppId\": \"SAM001\",\n            \"ChannelName\": \"wechat\",\n            \"ExternalReturnCode\": \"SUCCESS\",\n            \"ExternalReturnMessage\": \"\",\n            \"ExternalReturnData\": \"<xml><return_code><![CDATA[SUCCESS]]></return_code>\\n<result_code><![CDATA[SUCCESS]]></result_code>\\n<mch_id><![CDATA[1600317581]]></mch_id>\\n<appid><![CDATA[wxa384c55535723da0]]></appid>\\n<contract_id><![CDATA[202105115706341423]]></contract_id>\\n<plan_id>138096</plan_id>\\n<openid><![CDATA[o6khq5FNTcJTADCsk9uXSV6djzvE]]></openid>\\n<request_serial>1620703959</request_serial>\\n<contract_code><![CDATA[miketest_contract_0511001]]></contract_code>\\n<contract_display_account><![CDATA[甘丽娜]]></contract_display_account>\\n<contract_state>1</contract_state>\\n<contract_signed_time><![CDATA[2021-05-11 11:34:22]]></contract_signed_time>\\n<contract_expired_time><![CDATA[2031-05-09 11:34:22]]></contract_expired_time>\\n<contract_terminated_time><![CDATA[2021-05-11 20:41:07]]></contract_terminated_time>\\n<contract_termination_mode>3</contract_termination_mode>\\n<contract_termination_remark><![CDATA[test]]></contract_termination_remark>\\n<err_code>0</err_code>\\n<err_code_des><![CDATA[SUCCESS]]></err_code_des>\\n<sign><![CDATA[AF82AA6BA9B3064F54FEC7C3B104ABAC]]></sign>\\n</xml>\",\n            \"NotifyUrl\": \"https://dev.tke.midas.qq.com/node/vereinen/util/dump/empty_req/post\",\n            \"ChannelSubAppId\": \"\",\n            \"ChannelMerchantId\": \"SAM001\",\n            \"ReturnContractInfo\": {\n                \"ChannelReturnContractInfo\": {\n                    \"ContractStatus\": \"CONTRACT_STATUS_TERMINATED\",\n                    \"ChannelContractInfo\": {\n                        \"ChannelContractCode\": \"miketest_contract_0511001\",\n                        \"OutContractCode\": \"miketest_contract_0511001\"\n                    }\n                },\n                \"ExternalReturnContractInfo\": {\n                    \"ExternalReturnContractSignedTimestamp\": \"2021-05-11T11:34:22Z\",\n                    \"ExternalReturnContractTerminationTimestamp\": \"2021-05-11T20:41:07Z\",\n                    \"ExternalReturnContractEffectiveTimestamp\": \"1970-01-01T00:00:00Z\",\n                    \"ExternalReturnAgreementId\": \"202105115706341423\",\n                    \"ExternalReturnContractData\": \"{\\\"contract_id\\\":\\\"202105115706341423\\\"}\",\n                    \"ExternalReturnRequestId\": \"1620703959\",\n                    \"ExternalReturnContractTerminationRemark\": \"test\",\n                    \"ExternalReturnContractExpiredTimestamp\": \"2031-05-09T11:34:22Z\",\n                    \"ExternalReturnContractStatus\": \"CONTRACT_STATUS_TERMINATED\",\n                    \"ExternalReturnContractTerminationMode\": \"CONTRACT_TERMINATION_MODE_TERMINATED_BY_MERCHANT_API\"\n                },\n                \"ContractInfo\": {\n                    \"ChannelContractMerchantId\": \"SAM001\",\n                    \"ChannelContractSubMerchantId\": \"\",\n                    \"ChannelContractSubAppId\": \"\",\n                    \"ContractSceneId\": \"APP-GENERAL\",\n                    \"ContractMethod\": \"wechat_jsapi\",\n                    \"ChannelContractAppId\": \"SAM001\",\n                    \"ExternalContractUserInfoList\": [],\n                    \"UserInfo\": {\n                        \"UserType\": \"USER_ID\",\n                        \"UserId\": \"taddeng111\"\n                    },\n                    \"OutContractCode\": \"miketest_contract_0511001\",\n                    \"ExternalContractData\": \"\"\n                }\n            }\n        }\n    }\n}",
         "title": "查询签约关系"
+      }
+    ],
+    "QueryContractPayFee": [
+      {
+        "document": "查询支付方式费率及自定义表单项接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryContractPayFee\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"PaymentId\": \"21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"Pay\": {\n                \"PaymentId\": \"21\",\n                \"PaymentType\": \"2,3,4\",\n                \"PaymentTag\": \"Weixin\",\n                \"PaymentName\": \"微信\",\n                \"PaymentInternalName\": \"微信支付（九江银行）\",\n                \"PaymentIcon\": \"2017/a61611233156.jpg\",\n                \"PaymentDiscountFee\": \"日期\"\n            },\n            \"PayFee\": [\n                {\n                    \"PaymentClassificationId\": \"13\",\n                    \"PaymentClassificationName\": \"线下实体商户\",\n                    \"PaymentClassificationMinFee\": \"0.200\",\n                    \"PaymentClassificationMaxFee\": \"0.600\",\n                    \"PaymentClassificationLimit\": \"0\",\n                    \"OrganizationFeeType\": \"1\",\n                    \"OrganizationFee\": \"0.200\"\n                }\n            ],\n            \"ExtraInput\": \"无\"\n        }\n    }\n}",
+        "title": "查询支付方式费率及自定义表单项接口成功示例"
+      }
+    ],
+    "QueryContractPayWayList": [
+      {
+        "document": "查询合同支付方式列表接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryContractPayWayList\n<公共请求参数>\n\n{\n    \"OpenId\": \"abc\",\n    \"OpenKey\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"ok\",\n        \"RequestId\": \"98b36609-430f-49ac-ab91-814b46f6a71e\",\n        \"Result\": [\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"4\",\n                \"PaymentInternalName\": \"微信支付（默认银行）\",\n                \"PaymentName\": \"微信支付\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"微信子商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinTEST\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Alipay.jpg\",\n                \"PaymentId\": \"5\",\n                \"PaymentInternalName\": \"支付宝（默认银行）\",\n                \"PaymentName\": \"支付宝\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"支付宝子商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"AlipayTEST\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"10\",\n                \"PaymentInternalName\": \"乐刷微信\",\n                \"PaymentName\": \"乐刷微信\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"子商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinLS\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"11\",\n                \"PaymentInternalName\": \"乐刷支付宝\",\n                \"PaymentName\": \"乐刷支付宝\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"\",\n                \"PaymentOptionOne\": \"子商户号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"AlipayLS\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"12\",\n                \"PaymentInternalName\": \"四川农信微信支付\",\n                \"PaymentName\": \"四川农信微信支付\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"地区码\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinSCNX\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"13\",\n                \"PaymentInternalName\": \"陕西优惠券\",\n                \"PaymentName\": \"陕西优惠券\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"\",\n                \"PaymentOptionOne\": \"商户号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"终端号\",\n                \"PaymentTag\": \"MbCardHZF\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"14\",\n                \"PaymentInternalName\": \"福建农信微信支付\",\n                \"PaymentName\": \"福建农信微信支付\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"子商户号\",\n                \"PaymentOptionOne\": \"终端号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinFJNX\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"15\",\n                \"PaymentInternalName\": \"福建浦发微信\",\n                \"PaymentName\": \"福建浦发微信\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"终端编号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinFJPF\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Alipay.jpg\",\n                \"PaymentId\": \"16\",\n                \"PaymentInternalName\": \"福建浦发支付宝\",\n                \"PaymentName\": \"福建浦发支付宝\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"终端编号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"AlipayFJPF\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/UnionPay.jpg\",\n                \"PaymentId\": \"17\",\n                \"PaymentInternalName\": \"福建浦发银联\",\n                \"PaymentName\": \"福建浦发银联\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"终端号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"UnionFJPF\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"18\",\n                \"PaymentInternalName\": \"烟台农信微信\",\n                \"PaymentName\": \"烟台农信微信\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"机构号\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinYTZZ\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"19\",\n                \"PaymentInternalName\": \"烟台支付宝\",\n                \"PaymentName\": \"烟台支付宝\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"商户号\",\n                \"PaymentOptionOne\": \"\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"机构号\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"AlipayYTZZ\",\n                \"PaymentType\": \"2,3,4\"\n            },\n            {\n                \"PaymentIcon\": \"xxx/Weixin.jpg\",\n                \"PaymentId\": \"21\",\n                \"PaymentInternalName\": \"乐刷微信(生产)\",\n                \"PaymentName\": \"乐刷微信(生产)\",\n                \"PaymentOptionFive\": \"\",\n                \"PaymentOptionFour\": \"\",\n                \"PaymentOptionNine\": \"\",\n                \"PaymentOptionOne\": \"子商户号\",\n                \"PaymentOptionOther\": \"\",\n                \"PaymentOptionSeven\": \"\",\n                \"PaymentOptionSix\": \"\",\n                \"PaymentOptionTen\": \"\",\n                \"PaymentOptionThree\": \"\",\n                \"PaymentOptionTwo\": \"\",\n                \"PaymentTag\": \"WeixinLS2\",\n                \"PaymentType\": \"2,3,4\"\n            }\n        ]\n    }\n}",
+        "title": "查询合同支付方式列表接口成功示例"
+      }
+    ],
+    "QueryContractRelateShop": [
+      {
+        "document": "查询合同可关联门店接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryContractRelateShop\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"ContractId\": \"C0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"操作成功\",\n        \"Result\": [\n            {\n                \"IsChecked\": \"1\",\n                \"ShopNo\": \"S0001\",\n                \"ShopName\": \"南山店\",\n                \"Province\": \"广东\",\n                \"CityId\": \"440300\",\n                \"Address\": \"大学城\",\n                \"TerminalCount\": \"1\",\n                \"ShopStatus\": \"1\"\n            }\n        ]\n    }\n}",
+        "title": "查询合同可关联门店接口成功示例"
       }
     ],
     "QueryCustAcctIdBalance": [
@@ -566,6 +694,14 @@
         "title": "QueryMerchantBalance"
       }
     ],
+    "QueryMerchantClassification": [
+      {
+        "document": "查询商户分类接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMerchantClassification\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"查询成功\",\n        \"Result\": [\n            {\n                \"Code\": \"100\",\n                \"Name\": \"川菜\",\n                \"Parent\": \"0\"\n            }\n        ]\n    }\n}",
+        "title": "查询商户分类接口成功示例"
+      }
+    ],
     "QueryMerchantInfoForManagement": [
       {
         "document": "",
@@ -636,6 +772,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryRefund\n&UserId=your_user_id\n&RefundId=refund_id_00001\n&MidasAppId=your_midas_app_id\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"State\": \"2\",\n        \"RequestId\": \"665464d4-67fc-4ca0-847e-183508710681\"\n    }\n}",
         "title": "查询退款接口请求示例"
+      }
+    ],
+    "QueryShopOpenId": [
+      {
+        "document": "获取门店OpenId接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryShopOpenId\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"ShopNo\": \"TestS115\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ShopNo\": \"20260437\",\n            \"ShopName\": \"南山店\",\n            \"ShopFullName\": \"API进件测试的商户（南山店）\",\n            \"MerchantNo\": \"20743873\",\n            \"MerchantName\": \"API进件测试的商户\",\n            \"BrandName\": \"招牌名称\",\n            \"Province\": \"北京\",\n            \"City\": \"北京\",\n            \"County\": \"东城区\",\n            \"CityId\": \"110101\",\n            \"Address\": \"南山区科技园科苑大道讯美科技广场2栋12楼\",\n            \"Telephone\": \"88888888\",\n            \"OpenId\": \"eadca266c6d9a0aaa962323f3f778b576\",\n            \"OpenKey\": \"1248d0bc506ff93e012364d16d449df3\"\n        }\n    }\n}",
+        "title": "获取门店OpenId接口成功示例"
       }
     ],
     "QuerySinglePay": [
@@ -890,6 +1034,14 @@
         "title": "身份证图片上传加验证"
       }
     ],
+    "UploadOrgFile": [
+      {
+        "document": "上传机构文件接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadOrgFile\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"FileContent\": \"iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL\",\n    \"FileMd5\": \"E68A2FEBA43406F3D27B38F71E1C39A7\",\n    \"FileExtension\": \"jpg\",\n    \"Storage\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"Storage\": \"1\",\n            \"FilePath\": \"201912/eabc9ba6b7a5d577011def3a9f4c5302.png\"\n        }\n    }\n}",
+        "title": "上传机构文件接口成功示例"
+      }
+    ],
     "UploadTaxList": [
       {
         "document": "",
@@ -904,6 +1056,30 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTaxPayment\n<公共请求参数>\n\n{\n    \"Channel\": 1,\n    \"TaxId\": \"tax-xxx\",\n    \"FileUrl\": \"http://cos.qcloud.com/tax.xlsx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aadd86c-1727-40ef-9927-9f87201449af\"\n    }\n}",
         "title": "直播平台-上传代理商完税证明"
+      }
+    ],
+    "ViewContract": [
+      {
+        "document": "查询合同明细接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ViewContract\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"ContractId\": \"TestC115\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ContractId\": \"301385\",\n            \"Code\": \"123456\",\n            \"StartDate\": \"2016-11-01\",\n            \"EndDate\": \"2017-11-01\",\n            \"PaymentId\": \"13\",\n            \"PaymentType\": \"2\",\n            \"PaymentTag\": \"WeixinJJYH\",\n            \"PaymentName\": \"微信支付\",\n            \"PaymentInternalName\": \"微信支付(九江银行)\",\n            \"PaymentClassificationId\": \"38\",\n            \"PaymentClassificationName\": \"线下实体商户\",\n            \"Fee\": \"0.32\",\n            \"PaymentClassificationLimit\": \"0\",\n            \"MerchantNo\": \"20743873\",\n            \"MerchantName\": \"API进件测试的商户\",\n            \"BrandName\": \"招牌名称\",\n            \"Province\": \"北京\",\n            \"City\": \"北京\",\n            \"Country\": \"东城区\",\n            \"CityId\": \"110101\",\n            \"Address\": \"南山区科技园科苑大道讯美科技广场2栋12楼\",\n            \"AddTime\": \"2016-12-06 15:37:34\",\n            \"UpdateTime\": \"2016-12-06 15:41:04\",\n            \"OutContractId\": \"123456\",\n            \"SignDate\": \"2016-11-01\",\n            \"ShopCount\": \"1\",\n            \"AutoSign\": \"1\",\n            \"Status\": \"0\",\n            \"PictureOne\": \"201601/123456.jpg\",\n            \"PictureTwo\": \"201601/123456.jpg\"\n        }\n    }\n}",
+        "title": "查询合同明细接口成功示例"
+      }
+    ],
+    "ViewMerchant": [
+      {
+        "document": "查询商户明细接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ViewMerchant\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"MerchantNo\": \"Test10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"MerchantNo\": \"20743873\",\n            \"MerchantName\": \"API进件测试的商户\",\n            \"BrandName\": \"招牌名称\",\n            \"Province\": \"北京\",\n            \"City\": \"北京\",\n            \"Country\": \"东城区\",\n            \"CityId\": \"110100\",\n            \"ClassificationIds\": \"100,101\",\n            \"ClassificationNames\": \"美食,粤菜\",\n            \"Address\": \"科技园科苑大道讯美科技广场2栋12楼\",\n            \"Telephone\": \"13800138000\",\n            \"OpenHours\": \"9:00-12:00,13:00-18:00\",\n            \"Status\": \"2\",\n            \"Remark\": \"无\",\n            \"AddTime\": \"2016-12-06 13:29:41\",\n            \"UpdateTime\": \"2016-12-06 16:08:52\",\n            \"ShopCount\": \"1\",\n            \"TerminalCount\": \"0\",\n            \"ContractCount\": \"1\",\n            \"AppCount\": \"0\",\n            \"BossName\": \"林三\",\n            \"BossSex\": \"1\",\n            \"BossIdCount\": \"CHN\",\n            \"BossIdType\": \"1\",\n            \"BossStartDate\": \"2016-01-01\",\n            \"BossEndDate\": \"2026-01-01\",\n            \"BossIdNo\": \"431227198208081122\",\n            \"BossPositive\": \"201601/12345.jpg\",\n            \"BossBack\": \"201601/12345.jpg\",\n            \"BusinessLicenseType\": \"1\",\n            \"BusinessLicenseStartDate\": \"2016-01-01\",\n            \"BusinessLicenseEndDate\": \"2016-12-01\",\n            \"BusinessLicenseNo\": \"1234567890ABC\",\n            \"BankName\": \"招商银行\",\n            \"AccountName\": \"林三\",\n            \"AccountNo\": \"6222202888899999\",\n            \"AccountType\": \"1\",\n            \"BankNo\": \"123456789\"\n        }\n    }\n}",
+        "title": "查询商户明细接口成功示例"
+      }
+    ],
+    "ViewShop": [
+      {
+        "document": "查询门店明细接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ViewShop\n<公共请求参数>\n\n{\n    \"OpenId\": \"f2cc268b9c95fbbb230a19397fe35f8d\",\n    \"OpenKey\": \"e30051d527bd4e621e7090c9392739ec\",\n    \"ShopNo\": \"Test5333\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"提交成功\",\n        \"Result\": {\n            \"ShopNo\": \"20260437\",\n            \"ShopName\": \"南山店\",\n            \"ShopFullName\": \"API进件测试的商户（南山店）\",\n            \"MerchantNo\": \"20743873\",\n            \"MerchantName\": \"API进件测试的商户\",\n            \"BrandName\": \"招牌名称\",\n            \"Province\": \"北京\",\n            \"City\": \"北京\",\n            \"County\": \"东城区\",\n            \"CityId\": \"110101\",\n            \"Address\": \"南山区科技园科苑大道讯美科技广场2栋12楼\",\n            \"Telephone\": \"88888888\",\n            \"AddTime\": \"2016-12-06 14:38:35\",\n            \"UpdateTime\": \"2016-12-06 14:47:03\",\n            \"TerminalCount\": \"0\",\n            \"AppCount\": \"0\",\n            \"OutShopId\": \"123456\",\n            \"Status\": \"1\",\n            \"Remark\": \"无\",\n            \"PictureOne\": \"201601/123456.jpg\",\n            \"PictureTwo\": \"201601/123456.jpg\",\n            \"PictureThree\": \"201601/123456.jpg\",\n            \"PictureFour\": \"201601/123456.jpg\",\n            \"Longitude\": \"113.947107\",\n            \"Latitude\": \"22.547374\",\n            \"LongitudeTwo\": \"113.947107\",\n            \"LatitudeTwo\": \"22.547374\"\n        }\n    }\n}",
+        "title": "查询门店明细接口成功示例"
       }
     ],
     "WithdrawCashMembership": [

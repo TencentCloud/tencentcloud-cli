@@ -1,5 +1,23 @@
 {
   "actions": {
+    "AddContract": {
+      "document": "云支付-添加合同接口",
+      "input": "AddContractRequest",
+      "name": "云支付-添加合同接口",
+      "output": "AddContractResponse"
+    },
+    "AddMerchant": {
+      "document": "云支付-添加商户接口",
+      "input": "AddMerchantRequest",
+      "name": "云支付-添加商户接口",
+      "output": "AddMerchantResponse"
+    },
+    "AddShop": {
+      "document": "云支付-添加门店接口",
+      "input": "AddShopRequest",
+      "name": "云支付-添加门店接口",
+      "output": "AddShopResponse"
+    },
     "ApplyApplicationMaterial": {
       "document": "跨境-提交申报材料。申报材料的主体是付款人，需要提前调用【跨境-付款人申请】接口提交付款人信息且审核通过后调用。",
       "input": "ApplyApplicationMaterialRequest",
@@ -216,11 +234,65 @@
       "name": "查询单笔订单交易状态",
       "output": "DescribeOrderStatusResponse"
     },
+    "DistributeAccreditQuery": {
+      "document": "云支付-分账授权申请查询接口",
+      "input": "DistributeAccreditQueryRequest",
+      "name": "云支付-分账授权申请查询接口",
+      "output": "DistributeAccreditQueryResponse"
+    },
+    "DistributeAccreditTlinx": {
+      "document": "云支付-分账授权申请接口",
+      "input": "DistributeAccreditTlinxRequest",
+      "name": "云支付-分账授权申请接口",
+      "output": "DistributeAccreditTlinxResponse"
+    },
+    "DistributeAddReceiver": {
+      "document": "云支付-分账添加分账接收方接口",
+      "input": "DistributeAddReceiverRequest",
+      "name": "云支付-分账添加分账接收方接口",
+      "output": "DistributeAddReceiverResponse"
+    },
+    "DistributeApply": {
+      "document": "云支付-分账请求接口",
+      "input": "DistributeApplyRequest",
+      "name": "云支付-分账请求接口",
+      "output": "DistributeApplyResponse"
+    },
+    "DistributeCancel": {
+      "document": "云支付-分账撤销接口",
+      "input": "DistributeCancelRequest",
+      "name": "云支付-分账撤销接口",
+      "output": "DistributeCancelResponse"
+    },
+    "DistributeQuery": {
+      "document": "云支付-分账结果查询接口",
+      "input": "DistributeQueryRequest",
+      "name": "云支付-分账结果查询接口",
+      "output": "DistributeQueryResponse"
+    },
+    "DistributeQueryReceiver": {
+      "document": "云支付-T查询已添加分账接收方接口",
+      "input": "DistributeQueryReceiverRequest",
+      "name": "云支付-查询已添加分账接收方接口",
+      "output": "DistributeQueryReceiverResponse"
+    },
+    "DistributeRemoveReceiver": {
+      "document": "云支付-分账解除分账接收方接口",
+      "input": "DistributeRemoveReceiverRequest",
+      "name": "云支付-分账解除分账接收方接口",
+      "output": "DistributeRemoveReceiverResponse"
+    },
     "DownloadBill": {
       "document": "账单下载接口，根据本接口返回的URL地址，在D+1日下载对账单。注意，本接口返回的URL地址有时效，请尽快下载。URL超时时效后，请重新调用本接口再次获取。",
       "input": "DownloadBillRequest",
       "name": "聚鑫-账单下载",
       "output": "DownloadBillResponse"
+    },
+    "DownloadOrgFile": {
+      "document": "云支付-下载机构文件接口",
+      "input": "DownloadOrgFileRequest",
+      "name": "云支付-下载机构文件接口",
+      "output": "DownloadOrgFileResponse"
     },
     "DownloadReconciliationUrl": {
       "document": "获取对账中心账单下载地址的接口",
@@ -348,6 +420,12 @@
       "name": "智能代发-单笔代发转账对账单下载接口",
       "output": "QueryBillDownloadURLResponse"
     },
+    "QueryCityCode": {
+      "document": "云支付-查询城市编码接口",
+      "input": "QueryCityCodeRequest",
+      "name": "云支付-查询城市编码接口",
+      "output": "QueryCityCodeResponse"
+    },
     "QueryCommonTransferRecharge": {
       "document": "查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。",
       "input": "QueryCommonTransferRechargeRequest",
@@ -359,6 +437,24 @@
       "input": "QueryContractRequest",
       "name": "查询签约数据接口",
       "output": "QueryContractResponse"
+    },
+    "QueryContractPayFee": {
+      "document": "云支付-查询支付方式费率及自定义表单项接口",
+      "input": "QueryContractPayFeeRequest",
+      "name": "云支付-查询支付方式费率及自定义表单项接口",
+      "output": "QueryContractPayFeeResponse"
+    },
+    "QueryContractPayWayList": {
+      "document": "云支付-查询合同支付方式列表接口",
+      "input": "QueryContractPayWayListRequest",
+      "name": "云支付-查询合同支付方式列表接口",
+      "output": "QueryContractPayWayListResponse"
+    },
+    "QueryContractRelateShop": {
+      "document": "云支付-查询合同可关联门店接口",
+      "input": "QueryContractRelateShopRequest",
+      "name": "云支付-查询合同可关联门店接口",
+      "output": "QueryContractRelateShopResponse"
     },
     "QueryCustAcctIdBalance": {
       "document": "查询银行子账户余额。查询会员子账户以及平台的功能子账户的余额。",
@@ -420,6 +516,12 @@
       "name": "跨境-对接方账户余额查询",
       "output": "QueryMerchantBalanceResponse"
     },
+    "QueryMerchantClassification": {
+      "document": "云支付-查询商户分类接口",
+      "input": "QueryMerchantClassificationRequest",
+      "name": "云支付-查询商户分类接口",
+      "output": "QueryMerchantClassificationResponse"
+    },
     "QueryMerchantInfoForManagement": {
       "document": "智慧零售-查询管理端商户",
       "input": "QueryMerchantInfoForManagementRequest",
@@ -473,6 +575,12 @@
       "input": "QueryRefundRequest",
       "name": "聚鑫-查询退款接口",
       "output": "QueryRefundResponse"
+    },
+    "QueryShopOpenId": {
+      "document": "云支付-获取门店OpenId接口",
+      "input": "QueryShopOpenIdRequest",
+      "name": "云支付-获取门店OpenId接口",
+      "output": "QueryShopOpenIdResponse"
     },
     "QuerySinglePay": {
       "document": "银企直连-单笔支付状态查询接口",
@@ -654,6 +762,12 @@
       "name": "直播平台-文件上传",
       "output": "UploadFileResponse"
     },
+    "UploadOrgFile": {
+      "document": "云支付-上传机构文件接口",
+      "input": "UploadOrgFileRequest",
+      "name": "云支付-上传机构文件接口",
+      "output": "UploadOrgFileResponse"
+    },
     "UploadTaxList": {
       "document": "直播平台-上传代理商完税列表",
       "input": "UploadTaxListRequest",
@@ -665,6 +779,24 @@
       "input": "UploadTaxPaymentRequest",
       "name": "直播平台-上传代理商完税证明",
       "output": "UploadTaxPaymentResponse"
+    },
+    "ViewContract": {
+      "document": "云支付-查询合同明细接口",
+      "input": "ViewContractRequest",
+      "name": "云支付-查询合同明细接口",
+      "output": "ViewContractResponse"
+    },
+    "ViewMerchant": {
+      "document": "云支付-查询商户明细接口",
+      "input": "ViewMerchantRequest",
+      "name": "云支付-查询商户明细接口",
+      "output": "ViewMerchantResponse"
+    },
+    "ViewShop": {
+      "document": "云支付-查询门店明细接口",
+      "input": "ViewShopRequest",
+      "name": "云支付-查询门店明细接口",
+      "output": "ViewShopResponse"
     },
     "WithdrawCashMembership": {
       "document": "会员提现-不验证。此接口受理会员发起的提现申请。会员子账户的可提现余额、可用余额会减少，市场的资金汇总账户(监管账户)会减少相应的发生金额，提现到会员申请的收款账户。\t\t",
@@ -742,6 +874,1179 @@
           "document": "STRING(8)，维护日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MaintenanceDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AddContractRequest": {
+      "document": "AddContract请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "签约扣率百分比（如：0.32）",
+          "example": "0.32",
+          "member": "string",
+          "name": "Fee",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构合同主键（系统有唯一性校验），建议使用合同表的主键ID，防止重复添加合同",
+          "example": "C0001",
+          "member": "string",
+          "name": "OutContractId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "封顶值（分为单位，无封顶填0）",
+          "example": "0",
+          "member": "string",
+          "name": "PaymentClassificationLimit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人电话",
+          "example": "13800138000",
+          "member": "string",
+          "name": "ContactTelephone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式编号",
+          "example": "0",
+          "member": "string",
+          "name": "PaymentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同生效日期（yyyy-mm-dd）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同过期日期（yyyy-mm-dd）",
+          "example": "2029-9-9",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同签约人",
+          "example": "张三",
+          "member": "string",
+          "name": "SignMan",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签购单名称，建议使用商户招牌名称",
+          "example": "北极星",
+          "member": "string",
+          "name": "SignName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户编号",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同照片【私密区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "PictureOne",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "Contact",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同签署日期（yyyy-mm-dd）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "SignDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同编号（系统有唯一性校验）",
+          "example": "11111",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动续签（1是，0否）",
+          "example": "0",
+          "member": "string",
+          "name": "AutoSign",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式行业分类编号",
+          "example": "03-1",
+          "member": "string",
+          "name": "PaymentClassificationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同照片【私密区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "PictureTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项8",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionTen",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项7（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionNine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项6（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionOther",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同证书选项1（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionFive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项4（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionFour",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项5（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionSeven",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同证书选项2（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "微信子商户号",
+          "member": "string",
+          "name": "PaymentOptionSix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项1（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "open_id",
+          "member": "string",
+          "name": "PaymentOptionOne",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项3（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "九江银行商户号",
+          "member": "string",
+          "name": "PaymentOptionThree",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同选项2（不同支付方式规则不一样，请以支付方式规定的格式传值）",
+          "example": "open_key",
+          "member": "string",
+          "name": "PaymentOptionTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道扩展字段，json格式",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExtJson",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddContractResponse": {
+      "document": "AddContract返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加合同响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddContractResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddContractResult": {
+      "document": "添加合同响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "合同主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C0001",
+          "member": "string",
+          "name": "ContractId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AddMerchantRequest": {
+      "document": "AddMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "法人姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "BossName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照图片【私密区】（系统返回的图片路径），（小微商户不效验，随意传要有值，公司/个体户必传）",
+          "example": "picture3",
+          "member": "string",
+          "name": "BusinessLicensePicture",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "招牌名称",
+          "example": "北国风光",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照过期时间（yyyy-mm-dd）",
+          "example": "2029-9-9",
+          "member": "string",
+          "name": "BusinessLicenseEndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人证件生效时间（yyyy-mm-dd）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "BossStartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "清算联行号，开户行行号",
+          "example": "1",
+          "member": "string",
+          "name": "BankNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开户行名称",
+          "example": "中国银行",
+          "member": "string",
+          "name": "BankName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照类型（1三证合一，2非三证合一）",
+          "example": "1",
+          "member": "string",
+          "name": "BusinessLicenseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人证件过期时间（yyyy-mm-dd）",
+          "example": "2029-9-9",
+          "member": "string",
+          "name": "BossEndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照编号（系统有唯一性校验），（小微商户不效验，随意传要有值，公司/个体户必传）",
+          "example": "100",
+          "member": "string",
+          "name": "BusinessLicenseNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照生效时间（yyyy-mm-dd），（小微商户不效验，随意传要有值，公司/个体户必传）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "BusinessLicenseStartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人证件类型（1居民身份证,2临时居民身份证,3居民户口簿,4护照,5港澳居民来往内地通行证,6回乡证,7军人证,8武警身份证,9其他法定文件）",
+          "example": "1",
+          "member": "string",
+          "name": "BossIdType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "详细地址，不含省市区县名称，长度需要大于5。",
+          "example": "东湖路",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人证件国别/地区（中国CHN，香港HKG，澳门MAC，台湾CTN）",
+          "example": "中国CHN",
+          "member": "string",
+          "name": "BossIdCountry",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户名称，小微商户命名要符合“”商户_名字” （例如：商户_张三）",
+          "example": "北极星",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人性别（1男，2女）",
+          "example": "1",
+          "member": "string",
+          "name": "BossSex",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "行业分类编号列表（第一个分类编号为主分类，后面的为二级分类）",
+          "example": "无",
+          "member": "string",
+          "name": "ClassificationIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "法人证件号码",
+          "example": "00000000000000000",
+          "member": "string",
+          "name": "BossIdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "许可证图片【私密区】，（小微商户不效验，随意传要有值，公司/个体户必传）",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "LicencePicture",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)",
+          "example": "9:00-12:00,13:00-18:00",
+          "member": "string",
+          "name": "OpenHours",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行户名",
+          "example": "100",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行账号",
+          "example": "10000",
+          "member": "string",
+          "name": "AccountNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结算账户类型（2对私，1对公）",
+          "example": "1",
+          "member": "string",
+          "name": "AccountType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "联系电话",
+          "example": "11111111111",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人身份证正面【私密区】（系统返回的图片路径）",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "BossPositive",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "城市编号",
+          "example": "111000",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人身份证背面【私密区】（系统返回的图片路径）",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "BossBack",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构商户主键（系统有唯一性校验），建议使用商户表的主键ID，防止重复添加商户",
+          "example": "10",
+          "member": "string",
+          "name": "OutMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证生效时间（yyyy-mm-dd）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "OrganizationStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人亲属证件号码",
+          "example": "11111111111111112",
+          "member": "string",
+          "name": "AccountIdNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "财务联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "FinancialContact",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人亲属证件类型（1居民身份证,2临时居民身份证,3居民户口簿,4护照,5港澳居民来往内地通行证,6回乡证,7军人证,8武警身份证,9其他法定文件）结算账户人身份为法人亲属时必填",
+          "example": "1",
+          "member": "string",
+          "name": "AccountIdType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证号",
+          "example": "00000",
+          "member": "string",
+          "name": "OrganizationNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他资料1",
+          "example": "资料1",
+          "member": "string",
+          "name": "OtherPictureOne",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "财务联系人电话",
+          "example": "11111111111",
+          "member": "string",
+          "name": "FinancialTelephone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证图片【私密区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "OrganizationPicture",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税务登记证生效时间（yyyy-mm-dd）",
+          "example": "2019-9-9",
+          "member": "string",
+          "name": "TaxRegistrationStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户标记，自定义参数",
+          "example": "10",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结算账户人身份（1法人，2法人亲属），结算帐户为对私时必填",
+          "example": "1",
+          "member": "string",
+          "name": "AccountBoss",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人电话",
+          "example": "11111111111",
+          "member": "string",
+          "name": "BossTelephone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税务登记证图片【私密区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "TaxRegistrationPicture",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证过期时间（yyyy-mm-dd）",
+          "example": "2029-9-9",
+          "member": "string",
+          "name": "OrganizationEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人职业",
+          "example": "学生",
+          "member": "string",
+          "name": "BossJob",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他资料3",
+          "example": "资料3",
+          "member": "string",
+          "name": "OtherPictureThree",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权文件【私密区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "LicencePictureTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户logo【公共区】",
+          "example": "北极星",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人住址",
+          "example": "北京朝阳区",
+          "member": "string",
+          "name": "BossAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "法人邮箱",
+          "example": "11111111111@163.com",
+          "member": "string",
+          "name": "BossEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他资料2",
+          "example": "资料2",
+          "member": "string",
+          "name": "OtherPictureTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户简介",
+          "example": "互联网商户",
+          "member": "string",
+          "name": "Intro",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户经理姓名，必须为系统后台的管理员真实姓名",
+          "example": "李四",
+          "member": "string",
+          "name": "AccountManagerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税务登记证过期时间（yyyy-mm-dd）",
+          "example": "2029-9-9",
+          "member": "string",
+          "name": "TaxRegistrationEndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他资料4",
+          "example": "资料4",
+          "member": "string",
+          "name": "OtherPictureFour",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税务登记证号",
+          "example": "00100",
+          "member": "string",
+          "name": "TaxRegistrationNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户类型：1-个人，2-小微，3-企事业。不传默认为2-小微商户。",
+          "example": "2",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddMerchantResponse": {
+      "document": "AddMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加商户响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddMerchantResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddMerchantResult": {
+      "document": "添加商户响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "系统商户号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AddShopRequest": {
+      "document": "AddShop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店简称（例如：南山店）",
+          "example": "南山店",
+          "member": "string",
+          "name": "ShopName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户编号",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "整体门面（含招牌）图片【公共区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "PictureTwo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "店内环境图片【公共区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "PictureThree",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "整体门面（含招牌）图片【公共区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "PictureOne",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店电话",
+          "example": "11111111111",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机构门店主键（系统有唯一性校验），建议使用门店表的主键ID，防止重复添加门店",
+          "example": "S0001",
+          "member": "string",
+          "name": "OutShopId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店所在的城市编码",
+          "example": "440300",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店全称（例如：江山小厨（南山店））",
+          "example": "江山小厨（南山店）",
+          "member": "string",
+          "name": "ShopFullName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)",
+          "example": "9:00-12:00,13:00-18:00",
+          "member": "string",
+          "name": "OpenHours",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店详细地址，不含省市区县名称",
+          "example": "大学城",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高德地图纬度",
+          "example": "E114°03′",
+          "member": "string",
+          "name": "LatitudeTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "其他照片【公共区】",
+          "example": "201901/123456.jpg",
+          "member": "string",
+          "name": "OtherPicture",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高德地图经度",
+          "example": "N22°32′",
+          "member": "string",
+          "name": "LongitudeTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店负责人",
+          "example": "张三",
+          "member": "string",
+          "name": "Contact",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "百度地图经度",
+          "example": "N22°32′",
+          "member": "string",
+          "name": "Longitude",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "百度地图纬度",
+          "example": "E114°03′",
+          "member": "string",
+          "name": "Latitude",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负责人手机号码",
+          "example": "11111111111",
+          "member": "string",
+          "name": "FinancialTelephone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShopResponse": {
+      "document": "AddShop返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加申请响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddShopResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShopResult": {
+      "document": "添加门店响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "门店编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S0001",
+          "member": "string",
+          "name": "ShopNo",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3195,6 +4500,52 @@
       ],
       "type": "object"
     },
+    "CityCodeResult": {
+      "document": "查询城市编码响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "城市编码cityid，数字与字母的结合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110100",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东城区",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClearItem": {
       "document": "银行在途清算结果信息",
       "members": [
@@ -3962,6 +5313,172 @@
         }
       ],
       "type": "object"
+    },
+    "ContractPayListResult": {
+      "document": "合同-支付方式列表响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "支付标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123453",
+          "member": "string",
+          "name": "PaymentTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式图片url路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017/a15619894.jpg",
+          "member": "string",
+          "name": "PaymentIcon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionSix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信",
+          "member": "string",
+          "name": "PaymentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionSeven",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionOther",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PaymentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionFive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionNine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "string",
+          "name": "PaymentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionThree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称（内部名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wechant",
+          "member": "string",
+          "name": "PaymentInternalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "PaymentOptionTen",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ContractSyncInfo": {
       "document": "签约同步信息",
@@ -7664,6 +9181,959 @@
       ],
       "type": "object"
     },
+    "DistributeAccreditQueryRequest": {
+      "document": "DistributeAccreditQuery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAccreditQueryResponse": {
+      "document": "DistributeAccreditQuery返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询授权申请结果响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeAccreditQueryResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAccreditQueryResult": {
+      "document": "分账授权申请查询响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "状态（0-未开通，1-已开通，2-商户主动关闭，3-待审核，4-冻结，5-注销，6-待签合同）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同h5地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "ContractUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "说明",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeAccreditResult": {
+      "document": "授权申请响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "合同h5地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "ContractUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统商户号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeAccreditTlinxRequest": {
+      "document": "DistributeAccreditTlinx请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开",
+          "example": "1",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账比例（500=5%）不传默认百分之10",
+          "example": "200",
+          "member": "string",
+          "name": "Percent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "营业执照商户全称",
+          "example": "营业执照商户全称测试",
+          "member": "string",
+          "name": "FullName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAccreditTlinxResponse": {
+      "document": "DistributeAccreditTlinx返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权申请响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeAccreditResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAddReceiverRequest": {
+      "document": "DistributeAddReceiver请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户编号",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAddReceiverResponse": {
+      "document": "DistributeAddReceiver返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "添加分账接收方响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeReceiverResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeApplyRequest": {
+      "document": "DistributeApply请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户分账单号",
+          "example": "123",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账明细",
+          "example": "无",
+          "member": "MultiApplyDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明",
+          "example": "说明",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户交易订单号，和OrderNo二者传其一",
+          "example": "456",
+          "member": "string",
+          "name": "DeveloperNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台交易订单号，和DeveloperNo二者传其一",
+          "example": "789",
+          "member": "string",
+          "name": "OrderNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeApplyResponse": {
+      "document": "DistributeApply返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分账申请响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeMultiApplyResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeCancelRequest": {
+      "document": "DistributeCancel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台交易订单号",
+          "example": "789",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台分账单号，type为2时，和OutDistributeNo二者传其一",
+          "example": "456",
+          "member": "string",
+          "name": "DistributeNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户分账单号，type为2时，和DistributeNo二者传其一",
+          "example": "123",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeCancelResponse": {
+      "document": "DistributeCancel返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分账撤销响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeCancelResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeCancelResult": {
+      "document": "分账撤销响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "分账订单状态（0初始1成功2失败3撤销）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台交易订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "789",
+          "member": "string",
+          "name": "OrderNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "456",
+          "member": "string",
+          "name": "DistributeNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeMultiApplyResult": {
+      "document": "分账申请响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "分账状态（0分账初始 1分账成功 2分账失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "D001",
+          "member": "string",
+          "name": "DistributeNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "入账日期，yyyy-MM-dd格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-01",
+          "member": "string",
+          "name": "InDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分账金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "Amount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OD001",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台支付单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T001",
+          "member": "string",
+          "name": "OrderNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeQueryReceiverRequest": {
+      "document": "DistributeQueryReceiver请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeQueryReceiverResponse": {
+      "document": "DistributeQueryReceiver返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询询已添加分账接收方响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeReceiverResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeQueryRequest": {
+      "document": "DistributeQuery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询类型（1-全部，2-单笔）",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台分账单号，type为2时，和OutDistributeNo二者传其一",
+          "example": "456",
+          "member": "string",
+          "name": "DistributeNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户分账单号，type为2时，和DistributeNo二者传其一",
+          "example": "123",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台交易订单号",
+          "example": "789",
+          "member": "string",
+          "name": "OrderNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeQueryResponse": {
+      "document": "DistributeQuery返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分账结果响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeQueryResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeQueryResult": {
+      "document": "分账结果响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "分账订单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiApplyOrder",
+          "name": "Orders",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeReceiverResult": {
+      "document": "分账接收方响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "商户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DistributeRemoveReceiverRequest": {
+      "document": "DistributeRemoveReceiver请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户编号",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeRemoveReceiverResponse": {
+      "document": "DistributeRemoveReceiver返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解除分账接收方响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeReceiverResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DownloadBillRequest": {
       "document": "DownloadBill请求参数结构体",
       "members": [
@@ -7733,6 +10203,122 @@
           "name": "DownloadUrl",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadFileResult": {
+      "document": "上传下载响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "文件内容（base64加密的二进制内容）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Storage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DownloadOrgFileRequest": {
+      "document": "DownloadOrgFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域",
+          "example": "1",
+          "member": "string",
+          "name": "Storage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件路径",
+          "example": "201912/eabc9ba6b7a5d577011def3a9f4c5302.png",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadOrgFileResponse": {
+      "document": "DownloadOrgFile返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下载机构文件响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DownloadFileResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8228,6 +10814,42 @@
         }
       ],
       "usage": "out"
+    },
+    "MerchantClassificationId": {
+      "document": "商户分类",
+      "members": [
+        {
+          "default": "",
+          "document": "分类编号",
+          "example": "100",
+          "member": "string",
+          "name": "Code",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类名称",
+          "example": "川菜",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父级编号（0为一级编号，大于0为父级分类编号）",
+          "example": "0",
+          "member": "string",
+          "name": "Parent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "MerchantManagementList": {
       "document": "商户查询管理端列表",
@@ -8920,6 +11542,118 @@
       ],
       "type": "object"
     },
+    "MultiApplyDetail": {
+      "document": "分账明细",
+      "members": [
+        {
+          "default": "",
+          "document": "商户编号",
+          "example": "M0001",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分账金额",
+          "example": "100",
+          "member": "string",
+          "name": "Amount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MultiApplyOrder": {
+      "document": "分账订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "商户分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OutDistributeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台分账单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "456",
+          "member": "string",
+          "name": "DistributeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平台交易订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "789",
+          "member": "string",
+          "name": "OrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分账订单状态（0初始1成功2失败3撤销）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "入账日期，格式yyyy-MM-dd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-01",
+          "member": "string",
+          "name": "InDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分账明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiApplyDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Order": {
       "document": "线下查票-订单信息",
       "members": [
@@ -9168,6 +11902,268 @@
         }
       ],
       "usage": "in"
+    },
+    "PayDataResult": {
+      "document": "pay支付方式json数据",
+      "members": [
+        {
+          "default": "",
+          "document": "支付标签（唯一性）",
+          "example": "Weixin",
+          "member": "string",
+          "name": "PaymentTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加合同时需要隐藏的选项（多个以小写逗号分开）",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionHide",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付方式图片url路径",
+          "example": "2017/a61611233156.jpg",
+          "member": "string",
+          "name": "PaymentIcon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称6",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionSix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付款方式名称",
+          "example": "微信",
+          "member": "string",
+          "name": "PaymentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称7",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionSeven",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称8",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionOther",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称2",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称1",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启智能扣率（1是，0否）",
+          "example": "1",
+          "member": "string",
+          "name": "PaymentDiscountFee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）",
+          "example": "2,3,4",
+          "member": "string",
+          "name": "PaymentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称5",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionFive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称9",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionNine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付方式编号",
+          "example": "1",
+          "member": "string",
+          "name": "PaymentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称3",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionThree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付款方式名称（内部名称）",
+          "example": "微信支付（九江银行）",
+          "member": "string",
+          "name": "PaymentInternalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称4",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同选项名称10",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionTen",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PayFeeDataResult": {
+      "document": "pay_fee支付方式行业分类费率json数据",
+      "members": [
+        {
+          "default": "",
+          "document": "机构的分佣扣率扣率",
+          "example": "0.200",
+          "member": "string",
+          "name": "OrganizationFee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商户手续费封顶值，0为不限封顶",
+          "example": "0",
+          "member": "string",
+          "name": "PaymentClassificationLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机构的分佣扣率类型(1按签约扣率，2按收单收益)",
+          "example": "1",
+          "member": "string",
+          "name": "OrganizationFeeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商户扣率最大值",
+          "example": "0.600",
+          "member": "string",
+          "name": "PaymentClassificationMaxFee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商户扣率最小值",
+          "example": "0.200",
+          "member": "string",
+          "name": "PaymentClassificationMinFee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行业会类编号",
+          "example": "13",
+          "member": "string",
+          "name": "PaymentClassificationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行业分类名称",
+          "example": "线下实体商户",
+          "member": "string",
+          "name": "PaymentClassificationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PayOrderResult": {
       "document": "订单支付响应对象",
@@ -10780,6 +13776,78 @@
       ],
       "type": "object"
     },
+    "QueryCityCodeRequest": {
+      "document": "QueryCityCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCityCodeResponse": {
+      "document": "QueryCityCode返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询城市编码响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CityCodeResult",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryCommonTransferRechargeRequest": {
       "document": "QueryCommonTransferRecharge请求参数结构体",
       "members": [
@@ -10916,6 +13984,412 @@
         }
       ],
       "type": "object"
+    },
+    "QueryContractPayFeeRequest": {
+      "document": "QueryContractPayFee请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式编号",
+          "example": "21",
+          "member": "string",
+          "name": "PaymentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractPayFeeResponse": {
+      "document": "QueryContractPayFee返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询支付方式费率及自定义表单项响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryContractPayFeeResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractPayFeeResult": {
+      "document": "支付方式费率及自定义表单项",
+      "members": [
+        {
+          "default": "",
+          "document": "pay支付方式json数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayDataResult",
+          "name": "Pay",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同扩展自定义字段",
+          "example": "无",
+          "member": "string",
+          "name": "ExtraInput",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pay_fee支付方式行业分类费率json数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayFeeDataResult",
+          "name": "PayFee",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryContractPayWayListRequest": {
+      "document": "QueryContractPayWayList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractPayWayListResponse": {
+      "document": "QueryContractPayWayList返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询合同支付方式响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContractPayListResult",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractRelateShopRequest": {
+      "document": "QueryContractRelateShop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同主键",
+          "example": "C0001",
+          "member": "string",
+          "name": "ContractId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractRelateShopResponse": {
+      "document": "QueryContractRelateShop返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询合同可关联门店响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryContractRelateShopResult",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryContractRelateShopResult": {
+      "document": "合同可关联门店响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "440300",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山店",
+          "member": "string",
+          "name": "ShopName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "终端数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TerminalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ShopStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若是支付宝合同，支付宝上线状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AliPayOnline",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S0001",
+          "member": "string",
+          "name": "ShopNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若是支付宝合同，支付宝审核状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AliPayStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "为空或者0表示未关联，大于0表示已关联\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IsChecked",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "大学城",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若是支付宝合同，支付宝审核描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AliPayDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QueryContractRequest": {
       "document": "QueryContract请求参数结构体",
@@ -12564,6 +16038,78 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryMerchantClassificationRequest": {
+      "document": "QueryMerchantClassification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMerchantClassificationResponse": {
+      "document": "QueryMerchantClassification返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询商户分类响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MerchantClassificationId",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryMerchantInfoForManagementRequest": {
       "document": "QueryMerchantInfoForManagement请求参数结构体",
@@ -14217,6 +17763,233 @@
         }
       ],
       "type": "object"
+    },
+    "QueryShopOpenIdRequest": {
+      "document": "QueryShopOpenId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店编号",
+          "example": "TestS115",
+          "member": "string",
+          "name": "ShopNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryShopOpenIdResponse": {
+      "document": "QueryShopOpenId返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "获取门店OpenId响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryShopOpenIdResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryShopOpenIdResult": {
+      "document": "获取门店OpenId响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山店",
+          "member": "string",
+          "name": "ShopName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20743873",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110101",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "open_id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eadca266c6d9a0aaa962323f3f778b576",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "88888888",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260437",
+          "member": "string",
+          "name": "ShopNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东城区",
+          "member": "string",
+          "name": "County",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店全称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户（南山店）",
+          "member": "string",
+          "name": "ShopFullName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "招牌名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山区科技园科苑大道讯美科技广场2栋12楼",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "open_key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1248d0bc506ff93e012364d16d449df3",
+          "member": "string",
+          "name": "OpenKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QuerySinglePayItem": {
       "document": "银企直连-查询单笔支付状态条目",
@@ -19733,6 +23506,140 @@
       ],
       "type": "object"
     },
+    "UploadFileResult": {
+      "document": "上传文件响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Storage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201912/eabc9ba6b7a5d577011def3a9f4c5302.png",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadOrgFileRequest": {
+      "document": "UploadOrgFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域",
+          "example": "1",
+          "member": "string",
+          "name": "Storage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件的md5值（为防止平台多次上传重复文件，文件名为文件md5,且不会覆盖，重复上传返回第一次上传成功的文件路径）",
+          "example": "E68A2FEBA43406F3D27B38F71E1C39A7",
+          "member": "string",
+          "name": "FileMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件内容（先将图片转换成二进制，再进行base64加密）",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAI8AAAAeCAYAAAAVWU11AAAACXBIWXMAAAsTAAAL",
+          "member": "string",
+          "name": "FileContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件扩展名（png,jpg,gif）",
+          "example": "jpg",
+          "member": "string",
+          "name": "FileExtension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadOrgFileResponse": {
+      "document": "UploadOrgFile返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传机构文件响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UploadFileResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UploadTaxListRequest": {
       "document": "UploadTaxList请求参数结构体",
       "members": [
@@ -19831,6 +23738,1884 @@
         }
       ],
       "type": "object"
+    },
+    "ViewContractRequest": {
+      "document": "ViewContract请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部合同主键编号（ContractId或OutContractId必须传一个）",
+          "example": "C001",
+          "member": "string",
+          "name": "OutContractId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同主键（ContractId或OutContractId必须传一个）",
+          "example": "TestC115",
+          "member": "string",
+          "name": "ContractId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewContractResponse": {
+      "document": "ViewContract返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合同明细响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewContractResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewContractResult": {
+      "document": "合同明细响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "支付标签（唯一性）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WeixinJJYH",
+          "member": "string",
+          "name": "PaymentTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "AgentNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "string",
+          "name": "PaymentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户签约扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.32",
+          "member": "string",
+          "name": "Fee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionFive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构合同主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "OutContractId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不同的支付方式对于进件有不同的个性化需求，支付方式字段都是以双下划写开头的字段名称，请以支付方式规定的格式传值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExtJson",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionFive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-11-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山区科技园科苑大道讯美科技广场2栋12楼",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017-11-01",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionSix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称7\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionSeven",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同照片补充【私密区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20743873",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionOther",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionThree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东城区",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同关联的门店数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ShopCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionThree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式行业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "线下实体商户",
+          "member": "string",
+          "name": "PaymentClassificationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值7\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionSeven",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户签约扣率封顶值（分为单位）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PaymentClassificationLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionSix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionOther",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 15:37:34",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12354555",
+          "member": "string",
+          "name": "ContactTelephone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "Contact",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签约日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-11-01",
+          "member": "string",
+          "name": "SignDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionNine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信支付",
+          "member": "string",
+          "name": "PaymentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款方式名称（内部名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微信支付(九江银行)",
+          "member": "string",
+          "name": "PaymentInternalName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionTen",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同照片【私密区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureOne",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签约人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李四",
+          "member": "string",
+          "name": "SignMan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C001",
+          "member": "string",
+          "name": "ChannelNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 15:37:34",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动续签（1是，0否）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AutoSign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项值9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractOptionNine",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110101",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "PaymentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付方式行业编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "38",
+          "member": "string",
+          "name": "PaymentClassificationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "招牌名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同选项名称10\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentOptionTen",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "301385",
+          "member": "string",
+          "name": "ContractId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ViewMerchantRequest": {
+      "document": "ViewMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部商户主键编号（MerchantNo或OutMerchantId必须传一个）",
+          "example": "S0001",
+          "member": "string",
+          "name": "OutMerchantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户编号（MerchantNo或OutMerchantId必须传一个）",
+          "example": "Test10",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewMerchantResponse": {
+      "document": "ViewMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "商户明细响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewMerchantResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewMerchantResult": {
+      "document": "商户明细响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "税务登记证图片【私密区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaxCollectionPicture",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "431227198208081122",
+          "member": "string",
+          "name": "BossIdNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人亲属证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "431227198208081122",
+          "member": "string",
+          "name": "AccountIdNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他资料3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OtherPictureThree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人亲属证件类型（1居民身份证,2临时居民身份证,3居民户口簿,4护照,5港澳居民来往内地通行证,6回乡证,7军人证,8武警身份证,9其他法定文件）结算账户人身份为法人亲属时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AccountIdType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业执照图片【私密区】（系统返回的图片路径）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/12345.jpg",
+          "member": "string",
+          "name": "BusinessLicensePicture",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "招牌名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人身份证正面【私密区】（系统返回的图片路径）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/12345.jpg",
+          "member": "string",
+          "name": "BossPositive",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开通应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "AppCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人身份证背面【私密区】（系统返回的图片路径）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/12345.jpg",
+          "member": "string",
+          "name": "BossBack",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证图片【私密区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationCodePicture",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业执照过期时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-01",
+          "member": "string",
+          "name": "BusinessLicenseEndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OrganizationCodeNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "001",
+          "member": "string",
+          "name": "AgentNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件生效时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-01-01",
+          "member": "string",
+          "name": "BossStartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 16:08:52",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "清算联行号，开户行行号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
+          "member": "string",
+          "name": "BankNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "税务登记证生效时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-10-01",
+          "member": "string",
+          "name": "TaxCollectionStartDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业执照生效时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-01-01",
+          "member": "string",
+          "name": "BusinessLicenseStartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户经理用户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "001",
+          "member": "string",
+          "name": "AccountManagerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类编号(多个以小写逗号分开)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100,101",
+          "member": "string",
+          "name": "ClassificationIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业执照类型（1三证合一，2非三证合一）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BusinessLicenseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件过期时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01",
+          "member": "string",
+          "name": "BossEndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业执照编号（系统有唯一性校验）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567890ABC",
+          "member": "string",
+          "name": "BusinessLicenseNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "机构",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "略",
+          "member": "string",
+          "name": "Intro",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件类型（1居民身份证,2临时居民身份证,3居民户口簿,4护照,5港澳居民来往内地通行证,6回乡证,7军人证,8武警身份证,9其他法定文件）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BossIdType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 13:29:41",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ShopCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结算账户人身份（1法人，2法人亲属），结算帐户为对私时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AccountBoss",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类名称(多个以小写逗号分开)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "美食,粤菜",
+          "member": "string",
+          "name": "ClassificationNames",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1331456",
+          "member": "string",
+          "name": "BossTelephone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户经理姓名，必须为系统后台的管理员真实姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "AccountManagerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "终端数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TerminalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "财务联系人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李四",
+          "member": "string",
+          "name": "FinancialContact",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人性别（1男，2女）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BossSex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20743873",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人住址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "科技园科苑大道讯美科技广场2栋12楼",
+          "member": "string",
+          "name": "BossAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东城区",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "科技园科苑大道讯美科技广场2栋12楼",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人职业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BossJob",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "许可证图片【私密区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicencePicture",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证过期时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01",
+          "member": "string",
+          "name": "OrganizationCodeEndDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "营业时间，多个以小写逗号分开(9:00-12:00,13:00-18:00)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9:00-12:00,13:00-18:00",
+          "member": "string",
+          "name": "OpenHours",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他资料2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OtherPictureTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他资料1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OtherPictureOne",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "银行户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "林三",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "合同数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ContractCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权文件【私密区】（当结算帐户身份为法人亲属时必传）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicencePictureTwo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "银行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6222202888899999",
+          "member": "string",
+          "name": "AccountNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BossEmail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结算账户类型（2对私，1对公）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AccountType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "税务登记证过期时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-01-01",
+          "member": "string",
+          "name": "TaxCollectionEndDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开户行名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "招商银行",
+          "member": "string",
+          "name": "BankName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联系电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13800138000",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部商户主键编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64181616",
+          "member": "string",
+          "name": "OutMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110100",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人证件国别/地区（中国CHN，香港HKG，澳门MAC，台湾CTN）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CHN",
+          "member": "string",
+          "name": "BossIdCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户标记，自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "财务联系人电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1331345655",
+          "member": "string",
+          "name": "FinancialTelephone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "林三",
+          "member": "string",
+          "name": "BossName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构代码证生效时间（yyyy-mm-dd）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-01-01",
+          "member": "string",
+          "name": "OrganizationCodeStartDate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户logo【公共区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他资料4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OtherPictureFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "税务登记证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaxCollectionNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ViewShopRequest": {
+      "document": "ViewShop请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "f2cc268b9c95fbbb230a19397fe35f8d",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "e30051d527bd4e621e7090c9392739ec",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "沙箱环境填sandbox，正式环境不填",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Profile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部商户主键编号（ShopNo或OutShopId必须传一个）",
+          "example": "test1",
+          "member": "string",
+          "name": "OutShopId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店编号（ShopNo或OutShopId必须传一个）",
+          "example": "Test5333",
+          "member": "string",
+          "name": "ShopNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewShopResponse": {
+      "document": "ViewShop返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "门店明细响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewShopResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ViewShopResult": {
+      "document": "门店明细响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店简称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山店",
+          "member": "string",
+          "name": "ShopName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "百度地图纬度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22.547374",
+          "member": "string",
+          "name": "Latitude",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "品牌名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "招牌名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开通应用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "AppCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负责人手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13313455",
+          "member": "string",
+          "name": "ContactTelephone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户",
+          "member": "string",
+          "name": "MerchantName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东城区",
+          "member": "string",
+          "name": "County",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 14:47:03",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "终端数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TerminalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收银台图片【公共区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureTwo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高德地图纬度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22.547374",
+          "member": "string",
+          "name": "LatitudeTwo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "其他照片【公共区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureFour",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高德地图经度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "113.947107",
+          "member": "string",
+          "name": "LongitudeTwo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店状态（0未审核，1已审核，2审核未通过，3待审核，4已删除，5初审通过）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20743873",
+          "member": "string",
+          "name": "MerchantNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "添加时间（yyyy-mm-dd hh:ii:ss）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-12-06 14:38:35",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山区科技园科苑大道讯美科技广场2栋12楼",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "百度地图经度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "113.947107",
+          "member": "string",
+          "name": "Longitude",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260437",
+          "member": "string",
+          "name": "ShopNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店全称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "API进件测试的商户（南山店）",
+          "member": "string",
+          "name": "ShopFullName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Contact",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "店内环境图片【公共区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureThree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "整体门面（含招牌）图片【公共区】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201601/123456.jpg",
+          "member": "string",
+          "name": "PictureOne",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "门店电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "88888888",
+          "member": "string",
+          "name": "Telephone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构门店主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "OutShopId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "城市编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110101",
+          "member": "string",
+          "name": "CityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "WithdrawBill": {
       "document": "聚鑫提现订单内容",

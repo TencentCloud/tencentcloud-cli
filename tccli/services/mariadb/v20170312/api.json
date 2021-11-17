@@ -288,6 +288,12 @@
       "name": "修改数据库参数",
       "output": "ModifyDBParametersResponse"
     },
+    "ModifyDBSyncMode": {
+      "document": "本接口（ModifyDBSyncMode）用于修改云数据库实例的同步模式。",
+      "input": "ModifyDBSyncModeRequest",
+      "name": "修改同步模式",
+      "output": "ModifyDBSyncModeResponse"
+    },
     "ModifyLogFileRetentionPeriod": {
       "document": "本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。",
       "input": "ModifyLogFileRetentionPeriodRequest",
@@ -299,6 +305,12 @@
       "input": "ModifyRealServerAccessStrategyRequest",
       "name": "修改RS的访问策略",
       "output": "ModifyRealServerAccessStrategyResponse"
+    },
+    "ModifySyncTaskAttribute": {
+      "document": "本接口 (ModifySyncTaskAttribute) 用于修改同步任务的属性（目前只支持修改任务名称）",
+      "input": "ModifySyncTaskAttributeRequest",
+      "name": "修改同步任务的属性",
+      "output": "ModifySyncTaskAttributeResponse"
     },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通云数据库实例的外网访问。开通外网访问后，您可通过外网域名和端口访问实例，可使用查询实例列表接口获取外网域名和端口信息。",
@@ -4158,7 +4170,7 @@
         },
         {
           "default": "",
-          "document": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES \n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表/视图权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER \n存储过程/函数权限： ALTER ROUTINE，EXECUTE \n字段权限： INSERT，REFERENCES，SELECT，UPDATE",
+          "document": "全局权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER，SHOW DATABASES，REPLICATION CLIENT，REPLICATION SLAVE \n库权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE TEMPORARY TABLES，LOCK TABLES，EXECUTE，CREATE VIEW，SHOW VIEW，CREATE ROUTINE，ALTER ROUTINE，EVENT，TRIGGER \n表/视图权限： SELECT，INSERT，UPDATE，DELETE，CREATE，DROP，REFERENCES，INDEX，ALTER，CREATE VIEW，SHOW VIEW，TRIGGER \n存储过程/函数权限： ALTER ROUTINE，EXECUTE \n字段权限： INSERT，REFERENCES，SELECT，UPDATE",
           "example": "[\"SELECT\",\"INSERT\"]",
           "member": "string",
           "name": "Privileges",
@@ -4739,6 +4751,47 @@
       ],
       "type": "object"
     },
+    "ModifyDBSyncModeRequest": {
+      "document": "ModifyDBSyncMode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待修改同步模式的实例ID。形如：tdsql-ow728lmc。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
+          "member": "int64",
+          "name": "SyncMode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBSyncModeResponse": {
+      "document": "ModifyDBSyncMode返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务Id，可通过 DescribeFlow 查询任务状态。",
+          "member": "int64",
+          "name": "FlowId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLogFileRetentionPeriodRequest": {
       "document": "ModifyLogFileRetentionPeriod请求参数结构体",
       "members": [
@@ -4806,6 +4859,42 @@
     },
     "ModifyRealServerAccessStrategyResponse": {
       "document": "ModifyRealServerAccessStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncTaskAttributeRequest": {
+      "document": "ModifySyncTaskAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或多个待操作的任务ID。可通过[DescribeSyncTasks](https://tcloud-dev.oa.com/document/product/237/32979?!preview&!document=1) API返回值中的TaskId获取。每次请求允许操作的实例数量上限是100。",
+          "example": "100",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务名称。可任意命名，但不得超过100个字符。",
+          "example": "taskname",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncTaskAttributeResponse": {
+      "document": "ModifySyncTaskAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5545,6 +5634,7 @@
         {
           "default": "",
           "document": "语句校验和，用于查询详情",
+          "example": "无",
           "member": "string",
           "name": "CheckSum",
           "required": true,
@@ -5554,6 +5644,7 @@
         {
           "default": "",
           "document": "数据库名称",
+          "example": "无",
           "member": "string",
           "name": "Db",
           "required": true,
@@ -5563,6 +5654,7 @@
         {
           "default": "",
           "document": "抽象的SQL语句",
+          "example": "无",
           "member": "string",
           "name": "FingerPrint",
           "required": true,
@@ -5572,6 +5664,7 @@
         {
           "default": "",
           "document": "平均的锁时间",
+          "example": "无",
           "member": "string",
           "name": "LockTimeAvg",
           "required": true,
@@ -5581,6 +5674,7 @@
         {
           "default": "",
           "document": "最大锁时间",
+          "example": "无",
           "member": "string",
           "name": "LockTimeMax",
           "required": true,
@@ -5590,6 +5684,7 @@
         {
           "default": "",
           "document": "最小锁时间",
+          "example": "无",
           "member": "string",
           "name": "LockTimeMin",
           "required": true,
@@ -5599,6 +5694,7 @@
         {
           "default": "",
           "document": "锁时间总和",
+          "example": "无",
           "member": "string",
           "name": "LockTimeSum",
           "required": true,
@@ -5608,6 +5704,7 @@
         {
           "default": "",
           "document": "查询次数",
+          "example": "无",
           "member": "string",
           "name": "QueryCount",
           "required": true,
@@ -5617,6 +5714,7 @@
         {
           "default": "",
           "document": "平均查询时间",
+          "example": "无",
           "member": "string",
           "name": "QueryTimeAvg",
           "required": true,
@@ -5626,6 +5724,7 @@
         {
           "default": "",
           "document": "最大查询时间",
+          "example": "无",
           "member": "string",
           "name": "QueryTimeMax",
           "required": true,
@@ -5635,6 +5734,7 @@
         {
           "default": "",
           "document": "最小查询时间",
+          "example": "无",
           "member": "string",
           "name": "QueryTimeMin",
           "required": true,
@@ -5644,6 +5744,7 @@
         {
           "default": "",
           "document": "查询时间总和",
+          "example": "无",
           "member": "string",
           "name": "QueryTimeSum",
           "required": true,
@@ -5653,6 +5754,7 @@
         {
           "default": "",
           "document": "扫描行数",
+          "example": "无",
           "member": "string",
           "name": "RowsExaminedSum",
           "required": true,
@@ -5662,6 +5764,7 @@
         {
           "default": "",
           "document": "发送行数",
+          "example": "无",
           "member": "string",
           "name": "RowsSentSum",
           "required": true,
@@ -5671,6 +5774,7 @@
         {
           "default": "",
           "document": "最后执行时间",
+          "example": "无",
           "member": "string",
           "name": "TsMax",
           "required": true,
@@ -5680,6 +5784,7 @@
         {
           "default": "",
           "document": "首次执行时间",
+          "example": "无",
           "member": "string",
           "name": "TsMin",
           "required": true,
@@ -5689,6 +5794,7 @@
         {
           "default": "",
           "document": "帐号",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": true,
@@ -5698,11 +5804,22 @@
         {
           "default": "",
           "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ExampleSql",
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "账户的域名",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
