@@ -290,11 +290,11 @@ class ConfigureRemoveCommand(BasicConfigure):
         if os.path.exists(configure_file):
             os.remove(configure_file)
         else:
-            self._error_stream.write("profile %s is not exist" % configure_file)
+            self._error_stream.write("profile %s is not exist\n" % configure_file)
         if os.path.exists(credential_file):
             os.remove(credential_file)
         else:
-            self._error_stream.write("profile %s is not exist" % credential_file)
+            self._error_stream.write("profile %s is not exist\n" % credential_file)
 
 
 class ConfigureCommand(BasicConfigure):
