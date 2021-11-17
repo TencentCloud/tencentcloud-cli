@@ -284,17 +284,20 @@ class ConfigureRemoveCommand(BasicConfigure):
         profile_name = parsed_globals.profile \
             if parsed_globals.profile else "default"
 
-        configure_file = os.path.join(self.cli_path, profile_name + '.configure')
-        credential_file = os.path.join(self.cli_path, profile_name + '.credential')
+        configure_name = profile_name + '.configure'
+        credential_name = profile_name + '.credential'
+
+        configure_file = os.path.join(self.cli_path, configure_name)
+        credential_file = os.path.join(self.cli_path, credential_name)
 
         if os.path.exists(configure_file):
             os.remove(configure_file)
         else:
-            self._error_stream.write("profile %s is not exist\n" % configure_file)
+            self._error_stream.write("profile `%s` is not exist\n" % configure_name)
         if os.path.exists(credential_file):
             os.remove(credential_file)
         else:
-            self._error_stream.write("profile %s is not exist\n" % credential_file)
+            self._error_stream.write("profile `%s` is not exist\n" % credential_name)
 
 
 class ConfigureCommand(BasicConfigure):
