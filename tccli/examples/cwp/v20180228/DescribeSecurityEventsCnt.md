@@ -11,57 +11,65 @@ Output:
 ```
 {
     "Response": {
-        "AttackLogs": {
-            "EventCnt": 439,
+        "Malware": {
+            "EventCnt": 1,
+            "UuidCnt": 1
+        },
+        "EventsCount": 1,
+        "ReverseShell": {
+            "EventCnt": 1,
             "UuidCnt": 1
         },
         "BaseLine": {
-            "EventCnt": 1353,
-            "UuidCnt": 11
-        },
-        "Bash": {
-            "EventCnt": 5911,
-            "UuidCnt": 31
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
         "BruteAttack": {
-            "EventCnt": 52,
-            "UuidCnt": 10
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
+        "EffectMachineCount": 1,
         "EmergencyVul": {
-            "EventCnt": 6,
-            "UuidCnt": 5
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
-        "HostLogin": {
-            "EventCnt": 169,
-            "UuidCnt": 23
-        },
-        "Malware": {
-            "EventCnt": 226,
-            "UuidCnt": 12
+        "SysVul": {
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
         "PrivilegeRules": {
             "EventCnt": 1,
             "UuidCnt": 1
         },
-        "ReverseShell": {
-            "EventCnt": 2,
+        "RiskDns": {
+            "EventCnt": 1,
             "UuidCnt": 1
         },
-        "RiskDns": {
-            "EventCnt": 5,
-            "UuidCnt": 2
+        "HostLogin": {
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
-        "SysVul": {
-            "EventCnt": 25,
-            "UuidCnt": 14
+        "RequestId": "06eea0c1-7f08-41ba-a75e-8b2500e16bdf ",
+        "AttackLogs": {
+            "EventCnt": 1,
+            "UuidCnt": 1
+        },
+        "WindowVul": {
+            "EventCnt": 1,
+            "UuidCnt": 1
+        },
+        "LinuxVul": {
+            "EventCnt": 1,
+            "UuidCnt": 1
+        },
+        "Bash": {
+            "EventCnt": 1,
+            "UuidCnt": 1
         },
         "WebVul": {
-            "EventCnt": 3,
-            "UuidCnt": 2
-        },
-        "EffectMachineCount": 1,
-        "EventsCount": 1,
-        "RequestId": "1234567"
+            "EventCnt": 1,
+            "UuidCnt": 1
+        }
     }
 }
 ```

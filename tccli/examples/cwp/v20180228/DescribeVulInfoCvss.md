@@ -22,10 +22,11 @@ Output:
         "CvssScoreFloat": 9.9,
         "VulType": 1,
         "VulLevel": 2,
-        "RequestId": "req-566234234",
+        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
         "VulId": 100441,
         "RepairPlan": "13412",
         "CVSS": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
+        "Labels": "tag1,tag2",
         "PublicDate": "2020-12-30:00:00:00"
     }
 }

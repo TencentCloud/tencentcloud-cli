@@ -8,6 +8,14 @@
         "title": "添加互联网边界规则"
       }
     ],
+    "AddEnterpriseSecurityGroupRules": [
+      {
+        "document": "创建新企业安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddEnterpriseSecurityGroupRules\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": \"1\",\n            \"Protocol\": \"TCP\",\n            \"SourceType\": \"net\",\n            \"SourceContent\": \"192.168.0.1\",\n            \"DestType\": \"net\",\n            \"DestContent\": \"192.168.0.2\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"80\",\n            \"Description\": \"规则详情\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0\n    }\n}",
+        "title": "创建新企业安全组规则"
+      }
+    ],
     "CreateAcRules": [
       {
         "document": "",
@@ -170,6 +178,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwEips\n<公共请求参数>\n\n{\n    \"Mode\": 1,\n    \"NatGatewayId\": \"ALL\",\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
         "output": "{\n    \"Response\": {\n        \"NatFwEipList\": [\n            {\n                \"Eip\": \"xxx\",\n                \"NatGatewayId\": \"nat-xxx\",\n                \"NatGatewayName\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询防火墙弹性公网ip"
+      }
+    ],
+    "DescribeEnterpriseSecurityGroupRule": [
+      {
+        "document": "查询新企业安全组规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"Enable\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"Description\": \"xx\",\n    \"PageNo\": \"xx\",\n    \"SourceContent\": \"xx\",\n    \"ServiceTemplateId\": \"xx\",\n    \"PageSize\": \"xx\",\n    \"DestContent\": \"xx\",\n    \"RuleAction\": \"xx\",\n    \"Port\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"OrderIndex\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": \"xx\",\n                \"SourceContent\": \"xx\",\n                \"DestType\": \"xx\",\n                \"ServiceTemplateId\": \"xx\",\n                \"DestContent\": \"xx\",\n                \"RuleAction\": \"xx\",\n                \"Port\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"TotalCount\": \"xx\",\n        \"PageSize\": \"xx\",\n        \"PageNo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询新企业安全组规则"
       }
     ],
     "DescribeGuideScanInfo": [
@@ -518,6 +534,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAcRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": 8888\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
         "title": "删除互联网边界规则"
+      }
+    ],
+    "RemoveEnterpriseSecurityGroupRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RemoveType\": 0,\n    \"RuleUuid\": 8888\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Status\": 0\n    }\n}",
+        "title": "删除新企业安全组规则"
       }
     ],
     "RunSyncAsset": [

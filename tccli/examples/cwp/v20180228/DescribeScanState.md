@@ -13,12 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "g54f4ac3-8546-4516-8c8a-69e3ab73aa88",
-        "ScanState": 0,
-        "Schedule": 0,
-        "VulId": [],
+        "RiskEventCount": 1,
+        "ScanEndTime": "xx",
+        "Schedule": 1,
+        "ScanState": 1,
+        "ScanBeginTime": "xx",
+        "RequestId": "c741a4fd-776f-499b-85a2-7bc70fd5b92s",
         "TaskId": 1,
-        "Type": 0
+        "VulId": [
+            1
+        ],
+        "Type": 1
     }
 }
 ```

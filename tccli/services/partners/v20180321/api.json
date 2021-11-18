@@ -75,7 +75,7 @@
     "DescribeAgentSelfPayDeals": {
       "document": "【该接口将逐步下线，请切换使用升级版本DescribeAgentSelfPayDealsV2】可以查询代理商下指定客户的自付订单",
       "input": "DescribeAgentSelfPayDealsRequest",
-      "name": "代理商自付订单查询接口",
+      "name": "代理商自付订单查询接口（旧）",
       "output": "DescribeAgentSelfPayDealsResponse"
     },
     "DescribeAgentSelfPayDealsV2": {

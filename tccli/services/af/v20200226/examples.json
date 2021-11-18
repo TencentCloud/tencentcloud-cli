@@ -14,6 +14,14 @@
         "title": "金融借贷反欺诈接口示例----加密请求"
       }
     ],
+    "GetAntiFraud": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: af.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAntiFraud\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"AppIdU\": \"0\",\n        \"PhoneCryptoType\": \"0\",\n        \"WifiSSID\": \"0\",\n        \"IdCryptoType\": \"0\",\n        \"Imsi\": \"0\",\n        \"CustomerSubUin\": \"0\",\n        \"Mac\": \"0\",\n        \"Idfa\": \"0\",\n        \"Authorization\": \"0\",\n        \"Address\": \"0\",\n        \"Imei\": \"0\",\n        \"WifiBSSID\": \"0\",\n        \"BankCardNumber\": \"0\",\n        \"ExtensionId\": \"0\",\n        \"Name\": \"0\",\n        \"ExtensionIn\": \"0\",\n        \"CustomerUin\": \"0\",\n        \"UserIp\": \"0\",\n        \"PhoneNumber\": \"0\",\n        \"CustomerAppid\": \"0\",\n        \"NameCryptoType\": \"0\",\n        \"Uid\": \"0\",\n        \"WifiMac\": \"xx\",\n        \"BusinessId\": \"0\",\n        \"Scene\": \"0\",\n        \"IdNumber\": \"0\",\n        \"EmailAddress\": \"0\",\n        \"AccountType\": \"0\"\n    },\n    \"BusinessCryptoData\": {\n        \"CryptoType\": \"0\",\n        \"CryptoContent\": \"0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"OtherModelScores\": \"00\",\n            \"PostTime\": \"00\",\n            \"Code\": \"00\",\n            \"RiskInfo\": \"00\",\n            \"ExtensionOut\": \"00\",\n            \"IdFound\": \"00\",\n            \"CodeDesc\": \"00\",\n            \"Found\": \"00\",\n            \"Message\": \"00\",\n            \"RiskScore\": \"00\"\n        },\n        \"RequestId\": \"00\"\n    }\n}",
+        "title": "反欺诈评分接口"
+      }
+    ],
     "QueryAntiFraud": [
       {
         "document": "",

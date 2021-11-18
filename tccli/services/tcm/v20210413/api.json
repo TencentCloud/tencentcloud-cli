@@ -743,6 +743,32 @@
       ],
       "usage": "out"
     },
+    "InjectConfig": {
+      "document": "自动注入配置",
+      "members": [
+        {
+          "default": "",
+          "document": "不需要进行代理的 ip 地址范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"10.0.1.0/24\",\"10.0.2.0/24\"]",
+          "member": "string",
+          "name": "ExcludeIPRanges",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否等待sidecar启动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HoldApplicationUntilProxyStarts",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IstioConfig": {
       "document": "Istio配置",
       "members": [
@@ -765,6 +791,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "禁用策略检查功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DisablePolicyChecks",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1015,6 +1051,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动注入配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InjectConfig",
+          "name": "Inject",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
