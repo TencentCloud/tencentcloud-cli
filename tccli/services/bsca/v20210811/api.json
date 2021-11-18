@@ -1,0 +1,2704 @@
+{
+  "actions": {
+    "CreateAnalysis": {
+      "document": "本接口(CreateAnalysis)用于创建一个分析项。\n调用本接口前需先调用创建文件凭证(CreateFileTicket)接口获取文件上传凭证，并利用该接口返回值构造请求上传文件。",
+      "input": "CreateAnalysisRequest",
+      "name": "创建分析项",
+      "output": "CreateAnalysisResponse"
+    },
+    "CreateFileTicket": {
+      "document": "本接口(CreateFileTicket)用于创建文件上传所需的文件凭证。\n可通过接口返回值进行文件上传，返回值中的 URL 为实际上传文件请求的 URL，RequestHeaderSet 中的 Key 和 Value 用于该请求头的构造。\n以示例中的返回值为例，构造请求的关键参数如下：\n<pre>\nPUT /upload/1234567890-815e8385-82f8-4f8a-b35f-a7e5eac218c2 HTTP/1.1\nHost: bsca-1234567890.cos.ap-guangzhou.myqcloud.com\nContent-Length: 16\nAuthorization: q-sign-algorithm=sha1&q-ak=SecretID&q-sign-time=1631016205;1631019805&q-key-time=1631016205;1631019805&q-header-list=host&q-url-param-list=&q-signature=signature\n\n[Object Content]\n</pre>",
+      "input": "CreateFileTicketRequest",
+      "name": "创建文件凭证",
+      "output": "CreateFileTicketResponse"
+    },
+    "DeleteAnalysisList": {
+      "document": "本接口(DeleteAnalysisList)用于批量删除分析项列表。",
+      "input": "DeleteAnalysisListRequest",
+      "name": "删除分析项列表",
+      "output": "DeleteAnalysisListResponse"
+    },
+    "DescribeAccount": {
+      "document": "本接口(DescribeAccount)用于查询当前用户的账户流量信息。",
+      "input": "DescribeAccountRequest",
+      "name": "查询账户信息",
+      "output": "DescribeAccountResponse"
+    },
+    "DescribeAnalysisList": {
+      "document": "本接口(DescribeAnalysisList)用于查询分析项列表。",
+      "input": "DescribeAnalysisListRequest",
+      "name": "查询分析项列表",
+      "output": "DescribeAnalysisListResponse"
+    },
+    "DescribeCVEComponentList": {
+      "document": "本接口(DescribeCVEComponentList)用于查询含有CVE的组件列表信息。",
+      "input": "DescribeCVEComponentListRequest",
+      "name": "查询CVE组件列表",
+      "output": "DescribeCVEComponentListResponse"
+    },
+    "DescribeCVEList": {
+      "document": "本接口(DescribeCVEList)用于查询某个组件的CVE列表信息。",
+      "input": "DescribeCVEListRequest",
+      "name": "查询CVE列表",
+      "output": "DescribeCVEListResponse"
+    },
+    "DescribeCheckSecList": {
+      "document": "本接口(DescribeCheckSecList)用于查询分析的CheckSec列表信息。",
+      "input": "DescribeCheckSecListRequest",
+      "name": "查询CheckSec列表",
+      "output": "DescribeCheckSecListResponse"
+    },
+    "DescribeLicenseComponentList": {
+      "document": "本接口(DescribeLicenseComponentList)用于查询含有风险License的组件列表信息。",
+      "input": "DescribeLicenseComponentListRequest",
+      "name": "查询风险License组件列表",
+      "output": "DescribeLicenseComponentListResponse"
+    },
+    "DescribeLicenseDetail": {
+      "document": "本接口(DescribeLicenseDetail)用于查询某个license的详细信息。",
+      "input": "DescribeLicenseDetailRequest",
+      "name": "查询License详情",
+      "output": "DescribeLicenseDetailResponse"
+    },
+    "DescribeLicenseFileList": {
+      "document": "本接口(DescribeLicenseFileList)用于查询包含指定风险License组件的文件列表信息。",
+      "input": "DescribeLicenseFileListRequest",
+      "name": "查询License文件列表",
+      "output": "DescribeLicenseFileListResponse"
+    },
+    "DescribeReportOverview": {
+      "document": "本接口(DescribeReportOverview)用于查询分析报告概览。",
+      "input": "DescribeReportOverviewRequest",
+      "name": "查询报告概览",
+      "output": "DescribeReportOverviewResponse"
+    },
+    "DescribeSensitiveEmailDomainList": {
+      "document": "本接口(DescribeSensitiveEmailDomainList)用于查询敏感邮箱域名信息列表。",
+      "input": "DescribeSensitiveEmailDomainListRequest",
+      "name": "查询敏感邮箱域名列表",
+      "output": "DescribeSensitiveEmailDomainListResponse"
+    },
+    "DescribeSensitiveEmailList": {
+      "document": "本接口(DescribeSensitiveEmailList)用于查询敏感邮箱详情列表。",
+      "input": "DescribeSensitiveEmailListRequest",
+      "name": "查询敏感邮箱列表",
+      "output": "DescribeSensitiveEmailListResponse"
+    },
+    "DescribeSensitiveIPList": {
+      "document": "本接口(DescribeSensitiveIPList)用于查询敏感IP信息列表。",
+      "input": "DescribeSensitiveIPListRequest",
+      "name": "查询敏感IP列表",
+      "output": "DescribeSensitiveIPListResponse"
+    },
+    "DescribeSensitivePrivateKeyList": {
+      "document": "本接口(DescribeSensitivePrivateKeyList)用于查询敏感私钥列表信息。",
+      "input": "DescribeSensitivePrivateKeyListRequest",
+      "name": "查询敏感私钥列表",
+      "output": "DescribeSensitivePrivateKeyListResponse"
+    },
+    "DescribeSensitiveURIDomainList": {
+      "document": "本接口(DescribeSensitiveURIDomainList)用于查询敏感URI域名信息列表。",
+      "input": "DescribeSensitiveURIDomainListRequest",
+      "name": "查询敏感URI域名列表",
+      "output": "DescribeSensitiveURIDomainListResponse"
+    },
+    "DescribeSensitiveURIList": {
+      "document": "本接口(DescribeSensitiveURIList)用于查询敏感URI详情列表。",
+      "input": "DescribeSensitiveURIListRequest",
+      "name": "查询敏感URI列表",
+      "output": "DescribeSensitiveURIListResponse"
+    },
+    "DescribeSensitiveURIPwdList": {
+      "document": "本接口(DescribeSensitiveURIPwdList)用于查询敏感URI密码列表信息。",
+      "input": "DescribeSensitiveURIPwdListRequest",
+      "name": "查询敏感URI密码列表",
+      "output": "DescribeSensitiveURIPwdListResponse"
+    },
+    "ExecuteAnalysisList": {
+      "document": "本接口(ExecuteAnalysisList)用于批量执行分析项列表，仅支持失败的分析项。",
+      "input": "ExecuteAnalysisListRequest",
+      "name": "执行分析项列表",
+      "output": "ExecuteAnalysisListResponse"
+    },
+    "ModifyAnalysisAttribute": {
+      "document": "本接口(ModifyAnalysisAttribute)用于修改分析项属性。",
+      "input": "ModifyAnalysisAttributeRequest",
+      "name": "修改分析项属性",
+      "output": "ModifyAnalysisAttributeResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-11",
+    "api_brief": "介绍如何使用API对二进制软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
+    "serviceNameCN": "二进制软件成分分析",
+    "serviceShortName": "bsca"
+  },
+  "objects": {
+    "Analysis": {
+      "document": "分析项信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项ID。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析项名称。",
+          "example": "MyAnalysis",
+          "member": "string",
+          "name": "AnalysisName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析状态。取值范围：\n<li>WAITING：表示等待中分析项</li>\n<li>RUNNING：表示正在分析中的分析项</li>\n<li>SUCCESS：表示分析成功的分析项</li>\n<li>FAIL：表示分析失败的分析项。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "AnalysisState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析的文件名称。",
+          "example": "MyFile",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析的文件大小，单位：字节。",
+          "example": "100",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE信息统计。",
+          "example": "无",
+          "member": "CVECount",
+          "name": "CVECount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2021-08-20T07:37:12Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标星，表示重点关注的分析项。",
+          "example": "true",
+          "member": "bool",
+          "name": "Star",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析项类型。取值范围：\n<li>DOCKER：分析的文件为Docker镜像</li>\n<li>RTOS：分析的文件为RTOS固件</li>\n<li>GENERIC：分析的文件为其他制品文件。</li>",
+          "example": "GENERIC",
+          "member": "string",
+          "name": "AnalysisType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分析参数。\n目前仅RTOS类型含有，取值范围：\n<li>hex</li>\n<li>bin</li>\n<li>s19</li>\n其他类型分析值为空。",
+          "example": "bin",
+          "member": "string",
+          "name": "AnalysisParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CVE": {
+      "document": "CVE信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE ID。",
+          "example": "CVE-2018-1000500",
+          "member": "string",
+          "name": "CVEId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE名称。",
+          "example": "Busybox 安全漏洞",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE评分。",
+          "example": "7.8",
+          "member": "float",
+          "name": "CVSS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE风险等级。取值范围：\n<li>CRITICAL：严重</li>\n<li>HIGH：高危</li>\n<li>MEDIUM：中危</li>\n<li>LOW：低危</li>",
+          "example": "CRITICAL",
+          "member": "string",
+          "name": "CVSSRank",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包含该CVE的文件列表。",
+          "example": "[\"file1\",\"file2\"]",
+          "member": "string",
+          "name": "FileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE描述。",
+          "example": "cve description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解决方案。",
+          "example": "升级到最新无漏洞版本",
+          "member": "string",
+          "name": "Solution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防御方案。",
+          "example": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://git.busybox.net/busybox/tree/net",
+          "member": "string",
+          "name": "Defense",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "厂商链接列表。",
+          "example": "[\"reference1\",\"reference2\"]",
+          "member": "string",
+          "name": "ReferenceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE状态。取值范围：\n<li>HIGHLY_RELATED：高概率，该漏洞规则匹配与版本匹配均有该漏洞，需要重点关注</li>\n<li>LIKELY_RELATED：疑似，该漏洞疑似存在，需要确认</li>\n<li>CONFIRMED：已确认，该漏洞确认存在于该固件中</li>\n<li>FIXED：已修复，该漏洞在该版本已打Patch，无需关注</li>\n<li>NONE：无</li>",
+          "example": "FIXED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE类别。",
+          "example": "web应用漏洞",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CNNVD ID。",
+          "example": "CNNVD-210905-434",
+          "member": "string",
+          "name": "CnnvdId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVSS3.0详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CVSSV3Info",
+          "name": "CVSSV3Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CVSS2.0详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CVSSV2Info",
+          "name": "CVSSV2Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CVEComponent": {
+      "document": "包含CVE的组件库信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "组件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件版本。",
+          "example": "0.12.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件描述。",
+          "example": "component description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包含该组件的文件数量。",
+          "example": "3",
+          "member": "uint64",
+          "name": "FileCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件CVE个数统计。",
+          "example": "无",
+          "member": "CVECount",
+          "name": "CVECount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件路径。",
+          "example": "runtime",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CVECount": {
+      "document": "CVE个数统计。",
+      "members": [
+        {
+          "default": "",
+          "document": "严重CVE个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "CriticalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高危CVE个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "HighCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中危CVE个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MediumCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "低危CVE个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LowCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CVSSV2Info": {
+      "document": "CVSSv2.0详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE评分。",
+          "example": "6.8",
+          "member": "float",
+          "name": "CVSS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AccessVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>",
+          "example": "LOCAL",
+          "member": "string",
+          "name": "AccessVector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AccessComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>MEDIUM 中</li>\n<li>LOW 低</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "AccessComplexity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Authentication 身份验证。\n取值范围：\n<li>MULTIPLE 多系统认证</li>\n<li>SINGLE 单系统认证</li>\n<li>NONE 无</li>",
+          "example": "MULTIPLE",
+          "member": "string",
+          "name": "Authentication",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "ConImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "IntegrityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "AvailabilityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CVSSV3Info": {
+      "document": "Cvssv3.0详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE评分。",
+          "example": "5.5",
+          "member": "float",
+          "name": "CVSS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AttackVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>\n<li>PHYSICAL 物理</li>",
+          "example": "NETWORK",
+          "member": "string",
+          "name": "AttackVector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AttackComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "AttackComplexity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PrivilegesRequired 触发特权。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>\n<li>NONE 无</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "PrivilegesRequired",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UserInteraction 交互必要性。\n取值范围：\n<li>NONE 无</li>\n<li>REQUIRED 需要</li>",
+          "example": "REQUIRED",
+          "member": "string",
+          "name": "UserInteraction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Scope 绕过安全边界。\n取值范围：\n<li>UNCHANGED 否</li>\n<li>CHANGED 能</li>",
+          "example": "UNCHANGED",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "ConImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "IntegrityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "AvailabilityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckSec": {
+      "document": "CheckSec信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "canary用于栈溢出保护，函数开始执行的时候会向栈中插入cookie信息，当函数返回的时会验证cookie信息是否合法，如果不合法则停止程序运行。\n<li>true：canary已启用</li>\n<li>false：canary已禁用</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "Canary",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "symbols的存在会使二进制文件更容易推断软件的内部工作原理，通常在封闭源代码或专有软件的发布版本中会删除symbols。\n<li>true：symbols存在</li>\n<li>false：symbols不存在</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "Symbols",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "NX将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU将抛出异常，不执行恶意指令。\n<li>true：nx已启用</li>\n<li>false：nx已禁用</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "NonExecutable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RELRO 代表重定位只读，启用后使二进制文件中的 GOT 为只读，从而防止某种形式的重定位攻击。\n<li>true：relro完全开启</li>\n<li>false：relro已关闭或部分开启</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "RelReadOnly",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "rpath的存在可能导致不受信任（攻击者控制）库的运行，且目录可能受受攻击者控制植入恶意版本。\n<li>true：rpath已设置</li>\n<li>false：rpath未设置</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "RuntimeSearchPath",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "runpath的存在可能导致不受信任（攻击者控制）库的运行，且目录可能受受攻击者控制植入恶意版本。\n<li>true：runpath已设置</li>\n<li>false：runpath未设置</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "RunPath",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pie用于内存地址空间分布随机化，使代码在加载到内存时使用相对地址，所有对固定地址的访问都通过全局偏移表(GOT)来实现。\n<li>true：pie已启用</li>\n<li>false：pie已禁用</li>",
+          "example": "true",
+          "member": "bool",
+          "name": "PositionIndependentExecutable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CommonCount": {
+      "document": "通用统计类型，包含统计项名称和个数。",
+      "members": [
+        {
+          "default": "",
+          "document": "统计项名称。",
+          "example": "127.0.01",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计项个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComponentCount": {
+      "document": "开源组件信息统计。",
+      "members": [
+        {
+          "default": "",
+          "document": "开源组件名称。",
+          "example": "openssh v1.6",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE信息统计。",
+          "example": "无",
+          "member": "CVECount",
+          "name": "CVECount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAnalysisRequest": {
+      "document": "CreateAnalysis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项名称，2-100个字符。",
+          "example": "MyAnalysis",
+          "member": "string",
+          "name": "AnalysisName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分析项类型。取值范围：\n<li>DOCKER：分析的文件为Docker镜像</li>\n<li>RTOS：分析的文件为RTOS固件</li>\n<li>GENERIC：分析的文件为其他制品文件。</li>",
+          "example": "DOCKER",
+          "member": "string",
+          "name": "AnalysisType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分析的文件名称。",
+          "example": "MyFile",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件上传凭证，通过创建文件凭证(CreateFileTicket)接口获取。",
+          "example": "1234567890-716cc6c7-f60c-4e08-9f91-e3e3b73144e2",
+          "member": "string",
+          "name": "FileTicketId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分析参数，目前仅 RTOS 类型的分析需要。\n取值范围：\n<li>bin</li>\n<li>s19</li>\n<li>hex</li>",
+          "example": "bin",
+          "member": "string",
+          "name": "AnalysisParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAnalysisResponse": {
+      "document": "CreateAnalysis返回参数结构体",
+      "members": [
+        {
+          "document": "分析项ID。",
+          "example": "815e8385-82f8-4f8a-b35f-a7e5eac218c2",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileTicketRequest": {
+      "document": "CreateFileTicket请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateFileTicketResponse": {
+      "document": "CreateFileTicket返回参数结构体",
+      "members": [
+        {
+          "document": "文件上传凭证。",
+          "example": "1234567890-716cc6c7-f60c-4e08-9f91-e3e3b73144e2",
+          "member": "string",
+          "name": "TicketId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件上传URL。",
+          "example": "https://bsca-1234567890.cos.ap-guangzhou.myqcloud.com/upload/123",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求头信息列表。",
+          "example": "无",
+          "member": "RequestHeader",
+          "name": "RequestHeaderSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnalysisListRequest": {
+      "document": "DeleteAnalysisList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要批量删除的分析项id。",
+          "example": "[\"12d46ba8-5a03-460d-90da-0ed088353223\"]",
+          "member": "string",
+          "name": "AnalysisIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAnalysisListResponse": {
+      "document": "DeleteAnalysisList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountRequest": {
+      "document": "DescribeAccount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccountResponse": {
+      "document": "DescribeAccount返回参数结构体",
+      "members": [
+        {
+          "document": "账户总流量，单位：MiB。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账户剩余流量，单位：MiB。",
+          "example": "200",
+          "member": "uint64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnalysisListRequest": {
+      "document": "DescribeAnalysisList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "> AnalysisName\n\n    按照【分析名字】进行模糊搜索过滤。\n    类型：String\n    必选：否\n\n> FileName\n\n    按照【文件名字】进行模糊搜索过滤。\n    类型：String\n    必选：否\n\n> AnalysisState\n\n    按照【分析状态】进行过滤。状态类型详见实例状态表。\n    类型：String\n    必选：否\n\n> UpdatedTime\n\n    按照【更新时间】进行过滤，Values必须为2个，表示过滤的开始时间和结束时间。\n    类型：String，按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n    必选：否\n\n每次请求的Filters的上限为4，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAnalysisListResponse": {
+      "document": "DescribeAnalysisList返回参数结构体",
+      "members": [
+        {
+          "document": "分析项信息列表。",
+          "example": "无",
+          "member": "Analysis",
+          "name": "AnalysisSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的分析项数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCVEComponentListRequest": {
+      "document": "DescribeCVEComponentList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "true则返回Linux内核CVE，否则返回第三方库CVE。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLinuxKernel",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n> ComponentName\n\n    按照【组件名称】进行筛选。\n    类型：String\n    必选：否\n\n> FilePath\n\n   按照【文件路径】进行筛选，仅内核CVE支持。\n   类型：String\n   必选：否\n\n> Status\n  \n    按照【CVE状态】进行筛选，仅内核CVE支持。\n    类型：String\n    必选：否\n    Values 取值范围：\n<li>HIGHLY_RELATED：高概率</li>\n<li>LIKELY_RELATED：疑似</li>\n<li>CONFIRMED：已确认</li>\n<li>FIXED：已修复</li>\n<li>NONE：无</li>\n\n> CVSSRank\n \n   按照【CVE风险等级】进行筛选。\n   类型：String\n   必填：否\n   Values 取值范围：\n<li>CRITICAL：严重</li>\n<li>HIGH：高危</li>\n<li>MEDIUM：中危</li>\n<li>LOW：低危</li>\n\n> Category：\n  \n   按照【CVE类别】进行筛选。\n   类型：String\n   必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n> Component\n\n    按照【组件】进行排序。\n    类型：String\n    必选：否\n\n> TotalCount\n\n    按照【总漏洞数量】进行排序。\n    类型：String\n    必选：否\n\n> FileCount\n\n   按照【影响文件数量】进行排序，仅第三方库CVE支持。\n   类型：String\n   必选：否",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> CVEId\n\n    按照【CVEId】搜索组件。\n    类型：String\n    必选：否\n\n> CVEName\n\n   按照【CVE名称】搜索组件。\n   类型：String\n   必选：否\n\n> ComponentName\n\n    按照【组件名称】搜索组件。\n    类型：String\n    必选：否\n    Values 示例：[\"busybox\",\"pyml\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCVEComponentListResponse": {
+      "document": "DescribeCVEComponentList返回参数结构体",
+      "members": [
+        {
+          "document": "含有CVE的组件列表。",
+          "example": "无",
+          "member": "CVEComponent",
+          "name": "ComponentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的组件数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCVEListRequest": {
+      "document": "DescribeCVEList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组件版本。",
+          "example": "1.30.1",
+          "member": "string",
+          "name": "ComponentVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCVEListResponse": {
+      "document": "DescribeCVEList返回参数结构体",
+      "members": [
+        {
+          "document": "CVE信息列表。",
+          "example": "无",
+          "member": "CVE",
+          "name": "CVESet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCheckSecListRequest": {
+      "document": "DescribeCheckSecList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项id。",
+          "example": "f4461442-be34-4c60-ab21-55860baa9940",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认值20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n<li>Nx</li>\n<li>Relro</li>\n<li>Rpath</li>\n<li>Runpath</li>\n<li>Pie</li>\n<li>Canary</li>\n<li>Symbols</li>\n以上字段对应的 Values 取值类型均为 String，示例如下：\n[\"true\",\"false\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> FileName\n\n    按照【文件名称】进行搜索。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCheckSecListResponse": {
+      "document": "DescribeCheckSecList返回参数结构体",
+      "members": [
+        {
+          "document": "文件及其对应的 CheckSec 列表。",
+          "example": "无",
+          "member": "CheckSec",
+          "name": "CheckSecSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的文件数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseComponentListRequest": {
+      "document": "DescribeLicenseComponentList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项id。",
+          "example": "f4461442-be34-4c60-ab21-55860baa9940",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为20.",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序依据。支持字段如下：\n> ComponentName\n   \n    按照【组件名称】进行排序。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n> Risk\n\n    按照【License 风险等级】进行过滤。\n    类型：String\n    必选：否\n    Values 取值范围：\n<li>HighRisk</li>\n<li>MiddleRisk</li>\n<li>LowRisk</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> LicenseName\n\n    按照【license 名称】搜索组件。\n    类型：String\n    必选：否\n\n> ComponentName\n\n    按照【组件名称】搜索组件。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseComponentListResponse": {
+      "document": "DescribeLicenseComponentList返回参数结构体",
+      "members": [
+        {
+          "document": "含有风险license的组件列表。",
+          "example": "无",
+          "member": "LicenseComponent",
+          "name": "ComponentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的组件数量。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseDetailRequest": {
+      "document": "DescribeLicenseDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项id。",
+          "example": "f4461442-be34-4c60-ab21-55860baa9940",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "License名称。",
+          "example": "MIT",
+          "member": "string",
+          "name": "LicenseName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseDetailResponse": {
+      "document": "DescribeLicenseDetail返回参数结构体",
+      "members": [
+        {
+          "document": "License详细信息。",
+          "example": "无",
+          "member": "License",
+          "name": "License",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseFileListRequest": {
+      "document": "DescribeLicenseFileList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项id。",
+          "example": "f4461442-be34-4c60-ab21-55860baa9940",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "组件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseFileListResponse": {
+      "document": "DescribeLicenseFileList返回参数结构体",
+      "members": [
+        {
+          "document": "包含该组件的文件列表。",
+          "example": "[\"/test1\",\"/test2\"]",
+          "member": "string",
+          "name": "FileSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportOverviewRequest": {
+      "document": "DescribeReportOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportOverviewResponse": {
+      "document": "DescribeReportOverview返回参数结构体",
+      "members": [
+        {
+          "document": "分析项名称。",
+          "example": "MyAnalysis",
+          "member": "string",
+          "name": "AnalysisName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分析项类型。取值范围：\n<li>DOCKER：分析的文件为Docker镜像</li>\n<li>RTOS：分析的文件为RTOS固件</li>\n<li>GENERIC：分析的文件为其他制品文件。</li>",
+          "example": "DOCKER",
+          "member": "string",
+          "name": "AnalysisType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分析的文件名称。",
+          "example": "MyFile",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分析的文件大小，单位：字节。",
+          "example": "100",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2021-08-20T07:37:12Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CVE信息统计。",
+          "example": "无",
+          "member": "CVECount",
+          "name": "CVECount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感私钥信息统计。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SensitivePrivateKeyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感URI密码信息统计。",
+          "example": "2",
+          "member": "int64",
+          "name": "SensitiveURIPasswordCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感IP信息统计。",
+          "example": "无",
+          "member": "TopCount",
+          "name": "SensitiveIPCount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感URI信息统计。",
+          "example": "无",
+          "member": "TopCount",
+          "name": "SensitiveURICount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "敏感邮箱信息统计。",
+          "example": "无",
+          "member": "TopCount",
+          "name": "SensitiveMailCount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开源组件风险信息统计。",
+          "example": "无",
+          "member": "ComponentCount",
+          "name": "ComponentCount",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveEmailDomainListRequest": {
+      "document": "DescribeSensitiveEmailDomainList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n<li>RootDomain：根域名</li>\n<li>Count：暴露数量</li>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> Email\n\n    按照【敏感邮箱】搜索。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n> RootDomain\n\n  按照【根域名】进行筛选。\n  类型：String\n  必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveEmailDomainListResponse": {
+      "document": "DescribeSensitiveEmailDomainList返回参数结构体",
+      "members": [
+        {
+          "document": "敏感邮箱域名列表。",
+          "example": "无",
+          "member": "SensitiveDomain",
+          "name": "SensitiveDomainSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的邮箱域名数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveEmailListRequest": {
+      "document": "DescribeSensitiveEmailList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需查询的根域名。",
+          "example": "gmail.com",
+          "member": "string",
+          "name": "RootDomain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveEmailListResponse": {
+      "document": "DescribeSensitiveEmailList返回参数结构体",
+      "members": [
+        {
+          "document": "敏感邮箱详情列表。",
+          "example": "无",
+          "member": "SensitiveDomainDetail",
+          "name": "SensitiveDomainDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveIPListRequest": {
+      "document": "DescribeSensitiveIPList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n<li>IP</li>\n<li>Count：暴露数量</li>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n> Type\n\n   按照【IP类型】进行筛选。\n   类型：String\n   必填：否\n   Values 取值范围：\n<li>IPv4</li>\n<li>IPv6</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> IP\n\n   按照【IP】进行搜索。\n   类型：String\n   必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveIPListResponse": {
+      "document": "DescribeSensitiveIPList返回参数结构体",
+      "members": [
+        {
+          "document": "敏感IP信息列表。",
+          "example": "无",
+          "member": "SensitiveIP",
+          "name": "SensitiveIPSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的IP数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitivePrivateKeyListRequest": {
+      "document": "DescribeSensitivePrivateKeyList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n<li>FileName：文件名称，亦即暴露位置</li>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n>FileName\n\n  按照【暴露位置】进行搜索。\n  类型：String\n  必填：否\n\n>Content\n\n  按照【Content】进行搜索。\n  类型：String\n  必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitivePrivateKeyListResponse": {
+      "document": "DescribeSensitivePrivateKeyList返回参数结构体",
+      "members": [
+        {
+          "document": "包含敏感私钥的文件列表。",
+          "example": "无",
+          "member": "SensitiveFile",
+          "name": "SensitiveFileSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的文件数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIDomainListRequest": {
+      "document": "DescribeSensitiveURIDomainList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n<li>RootDomain：根域名</li>\n<li>Count：暴露数量</li>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n> RootDomain\n\n   按照【根域名】搜索敏感URI域名。\n   类型：String\n   必选：否\n\n> Scheme\n\n    按照【传输协议】搜索敏感URI域名。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选。支持字段如下：\n>RootDomain\n\n   按照【根域名】进行筛选。\n   类型：String\n   必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIDomainListResponse": {
+      "document": "DescribeSensitiveURIDomainList返回参数结构体",
+      "members": [
+        {
+          "document": "敏感URI域名列表。",
+          "example": "无",
+          "member": "SensitiveDomain",
+          "name": "SensitiveDomainSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的URI域名数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有可筛选字段的取值集合。",
+          "example": "无",
+          "member": "FieldValues",
+          "name": "FieldValuesSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIListRequest": {
+      "document": "DescribeSensitiveURIList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id。",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需查询的根域名。",
+          "example": "example.com",
+          "member": "string",
+          "name": "RootDomain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIListResponse": {
+      "document": "DescribeSensitiveURIList返回参数结构体",
+      "members": [
+        {
+          "document": "敏感URI详情列表。",
+          "example": "无",
+          "member": "SensitiveDomainDetail",
+          "name": "SensitiveDomainDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIPwdListRequest": {
+      "document": "DescribeSensitiveURIPwdList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项Id.",
+          "example": "34b0e422-c7be-404a-8861-a543af8393c8",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序。支持字段如下：\n<li>FileName：文件名，亦即暴露位置</li>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索。支持字段如下：\n>FileName\n\n   按照【暴露位置】进行搜索。\n   类型：String\n   必填：否\n\n>Content\n\n   按照【敏感URI密码】进行搜索\n   类型：String\n   必填：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Search",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSensitiveURIPwdListResponse": {
+      "document": "DescribeSensitiveURIPwdList返回参数结构体",
+      "members": [
+        {
+          "document": "文件及其包含的敏感URI密码列表。",
+          "example": "无",
+          "member": "SensitiveFile",
+          "name": "SensitiveFileSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的文件数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteAnalysisListRequest": {
+      "document": "ExecuteAnalysisList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要批量执行的分析项id。",
+          "example": "[\"12d46ba8-5a03-460d-90da-0ed088353223\"]",
+          "member": "string",
+          "name": "AnalysisIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteAnalysisListResponse": {
+      "document": "ExecuteAnalysisList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FieldValues": {
+      "document": "所有待筛选字段的可取值集合。",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称。",
+          "example": "Risk",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对应字段的取值集合。",
+          "example": "[\"HighRisk\",\"MiddleRisk\"]\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤参数\n>描述键值对过滤器，用于条件过滤查询。例如过滤名字、状态等\n> 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n> 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n>\n> 以DescribeAnalysisList接口的Filter为例。若我们需要查询分析项状态为成功或者失败的分析项时，可如下实现：\nFilters.0.Name=AnalysisState\n&Filters.0.Values.0=SUCCESS\n&Filters.0.Values.1=FAIL\n",
+      "members": [
+        {
+          "default": "",
+          "document": "需要过滤的字段。",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段的过滤值。",
+          "example": "[\"Name1\",\"Name2\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "License": {
+      "document": "License信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "license名称。",
+          "example": "MIT",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license的允许信息列表。",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "PermissionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license的要求信息列表。",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "ConditionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license的禁止信息列表。",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "ForbiddenSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license来源。",
+          "example": "https://opensource.org/licenses/GPL-2.0",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license内容。",
+          "example": "GNU GENERAL PUBLIC",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseComponent": {
+      "document": "包含license的组件库信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "组件名称。",
+          "example": "busybox",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件包含的license信息列表。",
+          "example": "无",
+          "member": "LicenseInfo",
+          "name": "LicenseInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件描述。",
+          "example": "The readline-static package",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseInfo": {
+      "document": "license信息，包括名称和风险等级。",
+      "members": [
+        {
+          "default": "",
+          "document": "license名称。",
+          "example": "MIT",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license风险，取值范围：\n<li>HighRisk</li>\n<li>MiddleRisk</li>\n<li>LowRisk</li>",
+          "example": "Low",
+          "member": "string",
+          "name": "Risk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseRestriction": {
+      "document": "License约束信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "license约束的名称。",
+          "example": "Commercial Use",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license约束的描述。",
+          "example": "The licensed material",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAnalysisAttributeRequest": {
+      "document": "ModifyAnalysisAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析项ID。",
+          "example": "815e8385-82f8-4f8a-b35f-a7e5eac218c2",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标星，表示重点关注的分析项。",
+          "example": "true",
+          "member": "bool",
+          "name": "Star",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAnalysisAttributeResponse": {
+      "document": "ModifyAnalysisAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "分析项ID。",
+          "example": "815e8385-82f8-4f8a-b35f-a7e5eac218c2",
+          "member": "string",
+          "name": "AnalysisId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderBy": {
+      "document": "排序参数\n描述报告页的排序，包括 Field 和 Order，前者表示待排序字段，后者表示顺序。\nOrder 取值范围：\n> ASC：升序 \n> DESC：降序\n示例：CVE 报告页中按照漏洞总数升序排序：\"OrderBy\":{\"Field\":\"TotalCount\",\"Order\":\"ASC\"}。",
+      "members": [
+        {
+          "default": "",
+          "document": "待排序字段。",
+          "example": "TotalCount",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序顺序，取值范围：\n<li>ASC：升序 </li>\n<li>DESC：降序</li>",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RequestHeader": {
+      "document": "请求头信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "请求头key。",
+          "example": "Authorization",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求头Value。",
+          "example": "q-sign-algorithm=sha1&q-ak=SecretID&q-sign-time=1631004209;16310",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SensitiveDomain": {
+      "document": "敏感域名信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "敏感根域名。",
+          "example": "gmail.com",
+          "member": "string",
+          "name": "RootDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感根域名出现次数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SensitiveDomainDetail": {
+      "document": "敏感域名信息详情。",
+      "members": [
+        {
+          "default": "",
+          "document": "敏感域名。",
+          "example": "xxx@gmail.com",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感域名出现次数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包含该敏感域名的文件列表。",
+          "example": "无",
+          "member": "SensitiveFileInfo",
+          "name": "FileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SensitiveFile": {
+      "document": "敏感文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "敏感文件基本信息。",
+          "example": "无",
+          "member": "SensitiveFileInfo",
+          "name": "File",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感文件内容列表。",
+          "example": "[\"sensitive content\"]",
+          "member": "string",
+          "name": "ContentList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SensitiveFileInfo": {
+      "document": "敏感文件基本信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "敏感文件名称。",
+          "example": "file name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感文件类型。取值范围：\n<li>TEXT：文本文件</li>\n<li>BINARY：二进制文件</li>",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SensitiveIP": {
+      "document": "敏感IP信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "敏感IP。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP类型。取值范围：\n<li>IPv4</li>\n<li>IPv6</li>",
+          "example": "IPv4",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP暴露次数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "包含该IP的文件列表。",
+          "example": "无",
+          "member": "SensitiveFileInfo",
+          "name": "FileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopCount": {
+      "document": "部分统计类型，包含统计项总个数和部分结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "统计项的总个数。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计项的部分结果。",
+          "example": "无",
+          "member": "CommonCount",
+          "name": "TopList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

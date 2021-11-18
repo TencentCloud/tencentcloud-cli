@@ -1,5 +1,11 @@
 {
   "actions": {
+    "GetAntiFraudVip": {
+      "document": "反欺诈VIP评分接口",
+      "input": "GetAntiFraudVipRequest",
+      "name": "反欺诈VIP评分接口",
+      "output": "GetAntiFraudVipResponse"
+    },
     "QueryAntiFraudVip": {
       "document": "天御反欺诈服务，主要应用于银行、证券、保险、P2P等金融行业客户，通过腾讯的大数据风控能力，\n可以准确识别恶意用户信息，解决客户在支付、活动、理财，风控等业务环节遇到的欺诈威胁，降低企业\n的损失。",
       "input": "QueryAntiFraudVipRequest",
@@ -14,6 +20,495 @@
     "serviceShortName": "afc"
   },
   "objects": {
+    "AntiFraudVipCryptoFilter": {
+      "document": "AntiFraudVipCryptoFilter– 业务入参",
+      "members": [
+        {
+          "default": "",
+          "document": "约定用入参，默认不涉及默认BusinessSecurityData 与BusinessCrptoData 不传",
+          "example": "无",
+          "member": "string",
+          "name": "CryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "约定用入参，默认不涉及",
+          "example": "无",
+          "member": "string",
+          "name": "CryptoContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AntiFraudVipFilter": {
+      "document": "AntiFraudVipFilter– 业务入参",
+      "members": [
+        {
+          "default": "",
+          "document": "业务方账号 ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务方APPID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerAppid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证号\n注 1：下方 idCryptoType 为指定\n加密方式\n注 2：若 idNumber 加密则必传加\n密方式",
+          "example": "无",
+          "member": "string",
+          "name": "IdNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号码（注：不需要带国家代码\n例如：13430421011）\n注 1：下方 phoneCryptoType 为\n指定加密方式:\n注 2：若 phoneNumber 加密则必\n传加密方式",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务场景 ID",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认不使用，业务方子\n账号，若接口使用密钥对应是子账\n号则必填",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerSubUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已获取约定标识则传 1；\n用于基于特定需求而传的标识字段\n注：有约定则是必传，若未传则查\n询接口失败",
+          "example": "无",
+          "member": "string",
+          "name": "Authorization",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名\n注 ：不支持加密",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "银行卡号",
+          "example": "无",
+          "member": "string",
+          "name": "BankCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户请求来源 IP",
+          "example": "无",
+          "member": "string",
+          "name": "UserIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国际移动设备识别码",
+          "example": "无",
+          "member": "string",
+          "name": "Imei",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ios 系统广告标示符",
+          "example": "无",
+          "member": "string",
+          "name": "Idfa",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户邮箱地址",
+          "example": "无",
+          "member": "string",
+          "name": "EmailAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户住址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MAC 地址",
+          "example": "无",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国际移动用户识别码",
+          "example": "无",
+          "member": "string",
+          "name": "Imsi",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的腾讯帐号 QQ：1；\n开放帐号微信： 2；",
+          "example": "无",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可选的 QQ 或微信 openid",
+          "example": "无",
+          "member": "string",
+          "name": "Uid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "qq 或微信分配给网站或应用的\nappid，用来唯一标识网站或应用",
+          "example": "无",
+          "member": "string",
+          "name": "AppIdU",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ＷＩＦＩＭＡＣ",
+          "example": "无",
+          "member": "string",
+          "name": "WifiMac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WIFI 服务集标识",
+          "example": "无",
+          "member": "string",
+          "name": "WifiSSID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "WIFI-BSSID",
+          "example": "无",
+          "member": "string",
+          "name": "WifiBSSID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拓展字段类型 ID\n注：默认不填写，需要时天御侧将\n提供",
+          "example": "无",
+          "member": "string",
+          "name": "ExtensionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拓展字段内容\n注：默认不填，需要时天御侧将提\n供",
+          "example": "无",
+          "member": "string",
+          "name": "ExtensionIn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务 ID，默认不传",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3\n注：若 idNumber 加密则必传加密\n方式",
+          "example": "无",
+          "member": "string",
+          "name": "IdCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号加密类型\n0：不加密（默认值）\n1：md5,\n2：sha256\n3：SM3\n注：若 phoneNumber 加密则必传\n加密方式",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名加密类型：——注：已经不支持加\n密，该字段存在是为了兼容可能历史客户\n版本；\n0：不加密（默认值）\n1：md5",
+          "example": "无",
+          "member": "string",
+          "name": "NameCryptoType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AntiFraudVipRecord": {
+      "document": "反欺诈VIP查询结果",
+      "members": [
+        {
+          "default": "",
+          "document": "公共错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务侧错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CodeDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务侧错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示该条记录能否查到：1 为能查到；-1 为查不到，此时 RiskScore 返回-1；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Found",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示该条记录中的身份 ID 能否查到\n1 为能查到\n-1 为查不到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "IdFound",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当可查到时，返回 0~100 区间，值越高 欺诈可\n能性越大。\n当查不到时（即 found=-1），返回-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "RiskScore",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "扩展字段，对风险类型的说明。扩展字段并非必\n然出现。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "SimpleKindRiskDetail",
+          "name": "RiskInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "默认出现，提供模型版本号说明及多模型返回需\n要时用到；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "OtherModelScores",
+          "name": "OtherModelScores",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表示请求时间，标准 sunix 时间戳，非必然出现\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PostTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拓展字段，非必然出现，和 ExtensionIn 对应；\n注：非必然出现，需要返回时天御侧将说明；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ExtensionOut",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetAntiFraudVipRequest": {
+      "document": "GetAntiFraudVip请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认不传，约定用原始业务\n入参(二选一BusinessSecurityData 或\nBusinessCryptoData)。",
+          "example": "无",
+          "member": "AntiFraudVipFilter",
+          "name": "BusinessSecurityData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "默认不传，约定用密文业务\n入参(二选一\nBusinessSecurityData 或\nBusinessCryptoData)。",
+          "example": "无",
+          "member": "AntiFraudVipCryptoFilter",
+          "name": "BusinessCryptoData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAntiFraudVipResponse": {
+      "document": "GetAntiFraudVip返回参数结构体",
+      "members": [
+        {
+          "document": "反欺诈评分接口结果",
+          "example": "无",
+          "member": "AntiFraudVipRecord",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OtherModelScores": {
+      "document": "扩展字段，包含多个模型的结果",
+      "members": [
+        {
+          "default": "",
+          "document": "模型类型",
+          "example": "“0”",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该模型评分",
+          "example": "“99”",
+          "member": "string",
+          "name": "ModelScore",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryAntiFraudVipRequest": {
       "document": "QueryAntiFraudVip请求参数结构体",
       "members": [
@@ -254,6 +749,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SimpleKindRiskDetail": {
+      "document": "扩展字段，对风险类型的说明",
+      "members": [
+        {
+          "default": "",
+          "document": "风险码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "RiskCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险码详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RiskCodeValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

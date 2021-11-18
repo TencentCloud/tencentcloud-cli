@@ -6,6 +6,12 @@
       "name": "添加互联网边界规则",
       "output": "AddAcRuleResponse"
     },
+    "AddEnterpriseSecurityGroupRules": {
+      "document": "创建新企业安全组规则",
+      "input": "AddEnterpriseSecurityGroupRulesRequest",
+      "name": "创建新企业安全组规则",
+      "output": "AddEnterpriseSecurityGroupRulesResponse"
+    },
     "CreateAcRules": {
       "document": "创建规则",
       "input": "CreateAcRulesRequest",
@@ -119,6 +125,12 @@
       "input": "DescribeCfwEipsRequest",
       "name": "查询防火墙弹性公网IP",
       "output": "DescribeCfwEipsResponse"
+    },
+    "DescribeEnterpriseSecurityGroupRule": {
+      "document": "查询新企业安全组规则",
+      "input": "DescribeEnterpriseSecurityGroupRuleRequest",
+      "name": "查询新企业安全组规则",
+      "output": "DescribeEnterpriseSecurityGroupRuleResponse"
     },
     "DescribeGuideScanInfo": {
       "document": "DescribeGuideScanInfo新手引导扫描接口信息",
@@ -371,6 +383,12 @@
       "input": "RemoveAcRuleRequest",
       "name": "删除互联网边界规则",
       "output": "RemoveAcRuleResponse"
+    },
+    "RemoveEnterpriseSecurityGroupRule": {
+      "document": "删除新企业安全组规则",
+      "input": "RemoveEnterpriseSecurityGroupRuleRequest",
+      "name": "删除新企业安全组规则",
+      "output": "RemoveEnterpriseSecurityGroupRuleResponse"
     },
     "RunSyncAsset": {
       "document": "同步资产-互联网&VPC",
@@ -642,6 +660,60 @@
           "name": "ReturnMsg",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddEnterpriseSecurityGroupRulesRequest": {
+      "document": "AddEnterpriseSecurityGroupRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建规则数据",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Data",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "添加类型，0：添加到最后，1：添加到最前；2：中间插入；默认0添加到最后",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "保证请求幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符，且不能超过64个字符。",
+          "example": "123e4567-e89b-12d3-a456-426655440000",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddEnterpriseSecurityGroupRulesResponse": {
+      "document": "AddEnterpriseSecurityGroupRules返回参数结构体",
+      "members": [
+        {
+          "document": "状态值，0：添加成功，非0：添加失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2188,6 +2260,150 @@
           "name": "NatFwEipList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnterpriseSecurityGroupRuleRequest": {
+      "document": "DescribeEnterpriseSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页查询时，显示的当前页的页码。\n\n默认值为1。",
+          "example": "1",
+          "member": "string",
+          "name": "PageNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询时，显示的每页数据的最大条数。\n\n可设置值最大为50。",
+          "example": "10",
+          "member": "string",
+          "name": "PageSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n支持通配",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SourceContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)\n支持通配",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DestContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则描述，支持通配",
+          "example": "这是一个规则描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值：\naccept：放行\ndrop：拒绝",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否启用规则，默认为启用，取值：\ntrue为启用，false为不启用",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问控制策略的端口。取值：\n-1/-1：全部端口\n80：80端口",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议；TCP/UDP/ICMP/ANY",
+          "example": "ANY",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥",
+          "example": "ppmg-jz17vpis",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnterpriseSecurityGroupRuleResponse": {
+      "document": "DescribeEnterpriseSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "分页查询时，显示的当前页的页码。",
+          "example": "1",
+          "member": "string",
+          "name": "PageNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页查询时，显示的每页数据的最大条数。",
+          "example": "10",
+          "member": "string",
+          "name": "PageSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制策略列表",
+          "example": "无",
+          "member": "SecurityGroupRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "访问控制策略的总数量。",
+          "example": "100",
+          "member": "string",
+          "name": "TotalCount",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5239,6 +5455,60 @@
       ],
       "type": "object"
     },
+    "RemoveEnterpriseSecurityGroupRuleRequest": {
+      "document": "RemoveEnterpriseSecurityGroupRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则的uuid，可通过查询规则列表获取",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "删除类型，0是单条删除，RuleUuid填写删除规则id，1为全部删除，RuleUuid填0即可",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoveType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveEnterpriseSecurityGroupRuleResponse": {
+      "document": "RemoveEnterpriseSecurityGroupRule返回参数结构体",
+      "members": [
+        {
+          "document": "删除成功后返回被删除策略的uuid",
+          "example": "8888",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0代表成功，-1代表失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RuleInfoData": {
       "document": "规则输入对象",
       "members": [
@@ -6144,6 +6414,112 @@
         }
       ],
       "usage": "in"
+    },
+    "SecurityGroupRule": {
+      "document": "安全组规则",
+      "members": [
+        {
+          "default": "",
+          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)",
+          "example": "ipm-dyodhpby",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region",
+          "example": "参数模版",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)",
+          "example": "ins-fmo10koi",
+          "member": "string",
+          "name": "DestContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region",
+          "example": "资产实例",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值：\naccept：放行\ndrop：拒绝",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则顺序，-1表示最低，1表示最高",
+          "example": "-1",
+          "member": "string",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议；TCP/UDP/ICMP/ANY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ANY",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "访问控制策略的端口。取值：\n-1/-1：全部端口\n80：80端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口协议类型参数模板id；协议端口模板id；与Protocol,Port互斥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ppmg-jz17vpis",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SequenceData": {
       "document": "执行顺序对象",

@@ -1028,7 +1028,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanState\n<公共请求参数>\n\n{\n    \"ModuleType\": \"Vul\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"g54f4ac3-8546-4516-8c8a-69e3ab73aa88\",\n        \"ScanState\": 0,\n        \"Schedule\": 0,\n        \"VulId\": [],\n        \"TaskId\": 1,\n        \"Type\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskEventCount\": 1,\n        \"ScanEndTime\": \"xx\",\n        \"Schedule\": 1,\n        \"ScanState\": 1,\n        \"ScanBeginTime\": \"xx\",\n        \"RequestId\": \"c741a4fd-776f-499b-85a2-7bc70fd5b92s\",\n        \"TaskId\": 1,\n        \"VulId\": [\n            1\n        ],\n        \"Type\": 1\n    }\n}",
         "title": "示例"
       }
     ],
@@ -1092,7 +1092,7 @@
       {
         "document": "获取安全事件数统计数据",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSecurityEventsCnt\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AttackLogs\": {\n            \"EventCnt\": 439,\n            \"UuidCnt\": 1\n        },\n        \"BaseLine\": {\n            \"EventCnt\": 1353,\n            \"UuidCnt\": 11\n        },\n        \"Bash\": {\n            \"EventCnt\": 5911,\n            \"UuidCnt\": 31\n        },\n        \"BruteAttack\": {\n            \"EventCnt\": 52,\n            \"UuidCnt\": 10\n        },\n        \"EmergencyVul\": {\n            \"EventCnt\": 6,\n            \"UuidCnt\": 5\n        },\n        \"HostLogin\": {\n            \"EventCnt\": 169,\n            \"UuidCnt\": 23\n        },\n        \"Malware\": {\n            \"EventCnt\": 226,\n            \"UuidCnt\": 12\n        },\n        \"PrivilegeRules\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"ReverseShell\": {\n            \"EventCnt\": 2,\n            \"UuidCnt\": 1\n        },\n        \"RiskDns\": {\n            \"EventCnt\": 5,\n            \"UuidCnt\": 2\n        },\n        \"SysVul\": {\n            \"EventCnt\": 25,\n            \"UuidCnt\": 14\n        },\n        \"WebVul\": {\n            \"EventCnt\": 3,\n            \"UuidCnt\": 2\n        },\n        \"EffectMachineCount\": 1,\n        \"EventsCount\": 1,\n        \"RequestId\": \"1234567\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Malware\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"EventsCount\": 1,\n        \"ReverseShell\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"BaseLine\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"BruteAttack\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"EffectMachineCount\": 1,\n        \"EmergencyVul\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"SysVul\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"PrivilegeRules\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"RiskDns\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"HostLogin\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"RequestId\": \"06eea0c1-7f08-41ba-a75e-8b2500e16bdf \",\n        \"AttackLogs\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"WindowVul\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"LinuxVul\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"Bash\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        },\n        \"WebVul\": {\n            \"EventCnt\": 1,\n            \"UuidCnt\": 1\n        }\n    }\n}",
         "title": "获取安全事件数统计数据"
       }
     ],
@@ -1204,7 +1204,7 @@
       {
         "document": "漏洞详情，带CVSS版本",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulInfoCvss\n&VulId=100441\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CveId\": \"1\",\n        \"CvssScore\": 1,\n        \"Description\": \"ad\",\n        \"Reference\": \"fs\",\n        \"VulName\": \"漏洞1\",\n        \"CveInfo\": \"\",\n        \"CvssScoreFloat\": 9.9,\n        \"VulType\": 1,\n        \"VulLevel\": 2,\n        \"RequestId\": \"req-566234234\",\n        \"VulId\": 100441,\n        \"RepairPlan\": \"13412\",\n        \"CVSS\": \"AV:L/AC:L/Au:N/C:N/I:P/A:N\",\n        \"PublicDate\": \"2020-12-30:00:00:00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CveId\": \"1\",\n        \"CvssScore\": 1,\n        \"Description\": \"ad\",\n        \"Reference\": \"fs\",\n        \"VulName\": \"漏洞1\",\n        \"CveInfo\": \"\",\n        \"CvssScoreFloat\": 9.9,\n        \"VulType\": 1,\n        \"VulLevel\": 2,\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"VulId\": 100441,\n        \"RepairPlan\": \"13412\",\n        \"CVSS\": \"AV:L/AC:L/Au:N/C:N/I:P/A:N\",\n        \"Labels\": \"tag1,tag2\",\n        \"PublicDate\": \"2020-12-30:00:00:00\"\n    }\n}",
         "title": "漏洞详情，带CVSS版本"
       }
     ],
@@ -1228,7 +1228,7 @@
       {
         "document": "漏洞top统计",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulTop\n&Top=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"VulTopList\": [\n            {\n                \"VulName\": \"Linux口令过期后账号最长有效天数策略\",\n                \"VulLevel\": 1,\n                \"VulCount\": 27\n            },\n            {\n                \"VulName\": \"Linux未配置账户登录失败锁定策略\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"Linux帐户超时自动登出配置\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"Linux帐户口令生存期策略\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"限制root权限用户远程登录\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f14ce73f-50d7-4c36-af1d-fc33dae510c4\",\n        \"VulTopList\": [\n            {\n                \"VulName\": \"Linux口令过期后账号最长有效天数策略\",\n                \"VulLevel\": 1,\n                \"VulCount\": 27\n            },\n            {\n                \"VulName\": \"Linux未配置账户登录失败锁定策略\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"Linux帐户超时自动登出配置\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"Linux帐户口令生存期策略\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            },\n            {\n                \"VulName\": \"限制root权限用户远程登录\",\n                \"VulLevel\": 2,\n                \"VulCount\": 17\n            }\n        ]\n    }\n}",
         "title": "漏洞top统计"
       }
     ],
@@ -1612,7 +1612,7 @@
       {
         "document": "漏洞管理 - 一键检测",
         "input": "https://cwp.tencentcloudapi.com/?Action=ScanVul\n&VulCategories=1;2\n&VulLevels=1;2\n&HostType=1\n&VulEmergency=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TaskId\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c741a4fd-776f-499b-85a2-7bc70fd5b92s\",\n        \"TaskId\": 1\n    }\n}",
         "title": "漏洞管理 - 一键检测"
       }
     ],
@@ -1620,7 +1620,7 @@
       {
         "document": "漏洞管理-重新检测接口",
         "input": "https://cwp.tencentcloudapi.com/?Action=ScanVulAgain\n&EventIds=1,2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89ea8dd4-0c5e-4e95-a2b7-2de18a2efcb4\"\n    }\n}",
         "title": "漏洞管理-重新检测接口"
       }
     ],

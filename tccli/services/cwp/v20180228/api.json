@@ -14979,6 +14979,33 @@
           "value_allowed_null": false
         },
         {
+          "document": "开始扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-09 15:04:01",
+          "member": "string",
+          "name": "ScanBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描漏洞数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-09 15:04:01",
+          "member": "string",
+          "name": "ScanEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15561,7 +15588,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "系统组件相关风险事件",
+          "document": "应用漏洞风险事件",
           "example": "1",
           "member": "SecurityEventInfo",
           "name": "SysVul",
@@ -15622,6 +15649,24 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "window 系统漏洞事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityEventInfo",
+          "name": "WindowVul",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "linux系统漏洞事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityEventInfo",
+          "name": "LinuxVul",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16265,7 +16310,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>AliasName - String - 主机名筛选</li>\n<li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>\n<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复这中.</li>\n<li>Uuid - String数组 - Uuid串数组</li>",
+          "document": "过滤条件。\n<li>AliasName - String - 主机名筛选</li>\n<li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>\n<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>\n<li>Uuid - String数组 - Uuid串数组</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -16458,7 +16503,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "漏洞分类 1: web应用漏洞 2:系统组件漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞分类 1: web应用漏洞 2:应用漏洞3:安全基线 4: Linux系统漏洞 5: Windows系统漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "VulType",
@@ -16548,6 +16593,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "漏洞标签 多个逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "标签1,标签2",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16558,7 +16612,17 @@
     },
     "DescribeVulLevelCountRequest": {
       "document": "DescribeVulLevelCount请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulCategory",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeVulLevelCountResponse": {
@@ -16605,12 +16669,30 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IfEmergency - String - 是否必填：否 - 是否为应急漏洞，查询应急漏洞传:yes</li>\n<li>Status - String - 是否必填：是 - 漏洞状态筛选，0: 待处理 1:忽略  3:已修复  5:检测中，6：修复中 控制台仅处理0,1,3,5,6五种状态</li>\n<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>\n<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>\n<li>LastDay- int - 是否必填：否 - 查询近几日的数据，需要 -1 之后传入，例如近3日数据，传2</li>\n<li>OrderBy - String 是否必填：否 默认按照处理状态,威胁等级,检测时间排序 -排序字段，支持：level,lastTime的动态排序  hostCount 影响主机台数排序</li>\n<li>IsShowFollowVul -  String 是否必填：否   是否仅展示重点关注漏洞  0=展示全部 1=仅展示重点关注漏洞</li>\n<li>VulCategory-  String 是否必填：否   1: web应用漏洞 2:系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>HostIp- string - 是否必填：否 - 主机ip</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可选排序字段 Level，LastTime，HostCount",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序顺序：desc  默认asc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16668,7 +16750,7 @@
         },
         {
           "default": "",
-          "document": "1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁，传0的时候表示查应急漏洞",
+          "document": "1: web应用漏洞 2=系统组件漏洞3:安全基线 4: Linux系统漏洞 5: windows补丁 6:应急漏洞",
           "example": "3",
           "member": "uint64",
           "name": "VulCategory",
@@ -17406,6 +17488,46 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVE-2021-3156",
+          "member": "string",
+          "name": "CveId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.4",
+          "member": "float",
+          "name": "CvssScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞标签 多个逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag1,tag2",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "影响机器数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -22699,15 +22821,6 @@
       "members": [
         {
           "default": "",
-          "document": "漏洞类型：1: web应用漏洞 2:系统组件漏洞 (多选英文;分隔)",
-          "example": "1",
-          "member": "string",
-          "name": "VulCategories",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "危害等级：1-低危；2-中危；3-高危；4-严重 (多选英文;分隔)",
           "example": "1",
           "member": "string",
@@ -22723,6 +22836,15 @@
           "name": "HostType",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "漏洞类型：1: web应用漏洞（webCMS） 2:系统组件（应用漏洞）漏洞  3:安全基线 4:Linux软件漏洞 5:Windows系统漏洞(多选英文;分隔)",
+          "example": "1",
+          "member": "string",
+          "name": "VulCategories",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -24016,7 +24138,7 @@
         },
         {
           "default": "",
-          "document": "状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态：0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 7: 回滚中 8:修复失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -24103,6 +24225,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本信息 0=普通版本 1=专业版 2=旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否能自动修复 0 :漏洞不可自动修复，  1：可自动修复， 2：客户端已离线， 3：主机不是旗舰版只能手动修复， 4：机型不允许 ，5：修复中 ，6：已修复， 7：检测中  9:修复失败，10:已忽略 11:漏洞只支持linux不支持Windows 12：漏洞只支持Windows不支持linux，13:修复失败但此时主机已离线，14:修复失败但此时主机不是旗舰版， 15:已手动修复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "IsSupportAutoFix",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "修复超时",
+          "member": "string",
+          "name": "FixStatusMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24174,7 +24326,7 @@
         },
         {
           "default": "",
-          "document": "0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中 控制台仅处理0,1,3,5,6四种状态",
+          "document": "0: 待处理 1:忽略  3:已修复  5:检测中 6:修复中  8:修复失败",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -24291,6 +24443,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVE-2021-3156",
+          "member": "string",
+          "name": "CveId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "float",
+          "name": "CvssScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞标签 多个逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "标签1,标签2",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否能自动修复且包含能自动修复的主机， 0=否  1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FixSwitch",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后扫描任务的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24390,7 +24592,7 @@
       "members": [
         {
           "default": "",
-          "document": "事件告警类型；1：离线，2：木马，3：异常登录，4：爆破，5：漏洞（已拆分为9-12四种类型）6：高危命令，7：反弹sell，8：本地提权，9：系统组件漏洞，10：wen应用漏洞，11：应急漏洞，12：安全基线 ,13: 防篡改",
+          "document": "事件告警类型；1：离线，2：木马，3：异常登录，4：爆破，5：漏洞（已拆分为9-12四种类型）6：高危命令，7：反弹sell，8：本地提权，9：应用漏洞，10：web-cms漏洞，11：应急漏洞，12：安全基线 ,13: 防篡改，14：恶意请求，15: 网络攻击，16：Windows系统漏洞，17：Linux软件漏洞",
           "example": "1",
           "member": "uint64",
           "name": "Type",
