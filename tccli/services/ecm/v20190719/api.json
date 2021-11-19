@@ -378,6 +378,12 @@
       "name": "获取网络峰值数据",
       "output": "DescribePeakNetworkOverviewResponse"
     },
+    "DescribePriceRunInstance": {
+      "document": "查询实例价格",
+      "input": "DescribePriceRunInstanceRequest",
+      "name": "查询实例价格",
+      "output": "DescribePriceRunInstanceResponse"
+    },
     "DescribeRouteConflicts": {
       "document": "查询自定义路由策略与云联网路由策略冲突列表",
       "input": "DescribeRouteConflictsRequest",
@@ -4775,6 +4781,69 @@
       ],
       "type": "object"
     },
+    "DescribePriceRunInstanceRequest": {
+      "document": "DescribePriceRunInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的机型信息",
+          "example": "SN3ne.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "系统盘信息",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据盘信息",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisk",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePriceRunInstanceResponse": {
+      "document": "DescribePriceRunInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例价格信息",
+          "example": "无",
+          "member": "InstancesPrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteConflictsRequest": {
       "document": "DescribeRouteConflicts请求参数结构体",
       "members": [
@@ -7392,6 +7461,42 @@
       ],
       "usage": "out"
     },
+    "InstancePricesPartDetail": {
+      "document": "描述实例的价格相关",
+      "members": [
+        {
+          "default": "",
+          "document": "cpu的价格信息",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "CpuPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存价格信息",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "MemPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘价格信息",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "DisksPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceStatistic": {
       "document": "用于描述实例的统计信息",
       "members": [
@@ -7521,6 +7626,52 @@
         }
       ],
       "usage": "out"
+    },
+    "InstancesPrice": {
+      "document": "实例价格信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分部描述实例子维度的价格",
+          "example": "无",
+          "member": "InstancePricesPartDetail",
+          "name": "InstancePricesPartDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例总价折扣",
+          "example": "20",
+          "member": "uint64",
+          "name": "Discount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣后价格",
+          "example": "200",
+          "member": "uint64",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣前价格，原始总价",
+          "example": "1000",
+          "member": "uint64",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Internet": {
       "document": "实例的网络相关信息。",
@@ -10548,6 +10699,42 @@
         }
       ],
       "usage": "out"
+    },
+    "PriceDetail": {
+      "document": "描述cpu,内存等维度的价格",
+      "members": [
+        {
+          "default": "",
+          "document": "表示折扣，20 表示20%，打2折",
+          "example": "20",
+          "member": "uint64",
+          "name": "Discount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "打折后价格，单位分",
+          "example": "20",
+          "member": "uint64",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣前价格，单位分",
+          "example": "100",
+          "member": "uint64",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrivateIPAddressInfo": {
       "document": "实例的内网ip相关信息。",

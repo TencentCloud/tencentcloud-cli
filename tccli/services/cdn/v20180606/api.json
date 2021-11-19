@@ -1746,6 +1746,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1792,6 +1802,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1845,6 +1865,16 @@
           "example": "dec",
           "member": "string",
           "name": "TimeFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "BackupSecretKey",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1924,6 +1954,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7444,6 +7484,16 @@
           "example": "无",
           "member": "RemoteAuthentication",
           "name": "RemoteAuthentication",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共享CNAME配置（白名单功能）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShareCname",
+          "name": "ShareCname",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -13399,6 +13449,32 @@
       ],
       "usage": "both"
     },
+    "ShareCname": {
+      "document": "ShareCname配置",
+      "members": [
+        {
+          "default": "",
+          "document": "ShareCname 配置开关, 开关为off时，域名使用默认CNAME，若需要使用共享CNAME，将开关置为on.\n\n* ShareCname 为内测功能,如需使用,请联系腾讯云工程师开白.",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置共享CNAME.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mycname-12345.shared.cdn.dnsv1.com",
+          "member": "string",
+          "name": "Cname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SimpleCache": {
       "document": "缓存配置基础版本\n默认情况下所有文件缓存过期时间为 30 天\n默认情况下静态加速类型的域名 .php;.jsp;.asp;.aspx 不缓存\n注意：该版本不支持设置源站未返回 max-age 情况下的缓存过期规则设置",
       "members": [
@@ -14523,6 +14599,15 @@
           "example": "无",
           "member": "RemoteAuthentication",
           "name": "RemoteAuthentication",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "共享CNAME配置，白名单功能",
+          "example": "无",
+          "member": "ShareCname",
+          "name": "ShareCname",
           "required": false,
           "type": "object"
         }

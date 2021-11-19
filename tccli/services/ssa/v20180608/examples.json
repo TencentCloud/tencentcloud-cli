@@ -96,6 +96,14 @@
         "title": "获取安全事件列表"
       }
     ],
+    "DescribeSocAlertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSocAlertList\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"FilterKey\": \"xx\",\n            \"FilterOperatorType\": 0,\n            \"FilterValue\": \"xx\"\n        }\n    ],\n    \"PageIndex\": 0,\n    \"Scenes\": 0,\n    \"PageSize\": 0,\n    \"Sorter\": [\n        {\n            \"SortType\": 0,\n            \"SortKey\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 0,\n            \"AlertList\": [\n                {\n                    \"AlertId\": \"xx\",\n                    \"VictimAssetSub\": \"xx\",\n                    \"Source\": \"xx\",\n                    \"Concerns\": [\n                        {\n                            \"StatisticsCount\": 0,\n                            \"ConcernType\": 0,\n                            \"EntityType\": 0,\n                            \"Concern\": \"xx\"\n                        }\n                    ],\n                    \"EventStatus\": 0,\n                    \"AlertName\": \"xx\",\n                    \"VictimAssetType\": \"xx\",\n                    \"AssetName\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"ConcernVictimCount\": 0,\n                    \"Status\": 0,\n                    \"SubType\": \"xx\",\n                    \"AssetId\": \"xx\",\n                    \"AssetPrivateIp\": [\n                        \"xx\"\n                    ],\n                    \"EventId\": \"xx\",\n                    \"Level\": 0,\n                    \"AttackTactic\": \"xx\",\n                    \"AlertTime\": \"xx\",\n                    \"Action\": 0,\n                    \"ConcernMaliciousCount\": 0,\n                    \"AssetPublicIp\": [\n                        \"xx\"\n                    ],\n                    \"AttackId\": \"xx\",\n                    \"AttackName\": \"xx\",\n                    \"AttackResult\": 0,\n                    \"AttackChain\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeSocCspmCompliance": [
       {
         "document": "",

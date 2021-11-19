@@ -312,6 +312,12 @@
       "name": "获取产品详情",
       "output": "DescribeProductResponse"
     },
+    "DescribeProductDynamicRegister": {
+      "document": "获取产品动态注册详情",
+      "input": "DescribeProductDynamicRegisterRequest",
+      "name": "获取产品动态注册详情",
+      "output": "DescribeProductDynamicRegisterResponse"
+    },
     "DescribeProducts": {
       "document": "获取产品列表",
       "input": "DescribeProductsRequest",
@@ -407,6 +413,12 @@
       "input": "ModifyProductRequest",
       "name": "修改产品信息",
       "output": "ModifyProductResponse"
+    },
+    "ModifyProductDynamicRegister": {
+      "document": "修改产品动态注册",
+      "input": "ModifyProductDynamicRegisterRequest",
+      "name": "修改产品动态注册",
+      "output": "ModifyProductDynamicRegisterResponse"
     },
     "PublishMessage": {
       "document": "本接口（PublishMessage）用于使用自定义透传协议进行设备远控",
@@ -4835,6 +4847,60 @@
       ],
       "type": "object"
     },
+    "DescribeProductDynamicRegisterRequest": {
+      "document": "DescribeProductDynamicRegister请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "KO9JAFB9W",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductDynamicRegisterResponse": {
+      "document": "DescribeProductDynamicRegister返回参数结构体",
+      "members": [
+        {
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "2",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册产品密钥",
+          "example": "y4cQABvFmabopcklMliuobY3",
+          "member": "string",
+          "name": "ProductSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册设备上限",
+          "example": "100",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductRequest": {
       "document": "DescribeProduct请求参数结构体",
       "members": [
@@ -6145,6 +6211,78 @@
     "ModifyModelDefinitionResponse": {
       "document": "ModifyModelDefinition返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductDynamicRegisterRequest": {
+      "document": "ModifyProductDynamicRegister请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "KO9JAFB9W",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "2",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动态注册设备上限",
+          "example": "50",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProductDynamicRegisterResponse": {
+      "document": "ModifyProductDynamicRegister返回参数结构体",
+      "members": [
+        {
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "2",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册产品密钥",
+          "example": "Secret",
+          "member": "string",
+          "name": "ProductSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册设备上限",
+          "example": "50",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
