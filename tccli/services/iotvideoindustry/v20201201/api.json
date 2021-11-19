@@ -2923,6 +2923,36 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "234354",
+          "member": "int64",
+          "name": "SceneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "834",
+          "member": "int64",
+          "name": "WarnId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "录制id，NVR下属设备有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611732169_1611732269",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

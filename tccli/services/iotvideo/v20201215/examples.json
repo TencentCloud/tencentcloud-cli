@@ -416,6 +416,14 @@
         "title": "获取产品详情"
       }
     ],
+    "DescribeProductDynamicRegister": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=DescribeProductDynamicRegister\n&ProductId=KO9JAFB9W\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductSecret\": \"y4cQABvFmabopcklMliuobY3\",\n        \"RegisterLimit\": 50,\n        \"RegisterType\": 2,\n        \"RequestId\": \"1aa7421b-f69b-4ea9-acf5-4bf22681f3b1\"\n    }\n}",
+        "title": "获取产品动态注册详情"
+      }
+    ],
     "DescribeProducts": [
       {
         "document": "",
@@ -542,6 +550,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"37MFSSRMZY\",\n    \"ProductName\": \"测试\",\n    \"ProductDescription\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"719fe65a-40fd-40b3-8fe9-eb166873e050\"\n    }\n}",
         "title": "修改产品信息"
+      }
+    ],
+    "ModifyProductDynamicRegister": [
+      {
+        "document": "",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=ModifyProductDynamicRegister\n&ProductId=KO9JAFB9W\n&RegisterType=2\n&RegisterLimit=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductSecret\": \"Secret\",\n        \"RegisterLimit\": 50,\n        \"RegisterType\": 2,\n        \"RequestId\": \"1aa7421b-f69b-4ea9-acf5-4bf22681f3b1\"\n    }\n}",
+        "title": "修改产品动态注册"
       }
     ],
     "PublishMessage": [

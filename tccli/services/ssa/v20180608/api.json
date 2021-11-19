@@ -72,6 +72,12 @@
       "name": "获取安全事件列表",
       "output": "DescribeSafetyEventListResponse"
     },
+    "DescribeSocAlertList": {
+      "document": "拉取告警列表",
+      "input": "DescribeSocAlertListRequest",
+      "name": "告警列表",
+      "output": "DescribeSocAlertListResponse"
+    },
     "DescribeSocCspmCompliance": {
       "document": "合规详情项",
       "input": "DescribeSocCspmComplianceRequest",
@@ -124,6 +130,288 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlertListData": {
+      "document": "告警列表响应数据",
+      "members": [
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "返回列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "AlertType",
+          "name": "AlertList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlertType": {
+      "document": "告警字段",
+      "members": [
+        {
+          "default": "",
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AlertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AlertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[”abc”]",
+          "member": "string",
+          "name": "AssetPrivateIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AlertName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警级别  0:未知 1:低危 2:中危 3:高危 4:严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击字段1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AttackChain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击字段2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "AttackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关注点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "ConcernInfo",
+          "name": "Concerns",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1：已防御，0,2：仅检测(0:告警类 1:拦截类 2:放行类 )\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0/空：未知，1：未成功，2：成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AttackResult",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "//调查状态  0/空：未启用，1：调查中，2：完成调查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EventStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "//关联事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "//处置状态  0：未关闭，1：已关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "AssetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "恶意实体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConcernMaliciousCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "受害者实体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConcernVictimCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "VictimAssetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警子类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”abc”",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击技术名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "AttackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[”abc”]",
+          "member": "string",
+          "name": "AssetPublicIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击战术名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Time\"",
+          "member": "string",
+          "name": "AttackTactic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "VictimAssetSub",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1339,6 +1627,52 @@
         }
       ],
       "usage": "both"
+    },
+    "ConcernInfo": {
+      "document": "关注点类型",
+      "members": [
+        {
+          "default": "",
+          "document": "关注点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConcernType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实体类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EntityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关注点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "Concern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StatisticsCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DataAssetMapping": {
       "document": "资产测绘对象",
@@ -2776,6 +3110,78 @@
       ],
       "type": "object"
     },
+    "DescribeSocAlertListRequest": {
+      "document": "DescribeSocAlertList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "业务场景 参考ScenesType",
+          "example": "1",
+          "member": "int64",
+          "name": "Scenes",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询参数",
+          "example": "\"asd\"",
+          "member": "QueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序参数",
+          "example": "\"asd\"",
+          "member": "QuerySort",
+          "name": "Sorter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSocAlertListResponse": {
+      "document": "DescribeSocAlertList返回参数结构体",
+      "members": [
+        {
+          "document": "业务数据",
+          "example": "无",
+          "member": "AlertListData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSocCspmComplianceRequest": {
       "document": "DescribeSocCspmCompliance请求参数结构体",
       "members": [],
@@ -3044,6 +3450,68 @@
           "name": "ExactMatch",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QueryFilter": {
+      "document": "查询参数",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的字段",
+          "example": "time",
+          "member": "string",
+          "name": "FilterKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询的值",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "FilterValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "匹配类型，枚举见pb",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterOperatorType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "QuerySort": {
+      "document": "排序的字段",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "\"Time\"",
+          "member": "string",
+          "name": "SortKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "顺序，1升序2降序",
+          "example": "1",
+          "member": "int64",
+          "name": "SortType",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
