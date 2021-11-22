@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "4234234",
-        "TotalCount": 2,
+        "TotalCount": 1,
         "FollowVulCount": 0,
         "VulInfoList": [
             {

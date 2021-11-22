@@ -9428,7 +9428,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "省",
+          "document": "省（返回空值）",
           "example": "北京",
           "member": "string",
           "name": "Province",
@@ -9437,7 +9437,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "地级市",
+          "document": "地级市（返回空值）",
           "example": "北京市",
           "member": "string",
           "name": "City",
@@ -9446,7 +9446,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "区\\县",
+          "document": "区\\县（返回空值）",
           "example": "海淀区",
           "member": "string",
           "name": "County",
@@ -9455,7 +9455,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "住所所在行政区划代码",
+          "document": "住所所在行政区划代码（返回空值）",
           "example": "110108",
           "member": "string",
           "name": "AreaCode",
@@ -9464,7 +9464,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "行业门类代码",
+          "document": "行业门类代码（返回空值）",
           "example": "I",
           "member": "string",
           "name": "IndustryPhyCode",
@@ -9473,7 +9473,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "行业门类名称",
+          "document": "行业门类名称（返回空值）",
           "example": "信息传输、软件和信息技术服务业",
           "member": "string",
           "name": "IndustryPhyName",
@@ -9482,7 +9482,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "国民经济行业代码",
+          "document": "国民经济行业代码（返回空值）",
           "example": "6439",
           "member": "string",
           "name": "IndustryCode",
@@ -9491,7 +9491,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "国民经济行业名称",
+          "document": "国民经济行业名称（返回空值）",
           "example": "其他互联网平台",
           "member": "string",
           "name": "IndustryName",

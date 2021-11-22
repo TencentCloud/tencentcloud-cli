@@ -72,6 +72,12 @@
       "name": "获取安全事件列表",
       "output": "DescribeSafetyEventListResponse"
     },
+    "DescribeSocAlertDetails": {
+      "document": "返回告警详情",
+      "input": "DescribeSocAlertDetailsRequest",
+      "name": "告警详情",
+      "output": "DescribeSocAlertDetailsResponse"
+    },
     "DescribeSocAlertList": {
       "document": "拉取告警列表",
       "input": "DescribeSocAlertListRequest",
@@ -130,6 +136,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlertDetail": {
+      "document": "告警详情",
+      "members": [
+        {
+          "default": "",
+          "document": "告警基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "AlertType",
+          "name": "BaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警详情，json序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“a's'd”",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3100,6 +3132,51 @@
           "name": "Total",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSocAlertDetailsRequest": {
+      "document": "DescribeSocAlertDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "告警id",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "AlertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "告警时间，取Timestamp字段",
+          "example": "\"asd\"",
+          "member": "string",
+          "name": "AlertTimestamp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSocAlertDetailsResponse": {
+      "document": "DescribeSocAlertDetails返回参数结构体",
+      "members": [
+        {
+          "document": "返回详情数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlertDetail",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

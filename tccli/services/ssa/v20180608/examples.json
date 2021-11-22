@@ -96,6 +96,14 @@
         "title": "获取安全事件列表"
       }
     ],
+    "DescribeSocAlertDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSocAlertDetails\n<公共请求参数>\n\n{\n    \"AlertTimestamp\": \"xx\",\n    \"AlertId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"asd-asdf-asdf-asdf-asdsfdsdsdsdsd\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeSocAlertList": [
       {
         "document": "",

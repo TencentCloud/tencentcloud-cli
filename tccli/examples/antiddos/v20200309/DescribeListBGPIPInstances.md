@@ -14,7 +14,8 @@ tccli antiddos DescribeListBGPIPInstances --cli-unfold-argument  \
     --FilterRegion ap-guangzhou \
     --FilterName test \
     --FilterEipType 1 \
-    --FilterEipEipAddressStatus BIND BINDING
+    --FilterEipEipAddressStatus BIND BINDING \
+    --FilterDamDDoSStatus 0
 ```
 
 Output: 
@@ -26,6 +27,8 @@ Output:
             {
                 "Status": "xx",
                 "EipAddressStatus": "xx",
+                "Domain": "xx",
+                "DamDDoSStatus": 1,
                 "Name": "xx",
                 "StaticPackRelation": {
                     "ForwardRulesLimit": 1,
@@ -55,7 +58,8 @@ Output:
                     "EipBoundRscIns": "xx",
                     "EipBoundRscVip": "xx",
                     "EipBoundRscEni": "xx",
-                    "EipAddressRegion": "xx"
+                    "EipAddressRegion": "xx",
+                    "ModifyTime": "xx"
                 },
                 "SpecificationLimit": {
                     "ProtectCCQPS": 1,
