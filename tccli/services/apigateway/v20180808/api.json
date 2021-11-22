@@ -6511,7 +6511,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。支持ServiceId、ServiceName、NotUsagePlanId、Environment、IpVersion。InstanceId",
+          "document": "过滤条件。支持ServiceId、ServiceName、NotUsagePlanId、Environment、IpVersion、InstanceId、NetType、EIAMAppId。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

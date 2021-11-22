@@ -576,6 +576,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启安全加速，是为1，否为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DamDDoSStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2644,6 +2654,15 @@
           "name": "FilterEipEipAddressStatus",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只获取安全加速实例。填写时，只能填写1或者0。当填写1时，表示返回安全加速实例。当填写0时，表示返回非安全加速实例。",
+          "example": "1",
+          "member": "int64",
+          "name": "FilterDamDDoSStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

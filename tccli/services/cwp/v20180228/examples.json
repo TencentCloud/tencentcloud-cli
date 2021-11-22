@@ -332,7 +332,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetJarList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Jars\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 0,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Jars\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 99,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询Jar包列表"
       }
     ],
@@ -1220,7 +1220,7 @@
       {
         "document": "获取指定分类和状态的漏洞列表数据",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeVulList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 2,\n        \"FollowVulCount\": 0,\n        \"VulInfoList\": [\n            {\n                \"Ids\": \"1748\",\n                \"Name\": \"Linux帐户口令生存期策略\",\n                \"Status\": 0,\n                \"VulId\": 100392,\n                \"PublishTime\": \"2019-09-02 00:00:00\",\n                \"LastTime\": \"2020-06-29 03:04:15\",\n                \"HostCount\": 1,\n                \"Level\": 2,\n                \"From\": 0,\n                \"Descript\": \"口令老化（Password aging）是一种增强的系统口令生命期认证机制，能够确保用户的口令定期更换，提高系统安全性。\",\n                \"PublishTimeWisteria\": \"\",\n                \"NameWisteria\": \"\",\n                \"DescriptWisteria\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 1,\n        \"FollowVulCount\": 0,\n        \"VulInfoList\": [\n            {\n                \"Ids\": \"1748\",\n                \"Name\": \"Linux帐户口令生存期策略\",\n                \"Status\": 0,\n                \"VulId\": 100392,\n                \"PublishTime\": \"2019-09-02 00:00:00\",\n                \"LastTime\": \"2020-06-29 03:04:15\",\n                \"HostCount\": 1,\n                \"Level\": 2,\n                \"From\": 0,\n                \"Descript\": \"口令老化（Password aging）是一种增强的系统口令生命期认证机制，能够确保用户的口令定期更换，提高系统安全性。\",\n                \"PublishTimeWisteria\": \"\",\n                \"NameWisteria\": \"\",\n                \"DescriptWisteria\": \"\"\n            }\n        ]\n    }\n}",
         "title": "获取指定分类和状态的漏洞列表"
       }
     ],

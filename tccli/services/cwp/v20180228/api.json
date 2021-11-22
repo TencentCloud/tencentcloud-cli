@@ -9490,7 +9490,7 @@
         },
         {
           "default": "",
-          "document": "排序方式，asc-升序 或 desc-降序",
+          "document": "排序方式，asc-升序 或 desc-降序。默认：desc-降序",
           "example": "1",
           "member": "string",
           "name": "Order",
