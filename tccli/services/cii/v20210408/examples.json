@@ -55,6 +55,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"Status\": \"0\",\n        \"Results\": [\n            {\n                \"Quality\": 0.72,\n                \"StructureResult\": \"xxxxxx\"\n            }\n        ]\n    }\n}",
         "title": "获取结构化结果接口示例"
       }
+    ],
+    "UploadMedicalFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadMedicalFile\n<公共请求参数>\n\n{\n    \"FileURL\": \"https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/nicon-2x-6258e1cf13.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9317f6e4-6636-41a0-bf24-89ad9e4877f2\",\n        \"FileKey\": \"6540556601/original_upload_dir/6540556601_9317f6e4-6636-41a0-bf24-89ad9e4877f2.png\"\n    }\n}",
+        "title": "上传医疗影像文件接口示例"
+      }
     ]
   },
   "version": "1.0"

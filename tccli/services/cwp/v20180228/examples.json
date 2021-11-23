@@ -332,7 +332,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetJarList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Limit\": 1,\n    \"Quuid\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Jars\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 99,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Jars\": [\n            {\n                \"Status\": 1,\n                \"OsInfo\": \"xx\",\n                \"Name\": \"xx\",\n                \"MachineName\": \"xx\",\n                \"Id\": \"xx\",\n                \"Version\": \"xx\",\n                \"Path\": \"xx\",\n                \"Type\": 8,\n                \"MachineIp\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询Jar包列表"
       }
     ],

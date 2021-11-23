@@ -2588,7 +2588,7 @@
         },
         {
           "default": "",
-          "document": "查询指定产品信息（暂时未开放获取）",
+          "document": "已废弃参数，未开放",
           "example": "0",
           "member": "string",
           "name": "ProductCode",
@@ -2630,6 +2630,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2925,6 +2934,15 @@
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
           "required": false,
           "type": "string"
         }

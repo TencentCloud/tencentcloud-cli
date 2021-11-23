@@ -41,6 +41,12 @@
       "input": "DescribeStructureTaskResultRequest",
       "name": "获取结构化结果接口",
       "output": "DescribeStructureTaskResultResponse"
+    },
+    "UploadMedicalFile": {
+      "document": "上传医疗影像文件，可以用来做结构化。",
+      "input": "UploadMedicalFileRequest",
+      "name": "上传医疗影像文件",
+      "output": "UploadMedicalFileResponse"
     }
   },
   "metadata": {
@@ -1178,6 +1184,51 @@
         }
       ],
       "usage": "out"
+    },
+    "UploadMedicalFileRequest": {
+      "document": "UploadMedicalFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件内容的base64的值。FileBase64与FileURL有一个不为空即可，若FileURL同时存在，那么取FileBase64。",
+          "example": "无",
+          "member": "binary",
+          "name": "File",
+          "required": false,
+          "type": "binary"
+        },
+        {
+          "default": "",
+          "document": "文件的URL地址。FileBase64与FileURL有一个不为空即可，若FileBase64同时存在，那么取FileBase64。",
+          "example": "https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/s",
+          "member": "string",
+          "name": "FileURL",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadMedicalFileResponse": {
+      "document": "UploadMedicalFile返回参数结构体",
+      "members": [
+        {
+          "document": "文件存储的key，可以用来创建结构化任务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6540556601/original_upload_dir/6540556601_syon08sl1pojv099a0.png",
+          "member": "string",
+          "name": "FileKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"
