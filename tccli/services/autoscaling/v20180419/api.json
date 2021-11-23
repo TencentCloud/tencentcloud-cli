@@ -1696,7 +1696,7 @@
         },
         {
           "default": "",
-          "document": "通知接收端类型，取值：`USER_GROUP`，`CMQ_QUEUE`，`CMQ_TOPIC`。默认值为：`USER_GROUP`。",
+          "document": "通知接收端类型，取值如下\n<br><li>USER_GROUP：用户组\n<br><li>CMQ_QUEUE：CMQ 队列\n<br><li>CMQ_TOPIC：CMQ 主题\n<br><li>TDMQ_CMQ_TOPIC：TDMQ CMQ 主题\n<br><li>TDMQ_CMQ_QUEUE：TDMQ CMQ 队列\n\n默认值为：`USER_GROUP`。",
           "example": "USER_GROUP",
           "member": "string",
           "name": "TargetType",
@@ -1705,7 +1705,7 @@
         },
         {
           "default": "",
-          "document": "CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE`，该字段必填。",
+          "document": "CMQ 队列名称，如 TargetType 取值为 `CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE` 时，该字段必填。",
           "example": "queue",
           "member": "string",
           "name": "QueueName",
@@ -1714,7 +1714,7 @@
         },
         {
           "default": "",
-          "document": "CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC`，该字段必填。",
+          "document": "CMQ 主题名称，如 TargetType 取值为 `CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC` 时，该字段必填。",
           "example": "topic",
           "member": "string",
           "name": "TopicName",
@@ -4463,7 +4463,7 @@
         },
         {
           "default": "",
-          "document": "CMQ 队列名。",
+          "document": "CMQ 队列或 TDMQ CMQ 队列名。",
           "example": "queue",
           "member": "string",
           "name": "QueueName",
@@ -4472,7 +4472,7 @@
         },
         {
           "default": "",
-          "document": "CMQ 主题名。",
+          "document": "CMQ 主题或 TDMQ CMQ 主题名。",
           "example": "topic",
           "member": "string",
           "name": "TopicName",
@@ -4662,7 +4662,8 @@
       "members": [
         {
           "default": "",
-          "document": "目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。\n<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>\n<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>",
+          "document": "目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`、`TDMQ_CMQ_QUEUE`、`TDMQ_CMQ_TOPIC`。\n<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>\n<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>\n<li> TDMQ_CMQ_QUEUE，指腾讯云 TDMQ 消息队列-队列模型。</li>\n<li> TDMQ_CMQ_TOPIC，指腾讯云 TDMQ 消息队列-主题模型。</li>",
+          "example": "TDMQ_CMQ_QUEUE",
           "member": "string",
           "name": "TargetType",
           "required": true,
@@ -4671,7 +4672,8 @@
         },
         {
           "default": "",
-          "document": "队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。",
+          "document": "队列名称，如果`TargetType`取值为`CMQ_QUEUE` 或 `TDMQ_CMQ_QUEUE`，则本字段必填。",
+          "example": "test-queue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -4680,7 +4682,8 @@
         },
         {
           "default": "",
-          "document": "主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。",
+          "document": "主题名称，如果`TargetType`取值为`CMQ_TOPIC` 或 `TDMQ_CMQ_TOPIC`，则本字段必填。",
+          "example": "test-topic",
           "member": "string",
           "name": "TopicName",
           "required": false,

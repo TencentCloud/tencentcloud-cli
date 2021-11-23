@@ -368,6 +368,14 @@
         "title": "修改L7转发规则"
       }
     ],
+    "ModifyNewDomainRules": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyNewDomainRules\n&Business=bgpip\n&Id=bgpip-000000xe\n&Rule.RuleName=test\n&Rule.Protocol=http\n&Rule.Domain=www.abc.com\n&Rule.SourceType=2\n&Rule.LbType=1\n&Rule.KeepTime=300\n&Rule.SourceList.0.Source=1.1.1.10\n&Rule.SourceList.0.Weight=100\n&Rule.SourceList.1.Source=1.1.1.20\n&Rule.SourceList.1.Weight=100\n&Rule.CertType=0\n&Rule.VirtualPort=8443\n&Rule.KeepEnable=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "修改7层转发规则"
+      }
+    ],
     "ModifyPacketFilterConfig": [
       {
         "document": "",

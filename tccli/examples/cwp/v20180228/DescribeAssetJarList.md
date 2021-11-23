@@ -28,7 +28,7 @@ Output:
                 "Id": "xx",
                 "Version": "xx",
                 "Path": "xx",
-                "Type": 99,
+                "Type": 8,
                 "MachineIp": "xx"
             }
         ],
