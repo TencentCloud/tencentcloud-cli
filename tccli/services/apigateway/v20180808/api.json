@@ -3454,7 +3454,7 @@
         },
         {
           "default": "",
-          "document": "插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth。",
+          "document": "插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。",
           "example": "IPControl",
           "member": "string",
           "name": "PluginType",

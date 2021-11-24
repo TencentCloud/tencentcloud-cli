@@ -133,7 +133,7 @@
       "output": "GeneralEfficientOCRResponse"
     },
     "GeneralFastOCR": {
-      "document": "本接口支持图片中整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，识别速度更快、支持的 QPS 更高。",
+      "document": "本接口支持图片中整体文字的检测和识别，返回文字框位置与文字内容。相比通用印刷体识别接口，识别速度更快。",
       "input": "GeneralFastOCRRequest",
       "name": "通用印刷体识别（高速版）",
       "output": "GeneralFastOCRResponse"
@@ -2585,6 +2585,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2593,6 +2594,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2606,15 +2608,19 @@
       "members": [
         {
           "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "6.3359375",
           "member": "float",
           "name": "Angel",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

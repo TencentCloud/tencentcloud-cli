@@ -13,128 +13,229 @@ Output:
 ```
 {
     "Response": {
+        "Angel": 359.989990234375,
+        "Language": "zh",
+        "PdfPageSize": 0,
+        "RequestId": "770d1ec1-9bbf-4ec3-876c-5b6b66fc5c8c",
         "TextDetections": [
             {
-                "DetectedText": "Confetteria",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",
                 "Confidence": 99,
+                "DetectedText": "Sun",
                 "ItemPolygon": {
-                    "X": 473,
-                    "Y": 273,
-                    "Width": 112,
-                    "Height": 22
+                    "Height": 35,
+                    "Width": 74,
+                    "X": 464,
+                    "Y": 100
                 },
                 "Polygon": [
                     {
-                        "X": 450,
-                        "Y": 211
+                        "X": 464,
+                        "Y": 100
                     },
                     {
-                        "X": 560,
-                        "Y": 223
+                        "X": 538,
+                        "Y": 100
                     },
                     {
-                        "X": 558,
-                        "Y": 244
+                        "X": 538,
+                        "Y": 135
                     },
                     {
-                        "X": 448,
-                        "Y": 232
+                        "X": 464,
+                        "Y": 135
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "DetectedText": "Raffaello",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}",
                 "Confidence": 99,
+                "DetectedText": "1月8日",
                 "ItemPolygon": {
-                    "X": 396,
-                    "Y": 304,
-                    "Width": 282,
-                    "Height": 68
+                    "Height": 18,
+                    "Width": 52,
+                    "X": 476,
+                    "Y": 141
                 },
                 "Polygon": [
                     {
-                        "X": 370,
-                        "Y": 233
+                        "X": 476,
+                        "Y": 141
                     },
                     {
-                        "X": 649,
-                        "Y": 265
+                        "X": 528,
+                        "Y": 141
                     },
                     {
-                        "X": 642,
-                        "Y": 331
+                        "X": 528,
+                        "Y": 159
                     },
                     {
-                        "X": 362,
-                        "Y": 299
+                        "X": 476,
+                        "Y": 159
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "DetectedText": "费列罗臻点坊",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}",
                 "Confidence": 99,
+                "DetectedText": "八色鸫",
                 "ItemPolygon": {
-                    "X": 437,
-                    "Y": 385,
-                    "Width": 188,
-                    "Height": 32
+                    "Height": 28,
+                    "Width": 85,
+                    "X": 62,
+                    "Y": 443
                 },
                 "Polygon": [
                     {
-                        "X": 402,
-                        "Y": 318
+                        "X": 62,
+                        "Y": 443
                     },
                     {
-                        "X": 587,
-                        "Y": 339
+                        "X": 147,
+                        "Y": 442
                     },
                     {
-                        "X": 584,
-                        "Y": 370
+                        "X": 147,
+                        "Y": 470
                     },
                     {
-                        "X": 398,
-                        "Y": 349
+                        "X": 63,
+                        "Y": 471
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "DetectedText": "拉斐尔脆雪柔",
-                "Confidence": 99,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":4}}",
+                "Confidence": 97,
+                "DetectedText": "Pilta nympha",
                 "ItemPolygon": {
-                    "X": 427,
-                    "Y": 435,
-                    "Width": 207,
-                    "Height": 34
+                    "Height": 17,
+                    "Width": 96,
+                    "X": 61,
+                    "Y": 482
                 },
                 "Polygon": [
                     {
-                        "X": 386,
-                        "Y": 366
+                        "X": 61,
+                        "Y": 482
                     },
                     {
-                        "X": 591,
-                        "Y": 390
+                        "X": 157,
+                        "Y": 483
                     },
                     {
-                        "X": 587,
-                        "Y": 423
+                        "X": 157,
+                        "Y": 500
                     },
                     {
-                        "X": 382,
-                        "Y": 399
+                        "X": 61,
+                        "Y": 499
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 99,
+                "DetectedText": "八色鸫雌鸟和雄鸟一样漂亮。它经常在亚热带的森林地面上走动,捕",
+                "ItemPolygon": {
+                    "Height": 18,
+                    "Width": 426,
+                    "X": 60,
+                    "Y": 506
+                },
+                "Polygon": [
+                    {
+                        "X": 60,
+                        "Y": 506
+                    },
+                    {
+                        "X": 486,
+                        "Y": 503
+                    },
+                    {
+                        "X": 486,
+                        "Y": 521
+                    },
+                    {
+                        "X": 60,
+                        "Y": 523
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 99,
+                "DetectedText": "食落叶下的昆虫和蜥蜴等小动物,唱歌时会飞到树上。因为森林砍伐",
+                "ItemPolygon": {
+                    "Height": 16,
+                    "Width": 426,
+                    "X": 60,
+                    "Y": 530
+                },
+                "Polygon": [
+                    {
+                        "X": 60,
+                        "Y": 530
+                    },
+                    {
+                        "X": 486,
+                        "Y": 530
+                    },
+                    {
+                        "X": 486,
+                        "Y": 546
+                    },
+                    {
+                        "X": 60,
+                        "Y": 546
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":5}}",
+                "Confidence": 99,
+                "DetectedText": "和非法的玩赏鸟贸易,现在它的数量已明显减少。",
+                "ItemPolygon": {
+                    "Height": 18,
+                    "Width": 308,
+                    "X": 59,
+                    "Y": 554
+                },
+                "Polygon": [
+                    {
+                        "X": 59,
+                        "Y": 554
+                    },
+                    {
+                        "X": 367,
+                        "Y": 552
+                    },
+                    {
+                        "X": 368,
+                        "Y": 570
+                    },
+                    {
+                        "X": 59,
+                        "Y": 572
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
             }
-        ],
-        "Language": "zh",
-        "Angel": 6.5,
-        "PdfPageSize": 0,
-        "RequestId": "6809d421-875a-47f6-915f-fee749982f80"
+        ]
     }
 }
 ```

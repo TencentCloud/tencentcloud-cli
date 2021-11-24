@@ -13,126 +13,227 @@ Output:
 ```
 {
     "Response": {
+        "Angel": 0,
+        "RequestId": "389c588f-ae23-42f9-a34c-c5dfafc8fdd1",
         "TextDetections": [
             {
-                "DetectedText": "Confetteria ",
-                "Confidence": 91,
-                "ItemPolygon": {
-                    "X": 472,
-                    "Y": 275,
-                    "Width": 118,
-                    "Height": 21
-                },
-                "Polygon": [
-                    {
-                        "X": 449,
-                        "Y": 214
-                    },
-                    {
-                        "X": 566,
-                        "Y": 227
-                    },
-                    {
-                        "X": 563,
-                        "Y": 247
-                    },
-                    {
-                        "X": 447,
-                        "Y": 234
-                    }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
-            },
-            {
-                "DetectedText": "Raffaello",
-                "Confidence": 98,
-                "ItemPolygon": {
-                    "X": 395,
-                    "Y": 305,
-                    "Width": 281,
-                    "Height": 69
-                },
-                "Polygon": [
-                    {
-                        "X": 370,
-                        "Y": 235
-                    },
-                    {
-                        "X": 648,
-                        "Y": 266
-                    },
-                    {
-                        "X": 640,
-                        "Y": 334
-                    },
-                    {
-                        "X": 362,
-                        "Y": 303
-                    }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
-            },
-            {
-                "DetectedText": "费列罗臻点坊",
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",
                 "Confidence": 99,
+                "DetectedText": "Sun",
                 "ItemPolygon": {
-                    "X": 434,
-                    "Y": 382,
-                    "Width": 191,
-                    "Height": 35
+                    "Height": 35,
+                    "Width": 71,
+                    "X": 467,
+                    "Y": 104
                 },
                 "Polygon": [
                     {
-                        "X": 400,
-                        "Y": 316
+                        "X": 467,
+                        "Y": 104
                     },
                     {
-                        "X": 589,
-                        "Y": 337
+                        "X": 537,
+                        "Y": 104
                     },
                     {
-                        "X": 585,
-                        "Y": 371
+                        "X": 537,
+                        "Y": 138
                     },
                     {
-                        "X": 396,
-                        "Y": 350
+                        "X": 467,
+                        "Y": 138
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                "WordCoordPoint": [],
+                "Words": []
             },
             {
-                "DetectedText": "拉斐尔@脆雪柔",
-                "Confidence": 90,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",
+                "Confidence": 99,
+                "DetectedText": "1月8日",
                 "ItemPolygon": {
-                    "X": 427,
-                    "Y": 434,
-                    "Width": 205,
-                    "Height": 36
+                    "Height": 19,
+                    "Width": 55,
+                    "X": 474,
+                    "Y": 142
                 },
                 "Polygon": [
                     {
-                        "X": 387,
-                        "Y": 367
+                        "X": 474,
+                        "Y": 142
                     },
                     {
-                        "X": 590,
-                        "Y": 389
+                        "X": 528,
+                        "Y": 142
                     },
                     {
-                        "X": 586,
-                        "Y": 424
+                        "X": 528,
+                        "Y": 160
                     },
                     {
-                        "X": 383,
-                        "Y": 402
+                        "X": 474,
+                        "Y": 160
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}",
+                "Confidence": 99,
+                "DetectedText": "八色鸫",
+                "ItemPolygon": {
+                    "Height": 29,
+                    "Width": 81,
+                    "X": 66,
+                    "Y": 443
+                },
+                "Polygon": [
+                    {
+                        "X": 66,
+                        "Y": 443
+                    },
+                    {
+                        "X": 146,
+                        "Y": 443
+                    },
+                    {
+                        "X": 146,
+                        "Y": 471
+                    },
+                    {
+                        "X": 66,
+                        "Y": 471
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}",
+                "Confidence": 86,
+                "DetectedText": "Pilta nympha",
+                "ItemPolygon": {
+                    "Height": 19,
+                    "Width": 95,
+                    "X": 63,
+                    "Y": 482
+                },
+                "Polygon": [
+                    {
+                        "X": 63,
+                        "Y": 482
+                    },
+                    {
+                        "X": 157,
+                        "Y": 482
+                    },
+                    {
+                        "X": 157,
+                        "Y": 500
+                    },
+                    {
+                        "X": 63,
+                        "Y": 500
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":4}}",
+                "Confidence": 93,
+                "DetectedText": "八色鸫雌鸟和雄鸟样漂亮。它经常在亚热带的森林地面上走动,捕",
+                "ItemPolygon": {
+                    "Height": 20,
+                    "Width": 424,
+                    "X": 63,
+                    "Y": 505
+                },
+                "Polygon": [
+                    {
+                        "X": 63,
+                        "Y": 505
+                    },
+                    {
+                        "X": 486,
+                        "Y": 505
+                    },
+                    {
+                        "X": 486,
+                        "Y": 524
+                    },
+                    {
+                        "X": 63,
+                        "Y": 524
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":4}}",
+                "Confidence": 98,
+                "DetectedText": "食落叶下的昆虫和蜥蜴等小动物，唱歌时会飞到树上。因为森林砍伐",
+                "ItemPolygon": {
+                    "Height": 20,
+                    "Width": 426,
+                    "X": 61,
+                    "Y": 529
+                },
+                "Polygon": [
+                    {
+                        "X": 61,
+                        "Y": 529
+                    },
+                    {
+                        "X": 486,
+                        "Y": 529
+                    },
+                    {
+                        "X": 486,
+                        "Y": 548
+                    },
+                    {
+                        "X": 61,
+                        "Y": 548
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":4}}",
+                "Confidence": 98,
+                "DetectedText": "和非法的玩赏鸟贸易，现在它的数量已明显减少。",
+                "ItemPolygon": {
+                    "Height": 18,
+                    "Width": 309,
+                    "X": 59,
+                    "Y": 555
+                },
+                "Polygon": [
+                    {
+                        "X": 59,
+                        "Y": 555
+                    },
+                    {
+                        "X": 367,
+                        "Y": 555
+                    },
+                    {
+                        "X": 367,
+                        "Y": 572
+                    },
+                    {
+                        "X": 59,
+                        "Y": 572
+                    }
+                ],
+                "WordCoordPoint": [],
+                "Words": []
             }
-        ],
-        "Angel": 6.3359375,
-        "RequestId": "f522dcec-f977-4497-a342-66680eb6aa6f"
+        ]
     }
 }
 ```
