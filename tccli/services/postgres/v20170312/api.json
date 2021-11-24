@@ -1786,8 +1786,8 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本",
-          "example": "12.4",
+          "document": "PostgreSQL主版本",
+          "example": "12",
           "member": "string",
           "name": "DBVersion",
           "required": true,
@@ -1952,6 +1952,26 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12.4_r1.0",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例网络信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "NetworkAccess",
+          "name": "NetworkAccessList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4322,6 +4342,92 @@
       ],
       "type": "object"
     },
+    "NetworkAccess": {
+      "document": "网络类型信息，用于实例查询接口和RO组查询接口的返回。",
+      "members": [
+        {
+          "default": "",
+          "document": "网络资源id，实例id或RO组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgre-123",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源类型，1-实例 2-RO组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.0",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ipv6的IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.0",
+          "member": "string",
+          "name": "Vip6",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接Port地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5432",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络状态，1-申请中，2-使用中，3-删除中，4-已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "NormalQueryItem": {
       "document": "单条SlowQuery信息",
       "members": [
@@ -4872,6 +4978,7 @@
         {
           "default": "",
           "document": "只读组标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -4881,6 +4988,7 @@
         {
           "default": "",
           "document": "只读组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "required": true,
@@ -4890,6 +4998,7 @@
         {
           "default": "",
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -4899,6 +5008,7 @@
         {
           "default": "",
           "document": "主实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "string",
           "name": "MasterDBInstanceId",
           "required": true,
@@ -4908,6 +5018,7 @@
         {
           "default": "",
           "document": "最小保留实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "int64",
           "name": "MinDelayEliminateReserve",
           "required": true,
@@ -4917,6 +5028,7 @@
         {
           "default": "",
           "document": "延迟空间大小阈值",
+          "example": "空",
           "member": "int64",
           "name": "MaxReplayLatency",
           "required": true,
@@ -4926,6 +5038,7 @@
         {
           "default": "",
           "document": "延迟大小开关",
+          "example": "空",
           "member": "int64",
           "name": "ReplayLatencyEliminate",
           "required": true,
@@ -4935,6 +5048,7 @@
         {
           "default": "",
           "document": "延迟时间大小阈值",
+          "example": "空",
           "member": "float",
           "name": "MaxReplayLag",
           "required": true,
@@ -4944,6 +5058,7 @@
         {
           "default": "",
           "document": "延迟时间开关",
+          "example": "空",
           "member": "int64",
           "name": "ReplayLagEliminate",
           "required": true,
@@ -4953,6 +5068,7 @@
         {
           "default": "",
           "document": "虚拟网络id",
+          "example": "空",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4962,6 +5078,7 @@
         {
           "default": "",
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -4971,6 +5088,7 @@
         {
           "default": "",
           "document": "地域id",
+          "example": "空",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -4980,6 +5098,7 @@
         {
           "default": "",
           "document": "地区id",
+          "example": "空",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -4989,6 +5108,7 @@
         {
           "default": "",
           "document": "状态",
+          "example": "空",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4998,6 +5118,7 @@
         {
           "default": "",
           "document": "实例详细信息",
+          "example": "空",
           "member": "DBInstance",
           "name": "ReadOnlyDBInstanceList",
           "required": true,
@@ -5007,6 +5128,7 @@
         {
           "default": "",
           "document": "自动负载均衡开关",
+          "example": "空",
           "member": "int64",
           "name": "Rebalance",
           "required": true,
@@ -5016,11 +5138,22 @@
         {
           "default": "",
           "document": "网络信息",
+          "example": "空",
           "member": "DBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读组网络信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
+          "member": "NetworkAccess",
+          "name": "NetworkAccessList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5324,6 +5457,7 @@
         {
           "default": "",
           "document": "实例id，唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres-1i1xmfwr",
           "member": "string",
           "name": "DBInstanceId",
           "required": false,
@@ -5333,6 +5467,7 @@
         {
           "default": "",
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pg10",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -5342,6 +5477,7 @@
         {
           "default": "",
           "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
           "member": "string",
           "name": "DBInstanceStatus",
           "required": false,
@@ -5351,6 +5487,7 @@
         {
           "default": "",
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": false,
@@ -5360,6 +5497,7 @@
         {
           "default": "",
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -5369,6 +5507,7 @@
         {
           "default": "",
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -5378,6 +5517,7 @@
         {
           "default": "",
           "document": "私有网络Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -5387,6 +5527,7 @@
         {
           "default": "",
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -5396,6 +5537,7 @@
         {
           "default": "",
           "document": "字符集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTF8",
           "member": "string",
           "name": "DBCharset",
           "required": false,
@@ -5405,6 +5547,7 @@
         {
           "default": "",
           "document": "数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -5414,6 +5557,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-11 17:04:24",
           "member": "string",
           "name": "CreateTime",
           "required": false,
@@ -5423,6 +5567,7 @@
         {
           "default": "",
           "document": "实例网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "ServerlessDBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
           "required": false,
@@ -5432,6 +5577,7 @@
         {
           "default": "",
           "document": "实例账户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "ServerlessDBAccount",
           "name": "DBAccountSet",
           "required": false,
@@ -5441,6 +5587,7 @@
         {
           "default": "",
           "document": "实例下的db信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "DBDatabaseList",
           "required": false,
@@ -5450,10 +5597,21 @@
         {
           "default": "",
           "document": "实例绑定的标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "Tag",
           "name": "TagList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v10.4_r1.0",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

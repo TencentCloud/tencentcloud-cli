@@ -18,6 +18,36 @@
       "name": "清空cmq订阅者消息标签",
       "output": "ClearCmqSubscriptionFilterTagsResponse"
     },
+    "CreateAMQPCluster": {
+      "document": "创建AMQP集群",
+      "input": "CreateAMQPClusterRequest",
+      "name": "创建AMQP集群",
+      "output": "CreateAMQPClusterResponse"
+    },
+    "CreateAMQPExchange": {
+      "document": "创建AMQP Exchange",
+      "input": "CreateAMQPExchangeRequest",
+      "name": "创建AMQP Exchange",
+      "output": "CreateAMQPExchangeResponse"
+    },
+    "CreateAMQPQueue": {
+      "document": "创建AMQP队列",
+      "input": "CreateAMQPQueueRequest",
+      "name": "创建AMQP队列",
+      "output": "CreateAMQPQueueResponse"
+    },
+    "CreateAMQPRouteRelation": {
+      "document": "创建AMQP路由关系",
+      "input": "CreateAMQPRouteRelationRequest",
+      "name": "创建AMQP路由关系",
+      "output": "CreateAMQPRouteRelationResponse"
+    },
+    "CreateAMQPVHost": {
+      "document": "创建Amqp Vhost",
+      "input": "CreateAMQPVHostRequest",
+      "name": "创建Amqp Vhost",
+      "output": "CreateAMQPVHostResponse"
+    },
     "CreateCluster": {
       "document": "创建用户的集群",
       "input": "CreateClusterRequest",
@@ -96,6 +126,36 @@
       "name": "新增主题",
       "output": "CreateTopicResponse"
     },
+    "DeleteAMQPCluster": {
+      "document": "删除AMQP集群",
+      "input": "DeleteAMQPClusterRequest",
+      "name": "删除AMQP集群",
+      "output": "DeleteAMQPClusterResponse"
+    },
+    "DeleteAMQPExchange": {
+      "document": "删除Amqp交换机",
+      "input": "DeleteAMQPExchangeRequest",
+      "name": "删除Amqp交换机",
+      "output": "DeleteAMQPExchangeResponse"
+    },
+    "DeleteAMQPQueue": {
+      "document": "删除Amqp队列",
+      "input": "DeleteAMQPQueueRequest",
+      "name": "删除Amqp队列",
+      "output": "DeleteAMQPQueueResponse"
+    },
+    "DeleteAMQPRouteRelation": {
+      "document": "删除Amqp路由关系",
+      "input": "DeleteAMQPRouteRelationRequest",
+      "name": "删除Amqp路由关系",
+      "output": "DeleteAMQPRouteRelationResponse"
+    },
+    "DeleteAMQPVHost": {
+      "document": "删除Vhost",
+      "input": "DeleteAMQPVHostRequest",
+      "name": "删除Vhost",
+      "output": "DeleteAMQPVHostResponse"
+    },
     "DeleteCluster": {
       "document": "删除集群",
       "input": "DeleteClusterRequest",
@@ -173,6 +233,48 @@
       "input": "DeleteTopicsRequest",
       "name": "删除主题",
       "output": "DeleteTopicsResponse"
+    },
+    "DescribeAMQPCluster": {
+      "document": "获取单个Amqp集群信息",
+      "input": "DescribeAMQPClusterRequest",
+      "name": "获取单个Amqp集群信息",
+      "output": "DescribeAMQPClusterResponse"
+    },
+    "DescribeAMQPClusters": {
+      "document": "获取amqp集群列表",
+      "input": "DescribeAMQPClustersRequest",
+      "name": "获取amqp集群列表",
+      "output": "DescribeAMQPClustersResponse"
+    },
+    "DescribeAMQPCreateQuota": {
+      "document": "获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数",
+      "input": "DescribeAMQPCreateQuotaRequest",
+      "name": "获取用户配额",
+      "output": "DescribeAMQPCreateQuotaResponse"
+    },
+    "DescribeAMQPExchanges": {
+      "document": "获取AMQP Exchange列表",
+      "input": "DescribeAMQPExchangesRequest",
+      "name": "获取AMQP Exchange列表",
+      "output": "DescribeAMQPExchangesResponse"
+    },
+    "DescribeAMQPQueues": {
+      "document": "获取Amqp队列列表",
+      "input": "DescribeAMQPQueuesRequest",
+      "name": "获取Amqp队列列表",
+      "output": "DescribeAMQPQueuesResponse"
+    },
+    "DescribeAMQPRouteRelations": {
+      "document": "获取Amqp路由关系列表",
+      "input": "DescribeAMQPRouteRelationsRequest",
+      "name": "获取Amqp路由关系列表",
+      "output": "DescribeAMQPRouteRelationsResponse"
+    },
+    "DescribeAMQPVHosts": {
+      "document": "获取Amqp Vhost 列表",
+      "input": "DescribeAMQPVHostsRequest",
+      "name": "获取Amqp Vhost列表",
+      "output": "DescribeAMQPVHostsResponse"
     },
     "DescribeBindClusters": {
       "document": "获取用户绑定的专享集群列表",
@@ -318,6 +420,30 @@
       "name": "查询主题列表",
       "output": "DescribeTopicsResponse"
     },
+    "ModifyAMQPCluster": {
+      "document": "更新Amqp集群信息",
+      "input": "ModifyAMQPClusterRequest",
+      "name": "更新Amqp集群信息",
+      "output": "ModifyAMQPClusterResponse"
+    },
+    "ModifyAMQPExchange": {
+      "document": "更新Amqp交换机",
+      "input": "ModifyAMQPExchangeRequest",
+      "name": "更新Amqp交换机",
+      "output": "ModifyAMQPExchangeResponse"
+    },
+    "ModifyAMQPQueue": {
+      "document": "更新Amqp队列",
+      "input": "ModifyAMQPQueueRequest",
+      "name": "更新Amqp队列",
+      "output": "ModifyAMQPQueueResponse"
+    },
+    "ModifyAMQPVHost": {
+      "document": "更新Vhost",
+      "input": "ModifyAMQPVHostRequest",
+      "name": "更新Vhost",
+      "output": "ModifyAMQPVHostResponse"
+    },
     "ModifyCluster": {
       "document": "更新集群信息",
       "input": "ModifyClusterRequest",
@@ -452,6 +578,634 @@
     "serviceShortName": "tdmq"
   },
   "objects": {
+    "AMQPClusterConfig": {
+      "document": "AMQP集群配置",
+      "members": [
+        {
+          "default": "",
+          "document": "单Vhost TPS上限",
+          "example": "8000",
+          "member": "uint64",
+          "name": "MaxTpsPerVHost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单Vhost客户端连接数上限",
+          "example": "8000",
+          "member": "uint64",
+          "name": "MaxConnNumPerVHost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大Vhost数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxVHostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大exchange数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxExchangeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大Queue数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "MaxQueueNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息最大保留时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "MaxRetentionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用Vhost数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "UsedVHostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用exchange数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "UsedExchangeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用queue数量",
+          "example": "8",
+          "member": "uint64",
+          "name": "UsedQueueNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPClusterDetail": {
+      "document": "租户AMQP集群详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群基本信息",
+          "example": "无",
+          "member": "AMQPClusterInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群配置信息",
+          "example": "无",
+          "member": "AMQPClusterConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPClusterInfo": {
+      "document": "AMQP集群基本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域信息",
+          "example": "华南地区",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，毫秒为单位",
+          "example": "100000000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PublicEndPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "VpcEndPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPClusterRecentStats": {
+      "document": "AMQP集群近期使用量",
+      "members": [
+        {
+          "default": "",
+          "document": "Queue数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "QueueNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息生产数",
+          "example": "11000",
+          "member": "uint64",
+          "name": "ProducedMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息堆积数",
+          "example": "22000",
+          "member": "uint64",
+          "name": "AccumulativeMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Exchange数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "ExchangeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPExchange": {
+      "document": "AMQP Exchange信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Exchange名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Exchange的类别，为枚举类型:Direct, Fanout, Topic",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主绑定数",
+          "example": "1",
+          "member": "uint64",
+          "name": "SourceBindedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被绑定数",
+          "example": "1",
+          "member": "uint64",
+          "name": "DestBindedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为内部Exchange(以amq.前缀开头的)",
+          "example": "false",
+          "member": "bool",
+          "name": "Internal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPQueueDetail": {
+      "document": "AMQP 队列信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Queue名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "被绑定数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DestBindedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "在线消费者数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "OnlineConsumerNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每秒钟的事务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Tps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息堆积数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "uint64",
+          "name": "AccumulativeMsgNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoDelete",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信交换机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterExchange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "死信交换机路由键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterRoutingKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPRouteRelation": {
+      "document": "AMQP路由关系",
+      "members": [
+        {
+          "default": "",
+          "document": "路由关系ID",
+          "example": "test",
+          "member": "string",
+          "name": "RouteRelationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源Exchange",
+          "example": "xxx",
+          "member": "string",
+          "name": "SourceExchange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标类型:Queue|Exchange",
+          "example": "Queue",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标值",
+          "example": "queue1",
+          "member": "string",
+          "name": "DestValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定key",
+          "example": "xxxc",
+          "member": "string",
+          "name": "RoutingKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源路由类型:Direct|Topic|Fanout",
+          "example": "true",
+          "member": "string",
+          "name": "SourceExchangeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间，以毫秒为单位",
+          "example": "修改时间",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AMQPVHost": {
+      "document": "vhostd信息",
+      "members": [
+        {
+          "default": "",
+          "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未消费消息的保留时间，以毫秒单位，范围60秒到15天",
+          "example": "100000",
+          "member": "uint64",
+          "name": "MsgTtl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AcknowledgeMessageRequest": {
       "document": "AcknowledgeMessage请求参数结构体",
       "members": [
@@ -1672,6 +2426,339 @@
       ],
       "usage": "out"
     },
+    "CreateAMQPClusterRequest": {
+      "document": "CreateAMQPCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群描述，128个字符以内",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPClusterResponse": {
+      "document": "CreateAMQPCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPExchangeRequest": {
+      "document": "CreateAMQPExchange请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "交换机名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "Exchange",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机所在的vhost，目前支持在单个vhost下创建主题",
+          "example": "test",
+          "member": "string",
+          "name": "VHosts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "交换机类型，可选值为Direct, Fanout, Topic",
+          "example": "topic",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备用交换机名称",
+          "example": "test1",
+          "member": "string",
+          "name": "AlternateExchange",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPExchangeResponse": {
+      "document": "CreateAMQPExchange返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPQueueRequest": {
+      "document": "CreateAMQPQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "队列名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "Queue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列所在的vhost名称",
+          "example": "test",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动清除",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoDelete",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "死信exchange",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterExchange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由键",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterRoutingKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPQueueResponse": {
+      "document": "CreateAMQPQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPRouteRelationRequest": {
+      "document": "CreateAMQPRouteRelation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机所在的vhost",
+          "example": "test",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源Exchange名称",
+          "example": "test",
+          "member": "string",
+          "name": "SourceExchange",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标类型:Queue|Exchange",
+          "example": "Queue",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标值",
+          "example": "queue1",
+          "member": "string",
+          "name": "DestValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定key,缺省值为default",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "RoutingKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPRouteRelationResponse": {
+      "document": "CreateAMQPRouteRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPVHostRequest": {
+      "document": "CreateAMQPVHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "example": "100000",
+          "member": "uint64",
+          "name": "MsgTtl",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAMQPVHostResponse": {
+      "document": "CreateAMQPVHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -2761,6 +3848,204 @@
       ],
       "type": "object"
     },
+    "DeleteAMQPClusterRequest": {
+      "document": "DeleteAMQPCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的集群Id。",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPClusterResponse": {
+      "document": "DeleteAMQPCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPExchangeRequest": {
+      "document": "DeleteAMQPExchange请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机名称",
+          "example": "test",
+          "member": "string",
+          "name": "Exchange",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPExchangeResponse": {
+      "document": "DeleteAMQPExchange返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPQueueRequest": {
+      "document": "DeleteAMQPQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列名称",
+          "example": "test",
+          "member": "string",
+          "name": "Queue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPQueueResponse": {
+      "document": "DeleteAMQPQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPRouteRelationRequest": {
+      "document": "DeleteAMQPRouteRelation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由关系ID",
+          "example": "route-xxxx",
+          "member": "string",
+          "name": "RouteRelationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPRouteRelationResponse": {
+      "document": "DeleteAMQPRouteRelation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPVHostRequest": {
+      "document": "DeleteAMQPVHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vhost名称",
+          "example": "vhost-xxxxx",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAMQPVHostResponse": {
+      "document": "DeleteAMQPVHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterRequest": {
       "document": "DeleteCluster请求参数结构体",
       "members": [
@@ -3290,6 +4575,599 @@
           "name": "TopicSets",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPClusterRequest": {
+      "document": "DescribeAMQPCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPClusterResponse": {
+      "document": "DescribeAMQPCluster返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息",
+          "example": "无",
+          "member": "AMQPClusterInfo",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群配置",
+          "example": "无",
+          "member": "AMQPClusterConfig",
+          "name": "ClusterConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群最近使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AMQPClusterRecentStats",
+          "name": "ClusterStats",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPClustersRequest": {
+      "document": "DescribeAMQPClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照集群ID关键字搜索",
+          "example": "xxx",
+          "member": "string",
+          "name": "IdKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照集群名称关键字搜索",
+          "example": "xxx",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID列表过滤",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签过滤查找时，需要设置为true",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTagFilter",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤器。目前支持按标签过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPClustersResponse": {
+      "document": "DescribeAMQPClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AMQPClusterDetail",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPCreateQuotaRequest": {
+      "document": "DescribeAMQPCreateQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAMQPCreateQuotaResponse": {
+      "document": "DescribeAMQPCreateQuota返回参数结构体",
+      "members": [
+        {
+          "document": "租户总共可使用集群数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxClusterNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "租户已创建集群数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "UsedClusterNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Exchange容量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ExchangeCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Queue容量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "QueueCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "单Vhost TPS",
+          "example": "8000",
+          "member": "uint64",
+          "name": "MaxTpsPerVHost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPExchangesRequest": {
+      "document": "DescribeAMQPExchanges请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询限制数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost ID",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按路由类型过滤查询结果，可选择Direct, Fanout, Topic",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按exchange名称搜索，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "FilterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤查询内部或者外部exchange",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterInternal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPExchangesResponse": {
+      "document": "DescribeAMQPExchanges返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主题信息列表",
+          "example": "无",
+          "member": "AMQPExchange",
+          "name": "Exchanges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPQueuesRequest": {
+      "document": "DescribeAMQPQueues请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询限制数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按队列名称搜索，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结果排序规则，ASC为升序，DESC为降序",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对查询结果排序，此为排序字段，目前支持Accumulative（消息堆积量）、Tps",
+          "example": "Accumulative",
+          "member": "string",
+          "name": "SortedBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列名称，指定此参数后将只返回该队列信息",
+          "example": "test",
+          "member": "string",
+          "name": "FilterOneQueue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPQueuesResponse": {
+      "document": "DescribeAMQPQueues返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "队列信息列表",
+          "example": "无",
+          "member": "AMQPQueueDetail",
+          "name": "Queues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPRouteRelationsRequest": {
+      "document": "DescribeAMQPRouteRelations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询限制数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按源exchange名称过滤查询结果，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "FilterSourceExchange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按绑定的目标类型过滤查询结果，可选值:Exchange、Queue",
+          "example": "Exchange",
+          "member": "string",
+          "name": "FilterDestType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按目标名称过滤查询结果，支持模糊查询",
+          "example": "test",
+          "member": "string",
+          "name": "FilterDestValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPRouteRelationsResponse": {
+      "document": "DescribeAMQPRouteRelations返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "路由关系列表",
+          "example": "无",
+          "member": "AMQPRouteRelation",
+          "name": "RouteRelations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPVHostsRequest": {
+      "document": "DescribeAMQPVHosts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按名称搜索",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAMQPVHostsResponse": {
+      "document": "DescribeAMQPVHosts返回参数结构体",
+      "members": [
+        {
+          "document": "Vhost 列表",
+          "example": "无",
+          "member": "AMQPVHost",
+          "name": "VHosts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5347,6 +7225,240 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyAMQPClusterRequest": {
+      "document": "ModifyAMQPCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，不超过128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPClusterResponse": {
+      "document": "ModifyAMQPCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPExchangeRequest": {
+      "document": "ModifyAMQPExchange请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "交换机名称",
+          "example": "test",
+          "member": "string",
+          "name": "Exchange",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "说明信息，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPExchangeResponse": {
+      "document": "ModifyAMQPExchange返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPQueueRequest": {
+      "document": "ModifyAMQPQueue请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Vhost名称",
+          "example": "prod",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "队列名称",
+          "example": "test",
+          "member": "string",
+          "name": "Queue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否自动清除",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoDelete",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "说明信息，最大128个字符",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "死信exchange",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterExchange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由键",
+          "example": "test",
+          "member": "string",
+          "name": "DeadLetterRoutingKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPQueueResponse": {
+      "document": "ModifyAMQPQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPVHostRequest": {
+      "document": "ModifyAMQPVHost请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "amqp-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vhost名称，3-64个字符，只能包含字母、数字、“-”及“_”",
+          "example": "test",
+          "member": "string",
+          "name": "VHostId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "未消费消息的保留时间，以毫秒为单位，60秒-15天",
+          "example": "8000",
+          "member": "uint64",
+          "name": "MsgTtl",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "说明，最大128个字符",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAMQPVHostResponse": {
+      "document": "ModifyAMQPVHost返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyClusterRequest": {
       "document": "ModifyCluster请求参数结构体",
