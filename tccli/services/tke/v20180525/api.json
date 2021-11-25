@@ -522,6 +522,18 @@
       "name": "重启容器实例",
       "output": "RestartEKSContainerInstancesResponse"
     },
+    "ScaleInClusterMaster": {
+      "document": "缩容独立集群master节点",
+      "input": "ScaleInClusterMasterRequest",
+      "name": "缩容独立集群master节点",
+      "output": "ScaleInClusterMasterResponse"
+    },
+    "ScaleOutClusterMaster": {
+      "document": "扩容独立集群master节点",
+      "input": "ScaleOutClusterMasterRequest",
+      "name": "扩容独立集群master节点",
+      "output": "ScaleOutClusterMasterResponse"
+    },
     "SetNodePoolNodeProtection": {
       "document": "仅能设置节点池中处于伸缩组的节点",
       "input": "SetNodePoolNodeProtectionRequest",
@@ -10214,6 +10226,141 @@
         }
       ],
       "usage": "both"
+    },
+    "ScaleInClusterMasterRequest": {
+      "document": "ScaleInClusterMaster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "master缩容选项",
+          "example": "无",
+          "member": "ScaleInMaster",
+          "name": "ScaleInMasters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleInClusterMasterResponse": {
+      "document": "ScaleInClusterMaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleInMaster": {
+      "document": "master节点缩容参数",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缩容的实例角色：MASTER,ETCD,MASTER_ETCD",
+          "example": "MASTER_ETCD",
+          "member": "string",
+          "name": "NodeRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的保留模式",
+          "example": "retain",
+          "member": "string",
+          "name": "InstanceDeleteMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ScaleOutClusterMasterRequest": {
+      "document": "ScaleOutClusterMaster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "cls-xxxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新建节点参数",
+          "example": "无",
+          "member": "RunInstancesForNode",
+          "name": "RunInstancesForNode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "添加已有节点相关参数",
+          "example": "无",
+          "member": "ExistedInstancesForNode",
+          "name": "ExistedInstancesForNode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例高级设置",
+          "example": "无",
+          "member": "InstanceAdvancedSettings",
+          "name": "InstanceAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "集群master组件自定义参数",
+          "example": "无",
+          "member": "ClusterExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutClusterMasterResponse": {
+      "document": "ScaleOutClusterMaster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SecurityContext": {
       "document": "cloudrun安全特性",

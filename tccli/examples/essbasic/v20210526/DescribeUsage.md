@@ -28,22 +28,26 @@ Output:
             {
                 "Date": "2020-07-11",
                 "ProxyOrganizationOpenId": "org1",
-                "Usage": 50
+                "Usage": 50,
+                "ProxyOrganizationName": "合作企业"
             },
             {
                 "Date": "2020-07-12",
                 "ProxyOrganizationOpenId": "org1",
-                "Usage": 50
+                "Usage": 50,
+                "ProxyOrganizationName": "合作企业"
             },
             {
                 "Date": "2020-07-11",
                 "ProxyOrganizationOpenId": "org2",
-                "Usage": 80
+                "Usage": 80,
+                "ProxyOrganizationName": "合作企业"
             },
             {
                 "Date": "2020-07-12",
                 "ProxyOrganizationOpenId": "org2",
-                "Usage": 86
+                "Usage": 86,
+                "ProxyOrganizationName": "合作企业"
             }
         ],
         "RequestId": "xx"
@@ -81,12 +85,14 @@ Output:
             {
                 "Date": "",
                 "ProxyOrganizationOpenId": "org1",
-                "Usage": 100
+                "Usage": 100,
+                "ProxyOrganizationName": "合作企业"
             },
             {
                 "Date": "",
                 "ProxyOrganizationOpenId": "org2",
-                "Usage": 166
+                "Usage": 166,
+                "ProxyOrganizationName": "合作企业"
             }
         ],
         "RequestId": "xx"

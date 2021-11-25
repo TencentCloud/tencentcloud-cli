@@ -992,7 +992,7 @@
         },
         {
           "default": "",
-          "document": "项目归属者。",
+          "document": "项目归属者。\n注：云转推项目，仅支持个人归属。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
