@@ -708,6 +708,22 @@
         "title": "重启容器实例"
       }
     ],
+    "ScaleInClusterMaster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleInClusterMaster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"ScaleInMasters\": [\n        {\n            \"InstanceId\": \"ins-xxxxxxxx\",\n            \"NodeRole\": \"MASTER_ETCD\",\n            \"InstanceDeleteMode\": \"retain\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "缩容独立集群master节点"
+      }
+    ],
+    "ScaleOutClusterMaster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutClusterMaster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"RunInstancesForNode\": [\n        {\n            \"NodeRole\": \"MASTER_ETCD\",\n            \"RunInstancesPara\": [\n                \"{\\\"VirtualPrivateCloud\\\":{\\\"SubnetId\\\":\\\"subnet-xxx\\\",\\\"VpcId\\\":\\\"vpc-xxx\\\"},\\\"Placement\\\":{\\\"Zone\\\":\\\"ap-region-1\\\",\\\"ProjectId\\\":1032509},\\\"InstanceType\\\":\\\"S3.LARGE8\\\",\\\"SystemDisk\\\":{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\"},\\\"DataDisks\\\":[{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50}],\\\"InstanceCount\\\":3,\\\"InternetAccessible\\\":{\\\"PublicIpAssigned\\\":true,\\\"InternetMaxBandwidthOut\\\":1},\\\"LoginSettings\\\":{\\\"Password\\\":\\\"YourPassword\\\"},\\\"UserData\\\":\\\"IyEvYmluL3NoCgplY2hvIGFhYQo=\\\"}\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "扩容独立集群master节点"
+      }
+    ],
     "SetNodePoolNodeProtection": [
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
