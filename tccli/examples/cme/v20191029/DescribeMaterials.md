@@ -7,7 +7,8 @@ Input:
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
     --Platform test \
-    --MaterialIds 1111
+    --MaterialIds 5fd8ad3d628dc30001bd0895 \
+    --Operator user_id4114428941bd0420
 ```
 
 Output: 
@@ -17,7 +18,7 @@ Output:
         "MaterialInfoSet": [
             {
                 "BasicInfo": {
-                    "MaterialId": "1111",
+                    "MaterialId": "5fd8ad3d628dc30001bd0895",
                     "MaterialType": "VIDEO",
                     "Name": "9Qvacao2r7EA",
                     "CreateTime": "2019-12-31T03:59:14Z",
@@ -35,6 +36,8 @@ Output:
                 "ImageMaterial": null,
                 "LinkMaterial": null,
                 "AudioMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null,
                 "VideoMaterial": {
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
@@ -79,7 +82,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "requestId"
+        "RequestId": "85b8cdac-8e18-430a-aeae-08076ac26a11"
     }
 }
 ```
@@ -93,7 +96,8 @@ Input:
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
     --Platform test \
-    --MaterialIds 22222
+    --MaterialIds 5fd8ad3d628dc30001bd08893 \
+    --Operator user_id4114428941bd0420
 ```
 
 Output: 
@@ -129,7 +133,7 @@ Output:
                 "BasicInfo": {
                     "ClassPath": "",
                     "CreateTime": "2019-10-29T09:36:33Z",
-                    "MaterialId": "22222",
+                    "MaterialId": "5fd8ad3d628dc30001bd08893",
                     "MaterialType": "AUDIO",
                     "Name": "Fgi.mp3",
                     "Owner": {
@@ -144,10 +148,12 @@ Output:
                 },
                 "ImageMaterial": null,
                 "LinkMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
-        "RequestId": "requestId"
+        "RequestId": "964aae95-7344-4200-8962-92a44ff7a2ac"
     }
 }
 ```
@@ -161,7 +167,8 @@ Input:
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
     --Platform test \
-    --MaterialIds 33333
+    --MaterialIds 5fd8ad3d628dc30001bd08894 \
+    --Operator user_id4114428941bd0420
 ```
 
 Output: 
@@ -174,7 +181,7 @@ Output:
                 "BasicInfo": {
                     "ClassPath": "",
                     "CreateTime": "2019-10-28T12:10:25Z",
-                    "MaterialId": "33333",
+                    "MaterialId": "5fd8ad3d628dc30001bd08894",
                     "MaterialType": "IMAGE",
                     "Name": "dzq1.png",
                     "Owner": {
@@ -194,7 +201,9 @@ Output:
                     "Width": 213
                 },
                 "LinkMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
         "RequestId": "964aae95-7344-4200-8962-92a44ff7a2aa"

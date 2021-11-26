@@ -18,7 +18,7 @@ Output:
     "Response": {
         "RequestId": "51a33e48-a808-4fe7-8c02-4e7be5245351",
         "Tag": "123",
-        "Notes": "1;2;3",
+        "Notes": "1,2,3",
         "ActivityTimeLeft": 1,
         "GroupTimeLeft": 1,
         "NickNameList": "a,b,c"

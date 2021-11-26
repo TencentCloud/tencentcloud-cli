@@ -61,7 +61,7 @@
       "output": "GetEmailTemplateResponse"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询90天之内的数据",
+      "document": "获取邮件发送状态。仅支持查询180天之内的数据",
       "input": "GetSendEmailStatusRequest",
       "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse"
@@ -737,6 +737,7 @@
         {
           "default": "",
           "document": "发送的日期，必填。仅支持查询某个日期，不支持范围查询。",
+          "example": "2020-09-22",
           "member": "date",
           "name": "RequestDate",
           "required": true,
@@ -745,6 +746,7 @@
         {
           "default": "",
           "document": "偏移量。默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -753,6 +755,7 @@
         {
           "default": "",
           "document": "拉取最大条数，最多 100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -761,6 +764,7 @@
         {
           "default": "",
           "document": "SendMail接口返回的MessageId字段。",
+          "example": "qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1",
           "member": "string",
           "name": "MessageId",
           "required": false,
@@ -769,6 +773,7 @@
         {
           "default": "",
           "document": "收件人邮箱。",
+          "example": "abc@ef.com",
           "member": "string",
           "name": "ToEmailAddress",
           "required": false,
@@ -782,8 +787,10 @@
       "members": [
         {
           "document": "邮件发送状态列表",
+          "example": "无",
           "member": "SendEmailStatus",
           "name": "EmailStatusList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

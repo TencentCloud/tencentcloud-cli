@@ -8,7 +8,7 @@ Input:
 tccli cme FlattenListMedia --cli-unfold-argument  \
     --Platform test \
     --ClassPath /a/b \
-    --Owner.Id 1111 \
+    --Owner.Id user_id_8ad3d628dc30001bd0343 \
     --Owner.Type PERSON
 ```
 
@@ -29,16 +29,18 @@ Output:
                     "TagSet": [],
                     "TagInfoSet": [],
                     "PresetTagSet": [],
-                    "PreviewUrl": "http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
+                    "PreviewUrl": "http://1810xxxxxxx2.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {
                         "Type": "PERSON",
-                        "Id": "1111"
+                        "Id": "user_id_8ad3d628dc30001bd0343"
                     }
                 },
                 "ImageMaterial": null,
                 "LinkMaterial": null,
                 "AudioMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
         "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"

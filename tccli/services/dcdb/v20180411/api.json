@@ -5659,6 +5659,7 @@
         {
           "default": "",
           "document": "待升级的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5667,6 +5668,7 @@
         {
           "default": "",
           "document": "升级类型，取值范围: \n<li> ADD: 新增分片 </li> \n <li> EXPAND: 升级实例中的已有分片 </li> \n <li> SPLIT: 将已有分片中的数据切分到新增分片上</li>",
+          "example": "ADD",
           "member": "string",
           "name": "UpgradeType",
           "required": true,
@@ -5675,6 +5677,7 @@
         {
           "default": "",
           "document": "新增分片配置，当UpgradeType为ADD时生效。",
+          "example": "无",
           "member": "AddShardConfig",
           "name": "AddShardConfig",
           "required": false,
@@ -5683,6 +5686,7 @@
         {
           "default": "",
           "document": "扩容分片配置，当UpgradeType为EXPAND时生效。",
+          "example": "无",
           "member": "ExpandShardConfig",
           "name": "ExpandShardConfig",
           "required": false,
@@ -5691,14 +5695,16 @@
         {
           "default": "",
           "document": "切分分片配置，当UpgradeType为SPLIT时生效。",
+          "example": "无",
           "member": "SplitShardConfig",
           "name": "SplitShardConfig",
           "required": false,
           "type": "object"
         },
         {
-          "default": "false",
+          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "false",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -5707,8 +5713,18 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[]",
           "member": "string",
           "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
+          "example": "[]",
+          "member": "string",
+          "name": "Zones",
           "required": false,
           "type": "list"
         }
@@ -5720,8 +5736,10 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20180103110035",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

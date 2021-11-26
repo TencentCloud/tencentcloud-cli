@@ -148,6 +148,14 @@
         "title": "访问控制列表"
       }
     ],
+    "DescribeAddrTemplateList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddrTemplateList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"xx\",\n    \"By\": \"xx\",\n    \"Limit\": 0,\n    \"Order\": \"xx\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": \"mb_123456\",\n                \"Name\": \"数据库白名单\",\n                \"Detail\": \"test\",\n                \"IpString\": \"0.0.0.0\",\n                \"InsertTime\": \"xxxxxx\",\n                \"UpdateTime\": \"xxxxxx\",\n                \"Type\": 1,\n                \"RulesNum\": 1\n            }\n        ],\n        \"NameList\": [\n            \"xxxxxx\"\n        ],\n        \"RequestId\": \"18ab90ea-b199-42c8-90bc-e3fd08027625\"\n    }\n}",
+        "title": "获取地址模版列表示例"
+      }
+    ],
     "DescribeAssociatedInstanceList": [
       {
         "document": "",

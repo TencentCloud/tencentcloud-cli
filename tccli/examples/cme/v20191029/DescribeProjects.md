@@ -7,7 +7,7 @@ Input:
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
     --Platform test \
-    --ProjectIds 1111
+    --ProjectIds cmepid_60599df66a6b440001518159
 ```
 
 Output: 
@@ -17,13 +17,13 @@ Output:
         "TotalCount": 1,
         "ProjectInfoSet": [
             {
-                "ProjectId": "1111",
+                "ProjectId": "cmepid_60599df66a6b440001518159",
                 "Name": "test",
                 "AspectRatio": "16:9",
                 "Category": "VIDEO_EDIT",
                 "Owner": {
                     "Type": "PERSON",
-                    "Id": "user_1233"
+                    "Id": "user_31345df76a6b44104571916a"
                 },
                 "StreamConnectProjectInfo": null,
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
@@ -31,7 +31,7 @@ Output:
                 "CoverUrl": ""
             }
         ],
-        "RequestId": "requestId"
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5c"
     }
 }
 ```
@@ -45,7 +45,7 @@ Input:
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
     --Platform test \
-    --ProjectIds 1111 \
+    --ProjectIds cmepid_60599df66a6b440001518169 \
     --CategorySet STREAM_CONNECT
 ```
 
@@ -56,13 +56,13 @@ Output:
         "TotalCount": 1,
         "ProjectInfoSet": [
             {
-                "ProjectId": "1111",
+                "ProjectId": "cmepid_60599df66a6b440001518169",
                 "Name": "test",
-                "AspectRatio": "16:9",
+                "AspectRatio": "",
                 "Category": "STREAM_CONNECT",
                 "Owner": {
                     "Type": "PERSON",
-                    "Id": "user_1233"
+                    "Id": "user_31345df76a6b44104571916a"
                 },
                 "UpdateTime": "2020-11-13T06:41:34.808Z",
                 "CreateTime": "2020-11-13T06:41:34.808Z",
@@ -92,7 +92,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "60599df66a6b440001518159"
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5c"
     }
 }
 ```

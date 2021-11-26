@@ -4348,7 +4348,7 @@
         {
           "default": "",
           "document": "网络资源id，实例id或RO组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "postgre-123",
+          "example": "postgres-d1ef3oj0",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4368,7 +4368,7 @@
         {
           "default": "",
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "vpc-38mb1lz2",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4378,7 +4378,7 @@
         {
           "default": "",
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.0",
+          "example": "10.39.6.14",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -4388,7 +4388,7 @@
         {
           "default": "",
           "document": "ipv6的IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.0",
+          "example": "2000:0000:0000:0000:0001:2345:6789:abcd",
           "member": "string",
           "name": "Vip6",
           "required": true,
@@ -4408,7 +4408,7 @@
         {
           "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "subnet-l3p9fzc3",
           "member": "string",
           "name": "SubnetId",
           "required": true,

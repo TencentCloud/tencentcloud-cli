@@ -3934,6 +3934,15 @@
           "name": "Storage",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "新节点数，传0表示节点数不变",
+          "example": "0",
+          "member": "int64",
+          "name": "NodeCount",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6049,6 +6058,7 @@
         {
           "default": "",
           "document": "待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6057,6 +6067,7 @@
         {
           "default": "",
           "document": "内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "2000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -6065,6 +6076,7 @@
         {
           "default": "",
           "document": "存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
+          "example": "20000",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -6073,6 +6085,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -6081,8 +6094,18 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[]",
           "member": "string",
           "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "变更部署时指定的新可用区列表，第1个为主可用区，其余为从可用区",
+          "example": "[]",
+          "member": "string",
+          "name": "Zones",
           "required": false,
           "type": "list"
         }
@@ -6094,8 +6117,10 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20171103110035",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

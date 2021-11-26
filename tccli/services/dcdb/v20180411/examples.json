@@ -401,7 +401,7 @@
     "UpgradeDCDBInstance": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeDCDBInstance\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UpgradeType=ADD\r\n&AddShardConfig.ShardCount=2\r\n&AddShardConfig.ShardMemory=2\r\n&AddShardConfig.ShardStorage=10\r\n&AutoVoucher=false\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=UpgradeDCDBInstance\n&InstanceId=dcdbt-fdpjf5zh\n&UpgradeType=ADD\n&AddShardConfig.ShardCount=2\n&AddShardConfig.ShardMemory=2\n&AddShardConfig.ShardStorage=10\n&AutoVoucher=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"DealName\": \"20180103110035\"\n    }\n}",
         "title": "升级分布式数据库"
       }
