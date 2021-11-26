@@ -7,14 +7,23 @@ Input:
 ```
 tccli cme DescribeLoginStatus --cli-unfold-argument  \
     --Platform test \
-    --UserIds 111
+    --UserIds user_id_5285890811433511063 user_id_5285890811433511064
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LoginStatusInfoSet": [],
+        "LoginStatusInfoSet": [
+            {
+                "UserId": "user_id_5285890811433511063",
+                "Status": "Online"
+            },
+            {
+                "UserId": "user_id_5285890811433511064",
+                "Status": "Offline"
+            }
+        ],
         "RequestId": "requestId"
     }
 }

@@ -4503,6 +4503,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "步骤信息",
+          "example": "无",
+          "member": "OneClickTaskStepInfo",
+          "name": "Steps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -8575,6 +8593,72 @@
           "document": "object key 对应的 value",
           "member": "string",
           "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OneClickTaskStepInfo": {
+      "document": "一键部署步骤信息",
+      "members": [
+        {
+          "default": "",
+          "document": "未启动：\"todo\"\n运行中：\"running\"\n失败：\"failed\"\n成功结束：\"finished\"",
+          "example": "\"running\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-11-16 01:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-11-16 01:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "耗时：秒",
+          "example": "10",
+          "member": "int64",
+          "name": "CostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": false

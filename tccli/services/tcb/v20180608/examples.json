@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudBaseRunOneClickTaskExternal\n<公共请求参数>\n\n{\n    \"ExternalId\": \"xxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"UserEnvId\": \"xx\",\n        \"EnvId\": \"xxxx\",\n        \"ServerName\": \"xx\",\n        \"FailReason\": \"xx\",\n        \"ExternalId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"VersionName\": \"xx\",\n        \"UserUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Stage\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"UserEnvId\": \"xx\",\n        \"EnvId\": \"xxxx\",\n        \"ServerName\": \"xx\",\n        \"FailReason\": \"xx\",\n        \"ExternalId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"VersionName\": \"xx\",\n        \"UserUin\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"StartTime\": \"xx\",\n        \"Stage\": \"xx\",\n        \"Steps\": []\n    }\n}",
         "title": "DescribeCloudBaseRunOneClickTaskExternal"
       }
     ],
@@ -339,7 +339,7 @@
     "DescribeEnvDealRegion": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvDealRegion\n&EnvId=test-12323\n&DealType=ENV_PREPAY\n&DealAction=RENEW\n&DealRegion=ap-shanghai\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvDealRegion\n&EnvId=test-12323\n&DealType=ENV_POSTPAY\n&DealAction=RENEW\n&DealRegion=ap-shanghai\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"Region\": \"ap-shanghai\",\n        \"Zone\": \"ap-shanghai-1\",\n        \"RegionId\": 4,\n        \"ZoneId\": 200001\n    }\n}",
         "title": "续费环境查询下单地域"
       }
@@ -460,7 +460,7 @@
       {
         "document": "查询用户活动信息",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeUserActivityInfo\n&ActivityId=1\n&ChannelToken=123\n&Channel=qc_console\n&GroupId=234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"123\",\n        \"Notes\": \"1;2;3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"123\",\n        \"Notes\": \"1,2,3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
         "title": "查询用户活动信息"
       }
     ],

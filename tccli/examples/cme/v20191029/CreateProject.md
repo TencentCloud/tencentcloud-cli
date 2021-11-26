@@ -9,7 +9,7 @@ tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category VIDEO_EDIT \
     --Name first_project \
-    --Owner.Id 1111 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
     --Owner.Type PERSON \
     --AspectRatio 16:9
 ```
@@ -35,8 +35,8 @@ Input:
 tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category SWITCHER \
-    --Name switcher_project \
-    --Owner.Id 1111 \
+    --Name 导播台 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
     --Owner.Type PERSON \
     --SwitcherProjectInput.PgmOutputConfig.TemplateId 10001
 ```
@@ -63,7 +63,7 @@ tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category STREAM_CONNECT \
     --Name stream_connect \
-    --Owner.Id 1111 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
     --Owner.Type PERSON \
     --StreamConnectProjectInput.MainInput.InputType LivePull \
     --StreamConnectProjectInput.MainInput.LivePullInputInfo.InputUrl rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759 \
@@ -91,8 +91,8 @@ Input:
 tccli cme CreateProject --cli-unfold-argument  \
     --Platform test \
     --Category STREAM_CONNECT \
-    --Name stream_connect \
-    --Owner.Id 1111 \
+    --Name 云转推 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
     --Owner.Type PERSON \
     --StreamConnectProjectInput.MainInput.InputType RtmpPush \
     --StreamConnectProjectInput.MainInput.RtmpPushInputInfo.ExpiredSecond 3600 \
@@ -115,6 +115,67 @@ Output:
             }
         ],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 5: 使用剪辑模板创建项目**
+
+
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Platform test \
+    --Category VIDEO_EDIT \
+    --Name 剪辑模板项目 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Owner.Type PERSON \
+    --VideoEditProjectInput.AspectRatio 16:9 \
+    --VideoEditProjectInput.VideoEditTemplateId 61385efc24827f05859d3765@Public@CME
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f30",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5a"
+    }
+}
+```
+
+**Example 6: 使用初始轨道创建项目**
+
+
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Platform test \
+    --Category VIDEO_EDIT \
+    --Name 视频剪辑项目并初始化轨道 \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Owner.Type PERSON \
+    --VideoEditProjectInput.AspectRatio 16:9 \
+    --VideoEditProjectInput.InitTracks.0.Type Video \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.Type Video \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceType VOD \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMedia 52858908113623182311 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMediaStartTime 0 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.Duration 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f31",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e6a"
     }
 }
 ```

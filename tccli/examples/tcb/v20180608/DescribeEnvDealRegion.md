@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcb DescribeEnvDealRegion --cli-unfold-argument  \
     --EnvId test-12323 \
-    --DealType ENV_PREPAY \
+    --DealType ENV_POSTPAY \
     --DealAction RENEW \
     --DealRegion ap-shanghai
 ```

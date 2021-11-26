@@ -15,9 +15,10 @@ Output:
         "PlatformInfoSet": [
             {
                 "Platform": "1112",
+                "Status": "Valid",
                 "Description": "test",
                 "VodSubAppId": 140000303,
-                "LicenseId": "cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e",
+                "LicenseId": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
                 "CreateTime": "2018-12-01T13:00:00Z",
                 "UpdateTime": "2018-12-01T13:00:00Z"
             }
@@ -27,7 +28,7 @@ Output:
 }
 ```
 
-**Example 2: 指定绑定的 license Id 获取平台列表**
+**Example 2: 指定绑定的 License Id 获取平台列表**
 
 
 
@@ -35,7 +36,7 @@ Input:
 
 ```
 tccli cme DescribePlatforms --cli-unfold-argument  \
-    --LicenseIds cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e
+    --LicenseIds cmelid_8621ba0483c211ea90dc6c92bf621f6e
 ```
 
 Output: 
@@ -46,9 +47,10 @@ Output:
         "PlatformInfoSet": [
             {
                 "Platform": "1112",
+                "Status": "Valid",
                 "Description": "test",
                 "VodSubAppId": 140000303,
-                "LicenseId": "cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e",
+                "LicenseId": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
                 "CreateTime": "2018-12-01T13:00:00Z",
                 "UpdateTime": "2018-12-01T13:00:00Z"
             }

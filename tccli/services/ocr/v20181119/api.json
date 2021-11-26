@@ -264,6 +264,12 @@
       "name": "集装箱识别",
       "output": "RecognizeContainerOCRResponse"
     },
+    "RecognizeFinancialReportOCR": {
+      "document": "财报识别。支持识别Type为3种类型的财报\n1 资产负债表，2 利润表，3 现金流量表",
+      "input": "RecognizeFinancialReportOCRRequest",
+      "name": "财报识别",
+      "output": "RecognizeFinancialReportOCRResponse"
+    },
     "RecognizeOnlineTaxiItineraryOCR": {
       "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。",
       "input": "RecognizeOnlineTaxiItineraryOCRRequest",
@@ -2237,6 +2243,104 @@
       ],
       "type": "object"
     },
+    "FinancialReportOCRTable": {
+      "document": "财报识别表格",
+      "members": [
+        {
+          "default": "",
+          "document": "财报表类型：1 资产负债表，2 利润表，3 现金流量表",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格行数组",
+          "example": "无",
+          "member": "FinancialReportOCRTableRow",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表格头单元格数组",
+          "example": "无",
+          "member": "FinancialReportOCRTableCell",
+          "name": "Head",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FinancialReportOCRTableCell": {
+      "document": "财报识别单元格",
+      "members": [
+        {
+          "default": "",
+          "document": "列，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "Col",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格的文本内容",
+          "example": "投资支付的现金",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格的座标，\"313,366,760,39\"，\"left,top,width ,height\"",
+          "example": "313,366,760,39",
+          "member": "string",
+          "name": "Rect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FinancialReportOCRTableRow": {
+      "document": "财报识别单元格行",
+      "members": [
+        {
+          "default": "",
+          "document": "列所属的行号",
+          "example": "2",
+          "member": "int64",
+          "name": "Row",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单元格数组",
+          "example": "无",
+          "member": "FinancialReportOCRTableCell",
+          "name": "Cells",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FlightInvoiceInfo": {
       "document": "机票行程单识别结果",
       "members": [
@@ -4123,7 +4227,8 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -4131,7 +4236,8 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -4140,6 +4246,7 @@
         {
           "default": "",
           "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票",
+          "example": "无",
           "member": "int64",
           "name": "Types",
           "required": false,
@@ -4153,8 +4260,10 @@
       "members": [
         {
           "document": "混贴票据识别结果，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "MixedInvoiceItem",
           "name": "MixedInvoiceItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5286,6 +5395,69 @@
           "member": "string",
           "name": "TareLB",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeFinancialReportOCRRequest": {
+      "document": "RecognizeFinancialReportOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeFinancialReportOCRResponse": {
+      "document": "RecognizeFinancialReportOCR返回参数结构体",
+      "members": [
+        {
+          "document": "财报识别表格数组，一般只有一个表格",
+          "example": "无",
+          "member": "FinancialReportOCRTable",
+          "name": "Tables",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

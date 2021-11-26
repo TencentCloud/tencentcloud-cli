@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddTeamMember": {
-      "document": "向一个团队中团队成员，并且指定成员的角色。",
+      "document": "向一个团队中添加团队成员，并且指定成员的角色。",
       "input": "AddTeamMemberRequest",
       "name": "添加团队成员",
       "output": "AddTeamMemberResponse"
@@ -25,7 +25,7 @@
       "output": "CreateLinkResponse"
     },
     "CreateProject": {
-      "document": "创建云剪的编辑项目，支持创建视频剪辑、直播剪辑、导播台、视频拆条、录制回放以及云转推项目。\n\n<b>若需使用云转推功能，请先咨询 [智能客服](https://cloud.tencent.com/act/event/smarty-service?from=doc_1138) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 。</b>\n",
+      "document": "创建云剪项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse"
@@ -61,19 +61,19 @@
       "output": "DeleteMaterialResponse"
     },
     "DeleteProject": {
-      "document": "删除云剪编辑项目。",
+      "document": "删除项目。",
       "input": "DeleteProjectRequest",
       "name": "删除项目",
       "output": "DeleteProjectResponse"
     },
     "DeleteTeam": {
-      "document": "删除一个团队。\n<li>要删除的团队必须没有归属的素材；</li>\n<li>要删除的团队必须没有归属的分类。</li>",
+      "document": "删除一个团队。要删除团队，必须满足以下条件：\n<li>要删除的团队必须没有归属的素材；</li>\n<li>要删除的团队必须没有归属的分类。</li>",
       "input": "DeleteTeamRequest",
       "name": "删除团队",
       "output": "DeleteTeamResponse"
     },
     "DeleteTeamMembers": {
-      "document": "将团队成员从团队中删除，默认只有 Owner 及管理员才有此权限。",
+      "document": "将团队成员从团队中删除。",
       "input": "DeleteTeamMembersRequest",
       "name": "删除团队成员",
       "output": "DeleteTeamMembersResponse"
@@ -85,7 +85,7 @@
       "output": "DeleteVideoEncodingPresetResponse"
     },
     "DescribeAccounts": {
-      "document": "获取用户账号信息。",
+      "document": "获取平台中所有的已注册账号。",
       "input": "DescribeAccountsRequest",
       "name": "获取账号信息",
       "output": "DescribeAccountsResponse"
@@ -97,7 +97,7 @@
       "output": "DescribeClassResponse"
     },
     "DescribeJoinTeams": {
-      "document": "获取指定的团队成员所加入的团队列表。",
+      "document": "获取用户所加入的团队列表",
       "input": "DescribeJoinTeamsRequest",
       "name": "获取成员加入的团队列表",
       "output": "DescribeJoinTeamsResponse"
@@ -115,7 +115,7 @@
       "output": "DescribeMaterialsResponse"
     },
     "DescribePlatforms": {
-      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n",
+      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。\n\n",
       "input": "DescribePlatformsRequest",
       "name": "获取平台列表",
       "output": "DescribePlatformsResponse"
@@ -127,7 +127,7 @@
       "output": "DescribeProjectsResponse"
     },
     "DescribeResourceAuthorization": {
-      "document": "查询指定资源的授权列表。",
+      "document": "查询资源被授权的情况。",
       "input": "DescribeResourceAuthorizationRequest",
       "name": "获取资源授权列表",
       "output": "DescribeResourceAuthorizationResponse"
@@ -151,7 +151,7 @@
       "output": "DescribeTasksResponse"
     },
     "DescribeTeamMembers": {
-      "document": "获取指定成员 ID 的信息，同时支持拉取所有团队成员信息。",
+      "document": "获取指定团队的成员信息。支持获取指定成员的信息，同时也支持分页拉取指定团队的所有成员信息。",
       "input": "DescribeTeamMembersRequest",
       "name": "获取团队成员信息",
       "output": "DescribeTeamMembersResponse"
@@ -169,19 +169,19 @@
       "output": "DescribeVideoEncodingPresetsResponse"
     },
     "ExportVideoByEditorTrackData": {
-      "document": "使用视频合成协议导出视频，支持导出到CME云媒资和VOD云媒资。",
+      "document": "使用 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225) 合成视频，支持导出视频到 CME 云媒资或者云点播媒资。",
       "input": "ExportVideoByEditorTrackDataRequest",
       "name": "使用视频合成协议导出视频",
       "output": "ExportVideoByEditorTrackDataResponse"
     },
     "ExportVideoByTemplate": {
-      "document": "使用视频编辑模板直接导出视频。",
+      "document": "使用视频剪辑模板直接导出视频。",
       "input": "ExportVideoByTemplateRequest",
-      "name": "使用视频编辑模板导出视频",
+      "name": "使用视频剪辑模板导出视频",
       "output": "ExportVideoByTemplateResponse"
     },
     "ExportVideoByVideoSegmentationData": {
-      "document": "使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频。",
+      "document": "使用视频智能拆条数据导出视频，将指定的视频拆条片段导出为一个视频(内测中，请勿使用)。",
       "input": "ExportVideoByVideoSegmentationDataRequest",
       "name": "使用视频智能拆条数据导出视频",
       "output": "ExportVideoByVideoSegmentationDataResponse"
@@ -193,7 +193,7 @@
       "output": "ExportVideoEditProjectResponse"
     },
     "FlattenListMedia": {
-      "document": "平铺分类路径下及其子分类下的所有媒体基础信息。",
+      "document": "平铺分类路径下及其子分类下的所有媒体基础信息，返回当前分类及子分类中的所有媒体的基础信息。",
       "input": "FlattenListMediaRequest",
       "name": "平铺浏览媒体",
       "output": "FlattenListMediaResponse"
@@ -205,7 +205,7 @@
       "output": "GenerateVideoSegmentationSchemeByAiResponse"
     },
     "GrantResourceAuthorization": {
-      "document": "资源归属者对目标个人或团队授予目标资源的相应权限。",
+      "document": "资源归属者对个人或团队授予目标资源的相应权限。",
       "input": "GrantResourceAuthorizationRequest",
       "name": "发起媒资授权",
       "output": "GrantResourceAuthorizationResponse"
@@ -217,13 +217,13 @@
       "output": "HandleStreamConnectProjectResponse"
     },
     "ImportMaterial": {
-      "document": "将云点播媒资文件导入到云剪媒体资源库。",
+      "document": "将云点播媒资文件导入到云剪媒体资源库。支持导入媒体归属团队或者个人。",
       "input": "ImportMaterialRequest",
       "name": "导入媒体",
       "output": "ImportMaterialResponse"
     },
     "ImportMediaToProject": {
-      "document": "将云点播中的媒资或者用户自有媒资文件添加到媒体库中，跟项目关联，供后续视频编辑使用。目前仅普通编辑项目和智能视频拆条项目有效。",
+      "document": "将云点播中的媒资或者用户自有媒资文件添加到项目中与项目关联，供后续视频编辑使用。目前仅视频编辑项目和智能视频拆条项目有效。",
       "input": "ImportMediaToProjectRequest",
       "name": "在项目中导入媒体",
       "output": "ImportMediaToProjectResponse"
@@ -241,7 +241,7 @@
       "output": "ModifyMaterialResponse"
     },
     "ModifyProject": {
-      "document": "修改云剪编辑项目的信息。",
+      "document": "修改项目信息。",
       "input": "ModifyProjectRequest",
       "name": "修改项目",
       "output": "ModifyProjectResponse"
@@ -283,9 +283,9 @@
       "output": "ParseEventResponse"
     },
     "RevokeResourceAuthorization": {
-      "document": " 资源所属实体对目标实体回收目标资源的相应权限，若原本没有相应权限则不产生变更。",
+      "document": " 资源所属实体对目标实体撤销目标资源的相应权限，若原本没有相应权限则不产生变更。",
       "input": "RevokeResourceAuthorizationRequest",
-      "name": "回收资源权限",
+      "name": "撤销资源授权",
       "output": "RevokeResourceAuthorizationResponse"
     },
     "SearchMaterial": {
@@ -386,7 +386,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -395,6 +396,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "1kdk882ddd88338ddd3k3",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -403,6 +405,7 @@
         {
           "default": "",
           "document": "要添加的成员列表，一次最多添加30个成员。",
+          "example": "无",
           "member": "AddMemberInfo",
           "name": "TeamMembers",
           "required": true,
@@ -410,7 +413,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队中添加成员。如果指定操作者，则操作者必须为管理员或者团队所有者。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -885,7 +889,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -893,7 +898,8 @@
         },
         {
           "default": "",
-          "document": "链接类型，取值有:\n<li>CLASS: 分类链接；</li>\n<li> MATERIAL：媒体文件链接。</li>",
+          "document": "链接类型，可取值有:\n<li>CLASS: 分类链接；</li>\n<li> MATERIAL：媒体文件链接。</li>",
+          "example": "MATERIAL",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -902,6 +908,7 @@
         {
           "default": "",
           "document": "链接名称，不能超过30个字符。",
+          "example": "link",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -910,6 +917,7 @@
         {
           "default": "",
           "document": "链接归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -917,7 +925,8 @@
         },
         {
           "default": "",
-          "document": "目标资源Id。取值：\n<li>当 Type 为 MATERIAL 时填媒体 ID；</li>\n<li>当 Type 为 CLASS 时填写分类路径。</li>",
+          "document": "目标资源Id。可取值有：\n<li>当 Type 为 MATERIAL 时填媒体 ID；</li>\n<li>当 Type 为 CLASS 时填写分类路径。</li>",
+          "example": "5fec3806b4e0960001ed9ce2",
           "member": "string",
           "name": "DestinationId",
           "required": true,
@@ -926,6 +935,7 @@
         {
           "default": "",
           "document": "目标资源归属者。",
+          "example": "无",
           "member": "Entity",
           "name": "DestinationOwner",
           "required": true,
@@ -934,6 +944,7 @@
         {
           "default": "",
           "document": "链接的分类路径，如填\"/a/b\"则代表链接属于该分类路径，不填则默认为根路径。",
+          "example": "/a/b",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -941,7 +952,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以创建任意源及目标资源的链接。如果指定操作者，则操作者必须对源资源有读权限，对目标媒体有写权限。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -955,8 +967,10 @@
       "members": [
         {
           "document": "新建链接的媒体 Id。",
+          "example": "5fec3806b4e0960001ed9ce5",
           "member": "string",
           "name": "MaterialId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -974,7 +988,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -992,7 +1006,7 @@
         },
         {
           "default": "",
-          "document": "项目归属者。\n注：云转推项目，仅支持个人归属。",
+          "document": "项目归属者，即项目的所有者，后续操作只有该所有者有权限操作。\n\n注：目前所有项目只能设置归属个人，暂不支持团队项目。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
@@ -1010,7 +1024,7 @@
         },
         {
           "default": "",
-          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式，即普通视频编辑项目。</li>\n<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>\n\n注：不填则为默认模式。",
           "example": "无",
           "member": "string",
           "name": "Mode",
@@ -1037,7 +1051,7 @@
         },
         {
           "default": "",
-          "document": "导播台信息，仅当项目类型为 SWITCHER 时必填。",
+          "document": "导播台项目输入信息，仅当项目类型为 SWITCHER 时必填。",
           "example": "无",
           "member": "SwitcherProjectInput",
           "name": "SwitcherProjectInput",
@@ -1046,7 +1060,7 @@
         },
         {
           "default": "",
-          "document": "直播剪辑信息，暂未开放，请勿使用。",
+          "document": "直播剪辑项目输入信息，暂未开放，请勿使用。",
           "example": "无",
           "member": "LiveStreamClipProjectInput",
           "name": "LiveStreamClipProjectInput",
@@ -1055,7 +1069,7 @@
         },
         {
           "default": "",
-          "document": "视频编辑信息，仅当项目类型为 VIDEO_EDIT 时必填。",
+          "document": "视频编辑项目输入信息，仅当项目类型为 VIDEO_EDIT 时必填。",
           "example": "无",
           "member": "VideoEditProjectInput",
           "name": "VideoEditProjectInput",
@@ -1064,7 +1078,7 @@
         },
         {
           "default": "",
-          "document": "视频拆条信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。",
+          "document": "视频拆条项目输入信息，仅当项目类型为 VIDEO_SEGMENTATION  时必填。",
           "example": "无",
           "member": "VideoSegmentationProjectInput",
           "name": "VideoSegmentationProjectInput",
@@ -1073,7 +1087,7 @@
         },
         {
           "default": "",
-          "document": "云转推项目信息，仅当项目类型为 STREAM_CONNECT 时必填。",
+          "document": "云转推项目输入信息，仅当项目类型为 STREAM_CONNECT 时必填。",
           "example": "无",
           "member": "StreamConnectProjectInput",
           "name": "StreamConnectProjectInput",
@@ -1082,7 +1096,7 @@
         },
         {
           "default": "",
-          "document": "录制回放项目信息，仅当项目类型为 RECORD_REPLAY 时必填。",
+          "document": "录制回放项目输入信息，仅当项目类型为 RECORD_REPLAY 时必填。",
           "example": "无",
           "member": "RecordReplayProjectInput",
           "name": "RecordReplayProjectInput",
@@ -1105,7 +1119,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "输入源推流信息。\n <li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为 2 ，第 0 个代表主输入源，第 1 个代表备输入源。只有当各自输入源类型为推流时才有有效内容。</li>",
+          "document": "<li> 当 Catagory 为 STREAM_CONNECT 时，数组返回长度为2 ，第0个代表主输入源推流信息，第1个代表备输入源推流信息。只有当各自输入源类型为推流时才有有效内容。</li>",
           "example": "无",
           "member": "RtmpPushInputInfo",
           "name": "RtmpPushInputInfoSet",
@@ -1411,7 +1425,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -1420,7 +1434,7 @@
         },
         {
           "default": "",
-          "document": "项目 Id。",
+          "document": "要删除的项目 Id。",
           "example": "1112",
           "member": "string",
           "name": "ProjectId",
@@ -1429,7 +1443,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验对项目删除操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除一切项目。如果指定操作者，则操作者必须为项目所有者。",
           "example": "user_id_100001",
           "member": "string",
           "name": "Operator",
@@ -1456,7 +1470,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1465,6 +1480,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "1kdk882ddd88338ddd3k3",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -1473,6 +1489,7 @@
         {
           "default": "",
           "document": "要删除的成员列表。",
+          "example": "[\"999kd3ej3okjdije3lejjdjk99\\r\\n\",\"999kd3ej3okjdije3lejjdjk98\\r\\n\"]",
           "member": "string",
           "name": "MemberIds",
           "required": true,
@@ -1480,7 +1497,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除所有团队的成员。如果指定操作者，则操作者必须为团队管理员或者所有者。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1506,7 +1524,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1515,6 +1534,7 @@
         {
           "default": "",
           "document": "要删除的团队  ID。",
+          "example": "9aoodiiiekj899dkk99d7d6d5dff77f",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -1522,7 +1542,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除所有团队。如果指定操作者，则操作者必须为团队所有者。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1584,8 +1605,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台唯一标识。",
-          "example": "1000000001",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1593,7 +1614,7 @@
         },
         {
           "default": "",
-          "document": "手机号码。",
+          "document": "手机号码。指定手机号获取账号信息，目前仅支持国内手机号，且号码不加地区码 `+86` 等。",
           "example": "15515555055",
           "member": "string",
           "name": "Phone",
@@ -1705,7 +1726,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -1777,7 +1798,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1785,7 +1807,8 @@
         },
         {
           "default": "",
-          "document": "用户 Id 列表，N 从 0 开始取值，最大 19。",
+          "document": "用户 Id 列表，N 从0开始取值，最大19。",
+          "example": "[\"111\"]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -1799,8 +1822,10 @@
       "members": [
         {
           "document": "用户登录状态列表。",
+          "example": "无",
           "member": "LoginStatusInfo",
           "name": "LoginStatusInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1818,7 +1843,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1826,7 +1852,8 @@
         },
         {
           "default": "",
-          "document": "媒体 ID 列表，N 从 0 开始取值，最大 19。",
+          "document": "媒体 ID 列表，一次最多可拉取20个媒体的信息。",
+          "example": "[\"5fd8ad3d628dc30001bd0895\"]",
           "member": "string",
           "name": "MaterialIds",
           "required": true,
@@ -1835,6 +1862,7 @@
         {
           "default": "",
           "document": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>",
+          "example": "无",
           "member": "SortBy",
           "name": "Sort",
           "required": false,
@@ -1842,7 +1870,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体的访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1856,8 +1885,10 @@
       "members": [
         {
           "document": "媒体列表信息。",
+          "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1875,7 +1906,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台集合。",
+          "document": "平台 Id 列表。如果不填，则不按平台 Id 进行过滤。",
+          "example": "test",
           "member": "string",
           "name": "Platforms",
           "required": false,
@@ -1883,7 +1915,8 @@
         },
         {
           "default": "",
-          "document": "平台绑定的 license Id 集合。",
+          "document": "平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。",
+          "example": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
           "member": "string",
           "name": "LicenseIds",
           "required": false,
@@ -1892,6 +1925,7 @@
         {
           "default": "",
           "document": "分页返回的起始偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1899,7 +1933,8 @@
         },
         {
           "default": "",
-          "document": "分页返回的记录条数，默认值：10。",
+          "document": "分页返回的记录条数，默认值：10，最大值：20。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1912,16 +1947,20 @@
       "document": "DescribePlatforms返回参数结构体",
       "members": [
         {
-          "document": "符合搜索条件的记录总数。",
+          "document": "符合查询条件的记录总数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "平台信息列表。",
+          "example": "无",
           "member": "PlatformInfo",
           "name": "PlatformInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1939,7 +1978,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -1948,8 +1987,8 @@
         },
         {
           "default": "",
-          "document": "项目 Id 列表，N 从 0 开始取值，最大 19。",
-          "example": "[\"1111\\n\"]",
+          "document": "项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。",
+          "example": "[\"1111\"]",
           "member": "string",
           "name": "ProjectIds",
           "required": false,
@@ -1957,7 +1996,7 @@
         },
         {
           "default": "",
-          "document": "画布宽高比集合。",
+          "document": "画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。",
           "example": "无",
           "member": "string",
           "name": "AspectRatioSet",
@@ -1966,7 +2005,7 @@
         },
         {
           "default": "",
-          "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
+          "document": "项目类型过滤参数列表，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>\n\n注：如果不填则不使用项目类型进行过滤。",
           "example": "无",
           "member": "string",
           "name": "CategorySet",
@@ -1975,7 +2014,7 @@
         },
         {
           "default": "",
-          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "document": "项目模式过滤参数列表，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>\n\n注：不填不使用项目模式进行过滤。",
           "example": "无",
           "member": "string",
           "name": "Modes",
@@ -1984,7 +2023,7 @@
         },
         {
           "default": "",
-          "document": "列表排序，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>",
+          "document": "结果排序方式，支持下列排序字段：\n<li>CreateTime：创建时间；</li>\n<li>UpdateTime：更新时间。</li>\n\n注：如不填，则使用项目创建时间倒序排列。",
           "example": "无",
           "member": "SortBy",
           "name": "Sort",
@@ -1993,7 +2032,7 @@
         },
         {
           "default": "",
-          "document": "项目归属者。",
+          "document": "项目所有者，目前仅支持个人项目过滤。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
@@ -2020,7 +2059,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。",
           "example": "无",
           "member": "string",
           "name": "Operator",
@@ -2065,7 +2104,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "1000000001",
           "member": "string",
           "name": "Platform",
@@ -2092,7 +2131,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询任意资源的被授权情况。如果指定操作者，则操作者必须对被授权资源有读权限。",
           "example": "1234c68e-1111-2222-3333-3221728e4444",
           "member": "string",
           "name": "Operator",
@@ -2137,7 +2176,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2145,7 +2185,8 @@
         },
         {
           "default": "",
-          "document": "被授权目标,，个人或团队。",
+          "document": "被授权目标，个人或团队。",
+          "example": "无",
           "member": "Entity",
           "name": "Authorizee",
           "required": true,
@@ -2153,7 +2194,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询任意个人或者团队的共享空间。如果指定操作者，则操作者必须本人或者团队成员。",
+          "example": "teamAmemberXXX",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2167,17 +2209,21 @@
       "members": [
         {
           "document": "查询到的共享空间总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "各个共享空间对应的授权者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "各个共享空间对应的授权者信息。",
+          "example": "无",
           "member": "Authorizer",
           "name": "AuthorizerSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2193,7 +2239,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -2211,7 +2257,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取任意任务信息。如果指定操作者，则操作者需要是任务发起者。",
           "example": "85b8cdac-8e18-430a-aeae-08076ac26a11",
           "member": "string",
           "name": "Operator",
@@ -2301,7 +2347,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -2310,7 +2356,7 @@
         },
         {
           "default": "",
-          "document": "项目 Id。",
+          "document": "项目 Id，使用项目 Id 进行过滤。",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -2319,7 +2365,7 @@
         },
         {
           "default": "",
-          "document": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>",
+          "document": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>\n\n注：不填不使用任务类型进行过滤。",
           "example": "无",
           "member": "string",
           "name": "TaskTypeSet",
@@ -2328,7 +2374,7 @@
         },
         {
           "default": "",
-          "document": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "document": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>\n\n注：不填则不使用任务状态进行过滤。",
           "example": "PROCESSING",
           "member": "string",
           "name": "StatusSet",
@@ -2355,7 +2401,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验对任务的访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。",
           "example": "无",
           "member": "string",
           "name": "Operator",
@@ -2400,7 +2446,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2409,6 +2456,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "1kdk882ddd88338ddd3k3",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -2417,6 +2465,7 @@
         {
           "default": "",
           "document": "成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。",
+          "example": "无",
           "member": "string",
           "name": "MemberIds",
           "required": false,
@@ -2425,6 +2474,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2433,6 +2483,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：30，最大值：30。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2440,7 +2491,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以拉取任意团队成员的信息。如果指定操作者，则操作者必须为团队成员。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2454,15 +2506,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "30",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "团队成员列表。",
+          "example": "无",
           "member": "TeamMemberInfo",
           "name": "MemberSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2480,7 +2536,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2489,6 +2546,7 @@
         {
           "default": "",
           "document": "团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。",
+          "example": "[\"1kdk882ddd88338ddd3k3\\n\",\"1kdk882ddd88338ddd3k4\\n\"]",
           "member": "string",
           "name": "TeamIds",
           "required": false,
@@ -2497,6 +2555,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2505,6 +2564,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：20，最大值：30。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2518,15 +2578,19 @@
       "members": [
         {
           "document": "符合条件的记录总数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "团队列表。",
+          "example": "无",
           "member": "TeamInfo",
           "name": "TeamSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2691,7 +2755,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -2700,7 +2764,7 @@
         },
         {
           "default": "",
-          "document": "导出视频编码配置 Id，推荐优先使用下面的预置模板 Id，有其他需求可通过接口定制视频编码配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "document": "导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
@@ -2709,7 +2773,7 @@
         },
         {
           "default": "",
-          "document": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -2727,7 +2791,7 @@
         },
         {
           "default": "",
-          "document": "轨道数据对应的画布宽高比，配合视频编码配置中的视频短边尺寸，可决定导出画面的尺寸。例：\n<li>如果 AspectRatio 取值 16:9，视频编码配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>\n<li>如果 AspectRatio 取值 9:16，视频编码配置选为11（短边720），则导出尺寸为 720 *1280。</li>",
+          "document": "轨道数据对应的画布宽高比，配合预设配置中的视频短边尺寸，可决定导出画面的尺寸。例：\n<li>如果 AspectRatio 取值 16:9，预设配置选为12（短边1080），则导出尺寸为 1920 * 1080；</li>\n<li>如果 AspectRatio 取值 9:16，预设配置选为11（短边720），则导出尺寸为 720 *1280。</li>",
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
@@ -2763,7 +2827,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验导出操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。",
           "example": "b64e98ad",
           "member": "string",
           "name": "Operator",
@@ -2799,7 +2863,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -2817,7 +2881,7 @@
         },
         {
           "default": "",
-          "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
+          "document": "导出视频预设配置 Id，推荐优先使用下面的默认预设配置 Id，有其他需求可通过接口定制预设配置。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -2826,7 +2890,7 @@
         },
         {
           "default": "",
-          "document": "导出目标，可取值为：\n<li>CME：云剪，即导出为云剪媒体；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -2844,7 +2908,7 @@
         },
         {
           "default": "",
-          "document": "导出的云剪媒体信息。当导出目标为 CME 时必填。",
+          "document": "导出的云剪媒资信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
           "name": "CMEExportInfo",
@@ -2862,7 +2926,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
@@ -2898,7 +2962,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "default_platform",
           "member": "string",
           "name": "Platform",
@@ -2943,7 +3007,7 @@
         },
         {
           "default": "",
-          "document": "导出目标。\n<li>CME：云剪，即导出为云剪素材；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -2970,7 +3034,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作任意智能拆条项目。如果指定操作者，则操作者必须为项目所有。",
           "example": "16556266637489",
           "member": "string",
           "name": "Operator",
@@ -3140,7 +3204,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -3185,7 +3249,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以平铺查询任意分类下的媒体信息。如果指定操作者，则操作者必须对当前分类有读权限。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",
@@ -3230,7 +3294,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -3248,7 +3312,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以对任务视频拆条项目发起拆条任务。如果指定操作者，则操作者必须为项目所有者。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",
@@ -3284,7 +3348,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3293,6 +3358,7 @@
         {
           "default": "",
           "document": "资源归属者，个人或者团队。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -3301,6 +3367,7 @@
         {
           "default": "",
           "document": "被授权资源。",
+          "example": "无",
           "member": "Resource",
           "name": "Resources",
           "required": true,
@@ -3309,6 +3376,7 @@
         {
           "default": "",
           "document": "被授权目标，个人或者团队。",
+          "example": "无",
           "member": "Entity",
           "name": "Authorizees",
           "required": true,
@@ -3317,6 +3385,7 @@
         {
           "default": "",
           "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "example": "[\"R\\n\"]",
           "member": "string",
           "name": "Permissions",
           "required": true,
@@ -3324,7 +3393,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以授权任意归属者的资源。如果指定操作者，则操作者必须对资源拥有写权限。",
+          "example": "123",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3350,7 +3420,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -3359,7 +3429,7 @@
         },
         {
           "default": "",
-          "document": "云转推项目Id 。",
+          "document": "云转推项目 Id 。",
           "example": "project_id",
           "member": "string",
           "name": "ProjectId",
@@ -3408,6 +3478,15 @@
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "CurrentStopTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作所有云转推项目。如果指定操作者，则操作者必须为项目所有者。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "Operator",
           "required": false,
           "type": "string"
         }
@@ -3500,7 +3579,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -3509,7 +3588,7 @@
         },
         {
           "default": "",
-          "document": "媒体归属者，团队或个人。",
+          "document": "媒体归属者，可支持归属团队或个人。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
@@ -3527,7 +3606,7 @@
         },
         {
           "default": "",
-          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -3563,7 +3642,7 @@
         },
         {
           "default": "",
-          "document": "媒体预处理任务模板 ID。取值：\n<li>10：进行编辑预处理。</li>",
+          "document": "媒体预处理任务参数 ID。可取值有：\n<li>10：进行编辑预处理。</li>",
           "example": "10",
           "member": "int64",
           "name": "PreProcessDefinition",
@@ -3572,7 +3651,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队或者个人导入媒体。如果指定操作者，如果媒体归属为个人，则操作者必须与归属者一致；如果媒体归属为团队，则必须为团队可导入媒体的团队成员(如果没有特殊设置，所有团队成员可导入媒体)。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
@@ -3617,7 +3696,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "cme_platform",
           "member": "string",
           "name": "Platform",
@@ -3662,7 +3741,7 @@
         },
         {
           "default": "",
-          "document": "媒体名称，不能超过30个字符。",
+          "document": "媒体名称，不能超过30个字符。如果不填，则媒体名称为点播媒资文件名称。",
           "example": "测试",
           "member": "string",
           "name": "Name",
@@ -3671,7 +3750,7 @@
         },
         {
           "default": "",
-          "document": "媒体预处理任务模板 ID，取值：\n<li>10：进行编辑预处理。</li>\n注意：如果填0则不进行处理。",
+          "document": "媒体预处理配置 ID，取值：\n<li>10：进行视频编辑预处理。</li>\n\n注意：如果填0或者不填则不进行处理，如果原始视频不可在浏览器直接播放将无法在编辑页面编辑。",
           "example": "10",
           "member": "int64",
           "name": "PreProcessDefinition",
@@ -3680,7 +3759,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验项目和媒体文件访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向所有视频编辑项目导入媒体；如果指定操作者，则操作者必须为项目所有者。",
           "example": "abf00b8b-9482-4c34-b72c-bea5da0a27ce",
           "member": "string",
           "name": "Operator",
@@ -3894,7 +3973,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -3939,7 +4018,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验对媒体的访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以浏览任意分类的信息。如果指定操作者，则操作者必须对分类有读权限。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",
@@ -4625,7 +4704,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -4634,7 +4713,7 @@
         },
         {
           "default": "",
-          "document": "媒体 Id。",
+          "document": "要修改的媒体 Id。",
           "example": "123245678",
           "member": "string",
           "name": "MaterialId",
@@ -4643,7 +4722,7 @@
         },
         {
           "default": "",
-          "document": "媒体或分类路径归属。",
+          "document": "媒体归属者。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
@@ -4652,7 +4731,7 @@
         },
         {
           "default": "",
-          "document": "媒体名称，不能超过30个字符。",
+          "document": "媒体名称，不能超过30个字符，不填则不修改。",
           "example": "name_modify",
           "member": "string",
           "name": "Name",
@@ -4670,7 +4749,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意媒体的信息。如果指定操作者，则操作者必须对媒体有写权限。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",
@@ -4697,7 +4776,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -4724,7 +4803,7 @@
         },
         {
           "default": "",
-          "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16。</li>",
+          "document": "画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。",
           "example": "无",
           "member": "string",
           "name": "AspectRatio",
@@ -4733,7 +4812,7 @@
         },
         {
           "default": "",
-          "document": "项目归属者。",
+          "document": "项目所有者。目前仅支持个人项目，不支持团队项目。",
           "example": "无",
           "member": "Entity",
           "name": "Owner",
@@ -4742,7 +4821,7 @@
         },
         {
           "default": "",
-          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Defualt：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>",
+          "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式，即普通视频编辑项目。</li>\n<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>",
           "example": "Default",
           "member": "string",
           "name": "Mode",
@@ -4769,7 +4848,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4778,6 +4858,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "1kdk882ddd88338ddd3k3",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -4786,6 +4867,7 @@
         {
           "default": "",
           "document": "团队成员 ID。",
+          "example": "1kd3ej3okjdije3lejjdjk99",
           "member": "string",
           "name": "MemberId",
           "required": true,
@@ -4793,7 +4875,8 @@
         },
         {
           "default": "",
-          "document": "成员备注，允许设置备注为空，不为空时长度不能超过15个字符。",
+          "document": "成员备注，长度不能超过15个字符。",
+          "example": "主编辑李四",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4801,7 +4884,8 @@
         },
         {
           "default": "",
-          "document": "成员角色，取值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "document": "成员角色，可取值有：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
+          "example": "Admin",
           "member": "string",
           "name": "Role",
           "required": false,
@@ -4809,7 +4893,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以个改任意团队成员的信息。如果指定操作者，则操作者必须为团队的管理员或者所有者。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -4835,7 +4920,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4844,6 +4930,7 @@
         {
           "default": "",
           "document": "团队 ID。",
+          "example": "997988688",
           "member": "string",
           "name": "TeamId",
           "required": true,
@@ -4851,7 +4938,8 @@
         },
         {
           "default": "",
-          "document": "团队名称，不能超过 30 个字符。",
+          "document": "团队名称。团队名称不能置空，并且不能超过30个字符。",
+          "example": "测试团队名称",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4859,7 +4947,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改所有团队的信息。如果指定操作者，则操作者必须为团队管理员或者所有者。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -5024,7 +5113,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "your_platform",
           "member": "string",
           "name": "Platform",
@@ -5051,7 +5140,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验资源访问以及写权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以移动任务资源。如果指定操作者，则操作者必须对源及目标资源有写权限。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",
@@ -5518,7 +5607,8 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -5527,6 +5617,7 @@
         {
           "default": "",
           "document": "资源所属实体。",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
@@ -5535,6 +5626,7 @@
         {
           "default": "",
           "document": "被授权资源。",
+          "example": "无",
           "member": "Resource",
           "name": "Resources",
           "required": true,
@@ -5543,6 +5635,7 @@
         {
           "default": "",
           "document": "被授权目标实体。",
+          "example": "无",
           "member": "Entity",
           "name": "Authorizees",
           "required": true,
@@ -5551,6 +5644,7 @@
         {
           "default": "",
           "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "example": "[\"R\\r\\n\"]",
           "member": "string",
           "name": "Permissions",
           "required": true,
@@ -5558,7 +5652,8 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。",
+          "example": "123",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -5610,7 +5705,7 @@
       "members": [
         {
           "default": "",
-          "document": "平台名称，指定访问的平台。",
+          "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
           "member": "string",
           "name": "Platform",
@@ -5628,7 +5723,7 @@
         },
         {
           "default": "",
-          "document": "媒体类型，取值：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片。</li>",
+          "document": "媒体类型，可取值有：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片；</li>\n<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>",
           "example": "无",
           "member": "string",
           "name": "MaterialTypes",
@@ -5709,7 +5804,7 @@
         },
         {
           "default": "",
-          "document": "操作者。填写用户的 Id，用于标识调用者及校验媒体访问权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以搜索任意媒体的信息。如果指定操作者，则操作者必须对媒体有读权限。",
           "example": "user_id",
           "member": "string",
           "name": "Operator",

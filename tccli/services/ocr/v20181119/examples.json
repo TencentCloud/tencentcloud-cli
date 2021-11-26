@@ -406,6 +406,14 @@
         "title": "集装箱识别示例代码"
       }
     ],
+    "RecognizeFinancialReportOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeFinancialReportOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"770d1ec1-9bbf-4ec3-876c-5b6b66fc5c8c\",\n        \"Tables\": [\n            {\n                \"Type\": \"3\",\n                \"Head\": [\n                    {\n                        \"Col\": 1,\n                        \"Text\": \"项目\",\n                        \"Rect\": \"313,366,760,39\"\n                    },\n                    {\n                        \"Col\": 2,\n                        \"Text\": \"本期发生额\",\n                        \"Rect\": \"1073,366,310,40\"\n                    },\n                    {\n                        \"Col\": 3,\n                        \"Text\": \"上期发生额\",\n                        \"Rect\": \"1383,366,310,40\"\n                    }\n                ],\n                \"Rows\": [\n                    {\n                        \"Row\": 2,\n                        \"Cells\": [\n                            {\n                                \"Col\": 1,\n                                \"Text\": \"、经营活动产生的现金流量:\",\n                                \"Rect\": \"313,366,760,39\"\n                            },\n                            {\n                                \"Col\": 2,\n                                \"Text\": \"\",\n                                \"Rect\": \"1073,366,310,40\"\n                            },\n                            {\n                                \"Col\": 3,\n                                \"Text\": \"\",\n                                \"Rect\": \"1383,366,310,40\"\n                            }\n                        ]\n                    },\n                    {\n                        \"Row\": 3,\n                        \"Cells\": [\n                            {\n                                \"Col\": 1,\n                                \"Text\": \"销售商品提供劳务收到的现金\",\n                                \"Rect\": \"313,404,760,42\"\n                            },\n                            {\n                                \"Col\": 2,\n                                \"Text\": \"1.609.403.170.56\",\n                                \"Rect\": \"1073,405,310,41\"\n                            },\n                            {\n                                \"Col\": 3,\n                                \"Text\": \"843.734.421.08\",\n                                \"Rect\": \"1383,406,310,40\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "财报识别示例代码"
+      }
+    ],
     "RecognizeOnlineTaxiItineraryOCR": [
       {
         "document": "",

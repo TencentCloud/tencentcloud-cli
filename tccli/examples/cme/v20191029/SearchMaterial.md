@@ -38,7 +38,9 @@ Output:
                 "ImageMaterial": null,
                 "LinkMaterial": null,
                 "AudioMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
         "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"
@@ -87,7 +89,9 @@ Output:
                 "ImageMaterial": null,
                 "LinkMaterial": null,
                 "AudioMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
         "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"
@@ -136,7 +140,9 @@ Output:
                 "ImageMaterial": null,
                 "LinkMaterial": null,
                 "AudioMaterial": null,
-                "VideoMaterial": null
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
             }
         ],
         "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a05"

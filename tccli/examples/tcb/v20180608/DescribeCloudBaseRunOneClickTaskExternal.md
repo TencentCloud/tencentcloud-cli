@@ -23,7 +23,9 @@ Output:
         "VersionName": "xx",
         "UserUin": "xx",
         "CreateTime": "xx",
-        "Stage": "xx"
+        "StartTime": "xx",
+        "Stage": "xx",
+        "Steps": []
     }
 }
 ```

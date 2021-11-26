@@ -1,27 +1,27 @@
-**Example 1: 回收资源权限**
+**Example 1: 撤销个人资源权限**
 
-
+撤销素材 Id `5fd8ad3d628dc30001bd0895` 对团队 `cmetid_afd3ad3d6289k390d9dk09ad0` 授予的读权限。
 
 Input: 
 
 ```
 tccli cme RevokeResourceAuthorization --cli-unfold-argument  \
     --Platform test \
-    --Operator 123 \
     --Permissions R \
     --Owner.Type PERSON \
-    --Owner.Id 123 \
+    --Owner.Id user_id_1c5ebebd4392343b6489560 \
     --Resources.0.Type MATERIAL \
-    --Resources.0.Id mid_abc \
+    --Resources.0.Id 5fd8ad3d628dc30001bd0895 \
     --Authorizees.0.Type TEAM \
-    --Authorizees.0.Id teamA
+    --Authorizees.0.Id cmetid_afd3ad3d6289k390d9dk09ad0 \
+    --Operator user_id_1c5ebebd4392343b6489560
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "requestId"
+        "RequestId": "d1c5eb0e-e499-4419-b465-60c097fbb65b"
     }
 }
 ```

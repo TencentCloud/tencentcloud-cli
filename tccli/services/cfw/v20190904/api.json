@@ -102,6 +102,12 @@
       "name": "访问控制列表",
       "output": "DescribeAcListsResponse"
     },
+    "DescribeAddrTemplateList": {
+      "document": "获取地址模版列表",
+      "input": "DescribeAddrTemplateListRequest",
+      "name": "获取地址模版列表",
+      "output": "DescribeAddrTemplateListResponse"
+    },
     "DescribeAssociatedInstanceList": {
       "document": "获取安全组关联实例列表",
       "input": "DescribeAssociatedInstanceListRequest",
@@ -1958,6 +1964,96 @@
           "name": "Enable",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddrTemplateListRequest": {
+      "document": "DescribeAddrTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，分页用",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "条数，分页用",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值 'UpdateTime' | 'RulesNum'",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序，取值 'asc'|'desc'",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索值",
+          "example": "name",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddrTemplateListResponse": {
+      "document": "DescribeAddrTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "模版总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模版列表数据",
+          "example": "无",
+          "member": "TemplateListInfo",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模版名称列表",
+          "example": "['name']",
+          "member": "string",
+          "name": "NameList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6431,7 +6527,7 @@
         {
           "default": "",
           "document": "访问源类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region",
-          "example": "参数模版",
+          "example": "template",
           "member": "string",
           "name": "SourceType",
           "required": true,
@@ -6451,7 +6547,7 @@
         {
           "default": "",
           "document": "访问目的类型，类型可以为以下6种：net|template|instance|resourcegroup|tag|region",
-          "example": "资产实例",
+          "example": "instance",
           "member": "string",
           "name": "DestType",
           "required": true,
@@ -6517,6 +6613,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则对应的唯一id",
+          "example": "cfw_newsg_xxxx",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态，true表示启用，false表示禁用",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6958,6 +7074,92 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateListInfo": {
+      "document": "地址模版列表数据",
+      "members": [
+        {
+          "default": "",
+          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mb_1300448058_1636944838448",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "whitelist",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IpString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "插入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-15 10:53:58",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-15 10:53:58",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模版类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联规则条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RulesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

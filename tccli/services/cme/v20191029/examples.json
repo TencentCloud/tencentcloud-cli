@@ -53,27 +53,39 @@
     "CreateProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=first_project\n&Owner.Id=1111\n&Owner.Type=PERSON\n&AspectRatio=16:9\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=first_project\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&AspectRatio=16:9\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ProjectId\": \"cmepid_5f16967b64436100015fb025\",\n        \"RtmpPushInputInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "创建普通剪辑项目"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=SWITCHER\n&Name=switcher_project\n&Owner.Id=1111\n&Owner.Type=PERSON\n&SwitcherProjectInput.PgmOutputConfig.TemplateId=10001\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=SWITCHER\n&Name=导播台\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&SwitcherProjectInput.PgmOutputConfig.TemplateId=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f29\",\n        \"RtmpPushInputInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5c\"\n    }\n}",
         "title": "创建一个导播台项目"
       },
       {
         "document": "云转推项目初始化输入输出源",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=STREAM_CONNECT\n&Name=stream_connect\n&Owner.Id=1111\n&Owner.Type=PERSON\n&StreamConnectProjectInput.MainInput.InputType=LivePull\n&StreamConnectProjectInput.MainInput.LivePullInputInfo.InputUrl=rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759\n&StreamConnectProjectInput.Outputs.0.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=STREAM_CONNECT\n&Name=stream_connect\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&StreamConnectProjectInput.MainInput.InputType=LivePull\n&StreamConnectProjectInput.MainInput.LivePullInputInfo.InputUrl=rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759\n&StreamConnectProjectInput.Outputs.0.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f29\",\n        \"RtmpPushInputInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "创建一个云转推项目，初始化输入源为直播拉流"
       },
       {
         "document": "云转推项目初始化输入输出源",
-        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=STREAM_CONNECT\n&Name=stream_connect\n&Owner.Id=1111\n&Owner.Type=PERSON\n&StreamConnectProjectInput.MainInput.InputType=RtmpPush\n&StreamConnectProjectInput.MainInput.RtmpPushInputInfo.ExpiredSecond=3600\n&StreamConnectProjectInput.Outputs.0.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=STREAM_CONNECT\n&Name=云转推\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&StreamConnectProjectInput.MainInput.InputType=RtmpPush\n&StreamConnectProjectInput.MainInput.RtmpPushInputInfo.ExpiredSecond=3600\n&StreamConnectProjectInput.Outputs.0.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f29\",\n        \"RtmpPushInputInfoSet\": [\n            {\n                \"ExpiredSecond\": 3600,\n                \"PushUrl\": \"rtmp://livepush-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b450001837f8e?txSecret=4478cfdfe0fd0eb3820705aebaa328xx&txTime=608FA1CE\"\n            },\n            {\n                \"ExpiredSecond\": 0,\n                \"PushUrl\": \"\"\n            }\n        ],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "创建一个云转推项目，初始化输入源为直播推流"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=剪辑模板项目\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&VideoEditProjectInput.AspectRatio=16:9\n&VideoEditProjectInput.VideoEditTemplateId=61385efc24827f05859d3765@Public@CME\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f30\",\n        \"RtmpPushInputInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5a\"\n    }\n}",
+        "title": "使用剪辑模板创建项目"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=CreateProject\n&Platform=test\n&Category=VIDEO_EDIT\n&Name=视频剪辑项目并初始化轨道\n&Owner.Id=user_id_61978823e6a253000100fb0f\n&Owner.Type=PERSON\n&VideoEditProjectInput.AspectRatio=16:9\n&VideoEditProjectInput.InitTracks.0.Type=Video\n&VideoEditProjectInput.InitTracks.0.TrackItems.0.Type=Video\n&VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceType=VOD\n&VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMedia=52858908113623182311\n&VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMediaStartTime=0\n&VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.Duration=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"3f1699f3f97b9f0001920f31\",\n        \"RtmpPushInputInfoSet\": [],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e6a\"\n    }\n}",
+        "title": "使用初始轨道创建项目"
       }
     ],
     "CreateTeam": [
@@ -125,24 +137,24 @@
     "DeleteProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteProject\n&Platform=test\n&ProjectId=1112\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DeleteProject\n&Platform=test\n&ProjectId=cmepid_5f16967b64436100015fb026\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a64cbb5b-b809-4061-8c36-7369b98e8e6x\"\n    }\n}",
         "title": "删除项目"
       }
     ],
     "DeleteTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeam\r\n&Platform=test\r\n&Name=测试团队名称\r\n&TeamId=9aoodiiiekj899dkk99d7d6d5dff77f\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeam\n&Platform=test\n&TeamId=9aoodiiiekj899dkk99d7d6d5dff77f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9l09d6d9f-aeec-4817-bbe2-d3499f95a3ac\"\n    }\n}",
         "title": "删除团队"
       }
     ],
     "DeleteTeamMembers": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeamMembers\r\n&Platform=test\r\n&TeamId=1kdk882ddd88338ddd3k3\r\n&MemberIds.0=999kd3ej3okjdije3lejjdjk99\r\n&MemberIds.1=999kd3ej3okjdije3lejjdjk98\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DeleteTeamMembers\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&MemberIds.0=999kd3ej3okjdije3lejjdjk99\n&MemberIds.1=999kd3ej3okjdije3lejjdjk98\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89dl4d9f-aeec-4817-bbe2-d3499f95aeba\"\n    }\n}",
         "title": "删除一个团队成员"
       }
     ],
@@ -157,9 +169,15 @@
     "DescribeAccounts": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeAccounts\n&Platform=100001\n&Phone=15517177077\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeAccounts\n&Platform=test\n&Phone=15517177077\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccountInfoSet\": [\n            {\n                \"UserId\": \"72392ca4-2c79-44f3-ad5a-63cbfa72367c\",\n                \"Phone\": \"15515555055\",\n                \"Nick\": \"Nick\",\n                \"Status\": \"Normal\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
-        "title": "获取用户信息"
+        "title": "指定手机号获取用户信息"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeAccounts\n&Platform=test\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccountInfoSet\": [\n            {\n                \"UserId\": \"32392ca4-2c79-44f3-ad5a-63cbfa72367c\",\n                \"Phone\": \"15515555056\",\n                \"Nick\": \"小李\",\n                \"Status\": \"Normal\"\n            },\n            {\n                \"UserId\": \"62392ca4-2c79-44f3-ad5a-63cbfa72365d\",\n                \"Phone\": \"13415555056\",\n                \"Nick\": \"小张\",\n                \"Status\": \"Normal\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21ad\"\n    }\n}",
+        "title": "分布获取平台所有账号信息"
       }
     ],
     "DescribeClass": [
@@ -175,34 +193,34 @@
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeJoinTeams\n&Platform=test\n&MemberId=1993939392iidkei8ei\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"Role\": \"Admin\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"Role\": \"Member\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
-        "title": "获取加入的团队列表"
+        "title": "获取用户所加入的团队列表"
       }
     ],
     "DescribeLoginStatus": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeLoginStatus\r\n&Platform=test\r\n&UserIds.0=111\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LoginStatusInfoSet\": [],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeLoginStatus\n&Platform=test\n&UserIds.0=user_id_5285890811433511063\n&UserIds.1=user_id_5285890811433511064\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LoginStatusInfoSet\": [\n            {\n                \"UserId\": \"user_id_5285890811433511063\",\n                \"Status\": \"Online\"\n            },\n            {\n                \"UserId\": \"user_id_5285890811433511064\",\n                \"Status\": \"Offline\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "查询用户登录态"
       }
     ],
     "DescribeMaterials": [
       {
         "document": "视频媒体",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=1111\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"1111\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": {\n                    \"MaterialStatus\": {\n                        \"EditorUsableStatus\": \"NORMAL\"\n                    },\n                    \"MetaData\": {\n                        \"Size\": 2148950,\n                        \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                        \"Bitrate\": 242237,\n                        \"Height\": 270,\n                        \"Width\": 480,\n                        \"Duration\": 69.4729995727539,\n                        \"Rotate\": 0,\n                        \"VideoStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 209241,\n                                \"Height\": 270,\n                                \"Width\": 480,\n                                \"Codec\": \"h264\",\n                                \"Fps\": 24\n                            }\n                        ],\n                        \"AudioStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 32996,\n                                \"SamplingRate\": 48000,\n                                \"Codec\": \"aac\"\n                            }\n                        ]\n                    },\n                    \"ImageSpriteInfo\": {\n                        \"Height\": 80,\n                        \"Width\": 142,\n                        \"TotalCount\": 70,\n                        \"ImageUrlSet\": [\n                            \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/imageSprite/1577764755_3800596325.100_0.jpg\"\n                        ],\n                        \"WebVttUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/imageSprite/1577764755.vtt\"\n                    },\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/v.f50000.m3u8?t=5e572824&sign=f3a588b4c37d047bd2df6b02ecf11ed8\",\n                    \"CoverUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Resolution\": \"SD\"\n                }\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=5fd8ad3d628dc30001bd0895\n&Operator=user_id4114428941bd0420\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5fd8ad3d628dc30001bd0895\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null,\n                \"VideoMaterial\": {\n                    \"MaterialStatus\": {\n                        \"EditorUsableStatus\": \"NORMAL\"\n                    },\n                    \"MetaData\": {\n                        \"Size\": 2148950,\n                        \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                        \"Bitrate\": 242237,\n                        \"Height\": 270,\n                        \"Width\": 480,\n                        \"Duration\": 69.4729995727539,\n                        \"Rotate\": 0,\n                        \"VideoStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 209241,\n                                \"Height\": 270,\n                                \"Width\": 480,\n                                \"Codec\": \"h264\",\n                                \"Fps\": 24\n                            }\n                        ],\n                        \"AudioStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 32996,\n                                \"SamplingRate\": 48000,\n                                \"Codec\": \"aac\"\n                            }\n                        ]\n                    },\n                    \"ImageSpriteInfo\": {\n                        \"Height\": 80,\n                        \"Width\": 142,\n                        \"TotalCount\": 70,\n                        \"ImageUrlSet\": [\n                            \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/imageSprite/1577764755_3800596325.100_0.jpg\"\n                        ],\n                        \"WebVttUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/imageSprite/1577764755.vtt\"\n                    },\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/v.f50000.m3u8?t=5e572824&sign=f3a588b4c37d047bd2df6b02ecf11ed8\",\n                    \"CoverUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Resolution\": \"SD\"\n                }\n            }\n        ],\n        \"RequestId\": \"85b8cdac-8e18-430a-aeae-08076ac26a11\"\n    }\n}",
         "title": "获取视媒体材详情"
       },
       {
         "document": "音频媒体",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=22222\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"AudioMaterial\": {\n                    \"CoverUrl\": \"\",\n                    \"MaterialStatus\": {\n                        \"EditorUsableStatus\": \"NORMAL\"\n                    },\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/6df9fb785285890795345485561/FOMbrvcsytgA.mp3?t=5eaa3d36&sign=72576faefb2863396f2775bd45259a44\",\n                    \"MetaData\": {\n                        \"AudioStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 320000,\n                                \"Codec\": \"mp3\",\n                                \"SamplingRate\": 44100\n                            }\n                        ],\n                        \"Bitrate\": 320047,\n                        \"Container\": \"mp3\",\n                        \"Duration\": 221.04815673828,\n                        \"Height\": 0,\n                        \"Rotate\": 0,\n                        \"Size\": 8843241,\n                        \"VideoStreamInfoSet\": [],\n                        \"Width\": 0\n                    }\n                },\n                \"BasicInfo\": {\n                    \"ClassPath\": \"\",\n                    \"CreateTime\": \"2019-10-29T09:36:33Z\",\n                    \"MaterialId\": \"22222\",\n                    \"MaterialType\": \"AUDIO\",\n                    \"Name\": \"Fgi.mp3\",\n                    \"Owner\": {\n                        \"Id\": \"03ce2cd6-a889-4e4d-95a7-876e44f21831\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PreviewUrl\": \"\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"UpdateTime\": \"2019-10-29T09:37:29Z\"\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=5fd8ad3d628dc30001bd08893\n&Operator=user_id4114428941bd0420\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"AudioMaterial\": {\n                    \"CoverUrl\": \"\",\n                    \"MaterialStatus\": {\n                        \"EditorUsableStatus\": \"NORMAL\"\n                    },\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/6df9fb785285890795345485561/FOMbrvcsytgA.mp3?t=5eaa3d36&sign=72576faefb2863396f2775bd45259a44\",\n                    \"MetaData\": {\n                        \"AudioStreamInfoSet\": [\n                            {\n                                \"Bitrate\": 320000,\n                                \"Codec\": \"mp3\",\n                                \"SamplingRate\": 44100\n                            }\n                        ],\n                        \"Bitrate\": 320047,\n                        \"Container\": \"mp3\",\n                        \"Duration\": 221.04815673828,\n                        \"Height\": 0,\n                        \"Rotate\": 0,\n                        \"Size\": 8843241,\n                        \"VideoStreamInfoSet\": [],\n                        \"Width\": 0\n                    }\n                },\n                \"BasicInfo\": {\n                    \"ClassPath\": \"\",\n                    \"CreateTime\": \"2019-10-29T09:36:33Z\",\n                    \"MaterialId\": \"5fd8ad3d628dc30001bd08893\",\n                    \"MaterialType\": \"AUDIO\",\n                    \"Name\": \"Fgi.mp3\",\n                    \"Owner\": {\n                        \"Id\": \"03ce2cd6-a889-4e4d-95a7-876e44f21831\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PreviewUrl\": \"\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"UpdateTime\": \"2019-10-29T09:37:29Z\"\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"964aae95-7344-4200-8962-92a44ff7a2ac\"\n    }\n}",
         "title": "获取音频媒体详情"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=33333\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"AudioMaterial\": null,\n                \"BasicInfo\": {\n                    \"ClassPath\": \"\",\n                    \"CreateTime\": \"2019-10-28T12:10:25Z\",\n                    \"MaterialId\": \"33333\",\n                    \"MaterialType\": \"IMAGE\",\n                    \"Name\": \"dzq1.png\",\n                    \"Owner\": {\n                        \"Id\": \"03ce2cd6-a889-4e4d-95a7-876e44f21831\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PreviewUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"UpdateTime\": \"2019-10-28T12:10:25Z\"\n                },\n                \"ImageMaterial\": {\n                    \"Height\": 153,\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png\",\n                    \"Size\": 52421,\n                    \"Width\": 213\n                },\n                \"LinkMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"964aae95-7344-4200-8962-92a44ff7a2aa\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeMaterials\n&Platform=test\n&MaterialIds.0=5fd8ad3d628dc30001bd08894\n&Operator=user_id4114428941bd0420\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"AudioMaterial\": null,\n                \"BasicInfo\": {\n                    \"ClassPath\": \"\",\n                    \"CreateTime\": \"2019-10-28T12:10:25Z\",\n                    \"MaterialId\": \"5fd8ad3d628dc30001bd08894\",\n                    \"MaterialType\": \"IMAGE\",\n                    \"Name\": \"dzq1.png\",\n                    \"Owner\": {\n                        \"Id\": \"03ce2cd6-a889-4e4d-95a7-876e44f21831\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PreviewUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"UpdateTime\": \"2019-10-28T12:10:25Z\"\n                },\n                \"ImageMaterial\": {\n                    \"Height\": 153,\n                    \"MaterialUrl\": \"https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png\",\n                    \"Size\": 52421,\n                    \"Width\": 213\n                },\n                \"LinkMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"964aae95-7344-4200-8962-92a44ff7a2aa\"\n    }\n}",
         "title": "获取图片媒体详情"
       }
     ],
@@ -210,27 +228,27 @@
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Status\": \"Valid\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba0483c211ea90dc6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
         "title": "获取所有创建的平台列表"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&LicenseIds.0=cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba04-83c2-11ea-90dc-6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
-        "title": "指定绑定的 license Id 获取平台列表"
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribePlatforms\n&LicenseIds.0=cmelid_8621ba0483c211ea90dc6c92bf621f6e\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformInfoSet\": [\n            {\n                \"Platform\": \"1112\",\n                \"Status\": \"Valid\",\n                \"Description\": \"test\",\n                \"VodSubAppId\": 140000303,\n                \"LicenseId\": \"cmelid_8621ba0483c211ea90dc6c92bf621f6e\",\n                \"CreateTime\": \"2018-12-01T13:00:00Z\",\n                \"UpdateTime\": \"2018-12-01T13:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"946c2480-a14f-4d18-8a09-31a45cbd21af\"\n    }\n}",
+        "title": "指定绑定的 License Id 获取平台列表"
       }
     ],
     "DescribeProjects": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=1111\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"1111\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"16:9\",\n                \"Category\": \"VIDEO_EDIT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_1233\"\n                },\n                \"StreamConnectProjectInfo\": null,\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=cmepid_60599df66a6b440001518159\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"cmepid_60599df66a6b440001518159\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"16:9\",\n                \"Category\": \"VIDEO_EDIT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_31345df76a6b44104571916a\"\n                },\n                \"StreamConnectProjectInfo\": null,\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\"\n            }\n        ],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5c\"\n    }\n}",
         "title": "获取项目列表"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=1111\n&CategorySet.0=STREAM_CONNECT\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"1111\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"16:9\",\n                \"Category\": \"STREAM_CONNECT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_1233\"\n                },\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\",\n                \"StreamConnectProjectInfo\": {\n                    \"Status\": \"Working\",\n                    \"CurrentInputEndpoint\": \"Main\",\n                    \"CurrentStartTime\": \"2020-11-13T06:41:34.808Z\",\n                    \"CurrentStopTime\": \"2020-11-13T08:41:34.808Z\",\n                    \"LastStopTime\": \"2020-11-12T07:41:34.808Z\",\n                    \"MainInput\": {\n                        \"InputType\": \"LivePull\",\n                        \"LivePullInputInfo\": {\n                            \"InputUrl\": \"rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759?txSecret=d5f0d5e9eadda723d7fbf6822313b1c0&txTime=6017C8FF\"\n                        }\n                    },\n                    \"OutputSet\": [\n                        {\n                            \"PushSwitch\": \"On\",\n                            \"StreamConnectOutput\": {\n                                \"Id\": \"124522\",\n                                \"PushUrl\": \"rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\",\n                                \"Name\": \"test\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"60599df66a6b440001518159\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeProjects\n&Platform=test\n&ProjectIds.0=cmepid_60599df66a6b440001518169\n&CategorySet.0=STREAM_CONNECT\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ProjectInfoSet\": [\n            {\n                \"ProjectId\": \"cmepid_60599df66a6b440001518169\",\n                \"Name\": \"test\",\n                \"AspectRatio\": \"\",\n                \"Category\": \"STREAM_CONNECT\",\n                \"Owner\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"user_31345df76a6b44104571916a\"\n                },\n                \"UpdateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CreateTime\": \"2020-11-13T06:41:34.808Z\",\n                \"CoverUrl\": \"\",\n                \"StreamConnectProjectInfo\": {\n                    \"Status\": \"Working\",\n                    \"CurrentInputEndpoint\": \"Main\",\n                    \"CurrentStartTime\": \"2020-11-13T06:41:34.808Z\",\n                    \"CurrentStopTime\": \"2020-11-13T08:41:34.808Z\",\n                    \"LastStopTime\": \"2020-11-12T07:41:34.808Z\",\n                    \"MainInput\": {\n                        \"InputType\": \"LivePull\",\n                        \"LivePullInputInfo\": {\n                            \"InputUrl\": \"rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759?txSecret=d5f0d5e9eadda723d7fbf6822313b1c0&txTime=6017C8FF\"\n                        }\n                    },\n                    \"OutputSet\": [\n                        {\n                            \"PushSwitch\": \"On\",\n                            \"StreamConnectOutput\": {\n                                \"Id\": \"124522\",\n                                \"PushUrl\": \"rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08\",\n                                \"Name\": \"test\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5c\"\n    }\n}",
         "title": "获取云转推项目信息"
       }
     ],
@@ -238,22 +256,22 @@
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeResourceAuthorization\n&Platform=test\n&Operator=123\n&Owner.Type=TEAM\n&Owner.Id=teamA\n&Resource.Type=MATERIAL\n&Resource.Id=mid_abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizationInfoSet\": [\n            {\n                \"Authorizee\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"234\"\n                },\n                \"PermissionSet\": [\n                    \"R\",\n                    \"W\"\n                ]\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizationInfoSet\": [\n            {\n                \"Authorizee\": {\n                    \"Type\": \"PERSON\",\n                    \"Id\": \"d1c5eb0ee4994419b46560\"\n                },\n                \"PermissionSet\": [\n                    \"R\",\n                    \"W\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb65b\"\n    }\n}",
         "title": "获取媒资授权信息"
       }
     ],
     "DescribeSharedSpace": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeSharedSpace\n&Platform=test\n&Operator=teamAmemberXXX\n&Authorizee.Type=TEAM\n&Authorizee.Id=teamA\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizerSet\": [\n            {\n                \"Type\": \"PERSON\",\n                \"Id\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeSharedSpace\n&Platform=test\n&Authorizee.Type=TEAM\n&Authorizee.Id=cmetid_acc5ddee49933d2b4338ud8d9\n&Operator=user_id_d1c5eb0ee4994419b465\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AuthorizerSet\": [\n            {\n                \"Type\": \"PERSON\",\n                \"Id\": \"user_id_d1c5eb0ee4994419b465\"\n            }\n        ],\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb6c9\"\n    }\n}",
         "title": "获取共享空间"
       }
     ],
     "DescribeTaskDetail": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTaskDetail\n&Platform=test\n&TaskId=1400-tfusion-ct0\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTaskDetail\n&Platform=test\n&TaskId=181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2020-04-28T18:16:58Z\",\n        \"ErrCode\": 0,\n        \"ErrMsg\": \"Success.\",\n        \"Progress\": 100,\n        \"RequestId\": \"85b8cdac-8e18-430a-aeae-08076ac26a11\",\n        \"Status\": \"SUCCESS\",\n        \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\",\n        \"VideoEditProjectOutput\": {\n            \"MaterialId\": \"1111\",\n            \"MetaData\": {\n                \"AudioStreamInfoSet\": [\n                    {\n                        \"Bitrate\": 46552,\n                        \"Codec\": \"aac\",\n                        \"SamplingRate\": 16000\n                    }\n                ],\n                \"Bitrate\": 6917072,\n                \"Container\": \"mov,mp4,m4a,3gp,3g2,mj2\",\n                \"Duration\": 346.55999755859375,\n                \"Height\": 1080,\n                \"Rotate\": 0,\n                \"Size\": 299688882,\n                \"VideoStreamInfoSet\": [\n                    {\n                        \"Bitrate\": 6870520,\n                        \"Codec\": \"h264\",\n                        \"Fps\": 25,\n                        \"Height\": 1080,\n                        \"Width\": 1920\n                    }\n                ],\n                \"Width\": 1920\n            },\n            \"URL\": \"http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4\",\n            \"VodFileId\": \"5285890802029089\"\n        }\n    }\n}",
         "title": "获取任务详情"
       }
@@ -261,17 +279,35 @@
     "DescribeTasks": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTasks\n&Platform=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efde1a47-f1c9-4c1b-911c-9865a6a4d1ac\",\n        \"TaskBaseInfoSet\": [\n            {\n                \"CreateTime\": \"2020-04-30T03:26:37Z\",\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"Status\": \"SUCCESS\",\n                \"TaskId\": \"140-procedurev2-b718fcee09a72470bf665cf55351d810t0\",\n                \"TaskType\": \"PROJECT_EXPORT\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "获取项目任务列表"
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTasks\n&Platform=test\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskBaseInfoSet\": [\n            {\n                \"CreateTime\": \"2020-04-30T03:26:37Z\",\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"Status\": \"SUCCESS\",\n                \"TaskId\": \"181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\",\n                \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\"\n            }\n        ],\n        \"RequestId\": \"efde1a47-f1c9-4c1b-911c-9865a6a4d1ac\"\n    }\n}",
+        "title": "分页获取视频导出任务列表"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTasks\n&Platform=test\n&Offset=0\n&ProjectId=cmepid_5fd8ad3d628dc30001bd0895\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskBaseInfoSet\": [\n            {\n                \"CreateTime\": \"2020-04-30T03:26:37Z\",\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"Status\": \"SUCCESS\",\n                \"TaskId\": \"181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\",\n                \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\"\n            }\n        ],\n        \"RequestId\": \"efde1a47-f1c9-4c1b-911c-9865a6a4d1ad\"\n    }\n}",
+        "title": "指定项目 Id 获取视频导出任务列表"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTasks\n&Platform=test\n&StatusSet.0=SUCCESS\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskBaseInfoSet\": [\n            {\n                \"CreateTime\": \"2020-04-30T03:26:37Z\",\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"Status\": \"SUCCESS\",\n                \"TaskId\": \"181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\",\n                \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\"\n            }\n        ],\n        \"RequestId\": \"efde1a47-f1c9-4c1b-911c-9865a6a4d1ae\"\n    }\n}",
+        "title": "指定任务状态获取视频导出任务列表"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTasks\n&Platform=test\n&TaskTypeSet.0=VIDEO_EDIT_PROJECT_EXPORT\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TaskBaseInfoSet\": [\n            {\n                \"CreateTime\": \"2020-04-30T03:26:37Z\",\n                \"ErrCode\": 0,\n                \"ErrMsg\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"Status\": \"SUCCESS\",\n                \"TaskId\": \"181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0\",\n                \"TaskType\": \"VIDEO_EDIT_PROJECT_EXPORT\"\n            }\n        ],\n        \"RequestId\": \"efde1a47-f1c9-4c1b-911c-9865a6a4d133\"\n    }\n}",
+        "title": "指定任务类型获取视频导出任务列表"
       }
     ],
     "DescribeTeamMembers": [
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeamMembers\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 30,\n        \"MemberSet\": [\n            {\n                \"MemberId\": \"1993939392iidkei8ei\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Members\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
-        "title": "拉取20个团队成员信息"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"MemberSet\": [\n            {\n                \"MemberId\": \"299addf39392iidkei38\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Owner\"\n            },\n            {\n                \"MemberId\": \"39a39a9b92iidkei9ab\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Admin\"\n            },\n            {\n                \"MemberId\": \"i9dlld9393d2iidkei89i0\",\n                \"Remark\": \"主编辑李四\",\n                \"Role\": \"Members\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "title": "分页拉取团队成员信息"
       },
       {
         "document": "",
@@ -284,8 +320,14 @@
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\n&Platform=test\n&TeamIds.0=1kdk882ddd88338ddd3k3\n&TeamIds.1=1kdk882ddd88338ddd3k4\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
-        "title": "获取团队信息"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"CreateTime\": \"2020-03-09T02:35:21Z\",\n                \"UpdateTime\": \"2020-07-06T04:55:21Z\"\n            },\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k4\",\n                \"Name\": \"工作室2\",\n                \"MemberCount\": 10,\n                \"CreateTime\": \"2020-04-03T09:25:21Z\",\n                \"UpdateTime\": \"2020-06-06T03:16:21Z\"\n            }\n        ],\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "title": "获取指定团队信息"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=DescribeTeams\n&Platform=test\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TeamSet\": [\n            {\n                \"TeamId\": \"1kdk882ddd88338ddd3k3\",\n                \"Name\": \"工作室1\",\n                \"MemberCount\": 30,\n                \"CreateTime\": \"2020-03-09T02:35:21Z\",\n                \"UpdateTime\": \"2020-07-06T04:55:21Z\"\n            }\n        ],\n        \"RequestId\": \"98534d9f-aeec-4817-bbe2-d3499f95a2af\"\n    }\n}",
+        "title": "分布获取团队信息"
       }
     ],
     "DescribeVideoEncodingPresets": [
@@ -304,30 +346,60 @@
     ],
     "ExportVideoByEditorTrackData": [
       {
-        "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=default_platform\n&Definition=10\n&ExportDestination=VOD\n&TrackData=[{\\\"id\\\":\\\"3e203081-0d40-4300-bbe5-0a6df9da9216\\\",\\\"type\\\":\\\"title\\\",\\\"order\\\":0,\\\"items\\\":[{\\\"id\\\":\\\"335c53f7-a4b5-4ffd-80f2-089d186e8bd8\\\",\\\"start_time\\\":4040,\\\"duration\\\":3000,\\\"type\\\":\\\"title\\\",\\\"content\\\":{\\\"template_id\\\":\\\"yj_templ_title_normal\\\",\\\"params\\\":{\\\"name\\\":\\\"yj_templ_title_black_transparent_bottom\\\",\\\"text\\\":\\\"hello\\\",\\\"text_x\\\":417,\\\"text_y\\\":141,\\\"text_width\\\":127,\\\"font\\\":\\\"SimHei\\\",\\\"font_color\\\":\\\"#ebebeb\\\",\\\"font_size\\\":60,\\\"bold\\\":0,\\\"italic\\\":0,\\\"layer_edit\\\":[{\\\"ind\\\":2,\\\"sw\\\":960,\\\"sc\\\":\\\"#000000\\\"}],\\\"shadow_color\\\":\\\"\\\",\\\"font_uline\\\":0,\\\"width\\\":960,\\\"height\\\":350,\\\"use_external_dimension\\\":1}},\\\"sizeRatio\\\":100,\\\"width\\\":960,\\\"height\\\":350,\\\"position\\\":{\\\"type\\\":\\\"ct\\\",\\\"x\\\":480,\\\"y\\\":270},\\\"asset_id\\\":\\\"281921553743709652@Public@CME\\\"}]},{\\\"id\\\":\\\"068383a0-5b03-4094-b5a0-8faacd69347b\\\",\\\"type\\\":\\\"video\\\",\\\"order\\\":1,\\\"items\\\":[{\\\"id\\\":\\\"d08c294a-28ee-4720-9915-1195ceb98eba\\\",\\\"start_time\\\":0,\\\"duration\\\":11600,\\\"type\\\":\\\"video\\\",\\\"section\\\":{\\\"from\\\":0,\\\"to\\\":11600},\\\"asset_id\\\":\\\"381921560306349928\\\",\\\"filter_asset_id\\\":\\\"\\\",\\\"operations\\\":[{\\\"type\\\":\\\"image_rotate\\\",\\\"params\\\":{\\\"angle\\\":0}}],\\\"position\\\":{\\\"x\\\":480,\\\"y\\\":270},\\\"width\\\":852,\\\"height\\\":480},{\\\"id\\\":\\\"69c746aa-863b-4ce7-807b-89fa7f1fc0e3\\\",\\\"start_time\\\":11600,\\\"duration\\\":4680,\\\"type\\\":\\\"video\\\",\\\"section\\\":{\\\"from\\\":0,\\\"to\\\":4680},\\\"asset_id\\\":\\\"381921560306349929\\\",\\\"filter_asset_id\\\":\\\"\\\",\\\"operations\\\":[{\\\"type\\\":\\\"image_rotate\\\",\\\"params\\\":{\\\"angle\\\":0}}],\\\"position\\\":{\\\"x\\\":480,\\\"y\\\":270},\\\"width\\\":852,\\\"height\\\":480},{\\\"id\\\":\\\"bfae2ebd-5332-428c-a8b6-edbc41b4c168\\\",\\\"start_time\\\":16280,\\\"duration\\\":10600,\\\"type\\\":\\\"video\\\",\\\"section\\\":{\\\"from\\\":1000,\\\"to\\\":11600},\\\"asset_id\\\":\\\"381921560306349928\\\",\\\"filter_asset_id\\\":\\\"\\\",\\\"width\\\":960,\\\"height\\\":541,\\\"position\\\":{\\\"x\\\":480,\\\"y\\\":270},\\\"operations\\\":[{\\\"type\\\":\\\"image_rotate\\\",\\\"params\\\":{\\\"angle\\\":0}}]}]}]\n&VODExportInfo.Name=在线编辑视频\n&Operator=16556266637489\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"125009388839-tfusion-0a54392053f84053942f9308c49404d7\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\n    }\n}",
-        "title": "使用视频编辑轨道数据导出视频"
+        "document": "使用视频编辑轨道数据导出视频到云点播，并指定操作者。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=default_platform\n&Definition=10\n&ExportDestination=VOD\n&TrackData=track_data_xxxx\n&VODExportInfo.Name=在线编辑视频\n&VODExportInfo.ClassId=10\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250093889-tfusion-0a54392053f84053942f9308c49404d7\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\n    }\n}",
+        "title": "使用视频编辑轨道数据导出视频到云点播"
       },
       {
-        "document": "当使用指定短边长度的视频编码配置以后，需要配合指定宽高比导出视频",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=[{\"id\":\"84eaf25e-a515-4914-91d7-74accb6976b7\",\"type\":\"video\",\"order\":0,\"items\":[{\"id\":\"3285515a-3743-495d-87ba-f68f67a84f5f\",\"start_time\":0,\"duration\":16320,\"type\":\"video\",\"section\":{\"from\":0,\"to\":16320},\"asset_id\":\"6152cb87b5671f000135c7a1\",\"filter_asset_id\":\"\",\"width\":960,\"height\":540,\"position\":{\"x\":540,\"y\":270},\"operations\":[{\"type\":\"image_rotate\",\"params\":{\"angle\":0}},{\"type\":\"audio_volumes\",\"params\":{\"all\":100}}],\"is_new\":true}]}]\n&Definition=11\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0\n&CMEExportInfo.Name=新建项目\n&CMEExportInfo.ClassPath=/成片\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"1810000001-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb5t\"\n    }\n}",
-        "title": "指定轨道数据和宽高比导出视频"
+        "document": "使用视频编辑轨道数据导出视频到云点播，同时指定导出视频宽高比且指定操作者。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxxx\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=在线编辑视频\n&VODExportInfo.ClassId=10\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb5t\",\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\"\n    }\n}",
+        "title": "使用视频编辑轨道数据导出视频到云点播并指定导出视频宽高比"
+      },
+      {
+        "document": "使用视频编辑轨道数据导出视频到云点播，并将导出的视频发布到企鹅号。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxxx\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=在线编辑视频\n&VODExportInfo.ClassId=10\n&VODExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId=5fd8ad3d628dc30001bd0895\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title=企鹅视频\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description=新闻\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags.0=娱乐\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category=100\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb7t\"\n    }\n}",
+        "title": "使用视频编辑轨道数据导出视频到云点播并发布到企鹅号"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxx\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0\n&CMEExportInfo.Name=新建项目\n&CMEExportInfo.ClassPath=/成片\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb5t\"\n    }\n}",
+        "title": "使用视频编辑轨道数据导出视频到云剪媒资库"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByEditorTrackData\n&Platform=test\n&AspectRatio=16:9\n&TrackData=track_data_xxxx\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSON\n&CMEExportInfo.Owner.Id=ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0\n&CMEExportInfo.Name=新建项目\n&CMEExportInfo.ClassPath=/成片\n&CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId=5fd8ad3d628dc30001bd0895\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title=企鹅视频\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description=新闻\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags.0=娱乐\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category=100\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e86c730b-97c8-4e7d-b4a1-f5b28291e2b3\",\n        \"TaskId\": \"181xxxxxx01-FusionCME-c82bf7f3b9b4c594fbd558800a6fe7c5t\"\n    }\n}",
+        "title": "使用视频编辑轨道数据导出视频到云剪媒资库并发布到企鹅号"
       }
     ],
     "ExportVideoByTemplate": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=测试视频\n&VODExportInfo.ClassId=10000\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MediaType=CMEMaterialId\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=测试视频\n&VODExportInfo.ClassId=10000\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd6\",\n        \"RequestId\": \"0b480791-97d7-4e4a-8740-e2128b871df6\"\n    }\n}",
-        "title": "使用模板导出视频到云点播"
+        "title": "使用剪辑模板导出视频到云点播"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSION\n&CMEExportInfo.Owner.Id=119993993939390\n&CMEExportInfo.Name=测试视频\n&CMEExportInfo.ClassPath=/素材/视频\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd6\",\n        \"RequestId\": \"0b480791-97d7-4e4a-8740-e2128b871df6\"\n    }\n}",
-        "title": "使用模板导出视频到剪媒资"
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MediaType=CMEMaterialId\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSION\n&CMEExportInfo.Owner.Id=119993993939390\n&CMEExportInfo.Name=测试视频\n&CMEExportInfo.ClassPath=/成片\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd7\",\n        \"RequestId\": \"323d0791-97d7-4e4a-8740-e2128b031df7\"\n    }\n}",
+        "title": "使用剪辑模板导出视频到云剪媒资"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MediaType=CMEMaterialId\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=VOD\n&VODExportInfo.Name=测试视频\n&VODExportInfo.ClassId=10000\n&VODExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId=5fd8ad3d628dc30001bd0895\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title=企鹅视频\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description=新闻\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags.0=娱乐\n&VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category=100\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd8\",\n        \"RequestId\": \"323d0791-97d7-4e4a-8740-e2128b031df8\"\n    }\n}",
+        "title": "使用剪辑模板导出视频到云点播并发布到企鹅号"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ExportVideoByTemplate\n&Platform=test\n&TemplateId=60498a50adaf8f000164a07b@prod@12500000\n&SlotReplacements.0.Id=1\n&SlotReplacements.0.ReplacementType=VIDEO\n&SlotReplacements.0.MediaReplacementInfo.MediaType=CMEMaterialId\n&SlotReplacements.0.MediaReplacementInfo.MaterialId=5fc4ad7f69ec74000179072345\n&SlotReplacements.0.MediaReplacementInfo.StartTimeOffset=0\n&Definition=10\n&ExportDestination=CME\n&CMEExportInfo.Owner.Type=PERSION\n&CMEExportInfo.Owner.Id=119993993939390\n&CMEExportInfo.Name=测试视频\n&CMEExportInfo.ClassPath=/成片\n&CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId=5fd8ad3d628dc30001bd0895\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title=企鹅视频\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description=新闻\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags.0=娱乐\n&CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category=100\n&Operator=user_id_9394392053f8405394299d8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd8\",\n        \"RequestId\": \"89dle791-97d7-4e4a-8740-e2128b038ad9\"\n    }\n}",
+        "title": "使用剪辑模板导出视频到云剪媒资并发布到企鹅号"
       }
     ],
     "ExportVideoByVideoSegmentationData": [
@@ -361,8 +433,8 @@
     "FlattenListMedia": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=FlattenListMedia\n&Platform=test\n&ClassPath=/a/b\n&Owner.Id=1111\n&Owner.Type=PERSON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"281921553743710210\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"1111\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=FlattenListMedia\n&Platform=test\n&ClassPath=/a/b\n&Owner.Id=user_id_8ad3d628dc30001bd0343\n&Owner.Type=PERSON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"281921553743710210\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810xxxxxxx2.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"user_id_8ad3d628dc30001bd0343\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "平铺浏览媒体"
       }
     ],
@@ -378,7 +450,7 @@
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=GrantResourceAuthorization\n&Platform=test\n&Operator=123\n&Permissions.0=R\n&Owner.Type=PERSON\n&Owner.Id=123\n&Resources.0.Type=MATERIAL\n&Resources.0.Id=mid_abc\n&Authorizees.0.Type=TEAM\n&Authorizees.0.Id=teamA\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c0973b3d2\"\n    }\n}",
         "title": "发起媒资授权"
       }
     ],
@@ -398,128 +470,176 @@
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值-1",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e85a\"\n    }\n}",
         "title": "添加点播拉流输入源且循环播放"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值 0",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c93cbb5b-b809-4061-8c45-7469b64e8e69\"\n    }\n}",
         "title": "添加点播拉流输入源且单次播放"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DeleteInput\nInputEndpoint | 是 | String | Main 或 Backup",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=DeleteInput\n&InputEndpoint=Main\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"a48cbb3b-b901-4052-8c48-9869b64e8e69\"\n    }\n}",
         "title": "删除输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.InputUrls.1=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/test.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"983cbb5b-b809-4061-8c45-7469b64e8e41\"\n    }\n}",
         "title": "修改输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段若不填则由后端生成",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddOutput\n&OutputInfo.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xx\n&OutputInfo.Name=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"1938bb5b-b809-4061-8c45-7469b64e8e893\"\n    }\n}",
         "title": "添加输出源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DeleteOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表接口中拿到对应输出源的 Id",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=DeleteOutput\n&OutputInfo.Id=12357877\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"kd83bb5b-b809-4061-8c45-7469b64e9183\"\n    }\n}",
         "title": "删除输出源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表中拿到对应输出源的 Id",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyOutput\n&OutputInfo.Id=12357877\n&OutputInfo.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"832dbb5b-b809-4061-8c45-7469b648329dl\"\n    }\n}",
         "title": "修改输出源"
       },
       {
         "document": "开启云转推包括开启输入源、输出源转推。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Start",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=Start\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"l90dbb5b-b809-4061-8c45-7469b64e928d\"\n    }\n}",
         "title": "开启云转推"
       },
       {
         "document": "停止云转推包括停止输入源、输出源转推。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Stop",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=Stop\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"7819bb5b-b809-4061-8c45-7469b64e8370\"\n    }\n}",
         "title": "停止云转推"
       },
       {
         "document": "云转推主备输入源切换，当前转推输入源为Main，切换到Backup输入源。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 SwitchInput\nInputEndPoint | 是 | String | Main 或 Backup",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=SwitchInput\n&InputEndpoint=Backup\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"9303bb5b-b809-4061-8c45-7469b64e7630\"\n    }\n}",
         "title": "切换输入源"
       },
       {
         "document": "修改当前正在转推项目的转推预计结束时间。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyCurrentStopTime\nCurrentStopTime | 是 | String | 当前转推预计结束时间，ISO 日期格式，不得超过当前时间30天",
         "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyCurrentStopTime\n&CurrentStopTime=2021-03-23T07:51:18.029Z\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"RequestId\": \"kkd89b5b-b809-4061-8c45-7469b64e9263\"\n    }\n}",
         "title": "修改转推结束时间"
       }
     ],
     "ImportMaterial": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&VodFileId=5285890796182734267\n&Owner.Id=1111\n&Owner.Type=PERSON\n&Name=material_name\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"MaterialId\": \"materialId\",\n        \"PreProcessTaskId\": \"taskId\"\n    }\n}",
-        "title": "导入媒体到个人"
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=528589079618273426711\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd5\",\n        \"PreProcessTaskId\": \"\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d7\"\n    }\n}",
+        "title": "导入云点播文件到个人"
       },
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&VodFileId=5285890796182734267\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=material_name\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"MaterialId\": \"materialId\",\n        \"PreProcessTaskId\": \"taskId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=528589079618273426711\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd6\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f9308c49404d8\",\n        \"RequestId\": \"0a738920-53f8-4053-942f-9308c494099dld\"\n    }\n}",
+        "title": "导入云点播文件到个人并发起预处理"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=5285890796182734267\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd6\",\n        \"PreProcessTaskId\": \"\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d30\"\n    }\n}",
         "title": "导入媒体到团队"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=5285890796182734267\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd6\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f9308978d3\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d30\"\n    }\n}",
+        "title": "导入媒体到团队并发起预处理"
+      },
+      {
+        "document": "导入外部链接的媒体，且外部链接为 `https`，且发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd9\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f93089kji3d3\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49408kd8\"\n    }\n}",
+        "title": "导入外部链接到个人"
+      },
+      {
+        "document": "导入外部链接的媒体，且外部链接为 `https`，且发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09da0\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f93089kji3d4\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49409634\"\n    }\n}",
+        "title": "导入外部链接到团队"
+      },
+      {
+        "document": "导入外部链接的媒体，且外部链接为 `http`，且发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000001\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09da0\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f9308990d5\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49692033\"\n    }\n}",
+        "title": "导入外部链接到个人(链接为 `http`)"
       }
     ],
     "ImportMediaToProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=user_111\n&VodFileId=111122\n&Name=test\n&PreProcessDefinition=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"248208104522663991\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\",\n        \"RequestId\": \"requestid\"\n    }\n}",
-        "title": "在项目中导入媒体"
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=cmepid_6f16967b64436100015fb046\n&SourceType=VOD\n&VodFileId=52858908114334690679\n&Name=视频1\n&PreProcessDefinition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"248208104522663991\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e56\"\n    }\n}",
+        "title": "在项目中导入云点播文件"
+      },
+      {
+        "document": "在项目中导入一个外部链接。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=cmepid_6f16967b64436100015fb046\n&SourceType=EXTERNAL\n&Name=视频2\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"248208104522663991\",\n        \"TaskId\": \"125xxxxxx65-procedurev2-3ab512f07530b88bc1aabb01fac345bcd\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e738\"\n    }\n}",
+        "title": "在项目中导入外部媒体"
       }
     ],
     "ListMedia": [
       {
         "document": "浏览媒体",
-        "input": "https://cme.tencentcloudapi.com/?Action=ListMedia\n&Platform=test\n&ClassPath=/a/b\n&Owner.Id=1111\n&Owner.Type=PERSON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [],\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"ClassPath\": \"/test\",\n                    \"CreateTime\": \"2019-11-20T02:43:29Z\",\n                    \"MaterialId\": \"281921553743710047\",\n                    \"MaterialType\": \"AUDIO\",\n                    \"Name\": \"林俊杰 - 可惜没如果.wav\",\n                    \"Owner\": {\n                        \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PreviewUrl\": \"\",\n                    \"TagSet\": [],\n                    \"UpdateTime\": \"2019-11-20T02:43:29Z\"\n                }\n            }\n        ],\n        \"MaterialTotalCount\": 1,\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=ListMedia\n&Platform=test\n&ClassPath=/素材/视频\n&Owner.Id=6b6ef043-85f3-4614-b735-768bb466ae5b\n&Owner.Type=PERSON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MaterialInfoSet\": [\n            {\n                \"AudioMaterial\": null,\n                \"BasicInfo\": {\n                    \"ClassPath\": \"/素材/视频\",\n                    \"CreateTime\": \"2021-11-24T16:08:07Z\",\n                    \"MaterialId\": \"619e6367b2e891000160aaac0\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"a.mp4\",\n                    \"Owner\": {\n                        \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1xxxxx98.vod2.myqcloud.com/334751dbvodtranssh1400293698/e37cf1313877022919226xxxx/coverBySnapshot/coverBySnapshot_10_0.jpg\",\n                    \"TagInfoSet\": [],\n                    \"TagSet\": [],\n                    \"UpdateTime\": \"2021-11-24T16:08:07Z\"\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"OtherMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"VideoMaterial\": null\n            },\n            {\n                \"AudioMaterial\": null,\n                \"BasicInfo\": {\n                    \"ClassPath\": \"/素材/视频\",\n                    \"CreateTime\": \"2021-11-14T15:42:09Z\",\n                    \"MaterialId\": \"61912e513a2f7c0001827dddda\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"片段1.mp4\",\n                    \"Owner\": {\n                        \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\",\n                        \"Type\": \"PERSON\"\n                    },\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://14xxxxxx98.vod2.myqcloud.com/334751dbvodtranssh1400293698/a958de3738770229144662908d/coverBySnapshot/coverBySnapshot_10_0.jpg\",\n                    \"TagInfoSet\": [],\n                    \"TagSet\": [],\n                    \"UpdateTime\": \"2021-11-14T15:53:17Z\"\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"OtherMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"ClassInfoSet\": [\n            {\n                \"Owner\": {\n                    \"Id\": \"6b6ef043-85f3-4614-b735-768bb466ae5b\",\n                    \"Type\": \"PERSON\"\n                },\n                \"ClassPath\": \"/素材/视频/体育\"\n            }\n        ],\n        \"RequestId\": \"60d1b6f5-f3f3-440f-943d-a6c2d56341ec\",\n        \"MaterialTotalCount\": 2\n    }\n}",
         "title": "浏览媒体"
       }
     ],
     "ModifyMaterial": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyMaterial\n&Platform=test\n&MaterialId=123245678\n&Name=name_modify\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyMaterial\n&Platform=test\n&MaterialId=5fd8ad3d628dc30001bd0895\n&Name=修改媒体名称\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
-        "title": "修改媒体信息"
+        "title": "修改媒体名称"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyMaterial\n&Platform=test\n&MaterialId=5fd8ad3d628dc30001bd0895\n&Owner.Id=cmetid_acbde8ad3do0303dc1b33\n&Owner.Type=TEAM\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a09\"\n    }\n}",
+        "title": "修改媒体归属为团队"
+      },
+      {
+        "document": "",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyMaterial\n&Platform=test\n&MaterialId=5fd8ad3d628dc30001bd0895\n&ClassPath=/媒体/视频\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a12\"\n    }\n}",
+        "title": "修改媒体的分类"
       }
     ],
     "ModifyProject": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyProject\n&Platform=test\n&ProjectId=1111\n&Name=first_project\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyProject\n&Platform=test\n&ProjectId=3f1699f3f97b9f0001920f29\n&Name=项目名称\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5d\"\n    }\n}",
         "title": "修改项目名称"
       }
     ],
     "ModifyTeam": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeam\r\n&Platform=test\r\n&TeamId=997988688\r\n&Name=测试团队名称\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeam\n&Platform=test\n&TeamId=997988688\n&Name=测试团队名称\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a3ba\"\n    }\n}",
         "title": "修改团队名称"
       }
     ],
     "ModifyTeamMember": [
       {
         "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeamMember\r\n&Platform=test\r\n&TeamId=1kdk882ddd88338ddd3k3\r\n&MemberId=1kd3ej3okjdije3lejjdjk99\r\n&Remark=主编辑李四\r\n&<公共请求参数>",
+        "input": "https://cme.tencentcloudapi.com/?Action=ModifyTeamMember\n&Platform=test\n&TeamId=1kdk882ddd88338ddd3k3\n&MemberId=1kd3ej3okjdije3lejjdjk99\n&Remark=主编辑李四\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99004d9f-aeec-4817-bbe2-d3499f95a2bf\"\n    }\n}",
         "title": "修改一个团队成员的备注"
       }
@@ -550,7 +670,7 @@
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=MoveResource\n&Platform=test\n&SourceResource.Resource.Id=123245678\n&SourceResource.Resource.Type=MATERIAL\n&SourceResource.Owner.Id=6b6ef043-85f3-4614-b735-768bb466ae5b\n&SourceResource.Owner.Type=PERSON\n&DestinationResource.Resource.Id=/个人/视频\n&DestinationResource.Resource.Type=CLASS\n&DestinationResource.Owner.Id=6b6ef043-85f3-4614-b735-768bb466ae5b\n&DestinationResource.Owner.Type=PERSON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c0973b3d2\"\n    }\n}",
         "title": "移动媒体到某分类下面"
       },
       {
@@ -582,29 +702,29 @@
     ],
     "RevokeResourceAuthorization": [
       {
-        "document": "",
-        "input": "https://cme.tencentcloudapi.com/?Action=RevokeResourceAuthorization\r\n&Platform=test\r\n&Operator=123\r\n&Permissions.0=R\r\n&Owner.Type=PERSON\r\n&Owner.Id=123\r\n&Resources.0.Type=MATERIAL\r\n&Resources.0.Id=mid_abc\r\n&Authorizees.0.Type=TEAM\r\n&Authorizees.0.Id=teamA\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "回收资源权限"
+        "document": "撤销素材 Id `5fd8ad3d628dc30001bd0895` 对团队 `cmetid_afd3ad3d6289k390d9dk09ad0` 授予的读权限。",
+        "input": "https://cme.tencentcloudapi.com/?Action=RevokeResourceAuthorization\n&Platform=test\n&Permissions.0=R\n&Owner.Type=PERSON\n&Owner.Id=user_id_1c5ebebd4392343b6489560\n&Resources.0.Type=MATERIAL\n&Resources.0.Id=5fd8ad3d628dc30001bd0895\n&Authorizees.0.Type=TEAM\n&Authorizees.0.Id=cmetid_afd3ad3d6289k390d9dk09ad0\n&Operator=user_id_1c5ebebd4392343b6489560\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1c5eb0e-e499-4419-b465-60c097fbb65b\"\n    }\n}",
+        "title": "撤销个人资源权限"
       }
     ],
     "SearchMaterial": [
       {
         "document": "检索某搜索空间下的媒体。",
         "input": "https://cme.tencentcloudapi.com/?Action=SearchMaterial\n&Platform=test\n&SearchScopes.0.Owner.Id=3bfd339c-4e0d-4742-933e-eb71abde0965\n&SearchScopes.0.Owner.Type=PERSON\n&SearchScopes.0.ClassPath=/a/b\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a4\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a4\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "根据搜索空间检索媒体"
       },
       {
         "document": "检索某搜索空间下媒体类型为VIDEO的媒体。",
         "input": "https://cme.tencentcloudapi.com/?Action=SearchMaterial\n&Platform=test\n&SearchScopes.0.Owner.Id=3bfd339c-4e0d-4742-933e-eb71abde0965\n&SearchScopes.0.Owner.Type=PERSON\n&SearchScopes.0.ClassPath=/a/b\n&MaterialTypes.0=VIDEO\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a4\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a4\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"9Qvacao2r7EA\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "根据媒体类型检索媒体"
       },
       {
         "document": "检索某搜索空间下包含关键字的媒体。",
         "input": "https://cme.tencentcloudapi.com/?Action=SearchMaterial\n&Platform=test\n&SearchScopes.0.Owner.Id=3bfd339c-4e0d-4742-933e-eb71abde0965\n&SearchScopes.0.Owner.Type=PERSON\n&SearchScopes.0.ClassPath=/a/b\n&Text=滨海\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a5\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"腾讯滨海大厦\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MaterialInfoSet\": [\n            {\n                \"BasicInfo\": {\n                    \"MaterialId\": \"5feb08c4b4e0960001ed96a5\",\n                    \"MaterialType\": \"VIDEO\",\n                    \"Name\": \"腾讯滨海大厦\",\n                    \"CreateTime\": \"2019-12-31T03:59:14Z\",\n                    \"UpdateTime\": \"2019-12-31T03:59:14Z\",\n                    \"ClassPath\": \"/a/b\",\n                    \"TagSet\": [],\n                    \"TagInfoSet\": [],\n                    \"PresetTagSet\": [],\n                    \"PreviewUrl\": \"http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg\",\n                    \"Owner\": {\n                        \"Type\": \"PERSON\",\n                        \"Id\": \"3bfd339c-4e0d-4742-933e-eb71abde0965\"\n                    }\n                },\n                \"ImageMaterial\": null,\n                \"LinkMaterial\": null,\n                \"AudioMaterial\": null,\n                \"VideoMaterial\": null,\n                \"VideoEditTemplateMaterial\": null,\n                \"OtherMaterial\": null\n            }\n        ],\n        \"RequestId\": \"7bf08361-4455-4cbd-afd6-423b62c54a05\"\n    }\n}",
         "title": "根据关键字检索媒体"
       }
     ]

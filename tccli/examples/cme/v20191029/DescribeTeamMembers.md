@@ -1,4 +1,4 @@
-**Example 1: 拉取20个团队成员信息**
+**Example 1: 分页拉取团队成员信息**
 
 
 
@@ -16,10 +16,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 30,
+        "TotalCount": 3,
         "MemberSet": [
             {
-                "MemberId": "1993939392iidkei8ei",
+                "MemberId": "299addf39392iidkei38",
+                "Remark": "主编辑李四",
+                "Role": "Owner"
+            },
+            {
+                "MemberId": "39a39a9b92iidkei9ab",
+                "Remark": "主编辑李四",
+                "Role": "Admin"
+            },
+            {
+                "MemberId": "i9dlld9393d2iidkei89i0",
                 "Remark": "主编辑李四",
                 "Role": "Members"
             }
