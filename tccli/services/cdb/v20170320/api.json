@@ -11539,6 +11539,7 @@
         {
           "default": "",
           "document": "Sql的执行时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1637894492",
           "member": "uint64",
           "name": "Timestamp",
           "required": true,
@@ -11547,7 +11548,8 @@
         },
         {
           "default": "",
-          "document": "Sql的执行时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Sql的执行时长（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
           "member": "float",
           "name": "QueryTime",
           "required": true,
@@ -11557,6 +11559,7 @@
         {
           "default": "",
           "document": "Sql语句。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from test",
           "member": "string",
           "name": "SqlText",
           "required": true,
@@ -11566,6 +11569,7 @@
         {
           "default": "",
           "document": "客户端地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "UserHost",
           "required": true,
@@ -11575,6 +11579,7 @@
         {
           "default": "",
           "document": "用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -11584,6 +11589,7 @@
         {
           "default": "",
           "document": "数据库名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_db",
           "member": "string",
           "name": "Database",
           "required": true,
@@ -11592,7 +11598,8 @@
         },
         {
           "default": "",
-          "document": "锁时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锁时长（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.11",
           "member": "float",
           "name": "LockTime",
           "required": true,
@@ -11602,6 +11609,7 @@
         {
           "default": "",
           "document": "扫描行数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
           "member": "int64",
           "name": "RowsExamined",
           "required": true,
@@ -11611,6 +11619,7 @@
         {
           "default": "",
           "document": "结果集行数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RowsSent",
           "required": true,
@@ -11620,6 +11629,7 @@
         {
           "default": "",
           "document": "Sql模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from test",
           "member": "string",
           "name": "SqlTemplate",
           "required": true,
@@ -11629,6 +11639,7 @@
         {
           "default": "",
           "document": "Sql语句的md5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2casbjhk1ty",
           "member": "string",
           "name": "Md5",
           "required": true,

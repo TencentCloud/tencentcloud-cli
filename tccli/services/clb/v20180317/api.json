@@ -30,6 +30,12 @@
       "name": "批量绑定虚拟主机或弹性网卡",
       "output": "BatchRegisterTargetsResponse"
     },
+    "CloneLoadBalancer": {
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。",
+      "input": "CloneLoadBalancerRequest",
+      "name": "克隆负载均衡实例",
+      "output": "CloneLoadBalancerResponse"
+    },
     "CreateClsLogSet": {
       "document": "创建CLB专有日志集，此日志集用于存储CLB的日志。",
       "input": "CreateClsLogSetRequest",
@@ -1492,6 +1498,186 @@
         }
       ],
       "usage": "in"
+    },
+    "CloneLoadBalancerRequest": {
+      "document": "CloneLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID。",
+          "example": "lb-xxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "克隆出负载均衡实例的名称，规则：1-60 个英文、汉字、数字、连接线“-”或下划线“_”。\n注意：如果名称与系统中已有负载均衡实例的名称相同，则系统将会自动生成此次创建的负载均衡实例的名称。",
+          "example": "test-name",
+          "member": "string",
+          "name": "LoadBalancerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的备可用区ID，例如 100001 或 ap-guangzhou-1\n注：备可用区是主可用区故障后，需要承载流量的可用区。可通过 DescribeMasterZones 接口查询一个地域的主/备可用区的列表。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "SlaveZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。可用区ID，指定可用区以创建负载均衡实例。如：ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。负载均衡的网络计费模式。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。可通过 DescribeSingleIsp 接口查询一个地域所支持的Isp。如果指定运营商，则网络计费式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "VipIsp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定Vip申请负载均衡。",
+          "example": "139.X.X.X",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买负载均衡同时，给负载均衡打上标签。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "独占集群信息。",
+          "example": "无",
+          "member": "ExclusiveCluster",
+          "name": "ExclusiveCluster",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "带宽包ID，指定此参数时，网络计费方式（InternetAccessible.InternetChargeType）只支持按带宽包计费（BANDWIDTH_PACKAGE）。",
+          "example": "bwp-pnbe****",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否支持绑定跨地域/跨Vpc绑定IP的功能。",
+          "example": "true",
+          "member": "bool",
+          "name": "SnatPro",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
+          "example": "无",
+          "member": "SnatIp",
+          "name": "SnatIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "公网独占集群ID或者CDCId。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Stgw独占集群的标签。",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterTag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "仅适用于私有网络内网负载均衡。内网就近接入时，选择可用区下发。",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "EIP 的唯一 ID，形如：eip-11112222，仅适用于内网负载均衡绑定EIP。",
+          "example": "eip-1111****",
+          "member": "string",
+          "name": "EipAddressId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloneLoadBalancerResponse": {
+      "document": "CloneLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Cluster": {
       "document": "集群的详细信息，如集群ID，名称，类型，可用区，标签等",

@@ -432,11 +432,23 @@
       "name": "查询机型可支持的最大VPC-CNI模式Pod数量",
       "output": "DescribeVpcCniPodLimitsResponse"
     },
+    "DisableClusterDeletionProtection": {
+      "document": "关闭集群删除保护",
+      "input": "DisableClusterDeletionProtectionRequest",
+      "name": "关闭集群删除保护",
+      "output": "DisableClusterDeletionProtectionResponse"
+    },
     "DisableVpcCniNetworkType": {
       "document": "提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI",
       "input": "DisableVpcCniNetworkTypeRequest",
       "name": "关闭附加的VPC-CNI网络能力",
       "output": "DisableVpcCniNetworkTypeResponse"
+    },
+    "EnableClusterDeletionProtection": {
+      "document": "启用集群删除保护",
+      "input": "EnableClusterDeletionProtectionRequest",
+      "name": "启用集群删除保护",
+      "output": "EnableClusterDeletionProtectionResponse"
     },
     "EnableVpcCniNetworkType": {
       "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
@@ -6205,6 +6217,32 @@
       ],
       "type": "object"
     },
+    "DisableClusterDeletionProtectionRequest": {
+      "document": "DisableClusterDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableClusterDeletionProtectionResponse": {
+      "document": "DisableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableVpcCniNetworkTypeRequest": {
       "document": "DisableVpcCniNetworkType请求参数结构体",
       "members": [
@@ -6715,6 +6753,32 @@
         }
       ],
       "usage": "both"
+    },
+    "EnableClusterDeletionProtectionRequest": {
+      "document": "EnableClusterDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClusterDeletionProtectionResponse": {
+      "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EnableVpcCniNetworkTypeRequest": {
       "document": "EnableVpcCniNetworkType请求参数结构体",
