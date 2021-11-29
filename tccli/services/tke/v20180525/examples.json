@@ -588,12 +588,28 @@
         "title": "查询广州3区下的S5实例族机型可支持的 VPC-CNI Pod 数量"
       }
     ],
+    "DisableClusterDeletionProtection": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "关闭集群删除保护"
+      }
+    ],
     "DisableVpcCniNetworkType": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableVpcCniNetworkType\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "关闭vpc-cni网络"
+      }
+    ],
+    "EnableClusterDeletionProtection": [
+      {
+        "document": "集群删除保护一定程度上可以避免您误删集群，启用集群删除保护后，您将无法直接通过控制台和API来删除集群，如需删除集群，需要先关闭集群删除保护。",
+        "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "启用集群删除保护"
       }
     ],
     "EnableVpcCniNetworkType": [

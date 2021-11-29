@@ -265,7 +265,7 @@
       "output": "ScheduleKeyDeletionResponse"
     },
     "SignByAsymmetricKey": {
-      "document": "非对称密钥签名。\n注意：只有成功创建了KeyUsage= ASYMMETRIC_SIGN_VERIFY_SM2、ASYMMETRIC_SIGN_VERIFY_ECC 或 ASYMMETRIC_SIGN_VERIFY_RSA_2048 的密钥才可以使用签名功能",
+      "document": "非对称密钥签名。\n注意：只有 KeyUsage 为 ASYMMETRIC_SIGN_VERIFY_SM2、ASYMMETRIC_SIGN_VERIFY_ECC 或其他支持的 ASYMMETRIC_SIGN_VERIFY_${ALGORITHM} 的密钥才可以使用签名功能。",
       "input": "SignByAsymmetricKeyRequest",
       "name": "签名",
       "output": "SignByAsymmetricKeyResponse"
@@ -2474,7 +2474,7 @@
       "members": [
         {
           "default": "",
-          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256",
+          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。",
           "example": "SM2DSA",
           "member": "string",
           "name": "Algorithm",
@@ -2722,7 +2722,7 @@
         },
         {
           "default": "",
-          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256",
+          "document": "签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。",
           "example": "SM2DSA",
           "member": "string",
           "name": "Algorithm",

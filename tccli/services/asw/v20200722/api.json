@@ -769,6 +769,7 @@
         {
           "default": "",
           "document": "状态机资源名",
+          "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
           "member": "string",
           "name": "StateMachineResourceName",
           "required": true,
@@ -776,7 +777,8 @@
         },
         {
           "default": "",
-          "document": "输入参数",
+          "document": "输入参数，内容为JsonObject，长度不大于524288字符。",
+          "example": "{}",
           "member": "string",
           "name": "Input",
           "required": false,
@@ -785,6 +787,7 @@
         {
           "default": "",
           "document": "本次执行名。如果不填，系统会自动生成。如果填，应保证状态机下唯一",
+          "example": "name of execution",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -798,15 +801,19 @@
       "members": [
         {
           "document": "执行资源名",
+          "example": "qrn:qcs:asw:ap-guangzhou:1300074211:execution:bfhzs4j8:bgi61l31b",
           "member": "string",
           "name": "ExecutionResourceName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "执行开始时间",
+          "example": "1596716960181",
           "member": "string",
           "name": "StartDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
