@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreatePrivateDNSAccount": {
+      "document": "创建私有域解析账号",
+      "input": "CreatePrivateDNSAccountRequest",
+      "name": "创建私有域解析账号",
+      "output": "CreatePrivateDNSAccountResponse"
+    },
     "CreatePrivateZone": {
       "document": "创建私有域",
       "input": "CreatePrivateZoneRequest",
@@ -12,6 +18,12 @@
       "name": "添加私有域解析记录",
       "output": "CreatePrivateZoneRecordResponse"
     },
+    "DeletePrivateDNSAccount": {
+      "document": "删除私有域解析账号",
+      "input": "DeletePrivateDNSAccountRequest",
+      "name": "删除私有域解析账号",
+      "output": "DeletePrivateDNSAccountResponse"
+    },
     "DeletePrivateZone": {
       "document": "删除私有域并停止解析",
       "input": "DeletePrivateZoneRequest",
@@ -23,6 +35,12 @@
       "input": "DeletePrivateZoneRecordRequest",
       "name": "删除私有域解析记录",
       "output": "DeletePrivateZoneRecordResponse"
+    },
+    "DescribeAccountVpcList": {
+      "document": "获取私有域解析账号的VPC列表",
+      "input": "DescribeAccountVpcListRequest",
+      "name": "获取私有域解析账号的VPC列表",
+      "output": "DescribeAccountVpcListResponse"
     },
     "DescribeAuditLog": {
       "document": "获取操作日志列表",
@@ -150,6 +168,52 @@
       ],
       "usage": "both"
     },
+    "AccountVpcInfoOut": {
+      "document": "查询关联账号VPC列表出参",
+      "members": [
+        {
+          "default": "",
+          "document": "VpcId： vpc-xadsafsdasd",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc所属账号: 123456789",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vpc资源名称：testname",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AccountVpcInfoOutput": {
       "document": "关联的VPC出参",
       "members": [
@@ -260,6 +324,33 @@
         }
       ],
       "usage": "out"
+    },
+    "CreatePrivateDNSAccountRequest": {
+      "document": "CreatePrivateDNSAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有域解析账号",
+          "example": "无",
+          "member": "PrivateDNSAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateDNSAccountResponse": {
+      "document": "CreatePrivateDNSAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreatePrivateZoneRecordRequest": {
       "document": "CreatePrivateZoneRecord请求参数结构体",
@@ -474,6 +565,33 @@
       ],
       "usage": "out"
     },
+    "DeletePrivateDNSAccountRequest": {
+      "document": "DeletePrivateDNSAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "私有域解析账号",
+          "example": "无",
+          "member": "PrivateDNSAccount",
+          "name": "Account",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateDNSAccountResponse": {
+      "document": "DeletePrivateDNSAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePrivateZoneRecordRequest": {
       "document": "DeletePrivateZoneRecord请求参数结构体",
       "members": [
@@ -546,6 +664,78 @@
     "DeletePrivateZoneResponse": {
       "document": "DeletePrivateZone返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountVpcListRequest": {
+      "document": "DescribeAccountVpcList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "关联账号的uin",
+          "example": "123456789",
+          "member": "string",
+          "name": "AccountUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，从0开始",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页限制数目， 最大100，默认20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountVpcListResponse": {
+      "document": "DescribeAccountVpcList返回参数结构体",
+      "members": [
+        {
+          "document": "VPC数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "VPC 列表",
+          "example": "无",
+          "member": "AccountVpcInfoOut",
+          "name": "VpcSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

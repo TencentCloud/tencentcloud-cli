@@ -456,6 +456,18 @@
       "name": "开启vpc-cni容器网络能力",
       "output": "EnableVpcCniNetworkTypeResponse"
     },
+    "ForwardApplicationRequestV3": {
+      "document": "操作TKE集群的addon",
+      "input": "ForwardApplicationRequestV3Request",
+      "name": "操作TKE集群的addon",
+      "output": "ForwardApplicationRequestV3Response"
+    },
+    "GetTkeAppChartList": {
+      "document": "获取TKE支持的App列表",
+      "input": "GetTkeAppChartListRequest",
+      "name": "获取TKE支持的App列表",
+      "output": "GetTkeAppChartListResponse"
+    },
     "GetUpgradeInstanceProgress": {
       "document": "获得节点升级当前的进度 ",
       "input": "GetUpgradeInstanceProgressRequest",
@@ -891,6 +903,42 @@
         }
       ],
       "type": "object"
+    },
+    "AppChart": {
+      "document": "app所支持的chart",
+      "members": [
+        {
+          "default": "",
+          "document": "chart名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "chart的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "chart的版本",
+          "example": "无",
+          "member": "string",
+          "name": "LatestVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AutoScalingGroupRange": {
       "document": "集群关联的伸缩组最大实例数最小值实例数",
@@ -7273,6 +7321,150 @@
         }
       ],
       "usage": "in"
+    },
+    "ForwardApplicationRequestV3Request": {
+      "document": "ForwardApplicationRequestV3请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求集群addon的访问",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的路径",
+          "example": "/api/v1/namespaces",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon后允许接收的数据格式",
+          "example": "无",
+          "member": "string",
+          "name": "Accept",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的数据格式",
+          "example": "无",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的数据",
+          "example": "无",
+          "member": "string",
+          "name": "RequestBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否编码请求内容",
+          "example": "无",
+          "member": "string",
+          "name": "EncodedBody",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForwardApplicationRequestV3Response": {
+      "document": "ForwardApplicationRequestV3返回参数结构体",
+      "members": [
+        {
+          "document": "请求集群addon后返回的数据",
+          "example": "[]",
+          "member": "string",
+          "name": "ResponseBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTkeAppChartListRequest": {
+      "document": "GetTkeAppChartList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible",
+          "example": "无",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "app支持的操作系统，取值arm32、arm64、amd64",
+          "example": "无",
+          "member": "string",
+          "name": "Arch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型，取值tke、eks",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTkeAppChartListResponse": {
+      "document": "GetTkeAppChartList返回参数结构体",
+      "members": [
+        {
+          "document": "所支持的chart列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppChart",
+          "name": "AppCharts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetUpgradeInstanceProgressRequest": {
       "document": "GetUpgradeInstanceProgress请求参数结构体",

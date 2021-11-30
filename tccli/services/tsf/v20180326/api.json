@@ -456,6 +456,12 @@
       "name": "查询虚拟机部署组详情",
       "output": "DescribeGroupResponse"
     },
+    "DescribeGroupAttribute": {
+      "document": "获取部署组其他属性",
+      "input": "DescribeGroupAttributeRequest",
+      "name": "获取部署组其他属性",
+      "output": "DescribeGroupAttributeResponse"
+    },
     "DescribeGroupBindedGateways": {
       "document": "查询某个API分组已绑定的网关部署组信息列表",
       "input": "DescribeGroupBindedGatewaysRequest",
@@ -8556,6 +8562,39 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupAttributeRequest": {
+      "document": "DescribeGroupAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组ID字段",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupAttributeResponse": {
+      "document": "DescribeGroupAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "虚拟机部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "VmGroupOther",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -20333,6 +20372,102 @@
           "name": "Alias",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VmGroupOther": {
+      "document": "虚拟机部署组其他字段",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "程序包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "程序包版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组运行中实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RunInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组中停止实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OffInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务配置信息是否匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsNotEqualServiceConfig",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

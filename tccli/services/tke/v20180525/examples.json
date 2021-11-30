@@ -620,6 +620,22 @@
         "title": "启用vpc-cni网络"
       }
     ],
+    "ForwardApplicationRequestV3": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ForwardApplicationRequestV3\n&Method=GET\n&Path=/api/v1/namespaces\n&ClusterName=cls-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResponseBody\": \"[]\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "操作TKE集群的addon"
+      }
+    ],
+    "GetTkeAppChartList": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=GetTkeAppChartList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"AppCharts\": []\n    }\n}",
+        "title": "获取TKE支持的AppChart列表"
+      }
+    ],
     "GetUpgradeInstanceProgress": [
       {
         "document": "",
