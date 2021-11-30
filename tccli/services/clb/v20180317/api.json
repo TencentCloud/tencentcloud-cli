@@ -222,6 +222,12 @@
       "name": "根据证书ID查询负载均衡",
       "output": "DescribeLoadBalancerListByCertIdResponse"
     },
+    "DescribeLoadBalancerOverview": {
+      "document": "查询运行中、隔离中、即将到期和负载均衡总数。",
+      "input": "DescribeLoadBalancerOverviewRequest",
+      "name": "查询负载均衡状态统计数据",
+      "output": "DescribeLoadBalancerOverviewResponse"
+    },
     "DescribeLoadBalancerTraffic": {
       "document": "查询账号下的高流量负载均衡，返回前10个负载均衡。如果是子账号登录，只返回子账号有权限的负载均衡。",
       "input": "DescribeLoadBalancerTrafficRequest",
@@ -3935,6 +3941,51 @@
       ],
       "type": "object"
     },
+    "DescribeLoadBalancerOverviewRequest": {
+      "document": "DescribeLoadBalancerOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLoadBalancerOverviewResponse": {
+      "document": "DescribeLoadBalancerOverview返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运行中的负载均衡数目",
+          "member": "int64",
+          "name": "RunningCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "隔离中的负载均衡数目",
+          "member": "int64",
+          "name": "IsolationCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "即将到期的负载均衡数目",
+          "member": "int64",
+          "name": "WillExpireCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoadBalancerTrafficRequest": {
       "document": "DescribeLoadBalancerTraffic请求参数结构体",
       "members": [
@@ -3994,7 +4045,7 @@
         },
         {
           "default": "",
-          "document": "选择返回的Fields列表，默认添加LoadBalancerId和LoadBalancerName。",
+          "document": "选择返回的Fields列表，系统仅会返回Fileds中填写的字段，可填写的字段详情请参见<a href=\"https://cloud.tencent.com/document/api/214/30694#LoadBalancerDetail\">LoadBalancerDetail</a>。若未在Fileds填写相关字段，则此字段返回null。Fileds中默认添加LoadBalancerId和LoadBalancerName字段。",
           "example": "无",
           "member": "string",
           "name": "Fields",
@@ -4219,7 +4270,7 @@
         },
         {
           "default": "",
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。详细的过滤条件如下：\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>\n<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如：\"BGP\",\"INTERNAL\",\"CMCC\",\"CTCC\",\"CUCC\"等。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括\"PREPAID\",\"POSTPAID_BY_HOUR\"。</li>\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>\n<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如：\"BGP\",\"INTERNAL\",\"CMCC\",\"CTCC\",\"CUCC\"等。</li>\n<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括\"clb.c2.medium\",\"clb.c3.small\",\"clb.c3.medium\",\"clb.c4.small\",\"clb.c4.medium\",\"clb.c4.large\",\"clb.c4.xlarge\"。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5995,6 +6046,26 @@
           "name": "HealthLogTopicId",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群ID.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-1234xxxx",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负载均衡的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DeleteProtect",
+          "member": "string",
+          "name": "AttributeFlags",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

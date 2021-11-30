@@ -608,6 +608,14 @@
         "title": "查询虚拟机部署组详情"
       }
     ],
+    "DescribeGroupAttribute": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupAttribute\r\n&GroupId=group-byxke4al\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0bd33701-90d0-413f-9ae9-3a89df2fa6ad\",\n        \"Result\": {\n            \"InstanceCount\": 1,\n            \"GroupId\": \"group-byxke4al\",\n            \"PackageId\": \"pkg-278c1954\",\n            \"PackageVersion\": \"1.12.0_E\",\n            \"PackageName\": \"consumer-demo-1.12.0-Edgware-SNAPSHOT.jar\",\n            \"RunInstanceCount\": 0,\n            \"GroupStatus\": \"Updating\",\n            \"OffInstanceCount\": 1\n        }\n    }\n}",
+        "title": "获取部署组其他属性"
+      }
+    ],
     "DescribeGroupBindedGateways": [
       {
         "document": "",

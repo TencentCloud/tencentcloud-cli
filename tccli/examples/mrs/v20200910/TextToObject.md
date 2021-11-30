@@ -1455,7 +1455,10 @@ Output:
             "MedicalRecordInfo": null,
             "Hospitalization": null,
             "Surgery": null,
-            "Electrocardiogram": null
+            "Electrocardiogram": null,
+            "Endoscopy": null,
+            "Prescription": null,
+            "VaccineCertificate": null
         }
     }
 }

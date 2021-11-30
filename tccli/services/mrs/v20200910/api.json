@@ -1323,7 +1323,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片列表，允许传入多张图片，支持传入图片的url或base64编码",
+          "document": "图片列表，允许传入多张图片，支持传入图片的base64编码，暂不支持图片url",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfoList",
@@ -1341,8 +1341,8 @@
         },
         {
           "default": "",
-          "document": "图片类型，目前支持11（检验报告），12（检查报告），15（病理报告），218（诊断证明）。",
-          "example": "1",
+          "document": "不填，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -1377,7 +1377,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片列表，允许传入多张图片，支持传入图片的url或base64编码",
+          "document": "图片列表，允许传入多张图片，目前只支持传入图片base64编码，图片url暂不支持",
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfoList",
@@ -1395,7 +1395,7 @@
         },
         {
           "default": "",
-          "document": "报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
+          "document": "报告类型，目前支持11（检验报告），12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单），219（免疫接种证明），301（C14呼气试验）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -3457,6 +3457,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "免疫接种证明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "VaccineCertificate",
+          "name": "VaccineCertificate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3511,7 +3521,7 @@
         },
         {
           "default": "",
-          "document": "报告类型，目前支持12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
+          "document": "报告类型，目前支持12（检查报告），15（病理报告），28（出院报告），29（入院报告），210（门诊病历），212（手术记录），218（诊断证明），363（心电图），27（内窥镜检查），215（处方单），219（免疫接种证明），301（C14呼气试验）。如果不清楚报告类型，可以使用分类引擎，该字段传0（同时IsUsedClassify字段必须为True，否则无法输出结果）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -4194,6 +4204,118 @@
           "name": "Src",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Vaccination": {
+      "document": "免疫接种记录",
+      "members": [
+        {
+          "default": "",
+          "document": "序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "疫苗名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "新冠疫苗(Wero细题)①",
+          "member": "string",
+          "name": "Vaccine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剂次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Dose",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接种日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-12 00:00:00",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "疫苗批号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LotNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产企业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京生物",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接种单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "西安市中医医院",
+          "member": "string",
+          "name": "Clinic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接种部位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "左上臂",
+          "member": "string",
+          "name": "Site",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接种者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Provider",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VaccineCertificate": {
+      "document": "免疫接种证明",
+      "members": [
+        {
+          "default": "",
+          "document": "免疫接种列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[object]",
+          "member": "Vaccination",
+          "name": "VaccineList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

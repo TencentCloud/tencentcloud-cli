@@ -1242,6 +1242,7 @@
         {
           "default": "",
           "document": "返回的code，0为正常，非0为错误",
+          "example": "1",
           "member": "string",
           "name": "ReturnCode",
           "required": true,
@@ -1251,6 +1252,7 @@
         {
           "default": "",
           "document": "成功消息",
+          "example": "1",
           "member": "string",
           "name": "ReturnMessage",
           "required": true,
@@ -1260,10 +1262,21 @@
         {
           "default": "",
           "document": "操作型返回的Data数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "CreateInstancePreData",
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除是时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeleteRouteTimestamp",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

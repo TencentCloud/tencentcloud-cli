@@ -17,12 +17,12 @@ Output:
         "TotalCount": 2,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "lb-rbw529fz",
+                "LoadBalancerId": "lb-rbw5****",
                 "LoadBalancerName": "test_LB",
                 "Forward": 1,
                 "Domain": "",
                 "LoadBalancerVips": [
-                    "129.226.78.67"
+                    "XX.XX.XX.XX"
                 ],
                 "LoadBalancerType": "OPEN",
                 "Status": 1,
@@ -80,12 +80,12 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "lb-rbw529fz",
+                "LoadBalancerId": "lb-rbw5****",
                 "LoadBalancerName": "test_LB",
                 "Forward": 1,
                 "Domain": "",
                 "LoadBalancerVips": [
-                    "129.226.78.67"
+                    "XX.XX.XX.XX"
                 ],
                 "LoadBalancerType": "OPEN",
                 "Status": 1,
@@ -133,7 +133,7 @@ Input:
 
 ```
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
-    --LoadBalancerIds lb-rbw529fz
+    --LoadBalancerIds lb-rbw5****
 ```
 
 Output: 
@@ -143,12 +143,12 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "lb-rbw529fz",
+                "LoadBalancerId": "lb-rbw5****",
                 "LoadBalancerName": "test_LB",
                 "Forward": 1,
                 "Domain": "",
                 "LoadBalancerVips": [
-                    "129.226.78.67"
+                    "XX.XX.XX.XX"
                 ],
                 "LoadBalancerType": "OPEN",
                 "Status": 1,
@@ -199,7 +199,7 @@ tccli clb DescribeLoadBalancers --cli-unfold-argument  \
     --LoadBalancerType OPEN \
     --ProjectId 0 \
     --LoadBalancerName test_LB \
-    --LoadBalancerVips 129.226.78.67
+    --LoadBalancerVips XX.XX.XX.XX
 ```
 
 Output: 
@@ -209,12 +209,12 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "lb-rbw529fz",
+                "LoadBalancerId": "lb-rbw5****",
                 "LoadBalancerName": "test_LB",
                 "Forward": 1,
                 "Domain": "",
                 "LoadBalancerVips": [
-                    "129.226.78.67"
+                    "1XX.XX.XX.XX"
                 ],
                 "LoadBalancerType": "OPEN",
                 "Status": 1,
@@ -236,6 +236,78 @@ Output:
                 "SubnetId": "",
                 "SecureGroups": [],
                 "Tags": [],
+                "VipIsp": "BGP",
+                "MasterZone": null,
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2019-08-02 18:12:52",
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "NetworkAttributes": {
+                    "InternetChargeType": "BANDWIDTH_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 10
+                },
+                "PrepaidAttributes": null
+            }
+        ],
+        "RequestId": "eba822a4-67cb-414c-b21d-f98ba3995d12"
+    }
+}
+```
+
+**Example 5: 根据负载均衡的标签键值对过滤查询**
+
+
+
+Input: 
+
+```
+tccli clb DescribeLoadBalancers --cli-unfold-argument  \
+    --LoadBalancerType OPEN \
+    --ProjectId 0 \
+    --LoadBalancerName test_LB \
+    --Filters.0.Name tag:test_tag_key \
+    --Filters.0.Values test_tag_value1 test_tag_value2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "LoadBalancerSet": [
+            {
+                "LoadBalancerId": "lb-rbw5****",
+                "LoadBalancerName": "test_LB",
+                "Forward": 1,
+                "Domain": "",
+                "LoadBalancerVips": [
+                    "XX.XX.XX.XX"
+                ],
+                "LoadBalancerType": "OPEN",
+                "Status": 1,
+                "CreateTime": "2019-07-02 18:12:52",
+                "StatusTime": "2019-07-02 18:12:53",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "AddressIPVersion": "ipv4",
+                "VpcId": "vpc-lt9uj4mo",
+                "NumericalVpcId": 117008,
+                "TargetRegionInfo": {
+                    "Region": "ap-hongkong",
+                    "VpcId": "vpc-lt9uj12o"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
+                "Tags": [
+                    {
+                        "TagKey": "test_tag_key",
+                        "TagValue": "test_tag_value1"
+                    }
+                ],
                 "VipIsp": "BGP",
                 "MasterZone": null,
                 "BackupZoneSet": null,

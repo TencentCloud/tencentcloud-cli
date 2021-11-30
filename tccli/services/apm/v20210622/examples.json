@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeApmAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"jYm6_leMg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmAgent\": {\n            \"CollectorURL\": \"http://127.0.0.1:8080\",\n            \"AgentDownloadURL\": \"https://agent.tapm.tencentyun.com/DownloadAgent\",\n            \"Token\": \"14dac76ca10f4610f727ca68528758b43980251387493706d18988fa7d0621b7\",\n            \"PublicCollectorURL\": \"http://127.0.0.1:8080\",\n            \"InnerCollectorURL\": \"http://127.0.0.1:8080\",\n            \"PrivateLinkCollectorURL\": \"http://127.0.0.1:8080\"\n        },\n        \"RequestId\": \"mzltx5whme-zl7je3p16tk5fwtb7ht61\"\n    }\n}",
+        "title": "获取Apm Agent信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

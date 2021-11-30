@@ -4343,12 +4343,12 @@
       "type": "object"
     },
     "NetworkAccess": {
-      "document": "网络类型信息，用于实例查询接口和RO组查询接口的返回。",
+      "document": "网络相关信息。",
       "members": [
         {
           "default": "",
-          "document": "网络资源id，实例id或RO组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "postgres-d1ef3oj0",
+          "document": "网络资源id，实例id或RO组id(此字段已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4357,7 +4357,7 @@
         },
         {
           "default": "",
-          "document": "资源类型，1-实例 2-RO组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型，1-实例 2-RO组(此字段已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ResourceType",
@@ -4368,7 +4368,7 @@
         {
           "default": "",
           "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-38mb1lz2",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4377,8 +4377,8 @@
         },
         {
           "default": "",
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10.39.6.14",
+          "document": "IPV4地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.11.1.11",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -4387,7 +4387,7 @@
         },
         {
           "default": "",
-          "document": "ipv6的IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPV6地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2000:0000:0000:0000:0001:2345:6789:abcd",
           "member": "string",
           "name": "Vip6",
@@ -4397,7 +4397,7 @@
         },
         {
           "default": "",
-          "document": "连接Port地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5432",
           "member": "int64",
           "name": "Vport",
@@ -4408,7 +4408,7 @@
         {
           "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-l3p9fzc3",
+          "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
