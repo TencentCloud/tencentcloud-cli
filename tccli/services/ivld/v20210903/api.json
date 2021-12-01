@@ -1,0 +1,1470 @@
+{
+  "actions": {
+    "CreateTask": {
+      "document": "创建智能标签任务。\n\n请注意，本接口为异步接口，**返回TaskId只代表任务创建成功，不代表任务执行成功**。\n",
+      "input": "CreateTaskRequest",
+      "name": "创建任务",
+      "output": "CreateTaskResponse"
+    },
+    "DeleteMedia": {
+      "document": "将MediaId对应的媒资文件从系统中删除。\n\n**请注意，本接口仅删除媒资文件，媒资文件对应的视频分析结果不会被删除**。如您需要删除结构化分析结果，请调用DeleteTask接口。",
+      "input": "DeleteMediaRequest",
+      "name": "删除媒资文件",
+      "output": "DeleteMediaResponse"
+    },
+    "DescribeMedia": {
+      "document": "描述媒资文件信息，包括媒资状态，分辨率，帧率等。\n\n如果媒资文件未完成导入，本接口将仅输出媒资文件的状态信息；导入完成后，本接口还将输出媒资文件的其他元信息。",
+      "input": "DescribeMediaRequest",
+      "name": "描述媒资文件",
+      "output": "DescribeMediaResponse"
+    },
+    "DescribeMedias": {
+      "document": "依照输入条件，描述命中的媒资文件信息，包括媒资状态，分辨率，帧率等。\n\n请注意，本接口最多支持同时描述**50**个媒资文件\n\n如果媒资文件未完成导入，本接口将仅输出媒资文件的状态信息；导入完成后，本接口还将输出媒资文件的其他元信息。",
+      "input": "DescribeMediasRequest",
+      "name": "批量描述媒资文件",
+      "output": "DescribeMediasResponse"
+    },
+    "DescribeTask": {
+      "document": "描述智能标签任务进度。\n\n请注意，**此接口仅返回任务执行状态信息，不返回任务执行结果**\n\n",
+      "input": "DescribeTaskRequest",
+      "name": "描述任务",
+      "output": "DescribeTaskResponse"
+    },
+    "DescribeTaskDetail": {
+      "document": "描述任务信息，如果任务成功完成，还将返回任务结果",
+      "input": "DescribeTaskDetailRequest",
+      "name": "描述任务与任务结果",
+      "output": "DescribeTaskDetailResponse"
+    },
+    "DescribeTasks": {
+      "document": "依照输入条件，描述命中的任务信息，包括任务创建时间，处理时间信息等。\n\n请注意，本接口最多支持同时描述**50**个任务信息",
+      "input": "DescribeTasksRequest",
+      "name": "批量描述任务",
+      "output": "DescribeTasksResponse"
+    },
+    "ImportMedia": {
+      "document": "将URL指向的媒资视频文件导入系统之中。\n\n**请注意，本接口为异步接口**。接口返回MediaId仅代表导入视频任务发起，不代表任务完成，您可调用读接口(DescribeMedia/DescribeMedias)接口查询MediaId对应的媒资文件的状态。\n\n当前URL只支持COS地址，其形式为`https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${ObjectKey}`，其中`${Bucket}`为您的COS桶名称，Region为COS桶所在[可用区](https://cloud.tencent.com/document/product/213/6091)，`${ObjectKey}`为指向存储在COS桶内的待分析的视频的[ObjectKey](https://cloud.tencent.com/document/product/436/13324)\n\n分析完成后，本产品将在您的`${Bucket}`桶内创建名为`${ObjectKey}-${task-start-time}`的目录(`task-start-time`形式为1970-01-01T08:08:08)并将分析结果将回传回该目录，也即，结构化分析结果(包括图片，JSON等数据)将会写回`https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${ObjectKey}-${task-start-time}`目录\n",
+      "input": "ImportMediaRequest",
+      "name": "导入媒资文件",
+      "output": "ImportMediaResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-09-03",
+    "api_brief": "介绍如何使用API对视频智能标签进行操作，包括视频上传、发起分析任务、获取任务分析结果等。",
+    "serviceNameCN": "视频智能标签",
+    "serviceShortName": "ivld"
+  },
+  "objects": {
+    "AppearIndexPair": {
+      "document": "出现信息索引对\n\nAppearIndex可选值定义如下：\n\n| AppearIndex名称 | AppearIndex取值 | AppearIndex描述 |\n|---|---|---|\n| APPEAR_INDEX_INVALID | 0 | 非法的任务状态 |\n| APPEAR_INDEX_AUDIO | 1 | 音频出现信息|\n| APPEAR_INDEX_TEXT | 2 | 可视文本出现信息|\n| APPEAR_INDEX_VIDEO | 3 | 视频出现信息|\n\n例如，当AppearIndex=1，Index=15，则意味着目标关键词出现在第16个(Index计数从0开始)音频文字识别结果之中",
+      "members": [
+        {
+          "default": "",
+          "document": "出现信息，取值范围为[1，3]",
+          "example": "1",
+          "member": "int64",
+          "name": "AppearIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AppearInfo中AppearIndex对应元素的第Index元素，从0开始技术",
+          "example": "50",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AppearInfo": {
+      "document": "出现信息结构\n\n包含关键词在音频转文字(ASR)，图片转文字(OCR)以及视频结果中的出现信息\n",
+      "members": [
+        {
+          "default": "",
+          "document": "关键词在音频文本结果中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextAppearInfo",
+          "name": "AudioAppearSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关键词在可视文本结果中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextAppearInfo",
+          "name": "TextAppearSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关键词在视频信息中的出现位置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoAppearInfo",
+          "name": "VideoAppearSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioInfo": {
+      "document": "音频识别结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "ASR提取的文字信息",
+          "example": "\"欢迎收看新闻30分\"",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ASR起始时间戳，从0开始",
+          "example": "0.52",
+          "member": "float",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ASR结束时间戳，从0开始",
+          "example": "0.92",
+          "member": "float",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ASR提取的音频标签",
+          "example": "\"导语\"",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateTaskRequest": {
+      "document": "CreateTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资文件ID，最长32B",
+          "example": "\"media-12345678\"",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒资素材先验知识，相关限制参考MediaPreknownInfo",
+          "example": "无",
+          "member": "MediaPreknownInfo",
+          "name": "MediaPreknownInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "任务名称，最长100个中文字符",
+          "example": "\"新闻30分\"",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否上传转码后的视频，仅设置true时上传，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "UploadVideo",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskResponse": {
+      "document": "CreateTask返回参数结构体",
+      "members": [
+        {
+          "document": "智能标签视频分析任务ID",
+          "example": "\"56789\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Data": {
+      "document": "任务结果数据",
+      "members": [
+        {
+          "default": "",
+          "document": "节目粒度结构化结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShowInfo",
+          "name": "ShowInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteMediaRequest": {
+      "document": "DeleteMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资文件在系统中的ID",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMediaResponse": {
+      "document": "DeleteMedia返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaRequest": {
+      "document": "DescribeMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "导入媒资返回的媒资ID，最长32B",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaResponse": {
+      "document": "DescribeMedia返回参数结构体",
+      "members": [
+        {
+          "document": "媒资信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInfo",
+          "name": "MediaInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediasRequest": {
+      "document": "DescribeMedias请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页序号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每个分页所包含的元素数量，最大为50",
+          "example": "15",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列举过滤条件，相关限制相见MediaFilter",
+          "example": "无",
+          "member": "MediaFilter",
+          "name": "MediaFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "返回结果排序信息，By字段只支持CreateTime",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediasResponse": {
+      "document": "DescribeMedias返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的媒资视频总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "满足过滤条件的媒资信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInfo",
+          "name": "MediaInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailRequest": {
+      "document": "DescribeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "创建任务返回的TaskId",
+          "example": "\"task-12345678\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskDetailResponse": {
+      "document": "DescribeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "document": "任务信息，不包含任务结果",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务结果数据，只在任务结束时返回",
+          "example": "无",
+          "member": "Data",
+          "name": "TaskData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskRequest": {
+      "document": "DescribeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CreateTask返回的任务ID，最长32B",
+          "example": "\"task-12345678\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResponse": {
+      "document": "DescribeTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务信息，详情参见TaskInfo的定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页序号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每个分页所包含的元素数量，最大为50",
+          "example": "15",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，相关限制参见TaskFilter",
+          "example": "无",
+          "member": "TaskFilter",
+          "name": "TaskFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "返回结果排序信息，By字段只支持CreateTimeStamp",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的任务总数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "满足过滤条件的任务数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMediaRequest": {
+      "document": "ImportMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待分析视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB",
+          "example": "cos://bucket/object.mp4",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待分析视频的MD5，为空时不做校验，否则会做MD5校验，长度必须为32B",
+          "example": "9207adf18198dd5b165aae0bdd8f709d",
+          "member": "string",
+          "name": "MD5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待分析视频的名称，指定后可支持筛选，最多100个中文字符",
+          "example": "新闻30分",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMediaResponse": {
+      "document": "ImportMedia返回参数结构体",
+      "members": [
+        {
+          "document": "媒资文件在系统中的ID",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "L1Tag": {
+      "document": "一级标签信息\n\n请注意，一级标签信息可能不包含二级标签(此时L2TagSet为空)。在这种情况下，一级标签可直接包含出现信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "一级标签名",
+          "example": "\"地点\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "L2Tag",
+          "name": "L2TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "一级标签出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppearIndexPair",
+          "name": "AppearIndexPairSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "一级标签首次出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FirstAppear",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "L2Tag": {
+      "document": "二级标签信息\n\n请注意，二级标签信息可能不包含三级标签(此时L3TagSet为空)。\n",
+      "members": [
+        {
+          "default": "",
+          "document": "二级标签名",
+          "example": "\"地点\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从属于此二级标签的三级标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "L3Tag",
+          "name": "L3TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二级标签出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppearIndexPair",
+          "name": "AppearIndexPairSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "二级标签首次出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FirstAppear",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "L3Tag": {
+      "document": "三级标签信息。\n\n三级标签不再包含任何子标签。所有三级标签都对应着识别结果中的出现信息，出现信息使用AppearIndexPairSet定位。",
+      "members": [
+        {
+          "default": "",
+          "document": "三级标签名",
+          "example": "\"成都\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "三级标签出现信息索引数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppearIndexPair",
+          "name": "AppearIndexPairSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "三级标签首次出现信息，可选值为[1,3]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FirstAppear",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaFilter": {
+      "document": "媒资过滤条件\n\n",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资名称过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"新闻30分\",\"朝闻天下\"]",
+          "member": "string",
+          "name": "MediaNameSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资状态数组，媒资状态可选值参见MediaInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "MediaIdSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaInfo": {
+      "document": "媒资信息结构体\n\n媒资状态定义如下：\n\n| 状态名 | 状态值 | 状态描述 | \n|---|---|---|\n| MEDIA_STATUS_INVALID | 0 | 非法状态|\n| MEDIA_STATUS_WAITING| 1 | 等待中 |\n| MEDIA_STATUS_DOWNLOADING | 2 | 下载中 |\n| MEDIA_STATUS_DOWNLOADED | 3 | 下载完成 |\n| MEDIA_STATUS_DOWNLOAD_FAILED | 4 | 下载失败 |\n| MEDIA_STATUS_TRANSCODING | 5 | 转码中 |\n| MEDIA_STATUS_TRANSCODED | 6 | 转码完成 | \n| MEDIA_STATUS_TRANCODE_FAILED | 7 | 转码失败 |\n| MEDIA_STATUS_SUCCESS | 8 | 媒资文件状态就绪，可发起任务 |\n| MEDIA_STATUS_EXPIRED | 9 | 媒资文件已过期 |\n",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资ID",
+          "example": "“123456”",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"新闻30分\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"http://example-bucket/example-key.mp4\"",
+          "member": "string",
+          "name": "DownLoadURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资状态，取值参看上方表格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "若状态为失败，表示失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"下载失败\"",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频元信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetadata",
+          "name": "Metadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导入视频进度，取值范围为[0,100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30.0",
+          "member": "float",
+          "name": "Progress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaMetadata": {
+      "document": "媒资文件视频元信息，包括分辨率，帧率，码率等",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资视频文件大小",
+          "example": "340000",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资视频文件MD5",
+          "example": "\"d228d21b68688c14dcb7275b806398fc\"",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资视频时长，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.00",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频总帧数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "NumFrames",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频宽度，单位为像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频高度，单位为像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频帧率，单位为Hz\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25",
+          "member": "float",
+          "name": "FPS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资视频比特率，单位为kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "BitRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaPreknownInfo": {
+      "document": "描述输入媒资的先验知识，例如文件类型(视频)，媒体类型(新闻/综艺等)\n\nMediaPreknownInfo.MediaType:\n\n| MediaType 名称|  MediaType取值 | MediaType描述 |\n|---|---|---|\n| MEDIA_TYPE_INVALID | 0 | 非法的媒资文件类型 | \n| MEDIA_TYPE_IMAGE | 1 | 图片，当前不支持 |\n| MEDIA_TYPE_VIDEO | 2 | 视频，当前只支持此类型媒资文件 |\n\nMediaPreknownInfo.MediaLabel:\n\n| MediaLabel名称 | MediaLabel取值 | MediaLabel描述 |\n|---|---|---|\n| MEDIA_LABEL_INVALID | 0 | 非法的一级媒资素材类型 |\n| MEDIA_LABEL_NEWS | 1 | 新闻 |\n| MEDIA_LABEL_ENTERTAINMENT | 2 | 综艺|\n| MEDIA_LABEL_INTERNET_INFO | 3 | 互联网资讯 | \n| MEDIA_LABEL_MOVIE | 4 | 电影 |\n| MEDIA_LABEL_SERIES | 5 | 电视连续剧 |\n| MEDIA_LABEL_SPECIAL | 6 | 专题 |\n| MEDIA_LABEL_SPORT | 7 | 体育 |\n\nMediaPreknownInfo.MediaSecondLabel\n请注意：**当且仅当MediaLabel=2(综艺)时MediaSecondLabel才有意义**\n\n| MediaSecondLabel名称 | MediaSecondLabel取值 | MediaSecondLabel 描述|\n|---|---|---|\n| MEDIA_SECOND_LABEL_INVALID |  0  | 非法的MediaSecondLabel |\n| MEDIA_SECOND_LABEL_EVENING | 1 | 综艺晚会 |\n| MEDIA_SECOND_LABEL_OTHERS | 2 | 其他 |\n\nMediaMeta.MediaLang\n\n| MediaLang名称 | MediaLang取值 | MediaLang描述 |\n|---|---|---|\n| MEDIA_LANG_INVALID | 0 | 非法的MediaLang |\n| MEDIA_LANG_MANDARIN | 1 | 普通话 |\n| MEDIA_LANG_CANTONESE | 2 | 粤语 | ",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资文件类型，参见MediaPreknownInfo结构体定义",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资素材一级类型，参见MediaPreknownInfo结构体定义",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaLabel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资素材二级类型，参见MediaPreknownInfo结构体定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaSecondLabel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资音频类型，参见MediaPreknownInfo结构体定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaLang",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MultiLevelTag": {
+      "document": "标签信息结构体\n\n包含多级(最多三级)标签结果，以及这些标签在识别结果中的出现位置",
+      "members": [
+        {
+          "default": "",
+          "document": "树状标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "L1Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签在识别结果中的定位信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppearInfo",
+          "name": "AppearInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ShowInfo": {
+      "document": "视频结构化结果",
+      "members": [
+        {
+          "default": "",
+          "document": "节目日期(只在新闻有效)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "台标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东方卫视",
+          "member": "string",
+          "name": "Logo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东方新闻",
+          "member": "string",
+          "name": "Column",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "来源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "东方卫视",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节目封面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example-key",
+          "member": "string",
+          "name": "CoverImageURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节目内容概要列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"全运会召开\",”神舟飞船升空\"]",
+          "member": "string",
+          "name": "SummarySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节目片段标题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"中国共产党第十九届中央委员会第五次全体会议在京召开\"]",
+          "member": "string",
+          "name": "TitleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioInfo",
+          "name": "AudioInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可视文字识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextInfo",
+          "name": "TextInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文本标签列表，包含标签内容和出现信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelTag",
+          "name": "TextTagSet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "帧标签列表，包括人物信息，场景信息等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiLevelTag",
+          "name": "FrameTagSet",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example-key",
+          "member": "string",
+          "name": "WebMediaURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资分类信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"会议\"]",
+          "member": "string",
+          "name": "MediaClassifierSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "概要标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"全运会\"]",
+          "member": "string",
+          "name": "SummaryTagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SortBy": {
+      "document": "排序条件",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段，默认为CreateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true表示降序，false表示升序",
+          "example": "true",
+          "member": "bool",
+          "name": "Descend",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskFilter": {
+      "document": "任务筛选条件结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒资文件类型",
+          "example": "[2]",
+          "member": "int64",
+          "name": "MediaTypeSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待筛选的任务状态列表",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "TaskStatusSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待筛选的任务名称数组",
+          "example": "[\"xx新闻\",\"yy新闻\"]",
+          "member": "string",
+          "name": "TaskNameSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TaskId数组",
+          "example": "[\"xyzabcd\", \"xyz1234\"]",
+          "member": "string",
+          "name": "TaskIdSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资文件名数组",
+          "example": "[\"xx新闻\"]",
+          "member": "string",
+          "name": "MediaNameSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资语言类型",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "MediaLangSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资素材一级类型",
+          "example": "[1,3]",
+          "member": "int64",
+          "name": "MediaLabelSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskInfo": {
+      "document": "任务信息\n\nTaskStatus定义如下:\n\n| TaskStatus名称 | TaskStatus取值 | TaskStatus描述 |\n|---|---|---|\n| TASK_STATUS_INVALID | 0 | 非法的任务状态 |\n| TASK_STATUS_WAITING | 1 | 排队中 |\n| TASK_STATUS_ANALYSING | 2 | 任务分析中 |\n| TASK_STATUS_ANALYSED | 3 | 任务分析完成 |\n| TASK_STATUS_SNAPSHOT_CREATING | 4 | 任务结果快照生成中 |\n| TASK_STATUS_SNAPSHOT_CREATED | 5 | 任务结果快照生成完成 |\n| TASK_STATUS_RESULT_UPLOADING | 6 | 任务结果快照上传中 |\n| TASK_STATUS_RESULT_UPLOADED | 7 | 任务结果快照上传完成 |\n| TASK_STATUS_SUCCESS | 8 | 任务执行完成 |\n| TASK_STATUS_FAILED | 9 | 任务执行失败 |",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "“34567”",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述任务名称，指定后可根据名称筛选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"本地新闻\"",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资文件ID",
+          "example": "\"media-12345678\"",
+          "member": "string",
+          "name": "MediaId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度，范围为[0，100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "75",
+          "member": "float",
+          "name": "TaskProgress",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "TaskTimeCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "TaskCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "TaskStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"分析失败\"",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务执行时指定的先验知识",
+          "example": "无",
+          "member": "MediaPreknownInfo",
+          "name": "MediaPreknownInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"test-video\"",
+          "member": "string",
+          "name": "MediaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TextAppearInfo": {
+      "document": "关键词在文本中的定位信息\n\nPosition为关键词在文本中的偏移量，从0开始。例如，给定文本结果\"欢迎收看新闻三十分”，以及关键词\"新闻三十分\"，那么StartPosition的值为4，EndPosition的值为9",
+      "members": [
+        {
+          "default": "",
+          "document": "文本结果数组中的下标",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键词在文本中出现的起始偏移量(包含)",
+          "example": "10",
+          "member": "int64",
+          "name": "StartPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键词在文本中出现的结束偏移量(不包含)",
+          "example": "13",
+          "member": "int64",
+          "name": "EndPosition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextInfo": {
+      "document": "可视文本识别结果信息(OCR)",
+      "members": [
+        {
+          "default": "",
+          "document": "OCR提取的内容",
+          "example": "\"深圳湾公园启用\"",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OCR起始时间戳，从0开始",
+          "example": "0.52",
+          "member": "float",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OCR结束时间戳，从0开始",
+          "example": "1.52",
+          "member": "float",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "OCR标签信息",
+          "example": "\"新闻\"",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoAppearInfo": {
+      "document": "关键词在视觉结果中的定位信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视觉信息起始时间戳，从0开始",
+          "example": "0.52",
+          "member": "float",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视觉信息终止时间戳，从0开始\n关键词在视觉信息中的区间为[StartTimeStamp, EndTimeStamp)",
+          "example": "1.52",
+          "member": "float",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关键词在视觉信息中的封面图片",
+          "example": "cos://bucket/cover0.jpg",
+          "member": "string",
+          "name": "ImageURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

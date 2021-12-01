@@ -27,7 +27,7 @@
     "CreateDBInstance": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\n&Memory=4\n&Volume=250\n&GoodsNum=1\n&Zone=ap-guangzhou-2\n&VpcId=vpc-0akbol5v\n&SubnetId=subnet-fyrtjbqw\n&ProjectId=0\n&MongoVersion=MONGO_3_WT\n&MachineCode=TGIO\n&NodeNum=3\n&Period=1\n&Password=pwd123456\n&ClusterType=REPLSET\n&ReplicateSetNum=1\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\n&Memory=4\n&Volume=250\n&GoodsNum=1\n&Zone=ap-guangzhou-2\n&VpcId=vpc-0akbol5v\n&SubnetId=subnet-fyrtjbqw\n&ProjectId=0\n&MongoVersion=MONGO_40_WT\n&MachineCode=HIO10G\n&NodeNum=3\n&Period=1\n&Password=pwd123456\n&ClusterType=REPLSET\n&ReplicateSetNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\",\n        \"InstanceIds\": [\n            \"cmgo-po5f899l\"\n        ]\n    }\n}",
         "title": "创建包年包月的云数据库实例"
       }
@@ -35,7 +35,7 @@
     "CreateDBInstanceHour": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\n&Memory=4\n&Volume=250\n&ReplicateSetNum=1\n&NodeNum=2\n&MongoVersion=MONGO_3_WT\n&MachineCode=TGIO\n&GoodsNum=1\n&Zone=ap-guangzhou-3\n&Clone=1\n&ClusterType=REPLSET\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\n&Memory=4\n&Volume=250\n&ReplicateSetNum=1\n&NodeNum=2\n&MongoVersion=MONGO_40_WT\n&MachineCode=HIO10G\n&GoodsNum=1\n&Zone=ap-guangzhou-3\n&Clone=1\n&ClusterType=REPLSET\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c6jsf\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }

@@ -7,6 +7,14 @@
         "output": "{\n    \"Response\": {\n        \"ApmAgent\": {\n            \"CollectorURL\": \"http://127.0.0.1:8080\",\n            \"AgentDownloadURL\": \"https://agent.tapm.tencentyun.com/DownloadAgent\",\n            \"Token\": \"14dac76ca10f4610f727ca68528758b43980251387493706d18988fa7d0621b7\",\n            \"PublicCollectorURL\": \"http://127.0.0.1:8080\",\n            \"InnerCollectorURL\": \"http://127.0.0.1:8080\",\n            \"PrivateLinkCollectorURL\": \"http://127.0.0.1:8080\"\n        },\n        \"RequestId\": \"mzltx5whme-zl7je3p16tk5fwtb7ht61\"\n    }\n}",
         "title": "获取Apm Agent信息"
       }
+    ],
+    "DescribeApmInstances": [
+      {
+        "document": "拉取APM实例列表",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmInstances\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"appid\",\n            \"Value\": \"1231\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Name\": \"测试使用\",\n                \"InstanceId\": \"3bxumb01ul\",\n                \"Description\": \"测试使用\",\n                \"AppId\": 251005942,\n                \"CreateUin\": 1618331756\n            }\n        ],\n        \"RequestId\": \"xxvi8hvszwk2b293tvjzjpezi5hx-gvm\"\n    }\n}",
+        "title": "拉取APM实例列表"
+      }
     ]
   },
   "version": "1.0"

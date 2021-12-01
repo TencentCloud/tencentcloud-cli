@@ -5,6 +5,12 @@
       "input": "DescribeApmAgentRequest",
       "name": "获取Apm Agent信息",
       "output": "DescribeApmAgentResponse"
+    },
+    "DescribeApmInstances": {
+      "document": "APM实例列表拉取",
+      "input": "DescribeApmInstancesRequest",
+      "name": "拉取APM实例列表",
+      "output": "DescribeApmInstancesResponse"
     }
   },
   "metadata": {
@@ -80,6 +86,218 @@
       ],
       "usage": "out"
     },
+    "ApmInstanceDetail": {
+      "document": "apm实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储使用量(MB)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "AmountOfUsedStorage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试Demo",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建人Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12543625",
+          "member": "string",
+          "name": "CreateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该实例已上报的服务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日均上报Span数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "CountOfReportSpanPerDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "AppId信息",
+          "example": "12653698",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Trace数据保存时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "604800",
+          "member": "int64",
+          "name": "TraceDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例上报额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500000",
+          "member": "int64",
+          "name": "SpanDailyCounters",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例是否开通计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BillingInstance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "ErrRateThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采样率阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启错误采样 0  关 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorSample",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "慢调用保存阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "int64",
+          "name": "SlowRequestSavedThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApmTag": {
+      "document": "维度（标签）对象",
+      "members": [
+        {
+          "default": "",
+          "document": "维度Key(列名，标签Key)",
+          "example": "region",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度值（标签值）",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DescribeApmAgentRequest": {
       "document": "DescribeApmAgent请求参数结构体",
       "members": [
@@ -132,6 +350,60 @@
           "name": "ApmAgent",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmInstancesRequest": {
+      "document": "DescribeApmInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Tag列表",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "搜索实例名",
+          "example": "云监控-测试",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmInstancesResponse": {
+      "document": "DescribeApmInstances返回参数结构体",
+      "members": [
+        {
+          "document": "apm实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmInstanceDetail",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {

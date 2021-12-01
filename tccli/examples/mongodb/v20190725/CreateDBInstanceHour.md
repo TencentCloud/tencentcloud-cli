@@ -10,8 +10,8 @@ tccli mongodb CreateDBInstanceHour --cli-unfold-argument  \
     --Volume 250 \
     --ReplicateSetNum 1 \
     --NodeNum 2 \
-    --MongoVersion MONGO_3_WT \
-    --MachineCode TGIO \
+    --MongoVersion MONGO_40_WT \
+    --MachineCode HIO10G \
     --GoodsNum 1 \
     --Zone ap-guangzhou-3 \
     --Clone 1 \

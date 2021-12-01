@@ -1046,62 +1046,6 @@
       ],
       "type": "object"
     },
-    "DataDiskPrice": {
-      "document": "数据盘价格",
-      "members": [
-        {
-          "default": "",
-          "document": "磁盘ID",
-          "example": "lhdisk-f3vgfci1",
-          "member": "string",
-          "name": "DiskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "磁盘单价",
-          "example": "0.8",
-          "member": "float",
-          "name": "OriginalDiskPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "磁盘总价",
-          "example": "0.8",
-          "member": "float",
-          "name": "OriginalPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "折扣",
-          "example": "0.5",
-          "member": "float",
-          "name": "Discount",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "折后总价",
-          "example": "0.4",
-          "member": "float",
-          "name": "DiscountPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "DeleteBlueprintsRequest": {
       "document": "DeleteBlueprints请求参数结构体",
       "members": [
@@ -1795,7 +1739,7 @@
         },
         {
           "default": "",
-          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。",
+          "document": "过滤器列表。\n<li>instance-name</li>按照【实例名称】进行过滤。\n类型：String\n必选：否\n<li>private-ip-address</li>按照【实例主网卡的内网 IP】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否\n<li>instance-state</li>按照【实例状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 InstanceIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3738,16 +3682,6 @@
           "name": "InstancePrice",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "数据盘价格。",
-          "example": "无",
-          "member": "DataDiskPrice",
-          "name": "DataDiskPrices",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         }
       ],

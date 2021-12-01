@@ -618,7 +618,7 @@
         {
           "default": "",
           "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆",
-          "example": "TGIO",
+          "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -879,7 +879,7 @@
         {
           "default": "",
           "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型",
-          "example": "TGIO",
+          "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
           "required": true,

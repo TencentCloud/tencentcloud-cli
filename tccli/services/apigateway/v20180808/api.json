@@ -517,9 +517,9 @@
       "output": "UnbindApiAppResponse"
     },
     "UpdateApiAppKey": {
-      "document": "本接口（UpdateApiAppKey）用于更新应用秘钥。",
+      "document": "本接口（UpdateApiAppKey）用于更新应用密钥。",
       "input": "UpdateApiAppKeyRequest",
-      "name": "更新应用秘钥",
+      "name": "更新应用密钥",
       "output": "UpdateApiAppKeyResponse"
     },
     "UpdateApiKey": {
