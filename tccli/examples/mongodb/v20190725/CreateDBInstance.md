@@ -13,8 +13,8 @@ tccli mongodb CreateDBInstance --cli-unfold-argument  \
     --VpcId vpc-0akbol5v \
     --SubnetId subnet-fyrtjbqw \
     --ProjectId 0 \
-    --MongoVersion MONGO_3_WT \
-    --MachineCode TGIO \
+    --MongoVersion MONGO_40_WT \
+    --MachineCode HIO10G \
     --NodeNum 3 \
     --Period 1 \
     --Password pwd123456 \
