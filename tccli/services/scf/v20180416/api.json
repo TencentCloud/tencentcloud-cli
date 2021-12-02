@@ -120,6 +120,12 @@
       "name": "获取函数预置并发详情",
       "output": "GetProvisionedConcurrencyConfigResponse"
     },
+    "GetRequestStatus": {
+      "document": "该接口根据指定的查询条件返回函数单个请求运行状态。",
+      "input": "GetRequestStatusRequest",
+      "name": "获取函数单个请求运行状态",
+      "output": "GetRequestStatusResponse"
+    },
     "GetReservedConcurrencyConfig": {
       "document": "获取函数的最大独占配额详情。",
       "input": "GetReservedConcurrencyConfigRequest",
@@ -2967,6 +2973,87 @@
       ],
       "type": "object"
     },
+    "GetRequestStatusRequest": {
+      "document": "GetRequestStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "example": "hello",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要查询状态的请求 id",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionRequestId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "函数的所在的命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时",
+          "example": "2017-05-16 20:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的结束时间，例如：2017-05-16 20:59:59，不填默认为当前时间。EndTime 需要晚于 StartTime。",
+          "example": "2017-05-16 20:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRequestStatusResponse": {
+      "document": "GetRequestStatus返回参数结构体",
+      "members": [
+        {
+          "document": "函数运行状态的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "函数运行状态数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RequestStatus",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetReservedConcurrencyConfigRequest": {
       "document": "GetReservedConcurrencyConfig请求参数结构体",
       "members": [
@@ -3182,7 +3269,7 @@
         },
         {
           "default": "",
-          "document": "触发函数的版本号或别名",
+          "document": "触发函数的版本号或别名，默认值为 $LATEST",
           "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
@@ -4681,6 +4768,92 @@
         }
       ],
       "type": "object"
+    },
+    "RequestStatus": {
+      "document": "函数运行状态",
+      "members": [
+        {
+          "default": "",
+          "document": "函数的名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "函数执行完成后的返回值",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RetMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询的请求 id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求开始时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求执行结果， 0 表示执行成功，1表示运行中，-1 表示执行异常。",
+          "example": "0",
+          "member": "int64",
+          "name": "RetCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求运行耗时，单位：ms",
+          "example": "0",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求消耗内存，单位为 MB",
+          "example": "0",
+          "member": "float",
+          "name": "MemUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试次数",
+          "example": "0",
+          "member": "int64",
+          "name": "RetryNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Result": {
       "document": "运行函数的返回",

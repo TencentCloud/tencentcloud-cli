@@ -1647,7 +1647,7 @@
         {
           "default": "",
           "document": "实例所属可用区， 如：ap-guangzhou-3，对应ZoneSet的Zone字段",
-          "example": "100003",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1667,7 +1667,7 @@
         {
           "default": "",
           "document": "私有网络ID",
-          "example": "123123",
+          "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1677,7 +1677,7 @@
         {
           "default": "",
           "document": "子网ID",
-          "example": "1",
+          "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1687,7 +1687,7 @@
         {
           "default": "",
           "document": "实例ID",
-          "example": "postgre-123",
+          "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -1697,7 +1697,7 @@
         {
           "default": "",
           "document": "实例名称",
-          "example": "postgre-123",
+          "example": "xxxx",
           "member": "string",
           "name": "DBInstanceName",
           "required": true,
@@ -1747,7 +1747,7 @@
         {
           "default": "",
           "document": "售卖规格ID",
-          "example": "11",
+          "example": "cdb.pg.ts1.2g",
           "member": "string",
           "name": "DBInstanceClass",
           "required": true,
@@ -1857,7 +1857,7 @@
         {
           "default": "",
           "document": "实例网络连接信息",
-          "example": "1",
+          "example": "无",
           "member": "DBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
           "required": true,
@@ -1867,7 +1867,7 @@
         {
           "default": "",
           "document": "机器类型",
-          "example": "1",
+          "example": "TS85",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1907,7 +1907,7 @@
         {
           "default": "",
           "document": "实例绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "required": true,
@@ -1917,7 +1917,7 @@
         {
           "default": "",
           "document": "主实例信息，仅在实例为只读实例时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "postgre-123",
+          "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "MasterDBInstanceId",
           "required": true,
@@ -1966,8 +1966,8 @@
         },
         {
           "default": "",
-          "document": "实例网络信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "实例网络信息列表（此字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NetworkAccess",
           "name": "NetworkAccessList",
           "required": true,
@@ -1983,6 +1983,7 @@
         {
           "default": "",
           "document": "DNS域名",
+          "example": "cd-postgres-xxxxxxxx.sql.tencentcdb.com",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -1992,6 +1993,7 @@
         {
           "default": "",
           "document": "IP地址",
+          "example": "111.111.11.11",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -2001,6 +2003,7 @@
         {
           "default": "",
           "document": "连接Port地址",
+          "example": "5432",
           "member": "uint64",
           "name": "Port",
           "required": true,
@@ -2010,6 +2013,7 @@
         {
           "default": "",
           "document": "网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；",
+          "example": "private",
           "member": "string",
           "name": "NetType",
           "required": true,
@@ -2018,12 +2022,33 @@
         },
         {
           "default": "",
-          "document": "网络连接状态",
+          "document": "网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；",
+          "example": "opened",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4343,11 +4368,11 @@
       "type": "object"
     },
     "NetworkAccess": {
-      "document": "网络相关信息。",
+      "document": "网络相关信息。（该数据结构已废弃，网络相关信息使用DBInstanceNetInfo）",
       "members": [
         {
           "default": "",
-          "document": "网络资源id，实例id或RO组id(此字段已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络资源id，实例id或RO组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
@@ -4357,7 +4382,7 @@
         },
         {
           "default": "",
-          "document": "资源类型，1-实例 2-RO组(此字段已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型，1-实例 2-RO组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ResourceType",
@@ -5147,7 +5172,7 @@
         },
         {
           "default": "",
-          "document": "只读组网络信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读组网络信息列表（此字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "NetworkAccess",
           "name": "NetworkAccessList",

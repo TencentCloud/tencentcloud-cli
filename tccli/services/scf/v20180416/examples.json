@@ -160,6 +160,14 @@
         "title": "获取函数预置并发详情"
       }
     ],
+    "GetRequestStatus": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetRequestStatus\n&FunctionName=<FunctionName>\n&FunctionRequestId=<FunctionRequestId>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"MemUsage\": 0.0,\n                \"RetCode\": 0,\n                \"RetMsg\": \"xx\",\n                \"RequestId\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Duration\": 0.0,\n                \"RetryNum\": 0,\n                \"FunctionName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取函数运行状态"
+      }
+    ],
     "GetReservedConcurrencyConfig": [
       {
         "document": "",

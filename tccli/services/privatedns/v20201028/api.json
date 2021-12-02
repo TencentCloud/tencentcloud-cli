@@ -161,7 +161,7 @@
           "example": "testname",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
