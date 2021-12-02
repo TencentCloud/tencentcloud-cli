@@ -1225,7 +1225,7 @@
         },
         {
           "default": "",
-          "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
+          "document": "认证状态：未实名审核:NotUpload, 实名审核中:InAudit，已实名审核:Approved，实名审核失败:Reject，更新手机邮箱:NotVerified。",
           "example": "InAudit",
           "member": "string",
           "name": "Status",

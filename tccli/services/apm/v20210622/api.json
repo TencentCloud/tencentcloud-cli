@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateApmInstance": {
+      "document": "业务购买APM实例，调用该接口创建",
+      "input": "CreateApmInstanceRequest",
+      "name": "创建Apm实例",
+      "output": "CreateApmInstanceResponse"
+    },
     "DescribeApmAgent": {
       "document": "获取Apm Agent信息",
       "input": "DescribeApmAgentRequest",
@@ -297,6 +303,78 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateApmInstanceRequest": {
+      "document": "CreateApmInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "云监控-测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Trace数据保存时长",
+          "example": "604800",
+          "member": "int64",
+          "name": "TraceDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例上报额度值",
+          "example": "100000000",
+          "member": "uint64",
+          "name": "SpanDailyCounters",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApmInstanceResponse": {
+      "document": "CreateApmInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Lcmm7a3kl",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeApmAgentRequest": {
       "document": "DescribeApmAgent请求参数结构体",

@@ -1619,6 +1619,24 @@
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
+          "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+          "member": "string",
+          "name": "OutputCOSBucketUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
+          "example": "aa/bb/cc",
+          "member": "string",
+          "name": "OutputCOSKeyPrefix",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1897,6 +1915,24 @@
           "example": "root",
           "member": "string",
           "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
+          "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+          "member": "string",
+          "name": "OutputCOSBucketUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
+          "example": "aa/bb/cc",
+          "member": "string",
+          "name": "OutputCOSKeyPrefix",
           "required": false,
           "type": "string"
         }
@@ -2212,6 +2248,24 @@
           "example": "root",
           "member": "string",
           "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定日志上传的cos bucket 地址，必须以https开头，如 https://BucketName-123454321.cos.ap-beijing.myqcloud.com。",
+          "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+          "member": "string",
+          "name": "OutputCOSBucketUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定日志在cos bucket中的目录，目录命名有如下规则：\n1. 可用数字、中英文和可见字符的组合，长度最多为60。\n2. 用 / 分割路径，可快速创建子目录。\n3. 不允许连续 / ；不允许以 / 开头；不允许以..作为文件夹名称。",
+          "example": "aa/bb/cc",
+          "member": "string",
+          "name": "OutputCOSKeyPrefix",
           "required": false,
           "type": "string"
         }

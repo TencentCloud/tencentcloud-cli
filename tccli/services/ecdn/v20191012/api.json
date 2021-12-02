@@ -91,7 +91,7 @@
       "output": "StopEcdnDomainResponse"
     },
     "UpdateDomainConfig": {
-      "document": "本接口（UpdateDomainConfig）用于更新ECDN加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值。建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。",
+      "document": "本接口（UpdateDomainConfig）用于更新ECDN加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值。建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41116\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。\n",
       "input": "UpdateDomainConfigRequest",
       "name": "更新域名配置",
       "output": "UpdateDomainConfigResponse"
@@ -2242,6 +2242,7 @@
         {
           "default": "",
           "document": "域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -2250,6 +2251,7 @@
         {
           "default": "",
           "document": "源站配置。",
+          "example": "无",
           "member": "Origin",
           "name": "Origin",
           "required": false,
@@ -2258,6 +2260,7 @@
         {
           "default": "",
           "document": "项目id。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2266,6 +2269,7 @@
         {
           "default": "",
           "document": "IP黑白名单配置。",
+          "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
@@ -2274,6 +2278,7 @@
         {
           "default": "",
           "document": "IP限频配置。",
+          "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
@@ -2282,6 +2287,7 @@
         {
           "default": "",
           "document": "源站响应头部配置。",
+          "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
@@ -2290,6 +2296,7 @@
         {
           "default": "",
           "document": "节点缓存配置。",
+          "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
@@ -2298,6 +2305,7 @@
         {
           "default": "",
           "document": "缓存规则配置。",
+          "example": "无",
           "member": "Cache",
           "name": "Cache",
           "required": false,
@@ -2306,6 +2314,7 @@
         {
           "default": "",
           "document": "Https配置。",
+          "example": "无",
           "member": "Https",
           "name": "Https",
           "required": false,
@@ -2314,6 +2323,7 @@
         {
           "default": "",
           "document": "访问协议强制跳转配置。",
+          "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
@@ -2322,6 +2332,7 @@
         {
           "default": "",
           "document": "域名加速区域，mainland，overseas或global，分别表示中国境内加速，海外加速或全球加速。",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -2330,6 +2341,7 @@
         {
           "default": "",
           "document": "WebSocket配置",
+          "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
           "required": false,

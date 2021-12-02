@@ -3424,6 +3424,7 @@
         {
           "default": "",
           "document": "要删除的域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -3432,6 +3433,7 @@
         {
           "default": "",
           "document": "类型。0-推流，1-播放",
+          "example": "0",
           "member": "uint64",
           "name": "DomainType",
           "required": true,

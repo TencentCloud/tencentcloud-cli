@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateApmInstance": [
+      {
+        "document": "创建APM实例",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApmInstance\n<公共请求参数>\n\n{\n    \"Name\": \"云监控-测试\",\n    \"Description\": \"测试环境\",\n    \"Tags\": [\n        {\n            \"Key\": \"appid\",\n            \"Value\": \"123123422\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"sSBebnOhf\",\n        \"RequestId\": \"49fktc24elkfi4a1mkyir-9t2pt2stlx\"\n    }\n}",
+        "title": "创建APM实例"
+      }
+    ],
     "DescribeApmAgent": [
       {
         "document": "",

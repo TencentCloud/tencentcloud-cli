@@ -25,7 +25,7 @@
       "output": "CreateLinkResponse"
     },
     "CreateProject": {
-      "document": "创建云剪项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>",
+      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推。</li>",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse"
@@ -49,7 +49,7 @@
       "output": "DeleteClassResponse"
     },
     "DeleteLoginStatus": {
-      "document": "删除用户登录态，使用户登出云剪平台。",
+      "document": "删除用户登录态，使用户登出多媒体创作引擎平台。",
       "input": "DeleteLoginStatusRequest",
       "name": "删除登录态",
       "output": "DeleteLoginStatusResponse"
@@ -217,7 +217,7 @@
       "output": "HandleStreamConnectProjectResponse"
     },
     "ImportMaterial": {
-      "document": "将云点播媒资文件导入到云剪媒体资源库。支持导入媒体归属团队或者个人。",
+      "document": "将云点播媒资文件导入到多媒体创作引擎媒体资源库。支持导入媒体归属团队或者个人。",
       "input": "ImportMaterialRequest",
       "name": "导入媒体",
       "output": "ImportMaterialResponse"
@@ -543,7 +543,7 @@
         },
         {
           "default": "",
-          "document": "音频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp3`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>",
+          "document": "音频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填多媒体创作引擎媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp3`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>",
           "example": "1000000:www.qq.com/a.mp4",
           "member": "string",
           "name": "SourceMedia",
@@ -623,7 +623,7 @@
       "usage": "both"
     },
     "CMEExportInfo": {
-      "document": "云剪导出信息。",
+      "document": "多媒体创作引擎导出信息。",
       "members": [
         {
           "default": "",
@@ -1347,6 +1347,7 @@
         {
           "default": "",
           "document": "平台名称，指定访问的平台。",
+          "example": "test",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1355,6 +1356,7 @@
         {
           "default": "",
           "document": "用户 Id 列表，N 从 0 开始取值，最大 19。",
+          "example": "[\"111\\r\\n\"]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -2773,7 +2775,7 @@
         },
         {
           "default": "",
-          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创建引擎，即导出到多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -2809,7 +2811,7 @@
         },
         {
           "default": "",
-          "document": "导出的云剪媒体信息。当导出目标为 CME 时必填。",
+          "document": "导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
           "name": "CMEExportInfo",
@@ -2890,7 +2892,7 @@
         },
         {
           "default": "",
-          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -2908,7 +2910,7 @@
         },
         {
           "default": "",
-          "document": "导出的云剪媒资信息。当导出目标为 CME 时必填。",
+          "document": "导出的多媒体创作引擎媒资信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
           "name": "CMEExportInfo",
@@ -3007,7 +3009,7 @@
         },
         {
           "default": "",
-          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：云剪，即导出为云剪媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在云剪媒资库将不可见。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "VOD",
           "member": "string",
           "name": "ExportDestination",
@@ -3016,7 +3018,7 @@
         },
         {
           "default": "",
-          "document": "导出的云剪媒体信息。当导出目标为 CME 时必填。",
+          "document": "导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
           "name": "CMEExportInfo",
@@ -3097,7 +3099,7 @@
         },
         {
           "default": "",
-          "document": "导出目标。\n<li>CME：云剪，即导出为云剪媒体；</li>\n<li>VOD：云点播，即导出为云点播媒资。</li>",
+          "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "CME",
           "member": "string",
           "name": "ExportDestination",
@@ -3115,7 +3117,7 @@
         },
         {
           "default": "",
-          "document": "导出的云剪媒体信息。当导出目标为 CME 时必填。",
+          "document": "导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。",
           "example": "无",
           "member": "CMEExportInfo",
           "name": "CMEExportInfo",
@@ -3606,7 +3608,7 @@
         },
         {
           "default": "",
-          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建云剪平台时使用的云点播子应用一致。",
+          "document": "导入媒资类型，取值：\n<li>VOD：云点播文件；</li>\n<li>EXTERNAL：媒资绑定。</li>\n\n注意：如果不填默认为云点播文件，如果媒体存储在非腾讯云点播中，都需要使用媒资绑定。另外，导入云点播的文件，使用云点播的子应用 Id 必须与创建多媒体创作引擎平台时使用的云点播子应用一致。",
           "example": "VOD",
           "member": "string",
           "name": "SourceType",
@@ -5675,7 +5677,7 @@
       "type": "object"
     },
     "RtmpPushInputInfo": {
-      "document": "直播推流信息，包括推流地址有效时长，云剪后端生成直播推流地址。",
+      "document": "直播推流信息，包括推流地址有效时长，多媒体创作引擎后端生成直播推流地址。",
       "members": [
         {
           "default": "",
@@ -5689,7 +5691,7 @@
         },
         {
           "default": "",
-          "document": "直播推流地址，入参不填默认由云剪生成。",
+          "document": "直播推流地址，入参不填默认由多媒体创作引擎生成。",
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
           "member": "string",
           "name": "PushUrl",
@@ -6688,7 +6690,7 @@
       "members": [
         {
           "default": "",
-          "document": "导出的云剪素材 MaterialId，仅当导出为云剪素材时有效。",
+          "document": "导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。",
           "example": "无",
           "member": "string",
           "name": "MaterialId",
@@ -7000,7 +7002,7 @@
       "members": [
         {
           "default": "",
-          "document": "封装格式，可选值：\n<li>mp4 </li>\n<li>mov </li>\n不填则默认使用导出模板中的值。",
+          "document": "封装格式，可选值：\n<li>mp4 </li>\n<li>mov </li>\n不填则使用视频导出编码配置。",
           "example": "mp4",
           "member": "string",
           "name": "Container",
@@ -7010,7 +7012,7 @@
         },
         {
           "default": "",
-          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例如：项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>\n不填则默认使用导出模板中对的值。",
+          "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例如：项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>\n不填则使用视频导出编码配置。",
           "example": "1080",
           "member": "uint64",
           "name": "ShortEdge",
@@ -7020,7 +7022,7 @@
         },
         {
           "default": "",
-          "document": "指定码率，单位 bps。当该参数为 0 时则不强制限定码率。\n不填则默认使用导出模板中的值。",
+          "document": "指定码率，单位 bps。当该参数为 0 时则不强制限定码率。\n不填则使用视频导出编码配置。",
           "example": "0",
           "member": "uint64",
           "name": "VideoBitrate",
@@ -7030,7 +7032,17 @@
         },
         {
           "default": "",
-          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则默认使用导出模板中对的值。",
+          "document": "帧率。取值范围：[15, 60]，不填默认值为 25。",
+          "example": "0",
+          "member": "float",
+          "name": "FrameRate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
           "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
@@ -7040,7 +7052,7 @@
         },
         {
           "default": "",
-          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则默认使用导出模板中对的值。",
+          "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
           "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
@@ -7241,7 +7253,7 @@
         },
         {
           "default": "",
-          "document": "视频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填云剪媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>",
+          "document": "视频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填多媒体创作引擎媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "SourceMedia",
