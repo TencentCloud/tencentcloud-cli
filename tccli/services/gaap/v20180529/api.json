@@ -4294,6 +4294,15 @@
           "name": "Granularity",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "运营商（通道为三网通道时有效），支持CMCC，CUCC，CTCC，传空值或不传则合并三个运营商数据",
+          "example": "CMCC",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8681,6 +8690,7 @@
         {
           "default": "",
           "document": "对应的时间点",
+          "example": "0",
           "member": "uint64",
           "name": "Time",
           "required": true,
@@ -8690,6 +8700,7 @@
         {
           "default": "",
           "document": "统计数据值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
           "member": "float",
           "name": "Data",
           "required": true,

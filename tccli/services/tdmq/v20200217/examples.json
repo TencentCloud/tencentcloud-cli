@@ -368,6 +368,14 @@
         "title": "获取Amqp Vhost列表"
       }
     ],
+    "DescribeAllTenants": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllTenants\n<公共请求参数>\n\n{\n    \"ClusterName\": \"xx\",\n    \"TenantName\": \"xx\",\n    \"Limit\": 0,\n    \"SortBy\": \"xx\",\n    \"Offset\": 0,\n    \"TenantId\": \"xx\",\n    \"Types\": [\n        \"xx\"\n    ],\n    \"SortOrder\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Tenants\": [\n            {\n                \"MaxRetention\": 1,\n                \"MaxDispatchTps\": 1,\n                \"UpdateTime\": 1,\n                \"MaxTopics\": 0,\n                \"ClusterName\": \"xx\",\n                \"MaxMsgBacklogSize\": 1,\n                \"UsedTopics\": 0,\n                \"CustomerUin\": \"xx\",\n                \"UsedNamespaces\": 0,\n                \"MaxNamespaces\": 0,\n                \"UsedPartitions\": 0,\n                \"CustomerAppId\": \"xx\",\n                \"TenantName\": \"xx\",\n                \"MaxPartitions\": 0,\n                \"TenantId\": \"xx\",\n                \"Type\": \"xx\",\n                \"CreateTime\": 1,\n                \"MaxPublishTps\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运营端获取虚拟集群列表"
+      }
+    ],
     "DescribeBindClusters": [
       {
         "document": "",
@@ -500,7 +508,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQCluster\n&ClusterId=rocketmq-rd3545bkkj49\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d158b6-89b2-40d1-b1f6-5973f0f00cd5\",\n        \"ClusterInfo\": {},\n        \"ClusterConfig\": {},\n        \"ClusterStats\": {}\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d158b6-89b2-40d1-b1f6-5973f0f00cd5\",\n        \"ClusterInfo\": {\n            \"ClusterId\": \"rocketmq-rd3545bkkj49\",\n            \"ClusterName\": \"test-example\",\n            \"Region\": \"ap-beijing\",\n            \"CreateTime\": 1620321019000,\n            \"Remark\": \"modified\",\n            \"PublicEndPoint\": \"pulsar://xxxxx.com:6650\",\n            \"VpcEndPoint\": \"pulsar://xxxxx.com:6650\"\n        },\n        \"ClusterConfig\": {\n            \"MaxTpsPerNamespace\": 8000,\n            \"UsedNamespaceNum\": 1,\n            \"MaxTopicNum\": 1000,\n            \"UsedTopicNum\": 2,\n            \"MaxGroupNum\": 10000,\n            \"UsedGroupNum\": 1,\n            \"MaxRetentionTime\": 1296000000,\n            \"MaxLatencyTime\": 3456000000,\n            \"MaxNamespaceNum\": 10\n        },\n        \"ClusterStats\": {\n            \"TopicNum\": 2,\n            \"ProducedMsgNum\": 0,\n            \"ConsumedMsgNum\": 0,\n            \"AccumulativeMsgNum\": 0\n        }\n    }\n}",
         "title": "huo"
       }
     ],
@@ -508,7 +516,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQClusters\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1faeceb2-eaa9-407e-bd9a-d3eff76ca882\",\n        \"TotalCount\": 1,\n        \"ClusterList\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1faeceb2-eaa9-407e-bd9a-d3eff76ca882\",\n        \"TotalCount\": 1,\n        \"ClusterList\": [\n            {\n                \"Info\": {\n                    \"ClusterId\": \"rocketmq-xxxx1\",\n                    \"ClusterName\": \"test\",\n                    \"Region\": \"ap-beijing\",\n                    \"CreateTime\": 1620321019000,\n                    \"Remark\": \"字符串\",\n                    \"PublicEndPoint\": \"pulsar://rocketmq-xxxx1.xxxx.com:5678\",\n                    \"VpcEndPoint\": \"pulsar://rocketmq-xxxx1.xxxx.com:5678\"\n                },\n                \"Config\": {\n                    \"MaxTpsPerNamespace\": 8000,\n                    \"UsedNamespaceNum\": 1,\n                    \"MaxTopicNum\": 1000,\n                    \"UsedTopicNum\": 2,\n                    \"MaxGroupNum\": 10000,\n                    \"UsedGroupNum\": 1,\n                    \"MaxRetentionTime\": 1296000000,\n                    \"MaxLatencyTime\": 3456000000,\n                    \"MaxNamespaceNum\": 10\n                }\n            }\n        ]\n    }\n}",
         "title": "获取用户创建的集群信息列表"
       }
     ],
@@ -516,7 +524,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQGroups\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c127300-fcdd-4087-b1d2-fd75a1cefbe4\",\n        \"TotalCount\": 1,\n        \"Groups\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c127300-fcdd-4087-b1d2-fd75a1cefbe4\",\n        \"TotalCount\": 1,\n        \"Groups\": [\n            {\n                \"Name\": \"group-example\",\n                \"ConsumerNum\": 0,\n                \"TotalAccumulative\": 0,\n                \"ConsumptionMode\": -1,\n                \"BroadcastEnabled\": false,\n                \"ReadEnabled\": true,\n                \"RetryPartitionNum\": 0,\n                \"CreateTime\": 1621307489000,\n                \"UpdateTime\": 1621307706000,\n                \"ClientProtocol\": \"TCP\",\n                \"Remark\": \"modified\",\n                \"ConsumerType\": \"\",\n                \"TPS\": 0\n            }\n        ]\n    }\n}",
         "title": "查询订阅组列表"
       }
     ],
@@ -524,7 +532,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeRocketMQNamespaces\n&ClusterId=rocketmq-rd3545bkkj49\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d4c4cd-9e03-4574-88bb-98b5115334ac\",\n        \"TotalCount\": 1,\n        \"Namespaces\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d4c4cd-9e03-4574-88bb-98b5115334ac\",\n        \"TotalCount\": 1,\n        \"Namespaces\": [\n            {\n                \"NamespaceId\": \"test\",\n                \"Ttl\": 60000,\n                \"RetentionTime\": 100000,\n                \"Remark\": \"字符串\"\n            }\n        ]\n    }\n}",
         "title": "获取用户命名空间列表"
       }
     ],
@@ -532,7 +540,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQTopics\n&Offset=0\n&Limit=10\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c017c4d1-13cb-4f14-ab89-2c6530892f90\",\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c017c4d1-13cb-4f14-ab89-2c6530892f90\",\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"Name\": \"example-topic\",\n                \"Remark\": \"modified\",\n                \"PartitionNum\": 3,\n                \"CreateTime\": 1621308465000,\n                \"UpdateTime\": 1621308657000\n            }\n        ]\n    }\n}",
         "title": "获取主题列表"
       }
     ],

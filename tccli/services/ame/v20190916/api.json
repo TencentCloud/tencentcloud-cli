@@ -1940,6 +1940,7 @@
         {
           "default": "",
           "document": "订单id",
+          "example": "空字符串",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -1949,6 +1950,7 @@
         {
           "default": "",
           "document": "歌曲名",
+          "example": "空字符串",
           "member": "string",
           "name": "TrackName",
           "required": true,
@@ -1958,6 +1960,7 @@
         {
           "default": "",
           "document": "歌曲ID",
+          "example": "空字符串",
           "member": "string",
           "name": "ItemID",
           "required": true,
@@ -1967,6 +1970,7 @@
         {
           "default": "",
           "document": "专辑图片",
+          "example": "空字符串",
           "member": "string",
           "name": "Img",
           "required": true,
@@ -1976,6 +1980,7 @@
         {
           "default": "",
           "document": "歌手名",
+          "example": "空字符串",
           "member": "string",
           "name": "ArtistName",
           "required": true,
@@ -1985,6 +1990,7 @@
         {
           "default": "",
           "document": "歌曲时长",
+          "example": "空字符串",
           "member": "string",
           "name": "Duration",
           "required": true,
@@ -1994,10 +2000,21 @@
         {
           "default": "",
           "document": "授权区域，global: 全球 CN: 中国",
+          "example": "空字符串",
           "member": "string",
           "name": "AuthorizedArea",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签数组",
+          "example": "空数组",
+          "member": "string",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -1773,6 +1773,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "1=控制台校验，2=第三方校验",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

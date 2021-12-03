@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticSummary\n<公共请求参数>\n\n{\n    \"Date\": \"2020-12-09\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RecordingDevice\": 3,\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"StorageUsage\": 1.22,\n        \"NonRecordingDevice\": 1,\n        \"WatchFlux\": 2.21,\n        \"P2PFluxTotal\": 1.2,\n        \"P2PPeakValue\": 2.4\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordingDevice\": 3,\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"StorageUsage\": 1.22,\n        \"NonRecordingDevice\": 1,\n        \"WatchFlux\": 2.21,\n        \"P2PFluxTotal\": 1.2,\n        \"P2PPeakValue\": 2.4,\n        \"LivePushTotal\": 5\n    }\n}",
         "title": "查询统计指标概览数据"
       }
     ],
@@ -210,7 +210,7 @@
       {
         "document": "根据时间获取回放文件列表(云端录制用)",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoList\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99870353841320000007_99870353841320000007\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"StartTime\": 1616660711,\n    \"EndTime\": 1616661017\n}",
-        "output": "{\n    \"Response\": {\n        \"VideoList\": {\n            \"EventId\": 1,\n            \"VideoUrl\": \"xx\",\n            \"RecordTaskId\": \"xx\",\n            \"StartTime\": 1616661013,\n            \"RecordStatus\": 0,\n            \"RecordPlanId\": \"xx\",\n            \"EndTime\": 1616661314\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RecordList\": [\n            {\n                \"EventId\": 0,\n                \"VideoUrl\": \"xx\",\n                \"RecordTaskId\": \"xx\",\n                \"StartTime\": 0,\n                \"RecordStatus\": 0,\n                \"RecordPlanId\": \"xx\",\n                \"EndTime\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VideoList\": {\n            \"EventId\": 1,\n            \"VideoUrl\": \"xx\",\n            \"RecordTaskId\": \"xx\",\n            \"SceneId\": 1,\n            \"StartTime\": 1616661013,\n            \"RecordStatus\": 0,\n            \"RecordPlanId\": \"xx\",\n            \"EndTime\": 1616661314,\n            \"WarnId\": 0\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"RecordList\": [\n            {\n                \"EventId\": 0,\n                \"VideoUrl\": \"xx\",\n                \"RecordTaskId\": \"xx\",\n                \"SceneId\": 1,\n                \"StartTime\": 0,\n                \"RecordStatus\": 0,\n                \"RecordPlanId\": \"xx\",\n                \"EndTime\": 0,\n                \"WarnId\": 1\n            }\n        ]\n    }\n}",
         "title": "根据时间获取回放文件列表(云端录制用)"
       }
     ],

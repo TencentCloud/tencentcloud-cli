@@ -19,7 +19,8 @@ Output:
         "NonRecordingDevice": 1,
         "WatchFlux": 2.21,
         "P2PFluxTotal": 1.2,
-        "P2PPeakValue": 2.4
+        "P2PPeakValue": 2.4,
+        "LivePushTotal": 5
     }
 }
 ```
