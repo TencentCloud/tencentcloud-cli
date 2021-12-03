@@ -14,7 +14,8 @@ tccli iotvideo CreateProduct --cli-unfold-argument  \
     --ProductVaildYears 1 \
     --ChipManufactureId x86 \
     --ChipOs linux \
-    --EncryptionType 2
+    --EncryptionType 2 \
+    --NetType wifi
 ```
 
 Output: 
@@ -34,7 +35,8 @@ Output:
             "CreateTime": 1612216201,
             "Features": [
                 "test1"
-            ]
+            ],
+            "NetType": "wifi"
         },
         "RequestId": "055cdcffeed5"
     }

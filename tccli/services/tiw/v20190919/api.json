@@ -2756,7 +2756,8 @@
       "members": [
         {
           "default": "",
-          "document": "实时录制结果里白板视频宽，默认为1280",
+          "document": "实时录制结果里白板视频宽，取值必须大于等于2，默认为1280",
+          "example": "1280",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -2765,7 +2766,8 @@
         },
         {
           "default": "",
-          "document": "实时录制结果里白板视频高，默认为960",
+          "document": "实时录制结果里白板视频高，取值必须大于等于2，默认为960",
+          "example": "960",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -2775,6 +2777,7 @@
         {
           "default": "",
           "document": "白板初始化参数，透传到白板 SDK",
+          "example": "无",
           "member": "string",
           "name": "InitParam",
           "required": false,

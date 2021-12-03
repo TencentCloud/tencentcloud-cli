@@ -21,10 +21,12 @@ Output:
             "EventId": 1,
             "VideoUrl": "xx",
             "RecordTaskId": "xx",
+            "SceneId": 1,
             "StartTime": 1616661013,
             "RecordStatus": 0,
             "RecordPlanId": "xx",
-            "EndTime": 1616661314
+            "EndTime": 1616661314,
+            "WarnId": 0
         },
         "TotalCount": 1,
         "RequestId": "xx",
@@ -33,10 +35,12 @@ Output:
                 "EventId": 0,
                 "VideoUrl": "xx",
                 "RecordTaskId": "xx",
+                "SceneId": 1,
                 "StartTime": 0,
                 "RecordStatus": 0,
                 "RecordPlanId": "xx",
-                "EndTime": 0
+                "EndTime": 0,
+                "WarnId": 1
             }
         ]
     }

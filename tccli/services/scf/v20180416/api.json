@@ -5625,6 +5625,15 @@
         },
         {
           "default": "",
+          "document": "是否自动安装依赖",
+          "example": "FALSE",
+          "member": "string",
+          "name": "InstallDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "函数所属环境",
           "example": "<函数所属环境>",
           "member": "string",

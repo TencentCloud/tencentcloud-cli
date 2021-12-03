@@ -476,7 +476,7 @@
         },
         {
           "default": "",
-          "document": "|控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)\n| Offset  | uint  |否|拖动播放时的时间偏移量（相对于起始时间）,单位：秒",
+          "document": "|控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)\n| Offset  | uint  |否|拖动播放时的时间偏移量（相对于起始时间）,单位：秒\n目前支持的command：\n\"Command\": \"{\"Action\":\"PAUSE\"}\" 暂停\n\"Command\": \"{\"Action\":\"PLAY\"}\" 暂停恢复\n\"Command\": \"{\"Action\":\"PLAY\",\"Offset\":\"15\"}\" 位置偏移，可以替代jump操作",
           "example": "{\\\"Action\\\":\\\"pause\\\"}",
           "member": "string",
           "name": "Command",
@@ -1626,7 +1626,7 @@
         },
         {
           "default": "",
-          "document": "统计项。取值范围：\n1.录制设备数：RecordingDevice\n2.非录制设备数：NonRecordingDevice\n3.观看流量总数：WatchFlux\n4.已用存储容量总数：StorageUsage\n5. X-P2P分享流量: P2PFluxTotal\n6. X-P2P峰值带宽: P2PPeakValue",
+          "document": "统计项。取值范围：\n1.录制设备数：RecordingDevice\n2.非录制设备数：NonRecordingDevice\n3.观看流量总数：WatchFlux\n4.已用存储容量总数：StorageUsage\n5. X-P2P分享流量: P2PFluxTotal\n6. X-P2P峰值带宽: P2PPeakValue\n7. RTMP推流路数(直播推流): LivePushTotal",
           "example": "StorageUsage",
           "member": "string",
           "name": "StatisticField",
@@ -1727,6 +1727,15 @@
           "name": "P2PPeakValue",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "RTMP推流路数 ( 直播推流)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "LivePushTotal",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -1938,6 +1947,42 @@
           "name": "ChannelId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "planidyyysssdd",
+          "member": "string",
+          "name": "PlanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "3445",
+          "member": "int64",
+          "name": "SceneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "告警ID",
+          "example": "34455",
+          "member": "int64",
+          "name": "WarnId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录制类型 1: 联动计划录制 2: 告警录制",
+          "example": "[1]",
+          "member": "int64",
+          "name": "RecordType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
