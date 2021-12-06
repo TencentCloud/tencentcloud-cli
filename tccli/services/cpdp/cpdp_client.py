@@ -15,6 +15,54 @@ from tencentcloud.cpdp.v20190820 import models as models_v20190820
 from jmespath import search
 import time
 
+def doQueryAssignment(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryAssignmentRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.QueryAssignment(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDistributeAccreditQuery(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -63,7 +111,7 @@ def doDistributeAccreditQuery(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryMerchantClassification(args, parsed_globals):
+def doModifyAgentTaxPaymentInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -88,11 +136,11 @@ def doQueryMerchantClassification(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryMerchantClassificationRequest()
+    model = models.ModifyAgentTaxPaymentInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryMerchantClassification(model)
+        rsp = client.ModifyAgentTaxPaymentInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -927,7 +975,7 @@ def doAddShop(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyAgentTaxPaymentInfo(args, parsed_globals):
+def doQueryMerchantClassification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -952,11 +1000,11 @@ def doModifyAgentTaxPaymentInfo(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyAgentTaxPaymentInfoRequest()
+    model = models.QueryMerchantClassificationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyAgentTaxPaymentInfo(model)
+        rsp = client.QueryMerchantClassification(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1341,6 +1389,54 @@ def doQuerySinglePaymentResult(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.QuerySinglePaymentResult(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeduceQuota(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeduceQuotaRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeduceQuota(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2127,7 +2223,7 @@ def doQueryContractRelateShop(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckAmount(args, parsed_globals):
+def doQueryInvoiceV2(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2152,11 +2248,11 @@ def doCheckAmount(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckAmountRequest()
+    model = models.QueryInvoiceV2Request()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CheckAmount(model)
+        rsp = client.QueryInvoiceV2(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2943,7 +3039,7 @@ def doQueryAnchorContractInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryInvoiceV2(args, parsed_globals):
+def doCheckAmount(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2968,11 +3064,11 @@ def doQueryInvoiceV2(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryInvoiceV2Request()
+    model = models.CheckAmountRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryInvoiceV2(model)
+        rsp = client.CheckAmount(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6458,8 +6554,9 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "QueryAssignment": doQueryAssignment,
     "DistributeAccreditQuery": doDistributeAccreditQuery,
-    "QueryMerchantClassification": doQueryMerchantClassification,
+    "ModifyAgentTaxPaymentInfo": doModifyAgentTaxPaymentInfo,
     "ModifyMntMbrBindRelateAcctBankCode": doModifyMntMbrBindRelateAcctBankCode,
     "CreateBatchPayment": doCreateBatchPayment,
     "ViewMerchant": doViewMerchant,
@@ -6477,7 +6574,7 @@ ACTION_MAP = {
     "QueryTrade": doQueryTrade,
     "QueryTransferDetail": doQueryTransferDetail,
     "AddShop": doAddShop,
-    "ModifyAgentTaxPaymentInfo": doModifyAgentTaxPaymentInfo,
+    "QueryMerchantClassification": doQueryMerchantClassification,
     "ApplyApplicationMaterial": doApplyApplicationMaterial,
     "CreateTransferBatch": doCreateTransferBatch,
     "CreateInvoiceV2": doCreateInvoiceV2,
@@ -6486,6 +6583,7 @@ ACTION_MAP = {
     "UnbindRelateAcct": doUnbindRelateAcct,
     "ContractOrder": doContractOrder,
     "QuerySinglePaymentResult": doQuerySinglePaymentResult,
+    "DeduceQuota": doDeduceQuota,
     "UploadTaxPayment": doUploadTaxPayment,
     "QueryMemberBind": doQueryMemberBind,
     "RefundTlinxOrder": doRefundTlinxOrder,
@@ -6502,7 +6600,7 @@ ACTION_MAP = {
     "UnBindAcct": doUnBindAcct,
     "ConfirmOrder": doConfirmOrder,
     "QueryContractRelateShop": doQueryContractRelateShop,
-    "CheckAmount": doCheckAmount,
+    "QueryInvoiceV2": doQueryInvoiceV2,
     "QueryTransferResult": doQueryTransferResult,
     "CreateAnchor": doCreateAnchor,
     "QueryOutwardOrder": doQueryOutwardOrder,
@@ -6519,7 +6617,7 @@ ACTION_MAP = {
     "SyncContractData": doSyncContractData,
     "ViewContract": doViewContract,
     "QueryAnchorContractInfo": doQueryAnchorContractInfo,
-    "QueryInvoiceV2": doQueryInvoiceV2,
+    "CheckAmount": doCheckAmount,
     "BindAcct": doBindAcct,
     "BindRelateAcctSmallAmount": doBindRelateAcctSmallAmount,
     "CreateOrder": doCreateOrder,

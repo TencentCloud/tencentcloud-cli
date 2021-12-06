@@ -210,6 +210,12 @@
       "name": "智慧薪酬-发起批量转账",
       "output": "CreateTransferBatchResponse"
     },
+    "DeduceQuota": {
+      "document": "直播平台-扣减额度",
+      "input": "DeduceQuotaRequest",
+      "name": "直播平台-扣减额度",
+      "output": "DeduceQuotaResponse"
+    },
     "DeleteAgentTaxPaymentInfo": {
       "document": "直播平台-删除代理商完税信息",
       "input": "DeleteAgentTaxPaymentInfoRequest",
@@ -383,6 +389,12 @@
       "input": "QueryApplicationMaterialRequest",
       "name": "跨境-成功申报材料查询",
       "output": "QueryApplicationMaterialResponse"
+    },
+    "QueryAssignment": {
+      "document": "直播平台-查询分配关系",
+      "input": "QueryAssignmentRequest",
+      "name": "直播平台-查询分配关系",
+      "output": "QueryAssignmentResponse"
     },
     "QueryBalance": {
       "document": "子商户余额查询",
@@ -3445,6 +3457,52 @@
         }
       ],
       "type": "object"
+    },
+    "AssignmentData": {
+      "document": "分配关系",
+      "members": [
+        {
+          "default": "",
+          "document": "主播ID",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主播名称",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理商ID",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理商名称",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BankCardItem": {
       "document": "绑卡列表",
@@ -8688,6 +8746,78 @@
       ],
       "type": "object"
     },
+    "DeduceQuotaRequest": {
+      "document": "DeduceQuota请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播ID",
+          "example": "Anchor123",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "提现金额，单位为\"分\"",
+          "example": "100",
+          "member": "int64",
+          "name": "Amount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "外部业务订单号",
+          "example": "OrderId123",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeduceQuotaResponse": {
+      "document": "DeduceQuota返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssignmentData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAgentTaxPaymentInfoRequest": {
       "document": "DeleteAgentTaxPaymentInfo请求参数结构体",
       "members": [
@@ -12922,6 +13052,60 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAssignmentRequest": {
+      "document": "QueryAssignment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主播ID",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAssignmentResponse": {
+      "document": "QueryAssignment返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。响应成功：\"SUCCESS\"，其他为不成功。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "响应消息",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssignmentData",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -30,6 +30,12 @@
       "name": "删除坐席信息",
       "output": "DeleteStaffResponse"
     },
+    "DescribeCCCBuyInfoList": {
+      "document": "获取用户购买信息列表",
+      "input": "DescribeCCCBuyInfoListRequest",
+      "name": "获取用户购买信息列表",
+      "output": "DescribeCCCBuyInfoListResponse"
+    },
     "DescribeCallInMetrics": {
       "document": "获取呼入实时数据统计指标",
       "input": "DescribeCallInMetricsRequest",
@@ -541,6 +547,60 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCCBuyInfoListRequest": {
+      "document": "DescribeCCCBuyInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID列表，不传时查询所有应用",
+          "example": "[1400000,14000001]",
+          "member": "int64",
+          "name": "SdkAppIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCCBuyInfoListResponse": {
+      "document": "DescribeCCCBuyInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "应用总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用购买信息列表",
+          "example": "[]",
+          "member": "SdkAppIdBuyInfo",
+          "name": "SdkAppIdBuyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "套餐包购买信息列表",
+          "example": "[]",
+          "member": "PackageBuyInfo",
+          "name": "PackageBuyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1866,6 +1926,194 @@
       ],
       "usage": "out"
     },
+    "PackageBuyInfo": {
+      "document": "套餐包购买信息",
+      "members": [
+        {
+          "default": "",
+          "document": "套餐包Id",
+          "example": "1001",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包类型，0-外呼套餐包|1-400呼入套餐包",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包总量",
+          "example": "10000",
+          "member": "int64",
+          "name": "CapacitySize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐包剩余量",
+          "example": "143",
+          "member": "int64",
+          "name": "CapacityRemain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间戳",
+          "example": "1630000000",
+          "member": "int64",
+          "name": "BuyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截至时间戳",
+          "example": "1640000000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PhoneNumBuyInfo": {
+      "document": "号码购买信息",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码",
+          "example": "008602112345678",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "号码类型，0-固话|1-虚商号码|2-运营商号码|3-400号码",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "号码呼叫类型，1-呼入|2-呼出|3-呼入呼出",
+          "example": "2",
+          "member": "int64",
+          "name": "CallType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间戳",
+          "example": "1630000000",
+          "member": "int64",
+          "name": "BuyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截至时间戳",
+          "example": "1640000000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "号码状态，1正常|2停用",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SdkAppIdBuyInfo": {
+      "document": "应用购买信息",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称",
+          "example": "Test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席购买数（还在有效期内）",
+          "example": "10",
+          "member": "int64",
+          "name": "StaffBuyNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐席购买列表 （还在有效期内）",
+          "example": "[]",
+          "member": "StaffBuyInfo",
+          "name": "StaffBuyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "号码购买列表",
+          "example": "[]",
+          "member": "PhoneNumBuyInfo",
+          "name": "PhoneNumBuyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeatUserInfo": {
       "document": "坐席用户信息",
       "members": [
@@ -2225,6 +2473,42 @@
           "name": "Type",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StaffBuyInfo": {
+      "document": "坐席购买信息",
+      "members": [
+        {
+          "default": "",
+          "document": "购买坐席数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "购买时间戳",
+          "example": "163000000",
+          "member": "int64",
+          "name": "BuyTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截至时间戳",
+          "example": "164000000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
