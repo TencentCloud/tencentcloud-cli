@@ -388,6 +388,14 @@
         "title": "启用规则"
       }
     ],
+    "GenSingleDeviceSignatureOfPublic": [
+      {
+        "document": "生成单个设备绑定的签名,  一般用于APP绑定设备",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenSingleDeviceSignatureOfPublic\n<公共请求参数>\n\n{\n    \"DeviceName\": \"dev001\",\n    \"Expire\": 86400,\n    \"ProductId\": \"H4EAI7TIZR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceSignature\": {\n            \"DeviceName\": \"dev001\",\n            \"DeviceSignature\": \"fbaba57679644f29adee486528644a5a\"\n        },\n        \"RequestId\": \"8bbbaa15-9918-4fd9-a70c-dbb47deac0ca\"\n    }\n}",
+        "title": "生成单个设备绑定的签名"
+      }
+    ],
     "GetBatchProductionsList": [
       {
         "document": "",

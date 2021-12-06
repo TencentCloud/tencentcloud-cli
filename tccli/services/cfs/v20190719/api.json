@@ -1599,6 +1599,7 @@
         {
           "default": "",
           "document": "标签键",
+          "example": "xx",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -1608,6 +1609,7 @@
         {
           "default": "",
           "document": "标签值",
+          "example": "xx",
           "member": "string",
           "name": "TagValue",
           "required": true,

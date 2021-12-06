@@ -286,6 +286,14 @@
         "title": "发起批量转账错误返回示例"
       }
     ],
+    "DeduceQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeduceQuota\n<公共请求参数>\n\n{\n    \"AnchorId\": \"100180419\",\n    \"Amount\": 2323,\n    \"OrderId\": \"o1232518\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"Result\": {\n            \"AnchorName\": \"主播名称\",\n            \"AgentId\": \"AgentId\",\n            \"AnchorId\": \"100180419\",\n            \"AgentName\": \"代理商名称\"\n        },\n        \"ErrMsg\": \"成功\",\n        \"RequestId\": \"123123\"\n    }\n}",
+        "title": "DeduceQuota"
+      }
+    ],
     "DeleteAgentTaxPaymentInfo": [
       {
         "document": "",
@@ -516,6 +524,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryApplicationMaterial\n&DeclareId=dcldid201911230011\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"66ff21b9-caad-466b-9173-c9ec8c99ca61\",\n        \"Result\": {\n            \"Data\": {\n                \"Status\": null,\n                \"DeclareId\": \"dcldid201911230011\",\n                \"OriginalDeclareId\": null,\n                \"PayerId\": \"qyfkr201911230004\",\n                \"SourceCurrency\": \"CNY\",\n                \"SourceAmount\": \"10.00\",\n                \"MerchantId\": \"202002270000054004\",\n                \"TradeCode\": \"223010\",\n                \"TargetAmount\": null,\n                \"TargetCurrency\": \"USD\",\n                \"TransactionId\": \"trasid201911230011\"\n            },\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryApplicationMaterial"
+      }
+    ],
+    "QueryAssignment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryAssignment\n<公共请求参数>\n\n{\n    \"AnchorId\": \"100180419\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"Result\": {\n            \"AnchorName\": \"主播名称\",\n            \"AgentId\": \"AgentId\",\n            \"AnchorId\": \"100180419\",\n            \"AgentName\": \"代理商名称\"\n        },\n        \"ErrMsg\": \"成功\",\n        \"RequestId\": \"123123\"\n    }\n}",
+        "title": "QueryAssignment"
       }
     ],
     "QueryBalance": [

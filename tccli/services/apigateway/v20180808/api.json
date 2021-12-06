@@ -3310,6 +3310,42 @@
           "name": "ServiceScfFunctionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用类型。",
+          "example": "Client",
+          "member": "string",
+          "name": "EIAMAppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。",
+          "example": "Authorization",
+          "member": "string",
+          "name": "EIAMAuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用Token 有效时间，单位为秒，默认为7200秒。",
+          "example": "7200",
+          "member": "int64",
+          "name": "TokenTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EIAMAppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

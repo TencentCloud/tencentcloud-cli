@@ -264,6 +264,12 @@
       "name": "启用规则",
       "output": "EnableTopicRuleResponse"
     },
+    "GenSingleDeviceSignatureOfPublic": {
+      "document": "无",
+      "input": "GenSingleDeviceSignatureOfPublicRequest",
+      "name": "生成单个设备绑定的签名",
+      "output": "GenSingleDeviceSignatureOfPublicResponse"
+    },
     "GetBatchProductionsList": {
       "document": "列出量产数据列表信息。",
       "input": "GetBatchProductionsListRequest",
@@ -3311,6 +3317,30 @@
       ],
       "usage": "out"
     },
+    "DeviceSignatureInfo": {
+      "document": "设备签名",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备签名",
+          "member": "string",
+          "name": "DeviceSignature",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DevicesItem": {
       "document": "ProductId -> DeviceName",
       "members": [
@@ -3785,6 +3815,60 @@
         }
       ],
       "usage": "out"
+    },
+    "GenSingleDeviceSignatureOfPublicRequest": {
+      "document": "GenSingleDeviceSignatureOfPublic请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属的产品ID",
+          "example": "H4EAI7TIZR",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要绑定的设备",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）",
+          "example": "-1",
+          "member": "int64",
+          "name": "Expire",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenSingleDeviceSignatureOfPublicResponse": {
+      "document": "GenSingleDeviceSignatureOfPublic返回参数结构体",
+      "members": [
+        {
+          "document": "设备签名",
+          "example": "无",
+          "member": "DeviceSignatureInfo",
+          "name": "DeviceSignature",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetBatchProductionsListRequest": {
       "document": "GetBatchProductionsList请求参数结构体",

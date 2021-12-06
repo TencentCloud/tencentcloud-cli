@@ -40,6 +40,14 @@
         "title": "删除坐席信息示例"
       }
     ],
+    "DescribeCCCBuyInfoList": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=DescribeCCCBuyInfoList\n&SdkAppIds.0=1400000000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 602,\n        \"SdkAppIdBuyList\": [\n            {\n                \"SdkAppId\": 1400000000,\n                \"Name\": \"xiao\",\n                \"StaffBuyNum\": 2,\n                \"StaffBuyList\": [\n                    {\n                        \"Num\": 50,\n                        \"BuyTime\": 1613988825,\n                        \"EndTime\": 1623988825\n                    },\n                    {\n                        \"Num\": 10,\n                        \"BuyTime\": 1623988825,\n                        \"EndTime\": 1624988825\n                    }\n                ],\n                \"PhoneNumBuyList\": [\n                    {\n                        \"PhoneNum\": \"86020111111\",\n                        \"Type\": 1,\n                        \"CallType\": 1,\n                        \"State\": 1,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825\n                    },\n                    {\n                        \"PhoneNum\": \"86020111112\",\n                        \"Type\": 1,\n                        \"CallType\": 1,\n                        \"State\": 1,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825\n                    }\n                ]\n            }\n        ],\n        \"PackageBuyList\": [\n            {\n                \"PackageId\": \"1001\",\n                \"Type\": 1,\n                \"CapacitySize\": 10000,\n                \"CapacityRemain\": 189,\n                \"EndTime\": 1623988825,\n                \"BuyTime\": 1613988825\n            },\n            {\n                \"PackageId\": \"2001\",\n                \"Type\": 1,\n                \"CapacitySize\": 10000,\n                \"CapacityRemain\": 189,\n                \"EndTime\": 1623988825,\n                \"BuyTime\": 1613988825\n            }\n        ]\n    }\n}",
+        "title": "获取用户购买信息列表示例"
+      }
+    ],
     "DescribeCallInMetrics": [
       {
         "document": "",
