@@ -2486,6 +2486,7 @@
         {
           "default": "",
           "document": "Service名，需要转发访问的接口名",
+          "example": "ModifyEnv",
           "member": "string",
           "name": "Service",
           "required": true,
@@ -2494,8 +2495,18 @@
         {
           "default": "",
           "document": "需要转发的云API参数，要转成JSON格式",
+          "example": "{}",
           "member": "string",
           "name": "JSONData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定角色",
+          "example": "d",
+          "member": "string",
+          "name": "ApiRole",
           "required": false,
           "type": "string"
         }
@@ -2507,8 +2518,10 @@
       "members": [
         {
           "document": "json格式response",
+          "example": "d",
           "member": "string",
           "name": "JSONResp",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

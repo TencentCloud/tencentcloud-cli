@@ -208,6 +208,24 @@
           "name": "TaskManagerSpec",
           "required": false,
           "type": "float"
+        },
+        {
+          "default": "",
+          "document": "CLS日志集ID",
+          "example": "xx",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLS日志主题ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1264,6 +1282,26 @@
           "name": "TaskManagerSpec",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CLS日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

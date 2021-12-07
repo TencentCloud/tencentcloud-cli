@@ -2620,7 +2620,7 @@
       "members": [
         {
           "default": "",
-          "document": "<br><li> name\n\n按照【告警策略名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmId\n\n按照【告警策略ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【监控对象的日志主题ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> enable\n\n按照【启用状态】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<br><li> name\n\n按照【告警策略名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmId\n\n按照【告警策略ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【监控对象的日志主题ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> enable\n\n按照【启用状态】进行过滤。\n\n类型：String\n\n备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

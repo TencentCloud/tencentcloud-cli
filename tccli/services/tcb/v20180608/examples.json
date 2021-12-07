@@ -19,8 +19,8 @@
     "CommonServiceAPI": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=CommonServiceAPI\r\n&Service=ModifyEnv\r\n&JSONData={}\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "input": "https://tcb.tencentcloudapi.com/?Action=CommonServiceAPI\n&Service=ModifyEnv\n&JSONData={}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JSONResp\": \"\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "示例"
       }
     ],

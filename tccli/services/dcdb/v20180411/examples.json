@@ -91,8 +91,8 @@
     "DescribeDBLogFiles": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBLogFiles\r\n&InstanceId=dcdbt-2t4cf98d\r\n&ShardId=shard-gdqcdn39\r\n&Type=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"Length\": 5253724,\n                \"Mtime\": 1468822981,\n                \"Uri\": \"/1/noshard_108/group_1520844319_37793941/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272/1/shard-5ps4rppj/set_1516333432_6\"\n            }\n        ],\n        \"InstanceId\": \"dcdbt-2t4cf98d\",\n        \"ShardId\": \"shard-gdqcdn39\",\n        \"NormalPrefix\": \"http://10.66.255.253:8083\",\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"Total\": 1,\n        \"Type\": 1,\n        \"VpcPrefix\": \"http://169.254.0.27:8083\"\n    }\n}",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBLogFiles\n&InstanceId=dcdbt-2t4cf98d\n&ShardId=shard-gdqcdn39\n&Type=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Files\": [\n            {\n                \"FileName\": \"cos_xtrabackup+1638332007+20211201+121327+2830373251+xbstream.lz4\",\n                \"Length\": 5253724,\n                \"Mtime\": 1468822981,\n                \"Uri\": \"/1/noshard_108/group_1520844319_37793941/1468578832/859932065/000001/5ce7d1a8f26c2dfcf1de22d4e9792b11b0b0057450684d266e1bf9a8aa6ea272/1/shard-5ps4rppj/set_1516333432_6\"\n            }\n        ],\n        \"InstanceId\": \"dcdbt-2t4cf98d\",\n        \"ShardId\": \"shard-gdqcdn39\",\n        \"NormalPrefix\": \"http://10.66.255.253:8083\",\n        \"RequestId\": \"7212a9ec-a235-2144-98d4-59fbe6f14d79\",\n        \"Total\": 1,\n        \"Type\": 1,\n        \"VpcPrefix\": \"http://169.254.0.27:8083\"\n    }\n}",
         "title": "获取日志列表"
       }
     ],
