@@ -2589,6 +2589,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-2t4cf98d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2597,6 +2598,7 @@
         {
           "default": "",
           "document": "分片 ID，形如：shard-7noic7tv",
+          "example": "shard-gdqcdn39",
           "member": "string",
           "name": "ShardId",
           "required": true,
@@ -2605,6 +2607,7 @@
         {
           "default": "",
           "document": "请求日志类型，取值只能为1、2、3或者4。1-binlog，2-冷备，3-errlog，4-slowlog。",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -2618,50 +2621,64 @@
       "members": [
         {
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-2t4cf98d",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "请求日志类型。1-binlog，2-冷备，3-errlog，4-slowlog。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求日志总数",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "日志文件列表",
+          "example": "无",
           "member": "LogFileInfo",
           "name": "Files",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "如果是VPC网络的实例，做用本前缀加上URI为下载地址",
+          "example": "http://169.254.0.27:8083",
           "member": "string",
           "name": "VpcPrefix",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "如果是普通网络的实例，做用本前缀加上URI为下载地址",
+          "example": "http://10.66.255.253:8083",
           "member": "string",
           "name": "NormalPrefix",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "分片 ID，形如：shard-7noic7tv",
+          "example": "shard-gdqcdn39",
           "member": "string",
           "name": "ShardId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

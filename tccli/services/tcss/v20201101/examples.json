@@ -1,0 +1,1393 @@
+{
+  "actions": {
+    "AddAssetImageRegistryRegistryDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"Name\": \"xx\",\n    \"Url\": \"xx\",\n    \"RegistryVersion\": \"xx\",\n    \"RegistryRegion\": \"xx\",\n    \"NetType\": \"xx\",\n    \"Password\": \"xx\",\n    \"RegistryType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"NameRepeatErr\": \"xx\",\n        \"HealthCheckErr\": \"xx\",\n        \"RegistryId\": 4\n    }\n}",
+        "title": "新增单个镜像仓库详细信息"
+      }
+    ],
+    "AddCompliancePolicyItemToWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCompliancePolicyItemToWhitelist\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemIdSet\": [\n        10001,\n        10002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "忽略检测项列表"
+      }
+    ],
+    "AddEditAbnormalProcessRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditAbnormalProcessRule\n&RuleInfo.IsEnable=true\n&RuleInfo.ImageIds.0=xxxx\n&RuleInfo.ChildRules.0.RuleMode=RULE_MODE_RELEASE\n&RuleInfo.ChildRules.0.ProcessPath=xxxx\n&RuleInfo.RuleName=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "添加规则"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditAbnormalProcessRule\n&RuleInfo.IsEnable=true\n&RuleInfo.ImageIds.0=xxxx\n&RuleInfo.ChildRules.0.RuleMode=RULE_MODE_RELEASE\n&RuleInfo.ChildRules.0.ProcessPath=xxxx\n&RuleInfo.ChildRules.0.RuleId=xxx\n&RuleInfo.RuleName=xxxx\n&RuleInfo.RuleId=6038e07298dab13d32bc34ec\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "编辑规则"
+      }
+    ],
+    "AddEditAccessControlRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditAccessControlRule\n&RuleInfo.IsEnable=true\n&RuleInfo.ImageIds.0=xxxx\n&RuleInfo.ChildRules.0.RuleMode=RULE_MODE_RELEASE\n&RuleInfo.ChildRules.0.ProcessPath=xxxx\n&RuleInfo.ChildRules.0.TargetFilePath=xxxx\n&RuleInfo.RuleName=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "添加规则"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditAccessControlRule\n&RuleInfo.IsEnable=true\n&RuleInfo.ImageIds.0=xxxx\n&RuleInfo.ChildRules.0.RuleMode=RULE_MODE_RELEASE\n&RuleInfo.ChildRules.0.ProcessPath=xxxx\n&RuleInfo.ChildRules.0.TargetFilePath=xxxx\n&RuleInfo.ChildRules.0.RuleId=xxx\n&RuleInfo.RuleName=xxxx\n&RuleInfo.RuleId=6038e07298dab13d32bc34ec\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "编辑规则"
+      }
+    ],
+    "AddEditReverseShellWhiteList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditReverseShellWhiteList\n&WhiteListInfo.DstIp=xxx\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.DstPort=12345\n&WhiteListInfo.ProcessName=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "添加反弹shell白名单"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditReverseShellWhiteList\n&WhiteListInfo.DstIp=xxxx\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.DstPort=12345\n&WhiteListInfo.ProcessName=xxx\n&WhiteListInfo.Id=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "编辑白名单"
+      }
+    ],
+    "AddEditRiskSyscallWhiteList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditRiskSyscallWhiteList\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.SyscallNames.0=chroot\n&WhiteListInfo.ProcessPath=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "添加高危系统调用白名单"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditRiskSyscallWhiteList\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.SyscallNames.0=chroot\n&WhiteListInfo.ProcessPath=xxx\n&WhiteListInfo.Id=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "编辑高危系统调用白名单"
+      }
+    ],
+    "AddEditWarningRules": [
+      {
+        "document": "保存告警策略",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditWarningRules\n&WarningRules.0.Type=IMG_VUL\n&WarningRules.0.Switch=ON\n&WarningRules.0.BeginTime=20:00\n&WarningRules.0.EndTime=10:00\n&WarningRules.0.ControlBits=111\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "保存告警策略"
+      }
+    ],
+    "CheckRepeatAssetImageRegistry": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CheckRepeatAssetImageRegistry\n&Name=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"IsRepeat\": true\n    }\n}",
+        "title": "检查单个镜像仓库名是否重复"
+      }
+    ],
+    "CreateAssetImageRegistryScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageRegistryScanTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68d5d49c-4b6b-46af-b060-46f521db0400\"\n    }\n}",
+        "title": "镜像仓库创建镜像扫描任务"
+      }
+    ],
+    "CreateAssetImageRegistryScanTaskOneKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageRegistryScanTaskOneKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68d5d49c-4b6b-46af-b060-46f521db0400\"\n    }\n}",
+        "title": "镜像仓库创建镜像一键扫描任务"
+      }
+    ],
+    "CreateAssetImageScanSetting": [
+      {
+        "document": "添加容器安全镜像扫描设置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageScanSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"ScanTime\": \"2020-12-28 15:53:26\",\n    \"ScanPeriod\": 3600,\n    \"ScanVirus\": true,\n    \"ScanRisk\": true,\n    \"ScanVul\": true,\n    \"All\": true,\n    \"Images\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af170769-a009-4c51-879a-8fe182ace76e\"\n    }\n}",
+        "title": "添加容器安全镜像扫描设置"
+      }
+    ],
+    "CreateAssetImageScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageScanTask \n<公共请求参数>\n\n{\n    \"ScanVirus\": true,\n    \"ScanRisk\": true,\n    \"ScanVul\": true,\n    \"All\": true,\n    \"Images\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6d8d540-940f-47d9-8d7f-daac832ba5b4\",\n        \"TaskID\": \"6013a6c334b9a9000cf519be\"\n    }\n}",
+        "title": "创建镜像扫描任务"
+      }
+    ],
+    "CreateCheckComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCheckComponent\n<公共请求参数>\n\n{\n    \"ClusterInfoList\": [\n        {\n            \"ClusterId\": \"cls-0zmsjvko\",\n            \"ClusterRegion\": \"ap-guangzho\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feb3881a-be8a-4f43-a485-fa1af264c2cc\",\n        \"InstallResult\": \"InstallSucc\"\n    }\n}",
+        "title": "安装检查组件示例"
+      }
+    ],
+    "CreateClusterCheckTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterCheckTask\n<公共请求参数>\n\n{\n    \"ClusterCheckTaskList\": [\n        {\n            \"ClusterId\": \"cls-0zmsjvko\",\n            \"ClusterRegion\": \"ap-guangzho\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f19fd113-9288-4f1c-9236-9f59828763a9\",\n        \"TaskId\": 32401,\n        \"CreateResult\": \"Succ\"\n    }\n}",
+        "title": "创建集群扫描任务示例"
+      }
+    ],
+    "CreateComplianceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateComplianceTask\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINER\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 12345\n    }\n}",
+        "title": "创建合规检查任务"
+      }
+    ],
+    "CreateExportComplianceStatusListJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportComplianceStatusListJob\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\",\n    \"ExportByAsset\": false,\n    \"ExportAll\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"JobId\": \"xxxx\"\n    }\n}",
+        "title": "创建一个导出安全合规信息的任务"
+      }
+    ],
+    "CreateOrModifyPostPayCores": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=CreateOrModifyPostPayCores\n&CoresCnt=500\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建或者编辑弹性计费上限"
+      }
+    ],
+    "CreateRefreshTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRefreshTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"CreateResult\": \"Succ\"\n    }\n}",
+        "title": "创建刷新任务示例"
+      }
+    ],
+    "CreateVirusScanAgain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVirusScanAgain\n<公共请求参数>\n\n{\n    \"TaskId\": \"\",\n    \"ContainerIds\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "运行时文件查杀重新检测"
+      }
+    ],
+    "CreateVirusScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVirusScanTask\n<公共请求参数>\n\n{\n    \"ScanRangeAll\": true,\n    \"ScanPathAll\": true,\n    \"ScanRangeType\": 1,\n    \"Timeout\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6d8d540-940f-47d9-8d7f-daac832ba5b4\",\n        \"TaskID\": \"6013a6c334b9a9000cf519be\"\n    }\n}",
+        "title": "运行时文件查杀一键扫描"
+      }
+    ],
+    "DeleteAbnormalProcessRules": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteAbnormalProcessRules\n&RuleIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行异常进程策略"
+      }
+    ],
+    "DeleteAccessControlRules": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteAccessControlRules\n&RuleIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行时访问控制策略"
+      }
+    ],
+    "DeleteCompliancePolicyItemFromWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCompliancePolicyItemFromWhitelist\n<公共请求参数>\n\n{\n    \"WhitelistIdSet\": [\n        10001,\n        10002\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "取消忽略检测项列表"
+      }
+    ],
+    "DeleteReverseShellWhiteLists": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteReverseShellWhiteLists\n&WhiteListIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行时反弹shell白名单"
+      }
+    ],
+    "DeleteRiskSyscallWhiteLists": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DeleteRiskSyscallWhiteLists\n&WhiteListIdSet.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除运行时高危系统调用白名单"
+      }
+    ],
+    "DescribeAbnormalProcessDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessDetail\n&EventId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"Remark\": \"xx\",\n            \"MatchRule\": {\n                \"ProcessPath\": \"xx\",\n                \"RuleMode\": \"xx\",\n                \"RuleId\": \"xx\"\n            },\n            \"Description\": \"xx\",\n            \"RuleId\": \"xx\",\n            \"Solution\": \"xx\",\n            \"RuleName\": \"xx\"\n        },\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventType\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"NodeName\": \"xx\",\n            \"LatestFoundTime\": \"xx\",\n            \"EventCount\": 0\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ParentProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时异常进程事件详细信息"
+      }
+    ],
+    "DescribeAbnormalProcessEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessEvents\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"Status\": \"xx\",\n                \"ProcessPath\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"MatchRuleName\": \"xx\",\n                \"EventType\": \"xx\",\n                \"MatchAction\": \"xx\",\n                \"MatchProcessPath\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"Solution\": \"xx\",\n                \"FoundTime\": \"2020-09-22 00:00:00\",\n                \"ImageId\": \"xx\",\n                \"MatchRuleId\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"Behavior\": \"xx\",\n                \"Id\": \"xx\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"EventCount\": 0,\n                \"RuleExist\": true,\n                \"Description\": \"xx\",\n                \"RuleId\": \"xxxx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时异常进程列表"
+      }
+    ],
+    "DescribeAbnormalProcessEventsExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时异常进程事件列表信息导出"
+      }
+    ],
+    "DescribeAbnormalProcessRuleDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&RuleId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045892534b9a9000c4ae5ba\",\n            \"IsEnable\": true,\n            \"RuleName\": \"9999\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"6020e81134b9a9000c50b56a\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/bin/ptest\"\n                },\n                {\n                    \"RuleId\": \"60212ddd98dab16785dfeab2\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/ps\"\n                },\n                {\n                    \"RuleId\": \"6021472934b9a9000c358fa3\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/top\"\n                },\n                {\n                    \"RuleId\": \"602f603d34b9a9000cb2b405\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/tail\"\n                },\n                {\n                    \"RuleId\": \"60326e4434b9a9000c0897a8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/busybox\"\n                },\n                {\n                    \"RuleId\": \"60337df034b9a9000c2240c8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/sss\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
+        "title": "根据规则ID查询规则详情（用户策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&ImageId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045892534b9a9000c4ae5ba\",\n            \"IsEnable\": true,\n            \"RuleName\": \"9999\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"6020e81134b9a9000c50b56a\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/bin/ptest\"\n                },\n                {\n                    \"RuleId\": \"60212ddd98dab16785dfeab2\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/ps\"\n                },\n                {\n                    \"RuleId\": \"6021472934b9a9000c358fa3\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/top\"\n                },\n                {\n                    \"RuleId\": \"602f603d34b9a9000cb2b405\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/tail\"\n                },\n                {\n                    \"RuleId\": \"60326e4434b9a9000c0897a8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/busybox\"\n                },\n                {\n                    \"RuleId\": \"60337df034b9a9000c2240c8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/sss\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&RuleId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6048403bd620f3f9012c521d\",\n            \"IsEnable\": true,\n            \"RuleName\": \"系统策略\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"100000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"PROXY_TOOL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"TRANSFER_CONTROL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ATTACK_CMD\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000004\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"REVERSE_SHELL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000005\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"FILELESS\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000006\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"RISK_CMD\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000007\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ABNORMAL_CHILD_PROC\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
+        "title": "根据规则ID查询规则详情（系统策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&ImageId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6048403bd620f3f9012c521d\",\n            \"IsEnable\": true,\n            \"RuleName\": \"系统策略\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"100000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"PROXY_TOOL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"TRANSFER_CONTROL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ATTACK_CMD\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000004\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"REVERSE_SHELL\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000005\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"FILELESS\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000006\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"RISK_CMD\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000007\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ABNORMAL_CHILD_PROC\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（系统策略）"
+      }
+    ],
+    "DescribeAbnormalProcessRules": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRules\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RuleSet\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"IsEnable\": true,\n                \"RuleId\": \"xx\",\n                \"EffectImageCount\": 1,\n                \"EditUserName\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"IsDefault\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时异常进程策略列表"
+      }
+    ],
+    "DescribeAbnormalProcessRulesExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRulesExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时异常进程策略列表信息导出"
+      }
+    ],
+    "DescribeAccessControlDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlDetail\n&EventId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"Remark\": \"xx\",\n            \"MatchRule\": {\n                \"ProcessPath\": \"xx\",\n                \"RuleMode\": \"xx\",\n                \"TargetFilePath\": \"xx\",\n                \"RuleId\": \"xx\"\n            },\n            \"Description\": \"xx\",\n            \"RuleId\": \"xx\",\n            \"Solution\": \"xx\",\n            \"RuleName\": \"xx\"\n        },\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventType\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"EventCount\": 0,\n            \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"NodeName\": \"xx\"\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"TamperedFileInfo\": {\n            \"FileCreateTime\": \"2020-09-22 00:00:00\",\n            \"LatestTamperedFileMTime\": \"2020-09-22 00:00:00\",\n            \"FileType\": \"xx\",\n            \"FileName\": \"xx\",\n            \"FileSize\": 1,\n            \"FilePath\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时访问控制事件详细信息"
+      }
+    ],
+    "DescribeAccessControlEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlEvents\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"Status\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"MatchRuleName\": \"xx\",\n                \"EventType\": \"xx\",\n                \"MatchAction\": \"xx\",\n                \"FilePath\": \"xx\",\n                \"Solution\": \"xx\",\n                \"FoundTime\": \"2020-09-22 00:00:00\",\n                \"FileName\": \"xx\",\n                \"ProcessName\": \"xx\",\n                \"MatchProcessPath\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"Behavior\": \"xx\",\n                \"MatchRuleId\": \"xx\",\n                \"ImageId\": \"xx\",\n                \"MatchFilePath\": \"xx\",\n                \"Id\": \"xx\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"EventCount\": 0,\n                \"RuleExist\": true,\n                \"Description\": \"xx\",\n                \"RuleId\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时访问控制事件列表"
+      }
+    ],
+    "DescribeAccessControlEventsExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时访问控制事件列表导出"
+      }
+    ],
+    "DescribeAccessControlRuleDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&RuleId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045899634b9a9000c4ae5bb\",\n            \"IsEnable\": true,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"603279ba34b9a9000c0897ae\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.txt\"\n                },\n                {\n                    \"RuleId\": \"60327a7b34b9a9000c0897af\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test2.txt\"\n                },\n                {\n                    \"RuleId\": \"6033081234b9a9000c0897b0\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/coreutils\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60337e1034b9a9000c2240c9\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60361e8234b9a9000cf7a3ee\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"603772d334b9a9000cd92ae8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/iv\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"6045899634b9a9000c4ae5bc\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"/1.txt\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
+        "title": "根据规则ID查询规则详情（用户策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&ImageId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045899634b9a9000c4ae5bb\",\n            \"IsEnable\": true,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"603279ba34b9a9000c0897ae\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.txt\"\n                },\n                {\n                    \"RuleId\": \"60327a7b34b9a9000c0897af\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test2.txt\"\n                },\n                {\n                    \"RuleId\": \"6033081234b9a9000c0897b0\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/coreutils\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60337e1034b9a9000c2240c9\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60361e8234b9a9000cf7a3ee\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"603772d334b9a9000cd92ae8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/iv\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"6045899634b9a9000c4ae5bc\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"/1.txt\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&RuleId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"60484042d620f3f9012c521e\",\n            \"IsEnable\": true,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"200000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_CRONTAB\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_SYS_BIN\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_USRCFG\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
+        "title": "根据规则ID查询规则详情（系统策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&RuleId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"60484042d620f3f9012c521e\",\n            \"IsEnable\": true,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"200000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_CRONTAB\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_SYS_BIN\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_USRCFG\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（系统策略）"
+      }
+    ],
+    "DescribeAccessControlRules": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRules\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RuleSet\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"IsEnable\": true,\n                \"RuleId\": \"xx\",\n                \"EffectImageCount\": 1,\n                \"EditUserName\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"IsDefault\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时访问控制策略列表"
+      }
+    ],
+    "DescribeAccessControlRulesExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRulesExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时访问控制策略列表导出"
+      }
+    ],
+    "DescribeAffectedClusterCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedClusterCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dba27bfb-5260-4ddd-8661-848c6820f3e0\",\n        \"SeriousRiskClusterCount\": 0,\n        \"HighRiskClusterCount\": 2,\n        \"MiddleRiskClusterCount\": 1,\n        \"HintRiskClusterCount\": 1\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeAffectedNodeList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedNodeList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"CheckItemId\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2cf3a82-f75e-49f3-b2ea-d1f9172062db\",\n        \"TotalCount\": 6,\n        \"AffectedNodeList\": [\n            {\n                \"ClusterId\": \"cls-0zmsjvko\",\n                \"ClusterName\": \"wk独立集群\",\n                \"InstanceId\": \"ins-afynf7mw\",\n                \"PrivateIpAddresses\": \"10.0.2.7\",\n                \"InstanceRole\": \"WORKER\",\n                \"ClusterVersion\": \"1.18.4\",\n                \"ContainerRuntime\": \"docker\",\n                \"Region\": \"ap-guangzhou\",\n                \"VerifyInfo\": \"Runc 版本为 1.0.0-rc10\"\n            },\n            {\n                \"ClusterId\": \"cls-0zmsjvko\",\n                \"ClusterName\": \"wk独立集群\",\n                \"InstanceId\": \"ins-9l567jse\",\n                \"PrivateIpAddresses\": \"10.0.2.42\",\n                \"InstanceRole\": \"WORKER\",\n                \"ClusterVersion\": \"1.18.4\",\n                \"ContainerRuntime\": \"docker\",\n                \"Region\": \"ap-guangzhou\",\n                \"VerifyInfo\": \"Runc 版本为 1.0.0-rc10\"\n            }\n        ]\n    }\n}",
+        "title": "查询节点类型的影响范围示例"
+      }
+    ],
+    "DescribeAffectedWorkloadList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAffectedWorkloadList\n<公共请求参数>\n\n{\n    \"CheckItemId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea73ee35-ec93-4d94-b2fc-979a58f34be1\",\n        \"TotalCount\": 0,\n        \"AffectedWorkloadList\": []\n    }\n}",
+        "title": "查询workload类型的影响范围示例"
+      }
+    ],
+    "DescribeAssetAppServiceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetAppServiceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ServiceID\": \"366135633765366230363863343763336265316533306562623030643364393731323536323939383433\",\n                \"HostID\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"HostIP\": \"172.16.0.4\",\n                \"ContainerName\": \"/k8s_sidecar_kube-dns-7f687bdf4-s29r7_kube-system_c4cdbd2c-af84-11e8-90de-0a587f84039e_1\",\n                \"MainType\": \"app\",\n                \"Type\": \"sidecar\",\n                \"Version\": \"\",\n                \"RunAs\": \"nobody:nobody\",\n                \"Exe\": \"/sidecar\",\n                \"Config\": \"\",\n                \"ProcessCnt\": 0,\n                \"AccessLog\": \"\",\n                \"ErrorLog\": \"\",\n                \"DataPath\": \"\",\n                \"WebRoot\": \"\",\n                \"Pids\": [\n                    2693\n                ],\n                \"Listen\": [\n                    \"tcp://:::10054\"\n                ],\n                \"Parameter\": \"/sidecar --v=2 --logtostderr --probe=kubedns,127.0.0.1:10053,kubernetes.default.svc.cluster.local,5,A --probe=dnsmasq,127.0.0.1:53,kubernetes.default.svc.cluster.local,5,A\",\n                \"ContainerId\": \"a4b2d7595c09ebc2d1c815ab040270154ee11da28afb3629d57ee7a7b3a5bf69\"\n            }\n        ],\n        \"RequestId\": \"5e1e8870-766a-4a72-bbc6-d9bad2088526\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "查询app服务列表"
+      }
+    ],
+    "DescribeAssetComponentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetComponentList\n<公共请求参数>\n\n{\n    \"ContainerID\": \"dnhaidhkahdjas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Name\": \"zlib\",\n                \"Version\": \"1.2.11-r0;apk;;\"\n            },\n            {\n                \"Name\": \"apk-tools\",\n                \"Version\": \"2.7.6-r0;apk;;\"\n            }\n        ],\n        \"RequestId\": \"8341b3a1-8bb3-43ad-a56e-30e265be1a97\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "查询容器组件列表"
+      }
+    ],
+    "DescribeAssetContainerDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetContainerDetail\n<公共请求参数>\n\n{\n    \"ContainerId\": \"cndajlhcklanca\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppCnt\": 0,\n        \"CPUUsage\": 0,\n        \"Cmd\": \"/pause\",\n        \"ComponentCnt\": 0,\n        \"ContainerName\": \"/k8s_POD_ip-masq-agent-nhwn8_kube-system_56279ed6-af85-11e8-90de-0a587f84039e_0\",\n        \"CreateTime\": \"2018-09-03T14:26:28Z\",\n        \"HostID\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n        \"HostIP\": \"172.16.0.4\",\n        \"HostStatus\": \"\",\n        \"ImageCreateTime\": \"2014-07-19T07:02:32Z\",\n        \"ImageID\": \"sha256:f9d5de0795395db6c50cb1ac82ebed1bd8eb3eefcebb1aa724e01239594e937b\",\n        \"ImageName\": \"ccr.ccs.tencentyun.com/library/pause:latest\",\n        \"ImageSize\": 239840,\n        \"K8sMaster\": \"\",\n        \"Mounts\": [],\n        \"Network\": {\n            \"EndpointID\": \"912b40bfbddd044734e42135bc0a6a49984048ccdf26687d824f2d52cb63c650\",\n            \"Gateway\": \"\",\n            \"Ipv4\": \"\",\n            \"Ipv6\": \"\",\n            \"MAC\": \"\",\n            \"Mode\": \"host\",\n            \"Name\": \"\",\n            \"NetworkID\": \"327b241f90565248657f72ead20c1adfbac8dd60b18f7abf0a9727f2ff7ffc49\"\n        },\n        \"POD\": \"\",\n        \"PortCnt\": 0,\n        \"ProcessCnt\": 0,\n        \"RamUsage\": 0,\n        \"RequestId\": \"9915f397-3268-4c12-85c9-03b07b6db718\",\n        \"RunAs\": \"\",\n        \"Status\": \"exited\",\n        \"WebServiceCnt\": 0\n    }\n}",
+        "title": "查询容器信息"
+      }
+    ],
+    "DescribeAssetContainerList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetContainerList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ContainerID\": \"dc26549577ae70f50f0d87d78f5ed72ce2be0607c8e83758eb200f03d23d56e4\",\n                \"ContainerName\": \"/k8s_sidecar_kube-dns-7f687bdf4-llln6_kube-system_c4ab281e-af84-11e8-90de-0a587f84039e_0\",\n                \"Status\": \"exited\",\n                \"CreateTime\": \"2018-09-03T14:27:08Z\",\n                \"UpdateTime\": \"2021-01-29T07:48:28.486Z\",\n                \"RunAs\": \"\",\n                \"Cmd\": \"/sidecar --v=2 --logtostderr --probe=kubedns,127.0.0.1:10053,kubernetes.default.svc.cluster.local,5,A --probe=dnsmasq,127.0.0.1:53,kubernetes.default.svc.cluster.local,5,A\",\n                \"CPUUsage\": 0,\n                \"RamUsage\": 0,\n                \"ImageName\": \"ccr.ccs.tencentyun.com/library/k8s-dns-sidecar-amd64@sha256:97074c951046e37d3cbb98b82ae85ed15704a290cce66a8314e7f846404edde9\",\n                \"ImageID\": \"sha256:38bac66034a6217abfd44b4a8a763b1a4c973045cae2763f2cc857baa5c9a872\",\n                \"POD\": \"\",\n                \"HostID\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"HostIP\": \"172.16.0.4\"\n            }\n        ],\n        \"RequestId\": \"05c83fc4-d189-4d61-9947-3b845262d500\",\n        \"TotalCount\": 224\n    }\n}",
+        "title": "搜索查询容器列表"
+      }
+    ],
+    "DescribeAssetDBServiceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetDBServiceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ServiceID\": \"316237346564376164346334376231386136636436306630306366326266393131323536323939383433\",\n                \"HostID\": \"a339b0b9-f60c-4e04-a3dc-672fc5a3e499\",\n                \"HostIP\": \"172.16.32.2\",\n                \"ContainerName\": \"/some-mariadb\",\n                \"MainType\": \"db\",\n                \"Type\": \"mysql\",\n                \"Version\": \"\",\n                \"RunAs\": \"mysql:mysql\",\n                \"Exe\": \"/usr/sbin/mariadbd\",\n                \"Config\": \"\",\n                \"ProcessCnt\": 0,\n                \"AccessLog\": \"\",\n                \"ErrorLog\": \"\",\n                \"DataPath\": \"\",\n                \"WebRoot\": \"\",\n                \"Pids\": [\n                    6776\n                ],\n                \"Listen\": [\n                    \"tcp://:::3306\"\n                ],\n                \"Parameter\": \"mysqld\",\n                \"ContainerId\": \"57c36b768d6a7164992a5070bff58a76dcaba251c02fdd1d79e7abedf5654aa2\"\n            },\n            {\n                \"ServiceID\": \"373538346334313961333265643635333839393535323964623530613962623131323536323939383433\",\n                \"HostID\": \"5f029cbb-3690-4e63-b49f-00699e274c09\",\n                \"HostIP\": \"10.0.0.11\",\n                \"ContainerName\": \"/redis\",\n                \"MainType\": \"db\",\n                \"Type\": \"redis\",\n                \"Version\": \"\",\n                \"RunAs\": \"redis:redis\",\n                \"Exe\": \"/usr/local/bin/redis-server\",\n                \"Config\": \"\",\n                \"ProcessCnt\": 0,\n                \"AccessLog\": \"\",\n                \"ErrorLog\": \"\",\n                \"DataPath\": \"\",\n                \"WebRoot\": \"\",\n                \"Pids\": [\n                    1324531\n                ],\n                \"Listen\": [\n                    \"tcp://:::6379\",\n                    \"tcp://0.0.0.0:6379\"\n                ],\n                \"Parameter\": \"redis-server *:6379         \",\n                \"ContainerId\": \"690049831fc902c88a1f930c9cf2a67d235099bf7a61c1f62777c69629ded230\"\n            }\n        ],\n        \"RequestId\": \"339214f6-ea32-4c1a-89fb-7973665cdc3c\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询db服务列表"
+      }
+    ],
+    "DescribeAssetHostDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetHostDetail\n<公共请求参数>\n\n{\n    \"HostId\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentVersion\": \"2.4.0.107\",\n        \"ContainerCnt\": 0,\n        \"DockerAPIVersion\": \"\",\n        \"DockerFileSystemDriver\": \"\",\n        \"DockerGoVersion\": \"\",\n        \"DockerRootDir\": \"\",\n        \"DockerVersion\": \"\",\n        \"Group\": \"\",\n        \"HostIP\": \"172.16.48.101\",\n        \"HostName\": \"\",\n        \"ImageCnt\": 0,\n        \"K8sMasterIP\": \"\",\n        \"K8sVersion\": \"\",\n        \"KernelVersion\": \"\",\n        \"KubeProxyVersion\": \"\",\n        \"OsName\": \"\",\n        \"RequestId\": \"32429538-86bc-44ac-abdb-b1f5ae9c3f50\",\n        \"Status\": \"online\",\n        \"UUID\": \"6a19cc22-e989-4c65-9d00-d152af1e932f\",\n        \"UpdateTime\": \"2021-01-29T06:33:13.814Z\"\n    }\n}",
+        "title": "查询主机详细信息"
+      }
+    ],
+    "DescribeAssetHostList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetHostList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"HostID\": \"43d2d5df-93af-4229-b62e-60130801db2b\",\n                \"HostName\": \"\",\n                \"Group\": \"\",\n                \"HostIP\": \"10.0.0.33\",\n                \"DockerVersion\": \"\",\n                \"DockerFileSystemDriver\": \"\",\n                \"ImageCnt\": 0,\n                \"ContainerCnt\": 0,\n                \"Status\": \"online\"\n            },\n            {\n                \"HostID\": \"1f17abee-b687-11ea-ab12-48fd8e5f45fe\",\n                \"HostName\": \"VM-16-36-ubuntu\",\n                \"Group\": \"\",\n                \"HostIP\": \"172.16.16.36\",\n                \"DockerVersion\": \"\",\n                \"DockerFileSystemDriver\": \"\",\n                \"ImageCnt\": 0,\n                \"ContainerCnt\": 0,\n                \"Status\": \"online\"\n            }\n        ],\n        \"RequestId\": \"1a55edb3-33de-4538-81a8-8eb26a0db655\",\n        \"TotalCount\": 122\n    }\n}",
+        "title": "查询主机列表"
+      }
+    ],
+    "DescribeAssetImageBindRuleInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAssetImageBindRuleInfo\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ImageBindRuleSet\": [\n            {\n                \"ImageSize\": 0,\n                \"RuleId\": \"xx\",\n                \"ScanTime\": \"xx\",\n                \"ImageId\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"RuleName\": \"xx\",\n                \"ContainerCnt\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "镜像绑定规则列表"
+      }
+    ],
+    "DescribeAssetImageDetail": [
+      {
+        "document": "查询镜像详细信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageDetail\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentError\": \"\",\n        \"Architecture\": \"\",\n        \"Author\": \"\",\n        \"BuildHistory\": \"file:c92c248239f8c7b9b3c067650954815f391b7bcb09023f984972c082ace2a8d0 in  \",\n        \"ContainerCnt\": 0,\n        \"CreateTime\": \"2021-01-29T04:03:11Z\",\n        \"HostCnt\": 1,\n        \"ImageID\": \"sha256:1c19ee40bfafd313400cde57a50b38b16ed4751c6b62a64141f18629a0e9d430\",\n        \"ImageName\": \"<none>:<none>\",\n        \"IsTrustImage\": true,\n        \"OsName\": \"alpine:v3.12\",\n        \"RemainScanTime\": 0,\n        \"RequestId\": \"1d1ca0b5-f2ca-40bb-8797-39132bdbf35e\",\n        \"RiskCnt\": 7,\n        \"ScanError\": \"\",\n        \"ScanRiskError\": \"\",\n        \"ScanRiskProgress\": 100,\n        \"ScanStatus\": \"SCAN_ERR\",\n        \"ScanTime\": \"2021-01-29T05:26:18.07Z\",\n        \"ScanVirusError\": \" 失败\",\n        \"ScanVirusProgress\": 100,\n        \"ScanVulError\": \"\",\n        \"ScanVulProgress\": 100,\n        \"SensitiveInfoCnt\": 0,\n        \"Size\": 16159906,\n        \"Status\": 3,\n        \"VirusCnt\": 11,\n        \"VulCnt\": 5,\n        \"IsAuthorized\": 0\n    }\n}",
+        "title": "查询镜像详细信息"
+      }
+    ],
+    "DescribeAssetImageHostList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageHostList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ImageID\": \"sha256:bd571e6529f32461648680c82e2540f9db4b3bb92709ae5d19dd347531c98f19\",\n                \"HostID\": \"5cd1c13e-d18a-4904-ada3-a2efed76c6f9\"\n            },\n            {\n                \"ImageID\": \"sha256:d6e46aa2470df1d32034c6707c8041158b652f38d2a9ae3d7ad7e7532d22ebe0\",\n                \"HostID\": \"5cd1c13e-d18a-4904-ada3-a2efed76c6f9\"\n            }\n        ],\n        \"RequestId\": \"f28e2b9b-ee35-4c82-87e4-fcb64671d2af\",\n        \"TotalCount\": 24\n    }\n}",
+        "title": "查询镜像关联主机"
+      }
+    ],
+    "DescribeAssetImageList": [
+      {
+        "document": "查询镜像列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ImageID\": \"sha256:2061084bfcc0d9ff44f479efc582e3ac9feaf96b556f6901bb39dbddfb9676b2\",\n                \"ImageName\": \"l10:latest\",\n                \"CreateTime\": \"2021-01-29T04:03:18Z\",\n                \"Size\": 16159906,\n                \"HostCnt\": 1,\n                \"ContainerCnt\": 0,\n                \"ScanTime\": \"2021-01-29T06:10:12.021Z\",\n                \"VulCnt\": 5,\n                \"VirusCnt\": 11,\n                \"RiskCnt\": 7,\n                \"IsTrustImage\": true,\n                \"OsName\": \"alpine:v3.12\",\n                \"AgentError\": \"\",\n                \"ScanError\": \"\",\n                \"ScanStatus\": \"SCANNED\",\n                \"ScanVirusError\": \"\",\n                \"ScanVulError\": \"\",\n                \"ScanRiskError\": \"\",\n                \"IsSuggest\": 0\n            }\n        ],\n        \"RequestId\": \"9c2d0eee-b4b8-4954-98ab-be69f503f77d\",\n        \"TotalCount\": 339\n    }\n}",
+        "title": "查询镜像列表"
+      }
+    ],
+    "DescribeAssetImageListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageListExport\n<公共请求参数>\n\n{\n    \"ExportField\": [\n        \"ImageName\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"sfsfsfsfsfs\",\n        \"RequestId\": \"7c07629e-58ff-4e8a-b63d-679698cf295a\"\n    }\n}",
+        "title": "查询镜像列表导出"
+      }
+    ],
+    "DescribeAssetImageRegistryAssetStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryAssetStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\",\n        \"Status\": \"doing\",\n        \"Err\": \"xx\"\n    }\n}",
+        "title": "查看镜像仓库资产更新进度状态"
+      }
+    ],
+    "DescribeAssetImageRegistryDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ImageDigest\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "镜像仓库查询镜像仓库详情"
+      }
+    ],
+    "DescribeAssetImageRegistryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d5dbc7e-6afa-488f-82d9-26e2ca9f2094\"\n    }\n}",
+        "title": "镜像仓库查询镜像仓库列表"
+      }
+    ],
+    "DescribeAssetImageRegistryListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryListExport\n<公共请求参数>\n\n{\n    \"By\": \"xx\",\n    \"ExportField\": [\n        \"xx\"\n    ],\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Order\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c00f4492-6973-4d8f-872b-c29d22c8eee0\",\n        \"DownloadUrl\": \"https://image-registory-1302977000.cos.ap-guangzhou.myqcloud.com/251011530-100015468030-ImageListExport.csv?q-sign-algorithm=sha1&q-ak=AKIDSefQCiRPhjYAW4BR9b1B9qqd4E71a63k&q-sign-time=1611991144%3B1611991204&q-key-time=1611991144%3B1611991204&q-header-list=host&q-url-param-list=&q-signature=e3fc796e87165f7401098b83208d973e8e1af6ec\"\n    }\n}",
+        "title": "镜像仓库镜像列表导出"
+      }
+    ],
+    "DescribeAssetImageRegistryRegistryDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAssetImageRegistryRegistryDetail\n&RegistryId=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Name\": \"tcr2\",\n        \"Username\": \"100015468030\",\n        \"Password\": \"B3OE6m0c4Ju34pZKRUSpK1mYK21Ew6gvO8MyB8uIoyhViSQoGO4sDJgK7Y/0WRwdaqFuBebjhfQAnnX7YHxqI//QwmzaZL4rva/kkw+dMfR1D3pMcwMaCvx4oW1S/ZB+wsLFg3N+pC2r8xB1EfMBYOZdUy8ZJ2d2THAM60FeqneB+9ouumyKybn82iyYXYnFx36jVzCL/I+YKSF/CtHLbYpOVhUu5vMcH/7ViomP2Wj7mQgQCLlDskl4ZXSz6SBrRcueMKjDVqLSLKUc40PHU/jZF7GkQ7kBnKckigBHLhfkDQVBtUYGwu/UTOmqoZfbFE4lA4OHmqPAySdmE/oJ6fMgIu6X9eRAevqvw2EHHDCCUPhgdtey5KxcXeDkzTwlW46i6kyzabLwYjALWUnO+piZimAUGkgUWeU9WsWOFRgmoGFSgGouTcaDjaisbdA3eG7ethc7Z8omtVbsmiWxPPemAS5S5hkkh+CVWTPc2StlyDNJ2AEBezf4Ik/7tZCEoZeO+pL4RmXB+QZGwA0pxtoNwAF1kh0SHl8FtLftRHykRKs8pxkCyamtkC8gOO0gCiNSFnyfE8eAvMcRHf66fzRxmBZHw5as1rmnGMhurBWtbdoUyxa9BZA0AP5ynNhcj9U/CMPN3cN9x40DFAYR0OijAkiY1XISI+uRIK68maSJpeKhHeieqXkHE0oDt6/dOwwiFwm2TjsmobrrPHcA7jiZFgsUcsUVscVzbh8dB4a54CoqaqybE73GQXfo2YGulP2gS9+0sGnADBsd5R27oQ3ecCZMjIuqHcds/9W05JLbLADi3Rx9njFxd3M/c27vlplyrEC/caOCwMWUF50s3Xox\",\n        \"Url\": \"https://yunding.tencentcloudcr.com\",\n        \"RegistryType\": \"harbor\",\n        \"RegistryVersion\": \"v1.x\",\n        \"NetType\": \"public\",\n        \"RegistryRegion\": \"default\",\n        \"SpeedLimit\": 1\n    }\n}",
+        "title": "运行时访问控制事件详细信息"
+      }
+    ],
+    "DescribeAssetImageRegistryRegistryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRegistryList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d5dbc73-6afa-488f-82d9-26e2ca9f2094\"\n    }\n}",
+        "title": "镜像仓库查询镜像仓库列表"
+      }
+    ],
+    "DescribeAssetImageRegistryRiskInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRiskInfoList\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c283b995-d932-436d-8deb-11d2b7eb216c\",\n        \"List\": null,\n        \"TotalCount\": 0\n    }\n}",
+        "title": "镜像仓库查询镜像高危行为列表"
+      }
+    ],
+    "DescribeAssetImageRegistryRiskListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRiskListExport\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    },\n    \"ExportField\": [\n        \"xx\"\n    ],\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"488e3711-8515-450a-9a40-df3e95c806fa\",\n        \"DownloadUrl\": \"https://image-registory-1302977000.cos.ap-guangzhou.myqcloud.com/251011530-100015468030-ImageRiskListExport.csv?q-sign-algorithm=sha1&q-ak=AKIDSefQCiRPhjYAW4BR9b1B9qqd4E71a63k&q-sign-time=1611990834%3B1611990894&q-key-time=1611990834%3B1611990894&q-header-list=host&q-url-param-list=&q-signature=2736b65c910654d3d87b96b7c075e6d83a96f11d\"\n    }\n}",
+        "title": "镜像仓库敏感信息列表导出"
+      }
+    ],
+    "DescribeAssetImageRegistryScanStatusOneKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryScanStatusOneKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15c1773a-36a9-44a8-9d1a-fdfd5fffc7e6\",\n        \"ImageTotal\": 47,\n        \"ImageScanCnt\": 47,\n        \"ImageStatus\": [\n            {\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/luping:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/luping\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/person_instance2/personrepo:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"person_instance2/personrepo\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/helo:centos\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/helo\",\n                \"ImageTag\": \"centos\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/helo:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/helo\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/person1:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/person1\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/2:3.10\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"2\",\n                \"ImageTag\": \"3.10\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/bbbbb10:v4\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"bbbbb10\",\n                \"ImageTag\": \"v4\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/bbbbb5:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"bbbbb5\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/bbbbb7:v4\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"bbbbb7\",\n                \"ImageTag\": \"v4\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/bbbbb8:v4\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"bbbbb8\",\n                \"ImageTag\": \"v4\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/bbbbb9:v4\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"bbbbb9\",\n                \"ImageTag\": \"v4\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/char-payne:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"char-payne\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/mmmm1:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"mmmm1\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/nnnnnn1:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"nnnnnn1\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/none-sensitivity:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"none-sensitivity\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/none-trojan:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"none-trojan\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/odoo:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"odoo\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/sensitivity:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"sensitivity\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/test-sensi:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"test-sensi\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/test1:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"test1\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/testlong:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"testlong\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/testlonzhanggadwq:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"testlonzhanggadwq\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu1/testzhang:1.1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu1\",\n                \"ImageName\": \"testzhang\",\n                \"ImageTag\": \"1.1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/image_scan/cve-2016-6210_ssvid_92147:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"image_scan\",\n                \"ImageName\": \"cve-2016-6210_ssvid_92147\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/image_scan/tcr_compliance_permitroot:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"image_scan\",\n                \"ImageName\": \"tcr_compliance_permitroot\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/image_scan/test2:v2\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"image_scan\",\n                \"ImageName\": \"test2\",\n                \"ImageTag\": \"v2\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/image_pull_block/image-with-high-vulnerability:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"image_pull_block\",\n                \"ImageName\": \"image-with-high-vulnerability\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/cve-2016-6210_ssvid_92147:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"cve-2016-6210_ssvid_92147\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.6\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.6\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.3\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.3\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.7\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.7\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.5\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.5\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.4\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.4\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.8\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.8\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.2\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.2\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:leak_3.1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"leak_3.1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:git\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"git\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:root\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"root\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/danger:env\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"danger\",\n                \"ImageTag\": \"env\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/roopingliu/virus:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"roopingliu\",\n                \"ImageName\": \"virus\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 0,\n                \"RiskProgress\": 0,\n                \"VirusProgress\": 0\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/dehonghao/content-trust:non-trust\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"dehonghao\",\n                \"ImageName\": \"content-trust\",\n                \"ImageTag\": \"non-trust\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/dehonghao/content-trust:trust\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"dehonghao\",\n                \"ImageName\": \"content-trust\",\n                \"ImageTag\": \"trust\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/dehonghao/image-with-high-vulnerability:latest\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"dehonghao\",\n                \"ImageName\": \"image-with-high-vulnerability\",\n                \"ImageTag\": \"latest\",\n                \"ScanStatus\": \"SCANNING\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/dehonghao/trust:test2\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"dehonghao\",\n                \"ImageName\": \"trust\",\n                \"ImageTag\": \"test2\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/dehonghao/trust:test1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"dehonghao\",\n                \"ImageName\": \"trust\",\n                \"ImageTag\": \"test1\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/kofj/tcr_compliance_permitroot:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"kofj\",\n                \"ImageName\": \"tcr_compliance_permitroot\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            },\n            {\n                \"RegistryType\": \"tcr\",\n                \"ImageRepoAddress\": \"yunding.tencentcloudcr.com/kofj/tcr_virus:v1\",\n                \"InstanceId\": \"tcr-kc979nrs\",\n                \"InstanceName\": \"yunding\",\n                \"Namespace\": \"kofj\",\n                \"ImageName\": \"tcr_virus\",\n                \"ImageTag\": \"v1\",\n                \"ScanStatus\": \"SCANNED\",\n                \"CveProgress\": 99,\n                \"RiskProgress\": 100,\n                \"VirusProgress\": 100\n            }\n        ],\n        \"SuccessCount\": 7,\n        \"RiskCount\": 11,\n        \"Status\": \"SCANNING\",\n        \"Schedule\": 23,\n        \"ScanRemainTime\": 3840\n    }\n}",
+        "title": "镜像仓库查询一键镜像扫描状态"
+      }
+    ],
+    "DescribeAssetImageRegistrySummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistrySummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5247d905-bf3c-41b4-9d6f-f93a008d9efb\"\n    }\n}",
+        "title": "镜像仓库查询镜像统计信息"
+      }
+    ],
+    "DescribeAssetImageRegistryVirusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryVirusList\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae035bd6-6e5a-4f3e-b3ce-1f9cf6917066\",\n        \"List\": [\n            {\n                \"Path\": \"var/cache/debconf/passwords.dat\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"passwords.dat\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"etc/.pwd.lock\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \".pwd.lock\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/lib/dpkg/triggers/Unincorp\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"Unincorp\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/lib/systemd/deb-systemd-helper-enabled/timers.target.wants/apt-daily.timer\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"apt-daily.timer\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/lib/dpkg/triggers/Lock\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"Lock\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/log/btmp\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"btmp\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/lib/dpkg/statoverride\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"statoverride\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/lib/dpkg/lock\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"lock\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"var/log/wtmp\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"wtmp\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            },\n            {\n                \"Path\": \"run/utmp\",\n                \"RiskLevel\": \"4\",\n                \"Category\": \"\",\n                \"VirusName\": \"stargate.lock\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"FileType\": \"\",\n                \"FileName\": \"utmp\",\n                \"FileMd5\": \"d41d8cd98f00b204e9800998ecf8427e\",\n                \"FileSize\": 0,\n                \"FirstScanTime\": \"2021-01-30 03:31:56 +0000 UTC\",\n                \"LatestScanTime\": \"2021-01-30 05:14:07 +0000 UTC\"\n            }\n        ],\n        \"TotalCount\": 17\n    }\n}",
+        "title": "镜像仓库查询木马病毒列表"
+      }
+    ],
+    "DescribeAssetImageRegistryVirusListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryVirusListExport\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    },\n    \"ExportField\": [\n        \"xx\"\n    ],\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62e5c0e8-2cae-410a-8240-9cefbd419e08\",\n        \"DownloadUrl\": \"https://image-registory-1302977000.cos.ap-guangzhou.myqcloud.com/251011530-100015468030-ImageVirusListExport.csv?q-sign-algorithm=sha1&q-ak=AKIDSefQCiRPhjYAW4BR9b1B9qqd4E71a63k&q-sign-time=1611991027%3B1611991087&q-key-time=1611991027%3B1611991087&q-header-list=host&q-url-param-list=&q-signature=2fe57c480e4161a967cdbac59e0e2e0271a6d74c\"\n    }\n}",
+        "title": "镜像仓库木马信息列表导出"
+      }
+    ],
+    "DescribeAssetImageRegistryVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryVulList\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    },\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ffca7b7-3d73-4317-8a76-a2b00e90f3b2\",\n        \"List\": null,\n        \"TotalCount\": 0\n    }\n}",
+        "title": "镜像仓库查询镜像漏洞列表"
+      }
+    ],
+    "DescribeAssetImageRegistryVulListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryVulListExport\n<公共请求参数>\n\n{\n    \"ImageInfo\": {\n        \"Force\": \"xx\",\n        \"ImageTag\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"RegistryType\": \"xx\",\n        \"Namespace\": \"xx\",\n        \"ImageRepoAddress\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"ImageDigest\": \"xx\",\n        \"InstanceName\": \"xx\"\n    },\n    \"ExportField\": [\n        \"xx\"\n    ],\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"488e3711-8515-450a-9a40-df3e95c806fa\",\n        \"DownloadUrl\": \"https://image-registory-1302977000.cos.ap-guangzhou.myqcloud.com/251011530-100015468030-ImageVulListExport.csv?q-sign-algorithm=sha1&q-ak=AKIDSefQCiRPhjYAW4BR9b1B9qqd4E71a63k&q-sign-time=1611990834%3B1611990894&q-key-time=1611990834%3B1611990894&q-header-list=host&q-url-param-list=&q-signature=2736b65c910654d3d87b96b7c075e6d83a96f11d\"\n    }\n}",
+        "title": "镜像仓库漏洞列表导出"
+      }
+    ],
+    "DescribeAssetImageRiskList": [
+      {
+        "document": "查询镜像风险列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRiskList\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Behavior\": 3,\n                \"Level\": 3,\n                \"Type\": 2,\n                \"Desc\": \"Dockerfile中存在账号密码、认证凭据等敏感信息\",\n                \"InstructionContent\": \"/bin/sh -c #(nop)  ENV PWD=postgresql://1.1.1.1:xxx@yyy\"\n            },\n            {\n                \"Behavior\": 3,\n                \"Level\": 3,\n                \"Type\": 2,\n                \"Desc\": \"Dockerfile中存在账号密码、认证凭据等敏感信息\",\n                \"InstructionContent\": \"/bin/sh -c echo root:654321 | chpasswd\"\n            }\n        ],\n        \"RequestId\": \"ff49ad4b-fe52-4f9d-8810-ba377eab9124\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "查询镜像风险列表"
+      }
+    ],
+    "DescribeAssetImageRiskListExport": [
+      {
+        "document": "镜像风险列表导出",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRiskListExport\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\",\n    \"ExportField\": [\n        \"Behavior\",\n        \"Level\",\n        \"Type\",\n        \"Desc\",\n        \"InstructionContent\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"csfsfsf\",\n        \"RequestId\": \"7c07629e-58ff-4e8a-b63d-679698cf295a\"\n    }\n}",
+        "title": "镜像风险列表导出"
+      }
+    ],
+    "DescribeAssetImageScanSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageScanSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"All\": false,\n        \"Enable\": true,\n        \"Images\": [\n            \"sha256:f8d1d3fe96d0bb9d04eab9043b53ed5280a409db58f2506e9f65caa11bb39ad1\"\n        ],\n        \"RequestId\": \"6732aa52-9940-49c3-a8be-361c312b1ee5\",\n        \"ScanPeriod\": 1,\n        \"ScanRisk\": false,\n        \"ScanTime\": \"11:05:00\",\n        \"ScanVirus\": true,\n        \"ScanVul\": false\n    }\n}",
+        "title": "获取镜像扫描设置信息"
+      }
+    ],
+    "DescribeAssetImageScanStatus": [
+      {
+        "document": "查询镜像扫描状态",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageScanStatus\n<公共请求参数>\n\n{\n    \"TaskID\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageScanCnt\": 0,\n        \"ImageTotal\": 339,\n        \"LeftSeconds\": 4666,\n        \"RequestId\": \"b9e9e86e-5b7e-476c-9be1-a8c6399afef3\",\n        \"RiskCount\": 0,\n        \"Schedule\": 0,\n        \"Status\": \"SCANNING\",\n        \"SuccessCount\": 0\n    }\n}",
+        "title": "查询镜像扫描状态"
+      }
+    ],
+    "DescribeAssetImageScanTask": [
+      {
+        "document": "查询正在一键扫描的镜像扫描taskid",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageScanTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"TaskID\": \"\"\n    }\n}",
+        "title": "查询正在一键扫描的镜像扫描taskid"
+      }
+    ],
+    "DescribeAssetImageSimpleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageSimpleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ImageID\": \"sha256:27a55a6c3646bdb51f0bedff3a7b87f613c4c69c94b4134c3f7248e1a4bd2ffb\",\n                \"ImageName\": \"<none>:<none>\",\n                \"ContainerCnt\": 0,\n                \"ScanTime\": \"2021-01-29T05:26:18.07Z\",\n                \"Size\": 12800228\n            }\n        ],\n        \"RequestId\": \"1b4fa00d-257c-4d97-b175-cd78c7a8a362\",\n        \"TotalCount\": 339\n    }\n}",
+        "title": "查询镜像简略信息列表"
+      }
+    ],
+    "DescribeAssetImageVirusList": [
+      {
+        "document": "查询镜像病毒列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageVirusList\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Path\": \"/root/specimen_56d9739c7ecdbffa0f2f21efb33189fe\",\n                \"RiskLevel\": 4,\n                \"VirusName\": \"Script.VB.Ramnit.aa\",\n                \"Tags\": [],\n                \"Desc\": \"\",\n                \"Solution\": \"\",\n                \"Size\": 342181,\n                \"FirstScanTime\": \"2021-01-15T09:14:46Z\",\n                \"LatestScanTime\": \"2021-01-29T04:37:05.146Z\",\n                \"Md5\": \"56d9739c7ecdbffa0f2f21efb33189fe\",\n                \"FileName\": \"\"\n            }\n        ],\n        \"RequestId\": \"8ca5c2e3-fb80-4e44-82f1-f561ef2b4ccf\",\n        \"TotalCount\": 11,\n        \"VirusScanStatus\": 0\n    }\n}",
+        "title": "查询镜像病毒列表"
+      }
+    ],
+    "DescribeAssetImageVirusListExport": [
+      {
+        "document": "查询镜像病毒列表导出",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageVirusListExport\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\",\n    \"ExportField\": [\n        \"Path\",\n        \"RiskLevel\",\n        \"FileType\",\n        \"VirusName\",\n        \"Tags\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"sfsfsfsfsfs\",\n        \"RequestId\": \"7c07629e-58ff-4e8a-b63d-679698cf295a\"\n    }\n}",
+        "title": "查询镜像病毒列表导出"
+      }
+    ],
+    "DescribeAssetImageVulList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageVulList\n<公共请求参数>\n\n{\n    \"ImageID\": \"csnjkcnshj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"List\": [\n            {\n                \"Category\": \"xx\",\n                \"CVEID\": \"CVE-2018-1000500\",\n                \"Name\": \"Sudo 安全漏洞\",\n                \"Reference\": \"[\\\"https://bugzilla.suse.com/show_bug.cgi?id=CVE-2021-23240\\\", \\\"https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EE42Y35SMJOLONAIBNYNFC7J44UUZ2Y6/\\\", \\\"https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GMY4VSSBIND7VAYSN6T7XIWJRWG4GBB3/\\\", \\\"https://security.gentoo.org/glsa/202101-33\\\", \\\"https://www.sudo.ws/stable.html#1.9.5\\\"]\",\n                \"Level\": 1,\n                \"CVSSV3Score\": 7.800000190734863,\n                \"Des\": \"Sudo是一款使用于类Unix系统的，允许用户通过安全的方式使用特殊的权限执行命令的程序。sudo1.9.4.p2-2版本存在安全漏洞，攻击者可利用该漏洞使用sudoedit来更改任意文件的所有权。\",\n                \"Component\": \"sudo\",\n                \"IsSuggest\": true,\n                \"SubmitTime\": \"2021-01-12T09:15:00Z\",\n                \"Version\": \"1.9.0-r0\",\n                \"DefenseSolution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接:https://www.sudo.ws/repos/sudo/rev/8fcb36ef422a\",\n                \"OfficialSolution\": \"\",\n                \"CategoryType\": \"其他\",\n                \"CVSSV3Desc\": \"CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H\"\n            },\n            {\n                \"Category\": \"资料不足\",\n                \"CVEID\": \"CVE-2021-23240\",\n                \"Name\": \"Busybox 安全漏洞\",\n                \"Reference\": \"[\\\"https://bugzilla.suse.com/show_bug.cgi?id=CVE-2021-23240\\\", \\\"https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EE42Y35SMJOLONAIBNYNFC7J44UUZ2Y6/\\\", \\\"https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GMY4VSSBIND7VAYSN6T7XIWJRWG4GBB3/\\\", \\\"https://security.gentoo.org/glsa/202101-33\\\", \\\"https://www.sudo.ws/stable.html#1.9.5\\\"]\",\n                \"Level\": 3,\n                \"CVSSV3Score\": 8.100000381469727,\n                \"Des\": \"<p>BusyBox是乌克兰软件开发者DenisVlasenko所负责维护的一套包含了多个linux命令和工具的应用程序。Busybox在“ busybox wget”小程序中包含一个缺少SSL证书验证漏洞，该漏洞可能导致任意代码执行。通过使用“ busybox wget https://compromised-domain.com/important-file”通过HTTPS下载任何文件，似乎可以利用此攻击。</p>\",\n                \"Component\": \"busybox\",\n                \"IsSuggest\": true,\n                \"SubmitTime\": \"2018-06-26T16:29:00Z\",\n                \"Version\": \"1.31.1-r16\",\n                \"DefenseSolution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://git.busybox.net/busybox/tree/networking/wget.c?id=8bc418f07eab79a9c8d26594629799f6157a9466#n74\",\n                \"OfficialSolution\": \"<p>升级到最新无漏洞版本</p>\",\n                \"CategoryType\": \"web应用漏洞\",\n                \"CVSSV3Desc\": \"CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H\"\n            }\n        ],\n        \"RequestId\": \"f29aaf0b-acde-40e2-9ce8-c517265c0ff3\"\n    }\n}",
+        "title": "查询镜像漏洞列表"
+      }
+    ],
+    "DescribeAssetImageVulListExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageVulListExport\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\",\n    \"ExportField\": [\n        \"CVEID\",\n        \"Name\",\n        \"Component\",\n        \"Version\",\n        \"Category\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"sfsfsfsfsfs\",\n        \"RequestId\": \"7c07629e-58ff-4e8a-b63d-679698cf295a\"\n    }\n}",
+        "title": "镜像漏洞列表导出"
+      }
+    ],
+    "DescribeAssetPortList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetPortList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Type\": \"tcp\",\n                \"PublicIP\": \"-\",\n                \"PublicPort\": 0,\n                \"ContainerPort\": 3306,\n                \"ContainerPID\": 1,\n                \"ContainerName\": \"/some-mariadb\",\n                \"HostID\": \"a339b0b9-f60c-4e04-a3dc-672fc5a3e499\",\n                \"HostIP\": \"172.16.32.2\",\n                \"ProcessName\": \"mariadbd\",\n                \"ListenContainer\": \"tcp://:::3306\",\n                \"ListenHost\": \"\",\n                \"RunAs\": \"mysql:mysql\"\n            }\n        ],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 58\n    }\n}",
+        "title": "查询端口占用列表"
+      }
+    ],
+    "DescribeAssetProcessList": [
+      {
+        "document": "查询进程列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetProcessList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"StartTime\": \"2021-01-14T02:25:29Z\",\n                \"RunAs\": \"work:work\",\n                \"CmdLine\": \"sh\",\n                \"Exe\": \"/bin/busybox\",\n                \"PID\": 3766,\n                \"ContainerPID\": 1,\n                \"ContainerName\": \"/practical_sanderson\",\n                \"HostID\": \"5cd1c13e-d18a-4904-ada3-a2efed76c6f9\",\n                \"HostIP\": \"10.0.0.13\",\n                \"ProcessName\": \"busybox\"\n            }\n        ],\n        \"RequestId\": \"b62e7e38-ecb9-4014-a8ba-5ebf39c1488f\",\n        \"TotalCount\": 87\n    }\n}",
+        "title": "查询进程列表"
+      }
+    ],
+    "DescribeAssetSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AppCnt\": 14,\n        \"ContainerCnt\": 223,\n        \"ContainerPause\": 1,\n        \"ContainerRunning\": 56,\n        \"ContainerStop\": 166,\n        \"CreateTime\": \"2020-11-02T12:55:02.043Z\",\n        \"DbCnt\": 2,\n        \"HostCnt\": 122,\n        \"HostOnline\": 119,\n        \"ImageCnt\": 339,\n        \"ImageHasRiskInfoCnt\": 145,\n        \"ImageHasVirusCnt\": 22,\n        \"ImageHasVulsCnt\": 325,\n        \"ImageUnsafeCnt\": 326,\n        \"ImageUntrustCnt\": 4,\n        \"LatestImageScanTime\": \"2021-01-29T06:10:17.043Z\",\n        \"ListenPortCnt\": 58,\n        \"ProcessCnt\": 87,\n        \"RequestId\": \"c2ac8fcc-f9af-4aa6-97fc-26c855bf9a6b\",\n        \"WebServiceCnt\": 7\n    }\n}",
+        "title": "查询账户容器、镜像等统计信息"
+      }
+    ],
+    "DescribeAssetWebServiceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetWebServiceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ServiceID\": \"616334633131363739616263383435663365306465666135646234656634363731323536323939383433\",\n                \"HostID\": \"33f4b57c-2b0c-4643-9aee-93f90a2d63b5\",\n                \"HostIP\": \"10.0.0.3\",\n                \"ContainerName\": \"/p1\",\n                \"MainType\": \"web\",\n                \"Type\": \"Apache\",\n                \"Version\": \"2.4.38\",\n                \"RunAs\": \"root:root\",\n                \"Exe\": \"/usr/sbin/apache2\",\n                \"Config\": \"/etc/apache2/apache2.conf\",\n                \"ProcessCnt\": 0,\n                \"AccessLog\": \"\",\n                \"ErrorLog\": \"\",\n                \"DataPath\": \"\",\n                \"WebRoot\": \"\",\n                \"Pids\": [\n                    1882552,\n                    1883015,\n                    1883016,\n                    1883017,\n                    1883018,\n                    1883019\n                ],\n                \"Listen\": [\n                    \"tcp://0.0.0.0:80\"\n                ],\n                \"Parameter\": \"apache2 -DFOREGROUND\",\n                \"ContainerId\": \"d591c50bbcd79bb3f45d661c0a1864102aaa5fa577a69a67a546d8380956dc04\"\n            }\n        ],\n        \"RequestId\": \"48ca3c70-801e-48b1-80a7-1007afbf5ffb\",\n        \"TotalCount\": 7\n    }\n}",
+        "title": "查询web服务列表"
+      }
+    ],
+    "DescribeCheckItemList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckItemList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d03392a-2a32-4950-b203-d2baf28057fe\",\n        \"TotalCount\": 34,\n        \"ClusterCheckItems\": [\n            {\n                \"CheckItemId\": 1,\n                \"Name\": \"runc 安全漏洞\",\n                \"ItemDetail\": \"runc是一款用于根据OCI规范生成和运行容器的CLI（命令行界面）工具。runc存在安全漏洞，攻击者可利用该漏洞将主机文件系统绑定到容器中。\",\n                \"RiskLevel\": \"Serious\",\n                \"RiskTarget\": \"runC\",\n                \"RiskType\": \"CVERisk\",\n                \"RiskAttribute\": \"PrivilegePromotion\",\n                \"RiskProperty\": \"ExistPOC ExistEXP RemoteExploit ServerRestart\",\n                \"CVENumber\": \"CVE-2021-30465\",\n                \"DiscoverTime\": \"2021-05-27 21:15:00\",\n                \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r\",\n                \"CVSS\": \"CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H\",\n                \"CVSSScore\": \"8.5\",\n                \"RelateLink\": \"https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r https://github.com/opencontainers/runc/releases http://www.openwall.com/lists/oss-security/2021/05/19/2\",\n                \"AffectedType\": \"Node\",\n                \"AffectedVersion\": \"\"\n            },\n            {\n                \"CheckItemId\": 2,\n                \"Name\": \"Apache containerd 安全漏洞\",\n                \"ItemDetail\": \"containerd是美国阿帕奇（Apache）基金会的一个容器守护进程。该进程根据RunCOCI规范负责控制宿主机上容器的完整周期。containerd1.3.9之前版本和1.4.3版本存在安全漏洞，该漏洞源于containerd-shimAPI被不正确地公开给主机网络容器。shimsAPI套接字的访问控制验证了连接进程的有效UID为0，但是没有限制对抽象Unix域套接字的访问。这将允许在与shim相同的网络名称空间中运行的恶意容器，其有效UID为0，但在其他方面减少了特权，从而导致使用elevat运行新进程。\",\n                \"RiskLevel\": \"Middle\",\n                \"RiskTarget\": \"Containerd\",\n                \"RiskType\": \"CVERisk\",\n                \"RiskAttribute\": \"PrivilegePromotion\",\n                \"RiskProperty\": \"ExistPOC ExistEXP ServerRestart\",\n                \"CVENumber\": \"CVE-2020-15257\",\n                \"DiscoverTime\": \"2020-12-01 11:15:00\",\n                \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad\",\n                \"CVSS\": \"CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N\",\n                \"CVSSScore\": \"5.2\",\n                \"RelateLink\": \"https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad https://github.com/containerd/containerd/releases/tag/v1.4.3 https://github.com/containerd/containerd/security/advisories/GHSA-36xw-fx78-c5r4\",\n                \"AffectedType\": \"Node\",\n                \"AffectedVersion\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询所有检查项示例"
+      }
+    ],
+    "DescribeClusterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0zmsjvko\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a360c7e-22d3-421d-8cf9-f5f6af91a8d8\",\n        \"ClusterId\": \"cls-0zmsjvko\",\n        \"ClusterName\": \"wk独立集群\",\n        \"ScanTaskProgress\": 100,\n        \"ClusterVersion\": \"1.18.4\",\n        \"ContainerRuntime\": \"docker\",\n        \"ClusterNodeNum\": 2,\n        \"ClusterStatus\": \"Running\",\n        \"DefenderStatus\": \"Defender_Normal\",\n        \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n        \"Region\": \"ap-guangzhou\",\n        \"SeriousRiskCount\": 1,\n        \"HighRiskCount\": 5,\n        \"MiddleRiskCount\": 8,\n        \"HintRiskCount\": 4,\n        \"CheckStatus\": \"HasRisk\",\n        \"TaskCreateTime\": \"2021-11-16 10:13:42\"\n    }\n}",
+        "title": "查询单个集群的详细信息示例"
+      }
+    ],
+    "DescribeClusterSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4\",\n        \"TotalCount\": 9,\n        \"RiskClusterCount\": 7,\n        \"UncheckClusterCount\": 1,\n        \"ManagedClusterCount\": 6,\n        \"IndependentClusterCount\": 3,\n        \"NoRiskClusterCount\": 1\n    }\n}",
+        "title": "查询用户集群资产总览示例"
+      }
+    ],
+    "DescribeComplianceAssetDetailInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetDetailInfo\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 123456789\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"AssetDetailInfo\": {\n            \"CustomerAssetId\": 123456789,\n            \"AssetType\": \"ASSET_CONTAINDER\",\n            \"AssetName\": \"happy-jekins\",\n            \"HostIP\": \"xx\",\n            \"HostName\": \"xx\",\n            \"NodeName\": \"worker-node-1\",\n            \"CheckStatus\": \"CHECK_FINISHED\",\n            \"AssetCreateTime\": \"2021-03-31 00:00:00\",\n            \"AssetStatus\": \"ASSET_NORMAL\",\n            \"LastCheckTime\": \"2021-04-02 16:42:00\",\n            \"PassedPolicyItemCount\": 100,\n            \"FailedPolicyItemCount\": 10,\n            \"CheckResult\": \"RESULT_PASSED\"\n        },\n        \"ContainerDetailInfo\": {\n            \"ContainerId\": \"xxxx\",\n            \"PodName\": \"happy-jekins\"\n        },\n        \"K8SDetailInfo\": {\n            \"ClusterName\": \"xx\"\n        },\n        \"HostDetailInfo\": {\n            \"DockerVersion\": \"xx\",\n            \"K8SVersion\": \"xx\"\n        },\n        \"ImageDetailInfo\": {\n            \"ImageTag\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"Repository\": \"xx\",\n            \"ImageId\": \"xx\"\n        }\n    }\n}",
+        "title": "查询某个资产的详情"
+      }
+    ],
+    "DescribeComplianceAssetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetList\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINDER\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"AssetInfoList\": [\n            {\n                \"CustomerAssetId\": 123456789,\n                \"AssetType\": \"ASSET_CONTAINDER\",\n                \"AssetName\": \"happy-jekins\",\n                \"NodeName\": \"worker-node-1\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"LastCheckTime\": \"2021-04-02 16:42:00\",\n                \"PassedPolicyItemCount\": 100,\n                \"FailedPolicyItemCount\": 10,\n                \"CheckResult\": \"RESULT_PASSED\"\n            }\n        ]\n    }\n}",
+        "title": "查询某类资产的列表"
+      }
+    ],
+    "DescribeComplianceAssetPolicyItemList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceAssetPolicyItemList\n<公共请求参数>\n\n{\n    \"CustomerAssetId\": 123456,\n    \"Offset\": 10,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"RiskLevel\",\n            \"Values\": [\n                \"RISK_CRITICAL\",\n                \"RISK_HIGH\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 123,\n        \"AssetPolicyItemList\": [\n            {\n                \"CustomerPolicyItemId\": 10001,\n                \"BasePolicyItemId\": 1,\n                \"Name\": \"审计Docker文件和目录\",\n                \"Category\": \"xxx\",\n                \"BenchmarkStandardId\": 123,\n                \"BenchmarkStandardName\": \"CIS Docker\",\n                \"RiskLevel\": \"RISK_HIGH\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckResult\": \"RESULT_FAILED\",\n                \"WhitelistId\": 12345,\n                \"FixSuggestion\": \"xxxx\",\n                \"LastCheckTime\": \"2021-04-02 16:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询某资产下的检测项列表"
+      }
+    ],
+    "DescribeCompliancePeriodTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompliancePeriodTaskList\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\",\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"PeriodTaskSet\": [\n            {\n                \"PeriodTaskId\": 123,\n                \"AssetType\": \"xxxx\",\n                \"PeriodRule\": {\n                    \"ExecutionTime\": \"xx\",\n                    \"Frequency\": 1\n                },\n                \"LastTriggerTime\": \"YYYY-MM-DD HH:mm:SS\",\n                \"TotalPolicyItemCount\": 123,\n                \"BenchmarkStandardSet\": [\n                    {\n                        \"StandardId\": 12345,\n                        \"Name\": \"CIS Docker\",\n                        \"Description\": \"CIS Docker\",\n                        \"PolicyItemCount\": 123,\n                        \"Enabled\": true\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询定时任务列表"
+      }
+    ],
+    "DescribeCompliancePolicyItemAffectedAssetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompliancePolicyItemAffectedAssetList\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 12345,\n    \"Offset\": 1000,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"NodeName\",\n            \"Values\": [\n                \"node-1\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 10,\n        \"AffectedAssetList\": [\n            {\n                \"CustomerAssetId\": 10001,\n                \"AssetName\": \"happy-jenkins\",\n                \"AssetType\": \"ASSET_CONTAINDER\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"NodeName\": \"worker-node-1\",\n                \"LastCheckTime\": \"2021-04-02 16:42:00\",\n                \"CheckResult\": \"RESULT_PASSED\"\n            }\n        ]\n    }\n}",
+        "title": "查询检测项影响的资产列表"
+      }
+    ],
+    "DescribeCompliancePolicyItemAffectedSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompliancePolicyItemAffectedSummary\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 12345\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"PolicyItemSummary\": {\n            \"CustomerPolicyItemId\": 10001,\n            \"BasePolicyItemId\": 1,\n            \"Name\": \"审计Docker文件和目录\",\n            \"Category\": \"xxx\",\n            \"BenchmarkStandardName\": \"CIS_Docker\",\n            \"BenchmarkStandardId\": 123,\n            \"RiskLevel\": \"xx\",\n            \"AssetType\": \"xxx\",\n            \"CheckStatus\": \"\",\n            \"CheckResult\": \"xx\",\n            \"LastCheckTime\": \"2020-09-22 00:00:00\",\n            \"PassedAssetCount\": 100,\n            \"FailedAssetCount\": 20,\n            \"WhitelistId\": 12345,\n            \"FixSuggestion\": \"xxxx\"\n        }\n    }\n}",
+        "title": "查询某检测项影响的信息"
+      }
+    ],
+    "DescribeComplianceScanFailedAssetList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceScanFailedAssetList\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINDER\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"ScanFailedAssetList\": [\n            {\n                \"CustomerAssetId\": 123456789,\n                \"AssetType\": \"ASSET_CONTAINDER\",\n                \"AssetName\": \"happy-jenkins\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckTime\": \"2021-04-02 16:42:00\",\n                \"FailureReason\": \"发生一些预料之外的情况\",\n                \"Suggestion\": \"尝试重试\"\n            }\n        ]\n    }\n}",
+        "title": "查询上次检测失败的资产的列表"
+      }
+    ],
+    "DescribeComplianceTaskAssetSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceTaskAssetSummary\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINER\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"Status\": \"USER_NORMAL\",\n        \"AssetSummaryList\": [\n            {\n                \"AssetType\": \"ASSET_CONTAINER\",\n                \"IsCustomerFirstCheck\": true,\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"LastCheckTime\": \"2021-04-02 16:42:00\",\n                \"CheckCostTime\": 300,\n                \"CheckProgress\": 100,\n                \"PeriodRule\": {\n                    \"ExecutionTime\": \"xx\",\n                    \"Frequency\": 1\n                },\n                \"PassedPolicyItemCount\": 100,\n                \"FailedPolicyItemCount\": 10,\n                \"FailedCriticalPolicyItemCount\": 1,\n                \"FailedHighRiskPolicyItemCount\": 2,\n                \"FailedMediumRiskPolicyItemCount\": 1,\n                \"FailedLowRiskPolicyItemCount\": 1,\n                \"NoticePolicyItemCount\": 1,\n                \"PassedAssetCount\": 1000,\n                \"FailedAssetCount\": 100,\n                \"AssetPassedRate\": 91,\n                \"ScanFailedAssetCount\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询上次任务的资产通过率汇总信息"
+      }
+    ],
+    "DescribeComplianceTaskPolicyItemSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceTaskPolicyItemSummaryList\n<公共请求参数>\n\n{\n    \"AssetType\": \"ASSET_CONTAINER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123456,\n        \"TotalCount\": 123,\n        \"PolicyItemSummaryList\": [\n            {\n                \"CustomerPolicyItemId\": 10001,\n                \"BasePolicyItemId\": 1,\n                \"Name\": \"审计Docker文件和目录\",\n                \"Category\": \"xxx\",\n                \"BenchmarkStandardName\": \"CIS_Docker\",\n                \"BenchmarkStandardId\": 123,\n                \"RiskLevel\": \"xx\",\n                \"AssetType\": \"xxx\",\n                \"LastCheckTime\": \"2020-09-22 00:00:00\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckResult\": \"xx\",\n                \"PassedAssetCount\": 100,\n                \"FailedAssetCount\": 20,\n                \"WhitelistId\": 12345,\n                \"FixSuggestion\": \"xxxx\"\n            }\n        ]\n    }\n}",
+        "title": "查询上次任务的检测项的汇总信息列表"
+      }
+    ],
+    "DescribeComplianceWhitelistItemList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceWhitelistItemList\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_IMAGE\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"WhitelistItemSet\": [\n            {\n                \"WhitelistItemId\": 123,\n                \"CustomerPolicyItemId\": 456,\n                \"Name\": \"xxxx\",\n                \"StandardId\": 123,\n                \"StandardName\": \"CIS Docker\",\n                \"AffectedAssetCount\": 100,\n                \"LastUpdateTime\": \"2021-04-02 16:00:00\",\n                \"InsertTime\": \"2021-04-02 16:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询白名单列表"
+      }
+    ],
+    "DescribeContainerAssetSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeContainerAssetSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HostRunningCnt\": 1,\n        \"ContainerPauseCnt\": 1,\n        \"ContainerRunningCnt\": 1,\n        \"ImageRegistryCnt\": 1,\n        \"ContainerStopped\": 1,\n        \"ImageTotalCnt\": 1,\n        \"ImageCnt\": 1,\n        \"HostCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"HostOfflineCnt\": 1,\n        \"ContainerTotalCnt\": 1\n    }\n}",
+        "title": "查询容器资产信息"
+      }
+    ],
+    "DescribeContainerSecEventSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeContainerSecEventSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UnhandledFileCnt\": 1,\n        \"UnhandledEscapeCnt\": 1,\n        \"UnhandledRiskSyscallCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"UnhandledReverseShellCnt\": 1,\n        \"UnhandledAbnormalProcessCnt\": 1\n    }\n}",
+        "title": "查询待处理安全事件"
+      }
+    ],
+    "DescribeEscapeEventDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventDetail\n&EventId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"Remark\": \"xx\",\n            \"Description\": \"xx\",\n            \"Solution\": \"xx\"\n        },\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventType\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n            \"EventCount\": 0,\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"NodeName\": \"xx\"\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "getecsapeDetail"
+      }
+    ],
+    "DescribeEscapeEventInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventInfo\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"Status\": \"xx\",\n                \"EventId\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"EventType\": \"xx\",\n                \"Solution\": \"xx\",\n                \"FoundTime\": \"2020-09-22 00:00:00\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"ImageId\": \"xx\",\n                \"EventName\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"PodName\": \"xx\",\n                \"Description\": \"xx\",\n                \"EventCount\": 0,\n                \"NodeName\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "getescapeInfo"
+      }
+    ],
+    "DescribeEscapeEventsExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询容器逃逸事件列表导出"
+      }
+    ],
+    "DescribeEscapeRuleInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeRuleInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleSet\": [\n            {\n                \"Type\": \"xx\",\n                \"Name\": \"xx\",\n                \"IsEnable\": true\n            }\n        ]\n    }\n}",
+        "title": "getescapeRule"
+      }
+    ],
+    "DescribeEscapeSafeState": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeSafeState\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IsSafe\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询容器逃逸安全状态"
+      }
+    ],
+    "DescribeExportJobResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportJobResult\n<公共请求参数>\n\n{\n    \"JobId\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"ExportStatus\": \"RUNNING\",\n        \"ExportProgress\": 90,\n        \"DownloadURL\": \"\",\n        \"FailureMsg\": \"\"\n    }\n}",
+        "title": "查询导出任务的结果"
+      }
+    ],
+    "DescribeImageAuthorizedInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAuthorizedInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NotScannedImageCnt\": 1,\n        \"TotalAuthorizedCnt\": 1,\n        \"UsedAuthorizedCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询镜像授权信息"
+      }
+    ],
+    "DescribeImageRegistryTimingScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageRegistryTimingScanTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f60f0ef9-a105-4535-8dfd-42ad8b3a9c73\",\n        \"ScanTime\": \"03:00:00\",\n        \"ScanPeriod\": 1,\n        \"ScanType\": [\n            \"risk\",\n            \"virus\"\n        ],\n        \"All\": false,\n        \"Images\": [\n            {\n                \"ImageDigest\": \"sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8\",\n                \"RegistryType\": \"ccr\",\n                \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/luping:v1\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"Namespace\": \"\",\n                \"ImageName\": \"yunding/luping\",\n                \"ImageTag\": \"v1\",\n                \"Force\": \"\"\n            }\n        ],\n        \"Id\": [\n            1\n        ],\n        \"Enable\": true\n    }\n}",
+        "title": "镜像仓库查看定时任务"
+      }
+    ],
+    "DescribeImageRiskSummary": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageRiskSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RiskCnt\": [\n            {\n                \"Cnt\": 1,\n                \"Level\": \"xx\"\n            }\n        ],\n        \"VulnerabilityCnt\": [\n            {\n                \"Cnt\": 1,\n                \"Level\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"MalwareVirusCnt\": [\n            {\n                \"Cnt\": 1,\n                \"Level\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询本地镜像风险概览"
+      }
+    ],
+    "DescribeImageRiskTendency": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageRiskTendency\n&EndTime=2020-09-22\n&StartTime=2020-09-22\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ImageRiskTendencySet\": [\n            {\n                \"ImageRiskSet\": [\n                    {\n                        \"Cnt\": 1,\n                        \"CurTime\": \"2020-09-22\"\n                    }\n                ],\n                \"ImageRiskType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取运行时安全事件新增趋势"
+      }
+    ],
+    "DescribeImageSimpleList": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageSimpleList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ImageCnt\": 1,\n        \"ImageList\": [\n            {\n                \"Size\": 1,\n                \"ImageName\": \"xx\",\n                \"ContainerCnt\": 0,\n                \"ImageType\": \"xx\",\n                \"ImageID\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询全部镜像列表"
+      }
+    ],
+    "DescribePostPayDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribePostPayDetail\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SoftQuotaDayDetail\": [\n            {\n                \"PayTime\": \"xx\",\n                \"CoresCnt\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询后付费详情"
+      }
+    ],
+    "DescribeProVersionInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeProVersionInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2021-05-01 00:00:00\",\n        \"CoresCnt\": 1,\n        \"MaxPostPayCoresCnt\": 1,\n        \"StartTime\": \"2021-05-31 00:00:00\",\n        \"ResourceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询专业版需购买信息"
+      }
+    ],
+    "DescribePurchaseStateInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribePurchaseStateInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AuthorizedImageCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"GivenAuthorizedCnt\": 500,\n        \"AuthorizedCoresCnt\": 1,\n        \"ImageCnt\": 1,\n        \"State\": 0,\n        \"RequestId\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"CoresCnt\": 1,\n        \"AutomaticRenewal\": 0\n    }\n}",
+        "title": "查询容器安全服务已购买信息"
+      }
+    ],
+    "DescribeRefreshTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRefreshTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"34702\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed202021-696e-4c03-a726-ca459c47c4ea\",\n        \"TaskStatus\": \"Task_Finish\"\n    }\n}",
+        "title": "任务执行结束示例"
+      }
+    ],
+    "DescribeReverseShellDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellDetail\n&EventId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"DstAddress\": \"xx\",\n            \"Remark\": \"xx\",\n            \"Description\": \"xx\",\n            \"Solution\": \"xx\"\n        },\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventType\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n            \"EventCount\": 0,\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"NodeName\": \"xx\"\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ParentProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时反弹shell事件详细信息"
+      }
+    ],
+    "DescribeReverseShellEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellEvents\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"Status\": \"xx\",\n                \"ContainerName\": \"xx\",\n                \"Remark\": \"xx\",\n                \"ContainerId\": \"xx\",\n                \"PProcessName\": \"xx\",\n                \"ProcessPath\": \"xx\",\n                \"Solution\": \"xx\",\n                \"FoundTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageId\": \"xx\",\n                \"ProcessName\": \"xx\",\n                \"ImageName\": \"xx\",\n                \"EventId\": \"xx\",\n                \"EventCount\": 0,\n                \"LatestFoundTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时反弹shell列表"
+      }
+    ],
+    "DescribeReverseShellEventsExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时反弹shell事件列表信息导出"
+      }
+    ],
+    "DescribeReverseShellWhiteListDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellWhiteListDetail\n&WhiteListId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"WhiteListDetailInfo\": {\n            \"ImageIds\": [\n                \"xx\"\n            ],\n            \"Id\": \"xx\",\n            \"ProcessName\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时反弹shell白名单详细信息"
+      }
+    ],
+    "DescribeReverseShellWhiteLists": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeReverseShellWhiteLists\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"WhiteListSet\": [\n            {\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"DstIp\": \"xx\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"ProcessName\": \"xx\",\n                \"DstPort\": \"xx\",\n                \"Id\": \"xx\",\n                \"ImageCount\": 1\n            }\n        ]\n    }\n}",
+        "title": "运行时反弹shell白名单列表"
+      }
+    ],
+    "DescribeRiskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0zmsjvko\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ada3da6c-7aa9-48a7-9bdd-c9ae192fef65\",\n        \"TotalCount\": 18,\n        \"ClusterRiskItems\": [\n            {\n                \"CheckItem\": {\n                    \"CheckItemId\": 1,\n                    \"Name\": \"runc 安全漏洞\",\n                    \"ItemDetail\": \"runc是一款用于根据OCI规范生成和运行容器的CLI（命令行界面）工具。runc存在安全漏洞，攻击者可利用该漏洞将主机文件系统绑定到容器中。\",\n                    \"RiskLevel\": \"Serious\",\n                    \"RiskTarget\": \"runC\",\n                    \"RiskType\": \"CVERisk\",\n                    \"RiskAttribute\": \"PrivilegePromotion\",\n                    \"RiskProperty\": \"ExistPOC ExistEXP RemoteExploit ServerRestart\",\n                    \"CVENumber\": \"CVE-2021-30465\",\n                    \"DiscoverTime\": \"2021-05-27 21:15:00\",\n                    \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r\",\n                    \"CVSS\": \"CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H\",\n                    \"CVSSScore\": \"8.5\",\n                    \"RelateLink\": \"https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r https://github.com/opencontainers/runc/releases http://www.openwall.com/lists/oss-security/2021/05/19/2\",\n                    \"AffectedType\": \"Node\",\n                    \"AffectedVersion\": \"\"\n                },\n                \"VerifyInfo\": \"\",\n                \"ErrorMessage\": \"\",\n                \"AffectedClusterCount\": 1,\n                \"AffectedNodeCount\": 2\n            },\n            {\n                \"CheckItem\": {\n                    \"CheckItemId\": 2,\n                    \"Name\": \"Apache containerd 安全漏洞\",\n                    \"ItemDetail\": \"containerd是美国阿帕奇（Apache）基金会的一个容器守护进程。该进程根据RunCOCI规范负责控制宿主机上容器的完整周期。containerd1.3.9之前版本和1.4.3版本存在安全漏洞，该漏洞源于containerd-shimAPI被不正确地公开给主机网络容器。shimsAPI套接字的访问控制验证了连接进程的有效UID为0，但是没有限制对抽象Unix域套接字的访问。这将允许在与shim相同的网络名称空间中运行的恶意容器，其有效UID为0，但在其他方面减少了特权，从而导致使用elevat运行新进程。\",\n                    \"RiskLevel\": \"Middle\",\n                    \"RiskTarget\": \"Containerd\",\n                    \"RiskType\": \"CVERisk\",\n                    \"RiskAttribute\": \"PrivilegePromotion\",\n                    \"RiskProperty\": \"ExistPOC ExistEXP ServerRestart\",\n                    \"CVENumber\": \"CVE-2020-15257\",\n                    \"DiscoverTime\": \"2020-12-01 11:15:00\",\n                    \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad\",\n                    \"CVSS\": \"CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N\",\n                    \"CVSSScore\": \"5.2\",\n                    \"RelateLink\": \"https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad https://github.com/containerd/containerd/releases/tag/v1.4.3 https://github.com/containerd/containerd/security/advisories/GHSA-36xw-fx78-c5r4\",\n                    \"AffectedType\": \"Node\",\n                    \"AffectedVersion\": \"\"\n                },\n                \"VerifyInfo\": \"\",\n                \"ErrorMessage\": \"\",\n                \"AffectedClusterCount\": 1,\n                \"AffectedNodeCount\": 2\n            }\n        ]\n    }\n}",
+        "title": "查询集群风险项列表示例"
+      }
+    ],
+    "DescribeRiskSyscallDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallDetail\n&EventId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventDetail\": {\n            \"SyscallName\": \"chroot\",\n            \"Remark\": \"xx\",\n            \"Description\": \"xx\",\n            \"Solution\": \"xx\"\n        },\n        \"EventBaseInfo\": {\n            \"EventId\": \"xx\",\n            \"ContainerName\": \"xx\",\n            \"ContainerId\": \"xx\",\n            \"EventType\": \"xx\",\n            \"FoundTime\": \"2020-09-22 00:00:00\",\n            \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n            \"EventCount\": 0,\n            \"Status\": \"xx\",\n            \"EventName\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"PodName\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"NodeName\": \"xx\"\n        },\n        \"ProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessTree\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessAuthority\": \"xx\",\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessMd5\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ParentProcessInfo\": {\n            \"ProcessPath\": \"xx\",\n            \"ProcessId\": 1,\n            \"ProcessUserGroup\": \"xx\",\n            \"ProcessName\": \"xx\",\n            \"ProcessParam\": \"xx\",\n            \"ProcessStartUser\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时高危系统调用事件详细信息"
+      }
+    ],
+    "DescribeRiskSyscallEvents": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallEvents\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EventSet\": [\n            {\n                \"ProcessName\": \"bash\",\n                \"ProcessPath\": \"/home/work/\",\n                \"ImageId\": \"81abdbc1427b1983b63a2e7bf48ab156a9a22\",\n                \"ContainerId\": \"81abdbc1427b1983b63a2e7bf48ab156a9a22\",\n                \"ImageName\": \"镜像名\",\n                \"ContainerName\": \"/condescending_allen\",\n                \"FoundTime\": \"2020-02-02 13:00:00\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"EventCount\": 0,\n                \"Solution\": \"解决方案\",\n                \"Description\": \"xxx事件\",\n                \"SyscallName\": \"chroot\",\n                \"Status\": \"EVENT_UNDEAL\",\n                \"EventId\": \"xxx\",\n                \"NodeName\": \"VM-0-13-centos\",\n                \"PodName\": \"pod-name\",\n                \"RuleExist\": true,\n                \"Remark\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"0094843a-3023-1721-f7ed-b23f47ff3252\"\n    }\n}",
+        "title": "运行时高危系统调用接口"
+      }
+    ],
+    "DescribeRiskSyscallEventsExport": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallEventsExport\n&ExportField.0=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DownloadUrl\": \"xx\"\n    }\n}",
+        "title": "查询运行时异常进程事件列表信息导出"
+      }
+    ],
+    "DescribeRiskSyscallNames": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallNames\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SyscallNames\": [\n            \"chroot\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时高危系统调用系统名称列表"
+      }
+    ],
+    "DescribeRiskSyscallWhiteListDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallWhiteListDetail\n&WhiteListId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"WhiteListDetailInfo\": {\n            \"SyscallNames\": [\n                \"chroot\"\n            ],\n            \"ImageIds\": [\n                \"xx\"\n            ],\n            \"Id\": \"xx\",\n            \"ProcessPath\": \"xx\"\n        }\n    }\n}",
+        "title": "运行时高危系统调用白名单详细信息"
+      }
+    ],
+    "DescribeRiskSyscallWhiteLists": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeRiskSyscallWhiteLists\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"WhiteListSet\": [\n            {\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"SyscallNames\": [\n                    \"chroot\",\n                    \"kill\"\n                ],\n                \"ImageIds\": [\n                    \"xx\"\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"ProcessPath\": \"xx\",\n                \"Id\": \"xx\",\n                \"ImageCount\": 1,\n                \"IsGlobal\": true\n            }\n        ]\n    }\n}",
+        "title": "运行时高危系统调用白名单列表"
+      }
+    ],
+    "DescribeSecEventsTendency": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeSecEventsTendency\n&EndTime=2020-09-22\n&StartTime=2020-09-22\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"EventTendencySet\": [\n            {\n                \"EventSet\": [\n                    {\n                        \"Cnt\": 1,\n                        \"CurTime\": \"2020-09-22\"\n                    }\n                ],\n                \"EventType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取运行时安全事件新增趋势"
+      }
+    ],
+    "DescribeTaskResultSummary": [
+      {
+        "document": "请求成功获取的实例",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResultSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SeriousRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"HighRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"MiddleRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"HintRiskNodeCount\": [\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2,\n            3,\n            2\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "常规请求"
+      }
+    ],
+    "DescribeUnfinishRefreshTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnfinishRefreshTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7e5ce68-b074-4fb7-8354-f2b87260063e\",\n        \"TaskId\": 0,\n        \"TaskStatus\": \"Task_NoExist\"\n    }\n}",
+        "title": "查询是否存在未完成刷新任务示例"
+      }
+    ],
+    "DescribeUserCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserCluster\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6405e01-bf4f-4044-abe9-4458783a3066\",\n        \"TotalCount\": 9,\n        \"ClusterInfoList\": [\n            {\n                \"ClusterId\": \"cls-0zmsjvko\",\n                \"ClusterName\": \"wk独立集群\",\n                \"ClusterVersion\": \"1.18.4\",\n                \"ClusterOs\": \"tlinux2.4x86_64\",\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n                \"ClusterNodeNum\": 2,\n                \"Region\": \"ap-guangzhou\",\n                \"DefenderStatus\": \"Defender_Normal\",\n                \"ClusterStatus\": \"Running\",\n                \"ClusterCheckMode\": \"Cluster_Normal\",\n                \"ClusterAutoCheck\": true,\n                \"DefenderErrorReason\": \"\",\n                \"UnreadyNodeNum\": 0,\n                \"SeriousRiskCount\": 1,\n                \"HighRiskCount\": 5,\n                \"MiddleRiskCount\": 8,\n                \"HintRiskCount\": 4,\n                \"CheckFailReason\": \"\",\n                \"CheckStatus\": \"HasRisk\",\n                \"TaskCreateTime\": \"2021-11-16 02:01:36\"\n            },\n            {\n                \"ClusterId\": \"cls-94d14s7x\",\n                \"ClusterName\": \"jgl-独立\",\n                \"ClusterVersion\": \"1.20.6\",\n                \"ClusterOs\": \"tlinux2.4x86_64\",\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n                \"ClusterNodeNum\": 2,\n                \"Region\": \"ap-beijing\",\n                \"DefenderStatus\": \"Defender_Normal\",\n                \"ClusterStatus\": \"Running\",\n                \"ClusterCheckMode\": \"Cluster_Normal\",\n                \"ClusterAutoCheck\": false,\n                \"DefenderErrorReason\": \"\",\n                \"UnreadyNodeNum\": 0,\n                \"SeriousRiskCount\": 0,\n                \"HighRiskCount\": 1,\n                \"MiddleRiskCount\": 7,\n                \"HintRiskCount\": 3,\n                \"CheckFailReason\": \"\",\n                \"CheckStatus\": \"HasRisk\",\n                \"TaskCreateTime\": \"2021-11-15 11:57:24\"\n            }\n        ]\n    }\n}",
+        "title": "查询结果"
+      }
+    ],
+    "DescribeValueAddedSrvInfo": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeValueAddedSrvInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LocalImageCnt\": 1,\n        \"UnusedAuthorizedCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"RegistryImageCnt\": 1\n    }\n}",
+        "title": "查询增值服务需购买信息"
+      }
+    ],
+    "DescribeVirusDetail": [
+      {
+        "document": "运行时查询木马文件信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusDetail\n<公共请求参数>\n\n{\n    \"Id\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerName\": \"xx\",\n        \"ProcessStartAccount\": \"xx\",\n        \"RiskLevel\": \"xx\",\n        \"VirusName\": \"xx\",\n        \"Mark\": \"xx\",\n        \"ProcessChan\": \"xx\",\n        \"ProcessAccountGroup\": \"xx\",\n        \"ProcessId\": 1,\n        \"Tags\": [\n            \"xx\"\n        ],\n        \"HostName\": \"xx\",\n        \"ImageId\": \"xx\",\n        \"HarmDescribe\": \"xx\",\n        \"SuggestScheme\": \"xx\",\n        \"ProcessName\": \"xx\",\n        \"ProcessArgv\": \"xx\",\n        \"ProcessMd5\": \"xx\",\n        \"ProcessFileAuthority\": \"xx\",\n        \"ModifyTime\": \"xx\",\n        \"SourceType\": 1,\n        \"ProcessPath\": \"xx\",\n        \"HostId\": \"xx\",\n        \"ContainerId\": \"xx\",\n        \"FilePath\": \"xx\",\n        \"ImageName\": \"xx\",\n        \"PodName\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"Size\": 1,\n        \"FileName\": \"xx\",\n        \"FileMd5\": \"xx\",\n        \"EventType\": \"xx\",\n        \"Status\": \"xx\",\n        \"SubStatus\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时查询木马文件信息"
+      }
+    ],
+    "DescribeVirusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "运行时文件查杀事件列表"
+      }
+    ],
+    "DescribeVirusMonitorSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusMonitorSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"ScanPath\": []\n    }\n}",
+        "title": "运行时查询文件查杀实时监控设置"
+      }
+    ],
+    "DescribeVirusScanSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\",\n        \"EnableScan\": true,\n        \"Cycle\": 1,\n        \"BeginScanAt\": \"01:00:00\",\n        \"ScanPathAll\": true,\n        \"ScanPathType\": 0,\n        \"Timeout\": 2,\n        \"ScanRangeType\": 0,\n        \"ClickTimeout\": 1,\n        \"ScanRangeAll\": true,\n        \"ScanIds\": [],\n        \"ScanPath\": []\n    }\n}",
+        "title": "运行时查询文件查杀设置"
+      }
+    ],
+    "DescribeVirusScanTaskStatus": [
+      {
+        "document": "运行时查询文件查杀任务状态",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanTaskStatus\n<公共请求参数>\n\n{\n    \"TaskID\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ContainerScanCnt\": 0,\n        \"ContainerTotal\": 339,\n        \"LeftSeconds\": 4666,\n        \"RequestId\": \"b9e9e86e-5b7e-476c-9be1-a8c6399afef3\",\n        \"RiskCnt\": 0,\n        \"Schedule\": 0,\n        \"Status\": \"SCANNING\",\n        \"RiskContainerCnt\": 0,\n        \"StartTime\": \"\",\n        \"EndTime\": \"\",\n        \"ScanType\": 1\n    }\n}",
+        "title": "运行时查询文件查杀任务状态"
+      }
+    ],
+    "DescribeVirusScanTimeoutSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusScanTimeoutSetting\n<公共请求参数>\n\n{\n    \"ScanType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\",\n        \"Timeout\": 5\n    }\n}",
+        "title": "运行时文件扫描超时设置查询"
+      }
+    ],
+    "DescribeVirusSummary": [
+      {
+        "document": "运行时查询木马概览信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xx\",\n        \"RiskContainerCnt\": 1,\n        \"RiskCnt\": 1,\n        \"VirusDataBaseModifyTime\": \"xx\",\n        \"RiskContainerIncrease\": 1,\n        \"RiskIncrease\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时查询木马概览信息"
+      }
+    ],
+    "DescribeVirusTaskList": [
+      {
+        "document": "运行时查询文件查杀任务列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusTaskList\n<公共请求参数>\n\n{\n    \"TaskId\": \"dskaldjskld\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"ff49ad4b-fe52-4f9d-8810-ba377eab9124\",\n        \"TotalCount\": 6\n    }\n}",
+        "title": "运行时查询文件查杀任务列表"
+      }
+    ],
+    "DescribeWarningRules": [
+      {
+        "document": "获取告警策略列表",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeWarningRules\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"WarningRules\": [\n            {\n                \"Type\": \"IMG_VIRUS\",\n                \"Switch\": \"ON\",\n                \"BeginTime\": \"10:00\",\n                \"EndTime\": \"20:00\",\n                \"ControlBits\": \"110\"\n            }\n        ],\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "获取告警策略列表"
+      }
+    ],
+    "ExportVirusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportVirusList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\",\n        \"JobId\": \"\"\n    }\n}",
+        "title": "运行时文件查杀事件列表导出"
+      }
+    ],
+    "InitializeUserComplianceEnvironment": [
+      {
+        "document": "在用户首次进入合规安全功能的场景下，调用此接口为用户初始化环境，分配资源和数据。",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitializeUserComplianceEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "初始化用户的合规基线检环境"
+      }
+    ],
+    "ModifyAbnormalProcessRuleStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyAbnormalProcessRuleStatus\n&IsEnable=true\n&RuleIdSet.0=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "修改规则状态"
+      }
+    ],
+    "ModifyAbnormalProcessStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyAbnormalProcessStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改异常进程事件状态"
+      }
+    ],
+    "ModifyAccessControlRuleStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyAccessControlRuleStatus\n&IsEnable=true\n&RuleIdSet.0=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
+        "title": "修改规则状态"
+      }
+    ],
+    "ModifyAccessControlStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyAccessControlStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改运行时访问控制事件状态"
+      }
+    ],
+    "ModifyAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAsset\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"Hosts\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\",\n        \"Status\": \"SUCCESS\"\n    }\n}",
+        "title": "主机资产刷新"
+      }
+    ],
+    "ModifyAssetImageRegistryScanStop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStop\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
+        "title": "镜像仓库停止镜像一键扫描任务"
+      }
+    ],
+    "ModifyAssetImageRegistryScanStopOneKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStopOneKey\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
+        "title": "镜像仓库停止镜像一键扫描任务"
+      }
+    ],
+    "ModifyAssetImageScanStop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageScanStop\n<公共请求参数>\n\n{\n    \"TaskID\": \"6013bde934b9a906387abe8a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8699941c-3c21-43a7-a6d4-aef30cbabd54\",\n        \"Status\": \"SUCCESS\"\n    }\n}",
+        "title": "停止镜像扫描"
+      }
+    ],
+    "ModifyCompliancePeriodTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompliancePeriodTask\n<公共请求参数>\n\n{\n    \"PeriodTaskId\": 12345,\n    \"PeriodRule\": {\n        \"ExecutionTime\": \"04:00:00\",\n        \"Frequency\": 1\n    },\n    \"StandardSettings\": [\n        {\n            \"StandardId\": 12345,\n            \"Enable\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "编辑定时任务"
+      }
+    ],
+    "ModifyEscapeEventStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyEscapeEventStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改容器逃逸扫描事件状态"
+      }
+    ],
+    "ModifyEscapeRule": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyEscapeRule\n&RuleSet.0.Type=\"ESCAPE_HOST_ACESS_FILE\"\n&RuleSet.0.IsEnable=true\n&RuleSet.1.Type=\"ESCAPE_MOUNT_NAMESPACE\"\n&RuleSet.1.IsEnable=true\n&RuleSet.2.Type=\"ESCAPE_PRIVILEDGE\"\n&RuleSet.2.IsEnable=true\n&RuleSet.3.Type=\"ESCAPE_PRIVILEDGE_CONTAINER_START\"\n&RuleSet.3.IsEnable=true\n&RuleSet.4.Type=\"ESCAPE_MOUNT_SENSITIVE_PTAH\"\n&RuleSet.4.IsEnable=true\n&RuleSet.5.Type=\"ESCAPE_SYSCALL\"\n&RuleSet.5.IsEnable=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "updataEscape"
+      }
+    ],
+    "ModifyReverseShellStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyReverseShellStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改反弹shell事件状态"
+      }
+    ],
+    "ModifyRiskSyscallStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyRiskSyscallStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改高危系统调用事件状态"
+      }
+    ],
+    "ModifyVirusFileStatus": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyVirusFileStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时更新木马文件事件状态"
+      }
+    ],
+    "ModifyVirusMonitorSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusMonitorSetting\n<公共请求参数>\n\n{\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanPathAll\": true,\n    \"ScanPath\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\"\n    }\n}",
+        "title": "运行时更新文件查杀实时监控设置"
+      }
+    ],
+    "ModifyVirusScanSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusScanSetting\n<公共请求参数>\n\n{\n    \"BeginScanAt\": \"xx\",\n    \"EnableScan\": true,\n    \"ScanPathType\": 1,\n    \"ScanRangeType\": 1,\n    \"ScanPathAll\": true,\n    \"Timeout\": 1,\n    \"ScanIds\": [\n        \"xx\"\n    ],\n    \"ScanPath\": [\n        \"xx\"\n    ],\n    \"ScanRangeAll\": true,\n    \"Cycle\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9cd345d-9d88-4e3b-86b6-e0e5c971731a\"\n    }\n}",
+        "title": "运行时更新文件查杀设置"
+      }
+    ],
+    "ModifyVirusScanTimeoutSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVirusScanTimeoutSetting\n<公共请求参数>\n\n{\n    \"Timeout\": 1,\n    \"ScanType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\"\n    }\n}",
+        "title": "运行时文件扫描超时设置"
+      }
+    ],
+    "RemoveAssetImageRegistryRegistryDetail": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=RemoveAssetImageRegistryRegistryDetail\n&RegistryId=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除单个镜像仓库详细信息"
+      }
+    ],
+    "RenewImageAuthorizeState": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=RenewImageAuthorizeState\n&AllImages=false\n&ImageIds.0=xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "授权镜像扫描"
+      }
+    ],
+    "ScanComplianceAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
+        "title": "重新扫描指定的资产"
+      }
+    ],
+    "ScanComplianceAssetsByPolicyItem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceAssetsByPolicyItem\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemId\": 10001,\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
+        "title": "用指定的检测项重新检测选定的资产"
+      }
+    ],
+    "ScanCompliancePolicyItems": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanCompliancePolicyItems\n<公共请求参数>\n\n{\n    \"CustomerPolicyItemIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
+        "title": "重新检测选定的检测项"
+      }
+    ],
+    "ScanComplianceScanFailedAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanComplianceScanFailedAssets\n<公共请求参数>\n\n{\n    \"CustomerAssetIdSet\": [\n        123,\n        456,\n        789\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TaskId\": 123\n    }\n}",
+        "title": "重新检测上次检测失败的资产"
+      }
+    ],
+    "SetCheckMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCheckMode\n<公共请求参数>\n\n{\n    \"ClusterAutoCheck\": \"1\",\n    \"ClusterIds\": [\n        \"cls-0zmsjvko\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ec127f1-0a8f-4f44-857f-46290bfe23e7\",\n        \"SetCheckResult\": \"Succ\"\n    }\n}",
+        "title": "设置检测模式和自动检查示例"
+      }
+    ],
+    "StopVirusScanTask": [
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=StopVirusScanTask\n&TaskId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "运行时停止木马查杀任务"
+      }
+    ],
+    "SyncAssetImageRegistryAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncAssetImageRegistryAsset\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\"\n    }\n}",
+        "title": "镜像仓库资产刷新"
+      }
+    ],
+    "UpdateAssetImageRegistryRegistryDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"Name\": \"xx\",\n    \"Url\": \"xx\",\n    \"RegistryVersion\": \"xx\",\n    \"RegistryRegion\": \"xx\",\n    \"NetType\": \"xx\",\n    \"Password\": \"xx\",\n    \"RegistryType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"NameRepeatErr\": \"xx\",\n        \"HealthCheckErr\": \"xx\",\n        \"RegistryId\": 4\n    }\n}",
+        "title": "更新单个镜像仓库详细信息"
+      }
+    ],
+    "UpdateImageRegistryTimingScanTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageRegistryTimingScanTask\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"ScanType\": [\n        \"xx\"\n    ],\n    \"ScanTime\": \"xx\",\n    \"ScanPeriod\": 1,\n    \"Enable\": true,\n    \"Images\": [\n        {\n            \"Force\": \"xx\",\n            \"ImageTag\": \"xx\",\n            \"InstanceId\": \"xx\",\n            \"RegistryType\": \"xx\",\n            \"Namespace\": \"xx\",\n            \"ImageRepoAddress\": \"xx\",\n            \"ImageName\": \"xx\",\n            \"ImageDigest\": \"xx\",\n            \"InstanceName\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dc14a3b-9238-40b7-aa68-425db89964fa\"\n    }\n}",
+        "title": "镜像仓库更新定时任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -335,6 +335,8 @@ include tccli/services/tcm/v20210413/api.json
 include tccli/services/tcm/v20210413/examples.json
 include tccli/services/tcr/v20190924/api.json
 include tccli/services/tcr/v20190924/examples.json
+include tccli/services/tcss/v20201101/api.json
+include tccli/services/tcss/v20201101/examples.json
 include tccli/services/tdid/v20210519/api.json
 include tccli/services/tdid/v20210519/examples.json
 include tccli/services/tdmq/v20200217/api.json
