@@ -48,7 +48,7 @@
       {
         "document": "",
         "input": "https://ft.tencentcloudapi.com/?Action=QueryFaceMorphJob\n&JobId=Iyjz4Rj3OCt5Az9a\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobStatus\": \"处理完成\",\n        \"FaceMorphOutput\": {\n            \"MorphUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_morph_test/1/251009261/20200825102457_19635278-0738-4d87-a264-159832228363_result.mp4\",\n            \"MorphMd5\": \"31CDA040BA0F1CE7C59DB3F0B3334AA8\",\n            \"CoverImage\": \"\"\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobStatusCode\": 7,\n        \"JobStatus\": \"处理完成\",\n        \"FaceMorphOutput\": {\n            \"MorphUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_morph_test/1/251009261/20200825102457_19635278-0738-4d87-a264-159832228363_result.mp4\",\n            \"MorphMd5\": \"31CDA040BA0F1CE7C59DB3F0B3334AA8\",\n            \"CoverImage\": \"\"\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
         "title": "调用返回成功"
       }
     ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres DescribeDBInstanceAttribute --cli-unfold-argument  \
-    --DBInstanceId postgres-6bwgamo3
+    --DBInstanceId postgres-xxxxxxxx
 ```
 
 Output: 
@@ -20,10 +20,10 @@ Output:
             "AppId": 100000000,
             "Uid": 1000001,
             "ProjectId": 0,
-            "VpcId": "",
-            "SubnetId": "",
-            "DBInstanceId": "postgres-6bwgamo3",
-            "MasterDBInstanceId": "postgres-omi7b91z",
+            "VpcId": "vpc-xxxxxxxx",
+            "SubnetId": "subnet-xxxxxxxx",
+            "DBInstanceId": "postgres-xxxxxxxx",
+            "MasterDBInstanceId": "postgres-xxxxxxxx",
             "Type": 1,
             "DBInstanceName": "未命名",
             "DBInstanceStatus": "running",
@@ -36,25 +36,31 @@ Output:
             "DBInstanceNetInfo": [
                 {
                     "Address": "",
-                    "Ip": "xxxxx",
+                    "Ip": "10.10.10.220",
                     "Port": 5432,
                     "Status": "opened",
-                    "NetType": "inner"
+                    "NetType": "private",
+                    "VpcId": "vpc-xxxxxxxx",
+                    "SubnetId": "subnet-xxxxxxxx"
                 },
                 {
                     "Address": "",
                     "Ip": "",
                     "Port": 0,
-                    "Status": "0",
-                    "NetType": "public"
+                    "Status": "initing",
+                    "NetType": "public",
+                    "VpcId": "",
+                    "SubnetId": ""
                 }
             ],
             "DBCharset": "UTF8",
-            "DBVersion": "9.5.4",
+            "DBVersion": "10",
+            "DBKernelVersion": "v10.4_r1.0",
             "CreateTime": "2017-12-28 19:23:19",
             "UpdateTime": "2018-01-18 15:54:32",
             "ExpireTime": "2018-01-28 19:23:23",
             "IsolatedTime": "0000-00-00 00:00:00",
+            "OfflineTime": "2019-12-28 19:23:19",
             "PayType": "prepaid",
             "AutoRenew": 1,
             "ReadOnlyInstanceNum": 1,
@@ -65,7 +71,8 @@ Output:
                     "TagKey": "tag1",
                     "TagValue": "v1"
                 }
-            ]
+            ],
+            "NetworkAccessList": []
         }
     }
 }

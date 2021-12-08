@@ -6,14 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeAssetImageRegistryListExport --cli-unfold-argument  \
-    --By xx \
-    --ExportField xx \
-    --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
-    --Offset 1 \
-    --Order xx
+    --ExportField InstanceName InstanceId RegistryType Namespace ImageName ImageTag ImageSize ImageDigest ImageId ImageRepoAddress ScanStatus VulCnt VirusCnt RiskCnt ScanStartTime ScanEndTime OsName IsAuthorized RegistryRegion
 ```
 
 Output: 

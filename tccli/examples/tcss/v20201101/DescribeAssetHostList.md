@@ -11,32 +11,40 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "List": [
             {
-                "HostID": "43d2d5df-93af-4229-b62e-60130801db2b",
-                "HostName": "",
-                "Group": "",
-                "HostIP": "10.0.0.33",
-                "DockerVersion": "",
-                "DockerFileSystemDriver": "",
-                "ImageCnt": 0,
-                "ContainerCnt": 0,
-                "Status": "online"
+                "Status": "xx",
+                "PublicIp": "xx",
+                "HostID": "xx",
+                "Group": "xx",
+                "DockerVersion": "xx",
+                "IsContainerd": true,
+                "HostName": "xx",
+                "ImageCnt": 1,
+                "DockerFileSystemDriver": "xx",
+                "HostIP": "xx",
+                "MachineType": "xx",
+                "ContainerCnt": 1,
+                "Uuid": "xx"
             },
             {
-                "HostID": "1f17abee-b687-11ea-ab12-48fd8e5f45fe",
-                "HostName": "VM-16-36-ubuntu",
-                "Group": "",
-                "HostIP": "172.16.16.36",
-                "DockerVersion": "",
-                "DockerFileSystemDriver": "",
-                "ImageCnt": 0,
-                "ContainerCnt": 0,
-                "Status": "online"
+                "Status": "xx",
+                "ImageCnt": 1,
+                "HostID": "xx",
+                "Group": "xx",
+                "DockerVersion": "xx",
+                "IsContainerd": true,
+                "HostName": "xx",
+                "PublicIp": "xx",
+                "DockerFileSystemDriver": "xx",
+                "HostIP": "xx",
+                "MachineType": "xx",
+                "ContainerCnt": 1,
+                "Uuid": "xx"
             }
         ],
-        "RequestId": "1a55edb3-33de-4538-81a8-8eb26a0db655",
-        "TotalCount": 122
+        "RequestId": "xx"
     }
 }
 ```

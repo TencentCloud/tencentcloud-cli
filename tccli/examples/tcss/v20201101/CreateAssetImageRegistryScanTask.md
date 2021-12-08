@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tcss CreateAssetImageRegistryScanTask --cli-unfold-argument ```
+tccli tcss CreateAssetImageRegistryScanTask --cli-unfold-argument  \
+    --Id 8741110 \
+    --ScanType CVE VIRUS RISK
+```
 
 Output: 
 ```

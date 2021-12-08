@@ -6,21 +6,8 @@ Input:
 
 ```
 tccli tcss DescribeAssetImageRegistryRiskListExport --cli-unfold-argument  \
-    --ImageInfo.Force xx \
-    --ImageInfo.ImageTag xx \
-    --ImageInfo.InstanceId xx \
-    --ImageInfo.RegistryType xx \
-    --ImageInfo.Namespace xx \
-    --ImageInfo.ImageRepoAddress xx \
-    --ImageInfo.ImageName xx \
-    --ImageInfo.ImageDigest xx \
-    --ImageInfo.InstanceName xx \
-    --ExportField xx \
-    --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
-    --Offset 1
+    --ExportField Path RiskLevel Category VirusName Tags \
+    --Id 3421599
 ```
 
 Output: 

@@ -857,7 +857,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本，目前支持：9.3.5、9.5.4、10.4、11.8、12.4五种版本。",
+          "document": "PostgreSQL主版本，目前支持：9.3、9.5、10、11、12、13以及9.3.5、9.5.4、10.4、11.8、12.4版本。",
           "example": "无",
           "member": "string",
           "name": "DBVersion",
@@ -2380,6 +2380,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -2393,8 +2394,10 @@
       "members": [
         {
           "document": "实例详细信息。",
+          "example": "无",
           "member": "DBInstance",
           "name": "DBInstance",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2517,7 +2520,7 @@
       "members": [
         {
           "document": "查询到的实例数量。",
-          "example": "2",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
@@ -2982,6 +2985,7 @@
         {
           "default": "",
           "document": "查询条件",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -2990,6 +2994,7 @@
         {
           "default": "",
           "document": "查询个数",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2998,6 +3003,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3006,6 +3012,7 @@
         {
           "default": "",
           "document": "排序指标，目前支持实例创建时间CreateTime",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3014,6 +3021,7 @@
         {
           "default": "",
           "document": "排序方式，包括升序、降序",
+          "example": "无",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3027,15 +3035,19 @@
       "members": [
         {
           "document": "查询结果数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServerlessDBInstance",
           "name": "DBInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

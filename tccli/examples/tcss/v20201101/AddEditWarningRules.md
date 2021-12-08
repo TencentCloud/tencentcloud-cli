@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tcss AddEditWarningRules --cli-unfold-argument  \
-    --WarningRules.0.Type IMG_VUL \
-    --WarningRules.0.Switch ON \
-    --WarningRules.0.BeginTime 20:00 \
-    --WarningRules.0.EndTime 10:00 \
-    --WarningRules.0.ControlBits 111
+    --WarningRules.0.BeginTime 00:00 \
+    --WarningRules.0.ControlBits 00000000 \
+    --WarningRules.0.EndTime 23:59 \
+    --WarningRules.0.Switch OFF \
+    --WarningRules.0.Type IMG_VUL
 ```
 
 Output: 

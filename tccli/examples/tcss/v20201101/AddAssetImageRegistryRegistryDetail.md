@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcss AddAssetImageRegistryRegistryDetail --cli-unfold-argument  \
-    --Username xx \
-    --Name xx \
-    --Url xx \
-    --RegistryVersion xx \
-    --RegistryRegion xx \
-    --NetType xx \
-    --Password xx \
-    --RegistryType xx
+    --Username usename \
+    --Name test \
+    --Url http://127.0.0.1:8080 \
+    --RegistryVersion V2 \
+    --RegistryRegion default \
+    --NetType public \
+    --Password xxx \
+    --RegistryType harbor
 ```
 
 Output: 

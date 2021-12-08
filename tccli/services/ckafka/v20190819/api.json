@@ -1236,7 +1236,7 @@
       ],
       "type": "object"
     },
-    "CreateInstancePreResponse": {
+    "CreateInstancePreResp": {
       "document": "创建预付费实例返回结构",
       "members": [
         {
@@ -1281,6 +1281,27 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateInstancePreResponse": {
+      "document": "CreateInstancePre返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "CreateInstancePreResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreatePartitionRequest": {
       "document": "CreatePartition请求参数结构体",

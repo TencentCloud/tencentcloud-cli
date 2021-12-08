@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument ```
+tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
+    --All True
+```
 
 Output: 
 ```

@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "JobStatusCode": 7,
         "JobStatus": "处理完成",
         "FaceMorphOutput": {
             "MorphUrl": "http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_morph_test/1/251009261/20200825102457_19635278-0738-4d87-a264-159832228363_result.mp4",

@@ -13,24 +13,26 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "List": [
             {
-                "Path": "/root/specimen_56d9739c7ecdbffa0f2f21efb33189fe",
-                "RiskLevel": 4,
-                "VirusName": "Script.VB.Ramnit.aa",
-                "Tags": [],
-                "Desc": "",
-                "Solution": "",
-                "Size": 342181,
-                "FirstScanTime": "2021-01-15T09:14:46Z",
-                "LatestScanTime": "2021-01-29T04:37:05.146Z",
-                "Md5": "56d9739c7ecdbffa0f2f21efb33189fe",
-                "FileName": ""
+                "FirstScanTime": "xx",
+                "Tags": [
+                    "xx"
+                ],
+                "RiskLevel": 1,
+                "VirusName": "xx",
+                "Solution": "xx",
+                "FileName": "xx",
+                "Md5": "xx",
+                "LatestScanTime": "xx",
+                "Path": "xx",
+                "Size": 1,
+                "Desc": "xx"
             }
         ],
-        "RequestId": "8ca5c2e3-fb80-4e44-82f1-f561ef2b4ccf",
-        "TotalCount": 11,
-        "VirusScanStatus": 0
+        "RequestId": "xx",
+        "VirusScanStatus": 1
     }
 }
 ```

@@ -112,6 +112,14 @@
         "title": "查询别名详细信息"
       }
     ],
+    "GetAsyncEventStatus": [
+      {
+        "document": "",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetAsyncEventStatus\n&InvokeRequestId=b379787f-8487-4bac-bd8c-17a20a9ce40e\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee33a89b-3825-4d2f-bd88-35a8fa27aae1\",\n        \"Result\": {\n            \"Status\": \"RUNNING\",\n            \"InvokeRequestId\": \"xx\",\n            \"StatusCode\": 0\n        }\n    }\n}",
+        "title": "查询函数异步事件状态"
+      }
+    ],
     "GetFunction": [
       {
         "document": "用户用此函数获取对应的函数信息，可指定版本与命名空间。",

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tcss ModifyAssetImageRegistryScanStopOneKey --cli-unfold-argument ```
+tccli tcss ModifyAssetImageRegistryScanStopOneKey --cli-unfold-argument  \
+    --All True
+```
 
 Output: 
 ```

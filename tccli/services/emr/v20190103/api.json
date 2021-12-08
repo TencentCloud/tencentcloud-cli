@@ -320,6 +320,7 @@
         {
           "default": "",
           "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13284",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -329,6 +330,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-38om728d",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -338,6 +340,7 @@
         {
           "default": "",
           "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "集群运行中",
           "member": "string",
           "name": "Ftitle",
           "required": true,
@@ -347,6 +350,7 @@
         {
           "default": "",
           "document": "集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tencent_emr",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -356,6 +360,7 @@
         {
           "default": "",
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": true,
@@ -365,6 +370,7 @@
         {
           "default": "",
           "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10002",
           "member": "int64",
           "name": "ZoneId",
           "required": true,
@@ -374,6 +380,7 @@
         {
           "default": "",
           "document": "用户APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "251112431",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -383,6 +390,7 @@
         {
           "default": "",
           "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000122121",
           "member": "string",
           "name": "Uin",
           "required": true,
@@ -392,6 +400,7 @@
         {
           "default": "",
           "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -401,6 +410,7 @@
         {
           "default": "",
           "document": "集群VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "87821",
           "member": "int64",
           "name": "VpcId",
           "required": true,
@@ -410,6 +420,7 @@
         {
           "default": "",
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021891",
           "member": "int64",
           "name": "SubnetId",
           "required": true,
@@ -419,6 +430,7 @@
         {
           "default": "",
           "document": "实例的状态码。取值范围：\n<li>2：表示集群运行中。</li>\n<li>3：表示集群创建中。</li>\n<li>4：表示集群扩容中。</li>\n<li>5：表示集群增加router节点中。</li>\n<li>6：表示集群安装组件中。</li>\n<li>7：表示集群执行命令中。</li>\n<li>8：表示重启服务中。</li>\n<li>9：表示进入维护中。</li>\n<li>10：表示服务暂停中。</li>\n<li>11：表示退出维护中。</li>\n<li>12：表示退出暂停中。</li>\n<li>13：表示配置下发中。</li>\n<li>14：表示销毁集群中。</li>\n<li>15：表示销毁core节点中。</li>\n<li>16：销毁task节点中。</li>\n<li>17：表示销毁router节点中。</li>\n<li>18：表示更改webproxy密码中。</li>\n<li>19：表示集群隔离中。</li>\n<li>20：表示集群冲正中。</li>\n<li>21：表示集群回收中。</li>\n<li>22：表示变配等待中。</li>\n<li>23：表示集群已隔离。</li>\n<li>24：表示缩容节点中。</li>\n<li>33：表示集群等待退费中。</li>\n<li>34：表示集群已退费。</li>\n<li>301：表示创建失败。</li>\n<li>302：表示扩容失败。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -428,6 +440,7 @@
         {
           "default": "",
           "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-10-18 19:46:32",
           "member": "string",
           "name": "AddTime",
           "required": true,
@@ -437,6 +450,7 @@
         {
           "default": "",
           "document": "已经运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0天18小时32分钟28秒",
           "member": "string",
           "name": "RunTime",
           "required": true,
@@ -446,6 +460,7 @@
         {
           "default": "",
           "document": "集群产品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EmrProductConfigOutter",
           "name": "Config",
           "required": true,
@@ -455,6 +470,7 @@
         {
           "default": "",
           "document": "主节点外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--",
           "member": "string",
           "name": "MasterIp",
           "required": true,
@@ -464,6 +480,7 @@
         {
           "default": "",
           "document": "EMR版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR-V2.5.0",
           "member": "string",
           "name": "EmrVersion",
           "required": true,
@@ -473,6 +490,7 @@
         {
           "default": "",
           "document": "收费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ChargeType",
           "required": true,
@@ -482,6 +500,7 @@
         {
           "default": "",
           "document": "交易版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TradeVersion",
           "required": true,
@@ -491,6 +510,7 @@
         {
           "default": "",
           "document": "资源订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ResourceOrderId",
           "required": true,
@@ -500,6 +520,7 @@
         {
           "default": "",
           "document": "是否计费集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IsTradeCluster",
           "required": true,
@@ -509,6 +530,7 @@
         {
           "default": "",
           "document": "集群错误状态告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AlarmInfo",
           "required": true,
@@ -518,6 +540,7 @@
         {
           "default": "",
           "document": "是否采用新架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "IsWoodpeckerCluster",
           "required": true,
@@ -527,6 +550,7 @@
         {
           "default": "",
           "document": "元数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "MetaDb",
           "required": true,
@@ -536,6 +560,7 @@
         {
           "default": "",
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -545,6 +570,7 @@
         {
           "default": "",
           "document": "Hive元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "HiveMetaDb",
           "required": true,
@@ -554,6 +580,7 @@
         {
           "default": "",
           "document": "集群类型:EMR,CLICKHOUSE,DRUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HADOOP",
           "member": "string",
           "name": "ServiceClass",
           "required": true,
@@ -563,6 +590,7 @@
         {
           "default": "",
           "document": "集群所有节点的别名序列化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "AliasInfo",
           "required": true,
@@ -572,6 +600,7 @@
         {
           "default": "",
           "document": "集群版本Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
           "member": "int64",
           "name": "ProductId",
           "required": true,
@@ -581,8 +610,69 @@
         {
           "default": "",
           "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hadoop-Default",
+          "member": "string",
+          "name": "SceneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景化集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hadoop",
+          "member": "string",
+          "name": "SceneServiceClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景化EMR版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClickHouse-V1.0.0",
+          "member": "string",
+          "name": "SceneEmrVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景化集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hadoop",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpc name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "subnet name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-name",
+          "member": "string",
+          "name": "SubnetName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2274,6 +2364,7 @@
         {
           "default": "",
           "document": "变配的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -2282,6 +2373,7 @@
         {
           "default": "",
           "document": "变配的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "3600",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -2290,6 +2382,7 @@
         {
           "default": "",
           "document": "节点变配的目标配置。",
+          "example": "无",
           "member": "UpdateInstanceSettings",
           "name": "UpdateSpec",
           "required": true,
@@ -2298,6 +2391,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -2306,6 +2400,7 @@
         {
           "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -2314,6 +2409,7 @@
         {
           "default": "",
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
+          "example": "CNY",
           "member": "string",
           "name": "Currency",
           "required": false,
@@ -2327,29 +2423,37 @@
       "members": [
         {
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.04",
           "member": "float",
           "name": "OriginalCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.01",
           "member": "float",
           "name": "DiscountCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "变配的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "s",
           "member": "string",
           "name": "TimeUnit",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "变配的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
           "member": "int64",
           "name": "TimeSpan",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4662,6 +4766,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "emr-4slr7ad7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4670,6 +4775,7 @@
         {
           "default": "",
           "document": "销毁节点ID。该参数为预留参数，用户无需配置。",
+          "example": "无",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -4696,6 +4802,7 @@
         {
           "default": "",
           "document": "实例ID。",
+          "example": "emr-4slr7ad7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4704,6 +4811,7 @@
         {
           "default": "",
           "document": "待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "example": "[\"emr-vm-xxx33tg\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,

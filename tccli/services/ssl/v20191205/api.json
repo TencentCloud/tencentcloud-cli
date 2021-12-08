@@ -286,6 +286,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

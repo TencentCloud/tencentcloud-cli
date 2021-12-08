@@ -6,15 +6,12 @@ Input:
 
 ```
 tccli tcss DescribeAssetImageRegistryVirusList --cli-unfold-argument  \
-    --ImageInfo.Force xx \
-    --ImageInfo.ImageTag xx \
-    --ImageInfo.InstanceId xx \
-    --ImageInfo.RegistryType xx \
-    --ImageInfo.Namespace xx \
-    --ImageInfo.ImageRepoAddress xx \
-    --ImageInfo.ImageName xx \
-    --ImageInfo.ImageDigest xx \
-    --ImageInfo.InstanceName xx
+    --Filters.0.ExactMatch False \
+    --Filters.0.Name RiskLevel \
+    --Filters.0.Values all \
+    --Id 6947411 \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 

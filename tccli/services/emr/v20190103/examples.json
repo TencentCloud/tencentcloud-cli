@@ -83,7 +83,7 @@
     "InquiryPriceUpdateInstance": [
       {
         "document": "",
-        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceUpdateInstance\r\n&TimeUnit=s\r\n&TimeSpan=3600\r\n&Placement.Zone=100003\r\n&Currency=CNY\r\n&Placement.ProjectId=0\r\n&UpdateSpec.Memory=16\r\n&UpdateSpec.CPUCores=8\r\n&UpdateSpec.ResourceId=emr-vm-a0xxx9on\r\n&PayMode=0\r\n&<公共请求参数>",
+        "input": "https://emr.tencentcloudapi.com/?Action=InquiryPriceUpdateInstance\n&TimeUnit=s\n&TimeSpan=3600\n&Placement.Zone=100003\n&Currency=CNY\n&Placement.ProjectId=0\n&UpdateSpec.Memory=16\n&UpdateSpec.CPUCores=8\n&UpdateSpec.ResourceId=emr-vm-a0xxx9on\n&PayMode=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DiscountCost\": 2.01,\n        \"OriginalCost\": 3.04,\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\",\n        \"TimeSpan\": 3600,\n        \"TimeUnit\": \"s\"\n    }\n}",
         "title": "变配询价"
       }
@@ -115,7 +115,7 @@
     "TerminateInstance": [
       {
         "document": "销毁整个集群",
-        "input": "https://emr.tencentcloudapi.com/?Action=TerminateInstance\r\n&InstanceId=emr-4slr7ad7\r\n&<公共请求参数>",
+        "input": "https://emr.tencentcloudapi.com/?Action=TerminateInstance\n&InstanceId=emr-4slr7ad7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d701c1e-8507-47e1-8c69-a8f06a236f24\"\n    }\n}",
         "title": "销毁实例"
       }
@@ -123,7 +123,7 @@
     "TerminateTasks": [
       {
         "document": "销毁TASK节点",
-        "input": "https://emr.tencentcloudapi.com/?Action=TerminateTasks\r\n&InstanceId=emr-4slr7ad7\r\n&ResourceIds.0=emr-vm-xxx33tg\r\n&<公共请求参数>",
+        "input": "https://emr.tencentcloudapi.com/?Action=TerminateTasks\n&InstanceId=emr-4slr7ad7\n&ResourceIds.0=emr-vm-xxx33tg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d701c1e-8507-47e1-8c69-a8f06a236f24\"\n    }\n}",
         "title": "销毁节点"
       }

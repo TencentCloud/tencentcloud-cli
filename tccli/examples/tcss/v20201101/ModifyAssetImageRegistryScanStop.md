@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli tcss ModifyAssetImageRegistryScanStop --cli-unfold-argument ```
+tccli tcss ModifyAssetImageRegistryScanStop --cli-unfold-argument  \
+    --Id 12034807
+```
 
 Output: 
 ```
