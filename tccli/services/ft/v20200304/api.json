@@ -462,6 +462,7 @@
         {
           "default": "",
           "document": "人像渐变任务Job id",
+          "example": "Iyjz4Rj3OCt5Az9a",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -475,16 +476,29 @@
       "members": [
         {
           "document": "当前任务状态：排队中、处理中、处理失败或者处理完成",
+          "example": "处理完成",
           "member": "string",
           "name": "JobStatus",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "人像渐变输出的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FaceMorphOutput",
           "name": "FaceMorphOutput",
+          "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobStatusCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

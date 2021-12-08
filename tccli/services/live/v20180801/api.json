@@ -8322,6 +8322,7 @@
         {
           "default": "",
           "document": "待停用的直播域名。",
+          "example": "5000.livepush.com",
           "member": "string",
           "name": "DomainName",
           "required": true,

@@ -18,22 +18,23 @@ Output:
         "TotalCount": 1,
         "DBInstanceSet": [
             {
-                "DBInstanceId": "postgres-gqmunix5",
-                "DBInstanceName": "anita_10",
-                "DBInstanceStatus": "initing",
+                "DBInstanceId": "postgres-xxxxxxxx",
+                "DBInstanceName": "xxx",
+                "DBInstanceStatus": "running",
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-3",
                 "ProjectId": 0,
-                "VpcId": "vpc-0mocsnzb",
-                "SubnetId": "subnet-mutl5yka",
+                "VpcId": "vpc-xxxxxxxx",
+                "SubnetId": "subnet-xxxxxxxx",
                 "DBCharset": "UTF8",
-                "DBVersion": "10.4",
+                "DBVersion": "10",
+                "DBKernelVersion": "v10.4_r1.0",
                 "CreateTime": "2020-03-20 12:19:14",
                 "DBInstanceNetInfo": [
                     {
                         "Address": "",
-                        "Ip": "",
-                        "Port": 0,
+                        "Ip": "10.10.10.111",
+                        "Port": 5432,
                         "Status": "opened",
                         "NetType": "private"
                     },
@@ -41,7 +42,7 @@ Output:
                         "Address": "",
                         "Ip": "",
                         "Port": 0,
-                        "Status": "0",
+                        "Status": "initing",
                         "NetType": "public"
                     }
                 ],

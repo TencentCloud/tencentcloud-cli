@@ -84,6 +84,12 @@
       "name": "获取别名详细信息",
       "output": "GetAliasResponse"
     },
+    "GetAsyncEventStatus": {
+      "document": "获取函数异步执行事件状态，事件状态保留 3 * 24 小时（从事件完成开始计时）。",
+      "input": "GetAsyncEventStatusRequest",
+      "name": "获取函数异步事件状态",
+      "output": "GetAsyncEventStatusResponse"
+    },
     "GetFunction": {
       "document": "该接口获取某个函数的详细信息，包括名称、代码、处理方法、关联触发器和超时时间等字段。",
       "input": "GetFunctionRequest",
@@ -409,6 +415,42 @@
           "example": "2021-01-01 00:00:00.002",
           "member": "string",
           "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AsyncEventStatus": {
+      "document": "异步事件状态",
+      "members": [
+        {
+          "default": "",
+          "document": "异步事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异步执行请求 Id",
+          "example": "ea7bb7c7-c312-4255-b7dc-b2bf0cfda10e",
+          "member": "string",
+          "name": "InvokeRequestId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1638,7 +1680,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要过滤的字段。",
+          "document": "需要过滤的字段。过滤条件数量限制为10。\nName可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。\nName可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。\n当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。",
+          "example": "Status",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1648,6 +1691,7 @@
         {
           "default": "",
           "document": "字段的过滤值。",
+          "example": "[\"Creating\", \"Updating\", \"Deleting\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -2097,6 +2141,42 @@
           "name": "ModTime",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsyncEventStatusRequest": {
+      "document": "GetAsyncEventStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "异步执行请求 id",
+          "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
+          "member": "string",
+          "name": "InvokeRequestId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsyncEventStatusResponse": {
+      "document": "GetAsyncEventStatus返回参数结构体",
+      "members": [
+        {
+          "document": "异步事件状态",
+          "example": "{             \"Status\": \"RUNNING\",             \"StatusCode\": 0  ",
+          "member": "AsyncEventStatus",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
