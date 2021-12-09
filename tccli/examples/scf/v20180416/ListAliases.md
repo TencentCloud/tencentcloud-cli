@@ -14,7 +14,33 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d1b93f9c-ac3a-412a-a4f3-6f0697099f72"
+        "TotalCount": 1,
+        "RequestId": "xx",
+        "Aliases": [
+            {
+                "ModTime": "2020-09-22 00:00:00",
+                "Name": "xx",
+                "AddTime": "2020-09-22 00:00:00",
+                "FunctionVersion": "xx",
+                "RoutingConfig": {
+                    "AdditionalVersionWeights": [
+                        {
+                            "Version": "xx",
+                            "Weight": 0.0
+                        }
+                    ],
+                    "AddtionVersionMatchs": [
+                        {
+                            "Version": "xx",
+                            "Expression": "xx",
+                            "Method": "xx",
+                            "Key": "xx"
+                        }
+                    ]
+                },
+                "Description": "xx"
+            }
+        ]
     }
 }
 ```

@@ -12437,6 +12437,66 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的appid参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的timeStamp参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatTimeStamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的nonceStr参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatNonceStr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的signType参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatSignType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的package参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatPackage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信返回调起小程序/原生JS支付的paySign参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatPaySign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -23501,6 +23561,33 @@
           "example": "1",
           "member": "string",
           "name": "Royalty",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小程序支付参数：填默认值 1",
+          "example": "1",
+          "member": "string",
+          "name": "Jsapi",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小程序支付参数：\n当前调起支付的小程序APPID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小程序支付参数:\n用户在子商户appid下的唯一标识。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SubOpenId",
           "required": false,
           "type": "string"
         }

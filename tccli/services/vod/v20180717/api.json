@@ -313,19 +313,19 @@
       "output": "DescribeContentReviewTemplatesResponse"
     },
     "DescribeDailyMediaPlayStat": {
-      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近30天的播放统计数据。",
+      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 结束日期和起始日期的时间跨度最大为90天。",
       "input": "DescribeDailyMediaPlayStatRequest",
       "name": "查询媒体文件的播放统计数据",
       "output": "DescribeDailyMediaPlayStatResponse"
     },
     "DescribeDailyMostPlayedStat": {
-      "document": "该接口用于查询每日播放Top100 的媒体文件的播放统计数据。\n* 可以查询最近30天的播放统计数据。\n* 可以按播放次数或者播放流量查询。\n* 播放次数统计说明：\n    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。",
+      "document": "该接口用于查询每日播放Top100 的媒体文件的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 可以按播放次数或者播放流量查询。\n* 播放次数统计说明：\n    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。",
       "input": "DescribeDailyMostPlayedStatRequest",
       "name": "查询每日播放 Top100的媒体文件的播放统计数据",
       "output": "DescribeDailyMostPlayedStatResponse"
     },
     "DescribeDailyPlayStatFileList": {
-      "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近30天的播放统计文件下载地址。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。",
+      "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近一年的播放统计文件下载地址，查询的起始日期和结束日期的时间跨度不超过90天。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。",
       "input": "DescribeDailyPlayStatFileListRequest",
       "name": "查询播放统计文件下载列表",
       "output": "DescribeDailyPlayStatFileListResponse"
@@ -1283,11 +1283,32 @@
       "members": [
         {
           "default": "",
-          "document": "视频智能分类列表。",
+          "document": "视频智能分类列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 ClassificationSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaAiAnalysisClassificationItem",
           "name": "ClassificationSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能分类列表文件 URL。文件的内容为 JSON，数据结构与 ClassificationSet 字段一致。 （文件不会永久存储，到达 ClassificationSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "ClassificationSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能分类列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "ClassificationSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1373,11 +1394,32 @@
       "members": [
         {
           "default": "",
-          "document": "智能封面列表。",
+          "document": "智能封面列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 CoverSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaAiAnalysisCoverItem",
           "name": "CoverSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能封面列表文件 URL。文件的内容为 JSON，数据结构与 CoverSet 字段一致。 （文件不会永久存储，到达 CoverSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "CoverSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "智能封面列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "CoverSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1463,11 +1505,32 @@
       "members": [
         {
           "default": "",
-          "document": "视频按帧标签列表。",
+          "document": "视频按帧标签列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaAiAnalysisFrameTagSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频按帧标签列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频按帧标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1553,11 +1616,32 @@
       "members": [
         {
           "default": "",
-          "document": "视频智能精彩片段列表。",
+          "document": "视频智能精彩片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 HighlightSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaAiAnalysisHighlightItem",
           "name": "HighlightSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能精彩片段列表文件 URL。文件的内容为 JSON，数据结构与 HighlightSet 字段一致。 （文件不会永久存储，到达 HighlightSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "HighlightSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能精彩片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "HighlightSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1658,11 +1742,32 @@
       "members": [
         {
           "default": "",
-          "document": "视频智能标签列表。",
+          "document": "视频智能标签列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 TagSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaAiAnalysisTagItem",
           "name": "TagSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能标签列表文件 URL。文件的内容为 JSON，数据结构与 TagSet 字段一致。 （文件不会永久存储，到达 TagSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "TagSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频智能标签列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "TagSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3336,6 +3441,7 @@
         {
           "default": "",
           "document": "Asr 文字涉政、敏感评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3345,6 +3451,7 @@
         {
           "default": "",
           "document": "Asr 文字涉政、敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3353,11 +3460,32 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表。",
+          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3384,6 +3512,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉政、敏感评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3393,6 +3522,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉政、敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3401,11 +3531,32 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表。",
+          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3432,6 +3583,7 @@
         {
           "default": "",
           "document": "视频涉政评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3441,6 +3593,7 @@
         {
           "default": "",
           "document": "涉政结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3450,6 +3603,7 @@
         {
           "default": "",
           "document": "视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\n其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：\n<li>politician：政治人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -3458,11 +3612,32 @@
         },
         {
           "default": "",
-          "document": "有涉政嫌疑的视频片段列表。",
+          "document": "有涉政嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewPoliticalSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉政嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉政嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3489,6 +3664,7 @@
         {
           "default": "",
           "document": "Asr 文字涉黄评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3498,6 +3674,7 @@
         {
           "default": "",
           "document": "Asr 文字涉黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3506,11 +3683,32 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉黄嫌疑的视频片段列表。",
+          "document": "Asr 文字有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3537,6 +3735,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉黄评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3546,6 +3745,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3554,11 +3754,32 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉黄嫌疑的视频片段列表。",
+          "document": "Ocr 文字有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3585,6 +3806,7 @@
         {
           "default": "",
           "document": "视频鉴黄评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3594,6 +3816,7 @@
         {
           "default": "",
           "document": "鉴黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3603,6 +3826,7 @@
         {
           "default": "",
           "document": "视频鉴黄结果标签，取值范围：\n<li>porn：色情。</li>\n<li>sexy：性感。</li>\n<li>vulgar：低俗。</li>\n<li>intimacy：亲密行为。</li>",
+          "example": "无",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -3611,11 +3835,32 @@
         },
         {
           "default": "",
-          "document": "有涉黄嫌疑的视频片段列表。",
+          "document": "有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3642,6 +3887,7 @@
         {
           "default": "",
           "document": "Asr 文字涉违禁评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3651,6 +3897,7 @@
         {
           "default": "",
           "document": "Asr 文字涉违禁结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3659,11 +3906,32 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉违禁嫌疑的视频片段列表。",
+          "document": "Asr 文字有涉违禁嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉违禁嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Asr 文字有涉违禁嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3690,6 +3958,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉违禁评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -3699,6 +3968,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉违禁结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -3707,11 +3977,32 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉违禁嫌疑的视频片段列表。",
+          "document": "Ocr 文字有涉违禁嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉违禁嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉违禁嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4338,6 +4629,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉恐评分，分值为0到100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -4347,6 +4639,7 @@
         {
           "default": "",
           "document": "Ocr 文字涉恐结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -4355,11 +4648,32 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉恐嫌疑的视频片段列表。",
+          "document": "Ocr 文字有涉恐嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉恐嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字有涉恐嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4415,12 +4729,32 @@
         },
         {
           "default": "",
-          "document": "有暴恐嫌疑的视频片段列表。",
+          "document": "有暴恐嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "[]",
           "member": "MediaContentReviewSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴恐嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "example": "http://12xxx",
+          "member": "string",
+          "name": "SegmentSetFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暴恐嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
+          "member": "string",
+          "name": "SegmentSetFileUrlExpireTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12047,6 +12381,16 @@
           "example": "null",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishCompleteEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "RestoreMediaTask",
+          "name": "RestoreMediaCompleteEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -20065,6 +20409,82 @@
         }
       ],
       "usage": "in"
+    },
+    "RestoreMediaTask": {
+      "document": "取回视频任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "取回任务状态，0表示取回完成，其他值表示取回还未完成。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提示信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件ID。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件原始存储类型。",
+          "example": "\"ARCHIVE\"",
+          "member": "string",
+          "name": "OriginalStorageClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件目标存储类型。对于临时取回，目标存储类型与原始存储类型相同。",
+          "example": "\"STANDARD\"",
+          "member": "string",
+          "name": "TargetStorageClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取回模式，取值：\n<li>Expedited：极速模式</li>\n<li>Standard：标准模式</li>\n<li>Bulk：批量模式</li>",
+          "example": "\"Expedited\"",
+          "member": "string",
+          "name": "RestoreTier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "临时取回副本有效期，单位：天。对于永久取回，取值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "RestoreDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型",

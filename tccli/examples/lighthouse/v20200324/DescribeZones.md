@@ -14,15 +14,18 @@ Output:
         "ZoneInfoSet": [
             {
                 "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区"
+                "ZoneName": "广州二区",
+                "InstanceDisplayLabel": "NORMAL"
             },
             {
                 "Zone": "ap-guangzhou-3",
-                "ZoneName": "广州三区"
+                "ZoneName": "广州三区",
+                "InstanceDisplayLabel": "NORMAL"
             },
             {
                 "Zone": "ap-guangzhou-4",
-                "ZoneName": "广州四区"
+                "ZoneName": "广州四区",
+                "InstanceDisplayLabel": "NORMAL"
             }
         ],
         "TotalCount": 3,

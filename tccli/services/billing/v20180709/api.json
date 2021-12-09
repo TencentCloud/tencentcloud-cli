@@ -218,6 +218,7 @@
         {
           "default": "",
           "document": "产品名称：云产品大类，如云服务器CVM、云数据库MySQL",
+          "example": "云服务器CVM",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -227,6 +228,7 @@
         {
           "default": "",
           "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1",
+          "example": "云服务器CVM-标准型S1",
           "member": "string",
           "name": "ProductCodeName",
           "required": true,
@@ -236,6 +238,7 @@
         {
           "default": "",
           "document": "计费模式：包年包月和按量计费",
+          "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
           "required": true,
@@ -245,6 +248,7 @@
         {
           "default": "",
           "document": "项目:资源所属项目",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -254,6 +258,7 @@
         {
           "default": "",
           "document": "区域：资源所属地域，如华南地区（广州）",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -263,6 +268,7 @@
         {
           "default": "",
           "document": "可用区：资源所属可用区，如广州三区",
+          "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -272,6 +278,7 @@
         {
           "default": "",
           "document": "资源实例ID",
+          "example": "ins-rb7bmkwx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -281,6 +288,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "emr-Core.3_emr-4g83a3k3",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -290,6 +298,7 @@
         {
           "default": "",
           "document": "交易类型",
+          "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
           "required": true,
@@ -299,6 +308,7 @@
         {
           "default": "",
           "document": "订单ID",
+          "example": "20211202400008418120371",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -308,6 +318,7 @@
         {
           "default": "",
           "document": "交易ID",
+          "example": "20211202400008418120371",
           "member": "string",
           "name": "BillId",
           "required": true,
@@ -317,6 +328,7 @@
         {
           "default": "",
           "document": "扣费时间",
+          "example": "2021-12-02 12:45:12",
           "member": "datetime",
           "name": "PayTime",
           "required": true,
@@ -326,6 +338,7 @@
         {
           "default": "",
           "document": "开始使用时间",
+          "example": "2021-12-02 12:45:05",
           "member": "datetime",
           "name": "FeeBeginTime",
           "required": true,
@@ -335,6 +348,7 @@
         {
           "default": "",
           "document": "结束使用时间",
+          "example": "2021-12-03 12:45:05",
           "member": "datetime",
           "name": "FeeEndTime",
           "required": true,
@@ -344,6 +358,7 @@
         {
           "default": "",
           "document": "组件列表",
+          "example": "[           {             \"ComponentCodeName\": \"实例\",            ",
           "member": "BillDetailComponent",
           "name": "ComponentSet",
           "required": true,
@@ -353,6 +368,7 @@
         {
           "default": "",
           "document": "支付者UIN",
+          "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": true,
@@ -362,6 +378,7 @@
         {
           "default": "",
           "document": "使用者UIN",
+          "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
           "required": true,
@@ -371,6 +388,7 @@
         {
           "default": "",
           "document": "操作者UIN",
+          "example": "909619400",
           "member": "string",
           "name": "OperateUin",
           "required": true,
@@ -380,6 +398,7 @@
         {
           "default": "",
           "document": "Tag 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[           {             \"TagKey\": \"jemmahuang\",             \"T",
           "member": "BillTagInfo",
           "name": "Tags",
           "required": true,
@@ -388,7 +407,8 @@
         },
         {
           "default": "",
-          "document": "商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -397,7 +417,8 @@
         },
         {
           "default": "",
-          "document": "子商品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_cvm_sa2",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -406,7 +427,8 @@
         },
         {
           "default": "",
-          "document": "交易类型代码（未开放的字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -416,6 +438,7 @@
         {
           "default": "",
           "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "RegionId",
           "required": true,
@@ -425,6 +448,7 @@
         {
           "default": "",
           "document": "项目ID:资源所属项目ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -626,7 +650,7 @@
         },
         {
           "default": "",
-          "document": "子产品：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回\"-\"",
+          "document": "子产品名称：云产品子类，如云服务器CVM-标准型S1， 当没有获取到子产品名称时，返回\"-\"",
           "example": "实时音视频-音视频通话",
           "member": "string",
           "name": "ProductCodeName",
@@ -916,7 +940,7 @@
         },
         {
           "default": "",
-          "document": "商品名称代码",
+          "document": "产品名称代码",
           "example": "p_rav",
           "member": "string",
           "name": "BusinessCode",
@@ -926,7 +950,7 @@
         },
         {
           "default": "",
-          "document": "子商品名称代码",
+          "document": "子产品名称代码",
           "example": "sp_rav_audio_video",
           "member": "string",
           "name": "ProductCode",
@@ -1081,7 +1105,7 @@
       "members": [
         {
           "default": "",
-          "document": "产品码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p_cdn",
           "member": "string",
           "name": "BusinessCode",
@@ -1233,7 +1257,8 @@
       "members": [
         {
           "default": "",
-          "document": "产品码",
+          "document": "产品名称代码",
+          "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -1243,6 +1268,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "负载均衡CLB",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -1328,8 +1354,9 @@
       "document": "账单筛选条件对象",
       "members": [
         {
-          "default": "6",
+          "default": "",
           "document": "只支持6和12两个值",
+          "example": "6",
           "member": "uint64",
           "name": "TimeRange",
           "required": false,
@@ -1338,7 +1365,8 @@
         },
         {
           "default": "",
-          "document": "产品编码",
+          "document": "产品名称代码",
+          "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
           "required": false,
@@ -1348,6 +1376,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1357,6 +1386,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "0",
           "member": "int64",
           "name": "RegionId",
           "required": false,
@@ -1366,6 +1396,7 @@
         {
           "default": "",
           "document": "付费模式，可选prePay和postPay",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
           "required": false,
@@ -1375,6 +1406,7 @@
         {
           "default": "",
           "document": "资源关键字",
+          "example": "lb-1weg57ny",
           "member": "string",
           "name": "ResourceKeyword",
           "required": false,
@@ -1383,7 +1415,8 @@
         },
         {
           "default": "",
-          "document": "产品编码",
+          "document": "产品名称代码",
+          "example": "['p_clb']",
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
@@ -1392,7 +1425,8 @@
         },
         {
           "default": "",
-          "document": "子产品编码",
+          "document": "子产品名称代码",
+          "example": "['sp_clb']",
           "member": "string",
           "name": "ProductCodes",
           "required": false,
@@ -1402,6 +1436,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "[1]",
           "member": "int64",
           "name": "RegionIds",
           "required": false,
@@ -1411,6 +1446,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "[0]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -1420,6 +1456,7 @@
         {
           "default": "",
           "document": "付费模式，可选prePay和postPay",
+          "example": "['postPay']",
           "member": "string",
           "name": "PayModes",
           "required": false,
@@ -1429,6 +1466,7 @@
         {
           "default": "",
           "document": "交易类型",
+          "example": "['postpay_deduct_h']",
           "member": "string",
           "name": "ActionTypes",
           "required": false,
@@ -1436,8 +1474,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "default": "",
           "document": "是否隐藏0元流水",
+          "example": "1",
           "member": "int64",
           "name": "HideFreeCost",
           "required": false,
@@ -1447,6 +1486,7 @@
         {
           "default": "",
           "document": "排序规则，可选desc和asc",
+          "example": "asc",
           "member": "string",
           "name": "OrderByCost",
           "required": false,
@@ -1456,6 +1496,7 @@
         {
           "default": "",
           "document": "交易ID",
+          "example": "20211101400077789101862",
           "member": "string",
           "name": "BillIds",
           "required": false,
@@ -1465,6 +1506,7 @@
         {
           "default": "",
           "document": "组件编码",
+          "example": "['v_clb_ins']",
           "member": "string",
           "name": "ComponentCodes",
           "required": false,
@@ -1474,6 +1516,7 @@
         {
           "default": "",
           "document": "文件ID",
+          "example": "1",
           "member": "string",
           "name": "FileIds",
           "required": false,
@@ -1483,6 +1526,7 @@
         {
           "default": "",
           "document": "文件类型",
+          "example": "-",
           "member": "string",
           "name": "FileTypes",
           "required": false,
@@ -1492,6 +1536,7 @@
         {
           "default": "",
           "document": "状态",
+          "example": "[1]",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1506,7 +1551,8 @@
       "members": [
         {
           "default": "",
-          "document": "产品码",
+          "document": "产品名称代码",
+          "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -1516,6 +1562,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "负载均衡CLB",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -1525,6 +1572,7 @@
         {
           "default": "",
           "document": "折后总价",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -1534,6 +1582,7 @@
         {
           "default": "",
           "document": "费用趋势",
+          "example": "0",
           "member": "ConsumptionSummaryTrend",
           "name": "Trend",
           "required": true,
@@ -1693,6 +1742,7 @@
         {
           "default": "",
           "document": "资源ID",
+          "example": "lb-1weg57ny",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1702,6 +1752,7 @@
         {
           "default": "",
           "document": "资源名称",
+          "example": "lb-6073eff6",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -1711,6 +1762,7 @@
         {
           "default": "",
           "document": "折后总价",
+          "example": "0.00",
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
@@ -1720,6 +1772,7 @@
         {
           "default": "",
           "document": "现金花费",
+          "example": "0.00",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -1729,6 +1782,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1738,6 +1792,7 @@
         {
           "default": "",
           "document": "项目名称",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -1747,6 +1802,7 @@
         {
           "default": "",
           "document": "地域ID",
+          "example": "1",
           "member": "string",
           "name": "RegionId",
           "required": true,
@@ -1756,6 +1812,7 @@
         {
           "default": "",
           "document": "地域名称",
+          "example": "广州一区",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -1765,6 +1822,7 @@
         {
           "default": "",
           "document": "付费模式",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -1774,6 +1832,7 @@
         {
           "default": "",
           "document": "付费模式名称",
+          "example": "按量计费",
           "member": "string",
           "name": "PayModeName",
           "required": true,
@@ -1782,7 +1841,8 @@
         },
         {
           "default": "",
-          "document": "产品码",
+          "document": "产品名称代码",
+          "example": "p_clb",
           "member": "string",
           "name": "BusinessCode",
           "required": true,
@@ -1792,6 +1852,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "负载均衡CLB",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -1801,6 +1862,7 @@
         {
           "default": "",
           "document": "消耗类型",
+          "example": "历史新购",
           "member": "string",
           "name": "ConsumptionTypeName",
           "required": true,
@@ -2038,6 +2100,7 @@
         {
           "default": "",
           "document": "支付者uin",
+          "example": "909619400",
           "member": "string",
           "name": "PayerUin",
           "required": true,
@@ -2046,7 +2109,8 @@
         },
         {
           "default": "",
-          "document": "业务名称",
+          "document": "产品名称",
+          "example": "移动推送",
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
@@ -2055,7 +2119,8 @@
         },
         {
           "default": "",
-          "document": "产品名称",
+          "document": "子产品名称",
+          "example": "移动推送基础服务",
           "member": "string",
           "name": "ProductCodeName",
           "required": true,
@@ -2065,6 +2130,7 @@
         {
           "default": "",
           "document": "计费模式名称",
+          "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
           "required": true,
@@ -2074,6 +2140,7 @@
         {
           "default": "",
           "document": "项目名称",
+          "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -2083,6 +2150,7 @@
         {
           "default": "",
           "document": "区域名称",
+          "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -2092,6 +2160,7 @@
         {
           "default": "",
           "document": "地区名称",
+          "example": "其他",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -2101,6 +2170,7 @@
         {
           "default": "",
           "document": "资源id",
+          "example": "tpns1150002173220210809400005346410791c7c8b9aff765f56aaa052c8f16",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2110,6 +2180,7 @@
         {
           "default": "",
           "document": "资源名称",
+          "example": "未命名",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -2119,6 +2190,7 @@
         {
           "default": "",
           "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "包年包月续费",
           "member": "string",
           "name": "ActionTypeName",
           "required": true,
@@ -2128,6 +2200,7 @@
         {
           "default": "",
           "document": "订单id",
+          "example": "20211009400006732337101",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -2137,6 +2210,7 @@
         {
           "default": "",
           "document": "交易id",
+          "example": "20211009400006732337101",
           "member": "string",
           "name": "BillId",
           "required": true,
@@ -2146,6 +2220,7 @@
         {
           "default": "",
           "document": "费用开始时间",
+          "example": "2021-11-03 00:00:00",
           "member": "string",
           "name": "FeeBeginTime",
           "required": true,
@@ -2155,6 +2230,7 @@
         {
           "default": "",
           "document": "费用结束时间",
+          "example": "2021-11-03 23:59:59",
           "member": "string",
           "name": "FeeEndTime",
           "required": true,
@@ -2164,6 +2240,7 @@
         {
           "default": "",
           "document": "组件明细",
+          "example": "[           {             \"ComponentCodeName\": \"移动推送TPNS_预付费_境内资",
           "member": "CostComponentSet",
           "name": "ComponentSet",
           "required": true,
@@ -2172,7 +2249,8 @@
         },
         {
           "default": "",
-          "document": "产品代码",
+          "document": "子产品名称代码",
+          "example": "sp_tpns_basic",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -2615,7 +2693,7 @@
         },
         {
           "default": "",
-          "document": "查询交易类型。如 按量计费日结，按量计费小时结 等",
+          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n包年包月转按量",
           "example": "按量计费日结",
           "member": "string",
           "name": "ActionType",
@@ -2633,7 +2711,7 @@
         },
         {
           "default": "",
-          "document": "商品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
@@ -2912,7 +2990,7 @@
         },
         {
           "default": "",
-          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正",
+          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n包年包月转按量",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",
@@ -2939,7 +3017,7 @@
         },
         {
           "default": "",
-          "document": "商品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
+          "document": "产品名称代码\n备注：如需获取当月使用过的BusinessCode，请调用API：<a href=\"https://cloud.tencent.com/document/product/555/35761\">获取产品汇总费用分布</a>",
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",

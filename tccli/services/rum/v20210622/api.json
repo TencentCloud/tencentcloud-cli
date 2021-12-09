@@ -6,6 +6,12 @@
       "name": "创建项目",
       "output": "CreateProjectResponse"
     },
+    "DescribeDataEventUrl": {
+      "document": "获取DescribeDataEventUrl信息",
+      "input": "DescribeDataEventUrlRequest",
+      "name": "获取DescribeDataEventUrl信息",
+      "output": "DescribeDataEventUrlResponse"
+    },
     "DescribeDataLogUrlStatistics": {
       "document": "获取LogUrlStatistics信息",
       "input": "DescribeDataLogUrlStatisticsRequest",
@@ -17,6 +23,12 @@
       "input": "DescribeDataPerformancePageRequest",
       "name": "获取PerformancePage信息",
       "output": "DescribeDataPerformancePageResponse"
+    },
+    "DescribeDataPvUrlStatistics": {
+      "document": "获取DescribeDataPvUrlStatistics信息",
+      "input": "DescribeDataPvUrlStatisticsRequest",
+      "name": "获取DescribeDataPvUrlStatistics信息",
+      "output": "DescribeDataPvUrlStatisticsResponse"
     },
     "DescribeError": {
       "document": "获取首页错误信息",
@@ -145,6 +157,222 @@
           "example": "RlOmCVbPrKd4",
           "member": "string",
           "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEventUrlRequest": {
+      "document": "DescribeDataEventUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEventUrlResponse": {
+      "document": "DescribeDataEventUrl返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -562,6 +790,213 @@
     },
     "DescribeDataPerformancePageResponse": {
       "document": "DescribeDataPerformancePage返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPvUrlStatisticsRequest": {
+      "document": "DescribeDataPvUrlStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型:\"allcount\", \"falls\", \"samp\", \"version\", \"ext3\",\"nettype\", \"platform\",\"isp\",\"region\",\"device\",\"browser\",\"ext1\",\"ext2\"",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPvUrlStatisticsResponse": {
+      "document": "DescribeDataPvUrlStatistics返回参数结构体",
       "members": [
         {
           "document": "返回值",

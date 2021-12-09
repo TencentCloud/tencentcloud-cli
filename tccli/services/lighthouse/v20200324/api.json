@@ -1866,6 +1866,7 @@
         {
           "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1874,6 +1875,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1882,6 +1884,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1895,15 +1898,19 @@
       "members": [
         {
           "document": "符合条件的实例流量包详情数量。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例流量包详情列表。",
+          "example": "无",
           "member": "InstanceTrafficPackage",
           "name": "InstanceTrafficPackageSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3693,6 +3700,7 @@
         {
           "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4130,6 +4138,7 @@
         {
           "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4156,6 +4165,7 @@
         {
           "default": "",
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

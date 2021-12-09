@@ -18,7 +18,9 @@ tccli scf CopyFunction --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "RequestId": "xx"
+    }
 }
 ```
 

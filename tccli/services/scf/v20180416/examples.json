@@ -3,15 +3,15 @@
     "CopyFunction": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=CopyFunction\r\n&Namespace=default\r\n&FunctionName=myfunc\r\n&TargetNamespace=otherns\r\n&NewFunctionName=newfunc\r\n&TargetRegion=ap-shanghai\r\n&Override=FALSE\r\n&CopyConfiguration=TRUE\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=CopyFunction\n&Namespace=default\n&FunctionName=myfunc\n&TargetNamespace=otherns\n&NewFunctionName=newfunc\n&TargetRegion=ap-shanghai\n&Override=FALSE\n&CopyConfiguration=TRUE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "复制函数"
       }
     ],
     "CreateAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=CreateAlias\r\n&Name=<AliasName>\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&FunctionVersion=<FunctionVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateAlias\n&Name=<AliasName>\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&FunctionVersion=<FunctionVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建一个别名"
       }
@@ -43,7 +43,7 @@
     "DeleteAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteAlias\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&Name=<AliasName>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteAlias\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&Name=<AliasName>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\"\n    }\n}",
         "title": "删除别名"
       }
@@ -107,8 +107,8 @@
     "GetAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetAlias\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&Name=<AliasName>\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\n        \"FunctionVersion\": \"1\",\n        \"Name\": \"al3\",\n        \"RoutingConfig\": {\n            \"AdditionalVersionWeights\": [\n                {\n                    \"Version\": \"3\",\n                    \"Weight\": 0.3\n                },\n                {\n                    \"Version\": \"2\",\n                    \"Weight\": 0.2\n                }\n            ]\n        },\n        \"Description\": \"\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetAlias\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&Name=<AliasName>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ModTime\": \"2020-09-22 00:00:00\",\n        \"Description\": \"xx\",\n        \"AddTime\": \"2020-09-22 00:00:00\",\n        \"FunctionVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"RoutingConfig\": {\n            \"AdditionalVersionWeights\": [\n                {\n                    \"Version\": \"xx\",\n                    \"Weight\": 0.3\n                },\n                {\n                    \"Version\": \"xx\",\n                    \"Weight\": 0.2\n                }\n            ],\n            \"AddtionVersionMatchs\": [\n                {\n                    \"Version\": \"xx\",\n                    \"Expression\": \"xx\",\n                    \"Method\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"Name\": \"xx\"\n    }\n}",
         "title": "查询别名详细信息"
       }
     ],
@@ -131,7 +131,7 @@
     "GetFunctionAddress": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionAddress\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetFunctionAddress\n&FunctionName=<FunctionName>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Url\": \"http://lambdacode-1253970226.cosgz.myqcloud.com/1253970226/ledDummyAPITest/ledDummyAPITest_LATEST.zip?sign=RwvyBS5VPXz75hYNCJKHrSUHBqBhPTEyNTM5NzAyMjYmaz1BS0lEQ2dPUFdqUTZCQXh2SHR5Y2toV0FCSlZZU0JqNTQ4cE4mZT0wJnQ9MTUyOTg1MTQxNSZyPTY5NzYyMTk3NCZmPS8xMjUzOTcwMjI2L2xlZER1bW15QVBJVGVzdC9sZWREdW1teUFQSVRlc3RfTEFURVNULnppcCZiPWxhbWJkYWNvZGU=\",\n        \"CodeSha256\": \"5077f5203547b225b532434dd6fcf7c9897025d7581a9f3d474a7afee88bc696\",\n        \"RequestId\": \"a90cb10a-7ad4-4270-b92d-ba0319be6dbd\"\n    }\n}",
         "title": "获取函数代码下载地址"
       }
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"UnallocatedConcurrencyNum\": 1,\n        \"Allocated\": [\n            {\n                \"Status\": \"xx\",\n                \"AllocatedProvisionedConcurrencyNum\": 1,\n                \"AvailableProvisionedConcurrencyNum\": 1,\n                \"Qualifier\": \"xx\",\n                \"StatusReason\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UnallocatedConcurrencyNum\": 1,\n        \"Allocated\": [\n            {\n                \"Status\": \"xx\",\n                \"Qualifier\": \"xx\",\n                \"AvailableProvisionedConcurrencyNum\": 1,\n                \"StatusReason\": \"xx\",\n                \"AllocatedProvisionedConcurrencyNum\": 1,\n                \"TriggerActions\": [\n                    {\n                        \"TriggerProvisionedConcurrencyNum\": 1,\n                        \"TriggerCronConfig\": \"xx\",\n                        \"TriggerName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取函数预置并发详情"
       }
     ],
@@ -203,8 +203,8 @@
     "ListAliases": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListAliases\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListAliases\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Aliases\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"Name\": \"xx\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"FunctionVersion\": \"xx\",\n                \"RoutingConfig\": {\n                    \"AdditionalVersionWeights\": [\n                        {\n                            \"Version\": \"xx\",\n                            \"Weight\": 0.0\n                        }\n                    ],\n                    \"AddtionVersionMatchs\": [\n                        {\n                            \"Version\": \"xx\",\n                            \"Expression\": \"xx\",\n                            \"Method\": \"xx\",\n                            \"Key\": \"xx\"\n                        }\n                    ]\n                },\n                \"Description\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询函数下的全部别名"
       }
     ],
@@ -265,8 +265,8 @@
     "ListVersionByFunction": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\r\n&FunctionName=xxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FunctionVersion\": [\n            \"$LATEST\",\n            \"3\",\n            \"2\",\n            \"1\"\n        ],\n        \"RequestId\": \"d1b93f9c-ac3a-412a-a4f3-6f0697099f72\",\n        \"Versions\": [\n            {\n                \"Version\": \"$LATEST\",\n                \"Description\": \"123\"\n            },\n            {\n                \"Version\": \"3\",\n                \"Description\": \"123\"\n            },\n            {\n                \"Version\": \"2\",\n                \"Description\": \"123\"\n            },\n            {\n                \"Version\": \"1\",\n                \"Description\": \"123\"\n            }\n        ]\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\n&FunctionName=xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FunctionVersion\": [\n            \"$LATEST\",\n            \"3\",\n            \"2\",\n            \"1\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Versions\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询函数版本"
       }
     ],
@@ -281,7 +281,7 @@
     "PublishVersion": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=PublishVersion\r\n&FunctionName=<FunctionName>\r\n&Description=<Description>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=PublishVersion\n&FunctionName=<FunctionName>\n&Description=<Description>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Namespace\": \"default\",\n        \"Description\": \"dummytut\",\n        \"CodeSize\": 45686,\n        \"MemorySize\": 256,\n        \"Handler\": \"scfredis.main_handler\",\n        \"RequestId\": \"68c9669c-9e2c-47b0-9a01-e8406a41be59\",\n        \"Timeout\": 3,\n        \"Runtime\": \"Python2.7\",\n        \"FunctionVersion\": \"4\"\n    }\n}",
         "title": "发布新版本"
       }
@@ -321,7 +321,7 @@
     "UpdateAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\r\n&Name=<AliasName>\r\n&Namespace=<Namespace>\r\n&FunctionName=<FunctionName>\r\n&FunctionVersion=<FunctionVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\r\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=<AliasName>\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&FunctionVersion=<FunctionVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新别名的配置"
       }
@@ -353,7 +353,7 @@
     "UpdateNamespace": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateNamespace\r\n&Namespace=test01\r\n&Description=fdsgfds\r\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateNamespace\n&Namespace=test01\n&Description=fdsgfds\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2b845e1-d44a-4c3e-8314-b6b774b4e66f\"\n    }\n}",
         "title": "更新命名空间"
       }
