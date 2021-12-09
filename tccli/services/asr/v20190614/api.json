@@ -1567,6 +1567,7 @@
         {
           "default": "",
           "document": "任务标识。",
+          "example": "123",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -1576,6 +1577,7 @@
         {
           "default": "",
           "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1585,6 +1587,7 @@
         {
           "default": "",
           "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。",
+          "example": "waiting",
           "member": "string",
           "name": "StatusStr",
           "required": true,
@@ -1594,6 +1597,7 @@
         {
           "default": "",
           "document": "识别结果。",
+          "example": "无",
           "member": "string",
           "name": "Result",
           "required": true,
@@ -1603,6 +1607,7 @@
         {
           "default": "",
           "document": "失败原因说明。",
+          "example": "无",
           "member": "string",
           "name": "ErrorMsg",
           "required": true,
@@ -1612,10 +1617,21 @@
         {
           "default": "",
           "document": "识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SentenceDetail",
           "name": "ResultDetail",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "音频时长(秒)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2",
+          "member": "float",
+          "name": "AudioDuration",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

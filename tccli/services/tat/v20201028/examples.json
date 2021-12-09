@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CancelInvocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelInvocation\n<公共请求参数>\n\n{\n    \"InvocationId\": \"inv-ib2lld37\",\n    \"InstanceIds\": [\n        \"ins-zcewfho0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b27421da-0ad4-4e11-b694-cda143606701\"\n    }\n}",
+        "title": "取消命令执行"
+      }
+    ],
     "CreateCommand": [
       {
         "document": "",

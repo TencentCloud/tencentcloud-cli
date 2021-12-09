@@ -32,7 +32,8 @@ Output:
                     "RequiredSystemDiskSize": 10,
                     "BlueprintState": "NORMAL",
                     "SupportAutomationTools": true,
-                    "CreatedTime": "2020-09-22T00:00:00+00:00"
+                    "CreatedTime": "2020-09-22T00:00:00+00:00",
+                    "ImageId": "img-f82x5lxe"
                 },
                 "SoftwareSet": [
                     {

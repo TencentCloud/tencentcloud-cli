@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CancelInvocation": {
+      "document": "取消一台或多台CVM实例执行的命令\n\n* 如果命令还未下发到agent，任务状态处于处于PENDING、DELIVERING、DELIVER_DELAYED，取消后任务状态是CANCELLED\n* 如果命令已下发到agent，任务状态处于RUNNING， 取消后任务状态是TERMINATED",
+      "input": "CancelInvocationRequest",
+      "name": "取消命令执行",
+      "output": "CancelInvocationResponse"
+    },
     "CreateCommand": {
       "document": "此接口用于创建命令。",
       "input": "CreateCommandRequest",
@@ -171,6 +177,42 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelInvocationRequest": {
+      "document": "CancelInvocation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "执行活动ID",
+          "example": "无 ",
+          "member": "string",
+          "name": "InvocationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID列表，上限100。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelInvocationResponse": {
+      "document": "CancelInvocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Command": {
       "document": "命令详情。",

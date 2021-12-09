@@ -6600,6 +6600,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态是否持久化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "bool",
+          "name": "PersistStatus",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

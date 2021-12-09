@@ -72,6 +72,12 @@
       "name": "获取域名信息",
       "output": "DescribeDomainResponse"
     },
+    "DescribeDomainAliasList": {
+      "document": "获取域名别名列表",
+      "input": "DescribeDomainAliasListRequest",
+      "name": "获取域名别名列表",
+      "output": "DescribeDomainAliasListResponse"
+    },
     "DescribeDomainList": {
       "document": "获取域名列表",
       "input": "DescribeDomainListRequest",
@@ -1512,6 +1518,51 @@
       ],
       "type": "object"
     },
+    "DescribeDomainAliasListRequest": {
+      "document": "DescribeDomainAliasList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "myfm.cc",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名ID,域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain",
+          "example": "134243",
+          "member": "int64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAliasListResponse": {
+      "document": "DescribeDomainAliasList返回参数结构体",
+      "members": [
+        {
+          "document": "域名别名列表",
+          "example": "无",
+          "member": "DomainAliasInfo",
+          "name": "DomainAliasList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainListRequest": {
       "document": "DescribeDomainList请求参数结构体",
       "members": [
@@ -2140,6 +2191,32 @@
         }
       ],
       "type": "object"
+    },
+    "DomainAliasInfo": {
+      "document": "域名别名信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名别名ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名别名",
+          "example": "mm.com",
+          "member": "string",
+          "name": "DomainAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DomainCountInfo": {
       "document": "列表页分页统计信息",

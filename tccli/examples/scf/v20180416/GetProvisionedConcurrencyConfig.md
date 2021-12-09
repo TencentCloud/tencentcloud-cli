@@ -18,10 +18,17 @@ Output:
         "Allocated": [
             {
                 "Status": "xx",
-                "AllocatedProvisionedConcurrencyNum": 1,
-                "AvailableProvisionedConcurrencyNum": 1,
                 "Qualifier": "xx",
-                "StatusReason": "xx"
+                "AvailableProvisionedConcurrencyNum": 1,
+                "StatusReason": "xx",
+                "AllocatedProvisionedConcurrencyNum": 1,
+                "TriggerActions": [
+                    {
+                        "TriggerProvisionedConcurrencyNum": 1,
+                        "TriggerCronConfig": "xx",
+                        "TriggerName": "xx"
+                    }
+                ]
             }
         ],
         "RequestId": "xx"

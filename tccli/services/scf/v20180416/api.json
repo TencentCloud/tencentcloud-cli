@@ -746,6 +746,7 @@
         {
           "default": "",
           "document": "要复制的函数的名称",
+          "example": "myfunc",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -754,6 +755,7 @@
         {
           "default": "",
           "document": "新函数的名称",
+          "example": "newfunc",
           "member": "string",
           "name": "NewFunctionName",
           "required": true,
@@ -762,6 +764,7 @@
         {
           "default": "",
           "document": "要复制的函数所在的命名空间，默认为default",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -770,6 +773,7 @@
         {
           "default": "",
           "document": "将函数复制到的命名空间，默认为default",
+          "example": "otherns",
           "member": "string",
           "name": "TargetNamespace",
           "required": false,
@@ -778,6 +782,7 @@
         {
           "default": "",
           "document": "新函数的描述",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -786,22 +791,25 @@
         {
           "default": "",
           "document": "要将函数复制到的地域，不填则默认为当前地域",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "TargetRegion",
           "required": false,
           "type": "string"
         },
         {
-          "default": "FALSE",
+          "default": "",
           "document": "如果目标Namespace下已有同名函数，是否覆盖，默认为否\n（注意：如果选择覆盖，会导致同名函数被删除，请慎重操作）\nTRUE：覆盖同名函数\nFALSE：不覆盖同名函数",
+          "example": "FALSE",
           "member": "bool",
           "name": "Override",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "TRUE",
+          "default": "",
           "document": "是否复制函数的属性，包括环境变量、内存、超时、函数描述、标签、VPC等，默认为是。\nTRUE：复制函数配置\nFALSE：不复制函数配置",
+          "example": "TRUE",
           "member": "bool",
           "name": "CopyConfiguration",
           "required": false,
@@ -828,6 +836,7 @@
         {
           "default": "",
           "document": "别名的名称，在函数级别中唯一，只能包含字母、数字、'_'和‘-’，且必须以字母开头，长度限制为1-64",
+          "example": "<AliasName>",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -836,6 +845,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -844,6 +854,7 @@
         {
           "default": "",
           "document": "别名指向的主版本",
+          "example": "<FunctionVersion>",
           "member": "string",
           "name": "FunctionVersion",
           "required": true,
@@ -852,6 +863,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间",
+          "example": "<Namespace>",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -860,6 +872,7 @@
         {
           "default": "",
           "document": "别名的请求路由配置",
+          "example": "无",
           "member": "RoutingConfig",
           "name": "RoutingConfig",
           "required": false,
@@ -868,6 +881,7 @@
         {
           "default": "",
           "document": "别名的描述信息",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1314,6 +1328,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1322,6 +1337,7 @@
         {
           "default": "",
           "document": "别名的名称",
+          "example": "<AliasName>",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1330,6 +1346,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间",
+          "example": "<Namespace>",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1356,6 +1373,7 @@
         {
           "default": "",
           "document": "要删除的函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1364,6 +1382,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1371,7 +1390,8 @@
         },
         {
           "default": "",
-          "document": "函数版本",
+          "document": "函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本",
+          "example": "\"\"",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -1459,6 +1479,7 @@
         {
           "default": "",
           "document": "需要删除预置并发的函数的名称",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1467,6 +1488,7 @@
         {
           "default": "",
           "document": "函数的版本号",
+          "example": "1",
           "member": "string",
           "name": "Qualifier",
           "required": true,
@@ -1475,6 +1497,7 @@
         {
           "default": "",
           "document": "函数所属命名空间，默认为default",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1996,6 +2019,7 @@
         {
           "default": "",
           "document": "函数版本名称",
+          "example": "\"\"",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -2005,6 +2029,7 @@
         {
           "default": "",
           "document": "版本描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2014,6 +2039,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "datetime",
           "name": "AddTime",
           "required": false,
@@ -2023,8 +2049,19 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
           "member": "datetime",
           "name": "ModTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Status",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2073,6 +2110,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "\"\"",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -2081,6 +2119,7 @@
         {
           "default": "",
           "document": "别名的名称",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2089,6 +2128,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2102,43 +2142,55 @@
       "members": [
         {
           "document": "别名指向的主版本",
+          "example": "1",
           "member": "string",
           "name": "FunctionVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "别名的名称",
+          "example": "al3",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "别名的路由信息",
+          "example": "无",
           "member": "RoutingConfig",
           "name": "RoutingConfig",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "别名的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "AddTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "ModTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2193,6 +2245,7 @@
         {
           "default": "",
           "document": "函数的名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -2201,6 +2254,7 @@
         {
           "default": "",
           "document": "函数的版本",
+          "example": "\"\"",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -2209,6 +2263,7 @@
         {
           "default": "",
           "document": "函数的命名空间",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2222,15 +2277,19 @@
       "members": [
         {
           "document": "函数的Cos地址",
+          "example": "\"\"",
           "member": "string",
           "name": "Url",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的SHA256编码",
+          "example": "\"\"",
           "member": "string",
           "name": "CodeSha256",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3003,6 +3062,7 @@
         {
           "default": "",
           "document": "需要获取预置并发详情的函数名称。",
+          "example": "test",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -3011,6 +3071,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间，默认为default。",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -3019,6 +3080,7 @@
         {
           "default": "",
           "document": "函数版本号，不传则返回函数所有版本的预置并发信息。",
+          "example": "1",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -3032,15 +3094,19 @@
       "members": [
         {
           "document": "该函数剩余可配置的预置并发数。",
+          "example": "1",
           "member": "uint64",
           "name": "UnallocatedConcurrencyNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数已预置的并发配置详情。",
+          "example": "无",
           "member": "VersionProvisionedConcurrencyInfo",
           "name": "Allocated",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3539,6 +3605,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -3547,6 +3614,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间",
+          "example": "<Namespace>",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -3555,6 +3623,7 @@
         {
           "default": "",
           "document": "如果提供此参数，则只返回与该函数版本有关联的别名",
+          "example": "\"\"",
           "member": "string",
           "name": "FunctionVersion",
           "required": false,
@@ -3563,6 +3632,7 @@
         {
           "default": "",
           "document": "数据偏移量，默认值为 0",
+          "example": "\"\"",
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -3571,6 +3641,7 @@
         {
           "default": "",
           "document": "返回数据长度，默认值为 20",
+          "example": "\"\"",
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -3584,15 +3655,19 @@
       "members": [
         {
           "document": "别名列表",
+          "example": "无",
           "member": "Alias",
           "name": "Aliases",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "别名总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4145,6 +4220,7 @@
         {
           "default": "",
           "document": "函数名",
+          "example": "xxxxx",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -4153,6 +4229,7 @@
         {
           "default": "",
           "document": "函数所在命名空间",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -4161,6 +4238,7 @@
         {
           "default": "",
           "document": "数据偏移量，默认值为 0",
+          "example": "\"\"",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4169,6 +4247,7 @@
         {
           "default": "",
           "document": "返回数据长度，默认值为 20",
+          "example": "\"\"",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4177,6 +4256,7 @@
         {
           "default": "",
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "example": "\"\"",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -4185,6 +4265,7 @@
         {
           "default": "",
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime",
+          "example": "\"\"",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -4198,22 +4279,28 @@
       "members": [
         {
           "document": "函数版本。",
+          "example": "[\"$LATEST\",\"3\",\"2\",\"1\"]",
           "member": "string",
           "name": "FunctionVersion",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "函数版本列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FunctionVersion",
           "name": "Versions",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "函数版本总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4615,6 +4702,7 @@
         {
           "default": "",
           "document": "发布函数的名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -4623,6 +4711,7 @@
         {
           "default": "",
           "document": "函数的描述",
+          "example": "<Description>",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4631,6 +4720,7 @@
         {
           "default": "",
           "document": "函数的命名空间",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -4644,57 +4734,73 @@
       "members": [
         {
           "document": "函数的版本",
+          "example": "4",
           "member": "string",
           "name": "FunctionVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "代码大小",
+          "example": "45686",
           "member": "int64",
           "name": "CodeSize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "最大可用内存",
+          "example": "256",
           "member": "int64",
           "name": "MemorySize",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的描述",
+          "example": "dummytut",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的入口",
+          "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的超时时间",
+          "example": "3",
           "member": "int64",
           "name": "Timeout",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "函数的运行环境",
+          "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "函数的命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4821,6 +4927,7 @@
         {
           "default": "",
           "document": "账号并发内存配额，注：账号并发内存配额下限：用户已用并发内存总额 + 12800",
+          "example": "128000",
           "member": "uint64",
           "name": "TotalConcurrencyMem",
           "required": true,
@@ -4829,6 +4936,7 @@
         {
           "default": "",
           "document": "命名空间，默认为default",
+          "example": "\"\"",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5156,7 +5264,7 @@
         },
         {
           "default": "",
-          "document": "优雅关停",
+          "document": "该参数已下线",
           "example": "false",
           "member": "bool",
           "name": "GraceShutdown",
@@ -5577,6 +5685,7 @@
         {
           "default": "",
           "document": "函数名称",
+          "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -5585,6 +5694,7 @@
         {
           "default": "",
           "document": "别名的名称",
+          "example": "<AliasName>",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5593,6 +5703,7 @@
         {
           "default": "",
           "document": "别名指向的主版本",
+          "example": "<FunctionVersion>",
           "member": "string",
           "name": "FunctionVersion",
           "required": true,
@@ -5601,6 +5712,7 @@
         {
           "default": "",
           "document": "函数所在的命名空间",
+          "example": "<Namespace>",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5609,6 +5721,7 @@
         {
           "default": "",
           "document": "别名的路由信息，需要为别名指定附加版本时，必须提供此参数",
+          "example": "无",
           "member": "RoutingConfig",
           "name": "RoutingConfig",
           "required": false,
@@ -5617,6 +5730,7 @@
         {
           "default": "",
           "document": "别名的描述",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -6012,6 +6126,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "test01",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -6020,6 +6135,7 @@
         {
           "default": "",
           "document": "命名空间描述",
+          "example": "fdsgfds",
           "member": "string",
           "name": "Description",
           "required": true,

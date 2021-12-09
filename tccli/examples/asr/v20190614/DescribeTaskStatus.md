@@ -18,6 +18,7 @@ Output:
             "TaskId": 9266418,
             "Status": 2,
             "StatusStr": "success",
+            "AudioDuration": 2.38,
             "Result": "[0:0.020,0:2.380]  腾讯云语音识别欢迎您。\n",
             "ResultDetail": [
                 {
@@ -77,6 +78,7 @@ Output:
             "TaskId": 522931820,
             "Status": 0,
             "StatusStr": "waiting",
+            "AudioDuration": 0,
             "Result": "",
             "ErrorMsg": "",
             "ResultDetail": []
@@ -105,6 +107,7 @@ Output:
             "TaskId": 522931820,
             "Status": 1,
             "StatusStr": "doing",
+            "AudioDuration": 0,
             "Result": "",
             "ErrorMsg": "",
             "ResultDetail": []
@@ -133,6 +136,7 @@ Output:
             "TaskId": 522931820,
             "Status": 3,
             "StatusStr": "failed",
+            "AudioDuration": 0,
             "Result": "",
             "ErrorMsg": "Failed to download audio file!",
             "ResultDetail": []

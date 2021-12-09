@@ -414,6 +414,12 @@
       "name": "设备透传指令控制",
       "output": "PublishMessageResponse"
     },
+    "PublishRRPCMessage": {
+      "document": "下发RRPC消息",
+      "input": "PublishRRPCMessageRequest",
+      "name": "发布RRPC消息",
+      "output": "PublishRRPCMessageResponse"
+    },
     "ReleaseStudioProduct": {
       "document": "产品开发完成并测试通过后，通过发布产品将产品设置为发布状态",
       "input": "ReleaseStudioProductRequest",
@@ -6247,6 +6253,69 @@
     "PublishMessageResponse": {
       "document": "PublishMessage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishRRPCMessageRequest": {
+      "document": "PublishRRPCMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "productId",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "deviceName",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容，utf8编码",
+          "example": "payload",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishRRPCMessageResponse": {
+      "document": "PublishRRPCMessage返回参数结构体",
+      "members": [
+        {
+          "document": "RRPC消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "74",
+          "member": "int64",
+          "name": "MessageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备回复的消息内容，采用base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QUJDRA==",
+          "member": "string",
+          "name": "PayloadBase64",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

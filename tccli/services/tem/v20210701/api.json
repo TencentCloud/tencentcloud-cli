@@ -84,6 +84,12 @@
       "name": "修改应用基本信息",
       "output": "ModifyApplicationInfoResponse"
     },
+    "ModifyApplicationReplicas": {
+      "document": "修改应用实例数量",
+      "input": "ModifyApplicationReplicasRequest",
+      "name": "修改应用实例数量",
+      "output": "ModifyApplicationReplicasResponse"
+    },
     "ModifyEnvironment": {
       "document": "编辑环境",
       "input": "ModifyEnvironmentRequest",
@@ -2439,6 +2445,60 @@
           "type": "bool",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationReplicasRequest": {
+      "document": "ModifyApplicationReplicas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "service-adfi142f",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationReplicasResponse": {
+      "document": "ModifyApplicationReplicas返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -446,6 +446,7 @@
         {
           "default": "",
           "document": "连接的客户端IP",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "IP",
           "required": true,
@@ -455,10 +456,21 @@
         {
           "default": "",
           "document": "对应客户端IP的连接数",
+          "example": "9",
           "member": "uint64",
           "name": "Count",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为内部ip",
+          "example": "true",
+          "member": "bool",
+          "name": "InternalService",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
