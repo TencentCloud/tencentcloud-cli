@@ -1081,6 +1081,15 @@
           "name": "ApplicationRole",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
+          "example": "Hadoop-Kudu",
+          "member": "string",
+          "name": "SceneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1953,6 +1962,7 @@
         {
           "default": "",
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
+          "example": "无",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -1961,6 +1971,7 @@
         {
           "default": "",
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
+          "example": "无",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -1969,6 +1980,7 @@
         {
           "default": "",
           "document": "询价的节点规格。",
+          "example": "无",
           "member": "NewResourceSpec",
           "name": "ResourceSpec",
           "required": true,
@@ -1977,6 +1989,7 @@
         {
           "default": "",
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "example": "无",
           "member": "string",
           "name": "Currency",
           "required": true,
@@ -1985,6 +1998,7 @@
         {
           "default": "",
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "PayMode",
           "required": true,
@@ -1993,6 +2007,7 @@
         {
           "default": "",
           "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。\u0007</li>",
+          "example": "无",
           "member": "uint64",
           "name": "SupportHA",
           "required": true,
@@ -2001,6 +2016,7 @@
         {
           "default": "",
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>",
+          "example": "无",
           "member": "string",
           "name": "Software",
           "required": true,
@@ -2009,6 +2025,7 @@
         {
           "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -2017,6 +2034,7 @@
         {
           "default": "",
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": true,
@@ -2025,6 +2043,7 @@
         {
           "default": "",
           "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "example": "无",
           "member": "string",
           "name": "MetaType",
           "required": false,
@@ -2033,6 +2052,7 @@
         {
           "default": "",
           "document": "EMR-MetaDB实例",
+          "example": "无",
           "member": "string",
           "name": "UnifyMetaInstanceId",
           "required": false,
@@ -2041,6 +2061,7 @@
         {
           "default": "",
           "document": "自定义MetaDB信息",
+          "example": "无",
           "member": "CustomMetaInfo",
           "name": "MetaDBInfo",
           "required": false,
@@ -2049,10 +2070,20 @@
         {
           "default": "",
           "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "ProductId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
+          "example": "无",
+          "member": "string",
+          "name": "SceneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2062,29 +2093,37 @@
       "members": [
         {
           "document": "原价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "OriginalCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "float",
           "name": "DiscountCost",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TimeUnit",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "购买实例的时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "TimeSpan",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

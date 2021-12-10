@@ -428,6 +428,7 @@
         {
           "default": "",
           "document": "访问密钥标识",
+          "example": "AccessKeyId",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -437,6 +438,7 @@
         {
           "default": "",
           "document": "密钥状态，激活（Active）或未激活（Inactive）",
+          "example": "Active",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -446,6 +448,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2021-03-20 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,

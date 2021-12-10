@@ -54,6 +54,12 @@
       "name": "删除ACL规则",
       "output": "DeleteAclRuleResponse"
     },
+    "DeleteInstancePre": {
+      "document": "删除预付费实例",
+      "input": "DeleteInstancePreRequest",
+      "name": "删除预付费实例",
+      "output": "DeleteInstancePreResponse"
+    },
     "DeleteRouteTriggerTime": {
       "document": "修改删除路由延迟触发时间",
       "input": "DeleteRouteTriggerTimeRequest",
@@ -1751,6 +1757,42 @@
           "name": "Result",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePreRequest": {
+      "document": "DeleteInstancePre请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePreResponse": {
+      "document": "DeleteInstancePre返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "data",
+          "member": "CreateInstancePreResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

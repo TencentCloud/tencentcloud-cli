@@ -3014,6 +3014,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "IVRKeyPressedElement",
+          "name": "IVRKeyPressedEx",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

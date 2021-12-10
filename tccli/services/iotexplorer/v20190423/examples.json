@@ -428,6 +428,14 @@
         "title": "GetDeviceLocationHistory"
       }
     ],
+    "GetFamilyDeviceUserList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFamilyDeviceUserList\n<公共请求参数>\n\n{\n    \"ProductId\": \"CR2Q0GQ\",\n    \"DeviceName\": \"device\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"UserList\": [\n            {\n                \"UserId\": \"294078350912131072\",\n                \"Role\": 1\n            },\n            {\n                \"UserId\": \"66852374529970176\",\n                \"Role\": 0\n            }\n        ]\n    }\n}",
+        "title": "GetFamilyDeviceUserList"
+      }
+    ],
     "GetLoRaGatewayList": [
       {
         "document": "",

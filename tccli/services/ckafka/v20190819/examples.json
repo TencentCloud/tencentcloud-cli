@@ -72,6 +72,14 @@
         "title": "删除ACL规则示例"
       }
     ],
+    "DeleteInstancePre": [
+      {
+        "document": "删除实例(预付费包年包月)",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteInstancePre\n&InstanceId=ckafka-xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DeleteRouteTimestamp\": \"xx\",\n            \"ReturnMessage\": \"xx\",\n            \"ReturnCode\": \"xx\",\n            \"Data\": {\n                \"InstanceId\": \"xx\",\n                \"FlowId\": 0,\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除实例(预付费包年包月)"
+      }
+    ],
     "DeleteRouteTriggerTime": [
       {
         "document": "",

@@ -919,6 +919,15 @@
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受100的字符串长度。",
+          "example": "无",
+          "member": "string",
+          "name": "IntentionVerifyText",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1694,6 +1703,15 @@
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionVerifyData",
+          "name": "IntentionVerifyData",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -2582,6 +2600,62 @@
         }
       ],
       "type": "object"
+    },
+    "IntentionVerifyData": {
+      "document": "意愿核身相关结果",
+      "members": [
+        {
+          "default": "",
+          "document": "意愿确认环节中录制的视频（base64）。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IntentionVerifyVideo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "意愿确认环节中用户语音转文字的识别结果。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsrResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "意愿确认环节的结果码。当该结果码为0时，语音朗读的视频与语音识别结果才会返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "意愿确认环节的结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "意愿确认环节中录制视频的最佳帧（base64）。若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IntentionVerifyBestFrame",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LivenessCompareRequest": {
       "document": "LivenessCompare请求参数结构体",

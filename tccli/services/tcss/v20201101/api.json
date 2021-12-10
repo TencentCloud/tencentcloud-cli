@@ -4405,7 +4405,7 @@
         },
         {
           "default": "",
-          "document": "cpu 使用率 *1000",
+          "document": "CPU使用率 *1000",
           "example": "1",
           "member": "uint64",
           "name": "CPUUsage",
