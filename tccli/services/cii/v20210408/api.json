@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateAutoClassifyStructureTask": {
+      "document": "本接口(CreateAutoClassifyStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
+      "input": "CreateAutoClassifyStructureTaskRequest",
+      "name": "新建自动分类结构化任务",
+      "output": "CreateAutoClassifyStructureTaskResponse"
+    },
     "CreateStructureTask": {
       "document": "本接口(CreateStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
       "input": "CreateStructureTaskRequest",
@@ -187,6 +193,133 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAutoClassifyStructureTaskInfo": {
+      "document": "创建自动分类的结构化任务子任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可",
+          "example": "[\"original_upload_dir/100000013512_e75d5c6e-7b90-4ff6-b890-483\"]",
+          "member": "string",
+          "name": "FileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户号",
+          "example": "C0001",
+          "member": "string",
+          "name": "CustomerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户姓名",
+          "example": "测试客户",
+          "member": "string",
+          "name": "CustomerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列",
+          "example": "[\"9xkKYHNKWDxxxxx\"]",
+          "member": "string",
+          "name": "ImageList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateAutoClassifyStructureTaskRequest": {
+      "document": "CreateAutoClassifyStructureTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
+          "example": "Structured",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建任务时可以上传多个报告，后台生成多个识别子任务，子任务的详细信息",
+          "example": "无",
+          "member": "CreateAutoClassifyStructureTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "保单号",
+          "example": "p0001",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "核保触发方式\nAuto 自动\nManual 手动",
+          "example": "Auto",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
+          "example": "[\"CriticalDiseaseInsurance\"]",
+          "member": "string",
+          "name": "InsuranceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "回调地址，接收Post请求传送结果",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoClassifyStructureTaskResponse": {
+      "document": "CreateAutoClassifyStructureTask返回参数结构体",
+      "members": [
+        {
+          "document": "创建的主任务号，用于查询结果",
+          "example": "46313288149458944",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateStructureTaskInfo": {
       "document": "创建结构化任务子任务信息",

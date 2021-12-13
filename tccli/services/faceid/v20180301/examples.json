@@ -5,13 +5,13 @@
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"RequestId\": \"c6daaf7f-dbdc-4a9d-a20b-9a14ffdd8328\"\n    }\n}",
-        "title": "认证通过示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerification&S"
+        "title": "认证通过示例"
       },
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=BankCard2EVerification\n&Name=张三\n&BankCard=6222222222222222222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"-4\",\n        \"Description\": \"持卡人信息有误\",\n        \"RequestId\": \"d668328c-7847-42d7-bdce-215ebadffd9b\"\n    }\n}",
-        "title": "认证不通过示例  [前往调试工具] (https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerificatio"
+        "title": "认证不通过示例"
       }
     ],
     "BankCard4EVerification": [

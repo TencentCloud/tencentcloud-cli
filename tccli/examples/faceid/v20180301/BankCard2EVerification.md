@@ -1,4 +1,4 @@
-**Example 1: 认证通过示例 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerification&S**
+**Example 1: 认证通过示例**
 
 
 
@@ -21,7 +21,7 @@ Output:
 }
 ```
 
-**Example 2: 认证不通过示例  [前往调试工具] (https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=BankCard2EVerificatio**
+**Example 2: 认证不通过示例**
 
 
 

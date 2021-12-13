@@ -300,6 +300,12 @@
       "name": "修改镜像分享信息",
       "output": "ModifyImageSharePermissionResponse"
     },
+    "ModifyInstanceDiskType": {
+      "document": "本接口 (ModifyInstanceDiskType) 用于修改实例硬盘介质类型。\n\n* 只支持实例的本地系统盘、本地数据盘转化成指定云硬盘介质。\n* 只支持实例在关机状态下转换成指定云硬盘介质。\n* 不支持竞价实例类型。\n* 修改前请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。",
+      "input": "ModifyInstanceDiskTypeRequest",
+      "name": "修改实例的硬盘介质",
+      "output": "ModifyInstanceDiskTypeResponse"
+    },
     "ModifyInstancesAttribute": {
       "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesAttributeRequest",
@@ -5039,6 +5045,51 @@
     },
     "ModifyImageSharePermissionResponse": {
       "document": "ModifyImageSharePermission返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceDiskTypeRequest": {
+      "document": "ModifyInstanceDiskType请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例数据盘配置信息，只需要指定要转换的目标云硬盘的介质类型，指定DiskType的值，当前只支持一个数据盘转化。只支持CDHPAID类型实例指定CdcId参数。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例系统盘配置信息，只需要指定要转换的目标云硬盘的介质类型，指定DiskType的值。只支持CDHPAID类型实例指定CdcId参数。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceDiskTypeResponse": {
+      "document": "ModifyInstanceDiskType返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

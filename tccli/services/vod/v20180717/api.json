@@ -20415,26 +20415,6 @@
       "members": [
         {
           "default": "",
-          "document": "取回任务状态，0表示取回完成，其他值表示取回还未完成。",
-          "example": "0",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "提示信息。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "文件ID。",
           "example": "\"\"",
           "member": "string",
@@ -20475,13 +20455,33 @@
         },
         {
           "default": "",
-          "document": "临时取回副本有效期，单位：天。对于永久取回，取值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时取回副本有效期，单位：天。对于永久取回，取值为0。",
           "example": "5",
           "member": "int64",
           "name": "RestoreDay",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段已废弃。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段已废弃。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

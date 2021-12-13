@@ -498,6 +498,14 @@
         "title": "手动添加一条重定向关系"
       }
     ],
+    "MigrateClassicalLoadBalancers": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=MigrateClassicalLoadBalancers\r\n&LoadBalancerIds.0=lb-isdw5mum\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55afe8ae-9580-4582-92e6-c7e67f893c1f\"\n    }\n}",
+        "title": "传统型迁移"
+      }
+    ],
     "ModifyBlockIPList": [
       {
         "document": "使用封禁功能，需要先设置header，指定客户端真实IP存放的header字段名，开启黑名单功能。",

@@ -436,6 +436,14 @@
         "title": "共享镜像"
       }
     ],
+    "ModifyInstanceDiskType": [
+      {
+        "document": "修改实例系统盘介质，从本地盘转化成普通云硬盘。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstanceDiskType\n&InstanceId=ins-r8hr2upy\n&SystemDisk.DiskType=CLOUD_BASIC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改按量实例系统盘介质"
+      }
+    ],
     "ModifyInstancesAttribute": [
       {
         "document": "本示例用于修改两个实例的名称。",

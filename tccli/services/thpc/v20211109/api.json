@@ -20,6 +20,52 @@
     "serviceShortName": "thpc"
   },
   "objects": {
+    "CFSOption": {
+      "document": "描述CFS文件系统版本和挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统本地挂载路径",
+          "example": "/data",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统远程挂载ip及路径",
+          "example": "172.0.0.1:/",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统协议类型，默认值NFS 3.0",
+          "example": "NFS 3.0",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统存储类型，默认值SD",
+          "example": "SD",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ComputeNode": {
       "document": "计算节点信息。",
       "members": [
@@ -224,6 +270,15 @@
           "name": "ClusterName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群存储选项",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -457,6 +512,22 @@
           "name": "Zone",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "StorageOption": {
+      "document": "描述集群文件系统选项",
+      "members": [
+        {
+          "default": "",
+          "document": "集群挂载CFS文件系统选项",
+          "example": "无",
+          "member": "CFSOption",
+          "name": "CFSOptions",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

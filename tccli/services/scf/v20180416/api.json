@@ -1560,6 +1560,7 @@
         {
           "default": "",
           "document": "函数的名称",
+          "example": "ledDummyAPITest",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1568,6 +1569,7 @@
         {
           "default": "",
           "document": "要删除的触发器名称",
+          "example": "trigger_name",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -1576,6 +1578,7 @@
         {
           "default": "",
           "document": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型",
+          "example": "timer",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1584,6 +1587,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1592,6 +1596,7 @@
         {
           "default": "",
           "document": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段",
+          "example": "无",
           "member": "string",
           "name": "TriggerDesc",
           "required": false,
@@ -1600,6 +1605,7 @@
         {
           "default": "",
           "document": "函数的版本信息",
+          "example": "$DEFAULT",
           "member": "string",
           "name": "Qualifier",
           "required": false,
