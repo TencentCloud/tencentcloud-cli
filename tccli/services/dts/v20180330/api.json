@@ -490,6 +490,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,

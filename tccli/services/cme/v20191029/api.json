@@ -3180,21 +3180,31 @@
       "members": [
         {
           "default": "",
-          "document": "媒资绑定模板 ID，可取值为：\n<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>\n<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>\n\n注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。",
+          "document": "目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。",
+          "example": "www.qq.com/a.mp4",
+          "member": "string",
+          "name": "MediaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段废弃，请勿使用。",
           "example": "1000000",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：\n原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。",
-          "example": "www.qq.com/a.mp4",
+          "document": "媒资挂载的存储 Id。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
-          "name": "MediaKey",
-          "required": true,
+          "name": "StorageId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

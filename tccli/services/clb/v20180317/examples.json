@@ -296,6 +296,14 @@
         "title": "查询集群资源列表"
       }
     ],
+    "DescribeCrossTargets": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeCrossTargets\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CrossTargetSet\": [\n            {\n                \"LocalVpcId\": \"vpc-test1234\",\n                \"VpcId\": \"vpc-test4321\",\n                \"IP\": \"10.22.106.8\",\n                \"VpcName\": \"测试\",\n                \"EniId\": \"eni-test1234\",\n                \"InstanceId\": \"ins-test1234\",\n                \"InstanceName\": \"test\",\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7717db32-9080-4391-acd7-18f8bbd0664d\"\n    }\n}",
+        "title": "查询跨域2.0版本云联网后端子机和网卡信息"
+      }
+    ],
     "DescribeCustomizedConfigAssociateList": [
       {
         "document": "",
@@ -567,7 +575,7 @@
     "ModifyLoadBalancerSla": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyLoadBalancerSla\r\n&LoadBalancerSla.0.LoadBalancerId=lb-db2nt5l2\r\n&LoadBalancerSla.0.SlaType=sla-3\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyLoadBalancerSla\n&LoadBalancerSla.0.LoadBalancerId=lb-db2nt5l2\n&LoadBalancerSla.0.SlaType=sla-3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1157c81-f3dc-4f2a-9346-76f161d548eb\"\n    }\n}",
         "title": "提升性能保障规格"
       }

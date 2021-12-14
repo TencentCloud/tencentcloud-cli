@@ -61,7 +61,7 @@
     "DeleteMigrateJob": [
       {
         "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=DeleteMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=DeleteMigrateJob\n&JobId=dts-1kl0iy0v\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e15f9b4c-9841-40d2-a28b-dea284a17315\"\n    }\n}",
         "title": "删除数据迁移任务"
       }

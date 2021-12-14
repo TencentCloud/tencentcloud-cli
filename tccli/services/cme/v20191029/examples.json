@@ -569,43 +569,37 @@
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=5285890796182734267\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd6\",\n        \"PreProcessTaskId\": \"\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d30\"\n    }\n}",
-        "title": "导入媒体到团队"
+        "title": "导入云点播媒体到团队"
       },
       {
         "document": "",
         "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=VOD\n&VodFileId=5285890796182734267\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd6\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f9308978d3\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49404d30\"\n    }\n}",
-        "title": "导入媒体到团队并发起预处理"
+        "title": "导入云点播媒体到团队并发起预处理"
       },
       {
-        "document": "导入外部链接的媒体，且外部链接为 `https`，且发起预处理。",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "document": "导入一个  COS 桶中媒体到个人，且发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.MediaKey=example-folder/example-object.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09dd9\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f93089kji3d3\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49408kd8\"\n    }\n}",
-        "title": "导入外部链接到个人"
+        "title": "导入外部媒体到个人并发起预处理"
       },
       {
-        "document": "导入外部链接的媒体，且外部链接为 `https`，且发起预处理。",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
+        "document": "导入一个  COS 桶中媒体到团队，且发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce\n&Owner.Type=TEAM\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.MediaKey=example-folder/example-object.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09da0\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f93089kji3d4\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49409634\"\n    }\n}",
-        "title": "导入外部链接到团队"
-      },
-      {
-        "document": "导入外部链接的媒体，且外部链接为 `http`，且发起预处理。",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMaterial\n&Platform=test\n&SourceType=EXTERNAL\n&Owner.Id=user_id_0a54392053f84053942f930\n&Owner.Type=PERSON\n&Name=媒体名称\n&ClassPath=/媒体\n&ExternalMediaInfo.Definition=1000001\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&Operator=user_id_0a54392053f84053942f930\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaterialId\": \"3dfd8ad3d628dc30001bd09da0\",\n        \"PreProcessTaskId\": \"125xxxxxxx9-tfusion-0a54392053f84053942f9308990d5\",\n        \"RequestId\": \"0a543920-53f8-4053-942f-9308c49692033\"\n    }\n}",
-        "title": "导入外部链接到个人(链接为 `http`)"
+        "title": "导入外部媒体到团队并发起预处理"
       }
     ],
     "ImportMediaToProject": [
       {
-        "document": "",
+        "document": "在项目中导入云点播文件，并发起预处理。",
         "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=cmepid_6f16967b64436100015fb046\n&SourceType=VOD\n&VodFileId=52858908114334690679\n&Name=视频1\n&PreProcessDefinition=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"248208104522663991\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e56\"\n    }\n}",
         "title": "在项目中导入云点播文件"
       },
       {
-        "document": "在项目中导入一个外部链接。",
-        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=cmepid_6f16967b64436100015fb046\n&SourceType=EXTERNAL\n&Name=视频2\n&ExternalMediaInfo.Definition=1000000\n&ExternalMediaInfo.MediaKey=1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4\n&PreProcessDefinition=10\n&<公共请求参数>",
+        "document": "在项目中导入一个  COS 桶中媒体 ，并发起预处理。",
+        "input": "https://cme.tencentcloudapi.com/?Action=ImportMediaToProject\n&Platform=test\n&ProjectId=cmepid_6f16967b64436100015fb046\n&SourceType=EXTERNAL\n&Name=视频2\n&ExternalMediaInfo.MediaKey=example-folder/example-object.mp4\n&PreProcessDefinition=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MaterialId\": \"248208104522663991\",\n        \"TaskId\": \"125xxxxxx65-procedurev2-3ab512f07530b88bc1aabb01fac345bcd\",\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e738\"\n    }\n}",
         "title": "在项目中导入外部媒体"
       }

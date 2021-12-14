@@ -179,7 +179,7 @@
     "DescribeInstances": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstances\r\n&InstanceId=instance-will-s\r\n&SearchWord=tre\r\n&Offset=0&Limit=10\r\n&Status.0=0\r\n&Status.1=1\r\n&Status.2=2\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstances\n&InstanceId=instance-will-s\n&SearchWord=tre\n&Offset=0\n&Limit=10\n&Status.0=0\n&Status.1=1\n&Status.2=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"InstanceList\": [\n                {\n                    \"InstanceId\": \"instance-will-s\",\n                    \"InstanceName\": \"treTest\",\n                    \"IfCommunity\": true,\n                    \"Status\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"31740399-5d06-404b-a4b5-3652e21c8a1d\"\n    }\n}",
         "title": "获取实例列表"
       }

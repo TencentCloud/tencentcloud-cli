@@ -56,7 +56,7 @@ Output:
 }
 ```
 
-**Example 3: 导入媒体到团队**
+**Example 3: 导入云点播媒体到团队**
 
 
 
@@ -85,7 +85,7 @@ Output:
 }
 ```
 
-**Example 4: 导入媒体到团队并发起预处理**
+**Example 4: 导入云点播媒体到团队并发起预处理**
 
 
 
@@ -115,9 +115,9 @@ Output:
 }
 ```
 
-**Example 5: 导入外部链接到个人**
+**Example 5: 导入外部媒体到个人并发起预处理**
 
-导入外部链接的媒体，且外部链接为 `https`，且发起预处理。
+导入一个  COS 桶中媒体到个人，且发起预处理。
 
 Input: 
 
@@ -129,8 +129,7 @@ tccli cme ImportMaterial --cli-unfold-argument  \
     --Owner.Type PERSON \
     --Name 媒体名称 \
     --ClassPath /媒体 \
-    --ExternalMediaInfo.Definition 1000000 \
-    --ExternalMediaInfo.MediaKey 1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4 \
+    --ExternalMediaInfo.MediaKey example-folder/example-object.mp4 \
     --PreProcessDefinition 10 \
     --Operator user_id_0a54392053f84053942f930
 ```
@@ -146,9 +145,9 @@ Output:
 }
 ```
 
-**Example 6: 导入外部链接到团队**
+**Example 6: 导入外部媒体到团队并发起预处理**
 
-导入外部链接的媒体，且外部链接为 `https`，且发起预处理。
+导入一个  COS 桶中媒体到团队，且发起预处理。
 
 Input: 
 
@@ -160,8 +159,7 @@ tccli cme ImportMaterial --cli-unfold-argument  \
     --Owner.Type TEAM \
     --Name 媒体名称 \
     --ClassPath /媒体 \
-    --ExternalMediaInfo.Definition 1000000 \
-    --ExternalMediaInfo.MediaKey 1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4 \
+    --ExternalMediaInfo.MediaKey example-folder/example-object.mp4 \
     --PreProcessDefinition 10 \
     --Operator user_id_0a54392053f84053942f930
 ```
@@ -173,37 +171,6 @@ Output:
         "MaterialId": "3dfd8ad3d628dc30001bd09da0",
         "PreProcessTaskId": "125xxxxxxx9-tfusion-0a54392053f84053942f93089kji3d4",
         "RequestId": "0a543920-53f8-4053-942f-9308c49409634"
-    }
-}
-```
-
-**Example 7: 导入外部链接到个人(链接为 `http`)**
-
-导入外部链接的媒体，且外部链接为 `http`，且发起预处理。
-
-Input: 
-
-```
-tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
-    --SourceType EXTERNAL \
-    --Owner.Id user_id_0a54392053f84053942f930 \
-    --Owner.Type PERSON \
-    --Name 媒体名称 \
-    --ClassPath /媒体 \
-    --ExternalMediaInfo.Definition 1000001 \
-    --ExternalMediaInfo.MediaKey 1810000000.vod2.myqcloud.com/b64e98acvodcq1810000000/f69747475285890810007930755/f0.mp4 \
-    --PreProcessDefinition 10 \
-    --Operator user_id_0a54392053f84053942f930
-```
-
-Output: 
-```
-{
-    "Response": {
-        "MaterialId": "3dfd8ad3d628dc30001bd09da0",
-        "PreProcessTaskId": "125xxxxxxx9-tfusion-0a54392053f84053942f9308990d5",
-        "RequestId": "0a543920-53f8-4053-942f-9308c49692033"
     }
 }
 ```

@@ -3526,7 +3526,7 @@
         },
         {
           "default": "",
-          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction",
+          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder",
           "example": "Default",
           "member": "string",
           "name": "Type",
@@ -3550,6 +3550,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区数，全局顺序无效",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8503,6 +8512,15 @@
           "name": "Remark",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分区数，全局类型无效，不可小于当前分区数",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

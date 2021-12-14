@@ -361,6 +361,15 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -566,6 +575,15 @@
           "example": "ie",
           "member": "string",
           "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境区分",
+          "example": "production",
+          "member": "string",
+          "name": "Env",
           "required": false,
           "type": "string"
         }
@@ -784,6 +802,15 @@
           "name": "CostType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境变量",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -989,6 +1016,15 @@
           "example": "ie",
           "member": "string",
           "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
           "required": false,
           "type": "string"
         }

@@ -186,6 +186,12 @@
       "name": "查询集群中资源列表",
       "output": "DescribeClusterResourcesResponse"
     },
+    "DescribeCrossTargets": {
+      "document": "查询跨域2.0版本云联网后端子机和网卡信息。",
+      "input": "DescribeCrossTargetsRequest",
+      "name": "查询跨域2.0版本云联网后端子机和网卡信息",
+      "output": "DescribeCrossTargetsResponse"
+    },
     "DescribeCustomizedConfigAssociateList": {
       "document": "拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。",
       "input": "DescribeCustomizedConfigAssociateListRequest",
@@ -343,9 +349,9 @@
       "output": "ModifyLoadBalancerAttributesResponse"
     },
     "ModifyLoadBalancerSla": {
-      "document": "升、降配接口。支持共享型clb升级到性能保障型clb。支持性能保障型提升等级。支持性能保障降低规格。（不支持性能保障降级到共享型）。",
+      "document": "支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。",
       "input": "ModifyLoadBalancerSlaRequest",
-      "name": "性能保障变配",
+      "name": "性能容量型变配",
       "output": "ModifyLoadBalancerSlaResponse"
     },
     "ModifyRule": {
@@ -2766,6 +2772,92 @@
       ],
       "type": "object"
     },
+    "CrossTargets": {
+      "document": "跨域2.0云联网下子机和网卡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "本地私有网络ID，即负载均衡的VpcId。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡所属的私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡的IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡所属的私有网络名称。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机的网卡ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EniId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子机实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子机或者网卡所属的地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteListenerRequest": {
       "document": "DeleteListener请求参数结构体",
       "members": [
@@ -3570,6 +3662,69 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossTargetsRequest": {
+      "document": "DescribeCrossTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回后端服务列表数目，默认20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回后端服务列表起始偏移量，默认0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询跨域2.0版本云联网后端子机和网卡服务列表条件，详细的过滤条件如下：\n<li> vpc-id - String - 是否必填：否 - （过滤条件）按照 本地私有网络ID，即负载均衡的VpcId 过滤，如：\"vpc-12345678\"。</li>\n<li> ip - String - 是否必填：否 - （过滤条件）按照 后端服务ip 过滤，如：\"192.168.0.1\"。</li>\n<li> listener-id - String - 是否必填：否 - （过滤条件）按照 监听器ID 过滤，如：\"lbl-12345678\"。</li>\n<li> location-id - String - 是否必填：否 - （过滤条件）按照 七层监听器规则ID 过滤，如：\"loc-12345678\"。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossTargetsResponse": {
+      "document": "DescribeCrossTargets返回参数结构体",
+      "members": [
+        {
+          "document": "后端服务列表总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "后端服务列表。",
+          "example": "无",
+          "member": "CrossTargets",
+          "name": "CrossTargetSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7010,7 +7165,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡性能保障实例ID和变配的目标规格",
+          "document": "负载均衡实例信息",
+          "example": "无",
           "member": "SlaUpdateParam",
           "name": "LoadBalancerSla",
           "required": true,
@@ -8444,11 +8600,12 @@
       "type": "object"
     },
     "SlaUpdateParam": {
-      "document": "性能保障变配参数",
+      "document": "性能容量型变配参数",
       "members": [
         {
           "default": "",
           "document": "lb的字符串ID",
+          "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8457,7 +8614,8 @@
         },
         {
           "default": "",
-          "document": "需要变更的性能保障级别",
+          "document": "变更为性能容量型，固定为SLA",
+          "example": "SLA",
           "member": "string",
           "name": "SlaType",
           "required": true,

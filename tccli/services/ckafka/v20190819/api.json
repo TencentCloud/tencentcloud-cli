@@ -2493,6 +2493,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例ID过滤",
+          "example": "instance-will-s",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2501,6 +2502,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "example": "tre",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -2509,6 +2511,7 @@
         {
           "default": "",
           "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -2517,6 +2520,7 @@
         {
           "default": "",
           "document": "偏移量，不填默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2525,6 +2529,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认10，最大值100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2532,7 +2537,8 @@
         },
         {
           "default": "",
-          "document": "匹配标签key值。",
+          "document": "已废弃。匹配标签key值。",
+          "example": "1",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -2546,8 +2552,10 @@
       "members": [
         {
           "document": "返回的结果",
+          "example": "无",
           "member": "InstanceResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3793,6 +3801,26 @@
           "name": "DeleteRouteTimestamp",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余创建分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "135",
+          "member": "int64",
+          "name": "RemainingPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余创建主题数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "135",
+          "member": "int64",
+          "name": "RemainingTopics",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
